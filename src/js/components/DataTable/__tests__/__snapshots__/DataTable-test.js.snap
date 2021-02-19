@@ -172,9 +172,6 @@ exports[`DataTable !primaryKey 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
           class="c7 "
@@ -203,9 +200,6 @@ exports[`DataTable !primaryKey 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -427,9 +421,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c8 "
@@ -459,9 +450,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -659,9 +647,6 @@ exports[`DataTable aggregate 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -691,9 +676,6 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -946,9 +928,6 @@ exports[`DataTable aggregate with nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -991,9 +970,6 @@ exports[`DataTable aggregate with nested object 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -1287,9 +1263,6 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -1319,9 +1292,6 @@ exports[`DataTable background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -1427,9 +1397,6 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c12 "
@@ -1459,9 +1426,6 @@ exports[`DataTable background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -1567,9 +1531,6 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c12 "
@@ -1599,9 +1560,6 @@ exports[`DataTable background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -1814,9 +1772,6 @@ exports[`DataTable basic 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -1846,9 +1801,6 @@ exports[`DataTable basic 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -2047,9 +1999,6 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c3 "
@@ -2079,9 +2028,6 @@ exports[`DataTable border 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -2187,9 +2133,6 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -2219,9 +2162,6 @@ exports[`DataTable border 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -2327,9 +2267,6 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c10 "
@@ -2359,9 +2296,6 @@ exports[`DataTable border 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -2467,9 +2401,6 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c10 "
@@ -2499,9 +2430,6 @@ exports[`DataTable border 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -2691,9 +2619,6 @@ exports[`DataTable click 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
       >
         <th
@@ -2711,9 +2636,6 @@ exports[`DataTable click 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -2771,9 +2693,6 @@ exports[`DataTable click 2`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
-      <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 jesxJF"
       >
         <th
@@ -2791,9 +2710,6 @@ exports[`DataTable click 2`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -3369,9 +3285,6 @@ exports[`DataTable custom theme 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
           class="c19"
@@ -3412,9 +3325,6 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -3552,9 +3462,6 @@ exports[`DataTable custom theme 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
@@ -3595,9 +3502,6 @@ exports[`DataTable custom theme 2`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -3867,9 +3771,6 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -3899,9 +3800,6 @@ exports[`DataTable fill 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -4007,9 +3905,6 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -4039,9 +3934,6 @@ exports[`DataTable fill 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -4147,9 +4039,6 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -4179,9 +4068,6 @@ exports[`DataTable fill 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -4407,9 +4293,6 @@ exports[`DataTable footer 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -4439,9 +4322,6 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -6405,9 +6285,6 @@ exports[`DataTable onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -6439,9 +6316,6 @@ exports[`DataTable onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -6471,9 +6345,6 @@ exports[`DataTable onSort 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -6697,9 +6568,6 @@ exports[`DataTable onSort 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
       .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6776,9 +6644,6 @@ exports[`DataTable onSort 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
       .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6855,9 +6720,6 @@ exports[`DataTable onSort 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -7183,9 +7045,6 @@ exports[`DataTable onSort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -7217,9 +7076,6 @@ exports[`DataTable onSort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -7249,9 +7105,6 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -7411,9 +7264,6 @@ exports[`DataTable onSort external 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -7445,9 +7295,6 @@ exports[`DataTable onSort external 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -7477,9 +7324,6 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -7719,9 +7563,6 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -7751,9 +7592,6 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -7859,9 +7697,6 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c12 "
@@ -7891,9 +7726,6 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -7999,9 +7831,6 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c12 "
@@ -8031,9 +7860,6 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -8246,9 +8072,6 @@ exports[`DataTable paths 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -8278,9 +8101,6 @@ exports[`DataTable paths 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -8565,9 +8385,6 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -8597,9 +8414,6 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
@@ -8705,9 +8519,6 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -8737,9 +8548,6 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -8845,9 +8653,6 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -8877,9 +8682,6 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
@@ -9264,9 +9066,6 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c10 c11"
@@ -9296,9 +9095,6 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
         </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
       </tbody>
       <tfoot
         class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
@@ -9408,9 +9204,6 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c10 c11"
@@ -9440,9 +9233,6 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
         </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
       </tbody>
       <tfoot
         class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
@@ -9552,9 +9342,6 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c10 c11"
@@ -9584,9 +9371,6 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
         </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        />
       </tbody>
       <tfoot
         class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c14"
@@ -9857,9 +9641,6 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -9889,9 +9670,6 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c13"
@@ -9997,9 +9775,6 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -10029,9 +9804,6 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -10137,9 +9909,6 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 c10"
@@ -10169,9 +9938,6 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c13"
@@ -10431,9 +10197,6 @@ exports[`DataTable placeholder 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -10463,9 +10226,6 @@ exports[`DataTable placeholder 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -10585,9 +10345,6 @@ exports[`DataTable placeholder 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c7 "
@@ -10617,9 +10374,6 @@ exports[`DataTable placeholder 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <caption
       class="c11"
@@ -10813,9 +10567,6 @@ exports[`DataTable primaryKey 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
           class="c7 "
@@ -10845,9 +10596,6 @@ exports[`DataTable primaryKey 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -11069,9 +10817,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c8 "
@@ -11101,9 +10846,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -11306,9 +11048,6 @@ exports[`DataTable replace 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
           class="c7 "
@@ -11338,9 +11077,6 @@ exports[`DataTable replace 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
@@ -11726,9 +11462,6 @@ exports[`DataTable resizeable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c16 "
@@ -11758,9 +11491,6 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -11970,9 +11700,6 @@ exports[`DataTable rowProps 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c10 "
@@ -12002,9 +11729,6 @@ exports[`DataTable rowProps 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
@@ -12333,9 +12057,6 @@ exports[`DataTable search 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -12354,9 +12075,6 @@ exports[`DataTable search 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -12373,9 +12091,6 @@ exports[`DataTable search 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -12596,9 +12311,6 @@ exports[`DataTable search 2`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -12959,9 +12671,6 @@ exports[`DataTable select 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
           class="c13"
@@ -12998,9 +12707,6 @@ exports[`DataTable select 1`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -13140,9 +12846,6 @@ exports[`DataTable select 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
@@ -13210,9 +12913,6 @@ exports[`DataTable select 2`] = `
           </div>
         </th>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -13538,9 +13238,6 @@ exports[`DataTable sort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -13572,9 +13269,6 @@ exports[`DataTable sort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -13604,9 +13298,6 @@ exports[`DataTable sort 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -13932,9 +13623,6 @@ exports[`DataTable sort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -13966,9 +13654,6 @@ exports[`DataTable sort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -13998,9 +13683,6 @@ exports[`DataTable sort external 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -14325,9 +14007,6 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -14359,9 +14038,6 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -14391,9 +14067,6 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -14718,9 +14391,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -14752,9 +14422,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c11 "
@@ -14784,9 +14451,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -15046,9 +14710,6 @@ exports[`DataTable sortable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -15080,9 +14741,6 @@ exports[`DataTable sortable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -15112,9 +14770,6 @@ exports[`DataTable sortable 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -15338,9 +14993,6 @@ exports[`DataTable sortable 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
       .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -15417,9 +15069,6 @@ exports[`DataTable sortable 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
       .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -15496,9 +15145,6 @@ exports[`DataTable sortable 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-1 kHghvN"
-      />
     </tbody>
   </table>
 </div>
@@ -15720,9 +15366,6 @@ exports[`DataTable themeColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c8 "
@@ -15752,9 +15395,6 @@ exports[`DataTable themeColumnSizes 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
   </table>
 </div>
@@ -15986,9 +15626,6 @@ exports[`DataTable units 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
           class="c9 "
@@ -16018,9 +15655,6 @@ exports[`DataTable units 1`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
     </tbody>
     <tfoot
       class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "

@@ -89,8 +89,8 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
-              const childExist = childExpand.includes(index);
-              const ischildExpanded = childExpand && childExist;
+              const ischildExpanded =
+                childExpand && childExpand.includes(index);
               return (
                 <Fragment key={`${index.toString()}_expanded`}>
                   <StyledDataTableRow
@@ -119,21 +119,6 @@ const Body = forwardRef(
                     onFocus={onClickRow ? () => setActive(index) : undefined}
                     onBlur={onClickRow ? () => setActive(undefined) : undefined}
                   >
-                    {childComponent && (
-                      <ExpanderCell
-                        context={ischildExpanded ? 'groupHeader' : 'body'}
-                        expanded={ischildExpanded}
-                        onToggle={() => {
-                          if (ischildExpanded) {
-                            setChildExpand(
-                              childExpand.filter(s => s !== index),
-                            );
-                          } else {
-                            setChildExpand([...childExpand, index]);
-                          }
-                        }}
-                      />
-                    )}
                     {(selected || onSelect) && (
                       <TableCell background={background}>
                         <CheckBox
@@ -153,6 +138,21 @@ const Body = forwardRef(
                       </TableCell>
                     )}
 
+                    {childComponent && (
+                      <ExpanderCell
+                        context={ischildExpanded ? 'groupHeader' : 'body'}
+                        expanded={ischildExpanded}
+                        onToggle={() => {
+                          if (ischildExpanded) {
+                            setChildExpand(
+                              childExpand.filter(s => s !== index),
+                            );
+                          } else {
+                            setChildExpand([...childExpand, index]);
+                          }
+                        }}
+                      />
+                    )}
                     {columns.map(column => (
                       <Cell
                         key={column.property}
@@ -173,16 +173,14 @@ const Body = forwardRef(
                       />
                     ))}
                   </StyledDataTableRow>
-                  <StyledDataTableRow key={`${index.toString()}_expand`}>
-                    {childComponent &&
-                      ischildExpanded &&
-                      (selected || onSelect) && <TableCell />}
-                    {childComponent && ischildExpanded && (
+                  {childComponent && ischildExpanded && (
+                    <StyledDataTableRow key={`${index.toString()}_expand`}>
+                      {(selected || onSelect) && <TableCell />}
                       <TableCell colSpan={columns.length}>
                         {childComponent(data[index])}
                       </TableCell>
-                    )}
-                  </StyledDataTableRow>
+                    </StyledDataTableRow>
+                  )}
                 </Fragment>
               );
             }}

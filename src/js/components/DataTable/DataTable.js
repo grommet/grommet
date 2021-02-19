@@ -265,7 +265,7 @@ const DataTable = ({
         }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
-        childComponent={!!childComponent}
+        childComponent={childComponent}
         primaryProperty={primaryProperty}
         scrollOffset={scrollOffset}
       />
