@@ -74,7 +74,7 @@ describe('MaskedInput', () => {
             regexp: /^[ab]$/,
           },
         ]}
-        value="bb!ax"
+        value="a"
         onChange={onChange}
         onFocus={onFocus}
       />,
@@ -83,7 +83,7 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitForElement(() => screen.findByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
     expect(onChange).not.toBeCalled();

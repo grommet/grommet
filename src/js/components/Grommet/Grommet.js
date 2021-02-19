@@ -66,6 +66,9 @@ const Grommet = forwardRef((props, ref) => {
     const color = normalizeColor(background || themeBackground, nextTheme);
     nextTheme.dark = backgroundIsDark(color, nextTheme);
     nextTheme.baseBackground = background || themeBackground;
+    // This allows DataTable to intelligently set the background of a pinned
+    // header or footer.
+    nextTheme.background = nextTheme.baseBackground;
 
     if (dir) {
       nextTheme.dir = dir;

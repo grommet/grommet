@@ -3536,6 +3536,90 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "FileInput": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js",
+      },
+    ],
+    "description": "A control to input one or more files.",
+    "intrinsicElement": "input",
+    "name": "FileInput",
+    "properties": Array [
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether the control is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "The id attribute of the input.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "defaultValue": Object {
+          "browse": "browse",
+          "dropPrompt": "Drop file here or",
+          "dropPromptMultiple": "Drop files here or",
+          "files": "files",
+          "remove": "remove",
+          "removeAll": "remove all",
+        },
+        "description": "Custom messages for FileInput. Used for accessibility by screen
+        readers.",
+        "format": "{
+  browse: string,
+  dropPrompt: string,
+  dropPromptMultiple: string,
+  files: string,
+  remove: string,
+  removeAll: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether to allow multiple files. If an object is supplied,
+        'aggregageThreshold' indicates the maximum number of individual
+        files to show. Above this, only a single message describing the
+        number of files will be shown.",
+        "format": "boolean
+{
+  aggregateThreshold: number
+}",
+        "name": "multiple",
+      },
+      Object {
+        "description": "The name attribute of the input. This is required when used within
+      a Form.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when one or more files are added to 
+      the input. The file(s) can be found in event.target.files.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Provides custom rendering of the file. If not provided, the file's
+      name will be shown. It will be passed the browser File object as
+      an argument. For example: (file) => <Text>{file.name}</Text>",
+        "format": "node",
+        "name": "renderFile",
+      },
+    ],
+    "usage": "import { FileInput } from 'grommet';
+<FileInput id='file' name='file' />",
+  },
   "Footer": [Function],
   "Form": Object {
     "availableAt": Array [
@@ -3616,7 +3700,8 @@ string",
         "defaultValue": "submit",
         "description": "When to perform validation",
         "format": "blur
-submit",
+submit
+change",
         "name": "validate",
       },
       Object {
@@ -5372,6 +5457,15 @@ string",
         "name": "pad",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Whether to paginate the data. If providing an object, any Box props or 
+    Pagination props are valid and will be used to style the underlying 
+    pagination component.",
+        "format": "boolean
+object",
+        "name": "paginate",
+      },
+      Object {
         "description": "When a string is supplied, it indicates the property in a data item
       object to use to get the primary content. If a function is supplied, it
       will be called with the current data item object and should return
@@ -5388,6 +5482,17 @@ function",
         "format": "string
 function",
         "name": "secondaryKey",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "If provided as a number, the index of an item to show. If using 
+        paginate and provided as an object in the format of show={{ page: 2 }}, 
+        the default page to show.",
+        "format": "number
+{
+  page: number
+}",
+        "name": "show",
       },
       Object {
         "defaultValue": 50,
@@ -5644,10 +5749,10 @@ It will be passed a props object. The props passed are
 different depending on the menu \`open\` state. When the menu is closed,
 two props are passed:
 \`{ hover, focus }\`,
-but when the menu is open, all menu props are passed to this function.\\\\
+but when the menu is open, all menu props are passed to this function.
 It should return a React element.
 For example:
-\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+\`children={(props) => <Box ...>{...}</Box>}\`
 **Note:** This function will be invoked on every mouse move when hovering.
 - Node is anything that can be rendered, e.g.
 \`<Box><CaretNext /><Text>Open Me</Text></Box>\`
@@ -5996,6 +6101,180 @@ circle",
 <Meter />",
   },
   "Nav": [Function],
+  "Pagination": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Pagination&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js",
+      },
+    ],
+    "description": "A control that enables selection of a single page from a 
+      range of pages.",
+    "intrinsicElement": "nav",
+    "name": "Pagination",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": 1,
+        "description": "The number of pagination buttons visible at the start and end of page 
+        range.",
+        "format": "number",
+        "name": "numberEdgePages",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The total number of items to paginate.",
+        "format": "number",
+        "name": "numberItems",
+      },
+      Object {
+        "defaultValue": 3,
+        "description": "The number of pagination buttons visible in the middle of the 
+        controls.",
+        "format": "number",
+        "name": "numberMiddlePages",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Function called when the user clicks a page or arrow button. The 
+        single argument is an event containing the target page via 
+        \`event.page\`, and the startIndex and endIndex for items contained 
+        in the target page via \`event.startIndex\` and \`event.endIndex\`, 
+        respectively.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The default page. If used with onChange, it can be used to control the 
+        active page via state.",
+        "format": "number",
+        "name": "page",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "Specifies what size the pagination control buttons should be.",
+        "format": "small
+medium
+large",
+        "name": "size",
+      },
+      Object {
+        "defaultValue": 10,
+        "description": "The number of items per page.",
+        "format": "number",
+        "name": "step",
+      },
+    ],
+    "usage": "import { Pagination } from 'grommet';
+      <Pagination />",
+  },
   "Paragraph": Object {
     "availableAt": Array [
       Object {
