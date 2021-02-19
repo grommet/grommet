@@ -88,8 +88,6 @@ const LayerContainer = forwardRef(
       }
     }, [position, ref]);
 
-    const hitResponsiveBreakpoint =
-      responsive && size === theme.layer.responsiveBreakpoint;
     useEffect(() => {
       const onClickDocument = event => {
         // determine which portal id the target is in, if any
@@ -166,13 +164,7 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [
-      hitResponsiveBreakpoint,
-      layerTarget,
-      onClickOutside,
-      portalContext,
-      portalId,
-    ]);
+    }, [layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
@@ -260,6 +252,8 @@ const LayerContainer = forwardRef(
       </PortalContext.Provider>
     );
 
+    const hitResponsiveBreakpoint =
+      responsive && size === theme.layer.responsiveBreakpoint;
     // if layer is responsive and we've hit the breakpoint,
     // the layer will be filling the viewport, so we want to
     // restrict the scroll to the layer and not allow the
