@@ -3,7 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
-import { ReactComponentElement } from 'react';
+import { ReactComponentElement, ReactElement } from 'react';
 
 import {
   BackgroundType,
@@ -1130,7 +1130,7 @@ export interface ThemeType {
       | BoxProps
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
-    icon?: any;
+    icon?: React.ReactNode;
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   };
   tab?: {

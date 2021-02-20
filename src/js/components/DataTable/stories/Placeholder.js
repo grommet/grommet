@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Text, Spinner } from 'grommet';
+import { Grommet, Box, DataTable, Spinner, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 // Source code for the data can be found here

@@ -4,8 +4,8 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 
-const BasicSpinner = ({ spinnerSize, ref, ...rest }) => (
-  <Box height={spinnerSize} width={spinnerSize} ref={ref} {...rest} />
+const BasicSpinner = ({ size, ref, ...rest }) => (
+  <Box height={size} width={size} ref={ref} {...rest} />
 );
 
 /**
@@ -27,15 +27,15 @@ const Spinner = forwardRef(
   ({ children, color: colorProp, size, ...rest }, ref) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    // Avoid color and size to leak into the DOM
+    // Avoid color and size leaking into the DOM
     const {
       size: sizeThemeProp,
       color: colorThemeProp,
       ...themeProps
     } = theme.spinner.container;
 
-    const requiredSize = size || sizeThemeProp;
-    const spinnerSize = theme.spinner.size[requiredSize] || requiredSize;
+    const normalizedSize = size || sizeThemeProp;
+    const spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;
 
     const color = colorProp || colorThemeProp;
     const Icon = theme.spinner.icon;
@@ -43,7 +43,7 @@ const Spinner = forwardRef(
     // children will take precedence over theme attributes
     if (children) {
       return (
-        <BasicSpinner spinnerSize={spinnerSize} ref={ref} {...rest}>
+        <BasicSpinner size={spinnerSize} ref={ref} {...rest}>
           {children}
         </BasicSpinner>
       );
@@ -52,12 +52,7 @@ const Spinner = forwardRef(
     // In case icon is provided by the theme
     if (Icon)
       return (
-        <BasicSpinner
-          spinnerSize={spinnerSize}
-          ref={ref}
-          {...themeProps}
-          {...rest}
-        >
+        <BasicSpinner size={spinnerSize} ref={ref} {...themeProps} {...rest}>
           {/* If the icon is SVG then treat it differently than an element */}
           {isValidElement(Icon) ? (
             Icon
@@ -69,7 +64,7 @@ const Spinner = forwardRef(
 
     return (
       <BasicSpinner
-        spinnerSize={spinnerSize}
+        size={spinnerSize}
         ref={ref}
         border={[
           { side: 'all', color: 'background-contrast', size },

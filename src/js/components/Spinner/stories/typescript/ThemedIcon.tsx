@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Box, Grommet, Spinner } from 'grommet';
 import { Node } from 'grommet-icons';
+import { ThemeType } from 'grommet/themes';
 
-const themeWithAnimation = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const themeWithAnimation: ThemeType = {
   spinner: {
     icon: Node,
     container: {
@@ -16,7 +19,9 @@ const themeWithAnimation = {
   },
 };
 
-const themeWithAnimatedIcon = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const themeWithAnimatedIcon: ThemeType = {
   spinner: {
     icon: (
       <svg
