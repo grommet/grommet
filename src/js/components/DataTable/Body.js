@@ -27,11 +27,11 @@ const Body = forwardRef(
       primaryProperty,
       rowProps,
       selected,
-      childComponent,
+      rowDetails,
       size,
       step,
-      childExpand,
-      setChildExpand,
+      rowExpand,
+      setrowExpand,
       ...rest
     },
     ref,
@@ -89,8 +89,7 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
-              const ischildExpanded =
-                childExpand && childExpand.includes(index);
+              const isrowExpanded = rowExpand && rowExpand.includes(index);
               return (
                 <Fragment key={`${index.toString()}_expanded`}>
                   <StyledDataTableRow
@@ -138,17 +137,15 @@ const Body = forwardRef(
                       </TableCell>
                     )}
 
-                    {childComponent && (
+                    {rowDetails && (
                       <ExpanderCell
-                        context={ischildExpanded ? 'groupHeader' : 'body'}
-                        expanded={ischildExpanded}
+                        context={isrowExpanded ? 'groupHeader' : 'body'}
+                        expanded={isrowExpanded}
                         onToggle={() => {
-                          if (ischildExpanded) {
-                            setChildExpand(
-                              childExpand.filter(s => s !== index),
-                            );
+                          if (isrowExpanded) {
+                            setrowExpand(rowExpand.filter(s => s !== index));
                           } else {
-                            setChildExpand([...childExpand, index]);
+                            setrowExpand([...rowExpand, index]);
                           }
                         }}
                       />
@@ -173,11 +170,11 @@ const Body = forwardRef(
                       />
                     ))}
                   </StyledDataTableRow>
-                  {childComponent && ischildExpanded && (
+                  {rowDetails && isrowExpanded && (
                     <StyledDataTableRow key={`${index.toString()}_expand`}>
                       {(selected || onSelect) && <TableCell />}
                       <TableCell colSpan={columns.length}>
-                        {childComponent(data[index])}
+                        {rowDetails(data[index])}
                       </TableCell>
                     </StyledDataTableRow>
                   )}

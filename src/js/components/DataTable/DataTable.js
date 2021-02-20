@@ -67,7 +67,7 @@ const DataTable = ({
   size,
   sort: sortProp,
   sortable,
-  childComponent,
+  rowDetails,
   step = 50,
   ...rest
 }) => {
@@ -123,7 +123,7 @@ const DataTable = ({
     select,
   ]);
 
-  const [childExpand, setChildExpand] = useState([]);
+  const [rowExpand, setrowExpand] = useState([]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -265,7 +265,7 @@ const DataTable = ({
         }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
-        childComponent={childComponent}
+        rowDetails={rowDetails}
         primaryProperty={primaryProperty}
         scrollOffset={scrollOffset}
       />
@@ -293,8 +293,8 @@ const DataTable = ({
           onMore={onMore}
           replace={replace}
           onClickRow={onClickRow}
-          childExpand={childExpand}
-          setChildExpand={setChildExpand}
+          rowExpand={rowExpand}
+          setrowExpand={setrowExpand}
           onSelect={
             onSelect
               ? nextSelected => {
@@ -309,7 +309,7 @@ const DataTable = ({
           primaryProperty={primaryProperty}
           rowProps={rowProps}
           selected={selected}
-          childComponent={childComponent}
+          rowDetails={rowDetails}
           size={size}
           step={step}
         />

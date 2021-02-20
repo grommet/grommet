@@ -56,7 +56,7 @@ export const ControlledDataTable = () => {
           ].map(col => ({ ...col }))}
           data={DATA}
           sortable
-          childComponent={row => <Box> {row.name} </Box>}
+          rowDetails={row => <Box> {row.name} </Box>}
           size="medium"
         />
       </Box>
@@ -64,8 +64,8 @@ export const ControlledDataTable = () => {
   );
 };
 
-ControlledDataTable.storyName = 'childComponent';
+ControlledDataTable.storyName = 'rowDetails';
 
 export default {
-  title: 'Visualizations/DataTable/childComponent',
+  title: 'Visualizations/DataTable/rowDetails',
 };

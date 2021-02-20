@@ -110,7 +110,7 @@ const Header = forwardRef(
       pin: tablePin,
       primaryProperty,
       selected,
-      childComponent,
+      rowDetails,
       sort,
       widths,
       ...rest
@@ -159,7 +159,7 @@ const Header = forwardRef(
               )}
             </TableCell>
           )}
-          {childComponent && <TableCell size="xxsmall" plain pad="none" />}
+          {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
           {columns.map(
             ({
               property,
