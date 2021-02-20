@@ -4,33 +4,8 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 
-const defaultAnimation = 'rotateRight';
-
-const ChildrenSpinner = ({ spinnerSize, ...rest }) => (
-  <Box
-    animation={defaultAnimation}
-    height={spinnerSize}
-    width={spinnerSize}
-    {...rest}
-  />
-);
-
-const IconSpinner = ({ spinnerSize, ...rest }) => (
-  <Box
-    animation={defaultAnimation}
-    height={spinnerSize}
-    width={spinnerSize}
-    {...rest}
-  />
-);
-
-const BasicSpinner = ({ spinnerSize, ...rest }) => (
-  <Box
-    animation={defaultAnimation}
-    height={spinnerSize}
-    width={spinnerSize}
-    {...rest}
-  />
+const BasicSpinner = ({ spinnerSize, ref, ...rest }) => (
+  <Box height={spinnerSize} width={spinnerSize} ref={ref} {...rest} />
 );
 
 /**
@@ -68,16 +43,16 @@ const Spinner = forwardRef(
     // children will take precedence over theme attributes
     if (children) {
       return (
-        <ChildrenSpinner spinnerSize={spinnerSize} ref={ref} {...rest}>
+        <BasicSpinner spinnerSize={spinnerSize} ref={ref} {...rest}>
           {children}
-        </ChildrenSpinner>
+        </BasicSpinner>
       );
     }
 
     // In case icon is provided by the theme
     if (Icon)
       return (
-        <IconSpinner
+        <BasicSpinner
           spinnerSize={spinnerSize}
           ref={ref}
           {...themeProps}
@@ -89,7 +64,7 @@ const Spinner = forwardRef(
           ) : (
             <Icon size={spinnerSize} color={color} />
           )}
-        </IconSpinner>
+        </BasicSpinner>
       );
 
     return (

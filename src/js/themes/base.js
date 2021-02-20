@@ -1078,10 +1078,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     spinner: {
       container: {
-        round: 'full',
-        pad: 'small',
-        size: 'small',
+        animation: 'rotateRight',
         color: 'brand',
+        pad: 'small',
+        round: 'full',
+        size: 'small',
       },
       // icon: undefined
       size: {

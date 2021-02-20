@@ -25,8 +25,20 @@ export const doc = Spinner => {
 
 export const themeDoc = {
   'spinner.container': {
-    description: 'Any valid Box prop for the Spinner container.',
+    description: `Any valid Box prop for the Spinner container. 
+    Including 'color' for the spinner border and 'size' its default size.`,
     type: 'object',
+    defaultValue: {
+      animation: 'rotateRight',
+      color: 'brand',
+      pad: 'small',
+      round: 'full',
+      size: 'small',
+    },
+  },
+  'spinner.icon': {
+    description: `An icon or an SVG to use as the default Spinner.`,
+    type: 'ReactElement | SVG',
     defaultValue: undefined,
   },
   'spinner.size.xsmall': {

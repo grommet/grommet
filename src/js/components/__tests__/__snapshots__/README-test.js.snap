@@ -15364,7 +15364,18 @@ string
   
 **spinner.container**
 
-Any valid Box prop for the Spinner container. Expects \`object\`.
+Any valid Box prop for the Spinner container. 
+    Including 'color' for the spinner border and 'size' its default size. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**spinner.icon**
+
+An icon or an SVG to use as the default Spinner. Expects \`ReactElement | SVG\`.
 
 Defaults to
 
