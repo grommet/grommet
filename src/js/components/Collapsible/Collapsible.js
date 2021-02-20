@@ -13,21 +13,16 @@ import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
-const invisibleCss = `
-visibility: hidden;
-position: absolute;
-pointer-events: none;
-`;
-
 const AnimatedBox = styled(Box)`
   ${props =>
     props.shouldOpen
-      ? invisibleCss
+      ? `visibility: hidden;
+      position: absolute;
+      pointer-events: none;`
       : // eslint-disable-next-line max-len
         `transition: ${`max-${props.dimension} ${props.speedProp}ms, opacity ${props.speedProp}ms`};
       opacity: ${props.open ? 1 : 0};
-      overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};
-    `}
+      overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};`}
 `;
 
 const Collapsible = forwardRef(
@@ -57,7 +52,7 @@ const Collapsible = forwardRef(
     useLayoutEffect(() => {
       const container = containerRef.current;
 
-      // skip this if we are animating
+      // skip this if animation is in progress
       if (!animate && shouldOpen) {
         const parentPrevPosition = container.parentNode.style.position;
         container.parentNode.style.position = 'relative';
