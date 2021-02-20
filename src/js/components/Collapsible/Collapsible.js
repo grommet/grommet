@@ -58,9 +58,7 @@ const Collapsible = forwardRef(
       const container = containerRef.current;
 
       // skip this if we are animating
-      // TODO: fix - this is not runnign always (maybe to run this every
-      // time before animation when open, and only once here)
-      if (openArg !== open && shouldOpen && !sizeRef.current) {
+      if (!animate && shouldOpen) {
         const parentPrevPosition = container.parentNode.style.position;
         container.parentNode.style.position = 'relative';
         const { [dimension]: size } = container.getBoundingClientRect();
@@ -74,7 +72,7 @@ const Collapsible = forwardRef(
         const { [dimension]: size } = container.getBoundingClientRect();
         container.style[`max-${dimension}`] = `${size}px`;
       }
-    }, [shouldOpen, shouldClose, containerRef, dimension, openArg, open]);
+    }, [shouldOpen, shouldClose, containerRef, dimension, animate]);
 
     useEffect(() => {
       if (shouldOpen || shouldClose) {
@@ -125,6 +123,7 @@ const Collapsible = forwardRef(
         // an intermediate state that will render invisible element
         // we need to do this because we can't use scrollHeight/scrollWidth
         // to get size while overflow is hidden.
+        // skipped if animation is in progress
         shouldOpen={!animate && shouldOpen}
       >
         {shouldOpen || open || animate ? children : null}
