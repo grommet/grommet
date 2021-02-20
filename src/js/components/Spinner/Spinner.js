@@ -1,45 +1,111 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { isValidElement, forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 
-const BasicSpinner = ({ theme, spinnerSize, pad, round, ...rest }) => (
+const defaultAnimation = 'rotateRight';
+
+const ChildrenSpinner = ({ spinnerSize, ...rest }) => (
   <Box
-    animation="rotateRight"
+    animation={defaultAnimation}
     height={spinnerSize}
     width={spinnerSize}
-    // deconstruct to give priority to caller preference
-    pad={pad}
-    round={round}
-    {...theme.spinner?.container}
     {...rest}
   />
 );
 
-const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const spinnerSize =
-    theme.spinner.size[size] || size || theme.spinner.size.small;
-  return children ? (
-    <BasicSpinner theme={theme} spinnerSize={spinnerSize} ref={ref} {...rest}>
-      {children}
-    </BasicSpinner>
-  ) : (
-    <BasicSpinner
-      spinnerSize={spinnerSize}
-      theme={theme}
-      ref={ref}
-      border={[
-        { side: 'all', color: 'background-contrast', size },
-        { side: 'top', color: color || 'brand', size },
-      ]}
-      round="full"
-      pad="small"
-      {...rest}
-    />
-  );
-});
+const IconSpinner = ({ spinnerSize, ...rest }) => (
+  <Box
+    animation={defaultAnimation}
+    height={spinnerSize}
+    width={spinnerSize}
+    {...rest}
+  />
+);
+
+const BasicSpinner = ({ spinnerSize, ...rest }) => (
+  <Box
+    animation={defaultAnimation}
+    height={spinnerSize}
+    width={spinnerSize}
+    {...rest}
+  />
+);
+
+/**
+ * If the user is calling <Spinner>…</Spinner> with children, it will take
+ * precedence over theme styling. Yet, it will still inherit the
+ * default animation and size of the spinner, and of course any additional
+ * given props.
+ *
+ * If the user is providing an icon/svg via the theme.spinner.icon,
+ * the Spinner will use it as a child and will include all its relevant
+ * theme props (size/color/pad…) as well,
+ * user will only need to type <Spinner />.
+ * If the icon has its own animation, user can turn it off via the theme.
+ *
+ * If none of the above is provider <Spinner /> will provide its default border,
+ * size and friends, all configurable via theme.
+ */
+const Spinner = forwardRef(
+  ({ children, color: colorProp, size, ...rest }, ref) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    // Avoid color and size to leak into the DOM
+    const {
+      size: sizeThemeProp,
+      color: colorThemeProp,
+      ...themeProps
+    } = theme.spinner.container;
+
+    const requiredSize = size || sizeThemeProp;
+    const spinnerSize = theme.spinner.size[requiredSize] || requiredSize;
+
+    const color = colorProp || colorThemeProp;
+    const Icon = theme.spinner.icon;
+
+    // children will take precedence over theme attributes
+    if (children) {
+      return (
+        <ChildrenSpinner spinnerSize={spinnerSize} ref={ref} {...rest}>
+          {children}
+        </ChildrenSpinner>
+      );
+    }
+
+    // In case icon is provided by the theme
+    if (Icon)
+      return (
+        <IconSpinner
+          spinnerSize={spinnerSize}
+          ref={ref}
+          {...themeProps}
+          {...rest}
+        >
+          {/* If the icon is SVG then treat it differently than an element */}
+          {isValidElement(Icon) ? (
+            Icon
+          ) : (
+            <Icon size={spinnerSize} color={color} />
+          )}
+        </IconSpinner>
+      );
+
+    return (
+      <BasicSpinner
+        spinnerSize={spinnerSize}
+        ref={ref}
+        border={[
+          { side: 'all', color: 'background-contrast', size },
+          { side: 'top', color, size },
+        ]}
+        {...themeProps}
+        {...rest}
+      />
+    );
+  },
+);
 
 Spinner.displayName = 'Spinner';
 

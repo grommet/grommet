@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 import 'jest-axe/extend-expect';
 import { axe } from 'jest-axe';
 
+import { Node } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Spinner } from '..';
 
@@ -135,6 +136,29 @@ describe('Spinner', () => {
           background: 'red',
           pad: 'large',
           round: 'medium',
+        },
+      },
+    };
+
+    const component = renderer.create(
+      <Grommet theme={theme}>
+        <Spinner />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('spinner icon changes according to theme', () => {
+    const theme = {
+      spinner: {
+        icon: Node,
+        container: {
+          color: 'accent-2',
+          align: 'center',
+          justify: 'center',
+          size: 'large',
+          animation: { type: 'rotateLeft', duration: 900 },
         },
       },
     };

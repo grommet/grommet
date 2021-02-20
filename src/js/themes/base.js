@@ -1077,6 +1077,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     spinner: {
+      container: {
+        round: 'full',
+        pad: 'small',
+        size: 'small',
+        color: 'brand',
+      },
+      // icon: undefined
       size: {
         xsmall: `${baseSpacing * 0.75}px`,
         small: `${baseSpacing}px`,
@@ -1084,7 +1091,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         large: `${baseSpacing * 3}px`,
         xlarge: `${baseSpacing * 4}px`,
       },
-      // container: undefined,
     },
     radioButton: {
       border: {

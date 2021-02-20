@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { grommet, Box, Grommet, Meter, Spinner, Text } from 'grommet';
+import { grommet, Box, Grommet, Spinner } from 'grommet';
 
 const gradient =
   'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)';
@@ -42,7 +42,11 @@ export const Animation = () => {
 
   return (
     <Grommet theme={grommet} full>
-      <Box gap="xlarge" pad="xlarge" margin="xlarge">
+      <Box
+        gap="xlarge"
+        pad={{ vertical: 'xlarge', horizontal: 'large' }}
+        margin="xlarge"
+      >
         <BounceSpinner
           background={gradientRainbow}
           border={false}
@@ -57,23 +61,13 @@ export const Animation = () => {
           ]}
           border={false}
         />
-        <Spinner
-          width="large"
-          animation={undefined}
-          direction="row"
-          gap="small"
-        >
-          <Meter
-            round
-            background="light-2"
-            value={meterValue}
-            color="graph-0"
-          />
-          <Text>{Math.round(meterValue, 2)}%</Text>
-        </Spinner>
       </Box>
     </Grommet>
   );
+};
+
+Animation.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {
