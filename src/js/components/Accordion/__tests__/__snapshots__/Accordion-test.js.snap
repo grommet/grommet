@@ -2018,7 +2018,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -2119,7 +2119,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="false"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 jNusOZ"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 cOLuIr"
           open=""
         >
           Panel body 2
@@ -5009,7 +5009,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5058,7 +5058,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5119,7 +5119,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5168,7 +5168,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5229,7 +5229,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5278,7 +5278,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5339,7 +5339,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>
@@ -5388,7 +5388,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 fMyQzI"
+          class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 hvwZUu"
         />
       </div>
     </div>

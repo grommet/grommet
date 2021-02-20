@@ -21,11 +21,12 @@ pointer-events: none;
 
 const AnimatedBox = styled(Box)`
   ${props =>
-    // eslint-disable-next-line max-len
-    `transition: ${`max-${props.dimension} ${props.speedProp}ms, opacity ${props.speedProp}ms`};
+    props.shouldOpen
+      ? invisibleCss
+      : // eslint-disable-next-line max-len
+        `transition: ${`max-${props.dimension} ${props.speedProp}ms, opacity ${props.speedProp}ms`};
       opacity: ${props.open ? 1 : 0};
       overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};
-      ${props.shouldOpen ? invisibleCss : ''}
     `}
 `;
 
@@ -55,18 +56,25 @@ const Collapsible = forwardRef(
     // prepare to open or close
     useLayoutEffect(() => {
       const container = containerRef.current;
-      if (shouldOpen) {
+
+      // skip this if we are animating
+      // TODO: fix - this is not runnign always (maybe to run this every
+      // time before animation when open, and only once here)
+      if (openArg !== open && shouldOpen && !sizeRef.current) {
         const parentPrevPosition = container.parentNode.style.position;
         container.parentNode.style.position = 'relative';
         const { [dimension]: size } = container.getBoundingClientRect();
         container.parentNode.style.position = parentPrevPosition;
         sizeRef.current = size;
+      }
+
+      if (shouldOpen) {
         container.style[`max-${dimension}`] = 0;
       } else if (shouldClose) {
         const { [dimension]: size } = container.getBoundingClientRect();
         container.style[`max-${dimension}`] = `${size}px`;
       }
-    }, [shouldOpen, shouldClose, containerRef, dimension]);
+    }, [shouldOpen, shouldClose, containerRef, dimension, openArg, open]);
 
     useEffect(() => {
       if (shouldOpen || shouldClose) {
@@ -81,12 +89,14 @@ const Collapsible = forwardRef(
         setSpeed(nextSpeed);
 
         requestAnimationFrame(() => {
-          // Change the max to where we want to end up, the transition will
-          // animate to get there. We do this in an animation frame to
-          // give our starter setting a chance to fully render.
-          container.style[`max-${dimension}`] = shouldOpen
-            ? `${sizeRef.current}px`
-            : 0;
+          requestAnimationFrame(() => {
+            // Change the max to where we want to end up, the transition will
+            // animate to get there. We do this in an animation frame to
+            // give our starter setting a chance to fully render.
+            container.style[`max-${dimension}`] = shouldOpen
+              ? `${sizeRef.current}px`
+              : 0;
+          });
         });
       }
     }, [shouldOpen, shouldClose, containerRef, dimension, theme]);
@@ -112,10 +122,10 @@ const Collapsible = forwardRef(
         animate={animate}
         dimension={dimension}
         speedProp={speed}
-        // an intermediate state that will render invisible children
+        // an intermediate state that will render invisible element
         // we need to do this because we can't use scrollHeight/scrollWidth
-        // to get size while overflow is hidden
-        shouldOpen={shouldOpen}
+        // to get size while overflow is hidden.
+        shouldOpen={!animate && shouldOpen}
       >
         {shouldOpen || open || animate ? children : null}
       </AnimatedBox>
