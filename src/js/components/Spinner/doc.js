@@ -17,7 +17,16 @@ export const doc = Spinner => {
       PropTypes.string,
     ])
       .description('A fixed size.')
-      .defaultValue('medium'),
+      .defaultValue('small'),
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ])
+      .description('The border color of the Spinner.')
+      .defaultValue(undefined),
   };
 
   return DocumentedSpinner;
@@ -26,7 +35,8 @@ export const doc = Spinner => {
 export const themeDoc = {
   'spinner.container': {
     description: `Any valid Box prop for the Spinner container. 
-    Including 'color' for the spinner border and 'size' its default size.`,
+    Including 'color' for the spinner border color and 'size' for the default 
+    size of the Spinner.`,
     type: 'object',
     defaultValue: {
       animation: 'rotateRight',

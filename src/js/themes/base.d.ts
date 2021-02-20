@@ -1126,8 +1126,11 @@ export interface ThemeType {
     label?: TextProps;
   };
   spinner?: {
-    container?: BoxProps | 'color' | 'size';
-    icon?: any,
+    container?:
+      | BoxProps
+      | { color?: ColorType }
+      | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
+    icon?: any;
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   };
   tab?: {

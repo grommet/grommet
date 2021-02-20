@@ -13,7 +13,7 @@ import { Spinner } from 'grommet';
 
 **size**
 
-A fixed size. Defaults to `medium`.
+A fixed size. Defaults to `small`.
 
 ```
 xsmall
@@ -23,13 +23,26 @@ large
 xlarge
 string
 ```
+
+**color**
+
+The border color of the Spinner.
+
+```
+string
+{
+  dark: string,
+  light: string
+}
+```
   
 ## Theme
   
 **spinner.container**
 
 Any valid Box prop for the Spinner container. 
-    Including 'color' for the spinner border and 'size' its default size. Expects `object`.
+    Including 'color' for the spinner border color and 'size' for the default 
+    size of the Spinner. Expects `object`.
 
 Defaults to
 

@@ -7205,7 +7205,7 @@ function
     "name": "Spinner",
     "properties": Array [
       Object {
-        "defaultValue": "medium",
+        "defaultValue": "small",
         "description": "A fixed size.",
         "format": "xsmall
 small
@@ -7214,6 +7214,16 @@ large
 xlarge
 string",
         "name": "size",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The border color of the Spinner.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
+        "name": "color",
       },
     ],
     "usage": "import { Spinner } from 'grommet';
