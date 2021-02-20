@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useLayoutEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -12,13 +13,19 @@ import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
+const invisibleCss = `
+visibility: hidden;
+position: absolute;
+pointer-events: none;
+`;
+
 const AnimatedBox = styled(Box)`
   ${props =>
     // eslint-disable-next-line max-len
     `transition: ${`max-${props.dimension} ${props.speedProp}ms, opacity ${props.speedProp}ms`};
       opacity: ${props.open ? 1 : 0};
       overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};
-      max-${props.dimension}: ${props.open ? 'unset' : 0};
+      ${props.shouldOpen ? invisibleCss : ''}
     `}
 `;
 
@@ -27,13 +34,15 @@ const Collapsible = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [open, setOpen] = useState(openArg);
     const [animate, setAnimate] = useState(false);
-    const [size, setSize] = useState();
     const [speed, setSpeed] = useState(theme.collapsible.minSpeed);
     const dimension = useMemo(
       () => (direction === 'horizontal' ? 'width' : 'height'),
       [direction],
     );
     const containerRef = useForwardedRef(ref);
+    const sizeRef = useRef();
+    const shouldOpen = !open && openArg;
+    const shouldClose = open && !openArg;
 
     // when the caller changes openArg, trigger animation
     useEffect(() => {
@@ -43,53 +52,57 @@ const Collapsible = forwardRef(
       }
     }, [open, openArg]);
 
-    // When we animate, start a timer to clear out the animation when it
-    // has finished.
+    // prepare to open or close
+    useLayoutEffect(() => {
+      const container = containerRef.current;
+      if (shouldOpen) {
+        const parentPrevPosition = container.parentNode.style.position;
+        container.parentNode.style.position = 'relative';
+        const { [dimension]: size } = container.getBoundingClientRect();
+        container.parentNode.style.position = parentPrevPosition;
+        sizeRef.current = size;
+        container.style[`max-${dimension}`] = 0;
+      } else if (shouldClose) {
+        const { [dimension]: size } = container.getBoundingClientRect();
+        container.style[`max-${dimension}`] = `${size}px`;
+      }
+    }, [shouldOpen, shouldClose, containerRef, dimension]);
+
+    useEffect(() => {
+      if (shouldOpen || shouldClose) {
+        const container = containerRef.current;
+        const {
+          collapsible: { minSpeed, baseline },
+        } = theme;
+        const nextSpeed = Math.max(
+          (sizeRef.current / baseline) * minSpeed,
+          minSpeed,
+        );
+        setSpeed(nextSpeed);
+
+        requestAnimationFrame(() => {
+          // Change the max to where we want to end up, the transition will
+          // animate to get there. We do this in an animation frame to
+          // give our starter setting a chance to fully render.
+          container.style[`max-${dimension}`] = shouldOpen
+            ? `${sizeRef.current}px`
+            : 0;
+        });
+      }
+    }, [shouldOpen, shouldClose, containerRef, dimension, theme]);
+
     useEffect(() => {
       if (animate) {
+        const container = containerRef.current;
         const timer = setTimeout(() => {
           setAnimate(false);
-          setSize(undefined);
-          const container = containerRef.current;
           container.removeAttribute('style');
         }, speed);
         return () => clearTimeout(timer);
       }
       return undefined;
-    }, [animate, containerRef, speed]);
-
-    useEffect(() => {
-      if (animate) {
-        const {
-          collapsible: { minSpeed, baseline },
-        } = theme;
-        const container = containerRef.current;
-        // get the desired size by unsetting the max temporarily
-        container.style[`max-${dimension}`] = 'unset';
-        const rect = container.getBoundingClientRect();
-        container.removeAttribute('style');
-        const nextSize = rect[dimension];
-        // start with the max set to the size we are starting from
-        container.style[`max-${dimension}`] = open ? 0 : `${nextSize}px`;
-        setSize(nextSize);
-        const nextSpeed = Math.max((nextSize / baseline) * minSpeed, minSpeed);
-        setSpeed(nextSpeed);
-      }
-    }, [animate, containerRef, dimension, open, theme]);
-
-    useLayoutEffect(() => {
-      if (animate && size) {
-        const container = containerRef.current;
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            // Change the max to where we want to end up, the transition will
-            // animate to get there. We do this in an animation frame to
-            // give our starter setting a chance to fully render.
-            container.style[`max-${dimension}`] = open ? `${size}px` : 0;
-          });
-        });
-      }
-    }, [animate, containerRef, dimension, open, size]);
+      // we need open here to cancel the timer and restart it
+    }, [animate, containerRef, speed, open]);
 
     return (
       <AnimatedBox
@@ -99,8 +112,12 @@ const Collapsible = forwardRef(
         animate={animate}
         dimension={dimension}
         speedProp={speed}
+        // an intermediate state that will render invisible children
+        // we need to do this because we can't use scrollHeight/scrollWidth
+        // to get size while overflow is hidden
+        shouldOpen={shouldOpen}
       >
-        {open || animate ? children : null}
+        {shouldOpen || open || animate ? children : null}
       </AnimatedBox>
     );
   },
