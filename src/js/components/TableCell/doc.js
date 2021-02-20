@@ -40,18 +40,16 @@ export const doc = TableCell => {
     ),
     align: PropTypes.oneOfType([
       PropTypes.oneOf([
-        "left",
-        "right",
-        "center",
-        "justify",
-        "inherit",
-        "start",
-        "end",
-
-      ]), 
-      PropTypes.string
-    ])
-    .description('How to align the body inside the Table.')
+        'left',
+        'right',
+        'center',
+        'justify',
+        'inherit',
+        'start',
+        'end',
+      ]),
+      PropTypes.string,
+    ]).description('How to align the body inside the Table.'),
   };
 
   return DocumentedTableCell;
