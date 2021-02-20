@@ -1,5 +1,4 @@
-export var getBreakpoint = function getBreakpoint(windowWidth, theme) {
-  var result;
+export var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
     var first = theme.global.breakpoints[a];
     var second = theme.global.breakpoints[b];
@@ -12,17 +11,9 @@ export var getBreakpoint = function getBreakpoint(windowWidth, theme) {
   // no windowWidth boundaries
 
   var lastBreakpoint = sortedBreakpoints[sortedBreakpoints.length - 1];
-  sortedBreakpoints.some(function (name) {
+  var result = sortedBreakpoints.find(function (name) {
     var breakpoint = theme.global.breakpoints[name];
-
-    if (breakpoint) {
-      if (!breakpoint.value || breakpoint.value >= windowWidth) {
-        result = name;
-        return true;
-      }
-    }
-
-    return false;
+    return !breakpoint.value || breakpoint.value >= viewportWidth ? name : false;
   });
   return result || lastBreakpoint;
 };

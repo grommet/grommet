@@ -98,7 +98,7 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, [background, dir, themeMode, themeProp]);
   (0, _react.useEffect)(function () {
     var onResize = function onResize() {
-      setResponsive((0, _utils.getBreakpoint)(window.innerWidth, theme));
+      setResponsive((0, _utils.getBreakpoint)(document.body.clientWidth, theme));
     };
 
     window.addEventListener('resize', onResize);
