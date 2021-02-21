@@ -175,6 +175,12 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'formField.error.size': {
+    description: `The size of the error messsage to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: 'medium',
+  },
   'formField.info.container': {
     description: `Any valid Box props for the container surrounding the info 
     message and icon.`,

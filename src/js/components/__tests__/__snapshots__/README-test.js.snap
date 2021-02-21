@@ -9149,6 +9149,17 @@ Defaults to
 undefined
 \`\`\`
 
+**formField.error.size**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
 **formField.info.container**
 
 Any valid Box props for the container surrounding the info 
