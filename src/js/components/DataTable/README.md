@@ -534,6 +534,17 @@ string
 }
 ```
 
+**paginate**
+
+Whether to paginate the data. If providing an object, any Box props or 
+      Pagination props are valid and will be used to style the underlying 
+      pagination component.
+
+```
+boolean
+object
+```
+
 **pin**
 
 Whether the header and/or footer should be pinned when
@@ -616,6 +627,19 @@ When supplied, causes checkboxes to be added to each row to indicate
 ]
 ```
 
+**show**
+
+If provided as a number, the index of an item to show. If using 
+        paginate and provided as an object in the format of show={{ page: 2 }}, 
+        the default page to show.
+
+```
+number
+{
+  page: number
+}
+```
+
 **size**
 
 The height of the table body. If set, the table body will have a fixed
@@ -694,6 +718,28 @@ Defaults to
 **dataTable.body.extend**
 
 Any additional style for an DataTable Body Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.container**
+
+When using paginate, any valid Box props for the container 
+    surrounding the DataTable and Pagination components. Expects `object`.
+
+Defaults to
+
+```
+{ gap: 'small' }
+```
+
+**dataTable.container.extend**
+
+Any additional style for the container 
+    surrounding the DataTable and Pagination components. Expects `object`.
 
 Defaults to
 
