@@ -77,7 +77,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setValidationResults = _useState3[1]; // when onBlur input validation is triggered, we need to complete any
   // potential click events before running the onBlur validation.
   // otherwise, click events like reset, etc. may not be registered.
-  // for a detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+  // for a detailed scenario/discussion,
+  // see: https://github.com/grommet/grommet/issues/4863
   // the value of pendingValidation is the name of the FormField
   // awaiting validation.
 
@@ -93,27 +94,42 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       infos: infosProp
     });
   }, [errorsProp, infosProp]);
-  var validations = useRef({}); // Currently, onBlur validation will trigger after a timeout of 120ms. #4863
+  var validations = useRef({}); // Currently, onBlur validation will trigger after a timeout of 120ms.
 
   useEffect(function () {
     var timer = setTimeout(function () {
       if (pendingValidation) {
-        // run validations on touched keys
+        // run validations on the pending one and any other touched fields
         var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
           var n = _ref3[0];
           return touched[n] || n === pendingValidation;
         }), value),
-            nextErrors = _validate[0],
-            nextInfos = _validate[1];
+            validatedErrors = _validate[0],
+            validatedInfos = _validate[1];
 
-        setPendingValidation(undefined); // give user access to errors that have occurred on validation
-
+        setPendingValidation(undefined);
         setValidationResults(function (prevValidationResults) {
-          // keep any previous errors and infos for untouched keys,
-          // which probably came from a submit
+          var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
+
+          var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos); // Remove any errors or infos that we don't have any validations
+          // for anymore. This can occur when fields are dynamically removed.
+
+
+          Object.keys(nextErrors).filter(function (n) {
+            return !validations.current[n] || nextErrors[n] === undefined;
+          }).map(function (n) {
+            return delete nextErrors[n];
+          });
+          Object.keys(nextInfos).filter(function (n) {
+            return !validations.current[n] || nextInfos[n] === undefined;
+          }).map(function (n) {
+            return delete nextInfos[n];
+          }); // keep any previous errors and infos for untouched keys,
+          // these may have come from a submit
+
           var nextValidationResults = {
-            errors: _extends({}, prevValidationResults.errors, nextErrors),
-            infos: _extends({}, prevValidationResults.infos, nextInfos)
+            errors: nextErrors,
+            infos: nextInfos
           };
           if (onValidate) onValidate(nextValidationResults);
           return nextValidationResults;

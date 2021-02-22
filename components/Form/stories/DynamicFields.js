@@ -28,8 +28,12 @@ var DynamicFields = function DynamicFields() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
+    validate: "blur",
     onReset: function onReset(event) {
       return console.log(event);
+    },
+    onValidate: function onValidate(event) {
+      return console.log('Validate', event);
     },
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
