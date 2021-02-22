@@ -13,9 +13,7 @@ import { Grommet } from '../../Grommet';
 import { Tip } from '../Tip';
 
 describe('Tip', () => {
-  afterEach(() => {
-    cleanup();
-  });
+  afterEach(cleanup);
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>

@@ -201,7 +201,7 @@ describe('RadioButtonGroup', () => {
       <Grommet>
         <RadioButtonGroup
           name="test"
-          value="1"
+          value="2"
           options={[
             {
               id: 'ONE',
