@@ -7320,6 +7320,18 @@ middle
 bottom",
         "name": "verticalAlign",
       },
+      Object {
+        "description": "How to align the body inside the Table.",
+        "format": "left
+right
+center
+justify
+inherit
+start
+end
+string",
+        "name": "align",
+      },
     ],
     "usage": "import { TableCell } from 'grommet';
 <TableCell />",
