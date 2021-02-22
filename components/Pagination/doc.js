@@ -12,7 +12,7 @@ var _mixins = require("../../utils/mixins");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Pagination) {
-  var DocumentedPagination = (0, _reactDesc.describe)(Pagination).availableAt((0, _mixins.getAvailableAtBadge)('Pagination')).description("A control that enables selection of a single page from a \n      range of pages.").usage("import { Pagination } from 'grommet';\n      <Pagination />").intrinsicElement('nav');
+  var DocumentedPagination = (0, _reactDesc.describe)(Pagination).availableAt((0, _mixins.getAvailableAtBadge)('Pagination', 'Controls')).description("A control that enables selection of a single page from a \n      range of pages.").usage("import { Pagination } from 'grommet';\n      <Pagination />").intrinsicElement('nav');
   DocumentedPagination.propTypes = _extends({}, _propTypes.genericProps, {
     numberEdgePages: _reactDesc.PropTypes.number.description("The number of pagination buttons visible at the start and end of page \n        range.").defaultValue(1),
     numberItems: _reactDesc.PropTypes.number.description('The total number of items to paginate.').defaultValue(undefined),

@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Pagination) {
-  var DocumentedPagination = describe(Pagination).availableAt(getAvailableAtBadge('Pagination')).description("A control that enables selection of a single page from a \n      range of pages.").usage("import { Pagination } from 'grommet';\n      <Pagination />").intrinsicElement('nav');
+  var DocumentedPagination = describe(Pagination).availableAt(getAvailableAtBadge('Pagination', 'Controls')).description("A control that enables selection of a single page from a \n      range of pages.").usage("import { Pagination } from 'grommet';\n      <Pagination />").intrinsicElement('nav');
   DocumentedPagination.propTypes = _extends({}, genericProps, {
     numberEdgePages: PropTypes.number.description("The number of pagination buttons visible at the start and end of page \n        range.").defaultValue(1),
     numberItems: PropTypes.number.description('The total number of items to paginate.').defaultValue(undefined),

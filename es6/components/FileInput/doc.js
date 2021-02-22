@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(FileInput) {
-  var DocumentedFileInput = describe(FileInput).availableAt(getAvailableAtBadge('FileInput')).description('A control to input one or more files.').usage("import { FileInput } from 'grommet';\n<FileInput id='file' name='file' />").intrinsicElement('input');
+  var DocumentedFileInput = describe(FileInput).availableAt(getAvailableAtBadge('FileInput', 'Input')).description('A control to input one or more files.').usage("import { FileInput } from 'grommet';\n<FileInput id='file' name='file' />").intrinsicElement('input');
   DocumentedFileInput.propTypes = {
     disabled: PropTypes.bool.description('Whether the control is disabled.').defaultValue(undefined),
     id: PropTypes.string.description('The id attribute of the input.'),

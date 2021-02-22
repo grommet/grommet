@@ -12,7 +12,7 @@ var _themeDocUtils = require("../../utils/themeDocUtils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(FileInput) {
-  var DocumentedFileInput = (0, _reactDesc.describe)(FileInput).availableAt((0, _mixins.getAvailableAtBadge)('FileInput')).description('A control to input one or more files.').usage("import { FileInput } from 'grommet';\n<FileInput id='file' name='file' />").intrinsicElement('input');
+  var DocumentedFileInput = (0, _reactDesc.describe)(FileInput).availableAt((0, _mixins.getAvailableAtBadge)('FileInput', 'Input')).description('A control to input one or more files.').usage("import { FileInput } from 'grommet';\n<FileInput id='file' name='file' />").intrinsicElement('input');
   DocumentedFileInput.propTypes = {
     disabled: _reactDesc.PropTypes.bool.description('Whether the control is disabled.').defaultValue(undefined),
     id: _reactDesc.PropTypes.string.description('The id attribute of the input.'),
