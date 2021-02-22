@@ -80,6 +80,14 @@ The current value.
 number
 string
 ```
+
+**inputValue**
+
+The input number type to inform range input value.
+
+```
+boolean
+```
   
 ## Intrinsic element
 

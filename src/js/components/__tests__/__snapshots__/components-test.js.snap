@@ -6652,6 +6652,11 @@ string",
 string",
         "name": "value",
       },
+      Object {
+        "description": "The input number type to inform range input value.",
+        "format": "boolean",
+        "name": "inputValue",
+      },
     ],
     "usage": "import { RangeInput } from 'grommet';
 <RangeInput />",

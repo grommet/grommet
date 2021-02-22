@@ -105,4 +105,13 @@ describe('RangeInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(onChange).toBeCalledTimes(1);
   });
+
+  test('inputValue', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput min={0} max={10} step={1} value={5} inputValue />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

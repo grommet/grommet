@@ -38,6 +38,9 @@ export const doc = RangeInput => {
       PropTypes.number,
       PropTypes.string,
     ]).description('The current value.'),
+    inputValue: PropTypes.oneOfType([PropTypes.bool]).description(
+      'The input number type to inform range input value.',
+    ),
   };
 
   return DocumentedRangeInput;

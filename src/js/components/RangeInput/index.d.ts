@@ -9,6 +9,7 @@ export interface RangeInputProps {
   name?: string;
   step?: number;
   value?: number | string;
+  inputValue?: boolean;
 }
 
 declare const RangeInput: React.FC<RangeInputProps &
