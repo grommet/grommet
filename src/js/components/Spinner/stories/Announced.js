@@ -1,27 +1,42 @@
-// import React from 'react';
-// import { grommet } from 'grommet/themes';
-// import { AnnounceContext, Box, Grommet, Heading, Button } from 'grommet';
-// import { Spinner } from '../../../components/Spinner/Spinner';
+import React, { useState } from 'react';
+import { grommet } from 'grommet/themes';
 
-// const AnnounceContextComponent = props => (
-//   <Grommet theme={grommet} full>
-//     <Box justify="center" align="center" background="brand" fill>
-//       <Heading>Welcome to announcement section</Heading>
-//       <AnnounceContext.Consumer>
-//         {announce => (
-//           <>
-//             <Button label="load" onClick={(announce, change - show)} />
-//             {show && <Spinner />}
-//             {/* effect that controls toggle show to and announce  */}
-//           </>
-//         )}
-//       </AnnounceContext.Consumer>
-//     </Box>
-//   </Grommet>
-// );
+import { Box, Button, Grommet, Spinner } from 'grommet';
 
-// export const Polite = () => <AnnounceContextComponent />;
+const PageContent = () => {
+  // show= true will trigger the start of the announcement
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <Button
+        label="Load"
+        onClick={() => {
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1500);
+        }}
+      />
+      {show && (
+        <Spinner
+          message={{
+            start: 'Start Built-in Spinner Announcement',
+            end: 'End Spinner Announcement',
+          }}
+        />
+      )}
+    </>
+  );
+};
 
-// export default {
-//   title: 'Utilities/AnnounceContext/Polite',
-// };
+export const Announced = () => (
+  <Grommet theme={grommet} full>
+    <Box justify="center" align="center" background="background-back" fill>
+      <PageContent />
+    </Box>
+  </Grommet>
+);
+
+export default {
+  title: 'Utilities/Spinner/Announced',
+};

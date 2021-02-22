@@ -1,13 +1,18 @@
-import React, { isValidElement, forwardRef, useContext } from 'react';
+import React, {
+  isValidElement,
+  forwardRef,
+  useContext,
+  useEffect,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 
-const BasicSpinner = ({ size, ref, ...rest }) => (
+const BasicSpinner = ({ ref, size, ...rest }) => (
   <Box height={size} width={size} ref={ref} {...rest} />
 );
-
 /**
  * If the user is calling <Spinner>…</Spinner> with children, it will take
  * precedence over theme styling. Yet, it will still inherit the
@@ -20,12 +25,20 @@ const BasicSpinner = ({ size, ref, ...rest }) => (
  * user will only need to type <Spinner />.
  * If the icon has its own animation, user can turn it off via the theme.
  *
- * If none of the above is provider <Spinner /> will provide its default border,
- * size and friends, all configurable via theme.
+ * If none of the above is provider, <Spinner /> will provide its default
+ * border, size and friends, all configurable via theme or props.
  */
 const Spinner = forwardRef(
-  ({ children, color: colorProp, size, ...rest }, ref) => {
+  ({ children, color: colorProp, size, message, ...rest }, ref) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (message?.start) {
+        announce(message.start);
+      }
+      return () => message?.end && announce(message.end);
+    }, [announce, message]);
 
     // Avoid color and size leaking into the DOM
     const {
