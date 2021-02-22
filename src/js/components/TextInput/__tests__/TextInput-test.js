@@ -1,12 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForElement,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -482,7 +477,7 @@ describe('TextInput', () => {
     fireEvent.focus(input);
     expect(document.activeElement).not.toEqual(input);
 
-    const selection = await waitForElement(() => screen.getByText('option1'));
+    const selection = await waitFor(() => screen.getByText('option1'));
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
@@ -511,7 +506,7 @@ describe('TextInput', () => {
     fireEvent.focus(input);
     expect(document.activeElement).not.toEqual(input);
 
-    const selection = await waitForElement(() => screen.getByText('option2'));
+    const selection = await waitFor(() => screen.getByText('option2'));
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
