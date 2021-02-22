@@ -7225,6 +7225,17 @@ string",
 }",
         "name": "color",
       },
+      Object {
+        "defaultValue": undefined,
+        "description": "The message that will be announced for screen readers, 
+      the start message will be announced as the Spinner shows and the end 
+      message as it closes.",
+        "format": "{
+  start: string,
+  end: string
+}",
+        "name": "message",
+      },
     ],
     "usage": "import { Spinner } from 'grommet';
 <Spinner/>",

@@ -15371,6 +15371,19 @@ string
   light: string
 }
 \`\`\`
+
+**message**
+
+The message that will be announced for screen readers, 
+      the start message will be announced as the Spinner shows and the end 
+      message as it closes.
+
+\`\`\`
+{
+  start: string,
+  end: string
+}
+\`\`\`
   
 ## Theme
   

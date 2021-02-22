@@ -27,6 +27,16 @@ export const doc = Spinner => {
     ])
       .description('The border color of the Spinner.')
       .defaultValue(undefined),
+    message: PropTypes.shape({
+      start: PropTypes.string,
+      end: PropTypes.string,
+    })
+      .description(
+        `The message that will be announced for screen readers, 
+      the start message will be announced as the Spinner shows and the end 
+      message as it closes.`,
+      )
+      .defaultValue(undefined),
   };
 
   return DocumentedSpinner;
