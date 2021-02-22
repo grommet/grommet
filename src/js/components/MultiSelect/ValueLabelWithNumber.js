@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
 const ValueLabelWithNumber = ({ value, number, color }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <Box direction="row" margin={{ horizontal: 'medium' }} align="center">
-      <Text aria-label="Selected Label Value" size="medium" weight={600}>
+      <Text
+        aria-label="Selected Label Value"
+        size="medium"
+        weight={600}
+        {...theme.multiselect.label}
+      >
         {number ? value : 'Select'}
       </Text>
       {number > 0 && (
