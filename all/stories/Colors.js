@@ -62,6 +62,6 @@ var Colors = function Colors() {
 
 exports.Colors = Colors;
 var _default = {
-  title: 'Others/Theme/Colors'
+  title: 'Utilities/Theme/Colors'
 };
 exports["default"] = _default;

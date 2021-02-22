@@ -50,5 +50,5 @@ export var Colors = function Colors() {
   }, "Click here to read more about Grommet Colors")));
 };
 export default {
-  title: 'Others/Theme/Colors'
+  title: 'Utilities/Theme/Colors'
 };
