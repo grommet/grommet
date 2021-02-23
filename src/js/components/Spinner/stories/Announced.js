@@ -35,6 +35,10 @@ export const Announced = () => (
   </Grommet>
 );
 
+Announced.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Spinner/Announced',
 };

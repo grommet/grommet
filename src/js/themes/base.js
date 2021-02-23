@@ -1087,8 +1087,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icon: undefined
       size: {
         xsmall: `${baseSpacing * 0.75}px`,
-        small: `${baseSpacing}px`,
-        medium: `${baseSpacing * 2}px`, // default 48
+        small: `${baseSpacing}px`, // default 24
+        medium: `${baseSpacing * 2}px`,
         large: `${baseSpacing * 3}px`,
         xlarge: `${baseSpacing * 4}px`,
       },
