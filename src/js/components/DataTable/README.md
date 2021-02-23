@@ -388,7 +388,7 @@ boolean
 **groupBy**
 
 Property to group data by. If object is specified
-      'property' is used to group data by, 'expand' accepts array of 
+      'property' is used to group data by, 'expand' accepts array of
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.
@@ -414,6 +414,15 @@ When supplied, this function will be called with an event object that
 function
 ```
 
+**rowDetails**
+
+When supplied, this function will be called with row data. Function can
+      return a React Element which will be rendered on expanding the row.
+
+```
+function
+```
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -422,7 +431,7 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or 
+      browser, such as columns.search, sortable, groupBy, or
       columns.aggregate.
 
 ```
@@ -763,15 +772,15 @@ Defaults to
 
 **dataTable.header.background**
 
-Any valid Box background value. Expects `string | 
+Any valid Box background value. Expects `string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }`.
 
@@ -843,16 +852,16 @@ small
 
 **dataTable.header.hover.background**
 
-The hover background color of the header cell contents, if 
-    clickable. Any valid Box background options apply. Expects `string | 
+The hover background color of the header cell contents, if
+    clickable. Any valid Box background options apply. Expects `string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }`.
 
@@ -898,7 +907,7 @@ undefined
 
 **dataTable.resize.hover.side**
 
-The side of the resizer when hovered over. If color or size 
+The side of the resizer when hovered over. If color or size
     are defined, this will default to 'end' which is the recommended value. Expects `string`.
 
 Defaults to
@@ -909,7 +918,7 @@ undefined
 
 **dataTable.resize.hover.size**
 
-The size of the resizer when hovered over. Size values 
+The size of the resizer when hovered over. Size values
     correspond with those accepted by Box border. Expects `string`.
 
 Defaults to
@@ -970,15 +979,15 @@ undefined
 
 **dataTable.pinned.body.background**
 
-Any valid Box background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`.
 
@@ -1000,15 +1009,15 @@ undefined
 
 **dataTable.pinned.header.background**
 
-Any valid Box background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`.
 
@@ -1030,15 +1039,15 @@ undefined
 
 **dataTable.pinned.footer.background**
 
-Any valid Box background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`.
 
