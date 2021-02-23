@@ -70,5 +70,5 @@ export const ThemedIcon = () => (
 ThemedIcon.storyName = 'Themed Icon';
 
 export default {
-  title: 'Utilities/Spinner/Themed Icon',
+  title: 'Visualizations/Spinner/Themed Icon',
 };

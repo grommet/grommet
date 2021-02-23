@@ -20,9 +20,9 @@ const theme: ThemeType = {
       'light-black': 'rgba(0, 0, 0, 0.3)',
     },
   },
-  spinner:{
+  spinner: {
     container: {
-      animation: {type: "rotateLeft", duration: 900},
+      animation: { type: 'rotateLeft', duration: 900 },
     },
   },
 };
@@ -65,5 +65,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Themed',
+  title: 'Visualizations/Spinner/Themed',
 };
