@@ -125,7 +125,9 @@ particular side of the layer`,
       .defaultValue('center'),
     responsive: PropTypes.bool
       .description(
-        'Whether the layer should take full width and height on mobile',
+        `Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target.`,
       )
       .defaultValue(true),
     target: PropTypes.object.description(
