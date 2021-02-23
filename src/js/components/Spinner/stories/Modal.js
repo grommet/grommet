@@ -50,5 +50,5 @@ Modal.parameters = {
 };
 
 export default {
-  title: 'Utilities/Spinner/Modal',
+  title: 'Visualizations/Spinner/Modal',
 };

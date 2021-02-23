@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Spinner => {
   const DocumentedSpinner = describe(Spinner)
-    .availableAt(getAvailableAtBadge('Spinner', 'Utilities'))
+    .availableAt(getAvailableAtBadge('Spinner', 'Visualizations'))
     .description('A Spinner.')
     .usage(
       `import { Spinner } from 'grommet';
@@ -27,14 +27,17 @@ export const doc = Spinner => {
     ])
       .description('The border color of the Spinner.')
       .defaultValue(undefined),
-    message: PropTypes.shape({
-      start: PropTypes.string,
-      end: PropTypes.string,
-    })
+    message: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        start: PropTypes.string,
+        end: PropTypes.string,
+      }),
+    ])
       .description(
-        `The message that will be announced for screen readers, 
-      the start message will be announced as the Spinner shows and the end 
-      message as it closes.`,
+        `The message that will be announced for screen readers when message 
+        is a string. When an object, the start message will be announced 
+        as the Spinner shows, and the end message as the spinner closes.`,
       )
       .defaultValue(undefined),
   };

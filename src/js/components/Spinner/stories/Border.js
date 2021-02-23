@@ -75,5 +75,5 @@ export const Border = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Border',
+  title: 'Visualizations/Spinner/Border',
 };

@@ -33,5 +33,5 @@ export const Children = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Children',
+  title: 'Visualizations/Spinner/Children',
 };

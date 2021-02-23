@@ -71,5 +71,5 @@ Animation.parameters = {
 };
 
 export default {
-  title: 'Utilities/Spinner/Animation',
+  title: 'Visualizations/Spinner/Animation',
 };

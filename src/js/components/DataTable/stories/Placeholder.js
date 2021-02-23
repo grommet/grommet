@@ -23,12 +23,7 @@ export const Placeholder = () => (
             gap="small"
             background={{ color: 'background-front', opacity: 'strong' }}
           >
-            <Spinner
-              border={[
-                { side: 'all', color: 'transparent', size: 'medium' },
-                { side: 'horizontal', color: 'brand', size: 'medium' },
-              ]}
-            />
+            <Spinner />
             <Text weight="bold">Loading ...</Text>
           </Box>
         }

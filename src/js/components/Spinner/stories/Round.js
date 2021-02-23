@@ -26,5 +26,5 @@ Round.parameters = {
 };
 
 export default {
-  title: 'Utilities/Spinner/Round',
+  title: 'Visualizations/Spinner/Round',
 };

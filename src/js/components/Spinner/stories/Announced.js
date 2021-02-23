@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { grommet } from 'grommet/themes';
 
-import { Box, Button, Grommet, Spinner } from 'grommet';
+import { Box, Button, Grommet, Paragraph, Spinner } from 'grommet';
 
 const PageContent = () => {
-  // show= true will trigger the start of the announcement
+  // 'show=true' will trigger the announcement
   const [show, setShow] = useState(false);
   return (
-    <>
+    <Box align="center" gap="small">
+      <Paragraph textAlign="center">
+        Spinner has a built in Screen Reader functionality to assist screen
+        readers. An announcement of the given message prop will be announced to
+        screen readers after the spinner component renders.
+      </Paragraph>
       <Button
         label="Load"
         onClick={() => {
@@ -17,26 +22,19 @@ const PageContent = () => {
           }, 1500);
         }}
       />
-      {show && (
-        <Spinner
-          message={{
-            start: 'Start Built-in Spinner Announcement',
-            end: 'End Spinner Announcement',
-          }}
-        />
-      )}
-    </>
+      {show && <Spinner message="Start Built-in Spinner Announcement" />}
+    </Box>
   );
 };
 
 export const Announced = () => (
   <Grommet theme={grommet} full>
-    <Box justify="center" align="center" background="background-back" fill>
+    <Box align="center" pad="large">
       <PageContent />
     </Box>
   </Grommet>
 );
 
 export default {
-  title: 'Utilities/Spinner/Announced',
+  title: 'Visualizations/Spinner/Announced',
 };

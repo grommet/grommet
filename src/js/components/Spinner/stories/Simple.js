@@ -12,5 +12,5 @@ export const Simple = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Simple',
+  title: 'Visualizations/Spinner/Simple',
 };

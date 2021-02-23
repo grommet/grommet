@@ -14,5 +14,5 @@ export const Size = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Size',
+  title: 'Visualizations/Spinner/Size',
 };

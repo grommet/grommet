@@ -32,5 +32,5 @@ export const Color = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Color',
+  title: 'Visualizations/Spinner/Color',
 };

@@ -34,9 +34,8 @@ const Spinner = forwardRef(
     const announce = useContext(AnnounceContext);
 
     useEffect(() => {
-      if (message?.start) {
-        announce(message.start);
-      }
+      if (message?.start) announce(message.start);
+      else if (typeof message === 'string') announce(message);
       return () => message?.end && announce(message.end);
     }, [announce, message]);
 
