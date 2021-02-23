@@ -37,7 +37,7 @@ var doc = function doc(Layer) {
     onEsc: _reactDesc.PropTypes.func.description("Function that will be called when the user presses the escape key inside\n       the layer."),
     plain: _reactDesc.PropTypes.bool.description('Whether this is a plain Layer with no background color or border.').defaultValue(false),
     position: _reactDesc.PropTypes.oneOf(['bottom', 'bottom-left', 'bottom-right', 'center', 'end', 'hidden', 'left', 'right', 'start', 'top', 'top-left', 'top-right']).description('Position of the layer content.').defaultValue('center'),
-    responsive: _reactDesc.PropTypes.bool.description('Whether the layer should take full width and height on mobile').defaultValue(true),
+    responsive: _reactDesc.PropTypes.bool.description("Whether the layer should take full width and height on mobile. If a \n        target is provided, the Layer will take the full width and height of \n        the target.").defaultValue(true),
     target: _reactDesc.PropTypes.object.description("Target where the layer will be aligned to. This should be a React\n      reference.")
   };
   return DocumentedLayer;

@@ -15,7 +15,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
-var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
+var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
 
 var StyledLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer",
@@ -30,7 +30,7 @@ var StyledLayer = _styledComponents["default"].div.withConfig({
   var styles = [];
   styles.push(desktopLayerStyle);
 
-  if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+  if (props.responsive && props.theme.layer.responsiveBreakpoint && !props.layerTarget) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     styles.push((0, _utils.breakpointStyle)(breakpoint, responsiveLayerStyle));
   }
@@ -467,7 +467,11 @@ var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";ma
 }, function (props) {
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(bounds, props.margin, props.theme), bounds) || '';
 });
-var responsiveContainerStyle = (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
+
+var responsiveContainerStyle = function responsiveContainerStyle(props) {
+  return (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:", ";width:", ";"], !props.layerTarget ? '100vh' : '100%', !props.layerTarget ? '100vw' : '100%');
+};
+
 var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });

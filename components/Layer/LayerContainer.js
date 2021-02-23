@@ -13,6 +13,8 @@ var _FocusedContainer = require("../FocusedContainer");
 
 var _Keyboard = require("../Keyboard");
 
+var _ResponsiveContext = require("../../contexts/ResponsiveContext");
+
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
@@ -53,6 +55,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
+  var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var anchorRef = (0, _react.useRef)();
   var containerRef = (0, _react.useRef)();
   var layerRef = (0, _react.useRef)();
@@ -189,21 +192,20 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     "aria-hidden": "true"
   }), children);
 
-  if (modal || layerTarget) {
-    content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, {
-      ref: layerRef,
-      id: id,
-      plain: plain,
-      position: position,
-      responsive: responsive,
-      tabIndex: "-1",
-      dir: theme.dir
-    }, modal && /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
-      plain: plain,
-      responsive: responsive,
-      onMouseDown: onClickOutside
-    }), content);
-  }
+  content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, {
+    ref: layerRef,
+    id: id,
+    plain: plain,
+    position: position,
+    responsive: responsive,
+    layerTarget: layerTarget,
+    tabIndex: "-1",
+    dir: theme.dir
+  }, modal && /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
+    plain: plain,
+    responsive: responsive,
+    onMouseDown: onClickOutside
+  }), content);
 
   if (onEsc) {
     content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
@@ -232,14 +234,18 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   content = /*#__PURE__*/_react["default"].createElement(_utils.PortalContext.Provider, {
     value: nextPortalContext
   }, content);
+  var hitResponsiveBreakpoint = responsive && size === theme.layer.responsiveBreakpoint; // if layer is responsive and we've hit the breakpoint,
+  // the layer will be filling the viewport, so we want to
+  // restrict the scroll to the layer and not allow the
+  // body to scroll
 
-  if (modal) {
+  if (modal || hitResponsiveBreakpoint) {
     content = /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       hidden: position === 'hidden' // if layer has a target, do not restrict scroll.
       // restricting scroll could inhibit the user's
       // ability to scroll the page while the layer is open.
       ,
-      restrictScroll: !layerTarget ? true : undefined,
+      restrictScroll: !layerTarget || hitResponsiveBreakpoint ? true : undefined,
       trapFocus: true
     }, content);
   }

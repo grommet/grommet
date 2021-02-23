@@ -7,6 +7,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
@@ -35,6 +36,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var size = useContext(ResponsiveContext);
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
@@ -169,22 +171,20 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tabIndex: "-1",
     "aria-hidden": "true"
   }), children);
-
-  if (modal || layerTarget) {
-    content = /*#__PURE__*/React.createElement(StyledLayer, {
-      ref: layerRef,
-      id: id,
-      plain: plain,
-      position: position,
-      responsive: responsive,
-      tabIndex: "-1",
-      dir: theme.dir
-    }, modal && /*#__PURE__*/React.createElement(StyledOverlay, {
-      plain: plain,
-      responsive: responsive,
-      onMouseDown: onClickOutside
-    }), content);
-  }
+  content = /*#__PURE__*/React.createElement(StyledLayer, {
+    ref: layerRef,
+    id: id,
+    plain: plain,
+    position: position,
+    responsive: responsive,
+    layerTarget: layerTarget,
+    tabIndex: "-1",
+    dir: theme.dir
+  }, modal && /*#__PURE__*/React.createElement(StyledOverlay, {
+    plain: plain,
+    responsive: responsive,
+    onMouseDown: onClickOutside
+  }), content);
 
   if (onEsc) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
@@ -213,14 +213,18 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   content = /*#__PURE__*/React.createElement(PortalContext.Provider, {
     value: nextPortalContext
   }, content);
+  var hitResponsiveBreakpoint = responsive && size === theme.layer.responsiveBreakpoint; // if layer is responsive and we've hit the breakpoint,
+  // the layer will be filling the viewport, so we want to
+  // restrict the scroll to the layer and not allow the
+  // body to scroll
 
-  if (modal) {
+  if (modal || hitResponsiveBreakpoint) {
     content = /*#__PURE__*/React.createElement(FocusedContainer, {
       hidden: position === 'hidden' // if layer has a target, do not restrict scroll.
       // restricting scroll could inhibit the user's
       // ability to scroll the page while the layer is open.
       ,
-      restrictScroll: !layerTarget ? true : undefined,
+      restrictScroll: !layerTarget || hitResponsiveBreakpoint ? true : undefined,
       trapFocus: true
     }, content);
   }

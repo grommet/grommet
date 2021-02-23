@@ -214,7 +214,9 @@ top-right
 
 **responsive**
 
-Whether the layer should take full width and height on mobile Defaults to `true`.
+Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target. Defaults to `true`.
 
 ```
 boolean
