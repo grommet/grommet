@@ -35,24 +35,7 @@ var Placeholder = function Placeholder() {
         color: 'background-front',
         opacity: 'strong'
       }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      border: [{
-        side: 'all',
-        color: 'transparent',
-        size: 'medium'
-      }, {
-        side: 'horizontal',
-        color: 'brand',
-        size: 'medium'
-      }],
-      pad: "small",
-      round: "full",
-      animation: {
-        type: 'rotateRight',
-        duration: 1500
-      }
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Spinner, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold"
     }, "Loading ...")),
     step: 10

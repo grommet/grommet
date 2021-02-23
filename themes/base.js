@@ -1181,6 +1181,24 @@ var generate = function generate(baseSpacing, scale) {
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
+    spinner: {
+      container: {
+        animation: 'rotateRight',
+        color: 'brand',
+        pad: 'small',
+        round: 'full',
+        size: 'small'
+      },
+      // icon: undefined
+      size: {
+        xsmall: baseSpacing * 0.75 + "px",
+        small: baseSpacing + "px",
+        // default 24
+        medium: baseSpacing * 2 + "px",
+        large: baseSpacing * 3 + "px",
+        xlarge: baseSpacing * 4 + "px"
+      }
+    },
     radioButton: {
       border: {
         color: {

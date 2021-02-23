@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DataTable, Text } from 'grommet';
+import { Grommet, Box, DataTable, Spinner, Text } from 'grommet';
 import { grommet } from 'grommet/themes'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
@@ -24,24 +24,7 @@ export var Placeholder = function Placeholder() {
         color: 'background-front',
         opacity: 'strong'
       }
-    }, /*#__PURE__*/React.createElement(Box, {
-      direction: "row",
-      border: [{
-        side: 'all',
-        color: 'transparent',
-        size: 'medium'
-      }, {
-        side: 'horizontal',
-        color: 'brand',
-        size: 'medium'
-      }],
-      pad: "small",
-      round: "full",
-      animation: {
-        type: 'rotateRight',
-        duration: 1500
-      }
-    }), /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Spinner, null), /*#__PURE__*/React.createElement(Text, {
       weight: "bold"
     }, "Loading ...")),
     step: 10

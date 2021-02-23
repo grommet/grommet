@@ -450,6 +450,14 @@ Object.keys(_SkipLinkTarget).forEach(function (key) {
   exports[key] = _SkipLinkTarget[key];
 });
 
+var _Spinner = require("./Spinner");
+
+Object.keys(_Spinner).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Spinner[key]) return;
+  exports[key] = _Spinner[key];
+});
+
 var _Stack = require("./Stack");
 
 Object.keys(_Stack).forEach(function (key) {
