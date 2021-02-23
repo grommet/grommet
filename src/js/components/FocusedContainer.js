@@ -13,13 +13,12 @@ export const FocusedContainer = ({
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
   const ref = useRef(null);
 
-  const root = useContext(RootsContext);
-  const [updatedRoot, setUpdatedRoot] = useState(root);
-
+  const roots = useContext(RootsContext);
+  const [nextRoots, setNextRoots] = useState(roots);
   useEffect(() => {
     // make sure value of null is not added to array
-    if (ref.current) setUpdatedRoot([...root, ref.current]);
-  }, [root]);
+    if (ref.current) setNextRoots([...roots, ref.current]);
+  }, [roots]);
 
   useEffect(() => {
     if (
@@ -33,7 +32,12 @@ export const FocusedContainer = ({
     }
 
     return () => {
-      if (restrictScroll) {
+      if (
+        bodyOverflowStyle !== 'hidden' &&
+        !hidden &&
+        restrictScroll &&
+        trapFocus
+      ) {
         document.body.style.overflow = bodyOverflowStyle;
       }
     };
@@ -41,20 +45,21 @@ export const FocusedContainer = ({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus && root && root[0] !== null) {
-        root.forEach(makeNodeUnfocusable);
+      if (!hidden && trapFocus && roots && roots[0] !== null) {
+        roots.forEach(makeNodeUnfocusable);
       }
     }, 0);
 
     return () => {
-      // remove trap
-      if (root && root[0] !== null) makeNodeFocusable(root[root.length - 1]);
+      // remove trap and restore ability to focus on the last root only
+      if (roots && roots[0] !== null)
+        makeNodeFocusable(roots[roots.length - 1]);
       clearTimeout(timer);
     };
-  }, [hidden, root, trapFocus]);
+  }, [hidden, roots, trapFocus]);
 
   return (
-    <RootsContext.Provider value={updatedRoot}>
+    <RootsContext.Provider value={nextRoots}>
       <div ref={ref} aria-hidden={hidden} {...rest}>
         {children}
       </div>
