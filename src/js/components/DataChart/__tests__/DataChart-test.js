@@ -30,6 +30,7 @@ describe('DataChart', () => {
         <DataChart data={data} />
         <DataChart data={data} series={[]} />
         <DataChart data={data} series={[{}]} />
+        <DataChart data={data} series={[{ property: 'a' }, {}]} />
         <DataChart data={data} chart={[]} />
         <DataChart data={data} chart={[{}]} />
       </Grommet>,

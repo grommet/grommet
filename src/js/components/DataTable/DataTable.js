@@ -1,11 +1,14 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
+  Fragment,
 } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -13,6 +16,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
+import { Pagination } from '../Pagination';
 import {
   buildFooterValues,
   buildGroups,
@@ -21,7 +25,12 @@ import {
   initializeFilters,
   normalizePrimaryProperty,
 } from './buildState';
-import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
+import { normalizeShow, usePagination } from '../../utils';
+import {
+  StyledContainer,
+  StyledDataTable,
+  StyledPlaceholder,
+} from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
 
@@ -58,12 +67,14 @@ const DataTable = ({
   onSort: onSortProp,
   replace,
   pad,
+  paginate,
   pin,
   placeholder,
   primaryKey,
   resizeable,
   rowProps,
   select,
+  show: showProp,
   size,
   sort: sortProp,
   sortable,
@@ -71,6 +82,8 @@ const DataTable = ({
   step = 50,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
   // property name of the primary property
   const primaryProperty = useMemo(
     () => normalizePrimaryProperty(columns, primaryKey),
@@ -122,8 +135,6 @@ const DataTable = ({
     onSelect,
     select,
   ]);
-
-  const [rowExpand, setRowExpand] = useState([]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -233,68 +244,41 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
+  const [items, paginationProps] = usePagination({
+    data: adjustedData,
+    page: normalizeShow(showProp, step),
+    step,
+    ...paginate, // let any specifications from paginate prop override component
+  });
+
+  const Container = paginate ? StyledContainer : Fragment;
+  const containterProps = paginate
+    ? { ...theme.dataTable.container }
+    : undefined;
+
   return (
-    <StyledDataTable fillProp={fill} {...rest}>
-      <Header
-        ref={headerRef}
-        background={normalizeProp(background, 'header')}
-        border={normalizeProp(border, 'header')}
-        columns={columns}
-        data={adjustedData}
-        fill={fill}
-        filtering={filtering}
-        filters={filters}
-        groups={groups}
-        groupState={groupState}
-        pad={normalizeProp(pad, 'header')}
-        pin={pin === true || pin === 'header'}
-        selected={selected}
-        size={size}
-        sort={sort}
-        widths={widths}
-        onFiltering={onFiltering}
-        onFilter={onFilter}
-        onResize={resizeable ? onResize : undefined}
-        onSelect={
-          onSelect
-            ? nextSelected => {
-                setSelected(nextSelected);
-                if (onSelect) onSelect(nextSelected);
-              }
-            : undefined
-        }
-        onSort={sortable || sortProp || onSortProp ? onSort : undefined}
-        onToggle={onToggleGroups}
-        rowDetails={rowDetails}
-        primaryProperty={primaryProperty}
-        scrollOffset={scrollOffset}
-      />
-      {groups ? (
-        <GroupedBody
-          ref={bodyRef}
-          background={normalizeProp(background, 'body')}
-          border={normalizeProp(border, 'body')}
-          columns={columns}
-          groupBy={groupBy.property ? groupBy.property : groupBy}
-          groups={groups}
-          groupState={groupState}
-          pad={normalizeProp(pad, 'body')}
-          primaryProperty={primaryProperty}
-          onToggle={onToggleGroup}
-          size={size}
-        />
-      ) : (
-        <Body
-          ref={bodyRef}
-          background={normalizeProp(background, 'body')}
-          border={normalizeProp(border, 'body')}
+    <Container {...containterProps}>
+      <StyledDataTable fillProp={fill} {...rest}>
+        <Header
+          ref={headerRef}
+          background={normalizeProp(background, 'header')}
+          border={normalizeProp(border, 'header')}
           columns={columns}
           data={adjustedData}
-          onMore={onMore}
-          replace={replace}
-          onClickRow={onClickRow}
-          rowExpand={rowExpand}
-          setRowExpand={setRowExpand}
+          fill={fill}
+          filtering={filtering}
+          filters={filters}
+          groups={groups}
+          groupState={groupState}
+          pad={normalizeProp(pad, 'header')}
+          pin={pin === true || pin === 'header'}
+          selected={selected}
+          size={size}
+          sort={sort}
+          widths={widths}
+          onFiltering={onFiltering}
+          onFilter={onFilter}
+          onResize={resizeable ? onResize : undefined}
           onSelect={
             onSelect
               ? nextSelected => {
@@ -303,52 +287,93 @@ const DataTable = ({
                 }
               : undefined
           }
-          pad={normalizeProp(pad, 'body')}
-          pinnedBackground={normalizeProp(background, 'pinned')}
-          placeholder={placeholder}
-          primaryProperty={primaryProperty}
-          rowProps={rowProps}
-          selected={selected}
-          rowDetails={rowDetails}
-          size={size}
-          step={step}
-        />
-      )}
-      {showFooter && (
-        <Footer
-          ref={footerRef}
-          background={normalizeProp(background, 'footer')}
-          border={normalizeProp(border, 'footer')}
-          columns={columns}
-          fill={fill}
-          footerValues={footerValues}
-          groups={groups}
-          onSelect={onSelect}
-          pad={normalizeProp(pad, 'footer')}
-          pin={pin === true || pin === 'footer'}
+          onSort={sortable || sortProp || onSortProp ? onSort : undefined}
+          onToggle={onToggleGroups}
           primaryProperty={primaryProperty}
           scrollOffset={scrollOffset}
-          selected={selected}
-          size={size}
+          rowDetails={rowDetails}
         />
-      )}
-      {placeholder && (
-        <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
-          {typeof placeholder === 'string' ? (
-            <Box
-              background={{ color: 'background-front', opacity: 'strong' }}
-              align="center"
-              justify="center"
-              fill="vertical"
-            >
-              <Text>{placeholder}</Text>
-            </Box>
-          ) : (
-            placeholder
-          )}
-        </StyledPlaceholder>
-      )}
-    </StyledDataTable>
+        {groups ? (
+          <GroupedBody
+            ref={bodyRef}
+            background={normalizeProp(background, 'body')}
+            border={normalizeProp(border, 'body')}
+            columns={columns}
+            groupBy={groupBy.property ? groupBy.property : groupBy}
+            groups={groups}
+            groupState={groupState}
+            pad={normalizeProp(pad, 'body')}
+            primaryProperty={primaryProperty}
+            onToggle={onToggleGroup}
+            size={size}
+          />
+        ) : (
+          <Body
+            ref={bodyRef}
+            background={normalizeProp(background, 'body')}
+            border={normalizeProp(border, 'body')}
+            columns={columns}
+            data={!paginate ? adjustedData : items}
+            onMore={onMore}
+            replace={replace}
+            onClickRow={onClickRow}
+            onSelect={
+              onSelect
+                ? nextSelected => {
+                    setSelected(nextSelected);
+                    if (onSelect) onSelect(nextSelected);
+                  }
+                : undefined
+            }
+            pad={normalizeProp(pad, 'body')}
+            pinnedBackground={normalizeProp(background, 'pinned')}
+            placeholder={placeholder}
+            primaryProperty={primaryProperty}
+            rowProps={rowProps}
+            selected={selected}
+            show={!paginate ? showProp : undefined}
+            size={size}
+            step={step}
+            rowDetails={rowDetails}
+          />
+        )}
+        {showFooter && (
+          <Footer
+            ref={footerRef}
+            background={normalizeProp(background, 'footer')}
+            border={normalizeProp(border, 'footer')}
+            columns={columns}
+            fill={fill}
+            footerValues={footerValues}
+            groups={groups}
+            onSelect={onSelect}
+            pad={normalizeProp(pad, 'footer')}
+            pin={pin === true || pin === 'footer'}
+            primaryProperty={primaryProperty}
+            scrollOffset={scrollOffset}
+            selected={selected}
+            size={size}
+          />
+        )}
+        {placeholder && (
+          <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+            {typeof placeholder === 'string' ? (
+              <Box
+                background={{ color: 'background-front', opacity: 'strong' }}
+                align="center"
+                justify="center"
+                fill="vertical"
+              >
+                <Text>{placeholder}</Text>
+              </Box>
+            ) : (
+              placeholder
+            )}
+          </StyledPlaceholder>
+        )}
+      </StyledDataTable>
+      {paginate && items && <Pagination alignSelf="end" {...paginationProps} />}
+    </Container>
   );
 };
 
