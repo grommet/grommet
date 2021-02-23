@@ -31,7 +31,7 @@ const Body = forwardRef(
       size,
       step,
       rowExpand,
-      setrowExpand,
+      setRowExpand,
       ...rest
     },
     ref,
@@ -89,11 +89,10 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
-              const isrowExpanded = rowExpand && rowExpand.includes(index);
+              const isRowExpanded = rowExpand && rowExpand.includes(index);
               return (
-                <Fragment key={`${index.toString()}_expanded`}>
+                <Fragment key={primaryValue || index}>
                   <StyledDataTableRow
-                    key={primaryValue || index}
                     ref={rowRef}
                     size={size}
                     active={active >= 0 ? active === index : undefined}
@@ -139,13 +138,13 @@ const Body = forwardRef(
 
                     {rowDetails && (
                       <ExpanderCell
-                        context={isrowExpanded ? 'groupHeader' : 'body'}
-                        expanded={isrowExpanded}
+                        context={isRowExpanded ? 'groupHeader' : 'body'}
+                        expanded={isRowExpanded}
                         onToggle={() => {
-                          if (isrowExpanded) {
-                            setrowExpand(rowExpand.filter(s => s !== index));
+                          if (isRowExpanded) {
+                            setRowExpand(rowExpand.filter(s => s !== index));
                           } else {
-                            setrowExpand([...rowExpand, index]);
+                            setRowExpand([...rowExpand, index]);
                           }
                         }}
                       />
@@ -170,10 +169,10 @@ const Body = forwardRef(
                       />
                     ))}
                   </StyledDataTableRow>
-                  {rowDetails && isrowExpanded && (
+                  {rowDetails && isRowExpanded && (
                     <StyledDataTableRow key={`${index.toString()}_expand`}>
                       {(selected || onSelect) && <TableCell />}
-                      <TableCell colSpan={columns.length}>
+                      <TableCell colSpan={columns.length + 1}>
                         {rowDetails(data[index])}
                       </TableCell>
                     </StyledDataTableRow>

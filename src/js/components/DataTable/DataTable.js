@@ -123,7 +123,7 @@ const DataTable = ({
     select,
   ]);
 
-  const [rowExpand, setrowExpand] = useState([]);
+  const [rowExpand, setRowExpand] = useState([]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -294,7 +294,7 @@ const DataTable = ({
           replace={replace}
           onClickRow={onClickRow}
           rowExpand={rowExpand}
-          setrowExpand={setrowExpand}
+          setRowExpand={setRowExpand}
           onSelect={
             onSelect
               ? nextSelected => {
