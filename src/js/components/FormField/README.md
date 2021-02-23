@@ -409,7 +409,13 @@ The size of the error messsage to be displayed.
 Defaults to
 
 ```
-medium
+
+      xsmall: '12px'
+      small: '14px'
+      medium: '18px'
+      large: '22px'
+      xlarge: '26px
+    
 ```
 
 **formField.info.container**

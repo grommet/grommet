@@ -179,7 +179,13 @@ export const themeDoc = {
     description: `The size of the error messsage to be displayed.
      The default size is medium.`,
     type: 'string',
-    defaultValue: 'medium',
+    defaultValue: `
+      xsmall: '12px'
+      small: '14px'
+      medium: '18px'
+      large: '22px'
+      xlarge: '26px
+    `,
   },
   'formField.info.container': {
     description: `Any valid Box props for the container surrounding the info 
