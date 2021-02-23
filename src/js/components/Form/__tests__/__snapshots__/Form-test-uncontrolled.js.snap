@@ -1941,7 +1941,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 <div
-  aria-hidden="false"
   class="c0"
 >
   <form>
@@ -2173,7 +2172,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 
 exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] = `
 <div
-  aria-hidden="false"
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <form>

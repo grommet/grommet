@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
-import { GrommetContext } from './Grommet/GrommetContext';
-
-const isNotAncestorOf = child => parent => !parent.contains(child);
+import { RootsContext } from '../contexts/RootsContext';
 
 export const FocusedContainer = ({
   hidden = false,
@@ -15,65 +13,51 @@ export const FocusedContainer = ({
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
   const ref = useRef(null);
 
-  const bodyChildrenFromGrommet = useContext(GrommetContext);
+  const root = useContext(RootsContext);
+  const [updatedRoot, setUpdatedRoot] = useState(root);
+
   useEffect(() => {
-    if (bodyChildrenFromGrommet && ref && ref.current) {
-      // Add node to array that tracks elements that come from Grommet
-      // so we know to handle their aria-hidden value
-      bodyChildrenFromGrommet.push(ref.current);
+    // make sure value of null is not added to array
+    if (ref.current) setUpdatedRoot([...root, ref.current]);
+  }, [root]);
+
+  useEffect(() => {
+    if (
+      bodyOverflowStyle !== 'hidden' &&
+      !hidden &&
+      restrictScroll &&
+      trapFocus
+    ) {
+      setBodyOverflowStyle(document.body.style.overflow);
+      document.body.style.overflow = 'hidden';
     }
-  }, [bodyChildrenFromGrommet]);
 
-  useEffect(() => {
-    const handleNodeFocusable = (child, handleFocusable) => {
-      // bodyChildrenFromGrommet[0] is ref of Grommet tag, make sure
-      // we have a value for it
-      if (bodyChildrenFromGrommet && bodyChildrenFromGrommet[0] !== null)
-        bodyChildrenFromGrommet
-          .filter(isNotAncestorOf(child))
-          .forEach(handleFocusable);
-    };
-
-    const removeTrap = () => {
-      const child = ref.current;
-      handleNodeFocusable(child, makeNodeFocusable);
-
+    return () => {
       if (restrictScroll) {
         document.body.style.overflow = bodyOverflowStyle;
       }
     };
+  }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
 
-    const handleTrapFocus = () => {
-      const child = ref.current;
-      handleNodeFocusable(child, makeNodeUnfocusable);
-
-      if (restrictScroll && bodyOverflowStyle !== 'hidden') {
-        setBodyOverflowStyle(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
+  useEffect(() => {
     const timer = setTimeout(() => {
-      if (!hidden && trapFocus) {
-        handleTrapFocus();
+      if (!hidden && trapFocus && root && root[0] !== null) {
+        root.forEach(makeNodeUnfocusable);
       }
     }, 0);
 
     return () => {
-      removeTrap();
+      // remove trap
+      if (root && root[0] !== null) makeNodeFocusable(root[root.length - 1]);
       clearTimeout(timer);
     };
-  }, [
-    hidden,
-    bodyOverflowStyle,
-    restrictScroll,
-    trapFocus,
-    bodyChildrenFromGrommet,
-  ]);
+  }, [hidden, root, trapFocus]);
 
   return (
-    <div ref={ref} aria-hidden={hidden} {...rest}>
-      {children}
-    </div>
+    <RootsContext.Provider value={updatedRoot}>
+      <div ref={ref} aria-hidden={hidden} {...rest}>
+        {children}
+      </div>
+    </RootsContext.Provider>
   );
 };
