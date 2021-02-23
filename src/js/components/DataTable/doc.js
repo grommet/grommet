@@ -210,6 +210,13 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
+    paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
+      .description(
+        `Whether to paginate the data. If providing an object, any Box props or 
+      Pagination props are valid and will be used to style the underlying 
+      pagination component.`,
+      )
+      .defaultValue(undefined),
     pin: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['header', 'footer']),
@@ -259,6 +266,16 @@ export const doc = DataTable => {
       object. If 'onSelect' is provided, the CheckBoxes are enabled
       and this function can be used to track select changes.`,
     ),
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({ page: PropTypes.number }),
+    ])
+      .description(
+        `If provided as a number, the index of an item to show. If using 
+        paginate and provided as an object in the format of show={{ page: 2 }}, 
+        the default page to show.`,
+      )
+      .defaultValue(undefined),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
@@ -303,6 +320,18 @@ export const themeDoc = {
   'dataTable.body.extend': {
     description: 'Any additional style for an DataTable Body',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.container': {
+    description: `When using paginate, any valid Box props for the container 
+    surrounding the DataTable and Pagination components.`,
+    type: 'object',
+    defaultValue: "{ gap: 'small' }",
+  },
+  'dataTable.container.extend': {
+    description: `Any additional style for the container 
+    surrounding the DataTable and Pagination components.`,
+    type: 'object',
     defaultValue: undefined,
   },
   'dataTable.groupHeader.background': {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Text } from 'grommet';
+import { Grommet, Box, DataTable, Spinner, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 // Source code for the data can be found here
@@ -23,16 +23,7 @@ export const Placeholder = () => (
             gap="small"
             background={{ color: 'background-front', opacity: 'strong' }}
           >
-            <Box
-              direction="row"
-              border={[
-                { side: 'all', color: 'transparent', size: 'medium' },
-                { side: 'horizontal', color: 'brand', size: 'medium' },
-              ]}
-              pad="small"
-              round="full"
-              animation={{ type: 'rotateRight', duration: 1500 }}
-            />
+            <Spinner />
             <Text weight="bold">Loading ...</Text>
           </Box>
         }

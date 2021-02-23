@@ -7,6 +7,11 @@ import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { DataTable } from '..';
 
+const DATA = [];
+for (let i = 0; i < 95; i += 1) {
+  DATA.push({ a: `entry-${i}`, b: i });
+}
+
 describe('DataTable', () => {
   afterEach(cleanup);
 
@@ -931,6 +936,128 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should paginate', () => {
+    const { container, getAllByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    const results = getAllByText('entry', { exact: false });
+    // default DataTable step 50
+    expect(results.length).toEqual(50);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply pagination styling', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate={{ background: 'red', margin: 'large' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show correct item index when "show" is a number', () => {
+    const show = 15;
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+          show={show}
+        />
+      </Grommet>,
+    );
+
+    const result = getByText(`entry-${show}`);
+    expect(result).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show correct page when "show" is { page: # }', () => {
+    const desiredPage = 2;
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+          show={{ page: desiredPage }}
+        />
+      </Grommet>,
+    );
+
+    const activePage = container.querySelector(`[aria-current="page"]`)
+      .innerHTML;
+
+    expect(activePage).toEqual(`${desiredPage}`);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render correct num items per page (step)', () => {
+    const step = 14;
+    const { container, getAllByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+          step={step}
+        />
+      </Grommet>,
+    );
+
+    const results = getAllByText('entry', { exact: false });
+
+    expect(results.length).toEqual(step);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render new data when page changes', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('Go to next page'));
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });
