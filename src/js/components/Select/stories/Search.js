@@ -42,6 +42,7 @@ export const Search = () => {
           value={valueMultiple}
           options={options}
           onChange={({ value: nextValue }) => setValueMultiple(nextValue)}
+          closeOnChange={false}
           onClose={() => setOptions(defaultOptions)}
           onSearch={text => {
             // The line below escapes regular expression special characters:

@@ -21,17 +21,22 @@ export const ValueLabel = () => {
           plain
           valueLabel={
             <Box
-              background="light-3"
               width="small"
               overflow="hidden"
               align="center"
+              border={{
+                color: 'dark-3',
+                size: 'xsmall',
+                style: 'solid',
+                side: 'bottom',
+              }}
             >
               {value || 'Select...'}
             </Box>
           }
           icon={
             <Box>
-              <CaretDown color="black" />
+              <CaretDown size="small" color="black" />
             </Box>
           }
         />
