@@ -1,10 +1,12 @@
 import * as React from 'react';
 
+type divProps = JSX.IntrinsicElements['div'];
 export interface MarkdownProps {
   components?: {};
 }
 
-declare const Markdown: React.ComponentClass<MarkdownProps &
-  JSX.IntrinsicElements['div']>;
+export interface MarkdownExtendedProps extends MarkdownProps, divProps {}
+
+declare const Markdown: React.ComponentClass<MarkdownExtendedProps>;
 
 export { Markdown };
