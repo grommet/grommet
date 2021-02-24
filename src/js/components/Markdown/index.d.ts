@@ -1,9 +1,9 @@
 import * as React from 'react';
-
-type divProps = JSX.IntrinsicElements['div'];
 export interface MarkdownProps {
   components?: {};
 }
+
+type divProps = JSX.IntrinsicElements['div'];
 
 export interface MarkdownExtendedProps extends MarkdownProps, divProps {}
 
