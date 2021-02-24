@@ -63,6 +63,7 @@ const Form = forwardRef(
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
+    const [requiredFields, setRequiredFields] = useState([]);
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -115,11 +116,20 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
+            let isFormValid = false;
+
+            isFormValid = requiredFields.every(
+              field => value[field] && value[field].length > 0,
+            );
+
+            if (Object.keys(nextErrors).length > 0) isFormValid = false;
+
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
+              isFormValid,
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
@@ -134,7 +144,7 @@ const Form = forwardRef(
       }, 120);
 
       return () => clearTimeout(timer);
-    }, [pendingValidation, onValidate, touched, value]);
+    }, [pendingValidation, onValidate, touched, value, requiredFields]);
 
     // clear any errors when value changes
     useEffect(() => {
@@ -288,6 +298,12 @@ const Form = forwardRef(
           }
           return result;
         };
+
+        if (required) {
+          setRequiredFields(prevValue =>
+            !prevValue.includes(name) ? [...prevValue, name] : [...prevValue],
+          );
+        }
 
         if (validateArg || required) {
           validations.current[name] = validateField;

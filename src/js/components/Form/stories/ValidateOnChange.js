@@ -12,6 +12,9 @@ export const ValidateOnChange = () => (
           validate="change"
           onReset={event => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
+          onValidate={validationResults => {
+            console.log('validationResults = ', validationResults);
+          }}
         >
           <FormField
             label="Name"
@@ -38,8 +41,8 @@ export const ValidateOnChange = () => (
             ]}
           />
 
-          <FormField label="Email" name="email" required>
-            <TextInput name="email" type="email" />
+          <FormField label="Address" name="address" required>
+            <TextInput name="address" />
           </FormField>
 
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
