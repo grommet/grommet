@@ -23,7 +23,7 @@ const RangeInput = forwardRef(
       min = 0,
       max = 100,
       step = 1,
-      inputValue,
+      inputValue = false,
       value: valueProp,
       ...rest
     },
@@ -89,9 +89,9 @@ const RangeInput = forwardRef(
           type="range"
         />
         {inputValue && showInputValue && (
-          <Box align="center" width="100px">
+          <Box align="center" width="small">
             <TextInput
-              id="input-mask"
+              id="input-range-value"
               type="number"
               min={min}
               max={max}

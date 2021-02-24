@@ -84,6 +84,7 @@ string
 **inputValue**
 
 The input number type to inform range input value.
+      It default value is false.
 
 ```
 boolean

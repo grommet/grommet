@@ -107,11 +107,34 @@ describe('RangeInput', () => {
   });
 
   test('inputValue', () => {
-    const { container } = render(
+    const onChange = jest.fn();
+    const { container, getByTestId } = render(
       <Grommet>
-        <RangeInput min={0} max={10} step={1} value={5} inputValue />
+        <RangeInput
+          data-testid="range-input"
+          min={0}
+          max={10}
+          step={1}
+          value={5}
+          onChange={onChange}
+          inputValue
+        />
       </Grommet>,
     );
+
+    fireEvent.keyDown(getByTestId('range-input'), {
+      key: '9',
+      code: 'Numpad9',
+    });
+
     expect(container.firstChild).toMatchSnapshot();
+
+    const inputRangeValue = container.querySelector('#input-range-value');
+    expect(inputRangeValue).not.toBeNull();
+
+    fireEvent.keyDown(inputRangeValue, { key: 'Tab', code: 'Tab' });
+
+    const hasInputRangeValue = container.querySelector('#input-range-value');
+    expect(hasInputRangeValue).toBeNull();
   });
 });
