@@ -51,7 +51,7 @@ export const doc = Form => {
       via \`validationResults.errors\` and info object via 
       \`validationResults.infos\`.`,
     ),
-    validate: PropTypes.oneOf(['blur', 'submit'])
+    validate: PropTypes.oneOf(['blur', 'submit', 'change'])
       .description('When to perform validation')
       .defaultValue('submit'),
     value: PropTypes.shape({})

@@ -387,5 +387,5 @@ const Components = () => {
 
 export const All = () => <Components />;
 export default {
-  title: 'Others/All',
+  title: 'All',
 };
