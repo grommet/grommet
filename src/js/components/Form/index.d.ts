@@ -16,7 +16,7 @@ export interface FormProps<T> {
   onValidate?: (validationResults: {
     errors: Record<string, any>;
     infos: Record<string, any>;
-    isFormValid: boolean;
+    valid: boolean;
   }) => void;
   validate?: 'blur' | 'submit' | 'change';
   value?: T;

@@ -49,7 +49,7 @@ export const doc = Form => {
       `Function that will be called when the form is validated. The
       single argument is an event containing the latest error object
       via \`validationResults.errors\`, info object via 
-      \`validationResults.infos\` and form's validity via \`isFormValid\`.`,
+      \`validationResults.infos\` and form's validity via \`valid\`.`,
     ),
     validate: PropTypes.oneOf(['blur', 'submit', 'change'])
       .description('When to perform validation')

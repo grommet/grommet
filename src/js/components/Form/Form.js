@@ -116,20 +116,20 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
-            let isFormValid = false;
+            let valid = false;
 
-            isFormValid = requiredFields.every(
+            valid = requiredFields.every(
               field => value[field] && value[field].length > 0,
             );
 
-            if (Object.keys(nextErrors).length > 0) isFormValid = false;
+            if (Object.keys(nextErrors).length > 0) valid = false;
 
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
-              isFormValid,
+              valid,
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
@@ -301,7 +301,7 @@ const Form = forwardRef(
 
         if (required) {
           setRequiredFields(prevValue =>
-            !prevValue.includes(name) ? [...prevValue, name] : [...prevValue],
+            !prevValue.includes(name) ? [...prevValue, name] : prevValue,
           );
         }
 

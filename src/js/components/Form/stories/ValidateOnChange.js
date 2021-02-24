@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { StatusGood } from 'grommet-icons';
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import { Box, Button, Grommet, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const ValidateOnChange = () => (
@@ -17,33 +16,32 @@ export const ValidateOnChange = () => (
           }}
         >
           <FormField
-            label="Name"
-            name="name"
+            label="First Name"
+            name="firstName"
             required
             validate={[
               { regexp: /^[a-z]/i },
-              name => {
-                if (name && name.length === 1) return 'must be >1 character';
-                return undefined;
-              },
-              name => {
-                if (name === 'good')
-                  return {
-                    message: (
-                      <Box align="end">
-                        <StatusGood />
-                      </Box>
-                    ),
-                    status: 'info',
-                  };
+              firstName => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
                 return undefined;
               },
             ]}
           />
 
-          <FormField label="Address" name="address" required>
-            <TextInput name="address" />
-          </FormField>
+          <FormField
+            label="Last Name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              lastName => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
 
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
