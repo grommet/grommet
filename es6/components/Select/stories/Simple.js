@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grommet, Select, Text } from 'grommet';
+import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var Simple = function Simple() {
   var options = ['one', 'two'];
@@ -17,9 +17,7 @@ export var Simple = function Simple() {
     justify: "start",
     pad: "large",
     gap: "medium"
-  }, /*#__PURE__*/React.createElement(Text, {
-    weight: "bold"
-  }, "Enabled"), /*#__PURE__*/React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -29,19 +27,6 @@ export var Simple = function Simple() {
       var option = _ref.option;
       return setValue(option);
     }
-  }), /*#__PURE__*/React.createElement(Text, {
-    weight: "bold"
-  }, "Disabled"), /*#__PURE__*/React.createElement(Select, {
-    id: "select",
-    name: "select",
-    placeholder: "Select",
-    value: value,
-    options: options,
-    onChange: function onChange(_ref2) {
-      var option = _ref2.option;
-      return setValue(option);
-    },
-    disabled: true
   })));
 };
 export default {

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.ChildrenRender = void 0;
+exports["default"] = exports.Children = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -17,7 +17,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 
-var ChildrenRender = function ChildrenRender() {
+var Children = function Children() {
   var _useState = (0, _react.useState)([]),
       selected = _useState[0],
       setSelected = _useState[1];
@@ -50,19 +50,16 @@ var ChildrenRender = function ChildrenRender() {
         horizontal: 'small'
       },
       margin: "xsmall",
-      background: "accent-1",
+      background: "brand",
       round: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      size: "small",
-      color: "white"
+      size: "small"
     }, season), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      background: "white",
       round: "full",
       margin: {
         left: 'xsmall'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, {
-      color: "accent-1",
       size: "small",
       style: {
         width: '12px',
@@ -111,9 +108,8 @@ var ChildrenRender = function ChildrenRender() {
   }, renderOption)));
 };
 
-exports.ChildrenRender = ChildrenRender;
-ChildrenRender.storyName = 'Children render';
+exports.Children = Children;
 var _default = {
-  title: 'Input/Select/Children render'
+  title: 'Input/Select/Children'
 };
 exports["default"] = _default;

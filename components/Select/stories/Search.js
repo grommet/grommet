@@ -73,6 +73,7 @@ var Search = function Search() {
       var nextValue = _ref2.value;
       return setValueMultiple(nextValue);
     },
+    closeOnChange: false,
     onClose: function onClose() {
       return setOptions(defaultOptions);
     },

@@ -120,10 +120,10 @@ export var CustomSearch = function CustomSearch() {
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small",
       truncate: true
-    }, selectedContentPartners.map(function (_ref2) {
+    }, selectedContentPartners.length > 1 ? 'multiple' : selectedContentPartners.map(function (_ref2) {
       var name = _ref2.name;
       return name;
-    }).join(', '))), /*#__PURE__*/React.createElement(Button, {
+    }))), /*#__PURE__*/React.createElement(Button, {
       href: "#",
       onFocus: function onFocus(event) {
         return event.stopPropagation();

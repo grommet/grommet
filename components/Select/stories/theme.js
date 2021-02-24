@@ -14,9 +14,15 @@ var _SearchInput = require("./components/SearchInput");
 var theme = {
   global: {
     colors: {
+      selected: 'neutral-3',
       border: '#e0e0e0',
       focus: '#2196F3',
       gray: (0, _polished.rgba)(0, 0, 0, 0.54)
+    },
+    control: {
+      border: {
+        radius: '24px'
+      }
     },
     drop: {
       background: '#ffffff'
@@ -30,11 +36,18 @@ var theme = {
       }
     },
     font: {
-      family: 'Arial'
+      family: 'Arial',
+      size: '12px'
+    },
+    input: {
+      weight: 400
     },
     size: {
       xxsmall: '24px'
     }
+  },
+  text: {
+    medium: '13px'
   },
   checkBox: {
     border: {
@@ -73,8 +86,18 @@ var theme = {
     maxHeight: '384px'
   },
   select: {
+    control: {
+      extend: 'padding: 3px 6px;',
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB'
+      }
+    },
     icons: {
-      down: _grommetIcons.CaretDownFill
+      down: _grommetIcons.CaretDownFill,
+      up: _grommetIcons.CaretUpFill,
+      color: 'dark-1',
+      margin: 'small'
     },
     searchInput: _SearchInput.SearchInput,
     container: {

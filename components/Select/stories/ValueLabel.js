@@ -42,13 +42,18 @@ var ValueLabel = function ValueLabel() {
     },
     plain: true,
     valueLabel: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      background: "brand",
       width: "small",
-      round: "small",
       overflow: "hidden",
-      align: "center"
+      align: "center",
+      border: {
+        color: 'dark-3',
+        size: 'xsmall',
+        style: 'solid',
+        side: 'bottom'
+      }
     }, value || 'Select...'),
     icon: /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommetIcons.CaretDown, {
+      size: "small",
       color: "black"
     }))
   })));
@@ -56,6 +61,6 @@ var ValueLabel = function ValueLabel() {
 
 exports.ValueLabel = ValueLabel;
 var _default = {
-  title: 'Input/Select/ValueLabel'
+  title: 'Input/Select/Value Label'
 };
 exports["default"] = _default;

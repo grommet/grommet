@@ -24,7 +24,7 @@ var ClearTop = function ClearTop() {
     justify: "start",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    placeholder: "Clear on top",
+    placeholder: "Clear Options",
     multiple: true,
     value: value,
     options: options,
@@ -36,131 +36,10 @@ var ClearTop = function ClearTop() {
   }));
 };
 
-var ClearBottom = function ClearBottom() {
-  var _useState2 = (0, _react.useState)(),
-      value = _useState2[0],
-      setValue = _useState2[1];
-
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    placeholder: "Clear on bottom",
-    multiple: true,
-    value: value,
-    options: options,
-    onChange: function onChange(_ref2) {
-      var nextValue = _ref2.value;
-      return setValue(nextValue);
-    },
-    clear: {
-      position: 'bottom'
-    }
-  }));
-};
-
-var ClearLabel = function ClearLabel() {
-  var _useState3 = (0, _react.useState)(),
-      value = _useState3[0],
-      setValue = _useState3[1];
-
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    placeholder: "Clear with label",
-    multiple: true,
-    value: value,
-    options: options,
-    onChange: function onChange(_ref3) {
-      var nextValue = _ref3.value;
-      return setValue(nextValue);
-    },
-    clear: {
-      label: 'Click me!'
-    }
-  }));
-};
-
-var ClearCustomTheme = function ClearCustomTheme() {
-  var _useState4 = (0, _react.useState)(),
-      value = _useState4[0],
-      setValue = _useState4[1];
-
-  return /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Extend, {
-    value: {
-      select: {
-        clear: {
-          container: {
-            background: 'accent-4'
-          },
-          text: {
-            color: 'neutral-3',
-            weight: 900
-          }
-        }
-      }
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    placeholder: "Clear with a custom theme",
-    multiple: true,
-    value: value,
-    options: options,
-    onChange: function onChange(_ref4) {
-      var nextValue = _ref4.value;
-      return setValue(nextValue);
-    },
-    clear: true
-  })));
-};
-
-var ClearForm = function ClearForm() {
-  var _useState5 = (0, _react.useState)(),
-      value = _useState5[0],
-      setValue = _useState5[1];
-
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    label: "Numbers",
-    name: "numbers"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    name: "numbers",
-    placeholder: "Clear within formfield",
-    multiple: true,
-    options: options,
-    value: value,
-    clear: true,
-    onChange: function onChange(_ref5) {
-      var nextValue = _ref5.value;
-      return setValue(nextValue);
-    }
-  })));
-};
-
 var Clear = function Clear() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "column",
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(ClearTop, null), /*#__PURE__*/_react["default"].createElement(ClearBottom, null), /*#__PURE__*/_react["default"].createElement(ClearLabel, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(ClearForm, null), /*#__PURE__*/_react["default"].createElement(ClearCustomTheme, null))));
+  }, /*#__PURE__*/_react["default"].createElement(ClearTop, null));
 };
 
 exports.Clear = Clear;

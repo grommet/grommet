@@ -134,10 +134,10 @@ var CustomSearch = function CustomSearch() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: "small",
       truncate: true
-    }, selectedContentPartners.map(function (_ref2) {
+    }, selectedContentPartners.length > 1 ? 'multiple' : selectedContentPartners.map(function (_ref2) {
       var name = _ref2.name;
       return name;
-    }).join(', '))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       href: "#",
       onFocus: function onFocus(event) {
         return event.stopPropagation();

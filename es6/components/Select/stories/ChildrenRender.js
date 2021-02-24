@@ -3,7 +3,7 @@ import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
-export var ChildrenRender = function ChildrenRender() {
+export var Children = function Children() {
   var _useState = useState([]),
       selected = _useState[0],
       setSelected = _useState[1];
@@ -36,19 +36,16 @@ export var ChildrenRender = function ChildrenRender() {
         horizontal: 'small'
       },
       margin: "xsmall",
-      background: "accent-1",
+      background: "brand",
       round: "large"
     }, /*#__PURE__*/React.createElement(Text, {
-      size: "small",
-      color: "white"
+      size: "small"
     }, season), /*#__PURE__*/React.createElement(Box, {
-      background: "white",
       round: "full",
       margin: {
         left: 'xsmall'
       }
     }, /*#__PURE__*/React.createElement(FormClose, {
-      color: "accent-1",
       size: "small",
       style: {
         width: '12px',
@@ -96,7 +93,6 @@ export var ChildrenRender = function ChildrenRender() {
     }
   }, renderOption)));
 };
-ChildrenRender.storyName = 'Children render';
 export default {
-  title: 'Input/Select/Children render'
+  title: 'Input/Select/Children'
 };

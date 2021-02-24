@@ -29,17 +29,22 @@ export var ValueLabel = function ValueLabel() {
     },
     plain: true,
     valueLabel: /*#__PURE__*/React.createElement(Box, {
-      background: "brand",
       width: "small",
-      round: "small",
       overflow: "hidden",
-      align: "center"
+      align: "center",
+      border: {
+        color: 'dark-3',
+        size: 'xsmall',
+        style: 'solid',
+        side: 'bottom'
+      }
     }, value || 'Select...'),
     icon: /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(CaretDown, {
+      size: "small",
       color: "black"
     }))
   })));
 };
 export default {
-  title: 'Input/Select/ValueLabel'
+  title: 'Input/Select/Value Label'
 };

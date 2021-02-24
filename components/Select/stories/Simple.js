@@ -29,9 +29,7 @@ var Simple = function Simple() {
     justify: "start",
     pad: "large",
     gap: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    weight: "bold"
-  }, "Enabled"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -41,19 +39,6 @@ var Simple = function Simple() {
       var option = _ref.option;
       return setValue(option);
     }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    weight: "bold"
-  }, "Disabled"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
-    id: "select",
-    name: "select",
-    placeholder: "Select",
-    value: value,
-    options: options,
-    onChange: function onChange(_ref2) {
-      var option = _ref2.option;
-      return setValue(option);
-    },
-    disabled: true
   })));
 };
 
