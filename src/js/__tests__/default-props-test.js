@@ -16,6 +16,7 @@ test('default theme is used', () => {
   const component = renderer.create(<Box background="brand" />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  component.unmount();
 });
 
 test('extends default theme', () => {
@@ -23,6 +24,7 @@ test('extends default theme', () => {
   const component = renderer.create(<Box background="brand" />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  component.unmount();
 });
 
 test('extends default theme twice', () => {
@@ -36,6 +38,7 @@ test('extends default theme twice', () => {
   component = renderer.create(<Box background="brand" />);
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  component.unmount();
 });
 
 test('uses Grommet theme instead of default', () => {
@@ -47,6 +50,7 @@ test('uses Grommet theme instead of default', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  component.unmount();
 });
 
 test('leverages default theme', () => {
@@ -54,4 +58,5 @@ test('leverages default theme', () => {
   const component = renderer.create(<CustomBox />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  component.unmount();
 });
