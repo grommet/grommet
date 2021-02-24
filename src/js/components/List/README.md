@@ -343,6 +343,17 @@ xlarge
 string
 ```
 
+**paginate**
+
+Whether to paginate the data. If providing an object, any Box props or 
+    Pagination props are valid and will be used to style the underlying 
+    pagination component.
+
+```
+boolean
+object
+```
+
 **primaryKey**
 
 When a string is supplied, it indicates the property in a data item
@@ -365,6 +376,19 @@ When a string is supplied, it indicates the property in a data item
 ```
 string
 function
+```
+
+**show**
+
+If provided as a number, the index of an item to show. If using 
+        paginate and provided as an object in the format of show={{ page: 2 }}, 
+        the default page to show.
+
+```
+number
+{
+  page: number
+}
 ```
 
 **step**
@@ -400,6 +424,28 @@ Defaults to
 
 ```
 { dark: 'white', light: 'black' }
+```
+
+**list.container**
+
+When using paginate, any valid Box props for the container 
+    surrounding the List and Pagination components. Expects `object`.
+
+Defaults to
+
+```
+{ gap: 'small' }
+```
+
+**list.container.extend**
+
+Any additional style for the container 
+    surrounding the List and Pagination components. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **list.extend**

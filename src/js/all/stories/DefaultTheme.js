@@ -24,5 +24,5 @@ export const CustomDefaultProps = () => (
 CustomDefaultProps.storyName = 'Extend default';
 
 export default {
-  title: 'Others/Theme/Extend default',
+  title: 'Utilities/Theme/Extend default',
 };
