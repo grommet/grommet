@@ -547,6 +547,144 @@ describe('Form uncontrolled', () => {
     expect(queryByText('must be >1 character')).toBe(null);
   });
 
+  test('form validity', async () => {
+    jest.useFakeTimers();
+    let valid;
+    const { getByPlaceholderText, queryAllByText } = render(
+      <Grommet>
+        <Form
+          validate="change"
+          onValidate={validationResults => {
+            valid = validationResults.valid;
+          }}
+        >
+          <FormField
+            label="First Name"
+            name="firstName"
+            placeholder="First Name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              firstName => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <FormField
+            label="Last Name"
+            name="lastName"
+            placeholder="Last Name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              lastName => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <FormField
+            label="Address"
+            name="address"
+            placeholder="Address"
+            validate={[
+              { regexp: /^[a-z]/i },
+              address => {
+                if (address && address.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <Button label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    // verify validate on change
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(queryAllByText('must be >1 character')).toHaveLength(1);
+    expect(valid).toBeFalsy();
+
+    // first field fails validation, second field passes validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field passes validation, second field fails validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'D' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field fails validation, second field fails validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'D' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field passes validation, second field passes validation,
+    // third field is not required, form validity should be true
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeTruthy();
+
+    // first field passes validation, second field passes validation,
+    // third field fails validation, form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    fireEvent.change(getByPlaceholderText('Address'), {
+      target: { value: 'K' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field passes validation, second field passes validation,
+    // third field passes validation, form validity should be true
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    fireEvent.change(getByPlaceholderText('Address'), {
+      target: { value: 'Easter Ave' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeTruthy();
+  });
+
   test('uncontrolled without name', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText } = render(
