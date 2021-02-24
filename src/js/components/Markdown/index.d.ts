@@ -7,6 +7,6 @@ type divProps = JSX.IntrinsicElements['div'];
 
 export interface MarkdownExtendedProps extends MarkdownProps, divProps {}
 
-declare const Markdown: React.ComponentClass<MarkdownExtendedProps>;
+declare const Markdown: React.FC<MarkdownExtendedProps>;
 
 export { Markdown };
