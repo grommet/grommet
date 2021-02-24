@@ -1,0 +1,9605 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should allow user to control page via state with page + 
+  onChange 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="c9 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c5 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c5 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c10 c11"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should apply button kind style when referenced by a string 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: skyblue;
+  padding: 2px 20px;
+  opacity: 0.3;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: skyblue;
+  padding: 2px 20px;
+  background: #33333310;
+  background-color: rgba(202,156,234,1);
+  color: #444444;
+  border-color: transparent;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: skyblue;
+  padding: 2px 20px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: undefined;
+  line-height: undefined;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should apply custom theme 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c14 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c14 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c14 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c6 > svg {
+  vertical-align: bottom;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 > svg {
+  vertical-align: middle;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c13 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  background: red;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c3"
+    >
+      <ul
+        class="c4"
+      >
+        <li
+          class="c5"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c6 c7"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c10 c7"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c11 c7"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c11 c7"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c11 c7"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c11 c7"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <span
+            class="c12 c13"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c11 c7"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c9"
+        />
+        <li
+          class="c5"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c11 c7"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c14"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should apply size 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 4px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c15 > svg {
+  vertical-align: bottom;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 4px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17 > svg {
+  vertical-align: bottom;
+}
+
+.c17:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c18 > svg {
+  vertical-align: bottom;
+}
+
+.c18:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c22 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c22 > svg {
+  vertical-align: bottom;
+}
+
+.c22:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c22:focus > circle,
+.c22:focus > ellipse,
+.c22:focus > line,
+.c22:focus > path,
+.c22:focus > polygon,
+.c22:focus > polyline,
+.c22:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c22:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c24 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  font-size: 22px;
+  line-height: 28px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c24 > svg {
+  vertical-align: bottom;
+}
+
+.c24:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c24:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus > circle,
+.c24:focus > ellipse,
+.c24:focus > line,
+.c24:focus > path,
+.c24:focus > polygon,
+.c24:focus > polyline,
+.c24:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c24:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c25 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  font-size: 22px;
+  line-height: 28px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c25 > svg {
+  vertical-align: bottom;
+}
+
+.c25:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c25:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus > circle,
+.c25:focus > ellipse,
+.c25:focus > line,
+.c25:focus > path,
+.c25:focus > polygon,
+.c25:focus > polyline,
+.c25:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c19 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c26 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c16 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c16 > svg {
+  vertical-align: middle;
+}
+
+.c23 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c23 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 30px;
+  min-width: 30px;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 48px;
+  min-width: 48px;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c20 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c27 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c14"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c15 c16"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c17 c16"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c18 c16"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c18 c16"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c18 c16"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c18 c16"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <span
+            class="c19 c20"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c18 c16"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c14"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c18 c16"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c21"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c22 c23"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c24 c23"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c25 c23"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c25 c23"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c25 c23"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c25 c23"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <span
+            class="c26 c27"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c25 c23"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c21"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c25 c23"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should disable next button if on last page 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c12 > svg {
+  vertical-align: bottom;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c10 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 20"
+            class="c5 c6"
+            type="button"
+          >
+            20
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 21"
+            class="c5 c6"
+            type="button"
+          >
+            21
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 22"
+            class="c5 c6"
+            type="button"
+          >
+            22
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 23"
+            class="c5 c6"
+            type="button"
+          >
+            23
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 24"
+            class="c11 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to next page"
+            class="c12 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should disable previous and next controls when numberItems 
+  < step 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to next page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should disable previous and next controls when numberItems 
+  === 0 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should disable previous and next controls when numberItems 
+  === step 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to next page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should disable previous button if on first page 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display next page of results when "next" is 
+  selected 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="c9 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c5 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c5 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c10 c11"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display next page of results when "next" is 
+  selected 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+    >
+      <ul
+        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+      >
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 eMJPUV"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <span
+            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to next page"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 eMJPUV"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display page 'n' of results when "page n" is 
+  selected 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="c9 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c5 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c5 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c10 c11"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display previous page of results when "previous" is 
+  selected 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="c9 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c5 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c5 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c10 c11"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display previous page of results when "previous" is 
+  selected 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+    >
+      <ul
+        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+      >
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 eMJPUV"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <span
+            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+        />
+        <li
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+        >
+          <button
+            aria-label="Go to next page"
+            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 eMJPUV"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should display the correct last page based on items length 
+  and step 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should render correct numberEdgePages 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c10 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c5 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 9"
+            class="c5 c6"
+            type="button"
+          >
+            9
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 10"
+            class="c11 c6"
+            type="button"
+          >
+            10
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 11"
+            class="c5 c6"
+            type="button"
+          >
+            11
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 22"
+            class="c5 c6"
+            type="button"
+          >
+            22
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 23"
+            class="c5 c6"
+            type="button"
+          >
+            23
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should render correct numberMiddlePages when even 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c10 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 9"
+            class="c5 c6"
+            type="button"
+          >
+            9
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 10"
+            class="c11 c6"
+            type="button"
+          >
+            10
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 11"
+            class="c5 c6"
+            type="button"
+          >
+            11
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 12"
+            class="c5 c6"
+            type="button"
+          >
+            12
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c10 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 8"
+            class="c5 c6"
+            type="button"
+          >
+            8
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 9"
+            class="c5 c6"
+            type="button"
+          >
+            9
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 10"
+            class="c11 c6"
+            type="button"
+          >
+            10
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 11"
+            class="c5 c6"
+            type="button"
+          >
+            11
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 12"
+            class="c5 c6"
+            type="button"
+          >
+            12
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should set page to last page if page prop > total possible 
+  pages 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 > svg {
+  vertical-align: bottom;
+}
+
+.c11:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c12 > svg {
+  vertical-align: bottom;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c10 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c9 c10"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 6"
+            class="c5 c6"
+            type="button"
+          >
+            6
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 7"
+            class="c5 c6"
+            type="button"
+          >
+            7
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 8"
+            class="c5 c6"
+            type="button"
+          >
+            8
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 9"
+            class="c5 c6"
+            type="button"
+          >
+            9
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 10"
+            class="c11 c6"
+            type="button"
+          >
+            10
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to next page"
+            class="c12 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

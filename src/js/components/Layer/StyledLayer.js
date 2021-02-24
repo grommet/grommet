@@ -24,7 +24,7 @@ const desktopLayerStyle = `
 `;
 
 const responsiveLayerStyle = `
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -44,7 +44,11 @@ const StyledLayer = styled.div`
     }
     const styles = [];
     styles.push(desktopLayerStyle);
-    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+    if (
+      props.responsive &&
+      props.theme.layer.responsiveBreakpoint &&
+      !props.layerTarget
+    ) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
       styles.push(breakpointStyle(breakpoint, responsiveLayerStyle));
@@ -748,7 +752,7 @@ const desktopContainerStyle = css`
     ''};
 `;
 
-const responsiveContainerStyle = css`
+const responsiveContainerStyle = props => css`
   position: relative;
   max-height: none;
   max-width: none;
@@ -759,8 +763,8 @@ const responsiveContainerStyle = css`
   right: 0;
   transform: none;
   animation: none;
-  height: 100vh;
-  width: 100vw;
+  height: ${!props.layerTarget ? '100vh' : '100%'};
+  width: ${!props.layerTarget ? '100vw' : '100%'};
 `;
 
 const elevationStyle = css`
