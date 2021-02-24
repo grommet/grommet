@@ -6,6 +6,7 @@ export * from './DOM';
 export * from './graphics';
 export * from './styles';
 export * from './object';
+export * from './pagination';
 export * from './PortalContext';
 export * from './refs';
 export * from './responsive';

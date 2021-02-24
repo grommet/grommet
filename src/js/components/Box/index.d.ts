@@ -6,6 +6,7 @@ import {
   BackgroundType,
   BasisType,
   BorderType,
+  DirectionType,
   ElevationType,
   FillType,
   GapType,
@@ -42,6 +43,8 @@ export interface BoxProps {
           | 'fadeOut'
           | 'jiggle'
           | 'pulse'
+          | 'rotateLeft'
+          | 'rotateRight'
           | 'slideUp'
           | 'slideDown'
           | 'slideLeft'
@@ -83,12 +86,7 @@ export interface BoxProps {
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
-  direction?:
-    | 'row'
-    | 'column'
-    | 'row-responsive'
-    | 'row-reverse'
-    | 'column-reverse';
+  direction?: DirectionType;
   elevation?: ElevationType;
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
   fill?: FillType;
