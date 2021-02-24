@@ -48,16 +48,14 @@ export var findScrollParents = function findScrollParents(element, horizontal) {
       }
 
       parent = parent.parentNode;
-    } // last scrollable element will be the document
-    // if nothing else is scrollable in the page
-
-
-    if (result.length === 0) {
-      result.push(document);
-    } else if (documentTags.includes(result[0].tagName.toLowerCase())) {
-      result.length = 0;
-      result.push(document);
     }
+
+    if (result.length && documentTags.includes(result[0].tagName.toLowerCase())) {
+      result.length = 0;
+    } // last scrollable element will be the document
+
+
+    result.push(document);
   }
 
   return result;
