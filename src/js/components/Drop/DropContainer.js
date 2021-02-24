@@ -243,6 +243,7 @@ const DropContainer = forwardRef(
         scrollParents.forEach(scrollParent =>
           scrollParent.addEventListener('scroll', place),
         );
+        window.addEventListener('scroll', place, true);
       };
 
       const removeScrollListeners = () => {
@@ -250,6 +251,7 @@ const DropContainer = forwardRef(
           scrollParent.removeEventListener('scroll', place),
         );
         scrollParents = [];
+        window.removeEventListener('scroll', place, true);
       };
 
       const onClickDocument = event => {
