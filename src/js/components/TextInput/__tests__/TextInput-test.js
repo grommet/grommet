@@ -1,12 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForElement,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -321,6 +316,40 @@ describe('TextInput', () => {
     );
   });
 
+  test('auto-select 1st suggestion via typing with defaultSuggestion', () => {
+    const onSelect = jest.fn();
+    const suggestions = ['nodefault1', 'default', 'nodefault2'];
+    const defaultSuggestionIndex = 1;
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          defaultSuggestion={defaultSuggestionIndex}
+          suggestions={suggestions}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // Set focus so drop opens and we track activeSuggestionIndex
+    fireEvent.focus(input);
+    // Fire a change event so that onChange is triggered.
+    fireEvent.change(input, { target: { value: 'ma' } });
+    // Each time we type, the active suggestion should reset to the suggestion
+    // matching the entered text, or the default suggestion index if no
+    // suggestion matches.  Now, when we hit enter, there's no match yet, so
+    // the default suggestion should be selected.
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'default',
+      }),
+    );
+  });
+
   test('do not select any suggestion without defaultSuggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId } = render(
@@ -482,7 +511,7 @@ describe('TextInput', () => {
     fireEvent.focus(input);
     expect(document.activeElement).not.toEqual(input);
 
-    const selection = await waitForElement(() => screen.getByText('option1'));
+    const selection = await waitFor(() => screen.getByText('option1'));
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
@@ -511,7 +540,7 @@ describe('TextInput', () => {
     fireEvent.focus(input);
     expect(document.activeElement).not.toEqual(input);
 
-    const selection = await waitForElement(() => screen.getByText('option2'));
+    const selection = await waitFor(() => screen.getByText('option2'));
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
