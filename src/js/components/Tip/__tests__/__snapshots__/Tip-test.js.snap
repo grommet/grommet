@@ -106,7 +106,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   aria-hidden="false"
 >
   <div
-    class="c0 c1"
+    class="c0 c1 "
     data-g-portal-id="0"
     style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
     tabindex="-1"
@@ -335,7 +335,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 "
   data-g-portal-id="0"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -410,7 +410,7 @@ exports[`Tip plain 1`] = `
     aria-hidden="false"
   >
     <div
-      class="c0 c1"
+      class="c0 c1 "
       data-g-portal-id="0"
       style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
       tabindex="-1"

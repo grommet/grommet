@@ -5,11 +5,15 @@ import React, {
   useContext,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
+
+const StyledDrop = styled(Drop)`
+  ${props => props.theme.tip.drop && props.theme.tip.drop.extend}}
+`;
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
@@ -59,7 +63,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   return [
     clonedChild,
     over && (
-      <Drop
+      <StyledDrop
         target={componentRef.current}
         trapFocus={false}
         key="tip-drop"
@@ -68,7 +72,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
         {...dropProps}
       >
         {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
-      </Drop>
+      </StyledDrop>
     ),
   ];
 });

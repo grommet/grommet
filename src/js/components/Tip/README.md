@@ -62,3 +62,13 @@ Defaults to
 ```
 {align: { top: 'bottom' }}
 ```
+
+**tip.drop.extend**
+
+Any additional style for Drop within tooltip. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

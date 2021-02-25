@@ -43,4 +43,9 @@ export const themeDoc = {
     type: 'object',
     defaultValue: "{align: { top: 'bottom' }}",
   },
+  'tip.drop.extend': {
+    description: 'Any additional style for Drop within tooltip.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
 };
