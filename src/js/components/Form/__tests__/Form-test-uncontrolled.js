@@ -468,17 +468,10 @@ describe('Form uncontrolled', () => {
 
   test('validate on change', async () => {
     jest.useFakeTimers();
-    const onFocus = jest.fn();
-    const {
-      getByText,
-      getByPlaceholderText,
-      queryAllByText,
-      queryByText,
-    } = render(
+    const { getByPlaceholderText, queryAllByText } = render(
       <Grommet>
         <Form validate="change">
           <FormField
-            onFocus={onFocus}
             label="Name"
             name="name"
             placeholder="name"
@@ -500,7 +493,7 @@ describe('Form uncontrolled', () => {
             ]}
           />
 
-          <FormField onFocus={onFocus} label="Email" name="email" required>
+          <FormField label="Email" name="email" required>
             <TextInput
               a11yTitle="test"
               name="email"
@@ -508,32 +501,31 @@ describe('Form uncontrolled', () => {
               placeholder="email"
             />
           </FormField>
-          <Button onFocus={onFocus} label="submit" type="submit" />
+          <Button label="submit" type="submit" />
         </Form>
       </Grommet>,
     );
 
-    // both fields have required error message
-    getByText('submit').focus();
-    fireEvent.click(getByText('submit'));
-    expect(queryAllByText('required')).toHaveLength(2);
-
-    // one fields has required error message
-    getByPlaceholderText('name').focus();
+    // change input of first field
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'Input has changed' },
     });
+    // change input of second field
+    fireEvent.change(getByPlaceholderText('email'), {
+      target: { value: 'Input has changed' },
+    });
+    // empty second field
+    fireEvent.change(getByPlaceholderText('email'), {
+      target: { value: '' },
+    });
     act(() => jest.advanceTimersByTime(1000)); // allow validations to run
-    expect(queryAllByText('required')).toHaveLength(1);
-
-    // name field has new error and email field still has required error message
-    getByPlaceholderText('name').focus();
+    // emulate error on first field
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
     act(() => jest.advanceTimersByTime(1000)); // allow validations to run
-    expect(queryByText('required')).toBeTruthy();
-    expect(queryByText('must be >1 character')).toBeTruthy();
+    expect(queryAllByText('required')).toHaveLength(1);
+    expect(queryAllByText('must be >1 character')).toHaveLength(1);
   });
 
   test('validate on blur', async () => {
