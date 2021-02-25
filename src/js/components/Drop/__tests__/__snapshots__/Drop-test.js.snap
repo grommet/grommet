@@ -1752,10 +1752,9 @@ exports[`Drop should have no accessibility violations 1`] = `
 
 }
 
-<div
-  aria-hidden="true"
->
+<div>
   <div
+    aria-hidden="true"
     class="c0"
   >
     <input
