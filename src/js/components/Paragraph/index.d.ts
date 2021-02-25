@@ -21,7 +21,10 @@ export interface ParagraphProps {
   textAlign?: TextAlignType;
 }
 
-declare const Paragraph: React.FC<ParagraphProps &
-  Omit<JSX.IntrinsicElements['p'], 'color'>>;
+export interface ParagraphExtendedProps
+  extends ParagraphProps,
+    Omit<JSX.IntrinsicElements['p'], 'color'> {}
+
+declare const Paragraph: React.FC<ParagraphExtendedProps>;
 
 export { Paragraph };
