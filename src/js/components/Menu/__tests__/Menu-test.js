@@ -14,6 +14,12 @@ import { Grommet, Menu } from '../..';
 
 const customTheme = {
   menu: {
+    drop: {
+      align: {
+        top: 'bottom',
+        left: 'right',
+      },
+    },
     icons: {
       color: '#F08080',
     },
@@ -557,5 +563,18 @@ describe('Menu', () => {
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('should apply custom drop alignment', () => {
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Menu
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+          open
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

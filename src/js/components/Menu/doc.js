@@ -139,6 +139,14 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'menu.drop.align': {
+    description: 'The alignment of the drop with respect to the menu button.',
+    type: 'string',
+    defaultValue: `{
+      top: 'top',
+      left: 'left',
+    },`,
+  },
   'menu.extend': {
     description: 'Any additional style for the Menu.',
     type: 'string | (props) => {}',

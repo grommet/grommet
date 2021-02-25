@@ -982,6 +982,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     menu: {
       // background: undefined,
       // extend: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left',
+        },
+      },
       icons: {
         down: FormDown,
         // up: undefined,

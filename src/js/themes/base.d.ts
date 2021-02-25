@@ -970,6 +970,9 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    drop?: {
+      align?: AlignContentType;
+    };
     extend?: ExtendType;
     icons?: {
       down?: any;

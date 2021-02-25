@@ -70,7 +70,7 @@ const Menu = forwardRef((props, ref) => {
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
-  const align = dropProps.align || dropAlign;
+  const align = dropProps.align || dropAlign || theme.menu.drop.align;
   const controlButtonIndex = useMemo(() => {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
@@ -357,10 +357,6 @@ const Menu = forwardRef((props, ref) => {
 });
 
 Menu.defaultProps = {
-  dropAlign: {
-    top: 'top',
-    left: 'left',
-  },
   dropProps: {},
   items: [],
   messages: {

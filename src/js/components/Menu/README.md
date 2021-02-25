@@ -339,6 +339,19 @@ Defaults to
 undefined
 ```
 
+**menu.drop.align**
+
+The alignment of the drop with respect to the menu button. Expects `string`.
+
+Defaults to
+
+```
+{
+      top: 'top',
+      left: 'left',
+    },
+```
+
 **menu.extend**
 
 Any additional style for the Menu. Expects `string | (props) => {}`.
