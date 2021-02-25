@@ -4,13 +4,13 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 
-const allowedKeysToOpenInputMask = [
+const allowedKeysToOpenInputValue = [
   'ArrowRight',
   'ArrowLeft',
   'ArrowUp',
   'ArrowDown',
 ];
-const allowedKeysToCloseInputMask = ['Tab', 'Escape'];
+const allowedKeysToCloseInputValue = ['Tab', 'Escape'];
 
 const RangeInput = forwardRef(
   (
@@ -20,6 +20,7 @@ const RangeInput = forwardRef(
       onChange,
       onFocus,
       onBlur,
+      onKeyDown,
       min = 0,
       max = 100,
       step = 1,
@@ -80,11 +81,12 @@ const RangeInput = forwardRef(
               checkInputAndChange(newEvent);
               setShowInputValue(true);
             }
-            if (allowedKeysToOpenInputMask.includes(event.key)) {
+            if (allowedKeysToOpenInputValue.includes(event.key)) {
               setShowInputValue(true);
-            } else if (allowedKeysToCloseInputMask.includes(event.key)) {
+            } else if (allowedKeysToCloseInputValue.includes(event.key)) {
               setShowInputValue(false);
             }
+            if (onKeyDown) onKeyDown(event);
           }}
           type="range"
         />
@@ -104,7 +106,7 @@ const RangeInput = forwardRef(
               }}
               onBlur={checkInputAndChange}
               onKeyDown={event => {
-                if (allowedKeysToCloseInputMask.includes(event.key)) {
+                if (allowedKeysToCloseInputValue.includes(event.key)) {
                   setShowInputValue(false);
                 }
               }}

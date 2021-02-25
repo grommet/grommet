@@ -137,4 +137,67 @@ describe('RangeInput', () => {
     const hasInputRangeValue = container.querySelector('#input-range-value');
     expect(hasInputRangeValue).toBeNull();
   });
+
+  test('allowed keys to open inputValue', () => {
+    const onChange = jest.fn();
+    const { container, getByTestId } = render(
+      <Grommet>
+        <RangeInput
+          data-testid="range-input"
+          min={0}
+          max={10}
+          step={1}
+          value={5}
+          onChange={onChange}
+          inputValue
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const expectOpenInputValue = (key, code) => {
+      fireEvent.keyDown(getByTestId('range-input'), { key, code });
+      const inputRangeValue = container.querySelector('#input-range-value');
+      expect(inputRangeValue).not.toBeNull();
+      fireEvent.keyDown(inputRangeValue, { key: 'Tab', code: 'Tab' });
+    };
+
+    expectOpenInputValue('ArrowRight', 'ArrowRight');
+    expectOpenInputValue('ArrowLeft', 'ArrowLeft');
+    expectOpenInputValue('ArrowUp', 'ArrowUp');
+    expectOpenInputValue('ArrowDown', 'ArrowDown');
+    expectOpenInputValue('9', 'Numpad9');
+  });
+
+  test('allowed keys to close inputValue', () => {
+    const onChange = jest.fn();
+    const { container, getByTestId } = render(
+      <Grommet>
+        <RangeInput
+          data-testid="range-input"
+          min={0}
+          max={10}
+          step={1}
+          value={5}
+          onChange={onChange}
+          inputValue
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const expectCloseInputValue = (key, code) => {
+      fireEvent.keyDown(getByTestId('range-input'), {
+        key: '9',
+        code: 'Numpad9',
+      });
+      const inputRangeValue = container.querySelector('#input-range-value');
+      fireEvent.keyDown(inputRangeValue, { key, code });
+      const hasInputRangeValue = container.querySelector('#input-range-value');
+      expect(hasInputRangeValue).toBeNull();
+    };
+
+    expectCloseInputValue('Tab', 'Tab');
+    expectCloseInputValue('Escape', 'Escape');
+  });
 });
