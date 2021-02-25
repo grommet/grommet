@@ -15,6 +15,8 @@ var _themes = require("../../themes");
 
 var _StyledGrommet = require("./StyledGrommet");
 
+var _RootsContext = require("../../contexts/RootsContext");
+
 var _templateObject;
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -100,17 +102,20 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     };
   }, [theme]);
   var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
+  var grommetRef = (0, _utils.useForwardedRef)(ref);
   return /*#__PURE__*/_react["default"].createElement(_contexts.ThemeContext.Provider, {
     value: theme
   }, /*#__PURE__*/_react["default"].createElement(_contexts.ResponsiveContext.Provider, {
     value: responsive
+  }, /*#__PURE__*/_react["default"].createElement(_RootsContext.RootsContext.Provider, {
+    value: [grommetRef.current]
   }, /*#__PURE__*/_react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
     value: containerTarget
   }, /*#__PURE__*/_react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
     full: full
   }, rest, {
-    ref: ref
-  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null))));
+    ref: grommetRef
+  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null)))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

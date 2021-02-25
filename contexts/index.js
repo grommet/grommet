@@ -26,6 +26,14 @@ Object.keys(_ResponsiveContext).forEach(function (key) {
   exports[key] = _ResponsiveContext[key];
 });
 
+var _RootsContext = require("./RootsContext");
+
+Object.keys(_RootsContext).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _RootsContext[key]) return;
+  exports[key] = _RootsContext[key];
+});
+
 var _ThemeContext = require("./ThemeContext");
 
 Object.keys(_ThemeContext).forEach(function (key) {

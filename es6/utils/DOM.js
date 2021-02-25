@@ -84,16 +84,6 @@ export var getFirstFocusableDescendant = function getFirstFocusableDescendant(el
 
   return undefined;
 };
-export var getBodyChildElements = function getBodyChildElements() {
-  var excludeMatch = /^(script|link)$/i;
-  var children = [];
-  [].forEach.call(document.body.children, function (node) {
-    if (!excludeMatch.test(node.tagName)) {
-      children.push(node);
-    }
-  });
-  return children;
-};
 export var getNewContainer = function getNewContainer(target, targetChildPosition) {
   if (target === void 0) {
     target = document.body;
@@ -122,7 +112,7 @@ var TABINDEX_STATE = 'data-g-tabindex';
 export var makeNodeFocusable = function makeNodeFocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
-    node.setAttribute('aria-hidden', false); // allow children to receive focus again
+    node.removeAttribute('aria-hidden'); // allow children to receive focus again
 
     var elements = node.getElementsByTagName('*'); // only reset elements we've changed in makeNodeUnfocusable()
 

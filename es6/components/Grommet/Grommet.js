@@ -9,9 +9,10 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { ContainerTargetContext, ResponsiveContext, ThemeContext } from '../../contexts';
-import { deepMerge, backgroundIsDark, getBreakpoint, getDeviceBreakpoint, normalizeColor } from '../../utils';
+import { deepMerge, backgroundIsDark, getBreakpoint, getDeviceBreakpoint, normalizeColor, useForwardedRef } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
+import { RootsContext } from '../../contexts/RootsContext';
 var FullGlobalStyle = createGlobalStyle(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
@@ -85,17 +86,20 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     };
   }, [theme]);
   var responsive = stateResponsive || deviceResponsive(userAgent, theme) || theme.global.deviceBreakpoints.tablet;
+  var grommetRef = useForwardedRef(ref);
   return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: theme
   }, /*#__PURE__*/React.createElement(ResponsiveContext.Provider, {
     value: responsive
+  }, /*#__PURE__*/React.createElement(RootsContext.Provider, {
+    value: [grommetRef.current]
   }, /*#__PURE__*/React.createElement(ContainerTargetContext.Provider, {
     value: containerTarget
   }, /*#__PURE__*/React.createElement(StyledGrommet, _extends({
     full: full
   }, rest, {
-    ref: ref
-  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null))));
+    ref: grommetRef
+  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null)))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

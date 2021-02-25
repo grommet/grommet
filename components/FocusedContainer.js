@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _utils = require("../utils");
 
+var _RootsContext = require("../contexts/RootsContext");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -14,12 +16,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-var isNotAncestorOf = function isNotAncestorOf(child) {
-  return function (parent) {
-    return !parent.contains(child);
-  };
-};
 
 var FocusedContainer = function FocusedContainer(_ref) {
   var _ref$hidden = _ref.hidden,
@@ -35,40 +31,46 @@ var FocusedContainer = function FocusedContainer(_ref) {
       setBodyOverflowStyle = _useState[1];
 
   var ref = (0, _react.useRef)(null);
-  (0, _react.useEffect)(function () {
-    var removeTrap = function removeTrap() {
-      var child = ref.current;
-      (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeFocusable);
+  var roots = (0, _react.useContext)(_RootsContext.RootsContext);
 
-      if (restrictScroll) {
+  var _useState2 = (0, _react.useState)(roots),
+      nextRoots = _useState2[0],
+      setNextRoots = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    // make sure value of null is not added to array
+    if (ref.current) setNextRoots([].concat(roots, [ref.current]));
+  }, [roots]);
+  (0, _react.useEffect)(function () {
+    if (bodyOverflowStyle !== 'hidden' && !hidden && restrictScroll && trapFocus) {
+      setBodyOverflowStyle(document.body.style.overflow);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return function () {
+      if (bodyOverflowStyle !== 'hidden' && !hidden && restrictScroll && trapFocus) {
         document.body.style.overflow = bodyOverflowStyle;
       }
     };
-
-    var handleTrapFocus = function handleTrapFocus() {
-      var child = ref.current;
-      (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeUnfocusable);
-
-      if (restrictScroll && bodyOverflowStyle !== 'hidden') {
-        setBodyOverflowStyle(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
+  }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
+  (0, _react.useEffect)(function () {
     var timer = setTimeout(function () {
-      if (!hidden && trapFocus) {
-        handleTrapFocus();
+      if (!hidden && trapFocus && roots && roots[0] !== null) {
+        roots.forEach(_utils.makeNodeUnfocusable);
       }
     }, 0);
     return function () {
-      removeTrap();
+      // remove trap and restore ability to focus on the last root only
+      if (roots && roots[0] !== null) (0, _utils.makeNodeFocusable)(roots[roots.length - 1]);
       clearTimeout(timer);
     };
-  }, [hidden, bodyOverflowStyle, restrictScroll, trapFocus]);
-  return /*#__PURE__*/_react["default"].createElement("div", _extends({
+  }, [hidden, roots, trapFocus]);
+  return /*#__PURE__*/_react["default"].createElement(_RootsContext.RootsContext.Provider, {
+    value: nextRoots
+  }, /*#__PURE__*/_react["default"].createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden
-  }, rest), children);
+  }, rest), children));
 };
 
 exports.FocusedContainer = FocusedContainer;
