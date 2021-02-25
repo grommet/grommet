@@ -5,7 +5,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = FileInput => {
   const DocumentedFileInput = describe(FileInput)
-    .availableAt(getAvailableAtBadge('FileInput'))
+    .availableAt(getAvailableAtBadge('FileInput', 'Input'))
     .description('A control to input one or more files.')
     .usage(
       `import { FileInput } from 'grommet';

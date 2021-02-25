@@ -3541,7 +3541,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-FileInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5134,7 +5134,9 @@ top-right",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether the layer should take full width and height on mobile",
+        "description": "Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target.",
         "format": "boolean",
         "name": "responsive",
       },
@@ -6106,7 +6108,7 @@ circle",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=undefined-Pagination&full=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Pagination&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7188,6 +7190,59 @@ function
   },
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
+  "Spinner": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Spinner&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/spinner&module=%2Fsrc%2FSpinner.js",
+      },
+    ],
+    "description": "A Spinner.",
+    "name": "Spinner",
+    "properties": Array [
+      Object {
+        "defaultValue": "small",
+        "description": "A fixed size.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The border color of the Spinner.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
+        "name": "color",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The message that will be announced for screen readers when message 
+        is a string. When an object, the start message will be announced 
+        as the Spinner shows, and the end message as the spinner closes.",
+        "format": "string
+{
+  start: string,
+  end: string
+}",
+        "name": "message",
+      },
+    ],
+    "usage": "import { Spinner } from 'grommet';
+<Spinner/>",
+  },
   "Stack": [Function],
   "Tab": Object {
     "description": "One tab within Tabs.",
@@ -7278,6 +7333,18 @@ string",
 middle
 bottom",
         "name": "verticalAlign",
+      },
+      Object {
+        "description": "How to align the body inside the Table.",
+        "format": "left
+right
+center
+justify
+inherit
+start
+end
+string",
+        "name": "align",
       },
     ],
     "usage": "import { TableCell } from 'grommet';
