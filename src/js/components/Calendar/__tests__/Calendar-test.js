@@ -39,6 +39,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('disabled', () => {
@@ -53,6 +54,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('dates', () => {
@@ -63,6 +65,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('daysOfWeek', () => {
@@ -73,6 +76,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('size', () => {
@@ -85,6 +89,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('fill', () => {
@@ -95,6 +100,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('firstDayOfWeek', () => {
@@ -106,6 +112,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('reference', () => {
@@ -116,6 +123,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('showAdjacentDays', () => {
@@ -128,6 +136,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('header', () => {
@@ -173,6 +182,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('children', () => {
@@ -185,6 +195,7 @@ describe('Calendar', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('select date', () => {

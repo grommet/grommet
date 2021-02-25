@@ -124,6 +124,7 @@ describe('Grommet', () => {
     test(`ssr rendering ${ua.substring(0, 25)}`, () => {
       const component = renderer.create(<SSRTester ua={ua} />);
       expect(component.toJSON()).toMatchSnapshot();
+      component.unmount();
     });
   });
 });
