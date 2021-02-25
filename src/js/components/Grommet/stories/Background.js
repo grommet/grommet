@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { mnet, MnetUIBase, Box, Text } from 'mnet-ui-base';
-import { neo } from 'mnet-ui-base-theme-neo';
-import { cdp } from 'mnet-ui-base-theme-cdp';
+// import { neo } from 'mnet-ui-base-theme-neo';
+// import { cdp } from 'mnet-ui-base-theme-cdp';
 
 const Background = () => {
-  const themeColor = 'background-back';
+  // const themeColor = 'background-back';
   const hexValue = '#DCD0FF';
   const cssColor = 'gold';
   return (
@@ -16,7 +16,7 @@ const Background = () => {
           <Text>MnetUIBase with no theme or background prop</Text>
         </Box>
       </MnetUIBase>
-      <MnetUIBase theme={neo} themeMode="dark">
+      {/* <MnetUIBase theme={neo} themeMode="dark">
         <Box pad="medium">
           <Text>MnetUIBase with theme & themeMode but no background prop</Text>
         </Box>
@@ -41,7 +41,7 @@ const Background = () => {
             &apos;
           </Text>
         </Box>
-      </MnetUIBase>
+      </MnetUIBase> */}
       <MnetUIBase theme={mnet} background={hexValue}>
         <Box pad="medium">
           <Text>

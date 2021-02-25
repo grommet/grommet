@@ -6398,11 +6398,6 @@ good-listener@^1.2.2:
   dependencies:
     delegate "^3.1.2"
 
-google-fonts@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/google-fonts/-/google-fonts-1.0.0.tgz#202e287a0c6272e3d651ac7e00c8f5aefc85b099"
-  integrity sha1-IC4oegxicuPWUax+AMj1rvyFsJk=
-
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9, graceful-fs@^4.2.0, graceful-fs@^4.2.2, graceful-fs@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
@@ -8651,24 +8646,6 @@ mkdirp-classic@^0.5.2:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
-
-"mnet-ui-base-theme-cdp@https://github.com/mnet-ui/mnet-ui-base-theme-cdp.git":
-  version "0.0.1"
-  resolved "https://github.com/mnet-ui/mnet-ui-base-theme-cdp.git#c62356e647e9034adada7dd401b8db9e6c492e9a"
-  dependencies:
-    google-fonts "^1.0.0"
-
-"mnet-ui-base-theme-hb@https://github.com/mnet-ui/mnet-ui-base-theme-hb":
-  version "0.0.1"
-  resolved "https://github.com/mnet-ui/mnet-ui-base-theme-hb#b436ab72f3728df409ec2e1d3e46cf9b49458be4"
-  dependencies:
-    google-fonts "^1.0.0"
-
-"mnet-ui-base-theme-neo@https://github.com/sabarnix/mnet-ui-base-theme-neo":
-  version "0.0.1"
-  resolved "https://github.com/sabarnix/mnet-ui-base-theme-neo#8d96618ad9511944b0988b3c21d3f3d0bbd98025"
-  dependencies:
-    google-fonts "^1.0.0"
 
 moment@^2.18.1:
   version "2.29.1"

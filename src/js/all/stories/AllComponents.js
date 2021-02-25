@@ -31,14 +31,14 @@ import {
 import { mnet, dark } from 'mnet-ui-base/themes';
 import { generate } from 'mnet-ui-base/themes/base';
 import { deepMerge } from 'mnet-ui-base/utils';
-import { neo } from 'mnet-ui-base-theme-neo';
-import { hb } from 'mnet-ui-base-theme-hb';
-import { cdp } from 'mnet-ui-base-theme-cdp';
+// import { neo } from 'mnet-ui-base-theme-neo';
+// import { hb } from 'mnet-ui-base-theme-hb';
+// import { cdp } from 'mnet-ui-base-theme-cdp';
 
 const themes = {
-  hb,
-  neo,
-  cdp,
+  // hb,
+  // neo,
+  // cdp,
   dark,
 };
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import { addParameters, configure, addDecorator } from '@storybook/react';
 import 'storybook-chromatic';
-import { neo } from 'mnet-ui-base-theme-neo';
-import { hb } from 'mnet-ui-base-theme-hb';
-import { cdp } from 'mnet-ui-base-theme-cdp';
+// import { neo } from 'mnet-ui-base-theme-neo';
+// import { hb } from 'mnet-ui-base-theme-hb';
+// import { cdp } from 'mnet-ui-base-theme-cdp';
 import { withThemes } from 'storybook-addon-themes/react';
 import { MnetUIBase } from '../src/js';
+import { base } from '../src/js/themes/base';
 import grommetLight from './theme';
 
 const req = require.context(
@@ -35,9 +36,10 @@ addParameters({
   themes: {
     Decorator,
     list: [
-      { name: 'HB', theme: hb, default: true },
-      { name: 'Neo', theme: neo },
-      { name: 'CDP', theme: cdp },
+      { name: 'Base', theme: base, default: true },
+      // { name: 'HB', theme: hb, default: true },
+      // { name: 'Neo', theme: neo },
+      // { name: 'CDP', theme: cdp },
     ],
   },
 });
