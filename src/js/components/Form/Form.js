@@ -119,7 +119,8 @@ const Form = forwardRef(
             let valid = false;
 
             valid = requiredFields.every(
-              field => value[field] && value[field].length > 0,
+              field =>
+                value[field] && (value[field] !== '' || value[field] !== false),
             );
 
             if (Object.keys(nextErrors).length > 0) valid = false;
