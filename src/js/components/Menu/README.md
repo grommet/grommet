@@ -341,7 +341,7 @@ undefined
 
 **menu.drop.align**
 
-The alignment of the drop with respect to the menu button. Expects `string`.
+The alignment of the drop with respect to the menu button. Expects `string | object`.
 
 Defaults to
 

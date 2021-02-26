@@ -141,7 +141,7 @@ export const themeDoc = {
   },
   'menu.drop.align': {
     description: 'The alignment of the drop with respect to the menu button.',
-    type: 'string',
+    type: 'string | object',
     defaultValue: `{
       top: 'top',
       left: 'left',
