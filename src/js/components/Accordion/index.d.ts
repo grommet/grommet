@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimateType } from '../../utils';
 import { BoxProps } from '../Box';
 
-export interface AccordionProps {
+export interface AccordionProps extends BoxProps {
   activeIndex?: number | number[];
   animate?: AnimateType;
   onActive?: (activeIndexes: number[]) => void;
@@ -10,8 +10,9 @@ export interface AccordionProps {
   messages?: { tabContents?: string };
 }
 
-declare const Accordion: React.FC<BoxProps &
-  AccordionProps &
-  JSX.IntrinsicElements['div']>;
+export type AccordionExtendedProps = AccordionProps &
+  JSX.IntrinsicElements['div'];
+
+declare const Accordion: React.FC<AccordionExtendedProps>;
 
 export { Accordion };
