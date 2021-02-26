@@ -14,6 +14,10 @@ export interface TableProps {
   margin?: MarginType;
 }
 
-declare const Table: React.FC<TableProps & JSX.IntrinsicElements['table']>;
+type htmlTableProps = JSX.IntrinsicElements['table'];
+
+export interface TableExtendedProps extends TableProps, htmlTableProps {}
+
+declare const Table: React.FC<TableExtendedProps>;
 
 export { Table };
