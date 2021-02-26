@@ -5,7 +5,9 @@ export interface AccordionPanelProps {
   header?: React.ReactNode;
 }
 
-declare const AccordionPanel: React.ComponentClass<AccordionPanelProps &
-  JSX.IntrinsicElements['div']>;
+export type AccordionPanelExtendedProps = AccordionPanelProps &
+  JSX.IntrinsicElements['div'];
+
+declare const AccordionPanel: React.FC<AccordionPanelExtendedProps>;
 
 export { AccordionPanel };
