@@ -136,6 +136,8 @@ const DataTable = ({
     select,
   ]);
 
+  const [rowExpand, setRowExpand] = useState([]);
+
   // any customized column widths
   const [widths, setWidths] = useState({});
 
@@ -335,6 +337,8 @@ const DataTable = ({
             size={size}
             step={step}
             rowDetails={rowDetails}
+            rowExpand={rowExpand}
+            setRowExpand={setRowExpand}
           />
         )}
         {showFooter && (

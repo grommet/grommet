@@ -408,6 +408,64 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('rowDetails', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          rowDetails={row => <Box>{row.a}</Box>}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rowDetails condtional', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          rowDetails={row => {
+            if (row.b === '1.1') {
+              return <Box> {row.a} </Box>;
+            }
+            return (
+              <Box>
+                {row.a} : {row.b}{' '}
+              </Box>
+            );
+          }}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>

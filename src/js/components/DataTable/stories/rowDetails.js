@@ -56,7 +56,12 @@ export const ControlledDataTable = () => {
           ].map(col => ({ ...col }))}
           data={DATA}
           sortable
-          rowDetails={row => <Box> {row.name} </Box>}
+          rowDetails={row => {
+            if (row.name === 'Alan') {
+              return <Box> {row.name} </Box>;
+            }
+            return <Box>Blah {row.name} </Box>;
+          }}
           size="medium"
         />
       </Box>
