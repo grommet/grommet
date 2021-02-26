@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, waitFor, cleanup } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
 import 'jest-styled-components';
 import { axe } from 'jest-axe';
@@ -13,6 +13,7 @@ import { Grommet } from '../../Grommet';
 import { Tip } from '../Tip';
 
 describe('Tip', () => {
+  afterEach(cleanup);
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -40,7 +41,7 @@ describe('Tip', () => {
     );
 
     fireEvent.mouseOver(getByText('Test Events'));
-    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(document.getElementById('tooltip-id')).not.toBeNull();
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
 
@@ -75,7 +76,7 @@ describe('Tip', () => {
 
     // Styles of plain are captured in snapshots only when applying mouseOver
     fireEvent.mouseOver(getByText('Example'));
-    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 
@@ -94,9 +95,7 @@ describe('Tip', () => {
     );
 
     fireEvent.mouseOver(getByText('Test dropProps'));
-    const tooltip = await waitForElement(() =>
-      screen.getByText('hello dropProps'),
-    );
+    const tooltip = await waitFor(() => screen.getByText('hello dropProps'));
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 
@@ -108,6 +107,7 @@ describe('Tip', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test(`throw error with more than one child`, () => {
