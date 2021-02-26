@@ -18,7 +18,9 @@ export interface CarouselProps {
   onChild?: (...args: any[]) => void;
 }
 
-declare const Carousel: React.ComponentClass<CarouselProps &
-  JSX.IntrinsicElements['div']>;
+export type CarouselExtendedProps = CarouselProps &
+  JSX.IntrinsicElements['div'];
+
+declare const Carousel: React.FC<CarouselExtendedProps>;
 
 export { Carousel };
