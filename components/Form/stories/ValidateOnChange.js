@@ -3,17 +3,21 @@
 exports.__esModule = true;
 exports["default"] = exports.ValidateOnChange = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _grommetIcons = require("grommet-icons");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var ValidateOnChange = function ValidateOnChange() {
+  var _useState = (0, _react.useState)(false),
+      valid = _useState[0],
+      setValid = _useState[1];
+
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
@@ -31,33 +35,32 @@ var ValidateOnChange = function ValidateOnChange() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
+    },
+    onValidate: function onValidate(validationResults) {
+      console.log('validationResults = ', validationResults);
+      setValid(validationResults.valid);
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    label: "Name",
-    name: "name",
+    label: "First Name",
+    name: "firstName",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
-    }, function (name) {
-      if (name && name.length === 1) return 'must be >1 character';
-      return undefined;
-    }, function (name) {
-      if (name === 'good') return {
-        message: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-          align: "end"
-        }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGood, null)),
-        status: 'info'
-      };
+    }, function (firstName) {
+      if (firstName && firstName.length === 1) return 'must be >1 character';
       return undefined;
     }]
   }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    label: "Email",
-    name: "email",
-    required: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    name: "email",
-    type: "email"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    label: "Last Name",
+    name: "lastName",
+    required: true,
+    validate: [{
+      regexp: /^[a-z]/i
+    }, function (lastName) {
+      if (lastName && lastName.length === 1) return 'must be >1 character';
+      return undefined;
+    }]
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {
@@ -71,6 +74,7 @@ var ValidateOnChange = function ValidateOnChange() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "Update",
+    disabled: !valid,
     primary: true
   }))))));
 };

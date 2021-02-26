@@ -1,8 +1,11 @@
-import React from 'react';
-import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Button, Grommet, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var ValidateOnChange = function ValidateOnChange() {
+  var _useState = useState(false),
+      valid = _useState[0],
+      setValid = _useState[1];
+
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -20,33 +23,32 @@ export var ValidateOnChange = function ValidateOnChange() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
+    },
+    onValidate: function onValidate(validationResults) {
+      console.log('validationResults = ', validationResults);
+      setValid(validationResults.valid);
     }
   }, /*#__PURE__*/React.createElement(FormField, {
-    label: "Name",
-    name: "name",
+    label: "First Name",
+    name: "firstName",
     required: true,
     validate: [{
       regexp: /^[a-z]/i
-    }, function (name) {
-      if (name && name.length === 1) return 'must be >1 character';
-      return undefined;
-    }, function (name) {
-      if (name === 'good') return {
-        message: /*#__PURE__*/React.createElement(Box, {
-          align: "end"
-        }, /*#__PURE__*/React.createElement(StatusGood, null)),
-        status: 'info'
-      };
+    }, function (firstName) {
+      if (firstName && firstName.length === 1) return 'must be >1 character';
       return undefined;
     }]
   }), /*#__PURE__*/React.createElement(FormField, {
-    label: "Email",
-    name: "email",
-    required: true
-  }, /*#__PURE__*/React.createElement(TextInput, {
-    name: "email",
-    type: "email"
-  })), /*#__PURE__*/React.createElement(Box, {
+    label: "Last Name",
+    name: "lastName",
+    required: true,
+    validate: [{
+      regexp: /^[a-z]/i
+    }, function (lastName) {
+      if (lastName && lastName.length === 1) return 'must be >1 character';
+      return undefined;
+    }]
+  }), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
@@ -60,6 +62,7 @@ export var ValidateOnChange = function ValidateOnChange() {
   }), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Update",
+    disabled: !valid,
     primary: true
   }))))));
 };

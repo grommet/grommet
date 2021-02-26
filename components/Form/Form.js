@@ -85,7 +85,11 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
   var _useState3 = (0, _react.useState)(defaultValidationResults),
       validationResults = _useState3[0],
-      setValidationResults = _useState3[1]; // when onBlur input validation is triggered, we need to complete any
+      setValidationResults = _useState3[1];
+
+  var _useState4 = (0, _react.useState)([]),
+      requiredFields = _useState4[0],
+      setRequiredFields = _useState4[1]; // when onBlur input validation is triggered, we need to complete any
   // potential click events before running the onBlur validation.
   // otherwise, click events like reset, etc. may not be registered.
   // for a detailed scenario/discussion,
@@ -94,9 +98,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   // awaiting validation.
 
 
-  var _useState4 = (0, _react.useState)(undefined),
-      pendingValidation = _useState4[0],
-      setPendingValidation = _useState4[1];
+  var _useState5 = (0, _react.useState)(undefined),
+      pendingValidation = _useState5[0],
+      setPendingValidation = _useState5[1];
 
   (0, _react.useEffect)(function () {
     setPendingValidation(undefined);
@@ -135,12 +139,18 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
             return !validations.current[n] || nextInfos[n] === undefined;
           }).map(function (n) {
             return delete nextInfos[n];
-          }); // keep any previous errors and infos for untouched keys,
+          });
+          var valid = false;
+          valid = requiredFields.every(function (field) {
+            return value[field] && value[field].length > 0;
+          });
+          if (Object.keys(nextErrors).length > 0) valid = false; // keep any previous errors and infos for untouched keys,
           // these may have come from a submit
 
           var nextValidationResults = {
             errors: nextErrors,
-            infos: nextInfos
+            infos: nextInfos,
+            valid: valid
           };
           if (onValidate) onValidate(nextValidationResults);
           return nextValidationResults;
@@ -156,7 +166,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [pendingValidation, onValidate, touched, value]); // clear any errors when value changes
+  }, [pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
 
   (0, _react.useEffect)(function () {
     if (validateOn !== 'change') setPendingValidation(undefined);
@@ -207,9 +217,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   //
 
   var useFormInput = function useFormInput(name, componentValue, initialValue) {
-    var _useState5 = (0, _react.useState)(initialValue),
-        inputValue = _useState5[0],
-        setInputValue = _useState5[1];
+    var _useState6 = (0, _react.useState)(initialValue),
+        inputValue = _useState6[0],
+        setInputValue = _useState6[1];
 
     var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
     // component is driving the value via componentValue.
@@ -306,6 +316,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
         return result;
       };
+
+      if (required) {
+        setRequiredFields(function (prevValue) {
+          return !prevValue.includes(name) ? [].concat(prevValue, [name]) : prevValue;
+        });
+      }
 
       if (validateArg || required) {
         validations.current[name] = validateField;
