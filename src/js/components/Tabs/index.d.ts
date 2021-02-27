@@ -20,6 +20,8 @@ export interface TabsProps {
   onActive?: (index: number) => void;
 }
 
-declare const Tabs: React.FC<TabsProps & JSX.IntrinsicElements['div']>;
+export type TabsExtendedProps = TabsProps & JSX.IntrinsicElements['div'];
+
+declare const Tabs: React.FC<TabsExtendedProps>;
 
 export { Tabs };
