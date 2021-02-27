@@ -13300,7 +13300,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c9"
               >
-                entry-47
+                entry-0
               </span>
             </div>
           </th>
@@ -13313,7 +13313,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c6"
               >
-                47
+                0
               </span>
             </div>
           </td>
@@ -13331,7 +13331,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c9"
               >
-                entry-0
+                entry-1
               </span>
             </div>
           </th>
@@ -13344,7 +13344,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c6"
               >
-                0
+                1
               </span>
             </div>
           </td>
@@ -14757,7 +14757,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c9"
               >
-                entry-1
+                entry-47
               </span>
             </div>
           </th>
@@ -14770,7 +14770,7 @@ exports[`DataTable should apply pagination styling 1`] = `
               <span
                 class="c6"
               >
-                1
+                47
               </span>
             </div>
           </td>
@@ -15502,7 +15502,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c9"
               >
-                entry-47
+                entry-0
               </span>
             </div>
           </th>
@@ -15515,7 +15515,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c6"
               >
-                47
+                0
               </span>
             </div>
           </td>
@@ -15533,7 +15533,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c9"
               >
-                entry-0
+                entry-1
               </span>
             </div>
           </th>
@@ -15546,7 +15546,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c6"
               >
-                0
+                1
               </span>
             </div>
           </td>
@@ -16959,7 +16959,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c9"
               >
-                entry-1
+                entry-47
               </span>
             </div>
           </th>
@@ -16972,7 +16972,7 @@ exports[`DataTable should paginate 1`] = `
               <span
                 class="c6"
               >
-                1
+                47
               </span>
             </div>
           </td>
@@ -17704,7 +17704,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               <span
                 class="c9"
               >
-                entry-47
+                entry-0
               </span>
             </div>
           </th>
@@ -17717,7 +17717,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               <span
                 class="c6"
               >
-                47
+                0
               </span>
             </div>
           </td>
@@ -17735,7 +17735,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               <span
                 class="c9"
               >
-                entry-0
+                entry-1
               </span>
             </div>
           </th>
@@ -17748,7 +17748,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               <span
                 class="c6"
               >
-                0
+                1
               </span>
             </div>
           </td>
@@ -18860,7 +18860,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c9"
               >
-                entry-47
+                entry-0
               </span>
             </div>
           </th>
@@ -18873,7 +18873,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c6"
               >
-                47
+                0
               </span>
             </div>
           </td>
@@ -18891,7 +18891,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c9"
               >
-                entry-0
+                entry-1
               </span>
             </div>
           </th>
@@ -18904,7 +18904,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c6"
               >
-                0
+                1
               </span>
             </div>
           </td>
@@ -20317,7 +20317,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c9"
               >
-                entry-1
+                entry-47
               </span>
             </div>
           </th>
@@ -20330,7 +20330,7 @@ exports[`DataTable should render new data when page changes 1`] = `
               <span
                 class="c6"
               >
-                1
+                47
               </span>
             </div>
           </td>
@@ -25172,7 +25172,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c9"
               >
-                entry-47
+                entry-0
               </span>
             </div>
           </th>
@@ -25185,7 +25185,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c6"
               >
-                47
+                0
               </span>
             </div>
           </td>
@@ -25203,7 +25203,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c9"
               >
-                entry-0
+                entry-1
               </span>
             </div>
           </th>
@@ -25216,7 +25216,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c6"
               >
-                0
+                1
               </span>
             </div>
           </td>
@@ -26629,7 +26629,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c9"
               >
-                entry-1
+                entry-47
               </span>
             </div>
           </th>
@@ -26642,7 +26642,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               <span
                 class="c6"
               >
-                1
+                47
               </span>
             </div>
           </td>
