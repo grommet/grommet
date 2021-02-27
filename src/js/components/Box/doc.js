@@ -2,6 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundDoc,
+  elevationPropType,
   genericProps,
   getBorderPropType,
   hoverIndicatorPropType,
@@ -134,10 +135,7 @@ export const doc = Box => {
     ])
       .description('The orientation to layout the child components in.')
       .defaultValue('column'),
-    elevation: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ])
+    elevation: elevationPropType
       .description(
         `Elevated height above the underlying context, indicated
         via a drop shadow.`,

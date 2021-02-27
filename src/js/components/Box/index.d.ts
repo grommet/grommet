@@ -121,7 +121,10 @@ export interface BoxProps {
           | 'xxlarge'
           | string;
       };
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?:
+    | { background: BackgroundType; elevation: ElevationType }
+    | BackgroundType
+    | boolean;
   justify?:
     | 'around'
     | 'between'

@@ -2583,7 +2583,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+        class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
         role="menuitem"
         tabindex="-1"
         type="button"
@@ -2599,7 +2599,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
-        class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+        class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
         role="menuitem"
         tabindex="-1"
         type="button"
