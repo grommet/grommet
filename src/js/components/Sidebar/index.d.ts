@@ -6,8 +6,10 @@ export interface SidebarProps {
   header?: React.ReactNode;
 }
 
-declare const Sidebar: React.FC<BoxProps &
+export type SidebarExtendedProps = BoxProps &
   SidebarProps &
-  JSX.IntrinsicElements['div']>;
+  JSX.IntrinsicElements['div'];
+
+declare const Sidebar: React.FC<SidebarExtendedProps>;
 
 export { Sidebar };
