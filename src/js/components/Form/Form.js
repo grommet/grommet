@@ -118,6 +118,12 @@ const Form = forwardRef(
 
             let valid = false;
 
+            setRequiredFields(
+              requiredFields.filter(n =>
+                Object.keys(validations.current).includes(n),
+              ),
+            );
+
             valid = requiredFields.every(
               field =>
                 value[field] && (value[field] !== '' || value[field] !== false),
@@ -301,7 +307,11 @@ const Form = forwardRef(
         };
 
         if (required) {
-          setRequiredFields(() => Object.keys(validations.current));
+          setRequiredFields(prevValue =>
+            !prevValue.includes(name) ? [...prevValue, name] : prevValue,
+          );
+        } else {
+          setRequiredFields(prevValue => prevValue.filter(v => v !== name));
         }
 
         if (validateArg || required) {
