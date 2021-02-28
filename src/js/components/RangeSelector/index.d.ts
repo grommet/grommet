@@ -24,6 +24,10 @@ export interface RangeSelectorProps {
   values: number[];
 }
 
+export interface RangeSelectorExtendedProps
+  extends RangeSelectorProps,
+    Omit<JSX.IntrinsicElements['div'], 'color' | 'onChange'> {}
+
 declare const RangeSelector: React.ComponentClass<RangeSelectorProps &
   Omit<JSX.IntrinsicElements['div'], 'color'>>;
 
