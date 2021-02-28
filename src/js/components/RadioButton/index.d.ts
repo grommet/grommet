@@ -14,6 +14,6 @@ export interface RadioButtonExtendedProps
   extends RadioButtonProps,
     Omit<JSX.IntrinsicElements['input'], 'name'> {}
 
-declare const RadioButton: React.ComponentClass<RadioButtonExtendedProps>;
+declare const RadioButton: React.FC<RadioButtonExtendedProps>;
 
 export { RadioButton };
