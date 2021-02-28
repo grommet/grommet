@@ -43,6 +43,7 @@ const CheckBox = forwardRef(
       reverse,
       toggle,
       indeterminate,
+      containerWidth,
       ...rest
     },
     ref,
@@ -197,6 +198,7 @@ const CheckBox = forwardRef(
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        width={containerWidth}
         {...themeableProps}
       >
         {first}

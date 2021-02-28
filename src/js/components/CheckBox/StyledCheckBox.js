@@ -37,6 +37,8 @@ const StyledCheckBoxContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
+  ${props =>
+    props.width && `width: ${props.width}; justify-content: space-between;`}
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
   ${props => props.theme.checkBox.hover.border.color && hoverStyle}

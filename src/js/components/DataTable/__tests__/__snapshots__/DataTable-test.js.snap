@@ -3409,7 +3409,7 @@ exports[`DataTable custom theme 2`] = `
         >
           <label
             aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 blBbHc"
             disabled=""
           >
             <div
@@ -3468,7 +3468,7 @@ exports[`DataTable custom theme 2`] = `
         >
           <label
             aria-label="select beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 blBbHc"
             disabled=""
           >
             <div
@@ -12550,7 +12550,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq"
         >
           <label
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -12623,7 +12623,7 @@ exports[`DataTable select 2`] = `
         >
           <label
             aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -12673,7 +12673,7 @@ exports[`DataTable select 2`] = `
         >
           <label
             aria-label="unselect beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"

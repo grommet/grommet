@@ -7,6 +7,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { CheckBox } from '..';
 
 describe('CheckBox', () => {
@@ -163,5 +164,18 @@ describe('CheckBox', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('test-label'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('different container widths', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box pad="small" width="20%">
+          <CheckBox width="50%" />
+          <CheckBox width="48px" />
+        </Box>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
