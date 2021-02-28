@@ -54,6 +54,12 @@ export const doc = CheckBox => {
 NOTE: This can only be used with non-toggle components`,
       )
       .defaultValue(false),
+    containerWidth: PropTypes.string
+      .description(
+        `Define a value for the container width and 
+        set value for justify content to space between.`,
+      )
+      .defaultValue(false),
   };
 
   return DocumentedCheckBox;

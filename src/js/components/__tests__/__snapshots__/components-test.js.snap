@@ -2243,6 +2243,13 @@ NOTE: This can only be used with non-toggle components",
         "format": "boolean",
         "name": "indeterminate",
       },
+      Object {
+        "defaultValue": false,
+        "description": "Define a value for the container width and 
+        set value for justify content to space between.",
+        "format": "string",
+        "name": "containerWidth",
+      },
     ],
     "usage": "import { CheckBox } from 'grommet';
 <CheckBox />",

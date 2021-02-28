@@ -97,6 +97,15 @@ NOTE: This can only be used with non-toggle components
 ```
 boolean
 ```
+
+**containerWidth**
+
+Define a value for the container width and 
+        set value for justify content to space between.
+
+```
+string
+```
   
 ## Intrinsic element
 

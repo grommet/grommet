@@ -11,6 +11,7 @@ export interface CheckBoxProps {
   reverse?: boolean;
   toggle?: boolean;
   indeterminate?: boolean;
+  containerWidth?: string;
 }
 
 declare const CheckBox: React.FC<CheckBoxProps &
