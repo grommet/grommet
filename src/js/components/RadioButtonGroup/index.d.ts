@@ -18,9 +18,11 @@ export interface RadioButtonGroupProps {
   )[];
   value?: string | number | boolean | object;
 }
+export interface RadioButtonGroupExtendedProps
+  extends RadioButtonGroupProps,
+    BoxProps,
+    Omit<JSX.IntrinsicElements['div'], 'onClick' | 'onChange'> {}
 
-declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupProps &
-  BoxProps &
-  JSX.IntrinsicElements['div']>;
+declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupExtendedProps>;
 
 export { RadioButtonGroup };
