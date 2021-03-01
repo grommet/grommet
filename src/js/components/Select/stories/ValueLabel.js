@@ -21,18 +21,22 @@ export const ValueLabel = () => {
           plain
           valueLabel={
             <Box
-              background="brand"
               width="small"
-              round="small"
               overflow="hidden"
               align="center"
+              border={{
+                color: 'dark-3',
+                size: 'xsmall',
+                style: 'solid',
+                side: 'bottom',
+              }}
             >
               {value || 'Select...'}
             </Box>
           }
           icon={
             <Box>
-              <CaretDown color="black" />
+              <CaretDown size="small" color="black" />
             </Box>
           }
         />
@@ -42,5 +46,5 @@ export const ValueLabel = () => {
 };
 
 export default {
-  title: 'Input/Select/ValueLabel',
+  title: 'Input/Select/Value Label',
 };
