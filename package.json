@@ -44,8 +44,8 @@
     "chromatic": "chromatic -t 9q99in2ygnh"
   },
   "peerDependencies": {
-    "react": ">= 16.6.1",
-    "react-dom": ">= 16.6.1",
+    "react": "^16.6.1 || ^17.0.0",
+    "react-dom": "^16.6.1 || ^17.0.0",
     "styled-components": ">= 5.1"
   },
   "dependencies": {
