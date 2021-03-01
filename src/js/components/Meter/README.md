@@ -147,7 +147,9 @@ string
 **color**
 
 The color of the value region.
-      This is only valid when used with 'value'
+      This is only valid when used with 'value'.
+      Linear Gradients can be used when passing '#grad-id', where
+      'id' corresponds to the gradient object in theme.
 
 ```
 string
@@ -222,7 +224,7 @@ Array of value objects describing the data.
       'value' is the actual numeric value.
       'label' is a text string describing it.
       'color' indicates the color name to use. If not specified a default one
-      will be chosen.
+      will be chosen. A gradient can be used just as referred by 'color' prop.
       'onClick' will be called when the user clicks on it.
       Set 'highlight' to call attention to it.
       'onHover' will be called with a boolean argument indicating when the
@@ -257,7 +259,7 @@ Defaults to
 
 **global.edgeSize**
 
-The border-radius of the styled Meter. thickness, height and 
+The border-radius of the styled Meter. thickness, height and
     width of the Bar Meter, height of the Circle Meter. Expects `object`.
 
 Defaults to
@@ -318,6 +320,29 @@ accent-1
 **meter.extend**
 
 Any additional style for Meter. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**meter.gradients**
+
+Custom linear gradients used for the Meter.
+    Should follow the pattern: {
+      random: {
+        props: {
+          id: 'random',
+        },
+        stops: [
+          { offset: '45%', stopColor: 'purple' },
+          { offset: '95%', stopColor: 'blue' },
+        ],
+      }
+    }
+     'props' can also contain any valid <linearContainer /> property,
+     and 'stops' can contain any valid <stop /> property.  Expects `undefined`.
 
 Defaults to
 

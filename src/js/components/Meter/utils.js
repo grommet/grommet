@@ -13,7 +13,12 @@ export const strokeProps = (color, theme) => {
         }`;
       }
     } else {
-      result.stroke = normalizeColor(color, theme);
+      const isGradientCheck = color.match(/^grad-(\w+)/);
+
+      result.stroke =
+        isGradientCheck === null
+          ? normalizeColor(color, theme)
+          : `url(#${isGradientCheck[1]})`;
     }
   }
   return result;

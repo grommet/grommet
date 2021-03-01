@@ -24,6 +24,7 @@ const Circle = forwardRef((props, ref) => {
   let startAngle = 0;
   const paths = [];
   let pathCaps = [];
+  const svgDefs = [];
   (values || [])
     .filter(v => v.value > 0)
     .forEach((valueArg, index) => {
@@ -52,6 +53,24 @@ const Circle = forwardRef((props, ref) => {
         someHighlight && !highlight ? background : colorName,
         theme,
       );
+
+      const gradientStroke = colorName.match(/^grad-(\w+)/);
+
+      if (gradientStroke) {
+        const { props: gradientProps, stops: gradientStops } = (theme.meter
+          .gradients &&
+          theme.meter.gradients[gradientStroke[1]]) ?? { props: {}, stops: [] };
+
+        const gradKey = `g-${index}`;
+        svgDefs.push(
+          <linearGradient key={gradKey} {...gradientProps}>
+            {gradientStops.map((stop, stopIndex) => {
+              const stopKey = `${gradKey}-${stopIndex}`;
+              return <stop key={stopKey} {...stop} />;
+            })}
+          </linearGradient>,
+        );
+      }
 
       if (round) {
         const d1 = arcCommands(
@@ -135,6 +154,7 @@ const Circle = forwardRef((props, ref) => {
       height={size === 'full' ? '100%' : width}
       {...rest}
     >
+      {svgDefs.length !== 0 && <defs>{svgDefs}</defs>}
       <circle
         cx={mid}
         cy={mid}
@@ -144,8 +164,8 @@ const Circle = forwardRef((props, ref) => {
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
       />
-      {paths}
       {pathCaps}
+      {paths}
     </StyledMeter>
   );
 });

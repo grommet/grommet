@@ -992,6 +992,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+      // gradients: {
+      //   linear: {
+      //     props: {
+      //       id: 'linear',
+      //       gradientUnits: 'userSpaceOnUse',
+      //       gradientTransform: 'rotate(90)',
+      //     },
+      //     stops: [
+      //       { offset: '5%', stopColor: 'gold' },
+      //       { offset: '65%', stopColor: 'red' },
+      //     ],
+      //   },
+      // },
     },
     pagination: {
       button: {
