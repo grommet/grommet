@@ -38,7 +38,7 @@ boolean
 
 **focusIndicator**
 
-Whether the plain textarea should receive a focus outline.
+Whether the plain TextArea should receive a focus outline.
 
 ```
 boolean
