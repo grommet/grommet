@@ -82,6 +82,7 @@ const TextInput = forwardRef(
       dropHeight,
       dropTarget,
       dropProps,
+      focusIndicator = true,
       icon,
       id,
       messages = defaultMessages,
@@ -426,6 +427,7 @@ const TextInput = forwardRef(
             icon={icon}
             reverse={reverse}
             focus={focus}
+            focusIndicator={focusIndicator}
             textAlign={textAlign}
             {...rest}
             {...extraProps}

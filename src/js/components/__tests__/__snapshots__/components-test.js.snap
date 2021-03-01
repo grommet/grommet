@@ -5568,6 +5568,11 @@ string",
         "name": "onChange",
       },
       Object {
+        "description": "Whether the plain MaskedInput should receive a focus outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
+      },
+      Object {
         "description": "Function that will be called when the user leaves the field.",
         "format": "function",
         "name": "onBlur",
@@ -7781,7 +7786,7 @@ break-word",
         "name": "fill",
       },
       Object {
-        "description": "Whether the plain textarea should receive a focus outline.",
+        "description": "Whether the plain TextArea should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7920,7 +7925,7 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Whether the plain text input should receive a focus outline.",
+        "description": "Whether the plain TextInput should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7955,7 +7960,7 @@ string",
         "description": "Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect",
         "format": "function",
         "name": "onSelect",
@@ -7984,7 +7989,7 @@ string",
       Object {
         "description": "Whether this is a plain input with no border or outline.
       Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.",
         "format": "boolean
 full",
