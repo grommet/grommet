@@ -25,6 +25,10 @@ export interface DiagramProps {
   }[];
 }
 
-declare const Diagram: React.FC<DiagramProps & JSX.IntrinsicElements['svg']>;
+type divProps = JSX.IntrinsicElements['svg'];
+
+export interface DiagramExtendedProps extends DiagramProps, divProps {}
+
+declare const Diagram: React.FC<DiagramExtendedProps>;
 
 export { Diagram };
