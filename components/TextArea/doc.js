@@ -17,7 +17,7 @@ var doc = function doc(TextArea) {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the textarea.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
-    focusIndicator: _reactDesc.PropTypes.bool.description('Whether the plain textarea should receive a focus outline.'),
+    focusIndicator: _reactDesc.PropTypes.bool.description('Whether the plain TextArea should receive a focus outline.'),
     name: _reactDesc.PropTypes.string.description('The name attribute of the textarea.'),
     onChange: _reactDesc.PropTypes.func.description('Function that will be called when the user types in the textarea.'),
     placeholder: _reactDesc.PropTypes.string.description('Placeholder text to use when no value is provided.'),

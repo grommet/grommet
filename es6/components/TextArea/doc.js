@@ -9,7 +9,7 @@ export var doc = function doc(TextArea) {
     a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
-    focusIndicator: PropTypes.bool.description('Whether the plain textarea should receive a focus outline.'),
+    focusIndicator: PropTypes.bool.description('Whether the plain TextArea should receive a focus outline.'),
     name: PropTypes.string.description('The name attribute of the textarea.'),
     onChange: PropTypes.func.description('Function that will be called when the user types in the textarea.'),
     placeholder: PropTypes.string.description('Placeholder text to use when no value is provided.'),

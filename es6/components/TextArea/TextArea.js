@@ -9,13 +9,15 @@ import { StyledTextArea } from './StyledTextArea';
 var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fill = _ref.fill,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       name = _ref.name,
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fill", "focusIndicator", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
 
   var formContext = useContext(FormContext);
 
@@ -41,7 +43,8 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name: name,
     fillArg: fill,
     focus: focus,
-    value: value
+    value: value,
+    focusIndicator: focusIndicator
   }, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);

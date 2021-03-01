@@ -22,7 +22,7 @@ export var doc = function doc(TextInput) {
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
     icon: PropTypes.element.description("An optional icon to show. This could be used to provide an\n      indication of what kind of input is expected, like an email icon,\n      or what the input will be used for, like a search icon."),
     id: PropTypes.string.description('The id attribute of the input.'),
-    focusIndicator: PropTypes.bool.description('Whether the plain text input should receive a focus outline.'),
+    focusIndicator: PropTypes.bool.description('Whether the plain TextInput should receive a focus outline.'),
     messages: PropTypes.shape({
       enterSelect: PropTypes.string,
       suggestionsCount: PropTypes.string,
@@ -36,12 +36,12 @@ export var doc = function doc(TextInput) {
     }),
     name: PropTypes.string.description("The name of the attribute when in a Form or FormField."),
     onChange: PropTypes.func.description('Function that will be called when the user types in the input.'),
-    onSelect: PropTypes.func.description("Note: This function is deprecated, use onSuggestionSelect instead.\n      Function that will be called when the user selects a suggestion.\n      The suggestion contains the object chosen from the supplied suggestions.\n      When used in conjunction with onSuggestionSelect \n      this will default to React's onSelect"),
+    onSelect: PropTypes.func.description("Note: This function is deprecated, use onSuggestionSelect instead.\n      Function that will be called when the user selects a suggestion.\n      The suggestion contains the object chosen from the supplied suggestions.\n      When used in conjunction with onSuggestionSelect\n      this will default to React's onSelect"),
     onSuggestionSelect: PropTypes.func.description("Function that will be called when the user selects a suggestion.\n      The suggestion contains the object chosen from the supplied suggestions."),
     onSuggestionsOpen: PropTypes.func.description('Function that will be called when the suggestions drop is opened.'),
     onSuggestionsClose: PropTypes.func.description('Function that will be called when the suggestions drop is closed.'),
     placeholder: PropTypes.node.description('Placeholder to use when no value is provided.'),
-    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]).description("Whether this is a plain input with no border or outline.\n      Use \"full\" to remove padding in addition to removing border and outline.\n      Only use this when the containing context provides sufficient \n      affordance."),
+    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]).description("Whether this is a plain input with no border or outline.\n      Use \"full\" to remove padding in addition to removing border and outline.\n      Only use this when the containing context provides sufficient\n      affordance."),
     reverse: PropTypes.bool.description("Whether an icon should be reversed so that the icon is at the\n      end of the input."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextInput.'),
     suggestions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({

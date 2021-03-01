@@ -60,6 +60,8 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dropHeight = _ref.dropHeight,
       dropTarget = _ref.dropTarget,
       dropProps = _ref.dropProps,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       icon = _ref.icon,
       id = _ref.id,
       _ref$messages = _ref.messages,
@@ -80,7 +82,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       suggestions = _ref.suggestions,
       textAlign = _ref.textAlign,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
@@ -336,6 +338,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     icon: icon,
     reverse: reverse,
     focus: focus,
+    focusIndicator: focusIndicator,
     textAlign: textAlign
   }, rest, extraProps, {
     defaultValue: renderLabel(defaultValue),

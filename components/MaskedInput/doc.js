@@ -21,6 +21,7 @@ var doc = function doc(MaskedInput) {
     id: _reactDesc.PropTypes.string.description('The id attribute of the input.'),
     name: _reactDesc.PropTypes.string.description('The name attribute of the input.'),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user types or pastes text."),
+    focusIndicator: _reactDesc.PropTypes.bool.description('Whether the plain MaskedInput should receive a focus outline.'),
     onBlur: _reactDesc.PropTypes.func.description("Function that will be called when the user leaves the field."),
     mask: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       length: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]),
@@ -55,7 +56,7 @@ var themeDoc = _extends({
     defaultValue: undefined
   },
   'maskedInput.container.extend': {
-    description: "Any additional style for the container surrounding the input \n    and, if present, icon.",
+    description: "Any additional style for the container surrounding the input\n    and, if present, icon.",
     type: 'string | (props) => {}',
     defaultValue: undefined
   },

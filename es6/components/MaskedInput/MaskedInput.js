@@ -145,6 +145,8 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dropHeight = _ref.dropHeight,
       dropProps = _ref.dropProps,
       focusProp = _ref.focus,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       icon = _ref.icon,
       id = _ref.id,
       _ref$mask = _ref.mask,
@@ -158,7 +160,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       plain = _ref.plain,
       reverse = _ref.reverse,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "dropHeight", "dropProps", "focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicator", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
@@ -350,6 +352,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: id,
     name: name,
     autoComplete: "off",
+    focusIndicator: focusIndicator,
     plain: plain,
     placeholder: placeholder || renderPlaceholder(),
     icon: icon,
