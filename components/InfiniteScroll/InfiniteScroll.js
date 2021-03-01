@@ -13,6 +13,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var calculateLastPageBound = function calculateLastPageBound(show, step) {
+  return show ? Math.floor((show + step) / step) - 1 : 0;
+};
+
 var InfiniteScroll = function InfiniteScroll(_ref) {
   var children = _ref.children,
       _ref$items = _ref.items,
@@ -34,7 +38,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     return Math.floor(items.length / step);
   }, [items.length, step]); // the pages we are rendering
 
-  var _useState2 = (0, _react.useState)([0, show ? Math.floor((show + step) / step) - 1 : 0]),
+  var _useState2 = (0, _react.useState)([0, calculateLastPageBound(show, step)]),
       renderPageBounds = _useState2[0],
       setRenderPageBounds = _useState2[1]; // the heights of the pages, approximated after we render the first page
   // and then updated for pages that have rendered
@@ -104,7 +108,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
       if (show) {
         // ensure we try to render any show page
-        var showPage = Math.floor((show + step) / step) - 1;
+        var showPage = calculateLastPageBound(show, step);
         nextBeginPage = Math.min(showPage, nextBeginPage);
         nextEndPage = Math.max(showPage, nextEndPage);
       }
@@ -150,7 +154,14 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       setPendingLength(items.length + 1);
       onMore();
     }
-  }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]); // scroll to any 'show'
+  }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
+  (0, _react.useEffect)(function () {
+    if (lastPage === 0 && pendingLength !== 0) {
+      setPageHeights([]);
+      setPendingLength(0);
+      setRenderPageBounds([0, calculateLastPageBound(show, step)]);
+    }
+  }, [lastPage, pendingLength, show, step]); // scroll to any 'show'
 
   (0, _react.useLayoutEffect)(function () {
     // ride out any animation delays, 100ms empirically measured

@@ -2,6 +2,10 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';
 import { Box } from '../Box';
 
+var calculateLastPageBound = function calculateLastPageBound(show, step) {
+  return show ? Math.floor((show + step) / step) - 1 : 0;
+};
+
 var InfiniteScroll = function InfiniteScroll(_ref) {
   var children = _ref.children,
       _ref$items = _ref.items,
@@ -23,7 +27,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     return Math.floor(items.length / step);
   }, [items.length, step]); // the pages we are rendering
 
-  var _useState2 = useState([0, show ? Math.floor((show + step) / step) - 1 : 0]),
+  var _useState2 = useState([0, calculateLastPageBound(show, step)]),
       renderPageBounds = _useState2[0],
       setRenderPageBounds = _useState2[1]; // the heights of the pages, approximated after we render the first page
   // and then updated for pages that have rendered
@@ -93,7 +97,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
       if (show) {
         // ensure we try to render any show page
-        var showPage = Math.floor((show + step) / step) - 1;
+        var showPage = calculateLastPageBound(show, step);
         nextBeginPage = Math.min(showPage, nextBeginPage);
         nextEndPage = Math.max(showPage, nextEndPage);
       }
@@ -139,7 +143,14 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       setPendingLength(items.length + 1);
       onMore();
     }
-  }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]); // scroll to any 'show'
+  }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
+  useEffect(function () {
+    if (lastPage === 0 && pendingLength !== 0) {
+      setPageHeights([]);
+      setPendingLength(0);
+      setRenderPageBounds([0, calculateLastPageBound(show, step)]);
+    }
+  }, [lastPage, pendingLength, show, step]); // scroll to any 'show'
 
   useLayoutEffect(function () {
     // ride out any animation delays, 100ms empirically measured
