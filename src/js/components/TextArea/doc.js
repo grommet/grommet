@@ -23,7 +23,7 @@ export const doc = TextArea => {
       .description('Whether the width and height should fill the container.')
       .defaultValue(false),
     focusIndicator: PropTypes.bool.description(
-      'Whether the plain textarea should receive a focus outline.',
+      'Whether the plain TextArea should receive a focus outline.',
     ),
     name: PropTypes.string.description('The name attribute of the textarea.'),
     onChange: PropTypes.func.description(
