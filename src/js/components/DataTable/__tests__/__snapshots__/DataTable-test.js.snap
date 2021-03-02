@@ -12025,24 +12025,27 @@ exports[`DataTable search 2`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2::-moz-focus-inner {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
