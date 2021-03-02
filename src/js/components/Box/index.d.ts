@@ -122,7 +122,7 @@ export interface BoxProps {
           | string;
       };
   hoverIndicator?:
-    | { background: BackgroundType; elevation: ElevationType }
+    | { background?: BackgroundType; elevation?: ElevationType }
     | BackgroundType
     | boolean;
   justify?:
