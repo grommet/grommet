@@ -77,7 +77,9 @@ one of top or bottom should be specified.`,
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`,
     ),
-    dropProps: PropTypes.object.description('Any valid Drop prop.'),
+    dropProps: PropTypes.object
+      .description('Any valid Drop prop.')
+      .defaultValue(undefined),
     justifyContent: PropTypes.oneOf([
       'start',
       'center',
@@ -139,10 +141,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
-  'menu.drop.align': {
-    description: 'The alignment of the drop with respect to the menu button.',
-    type: 'string | object',
-    defaultValue: `{
+  'menu.drop': {
+    description: 'Any valid Drop props for the Menu drop.',
+    type: 'object',
+    defaultValue: `align: {
       top: 'top',
       left: 'left',
     },`,

@@ -220,7 +220,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop. Defaults to `{}`.
+Any valid Drop prop.
 
 ```
 object
@@ -339,14 +339,14 @@ Defaults to
 undefined
 ```
 
-**menu.drop.align**
+**menu.drop**
 
-The alignment of the drop with respect to the menu button. Expects `string | object`.
+Any valid Drop props for the Menu drop. Expects `object`.
 
 Defaults to
 
 ```
-{
+align: {
       top: 'top',
       left: 'left',
     },

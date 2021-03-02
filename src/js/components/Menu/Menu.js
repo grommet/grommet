@@ -70,7 +70,11 @@ const Menu = forwardRef((props, ref) => {
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
-  const align = dropProps.align || dropAlign || theme.menu.drop.align;
+  // need to destructure the align otherwise it will get passed through
+  // to DropButton and override prop values
+  const { align: menuAlign, ...themeDropProps } = theme.menu.drop;
+
+  const align = (dropProps && dropProps.align) || dropAlign || menuAlign;
   const controlButtonIndex = useMemo(() => {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
@@ -270,7 +274,7 @@ const Menu = forwardRef((props, ref) => {
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
-        dropProps={dropProps}
+        dropProps={dropProps || themeDropProps}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
@@ -357,7 +361,6 @@ const Menu = forwardRef((props, ref) => {
 });
 
 Menu.defaultProps = {
-  dropProps: {},
   items: [],
   messages: {
     openMenu: 'Open Menu',

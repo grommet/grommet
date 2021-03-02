@@ -19,6 +19,7 @@ const customTheme = {
         top: 'bottom',
         left: 'right',
       },
+      elevation: 'xlarge',
     },
     icons: {
       color: '#F08080',
@@ -565,7 +566,7 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('should apply custom drop alignment', () => {
+  test('should apply themed drop props', () => {
     const { container } = render(
       <Grommet theme={customTheme}>
         <Menu

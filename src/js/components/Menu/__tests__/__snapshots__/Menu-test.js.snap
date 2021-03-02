@@ -4343,7 +4343,7 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 </div>
 `;
 
-exports[`Menu should apply custom drop alignment 1`] = `
+exports[`Menu should apply themed drop props 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
