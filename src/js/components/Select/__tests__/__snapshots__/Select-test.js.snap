@@ -8677,7 +8677,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -8693,7 +8693,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"

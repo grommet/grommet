@@ -14,7 +14,12 @@ export const OnClickBox = () => (
         align="center"
         round
         gap="small"
-        hoverIndicator
+        hoverIndicator={{
+          background: {
+            color: 'background-contrast',
+          },
+          elevation: 'medium',
+        }}
         onClick={() => {
           alert('clicked');
         }}

@@ -1459,7 +1459,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 feUVDF"
+          class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
           <svg
@@ -1651,7 +1651,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 feUVDF"
+          class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
           <svg
@@ -2174,7 +2174,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 feUVDF"
+          class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
           <svg
