@@ -33,6 +33,14 @@ const Distribution = ({
     );
   }
   if (values.length > 1) {
+    for (let i = 0; i < values.length; i += 1) {
+      if (!('value' in values[i]))
+        /* eslint-disable-next-line max-len */
+        throw new Error(
+          `Distribution should have set 'value' for each item in 'values'.`,
+        );
+    }
+
     const reducer = (accumulator, { value }) => accumulator + (value || 0);
     const total = values.reduce(reducer, 0);
 
