@@ -72,9 +72,9 @@ const Menu = forwardRef((props, ref) => {
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
-  const { align: menuAlign, ...themeDropProps } = theme.menu.drop;
+  const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
 
-  const align = (dropProps && dropProps.align) || dropAlign || menuAlign;
+  const align = (dropProps && dropProps.align) || dropAlign || themeDropAlign;
   const controlButtonIndex = useMemo(() => {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
