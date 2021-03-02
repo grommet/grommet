@@ -2,12 +2,7 @@ import React from 'react';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForElement,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -83,7 +78,7 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.findByText('aa'));
+    await waitFor(() => screen.findByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
     expect(onChange).not.toBeCalled();
@@ -152,7 +147,7 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
 
-    const option = await waitForElement(() => getByText(document, 'aa'));
+    const option = await waitFor(() => getByText(document, 'aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
@@ -185,7 +180,7 @@ describe('MaskedInput', () => {
     const input = getByTestId('test-input');
     fireEvent.focus(input);
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     // pressing enter here nothing will happen
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
@@ -277,7 +272,7 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
@@ -324,7 +319,7 @@ describe('MaskedInput', () => {
     const input = getByTestId('test-input');
     fireEvent.focus(input);
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     // pressing enter here nothing will happen
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
@@ -385,7 +380,7 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     const optionButton = getByText(document, 'bb').closest('button');
     fireEvent.mouseOver(optionButton);

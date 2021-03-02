@@ -1424,13 +1424,18 @@ When 'onClick' has been specified, the hover indicator to apply
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -1446,6 +1451,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 \`\`\`
@@ -2144,13 +2191,18 @@ with plain Buttons.
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -2166,6 +2218,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 \`\`\`
@@ -8714,8 +8808,8 @@ function
 
 Function that will be called when the form is validated. The
       single argument is an event containing the latest error object
-      via \`validationResults.errors\` and info object via 
-      \`validationResults.infos\`.
+      via \`validationResults.errors\`, info object via 
+      \`validationResults.infos\` and form's validity via \`valid\`.
 
 \`\`\`
 function
@@ -11123,7 +11217,9 @@ top-right
 
 **responsive**
 
-Whether the layer should take full width and height on mobile Defaults to \`true\`.
+Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -11947,6 +12043,14 @@ Function that will be called when the user types or pastes text.
 function
 \`\`\`
 
+**focusIndicator**
+
+Whether the plain MaskedInput should receive a focus outline.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onBlur**
 
 Function that will be called when the user leaves the field.
@@ -12049,7 +12153,7 @@ undefined
 
 **maskedInput.container.extend**
 
-Any additional style for the container surrounding the input 
+Any additional style for the container surrounding the input
     and, if present, icon. Expects \`string | (props) => {}\`.
 
 Defaults to
@@ -15351,6 +15455,132 @@ Defaults to
 18px
 \`\`\`
 ",
+  "Spinner": "## Spinner
+A Spinner.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-Spinner&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/spinner&module=%2Fsrc%2FSpinner.js)
+## Usage
+
+\`\`\`javascript
+import { Spinner } from 'grommet';
+<Spinner/>
+\`\`\`
+
+## Properties
+
+**size**
+
+A fixed size. Defaults to \`small\`.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**color**
+
+The border color of the Spinner.
+
+\`\`\`
+string
+{
+  dark: string,
+  light: string
+}
+\`\`\`
+
+**message**
+
+The message that will be announced for screen readers when message 
+        is a string. When an object, the start message will be announced 
+        as the Spinner shows, and the end message as the spinner closes.
+
+\`\`\`
+string
+{
+  start: string,
+  end: string
+}
+\`\`\`
+  
+## Theme
+  
+**spinner.container**
+
+Any valid Box prop for the Spinner container. 
+    Including 'color' for the spinner border color and 'size' for the default 
+    size of the Spinner. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**spinner.icon**
+
+An icon or an SVG to use as the default Spinner. Expects \`ReactElement | SVG\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**spinner.size.xsmall**
+
+The xsmall size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**spinner.size.small**
+
+The small size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**spinner.size.medium**
+
+The medium size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**spinner.size.large**
+
+The large size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
+**spinner.size.xlarge**
+
+The xlarge size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+96px
+\`\`\`
+",
   "Stack": "## Stack
 A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All
@@ -16953,7 +17183,7 @@ boolean
 
 **focusIndicator**
 
-Whether the plain textarea should receive a focus outline.
+Whether the plain TextArea should receive a focus outline.
 
 \`\`\`
 boolean
@@ -17330,7 +17560,7 @@ string
 
 **focusIndicator**
 
-Whether the plain text input should receive a focus outline.
+Whether the plain TextInput should receive a focus outline.
 
 \`\`\`
 boolean
@@ -17376,7 +17606,7 @@ function
 Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect
 
 \`\`\`
@@ -17420,7 +17650,7 @@ node
 
 Whether this is a plain input with no border or outline.
       Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.
 
 \`\`\`

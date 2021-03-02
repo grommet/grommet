@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
 
@@ -151,12 +151,12 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('restrict focus', () => {
+  test('restrict focus', async () => {
     render(<TestInput restrictFocus />);
     expect(document.activeElement).toMatchSnapshot();
     expectPortal('drop-node').toMatchSnapshot();
 
-    cleanup();
+    await waitFor(() => cleanup());
 
     expect(document.activeElement).toMatchSnapshot();
   });

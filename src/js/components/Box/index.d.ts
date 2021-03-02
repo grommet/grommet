@@ -43,6 +43,8 @@ export interface BoxProps {
           | 'fadeOut'
           | 'jiggle'
           | 'pulse'
+          | 'rotateLeft'
+          | 'rotateRight'
           | 'slideUp'
           | 'slideDown'
           | 'slideLeft'
@@ -119,7 +121,10 @@ export interface BoxProps {
           | 'xxlarge'
           | string;
       };
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?:
+    | { background?: BackgroundType; elevation?: ElevationType }
+    | BackgroundType
+    | boolean;
   justify?:
     | 'around'
     | 'between'
