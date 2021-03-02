@@ -409,7 +409,7 @@ describe('DataTable', () => {
   });
 
   test('rowDetails', () => {
-    const { container, getByText } = render(
+    const { container, getAllByLabelText } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -427,14 +427,13 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
-    const headerCell = getByText('A');
-    fireEvent.click(headerCell, {});
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('rowDetails condtional', () => {
-    const { container, getByText } = render(
+    const { container, getAllByLabelText } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -461,9 +460,8 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
-    const headerCell = getByText('A');
-    fireEvent.click(headerCell, {});
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
     expect(container.firstChild).toMatchSnapshot();
   });
   test('groupBy', () => {

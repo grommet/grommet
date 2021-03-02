@@ -11708,7 +11708,7 @@ exports[`DataTable rowDetails 1`] = `
           class="c8"
         >
           <button
-            aria-label="expand"
+            aria-label="collapse"
             class="c9"
             type="button"
           >
@@ -11716,7 +11716,7 @@ exports[`DataTable rowDetails 1`] = `
               class="c10"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="FormUp"
                 class="c11"
                 viewBox="0 0 24 24"
               >
@@ -11725,6 +11725,7 @@ exports[`DataTable rowDetails 1`] = `
                   points="18 9 12 15 6 9"
                   stroke="#000"
                   stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
                 />
               </svg>
             </div>
@@ -11757,6 +11758,20 @@ exports[`DataTable rowDetails 1`] = `
             </span>
           </div>
         </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+          colspan="3"
+        >
+          <div
+            class="c13"
+          >
+            one
+          </div>
+        </td>
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -11866,288 +11881,6 @@ exports[`DataTable rowDetails 1`] = `
           >
             <span
               class="c14"
-            >
-              2.2
-            </span>
-          </div>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable rowDetails 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
->
-  <table
-    class="StyledTable-sc-1m3u5g-6 kzMUEM StyledDataTable-xrlyjm-0 koIpgx"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-xrlyjm-4"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kqRtGs"
-        />
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dTCmQX"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dTCmQX"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 jAEaWo"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              one
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              1.1
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              one
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              1.2
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              two
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              2.1
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              two
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
             >
               2.2
             </span>
@@ -12506,7 +12239,7 @@ exports[`DataTable rowDetails condtional 1`] = `
           class="c8"
         >
           <button
-            aria-label="expand"
+            aria-label="collapse"
             class="c9"
             type="button"
           >
@@ -12514,7 +12247,7 @@ exports[`DataTable rowDetails condtional 1`] = `
               class="c10"
             >
               <svg
-                aria-label="FormDown"
+                aria-label="FormUp"
                 class="c11"
                 viewBox="0 0 24 24"
               >
@@ -12523,6 +12256,7 @@ exports[`DataTable rowDetails condtional 1`] = `
                   points="18 9 12 15 6 9"
                   stroke="#000"
                   stroke-width="2"
+                  transform="matrix(1 0 0 -1 0 24)"
                 />
               </svg>
             </div>
@@ -12555,6 +12289,23 @@ exports[`DataTable rowDetails condtional 1`] = `
             </span>
           </div>
         </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c12"
+          colspan="3"
+        >
+          <div
+            class="c13"
+          >
+            one
+             : 
+            1.2
+             
+          </div>
+        </td>
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -12664,288 +12415,6 @@ exports[`DataTable rowDetails condtional 1`] = `
           >
             <span
               class="c14"
-            >
-              2.2
-            </span>
-          </div>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable rowDetails condtional 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
->
-  <table
-    class="StyledTable-sc-1m3u5g-6 kzMUEM StyledDataTable-xrlyjm-0 koIpgx"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-xrlyjm-4"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kqRtGs"
-        />
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dTCmQX"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dTCmQX"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 jAEaWo"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              one
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              1.1
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              one
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              1.2
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              two
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              2.1
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
-      >
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
-        >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 konodp"
-            type="button"
-          >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
-            >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </td>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 DkZvS"
-            >
-              two
-            </span>
-          </div>
-        </td>
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
             >
               2.2
             </span>
