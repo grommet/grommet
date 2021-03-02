@@ -173,14 +173,20 @@ exports.selectedStyle = selectedStyle;
 
 var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
   var background;
+  var elevation;
 
   if (hoverIndicator === true || hoverIndicator === 'background') {
     background = theme.global.hover.background;
+  } else if (typeof hoverIndicator === 'object') {
+    if (hoverIndicator.elevation || hoverIndicator.background) {
+      elevation = hoverIndicator.elevation;
+      background = hoverIndicator.background;
+    } else background = hoverIndicator;
   } else {
     background = hoverIndicator;
   }
 
-  return (0, _styledComponents.css)(["", ""], backgroundStyle(background, theme, theme.global.hover.color));
+  return (0, _styledComponents.css)(["", " ", ""], backgroundStyle(background, theme, theme.global.hover.color), elevation && "box-shadow: " + theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation] + ";");
 };
 
 exports.getHoverIndicatorStyle = getHoverIndicatorStyle;

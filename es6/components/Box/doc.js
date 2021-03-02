@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { backgroundDoc, genericProps, getBorderPropType, hoverIndicatorPropType, padPropType } from '../../utils/prop-types';
+import { backgroundDoc, elevationPropType, genericProps, getBorderPropType, hoverIndicatorPropType, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -30,7 +30,7 @@ export var doc = function doc(Box) {
     basis: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), PropTypes.string]).description("A fixed or relative size along its container's main axis."),
     border: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']), BORDER_SHAPE, PropTypes.arrayOf(BORDER_SHAPE)]).description("Include a border. 'between' will place a border in the gap between\n      child elements. You must have a 'gap' to use 'between'."),
     direction: PropTypes.oneOf(['row', 'column', 'row-responsive', 'row-reverse', 'column-reverse']).description('The orientation to layout the child components in.').defaultValue('column'),
-    elevation: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("Elevated height above the underlying context, indicated\n        via a drop shadow.").defaultValue('none'),
+    elevation: elevationPropType.description("Elevated height above the underlying context, indicated\n        via a drop shadow.").defaultValue('none'),
     flex: PropTypes.oneOfType([PropTypes.oneOf(['grow', 'shrink']), PropTypes.bool, PropTypes.shape({
       grow: PropTypes.number,
       shrink: PropTypes.number

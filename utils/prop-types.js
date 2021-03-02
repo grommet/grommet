@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
+exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -32,7 +32,7 @@ var colorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string,
 
 exports.colorPropType = colorPropType;
 
-var backgroundDoc = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+var backgroundPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
   color: colorPropType,
   dark: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string]),
   image: _reactDesc.PropTypes.string,
@@ -41,8 +41,10 @@ var backgroundDoc = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string,
   repeat: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['no-repeat', 'repeat']), _reactDesc.PropTypes.string]),
   size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['cover', 'contain']), _reactDesc.PropTypes.string]),
   light: _reactDesc.PropTypes.string
-})]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
+})]);
 
+exports.backgroundPropType = backgroundPropType;
+var backgroundDoc = backgroundPropType.description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
 exports.backgroundDoc = backgroundDoc;
 var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 exports.MARGIN_SIZES = MARGIN_SIZES;
@@ -81,15 +83,13 @@ var genericProps = {
 };
 exports.genericProps = genericProps;
 
-var hoverIndicatorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.oneOf(['background']), _reactDesc.PropTypes.shape({
-  color: _reactDesc.PropTypes.string,
-  dark: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string]),
-  image: _reactDesc.PropTypes.string,
-  light: _reactDesc.PropTypes.string,
-  position: _reactDesc.PropTypes.string,
-  opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.bool, _reactDesc.PropTypes.number, _reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong'])]),
-  repeat: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['no-repeat', 'repeat']), _reactDesc.PropTypes.string]),
-  size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['cover', 'contain']), _reactDesc.PropTypes.string])
+var elevationPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]);
+
+exports.elevationPropType = elevationPropType;
+
+var hoverIndicatorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.oneOf(['background']), backgroundPropType, _reactDesc.PropTypes.shape({
+  background: backgroundPropType,
+  elevation: elevationPropType
 })]);
 
 exports.hoverIndicatorPropType = hoverIndicatorPropType;

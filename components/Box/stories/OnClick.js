@@ -26,7 +26,12 @@ var OnClickBox = function OnClickBox() {
     align: "center",
     round: true,
     gap: "small",
-    hoverIndicator: true,
+    hoverIndicator: {
+      background: {
+        color: 'background-contrast'
+      },
+      elevation: 'medium'
+    },
     onClick: function onClick() {
       alert('clicked');
     }

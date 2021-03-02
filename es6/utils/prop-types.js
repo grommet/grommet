@@ -17,7 +17,7 @@ export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shap
   dark: PropTypes.string,
   light: PropTypes.string
 })]);
-export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+export var backgroundPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   color: colorPropType,
   dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   image: PropTypes.string,
@@ -26,7 +26,8 @@ export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shap
   repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
   size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string]),
   light: PropTypes.string
-})]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
+})]);
+export var backgroundDoc = backgroundPropType.description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
 export var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export var marginProp = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), PropTypes.shape({
   bottom: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
@@ -55,15 +56,10 @@ export var genericProps = {
   gridArea: PropTypes.string.description("The name of the area to place\n    this inside a parent Grid."),
   margin: marginProp
 };
-export var hoverIndicatorPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), PropTypes.shape({
-  color: PropTypes.string,
-  dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  image: PropTypes.string,
-  light: PropTypes.string,
-  position: PropTypes.string,
-  opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])]),
-  repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
-  size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string])
+export var elevationPropType = PropTypes.oneOfType([PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]);
+export var hoverIndicatorPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), backgroundPropType, PropTypes.shape({
+  background: backgroundPropType,
+  elevation: elevationPropType
 })]);
 export var pointPropType = PropTypes.oneOf(['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown']);
 export var patternPropType = PropTypes.oneOf(['squares', 'circles', 'stripesHorizontal', 'stripesVertical', 'stripesDiagonalDown', 'stripesDiagonalUp']);
