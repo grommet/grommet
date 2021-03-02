@@ -987,6 +987,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           top: 'top',
           left: 'left',
         },
+        // any drop props
       },
       icons: {
         down: FormDown,

@@ -970,9 +970,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    drop?: {
-      align?: AlignContentType;
-    };
+    drop?: DropProps;
     extend?: ExtendType;
     icons?: {
       down?: any;
