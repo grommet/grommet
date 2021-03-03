@@ -131,9 +131,10 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       tablePin = _ref2.pin,
       primaryProperty = _ref2.primaryProperty,
       selected = _ref2.selected,
+      rowDetails = _ref2.rowDetails,
       sort = _ref2.sort,
       widths = _ref2.widths,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "rowDetails", "sort", "widths"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -165,7 +166,11 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           return (0, _buildState.datumValue)(datum, primaryProperty);
         }));
     }
-  })), columns.map(function (_ref3) {
+  })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    size: "xxsmall",
+    plain: true,
+    pad: "none"
+  }), columns.map(function (_ref3) {
     var property = _ref3.property,
         header = _ref3.header,
         align = _ref3.align,

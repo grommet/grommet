@@ -66,9 +66,10 @@ var DataTable = function DataTable(_ref) {
       size = _ref.size,
       sortProp = _ref.sort,
       sortable = _ref.sortable,
+      rowDetails = _ref.rowDetails,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme; // property name of the primary property
 
@@ -119,29 +120,34 @@ var DataTable = function DataTable(_ref) {
 
   useEffect(function () {
     return setSelected(select || onSelect && [] || undefined);
-  }, [onSelect, select]); // any customized column widths
+  }, [onSelect, select]);
 
-  var _useState6 = useState({}),
-      widths = _useState6[0],
-      setWidths = _useState6[1]; // placeholder placement stuff
+  var _useState6 = useState([]),
+      rowExpand = _useState6[0],
+      setRowExpand = _useState6[1]; // any customized column widths
+
+
+  var _useState7 = useState({}),
+      widths = _useState7[0],
+      setWidths = _useState7[1]; // placeholder placement stuff
 
 
   var headerRef = useRef();
   var bodyRef = useRef();
   var footerRef = useRef();
 
-  var _useState7 = useState(),
-      headerHeight = _useState7[0],
-      setHeaderHeight = _useState7[1];
-
   var _useState8 = useState(),
-      footerHeight = _useState8[0],
-      setFooterHeight = _useState8[1]; // offset compensation when body overflows
+      headerHeight = _useState8[0],
+      setHeaderHeight = _useState8[1];
+
+  var _useState9 = useState(),
+      footerHeight = _useState9[0],
+      setFooterHeight = _useState9[1]; // offset compensation when body overflows
 
 
-  var _useState9 = useState(0),
-      scrollOffset = _useState9[0],
-      setScrollOffset = _useState9[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
+  var _useState10 = useState(0),
+      scrollOffset = _useState10[0],
+      setScrollOffset = _useState10[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   useLayoutEffect(function () {
@@ -287,7 +293,8 @@ var DataTable = function DataTable(_ref) {
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups,
     primaryProperty: primaryProperty,
-    scrollOffset: scrollOffset
+    scrollOffset: scrollOffset,
+    rowDetails: rowDetails
   }), groups ? /*#__PURE__*/React.createElement(GroupedBody, {
     ref: bodyRef,
     background: normalizeProp(background, 'body'),
@@ -321,7 +328,10 @@ var DataTable = function DataTable(_ref) {
     selected: selected,
     show: !paginate ? showProp : undefined,
     size: size,
-    step: step
+    step: step,
+    rowDetails: rowDetails,
+    rowExpand: rowExpand,
+    setRowExpand: setRowExpand
   }), showFooter && /*#__PURE__*/React.createElement(Footer, {
     ref: footerRef,
     background: normalizeProp(background, 'footer'),

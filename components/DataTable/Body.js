@@ -15,6 +15,8 @@ var _TableCell = require("../TableCell");
 
 var _Keyboard = require("../Keyboard");
 
+var _ExpanderCell = require("./ExpanderCell");
+
 var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
@@ -43,10 +45,13 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
       selected = _ref.selected,
+      rowDetails = _ref.rowDetails,
       show = _ref.show,
       size = _ref.size,
       step = _ref.step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "show", "size", "step"]);
+      rowExpand = _ref.rowExpand,
+      setRowExpand = _ref.setRowExpand,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -82,8 +87,10 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
-    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
-      key: primaryValue || index,
+    var isRowExpanded = rowExpand && rowExpand.includes(index);
+    return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
+      key: primaryValue || index
+    }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       ref: rowRef,
       size: size,
       active: active >= 0 ? active === index : undefined,
@@ -114,11 +121,25 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       checked: isSelected,
       disabled: !onSelect,
       onChange: function onChange() {
-        if (isSelected) onSelect(selected.filter(function (s) {
-          return s !== primaryValue;
-        }));else onSelect([].concat(selected, [primaryValue]));
+        if (isSelected) {
+          onSelect(selected.filter(function (s) {
+            return s !== primaryValue;
+          }));
+        } else onSelect([].concat(selected, [primaryValue]));
       }
-    })), columns.map(function (column) {
+    })), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+      context: isRowExpanded ? 'groupHeader' : 'body',
+      expanded: isRowExpanded,
+      onToggle: function onToggle() {
+        if (isRowExpanded) {
+          setRowExpand(rowExpand.filter(function (s) {
+            return s !== index;
+          }));
+        } else {
+          setRowExpand([].concat(rowExpand, [index]));
+        }
+      }
+    }), columns.map(function (column) {
       return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
         background: column.pin ? pinnedBackground : background,
@@ -132,7 +153,11 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         rowProp: rowProps && rowProps[primaryValue],
         scope: column.primary || column.property === primaryProperty ? 'row' : undefined
       });
-    }));
+    })), rowDetails && isRowExpanded && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+      key: index.toString() + "_expand"
+    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null), /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+      colSpan: columns.length + 1
+    }, rowDetails(data[index]))));
   })));
 });
 exports.Body = Body;

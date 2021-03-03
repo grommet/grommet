@@ -75,9 +75,10 @@ var doc = function doc(DataTable) {
       property: _reactDesc.PropTypes.string,
       expand: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string),
       onExpand: _reactDesc.PropTypes.func
-    })]).description("Property to group data by. If object is specified\n      'property' is used to group data by, 'expand' accepts array of \n       group keys that sets expanded groups and 'onExpand' is a function\n       that will be called after expand button is clicked with\n       an array of keys of expanded groups."),
+    })]).description("Property to group data by. If object is specified\n      'property' is used to group data by, 'expand' accepts array of\n       group keys that sets expanded groups and 'onExpand' is a function\n       that will be called after expand button is clicked with\n       an array of keys of expanded groups."),
     onClickRow: _reactDesc.PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'datum' property containing the data value associated with\n      the clicked row. You should not include interactive elements, like\n      Anchor or Button inside table cells as that can cause confusion with\n      overlapping interactive elements."),
-    onMore: _reactDesc.PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or \n      columns.aggregate."),
+    rowDetails: _reactDesc.PropTypes.func.description("When supplied, this function will be called with row data. Function can\n      return a React Element which will be rendered on expanding the row."),
+    onMore: _reactDesc.PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data rows have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed. This cannot\n      be combined with properties that expect all data to be present in the\n      browser, such as columns.search, sortable, groupBy, or\n      columns.aggregate."),
     onSearch: _reactDesc.PropTypes.func.description("When supplied, and when at least one column has 'search' enabled,\n      this function will be called with an object with keys for property\n      names and values which are the search text strings. This is typically\n      employed so a back-end can be used to search through the data."),
     onSelect: _reactDesc.PropTypes.func.description("When supplied, causes checkboxes to be added to each row such that\n      the user can indicate which rows should be selected. This function\n      will be called with an array of primary key values, suitable to be\n      passed to the 'select' property. If you are storing select state via\n      a 'useState' hook, you can do something like:\n      '<DataTable select={select} onSelect={setSelect} />'."),
     onSort: _reactDesc.PropTypes.func.description("When supplied, this function will be called with an object\n      with a 'property' property that indicates which property\n      is being sorted on and a 'direction' property that will either be\n      'asc' or 'desc'. onSort={({ property, direction }) => {}}"),
@@ -164,7 +165,7 @@ var themeDoc = {
   },
   'dataTable.header.background': {
     description: 'Any valid Box background value.',
-    type: "string | \n    { dark: string, light: string } |\n    { \n      color: { dark: string, light: string } | string, \n      dark: bool, \n      image: string, \n      position: string, \n      opacity: bool | string, \n      repeat: no-repeat | repeat, \n      size: cover | contain | string\n    }",
+    type: "string |\n    { dark: string, light: string } |\n    {\n      color: { dark: string, light: string } | string,\n      dark: bool,\n      image: string,\n      position: string,\n      opacity: bool | string,\n      repeat: no-repeat | repeat,\n      size: cover | contain | string\n    }",
     defaultValue: undefined
   },
   'dataTable.header.border': {
@@ -198,8 +199,8 @@ var themeDoc = {
     defaultValue: 'small'
   },
   'dataTable.header.hover.background': {
-    description: "The hover background color of the header cell contents, if \n    clickable. Any valid Box background options apply.",
-    type: "string | \n    { dark: string, light: string } |\n    { \n      color: { dark: string, light: string } | string, \n      dark: bool, \n      image: string, \n      position: string, \n      opacity: bool | string, \n      repeat: no-repeat | repeat, \n      size: cover | contain | string\n    }",
+    description: "The hover background color of the header cell contents, if\n    clickable. Any valid Box background options apply.",
+    type: "string |\n    { dark: string, light: string } |\n    {\n      color: { dark: string, light: string } | string,\n      dark: bool,\n      image: string,\n      position: string,\n      opacity: bool | string,\n      repeat: no-repeat | repeat,\n      size: cover | contain | string\n    }",
     defaultValue: undefined
   },
   'dataTable.header.pad': {
@@ -218,12 +219,12 @@ var themeDoc = {
     defaultValue: undefined
   },
   'dataTable.resize.hover.side': {
-    description: "The side of the resizer when hovered over. If color or size \n    are defined, this will default to 'end' which is the recommended value.",
+    description: "The side of the resizer when hovered over. If color or size\n    are defined, this will default to 'end' which is the recommended value.",
     type: 'string',
     defaultValue: undefined
   },
   'dataTable.resize.hover.size': {
-    description: "The size of the resizer when hovered over. Size values \n    correspond with those accepted by Box border.",
+    description: "The size of the resizer when hovered over. Size values\n    correspond with those accepted by Box border.",
     type: 'string',
     defaultValue: undefined
   },
@@ -254,7 +255,7 @@ var themeDoc = {
   },
   'dataTable.pinned.body.background': {
     description: 'Any valid Box background options apply.',
-    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    type: "string |\n      { dark: string, light: string } |\n      {\n        color: { dark: string, light: string } | string,\n        dark: bool,\n        image: string,\n        position: string,\n        opacity: bool | string,\n        repeat: no-repeat | repeat,\n        size: cover | contain | string\n      }",
     defaultValue: undefined
   },
   'dataTable.pinned.body.extend': {
@@ -264,7 +265,7 @@ var themeDoc = {
   },
   'dataTable.pinned.header.background': {
     description: 'Any valid Box background options apply.',
-    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    type: "string |\n      { dark: string, light: string } |\n      {\n        color: { dark: string, light: string } | string,\n        dark: bool,\n        image: string,\n        position: string,\n        opacity: bool | string,\n        repeat: no-repeat | repeat,\n        size: cover | contain | string\n      }",
     defaultValue: undefined
   },
   'dataTable.pinned.header.extend': {
@@ -274,7 +275,7 @@ var themeDoc = {
   },
   'dataTable.pinned.footer.background': {
     description: 'Any valid Box background options apply.',
-    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    type: "string |\n      { dark: string, light: string } |\n      {\n        color: { dark: string, light: string } | string,\n        dark: bool,\n        image: string,\n        position: string,\n        opacity: bool | string,\n        repeat: no-repeat | repeat,\n        size: cover | contain | string\n      }",
     defaultValue: undefined
   },
   'dataTable.pinned.footer.extend': {

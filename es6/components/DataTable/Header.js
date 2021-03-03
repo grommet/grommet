@@ -107,9 +107,10 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       tablePin = _ref2.pin,
       primaryProperty = _ref2.primaryProperty,
       selected = _ref2.selected,
+      rowDetails = _ref2.rowDetails,
       sort = _ref2.sort,
       widths = _ref2.widths,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "rowDetails", "sort", "widths"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -141,7 +142,11 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           return datumValue(datum, primaryProperty);
         }));
     }
-  })), columns.map(function (_ref3) {
+  })), rowDetails && /*#__PURE__*/React.createElement(TableCell, {
+    size: "xxsmall",
+    plain: true,
+    pad: "none"
+  }), columns.map(function (_ref3) {
     var property = _ref3.property,
         header = _ref3.header,
         align = _ref3.align,

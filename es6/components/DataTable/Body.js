@@ -2,12 +2,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef } from 'react';
+import React, { forwardRef, Fragment } from 'react';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Keyboard } from '../Keyboard';
+import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue } from './buildState';
@@ -25,10 +26,13 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
       selected = _ref.selected,
+      rowDetails = _ref.rowDetails,
       show = _ref.show,
       size = _ref.size,
       step = _ref.step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "show", "size", "step"]);
+      rowExpand = _ref.rowExpand,
+      setRowExpand = _ref.setRowExpand,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -64,8 +68,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
-    return /*#__PURE__*/React.createElement(StyledDataTableRow, {
-      key: primaryValue || index,
+    var isRowExpanded = rowExpand && rowExpand.includes(index);
+    return /*#__PURE__*/React.createElement(Fragment, {
+      key: primaryValue || index
+    }, /*#__PURE__*/React.createElement(StyledDataTableRow, {
       ref: rowRef,
       size: size,
       active: active >= 0 ? active === index : undefined,
@@ -96,11 +102,25 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
       checked: isSelected,
       disabled: !onSelect,
       onChange: function onChange() {
-        if (isSelected) onSelect(selected.filter(function (s) {
-          return s !== primaryValue;
-        }));else onSelect([].concat(selected, [primaryValue]));
+        if (isSelected) {
+          onSelect(selected.filter(function (s) {
+            return s !== primaryValue;
+          }));
+        } else onSelect([].concat(selected, [primaryValue]));
       }
-    })), columns.map(function (column) {
+    })), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
+      context: isRowExpanded ? 'groupHeader' : 'body',
+      expanded: isRowExpanded,
+      onToggle: function onToggle() {
+        if (isRowExpanded) {
+          setRowExpand(rowExpand.filter(function (s) {
+            return s !== index;
+          }));
+        } else {
+          setRowExpand([].concat(rowExpand, [index]));
+        }
+      }
+    }), columns.map(function (column) {
       return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
         background: column.pin ? pinnedBackground : background,
@@ -114,7 +134,11 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
         rowProp: rowProps && rowProps[primaryValue],
         scope: column.primary || column.property === primaryProperty ? 'row' : undefined
       });
-    }));
+    })), rowDetails && isRowExpanded && /*#__PURE__*/React.createElement(StyledDataTableRow, {
+      key: index.toString() + "_expand"
+    }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, null), /*#__PURE__*/React.createElement(TableCell, {
+      colSpan: columns.length + 1
+    }, rowDetails(data[index]))));
   })));
 });
 export { Body };
