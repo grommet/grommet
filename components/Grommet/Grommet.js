@@ -74,7 +74,15 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       setResponsive = _useState[1];
 
   var theme = (0, _react.useMemo)(function () {
-    var nextTheme = (0, _utils.deepMerge)(_themes.base, themeProp || {});
+    var nextTheme = (0, _utils.deepMerge)(_themes.base, themeProp || {}); // if user provides specific menu alignment, we don't want
+    // the defaults to be included at all (can cause issues with controlMirror)
+    // override merged value with themeProp value
+
+    if (themeProp && themeProp.menu && themeProp.menu.drop && themeProp.menu.drop.align) {
+      delete nextTheme.menu.drop.align;
+      nextTheme.menu.drop.align = themeProp.menu.drop.align;
+    }
+
     var themeBackground = nextTheme.global.colors.background;
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
     var color = (0, _utils.normalizeColor)(background || themeBackground, nextTheme);

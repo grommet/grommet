@@ -58,8 +58,14 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
-  var align = dropProps.align || dropAlign;
+  var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
+  // to DropButton and override prop values
+
+  var _theme$menu$drop = theme.menu.drop,
+      themeDropAlign = _theme$menu$drop.align,
+      themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, ["align"]);
+
+  var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
   var controlButtonIndex = useMemo(function () {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
@@ -248,7 +254,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
-    dropProps: dropProps,
+    dropProps: dropProps || themeDropProps,
     open: isOpen,
     onOpen: onDropOpen,
     onClose: onDropClose,
@@ -311,11 +317,6 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   }), content));
 });
 Menu.defaultProps = {
-  dropAlign: {
-    top: 'top',
-    left: 'left'
-  },
-  dropProps: {},
   items: [],
   messages: {
     openMenu: 'Open Menu',

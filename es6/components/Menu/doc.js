@@ -24,7 +24,7 @@ export var doc = function doc(Menu) {
       opacity: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])])
     })]).description('Background color when drop is active'),
     dropTarget: PropTypes.object.description("Target where the drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Menu itself by default."),
-    dropProps: PropTypes.object.description('Any valid Drop prop.'),
+    dropProps: PropTypes.object.description('Any valid Drop prop.').defaultValue(undefined),
     justifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the row axis.').defaultValue('start'),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]).description('Indicates the icon shown as a control to open it.'),
     items: PropTypes.arrayOf(PropTypes.object).description("Menu items to be placed inside the drop down.\nThe object values can be any Button prop, \nfor example: `label`, `onClick`, and `href`.").isRequired,
@@ -56,6 +56,11 @@ export var themeDoc = {
     description: 'The color for the background of the menu Drop when it is open.',
     type: 'string',
     defaultValue: undefined
+  },
+  'menu.drop': {
+    description: 'Any valid Drop props for the Menu drop.',
+    type: 'object',
+    defaultValue: "align: {\n      top: 'top',\n      left: 'left',\n    },"
   },
   'menu.extend': {
     description: 'Any additional style for the Menu.',

@@ -58,7 +58,15 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       setResponsive = _useState[1];
 
   var theme = useMemo(function () {
-    var nextTheme = deepMerge(baseTheme, themeProp || {});
+    var nextTheme = deepMerge(baseTheme, themeProp || {}); // if user provides specific menu alignment, we don't want
+    // the defaults to be included at all (can cause issues with controlMirror)
+    // override merged value with themeProp value
+
+    if (themeProp && themeProp.menu && themeProp.menu.drop && themeProp.menu.drop.align) {
+      delete nextTheme.menu.drop.align;
+      nextTheme.menu.drop.align = themeProp.menu.drop.align;
+    }
+
     var themeBackground = nextTheme.global.colors.background;
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
     var color = normalizeColor(background || themeBackground, nextTheme);

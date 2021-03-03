@@ -1060,6 +1060,13 @@ export var generate = function generate(baseSpacing, scale) {
     menu: {
       // background: undefined,
       // extend: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left'
+        } // any drop props
+
+      },
       icons: {
         down: FormDown // up: undefined,
         // color: { dark: undefined, light: undefined },

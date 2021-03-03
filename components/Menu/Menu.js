@@ -77,8 +77,14 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
-  var align = dropProps.align || dropAlign;
+  var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
+  // to DropButton and override prop values
+
+  var _theme$menu$drop = theme.menu.drop,
+      themeDropAlign = _theme$menu$drop.align,
+      themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, ["align"]);
+
+  var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
   var controlButtonIndex = (0, _react.useMemo)(function () {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
@@ -268,7 +274,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
-    dropProps: dropProps,
+    dropProps: dropProps || themeDropProps,
     open: isOpen,
     onOpen: onDropOpen,
     onClose: onDropClose,
@@ -331,11 +337,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }), content));
 });
 Menu.defaultProps = {
-  dropAlign: {
-    top: 'top',
-    left: 'left'
-  },
-  dropProps: {},
   items: [],
   messages: {
     openMenu: 'Open Menu',
