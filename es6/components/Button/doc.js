@@ -117,12 +117,12 @@ export var themeDoc = _extends({
     defaultValue: undefined
   },
   'button.active.primary': {
-    description: 'Adjustments to the primary Button style when the Button is active.',
+    description: "Adjustments to the primary Button style when the Button is \n    active. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
   'button.active.secondary': {
-    description: 'Adjustments to the secondary Button style when the Button is active.',
+    description: "Adjustments to the secondary Button style when the Button is \n    active. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
@@ -208,12 +208,12 @@ export var themeDoc = _extends({
     defaultValue: undefined
   },
   'button.disabled.primary': {
-    description: 'Adjustments to the primary Button style when the Button is disabled.',
+    description: "Adjustments to the primary Button style when the Button is \n    disabled. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
   'button.disabled.secondary': {
-    description: 'Adjustments to the secondary Button style when the Button is disabled.',
+    description: "Adjustments to the secondary Button style when the Button is \n    disabled. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
@@ -239,12 +239,12 @@ export var themeDoc = _extends({
     defaultValue: undefined
   },
   'button.hover.primary': {
-    description: 'Adjustments to the primary Button style when the Button is hovered.',
+    description: "Adjustments to the primary Button style when the Button is \n    hovered. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
   'button.hover.secondary': {
-    description: 'Adjustments to the secondary Button style when the Button is hovered.',
+    description: "Adjustments to the secondary Button style when the Button is \n    hovered. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
   },
@@ -259,17 +259,17 @@ export var themeDoc = _extends({
     defaultValue: '4px'
   },
   'button.primary.background.color': {
-    description: "The color of the background for primary buttons.",
+    description: "The color of the background for primary buttons. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined
   },
   'button.primary.background.opacity': {
-    description: 'The value used for primary button background opacity.',
+    description: "The value used for primary button background opacity.\n    Only relevant for themes that have defined a value for button.default.",
     type: 'number | string',
     defaultValue: undefined
   },
   'button.primary.border.color': {
-    description: "The color of the border for primary buttons.",
+    description: "The color of the border for primary buttons. Only relevant \n    for themes that have defined a value for button.default.",
     type: 'string | { dark: string, light: string }'
   },
   'button.primary.color': {
@@ -296,39 +296,39 @@ export var themeDoc = _extends({
     defaultValue: 'undefined'
   },
   'button.secondary.background.color': {
-    description: "The color of the background for secondary buttons.",
+    description: "The color of the background for secondary buttons. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined
   },
   'button.secondary.background.opacity': {
-    description: 'The value used for secondary button background opacity.',
+    description: "The value used for secondary button background opacity. \n    Only relevant for themes that have defined a value for button.default.",
     type: 'number | string',
     defaultValue: undefined
   },
   'button.secondary.border.color': {
-    description: "The color of the border for secondary buttons.",
+    description: "The color of the border for secondary buttons. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | { dark: string, light: string }'
   },
   'button.secondary.color': {
-    description: "The color of the label for secondary buttons.",
+    description: "The color of the label for secondary buttons. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | { dark: string, light: string }'
   },
   'button.secondary.font.weight': {
-    description: "The weight of the text label for secondary buttons.",
+    description: "The weight of the text label for secondary buttons. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | number'
   },
   'button.secondary.padding.horizontal': {
-    description: 'The horizontal padding for a secondary button.',
+    description: "The horizontal padding for a secondary button. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string',
     defaultValue: '22px'
   },
   'button.secondary.padding.vertical': {
-    description: 'The vertical padding for a secondary button.',
+    description: "The vertical padding for a secondary button. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string',
     defaultValue: '4px'
   },
   'button.secondary.extend': {
-    description: 'Any additional style for a secondary button.',
+    description: "Any additional style for a secondary button. Only \n    relevant for themes that have defined a value for button.default.",
     type: 'string | (props) => {}',
     defaultValue: 'undefined'
   },
