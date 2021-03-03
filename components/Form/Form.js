@@ -117,7 +117,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         // run validations on the pending one and any other touched fields
         var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
           var n = _ref3[0];
-          return touched[n] || n === pendingValidation;
+          return touched[n] || pendingValidation.includes(n);
         }), value),
             validatedErrors = _validate[0],
             validatedInfos = _validate[1];
@@ -337,10 +337,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       info: info,
       inForm: true,
       onBlur: validateOn === 'blur' ? function () {
-        return setPendingValidation(name);
+        return setPendingValidation(pendingValidation ? [].concat(pendingValidation, [name]) : [name]);
       } : undefined,
       onChange: validateOn === 'change' ? function () {
-        return setPendingValidation(name);
+        return setPendingValidation(pendingValidation ? [].concat(pendingValidation, [name]) : [name]);
       } : undefined
     };
   };
