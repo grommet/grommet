@@ -33,23 +33,19 @@ const Distribution = ({
     );
   }
   if (values.length > 1) {
-    for (let i = 0; i < values.length; i += 1) {
-      if (!('value' in values[i]))
-        /* eslint-disable-next-line max-len */
-        throw new Error(
-          `Distribution should have set 'value' for each item in 'values'.`,
-        );
-    }
-
     const reducer = (accumulator, { value }) => accumulator + (value || 0);
-    const total = values.reduce(reducer, 0);
+    const total = values
+      .filter(v => Object.prototype.hasOwnProperty.call(v, 'value'))
+      .reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
     // total
     let subTotal = 0;
     let subIndex;
     values.some((v, index) => {
-      subTotal += v.value;
+      subTotal += Object.prototype.hasOwnProperty.call(v, 'value')
+        ? v.value
+        : 0;
       if (subTotal >= total * 0.4) {
         subIndex = index + 1;
         return true;

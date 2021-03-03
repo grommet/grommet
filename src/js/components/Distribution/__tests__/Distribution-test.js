@@ -55,20 +55,4 @@ describe('Distribution', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-
-  test('no value should throw error', () => {
-    console.error = jest.fn();
-    expect(() => {
-      render(
-        <Grommet>
-          <Distribution values={[{ name: 'val1' }, { name: 'val2' }]}>
-            {value => <span>{value.value}</span>}
-          </Distribution>
-        </Grommet>,
-      );
-      /* eslint-disable-next-line max-len */
-    }).toThrow(
-      `Distribution should have set 'value' for each item in 'values'.`,
-    );
-  });
 });
