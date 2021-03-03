@@ -6,9 +6,12 @@ export interface SidebarProps {
   header?: React.ReactNode;
 }
 
-export type SidebarExtendedProps = BoxProps &
-  SidebarProps &
-  JSX.IntrinsicElements['div'];
+type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
+
+export interface SidebarExtendedProps
+  extends BoxProps,
+    SidebarProps,
+    divProps {}
 
 declare const Sidebar: React.FC<SidebarExtendedProps>;
 
