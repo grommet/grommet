@@ -573,4 +573,28 @@ describe('Box', () => {
 
     expect(onClick).toBeCalled();
   });
+
+  test('hoverIndicator', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box>
+          <Box onClick={() => {}} hoverIndicator />
+          <Box onClick={() => {}} hoverIndicator="background-contrast" />\
+          <Box
+            onClick={() => {}}
+            hoverIndicator={{ color: 'background-contrast' }}
+          />
+          <Box
+            onClick={() => {}}
+            hoverIndicator={{
+              background: { color: 'background-contrast' },
+              elevation: 'medium',
+            }}
+          />
+        </Box>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
