@@ -296,6 +296,26 @@ exports[`DateInput dropProps should pass props to Drop
   padding-right: 48px;
 }
 
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -434,25 +454,28 @@ exports[`DateInput focus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
 
-.c4 > circle,
-.c4 > ellipse,
-.c4 > line,
-.c4 > path,
-.c4 > polygon,
-.c4 > polyline,
-.c4 > rect {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4::-moz-focus-inner {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1754,6 +1777,26 @@ exports[`DateInput format 1`] = `
   padding-right: 48px;
 }
 
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1903,6 +1946,26 @@ exports[`DateInput format disabled 1`] = `
   padding-right: 48px;
   opacity: 0.3;
   cursor: default;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -2302,6 +2365,26 @@ exports[`DateInput format inline 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -4901,6 +4984,26 @@ exports[`DateInput range format 1`] = `
   padding-right: 48px;
 }
 
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -5315,6 +5418,26 @@ exports[`DateInput range format inline 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7817,6 +7940,26 @@ exports[`DateInput select format 1`] = `
   padding-right: 48px;
 }
 
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7925,7 +8068,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 sXlff"
+      class="StyledMaskedInput-sc-99vkfa-0 jUwGbB"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -9383,6 +9526,26 @@ exports[`DateInput select format inline 1`] = `
   padding-right: 48px;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -10286,7 +10449,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 hBhiUS"
+        class="StyledMaskedInput-sc-99vkfa-0 jUwGbB"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -11393,6 +11556,26 @@ exports[`DateInput select format inline range 1`] = `
   padding-right: 48px;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -12296,7 +12479,7 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 hBhiUS"
+        class="StyledMaskedInput-sc-99vkfa-0 jUwGbB"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
@@ -14474,6 +14657,26 @@ exports[`DateInput type format inline 1`] = `
   padding-right: 48px;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -15377,7 +15580,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 hBhiUS"
+        class="StyledMaskedInput-sc-99vkfa-0 jUwGbB"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
