@@ -164,6 +164,7 @@ const MaskedInput = forwardRef(
       dropHeight,
       dropProps,
       focus: focusProp,
+      focusIndicator = true,
       icon,
       id,
       mask = defaultMask,
@@ -365,6 +366,7 @@ const MaskedInput = forwardRef(
             id={id}
             name={name}
             autoComplete="off"
+            focusIndicator={focusIndicator}
             plain={plain}
             placeholder={placeholder || renderPlaceholder()}
             icon={icon}

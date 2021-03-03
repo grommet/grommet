@@ -461,7 +461,9 @@ export const inputStyle = css`
         props.theme.global.input.font.weight};
     `} margin: 0;
   ${props => props.size && inputSizeStyle(props)}
-  ${props => props.focus && !props.plain && focusStyle()};
+  &:focus {
+    ${props => (!props.plain || props.focusIndicator) && focusStyle()};
+  }
   ${controlBorderStyle}
   ${placeholderStyle}
 
