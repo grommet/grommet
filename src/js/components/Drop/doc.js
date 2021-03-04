@@ -115,7 +115,7 @@ export const themeDoc = {
   },
   'global.drop.margin': {
     description: `The margin between the target
-     and conatiner when placed on outsde of target.`,
+     and Drop when Drop is placed outside of the target.`,
     type: 'string',
     defaultValue: undefined,
   },
