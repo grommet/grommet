@@ -187,7 +187,7 @@ describe('Drop', () => {
     expect(actualRoot).toBe(document.body);
   });
 
-  test(`should render correct margin for position target`, () => {
+  test(`should render correct margin depending on value of align`, () => {
     const theme = {
       global: {
         drop: {
