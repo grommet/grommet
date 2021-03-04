@@ -63,7 +63,18 @@ const normalizeReference = (reference, date, dates) => {
   if (reference) {
     normalizedReference = new Date(reference);
   } else if (date) {
-    normalizedReference = new Date(date);
+    if (typeof date === 'string') {
+      normalizedReference = new Date(date);
+    } else if (Array.isArray(date)) {
+      if (typeof date[0] === 'string') {
+        normalizedReference = new Date(date[0]);
+      } else if (Array.isArray(date[0])) {
+        normalizedReference = new Date(date[0][0] ? date[0][0] : date[0][1]);
+      } else {
+        normalizedReference = new Date();
+        normalizedReference.setHours(0, 0, 0, 0);
+      }
+    }
   } else if (dates && dates.length > 0) {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
@@ -182,7 +193,38 @@ const Calendar = forwardRef(
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
-    useEffect(() => setDate(normalizeForTimezone(dateProp)), [dateProp]);
+    useEffect(() => {
+      if (typeof dateProp === 'string') {
+        setDate(normalizeForTimezone(dateProp));
+      } else if (Array.isArray(dateProp)) {
+        if (Array.isArray(dateProp[0])) {
+          let from;
+          let to;
+          [from, to] = dateProp[0].map(day =>
+            day ? new Date(day) : undefined,
+          );
+          if (from) from = normalizeForTimezone(from, dateProp[0][0]);
+          if (to) to = normalizeForTimezone(to, dateProp[0][0]);
+
+          setDate([[from, to]]);
+        } else {
+          const dateArray = [];
+          dateProp.forEach(d => {
+            if (Array.isArray(d)) {
+              let from;
+              let to;
+              [from, to] = d.map(day => new Date(day));
+              from = normalizeForTimezone(from, d[0]);
+              to = normalizeForTimezone(to, d[0]);
+              dateArray.push([from, to]);
+            } else {
+              dateArray.push(normalizeForTimezone(d));
+            }
+          });
+          setDate(dateArray);
+        }
+      } else setDate(undefined);
+    }, [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
@@ -388,7 +430,7 @@ const Calendar = forwardRef(
                 }
               }
             });
-          } else if (dateProp) {
+          } else if (typeof dateProp === 'string') {
             if (!timeStamp.test(dateProp)) {
               adjustedDate = formatToLocalYYYYMMDD(selectedDate);
               if (dateProp === adjustedDate) {
@@ -396,6 +438,17 @@ const Calendar = forwardRef(
               } else {
                 adjustedDate = undefined;
               }
+            } else if (Array.isArray(dateProp)) {
+              dateProp.forEach(d => {
+                if (!timeStamp.test(d)) {
+                  adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                  if (d === adjustedDate) {
+                    nextDate = undefined;
+                  } else {
+                    adjustedDate = undefined;
+                  }
+                }
+              });
             } else {
               adjustedDate = undefined;
             }
@@ -404,7 +457,7 @@ const Calendar = forwardRef(
         // everything down is a range
         else if (!dates) {
           // if user supplies date, convert this into dates
-          if (date) {
+          if (date && typeof date === 'string') {
             const priorDate = new Date(date);
             const selDate = new Date(selectedDate);
             if (activeDate === activeDates.start) {
