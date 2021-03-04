@@ -187,6 +187,28 @@ describe('Drop', () => {
     expect(actualRoot).toBe(document.body);
   });
 
+  test(`should render correct margin for position target`, () => {
+    const theme = {
+      global: {
+        drop: {
+          margin: '5px',
+          intelligentMargin: true,
+        },
+      },
+    };
+    render(
+      <Grommet theme={theme}>
+        <TestInput
+          id="margin-drop-test"
+          align={{ bottom: 'bottom', right: 'left' }}
+          pad="small"
+        />
+        This Drop uses a custom theme
+      </Grommet>,
+    );
+    expectPortal('margin-drop-test').toMatchSnapshot();
+  });
+
   test('custom containerTarget', () => {
     const target = document.createElement('div');
     document.body.appendChild(target);

@@ -4032,7 +4032,7 @@ exports[`Layer position: bottom - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   bottom: 0px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -4752,7 +4752,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 4px 0 0;
   bottom: 0px;
   left: 0px;
   -webkit-transform: translateY(0);
@@ -5472,7 +5472,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 4px 0 0 0;
   bottom: 0px;
   right: 0px;
   -webkit-transform: translateY(0);
@@ -6909,7 +6909,8 @@ exports[`Layer position: end - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
   inset-inline-end: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -7629,7 +7630,7 @@ exports[`Layer position: left - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   left: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -8349,7 +8350,7 @@ exports[`Layer position: right - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px;
   right: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -9069,7 +9070,8 @@ exports[`Layer position: start - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-end-end-radius: 4px;
+  border-start-end-radius: 4px;
   inset-inline-start: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -9789,7 +9791,7 @@ exports[`Layer position: top - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px;
   top: 0px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -10509,7 +10511,7 @@ exports[`Layer position: top-left - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 4px 0;
   top: 0px;
   left: 0px;
   -webkit-transform: translateY(0);
@@ -11229,7 +11231,7 @@ exports[`Layer position: top-right - full: false 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 0 4px;
   top: 0px;
   right: 0px;
   -webkit-transform: translateY(0);

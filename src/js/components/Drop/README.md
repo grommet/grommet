@@ -193,6 +193,28 @@ Defaults to
 undefined
 ```
 
+**global.drop.intelligentMargin**
+
+Wheather the margin should adapt to where
+    the of the container is placed along the target. Expects `boolean`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.drop.margin**
+
+The margin between the target
+     and conatiner when placed on outsde of target. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.drop.shadowSize**
 
 Elevated height of the Drop. Expects `string`.

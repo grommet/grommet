@@ -153,7 +153,7 @@ export const themeDoc = {
   'layer.border.radius': {
     description: 'The rounding of the Layer corners.',
     type: 'string',
-    defaultValue: 'white',
+    defaultValue: '4px',
   },
   'layer.border.intelligentRounding': {
     description: `Whether the border-radius of the Layer should adapt based on 

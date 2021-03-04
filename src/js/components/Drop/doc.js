@@ -107,6 +107,18 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'global.drop.intelligentMargin': {
+    description: `Wheather the margin should adapt to where
+    the of the container is placed along the target.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
+  'global.drop.margin': {
+    description: `The margin between the target
+     and conatiner when placed on outsde of target.`,
+    type: 'string',
+    defaultValue: undefined,
+  },
   'global.drop.shadowSize': {
     description: 'Elevated height of the Drop.',
     type: 'string',

@@ -218,6 +218,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
+        // intelligentMargin: undefined,
+        // margin: undefined
         background: {
           dark: 'black',
           light: 'white',
@@ -945,7 +947,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       border: {
         radius: '4px',
-        // intelligentRounding: undefined,
+        intelligentRounding: true,
       },
       container: {
         // elevation: undefined,

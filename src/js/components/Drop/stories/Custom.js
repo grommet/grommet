@@ -7,6 +7,8 @@ import { deepMerge } from 'grommet/utils';
 const customTheme = deepMerge(grommet, {
   global: {
     drop: {
+      // margin: '10px',
+      // intelligentMargin: true,
       background: { dark: 'neutral-2', light: 'neutral-2' },
       border: { radius: '10px' },
       zIndex: '13',
@@ -17,7 +19,6 @@ const customTheme = deepMerge(grommet, {
 const CustomDrop = () => {
   const [, setShowDrop] = useState(false);
   const targetRef = useRef();
-
   useEffect(() => setShowDrop(true), []);
   return (
     <Grommet theme={customTheme} full>
@@ -33,7 +34,8 @@ const CustomDrop = () => {
         </Box>
         {targetRef.current && (
           <Drop
-            align={{ top: 'bottom', left: 'right' }}
+            elevation="xsmall"
+            align={{ bottom: 'bottom', right: 'left' }}
             target={targetRef.current}
           >
             <Box pad="small">This Drop uses a custom theme</Box>
