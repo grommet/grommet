@@ -27,7 +27,7 @@ const dropKeyFrames = keyframes`
   }
 `;
 
-function isObject(object) {
+const isObject = (object) => {
   return object != null && typeof object === 'object';
 }
 
