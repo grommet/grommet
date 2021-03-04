@@ -112,6 +112,11 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
             validatedInfos = _validate[1];
 
         setPendingValidation(undefined);
+        setRequiredFields(function (prevRequiredFields) {
+          return prevRequiredFields.filter(function (n) {
+            return Object.keys(validations.current).includes(n);
+          });
+        });
         setValidationResults(function (prevValidationResults) {
           var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
 
@@ -131,7 +136,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           });
           var valid = false;
           valid = requiredFields.every(function (field) {
-            return value[field] && value[field].length > 0;
+            return value[field] && (value[field] !== '' || value[field] !== false);
           });
           if (Object.keys(nextErrors).length > 0) valid = false; // keep any previous errors and infos for untouched keys,
           // these may have come from a submit
@@ -309,6 +314,12 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       if (required) {
         setRequiredFields(function (prevValue) {
           return !prevValue.includes(name) ? [].concat(prevValue, [name]) : prevValue;
+        });
+      } else {
+        setRequiredFields(function (prevValue) {
+          return prevValue.filter(function (v) {
+            return v !== name;
+          });
         });
       }
 
