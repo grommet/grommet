@@ -7,8 +7,6 @@ import { deepMerge } from 'grommet/utils';
 const customTheme = deepMerge(grommet, {
   global: {
     drop: {
-      // margin: '10px',
-      // intelligentMargin: true,
       background: { dark: 'neutral-2', light: 'neutral-2' },
       border: { radius: '10px' },
       zIndex: '13',

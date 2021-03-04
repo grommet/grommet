@@ -195,8 +195,8 @@ undefined
 
 **global.drop.intelligentMargin**
 
-Wheather the margin should adapt to where
-    the of the container is placed along the target. Expects `boolean`.
+Whether the margin should adapt depending on where
+    the drop is aligned with respect to the target. Expects `boolean`.
 
 Defaults to
 
@@ -207,7 +207,7 @@ undefined
 **global.drop.margin**
 
 The margin between the target
-     and conatiner when placed on outsde of target. Expects `string`.
+     and Drop when Drop is placed outside of the target. Expects `string`.
 
 Defaults to
 

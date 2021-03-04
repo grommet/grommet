@@ -1766,7 +1766,7 @@ exports[`Drop should have no accessibility violations 1`] = `
 </div>
 `;
 
-exports[`Drop should render correct margin for position target 1`] = `
+exports[`Drop should render correct margin depending on value of align 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1838,7 +1838,7 @@ exports[`Drop should render correct margin for position target 1`] = `
 </div>
 `;
 
-exports[`Drop should render correct margin for position target 2`] = `
+exports[`Drop should render correct margin depending on value of align 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .eVNwtn {
     display: -webkit-box;

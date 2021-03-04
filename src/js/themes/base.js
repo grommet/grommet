@@ -947,7 +947,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       border: {
         radius: '4px',
-        intelligentRounding: true,
+        // intelligentRounding: undefined,
       },
       container: {
         // elevation: undefined,

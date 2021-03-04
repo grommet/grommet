@@ -27,9 +27,7 @@ const dropKeyFrames = keyframes`
   }
 `;
 
-const isObject = (object) => {
-  return object != null && typeof object === 'object';
-}
+const isObject = object => object != null && typeof object === 'object';
 
 const deepEqual = (object1, object2) => {
   const keys1 = Object.keys(object1);
@@ -52,7 +50,7 @@ const deepEqual = (object1, object2) => {
   }
 
   return true;
-}
+};
 
 const marginStyle = (theme, align, margin) => {
   const styles = [];
