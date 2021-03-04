@@ -109,7 +109,7 @@ export const themeDoc = {
   },
   'global.drop.intelligentMargin': {
     description: `Whether the margin should adapt depending on where
-    the of the container is placed along the target.`,
+    the drop is aligned with respect to the target.`,
     type: 'boolean',
     defaultValue: undefined,
   },
