@@ -108,7 +108,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.drop.intelligentMargin': {
-    description: `Wheather the margin should adapt to where
+    description: `Whether the margin should adapt depending on where
     the of the container is placed along the target.`,
     type: 'boolean',
     defaultValue: undefined,
