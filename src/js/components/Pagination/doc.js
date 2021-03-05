@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Pagination => {
   const DocumentedPagination = describe(Pagination)
-    .availableAt(getAvailableAtBadge('Pagination'))
+    .availableAt(getAvailableAtBadge('Pagination', 'Controls'))
     .description(
       `A control that enables selection of a single page from a 
       range of pages.`,

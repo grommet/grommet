@@ -13,9 +13,11 @@ import {
   getBreakpoint,
   getDeviceBreakpoint,
   normalizeColor,
+  useForwardedRef,
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
+import { RootsContext } from '../../contexts/RootsContext';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -58,6 +60,18 @@ const Grommet = forwardRef((props, ref) => {
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
 
+    // if user provides specific menu alignment, we don't want
+    // the defaults to be included at all (can cause issues with controlMirror)
+    // override merged value with themeProp value
+    if (
+      themeProp &&
+      themeProp.menu &&
+      themeProp.menu.drop &&
+      themeProp.menu.drop.align
+    ) {
+      delete nextTheme.menu.drop.align;
+      nextTheme.menu.drop.align = themeProp.menu.drop.align;
+    }
     const {
       colors: { background: themeBackground },
     } = nextTheme.global;
@@ -93,15 +107,19 @@ const Grommet = forwardRef((props, ref) => {
     deviceResponsive(userAgent, theme) ||
     theme.global.deviceBreakpoints.tablet;
 
+  const grommetRef = useForwardedRef(ref);
+
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <ContainerTargetContext.Provider value={containerTarget}>
-          <StyledGrommet full={full} {...rest} ref={ref}>
-            {children}
-          </StyledGrommet>
-          {full && <FullGlobalStyle />}
-        </ContainerTargetContext.Provider>
+        <RootsContext.Provider value={[grommetRef.current]}>
+          <ContainerTargetContext.Provider value={containerTarget}>
+            <StyledGrommet full={full} {...rest} ref={grommetRef}>
+              {children}
+            </StyledGrommet>
+            {full && <FullGlobalStyle />}
+          </ContainerTargetContext.Provider>
+        </RootsContext.Provider>
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   );

@@ -50,7 +50,7 @@ export const TargetLayer = () => {
         </Box>
       </Grid>
       {/* Adding Box as placeholder to demo how Layer scrolls
-      with target */}
+        with target */}
       <Box height="large" />
       {open && (
         <Layer

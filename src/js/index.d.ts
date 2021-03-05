@@ -54,6 +54,7 @@ export * from './components/Sidebar';
 export * from './components/SkipLink';
 export * from './components/SkipLinks';
 export * from './components/SkipLinkTarget';
+export * from './components/Spinner';
 export * from './components/Stack';
 export * from './components/Table';
 export * from './components/TableBody';
