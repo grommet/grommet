@@ -282,6 +282,8 @@ export interface ThemeType {
     };
     debounceDelay?: number;
     drop?: {
+      intelligentMargin: boolean;
+      margin: MarginType;
       background?: BackgroundType;
       border?: {
         width?: string;
