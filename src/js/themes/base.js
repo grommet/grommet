@@ -982,6 +982,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     menu: {
       // background: undefined,
       // extend: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left',
+        },
+        // any drop props
+      },
       icons: {
         down: FormDown,
         // up: undefined,
@@ -1075,6 +1082,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+    },
+    spinner: {
+      container: {
+        animation: 'rotateRight',
+        color: 'brand',
+        pad: 'small',
+        round: 'full',
+        size: 'small',
+      },
+      // icon: undefined
+      size: {
+        xsmall: `${baseSpacing * 0.75}px`,
+        small: `${baseSpacing}px`, // default 24
+        medium: `${baseSpacing * 2}px`,
+        large: `${baseSpacing * 3}px`,
+        xlarge: `${baseSpacing * 4}px`,
+      },
     },
     radioButton: {
       border: {

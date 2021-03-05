@@ -63,6 +63,7 @@ const Form = forwardRef(
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
+    const [requiredFields, setRequiredFields] = useState([]);
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -86,11 +87,17 @@ const Form = forwardRef(
           // run validations on the pending one and any other touched fields
           const [validatedErrors, validatedInfos] = validate(
             Object.entries(validations.current).filter(
-              ([n]) => touched[n] || n === pendingValidation,
+              ([n]) => touched[n] || pendingValidation.includes(n),
             ),
             value,
           );
           setPendingValidation(undefined);
+
+          setRequiredFields(prevRequiredFields =>
+            prevRequiredFields.filter(n =>
+              Object.keys(validations.current).includes(n),
+            ),
+          );
 
           setValidationResults(prevValidationResults => {
             const nextErrors = {
@@ -115,11 +122,21 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
+            let valid = false;
+
+            valid = requiredFields.every(
+              field =>
+                value[field] && (value[field] !== '' || value[field] !== false),
+            );
+
+            if (Object.keys(nextErrors).length > 0) valid = false;
+
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
+              valid,
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
@@ -134,7 +151,7 @@ const Form = forwardRef(
       }, 120);
 
       return () => clearTimeout(timer);
-    }, [pendingValidation, onValidate, touched, value]);
+    }, [pendingValidation, onValidate, touched, value, requiredFields]);
 
     // clear any errors when value changes
     useEffect(() => {
@@ -289,6 +306,14 @@ const Form = forwardRef(
           return result;
         };
 
+        if (required) {
+          setRequiredFields(prevValue =>
+            !prevValue.includes(name) ? [...prevValue, name] : prevValue,
+          );
+        } else {
+          setRequiredFields(prevValue => prevValue.filter(v => v !== name));
+        }
+
         if (validateArg || required) {
           validations.current[name] = validateField;
           return () => delete validations.current[name];
@@ -302,10 +327,18 @@ const Form = forwardRef(
         info,
         inForm: true,
         onBlur:
-          validateOn === 'blur' ? () => setPendingValidation(name) : undefined,
+          validateOn === 'blur'
+            ? () =>
+                setPendingValidation(
+                  pendingValidation ? [...pendingValidation, name] : [name],
+                )
+            : undefined,
         onChange:
           validateOn === 'change'
-            ? () => setPendingValidation(name)
+            ? () =>
+                setPendingValidation(
+                  pendingValidation ? [...pendingValidation, name] : [name],
+                )
             : undefined,
       };
     };

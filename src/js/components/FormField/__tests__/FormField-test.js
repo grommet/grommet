@@ -42,6 +42,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('label', () => {
@@ -52,6 +53,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('help', () => {
@@ -62,6 +64,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('error', () => {
@@ -72,6 +75,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('info', () => {
@@ -82,6 +86,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('htmlFor', () => {
@@ -92,6 +97,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('margin', () => {
@@ -102,6 +108,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('empty margin', () => {
@@ -112,6 +119,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('pad', () => {
@@ -122,6 +130,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('abut', () => {
@@ -150,6 +159,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('abut with margin', () => {
@@ -178,6 +188,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('custom formfield', () => {
@@ -188,6 +199,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('disabled', () => {
@@ -201,6 +213,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('required', () => {
@@ -214,6 +227,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('custom label', () => {
@@ -237,6 +251,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('disabled with custom label', () => {
@@ -265,6 +280,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('pad with border undefined', () => {
@@ -286,6 +302,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('custom input margin', () => {
@@ -306,6 +323,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('contentProps', () => {
@@ -323,6 +341,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('custom error and info icon and container', () => {
@@ -361,6 +380,7 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('should render asterisk when requiredIndicator === true', () => {
