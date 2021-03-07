@@ -75,6 +75,15 @@ exports[`Grid align renders 1`] = `
   align-items: stretch;
 }
 
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
 <div
   className="c0"
 >
@@ -89,6 +98,9 @@ exports[`Grid align renders 1`] = `
   />
   <div
     className="c4"
+  />
+  <div
+    className="c5"
   />
 </div>
 `;
@@ -152,6 +164,22 @@ exports[`Grid alignContent renders 1`] = `
   align-content: stretch;
 }
 
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: baseline;
+  -ms-flex-line-pack: baseline;
+  align-content: baseline;
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+  align-content: space-evenly;
+}
+
 <div
   className="c0"
 >
@@ -172,6 +200,15 @@ exports[`Grid alignContent renders 1`] = `
   />
   <div
     className="c6"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c7"
+  />
+  <div
+    className="c8"
   />
 </div>
 `;

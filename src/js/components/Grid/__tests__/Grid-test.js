@@ -154,6 +154,7 @@ describe('Grid', () => {
         <Grid align="center" />
         <Grid align="end" />
         <Grid align="stretch" />
+        <Grid align="baseline" />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -184,6 +185,9 @@ describe('Grid', () => {
         <Grid alignContent="around" />
         <Grid alignContent="end" />
         <Grid alignContent="stretch" />
+        <Grid alignContent="around" />
+        <Grid alignContent="baseline" />
+        <Grid alignContent="evenly" />
       </Grommet>,
     );
     const tree = component.toJSON();

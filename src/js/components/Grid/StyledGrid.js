@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
-
-import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
+import {
+  alignContentStyle,
+  alignStyle,
+  borderStyle,
+  edgeStyle,
+  genericStyles,
+} from '../../utils';
 
 const fillStyle = fill => {
   if (!fill) {
@@ -18,30 +23,6 @@ const fillStyle = fill => {
       height: 100%;
     `;
 };
-
-const ALIGN_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignStyle = css`
-  align-items: ${props => ALIGN_MAP[props.align]};
-`;
-
-const ALIGN_CONTENT_MAP = {
-  around: 'space-around',
-  between: 'space-between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignContentStyle = css`
-  align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
 
 const JUSTIFY_MAP = {
   center: 'center',

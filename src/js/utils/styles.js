@@ -615,3 +615,31 @@ const TEXT_ALIGN_MAP = {
 export const textAlignStyle = css`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
+
+const ALIGN_ITEMS_MAP = {
+  baseline: 'baseline',
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignStyle = css`
+  align-items: ${props => ALIGN_ITEMS_MAP[props.align] ?? props.align};
+`;
+
+const ALIGN_CONTENT_MAP = {
+  around: 'space-around',
+  baseline: 'baseline',
+  between: 'space-between',
+  center: 'center',
+  evenly: 'space-evenly',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignContentStyle = css`
+  align-content: ${props =>
+    ALIGN_CONTENT_MAP[props.alignContent] ?? props.alignContent};
+`;

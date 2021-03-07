@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
   A11yTitleType,
+  AlignType,
   AlignContentType,
   AlignSelfType,
   BorderType,
@@ -16,7 +17,7 @@ import {
 export interface GridProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  align?: 'start' | 'center' | 'end' | 'stretch';
+  align?: AlignType;
   alignContent?: AlignContentType;
   areas?: { name?: string; start?: number[]; end?: number[] }[] | string[][];
   as?: PolymorphicType;

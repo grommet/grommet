@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
-
 import {
+  alignContentStyle,
+  alignStyle,
   backgroundStyle,
   borderStyle,
   breakpointStyle,
@@ -10,37 +10,12 @@ import {
   fillStyle,
   focusStyle,
   genericStyles,
+  getBreakpointStyle,
   getHoverIndicatorStyle,
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
-  getBreakpointStyle,
 } from '../../utils';
-
-const ALIGN_MAP = {
-  baseline: 'baseline',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignStyle = css`
-  align-items: ${props => ALIGN_MAP[props.align]};
-`;
-
-const ALIGN_CONTENT_MAP = {
-  around: 'around',
-  between: 'between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignContentStyle = css`
-  align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
 
 const BASIS_MAP = {
   auto: 'auto',

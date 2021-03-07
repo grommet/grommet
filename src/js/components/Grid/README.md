@@ -131,27 +131,35 @@ string
 
 **align**
 
-How to align the individual items inside the grid when there is extra
-space in the column axis. Defaults to `stretch`.
+How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.
 
 ```
-start
+baseline
 center
 end
+start
 stretch
+string
 ```
 
 **alignContent**
 
-How to align the contents along the column axis.
+How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.
 
 ```
-start
-center
-end
-between
 around
+baseline
+between
+center
+evenly
+end
+start
 stretch
+string
 ```
 
 **areas**

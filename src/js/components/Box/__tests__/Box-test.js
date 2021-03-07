@@ -94,6 +94,9 @@ describe('Box', () => {
         <Box alignContent="around" />
         <Box alignContent="stretch" />
         <Box alignContent="end" />
+        <Box alignContent="around" />
+        <Box alignContent="baseline" />
+        <Box alignContent="evenly" />
       </Grommet>,
     );
     const tree = component.toJSON();
