@@ -151,6 +151,26 @@ exports[`Select 0 value 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1438,6 +1458,26 @@ exports[`Select Search timeout 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1582,24 +1622,27 @@ exports[`Select Search timeout 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c0 > circle,
-.c0 > ellipse,
-.c0 > line,
-.c0 > path,
-.c0 > polygon,
-.c0 > polyline,
-.c0 > rect {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0::-moz-focus-inner {
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1806,6 +1849,26 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2181,6 +2244,26 @@ exports[`Select basic 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -2440,6 +2523,26 @@ exports[`Select complex options and children 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -2553,7 +2656,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 nnMiQ Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 hubMyb Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2972,6 +3075,26 @@ exports[`Select dark 1`] = `
   border: none;
 }
 
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -3245,6 +3368,26 @@ exports[`Select default value 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3850,6 +3993,26 @@ exports[`Select default value object options 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -4112,6 +4275,26 @@ exports[`Select disabled 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -4227,7 +4410,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 nnMiQ Select__SelectTextInput-sc-17idtfo-0 cANsmG"
+          class="StyledTextInput-sc-1x30a0s-0 hubMyb Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4407,6 +4590,26 @@ exports[`Select disabled key 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -5123,24 +5326,27 @@ exports[`Select empty results search 1`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c0 > circle,
-.c0 > ellipse,
-.c0 > line,
-.c0 > path,
-.c0 > polygon,
-.c0 > polyline,
-.c0 > rect {
+.c0:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0::-moz-focus-inner {
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5347,6 +5553,26 @@ exports[`Select keyboard navigation timeout 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6115,6 +6341,26 @@ exports[`Select modifies select control style on open 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -6375,6 +6621,26 @@ exports[`Select onChange with valueKey string 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6891,6 +7157,26 @@ exports[`Select onChange without valueKey 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7405,6 +7691,26 @@ exports[`Select prop: onClose 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7661,6 +7967,26 @@ exports[`Select prop: onClose 2`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7926,6 +8252,26 @@ exports[`Select prop: onOpen 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -8039,7 +8385,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 nnMiQ Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 hubMyb Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -8331,7 +8677,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -8347,7 +8693,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -8517,6 +8863,26 @@ exports[`Select renders custom icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -8777,6 +9143,26 @@ exports[`Select renders custom up and down icons 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -8904,7 +9290,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 nnMiQ Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 hubMyb Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -9135,6 +9521,26 @@ exports[`Select renders default icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -9394,6 +9800,26 @@ exports[`Select renders styled select options backwards compatible with legacy
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -9659,6 +10085,26 @@ exports[`Select renders styled select options combining select.options.box &&
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -9920,6 +10366,26 @@ exports[`Select renders styled select options using select.options.container 1`]
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -10126,6 +10592,26 @@ exports[`Select renders without icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -10356,6 +10842,26 @@ exports[`Select search 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -10626,24 +11132,27 @@ exports[`Select search 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c6 > circle,
-.c6 > ellipse,
-.c6 > line,
-.c6 > path,
-.c6 > polygon,
-.c6 > polyline,
-.c6 > rect {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6::-moz-focus-inner {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -10819,7 +11328,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 gyrSNV"
+  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
   type="search"
   value=""
 />
@@ -10828,7 +11337,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 gyrSNV"
+  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
   type="search"
   value="o"
 />
@@ -10983,6 +11492,26 @@ exports[`Select search and select 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -11253,24 +11782,27 @@ exports[`Select search and select 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c6 > circle,
-.c6 > ellipse,
-.c6 > line,
-.c6 > path,
-.c6 > polygon,
-.c6 > polyline,
-.c6 > rect {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6::-moz-focus-inner {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -11441,7 +11973,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 gyrSNV"
+  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
   type="search"
   value=""
 />
@@ -11450,7 +11982,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 gyrSNV"
+  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
   type="search"
   value="t"
 />
@@ -11605,6 +12137,26 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -11851,6 +12403,26 @@ exports[`Select select an option 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -12276,6 +12848,26 @@ exports[`Select select an option with enter 1`] = `
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -12520,6 +13112,26 @@ exports[`Select select an option with keypress 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -12768,6 +13380,26 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   border: none;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -13012,6 +13644,26 @@ exports[`Select selected 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6::-webkit-input-placeholder {
@@ -13274,6 +13926,26 @@ exports[`Select should not have accessibility violations 1`] = `
   border: none;
 }
 
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -13532,6 +14204,26 @@ exports[`Select size 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5::-webkit-input-placeholder {

@@ -269,6 +269,26 @@ exports[`Grommet custom theme 1`] = `
   border-radius: 4px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12::-webkit-input-placeholder {
   color: #cc6633;
 }

@@ -604,7 +604,7 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should only should default placeholder when placeholder is a 
+  test(`should only show default placeholder when placeholder is a
   string`, () => {
     const { container, getByTestId } = render(
       <Grommet>

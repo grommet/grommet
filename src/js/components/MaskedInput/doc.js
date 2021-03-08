@@ -32,6 +32,9 @@ export const doc = MaskedInput => {
     onChange: PropTypes.func.description(
       `Function that will be called when the user types or pastes text.`,
     ),
+    focusIndicator: PropTypes.bool.description(
+      'Whether the plain MaskedInput should receive a focus outline.',
+    ),
     onBlur: PropTypes.func.description(
       `Function that will be called when the user leaves the field.`,
     ),
@@ -90,7 +93,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'maskedInput.container.extend': {
-    description: `Any additional style for the container surrounding the input 
+    description: `Any additional style for the container surrounding the input
     and, if present, icon.`,
     type: 'string | (props) => {}',
     defaultValue: undefined,
