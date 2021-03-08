@@ -16,7 +16,10 @@ export interface FileInputProps {
   renderFile?: (...args: any[]) => void;
 }
 
-declare const FileInput: React.FC<FileInputProps &
-  JSX.IntrinsicElements['input']>;
+type inputProps = Omit<JSX.IntrinsicElements['input'], 'multiple'>;
+
+export interface FileInputExtendedProps extends FileInputProps, inputProps {}
+
+declare const FileInput: React.FC<FileInputExtendedProps>;
 
 export { FileInput };
