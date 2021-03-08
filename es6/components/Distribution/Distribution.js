@@ -45,13 +45,15 @@ var Distribution = function Distribution(_ref2) {
       return accumulator + (value || 0);
     };
 
-    var total = values.reduce(reducer, 0); // figure out how many of the values area needed to represent half of the
+    var total = values.filter(function (v) {
+      return Object.prototype.hasOwnProperty.call(v, 'value');
+    }).reduce(reducer, 0); // figure out how many of the values area needed to represent half of the
     // total
 
     var subTotal = 0;
     var subIndex;
     values.some(function (v, index) {
-      subTotal += v.value;
+      subTotal += Object.prototype.hasOwnProperty.call(v, 'value') ? v.value : 0;
 
       if (subTotal >= total * 0.4) {
         subIndex = index + 1;
@@ -71,7 +73,9 @@ var Distribution = function Distribution(_ref2) {
 
     var childBasis;
 
-    if (subTotal === total) {
+    if (subTotal === 0) {
+      childBasis = ['0px', '0px'];
+    } else if (subTotal === total) {
       childBasis = ['full', '0px'];
     } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
