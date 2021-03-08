@@ -60,6 +60,18 @@ const Grommet = forwardRef((props, ref) => {
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
 
+    // if user provides specific menu alignment, we don't want
+    // the defaults to be included at all (can cause issues with controlMirror)
+    // override merged value with themeProp value
+    if (
+      themeProp &&
+      themeProp.menu &&
+      themeProp.menu.drop &&
+      themeProp.menu.drop.align
+    ) {
+      delete nextTheme.menu.drop.align;
+      nextTheme.menu.drop.align = themeProp.menu.drop.align;
+    }
     const {
       colors: { background: themeBackground },
     } = nextTheme.global;
