@@ -18,8 +18,10 @@ export interface DropButtonProps {
   open?: boolean;
 }
 
-declare const DropButton: React.ComponentClass<DropButtonProps &
-  ButtonProps &
-  Omit<JSX.IntrinsicElements['button'], 'color'>>;
+type buttonProps = ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>;
+
+export interface DropButtonExtendedProps extends DropButtonProps, buttonProps {}
+
+declare const DropButton: React.FC<DropButtonExtendedProps>;
 
 export { DropButton };
