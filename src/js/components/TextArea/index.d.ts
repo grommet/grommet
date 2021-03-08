@@ -14,7 +14,9 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.FC<TextAreaProps &
-  JSX.IntrinsicElements['textarea']>;
+export type TextAreaExtendedProps = TextAreaProps &
+  JSX.IntrinsicElements['textarea'];
+
+declare const TextArea: React.FC<TextAreaExtendedProps>;
 
 export { TextArea };
