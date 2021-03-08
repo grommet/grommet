@@ -35,7 +35,9 @@ export interface FormFieldProps {
       )[];
 }
 
-declare const FormField: React.ComponentClass<FormFieldProps &
-  Omit<JSX.IntrinsicElements['input'], 'placeholder'>>;
+export type FormFieldExtendedProps = FormFieldProps &
+  Omit<JSX.IntrinsicElements['input'], 'placeholder'>;
+
+declare const FormField: React.FC<FormFieldExtendedProps>;
 
 export { FormField };
