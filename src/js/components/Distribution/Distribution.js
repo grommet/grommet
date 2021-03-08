@@ -63,7 +63,9 @@ const Distribution = ({
     }
 
     let childBasis;
-    if (subTotal === total) {
+    if (subTotal === 0) {
+      childBasis = ['0px', '0px'];
+    } else if (subTotal === total) {
       childBasis = ['full', '0px'];
     } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
