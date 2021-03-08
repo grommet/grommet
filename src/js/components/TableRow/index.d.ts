@@ -2,6 +2,12 @@ import * as React from 'react';
 
 export interface TableRowProps {}
 
-declare const TableRow: React.FC<TableRowProps & JSX.IntrinsicElements['tr']>;
+type htmlTableRowProps = JSX.IntrinsicElements['tr'];
+
+export interface TableRowExtendedProps
+  extends TableRowProps,
+    htmlTableRowProps {}
+
+declare const TableRow: React.FC<TableRowExtendedProps>;
 
 export { TableRow };
