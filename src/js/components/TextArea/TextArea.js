@@ -10,6 +10,7 @@ const TextArea = forwardRef(
     {
       a11yTitle,
       fill,
+      focusIndicator = true,
       name,
       onBlur,
       onChange,
@@ -41,6 +42,7 @@ const TextArea = forwardRef(
           fillArg={fill}
           focus={focus}
           value={value}
+          focusIndicator={focusIndicator}
           {...rest}
           onFocus={event => {
             setFocus(true);

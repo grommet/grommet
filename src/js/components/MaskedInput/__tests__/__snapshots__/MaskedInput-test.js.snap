@@ -31,6 +31,26 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   border: none;
 }
 
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c2::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -197,6 +217,26 @@ exports[`MaskedInput basic 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -303,6 +343,26 @@ exports[`MaskedInput custom theme 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 48px;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -413,6 +473,26 @@ exports[`MaskedInput disabled 1`] = `
   cursor: default;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -475,6 +555,26 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   line-height: 24px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -542,6 +642,26 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -813,7 +933,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cHnRqS"
+    class="StyledMaskedInput-sc-99vkfa-0 firnlR"
     data-testid="test-input"
     id="item"
     name="item"
@@ -873,6 +993,26 @@ exports[`MaskedInput icon 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-left: 48px;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1005,6 +1145,26 @@ exports[`MaskedInput icon reverse 1`] = `
   padding-right: 48px;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1098,6 +1258,26 @@ exports[`MaskedInput mask 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1380,6 +1560,26 @@ exports[`MaskedInput mask with long fixed 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1443,6 +1643,26 @@ exports[`MaskedInput next and previous without options 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1495,7 +1715,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 eHZYfC"
+    class="StyledMaskedInput-sc-99vkfa-0 fgpkwE"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1520,6 +1740,26 @@ exports[`MaskedInput option via keyboard 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1587,6 +1827,26 @@ exports[`MaskedInput option via mouse 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1858,7 +2118,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cHnRqS"
+    class="StyledMaskedInput-sc-99vkfa-0 firnlR"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1887,6 +2147,26 @@ exports[`MaskedInput with no mask 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-webkit-input-placeholder {
