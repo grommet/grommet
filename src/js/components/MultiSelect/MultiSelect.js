@@ -29,6 +29,7 @@ const MultiSelect = ({
   isExcluded: isExcludedProp,
   onIncExcChange,
   renderEmptySelected,
+  gridArea,
   validate,
   ...rest
 }) => {
@@ -174,7 +175,7 @@ const MultiSelect = ({
   };
 
   return (
-    <Box width={width}>
+    <Box width={width} gridArea={gridArea}>
       <Select
         multiple
         value={value}
