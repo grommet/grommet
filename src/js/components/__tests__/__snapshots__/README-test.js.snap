@@ -9283,13 +9283,62 @@ The size of the error messsage to be displayed.
 Defaults to
 
 \`\`\`
+medium
+\`\`\`
 
-      xsmall: '12px'
-      small: '14px'
-      medium: '18px'
-      large: '22px'
-      xlarge: '26px
-    
+**formField.error.size.xsmall**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+
+**formField.error.size.small**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
+\`\`\`
+
+**formField.error.size.medium**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**formField.error.size.large**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**formField.error.size.xlarge**
+
+The size of the error messsage to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+26px
 \`\`\`
 
 **formField.info.container**

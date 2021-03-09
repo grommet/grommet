@@ -181,19 +181,36 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'medium',
   },
-  'formField.error.size.small': {
+  'formField.error.size.xsmall': {
     description: `The size of the error messsage to be displayed.
      The default size is medium.`,
     type: 'string',
     defaultValue: '12px',
   },
-    'formField.error.size.medium': {
+  'formField.error.size.small': {
+    description: `The size of the error messsage to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'formField.error.size.medium': {
     description: `The size of the error messsage to be displayed.
      The default size is medium.`,
     type: 'string',
     defaultValue: '18px',
   },
-  // same for the rest of the sizes.
+  'formField.error.size.large': {
+    description: `The size of the error messsage to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'formField.error.size.xlarge': {
+    description: `The size of the error messsage to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: '26px',
+  },
   'formField.info.container': {
     description: `Any valid Box props for the container surrounding the info 
     message and icon.`,
