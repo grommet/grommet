@@ -1001,7 +1001,7 @@ string",
         "name": "responsive",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "How much to round the corners.",
         "format": "boolean
 xsmall
@@ -3368,13 +3368,93 @@ string",
         "name": "elevation",
       },
       Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "How much to round the corners.",
         "format": "boolean
 xsmall

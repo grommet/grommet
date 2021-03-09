@@ -49,11 +49,11 @@ const StyledDrop = styled.div`
     )}
 
   ${props =>
-    props.margin &&
+    (props.margin || props.theme.global.drop.margin) &&
     props.theme.global &&
     edgeStyle(
       'margin',
-      props.margin,
+      props.margin || props.theme.global.drop.margin,
       props.responsive,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,

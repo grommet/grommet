@@ -225,4 +225,4 @@ export const roundPropType = PropTypes.oneOfType([
   }),
 ])
   .description('How much to round the corners.')
-  .defaultValue(false);
+  .defaultValue(undefined);
