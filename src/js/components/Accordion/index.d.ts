@@ -10,8 +10,9 @@ export interface AccordionProps extends BoxProps {
   messages?: { tabContents?: string };
 }
 
-export type AccordionExtendedProps = AccordionProps &
-  JSX.IntrinsicElements['div'];
+export interface AccordionExtendedProps
+  extends AccordionProps,
+    Omit<JSX.IntrinsicElements['div'], 'onClick'> {}
 
 declare const Accordion: React.FC<AccordionExtendedProps>;
 
