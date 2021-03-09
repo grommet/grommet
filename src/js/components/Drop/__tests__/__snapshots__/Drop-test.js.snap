@@ -593,7 +593,7 @@ exports[`Drop align right right bottom top 4`] = `
 }"
 `;
 
-exports[`Drop background prop renders 1`] = `
+exports[`Drop background 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -658,7 +658,7 @@ exports[`Drop background prop renders 1`] = `
 </div>
 `;
 
-exports[`Drop background prop renders 2`] = `
+exports[`Drop background 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jpgUDo {
     display: -webkit-box;
@@ -1027,7 +1027,7 @@ exports[`Drop default elevation renders 2`] = `
 }"
 `;
 
-exports[`Drop elevation prop renders 1`] = `
+exports[`Drop elevation 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1092,7 +1092,7 @@ exports[`Drop elevation prop renders 1`] = `
 </div>
 `;
 
-exports[`Drop elevation prop renders 2`] = `
+exports[`Drop elevation 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jpgUDo {
     display: -webkit-box;
@@ -1343,7 +1343,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }"
 `;
 
-exports[`Drop margin prop renders 1`] = `
+exports[`Drop margin 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1416,7 +1416,7 @@ exports[`Drop margin prop renders 1`] = `
 </div>
 `;
 
-exports[`Drop margin prop renders 2`] = `
+exports[`Drop margin 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jpgUDo {
     display: -webkit-box;
@@ -1549,7 +1549,7 @@ exports[`Drop no stretch 2`] = `
 }"
 `;
 
-exports[`Drop plain renders 1`] = `
+exports[`Drop plain 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1611,7 +1611,7 @@ exports[`Drop plain renders 1`] = `
 </div>
 `;
 
-exports[`Drop plain renders 2`] = `
+exports[`Drop plain 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jpgUDo {
     display: -webkit-box;
@@ -1882,7 +1882,7 @@ exports[`Drop restrict focus 4`] = `
 <body />
 `;
 
-exports[`Drop round prop renders 1`] = `
+exports[`Drop round 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1948,7 +1948,7 @@ exports[`Drop round prop renders 1`] = `
 </div>
 `;
 
-exports[`Drop round prop renders 2`] = `
+exports[`Drop round 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jpgUDo {
     display: -webkit-box;

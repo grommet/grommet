@@ -175,27 +175,27 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('elevation prop renders', () => {
+  test('elevation', () => {
     render(<TestInput theme={customTheme} elevation="medium" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('plain renders', () => {
+  test('plain', () => {
     render(<TestInput plain />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('round prop renders', () => {
+  test('round', () => {
     render(<TestInput round="full" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('margin prop renders', () => {
+  test('margin', () => {
     render(<TestInput margin="small" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('background prop renders', () => {
+  test('background', () => {
     render(<TestInput background="background-contrast" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
