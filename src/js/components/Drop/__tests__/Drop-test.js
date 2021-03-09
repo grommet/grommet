@@ -15,6 +15,10 @@ const customTheme = {
   global: {
     drop: {
       shadowSize: 'large',
+      background: { dark: 'neutral-2', light: 'background-contrast' },
+      border: { radius: '10px' },
+      zIndex: '15',
+      margin: 'xsmall',
     },
   },
 };
@@ -171,13 +175,28 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('props elevation renders', () => {
+  test('elevation prop renders', () => {
     render(<TestInput theme={customTheme} elevation="medium" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('plain renders', () => {
     render(<TestInput plain />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('round prop renders', () => {
+    render(<TestInput round="full" />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('margin prop renders', () => {
+    render(<TestInput margin="small" />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('background prop renders', () => {
+    render(<TestInput background="background-contrast" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
