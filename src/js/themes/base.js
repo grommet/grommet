@@ -226,7 +226,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           radius: '0px',
         },
         // margin: undefined
-        shadowSize: 'small',
+        shadowSize: 'small', // shadowSize is deprecated, use 'elevation'
         zIndex: '20',
       },
       edgeSize: {

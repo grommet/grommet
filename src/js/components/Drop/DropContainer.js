@@ -319,7 +319,10 @@ const DropContainer = forwardRef(
         plain={plain}
         elevation={
           !plain
-            ? elevation || theme.global.drop.shadowSize || 'small'
+            ? elevation ||
+              theme.global.drop.elevation ||
+              theme.global.drop.shadowSize || // backward compatibility
+              'small'
             : undefined
         }
         tabIndex="-1"

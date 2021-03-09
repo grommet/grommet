@@ -14,7 +14,7 @@ import { Drop } from '..';
 const customTheme = {
   global: {
     drop: {
-      shadowSize: 'large',
+      elevation: 'large',
       background: { dark: 'neutral-2', light: 'background-contrast' },
       border: { radius: '10px' },
       zIndex: '15',

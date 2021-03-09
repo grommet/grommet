@@ -120,15 +120,25 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'global.drop.shadowSize': {
-    description: 'Elevated height of the Drop.',
+  ...themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'),
+  'global.drop.elevation': {
+    description: `Elevated height above the underlying context, indicated
+    via a drop shadow.`,
     type: 'string',
     defaultValue: 'small',
+  },
+  'global.drop.margin': {
+    description: 'The margin of the drop from the target.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'global.drop.shadowSize': {
+    description: `Deprecated. Use 'global.drop.elevation' instead.`,
+    type: 'string',
   },
   'global.drop.zIndex': {
     description: 'The stack order of the Drop.',
     type: 'number',
     defaultValue: 20,
   },
-  ...themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'),
 };

@@ -8359,26 +8359,6 @@ Defaults to
 undefined
 \`\`\`
 
-**global.drop.shadowSize**
-
-Elevated height of the Drop. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-small
-\`\`\`
-
-**global.drop.zIndex**
-
-The stack order of the Drop. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-20
-\`\`\`
-
 **global.edgeSize**
 
 The possible sizes for the Drop margin. Expects \`object\`.
@@ -8399,6 +8379,47 @@ Defaults to
       responsiveBreakpoint: 'small',
     },
   }
+\`\`\`
+
+**global.drop.elevation**
+
+Elevated height above the underlying context, indicated
+    via a drop shadow. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**global.drop.margin**
+
+The margin of the drop from the target. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.shadowSize**
+
+Deprecated. Use 'global.drop.elevation' instead. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.zIndex**
+
+The stack order of the Drop. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
 \`\`\`
 ",
   "DropButton": "## DropButton
