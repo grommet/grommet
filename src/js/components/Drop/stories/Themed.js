@@ -10,13 +10,13 @@ const customTheme = deepMerge(grommet, {
       background: { dark: 'neutral-2', light: 'background-contrast' },
       border: { radius: '10px' }, // impacting 'round' behavior
       zIndex: '13',
-      shadowSize: 'large', // impacting the elevation
+      elevation: 'large', // impacting the elevation
       margin: 'xsmall',
     },
   },
 });
 
-export const Themed = () => {
+const ThemedDrop = () => {
   const [, setShowDrop] = useState(false);
   const targetRef = useRef();
 
@@ -44,6 +44,11 @@ export const Themed = () => {
       </Box>
     </Grommet>
   );
+};
+
+export const Themed = () => <ThemedDrop />;
+Themed.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {

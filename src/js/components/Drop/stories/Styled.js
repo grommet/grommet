@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Styled = () => {
+const StyledDrop = () => {
   const targetRef = useRef();
 
   const [, setShowDrop] = useState(false);
@@ -49,6 +49,11 @@ export const Styled = () => {
       </Box>
     </Grommet>
   );
+};
+
+export const Styled = () => <StyledDrop />;
+Styled.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {
