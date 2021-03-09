@@ -225,7 +225,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           radius: '0px',
         },
-        // round: undefined
+        // margin: undefined
         shadowSize: 'small',
         zIndex: '20',
       },
