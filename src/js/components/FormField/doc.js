@@ -182,8 +182,7 @@ export const themeDoc = {
     defaultValue: 'medium',
   },
   'formField.error.size.xsmall': {
-    description: `The size of the error messsage to be displayed.
-     The default size is medium.`,
+    description: `The size of a 'xsmall' error message.`,
     type: 'string',
     defaultValue: '12px',
   },
