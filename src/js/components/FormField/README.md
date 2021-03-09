@@ -403,7 +403,7 @@ undefined
 
 **formField.error.size**
 
-The size of the error messsage to be displayed.
+The size of the error message to be displayed.
      The default size is medium. Expects `string`.
 
 Defaults to
@@ -414,8 +414,7 @@ medium
 
 **formField.error.size.xsmall**
 
-The size of the error messsage to be displayed.
-     The default size is medium. Expects `string`.
+The size of a 'xsmall' error message. Expects `string`.
 
 Defaults to
 
@@ -425,8 +424,7 @@ Defaults to
 
 **formField.error.size.small**
 
-The size of the error messsage to be displayed.
-     The default size is medium. Expects `string`.
+The size of a 'small' error message. Expects `string`.
 
 Defaults to
 
@@ -436,8 +434,7 @@ Defaults to
 
 **formField.error.size.medium**
 
-The size of the error messsage to be displayed.
-     The default size is medium. Expects `string`.
+The size of a 'medium' error message. Expects `string`.
 
 Defaults to
 
@@ -447,8 +444,7 @@ Defaults to
 
 **formField.error.size.large**
 
-The size of the error messsage to be displayed.
-     The default size is medium. Expects `string`.
+The size of a 'large' error message. Expects `string`.
 
 Defaults to
 
@@ -458,8 +454,7 @@ Defaults to
 
 **formField.error.size.xlarge**
 
-The size of the error messsage to be displayed.
-     The default size is medium. Expects `string`.
+The size of a 'xlarge' error message. Expects `string`.
 
 Defaults to
 

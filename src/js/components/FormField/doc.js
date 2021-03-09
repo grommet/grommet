@@ -176,7 +176,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'formField.error.size': {
-    description: `The size of the error messsage to be displayed.
+    description: `The size of the error message to be displayed.
      The default size is medium.`,
     type: 'string',
     defaultValue: 'medium',
@@ -187,26 +187,22 @@ export const themeDoc = {
     defaultValue: '12px',
   },
   'formField.error.size.small': {
-    description: `The size of the error messsage to be displayed.
-     The default size is medium.`,
+    description: `The size of a 'small' error message.`,
     type: 'string',
     defaultValue: '14px',
   },
   'formField.error.size.medium': {
-    description: `The size of the error messsage to be displayed.
-     The default size is medium.`,
+    description: `The size of a 'medium' error message.`,
     type: 'string',
     defaultValue: '18px',
   },
   'formField.error.size.large': {
-    description: `The size of the error messsage to be displayed.
-     The default size is medium.`,
+    description: `The size of a 'large' error message.`,
     type: 'string',
     defaultValue: '22px',
   },
   'formField.error.size.xlarge': {
-    description: `The size of the error messsage to be displayed.
-     The default size is medium.`,
+    description: `The size of a 'xlarge' error message.`,
     type: 'string',
     defaultValue: '26px',
   },
