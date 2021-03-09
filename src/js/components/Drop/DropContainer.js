@@ -37,6 +37,7 @@ const DropContainer = forwardRef(
   (
     {
       align = defaultAlign,
+      background,
       onAlign,
       children,
       dropTarget,
@@ -314,6 +315,7 @@ const DropContainer = forwardRef(
       <StyledDrop
         ref={ref || dropRef}
         as={Box}
+        background={background}
         plain={plain}
         elevation={
           !plain
@@ -330,8 +332,11 @@ const DropContainer = forwardRef(
       </StyledDrop>
     );
 
-    if (theme.global.drop.background) {
-      const dark = backgroundIsDark(theme.global.drop.background, theme);
+    if (background || theme.global.drop.background) {
+      const dark = backgroundIsDark(
+        background || theme.global.drop.background,
+        theme,
+      );
       if (dark !== undefined && dark !== theme.dark) {
         content = (
           <ThemeContext.Provider value={{ ...theme, dark }}>

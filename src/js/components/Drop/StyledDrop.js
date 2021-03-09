@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
-import { baseStyle } from '../../utils';
+import { ROUND_MAP } from '../Box/StyledBox';
+import { baseStyle, edgeStyle } from '../../utils';
 import { backgroundStyle } from '../../utils/background';
 import { defaultProps } from '../../default-props';
 
@@ -30,14 +31,33 @@ const dropKeyFrames = keyframes`
 const StyledDrop = styled.div`
   ${baseStyle}
 
-  border-radius: ${props => props.theme.global.drop.border.radius};
+  border-radius: ${props =>
+    ROUND_MAP[props.round] ||
+    props.theme.global.edgeSize[props.round] ||
+    props.round ||
+    props.theme.global.drop.border.radius};
+    
   position: fixed;
   z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
 
   ${props =>
     !props.plain &&
-    backgroundStyle(props.theme.global.drop.background, props.theme)}
+    backgroundStyle(
+      props.background || props.theme.global.drop.background,
+      props.theme,
+    )}
+
+  ${props =>
+    props.margin &&
+    props.theme.global &&
+    edgeStyle(
+      'margin',
+      props.margin,
+      props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};

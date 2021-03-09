@@ -145,7 +145,7 @@ const wrapStyle = css`
   flex-wrap: ${props => WRAP_MAP[props.wrapProp]};
 `;
 
-const ROUND_MAP = {
+export const ROUND_MAP = {
   full: '100%',
 };
 

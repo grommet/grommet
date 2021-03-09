@@ -7919,6 +7919,45 @@ How to align the drop with respect to the target element. Not
 }
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -8018,6 +8057,39 @@ Whether the drop element should have no background nor elevation.
 
 \`\`\`
 boolean
+\`\`\`
+
+**round**
+
+How much to round the corners.
+
+\`\`\`
+boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 \`\`\`
 
 **trapFocus**

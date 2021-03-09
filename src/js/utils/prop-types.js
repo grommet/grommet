@@ -202,3 +202,27 @@ export const patternPropType = PropTypes.oneOf([
   'stripesDiagonalDown',
   'stripesDiagonalUp',
 ]);
+
+export const roundPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+  PropTypes.string,
+  PropTypes.shape({
+    corner: PropTypes.oneOf([
+      'top',
+      'left',
+      'bottom',
+      'right',
+      'top-left',
+      'top-right',
+      'bottom-left',
+      'bottom-right',
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]),
+  }),
+])
+  .description('How much to round the corners.')
+  .defaultValue(false);
