@@ -240,7 +240,9 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           radius: '0px'
         },
+        // margin: undefined
         shadowSize: 'small',
+        // shadowSize is deprecated, use 'elevation'
         zIndex: '20'
       },
       edgeSize: {

@@ -7,17 +7,21 @@ var customTheme = deepMerge(grommet, {
     drop: {
       background: {
         dark: 'neutral-2',
-        light: 'neutral-2'
+        light: 'background-contrast'
       },
       border: {
         radius: '10px'
       },
-      zIndex: '13'
+      // impacting 'round' behavior
+      zIndex: '13',
+      elevation: 'large',
+      // impacting the elevation
+      margin: 'xsmall'
     }
   }
 });
 
-var CustomDrop = function CustomDrop() {
+var ThemedDrop = function ThemedDrop() {
   var _useState = useState(false),
       setShowDrop = _useState[1];
 
@@ -49,9 +53,14 @@ var CustomDrop = function CustomDrop() {
   }, "This Drop uses a custom theme"))));
 };
 
-export var Custom = function Custom() {
-  return /*#__PURE__*/React.createElement(CustomDrop, null);
+export var Themed = function Themed() {
+  return /*#__PURE__*/React.createElement(ThemedDrop, null);
+};
+Themed.parameters = {
+  chromatic: {
+    disable: true
+  }
 };
 export default {
-  title: 'Controls/Drop/Custom'
+  title: 'Controls/Drop/Themed'
 };

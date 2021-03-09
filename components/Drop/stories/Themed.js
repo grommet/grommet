@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Custom = void 0;
+exports["default"] = exports.Themed = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -20,17 +20,21 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     drop: {
       background: {
         dark: 'neutral-2',
-        light: 'neutral-2'
+        light: 'background-contrast'
       },
       border: {
         radius: '10px'
       },
-      zIndex: '13'
+      // impacting 'round' behavior
+      zIndex: '13',
+      elevation: 'large',
+      // impacting the elevation
+      margin: 'xsmall'
     }
   }
 });
 
-var CustomDrop = function CustomDrop() {
+var ThemedDrop = function ThemedDrop() {
   var _useState = (0, _react.useState)(false),
       setShowDrop = _useState[1];
 
@@ -62,12 +66,17 @@ var CustomDrop = function CustomDrop() {
   }, "This Drop uses a custom theme"))));
 };
 
-var Custom = function Custom() {
-  return /*#__PURE__*/_react["default"].createElement(CustomDrop, null);
+var Themed = function Themed() {
+  return /*#__PURE__*/_react["default"].createElement(ThemedDrop, null);
 };
 
-exports.Custom = Custom;
+exports.Themed = Themed;
+Themed.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
-  title: 'Controls/Drop/Custom'
+  title: 'Controls/Drop/Themed'
 };
 exports["default"] = _default;

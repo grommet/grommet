@@ -45,6 +45,7 @@ var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
+      background = _ref.background,
       onAlign = _ref.onAlign,
       children = _ref.children,
       dropTarget = _ref.dropTarget,
@@ -60,7 +61,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _ref$stretch = _ref.stretch,
       stretch = _ref$stretch === void 0 ? 'width' : _ref$stretch,
       trapFocus = _ref.trapFocus,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -318,16 +319,18 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
     ref: ref || dropRef,
     as: _Box.Box,
+    background: background,
     plain: plain,
-    elevation: !plain ? elevation || theme.global.drop.shadowSize || 'small' : undefined,
+    elevation: !plain ? elevation || theme.global.drop.elevation || theme.global.drop.shadowSize || // backward compatibility
+    'small' : undefined,
     tabIndex: "-1",
     alignProp: align,
     overflow: overflow,
     "data-g-portal-id": portalId
   }, rest), children);
 
-  if (theme.global.drop.background) {
-    var dark = (0, _utils.backgroundIsDark)(theme.global.drop.background, theme);
+  if (background || theme.global.drop.background) {
+    var dark = (0, _utils.backgroundIsDark)(background || theme.global.drop.background, theme);
 
     if (dark !== undefined && dark !== theme.dark) {
       content = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {

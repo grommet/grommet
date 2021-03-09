@@ -1,13 +1,15 @@
 "use strict";
 
 exports.__esModule = true;
-exports.textAlignStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.textAlignStyle = exports.roundStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
 var _background = require("./background");
 
 var _colors = require("./colors");
+
+var _responsive = require("./responsive");
 
 var _mixins = require("./mixins");
 
@@ -384,6 +386,71 @@ var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
 };
 
 exports.kindPartStyles = kindPartStyles;
+var ROUND_MAP = {
+  full: '100%'
+};
+
+var roundStyle = function roundStyle(data, responsive, theme) {
+  var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+  var styles = [];
+
+  if (typeof data === 'object') {
+    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
+    var responsiveSize = responsive && breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
+
+    if (data.corner === 'top') {
+      styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-top-left-radius: " + responsiveSize + ";\n          border-top-right-radius: " + responsiveSize + ";\n        "));
+      }
+    } else if (data.corner === 'bottom') {
+      styles.push((0, _styledComponents.css)(["border-bottom-left-radius:", ";border-bottom-right-radius:", ";"], size, size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-bottom-left-radius: " + responsiveSize + ";\n          border-bottom-right-radius: " + responsiveSize + ";\n        "));
+      }
+    } else if (data.corner === 'left') {
+      styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-bottom-left-radius:", ";"], size, size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-top-left-radius: " + responsiveSize + ";\n          border-bottom-left-radius: " + responsiveSize + ";\n        "));
+      }
+    } else if (data.corner === 'right') {
+      styles.push((0, _styledComponents.css)(["border-top-right-radius:", ";border-bottom-right-radius:", ";"], size, size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-top-right-radius: " + responsiveSize + ";\n          border-bottom-right-radius: " + responsiveSize + ";\n        "));
+      }
+    } else if (data.corner) {
+      styles.push((0, _styledComponents.css)(["border-", "-radius:", ";"], data.corner, size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-" + data.corner + "-radius: " + responsiveSize + ";\n        "));
+      }
+    } else {
+      styles.push((0, _styledComponents.css)(["border-radius:", ";"], size));
+
+      if (responsiveSize) {
+        styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n          border-radius: " + responsiveSize + ";\n        "));
+      }
+    }
+  } else {
+    var _size2 = data === true ? 'medium' : data;
+
+    styles.push((0, _styledComponents.css)(["border-radius:", ";"], ROUND_MAP[_size2] || theme.global.edgeSize[_size2] || _size2));
+
+    var _responsiveSize = breakpoint && breakpoint.edgeSize[_size2];
+
+    if (_responsiveSize) {
+      styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-radius: " + _responsiveSize + ";\n      "));
+    }
+  }
+
+  return styles;
+};
+
+exports.roundStyle = roundStyle;
 var TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',

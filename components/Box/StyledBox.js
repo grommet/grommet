@@ -9,6 +9,10 @@ var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
 
+var _responsive = require("../../utils/responsive");
+
+var _styles = require("../../utils/styles");
+
 var _FLEX_MAP;
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -59,7 +63,7 @@ var directionStyle = function directionStyle(direction, theme) {
   var styles = [(0, _styledComponents.css)(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
 
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+    var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
 
     if (breakpoint) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
@@ -103,70 +107,6 @@ var WRAP_MAP = {
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-var ROUND_MAP = {
-  full: '100%'
-};
-
-var roundStyle = function roundStyle(data, responsive, theme) {
-  var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
-  var styles = [];
-
-  if (typeof data === 'object') {
-    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
-    var responsiveSize = responsive && breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
-
-    if (data.corner === 'top') {
-      styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-top-left-radius: " + responsiveSize + ";\n          border-top-right-radius: " + responsiveSize + ";\n        "));
-      }
-    } else if (data.corner === 'bottom') {
-      styles.push((0, _styledComponents.css)(["border-bottom-left-radius:", ";border-bottom-right-radius:", ";"], size, size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-bottom-left-radius: " + responsiveSize + ";\n          border-bottom-right-radius: " + responsiveSize + ";\n        "));
-      }
-    } else if (data.corner === 'left') {
-      styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-bottom-left-radius:", ";"], size, size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-top-left-radius: " + responsiveSize + ";\n          border-bottom-left-radius: " + responsiveSize + ";\n        "));
-      }
-    } else if (data.corner === 'right') {
-      styles.push((0, _styledComponents.css)(["border-top-right-radius:", ";border-bottom-right-radius:", ";"], size, size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-top-right-radius: " + responsiveSize + ";\n          border-bottom-right-radius: " + responsiveSize + ";\n        "));
-      }
-    } else if (data.corner) {
-      styles.push((0, _styledComponents.css)(["border-", "-radius:", ";"], data.corner, size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-" + data.corner + "-radius: " + responsiveSize + ";\n        "));
-      }
-    } else {
-      styles.push((0, _styledComponents.css)(["border-radius:", ";"], size));
-
-      if (responsiveSize) {
-        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          border-radius: " + responsiveSize + ";\n        "));
-      }
-    }
-  } else {
-    var _size = data === true ? 'medium' : data;
-
-    styles.push((0, _styledComponents.css)(["border-radius:", ";"], ROUND_MAP[_size] || theme.global.edgeSize[_size] || _size));
-
-    var _responsiveSize = breakpoint && breakpoint.edgeSize[_size];
-
-    if (_responsiveSize) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        border-radius: " + _responsiveSize + ";\n      "));
-    }
-  }
-
-  return styles;
-};
-
 var SLIDE_SIZES = {
   xsmall: 1,
   small: 5,
@@ -414,7 +354,7 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.pad && (0, _utils.edgeStyle)('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.round && roundStyle(props.round, props.responsive, props.theme);
+  return props.round && (0, _styles.roundStyle)(props.round, props.responsive, props.theme);
 }, function (props) {
   return props.wrapProp && wrapStyle;
 }, function (props) {
@@ -435,7 +375,7 @@ exports.StyledBox = StyledBox;
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
-  var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+  var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
 

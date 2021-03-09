@@ -5,7 +5,7 @@ exports.StyledDrop = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _utils = require("../../utils");
+var _styles = require("../../utils/styles");
 
 var _background = require("../../utils/background");
 
@@ -36,12 +36,14 @@ var dropKeyFrames = (0, _styledComponents.keyframes)(["0%{opacity:0.5;transform:
 var StyledDrop = _styledComponents["default"].div.withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
-})(["", " border-radius:", ";position:fixed;z-index:", ";outline:none;", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _utils.baseStyle, function (props) {
-  return props.theme.global.drop.border.radius;
+})(["", " ", " position:fixed;z-index:", ";outline:none;", " ", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _styles.baseStyle, function (props) {
+  return !props.plain && (props.round && (0, _styles.roundStyle)(props.round, true, props.theme) || "border-radius: " + props.theme.global.drop.border.radius + ";");
 }, function (props) {
   return props.theme.global.drop.zIndex;
 }, function (props) {
-  return !props.plain && (0, _background.backgroundStyle)(props.theme.global.drop.background, props.theme);
+  return !props.plain && (0, _background.backgroundStyle)(props.background || props.theme.global.drop.background, props.theme);
+}, function (props) {
+  return !props.plain && (props.margin || props.theme.global.drop.margin) && props.theme.global && (0, _styles.edgeStyle)('margin', props.margin || props.theme.global.drop.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return getTransformOriginStyle(props.alignProp);
 }, dropKeyFrames, function (props) {
