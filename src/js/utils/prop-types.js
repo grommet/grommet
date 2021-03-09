@@ -48,7 +48,7 @@ export const colorPropType = PropTypes.oneOfType([
   PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
 ]);
 
-export const backgroundDoc = PropTypes.oneOfType([
+export const backgroundPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({
     color: colorPropType,
@@ -71,7 +71,9 @@ export const backgroundDoc = PropTypes.oneOfType([
     ]),
     light: PropTypes.string,
   }),
-]).description(`Either a color 
+]);
+
+export const backgroundDoc = backgroundPropType.description(`Either a color 
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
 
@@ -158,30 +160,19 @@ export const genericProps = {
   margin: marginProp,
 };
 
+export const elevationPropType = PropTypes.oneOfType([
+  PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+  PropTypes.string,
+]);
+
 export const hoverIndicatorPropType = PropTypes.oneOfType([
   PropTypes.bool,
   PropTypes.string,
   PropTypes.oneOf(['background']),
+  backgroundPropType,
   PropTypes.shape({
-    color: PropTypes.string,
-    dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    image: PropTypes.string,
-    light: PropTypes.string,
-    position: PropTypes.string,
-    opacity: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.bool,
-      PropTypes.number,
-      PropTypes.oneOf(['weak', 'medium', 'strong']),
-    ]),
-    repeat: PropTypes.oneOfType([
-      PropTypes.oneOf(['no-repeat', 'repeat']),
-      PropTypes.string,
-    ]),
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(['cover', 'contain']),
-      PropTypes.string,
-    ]),
+    background: backgroundPropType,
+    elevation: elevationPropType,
   }),
 ]);
 
