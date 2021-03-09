@@ -13,8 +13,9 @@ export interface CheckBoxProps {
   indeterminate?: boolean;
 }
 
-export type CheckBoxExtendedProps = CheckBoxProps &
-  JSX.IntrinsicElements['input'];
+type inputType = JSX.IntrinsicElements['input'];
+
+export interface CheckBoxExtendedProps extends CheckBoxProps, inputType {}
 
 declare const CheckBox: React.FC<CheckBoxExtendedProps>;
 
