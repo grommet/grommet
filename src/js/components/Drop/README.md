@@ -217,7 +217,8 @@ string
 
 **plain**
 
-Whether the drop element should have no background nor elevation.
+Whether the drop element should have no background, 
+        elevation, margin or round.
 
 ```
 boolean

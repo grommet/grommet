@@ -66,7 +66,8 @@ export const doc = Drop => {
       .defaultValue('auto'),
     plain: PropTypes.bool
       .description(
-        `Whether the drop element should have no background nor elevation.`,
+        `Whether the drop element should have no background, 
+        elevation, margin or round.`,
       )
       .defaultValue(false),
     responsive: PropTypes.bool
