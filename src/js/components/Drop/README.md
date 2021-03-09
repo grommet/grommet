@@ -76,84 +76,6 @@ string
 }
 ```
 
-**onClickOutside**
-
-Function that will be invoked when the user clicks outside the drop.
-
-```
-function
-```
-
-**onEsc**
-
-Function that will be called when the user presses the escape key inside
-       the drop.
-
-```
-function
-```
-
-**overflow**
-
-How to control the overflow inside the drop. Defaults to `auto`.
-
-```
-auto
-hidden
-scroll
-visible
-{
-  horizontal: 
-    auto
-    hidden
-    scroll
-    visible,
-  vertical: 
-    auto
-    hidden
-    scroll
-    visible
-}
-string
-```
-
-**responsive**
-
-Whether to dynamically re-place when resized. Defaults to `true`.
-
-```
-boolean
-```
-
-**restrictFocus**
-
-Whether the drop should control focus.
-
-```
-boolean
-```
-
-**stretch**
-
-If set to true the drop element will be stretched to at least match the
-      width of the target element. If set to align the width of the drop element
-      will be restricted to the width of the target element. The default is true
-      because that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
-
-```
-boolean
-align
-```
-
-**target**
-
-Required. Target where the drop will be aligned to. This should be a React 
-      reference.
-
-```
-object
-```
-
 **elevation**
 
 Elevated height of the target, indicated via a drop shadow. 
@@ -252,9 +174,66 @@ xlarge
 string
 ```
 
+**onClickOutside**
+
+Function that will be invoked when the user clicks outside the drop.
+
+```
+function
+```
+
+**onEsc**
+
+Function that will be called when the user presses the escape key inside
+       the drop.
+
+```
+function
+```
+
+**overflow**
+
+How to control the overflow inside the drop. Defaults to `auto`.
+
+```
+auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string
+```
+
 **plain**
 
 Whether the drop element should have no background nor elevation.
+
+```
+boolean
+```
+
+**responsive**
+
+Whether to dynamically re-place when resized. Defaults to `true`.
+
+```
+boolean
+```
+
+**restrictFocus**
+
+Whether the drop should control focus.
 
 ```
 boolean
@@ -291,6 +270,27 @@ string
     xlarge
     string
 }
+```
+
+**stretch**
+
+If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
+
+```
+boolean
+align
+```
+
+**target**
+
+Required. Target where the drop will be aligned to. This should be a React 
+      reference.
+
+```
+object
 ```
 
 **trapFocus**

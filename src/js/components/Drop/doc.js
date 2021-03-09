@@ -46,6 +46,14 @@ export const doc = Drop => {
         left: 'left',
       }),
     background: backgroundDoc,
+    elevation: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
+      `Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.`,
+    ),
+    margin: marginProp,
     onClickOutside: PropTypes.func.description(
       'Function that will be invoked when the user clicks outside the drop.',
     ),
@@ -56,12 +64,18 @@ export const doc = Drop => {
     overflow: dropOverflowPropTypes
       .description('How to control the overflow inside the drop.')
       .defaultValue('auto'),
+    plain: PropTypes.bool
+      .description(
+        `Whether the drop element should have no background nor elevation.`,
+      )
+      .defaultValue(false),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
       .defaultValue(true),
     restrictFocus: PropTypes.bool
       .description('Whether the drop should control focus.')
       .defaultValue(false),
+    round: roundPropType,
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])])
       .description(
         `If set to true the drop element will be stretched to at least match the
@@ -74,20 +88,6 @@ export const doc = Drop => {
       `Target where the drop will be aligned to. This should be a React 
       reference.`,
     ).isRequired,
-    elevation: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description(
-      `Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.`,
-    ),
-    margin: marginProp,
-    plain: PropTypes.bool
-      .description(
-        `Whether the drop element should have no background nor elevation.`,
-      )
-      .defaultValue(false),
-    round: roundPropType,
     trapFocus: PropTypes.bool
       .description(`Traps keyboard focus inside of drop.`)
       .defaultValue(true),
