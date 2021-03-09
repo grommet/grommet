@@ -179,7 +179,7 @@ export const themeDoc = {
     description: `The size of the error messsage to be displayed.
      The default size is medium.`,
     type: 'string',
-    defaultValue: medium',
+    defaultValue: 'medium',
   },
   'formField.error.size.small': {
     description: `The size of the error messsage to be displayed.
