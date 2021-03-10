@@ -242,6 +242,14 @@ function
   function
 ]
 ```
+
+**validateOnMount**
+
+Run validation on the field when component is mounted.
+
+```
+boolean
+```
   
 ## Intrinsic element
 

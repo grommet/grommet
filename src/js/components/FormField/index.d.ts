@@ -33,6 +33,7 @@ export interface FormFieldProps {
           }
         | ((...args: any[]) => any)
       )[];
+  validateOnMount?: boolean;
 }
 
 declare const FormField: React.ComponentClass<FormFieldProps &

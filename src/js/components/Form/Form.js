@@ -64,6 +64,7 @@ const Form = forwardRef(
       defaultValidationResults,
     );
     const [requiredFields, setRequiredFields] = useState([]);
+    const [validateOnMount, setValidateOnMount] = useState([]);
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -80,6 +81,51 @@ const Form = forwardRef(
     }, [errorsProp, infosProp]);
     const validations = useRef({});
 
+    const setValid = nextErrors => {
+      let valid = false;
+
+      valid = requiredFields
+        .filter(n => Object.keys(validations.current).includes(n))
+        .every(
+          field =>
+            value[field] && (value[field] !== '' || value[field] !== false),
+        );
+
+      if (Object.keys(nextErrors).length > 0) valid = false;
+      return valid;
+    };
+
+    useEffect(() => {
+      if (validateOnMount.length > 0) {
+        setPendingValidation(undefined);
+        const [validatedErrors, validatedInfos] = validate(
+          Object.entries(validations.current).filter(([n]) =>
+            validateOnMount.includes(n),
+          ),
+          value,
+        );
+
+        setValidationResults(prevValidationResults => {
+          const nextErrors = {
+            ...prevValidationResults.errors,
+            ...validatedErrors,
+          };
+          const nextInfos = {
+            ...prevValidationResults.infos,
+            ...validatedInfos,
+          };
+
+          const nextValidationResults = {
+            errors: nextErrors,
+            infos: nextInfos,
+            valid: setValid(nextErrors),
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          return nextValidationResults;
+        });
+      }
+    }, [validateOnMount]);
+
     // Currently, onBlur validation will trigger after a timeout of 120ms.
     useEffect(() => {
       const timer = setTimeout(() => {
@@ -92,12 +138,6 @@ const Form = forwardRef(
             value,
           );
           setPendingValidation(undefined);
-
-          setRequiredFields(prevRequiredFields =>
-            prevRequiredFields.filter(n =>
-              Object.keys(validations.current).includes(n),
-            ),
-          );
 
           setValidationResults(prevValidationResults => {
             const nextErrors = {
@@ -122,21 +162,12 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
-            let valid = false;
-
-            valid = requiredFields.every(
-              field =>
-                value[field] && (value[field] !== '' || value[field] !== false),
-            );
-
-            if (Object.keys(nextErrors).length > 0) valid = false;
-
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
-              valid,
+              valid: setValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
@@ -265,6 +296,7 @@ const Form = forwardRef(
       name,
       required,
       validate: validateArg,
+      validateOnMount: validateOnMountArg,
     }) => {
       const error = errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
@@ -315,12 +347,22 @@ const Form = forwardRef(
         }
 
         if (validateArg || required) {
+          if (validateOnMountArg) {
+            setValidateOnMount(prevValue =>
+              !prevValue.includes(name) ? [...prevValue, name] : prevValue,
+            );
+            setPendingValidation(
+              pendingValidation ? [...pendingValidation, name] : [name],
+            );
+          } else {
+            setValidateOnMount(prevValue => prevValue.filter(v => v !== name));
+          }
           validations.current[name] = validateField;
           return () => delete validations.current[name];
         }
 
         return undefined;
-      }, [error, name, required, validateArg]);
+      }, [error, name, required, validateArg, validateOnMountArg]);
 
       return {
         error,
@@ -379,6 +421,7 @@ const Form = forwardRef(
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
+              valid: setValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;

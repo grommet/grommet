@@ -91,6 +91,9 @@ export const doc = FormField => {
       describing the validation issue, if any, or an object with 'message'
       and 'status' properties.`,
     ),
+    validateOnMount: PropTypes.bool.description(
+      'Run validation on the field when component is mounted.',
+    ),
   };
 
   return DocumentedFormField;

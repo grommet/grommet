@@ -4189,6 +4189,11 @@ function
 ]",
         "name": "validate",
       },
+      Object {
+        "description": "Run validation on the field when component is mounted.",
+        "format": "boolean",
+        "name": "validateOnMount",
+      },
     ],
     "usage": "import { FormField } from 'grommet';
 <FormField />",
