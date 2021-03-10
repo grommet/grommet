@@ -457,7 +457,7 @@ describe('Form controlled', () => {
     // focus in and out of mood, should fail validation
     moodField.focus();
     toggleField.focus();
-    act(() => jest.advanceTimersByTime(2000)); // allow validations to run
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
