@@ -2,7 +2,12 @@ import * as React from 'react';
 
 export interface TableFooterProps {}
 
-declare const TableFooter: React.FC<TableFooterProps &
-  JSX.IntrinsicElements['tfoot']>;
+type htmlTableFooterProps = JSX.IntrinsicElements['tfoot'];
+
+export interface TableFooterExtendedProps
+  extends TableFooterProps,
+    htmlTableFooterProps {}
+
+declare const TableFooter: React.FC<TableFooterExtendedProps>;
 
 export { TableFooter };

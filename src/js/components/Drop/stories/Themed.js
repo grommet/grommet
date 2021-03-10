@@ -7,14 +7,16 @@ import { deepMerge } from 'grommet/utils';
 const customTheme = deepMerge(grommet, {
   global: {
     drop: {
-      background: { dark: 'neutral-2', light: 'neutral-2' },
-      border: { radius: '10px' },
+      background: { dark: 'neutral-2', light: 'background-contrast' },
+      border: { radius: '10px' }, // impacting 'round' behavior
       zIndex: '13',
+      elevation: 'large', // impacting the elevation
+      margin: 'xsmall',
     },
   },
 });
 
-const CustomDrop = () => {
+const ThemedDrop = () => {
   const [, setShowDrop] = useState(false);
   const targetRef = useRef();
 
@@ -44,8 +46,11 @@ const CustomDrop = () => {
   );
 };
 
-export const Custom = () => <CustomDrop />;
+export const Themed = () => <ThemedDrop />;
+Themed.parameters = {
+  chromatic: { disable: true },
+};
 
 export default {
-  title: 'Controls/Drop/Custom',
+  title: 'Controls/Drop/Themed',
 };
