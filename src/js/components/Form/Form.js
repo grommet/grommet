@@ -97,13 +97,14 @@ const Form = forwardRef(
 
     useEffect(() => {
       if (validateOnMount.length > 0) {
-        setPendingValidation(undefined);
         const [validatedErrors, validatedInfos] = validate(
           Object.entries(validations.current).filter(([n]) =>
             validateOnMount.includes(n),
           ),
           value,
         );
+
+        setPendingValidation(undefined);
 
         setValidationResults(prevValidationResults => {
           const nextErrors = {
