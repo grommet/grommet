@@ -225,7 +225,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           radius: '0px',
         },
-        shadowSize: 'small',
+        // margin: undefined
+        shadowSize: 'small', // shadowSize is deprecated, use 'elevation'
         zIndex: '20',
       },
       edgeSize: {
@@ -982,6 +983,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     menu: {
       // background: undefined,
       // extend: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left',
+        },
+        // any drop props
+      },
       icons: {
         down: FormDown,
         // up: undefined,

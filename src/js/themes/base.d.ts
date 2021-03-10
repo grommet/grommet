@@ -287,6 +287,7 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
+      margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
     };
@@ -970,6 +971,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    drop?: DropProps;
     extend?: ExtendType;
     icons?: {
       down?: any;
