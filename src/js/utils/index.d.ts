@@ -217,6 +217,12 @@ export type RoundType =
         | 'bottom-left'
         | 'bottom-right';
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    }
+  | {
+      corners?: Array<{
+        corner: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+        size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+      }>;
     };
 export type TextAlignType = 'start' | 'center' | 'end';
 export type ThicknessType =

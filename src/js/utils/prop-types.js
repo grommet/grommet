@@ -214,6 +214,22 @@ export const roundPropType = PropTypes.oneOfType([
       PropTypes.string,
     ]),
   }),
+  PropTypes.shape({
+    corners: PropTypes.arrayOf(
+      PropTypes.shape({
+        corner: PropTypes.oneOf([
+          'top-left',
+          'top-right',
+          'bottom-left',
+          'bottom-right',
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+          PropTypes.string,
+        ]),
+      }),
+    ),
+  }),
 ])
   .description('How much to round the corners.')
   .defaultValue(undefined);

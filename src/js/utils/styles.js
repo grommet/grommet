@@ -626,7 +626,32 @@ export const roundStyle = (data, responsive, theme) => {
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
-    if (data.corner === 'top') {
+    if (data.corners) {
+      data.corners.forEach(corner => {
+        const cSize =
+          ROUND_MAP[corner.size] ||
+          theme.global.edgeSize[corner.size || 'medium'] ||
+          corner.size;
+        const cResponsiveSize =
+          responsive &&
+          breakpoint &&
+          breakpoint.edgeSize[corner.size] &&
+          (breakpoint.edgeSize[corner.size] || corner.size);
+        styles.push(css`
+            border-${corner.corner}-radius: ${cSize};
+          `);
+        if (cResponsiveSize) {
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+              border-${corner.corner}-radius: ${cResponsiveSize};
+            `,
+            ),
+          );
+        }
+      });
+    } else if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
         border-top-right-radius: ${size};

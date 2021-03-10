@@ -1075,6 +1075,22 @@ string
     large
     xlarge
     string
+}
+{
+  corners: [{
+  corner: 
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}]
 }",
         "name": "round",
       },
@@ -3559,6 +3575,22 @@ string
     large
     xlarge
     string
+}
+{
+  corners: [{
+  corner: 
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}]
 }",
         "name": "round",
       },

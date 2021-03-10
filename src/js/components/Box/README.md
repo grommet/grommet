@@ -751,6 +751,22 @@ string
     xlarge
     string
 }
+{
+  corners: [{
+  corner: 
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}]
+}
 ```
 
 **tag**

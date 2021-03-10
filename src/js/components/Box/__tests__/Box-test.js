@@ -403,6 +403,16 @@ describe('Box', () => {
         <Box round={{ size: 'medium' }} />
         <Box round={{ size: 'large' }} />
         <Box round={{ size: 'xlarge' }} />
+        <Box
+          round={{
+            corners: [
+              { corner: 'top-left', size: 'small' },
+              { corner: 'top-right', size: 'large' },
+              { corner: 'bottom-left', size: 'medium' },
+              { corner: 'bottom-right', size: 'xsmall' },
+            ],
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();

@@ -4436,6 +4436,24 @@ exports[`Box round 1`] = `
   border-radius: 96px;
 }
 
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 48px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 6px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     border-radius: 12px;
@@ -4487,6 +4505,30 @@ exports[`Box round 1`] = `
 @media only screen and (max-width:768px) {
   .c18 {
     border-radius: 48px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border-top-left-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border-top-right-radius: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border-bottom-left-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border-bottom-right-radius: 3px;
   }
 }
 
@@ -4549,6 +4591,9 @@ exports[`Box round 1`] = `
   />
   <div
     className="c18"
+  />
+  <div
+    className="c19"
   />
 </div>
 `;
