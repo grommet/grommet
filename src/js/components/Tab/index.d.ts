@@ -9,7 +9,10 @@ export interface TabProps {
   title?: React.ReactNode;
 }
 
-declare const Tab: React.ComponentClass<TabProps &
-  Omit<JSX.IntrinsicElements['button'], 'title'>>;
+export interface TabExtendedProps
+  extends TabProps,
+    Omit<JSX.IntrinsicElements['button'], 'title'> {}
+
+declare const Tab: React.FC<TabExtendedProps>;
 
 export { Tab };

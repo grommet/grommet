@@ -281,7 +281,6 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
   position: fixed;
   z-index: 20;
   outline: none;
@@ -378,7 +377,6 @@ exports[`Tip plain 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
   position: fixed;
   z-index: 20;
   outline: none;

@@ -225,7 +225,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           radius: '0px',
         },
-        shadowSize: 'small',
+        // margin: undefined
+        shadowSize: 'small', // shadowSize is deprecated, use 'elevation'
         zIndex: '20',
       },
       edgeSize: {
