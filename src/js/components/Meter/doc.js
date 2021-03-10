@@ -57,6 +57,10 @@ export const doc = Meter => {
     type: PropTypes.oneOf(['bar', 'circle'])
       .description('The visual type of meter.')
       .defaultValue('bar'),
+    direction: PropTypes.oneOf(['horizontal', 'vertical'])
+      .description(`The direction of the Meter you want to display.
+       The default direction is horizontal.But, direction works only
+       when 'type' of Meter is 'bar'.`),
     value: PropTypes.number.description(`
       The numeric value to represent. Ignored when 'values' is specified.
     `),
