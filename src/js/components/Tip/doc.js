@@ -23,7 +23,9 @@ export const doc = Tip => {
         trapFocus: false,
       }),
     plain: PropTypes.bool
-      .description(`Whether content should have default styling.`)
+      .description(
+        `Whether content should have default styling from tip.content.`,
+      )
       .defaultValue(undefined),
   };
 

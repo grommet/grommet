@@ -8315,7 +8315,7 @@ number",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether content should have default styling.",
+        "description": "Whether content should have default styling from tip.content.",
         "format": "boolean",
         "name": "plain",
       },

@@ -33,7 +33,7 @@ object
 
 **plain**
 
-Whether content should have default styling.
+Whether content should have default styling from tip.content.
 
 ```
 boolean
