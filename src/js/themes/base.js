@@ -225,7 +225,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           radius: '0px',
         },
-        shadowSize: 'small',
+        // margin: undefined
+        shadowSize: 'small', // shadowSize is deprecated, use 'elevation'
         zIndex: '20',
       },
       edgeSize: {
@@ -1362,6 +1363,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         // any props for the drop
         align: { top: 'bottom' }, // most common use case is Header with Buttons
+        background: 'none',
+        elevation: 'none',
+        margin: 'none',
       },
     },
     video: {
