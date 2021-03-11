@@ -175,6 +175,37 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'formField.error.size': {
+    description: `The size of the error message to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: 'medium',
+  },
+  'formField.error.size.xsmall': {
+    description: `The size of a 'xsmall' error message.`,
+    type: 'string',
+    defaultValue: '12px',
+  },
+  'formField.error.size.small': {
+    description: `The size of a 'small' error message.`,
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'formField.error.size.medium': {
+    description: `The size of a 'medium' error message.`,
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'formField.error.size.large': {
+    description: `The size of a 'large' error message.`,
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'formField.error.size.xlarge': {
+    description: `The size of a 'xlarge' error message.`,
+    type: 'string',
+    defaultValue: '26px',
+  },
   'formField.info.container': {
     description: `Any valid Box props for the container surrounding the info 
     message and icon.`,
