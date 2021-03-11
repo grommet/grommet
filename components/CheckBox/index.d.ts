@@ -13,7 +13,10 @@ export interface CheckBoxProps {
   indeterminate?: boolean;
 }
 
-declare const CheckBox: React.FC<CheckBoxProps &
-  JSX.IntrinsicElements['input']>;
+type inputType = JSX.IntrinsicElements['input'];
+
+export interface CheckBoxExtendedProps extends CheckBoxProps, inputType {}
+
+declare const CheckBox: React.FC<CheckBoxExtendedProps>;
 
 export { CheckBox };
