@@ -19,7 +19,7 @@ export const CustomHeaderCalendar = () => {
           date={date}
           onSelect={onSelect}
           size="small"
-          bounds={['2018-09-08', '2018-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
           header={({
             date: currentDate,
             locale,

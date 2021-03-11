@@ -63,7 +63,6 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
         target={componentRef.current}
         trapFocus={false}
         key="tip-drop"
-        plain
         {...theme.tip.drop}
         {...dropProps}
       >

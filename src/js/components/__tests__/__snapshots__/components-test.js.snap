@@ -8338,7 +8338,6 @@ number",
       },
       Object {
         "defaultValue": Object {
-          "plain": true,
           "trapFocus": false,
         },
         "description": "Any valid Drop prop to style the Tip drop container.",
@@ -8347,7 +8346,7 @@ number",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether content should have default styling.",
+        "description": "Whether content should have default styling from tip.content.",
         "format": "boolean",
         "name": "plain",
       },
