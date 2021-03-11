@@ -9,19 +9,20 @@ const customTheme: ThemeType = {
       family: `-apple-system, BlinkMacSystemFont`,
     },
     colors: {
-      text: 'black',
+      text: 'white',
     },
   },
   tip: {
     drop: {
-      background: { color: 'accent-1', opacity: 0.9 },
+      background: { color: 'accent-2', opacity: 0.9 },
       margin: { vertical: 'small' },
-      round: { size: 'medium' },
+      round: 'medium',
       elevation: 'large',
     },
     content: {
       elevation: 'none',
       background: 'none',
+      pad: 'xsmall',
     },
   },
 };
@@ -34,8 +35,8 @@ export const Themed = () => (
         example, we are showing how Drop could be the main driver of the styles
         instead of the content.
       </Paragraph>
-      <Tip content="action info" plain>
-        <Button label="action" />
+      <Tip content="action info">
+        <Button label="action" primary />
       </Tip>
     </Box>
   </Grommet>

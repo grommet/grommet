@@ -23,7 +23,6 @@ node
 **dropProps**
 
 Any valid Drop prop to style the Tip drop container. Defaults to `{
-  "plain": true,
   "trapFocus": false
 }`.
 
@@ -43,7 +42,8 @@ boolean
   
 **tip.content**
 
-Any valid Box property for the Tip container. Expects `object`.
+Any valid Box property for the Tip container. Not applicable 
+    when using Tip plain prop. Expects `object`.
 
 Defaults to
 
@@ -55,10 +55,15 @@ Defaults to
 
 **tip.drop**
 
-Any valid Drop property for the Tooltip. Expects `object`.
+Any valid Drop property for the Tip. Expects `object`.
 
 Defaults to
 
 ```
-{align: { top: 'bottom' }}
+{
+      align: { top: 'bottom' },   
+      background: 'none',
+      elevation: 'none',
+      margin: 'none'
+    }
 ```
