@@ -38,6 +38,18 @@ export const doc = TableCell => {
     verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom']).description(
       'How to align the contents vertically.',
     ),
+    align: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'left',
+        'right',
+        'center',
+        'justify',
+        'inherit',
+        'start',
+        'end',
+      ]),
+      PropTypes.string,
+    ]).description('How to align the body inside the Table.'),
   };
 
   return DocumentedTableCell;

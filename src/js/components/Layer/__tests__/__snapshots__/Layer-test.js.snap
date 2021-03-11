@@ -69,7 +69,7 @@ exports[`Layer animation fadeIn 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -126,7 +126,7 @@ exports[`Layer animation fadeIn 1`] = `
 `;
 
 exports[`Layer animation fadeIn 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -146,8 +146,8 @@ exports[`Layer animation fadeIn 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -246,7 +246,7 @@ exports[`Layer animation false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -303,7 +303,7 @@ exports[`Layer animation false 1`] = `
 `;
 
 exports[`Layer animation false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -323,8 +323,8 @@ exports[`Layer animation false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -425,7 +425,7 @@ exports[`Layer animation slide 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -482,7 +482,7 @@ exports[`Layer animation slide 1`] = `
 `;
 
 exports[`Layer animation slide 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -502,8 +502,8 @@ exports[`Layer animation slide 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -604,7 +604,7 @@ exports[`Layer animation true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -661,7 +661,7 @@ exports[`Layer animation true 1`] = `
 `;
 
 exports[`Layer animation true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -681,8 +681,8 @@ exports[`Layer animation true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -783,7 +783,7 @@ exports[`Layer custom margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -840,7 +840,7 @@ exports[`Layer custom margin 1`] = `
 `;
 
 exports[`Layer custom margin 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -860,8 +860,8 @@ exports[`Layer custom margin 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -961,7 +961,7 @@ exports[`Layer custom theme 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1019,7 +1019,7 @@ exports[`Layer custom theme 1`] = `
 `;
 
 exports[`Layer custom theme 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1039,8 +1039,8 @@ exports[`Layer custom theme 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1081,6 +1081,26 @@ exports[`Layer dark context 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1107,7 +1127,7 @@ exports[`Layer dark context 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c1 {
+.c2 {
   width: 0;
   height: 0;
   overflow: hidden;
@@ -1116,6 +1136,15 @@ exports[`Layer dark context 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1136,22 +1165,47 @@ exports[`Layer dark context 1`] = `
 
 <div
   class="c0"
-  data-g-portal-id="0"
   id="non-modal-test"
+  tabindex="-1"
 >
-  <a
-    aria-hidden="true"
+  <div
     class="c1"
-    tabindex="-1"
-  />
-  This is a non-modal layer
+    data-g-portal-id="0"
+    id="non-modal-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
+    />
+    This is a non-modal layer
+  </div>
 </div>
 `;
 
 exports[`Layer dark context 2`] = `
-"@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+".gLYSEc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1370,8 +1424,8 @@ exports[`Layer hidden 1`] = `
 
 exports[`Layer hidden 2`] = `
 "@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1405,7 +1459,7 @@ exports[`Layer hidden 2`] = `
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 ijyCbN"
+  class="StyledLayer-rmtehz-0 gLYSEc"
   id="hidden-test"
   tabindex="-1"
 >
@@ -1428,7 +1482,7 @@ exports[`Layer hidden 3`] = `
 `;
 
 exports[`Layer hidden 4`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1448,8 +1502,8 @@ exports[`Layer hidden 4`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1490,6 +1544,26 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1514,7 +1588,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c1 {
+.c2 {
   width: 0;
   height: 0;
   overflow: hidden;
@@ -1523,6 +1597,15 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1543,27 +1626,52 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
 
 <div
   class="c0"
-  data-g-portal-id="0"
   id="layer-node"
+  tabindex="-1"
 >
-  <a
-    aria-hidden="true"
+  <div
     class="c1"
-    tabindex="-1"
-  />
-  <div>
-    This is a layer
-    <input
-      data-testid="test-input"
+    data-g-portal-id="0"
+    id="layer-node"
+  >
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
     />
+    <div>
+      This is a layer
+      <input
+        data-testid="test-input"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Layer invoke onClickOutside when modal={false} 2`] = `
-"@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+".gLYSEc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1656,15 +1764,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
     max-height: none;
@@ -1679,8 +1778,8 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -1706,28 +1805,9 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 `;
 
 exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`] = `
-".ijyCbN {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+"@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1826,7 +1906,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -1888,7 +1968,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
 `;
 
 exports[`Layer invoke onClickOutside when modal={true} 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1908,8 +1988,8 @@ exports[`Layer invoke onClickOutside when modal={true} 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2007,15 +2087,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
@@ -2036,8 +2107,8 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -2066,28 +2137,9 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 `;
 
 exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] = `
-".ijyCbN {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+"@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2120,7 +2172,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
 `;
 
 exports[`Layer invokes onEsc when modal={false} 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2131,30 +2183,30 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   stroke: #7D4CDB;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2176,7 +2228,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2195,7 +2247,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   flex-basis: auto;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2214,7 +2266,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2232,27 +2284,27 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   text-align: inherit;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2270,38 +2322,78 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   border: none;
 }
 
-.c7::-webkit-input-placeholder {
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c7:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c7::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c7:-moz-placeholder,
-.c7::-moz-placeholder {
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c7 {
   position: relative;
   width: 100%;
 }
 
 .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2333,24 +2425,24 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c1 {
+.c2 {
   width: 0;
   height: 0;
   overflow: hidden;
   position: absolute;
 }
 
-.c8 {
+.c9 {
   cursor: pointer;
 }
 
-.c3 {
+.c4 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2366,6 +2458,15 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2390,21 +2491,23 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 
 <div
   class="c0"
-  data-g-portal-id="0"
   id="esc-test"
+  tabindex="-1"
 >
-  <a
-    aria-hidden="true"
+  <div
     class="c1"
-    tabindex="-1"
-  />
-  <button
-    aria-label="Open Drop"
-    class="c2 c3"
-    type="button"
+    data-g-portal-id="0"
+    id="esc-test"
   >
-    <div
-      class="c4"
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
+    />
+    <button
+      aria-label="Open Drop"
+      class="c3 c4"
+      type="button"
     >
       <div
         class="c5"
@@ -2412,43 +2515,66 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
         <div
           class="c6"
         >
-          <input
-            autocomplete="off"
-            class="c7 c8"
-            data-testid="test-select"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c7"
+          >
+            <input
+              autocomplete="off"
+              class="c8 c9"
+              data-testid="test-select"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c10"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c11"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c9"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c10"
-          viewBox="0 0 24 24"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Layer invokes onEsc when modal={false} 2`] = `
-"@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+".gLYSEc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2606,7 +2732,7 @@ exports[`Layer margin large 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2663,7 +2789,7 @@ exports[`Layer margin large 1`] = `
 `;
 
 exports[`Layer margin large 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2683,8 +2809,8 @@ exports[`Layer margin large 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2785,7 +2911,7 @@ exports[`Layer margin medium 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2842,7 +2968,7 @@ exports[`Layer margin medium 1`] = `
 `;
 
 exports[`Layer margin medium 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2862,8 +2988,8 @@ exports[`Layer margin medium 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -2964,7 +3090,7 @@ exports[`Layer margin none 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3021,7 +3147,7 @@ exports[`Layer margin none 1`] = `
 `;
 
 exports[`Layer margin none 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3041,8 +3167,8 @@ exports[`Layer margin none 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3143,7 +3269,7 @@ exports[`Layer margin small 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3200,7 +3326,7 @@ exports[`Layer margin small 1`] = `
 `;
 
 exports[`Layer margin small 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3220,8 +3346,8 @@ exports[`Layer margin small 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3322,7 +3448,7 @@ exports[`Layer margin xsmall 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3379,7 +3505,7 @@ exports[`Layer margin xsmall 1`] = `
 `;
 
 exports[`Layer margin xsmall 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3399,8 +3525,8 @@ exports[`Layer margin xsmall 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3441,6 +3567,26 @@ exports[`Layer non-modal 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3467,7 +3613,7 @@ exports[`Layer non-modal 1`] = `
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
-.c1 {
+.c2 {
   width: 0;
   height: 0;
   overflow: hidden;
@@ -3476,6 +3622,15 @@ exports[`Layer non-modal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3496,22 +3651,47 @@ exports[`Layer non-modal 1`] = `
 
 <div
   class="c0"
-  data-g-portal-id="0"
   id="non-modal-test"
+  tabindex="-1"
 >
-  <a
-    aria-hidden="true"
+  <div
     class="c1"
-    tabindex="-1"
-  />
-  This is a non-modal layer
+    data-g-portal-id="0"
+    id="non-modal-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c2"
+      tabindex="-1"
+    />
+    This is a non-modal layer
+  </div>
 </div>
 `;
 
 exports[`Layer non-modal 2`] = `
-"@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+".gLYSEc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3692,7 +3872,7 @@ exports[`Layer plain 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3749,7 +3929,7 @@ exports[`Layer plain 1`] = `
 `;
 
 exports[`Layer plain 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3769,8 +3949,8 @@ exports[`Layer plain 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3871,7 +4051,7 @@ exports[`Layer position: bottom - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -3928,7 +4108,7 @@ exports[`Layer position: bottom - full: false 1`] = `
 `;
 
 exports[`Layer position: bottom - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3948,8 +4128,8 @@ exports[`Layer position: bottom - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4051,7 +4231,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4108,7 +4288,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: bottom - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4128,8 +4308,8 @@ exports[`Layer position: bottom - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4232,7 +4412,7 @@ exports[`Layer position: bottom - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4289,7 +4469,7 @@ exports[`Layer position: bottom - full: true 1`] = `
 `;
 
 exports[`Layer position: bottom - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4309,8 +4489,8 @@ exports[`Layer position: bottom - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4412,7 +4592,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4469,7 +4649,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
 `;
 
 exports[`Layer position: bottom - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4489,8 +4669,8 @@ exports[`Layer position: bottom - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4591,7 +4771,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4648,7 +4828,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
 `;
 
 exports[`Layer position: bottom-left - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4668,8 +4848,8 @@ exports[`Layer position: bottom-left - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4771,7 +4951,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4828,7 +5008,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: bottom-left - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4848,8 +5028,8 @@ exports[`Layer position: bottom-left - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -4952,7 +5132,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5009,7 +5189,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
 `;
 
 exports[`Layer position: bottom-left - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5029,8 +5209,8 @@ exports[`Layer position: bottom-left - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5132,7 +5312,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5189,7 +5369,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
 `;
 
 exports[`Layer position: bottom-left - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5209,8 +5389,8 @@ exports[`Layer position: bottom-left - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5311,7 +5491,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5368,7 +5548,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
 `;
 
 exports[`Layer position: bottom-right - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5388,8 +5568,8 @@ exports[`Layer position: bottom-right - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5491,7 +5671,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5548,7 +5728,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: bottom-right - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5568,8 +5748,8 @@ exports[`Layer position: bottom-right - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5672,7 +5852,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5729,7 +5909,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
 `;
 
 exports[`Layer position: bottom-right - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5749,8 +5929,8 @@ exports[`Layer position: bottom-right - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5852,7 +6032,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -5909,7 +6089,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
 `;
 
 exports[`Layer position: bottom-right - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5929,8 +6109,8 @@ exports[`Layer position: bottom-right - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6031,7 +6211,7 @@ exports[`Layer position: center - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6088,7 +6268,7 @@ exports[`Layer position: center - full: false 1`] = `
 `;
 
 exports[`Layer position: center - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -6108,8 +6288,8 @@ exports[`Layer position: center - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6211,7 +6391,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6268,7 +6448,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: center - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -6288,8 +6468,8 @@ exports[`Layer position: center - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6389,7 +6569,7 @@ exports[`Layer position: center - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6446,7 +6626,7 @@ exports[`Layer position: center - full: true 1`] = `
 `;
 
 exports[`Layer position: center - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -6466,8 +6646,8 @@ exports[`Layer position: center - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6569,7 +6749,7 @@ exports[`Layer position: center - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6626,7 +6806,7 @@ exports[`Layer position: center - full: vertical 1`] = `
 `;
 
 exports[`Layer position: center - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -6646,8 +6826,8 @@ exports[`Layer position: center - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6748,7 +6928,7 @@ exports[`Layer position: end - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6805,7 +6985,7 @@ exports[`Layer position: end - full: false 1`] = `
 `;
 
 exports[`Layer position: end - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -6825,8 +7005,8 @@ exports[`Layer position: end - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6928,7 +7108,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6985,7 +7165,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: end - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7005,8 +7185,8 @@ exports[`Layer position: end - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7109,7 +7289,7 @@ exports[`Layer position: end - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7166,7 +7346,7 @@ exports[`Layer position: end - full: true 1`] = `
 `;
 
 exports[`Layer position: end - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7186,8 +7366,8 @@ exports[`Layer position: end - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7289,7 +7469,7 @@ exports[`Layer position: end - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7346,7 +7526,7 @@ exports[`Layer position: end - full: vertical 1`] = `
 `;
 
 exports[`Layer position: end - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7366,8 +7546,8 @@ exports[`Layer position: end - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7468,7 +7648,7 @@ exports[`Layer position: left - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7525,7 +7705,7 @@ exports[`Layer position: left - full: false 1`] = `
 `;
 
 exports[`Layer position: left - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7545,8 +7725,8 @@ exports[`Layer position: left - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7648,7 +7828,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7705,7 +7885,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: left - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7725,8 +7905,8 @@ exports[`Layer position: left - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7829,7 +8009,7 @@ exports[`Layer position: left - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -7886,7 +8066,7 @@ exports[`Layer position: left - full: true 1`] = `
 `;
 
 exports[`Layer position: left - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -7906,8 +8086,8 @@ exports[`Layer position: left - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8009,7 +8189,7 @@ exports[`Layer position: left - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8066,7 +8246,7 @@ exports[`Layer position: left - full: vertical 1`] = `
 `;
 
 exports[`Layer position: left - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8086,8 +8266,8 @@ exports[`Layer position: left - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8188,7 +8368,7 @@ exports[`Layer position: right - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8245,7 +8425,7 @@ exports[`Layer position: right - full: false 1`] = `
 `;
 
 exports[`Layer position: right - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8265,8 +8445,8 @@ exports[`Layer position: right - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8368,7 +8548,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8425,7 +8605,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: right - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8445,8 +8625,8 @@ exports[`Layer position: right - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8549,7 +8729,7 @@ exports[`Layer position: right - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8606,7 +8786,7 @@ exports[`Layer position: right - full: true 1`] = `
 `;
 
 exports[`Layer position: right - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8626,8 +8806,8 @@ exports[`Layer position: right - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8729,7 +8909,7 @@ exports[`Layer position: right - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8786,7 +8966,7 @@ exports[`Layer position: right - full: vertical 1`] = `
 `;
 
 exports[`Layer position: right - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8806,8 +8986,8 @@ exports[`Layer position: right - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8908,7 +9088,7 @@ exports[`Layer position: start - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8965,7 +9145,7 @@ exports[`Layer position: start - full: false 1`] = `
 `;
 
 exports[`Layer position: start - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -8985,8 +9165,8 @@ exports[`Layer position: start - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9088,7 +9268,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9145,7 +9325,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: start - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -9165,8 +9345,8 @@ exports[`Layer position: start - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9269,7 +9449,7 @@ exports[`Layer position: start - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9326,7 +9506,7 @@ exports[`Layer position: start - full: true 1`] = `
 `;
 
 exports[`Layer position: start - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -9346,8 +9526,8 @@ exports[`Layer position: start - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9449,7 +9629,7 @@ exports[`Layer position: start - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9506,7 +9686,7 @@ exports[`Layer position: start - full: vertical 1`] = `
 `;
 
 exports[`Layer position: start - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -9526,8 +9706,8 @@ exports[`Layer position: start - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9628,7 +9808,7 @@ exports[`Layer position: top - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9685,7 +9865,7 @@ exports[`Layer position: top - full: false 1`] = `
 `;
 
 exports[`Layer position: top - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -9705,8 +9885,8 @@ exports[`Layer position: top - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9808,7 +9988,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9865,7 +10045,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: top - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -9885,8 +10065,8 @@ exports[`Layer position: top - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -9989,7 +10169,7 @@ exports[`Layer position: top - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10046,7 +10226,7 @@ exports[`Layer position: top - full: true 1`] = `
 `;
 
 exports[`Layer position: top - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10066,8 +10246,8 @@ exports[`Layer position: top - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10169,7 +10349,7 @@ exports[`Layer position: top - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10226,7 +10406,7 @@ exports[`Layer position: top - full: vertical 1`] = `
 `;
 
 exports[`Layer position: top - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10246,8 +10426,8 @@ exports[`Layer position: top - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10348,7 +10528,7 @@ exports[`Layer position: top-left - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10405,7 +10585,7 @@ exports[`Layer position: top-left - full: false 1`] = `
 `;
 
 exports[`Layer position: top-left - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10425,8 +10605,8 @@ exports[`Layer position: top-left - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10528,7 +10708,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10585,7 +10765,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: top-left - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10605,8 +10785,8 @@ exports[`Layer position: top-left - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10709,7 +10889,7 @@ exports[`Layer position: top-left - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10766,7 +10946,7 @@ exports[`Layer position: top-left - full: true 1`] = `
 `;
 
 exports[`Layer position: top-left - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10786,8 +10966,8 @@ exports[`Layer position: top-left - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10889,7 +11069,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -10946,7 +11126,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
 `;
 
 exports[`Layer position: top-left - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -10966,8 +11146,8 @@ exports[`Layer position: top-left - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11068,7 +11248,7 @@ exports[`Layer position: top-right - full: false 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11125,7 +11305,7 @@ exports[`Layer position: top-right - full: false 1`] = `
 `;
 
 exports[`Layer position: top-right - full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -11145,8 +11325,8 @@ exports[`Layer position: top-right - full: false 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11248,7 +11428,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11305,7 +11485,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
 `;
 
 exports[`Layer position: top-right - full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -11325,8 +11505,8 @@ exports[`Layer position: top-right - full: horizontal 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11429,7 +11609,7 @@ exports[`Layer position: top-right - full: true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11486,7 +11666,7 @@ exports[`Layer position: top-right - full: true 1`] = `
 `;
 
 exports[`Layer position: top-right - full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -11506,8 +11686,8 @@ exports[`Layer position: top-right - full: true 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11609,7 +11789,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11666,7 +11846,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
 `;
 
 exports[`Layer position: top-right - full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -11686,8 +11866,8 @@ exports[`Layer position: top-right - full: vertical 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11788,7 +11968,7 @@ exports[`Layer should apply background 1`] = `
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11845,7 +12025,7 @@ exports[`Layer should apply background 1`] = `
 `;
 
 exports[`Layer should apply background 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -11865,8 +12045,8 @@ exports[`Layer should apply background 2`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -11968,7 +12148,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12026,7 +12206,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 exports[`Layer should render correct border radius for position: bottom - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12046,8 +12226,8 @@ exports[`Layer should render correct border radius for position: bottom -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12150,7 +12330,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12208,7 +12388,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 exports[`Layer should render correct border radius for position: bottom - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12228,8 +12408,8 @@ exports[`Layer should render correct border radius for position: bottom -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12333,7 +12513,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12391,7 +12571,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 exports[`Layer should render correct border radius for position: bottom - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12411,8 +12591,8 @@ exports[`Layer should render correct border radius for position: bottom -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12515,7 +12695,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12573,7 +12753,7 @@ exports[`Layer should render correct border radius for position: bottom -
 
 exports[`Layer should render correct border radius for position: bottom - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12593,8 +12773,8 @@ exports[`Layer should render correct border radius for position: bottom -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12696,7 +12876,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12754,7 +12934,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 exports[`Layer should render correct border radius for position: bottom-left - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12774,8 +12954,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12878,7 +13058,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -12936,7 +13116,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 exports[`Layer should render correct border radius for position: bottom-left - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -12956,8 +13136,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13061,7 +13241,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13119,7 +13299,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 exports[`Layer should render correct border radius for position: bottom-left - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -13139,8 +13319,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13243,7 +13423,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13301,7 +13481,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
 
 exports[`Layer should render correct border radius for position: bottom-left - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -13321,8 +13501,8 @@ exports[`Layer should render correct border radius for position: bottom-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13424,7 +13604,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13482,7 +13662,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 exports[`Layer should render correct border radius for position: bottom-right - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -13502,8 +13682,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13606,7 +13786,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13664,7 +13844,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 exports[`Layer should render correct border radius for position: bottom-right - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -13684,8 +13864,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13789,7 +13969,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13847,7 +14027,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 exports[`Layer should render correct border radius for position: bottom-right - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -13867,8 +14047,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -13971,7 +14151,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14029,7 +14209,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
 
 exports[`Layer should render correct border radius for position: bottom-right - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14049,8 +14229,8 @@ exports[`Layer should render correct border radius for position: bottom-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14152,7 +14332,7 @@ exports[`Layer should render correct border radius for position: center -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14210,7 +14390,7 @@ exports[`Layer should render correct border radius for position: center -
 
 exports[`Layer should render correct border radius for position: center - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14230,8 +14410,8 @@ exports[`Layer should render correct border radius for position: center -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14334,7 +14514,7 @@ exports[`Layer should render correct border radius for position: center -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14392,7 +14572,7 @@ exports[`Layer should render correct border radius for position: center -
 
 exports[`Layer should render correct border radius for position: center - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14412,8 +14592,8 @@ exports[`Layer should render correct border radius for position: center -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14514,7 +14694,7 @@ exports[`Layer should render correct border radius for position: center -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14572,7 +14752,7 @@ exports[`Layer should render correct border radius for position: center -
 
 exports[`Layer should render correct border radius for position: center - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14592,8 +14772,8 @@ exports[`Layer should render correct border radius for position: center -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14696,7 +14876,7 @@ exports[`Layer should render correct border radius for position: center -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14754,7 +14934,7 @@ exports[`Layer should render correct border radius for position: center -
 
 exports[`Layer should render correct border radius for position: center - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14774,8 +14954,8 @@ exports[`Layer should render correct border radius for position: center -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14878,7 +15058,7 @@ exports[`Layer should render correct border radius for position: end -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -14936,7 +15116,7 @@ exports[`Layer should render correct border radius for position: end -
 
 exports[`Layer should render correct border radius for position: end - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -14956,8 +15136,8 @@ exports[`Layer should render correct border radius for position: end -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15060,7 +15240,7 @@ exports[`Layer should render correct border radius for position: end -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15118,7 +15298,7 @@ exports[`Layer should render correct border radius for position: end -
 
 exports[`Layer should render correct border radius for position: end - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -15138,8 +15318,8 @@ exports[`Layer should render correct border radius for position: end -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15243,7 +15423,7 @@ exports[`Layer should render correct border radius for position: end -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15301,7 +15481,7 @@ exports[`Layer should render correct border radius for position: end -
 
 exports[`Layer should render correct border radius for position: end - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -15321,8 +15501,8 @@ exports[`Layer should render correct border radius for position: end -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15425,7 +15605,7 @@ exports[`Layer should render correct border radius for position: end -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15483,7 +15663,7 @@ exports[`Layer should render correct border radius for position: end -
 
 exports[`Layer should render correct border radius for position: end - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -15503,8 +15683,8 @@ exports[`Layer should render correct border radius for position: end -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15606,7 +15786,7 @@ exports[`Layer should render correct border radius for position: left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15664,7 +15844,7 @@ exports[`Layer should render correct border radius for position: left -
 
 exports[`Layer should render correct border radius for position: left - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -15684,8 +15864,8 @@ exports[`Layer should render correct border radius for position: left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15788,7 +15968,7 @@ exports[`Layer should render correct border radius for position: left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15846,7 +16026,7 @@ exports[`Layer should render correct border radius for position: left -
 
 exports[`Layer should render correct border radius for position: left - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -15866,8 +16046,8 @@ exports[`Layer should render correct border radius for position: left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -15971,7 +16151,7 @@ exports[`Layer should render correct border radius for position: left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16029,7 +16209,7 @@ exports[`Layer should render correct border radius for position: left -
 
 exports[`Layer should render correct border radius for position: left - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16049,8 +16229,8 @@ exports[`Layer should render correct border radius for position: left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16153,7 +16333,7 @@ exports[`Layer should render correct border radius for position: left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16211,7 +16391,7 @@ exports[`Layer should render correct border radius for position: left -
 
 exports[`Layer should render correct border radius for position: left - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16231,8 +16411,8 @@ exports[`Layer should render correct border radius for position: left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16334,7 +16514,7 @@ exports[`Layer should render correct border radius for position: right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16392,7 +16572,7 @@ exports[`Layer should render correct border radius for position: right -
 
 exports[`Layer should render correct border radius for position: right - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16412,8 +16592,8 @@ exports[`Layer should render correct border radius for position: right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16516,7 +16696,7 @@ exports[`Layer should render correct border radius for position: right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16574,7 +16754,7 @@ exports[`Layer should render correct border radius for position: right -
 
 exports[`Layer should render correct border radius for position: right - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16594,8 +16774,8 @@ exports[`Layer should render correct border radius for position: right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16699,7 +16879,7 @@ exports[`Layer should render correct border radius for position: right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16757,7 +16937,7 @@ exports[`Layer should render correct border radius for position: right -
 
 exports[`Layer should render correct border radius for position: right - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16777,8 +16957,8 @@ exports[`Layer should render correct border radius for position: right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16881,7 +17061,7 @@ exports[`Layer should render correct border radius for position: right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -16939,7 +17119,7 @@ exports[`Layer should render correct border radius for position: right -
 
 exports[`Layer should render correct border radius for position: right - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -16959,8 +17139,8 @@ exports[`Layer should render correct border radius for position: right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17063,7 +17243,7 @@ exports[`Layer should render correct border radius for position: start -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17121,7 +17301,7 @@ exports[`Layer should render correct border radius for position: start -
 
 exports[`Layer should render correct border radius for position: start - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -17141,8 +17321,8 @@ exports[`Layer should render correct border radius for position: start -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17245,7 +17425,7 @@ exports[`Layer should render correct border radius for position: start -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17303,7 +17483,7 @@ exports[`Layer should render correct border radius for position: start -
 
 exports[`Layer should render correct border radius for position: start - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -17323,8 +17503,8 @@ exports[`Layer should render correct border radius for position: start -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17428,7 +17608,7 @@ exports[`Layer should render correct border radius for position: start -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17486,7 +17666,7 @@ exports[`Layer should render correct border radius for position: start -
 
 exports[`Layer should render correct border radius for position: start - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -17506,8 +17686,8 @@ exports[`Layer should render correct border radius for position: start -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17610,7 +17790,7 @@ exports[`Layer should render correct border radius for position: start -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17668,7 +17848,7 @@ exports[`Layer should render correct border radius for position: start -
 
 exports[`Layer should render correct border radius for position: start - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -17688,8 +17868,8 @@ exports[`Layer should render correct border radius for position: start -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17791,7 +17971,7 @@ exports[`Layer should render correct border radius for position: top -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17849,7 +18029,7 @@ exports[`Layer should render correct border radius for position: top -
 
 exports[`Layer should render correct border radius for position: top - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -17869,8 +18049,8 @@ exports[`Layer should render correct border radius for position: top -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -17973,7 +18153,7 @@ exports[`Layer should render correct border radius for position: top -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18031,7 +18211,7 @@ exports[`Layer should render correct border radius for position: top -
 
 exports[`Layer should render correct border radius for position: top - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18051,8 +18231,8 @@ exports[`Layer should render correct border radius for position: top -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18156,7 +18336,7 @@ exports[`Layer should render correct border radius for position: top -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18214,7 +18394,7 @@ exports[`Layer should render correct border radius for position: top -
 
 exports[`Layer should render correct border radius for position: top - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18234,8 +18414,8 @@ exports[`Layer should render correct border radius for position: top -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18338,7 +18518,7 @@ exports[`Layer should render correct border radius for position: top -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18396,7 +18576,7 @@ exports[`Layer should render correct border radius for position: top -
 
 exports[`Layer should render correct border radius for position: top - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18416,8 +18596,8 @@ exports[`Layer should render correct border radius for position: top -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18519,7 +18699,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18577,7 +18757,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 exports[`Layer should render correct border radius for position: top-left - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18597,8 +18777,8 @@ exports[`Layer should render correct border radius for position: top-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18701,7 +18881,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18759,7 +18939,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 exports[`Layer should render correct border radius for position: top-left - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18779,8 +18959,8 @@ exports[`Layer should render correct border radius for position: top-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18884,7 +19064,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -18942,7 +19122,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 exports[`Layer should render correct border radius for position: top-left - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -18962,8 +19142,8 @@ exports[`Layer should render correct border radius for position: top-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19066,7 +19246,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19124,7 +19304,7 @@ exports[`Layer should render correct border radius for position: top-left -
 
 exports[`Layer should render correct border radius for position: top-left - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -19144,8 +19324,8 @@ exports[`Layer should render correct border radius for position: top-left -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19247,7 +19427,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19305,7 +19485,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 exports[`Layer should render correct border radius for position: top-right - 
       full: false 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -19325,8 +19505,8 @@ exports[`Layer should render correct border radius for position: top-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19429,7 +19609,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19487,7 +19667,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 exports[`Layer should render correct border radius for position: top-right - 
       full: horizontal 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -19507,8 +19687,8 @@ exports[`Layer should render correct border radius for position: top-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19612,7 +19792,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19670,7 +19850,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 exports[`Layer should render correct border radius for position: top-right - 
       full: true 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -19690,8 +19870,8 @@ exports[`Layer should render correct border radius for position: top-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19794,7 +19974,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 @media only screen and (max-width:768px) {
   .c0 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19852,7 +20032,7 @@ exports[`Layer should render correct border radius for position: top-right -
 
 exports[`Layer should render correct border radius for position: top-right - 
       full: vertical 2`] = `
-".ijyCbN {
+".gLYSEc {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -19872,8 +20052,8 @@ exports[`Layer should render correct border radius for position: top-right -
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -19973,15 +20153,6 @@ exports[`Layer target 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
@@ -20002,8 +20173,8 @@ exports[`Layer target 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -20032,28 +20203,9 @@ exports[`Layer target 1`] = `
 `;
 
 exports[`Layer target 2`] = `
-".ijyCbN {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+"@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -20148,15 +20300,6 @@ exports[`Layer target not modal 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
     max-height: none;
@@ -20171,8 +20314,8 @@ exports[`Layer target not modal 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -20198,28 +20341,9 @@ exports[`Layer target not modal 1`] = `
 `;
 
 exports[`Layer target not modal 2`] = `
-".ijyCbN {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
-  .ijyCbN {
-    position: absolute;
+"@media only screen and (max-width: 768px) {
+  .gLYSEc {
+    position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;

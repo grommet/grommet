@@ -36,6 +36,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('format', () => {
@@ -46,6 +47,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('inline', () => {
@@ -72,6 +74,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('format disabled', () => {
@@ -88,6 +91,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('range', () => {
@@ -98,6 +102,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('range inline', () => {
@@ -108,6 +113,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('range format', () => {
@@ -123,6 +129,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('range format inline', () => {
@@ -139,6 +146,7 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('focus', () => {
@@ -313,5 +321,6 @@ describe('DateInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 });

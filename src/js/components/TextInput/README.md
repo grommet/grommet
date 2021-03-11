@@ -106,7 +106,7 @@ string
 
 **focusIndicator**
 
-Whether the plain text input should receive a focus outline.
+Whether the plain TextInput should receive a focus outline.
 
 ```
 boolean
@@ -152,7 +152,7 @@ function
 Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect
 
 ```
@@ -196,7 +196,7 @@ node
 
 Whether this is a plain input with no border or outline.
       Use "full" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.
 
 ```

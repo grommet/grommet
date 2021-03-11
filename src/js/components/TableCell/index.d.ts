@@ -21,8 +21,13 @@ export interface TableCellProps {
   verticalAlign?: 'top' | 'middle' | 'bottom';
 }
 
-declare const TableCell: React.FC<TableCellProps &
-  BoxTypes &
-  JSX.IntrinsicElements['td']>;
+// We combine BoxTypes & JSX.IntrinsicElements['td'] inline here since BoxTypes
+// is a combination of BoxProps & JSX.IntrinsicElements['div'], and there is a
+// large overlap between td and div attributes.
+export interface TableCellExtendedProps
+  extends TableCellProps,
+    Omit<BoxTypes & JSX.IntrinsicElements['td'], 'scope'> {}
+
+declare const TableCell: React.FC<TableCellExtendedProps>;
 
 export { TableCell };
