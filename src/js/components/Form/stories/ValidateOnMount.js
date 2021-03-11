@@ -4,16 +4,26 @@ import { Box, Button, Grommet, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const ValidateOnMount = () => {
+  const defaultValue = {
+    firstName: 'J',
+    lastName: '',
+  };
+
   const [valid, setValid] = useState(false);
+  const [value, setValue] = useState(defaultValue);
 
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            value={value}
             validate="change"
             onReset={event => console.log(event)}
-            onSubmit={({ value }) => console.log('Submit', value)}
+            onChange={(nextValue, { touched }) => {
+              console.log('Change', nextValue, touched);
+              setValue(nextValue);
+            }}
             onValidate={validationResults => {
               console.log('validationResults = ', validationResults);
               setValid(validationResults.valid);
@@ -23,7 +33,6 @@ export const ValidateOnMount = () => {
               label="First Name"
               name="firstName"
               required
-              validateOnMount
               validate={[
                 { regexp: /^[a-z]/i },
                 firstName => {
@@ -38,7 +47,6 @@ export const ValidateOnMount = () => {
               label="Last Name"
               name="lastName"
               required
-              validateOnMount
               validate={[
                 { regexp: /^[a-z]/i },
                 lastName => {

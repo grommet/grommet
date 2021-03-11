@@ -64,7 +64,6 @@ const Form = forwardRef(
       defaultValidationResults,
     );
     const [requiredFields, setRequiredFields] = useState([]);
-    const [validateOnMount, setValidateOnMount] = useState([]);
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -96,15 +95,11 @@ const Form = forwardRef(
     };
 
     useEffect(() => {
-      if (validateOnMount.length > 0) {
-        const [validatedErrors, validatedInfos] = validate(
-          Object.entries(validations.current).filter(([n]) =>
-            validateOnMount.includes(n),
-          ),
-          value,
-        );
-
-        setPendingValidation(undefined);
+      const dirtyFields = Object.entries(validations.current).filter(
+        ([n]) => value[n] && (value[n] !== '' || value[n] !== false),
+      );
+      if (dirtyFields.length > 0) {
+        const [validatedErrors, validatedInfos] = validate(dirtyFields, value);
 
         setValidationResults(prevValidationResults => {
           const nextErrors = {
@@ -125,7 +120,7 @@ const Form = forwardRef(
           return nextValidationResults;
         });
       }
-    }, [validateOnMount]);
+    }, []);
 
     // Currently, onBlur validation will trigger after a timeout of 120ms.
     useEffect(() => {
@@ -297,7 +292,6 @@ const Form = forwardRef(
       name,
       required,
       validate: validateArg,
-      validateOnMount: validateOnMountArg,
     }) => {
       const error = errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
@@ -348,22 +342,12 @@ const Form = forwardRef(
         }
 
         if (validateArg || required) {
-          if (validateOnMountArg) {
-            setValidateOnMount(prevValue =>
-              !prevValue.includes(name) ? [...prevValue, name] : prevValue,
-            );
-            setPendingValidation(
-              pendingValidation ? [...pendingValidation, name] : [name],
-            );
-          } else {
-            setValidateOnMount(prevValue => prevValue.filter(v => v !== name));
-          }
           validations.current[name] = validateField;
           return () => delete validations.current[name];
         }
 
         return undefined;
-      }, [error, name, required, validateArg, validateOnMountArg]);
+      }, [error, name, required, validateArg]);
 
       return {
         error,
