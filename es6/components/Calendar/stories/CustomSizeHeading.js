@@ -25,7 +25,7 @@ export var CustomSizeCalendar = function CustomSizeCalendar() {
   }, /*#__PURE__*/React.createElement(Calendar, {
     date: date,
     onSelect: onSelect,
-    bounds: ['2018-09-08', '2020-12-13']
+    bounds: ['2020-09-08', '2025-12-13']
   })));
 };
 CustomSizeCalendar.storyName = 'Heading size';

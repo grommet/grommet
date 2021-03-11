@@ -33,7 +33,7 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
     date: date,
     onSelect: onSelect,
     size: "small",
-    bounds: ['2018-09-08', '2018-12-13'],
+    bounds: ['2020-09-08', '2025-12-13'],
     header: function header(_ref) {
       var currentDate = _ref.date,
           locale = _ref.locale,

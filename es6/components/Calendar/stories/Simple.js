@@ -28,7 +28,7 @@ export var Simple = function Simple() {
     daysOfWeek: true,
     onSelect: onSelect,
     size: "small",
-    bounds: ['2018-09-08', '2020-12-13']
+    bounds: ['2020-09-08', '2025-12-13']
   })));
 };
 export default {
