@@ -85,7 +85,11 @@ describe('Tip', () => {
       <Grommet
         theme={{
           tip: {
-            drop: { background: 'red', elevation: 'large', margin: '21px' },
+            drop: {
+              background: 'brand',
+              elevation: 'large',
+              margin: '21px',
+            },
           },
         }}
       >
