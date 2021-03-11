@@ -19,7 +19,9 @@ const customAccordionTheme = {
       margin: { vertical: '6px', horizontal: '24px' },
     },
     hover: {
-      color: 'accent-2',
+      heading: {
+        color: 'accent-2',
+      },
     },
     icons: {
       collapse: SubtractCircle,
