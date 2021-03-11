@@ -123,11 +123,6 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
             validatedInfos = _validate[1];
 
         setPendingValidation(undefined);
-        setRequiredFields(function (prevRequiredFields) {
-          return prevRequiredFields.filter(function (n) {
-            return Object.keys(validations.current).includes(n);
-          });
-        });
         setValidationResults(function (prevValidationResults) {
           var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
 
@@ -146,7 +141,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
             return delete nextInfos[n];
           });
           var valid = false;
-          valid = requiredFields.every(function (field) {
+          valid = requiredFields.filter(function (n) {
+            return Object.keys(validations.current).includes(n);
+          }).every(function (field) {
             return value[field] && (value[field] !== '' || value[field] !== false);
           });
           if (Object.keys(nextErrors).length > 0) valid = false; // keep any previous errors and infos for untouched keys,
