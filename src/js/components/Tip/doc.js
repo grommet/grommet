@@ -19,11 +19,12 @@ export const doc = Tip => {
     dropProps: PropTypes.object
       .description('Any valid Drop prop to style the Tip drop container.')
       .defaultValue({
-        plain: true,
         trapFocus: false,
       }),
     plain: PropTypes.bool
-      .description(`Whether content should have default styling.`)
+      .description(
+        `Whether content should have default styling from tip.content.`,
+      )
       .defaultValue(undefined),
   };
 
@@ -32,15 +33,21 @@ export const doc = Tip => {
 
 export const themeDoc = {
   'tip.content': {
-    description: 'Any valid Box property for the Tip container.',
+    description: `Any valid Box property for the Tip container. Not applicable 
+    when using Tip plain prop.`,
     type: 'object',
     defaultValue: `{ background: 'background-contrast', elevation: 'small', 
     margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
     round: 'small'}`,
   },
   'tip.drop': {
-    description: 'Any valid Drop property for the Tooltip.',
+    description: 'Any valid Drop property for the Tip.',
     type: 'object',
-    defaultValue: "{align: { top: 'bottom' }}",
+    defaultValue: `{
+      align: { top: 'bottom' },   
+      background: 'none',
+      elevation: 'none',
+      margin: 'none'
+    }`,
   },
 };
