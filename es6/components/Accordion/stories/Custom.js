@@ -21,7 +21,9 @@ var customAccordionTheme = {
       }
     },
     hover: {
-      color: 'accent-2'
+      heading: {
+        color: 'accent-2'
+      }
     },
     icons: {
       collapse: SubtractCircle,
