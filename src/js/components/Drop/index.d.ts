@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ElevationType, KeyboardType } from '../../utils';
+import { BackgroundType, ElevationType, KeyboardType, MarginType, RoundType } from '../../utils';
 
 export interface DropProps {
   align?: {
@@ -8,6 +8,7 @@ export interface DropProps {
     right?: 'left' | 'right';
     left?: 'left' | 'right';
   };
+  background?: BackgroundType;
   elevation?: ElevationType;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
@@ -27,6 +28,8 @@ export interface DropProps {
   target?: object;
   trapFocus?: boolean;
   plain?: boolean;
+  margin?: MarginType;
+  round?: RoundType;
 }
 
 declare const Drop: React.ComponentClass<DropProps &

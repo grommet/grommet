@@ -26,6 +26,9 @@ const customTheme = {
     font: {
       family: `-apple-system, BlinkMacSystemFont`,
     },
+    colors: {
+      text: 'black',
+    },
   },
   tip: {
     drop: {
