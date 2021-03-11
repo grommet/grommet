@@ -10,8 +10,7 @@ var theme = deepMerge(grommet, {
         vertical: 'xsmall'
       },
       background: tooltipColor,
-      border: false // extend: `color: white;`,
-
+      border: false
     }
   }
 });

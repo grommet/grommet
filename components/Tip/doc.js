@@ -12,10 +12,9 @@ var doc = function doc(Tip) {
   DocumentedTip.propTypes = {
     content: _reactDesc.PropTypes.node.description("The tooltip content inside the drop."),
     dropProps: _reactDesc.PropTypes.object.description('Any valid Drop prop to style the Tip drop container.').defaultValue({
-      plain: true,
       trapFocus: false
     }),
-    plain: _reactDesc.PropTypes.bool.description("Whether content should have default styling.").defaultValue(undefined)
+    plain: _reactDesc.PropTypes.bool.description("Whether content should have default styling from tip.content.").defaultValue(undefined)
   };
   return DocumentedTip;
 };
@@ -23,14 +22,14 @@ var doc = function doc(Tip) {
 exports.doc = doc;
 var themeDoc = {
   'tip.content': {
-    description: 'Any valid Box property for the Tip container.',
+    description: "Any valid Box property for the Tip container. Not applicable \n    when using Tip plain prop.",
     type: 'object',
     defaultValue: "{ background: 'background-contrast', elevation: 'small', \n    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, \n    round: 'small'}"
   },
   'tip.drop': {
-    description: 'Any valid Drop property for the Tooltip.',
+    description: 'Any valid Drop property for the Tip.',
     type: 'object',
-    defaultValue: "{align: { top: 'bottom' }}"
+    defaultValue: "{\n      align: { top: 'bottom' },   \n      background: 'none',\n      elevation: 'none',\n      margin: 'none'\n    }"
   }
 };
 exports.themeDoc = themeDoc;

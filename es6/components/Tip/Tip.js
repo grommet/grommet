@@ -68,8 +68,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   return [clonedChild, over && /*#__PURE__*/React.createElement(Drop, _extends({
     target: componentRef.current,
     trapFocus: false,
-    key: "tip-drop",
-    plain: true
+    key: "tip-drop"
   }, theme.tip.drop, dropProps), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content))];
 });
 Tip.displayName = 'Tip';

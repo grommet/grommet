@@ -1452,8 +1452,11 @@ export var generate = function generate(baseSpacing, scale) {
         // any props for the drop
         align: {
           top: 'bottom'
-        } // most common use case is Header with Buttons
-
+        },
+        // most common use case is Header with Buttons
+        background: 'none',
+        elevation: 'none',
+        margin: 'none'
       }
     },
     video: {

@@ -10,6 +10,9 @@ var customTheme = {
   global: {
     font: {
       family: "-apple-system, BlinkMacSystemFont"
+    },
+    colors: {
+      text: 'black'
     }
   },
   tip: {

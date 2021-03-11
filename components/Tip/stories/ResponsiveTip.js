@@ -20,8 +20,7 @@ var theme = (0, _utils.deepMerge)(_grommet.grommet, {
         vertical: 'xsmall'
       },
       background: tooltipColor,
-      border: false // extend: `color: white;`,
-
+      border: false
     }
   }
 });
