@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimateType } from '../../utils';
 import { BoxProps } from '../Box';
 
-export interface AccordionProps extends BoxProps {
+export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: AnimateType;
   onActive?: (activeIndexes: number[]) => void;
@@ -12,6 +12,7 @@ export interface AccordionProps extends BoxProps {
 
 export interface AccordionExtendedProps
   extends AccordionProps,
+    BoxProps,
     Omit<JSX.IntrinsicElements['div'], 'onClick'> {}
 
 declare const Accordion: React.FC<AccordionExtendedProps>;
