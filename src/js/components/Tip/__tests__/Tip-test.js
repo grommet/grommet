@@ -80,6 +80,25 @@ describe('Tip', () => {
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 
+  test('themed', async () => {
+    const { getByText } = render(
+      <Grommet
+        theme={{
+          tip: {
+            drop: { background: 'red', elevation: 'large', margin: '21px' },
+          },
+        }}
+      >
+        <Tip content="tooltip">Example</Tip>
+      </Grommet>,
+    );
+
+    // Styles of plain are captured in snapshots only when applying mouseOver
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+  });
+
   test(`dropProps should pass props to Drop`, async () => {
     const { getByText } = render(
       <Grommet>
