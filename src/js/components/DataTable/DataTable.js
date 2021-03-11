@@ -78,6 +78,7 @@ const DataTable = ({
   size,
   sort: sortProp,
   sortable,
+  rowDetails,
   step = 50,
   ...rest
 }) => {
@@ -134,6 +135,8 @@ const DataTable = ({
     onSelect,
     select,
   ]);
+
+  const [rowExpand, setRowExpand] = useState([]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -290,6 +293,7 @@ const DataTable = ({
           onToggle={onToggleGroups}
           primaryProperty={primaryProperty}
           scrollOffset={scrollOffset}
+          rowDetails={rowDetails}
         />
         {groups ? (
           <GroupedBody
@@ -332,6 +336,9 @@ const DataTable = ({
             show={!paginate ? showProp : undefined}
             size={size}
             step={step}
+            rowDetails={rowDetails}
+            rowExpand={rowExpand}
+            setRowExpand={setRowExpand}
           />
         )}
         {showFooter && (

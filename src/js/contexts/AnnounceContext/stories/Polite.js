@@ -1,46 +1,54 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { grommet } from 'grommet/themes';
-import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
+import React, { useContext } from 'react';
 
-const Announcer = ({ announce, message, mode, role }) => {
-  React.useEffect(() => {
-    const timeout = 3000;
-    announce(message, mode, timeout);
-  }, [announce, message, mode]);
+import { Announce } from 'grommet-icons';
 
+import { grommet } from 'grommet/themes'; // used only for the grommet's font
+import {
+  Anchor,
+  AnnounceContext,
+  Box,
+  Button,
+  Grommet,
+  Paragraph,
+} from 'grommet';
+
+const message = `Thank you for clicking the Announce Button, 
+this announcement is being broadcast on the Button's click.`;
+
+const PageContent = ({ mode }) => {
+  const announce = useContext(AnnounceContext);
   return (
-    <Text align="center" role={role} aria-live={mode}>
-      {message}
-    </Text>
+    <Box align="center" gap="medium">
+      <Paragraph textAlign="center">
+        Announce can only be &quot;observed&quot; via a screen reader.
+        Here&apos;s{' '}
+        <Anchor
+          label=" how to turn it on"
+          href="https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
+        />
+        , hint: Command-F5 on OSX. Clicking the Button below will trigger an
+        announcement.
+      </Paragraph>
+      <Button
+        label="Announce"
+        icon={<Announce />}
+        a11yTitle="Announce button"
+        reverse
+        onClick={() => {
+          announce(message, mode);
+        }}
+      />
+    </Box>
   );
 };
 
-Announcer.propTypes = {
-  announce: PropTypes.func.isRequired,
-  message: PropTypes.string,
-  mode: PropTypes.string,
-  role: PropTypes.string,
-};
-
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log',
-};
-
-const AnnounceContextComponent = props => (
+export const Polite = () => (
   <Grommet theme={grommet} full>
     <Box justify="center" align="center" background="brand" fill>
-      <Heading>Welcome to announcement section</Heading>
-      <AnnounceContext.Consumer>
-        {announce => <Announcer announce={announce} {...props} />}
-      </AnnounceContext.Consumer>
+      <PageContent mode="polite" role="log" />
     </Box>
   </Grommet>
 );
-
-export const Polite = () => <AnnounceContextComponent />;
 
 export default {
   title: 'Utilities/AnnounceContext/Polite',

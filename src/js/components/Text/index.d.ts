@@ -36,8 +36,10 @@ export interface TextProps {
   weight?: 'normal' | 'bold' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
 }
+export interface TextExtendedProps
+  extends TextProps,
+    Omit<JSX.IntrinsicElements['span'], 'color'> {}
 
-declare const Text: React.FC<TextProps &
-  Omit<JSX.IntrinsicElements['span'], 'color'>>;
+declare const Text: React.FC<TextExtendedProps>;
 
 export { Text };

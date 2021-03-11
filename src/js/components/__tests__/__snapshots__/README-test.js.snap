@@ -1424,13 +1424,18 @@ When 'onClick' has been specified, the hover indicator to apply
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -1446,6 +1451,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 \`\`\`
@@ -2144,13 +2191,18 @@ with plain Buttons.
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -2166,6 +2218,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 \`\`\`
@@ -2464,7 +2558,9 @@ undefined
 
 **button.active.primary**
 
-Adjustments to the primary Button style when the Button is active. Expects \`{}\`.
+Adjustments to the primary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2474,7 +2570,9 @@ undefined
 
 **button.active.secondary**
 
-Adjustments to the secondary Button style when the Button is active. Expects \`{}\`.
+Adjustments to the secondary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2664,7 +2762,9 @@ undefined
 
 **button.disabled.primary**
 
-Adjustments to the primary Button style when the Button is disabled. Expects \`{}\`.
+Adjustments to the primary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2674,7 +2774,9 @@ undefined
 
 **button.disabled.secondary**
 
-Adjustments to the secondary Button style when the Button is disabled. Expects \`{}\`.
+Adjustments to the secondary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2734,7 +2836,9 @@ undefined
 
 **button.hover.primary**
 
-Adjustments to the primary Button style when the Button is hovered. Expects \`{}\`.
+Adjustments to the primary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2744,7 +2848,9 @@ undefined
 
 **button.hover.secondary**
 
-Adjustments to the secondary Button style when the Button is hovered. Expects \`{}\`.
+Adjustments to the secondary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default. Expects \`{}\`.
 
 Defaults to
 
@@ -2774,7 +2880,8 @@ Defaults to
 
 **button.primary.background.color**
 
-The color of the background for primary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the background for primary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2784,7 +2891,8 @@ undefined
 
 **button.primary.background.opacity**
 
-The value used for primary button background opacity. Expects \`number | string\`.
+The value used for primary button background opacity.
+    Only relevant for themes that have defined a value for button.default. Expects \`number | string\`.
 
 Defaults to
 
@@ -2794,7 +2902,8 @@ undefined
 
 **button.primary.border.color**
 
-The color of the border for primary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the border for primary buttons. Only relevant 
+    for themes that have defined a value for button.default. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2854,7 +2963,8 @@ undefined
 
 **button.secondary.background.color**
 
-The color of the background for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the background for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2864,7 +2974,8 @@ undefined
 
 **button.secondary.background.opacity**
 
-The value used for secondary button background opacity. Expects \`number | string\`.
+The value used for secondary button background opacity. 
+    Only relevant for themes that have defined a value for button.default. Expects \`number | string\`.
 
 Defaults to
 
@@ -2874,7 +2985,8 @@ undefined
 
 **button.secondary.border.color**
 
-The color of the border for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the border for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2884,7 +2996,8 @@ undefined
 
 **button.secondary.color**
 
-The color of the label for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+The color of the label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2894,7 +3007,8 @@ undefined
 
 **button.secondary.font.weight**
 
-The weight of the text label for secondary buttons. Expects \`string | number\`.
+The weight of the text label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | number\`.
 
 Defaults to
 
@@ -2904,7 +3018,8 @@ undefined
 
 **button.secondary.padding.horizontal**
 
-The horizontal padding for a secondary button. Expects \`string\`.
+The horizontal padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string\`.
 
 Defaults to
 
@@ -2914,7 +3029,8 @@ Defaults to
 
 **button.secondary.padding.vertical**
 
-The vertical padding for a secondary button. Expects \`string\`.
+The vertical padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string\`.
 
 Defaults to
 
@@ -2924,7 +3040,8 @@ Defaults to
 
 **button.secondary.extend**
 
-Any additional style for a secondary button. Expects \`string | (props) => {}\`.
+Any additional style for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -6640,7 +6757,7 @@ boolean
 **groupBy**
 
 Property to group data by. If object is specified
-      'property' is used to group data by, 'expand' accepts array of 
+      'property' is used to group data by, 'expand' accepts array of
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.
@@ -6666,6 +6783,15 @@ When supplied, this function will be called with an event object that
 function
 \`\`\`
 
+**rowDetails**
+
+When supplied, this function will be called with row data. Function can
+      return a React Element which will be rendered on expanding the row.
+
+\`\`\`
+function
+\`\`\`
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -6674,7 +6800,7 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or 
+      browser, such as columns.search, sortable, groupBy, or
       columns.aggregate.
 
 \`\`\`
@@ -7061,15 +7187,15 @@ Defaults to
 
 **dataTable.header.background**
 
-Any valid Box background value. Expects \`string | 
+Any valid Box background value. Expects \`string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }\`.
 
@@ -7141,16 +7267,16 @@ small
 
 **dataTable.header.hover.background**
 
-The hover background color of the header cell contents, if 
-    clickable. Any valid Box background options apply. Expects \`string | 
+The hover background color of the header cell contents, if
+    clickable. Any valid Box background options apply. Expects \`string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }\`.
 
@@ -7196,7 +7322,7 @@ undefined
 
 **dataTable.resize.hover.side**
 
-The side of the resizer when hovered over. If color or size 
+The side of the resizer when hovered over. If color or size
     are defined, this will default to 'end' which is the recommended value. Expects \`string\`.
 
 Defaults to
@@ -7207,7 +7333,7 @@ undefined
 
 **dataTable.resize.hover.size**
 
-The size of the resizer when hovered over. Size values 
+The size of the resizer when hovered over. Size values
     correspond with those accepted by Box border. Expects \`string\`.
 
 Defaults to
@@ -7268,15 +7394,15 @@ undefined
 
 **dataTable.pinned.body.background**
 
-Any valid Box background options apply. Expects \`string | 
+Any valid Box background options apply. Expects \`string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }\`.
 
@@ -7298,15 +7424,15 @@ undefined
 
 **dataTable.pinned.header.background**
 
-Any valid Box background options apply. Expects \`string | 
+Any valid Box background options apply. Expects \`string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }\`.
 
@@ -7328,15 +7454,15 @@ undefined
 
 **dataTable.pinned.footer.background**
 
-Any valid Box background options apply. Expects \`string | 
+Any valid Box background options apply. Expects \`string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }\`.
 
@@ -7919,6 +8045,143 @@ How to align the drop with respect to the target element. Not
 }
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
+**elevation**
+
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
+
+\`\`\`
+none
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -7960,6 +8223,15 @@ visible
 string
 \`\`\`
 
+**plain**
+
+Whether the drop element should have no background, 
+        elevation, margin or round.
+
+\`\`\`
+boolean
+\`\`\`
+
 **responsive**
 
 Whether to dynamically re-place when resized. Defaults to \`true\`.
@@ -7974,6 +8246,39 @@ Whether the drop should control focus.
 
 \`\`\`
 boolean
+\`\`\`
+
+**round**
+
+How much to round the corners.
+
+\`\`\`
+boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 \`\`\`
 
 **stretch**
@@ -7995,29 +8300,6 @@ Required. Target where the drop will be aligned to. This should be a React
 
 \`\`\`
 object
-\`\`\`
-
-**elevation**
-
-Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.
-
-\`\`\`
-none
-xsmall
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
-**plain**
-
-Whether the drop element should have no background nor elevation.
-
-\`\`\`
-boolean
 \`\`\`
 
 **trapFocus**
@@ -8052,7 +8334,10 @@ The background color of Drop. Expects \`string | { dark: string, light: string }
 Defaults to
 
 \`\`\`
-#ffffff
+{
+      dark: 'black',
+      light: 'white',
+    }
 \`\`\`
 
 **global.drop.border.radius**
@@ -8075,14 +8360,57 @@ Defaults to
 undefined
 \`\`\`
 
-**global.drop.shadowSize**
+**global.edgeSize**
 
-Elevated height of the Drop. Expects \`string\`.
+The possible sizes for the Drop margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
+**global.drop.elevation**
+
+Elevated height above the underlying context, indicated
+    via a drop shadow. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 small
+\`\`\`
+
+**global.drop.margin**
+
+The margin of the drop from the target. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.shadowSize**
+
+Deprecated. Use 'global.drop.elevation' instead. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.drop.zIndex**
@@ -8316,7 +8644,7 @@ button
   "FileInput": "## FileInput
 A control to input one or more files.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Input-FileInput&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -8714,8 +9042,8 @@ function
 
 Function that will be called when the form is validated. The
       single argument is an event containing the latest error object
-      via \`validationResults.errors\` and info object via 
-      \`validationResults.infos\`.
+      via \`validationResults.errors\`, info object via 
+      \`validationResults.infos\` and form's validity via \`valid\`.
 
 \`\`\`
 function
@@ -9147,6 +9475,67 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**formField.error.size**
+
+The size of the error message to be displayed.
+     The default size is medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**formField.error.size.xsmall**
+
+The size of a 'xsmall' error message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+
+**formField.error.size.small**
+
+The size of a 'small' error message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
+\`\`\`
+
+**formField.error.size.medium**
+
+The size of a 'medium' error message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**formField.error.size.large**
+
+The size of a 'large' error message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**formField.error.size.xlarge**
+
+The size of a 'xlarge' error message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+26px
 \`\`\`
 
 **formField.info.container**
@@ -11106,7 +11495,9 @@ top-right
 
 **responsive**
 
-Whether the layer should take full width and height on mobile Defaults to \`true\`.
+Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -11930,6 +12321,14 @@ Function that will be called when the user types or pastes text.
 function
 \`\`\`
 
+**focusIndicator**
+
+Whether the plain MaskedInput should receive a focus outline.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onBlur**
 
 Function that will be called when the user leaves the field.
@@ -12032,7 +12431,7 @@ undefined
 
 **maskedInput.container.extend**
 
-Any additional style for the container surrounding the input 
+Any additional style for the container surrounding the input
     and, if present, icon. Expects \`string | (props) => {}\`.
 
 Defaults to
@@ -12416,7 +12815,7 @@ object
 
 **dropProps**
 
-Any valid Drop prop. Defaults to \`{}\`.
+Any valid Drop prop.
 
 \`\`\`
 object
@@ -12533,6 +12932,19 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**menu.drop**
+
+Any valid Drop props for the Menu drop. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+align: {
+      top: 'top',
+      left: 'left',
+    },
 \`\`\`
 
 **menu.extend**
@@ -12912,7 +13324,7 @@ import { Nav } from 'grommet';
 A control that enables selection of a single page from a 
       range of pages.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=undefined-Pagination&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Pagination&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js)
 ## Usage
 
 \`\`\`javascript
@@ -15334,6 +15746,132 @@ Defaults to
 18px
 \`\`\`
 ",
+  "Spinner": "## Spinner
+A Spinner.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-Spinner&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/spinner&module=%2Fsrc%2FSpinner.js)
+## Usage
+
+\`\`\`javascript
+import { Spinner } from 'grommet';
+<Spinner/>
+\`\`\`
+
+## Properties
+
+**size**
+
+A fixed size. Defaults to \`small\`.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**color**
+
+The border color of the Spinner.
+
+\`\`\`
+string
+{
+  dark: string,
+  light: string
+}
+\`\`\`
+
+**message**
+
+The message that will be announced for screen readers when message 
+        is a string. When an object, the start message will be announced 
+        as the Spinner shows, and the end message as the spinner closes.
+
+\`\`\`
+string
+{
+  start: string,
+  end: string
+}
+\`\`\`
+  
+## Theme
+  
+**spinner.container**
+
+Any valid Box prop for the Spinner container. 
+    Including 'color' for the spinner border color and 'size' for the default 
+    size of the Spinner. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**spinner.icon**
+
+An icon or an SVG to use as the default Spinner. Expects \`ReactElement | SVG\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**spinner.size.xsmall**
+
+The xsmall size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**spinner.size.small**
+
+The small size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**spinner.size.medium**
+
+The medium size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**spinner.size.large**
+
+The large size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
+**spinner.size.xlarge**
+
+The xlarge size of the Spinner. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+96px
+\`\`\`
+",
   "Stack": "## Stack
 A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All
@@ -15989,6 +16527,21 @@ How to align the contents vertically.
 top
 middle
 bottom
+\`\`\`
+
+**align**
+
+How to align the body inside the Table.
+
+\`\`\`
+left
+right
+center
+justify
+inherit
+start
+end
+string
 \`\`\`
   
 ## Intrinsic element
@@ -16921,7 +17474,7 @@ boolean
 
 **focusIndicator**
 
-Whether the plain textarea should receive a focus outline.
+Whether the plain TextArea should receive a focus outline.
 
 \`\`\`
 boolean
@@ -17298,7 +17851,7 @@ string
 
 **focusIndicator**
 
-Whether the plain text input should receive a focus outline.
+Whether the plain TextInput should receive a focus outline.
 
 \`\`\`
 boolean
@@ -17344,7 +17897,7 @@ function
 Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect
 
 \`\`\`
@@ -17388,7 +17941,7 @@ node
 
 Whether this is a plain input with no border or outline.
       Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.
 
 \`\`\`
@@ -17752,7 +18305,6 @@ node
 **dropProps**
 
 Any valid Drop prop to style the Tip drop container. Defaults to \`{
-  \\"plain\\": true,
   \\"trapFocus\\": false
 }\`.
 
@@ -17762,7 +18314,7 @@ object
 
 **plain**
 
-Whether content should have default styling.
+Whether content should have default styling from tip.content.
 
 \`\`\`
 boolean
@@ -17772,7 +18324,8 @@ boolean
   
 **tip.content**
 
-Any valid Box property for the Tip container. Expects \`object\`.
+Any valid Box property for the Tip container. Not applicable 
+    when using Tip plain prop. Expects \`object\`.
 
 Defaults to
 
@@ -17784,12 +18337,17 @@ Defaults to
 
 **tip.drop**
 
-Any valid Drop property for the Tooltip. Expects \`object\`.
+Any valid Drop property for the Tip. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-{align: { top: 'bottom' }}
+{
+      align: { top: 'bottom' },   
+      background: 'none',
+      elevation: 'none',
+      margin: 'none'
+    }
 \`\`\`
 ",
   "Video": "## Video

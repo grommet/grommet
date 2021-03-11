@@ -2,10 +2,12 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundDoc,
+  elevationPropType,
   genericProps,
   getBorderPropType,
   hoverIndicatorPropType,
   padPropType,
+  roundPropType,
 } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
@@ -134,10 +136,7 @@ export const doc = Box => {
     ])
       .description('The orientation to layout the child components in.')
       .defaultValue('column'),
-    elevation: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ])
+    elevation: elevationPropType
       .description(
         `Elevated height above the underlying context, indicated
         via a drop shadow.`,
@@ -247,29 +246,7 @@ export const doc = Box => {
       sizes should be scaled for mobile environments.`,
       )
       .defaultValue(true),
-    round: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
-      PropTypes.string,
-      PropTypes.shape({
-        corner: PropTypes.oneOf([
-          'top',
-          'left',
-          'bottom',
-          'right',
-          'top-left',
-          'top-right',
-          'bottom-left',
-          'bottom-right',
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-          PropTypes.string,
-        ]),
-      }),
-    ])
-      .description('How much to round the corners.')
-      .defaultValue(false),
+    round: roundPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.`,
