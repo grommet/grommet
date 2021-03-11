@@ -93,7 +93,6 @@ describe('Tip', () => {
       </Grommet>,
     );
 
-    // Styles of plain are captured in snapshots only when applying mouseOver
     fireEvent.mouseOver(getByText('Example'));
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
