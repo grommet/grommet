@@ -102,8 +102,6 @@ describe('Form accessibility', () => {
 });
 
 describe('Form uncontrolled', () => {
-  // beforeEach(() => jest.useFakeTimers());
-  // afterEach(() => jest.advanceTimersByTime(200));
   afterEach(cleanup);
 
   test('empty', () => {
@@ -180,6 +178,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('uncontrolled onValidate', () => {
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const { getByText, container } = render(
       <Grommet>
@@ -203,6 +202,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('uncontrolled onValidate custom error', () => {
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
@@ -233,6 +233,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('uncontrolled onValidate custom info', () => {
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
@@ -263,6 +264,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('update', () => {
+    jest.useFakeTimers();
     const validate = jest
       .fn()
       .mockReturnValueOnce('too short')
@@ -323,6 +325,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('regexp validation', () => {
+    jest.useFakeTimers();
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
       <Grommet>
@@ -384,32 +387,32 @@ describe('Form uncontrolled', () => {
       target: { value: 'a' },
     });
     fireEvent.click(getByText('Submit'));
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(getByText('simple string')).toMatchSnapshot();
 
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'ab' },
     });
     fireEvent.click(getByText('Submit'));
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(getByText('ReactNode')).toMatchSnapshot();
 
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'abc' },
     });
     fireEvent.click(getByText('Submit'));
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(getByText('status error')).toMatchSnapshot();
 
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'abcd' },
     });
     fireEvent.click(getByText('Submit'));
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(getByText('status info')).toMatchSnapshot();
   });
 
-  test.only('required validation', () => {
+  test('required validation', () => {
     jest.useFakeTimers();
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
@@ -422,12 +425,12 @@ describe('Form uncontrolled', () => {
     );
 
     fireEvent.click(getByText('Submit'));
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(queryByText('required')).toMatchSnapshot();
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: '1' },
     });
-    act(() => jest.advanceTimersByTime(800)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(queryByText('required')).toBeNull();
   });
 
@@ -791,6 +794,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('uncontrolled reset without value', () => {
+    jest.useFakeTimers();
     const onChange = jest.fn();
     const { getByPlaceholderText, getByText, queryByText } = render(
       <Grommet>
@@ -840,6 +844,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('regexp validation with status', () => {
+    jest.useFakeTimers();
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, getAllByText } = render(
       <Grommet>
@@ -870,6 +875,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('custom component', () => {
+    jest.useFakeTimers();
     const CustomTextInput = ({ name, value, onChange }) => (
       <div>
         <input
@@ -1006,6 +1012,7 @@ describe('Form uncontrolled', () => {
   });
 
   test(`should validate with array of objects and/or functions`, () => {
+    jest.useFakeTimers();
     const validationArray = [
       {
         regexp: new RegExp('(?=.*?[0-9])'),

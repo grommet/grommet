@@ -399,7 +399,7 @@ describe('Form controlled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`dynamicly removed fields using blur validation
+  test.only(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
     jest.useFakeTimers();
     const onValidate = jest.fn();
@@ -446,23 +446,32 @@ describe('Form controlled', () => {
     const nameField = getByPlaceholderText('test name');
     const toggleField = getByLabelText('toggle');
 
-    // add mood
+    // add mood, should not be valid but not have error message yet
     act(() => {
       fireEvent.click(toggleField);
       return undefined;
     });
     expect(container.firstChild).toMatchSnapshot();
-    const moodField = getByPlaceholderText('test mood');
-
-    // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
+        errors: {},
+        infos: {},
+        valid: false,
+      }),
+    );
+    const moodField = getByPlaceholderText('test mood');
+
+    // focus in and out of mood, should show validation error message
+    moodField.focus();
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -470,22 +479,34 @@ describe('Form controlled', () => {
     moodField.focus();
     fireEvent.change(moodField, { target: { value: 'testy' } });
     toggleField.focus();
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(onValidate).toHaveBeenNthCalledWith(
-      2,
-      expect.objectContaining({ errors: {}, infos: {} }),
+      3,
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
     moodField.focus();
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(onValidate).toHaveBeenNthCalledWith(
-      3,
+      4,
+      expect.objectContaining({
+        errors: {},
+        infos: {},
+        valid: false,
+      }),
+    );
+
+    // blur out of mood, should add validation error message
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      5,
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
@@ -494,12 +515,12 @@ describe('Form controlled', () => {
       fireEvent.click(toggleField);
       return undefined;
     });
-    nameField.focus();
-    toggleField.focus();
-    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    // nameField.focus();
+    // toggleField.focus();
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
     expect(onValidate).toHaveBeenNthCalledWith(
-      4,
-      expect.objectContaining({ errors: {}, infos: {} }),
+      6,
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();

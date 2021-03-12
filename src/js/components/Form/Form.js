@@ -146,6 +146,36 @@ const Form = forwardRef(
       [messages, validators, value],
     );
 
+    // Runs all validators.
+    // returns undefined if any busy, true if no errors, false if errors
+    const validateForm = useCallback(() => {
+      const nextValidations = {};
+      Object.keys(validators).forEach(name => {
+        const result = validateField(name);
+        if (result) nextValidations[name] = result;
+      });
+      setValidations(nextValidations);
+      if (Object.values(nextValidations).filter(({ busy }) => busy).length)
+        return undefined;
+      return !Object.values(nextValidations).filter(({ error }) => error)
+        .length;
+    }, [validateField, validators]);
+
+    // if validating on change or blur, validate any initial values on mount
+    useEffect(() => {
+      if (validateOn === 'change' || validateOn === 'blur') {
+        const nextValidations = {};
+        Object.keys(validators)
+          .filter(name => value[name])
+          .forEach(name => {
+            const result = validateField(name);
+            if (result) nextValidations[name] = result;
+          });
+        setValidations(nextValidations);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const haveRequired = useMemo(
       () =>
         !Object.keys(validators).some(
@@ -174,60 +204,55 @@ const Form = forwardRef(
       [haveRequired, errorValidations, busyValidations],
     );
 
+    console.log('!!! render', valid, validations, validators);
+
     const [onValidateArg, setOnValidateArg] = useState();
 
-    // update onValidateArg, if needed
+    // update onValidateArg and deliver, if needed
     useEffect(() => {
-      if (onValidate && Object.keys(validators).length) {
-        const tmpArg = { errors: {}, infos: {}, valid };
+      if (onValidate && (Object.keys(validators).length || onValidateArg)) {
+        const nextValidateArg = { errors: {}, infos: {}, valid };
         Object.keys(validations).forEach(name => {
           const { error, info } = validations[name];
-          if (error) tmpArg.errors[name] = error;
-          if (info) tmpArg.infos[name] = info;
+          if (error) nextValidateArg.errors[name] = error;
+          if (info) nextValidateArg.infos[name] = info;
         });
+        console.log('!!! check', nextValidateArg);
         if (
           !onValidateArg ||
-          tmpArg.valid !== onValidateArg.valid ||
-          Object.keys(tmpArg.errors).length !==
+          nextValidateArg.valid !== onValidateArg.valid ||
+          Object.keys(nextValidateArg.errors).length !==
             Object.keys(onValidateArg.errors).length ||
-          Object.keys(tmpArg.infos).length !==
+          Object.keys(nextValidateArg.infos).length !==
             Object.keys(onValidateArg.infos).length
-        )
-          setOnValidateArg(tmpArg);
+        ) {
+          setOnValidateArg(nextValidateArg);
+          console.log('!!! deliver', nextValidateArg);
+          onValidate(nextValidateArg);
+        }
       }
-    }, [
-      haveRequired,
-      onValidate,
-      onValidateArg,
-      valid,
-      validations,
-      validators,
-    ]);
+    }, [onValidate, onValidateArg, valid, validations, validators]);
 
-    // deliver onValidate
-    useEffect(() => {
-      if (onValidate && onValidateArg) onValidate(onValidateArg);
-    }, [onValidate, onValidateArg]);
+    const deliverSubmit = useCallback(
+      event => {
+        const adjustedEvent = event;
+        adjustedEvent.value = value;
+        adjustedEvent.touched = touched;
+        onSubmit(event);
+      },
+      [onSubmit, touched, value],
+    );
 
+    // deliver onSubmit if we were waiting for validations
     useEffect(() => {
       if (pendingSubmit) {
         if (valid) {
-          pendingSubmit.value = value;
-          pendingSubmit.touched = touched;
+          deliverSubmit(pendingSubmit);
           onSubmit(pendingSubmit);
           setPendingSubmit(undefined);
-        } else if (!haveRequired || errorValidations)
-          setPendingSubmit(undefined);
+        } else if (errorValidations) setPendingSubmit(undefined);
       }
-    }, [
-      errorValidations,
-      haveRequired,
-      onSubmit,
-      pendingSubmit,
-      touched,
-      valid,
-      value,
-    ]);
+    }, [deliverSubmit, errorValidations, onSubmit, pendingSubmit, valid]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -322,7 +347,7 @@ const Form = forwardRef(
       info: infoArg,
       name,
       required,
-      validate,
+      validate: validateArg,
     }) => {
       const [pending, setPending] = useState();
       const error = errorArg || (validations[name] && validations[name].error);
@@ -332,18 +357,29 @@ const Form = forwardRef(
       useEffect(() => {
         setValidators(previousValidators => {
           const nextValidators = { ...previousValidators };
-          if (errorArg || (!validate && !required)) delete nextValidators[name];
+          if (errorArg || (!validateArg && !required))
+            delete nextValidators[name];
           else {
             nextValidators[name] = {};
             if (required) nextValidators[name].required = required;
-            if (validate)
-              nextValidators[name].validators = Array.isArray(validate)
-                ? validate
-                : [validate];
+            if (validateArg)
+              nextValidators[name].validators = Array.isArray(validateArg)
+                ? validateArg
+                : [validateArg];
           }
           return nextValidators;
         });
-      }, [errorArg, name, required, validate]);
+      }, [errorArg, name, required, validateArg]);
+
+      // remove any validator on unmount
+      useEffect(() => () => {
+        console.log('!!! remove', name);
+        setValidators(previousValidators => {
+          const nextValidators = { ...previousValidators };
+          delete nextValidators[name];
+          return nextValidators;
+        });
+      }, [name]);
 
       useEffect(() => {
         // when onBlur input validation is triggered, we need to complete any
@@ -414,18 +450,12 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
 
-          if (validateOn === 'submit') {
-            const nextValidations = {};
-            Object.keys(validators).forEach(name => {
-              const result = validateField(name);
-              if (result) nextValidations[name] = result;
-            });
-            setValidations(nextValidations);
-          }
+          const canSubmit = validateOn === 'submit' ? validateForm() : valid;
 
           if (onSubmit) {
             event.persist(); // extract from React's synthetic event pool
-            setPendingSubmit(event);
+            if (canSubmit === true) deliverSubmit(event);
+            else setPendingSubmit(event);
           }
         }}
       >
