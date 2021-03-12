@@ -3,6 +3,7 @@ export * from './AccordionPanel';
 export * from './Anchor';
 export * from './Avatar';
 export * from './Box';
+export * from './Breadcrumb';
 export * from './Button';
 export * from './Calendar';
 export * from './Carousel';

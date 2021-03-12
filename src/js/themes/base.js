@@ -380,6 +380,34 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
+    breadcrumb: {
+      item: {
+        margin: {
+          right: 'medium',
+        },
+      },
+      content: {
+        color: 'dark-1',
+        size: 'large',
+        // extend: undefined,
+      },
+      icon: {
+        color: 'dark-1',
+        size: 'small',
+      },
+      icons: {
+        separator: Next,
+      },
+      extend: {
+        ul: {
+          display: 'flex',
+          li: {
+            border: 'none',
+            padding: 0,
+          },
+        },
+      },
+    },
     button: {
       size: {
         small: {

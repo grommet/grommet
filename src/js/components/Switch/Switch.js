@@ -2,13 +2,15 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { deepMerge } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { MnetUIBase } from '../MnetUIBase';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import getSwitchTheme from './switchTheme';
 
+
 const Switch = ({ value, options, onValueChange, disabled, ...rest }) => {
   const theme = deepMerge(
-    useContext(ThemeContext),
+    useContext(ThemeContext) || defaultProps.theme,
     getSwitchTheme(),
   );
   return(
