@@ -502,6 +502,7 @@ exports[`FormField custom error and info icon and container 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label

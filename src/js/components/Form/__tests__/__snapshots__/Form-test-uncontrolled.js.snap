@@ -1949,29 +1949,6 @@ Array [
   >
     invalid
   </span>,
-  .c0 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #666666;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-<span
-    class="c0"
-  >
-    invalid
-  </span>,
 ]
 `;
 

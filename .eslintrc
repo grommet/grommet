@@ -29,7 +29,8 @@
     "afterAll": true,
     "KeyboardEvent": true,
     "MouseEvent": true,
-    "requestAnimationFrame": true
+    "requestAnimationFrame": true,
+    "AbortController": true
   },
   "rules": {
     "indent": "off",

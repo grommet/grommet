@@ -216,7 +216,10 @@ Validation rule when used within a grommet Form. Provide an object
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
       describing the validation issue, if any, or an object with 'message'
-      and 'status' properties.
+      and 'status' properties. Or, the function can behave asynchronously
+      and return a object with 'promise' and 'abort' properties. The 'abort'
+      function will be called if a new validation is needed before a previous
+      one has completed.
 
 ```
 {
