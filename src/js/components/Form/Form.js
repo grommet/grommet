@@ -87,7 +87,7 @@ const Form = forwardRef(
           // run validations on the pending one and any other touched fields
           const [validatedErrors, validatedInfos] = validate(
             Object.entries(validations.current).filter(
-              ([n]) => touched[n] || n === pendingValidation,
+              ([n]) => touched[n] || pendingValidation.includes(n),
             ),
             value,
           );
@@ -118,9 +118,13 @@ const Form = forwardRef(
 
             let valid = false;
 
-            valid = requiredFields.every(
-              field => value[field] && value[field].length > 0,
-            );
+            valid = requiredFields
+              .filter(n => Object.keys(validations.current).includes(n))
+              .every(
+                field =>
+                  value[field] &&
+                  (value[field] !== '' || value[field] !== false),
+              );
 
             if (Object.keys(nextErrors).length > 0) valid = false;
 
@@ -303,6 +307,8 @@ const Form = forwardRef(
           setRequiredFields(prevValue =>
             !prevValue.includes(name) ? [...prevValue, name] : prevValue,
           );
+        } else {
+          setRequiredFields(prevValue => prevValue.filter(v => v !== name));
         }
 
         if (validateArg || required) {
@@ -318,10 +324,18 @@ const Form = forwardRef(
         info,
         inForm: true,
         onBlur:
-          validateOn === 'blur' ? () => setPendingValidation(name) : undefined,
+          validateOn === 'blur'
+            ? () =>
+                setPendingValidation(
+                  pendingValidation ? [...pendingValidation, name] : [name],
+                )
+            : undefined,
         onChange:
           validateOn === 'change'
-            ? () => setPendingValidation(name)
+            ? () =>
+                setPendingValidation(
+                  pendingValidation ? [...pendingValidation, name] : [name],
+                )
             : undefined,
       };
     };

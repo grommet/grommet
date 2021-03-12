@@ -848,13 +848,18 @@ with plain Buttons.",
         "format": "boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -870,6 +875,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }",
         "name": "hoverIndicator",
@@ -1001,7 +1048,7 @@ string",
         "name": "responsive",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "How much to round the corners.",
         "format": "boolean
 xsmall
@@ -1295,13 +1342,18 @@ with plain Buttons.",
         "format": "boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -1317,6 +1369,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }",
         "name": "hoverIndicator",
@@ -3258,6 +3352,134 @@ string",
         "name": "align",
       },
       Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
+        "format": "none
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "elevation",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
         "description": "Function that will be invoked when the user clicks outside the drop.",
         "format": "function",
         "name": "onClickOutside",
@@ -3291,6 +3513,13 @@ string",
         "name": "overflow",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the drop element should have no background, 
+        elevation, margin or round.",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to dynamically re-place when resized.",
         "format": "boolean",
@@ -3301,6 +3530,37 @@ string",
         "description": "Whether the drop should control focus.",
         "format": "boolean",
         "name": "restrictFocus",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "How much to round the corners.",
+        "format": "boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
+        "name": "round",
       },
       Object {
         "defaultValue": true,
@@ -3318,24 +3578,6 @@ align",
         "format": "object",
         "name": "target",
         "required": true,
-      },
-      Object {
-        "description": "Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.",
-        "format": "none
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "elevation",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the drop element should have no background nor elevation.",
-        "format": "boolean",
-        "name": "plain",
       },
       Object {
         "defaultValue": true,
@@ -5568,6 +5810,11 @@ string",
         "name": "onChange",
       },
       Object {
+        "description": "Whether the plain MaskedInput should receive a focus outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
+      },
+      Object {
         "description": "Function that will be called when the user leaves the field.",
         "format": "function",
         "name": "onBlur",
@@ -5818,7 +6065,7 @@ one of top or bottom should be specified.",
         "name": "dropTarget",
       },
       Object {
-        "defaultValue": Object {},
+        "defaultValue": undefined,
         "description": "Any valid Drop prop.",
         "format": "object",
         "name": "dropProps",
@@ -7781,7 +8028,7 @@ break-word",
         "name": "fill",
       },
       Object {
-        "description": "Whether the plain textarea should receive a focus outline.",
+        "description": "Whether the plain TextArea should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7920,7 +8167,7 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Whether the plain text input should receive a focus outline.",
+        "description": "Whether the plain TextInput should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7955,7 +8202,7 @@ string",
         "description": "Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect",
         "format": "function",
         "name": "onSelect",
@@ -7984,7 +8231,7 @@ string",
       Object {
         "description": "Whether this is a plain input with no border or outline.
       Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.",
         "format": "boolean
 full",
@@ -8059,7 +8306,6 @@ number",
       },
       Object {
         "defaultValue": Object {
-          "plain": true,
           "trapFocus": false,
         },
         "description": "Any valid Drop prop to style the Tip drop container.",
@@ -8068,7 +8314,7 @@ number",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether content should have default styling.",
+        "description": "Whether content should have default styling from tip.content.",
         "format": "boolean",
         "name": "plain",
       },
