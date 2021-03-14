@@ -160,12 +160,18 @@ export type BorderType =
       style?: BoxStyleType;
     }[];
 export type ColorType = string | { dark?: string; light?: string } | undefined;
+type DirectionObjectType = {
+  direction: string;
+  reverse?: boolean;
+  responsive?: boolean;
+};
 export type DirectionType =
   | 'row'
   | 'column'
   | 'row-responsive'
   | 'row-reverse'
-  | 'column-reverse';
+  | 'column-reverse'
+  | DirectionObjectType;
 export type ElevationType =
   | 'none'
   | 'xsmall'

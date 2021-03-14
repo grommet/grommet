@@ -67,7 +67,23 @@ const basisStyle = css`
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-const directionStyle = (direction, theme) => {
+const directionStyle = (directionWrapper, theme) => {
+  let direction;
+  let isResponsive;
+  let isReverse;
+
+  if (
+    typeof directionWrapper === 'string' ||
+    directionWrapper instanceof String
+  ) {
+    direction = directionWrapper;
+  } else {
+    // DirectionWrapper is object now.
+    direction = directionWrapper.direction;
+    isResponsive = directionWrapper.responsive;
+    isReverse = directionWrapper.reverse;
+  }
+
   const styles = [
     css`
       min-width: 0;
@@ -75,24 +91,44 @@ const directionStyle = (direction, theme) => {
       flex-direction: ${direction === 'row-responsive' ? 'row' : direction};
     `,
   ];
-  if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    const breakpoint = getBreakpointStyle(
-      theme,
-      theme.box.responsiveBreakpoint,
-    );
-    if (breakpoint) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
+
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+
+  if (
+    direction === 'row-responsive' &&
+    theme.box.responsiveBreakpoint &&
+    breakpoint
+  ) {
+    styles.push(
+      breakpointStyle(
+        breakpoint,
+        `
         flex-direction: column;
         flex-basis: auto;
         justify-content: flex-start;
         align-items: stretch;
       `,
-        ),
-      );
-    }
+      ),
+    );
+  }
+
+  if (
+    direction === 'row' &&
+    isResponsive === true &&
+    isReverse === true &&
+    breakpoint
+  ) {
+    styles.push(
+      breakpointStyle(
+        breakpoint,
+        `
+         flex-direction: column-reverse;
+         flex-basis: auto;
+         justify-content: flex-start;
+         align-items: stretch;
+      `,
+      ),
+    );
   }
   return styles;
 };
@@ -457,7 +493,10 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
     if (responsiveMetric) {
       if (directionProp === 'row' || directionProp === 'row-reverse') {
         styles.push(breakpointStyle(breakpoint, `width: ${responsiveMetric};`));
-      } else if (directionProp === 'row-responsive') {
+      } else if (
+        directionProp === 'row-responsive' ||
+        (directionProp.direction === 'row' && directionProp.responsive === true)
+      ) {
         styles.push(
           breakpointStyle(
             breakpoint,
@@ -539,7 +578,11 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
               }`,
             ),
           );
-        } else if (directionProp === 'row-responsive') {
+        } else if (
+          directionProp === 'row-responsive' ||
+          (directionProp.direction === 'row' &&
+            directionProp.responsive === true)
+        ) {
           const adjustedBorder2 =
             typeof border === 'string' ? 'top' : { ...border, side: 'top' };
           styles.push(
