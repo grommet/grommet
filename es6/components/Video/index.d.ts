@@ -31,7 +31,10 @@ export interface VideoProps {
   mute?: boolean;
 }
 
-declare const Video: React.ComponentClass<VideoProps &
-  Omit<JSX.IntrinsicElements['video'], 'controls'>>;
+export interface VideoExtendedProps
+  extends VideoProps,
+    Omit<JSX.IntrinsicElements['video'], 'controls'> {}
+
+declare const Video: React.FC<VideoExtendedProps>;
 
 export { Video };
