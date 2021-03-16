@@ -263,10 +263,29 @@ var DataTable = function DataTable(_ref) {
       paginationProps = _usePagination[1];
 
   var Container = paginate ? StyledContainer : Fragment;
-  var containterProps = paginate ? _extends({}, theme.dataTable.container) : undefined;
-  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
-    fillProp: fill
-  }, rest), /*#__PURE__*/React.createElement(Header, {
+  var containterProps = paginate ? _extends({}, theme.dataTable.container, {
+    fill: fill
+  }) : undefined; // DataTable should overflow if paginating but pagination component
+  // should remain in its location
+
+  var OverflowContainer = paginate ? Box : Fragment;
+  var overflowContainerProps = paginate ? {
+    overflow: {
+      horizontal: 'auto'
+    },
+    flex: false
+  } : undefined; // necessary for Firefox, otherwise paginated DataTable will
+  // not fill its container like it does by default on other
+  // browsers like Chrome/Safari
+
+  var paginatedDataTableProps = paginate && (fill === true || fill === 'horizontal') ? {
+    style: {
+      minWidth: '100%'
+    }
+  } : undefined;
+  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
+    fillProp: !paginate ? fill : undefined
+  }, paginatedDataTableProps, rest), /*#__PURE__*/React.createElement(Header, {
     ref: headerRef,
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
@@ -358,7 +377,7 @@ var DataTable = function DataTable(_ref) {
     align: "center",
     justify: "center",
     fill: "vertical"
-  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder)), paginate && items && /*#__PURE__*/React.createElement(Pagination, _extends({
+  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder))), paginate && items && /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)));
 };
