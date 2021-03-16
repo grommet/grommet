@@ -11,7 +11,7 @@ const customTheme = deepMerge(grommet, {
       border: { radius: '10px' }, // impacting 'round' behavior
       zIndex: '13',
       elevation: 'large', // impacting the elevation
-      margin: '12px 30px',
+      margin: 'xsmall',
     },
   },
 });
