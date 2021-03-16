@@ -93,12 +93,6 @@ const Form = forwardRef(
           );
           setPendingValidation(undefined);
 
-          setRequiredFields(prevRequiredFields =>
-            prevRequiredFields.filter(n =>
-              Object.keys(validations.current).includes(n),
-            ),
-          );
-
           setValidationResults(prevValidationResults => {
             const nextErrors = {
               ...prevValidationResults.errors,

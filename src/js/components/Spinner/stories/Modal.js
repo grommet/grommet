@@ -11,7 +11,7 @@ export const Modal = () => {
     setTimeout(() => {
       setOpen(undefined);
       setIsDataLoaded(true);
-    }, 3000);
+    }, 2000);
   };
 
   return (

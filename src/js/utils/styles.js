@@ -37,7 +37,6 @@ export const edgeStyle = (
 ) => {
   const breakpoint =
     responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
-  console.log('data', kind, data);
   if (typeof data === 'string') {
     return css`
       ${kind}: ${theme.global.edgeSize[data] || data};
