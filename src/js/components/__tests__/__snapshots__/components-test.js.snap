@@ -2622,6 +2622,92 @@ vertical",
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
   },
+  "Columns": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Columns&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/columns&module=%2Fsrc%2FColumns.js",
+      },
+    ],
+    "description": "Typical variations on responsive multiple column layouts.",
+    "intrinsicElement": "div",
+    "name": undefined,
+    "properties": Array [
+      Object {
+        "description": "Maximum width of the last child.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "aside",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "
+      Whether to center the Columns component.
+    ",
+        "format": "boolean",
+        "name": "center",
+      },
+      Object {
+        "description": "
+      Minimum vertical gutters when 'center' is true.
+      ",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gutter",
+      },
+      Object {
+        "description": "
+      If specified, a sidebar element. Use 'Columns.SidebarToggleButton'
+      to control whether the sidebar is shown in small responsive contexts.
+      Use 'Columns.SidebarCloseButton' to close the sidebar in small
+      responsive contexts.
+      ",
+        "format": "node",
+        "name": "sidebar",
+      },
+      Object {
+        "description": "
+      The uniform minimum width of columns. Children will wrap as needed.
+    ",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "description": "Maximum width of the content when 'center' is true.",
+        "format": "{
+  max: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
+        "name": "width",
+      },
+    ],
+    "usage": "import { Columns } from 'grommet';
+<Columns />",
+  },
   "DataChart": Object {
     "availableAt": Array [
       Object {

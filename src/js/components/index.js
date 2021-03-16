@@ -15,6 +15,7 @@ export * from './Chart';
 export * from './CheckBox';
 export * from './Clock';
 export * from './Collapsible';
+export * from './Columns';
 export * from './DataChart';
 export * from './DataTable';
 export * from './DateInput';
