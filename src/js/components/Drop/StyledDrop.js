@@ -98,7 +98,6 @@ const marginStyle = (theme, align, data, responsive, margin) => {
       responsive,
       theme.global.edgeSize.responsiveBreakpoint,
       theme,
-      console.log('hello'),
     );
   }
   return edgeStyle(
@@ -107,7 +106,6 @@ const marginStyle = (theme, align, data, responsive, margin) => {
     responsive,
     theme.global.edgeSize.responsiveBreakpoint,
     theme,
-    console.log('hi'),
   );
 };
 
