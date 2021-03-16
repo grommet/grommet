@@ -127,12 +127,19 @@ export const doc = Box => {
       `Include a border. 'between' will place a border in the gap between
       child elements. You must have a 'gap' to use 'between'.`,
     ),
-    direction: PropTypes.oneOf([
-      'row',
-      'column',
-      'row-responsive',
-      'row-reverse',
-      'column-reverse',
+    direction: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'row',
+        'column',
+        'row-responsive',
+        'row-reverse',
+        'column-reverse',
+      ]),
+      PropTypes.shape({
+        direction: PropTypes.string,
+        responsive: PropTypes.bool,
+        reverse: PropTypes.bool,
+      }),
     ])
       .description('The orientation to layout the child components in.')
       .defaultValue('column'),
@@ -401,7 +408,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'box.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, 
+    description: `The actual breakpoint to trigger changes in the border,
     direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
@@ -410,7 +417,7 @@ export const themeDoc = {
     'The possible sizes for any of gap, margin, and pad.',
   ),
   ...themeDocUtils.breakpointStyle(
-    `The possible breakpoints that could affect border, direction, gap, margin, 
+    `The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round.`,
   ),
 };

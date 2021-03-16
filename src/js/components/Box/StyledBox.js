@@ -68,20 +68,14 @@ const basisStyle = css`
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
 const directionStyle = (directionWrapper, theme) => {
-  let direction;
-  let isResponsive;
-  let isReverse;
+  let { direction } = directionWrapper;
+  const { responsive, reverse } = directionWrapper;
 
   if (
     typeof directionWrapper === 'string' ||
     directionWrapper instanceof String
   ) {
     direction = directionWrapper;
-  } else {
-    // DirectionWrapper is object now.
-    direction = directionWrapper.direction;
-    isResponsive = directionWrapper.responsive;
-    isReverse = directionWrapper.reverse;
   }
 
   const styles = [
@@ -92,43 +86,46 @@ const directionStyle = (directionWrapper, theme) => {
     `,
   ];
 
-  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
-
-  if (
-    direction === 'row-responsive' &&
-    theme.box.responsiveBreakpoint &&
-    breakpoint
-  ) {
-    styles.push(
-      breakpointStyle(
-        breakpoint,
-        `
-        flex-direction: column;
-        flex-basis: auto;
-        justify-content: flex-start;
-        align-items: stretch;
-      `,
-      ),
+  if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
+    const breakpoint = getBreakpointStyle(
+      theme,
+      theme.box.responsiveBreakpoint,
     );
+
+    if (breakpoint) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+          flex-direction: column;
+          flex-basis: auto;
+          justify-content: flex-start;
+          align-items: stretch;
+        `,
+        ),
+      );
+    }
   }
 
-  if (
-    direction === 'row' &&
-    isResponsive === true &&
-    isReverse === true &&
-    breakpoint
-  ) {
-    styles.push(
-      breakpointStyle(
-        breakpoint,
-        `
-         flex-direction: column-reverse;
-         flex-basis: auto;
-         justify-content: flex-start;
-         align-items: stretch;
-      `,
-      ),
+  if (direction === 'row' && responsive && reverse) {
+    const breakpoint = getBreakpointStyle(
+      theme,
+      theme.box.responsiveBreakpoint,
     );
+
+    if (breakpoint) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+           flex-direction: column-reverse;
+           flex-basis: auto;
+           justify-content: flex-start;
+           align-items: stretch;
+        `,
+        ),
+      );
+    }
   }
   return styles;
 };
@@ -495,7 +492,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
         styles.push(breakpointStyle(breakpoint, `width: ${responsiveMetric};`));
       } else if (
         directionProp === 'row-responsive' ||
-        (directionProp.direction === 'row' && directionProp.responsive === true)
+        (directionProp.direction === 'row' && directionProp.responsive)
       ) {
         styles.push(
           breakpointStyle(
@@ -580,8 +577,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
           );
         } else if (
           directionProp === 'row-responsive' ||
-          (directionProp.direction === 'row' &&
-            directionProp.responsive === true)
+          (directionProp.direction === 'row' && directionProp.responsive)
         ) {
           const adjustedBorder2 =
             typeof border === 'string' ? 'top' : { ...border, side: 'top' };

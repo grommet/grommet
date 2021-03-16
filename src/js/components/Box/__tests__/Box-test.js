@@ -27,6 +27,13 @@ describe('Box', () => {
         <Box direction="column" />
         <Box direction="column-reverse" />
         <Box direction="row-reverse" />
+        <Box
+          direction={{
+            direction: 'row',
+            responsive: true,
+            reverse: true,
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();

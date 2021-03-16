@@ -396,6 +396,11 @@ column
 row-responsive
 row-reverse
 column-reverse
+{
+  direction: string,
+  responsive: boolean,
+  reverse: boolean
+}
 ```
 
 **elevation**
@@ -971,7 +976,7 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
     direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
@@ -1004,7 +1009,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects `object`.
 
 Defaults to
