@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
+import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
@@ -36,7 +37,7 @@ export const edgeStyle = (
 ) => {
   const breakpoint =
     responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
-
+  console.log('data', kind, data);
   if (typeof data === 'string') {
     return css`
       ${kind}: ${theme.global.edgeSize[data] || data};
@@ -605,6 +606,136 @@ export const kindPartStyles = (obj, theme, colorValue) => {
     styles.push(`opacity: ${opacity};`);
   }
   if (obj.extend) styles.push(obj.extend);
+  return styles;
+};
+
+const ROUND_MAP = {
+  full: '100%',
+};
+
+export const roundStyle = (data, responsive, theme) => {
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  const styles = [];
+  if (typeof data === 'object') {
+    const size =
+      ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'] ||
+      data.size;
+    const responsiveSize =
+      responsive &&
+      breakpoint &&
+      breakpoint.edgeSize[data.size] &&
+      (breakpoint.edgeSize[data.size] || data.size);
+    if (data.corner === 'top') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-top-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-top-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'bottom') {
+      styles.push(css`
+        border-bottom-left-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-bottom-left-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'left') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-bottom-left-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-bottom-left-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'right') {
+      styles.push(css`
+        border-top-right-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-right-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner) {
+      styles.push(css`
+        border-${data.corner}-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-${data.corner}-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else {
+      styles.push(css`
+        border-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    }
+  } else {
+    const size = data === true ? 'medium' : data;
+    styles.push(css`
+      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+    `);
+    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    if (responsiveSize) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+        border-radius: ${responsiveSize};
+      `,
+        ),
+      );
+    }
+  }
   return styles;
 };
 
