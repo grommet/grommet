@@ -283,12 +283,12 @@ export interface ThemeType {
     debounceDelay?: number;
     drop?: {
       intelligentMargin: boolean;
-      margin: MarginType;
       background?: BackgroundType;
       border?: {
         width?: string;
         radius?: string;
       };
+      margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
     };

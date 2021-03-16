@@ -1,6 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import { baseStyle } from '../../utils';
+import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
 import { defaultProps } from '../../default-props';
 
@@ -48,152 +48,99 @@ const deepEqual = (object1, object2) => {
       return false;
     }
   }
-
   return true;
 };
 
-const marginStyle = (theme, align, data) => {
-  const styles = [];
-  const margin = theme.global.edgeSize[data] || data;
-  // if user provides CSS string such as '50px 12px', apply that always
-  const customCSS = margin.split(' ').length > 1;
+const marginStyle = (theme, align, data, responsive, margin) => {
+  const marginProp = theme.global.edgeSize[data] || data;
+  let MarginSide;
 
-  if (!customCSS && theme.global.drop.intelligentMargin === true) {
+  if (theme.global.drop.intelligentMargin === true) {
     if (deepEqual(align, { top: 'bottom' })) {
-      styles.push(
-        css`
-          margin: ${margin} 0 0 0;
-        `,
-      );
+      MarginSide = { top: marginProp };
     } else if (deepEqual(align, { bottom: 'top' })) {
-      styles.push(css`
-        margin: 0 0 ${margin} 0;
-      `);
+      MarginSide = { bottom: marginProp };
     } else if (deepEqual(align, { right: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 0 -${margin};
-        `,
-      );
+      MarginSide = { left: `-${marginProp}` };
     } else if (deepEqual(align, { left: 'right' })) {
-      styles.push(
-        css`
-          margin: 0 0 0 ${margin};
-        `,
-      );
+      MarginSide = { left: marginProp };
     } else if (deepEqual(align, { top: 'top', left: 'right' })) {
-      styles.push(
-        css`
-          margin: 0px 0px 0px ${margin};
-        `,
-      );
+      MarginSide = { left: marginProp };
     } else if (deepEqual(align, { top: 'top', right: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 0 -${margin};
-        `,
-      );
+      MarginSide = { left: `-${marginProp}` };
     } else if (deepEqual(align, { top: 'bottom', right: 'left' })) {
-      styles.push(
-        css`
-          margin: ${margin} 0 0 -${margin};
-        `,
-      );
+      MarginSide = { top: marginProp, left: `-${marginProp}` };
     } else if (deepEqual(align, { top: 'bottom', right: 'right' })) {
-      styles.push(
-        css`
-          margin: ${margin} 0 0 0;
-        `,
-      );
+      MarginSide = { top: marginProp };
     } else if (deepEqual(align, { top: 'bottom', left: 'right' })) {
-      styles.push(
-        css`
-          margin: ${margin} 0 0 ${margin};
-        `,
-      );
+      MarginSide = { top: marginProp, left: marginProp };
     } else if (deepEqual(align, { top: 'bottom', left: 'left' })) {
-      styles.push(
-        css`
-          margin: ${margin} 0 0 0;
-        `,
-      );
+      MarginSide = { top: marginProp };
     } else if (deepEqual(align, { bottom: 'top', right: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 ${margin} -${margin};
-        `,
-      );
-    } else if (deepEqual(align, { bottom: 'top', right: 'right' })) {
-      styles.push(
-        css`
-          margin: 0 0 ${margin} 0;
-        `,
-      );
+      MarginSide = { bottom: marginProp, left: `-${marginProp}` };
+    } else if (deepEqual(align, { right: 'right', bottom: 'top' })) {
+      MarginSide = { bottom: marginProp };
     } else if (deepEqual(align, { bottom: 'top', left: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 ${margin} 0;
-        `,
-      );
+      MarginSide = { bottom: marginProp };
     } else if (deepEqual(align, { bottom: 'top', left: 'right' })) {
-      styles.push(
-        css`
-          margin: 0 0 ${margin} ${margin};
-        `,
-      );
+      MarginSide = { bottom: marginProp, left: marginProp };
     } else if (deepEqual(align, { bottom: 'top', right: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 ${margin} -${margin};
-        `,
-      );
+      MarginSide = { bottom: marginProp, left: `-${marginProp}` };
     } else if (deepEqual(align, { bottom: 'bottom', left: 'right' })) {
-      styles.push(
-        css`
-          margin: 0 0 0 ${margin};
-        `,
-      );
+      MarginSide = { left: marginProp };
     } else if (deepEqual(align, { bottom: 'bottom', right: 'left' })) {
-      styles.push(
-        css`
-          margin: 0 0 0 -${margin};
-        `,
-      );
-    } else {
-      styles.push(
-        css`
-          margin: none;
-        `,
-      );
+      MarginSide = { left: `-${marginProp}` };
     }
   } else {
-    // a complex CSS string such as "50px 20px" apply this
-    styles.push(css`
-      margin: ${margin};
-    `);
+    return edgeStyle(
+      'margin',
+      margin || theme.global.drop.margin,
+      responsive,
+      theme.global.edgeSize.responsiveBreakpoint,
+      theme,
+      console.log('hello'),
+    );
   }
-  return styles;
+  return edgeStyle(
+    'margin',
+    MarginSide,
+    responsive,
+    theme.global.edgeSize.responsiveBreakpoint,
+    theme,
+    console.log('hi'),
+  );
 };
 
 const StyledDrop = styled.div`
   ${baseStyle}
 
-  border-radius: ${props => props.theme.global.drop.border.radius};
+  ${props =>
+    !props.plain &&
+    ((props.round && roundStyle(props.round, true, props.theme)) ||
+      `border-radius: ${props.theme.global.drop.border.radius};`)}
+
   position: fixed;
   z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
 
   ${props =>
     !props.plain &&
-    backgroundStyle(props.theme.global.drop.background, props.theme)}
-    
-    ${props =>
-      props.theme.global.drop.margin &&
-      marginStyle(
-        props.theme,
-        props.alignProp,
-        props.theme.global.drop.margin,
-      )};  
+    backgroundStyle(
+      props.background || props.theme.global.drop.background,
+      props.theme,
+    )}
+
+  ${props =>
+    !props.plain &&
+    (props.margin || props.theme.global.drop.margin) &&
+    props.theme.global &&
+    marginStyle(
+      props.theme,
+      props.alignProp,
+      props.theme.global.drop.margin,
+      props.responsive,
+      props.margin,
+    )}
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
