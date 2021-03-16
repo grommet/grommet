@@ -35,7 +35,6 @@ const ThemedDrop = () => {
         </Box>
         {targetRef.current && (
           <Drop
-            elevation="xsmall"
             align={{ top: 'bottom', left: 'right' }}
             target={targetRef.current}
           >
