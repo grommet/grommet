@@ -53,9 +53,17 @@ const deepEqual = (object1, object2) => {
 
 const marginStyle = (theme, align, data, responsive, margin) => {
   const marginProp = theme.global.edgeSize[data] || data;
+  // if user provides CSS string such as '50px 12px', apply that always
+  let customCSS;
   let MarginSide;
-
-  if (theme.global.drop.intelligentMargin === true) {
+  if (typeof marginProp === 'string') {
+    customCSS = marginProp.split(' ').length > 1;
+  }
+  if (
+    theme.global.drop.intelligentMargin === true &&
+    !customCSS &&
+    typeof marginProp === 'string'
+  ) {
     if (deepEqual(align, { top: 'bottom' })) {
       MarginSide = { top: marginProp };
     } else if (deepEqual(align, { bottom: 'top' })) {
