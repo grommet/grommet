@@ -20,6 +20,7 @@ const Cell = ({
     align,
     pin: columnPin,
     footer,
+    plain,
     property,
     render,
     verticalAlign,
@@ -88,7 +89,7 @@ const Cell = ({
         ) || background
       }
       border={normalizeProp('border', rowProp, border)}
-      pad={normalizeProp('pad', rowProp, pad)}
+      pad={!plain ? normalizeProp('pad', rowProp, pad) : 'none'}
       pin={pin}
     >
       {content}

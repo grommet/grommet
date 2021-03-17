@@ -1,4 +1,5 @@
-import React, { forwardRef, Fragment } from 'react';
+import React, { forwardRef, Fragment, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -37,6 +38,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext);
     const [active, setActive] = React.useState();
     return (
       <Keyboard
@@ -120,7 +122,16 @@ const Body = forwardRef(
                     onBlur={onClickRow ? () => setActive(undefined) : undefined}
                   >
                     {(selected || onSelect) && (
-                      <TableCell background={background}>
+                      <TableCell
+                        background={background}
+                        // if the theme has defined its own checkBox pad,
+                        // make this cell plain so we use the checkBox padding
+                        plain={theme.checkBox.pad}
+                        // if theme doesn't apply checkBox pad, set a small
+                        // amount for the focus indicator
+                        pad={!theme.checkBox.pad ? 'xxsmall' : undefined}
+                        size={theme.checkBox.size} // match width to checkBox
+                      >
                         <CheckBox
                           a11yTitle={`${
                             isSelected ? 'unselect' : 'select'

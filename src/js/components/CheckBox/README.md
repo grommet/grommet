@@ -235,6 +235,16 @@ Defaults to
 undefined
 ```
 
+**checkBox.pad**
+
+The pad around the CheckBox and its label. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **checkBox.size**
 
 The height and width used for the CheckBox icon. Expects `string`.

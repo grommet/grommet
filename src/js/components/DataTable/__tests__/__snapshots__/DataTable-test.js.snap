@@ -2887,7 +2887,7 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2901,7 +2901,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: column;
 }
 
-.c27 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3035,10 +3035,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: start;
   background: skyblue;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 3px;
 }
 
 .c4 {
@@ -3056,6 +3053,18 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 24px;
+  max-width: 24px;
+  overflow: hidden;
+  text-align: start;
+  padding: 3px;
+}
+
+.c26 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3143,7 +3152,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c27 {
+  .c28 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -3269,11 +3278,11 @@ exports[`DataTable custom theme 1`] = `
           </label>
         </td>
         <th
-          class="c19 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c27"
           >
             <span
               class="c10"
@@ -3304,18 +3313,18 @@ exports[`DataTable custom theme 1`] = `
                 type="checkbox"
               />
               <div
-                class="c27 "
+                class="c28 "
                 disabled=""
               />
             </div>
           </label>
         </td>
         <th
-          class="c19 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c27"
           >
             <span
               class="c10"
@@ -3344,7 +3353,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ggqFaa"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kSemeV"
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cMrTAl StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -3405,11 +3414,11 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdaZZZ"
         >
           <label
             aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 blBbHc"
             disabled=""
           >
             <div
@@ -3464,11 +3473,11 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdaZZZ"
         >
           <label
             aria-label="select beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 blBbHc"
             disabled=""
           >
             <div
@@ -4541,7 +4550,6 @@ exports[`DataTable groupBy 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c12 {
@@ -4839,7 +4847,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
           <button
             aria-label="expand"
@@ -4890,7 +4898,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
           <button
             aria-label="expand"
@@ -5128,7 +5136,6 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c12 {
@@ -5153,7 +5160,6 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
-  padding: 0px;
 }
 
 .c1 {
@@ -5630,7 +5636,6 @@ exports[`DataTable groupBy property 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c12 {
@@ -5928,7 +5933,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
           <button
             aria-label="expand"
@@ -5979,7 +5984,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
           <button
             aria-label="expand"
@@ -11552,7 +11557,6 @@ exports[`DataTable rowDetails 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c12 {
@@ -12083,7 +12087,6 @@ exports[`DataTable rowDetails condtional 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c12 {
@@ -13264,7 +13267,7 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13281,7 +13284,7 @@ exports[`DataTable select 1`] = `
   flex: 1 0 auto;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13307,7 +13310,7 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13321,12 +13324,12 @@ exports[`DataTable select 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c16 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -13394,13 +13397,35 @@ exports[`DataTable select 1`] = `
   text-align: inherit;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 3px;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 24px;
+  max-width: 24px;
+  overflow: hidden;
+  text-align: start;
+  padding: 3px;
+}
+
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13425,7 +13450,7 @@ exports[`DataTable select 1`] = `
   height: auto;
 }
 
-.c12:focus {
+.c13:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -13436,7 +13461,7 @@ exports[`DataTable select 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -13490,14 +13515,14 @@ exports[`DataTable select 1`] = `
           </label>
         </td>
         <th
-          class="c3 "
+          class="c10 "
           scope="col"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               A
             </span>
@@ -13506,13 +13531,13 @@ exports[`DataTable select 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c13"
+          class="c14"
         >
           <label
             aria-label="unselect alpha"
@@ -13527,7 +13552,7 @@ exports[`DataTable select 1`] = `
                 type="checkbox"
               />
               <div
-                class="c14 "
+                class="c15 "
               >
                 <svg
                   class="c9"
@@ -13544,14 +13569,14 @@ exports[`DataTable select 1`] = `
           </label>
         </td>
         <th
-          class="c13 "
+          class="c16 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c17"
           >
             <span
-              class="c16"
+              class="c18"
             >
               alpha
             </span>
@@ -13562,7 +13587,7 @@ exports[`DataTable select 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c13"
+          class="c14"
         >
           <label
             aria-label="select beta"
@@ -13582,14 +13607,14 @@ exports[`DataTable select 1`] = `
           </label>
         </td>
         <th
-          class="c13 "
+          class="c16 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c17"
           >
             <span
-              class="c16"
+              class="c18"
             >
               beta
             </span>
@@ -13615,10 +13640,10 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 lkmiYN"
         >
           <label
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -13687,11 +13712,11 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdaZZZ"
         >
           <label
             aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -13737,11 +13762,11 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdaZZZ"
         >
           <label
             aria-label="unselect beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"

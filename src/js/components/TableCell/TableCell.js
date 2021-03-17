@@ -55,7 +55,10 @@ const TableCell = forwardRef(
             align: align || mergedProps.align || undefined,
             background: background || mergedProps.background || undefined,
             border: border || mergedProps.border || undefined,
-            pad: pad || mergedProps.pad || undefined,
+            pad:
+              !plain || tableContext !== 'body' // header already uses plain+pad
+                ? pad || mergedProps.pad || undefined
+                : undefined,
             verticalAlign:
               verticalAlign || mergedProps.verticalAlign || undefined,
           };

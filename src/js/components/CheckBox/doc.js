@@ -127,6 +127,11 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'checkBox.pad': {
+    description: 'The pad around the CheckBox and its label.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
   'checkBox.size': {
     description: 'The height and width used for the CheckBox icon.',
     type: 'string',

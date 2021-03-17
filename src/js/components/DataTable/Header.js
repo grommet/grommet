@@ -139,7 +139,12 @@ const Header = forwardRef(
           )}
 
           {(selected || onSelect) && (
-            <TableCell background={background || cellProps.background}>
+            <TableCell
+              background={background || cellProps.background}
+              // xxsmall leaves room for focus indicator
+              // if theme checkBox has pad, use that
+              pad={theme.checkBox.pad ? 'none' : 'xxsmall'}
+            >
               {onSelect && (
                 <CheckBox
                   checked={selected.length === data.length}
