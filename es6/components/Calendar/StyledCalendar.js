@@ -80,7 +80,7 @@ Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps); // The width of 14
 var StyledDayContainer = styled.div.withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
   componentId: "sc-1y4xhmp-4"
-})(["flex:0 0 auto;", ""], function (props) {
+})(["flex:0 1 auto;", ""], function (props) {
   return props.fillContainer && 'width: 14.3%;';
 });
 StyledDayContainer.defaultProps = {};
