@@ -18,7 +18,7 @@ var doc = function doc(Spinner) {
     message: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
       start: _reactDesc.PropTypes.string,
       end: _reactDesc.PropTypes.string
-    })]).description("The message that will be announced for screen readers when message \n        is a string. When an object, the start message will be announced \n        as the Spinner shows, and the end message as the spinner closes.").defaultValue(undefined)
+    })]).description("When message is a string, the message will be announced for \n        screen readers once the Spinner is loaded. \n        When an object, the 'start' message will be announced \n        as the Spinner appears, and the 'end' message as the spinner closes.").defaultValue(undefined)
   };
   return DocumentedSpinner;
 };
