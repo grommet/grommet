@@ -422,19 +422,44 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       size: {
         xsmall: baseSpacing * 0.75 + "px",
+        // 18px
         small: baseSpacing + "px",
+        // 24px
         medium: baseSpacing * 2 + "px",
-        // default 48
+        // default 48px
         large: baseSpacing * 3 + "px",
-        xlarge: baseSpacing * 4 + "px"
+        // 72px
+        xlarge: baseSpacing * 4 + "px",
+        // 96px
+        '2xl': baseSpacing * 5 + "px",
+        // 120px
+        '3xl': baseSpacing * 6 + "px",
+        // 144px
+        '4xl': baseSpacing * 7 + "px",
+        // 168px
+        '5xl': baseSpacing * 8 + "px" // 192px
+
       },
       text: {
         size: {
           xsmall: 'small',
+          // 14px
           small: 'medium',
+          // 18px
           medium: 'large',
+          // 22px
           large: 'xlarge',
-          xlarge: 'xxlarge'
+          // 26px
+          xlarge: 'xxlarge',
+          // 34px
+          '2xl': '3xl',
+          // 42px
+          '3xl': '4xl',
+          // 54px
+          '4xl': '5xl',
+          // 70px
+          '5xl': '6xl' // 90px
+
         } // fontWeight: undefined,
         // extend: undefined
 
