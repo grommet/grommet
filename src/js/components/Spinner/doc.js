@@ -35,9 +35,10 @@ export const doc = Spinner => {
       }),
     ])
       .description(
-        `The message that will be announced for screen readers when message 
-        is a string. When an object, the start message will be announced 
-        as the Spinner shows, and the end message as the spinner closes.`,
+        `When message is a string, the message will be announced for 
+        screen readers once the Spinner is loaded. 
+        When an object, the 'start' message will be announced 
+        as the Spinner appears, and the 'end' message as the spinner closes.`,
       )
       .defaultValue(undefined),
   };
