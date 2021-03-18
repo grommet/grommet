@@ -157,7 +157,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     background: background || cellProps.background
   }, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
-    checked: selected.length === data.length,
+    checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
     indeterminate: selected.length > 0 && selected.length < data.length,
     onChange: function onChange() {
       // if any are selected, clear selection
