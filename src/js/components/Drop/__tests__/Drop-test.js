@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 
-import { expectPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Drop } from '..';
@@ -29,6 +29,7 @@ const TestInput = ({
   elevation,
   containerTarget,
   message = 'this is a test',
+  align,
   ...rest
 }) => {
   const [showDrop, setShowDrop] = useState(false);
@@ -47,6 +48,7 @@ const TestInput = ({
         id="drop-node"
         elevation={elevation}
         target={inputRef.current}
+        align={align}
         {...rest}
       >
         {message}
@@ -205,40 +207,61 @@ describe('Drop', () => {
     const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
     expect(actualRoot).toBe(document.body);
   });
+});
 
-  test(`should render correct margin depending on value of align`, () => {
-    const theme = {
+test('custom containerTarget', () => {
+  const target = document.createElement('div');
+  document.body.appendChild(target);
+  try {
+    const { getByTestId } = render(
+      <TestInput data-testid="drop" containerTarget={target} />,
+    );
+    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(target);
+  } finally {
+    document.body.removeChild(target);
+  }
+});
+
+describe('Drop', () => {
+  beforeEach(createPortal);
+  afterEach(cleanup);
+  const alignPositions = [
+    { top: 'bottom' },
+    { top: 'top', left: 'right' },
+    { top: 'top', right: 'left' },
+    { top: 'bottom', right: 'left' },
+    { top: 'bottom', right: 'right' },
+    { top: 'bottom', left: 'right' },
+    { top: 'bottom', left: 'left' },
+    { bottom: 'top', right: 'left' },
+    { right: 'right', bottom: 'top' },
+    { bottom: 'top', left: 'left' },
+    { bottom: 'top', left: 'right' },
+    { bottom: 'top', right: 'left' },
+    { bottom: 'bottom', left: 'right' },
+    { bottom: 'bottom', right: 'left' },
+  ];
+
+  alignPositions.forEach(alignPosition => {
+    const customMarginTheme = {
       global: {
         drop: {
-          margin: '5px',
+          margin: 'small',
           intelligentMargin: true,
         },
       },
     };
-    render(
-      <Grommet theme={theme}>
+
+    test(`should render correct margin depending on value of align`, () => {
+      render(
         <TestInput
           id="margin-drop-test"
-          align={{ bottom: 'bottom', right: 'left' }}
-          pad="small"
-        />
-        This Drop uses a custom theme
-      </Grommet>,
-    );
-    expectPortal('margin-drop-test').toMatchSnapshot();
-  });
-
-  test('custom containerTarget', () => {
-    const target = document.createElement('div');
-    document.body.appendChild(target);
-    try {
-      const { getByTestId } = render(
-        <TestInput data-testid="drop" containerTarget={target} />,
+          theme={customMarginTheme}
+          align={alignPosition}
+        />,
       );
-      const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
-      expect(actualRoot).toBe(target);
-    } finally {
-      document.body.removeChild(target);
-    }
+      expectPortal('margin-drop-test').toMatchSnapshot();
+    });
   });
 });
