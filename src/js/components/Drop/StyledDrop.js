@@ -98,7 +98,8 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
       adjustedMargin = { left: margin };
     } else if (deepEqual(align, { bottom: 'bottom', right: 'left' })) {
       adjustedMargin = { left: `-${margin}` };
-    }
+      // Drop will be contained inside of target, don't apply margin
+    } else adjustedMargin = 'none';
   } else {
     return edgeStyle(
       'margin',

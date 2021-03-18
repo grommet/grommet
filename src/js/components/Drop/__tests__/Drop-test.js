@@ -6,7 +6,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 
-import { createPortal, expectPortal } from '../../../utils/portal';
+import { expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Drop } from '..';
@@ -207,25 +207,7 @@ describe('Drop', () => {
     const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
     expect(actualRoot).toBe(document.body);
   });
-});
 
-test('custom containerTarget', () => {
-  const target = document.createElement('div');
-  document.body.appendChild(target);
-  try {
-    const { getByTestId } = render(
-      <TestInput data-testid="drop" containerTarget={target} />,
-    );
-    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
-    expect(actualRoot).toBe(target);
-  } finally {
-    document.body.removeChild(target);
-  }
-});
-
-describe('Drop', () => {
-  beforeEach(createPortal);
-  afterEach(cleanup);
   const alignPositions = [
     { top: 'bottom' },
     { top: 'top', left: 'right' },
@@ -253,7 +235,8 @@ describe('Drop', () => {
       },
     };
 
-    test(`should render correct margin depending on value of align`, () => {
+    test(`should render correct margin depending on value of align: 
+    ${JSON.stringify(alignPosition)}`, () => {
       render(
         <TestInput
           id="margin-drop-test"
@@ -264,4 +247,18 @@ describe('Drop', () => {
       expectPortal('margin-drop-test').toMatchSnapshot();
     });
   });
+});
+
+test('custom containerTarget', () => {
+  const target = document.createElement('div');
+  document.body.appendChild(target);
+  try {
+    const { getByTestId } = render(
+      <TestInput data-testid="drop" containerTarget={target} />,
+    );
+    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(target);
+  } finally {
+    document.body.removeChild(target);
+  }
 });
