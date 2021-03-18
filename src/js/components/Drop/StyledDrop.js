@@ -51,58 +51,58 @@ const deepEqual = (object1, object2) => {
   return true;
 };
 
-const marginStyle = (theme, align, data, responsive, margin) => {
-  const marginProp = theme.global.edgeSize[data] || data;
+const marginStyle = (theme, align, data, responsive, marginProp) => {
+  const margin = theme.global.edgeSize[data] || data;
   // if user provides CSS string such as '50px 12px', apply that always
   let customCSS;
-  let MarginSide;
-  if (typeof marginProp === 'string') {
-    customCSS = marginProp.split(' ').length > 1;
+  let adjustedMargin;
+  if (typeof margin === 'string') {
+    customCSS = margin.split(' ').length > 1;
   }
   if (
     theme.global.drop.intelligentMargin === true &&
     !customCSS &&
-    typeof marginProp === 'string'
+    typeof margin === 'string'
   ) {
     if (deepEqual(align, { top: 'bottom' })) {
-      MarginSide = { top: marginProp };
+      adjustedMargin = { top: margin };
     } else if (deepEqual(align, { bottom: 'top' })) {
-      MarginSide = { bottom: marginProp };
+      adjustedMargin = { bottom: margin };
     } else if (deepEqual(align, { right: 'left' })) {
-      MarginSide = { left: `-${marginProp}` };
+      adjustedMargin = { left: `-${margin}` };
     } else if (deepEqual(align, { left: 'right' })) {
-      MarginSide = { left: marginProp };
+      adjustedMargin = { left: margin };
     } else if (deepEqual(align, { top: 'top', left: 'right' })) {
-      MarginSide = { left: marginProp };
+      adjustedMargin = { left: margin };
     } else if (deepEqual(align, { top: 'top', right: 'left' })) {
-      MarginSide = { left: `-${marginProp}` };
+      adjustedMargin = { left: `-${margin}` };
     } else if (deepEqual(align, { top: 'bottom', right: 'left' })) {
-      MarginSide = { top: marginProp, left: `-${marginProp}` };
+      adjustedMargin = { top: margin, left: `-${margin}` };
     } else if (deepEqual(align, { top: 'bottom', right: 'right' })) {
-      MarginSide = { top: marginProp };
+      adjustedMargin = { top: margin };
     } else if (deepEqual(align, { top: 'bottom', left: 'right' })) {
-      MarginSide = { top: marginProp, left: marginProp };
+      adjustedMargin = { top: margin, left: margin };
     } else if (deepEqual(align, { top: 'bottom', left: 'left' })) {
-      MarginSide = { top: marginProp };
+      adjustedMargin = { top: margin };
     } else if (deepEqual(align, { bottom: 'top', right: 'left' })) {
-      MarginSide = { bottom: marginProp, left: `-${marginProp}` };
+      adjustedMargin = { bottom: margin, left: `-${margin}` };
     } else if (deepEqual(align, { right: 'right', bottom: 'top' })) {
-      MarginSide = { bottom: marginProp };
+      adjustedMargin = { bottom: margin };
     } else if (deepEqual(align, { bottom: 'top', left: 'left' })) {
-      MarginSide = { bottom: marginProp };
+      adjustedMargin = { bottom: margin };
     } else if (deepEqual(align, { bottom: 'top', left: 'right' })) {
-      MarginSide = { bottom: marginProp, left: marginProp };
+      adjustedMargin = { bottom: margin, left: margin };
     } else if (deepEqual(align, { bottom: 'top', right: 'left' })) {
-      MarginSide = { bottom: marginProp, left: `-${marginProp}` };
+      adjustedMargin = { bottom: margin, left: `-${margin}` };
     } else if (deepEqual(align, { bottom: 'bottom', left: 'right' })) {
-      MarginSide = { left: marginProp };
+      adjustedMargin = { left: margin };
     } else if (deepEqual(align, { bottom: 'bottom', right: 'left' })) {
-      MarginSide = { left: `-${marginProp}` };
+      adjustedMargin = { left: `-${margin}` };
     }
   } else {
     return edgeStyle(
       'margin',
-      margin || theme.global.drop.margin,
+      marginProp || theme.global.drop.margin,
       responsive,
       theme.global.edgeSize.responsiveBreakpoint,
       theme,
@@ -110,7 +110,7 @@ const marginStyle = (theme, align, data, responsive, margin) => {
   }
   return edgeStyle(
     'margin',
-    MarginSide,
+    adjustedMargin,
     responsive,
     theme.global.edgeSize.responsiveBreakpoint,
     theme,
