@@ -295,6 +295,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // equals true.
     ,
     defaultCursor: disabled === true || undefined,
+    focusIndicator: false,
     id: id ? id + "__input" : undefined,
     name: name,
     ref: inputRef
