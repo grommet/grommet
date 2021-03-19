@@ -96,6 +96,6 @@ export interface ChartProps {
   )[];
 }
 
-declare const Chart: React.ComponentClass<ChartProps>;
+declare const Chart: React.FC<ChartProps>;
 
 export { Chart };

@@ -39,6 +39,10 @@ export interface MenuProps {
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 }
 
-declare const Menu: React.FC<MenuProps & Omit<ButtonType, 'icon'>>;
+export interface MenuExtendedProps
+  extends MenuProps,
+    Omit<ButtonType, 'icon' | 'size'> {}
+
+declare const Menu: React.FC<MenuExtendedProps>;
 
 export { Menu };
