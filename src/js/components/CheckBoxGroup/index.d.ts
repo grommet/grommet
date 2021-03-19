@@ -22,8 +22,11 @@ export interface CheckBoxGroupProps {
   valueKey?: string;
 }
 
-declare const CheckBoxGroup: React.ComponentClass<CheckBoxGroupProps &
-  BoxProps &
-  JSX.IntrinsicElements['div']>;
+export interface CheckBoxGroupExtendedProps
+  extends CheckBoxGroupProps,
+    BoxProps,
+    Omit<JSX.IntrinsicElements['div'], 'onClick' | 'onChange'> {}
+
+declare const CheckBoxGroup: React.FC<CheckBoxGroupExtendedProps>;
 
 export { CheckBoxGroup };
