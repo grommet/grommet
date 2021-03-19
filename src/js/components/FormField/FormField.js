@@ -8,12 +8,10 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import {
-  containsFocus,
-  useForwardedRef,
-  focusStyle,
-  parseMetricToNum,
-} from '../../utils';
+import { containsFocus } from '../../utils/DOM';
+import { useForwardedRef } from '../../utils/refs';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
