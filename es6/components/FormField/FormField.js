@@ -5,7 +5,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { focusStyle, parseMetricToNum } from '../../utils';
+import { containsFocus } from '../../utils/DOM';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
+import { useForwardedRef } from '../../utils/refs';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -173,6 +176,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var formFieldRef = useForwardedRef(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border; // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -310,14 +314,14 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       a11yTitle: "required"
     }, "*");
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
-    ref: ref,
+    ref: formFieldRef,
     className: className,
     background: outerBackground,
     margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus(true);
+      setFocus(containsFocus(formFieldRef.current));
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {

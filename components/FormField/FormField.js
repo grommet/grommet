@@ -9,7 +9,13 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _defaultProps = require("../../default-props");
 
-var _utils = require("../../utils");
+var _DOM = require("../../utils/DOM");
+
+var _styles = require("../../utils/styles");
+
+var _mixins = require("../../utils/mixins");
+
+var _refs = require("../../utils/refs");
 
 var _Box = require("../Box");
 
@@ -44,7 +50,7 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
 })(["", " ", ""], function (props) {
-  return props.focus && (0, _utils.focusStyle)({
+  return props.focus && (0, _styles.focusStyle)({
     justBorder: true
   });
 }, function (props) {
@@ -54,7 +60,7 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig
   displayName: "FormField__FormFieldContentBox",
   componentId: "m9hood-1"
 })(["", ""], function (props) {
-  return props.focus && (0, _utils.focusStyle)({
+  return props.focus && (0, _styles.focusStyle)({
     justBorder: true
   });
 });
@@ -194,6 +200,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var formFieldRef = (0, _refs.useForwardedRef)(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border; // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -293,7 +300,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
         // if the user defines a margin,
         // then the default margin below will be overridden
         abutMargin = {
-          bottom: "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
+          bottom: "-" + (0, _mixins.parseMetricToNum)(theme.global.borderSize[themeBorder.size] || themeBorder.size) + "px"
         };
       }
 
@@ -331,14 +338,14 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       a11yTitle: "required"
     }, "*");
   return /*#__PURE__*/_react["default"].createElement(FormFieldBox, _extends({
-    ref: ref,
+    ref: formFieldRef,
     className: className,
     background: outerBackground,
     margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
   }, outerProps, {
     style: outerStyle,
     onFocus: function onFocus(event) {
-      setFocus(true);
+      setFocus((0, _DOM.containsFocus)(formFieldRef.current));
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
