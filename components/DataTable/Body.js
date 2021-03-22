@@ -31,27 +31,120 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var background = _ref.background,
-      border = _ref.border,
-      columns = _ref.columns,
-      data = _ref.data,
-      onMore = _ref.onMore,
-      replace = _ref.replace,
+var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
+  var primaryValue = _ref.primaryValue,
+      index = _ref.index,
+      rowRef = _ref.rowRef,
+      size = _ref.size,
+      active = _ref.active,
       onClickRow = _ref.onClickRow,
+      datum = _ref.datum,
+      setActive = _ref.setActive,
+      selected = _ref.selected,
       onSelect = _ref.onSelect,
-      pad = _ref.pad,
+      background = _ref.background,
+      isSelected = _ref.isSelected,
+      rowDetails = _ref.rowDetails,
+      isRowExpanded = _ref.isRowExpanded,
+      setRowExpand = _ref.setRowExpand,
+      rowExpand = _ref.rowExpand,
+      columns = _ref.columns,
       pinnedBackground = _ref.pinnedBackground,
+      border = _ref.border,
+      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
-      selected = _ref.selected,
-      rowDetails = _ref.rowDetails,
-      show = _ref.show,
-      size = _ref.size,
-      step = _ref.step,
-      rowExpand = _ref.rowExpand,
-      setRowExpand = _ref.setRowExpand,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
+      data = _ref.data;
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    ref: rowRef,
+    size: size,
+    active: active,
+    onClick: onClickRow ? function (event) {
+      // extract from React's synthetic event pool
+      event.persist();
+      var adjustedEvent = event;
+      adjustedEvent.datum = datum;
+      adjustedEvent.index = index;
+      onClickRow(adjustedEvent);
+    } : undefined,
+    onMouseEnter: onClickRow ? function () {
+      return setActive(index);
+    } : undefined,
+    onMouseLeave: onClickRow ? function () {
+      return setActive(undefined);
+    } : undefined,
+    onFocus: onClickRow ? function () {
+      return setActive(index);
+    } : undefined,
+    onBlur: onClickRow ? function () {
+      return setActive(undefined);
+    } : undefined
+  }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    background: background
+  }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+    a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
+    checked: isSelected,
+    disabled: !onSelect,
+    onChange: function onChange() {
+      if (isSelected) {
+        onSelect(selected.filter(function (s) {
+          return s !== primaryValue;
+        }));
+      } else onSelect([].concat(selected, [primaryValue]));
+    }
+  })), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+    context: isRowExpanded ? 'groupHeader' : 'body',
+    expanded: isRowExpanded,
+    onToggle: function onToggle() {
+      if (isRowExpanded) {
+        setRowExpand(rowExpand.filter(function (s) {
+          return s !== index;
+        }));
+      } else {
+        setRowExpand([].concat(rowExpand, [index]));
+      }
+    }
+  }), columns.map(function (column) {
+    return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
+      key: column.property,
+      background: column.pin ? pinnedBackground : background,
+      border: border,
+      context: "body",
+      column: column,
+      datum: datum,
+      index: index,
+      pad: pad,
+      primaryProperty: primaryProperty,
+      rowProp: rowProps && rowProps[primaryValue],
+      scope: column.primary || column.property === primaryProperty ? 'row' : undefined
+    });
+  })), rowDetails && isRowExpanded && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    key: index.toString() + "_expand"
+  }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null), /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    colSpan: columns.length + 1
+  }, rowDetails(data[index]))));
+});
+var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
+  var background = _ref2.background,
+      border = _ref2.border,
+      columns = _ref2.columns,
+      data = _ref2.data,
+      onMore = _ref2.onMore,
+      replace = _ref2.replace,
+      onClickRow = _ref2.onClickRow,
+      onSelect = _ref2.onSelect,
+      pad = _ref2.pad,
+      pinnedBackground = _ref2.pinnedBackground,
+      primaryProperty = _ref2.primaryProperty,
+      rowProps = _ref2.rowProps,
+      selected = _ref2.selected,
+      rowDetails = _ref2.rowDetails,
+      show = _ref2.show,
+      size = _ref2.size,
+      step = _ref2.step,
+      rowExpand = _ref2.rowExpand,
+      setRowExpand = _ref2.setRowExpand,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -88,76 +181,32 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(index);
-    return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
-      key: primaryValue || index
-    }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
-      ref: rowRef,
+    return /*#__PURE__*/_react["default"].createElement(Row, {
+      key: primaryValue || index,
+      rowRef: rowRef,
+      primaryValue: primaryValue,
+      isSelected: isSelected,
+      isRowExpanded: isRowExpanded,
+      index: index,
       size: size,
       active: active >= 0 ? active === index : undefined,
-      onClick: onClickRow ? function (event) {
-        // extract from React's synthetic event pool
-        event.persist();
-        var adjustedEvent = event;
-        adjustedEvent.datum = datum;
-        adjustedEvent.index = index;
-        onClickRow(adjustedEvent);
-      } : undefined,
-      onMouseEnter: onClickRow ? function () {
-        return setActive(index);
-      } : undefined,
-      onMouseLeave: onClickRow ? function () {
-        return setActive(undefined);
-      } : undefined,
-      onFocus: onClickRow ? function () {
-        return setActive(index);
-      } : undefined,
-      onBlur: onClickRow ? function () {
-        return setActive(undefined);
-      } : undefined
-    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-      background: background
-    }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
-      a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
-      checked: isSelected,
-      disabled: !onSelect,
-      onChange: function onChange() {
-        if (isSelected) {
-          onSelect(selected.filter(function (s) {
-            return s !== primaryValue;
-          }));
-        } else onSelect([].concat(selected, [primaryValue]));
-      }
-    })), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
-      context: isRowExpanded ? 'groupHeader' : 'body',
-      expanded: isRowExpanded,
-      onToggle: function onToggle() {
-        if (isRowExpanded) {
-          setRowExpand(rowExpand.filter(function (s) {
-            return s !== index;
-          }));
-        } else {
-          setRowExpand([].concat(rowExpand, [index]));
-        }
-      }
-    }), columns.map(function (column) {
-      return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
-        key: column.property,
-        background: column.pin ? pinnedBackground : background,
-        border: border,
-        context: "body",
-        column: column,
-        datum: datum,
-        index: index,
-        pad: pad,
-        primaryProperty: primaryProperty,
-        rowProp: rowProps && rowProps[primaryValue],
-        scope: column.primary || column.property === primaryProperty ? 'row' : undefined
-      });
-    })), rowDetails && isRowExpanded && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
-      key: index.toString() + "_expand"
-    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null), /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-      colSpan: columns.length + 1
-    }, rowDetails(data[index]))));
+      onClickRow: onClickRow,
+      datum: datum,
+      setActive: setActive,
+      selected: selected,
+      onSelect: onSelect,
+      background: background,
+      rowDetails: rowDetails,
+      setRowExpand: setRowExpand,
+      rowExpand: rowExpand,
+      columns: columns,
+      pinnedBackground: pinnedBackground,
+      border: border,
+      pad: pad,
+      primaryProperty: primaryProperty,
+      rowProps: rowProps,
+      data: data
+    });
   })));
 });
 exports.Body = Body;

@@ -28,7 +28,7 @@ var normalizeProp = function normalizeProp(name, rowProp, prop) {
   return prop;
 };
 
-var Cell = function Cell(_ref) {
+var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
   var backgroundProp = _ref.background,
       border = _ref.border,
       _ref$column = _ref.column,
@@ -94,8 +94,7 @@ var Cell = function Cell(_ref) {
     pad: normalizeProp('pad', rowProp, pad),
     pin: pin
   }), content);
-};
-
+});
 exports.Cell = Cell;
 Cell.displayName = 'Cell';
 Cell.defaultProps = {};

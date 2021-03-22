@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
@@ -13,7 +13,7 @@ var normalizeProp = function normalizeProp(name, rowProp, prop) {
   return prop;
 };
 
-var Cell = function Cell(_ref) {
+var Cell = /*#__PURE__*/memo(function (_ref) {
   var backgroundProp = _ref.background,
       border = _ref.border,
       _ref$column = _ref.column,
@@ -77,8 +77,7 @@ var Cell = function Cell(_ref) {
     pad: normalizeProp('pad', rowProp, pad),
     pin: pin
   }), content);
-};
-
+});
 Cell.displayName = 'Cell';
 Cell.defaultProps = {};
 Object.setPrototypeOf(Cell.defaultProps, defaultProps);
