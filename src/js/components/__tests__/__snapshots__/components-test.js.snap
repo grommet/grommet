@@ -3887,7 +3887,7 @@ string",
         "description": "Provides custom rendering of the file. If not provided, the file's
       name will be shown. It will be passed the browser File object as
       an argument. For example: (file) => <Text>{file.name}</Text>",
-        "format": "node",
+        "format": "function",
         "name": "renderFile",
       },
     ],
