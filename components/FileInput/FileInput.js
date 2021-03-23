@@ -118,6 +118,29 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return typeof result === 'object' && Object.keys(result).length === 0 ? undefined : result;
   };
 
+  var rightPad;
+
+  if (mergeTheme('pad')) {
+    var _mergeTheme = mergeTheme('pad'),
+        horizontal = _mergeTheme.horizontal,
+        right = _mergeTheme.right;
+
+    if (right) {
+      rightPad = theme.global.edgeSize[right] || right;
+    } else if (horizontal) {
+      rightPad = theme.global.edgeSize[horizontal] || horizontal;
+    }
+  } // rightPad needs to be included in the rightOffset
+  // otherwise input may cover the RemoveButton, making it
+  // unreachable by mouse click.
+
+
+  var rightOffset;
+
+  if (removeRef.current) {
+    if (rightPad && typeof rightPad === 'string') rightOffset = removeRef.current.getBoundingClientRect().width + rightPad.replace('px', '');else rightOffset = removeRef.current.getBoundingClientRect().width;
+  }
+
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onSpace: function onSpace(event) {
       if (controlRef.current === event.target) inputRef.current.click();
@@ -192,7 +215,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     multiple: multiple,
     disabled: disabled,
     plain: true,
-    rightOffset: removeRef.current && removeRef.current.getBoundingClientRect().width
+    rightOffset: rightOffset
   }, rest, {
     onDragOver: function onDragOver() {
       return setDragOver(true);
