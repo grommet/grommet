@@ -111,6 +111,25 @@ const FileInput = forwardRef(
         : result;
     };
 
+    let rightPad;
+    if (mergeTheme('pad')) {
+      const { horizontal, right } = mergeTheme('pad');
+      if (right) {
+        rightPad = theme.global.edgeSize[right] || right;
+      } else if (horizontal) {
+        rightPad = theme.global.edgeSize[horizontal] || horizontal;
+      }
+    }
+
+    let rightOffset;
+    if (removeRef.current) {
+      if (rightPad && typeof rightPad === 'string')
+        rightOffset =
+          removeRef.current.getBoundingClientRect().width +
+          rightPad.replace('px', '');
+      else rightOffset = removeRef.current.getBoundingClientRect().width;
+    }
+
     return (
       <Keyboard
         onSpace={event => {
@@ -210,10 +229,7 @@ const FileInput = forwardRef(
             multiple={multiple}
             disabled={disabled}
             plain
-            rightOffset={
-              removeRef.current &&
-              removeRef.current.getBoundingClientRect().width
-            }
+            rightOffset={rightOffset}
             {...rest}
             onDragOver={() => setDragOver(true)}
             onDragLeave={() => setDragOver(false)}
