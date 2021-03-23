@@ -45,6 +45,6 @@ export interface DropExtendedProps extends DropProps, divProps {}
 // Keep type alias for backwards compatibility.
 export type DropType = DropProps & JSX.IntrinsicElements['div'];
 
-declare const Drop: React.ComponentClass<DropExtendedProps>;
+declare const Drop: React.FC<DropExtendedProps>;
 
 export { Drop };
