@@ -121,6 +121,9 @@ const FileInput = forwardRef(
       }
     }
 
+    // rightPad needs to be included in the rightOffset
+    // otherwise input may cover the RemoveButton, making it
+    // unreachable by mouse click.
     let rightOffset;
     if (removeRef.current) {
       if (rightPad && typeof rightPad === 'string')
