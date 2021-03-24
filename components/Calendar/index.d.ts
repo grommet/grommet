@@ -32,9 +32,14 @@ export interface CalendarProps {
   size?: 'small' | 'medium' | 'large' | string;
 }
 
-declare const Calendar: React.ComponentClass<CalendarProps &
-  JSX.IntrinsicElements['div']>;
+export interface CalendarExtendedProps
+  extends CalendarProps,
+    Omit<JSX.IntrinsicElements['div'], keyof CalendarProps> {}
+
+// Keep type alias for backwards compatibility.
 export type CalendarType = CalendarProps &
   Omit<JSX.IntrinsicElements['div'], 'onSelect'>;
+
+declare const Calendar: React.ComponentClass<CalendarExtendedProps>;
 
 export { Calendar };
