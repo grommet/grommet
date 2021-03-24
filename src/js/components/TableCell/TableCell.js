@@ -37,6 +37,9 @@ const TableCell = forwardRef(
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
 
+    // if window resizes, recalculate cell height so that content
+    // will continue to fill the height if the dimensions of the cell
+    // have changed
     useEffect(() => {
       const updateHeight = () => {
         if (plain === 'fill') {
@@ -46,13 +49,9 @@ const TableCell = forwardRef(
             container.style.height = '';
             const cellRect = cell.getBoundingClientRect();
 
-            // height must match cell height (minus border)
-            // otherwise table will apply some margin around the
-            // cell content. When plain = 'fill' we don't want that
-            container.style.height = `${cellRect.height -
-              (border
-                ? theme.global.borderSize.xsmall.replace('px', '')
-                : 0)}px`;
+            // height must match cell height otherwise table will apply some
+            // margin around the cell content
+            container.style.height = `${cellRect.height}px`;
           }
         }
       };
