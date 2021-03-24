@@ -89,7 +89,7 @@ Provides custom rendering of the file. If not provided, the file's
       an argument. For example: (file) => <Text>{file.name}</Text>
 
 ```
-node
+function
 ```
   
 ## Intrinsic element
