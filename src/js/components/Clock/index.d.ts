@@ -28,7 +28,17 @@ export interface ClockProps {
   type?: 'analog' | 'digital';
 }
 
-declare const Clock: React.ComponentClass<ClockProps &
-  (JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['svg'])>;
+/**
+ * Ideally this would be an interface, however since the Clock component can be
+ * either analog (svg) or digital (div), we cannot know at compile time whether
+ * ClockExtendedProps should contain svg or div props.
+ */
+export type ClockExtendedProps = ClockProps &
+  (
+    | Omit<JSX.IntrinsicElements['svg'], 'onChange' | 'type'>
+    | Omit<JSX.IntrinsicElements['div'], 'onChange'>
+  );
+
+declare const Clock: React.FC<ClockExtendedProps>;
 
 export { Clock };

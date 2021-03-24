@@ -8819,7 +8819,7 @@ Provides custom rendering of the file. If not provided, the file's
       an argument. For example: (file) => <Text>{file.name}</Text>
 
 \`\`\`
-node
+function
 \`\`\`
   
 ## Intrinsic element
@@ -11897,8 +11897,7 @@ string
 Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />
+      'action = ({item, index}) => <Content />'
 
 \`\`\`
 function
@@ -11984,8 +11983,7 @@ Function that will be called when each data item is rendered.
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'
 
 \`\`\`
 function
