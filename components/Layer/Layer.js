@@ -43,7 +43,7 @@ var Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     return setLayerContainer((0, _utils.getNewContainer)(containerTarget, targetChildPosition));
   }, [containerTarget, targetChildPosition]); // just a few things to clean up when the Layer is unmounted
 
-  (0, _react.useEffect)(function () {
+  (0, _react.useLayoutEffect)(function () {
     return function () {
       if (originalFocusedElement) {
         if (originalFocusedElement.focus) {

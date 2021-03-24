@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
@@ -28,7 +28,7 @@ var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
     return setLayerContainer(getNewContainer(containerTarget, targetChildPosition));
   }, [containerTarget, targetChildPosition]); // just a few things to clean up when the Layer is unmounted
 
-  useEffect(function () {
+  useLayoutEffect(function () {
     return function () {
       if (originalFocusedElement) {
         if (originalFocusedElement.focus) {
