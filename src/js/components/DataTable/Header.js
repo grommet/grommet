@@ -146,7 +146,11 @@ const Header = forwardRef(
             >
               {onSelect && (
                 <CheckBox
-                  checked={selected.length === data.length}
+                  checked={
+                    selected.length > 0 &&
+                    data.length > 0 &&
+                    selected.length === data.length
+                  }
                   indeterminate={
                     selected.length > 0 && selected.length < data.length
                   }
