@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -13,90 +13,93 @@ const normalizeProp = (name, rowProp, prop) => {
   return prop;
 };
 
-const Cell = ({
-  background: backgroundProp,
-  border,
-  column: {
-    align,
-    pin: columnPin,
-    footer,
-    plain,
-    property,
-    render,
-    verticalAlign,
-    size,
-  },
-  datum,
-  index,
-  pad,
-  pin: cellPin,
-  primaryProperty,
-  rowProp,
-  scope,
-}) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const value = datumValue(datum, property);
-  const context = useContext(TableContext);
-  const renderContexts =
-    context === 'body' || (context === 'footer' && footer && footer.aggregate);
+const Cell = memo(
+  ({
+    background: backgroundProp,
+    border,
+    column: {
+      align,
+      pin: columnPin,
+      plain,
+      footer,
+      property,
+      render,
+      verticalAlign,
+      size,
+    },
+    datum,
+    index,
+    pad,
+    pin: cellPin,
+    primaryProperty,
+    rowProp,
+    scope,
+  }) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const value = datumValue(datum, property);
+    const context = useContext(TableContext);
+    const renderContexts =
+      context === 'body' ||
+      (context === 'footer' && footer && footer.aggregate);
 
-  let content;
-  if (render && renderContexts) {
-    content = render(datum);
-  } else if (value !== undefined) {
-    content = value;
-  }
-
-  if (typeof content === 'string' || typeof content === 'number') {
-    const textProps =
-      property === primaryProperty ? theme.dataTable.primary : {};
-    content = <Text {...textProps}>{content}</Text>;
-  }
-
-  let pin;
-  if (cellPin) pin = cellPin;
-  else if (columnPin) pin = ['left'];
-
-  let background;
-  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-    background = theme.dataTable.pinned[context].background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
+    let content;
+    if (render && renderContexts) {
+      content = render(datum);
+    } else if (value !== undefined) {
+      content = value;
     }
-  } else background = undefined;
 
-  return (
-    <StyledDataTableCell
-      scope={scope}
-      {...theme.dataTable[context]}
-      align={align}
-      context={context}
-      verticalAlign={verticalAlign}
-      size={size}
-      background={
-        normalizeProp(
-          'background',
-          rowProp,
-          Array.isArray(backgroundProp)
-            ? backgroundProp[index % backgroundProp.length]
-            : backgroundProp,
-        ) || background
+    if (typeof content === 'string' || typeof content === 'number') {
+      const textProps =
+        property === primaryProperty ? theme.dataTable.primary : {};
+      content = <Text {...textProps}>{content}</Text>;
+    }
+
+    let pin;
+    if (cellPin) pin = cellPin;
+    else if (columnPin) pin = ['left'];
+
+    let background;
+    if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+      background = theme.dataTable.pinned[context].background;
+      if (!background.color && theme.background) {
+        // theme context has an active background color but the
+        // theme doesn't set an explicit color, repeat the context
+        // background explicitly
+        background = {
+          ...background,
+          color: normalizeBackgroundColor(theme),
+        };
       }
-      border={normalizeProp('border', rowProp, border)}
-      pad={normalizeProp('pad', rowProp, pad)}
-      pin={pin}
-      plain={plain}
-    >
-      {content}
-    </StyledDataTableCell>
-  );
-};
+    } else background = undefined;
+
+    return (
+      <StyledDataTableCell
+        scope={scope}
+        {...theme.dataTable[context]}
+        align={align}
+        context={context}
+        verticalAlign={verticalAlign}
+        size={size}
+        background={
+          normalizeProp(
+            'background',
+            rowProp,
+            Array.isArray(backgroundProp)
+              ? backgroundProp[index % backgroundProp.length]
+              : backgroundProp,
+          ) || background
+        }
+        border={normalizeProp('border', rowProp, border)}
+        pad={normalizeProp('pad', rowProp, pad)}
+        pin={pin}
+        plain={plain}
+      >
+        {content}
+      </StyledDataTableCell>
+    );
+  },
+);
 
 Cell.displayName = 'Cell';
 

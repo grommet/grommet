@@ -35,20 +35,21 @@ const TableCell = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const cellRef = useForwardedRef(ref);
-    const boxRef = useRef();
+    const containerRef = useRef();
 
     useEffect(() => {
       const updateHeight = () => {
         if (plain === 'fill') {
-          const container = boxRef.current;
-          if (container) {
+          const cell = cellRef.current;
+          const container = containerRef.current;
+          if (cell && container) {
             container.style.height = '';
-            const containerRect = container.getBoundingClientRect();
+            const cellRect = cell.getBoundingClientRect();
 
             // height must match cell height (minus border)
             // otherwise table will apply some margin around the
             // cell content. When plain = 'fill' we don't want that
-            container.style.height = `${containerRect.height -
+            container.style.height = `${cellRect.height -
               (border
                 ? theme.global.borderSize.xsmall.replace('px', '')
                 : 0)}px`;
@@ -104,7 +105,7 @@ const TableCell = forwardRef(
             // for the child contents to be able to fill the
             // TableCell
             content = (
-              <Box ref={boxRef} justify="center">
+              <Box ref={containerRef} justify="center">
                 {children}
               </Box>
             );
