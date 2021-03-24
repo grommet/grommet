@@ -224,9 +224,9 @@ exports[`Calendar change months 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c15 {
@@ -1143,7 +1143,7 @@ exports[`Calendar change months 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Dec 29 2019"
@@ -1159,7 +1159,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Dec 30 2019"
@@ -1175,7 +1175,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Dec 31 2019"
@@ -1191,7 +1191,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 01 2020"
@@ -1207,7 +1207,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 02 2020"
@@ -1223,7 +1223,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 03 2020"
@@ -1239,7 +1239,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 04 2020"
@@ -1259,7 +1259,7 @@ exports[`Calendar change months 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 05 2020"
@@ -1275,7 +1275,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 06 2020"
@@ -1291,7 +1291,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 07 2020"
@@ -1307,7 +1307,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 08 2020"
@@ -1323,7 +1323,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 09 2020"
@@ -1339,7 +1339,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 10 2020"
@@ -1355,7 +1355,7 @@ exports[`Calendar change months 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 11 2020"
@@ -1421,9 +1421,9 @@ exports[`Calendar change months 2`] = `
 }
 
 .c1 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c3 {
@@ -1641,9 +1641,9 @@ exports[`Calendar change months 2`] = `
 }
 
 .c1 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c3 {
@@ -1841,9 +1841,9 @@ exports[`Calendar change months 2`] = `
 }
 
 .c1 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c4 {
@@ -2059,9 +2059,9 @@ exports[`Calendar change months 2`] = `
 }
 
 .c1 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c3 {
@@ -2431,9 +2431,9 @@ exports[`Calendar children 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   width: 14.3%;
 }
 
@@ -3187,9 +3187,9 @@ exports[`Calendar date 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -4501,9 +4501,9 @@ exports[`Calendar dates 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -5833,9 +5833,9 @@ exports[`Calendar daysOfWeek 1`] = `
 }
 
 .c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c11 {
@@ -7272,9 +7272,9 @@ exports[`Calendar disabled 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -8607,9 +8607,9 @@ exports[`Calendar fill 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   width: 14.3%;
 }
 
@@ -9922,9 +9922,9 @@ exports[`Calendar first day sunday week monday 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -11010,9 +11010,9 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -13274,9 +13274,9 @@ exports[`Calendar header 1`] = `
 }
 
 .c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c12 {
@@ -14604,9 +14604,9 @@ exports[`Calendar reference 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -15898,9 +15898,9 @@ exports[`Calendar select date 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -16837,7 +16837,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Dec 29 2019"
@@ -16853,7 +16853,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Dec 30 2019"
@@ -16869,7 +16869,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Dec 31 2019"
@@ -16885,7 +16885,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 01 2020"
@@ -16901,7 +16901,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 02 2020"
@@ -16917,7 +16917,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 03 2020"
@@ -16933,7 +16933,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 04 2020"
@@ -16953,7 +16953,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 05 2020"
@@ -16969,7 +16969,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 06 2020"
@@ -16985,7 +16985,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 07 2020"
@@ -17001,7 +17001,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 08 2020"
@@ -17017,7 +17017,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 09 2020"
@@ -17033,7 +17033,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 10 2020"
@@ -17049,7 +17049,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 11 2020"
@@ -17069,7 +17069,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 12 2020"
@@ -17085,7 +17085,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 13 2020"
@@ -17101,7 +17101,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 14 2020"
@@ -17117,7 +17117,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 15 2020"
@@ -17133,7 +17133,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 16 2020"
@@ -17149,7 +17149,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 17 2020"
@@ -17165,7 +17165,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 18 2020"
@@ -17185,7 +17185,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 19 2020"
@@ -17201,7 +17201,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 20 2020"
@@ -17217,7 +17217,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 21 2020"
@@ -17233,7 +17233,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 22 2020"
@@ -17249,7 +17249,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 23 2020"
@@ -17265,7 +17265,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 24 2020"
@@ -17281,7 +17281,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 25 2020"
@@ -17301,7 +17301,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 26 2020"
@@ -17317,7 +17317,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 27 2020"
@@ -17333,7 +17333,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 28 2020"
@@ -17349,7 +17349,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 29 2020"
@@ -17365,7 +17365,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 30 2020"
@@ -17381,7 +17381,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 31 2020"
@@ -17397,7 +17397,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Feb 01 2020"
@@ -17417,7 +17417,7 @@ exports[`Calendar select date 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Feb 02 2020"
@@ -17433,7 +17433,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Feb 03 2020"
@@ -17449,7 +17449,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Feb 04 2020"
@@ -17465,7 +17465,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Feb 05 2020"
@@ -17481,7 +17481,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Feb 06 2020"
@@ -17497,7 +17497,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Feb 07 2020"
@@ -17513,7 +17513,7 @@ exports[`Calendar select date 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Feb 08 2020"
@@ -17760,9 +17760,9 @@ exports[`Calendar select dates 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -18717,7 +18717,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Dec 29 2019"
@@ -18733,7 +18733,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Dec 30 2019"
@@ -18749,7 +18749,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Dec 31 2019"
@@ -18765,7 +18765,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 01 2020"
@@ -18781,7 +18781,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 02 2020"
@@ -18797,7 +18797,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 03 2020"
@@ -18813,7 +18813,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 04 2020"
@@ -18833,7 +18833,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 05 2020"
@@ -18849,7 +18849,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 06 2020"
@@ -18865,7 +18865,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 07 2020"
@@ -18881,7 +18881,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 08 2020"
@@ -18897,7 +18897,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 09 2020"
@@ -18913,7 +18913,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 10 2020"
@@ -18929,7 +18929,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 11 2020"
@@ -18949,7 +18949,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 12 2020"
@@ -18965,7 +18965,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 13 2020"
@@ -18981,7 +18981,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 14 2020"
@@ -18997,7 +18997,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 15 2020"
@@ -19013,7 +19013,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 16 2020"
@@ -19029,7 +19029,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 17 2020"
@@ -19045,7 +19045,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 18 2020"
@@ -19065,7 +19065,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 19 2020"
@@ -19081,7 +19081,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 20 2020"
@@ -19097,7 +19097,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 21 2020"
@@ -19113,7 +19113,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 22 2020"
@@ -19129,7 +19129,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 23 2020"
@@ -19145,7 +19145,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 24 2020"
@@ -19161,7 +19161,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Jan 25 2020"
@@ -19181,7 +19181,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Jan 26 2020"
@@ -19197,7 +19197,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Jan 27 2020"
@@ -19213,7 +19213,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Jan 28 2020"
@@ -19229,7 +19229,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Jan 29 2020"
@@ -19245,7 +19245,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Jan 30 2020"
@@ -19261,7 +19261,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Jan 31 2020"
@@ -19277,7 +19277,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Feb 01 2020"
@@ -19297,7 +19297,7 @@ exports[`Calendar select dates 2`] = `
             class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sun Feb 02 2020"
@@ -19313,7 +19313,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Mon Feb 03 2020"
@@ -19329,7 +19329,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Tue Feb 04 2020"
@@ -19345,7 +19345,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Wed Feb 05 2020"
@@ -19361,7 +19361,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Thu Feb 06 2020"
@@ -19377,7 +19377,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Fri Feb 07 2020"
@@ -19393,7 +19393,7 @@ exports[`Calendar select dates 2`] = `
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 DjmJE"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
             >
               <button
                 aria-label="Sat Feb 08 2020"
@@ -19640,9 +19640,9 @@ exports[`Calendar showAdjacentDays 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {
@@ -22798,9 +22798,9 @@ exports[`Calendar size 1`] = `
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c14 {

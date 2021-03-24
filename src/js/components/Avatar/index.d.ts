@@ -6,8 +6,11 @@ export interface AvatarProps {
   src?: string;
 }
 
-declare const Avatar: React.FC<BoxProps &
-  AvatarProps &
-  JSX.IntrinsicElements['div']>;
+export interface AvatarExtendedProps
+  extends BoxProps,
+    AvatarProps,
+    Omit<JSX.IntrinsicElements['div'], 'onClick'> {}
+
+declare const Avatar: React.FC<AvatarExtendedProps>;
 
 export { Avatar };
