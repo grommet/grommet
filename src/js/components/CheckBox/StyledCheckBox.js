@@ -38,10 +38,10 @@ const StyledCheckBoxContainer = styled.label`
   user-select: none;
   width: fit-content;
   ${props =>
-    props.theme.checkBox.pad &&
+    (props.pad || props.theme.checkBox.pad) &&
     edgeStyle(
       'padding',
-      props.theme.checkBox.pad,
+      props.pad || props.theme.checkBox.pad,
       props.responsive,
       props.theme.box.responsiveBreakpoint,
       props.theme,

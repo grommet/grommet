@@ -38,7 +38,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
     return (
       <Keyboard
@@ -124,13 +124,8 @@ const Body = forwardRef(
                     {(selected || onSelect) && (
                       <TableCell
                         background={background}
-                        // if the theme has defined its own checkBox pad,
-                        // make this cell plain so we use the checkBox padding
-                        plain={theme.checkBox.pad}
-                        // if theme doesn't apply checkBox pad, set a small
-                        // amount for the focus indicator
-                        pad={!theme.checkBox.pad ? 'xxsmall' : undefined}
-                        size={theme.checkBox.size} // match width to checkBox
+                        plain="fill"
+                        size="auto"
                       >
                         <CheckBox
                           a11yTitle={`${
@@ -145,6 +140,13 @@ const Body = forwardRef(
                               );
                             } else onSelect([...selected, primaryValue]);
                           }}
+                          pad={
+                            (rowProps &&
+                              rowProps[primaryValue] &&
+                              rowProps[primaryValue].pad) ||
+                            pad ||
+                            theme.table.body.pad
+                          }
                         />
                       </TableCell>
                     )}

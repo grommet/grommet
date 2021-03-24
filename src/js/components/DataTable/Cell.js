@@ -89,8 +89,9 @@ const Cell = ({
         ) || background
       }
       border={normalizeProp('border', rowProp, border)}
-      pad={!plain ? normalizeProp('pad', rowProp, pad) : 'none'}
+      pad={normalizeProp('pad', rowProp, pad)}
       pin={pin}
+      plain={plain}
     >
       {content}
     </StyledDataTableCell>

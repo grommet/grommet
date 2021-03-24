@@ -1,7 +1,8 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useEffect, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -33,6 +34,35 @@ const TableCell = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const cellRef = useForwardedRef(ref);
+    const boxRef = useRef();
+
+    useEffect(() => {
+      const updateHeight = () => {
+        if (plain === 'fill') {
+          const container = boxRef.current;
+          if (container) {
+            container.style.height = '';
+            const containerRect = container.getBoundingClientRect();
+
+            // height must match cell height (minus border)
+            // otherwise table will apply some margin around the
+            // cell content. When plain = 'fill' we don't want that
+            container.style.height = `${containerRect.height -
+              (border
+                ? theme.global.borderSize.xsmall.replace('px', '')
+                : 0)}px`;
+          }
+        }
+      };
+
+      window.addEventListener('resize', updateHeight);
+      updateHeight();
+      return () => {
+        window.removeEventListener('resize', updateHeight);
+      };
+    });
+
     return (
       <TableContext.Consumer>
         {tableContext => {
@@ -56,7 +86,7 @@ const TableCell = forwardRef(
             background: background || mergedProps.background || undefined,
             border: border || mergedProps.border || undefined,
             pad:
-              !plain || tableContext !== 'body' // header already uses plain+pad
+              plain !== 'fill'
                 ? pad || mergedProps.pad || undefined
                 : undefined,
             verticalAlign:
@@ -68,21 +98,33 @@ const TableCell = forwardRef(
           delete mergedProps.pad;
           delete mergedProps.verticalAlign;
 
+          let content = children;
+          if (plain === 'fill' && children) {
+            // a Box with explicitly set height is necessary
+            // for the child contents to be able to fill the
+            // TableCell
+            content = (
+              <Box ref={boxRef} justify="center">
+                {children}
+              </Box>
+            );
+          }
+
           return (
             <StyledTableCell
-              ref={ref}
+              ref={cellRef}
               as={scope ? 'th' : undefined}
               scope={scope}
               size={size}
               colSpan={colSpan}
               tableContext={tableContext}
               tableContextTheme={tableContextTheme}
-              {...(plain ? mergedProps : {})}
+              {...(plain === true ? mergedProps : {})}
               {...cellProps}
               className={className}
             >
               {plain || !Object.keys(mergedProps).length ? (
-                children
+                content
               ) : (
                 <Box
                   {...mergedProps}

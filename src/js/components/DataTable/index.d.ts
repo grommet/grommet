@@ -43,7 +43,7 @@ export interface ColumnConfig<TRowType> {
   header?: string | React.ReactNode | { aggregate?: boolean };
   paginate?: boolean | PaginationType;
   pin?: boolean;
-  plain?: boolean;
+  plain?: boolean | 'fill';
   primary?: boolean;
   property: string;
   render?: (datum: TRowType) => React.ReactNode;

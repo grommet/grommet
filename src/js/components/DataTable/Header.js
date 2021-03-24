@@ -141,9 +141,8 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <TableCell
               background={background || cellProps.background}
-              // xxsmall leaves room for focus indicator
-              // if theme checkBox has pad, use that
-              pad={theme.checkBox.pad ? 'none' : 'xxsmall'}
+              plain="fill"
+              size="auto"
             >
               {onSelect && (
                 <CheckBox
@@ -160,6 +159,7 @@ const Header = forwardRef(
                         data.map(datum => datumValue(datum, primaryProperty)),
                       );
                   }}
+                  pad={pad || theme.table.header.pad}
                 />
               )}
             </TableCell>

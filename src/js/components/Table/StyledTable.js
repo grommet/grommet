@@ -19,9 +19,17 @@ const SIZE_MAP = {
 
 const sizeStyle = css`
   width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
+    props.size === 'auto'
+      ? '1px' // table cell will respect content width
+      : SIZE_MAP[props.size] ||
+        props.theme.global.size[props.size] ||
+        props.size};
   max-width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
+    props.size !== 'auto'
+      ? SIZE_MAP[props.size] ||
+        props.theme.global.size[props.size] ||
+        props.size
+      : undefined};
   overflow: hidden;
 `;
 
