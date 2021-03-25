@@ -38,8 +38,13 @@ export interface DropProps {
   round?: RoundType;
 }
 
-declare const Drop: React.ComponentClass<DropProps &
-  JSX.IntrinsicElements['div']>;
+type divProps = JSX.IntrinsicElements['div'];
+
+export interface DropExtendedProps extends DropProps, divProps {}
+
+// Keep type alias for backwards compatibility.
 export type DropType = DropProps & JSX.IntrinsicElements['div'];
+
+declare const Drop: React.FC<DropExtendedProps>;
 
 export { Drop };
