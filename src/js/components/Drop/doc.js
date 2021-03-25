@@ -122,8 +122,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.drop.intelligentMargin': {
-    description: `Whether the margin should adapt depending on where
-    the drop is aligned with respect to the target.`,
+    description: `Whether the margin should adjust according to the 
+    drop's alignment with respect to the target.`,
     type: 'boolean',
     defaultValue: undefined,
   },
