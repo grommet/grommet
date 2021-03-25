@@ -51,6 +51,7 @@ const deepEqual = (object1, object2) => {
   return true;
 };
 
+// The desired margin may be adjusted depending on drops alignment
 const marginStyle = (theme, align, data, responsive, marginProp) => {
   const margin = theme.global.edgeSize[data] || data;
   let customCSS;
