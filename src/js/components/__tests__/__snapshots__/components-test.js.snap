@@ -5546,8 +5546,7 @@ string",
         "description": "Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />",
+      'action = ({item, index}) => <Content />'",
         "format": "function",
         "name": "action",
       },
@@ -5619,8 +5618,7 @@ end
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      ",
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'",
         "format": "function",
         "name": "children",
       },
