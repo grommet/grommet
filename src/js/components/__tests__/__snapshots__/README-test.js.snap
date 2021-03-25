@@ -8449,8 +8449,8 @@ undefined
 
 **global.drop.intelligentMargin**
 
-Whether the margin should adapt depending on where
-    the drop is aligned with respect to the target. Expects \`boolean\`.
+Whether the margin should adjust according to the 
+    drop's alignment with respect to the target. Expects \`boolean\`.
 
 Defaults to
 

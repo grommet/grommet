@@ -287,7 +287,7 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
-      intelligentMargin: boolean;
+      intelligentMargin?: boolean;
       margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;

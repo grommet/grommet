@@ -53,9 +53,9 @@ const deepEqual = (object1, object2) => {
 
 const marginStyle = (theme, align, data, responsive, marginProp) => {
   const margin = theme.global.edgeSize[data] || data;
-  // if user provides CSS string such as '50px 12px', apply that always
   let customCSS;
   let adjustedMargin;
+  // if user provides CSS string such as '50px 12px', apply that always
   if (typeof margin === 'string') {
     customCSS = margin.split(' ').length > 1;
   }
