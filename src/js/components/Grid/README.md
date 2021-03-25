@@ -412,7 +412,7 @@ stretch
 **pad**
 
 Spacing around the outer edge of
-    the drawing coordinate area for the graphic elements to overflow into. Defaults to `none`.
+    the drawing coordinate area for the graphic elements to overflow into.
 
 ```
 none

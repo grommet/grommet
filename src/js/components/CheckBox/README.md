@@ -78,7 +78,7 @@ function
 The amount of padding on the container 
     surrounding the checkbox and its label. An object can be specified to 
     distinguish horizontal padding, vertical padding, and padding on a 
-    particular side of the container. Defaults to `none`.
+    particular side of the container.
 
 ```
 none

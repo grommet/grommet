@@ -50,7 +50,7 @@ export const doc = CheckBox => {
     distinguish horizontal padding, vertical padding, and padding on a 
     particular side of the container.`,
       )
-      .defaultValue('none'),
+      .defaultValue(undefined),
     reverse: PropTypes.bool
       .description('Whether to show the label in front of the checkbox.')
       .defaultValue(false),
