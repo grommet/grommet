@@ -102,6 +102,10 @@ export interface GridProps {
   tag?: PolymorphicType;
 }
 
-declare const Grid: React.FC<GridProps & JSX.IntrinsicElements['div']>;
+type divProps = JSX.IntrinsicElements['div'];
+
+export interface GridExtendedProps extends GridProps, divProps {}
+
+declare const Grid: React.FC<GridExtendedProps>;
 
 export { Grid };
