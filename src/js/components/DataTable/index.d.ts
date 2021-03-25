@@ -105,8 +105,12 @@ export interface DataTableProps<TRowType = any> {
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
 }
 
+export interface DataTableExtendedProps<TRowType = any>
+  extends DataTableProps<TRowType>,
+    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+
 declare class DataTable<TRowType = any> extends React.Component<
-  DataTableProps<TRowType> & Omit<JSX.IntrinsicElements['table'], 'onSelect'>
+  DataTableExtendedProps<TRowType>
 > {}
 
 export { DataTable };
