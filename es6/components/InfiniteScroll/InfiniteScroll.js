@@ -145,12 +145,12 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     }
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
   useEffect(function () {
-    if (lastPage === 0 && pendingLength !== 0) {
+    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
       setPageHeights([]);
       setPendingLength(0);
       setRenderPageBounds([0, calculateLastPageBound(show, step)]);
     }
-  }, [lastPage, pendingLength, show, step]); // scroll to any 'show'
+  }, [lastPage, pendingLength, show, step, items.length]); // scroll to any 'show'
 
   useLayoutEffect(function () {
     // ride out any animation delays, 100ms empirically measured
