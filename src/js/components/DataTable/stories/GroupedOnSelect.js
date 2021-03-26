@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -13,24 +13,19 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-export const GroupedOnSelectDataTable = () => {
-  const [select, setSelect] = useState(['Bryan']);
-
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          columns={groupColumns}
-          data={DATA}
-          groupBy="location"
-          select={select}
-          onSelect={setSelect}
-          sortable
-        />
-      </Box>
-    </Grommet>
-  );
-};
+export const GroupedOnSelectDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        groupBy="location"
+        onSelect={() => {}}
+        sortable
+      />
+    </Box>
+  </Grommet>
+);
 
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
 
