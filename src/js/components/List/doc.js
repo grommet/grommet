@@ -60,8 +60,7 @@ export const doc = List => {
       `Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />`,
+      'action = ({item, index}) => <Content />'`,
     ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')
@@ -83,8 +82,7 @@ export const doc = List => {
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      `,
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'`,
     ),
     itemProps: PropTypes.shape({}).description(
       `Item specific background, border, and pad, keyed by data index.
