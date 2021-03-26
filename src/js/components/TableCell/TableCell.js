@@ -34,6 +34,7 @@ const TableCell = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
 
@@ -51,7 +52,13 @@ const TableCell = forwardRef(
 
             // height must match cell height otherwise table will apply some
             // margin around the cell content
-            container.style.height = `${cellRect.height}px`;
+            container.style.height = `${Math.max(
+              cellRect.height -
+                (border || theme.table[tableContext].border
+                  ? theme.global.borderSize.xsmall.replace('px', '')
+                  : 0),
+              0,
+            )}px`;
           }
         }
       };
@@ -63,81 +70,70 @@ const TableCell = forwardRef(
       };
     });
 
+    let tableContextTheme;
+    if (tableContext === 'header') {
+      tableContextTheme = theme.table && theme.table.header;
+    } else if (tableContext === 'footer') {
+      tableContextTheme = theme.table && theme.table.footer;
+    } else {
+      tableContextTheme = theme.table && theme.table.body;
+    }
+    // merge tabelContextTheme and rest
+    const mergedProps = { ...tableContextTheme, ...rest };
+    Object.keys(mergedProps).forEach(key => {
+      if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
+    });
+    // split out background, border, and pad
+    const cellProps = {
+      align: align || mergedProps.align || undefined,
+      background: background || mergedProps.background || undefined,
+      border: border || mergedProps.border || undefined,
+      pad: plain !== 'fill' ? pad || mergedProps.pad || undefined : undefined,
+      verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
+    };
+    delete mergedProps.align;
+    delete mergedProps.background;
+    delete mergedProps.border;
+    delete mergedProps.pad;
+    delete mergedProps.verticalAlign;
+
+    let content = children;
+    if (plain === 'fill' && children) {
+      // a Box with explicitly set height is necessary
+      // for the child contents to be able to fill the
+      // TableCell
+      content = (
+        <Box ref={containerRef} justify="center">
+          {children}
+        </Box>
+      );
+    }
+
     return (
-      <TableContext.Consumer>
-        {tableContext => {
-          let tableContextTheme;
-          if (tableContext === 'header') {
-            tableContextTheme = theme.table && theme.table.header;
-          } else if (tableContext === 'footer') {
-            tableContextTheme = theme.table && theme.table.footer;
-          } else {
-            tableContextTheme = theme.table && theme.table.body;
-          }
-          // merge tabelContextTheme and rest
-          const mergedProps = { ...tableContextTheme, ...rest };
-          Object.keys(mergedProps).forEach(key => {
-            if (rest[key] === undefined)
-              mergedProps[key] = tableContextTheme[key];
-          });
-          // split out background, border, and pad
-          const cellProps = {
-            align: align || mergedProps.align || undefined,
-            background: background || mergedProps.background || undefined,
-            border: border || mergedProps.border || undefined,
-            pad:
-              plain !== 'fill'
-                ? pad || mergedProps.pad || undefined
-                : undefined,
-            verticalAlign:
-              verticalAlign || mergedProps.verticalAlign || undefined,
-          };
-          delete mergedProps.align;
-          delete mergedProps.background;
-          delete mergedProps.border;
-          delete mergedProps.pad;
-          delete mergedProps.verticalAlign;
-
-          let content = children;
-          if (plain === 'fill' && children) {
-            // a Box with explicitly set height is necessary
-            // for the child contents to be able to fill the
-            // TableCell
-            content = (
-              <Box ref={containerRef} justify="center">
-                {children}
-              </Box>
-            );
-          }
-
-          return (
-            <StyledTableCell
-              ref={cellRef}
-              as={scope ? 'th' : undefined}
-              scope={scope}
-              size={size}
-              colSpan={colSpan}
-              tableContext={tableContext}
-              tableContextTheme={tableContextTheme}
-              {...(plain === true ? mergedProps : {})}
-              {...cellProps}
-              className={className}
-            >
-              {plain || !Object.keys(mergedProps).length ? (
-                content
-              ) : (
-                <Box
-                  {...mergedProps}
-                  align={align}
-                  justify={verticalAlignToJustify[verticalAlign]}
-                >
-                  {children}
-                </Box>
-              )}
-            </StyledTableCell>
-          );
-        }}
-      </TableContext.Consumer>
+      <StyledTableCell
+        ref={cellRef}
+        as={scope ? 'th' : undefined}
+        scope={scope}
+        size={size}
+        colSpan={colSpan}
+        tableContext={tableContext}
+        tableContextTheme={tableContextTheme}
+        {...(plain === true ? mergedProps : {})}
+        {...cellProps}
+        className={className}
+      >
+        {plain || !Object.keys(mergedProps).length ? (
+          content
+        ) : (
+          <Box
+            {...mergedProps}
+            align={align}
+            justify={verticalAlignToJustify[verticalAlign]}
+          >
+            {children}
+          </Box>
+        )}
+      </StyledTableCell>
     );
   },
 );
