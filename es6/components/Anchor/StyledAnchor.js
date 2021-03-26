@@ -14,6 +14,12 @@ var sizeStyle = function sizeStyle(props) {
 };
 
 var StyledAnchor = styled.a.withConfig({
+  // prevent custom props from bleeding into DOM
+  // https://styled-components.com/docs/api#shouldforwardprop
+  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
+    return !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(prop) && defaultValidatorFn(prop);
+  }
+}).withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
 })(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
