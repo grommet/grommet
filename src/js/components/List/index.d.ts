@@ -61,7 +61,10 @@ export interface ListProps {
   action?: (item: any, index: number) => void;
 }
 
-declare const List: React.ComponentClass<ListProps &
-  JSX.IntrinsicElements['ul']>;
+type ulProps = JSX.IntrinsicElements['ul'];
+
+export interface ListExtendedProps extends ListProps, ulProps {}
+
+declare const List: React.FC<ListExtendedProps>;
 
 export { List };
