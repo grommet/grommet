@@ -24,7 +24,14 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a.withConfig({
+  // prevent custom props from bleeding into DOM
+  // https://styled-components.com/docs/api#shouldforwardprop
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+    !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(
+      prop,
+    ) && defaultValidatorFn(prop),
+})`
   box-sizing: border-box;
   ${props => sizeStyle(props)}
   color: ${props =>

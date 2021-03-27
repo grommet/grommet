@@ -14,7 +14,10 @@ export interface GrommetProps {
   userAgent?: string;
 }
 
-declare const Grommet: React.ComponentClass<GrommetProps &
-  JSX.IntrinsicElements['div']>;
+export interface GrommetExtendedProps
+  extends GrommetProps,
+    Omit<JSX.IntrinsicElements['div'], 'dir'> {}
+
+declare const Grommet: React.FC<GrommetExtendedProps>;
 
 export { Grommet };
