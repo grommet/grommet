@@ -106,6 +106,9 @@ exports[`Carousel basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c6 {
@@ -120,9 +123,6 @@ exports[`Carousel basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -337,13 +337,19 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "opacity": 0,
+            "zIndex": 0,
+          }
+        }
       >
         <div
           className="c4"
         >
           <img
             className=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
@@ -353,13 +359,18 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "zIndex": 2,
+          }
+        }
       >
         <div
           className="c6"
         >
           <img
             className=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
@@ -815,6 +826,12 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "opacity": 0,
+            "zIndex": 0,
+          }
+        }
       >
         <div
           className="c4"
@@ -831,6 +848,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "zIndex": 2,
+          }
+        }
       >
         <div
           className="c6"
@@ -1062,6 +1084,9 @@ exports[`Carousel navigate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c6 {
@@ -1076,9 +1101,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -1293,13 +1315,14 @@ exports[`Carousel navigate 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 0; opacity: 0;"
       >
         <div
           class="c4"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
@@ -1309,13 +1332,14 @@ exports[`Carousel navigate 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 2;"
       >
         <div
           class="c6"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
@@ -1422,14 +1446,47 @@ exports[`Carousel navigate 2`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 1; opacity: 1;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csgqhr"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -1438,14 +1495,49 @@ exports[`Carousel navigate 2`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  -webkit-animation: cCLHuk 1s 0s forwards;
+  animation: cCLHuk 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 2;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hggYQt"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -1553,15 +1645,48 @@ exports[`Carousel navigate 3`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 1; opacity: 1;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gWwFrB"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
@@ -1569,15 +1694,50 @@ exports[`Carousel navigate 3`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 2;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csgqhr"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
@@ -1779,6 +1939,9 @@ exports[`Carousel play 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c6 {
@@ -1793,9 +1956,6 @@ exports[`Carousel play 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -2009,13 +2169,14 @@ exports[`Carousel play 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 0; opacity: 0;"
       >
         <div
           class="c4"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
@@ -2025,13 +2186,14 @@ exports[`Carousel play 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 2;"
       >
         <div
           class="c6"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
@@ -2137,14 +2299,47 @@ exports[`Carousel play 2`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 1; opacity: 1;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csgqhr"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -2153,14 +2348,49 @@ exports[`Carousel play 2`] = `
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+      .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  -webkit-animation: cCLHuk 1s 0s forwards;
+  animation: cCLHuk 1s 0s forwards;
+}
+
+<div
+        class="c0"
+        style="z-index: 2;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hggYQt"
+          class="c1"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -2351,7 +2581,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   overflow: hidden;
 }
 
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2425,7 +2655,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2553,13 +2783,14 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 0; opacity: 0;"
       >
         <div
           class="c4"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
@@ -2569,13 +2800,14 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
     >
       <div
         class="c3"
+        style="z-index: 2;"
       >
         <div
           class="c6"
         >
           <img
             class=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>

@@ -106,7 +106,8 @@ const Carousel = ({
   );
 
   const selectors = [];
-  const wrappedChildren = Children.map(children, (child, index) => {
+  const wrappedChildren = [];
+  Children.map(children, (child, index) => {
     selectors.push(
       <Button
         // eslint-disable-next-line react/no-array-index-key
@@ -136,13 +137,33 @@ const Carousel = ({
       animation = { type: 'fadeOut', duration: 0 };
     }
 
-    return (
-      <Box fill={fill} overflow="hidden">
-        <Box fill={fill} animation={animation}>
-          {child}
-        </Box>
-      </Box>
-    );
+    if (index === activeIndex) {
+      wrappedChildren.push(
+        // eslint-disable-next-line react/no-array-index-key
+        <Box key={index} fill={fill} overflow="hidden" style={{ zIndex: 2 }}>
+          <Box fill={fill} animation={animation}>
+            {child}
+          </Box>
+        </Box>,
+      );
+    } else {
+      wrappedChildren.unshift(
+        <Box
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          fill={fill}
+          overflow="hidden"
+          style={{
+            zIndex: index === priorActiveIndex ? 1 : 0,
+            opacity: index === priorActiveIndex ? 1 : 0,
+          }}
+        >
+          <Box fill={fill} animation={animation}>
+            {child}
+          </Box>
+        </Box>,
+      );
+    }
   });
 
   const NextIcon = theme.carousel.icons.next;
