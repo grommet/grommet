@@ -268,6 +268,7 @@ const Header = forwardRef(
                     justify={!align || align === 'start' ? 'between' : align}
                     gap={theme.dataTable.header.gap}
                     fill="vertical"
+                    wrap
                     style={onResize ? { position: 'relative' } : undefined}
                   >
                     {content}

@@ -2747,6 +2747,9 @@ exports[`DataTable custom theme 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c6 {
@@ -3351,7 +3354,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 wMcEB"
+            class="StyledBox-sc-13pk1d4-0 iHyeQa"
             style="position: relative;"
           >
             <div
@@ -10990,6 +10993,9 @@ exports[`DataTable resizeable 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c5 {
@@ -12758,6 +12764,9 @@ exports[`DataTable search 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c5 {
@@ -13044,7 +13053,7 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 wMcEB"
+            class="StyledBox-sc-13pk1d4-0 iHyeQa"
           >
             <div
               class="StyledBox-sc-13pk1d4-0 dTCmQX"
