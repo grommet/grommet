@@ -41,7 +41,6 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
-  paginate?: boolean | PaginationType;
   pin?: boolean;
   primary?: boolean;
   property: string;
@@ -91,6 +90,7 @@ export interface DataTableProps<TRowType = any> {
         expand: Array<string>;
         onExpand: (expandedKeys: string[]) => void;
       };
+  paginate?: boolean | PaginationType;
   primaryKey?: string | boolean;
   select?: (string | number)[];
   sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
