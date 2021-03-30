@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Box, Grommet, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-// import { columns } from '../data';
 
 import { ColumnConfig } from '../..';
 
