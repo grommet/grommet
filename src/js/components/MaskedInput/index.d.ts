@@ -4,6 +4,7 @@ import { DropProps } from '../Drop';
 export interface MaskedInputProps {
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropProps?: DropProps;
+  focusIndicator?: boolean;
   icon?: JSX.Element;
   id?: string;
   mask?: Array<{
