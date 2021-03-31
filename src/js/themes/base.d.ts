@@ -726,7 +726,14 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
-    border?: BorderType;
+    border?: {
+      color?: ColorType;
+      position?: BorderType;
+      side?: BorderType;
+      error?: {
+        color?: ColorType;
+      };
+    };
     content?: {
       margin?: MarginType;
       pad?: PadType;
@@ -766,6 +773,7 @@ export interface ThemeType {
     label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
+    extend?: ExtendType;
   };
   grommet?: {
     extend?: ExtendType;
