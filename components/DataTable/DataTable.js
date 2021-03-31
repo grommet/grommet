@@ -345,7 +345,12 @@ var DataTable = function DataTable(_ref) {
     groupState: groupState,
     pad: normalizeProp(pad, 'body'),
     primaryProperty: primaryProperty,
+    onSelect: onSelect ? function (nextSelected) {
+      setSelected(nextSelected);
+      if (onSelect) onSelect(nextSelected);
+    } : undefined,
     onToggle: onToggleGroup,
+    selected: selected,
     size: size
   }) : /*#__PURE__*/_react["default"].createElement(_Body.Body, {
     ref: bodyRef,

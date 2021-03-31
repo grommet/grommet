@@ -391,8 +391,7 @@ Property to group data by. If object is specified
       'property' is used to group data by, 'expand' accepts array of
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
-       an array of keys of expanded groups. Cannot be used at the same
-       time as select/onSelect.
+       an array of keys of expanded groups.
 
 ```
 string
@@ -457,8 +456,7 @@ When supplied, causes checkboxes to be added to each row such that
       will be called with an array of primary key values, suitable to be
       passed to the 'select' property. If you are storing select state via
       a 'useState' hook, you can do something like:
-      '<DataTable select={select} onSelect={setSelect} />'. Cannot be used at 
-      the same time as groupBy.
+      '<DataTable select={select} onSelect={setSelect} />'.
 
 ```
 function
@@ -629,8 +627,7 @@ When supplied, causes checkboxes to be added to each row to indicate
       which rows are selected. The values in this array should match
       the 'primaryKey' or 'columns[].primary' keyed value for the row's data
       object. If 'onSelect' is provided, the CheckBoxes are enabled
-      and this function can be used to track select changes. Cannot be used at 
-      the same time as groupBy.
+      and this function can be used to track select changes.
 
 ```
 [

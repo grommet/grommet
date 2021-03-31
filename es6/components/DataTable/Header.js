@@ -133,6 +133,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
     background: background || cellProps.background
   }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
+    a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
     indeterminate: selected.length > 0 && selected.length < data.length,
     onChange: function onChange() {
