@@ -10,7 +10,7 @@ export var doc = function doc(Button) {
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.node]).description("Function that can be called to render the visual representation.\n      Button can take in Children as a function, node, or object. \n      For example, 'disabled', 'hover', and 'focus' can be passed as an \n      argument that would then return a react element.\n      `children={({ disabled, hover, focus }) => <Box...>{...}</Box>}`. \n      When Button has children, it is styled as a `plain` button.\n      "),
     active: PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag or react component to use for the element."),
-    color: colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
+    color: colorPropType.description("Fill color for primary, label color for plain, border color otherwise.\n       If button.default is defined in the theme, the color prop will\n       fill the background color for primary and secondary button types. \n       Color prop will change the text color for default button."),
     disabled: PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description("Whether the button expands to fill all of the available width and/or \n        height.").defaultValue(false),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
