@@ -326,7 +326,16 @@ const DataTable = ({
               groupState={groupState}
               pad={normalizeProp(pad, 'body')}
               primaryProperty={primaryProperty}
+              onSelect={
+                onSelect
+                  ? nextSelected => {
+                      setSelected(nextSelected);
+                      if (onSelect) onSelect(nextSelected);
+                    }
+                  : undefined
+              }
               onToggle={onToggleGroup}
+              selected={selected}
               size={size}
             />
           ) : (
