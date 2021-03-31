@@ -7292,7 +7292,18 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
               />
               <div
                 class="c12 "
-              />
+              >
+                <svg
+                  class="c13"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,12 L18,12"
+                    fill="none"
+                  />
+                </svg>
+              </div>
             </div>
           </label>
         </td>

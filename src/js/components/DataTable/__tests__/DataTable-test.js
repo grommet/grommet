@@ -1124,7 +1124,7 @@ describe('DataTable', () => {
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
+            { property: 'b', header: 'B', primary: true },
           ]}
           data={[
             { a: 'one', b: 1.1 },
@@ -1158,7 +1158,7 @@ describe('DataTable', () => {
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
+            { property: 'b', header: 'B', primary: true },
           ]}
           data={[
             { a: 'one', b: 1.1 },
@@ -1174,6 +1174,7 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
+    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1217,7 +1218,7 @@ describe('DataTable', () => {
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
+            { property: 'b', header: 'B', primary: true },
           ]}
           data={[
             { a: 'one', b: 1.1 },
