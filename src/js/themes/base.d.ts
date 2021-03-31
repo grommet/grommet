@@ -726,10 +726,7 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
-    border?: {
-      color?: ColorType;
-      position?: BorderType;
-      side?: BorderType;
+    border?: BorderType & {
       error?: {
         color?: ColorType;
       };
