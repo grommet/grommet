@@ -45,10 +45,7 @@ export const doc = Button => {
       `The DOM tag or react component to use for the element.`,
     ),
     color: colorPropType.description(
-      `Fill color for primary, label color for plain, border color otherwise.
-       If button.default is defined in the theme, the color prop will
-       affect the background color of the button, regardless of which
-       button kind is used.`,
+      'Fill color for primary, label color for plain, border color otherwise.',
     ),
     disabled: PropTypes.bool
       .description('Whether the button is disabled.')
