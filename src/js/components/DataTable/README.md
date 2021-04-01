@@ -315,7 +315,7 @@ A description of the data. The order controls the column order.
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally. 'plain' = 'fill' 
+      to the left when the table is scrolled horizontally. 'plain' = 'noPad' 
       indicates that the body cells in the column not apply pad.
 
 ```
@@ -342,7 +342,7 @@ A description of the data. The order controls the column order.
     },
   pin: boolean,
   plain: 
-    fill
+    noPad
     undefined,
   primary: boolean,
   property: string,

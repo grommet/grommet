@@ -102,7 +102,7 @@ export const doc = DataTable => {
           }),
         ]),
         pin: PropTypes.bool,
-        plain: PropTypes.oneOf(['fill', 'undefined']),
+        plain: PropTypes.oneOf(['noPad', 'undefined']),
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
@@ -142,7 +142,7 @@ export const doc = DataTable => {
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally. 'plain' = 'fill' 
+      to the left when the table is scrolled horizontally. 'plain' = 'noPad' 
       indicates that the body cells in the column not apply pad.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(

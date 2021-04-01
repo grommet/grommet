@@ -39,7 +39,7 @@ const columns: ColumnConfig<RowType>[] = [
       ) : (
         undefined
       ),
-    plain: 'fill',
+    plain: 'noPad',
   },
   {
     property: 'date',
