@@ -406,7 +406,11 @@ const DataTable = ({
           )}
         </StyledDataTable>
       </OverflowContainer>
-      {paginate && items && <Pagination alignSelf="end" {...paginationProps} />}
+      {paginate && items.length ? (
+        <Pagination alignSelf="end" {...paginationProps} />
+      ) : (
+        undefined
+      )}
     </Container>
   );
 };

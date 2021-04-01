@@ -1117,6 +1117,23 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('should not show paginate controls when data is empty array', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[]}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onSelect + groupBy should select/deselect all when grouped', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(

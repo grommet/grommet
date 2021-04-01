@@ -45,5 +45,5 @@ export const usePagination = ({ data, page, step, ...rest }) => {
     ...rest, // let anything coming from paginate prop override component
   };
 
-  return [currentItems, paginationProps];
+  return [currentItems || [], paginationProps];
 };
