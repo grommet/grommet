@@ -102,7 +102,7 @@ export const doc = DataTable => {
           }),
         ]),
         pin: PropTypes.bool,
-        plain: PropTypes.oneOf(['noPad', 'undefined']),
+        plain: PropTypes.oneOf(['noPad']),
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,

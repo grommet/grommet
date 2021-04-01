@@ -961,7 +961,7 @@ string",
         "name": "overflow",
       },
       Object {
-        "defaultValue": undefined,
+        "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
@@ -2040,7 +2040,7 @@ boolean",
         "name": "overflow",
       },
       Object {
-        "defaultValue": undefined,
+        "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
@@ -2319,7 +2319,7 @@ point",
         "name": "onChange",
       },
       Object {
-        "defaultValue": undefined,
+        "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
@@ -3077,7 +3077,7 @@ string",
         "name": "legend",
       },
       Object {
-        "defaultValue": undefined,
+        "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
@@ -4652,7 +4652,7 @@ stretch",
         "name": "justifyContent",
       },
       Object {
-        "defaultValue": undefined,
+        "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none

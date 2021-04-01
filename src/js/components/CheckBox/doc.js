@@ -43,14 +43,12 @@ export const doc = CheckBox => {
       will be passed a React event object. The current state can be accessed
       via event.target.checked. Same as React <input onChange={} />.`,
     ),
-    pad: padPropType
-      .description(
-        `The amount of padding on the container 
+    pad: padPropType.description(
+      `The amount of padding on the container 
     surrounding the checkbox and its label. An object can be specified to 
     distinguish horizontal padding, vertical padding, and padding on a 
     particular side of the container.`,
-      )
-      .defaultValue(undefined),
+    ),
     reverse: PropTypes.bool
       .description('Whether to show the label in front of the checkbox.')
       .defaultValue(false),

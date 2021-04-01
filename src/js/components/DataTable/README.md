@@ -342,8 +342,7 @@ A description of the data. The order controls the column order.
     },
   pin: boolean,
   plain: 
-    noPad
-    undefined,
+    noPad,
   primary: boolean,
   property: string,
   render: function,
