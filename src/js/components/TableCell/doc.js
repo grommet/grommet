@@ -10,9 +10,9 @@ export const doc = TableCell => {
     .intrinsicElement('td');
 
   DocumentedTableCell.propTypes = {
-    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['fill'])])
+    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['noPad'])])
       .description(
-        `Whether default styling context should be removed. If plain = 'fill', 
+        `Whether default styling context should be removed. If plain = 'noPad', 
         no pad will be applied, allowing content to fill the entirety of the 
         cell.`,
       )

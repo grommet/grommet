@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BoxTypes } from '../Box';
 
 export interface TableCellProps {
-  plain?: boolean;
+  plain?: boolean | 'noPad';
   scope?: 'col' | 'row';
   size?:
     | 'xxsmall'
@@ -17,6 +17,7 @@ export interface TableCellProps {
     | '1/4'
     | '2/4'
     | '3/4'
+    | 'auto'
     | string;
   verticalAlign?: 'top' | 'middle' | 'bottom';
 }

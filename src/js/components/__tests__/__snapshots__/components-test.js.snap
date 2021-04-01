@@ -7623,11 +7623,11 @@ string",
     "properties": Array [
       Object {
         "defaultValue": false,
-        "description": "Whether default styling context should be removed. If plain = 'fill', 
+        "description": "Whether default styling context should be removed. If plain = 'noPad', 
         no pad will be applied, allowing content to fill the entirety of the 
         cell.",
         "format": "boolean
-fill",
+noPad",
         "name": "plain",
       },
       Object {

@@ -62,7 +62,7 @@ const Row = memo(
         onBlur={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
-          <TableCell background={background} plain="fill" size="auto">
+          <TableCell background={background} plain="noPad" size="auto">
             <CheckBox
               a11yTitle={`${
                 isSelected ? 'unselect' : 'select'

@@ -6362,33 +6362,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-color: #000000;
 }
 
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c21:hover input:not([disabled]) + div,
-.c21:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
 .c12 {
   opacity: 0;
   -moz-appearance: none;
@@ -6461,6 +6434,16 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6666,37 +6649,42 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="select one"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select one"
+              class="c9"
             >
-              <input
-                checked=""
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
+                class="c10 c11"
               >
-                <svg
-                  class="c14"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  checked=""
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
                 >
-                  <path
-                    d="M6,12 L18,12"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c21 "
           scope="row"
         >
           <div
@@ -6710,7 +6698,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -6730,26 +6718,31 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="select 1.1"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select 1.1"
+              class="c9"
             >
-              <input
-                checked=""
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  checked=""
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -6762,7 +6755,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -6788,37 +6781,42 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="unselect 1.2"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="unselect 1.2"
+              class="c9"
             >
-              <input
-                checked=""
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c24 "
+                class="c10 c11"
               >
-                <svg
-                  class="c14"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  checked=""
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c24 "
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -6831,7 +6829,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -6876,25 +6874,30 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="select two"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select two"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c21 "
           scope="row"
         >
           <div
@@ -6908,7 +6911,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -7175,33 +7178,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-color: #000000;
 }
 
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c21:hover input:not([disabled]) + div,
-.c21:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
 .c12 {
   opacity: 0;
   -moz-appearance: none;
@@ -7274,6 +7250,16 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7459,36 +7445,41 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="select one"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select one"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
+                class="c10 c11"
               >
-                <svg
-                  class="c14"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
                 >
-                  <path
-                    d="M6,12 L18,12"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c21 "
           scope="row"
         >
           <div
@@ -7502,7 +7493,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -7541,25 +7532,30 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c20"
         >
-          <label
-            aria-label="select two"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select two"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c21 "
           scope="row"
         >
           <div
@@ -7573,7 +7569,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </th>
         <td
-          class="c20 "
+          class="c21 "
         >
           <div
             class="c22"
@@ -7746,7 +7742,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   flex-direction: column;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7865,33 +7861,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   border-color: #000000;
 }
 
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c21:hover input:not([disabled]) + div,
-.c21:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
 .c12 {
   opacity: 0;
   -moz-appearance: none;
@@ -7968,6 +7937,16 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c22 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
@@ -8005,7 +7984,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c21 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -8155,36 +8134,41 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         <td
           class="c20"
         >
-          <label
-            aria-label="unselect one"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="unselect one"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c22 "
+                class="c10 c11"
               >
-                <svg
-                  class="c14"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c21 "
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c22 "
           scope="row"
         >
           <div
@@ -8198,7 +8182,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c20 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -8237,25 +8221,30 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         <td
           class="c20"
         >
-          <label
-            aria-label="select two"
-            class="c21"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select two"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c20 "
+          class="c22 "
           scope="row"
         >
           <div
@@ -8269,7 +8258,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c20 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -8527,33 +8516,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   border-color: #000000;
 }
 
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.c20:hover input:not([disabled]) + div,
-.c20:hover input:not([disabled]) + span {
-  border-color: #000000;
-}
-
 .c12 {
   opacity: 0;
   -moz-appearance: none;
@@ -8626,6 +8588,16 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 }
 
 .c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8800,25 +8772,30 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         <td
           class="c19"
         >
-          <label
-            aria-label="select one"
-            class="c20"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select one"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c19 "
+          class="c20 "
           scope="row"
         >
           <div
@@ -8832,7 +8809,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           </div>
         </th>
         <td
-          class="c19 "
+          class="c20 "
         >
           <div
             class="c21"
@@ -8871,25 +8848,30 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         <td
           class="c19"
         >
-          <label
-            aria-label="select two"
-            class="c20"
+          <div
+            class="c8"
+            style="height: 0px;"
           >
-            <div
-              class="c10 c11"
+            <label
+              aria-label="select two"
+              class="c9"
             >
-              <input
-                class="c12"
-                type="checkbox"
-              />
               <div
-                class="c13 "
-              />
-            </div>
-          </label>
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c19 "
+          class="c20 "
           scope="row"
         >
           <div
@@ -8903,7 +8885,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           </div>
         </th>
         <td
-          class="c19 "
+          class="c20 "
         >
           <div
             class="c21"
@@ -9077,23 +9059,27 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
         >
-          <label
-            aria-label="unselect one"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="unselect one"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
               >
-                .c0 {
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                >
+                  .c0 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -9118,18 +9104,19 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 }
 
 <svg
-                  class="c0"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -9183,23 +9170,27 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
         >
-          <label
-            aria-label="unselect two"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="unselect two"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
               >
-                .c0 {
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                >
+                  .c0 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -9224,18 +9215,19 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
 }
 
 <svg
-                  class="c0"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -9391,24 +9383,29 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
         >
-          <label
-            aria-label="select one"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="select one"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
-              />
-            </div>
-          </label>
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -9462,24 +9459,29 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
         >
-          <label
-            aria-label="select two"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="select two"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
-              />
-            </div>
-          </label>
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"

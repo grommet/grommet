@@ -43,7 +43,7 @@ const TableCell = forwardRef(
     // have changed
     useEffect(() => {
       const updateHeight = () => {
-        if (plain === 'fill') {
+        if (plain === 'noPad') {
           const cell = cellRef.current;
           const container = containerRef.current;
           if (cell && container) {
@@ -88,7 +88,7 @@ const TableCell = forwardRef(
       align: align || mergedProps.align || undefined,
       background: background || mergedProps.background || undefined,
       border: border || mergedProps.border || undefined,
-      pad: plain !== 'fill' ? pad || mergedProps.pad || undefined : undefined,
+      pad: plain !== 'noPad' ? pad || mergedProps.pad || undefined : undefined,
       verticalAlign: verticalAlign || mergedProps.verticalAlign || undefined,
     };
     delete mergedProps.align;
@@ -98,7 +98,7 @@ const TableCell = forwardRef(
     delete mergedProps.verticalAlign;
 
     let content = children;
-    if (plain === 'fill' && children) {
+    if (plain === 'noPad' && children) {
       // a Box with explicitly set height is necessary
       // for the child contents to be able to fill the
       // TableCell

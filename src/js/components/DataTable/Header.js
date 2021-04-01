@@ -141,7 +141,7 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <TableCell
               background={background || cellProps.background}
-              plain="fill"
+              plain="noPad"
               size="auto"
             >
               {onSelect && (
