@@ -187,7 +187,8 @@ function
 
 **plain**
 
-Whether this is a plain Layer with no background color or border.
+Whether this is a plain Layer with no background color, border, or 
+        elevation.
 
 ```
 boolean

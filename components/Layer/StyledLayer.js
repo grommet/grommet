@@ -477,6 +477,12 @@ var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (
 });
 
 var StyledContainer = _styledComponents["default"].div.withConfig({
+  // don't let elevation leak to DOM
+  // https://styled-components.com/docs/api#shouldforwardprop
+  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
+    return !['elevation'].includes(prop) && defaultValidatorFn(prop);
+  }
+}).withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
 })(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
@@ -488,7 +494,7 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.layer.container.zIndex;
 }, function (props) {
-  return props.theme.layer.container.elevation && elevationStyle;
+  return !props.plain && props.theme.layer.container.elevation && elevationStyle;
 }, desktopContainerStyle, function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
