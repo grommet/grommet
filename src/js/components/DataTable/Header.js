@@ -146,6 +146,11 @@ const Header = forwardRef(
             >
               {onSelect && (
                 <CheckBox
+                  a11yTitle={
+                    selected.length === data.length
+                      ? 'unselect all'
+                      : 'select all'
+                  }
                   checked={
                     selected.length > 0 &&
                     data.length > 0 &&

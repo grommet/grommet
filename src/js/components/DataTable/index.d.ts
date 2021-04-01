@@ -41,7 +41,6 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
-  paginate?: boolean | PaginationType;
   pin?: boolean;
   plain?: boolean | 'fill';
   primary?: boolean;
@@ -69,6 +68,7 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
+  paginate?: boolean | PaginationType;
   pin?: boolean | 'header' | 'footer';
   placeholder?: string | React.ReactNode;
   resizeable?: boolean;
