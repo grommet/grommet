@@ -36,9 +36,12 @@ describe('TextInput', () => {
 
   test('a11yTitle', () => {
     const { container } = render(
-      <TextInput a11yTitle="aria-test" name="item" />,
+      <>
+        <TextInput a11yTitle="aria-test" name="item" />,
+        <TextInput aria-label="aria-test" name="item" />,
+      </>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('disabled', () => {

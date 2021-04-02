@@ -31,6 +31,16 @@ test('renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('a11yTitle', async () => {
+  const { container } = render(
+    <Grommet>
+      <Text a11yTitle="test"> Example</Text>
+      <Text aria-label="test"> Example</Text>
+    </Grommet>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('accepts ref', () => {
   const ref = React.createRef();
   const component = renderer.create(

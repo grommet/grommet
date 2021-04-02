@@ -27,6 +27,25 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const component = renderer.create(
+      <>
+        <DropButton
+          label="Dropper"
+          aria-label={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+        <DropButton
+          label="Dropper"
+          a11yTitle={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('closed', () => {
     const component = renderer.create(
       <DropButton

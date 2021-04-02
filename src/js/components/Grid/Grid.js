@@ -5,6 +5,7 @@ import { StyledGrid } from './StyledGrid';
 const Grid = forwardRef((props, ref) => {
   const {
     a11yTitle,
+    'aria-label': ariaLabel,
     border,
     fill, // munged to avoid styled-components putting it in the DOM
     responsive = true,
@@ -17,7 +18,7 @@ const Grid = forwardRef((props, ref) => {
   return (
     <StyledGrid
       ref={ref}
-      a11yTitleProp={a11yTitle}
+      a11yTitleProp={ariaLabel || a11yTitle}
       as={!as && tag ? tag : as}
       border={border}
       fillContainer={fill}

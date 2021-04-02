@@ -40,6 +40,7 @@ test('Image renders with aria-label', () => {
   const component = renderer.create(
     <Grommet>
       <Image a11yTitle="aria-label-text" src={SRC} />
+      <Image aria-label="aria-label-text" src={SRC} />
     </Grommet>,
   );
   const tree = component.toJSON();

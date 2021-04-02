@@ -22,6 +22,17 @@ test('Table renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Table a11yTitle renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table a11yTitle="test" />
+      <Table aria-label="test" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Table caption renders', () => {
   const component = renderer.create(
     <Grommet>

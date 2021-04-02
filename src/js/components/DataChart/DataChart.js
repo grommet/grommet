@@ -27,6 +27,7 @@ const DataChart = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       axis: axisProp = true,
       bounds: boundsProp = 'align',
       chart,
@@ -573,7 +574,7 @@ const DataChart = forwardRef(
     let content = (
       <Grid
         ref={ref}
-        aria-label={a11yTitle}
+        aria-label={ariaLabel || a11yTitle}
         fill={stackFill}
         columns={[
           'auto',

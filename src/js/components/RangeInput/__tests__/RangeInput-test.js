@@ -24,6 +24,17 @@ describe('RangeInput', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('a11yTitle', async () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput value="50" a11yTitle="test" />
+        <RangeInput value="50" aria-label="test" />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   test('renders', () => {
     const component = renderer.create(
       <Grommet>

@@ -32,6 +32,20 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(<MaskedInput a11yTitle={LABEL} name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('aria-label', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <MaskedInput aria-label={LABEL} name="item" />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('icon', () => {
     const { container } = render(<MaskedInput icon={<Search />} name="item" />);
     expect(container.firstChild).toMatchSnapshot();

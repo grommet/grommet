@@ -28,6 +28,16 @@ describe('Select', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('a11yTitle', () => {
+    const component = renderer.create(
+      <>
+        <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+        <Select id="test-select" options={['one', 'two']} ariaLabel="Select" />,
+      </>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,

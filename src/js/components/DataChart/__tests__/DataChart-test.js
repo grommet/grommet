@@ -40,6 +40,18 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const component = renderer.create(
+      <Grommet>
+        <DataChart data={data} a11yTitle={LABEL} />
+        <DataChart data={data} aria-label={LABEL} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('gap', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(

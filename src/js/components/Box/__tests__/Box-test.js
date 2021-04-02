@@ -33,6 +33,17 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box a11yTitle="Test" />
+        <Box aria-label="Test" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('responsive', () => {
     const component = renderer.create(
       <Grommet>

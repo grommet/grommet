@@ -45,6 +45,18 @@ describe('CheckBox', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('a11yTitle renders', async () => {
+    const LABEL = 'Label';
+    const component = renderer.create(
+      <Grommet>
+        <CheckBox a11yTitle={LABEL} />
+        <CheckBox aria-label={LABEL} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('label renders', () => {
     const component = renderer.create(
       <Grommet>

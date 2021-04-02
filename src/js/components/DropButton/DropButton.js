@@ -10,6 +10,7 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
+      'aria-label': ariaLabel,
       onAlign,
       disabled,
       dropAlign = defaultDropAlign,
@@ -68,7 +69,7 @@ const DropButton = forwardRef(
         <Button
           id={id}
           ref={buttonRef}
-          a11yTitle={a11yTitle}
+          a11yTitle={ariaLabel || a11yTitle}
           disabled={disabled}
           {...rest}
           onClick={onClickInternal}

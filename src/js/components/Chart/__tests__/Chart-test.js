@@ -62,6 +62,18 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const component = renderer.create(
+      <Grommet>
+        <Chart a11yTitle={LABEL} values={VALUES} />
+        <Chart aria-label={LABEL} values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('type', () => {
     const component = renderer.create(
       <Grommet>

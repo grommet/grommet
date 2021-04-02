@@ -25,6 +25,17 @@ describe('RadioButton', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('a11yTitle', async () => {
+    const { container } = render(
+      <Grommet>
+        <RadioButton name="test" a11yTitle="test" />
+        <RadioButton name="test" aria-label="test" />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>

@@ -22,6 +22,17 @@ describe('TextArea', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('a11yTitle', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea a11yTitle="test" id="item" name="item" />
+        <TextArea aria-label="test" id="item" name="item" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
