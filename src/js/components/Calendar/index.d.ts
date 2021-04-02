@@ -19,8 +19,8 @@ export interface HeaderProps {
   locale?: string;
   onPreviousMonth: () => void;
   onNextMonth: () => void;
-  previousInBound: 1 | 2 | undefined;
-  nextInBound: 1 | 2 | undefined;
+  previousInBound: boolean;
+  nextInBound: boolean;
 }
 
 export interface CalendarProps {

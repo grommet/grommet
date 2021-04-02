@@ -104,7 +104,8 @@ particular side of the layer`,
     ),
     plain: PropTypes.bool
       .description(
-        'Whether this is a plain Layer with no background color or border.',
+        `Whether this is a plain Layer with no background color, border, or 
+        elevation.`,
       )
       .defaultValue(false),
     position: PropTypes.oneOf([
