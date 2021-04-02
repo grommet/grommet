@@ -26,6 +26,22 @@ describe('Button', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('passes through the aria-label prop', async () => {
+    const TEST_LABEL = 'Test Label';
+    const { container, getByText } = render(
+      <Grommet>
+        <Button aria-label={TEST_LABEL} label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    const button = container.querySelector('button');
+    expect(button.getAttribute('aria-label')).toEqual(TEST_LABEL);
+
+    fireEvent.click(getByText('Test'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
@@ -327,7 +343,18 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test(`disabled state cursor should indicate the button cannot be 
+  test('a11yTitle', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button a11yTitle="Title" />
+        <Button aria-label="Title" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test(`disabled state cursor should indicate the button cannot be
   clicked`, () => {
     const { getByText } = render(
       <Grommet>
