@@ -408,9 +408,7 @@ const DataTable = ({
       </OverflowContainer>
       {paginate && items && items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
-      ) : (
-        undefined
-      )}
+      ) : null}
     </Container>
   );
 };
