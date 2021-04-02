@@ -78,6 +78,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       active = _ref.active,
       _ref$align = _ref.align,
       align = _ref$align === void 0 ? 'center' : _ref$align,
+      ariaLabel = _ref['aria-label'],
       color = _ref.color,
       children = _ref.children,
       disabled = _ref.disabled,
@@ -105,7 +106,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "aria-label", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "as"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -278,7 +279,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     styledButtonResult = /*#__PURE__*/React.createElement(StyledButton, _extends({}, rest, {
       as: domTag,
       ref: ref,
-      "aria-label": a11yTitle,
+      "aria-label": ariaLabel || a11yTitle,
       colorValue: color,
       active: active,
       selected: selected,
