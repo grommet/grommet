@@ -10,6 +10,8 @@ import {
   TextAlignType,
 } from '../../utils';
 
+import { TipProps } from '../Tip';
+
 export interface TextProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -35,6 +37,7 @@ export interface TextProps {
   truncate?: boolean;
   weight?: 'normal' | 'bold' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
+  tip?: TipProps;
 }
 export interface TextExtendedProps
   extends TextProps,

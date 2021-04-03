@@ -1,16 +1,28 @@
 import React, { forwardRef } from 'react';
 
 import { StyledText } from './StyledText';
+import { Tip } from '../Tip';
 
-const Text = forwardRef(({ color, tag, as, a11yTitle, ...rest }, ref) => (
-  <StyledText
-    as={!as && tag ? tag : as}
-    colorProp={color}
-    aria-label={a11yTitle}
-    {...rest}
-    ref={ref}
-  />
-));
+const Text = forwardRef(({ color, tag, as, a11yTitle, tip, ...rest }, ref) => {
+  const styledTextResult = (
+    <StyledText
+      as={!as && tag ? tag : as}
+      colorProp={color}
+      aria-label={a11yTitle}
+      {...rest}
+      ref={ref}
+    />
+  );
+
+  if (tip) {
+    if (typeof tip === 'string') {
+      return <Tip content={tip}>{styledTextResult}</Tip>;
+    }
+    return <Tip {...tip}>{styledTextResult}</Tip>;
+  }
+
+  return styledTextResult;
+});
 
 Text.displayName = 'Text';
 Text.defaultProps = {
