@@ -53,12 +53,24 @@ const normalizeProp = (prop, context) => {
   return undefined;
 };
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+const objectIs = (x, y) => {
+  if (x === y) {
+    return x !== 0 || 1 / x === 1 / y;
+  } else {
+    return x !== x && y !== y;
+  }
+};
+
+const equals = (x, y) =>
+  typeof Object.is === 'function' ? Object.is(x, y) : objectIs(x, y);
+
 const useStateWithDeps = (initialStateFn, deps) => {
   const [state, setState] = useState(initialStateFn);
   const [prevDeps, setPrevDeps] = useState(deps);
 
   for (let i = 0; i < deps.length; i++) {
-    if (prevDeps[i] !== deps[i]) {
+    if (!equals(prevDeps[i], deps[i])) {
       setPrevDeps(deps);
       const nextState = initialStateFn();
       setState(nextState);
