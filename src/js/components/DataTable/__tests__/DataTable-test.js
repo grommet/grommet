@@ -496,7 +496,9 @@ describe('DataTable', () => {
 
       return (
         <Grommet>
-          <button onClick={toggle}>toggle</button>
+          <button type="button" onClick={toggle}>
+            toggle
+          </button>
           <DataTable
             columns={[
               { property: 'a', header: 'A' },

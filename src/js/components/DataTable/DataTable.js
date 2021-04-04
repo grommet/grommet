@@ -57,9 +57,8 @@ const normalizeProp = (prop, context) => {
 const objectIs = (x, y) => {
   if (x === y) {
     return x !== 0 || 1 / x === 1 / y;
-  } else {
-    return x !== x && y !== y;
   }
+  return x !== x && y !== y; // eslint-disable-line no-self-compare
 };
 
 const equals = (x, y) =>
@@ -69,6 +68,7 @@ const useStateWithDeps = (initialStateFn, deps) => {
   const [state, setState] = useState(initialStateFn);
   const [prevDeps, setPrevDeps] = useState(deps);
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < deps.length; i++) {
     if (!equals(prevDeps[i], deps[i])) {
       setPrevDeps(deps);

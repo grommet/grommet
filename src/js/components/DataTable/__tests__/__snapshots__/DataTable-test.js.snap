@@ -6135,7 +6135,9 @@ exports[`DataTable groupBy toggle 1`] = `
 <div
   class="c0"
 >
-  <button>
+  <button
+    type="button"
+  >
     toggle
   </button>
   <table
@@ -6313,7 +6315,9 @@ exports[`DataTable groupBy toggle 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
-  <button>
+  <button
+    type="button"
+  >
     toggle
   </button>
   <table
@@ -6781,7 +6785,9 @@ exports[`DataTable groupBy toggle 3`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
-  <button>
+  <button
+    type="button"
+  >
     toggle
   </button>
   <table
