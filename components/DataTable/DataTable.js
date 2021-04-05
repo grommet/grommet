@@ -403,9 +403,9 @@ var DataTable = function DataTable(_ref) {
     align: "center",
     justify: "center",
     fill: "vertical"
-  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder))), paginate && items && /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
     alignSelf: "end"
-  }, paginationProps)));
+  }, paginationProps)) : null);
 };
 
 var DataTableDoc;

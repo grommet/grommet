@@ -258,9 +258,9 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       background: adjustedBackground,
       border: adjustedBorder
     }, boxProps, clickProps), content);
-  }))), paginate && items && /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
+  }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
     alignSelf: "end"
-  }, paginationProps)));
+  }, paginationProps)) : null);
 });
 
 List.displayName = 'List';

@@ -34,23 +34,10 @@ var usePagination = function usePagination(_ref) {
 
   var itemsBeginIndex = step * (activePage - 1);
   var itemsEndIndex = itemsBeginIndex + step;
-  var getCurrentItems = (0, _react.useCallback)(function (items) {
-    if (Array.isArray(items)) {
-      return items.length ? items.slice(itemsBeginIndex, itemsEndIndex) : undefined;
-    }
-
-    return items;
-  }, [itemsBeginIndex, itemsEndIndex]);
-
-  var _useState2 = (0, _react.useState)(getCurrentItems(data)),
-      currentItems = _useState2[0],
-      setCurrentItems = _useState2[1];
-
-  (0, _react.useEffect)(function () {
-    if (data) {
-      setCurrentItems(getCurrentItems(data));
-    }
-  }, [data, getCurrentItems, setCurrentItems]);
+  var currentItems = (0, _react.useMemo)(function () {
+    if (Array.isArray(data)) return data.slice(itemsBeginIndex, itemsEndIndex);
+    return [];
+  }, [data, itemsBeginIndex, itemsEndIndex]);
 
   var paginationProps = _extends({
     numberItems: data && data.length,

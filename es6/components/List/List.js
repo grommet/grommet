@@ -240,9 +240,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       background: adjustedBackground,
       border: adjustedBorder
     }, boxProps, clickProps), content);
-  }))), paginate && items && /*#__PURE__*/React.createElement(Pagination, _extends({
+  }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
-  }, paginationProps)));
+  }, paginationProps)) : null);
 });
 List.displayName = 'List';
 var ListDoc;
