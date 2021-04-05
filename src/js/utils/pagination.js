@@ -20,10 +20,8 @@ export const usePagination = ({ data, page, step, ...rest }) => {
   const itemsEndIndex = itemsBeginIndex + step;
 
   const currentItems = useMemo(() => {
-    if (Array.isArray(data)) {
-      return data.length ? data.slice(itemsBeginIndex, itemsEndIndex) : [];
-    }
-    return data;
+    if (Array.isArray(data)) return data.slice(itemsBeginIndex, itemsEndIndex);
+    return [];
   }, [data, itemsBeginIndex, itemsEndIndex]);
 
   const paginationProps = {
