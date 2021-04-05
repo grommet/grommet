@@ -19356,6 +19356,276 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
 </div>
 `;
 
+exports[`DataTable should not show paginate controls when length of data < step 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  overflow-x: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c4 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c8:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c3 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+  >
+    <div
+      class="c2"
+    >
+      <table
+        class="c3 c4"
+      >
+        <thead
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-xrlyjm-4"
+        >
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c5 "
+              scope="col"
+            >
+              <div
+                class="c6"
+              >
+                <span
+                  class="c7"
+                >
+                  A
+                </span>
+              </div>
+            </th>
+            <th
+              class="c5 "
+              scope="col"
+            >
+              <div
+                class="c6"
+              >
+                <span
+                  class="c7"
+                >
+                  B
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c8"
+        >
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c9 "
+              scope="row"
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c10"
+                >
+                  entry-1
+                </span>
+              </div>
+            </th>
+            <td
+              class="c9 "
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c7"
+                >
+                  1
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c9 "
+              scope="row"
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c10"
+                >
+                  entry-2
+                </span>
+              </div>
+            </th>
+            <td
+              class="c9 "
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c7"
+                >
+                  2
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c9 "
+              scope="row"
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c10"
+                >
+                  entry-3
+                </span>
+              </div>
+            </th>
+            <td
+              class="c9 "
+            >
+              <div
+                class="c1"
+              >
+                <span
+                  class="c7"
+                >
+                  3
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataTable should paginate 1`] = `
 .c19 {
   display: inline-block;
