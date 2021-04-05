@@ -20,7 +20,12 @@ const SIZE_MAP = {
 const sizeStyle = css`
   width: ${props =>
     props.size === 'auto'
-      ? '1px' // table cell will respect content width
+      ? // setting width to a small value will allow
+        // the cell to fit width of its content. this
+        // is a commonly implemented CSS pattern to
+        // allow an auto-width behavior on fixed table
+        // layouts (which is what DataTable applies)
+        '1px'
       : SIZE_MAP[props.size] ||
         props.theme.global.size[props.size] ||
         props.size};

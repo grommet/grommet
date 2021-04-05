@@ -68,7 +68,14 @@ const TableCell = forwardRef(
       return () => {
         window.removeEventListener('resize', updateHeight);
       };
-    });
+    }, [
+      border,
+      cellRef,
+      plain,
+      tableContext,
+      theme.global.borderSize,
+      theme.table,
+    ]);
 
     let tableContextTheme;
     if (tableContext === 'header') {
