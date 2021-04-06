@@ -1005,7 +1005,6 @@ exports[`Layer custom theme 1`] = `
   <div
     class="c2"
     data-g-portal-id="0"
-    elevation="large"
     id="custom-theme-test"
   >
     <a

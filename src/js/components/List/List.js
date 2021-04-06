@@ -280,9 +280,9 @@ const List = React.forwardRef(
             </InfiniteScroll>
           </StyledList>
         </Keyboard>
-        {paginate && items && (
+        {paginate && data.length > step && items && items.length ? (
           <Pagination alignSelf="end" {...paginationProps} />
-        )}
+        ) : null}
       </Container>
     );
   },
