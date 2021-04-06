@@ -752,20 +752,10 @@ string
     string
 }
 {
-  corners: [{
-  corner: 
-    top-left
-    top-right
-    bottom-left
-    bottom-right,
-  size: 
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}]
+  corners: [[object Object]
+[object Object]
+[object Object]
+[object Object]]
 }
 ```
 

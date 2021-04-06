@@ -627,25 +627,24 @@ export const roundStyle = (data, responsive, theme) => {
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
     if (data.corners) {
-      data.corners.forEach(corner => {
+      Object.keys(data.corners).forEach(corner => {
+        const iSize = data.corners[corner];
         const cSize =
-          ROUND_MAP[corner.size] ||
-          theme.global.edgeSize[corner.size || 'medium'] ||
-          corner.size;
+          ROUND_MAP[iSize] || theme.global.edgeSize[iSize || 'medium'] || iSize;
         const cResponsiveSize =
           responsive &&
           breakpoint &&
-          breakpoint.edgeSize[corner.size] &&
-          (breakpoint.edgeSize[corner.size] || corner.size);
+          breakpoint.edgeSize[iSize] &&
+          (breakpoint.edgeSize[iSize] || iSize);
         styles.push(css`
-            border-${corner.corner}-radius: ${cSize};
+            border-${corner}-radius: ${cSize};
           `);
         if (cResponsiveSize) {
           styles.push(
             breakpointStyle(
               breakpoint,
               `
-              border-${corner.corner}-radius: ${cResponsiveSize};
+              border-${corner}-radius: ${cResponsiveSize};
             `,
             ),
           );
