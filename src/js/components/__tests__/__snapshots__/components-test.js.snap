@@ -5353,7 +5353,8 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain Layer with no background color or border.",
+        "description": "Whether this is a plain Layer with no background color, border, or 
+        elevation.",
         "format": "boolean",
         "name": "plain",
       },
