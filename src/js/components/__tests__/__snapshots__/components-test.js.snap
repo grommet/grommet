@@ -2319,6 +2319,86 @@ point",
         "name": "onChange",
       },
       Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether to show the label in front of the checkbox.",
         "format": "boolean",
@@ -7545,7 +7625,8 @@ string",
       Object {
         "defaultValue": false,
         "description": "Whether default styling context should be removed.",
-        "format": "boolean",
+        "format": "boolean
+noPad",
         "name": "plain",
       },
       Object {
