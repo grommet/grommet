@@ -30,7 +30,7 @@ var Format = function Format() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
-    format: "mm/dd/yyyy",
+    format: "m/d/yy",
     value: value,
     onChange: onChange
   }))));

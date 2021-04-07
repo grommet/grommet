@@ -42,22 +42,31 @@ var valueToText = function valueToText(value, schema) {
     var _char = part[0].toLowerCase(); // advance dateIndex if we already have this part
 
 
-    while (dateIndex < dates.length && (Number.isNaN(dates[dateIndex].date) || (_char === 'm' || _char === 'd' || _char === 'y') && parts[_char])) {
+    while (dateIndex < dates.length && (Number.isNaN(dates[dateIndex].date) || (_char === 'm' || _char === 'd' || _char === 'y') && parts[part])) {
       dateIndex += 1;
       parts = {};
     }
 
     var date = dates[dateIndex];
 
-    if (date && _char === 'm') {
+    if (date && part === 'm') {
       text += date.getMonth() + 1;
-      parts[_char] = true;
-    } else if (date && _char === 'd') {
+      parts[part] = true;
+    } else if (date && part === 'mm') {
+      text += ("0" + (date.getMonth() + 1)).slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'd') {
       text += date.getDate();
-      parts[_char] = true;
-    } else if (date && _char === 'y') {
+      parts[part] = true;
+    } else if (date && part === 'dd') {
+      text += ("0" + date.getDate()).slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yy') {
+      text += date.getFullYear().toString().slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yyyy') {
       text += date.getFullYear();
-      parts[_char] = true;
+      parts[part] = true;
     } else text += part;
   });
   return text;

@@ -20,7 +20,7 @@ export var Format = function Format() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(DateInput, {
-    format: "mm/dd/yyyy",
+    format: "m/d/yy",
     value: value,
     onChange: onChange
   }))));

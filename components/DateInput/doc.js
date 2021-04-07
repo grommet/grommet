@@ -19,7 +19,7 @@ var doc = function doc(DateInput) {
         left: 'left'
       }
     }),
-    format: _reactDesc.PropTypes.string.description("The date format to use. If not specified, the date value will not\n      be displayed as a text string and the user will not be able to enter\n      a date by typing. For example: 'mm/dd/yyyy', or for a range:\n      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form."),
+    format: _reactDesc.PropTypes.string.description("The date format to use. If not specified, the date value will not\n      be displayed as a text string and the user will not be able to enter\n      a date by typing. For example: 'mm/dd/yyyy', or for a range:\n      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. \n      This property should be used when in a Form."),
     id: _reactDesc.PropTypes.string.description('The id of the input.'),
     inline: _reactDesc.PropTypes.bool.description("Whether the calendar should always be shown or via a Drop when\n      interacting with the input.").defaultValue(false),
     inputProps: _reactDesc.PropTypes.shape({}).description("Any properties to pass on to the underlying MaskedInput\n      when there is a format."),
