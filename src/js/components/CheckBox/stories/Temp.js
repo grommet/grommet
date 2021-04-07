@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { Gremlin, Hpe, Sun, Moon } from 'grommet-icons';
 
 import {
   Box,
-  Grommet,
+  Button,
   CheckBox,
+  CheckBoxGroup,
   FormField,
   DataTable,
+  Grommet,
+  Heading,
+  Text,
   ThemeContext,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -22,19 +27,30 @@ delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
-const myTheme = deepMerge(hpe, {
+const myHpeTheme = deepMerge(hpe, {
   checkBox: {
     check: {
-      // hpe theme has an 'extend: `box-shadow: none`', this is to undo
-      // that behavior. When implemented, the box-shadow: none will be
+      // hpe theme has an 'extend: `box-shadow: none`', this is to apply
+      // the extend currently in the theme, but overrid `the box-shadow: none`
+      // behavior. When implemented, the box-shadow: none will be
       // removed from the hpe theme.
-      extend: `box-shadow: undefined`,
+      extend: ({ theme, checked, indeterminate }) => `
+      box-shadow: undefined;
+      background-color: ${
+        checked || indeterminate
+          ? theme.global.colors.green[theme.dark ? 'dark' : 'light']
+          : theme.global.colors.background[theme.dark ? 'dark' : 'light']
+      };
+      ${(checked || indeterminate) && 'border: none;'}
+        `,
     },
-    focusIndicator: false,
   },
 });
 
 export const Temp = () => {
+  const [currentTheme, setCurrentTheme] = useState(grommet);
+  const [themeMode, setThemeMode] = useState('light');
+  const [title, setTitle] = useState('Grommet theme');
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked, setChecked] = useState([]);
@@ -51,48 +67,83 @@ export const Temp = () => {
     setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
 
   return (
-    <Grommet theme={grommet}>
-      <Box direction="row">
-        <Box align="start" pad="large" gap="large">
-          <Box direction="row" gap="medium">
-            <CheckBox
-              checked={checked1}
-              onChange={event => setChecked1(event.target.checked)}
-              label="I agree"
-            />
-            <FormField>
+    <Grommet theme={grommet} themeMode={themeMode}>
+      <ThemeControls
+        currentTheme={currentTheme}
+        setCurrentTheme={setCurrentTheme}
+        themeMode={themeMode}
+        setThemeMode={setThemeMode}
+        setTitle={setTitle}
+      />
+      <ThemeContext.Extend value={currentTheme}>
+        <Box
+          background="background"
+          pad={{ vertical: 'medium', horizontal: 'large' }}
+          gap="medium"
+        >
+          <Heading size="small">Checkboxes in {title}</Heading>
+          <Box direction="row" gap="xlarge">
+            <Box gap="medium" width="small">
+              <Text weight="bold">Checkboxes</Text>
               <CheckBox
-                checked={checked2}
-                onChange={event => setChecked2(event.target.checked)}
-                label="I understand and approve"
+                checked={checked1}
+                onChange={event => setChecked1(event.target.checked)}
+                label="I agree"
               />
-            </FormField>
-          </Box>
-          <Box direction="row" gap="medium">
-            <CheckBox
-              checked={checked1}
-              onChange={event => setChecked1(event.target.checked)}
-              label="I agree"
-              toggle
-            />
-            <FormField>
               <CheckBox
-                checked={checked2}
-                onChange={event => setChecked2(event.target.checked)}
-                label="I understand and approve"
+                checked={checked1}
+                onChange={event => setChecked1(event.target.checked)}
+                label="I agree"
                 toggle
               />
-            </FormField>
+              <CheckBoxGroup
+                options={[
+                  { value: 'Maui', label: 'Maui' },
+                  { value: 'Kauai', label: 'Kauai', disabled: true },
+                  { value: 'Ohau', label: 'Oahu' },
+                  { value: 'Big Island', label: 'Big Island' },
+                ]}
+              />
+            </Box>
+            <Box gap="medium">
+              <Text weight="bold">Checkboxes within FormField</Text>
+              <FormField>
+                <CheckBox
+                  checked={checked2}
+                  onChange={event => setChecked2(event.target.checked)}
+                  label="I understand and approve"
+                />
+              </FormField>
+              <FormField>
+                <CheckBox
+                  checked={checked2}
+                  onChange={event => setChecked2(event.target.checked)}
+                  label="I understand and approve"
+                  toggle
+                />
+              </FormField>
+              <FormField>
+                <CheckBoxGroup
+                  options={[
+                    { value: 'Maui', label: 'Maui' },
+                    { value: 'Kauai', label: 'Kauai', disabled: true },
+                    { value: 'Ohau', label: 'Oahu' },
+                    { value: 'Big Island', label: 'Big Island' },
+                  ]}
+                />
+              </FormField>
+            </Box>
           </Box>
+          <Text weight="bold">Checkboxes within a DataTable</Text>
           <DataTable
             columns={[
               {
                 property: 'checkbox',
-                render: datum => (
+                render: ({ name }) => (
                   <CheckBox
-                    key={datum.name}
-                    checked={checked.indexOf(datum.name) !== -1}
-                    onChange={e => onCheck(e, datum.name)}
+                    key={name}
+                    checked={checked.indexOf(name) !== -1}
+                    onChange={e => onCheck(e, name)}
                   />
                 ),
                 header: (
@@ -113,72 +164,65 @@ export const Temp = () => {
             size="medium"
           />
         </Box>
-        <ThemeContext.Extend value={myTheme}>
-          <Box align="start" pad="large" gap="large">
-            <Box direction="row" gap="medium">
-              <CheckBox
-                checked={checked1}
-                onChange={event => setChecked1(event.target.checked)}
-                label="I agree"
-              />
-              <FormField>
-                <CheckBox
-                  checked={checked2}
-                  onChange={event => setChecked2(event.target.checked)}
-                  label="I understand and approve"
-                />
-              </FormField>
-            </Box>
-            <Box direction="row" gap="medium">
-              <CheckBox
-                checked={checked1}
-                onChange={event => setChecked1(event.target.checked)}
-                label="I agree"
-                toggle
-              />
-              <FormField>
-                <CheckBox
-                  checked={checked2}
-                  onChange={event => setChecked2(event.target.checked)}
-                  label="I understand and approve"
-                  toggle
-                />
-              </FormField>
-            </Box>
-            <DataTable
-              columns={[
-                {
-                  property: 'checkbox',
-                  render: datum => (
-                    <CheckBox
-                      key={datum.name}
-                      checked={checked.indexOf(datum.name) !== -1}
-                      onChange={e => onCheck(e, datum.name)}
-                    />
-                  ),
-                  header: (
-                    <CheckBox
-                      checked={checked.length === DATA.length}
-                      indeterminate={
-                        checked.length > 0 && checked.length < DATA.length
-                      }
-                      onChange={onCheckAll}
-                    />
-                  ),
-                  sortable: false,
-                },
-                ...controlledColumns,
-              ].map(col => ({ ...col }))}
-              data={DATA}
-              sortable
-              size="medium"
-            />
-          </Box>
-        </ThemeContext.Extend>
-      </Box>
+      </ThemeContext.Extend>
     </Grommet>
   );
 };
+
+const ThemeControls = ({
+  currentTheme,
+  setCurrentTheme,
+  themeMode,
+  setThemeMode,
+  setTitle,
+}) => (
+  <Box
+    direction="row"
+    gap="small"
+    pad={{ horizontal: 'large', vertical: 'small' }}
+    background="background-contrast"
+  >
+    <Button
+      a11yTitle="Apply Grommet Theme"
+      icon={<Gremlin />}
+      onClick={() => {
+        setCurrentTheme(grommet);
+        setTitle('Grommet theme');
+      }}
+      plain={false}
+      primary={currentTheme === grommet}
+      tip="Apply Grommet theme"
+    />
+    <Button
+      a11yTitle="Apply HPE Theme"
+      icon={
+        <Hpe
+          color={
+            hpe.global.colors[
+              `${currentTheme === myHpeTheme ? 'white' : 'green!'}`
+            ]
+          }
+          size="small"
+        />
+      }
+      onClick={() => {
+        setCurrentTheme(myHpeTheme);
+        setTitle('HPE theme');
+      }}
+      plain={false}
+      primary={currentTheme === myHpeTheme}
+      tip="Apply HPE theme"
+    />
+    <Button
+      a11yTitle="Apply HPE Theme"
+      icon={themeMode === 'dark' ? <Sun /> : <Moon />}
+      onClick={() => {
+        setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
+      }}
+      tip={themeMode === 'dark' ? 'Light mode' : 'Dark mode'}
+    />
+  </Box>
+);
 
 export default {
   title: 'Input/CheckBox/Temp',

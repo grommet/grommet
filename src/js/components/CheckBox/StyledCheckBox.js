@@ -9,11 +9,23 @@ const disabledStyle = `
 `;
 
 const hoverStyle = css`
-  :hover input:not([disabled]) + div,
-  :hover input:not([disabled]) + span {
-    border-color: ${props =>
-      normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
-  }
+  ${props =>
+    !props.disabled &&
+    props.focusIndicator === false &&
+    `
+    input + div,
+    input + span {
+      border-color: ${normalizeColor(
+        props.theme.checkBox.hover.border.color,
+        props.theme,
+      )};
+    }
+    background-color: ${normalizeColor(
+      props.theme.checkBox.hover.background &&
+        props.theme.checkBox.hover.background.color,
+      props.theme,
+    )};
+  `}
 `;
 
 const StyledCheckBoxIcon = styled.svg`
@@ -37,9 +49,9 @@ const StyledCheckBoxContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
+  ${props => props.active && props.theme.checkBox.hover && hoverStyle}}
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
-  ${props => props.theme.checkBox.hover.border.color && hoverStyle}
   ${props => props.theme.checkBox.extend}
 `;
 
@@ -67,14 +79,7 @@ StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
 const StyledCheckBoxBox = styled.div`
-  ${props => {
-    // Check the theme for whether or not CheckBox should receive
-    // focus when in a FormField
-    const focusInFormField = props.theme.checkBox.focusIndicator;
-    return props.focusIndicator === false
-      ? props.focus && focusInFormField && focusStyle()
-      : props.focus && focusStyle();
-  }};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props => props.theme.checkBox.check.extend};
 `;
 
@@ -96,14 +101,7 @@ const StyledCheckBoxToggle = styled.span`
       ? normalizeColor(props.theme.checkBox.toggle.background, props.theme)
       : 'transparent'};
 
-  ${props => {
-    // Check the theme for whether or not CheckBox should receive
-    // focus when in a FormField
-    const focusInFormField = props.theme.checkBox.focusIndicator;
-    return props.focusIndicator === false
-      ? props.focus && focusInFormField && focusStyle()
-      : props.focus && focusStyle();
-  }};
+  ${props => props.focus && !props.plain && focusStyle()}};
   ${props => props.theme.checkBox.toggle.extend};
 `;
 

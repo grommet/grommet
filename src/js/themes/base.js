@@ -583,7 +583,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
-      focusIndicator: true, // default to true for backwards compatability
       // gap: undefined,
       hover: {
         border: {
@@ -592,6 +591,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        // background: undefined,
       },
       icon: {
         // size: undefined,

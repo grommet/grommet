@@ -23,8 +23,9 @@ const grommetInputNames = [
   'MaskedInput',
   'TextArea',
   'DateInput',
-  'CheckBox',
   'FileInput',
+  'CheckBox',
+  'CheckBoxGroup',
 ];
 const grommetInputPadNames = [
   'CheckBox',

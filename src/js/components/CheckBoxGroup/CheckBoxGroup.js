@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
@@ -10,11 +10,13 @@ export const CheckBoxGroup = forwardRef(
     {
       value: valueProp,
       disabled: disabledProp,
+      focusIndicator,
       gap,
       labelKey,
       valueKey,
       onChange,
       options: optionsProp,
+      plain,
       name,
       ...rest
     },
@@ -34,6 +36,7 @@ export const CheckBoxGroup = forwardRef(
         : option,
     );
 
+    const [activeIndex, setActiveIndex] = useState();
     // 'value' is an array of checked valueKeys
     const [value, setValue] = formContext.useFormInput(name, valueProp, []);
 
@@ -69,13 +72,14 @@ export const CheckBoxGroup = forwardRef(
         }
         {...rest}
       >
-        {options.map(option => {
+        {options.map((option, index) => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
           const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
           const key = `${label}-${valueOption}`;
+          const active = index === activeIndex;
 
           if (option.checked)
             console.warn(
@@ -89,12 +93,19 @@ export const CheckBoxGroup = forwardRef(
             <CheckBox
               key={key}
               {...optionProps}
-              disabled={disabled}
+              active={active}
               checked={checked}
+              disabled={disabled}
+              focusIndicator={focusIndicator}
               label={label}
+              plain={plain}
               onChange={event =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
+              onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(undefined)}
+              onFocus={() => setActiveIndex(index)}
+              onBlur={() => setActiveIndex(undefined)}
             />
           );
         })}

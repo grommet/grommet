@@ -30,6 +30,7 @@ const CheckBox = forwardRef(
   (
     {
       a11yTitle,
+      active,
       checked: checkedProp,
       defaultChecked = false,
       disabled,
@@ -41,6 +42,9 @@ const CheckBox = forwardRef(
       onBlur,
       onChange,
       onFocus,
+      onMouseEnter,
+      onMouseLeave,
+      plain,
       reverse,
       toggle,
       indeterminate,
@@ -75,10 +79,12 @@ const CheckBox = forwardRef(
     }, [checkedProp, toggle, indeterminate]);
 
     const themeableProps = {
+      active,
       checked,
       disabled,
       focus,
       focusIndicator,
+      plain,
       reverse,
       toggle,
       indeterminate,
@@ -199,6 +205,8 @@ const CheckBox = forwardRef(
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
         {...themeableProps}
       >
         {first}

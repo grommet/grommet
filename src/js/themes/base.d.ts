@@ -519,7 +519,6 @@ export interface ThemeType {
     };
     color?: ColorType;
     extend?: ExtendType;
-    focusIndicator: boolean;
     gap?: GapType;
     hover?: {
       border?: {
