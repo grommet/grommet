@@ -98,6 +98,7 @@ const Button = forwardRef(
       a11yTitle,
       active,
       align = 'center',
+      'aria-label': ariaLabel,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -300,7 +301,7 @@ const Button = forwardRef(
           {...rest}
           as={domTag}
           ref={ref}
-          aria-label={a11yTitle}
+          aria-label={ariaLabel || a11yTitle}
           colorValue={color}
           active={active}
           selected={selected}
