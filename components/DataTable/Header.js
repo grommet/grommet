@@ -155,7 +155,9 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }).length === 0,
     onToggle: onToggle
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-    background: background || cellProps.background
+    background: background || cellProps.background,
+    plain: "noPad",
+    size: "auto"
   }, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
@@ -166,7 +168,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       else onSelect(data.map(function (datum) {
           return (0, _buildState.datumValue)(datum, primaryProperty);
         }));
-    }
+    },
+    pad: pad || theme.table.header.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",
     plain: true,

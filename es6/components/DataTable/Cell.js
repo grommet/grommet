@@ -19,6 +19,7 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
       _ref$column = _ref.column,
       align = _ref$column.align,
       columnPin = _ref$column.pin,
+      plain = _ref$column.plain,
       footer = _ref$column.footer,
       property = _ref$column.property,
       render = _ref$column.render,
@@ -75,7 +76,8 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
     background: normalizeProp('background', rowProp, Array.isArray(backgroundProp) ? backgroundProp[index % backgroundProp.length] : backgroundProp) || background,
     border: normalizeProp('border', rowProp, border),
     pad: normalizeProp('pad', rowProp, pad),
-    pin: pin
+    pin: pin,
+    plain: plain ? 'noPad' : undefined
   }), content);
 });
 Cell.displayName = 'Cell';

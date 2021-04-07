@@ -5,6 +5,8 @@ exports.GroupedBody = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _Cell = require("./Cell");
 
 var _ExpanderCell = require("./ExpanderCell");
@@ -40,6 +42,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onSelect", "onToggle", "selected", "size"]);
 
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: ref,
     size: size
@@ -66,7 +69,9 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       expanded: expanded,
       onToggle: onToggle(group.key)
     }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-      background: background
+      background: background,
+      plain: "noPad",
+      size: "auto"
     }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
       a11yTitle: (isGroupSelected ? 'unselect' : 'select') + " " + group.key,
       checked: isGroupSelected,
@@ -80,7 +85,8 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         } else {
           onSelect([].concat(selected, primaryKeys));
         }
-      }
+      },
+      pad: pad || theme.table.body.pad
     })), columns.map(function (column) {
       return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
@@ -107,7 +113,9 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
           context: context
         }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-          background: background
+          background: background,
+          plain: "noPad",
+          size: "auto"
         }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
           a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
           checked: isSelected,
@@ -118,7 +126,8 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
                 return s !== primaryValue;
               }));
             } else onSelect([].concat(selected, [primaryValue]));
-          }
+          },
+          pad: pad || theme.table.body.pad
         })), columns.map(function (column) {
           return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
             key: column.property,

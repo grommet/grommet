@@ -131,7 +131,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }).length === 0,
     onToggle: onToggle
   }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: background || cellProps.background
+    background: background || cellProps.background,
+    plain: "noPad",
+    size: "auto"
   }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
@@ -142,7 +144,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       else onSelect(data.map(function (datum) {
           return datumValue(datum, primaryProperty);
         }));
-    }
+    },
+    pad: pad || theme.table.header.pad
   })), rowDetails && /*#__PURE__*/React.createElement(TableCell, {
     size: "xxsmall",
     plain: true,

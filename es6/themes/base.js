@@ -667,6 +667,7 @@ export var generate = function generate(baseSpacing, scale) {
       icons: {// checked: undefined,
         // indeterminate: undefined,
       },
+      // pad: undefined,
       size: baseSpacing + "px",
       toggle: {
         // background: undefined

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, normalizeColor } from '../../utils';
+import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var hoverStyle = css([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}"], function (props) {
@@ -24,7 +24,9 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 var StyledCheckBoxContainer = styled.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " ", " ", " ", ""], function (props) {
+  return (props.pad || props.theme.checkBox.pad) && edgeStyle('padding', props.pad || props.theme.checkBox.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
+}, function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';

@@ -2,7 +2,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, Fragment, memo } from 'react';
+import React, { forwardRef, memo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -35,7 +36,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
-      data = _ref.data;
+      data = _ref.data,
+      theme = _ref.theme;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
     ref: rowRef,
     size: size,
@@ -61,7 +63,9 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: background
+    background: background,
+    plain: "noPad",
+    size: "auto"
   }, /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
     checked: isSelected,
@@ -72,7 +76,8 @@ var Row = /*#__PURE__*/memo(function (_ref) {
           return s !== primaryValue;
         }));
       } else onSelect([].concat(selected, [primaryValue]));
-    }
+    },
+    pad: rowProps && rowProps[primaryValue] && rowProps[primaryValue].pad || pad || theme.table.body.pad
   })), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
@@ -126,6 +131,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       rowExpand = _ref2.rowExpand,
       setRowExpand = _ref2.setRowExpand,
       rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -186,7 +193,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       pad: pad,
       primaryProperty: primaryProperty,
       rowProps: rowProps,
-      data: data
+      data: data,
+      theme: theme
     });
   })));
 });

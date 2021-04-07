@@ -5,6 +5,8 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
+var _propTypes = require("../../utils/prop-types");
+
 var _mixins = require("../../utils/mixins");
 
 var doc = function doc(CheckBox) {
@@ -17,6 +19,7 @@ var doc = function doc(CheckBox) {
     label: _reactDesc.PropTypes.node.description("Label text to place next to the control. \n      Can be used instead of a11yTitle to meet accessibility requirements"),
     name: _reactDesc.PropTypes.string.description("The DOM name attribute value to use for the underlying <input/> \n      element."),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user clicks the check box. It\n      will be passed a React event object. The current state can be accessed\n      via event.target.checked. Same as React <input onChange={} />."),
+    pad: _propTypes.padPropType.description("The amount of padding on the container \n    surrounding the checkbox and its label. An object can be specified to \n    distinguish horizontal padding, vertical padding, and padding on a \n    particular side of the container."),
     reverse: _reactDesc.PropTypes.bool.description('Whether to show the label in front of the checkbox.').defaultValue(false),
     toggle: _reactDesc.PropTypes.bool.description('Whether to visualize it as a toggle switch.').defaultValue(false),
     indeterminate: _reactDesc.PropTypes.bool.description("Whether state is indeterminate.\nNOTE: This can only be used with non-toggle components").defaultValue(false)
@@ -89,6 +92,11 @@ var themeDoc = {
   'checkBox.icons.indeterminate': {
     description: 'The icon to use when indeterminate.',
     type: 'React.Element',
+    defaultValue: undefined
+  },
+  'checkBox.pad': {
+    description: 'The pad around the CheckBox and its label.',
+    type: 'string | object',
     defaultValue: undefined
   },
   'checkBox.size': {

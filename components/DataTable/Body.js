@@ -5,6 +5,8 @@ exports.Body = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _CheckBox = require("../CheckBox");
 
 var _InfiniteScroll = require("../InfiniteScroll");
@@ -54,7 +56,8 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
-      data = _ref.data;
+      data = _ref.data,
+      theme = _ref.theme;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
     ref: rowRef,
     size: size,
@@ -80,7 +83,9 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-    background: background
+    background: background,
+    plain: "noPad",
+    size: "auto"
   }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
     checked: isSelected,
@@ -91,7 +96,8 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
           return s !== primaryValue;
         }));
       } else onSelect([].concat(selected, [primaryValue]));
-    }
+    },
+    pad: rowProps && rowProps[primaryValue] && rowProps[primaryValue].pad || pad || theme.table.body.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
@@ -145,6 +151,8 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       rowExpand = _ref2.rowExpand,
       setRowExpand = _ref2.setRowExpand,
       rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -205,7 +213,8 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       pad: pad,
       primaryProperty: primaryProperty,
       rowProps: rowProps,
-      data: data
+      data: data,
+      theme: theme
     });
   })));
 });

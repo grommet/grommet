@@ -50,10 +50,11 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
+      pad = _ref.pad,
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "pad", "reverse", "toggle", "indeterminate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -179,7 +180,8 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     disabled: disabled
   }), {
     checked: checked,
-    onClick: stopLabelClick
+    onClick: stopLabelClick,
+    pad: pad
   }, themeableProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
