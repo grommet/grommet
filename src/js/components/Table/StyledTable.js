@@ -25,6 +25,7 @@ const sizeStyle = css`
         // is a commonly implemented CSS pattern to
         // allow an auto-width behavior on fixed table
         // layouts (which is what DataTable applies)
+        // https://stackoverflow.com/questions/4757844/css-table-column-autowidth?noredirect=1&lq=1
         '1px'
       : SIZE_MAP[props.size] ||
         props.theme.global.size[props.size] ||

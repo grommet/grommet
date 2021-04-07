@@ -11,11 +11,7 @@ export const doc = TableCell => {
 
   DocumentedTableCell.propTypes = {
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['noPad'])])
-      .description(
-        `Whether default styling context should be removed. If plain = 'noPad', 
-        no pad will be applied, allowing content to fill the entirety of the 
-        cell.`,
-      )
+      .description(`Whether default styling context should be removed.`)
       .defaultValue(false),
     scope: PropTypes.oneOf(['col', 'row'])
       .description(`For header cells, what scope the header is for.

@@ -12,9 +12,7 @@ import { TableCell } from 'grommet';
 
 **plain**
 
-Whether default styling context should be removed. If plain = 'noPad', 
-        no pad will be applied, allowing content to fill the entirety of the 
-        cell.
+Whether default styling context should be removed.
 
 ```
 boolean

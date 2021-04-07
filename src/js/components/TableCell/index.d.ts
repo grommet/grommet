@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BoxTypes } from '../Box';
 
 export interface TableCellProps {
-  plain?: boolean | 'noPad';
+  plain?: boolean | 'noPad'; // noPad is for internal use only
   scope?: 'col' | 'row';
   size?:
     | 'xxsmall'
