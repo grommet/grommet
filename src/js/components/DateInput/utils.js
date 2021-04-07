@@ -37,22 +37,34 @@ export const valueToText = (value, schema) => {
     while (
       dateIndex < dates.length &&
       (Number.isNaN(dates[dateIndex].date) ||
-        ((char === 'm' || char === 'd' || char === 'y') && parts[char]))
+        ((char === 'm' || char === 'd' || char === 'y') && parts[part]))
     ) {
       dateIndex += 1;
       parts = {};
     }
     const date = dates[dateIndex];
 
-    if (date && char === 'm') {
+    if (date && part === 'm') {
       text += date.getMonth() + 1;
-      parts[char] = true;
-    } else if (date && char === 'd') {
+      parts[part] = true;
+    } else if (date && part === 'mm') {
+      text += `0${date.getMonth() + 1}`.slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'd') {
       text += date.getDate();
-      parts[char] = true;
-    } else if (date && char === 'y') {
+      parts[part] = true;
+    } else if (date && part === 'dd') {
+      text += `0${date.getDate()}`.slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yy') {
+      text += date
+        .getFullYear()
+        .toString()
+        .slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yyyy') {
       text += date.getFullYear();
-      parts[char] = true;
+      parts[part] = true;
     } else text += part;
   });
 
