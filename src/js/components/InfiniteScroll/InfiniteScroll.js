@@ -13,6 +13,9 @@ import {
 } from '../../utils';
 import { Box } from '../Box';
 
+const calculateLastPageBound = (show, step) =>
+  show ? Math.floor((show + step) / step) - 1 : 0;
+
 const InfiniteScroll = ({
   children,
   items = [],
@@ -34,7 +37,7 @@ const InfiniteScroll = ({
   // the pages we are rendering
   const [renderPageBounds, setRenderPageBounds] = useState([
     0,
-    show ? Math.floor((show + step) / step) - 1 : 0,
+    calculateLastPageBound(show, step),
   ]);
 
   // the heights of the pages, approximated after we render the first page
@@ -98,7 +101,7 @@ const InfiniteScroll = ({
 
       if (show) {
         // ensure we try to render any show page
-        const showPage = Math.floor((show + step) / step) - 1;
+        const showPage = calculateLastPageBound(show, step);
         nextBeginPage = Math.min(showPage, nextBeginPage);
         nextEndPage = Math.max(showPage, nextEndPage);
       }
@@ -146,6 +149,14 @@ const InfiniteScroll = ({
       onMore();
     }
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
+
+  useEffect(() => {
+    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
+      setPageHeights([]);
+      setPendingLength(0);
+      setRenderPageBounds([0, calculateLastPageBound(show, step)]);
+    }
+  }, [lastPage, pendingLength, show, step, items.length]);
 
   // scroll to any 'show'
   useLayoutEffect(() => {

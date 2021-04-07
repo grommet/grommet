@@ -281,6 +281,7 @@ const Select = forwardRef(
                   // button should be disabled which occurs when disabled
                   // equals true.
                   defaultCursor={disabled === true || undefined}
+                  focusIndicator={false}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}

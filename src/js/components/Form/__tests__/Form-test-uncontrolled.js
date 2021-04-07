@@ -466,6 +466,68 @@ describe('Form uncontrolled', () => {
     );
   });
 
+  test('validate on change', async () => {
+    jest.useFakeTimers();
+    const { getByPlaceholderText, queryAllByText } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="Name"
+            name="name"
+            placeholder="name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              name => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              name => {
+                if (name === 'good')
+                  return {
+                    message: 'good',
+                    status: 'info',
+                  };
+                return undefined;
+              },
+            ]}
+          />
+
+          <FormField label="Email" name="email" required>
+            <TextInput
+              a11yTitle="test"
+              name="email"
+              type="email"
+              placeholder="email"
+            />
+          </FormField>
+          <Button label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    // change input of first field
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: { value: 'Input has changed' },
+    });
+    // change input of second field
+    fireEvent.change(getByPlaceholderText('email'), {
+      target: { value: 'Input has changed' },
+    });
+    // empty second field
+    fireEvent.change(getByPlaceholderText('email'), {
+      target: { value: '' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    // emulate error on first field
+    fireEvent.change(getByPlaceholderText('name'), {
+      target: { value: 'a' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(queryAllByText('required')).toHaveLength(1);
+    expect(queryAllByText('must be >1 character')).toHaveLength(1);
+  });
+
   test('validate on blur', async () => {
     jest.useFakeTimers();
     const onFocus = jest.fn();
@@ -545,6 +607,155 @@ describe('Form uncontrolled', () => {
     expect(onFocus).toBeCalledTimes(6);
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
+  });
+
+  test('form validity', async () => {
+    jest.useFakeTimers();
+    let valid;
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Form
+          validate="change"
+          onValidate={validationResults => {
+            valid = validationResults.valid;
+          }}
+        >
+          <FormField
+            label="First Name"
+            name="firstName"
+            placeholder="First Name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              firstName => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <FormField
+            label="Last Name"
+            name="lastName"
+            placeholder="Last Name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              lastName => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <FormField
+            label="Address"
+            name="address"
+            placeholder="Address"
+            validate={[
+              { regexp: /^[a-z]/i },
+              address => {
+                if (address && address.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+          <FormField
+            label="Agree"
+            name="test-checkbox"
+            htmlFor="test-checkbox"
+            required
+          >
+            <CheckBox
+              label="test-checkbox"
+              name="test-checkbox"
+              id="test-checkbox"
+            />
+          </FormField>
+          <Button label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    // verify validate on change
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field fails validation, second field passes validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field passes validation, second field fails validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'D' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field fails validation, second field fails validation,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'J' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'D' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // first field passes validation, second field passes validation,
+    // third field fails validation, form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    fireEvent.change(getByPlaceholderText('Address'), {
+      target: { value: 'K' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // all fields pass validation except for checkbox,
+    // form validity should be false
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    fireEvent.change(getByPlaceholderText('Address'), {
+      target: { value: 'Easter Ave' },
+    });
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeFalsy();
+
+    // all fields pass validation, form validity should be true
+    fireEvent.change(getByPlaceholderText('First Name'), {
+      target: { value: 'John' },
+    });
+    fireEvent.change(getByPlaceholderText('Last Name'), {
+      target: { value: 'Doe' },
+    });
+    fireEvent.click(getByText('test-checkbox'));
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    expect(valid).toBeTruthy();
   });
 
   test('uncontrolled without name', () => {

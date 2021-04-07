@@ -110,7 +110,9 @@ export const CustomSearch = () => {
       </Box>
       <Box flex>
         <Text size="small" truncate>
-          {selectedContentPartners.map(({ name }) => name).join(', ')}
+          {selectedContentPartners.length > 1
+            ? 'multiple'
+            : selectedContentPartners.map(({ name }) => name)}
         </Text>
       </Box>
       <Button

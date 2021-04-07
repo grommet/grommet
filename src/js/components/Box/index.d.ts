@@ -121,7 +121,10 @@ export interface BoxProps {
           | 'xxlarge'
           | string;
       };
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?:
+    | { background?: BackgroundType; elevation?: ElevationType }
+    | BackgroundType
+    | boolean;
   justify?:
     | 'around'
     | 'between'
@@ -187,7 +190,13 @@ export interface BoxProps {
   wrap?: boolean | 'reverse';
 }
 
-declare const Box: React.FC<BoxProps & JSX.IntrinsicElements['div']>;
+export interface BoxExtendedProps
+  extends BoxProps,
+    Omit<JSX.IntrinsicElements['div'], keyof BoxProps> {}
+
+// Keep type alias for backwards compatibility.
 export type BoxTypes = BoxProps & JSX.IntrinsicElements['div'];
+
+declare const Box: React.FC<BoxExtendedProps>;
 
 export { Box };

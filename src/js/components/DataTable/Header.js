@@ -110,6 +110,7 @@ const Header = forwardRef(
       pin: tablePin,
       primaryProperty,
       selected,
+      rowDetails,
       sort,
       widths,
       ...rest
@@ -141,7 +142,16 @@ const Header = forwardRef(
             <TableCell background={background || cellProps.background}>
               {onSelect && (
                 <CheckBox
-                  checked={selected.length === data.length}
+                  a11yTitle={
+                    selected.length === data.length
+                      ? 'unselect all'
+                      : 'select all'
+                  }
+                  checked={
+                    selected.length > 0 &&
+                    data.length > 0 &&
+                    selected.length === data.length
+                  }
                   indeterminate={
                     selected.length > 0 && selected.length < data.length
                   }
@@ -158,7 +168,7 @@ const Header = forwardRef(
               )}
             </TableCell>
           )}
-
+          {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
           {columns.map(
             ({
               property,

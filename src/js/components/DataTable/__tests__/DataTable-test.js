@@ -408,6 +408,62 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('rowDetails', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          rowDetails={row => <Box>{row.a}</Box>}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rowDetails condtional', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          rowDetails={row => {
+            if (row.b === '1.1') {
+              return <Box> {row.a} </Box>;
+            }
+            return (
+              <Box>
+                {row.a} : {row.b}{' '}
+              </Box>
+            );
+          }}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>
@@ -1057,6 +1113,163 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('Go to next page'));
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when data is empty array', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[]}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when length of data < step', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: `entry-1`, b: 1 },
+            { a: `entry-2`, b: 2 },
+            { a: `entry-3`, b: 3 },
+          ]}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSelect + groupBy should select/deselect all when grouped', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', primary: true },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    let headerCheckBox;
+    headerCheckBox = getByLabelText('select all');
+    fireEvent.click(headerCheckBox);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // aria-label should have changed since all entries
+    // are selected
+    headerCheckBox = getByLabelText('unselect all');
+    fireEvent.click(headerCheckBox);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSelect + groupBy should select all items within a group', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', primary: true },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const groupCheckBox = getByLabelText('select one');
+    fireEvent.click(groupCheckBox);
+    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`onSelect + groupBy should render indeterminate checkbox on table and 
+  group if subset of group items are selected`, () => {
+    const onSelect = jest.fn();
+    const { container, getAllByLabelText, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          primaryKey="b"
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const groupCheckBox = getByLabelText('select one');
+    fireEvent.click(groupCheckBox);
+    const expandButtons = getAllByLabelText('expand');
+    fireEvent.click(expandButtons[1], {});
+
+    fireEvent.click(getByLabelText('unselect 1.1'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`onSelect + groupBy should render indeterminate checkbox on table and 
+  group when controlled`, () => {
+    const onSelect = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', primary: true },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          select={[1.1]}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });

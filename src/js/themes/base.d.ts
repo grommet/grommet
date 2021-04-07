@@ -287,6 +287,7 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
+      margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
     };
@@ -725,7 +726,11 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
-    border?: BorderType;
+    border?: BorderType & {
+      error?: {
+        color?: ColorType;
+      };
+    };
     content?: {
       margin?: MarginType;
       pad?: PadType;
@@ -765,6 +770,7 @@ export interface ThemeType {
     label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
+    extend?: ExtendType;
   };
   grommet?: {
     extend?: ExtendType;
@@ -970,6 +976,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    drop?: DropProps;
     extend?: ExtendType;
     icons?: {
       down?: any;

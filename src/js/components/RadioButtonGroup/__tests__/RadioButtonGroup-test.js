@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, render, fireEvent, wait } from '@testing-library/react';
+import { cleanup, render, fireEvent, waitFor } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { RadioButtonGroup } from '..';
@@ -32,6 +32,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('number options', () => {
@@ -42,6 +43,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('boolean options', () => {
@@ -52,6 +54,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('object options just value', () => {
@@ -66,6 +69,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('object options', () => {
@@ -82,6 +86,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('object options disabled', () => {
@@ -95,6 +100,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('children', () => {
@@ -110,6 +116,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('adding additional props', () => {
@@ -134,6 +141,7 @@ describe('RadioButtonGroup', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    component.unmount();
   });
 
   test('onChange fires with event when passed from props', () => {
@@ -224,33 +232,37 @@ describe('RadioButtonGroup', () => {
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
 
-    await wait(() => getByTestId('testid-2'));
-    fireEvent.keyDown(middleRadioBtn, {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-      bubbles: true,
-      cancelable: true,
-    });
-    await wait(() => expect(onChange).toBeCalledTimes(1));
-    expect(onChange).toHaveBeenLastCalledWith(
-      expect.objectContaining({ target: { value: '3' } }),
-    );
+    await waitFor(() => getByTestId('testid-2'));
+    setTimeout(() => {
+      fireEvent.keyDown(middleRadioBtn, {
+        key: 'ArrowDown',
+        keyCode: 40,
+        which: 40,
+        bubbles: true,
+        cancelable: true,
+      });
+      expect(onChange).toBeCalledTimes(1);
+      expect(onChange).toHaveBeenLastCalledWith(
+        expect.objectContaining({ target: { value: '3' } }),
+      );
+    }, 50);
 
     // Focus radio '2' button and simulate ArrowUp key
     // should result in selecting radio '1'
     middleRadioBtn.focus();
-    await wait(() => getByTestId('testid-2'));
-    fireEvent.keyDown(middleRadioBtn, {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-      bubbles: true,
-      cancelable: true,
-    });
-    await wait(() => expect(onChange).toBeCalledTimes(2));
-    expect(onChange).toHaveBeenLastCalledWith(
-      expect.objectContaining({ target: { value: '1' } }),
-    );
+    await waitFor(() => getByTestId('testid-2'));
+    setTimeout(() => {
+      fireEvent.keyDown(middleRadioBtn, {
+        key: 'ArrowUp',
+        keyCode: 38,
+        which: 38,
+        bubbles: true,
+        cancelable: true,
+      });
+      expect(onChange).toBeCalledTimes(2);
+      expect(onChange).toHaveBeenLastCalledWith(
+        expect.objectContaining({ target: { value: '1' } }),
+      );
+    }, 50);
   });
 });

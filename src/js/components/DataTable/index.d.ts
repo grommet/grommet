@@ -41,7 +41,6 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
-  paginate?: boolean | PaginationType;
   pin?: boolean;
   primary?: boolean;
   property: string;
@@ -68,6 +67,7 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
+  paginate?: boolean | PaginationType;
   pin?: boolean | 'header' | 'footer';
   placeholder?: string | React.ReactNode;
   resizeable?: boolean;
@@ -79,6 +79,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
+  rowDetails?: React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
@@ -104,8 +105,12 @@ export interface DataTableProps<TRowType = any> {
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
 }
 
+export interface DataTableExtendedProps<TRowType = any>
+  extends DataTableProps<TRowType>,
+    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+
 declare class DataTable<TRowType = any> extends React.Component<
-  DataTableProps<TRowType> & Omit<JSX.IntrinsicElements['table'], 'onSelect'>
+  DataTableExtendedProps<TRowType>
 > {}
 
 export { DataTable };
