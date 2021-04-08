@@ -7778,7 +7778,8 @@ Any properties to pass on to the underlying Drop when not inline. Defaults to \`
 The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.
 
 \`\`\`
 string
@@ -8536,6 +8537,20 @@ Defaults to
 **global.drop.extend**
 
 Any additional style for Drop. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.intelligentMargin**
+
+Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target. Expects \`boolean\`.
 
 Defaults to
 
@@ -11730,7 +11745,7 @@ The rounding of the Layer corners. Expects \`string\`.
 Defaults to
 
 \`\`\`
-white
+4px
 \`\`\`
 
 **layer.border.intelligentRounding**
