@@ -219,8 +219,6 @@ describe('RangeSelector', () => {
     );
     const rangeContainer = container.firstChild.firstChild;
 
-    expect(container.firstChild).toMatchSnapshot();
-
     const lowerControl = getByLabelText('Lower Bounds');
     fireEvent.touchStart(lowerControl);
     fireEvent.touchMove(rangeContainer, {
@@ -244,5 +242,6 @@ describe('RangeSelector', () => {
       ],
     });
     expect(onChange).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
