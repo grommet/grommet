@@ -38,7 +38,10 @@ export interface WorldMapProps {
   }[];
 }
 
-declare const WorldMap: React.ComponentClass<WorldMapProps &
-  Omit<JSX.IntrinsicElements['svg'], 'color'>>;
+export interface WorldMapExtendedProps
+  extends WorldMapProps,
+    Omit<JSX.IntrinsicElements['svg'], 'color' | 'fill'> {}
+
+declare const WorldMap: React.FC<WorldMapExtendedProps>;
 
 export { WorldMap };
