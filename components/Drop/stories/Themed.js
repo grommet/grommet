@@ -29,7 +29,8 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
       zIndex: '13',
       elevation: 'large',
       // impacting the elevation
-      margin: 'xsmall'
+      margin: 'xsmall',
+      intelligentMargin: true
     }
   }
 });

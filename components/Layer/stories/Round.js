@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RoundLayer = void 0;
+exports["default"] = exports.RoundLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -117,3 +117,7 @@ RoundLayer.story = {
     }
   }
 };
+var _default = {
+  title: 'Layout/Layer/Round'
+};
+exports["default"] = _default;

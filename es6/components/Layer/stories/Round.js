@@ -102,3 +102,6 @@ RoundLayer.story = {
     }
   }
 };
+export default {
+  title: 'Layout/Layer/Round'
+};

@@ -58,6 +58,11 @@ export var themeDoc = _extends({
     description: 'Any additional style for Drop.',
     type: 'string | (props) => {}',
     defaultValue: undefined
+  },
+  'global.drop.intelligentMargin': {
+    description: "Whether the margin of the Drop\n    should adapt based on the Drop's alignment\n    with respect to its target. Margin will\n    only be applied on the side of the Drop that\n    is adjacent to its target.",
+    type: 'boolean',
+    defaultValue: undefined
   }
 }, themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'), {
   'global.drop.elevation': {

@@ -258,6 +258,7 @@ var generate = function generate(baseSpacing, scale) {
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
+        // intelligentMargin: undefined,
         background: {
           dark: 'black',
           light: 'white'
