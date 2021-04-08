@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const ValidateOnChange = () => {
@@ -46,7 +46,24 @@ export const ValidateOnChange = () => {
                 },
               ]}
             />
-
+            <FormField
+              label="Size"
+              name="select-size"
+              htmlFor="select-size__input"
+              required
+              validate={val => {
+                if (val === 'small') {
+                  return { message: 'Only 10 left in stock!', status: 'info' };
+                }
+                return undefined;
+              }}
+            >
+              <Select
+                name="select-size"
+                id="select-size"
+                options={['small', 'medium', 'large']}
+              />
+            </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
               <Button label="Cancel" />
               <Button type="reset" label="Reset" />
