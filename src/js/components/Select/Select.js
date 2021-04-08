@@ -196,8 +196,8 @@ const Select = forwardRef(
         name,
         onChange,
         onRequestClose,
-        triggerChangeEvent,
         setValue,
+        triggerChangeEvent,
       ],
     );
 
