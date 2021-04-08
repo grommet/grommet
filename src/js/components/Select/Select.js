@@ -173,7 +173,7 @@ const Select = forwardRef(
       (event, { option, value: nextValue, selected: nextSelected }) => {
         if (closeOnChange) onRequestClose();
         if (name && nextValue !== event.target.value) {
-          // select registers changing option as a click event or keydown
+          // select registers changing option as a click event or keydown.
           // when in a form, we need to programatically trigger a change
           // event in order for the change event to be registered upstream
           // necessary for change validation in form
