@@ -49,10 +49,9 @@ const StyledCheckBoxContainer = styled.label`
   align-items: center;
   user-select: none;
   ${props =>
-    props.fillProp &&
-    fillStyle(props.fillProp) &&
-    `justify-content: space-between;`} ${props =>
-  !props.fillProp && 'width: fit-content;'}
+    props.fill
+      ? fillStyle(props.fill) && `justify-content: space-between;`
+      : 'width: fit-content;'}
   ${props =>
     (props.pad || props.theme.checkBox.pad) &&
     edgeStyle(

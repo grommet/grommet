@@ -40,7 +40,7 @@ export const InsideFormField = props => (
         >
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
             <CheckBox
-              id="check-box-toggle"
+              id="check-box-fill-toggle"
               name="toggle"
               label="CheckBox"
               toggle
