@@ -287,6 +287,7 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
+      intelligentMargin?: boolean;
       margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
@@ -534,6 +535,7 @@ export interface ThemeType {
       checked?: any;
       indeterminate?: any;
     };
+    pad?: PadType;
     size?: string;
     toggle?: {
       background?: BackgroundType;

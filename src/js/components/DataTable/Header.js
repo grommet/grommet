@@ -139,7 +139,11 @@ const Header = forwardRef(
           )}
 
           {(selected || onSelect) && (
-            <TableCell background={background || cellProps.background}>
+            <TableCell
+              background={background || cellProps.background}
+              plain="noPad"
+              size="auto"
+            >
               {onSelect && (
                 <CheckBox
                   a11yTitle={
@@ -164,6 +168,7 @@ const Header = forwardRef(
                         data.map(datum => datumValue(datum, primaryProperty)),
                       );
                   }}
+                  pad={pad || theme.table.header.pad}
                 />
               )}
             </TableCell>

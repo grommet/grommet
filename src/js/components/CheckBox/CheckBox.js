@@ -40,6 +40,7 @@ const CheckBox = forwardRef(
       onBlur,
       onChange,
       onFocus,
+      pad,
       reverse,
       toggle,
       indeterminate,
@@ -197,6 +198,7 @@ const CheckBox = forwardRef(
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        pad={pad}
         {...themeableProps}
       >
         {first}
