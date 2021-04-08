@@ -33,7 +33,7 @@ export const doc = CheckBox => {
           height, in order to have set the label and checkbox/toggle justify
           content to space between.`,
       )
-      .defaultValue(false),
+      .defaultValue(undefined),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),
