@@ -195,7 +195,7 @@ const CheckBox = forwardRef(
     return (
       <StyledCheckBoxContainer
         aria-label={a11yTitle}
-        fillProp={fill}
+        fill={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
