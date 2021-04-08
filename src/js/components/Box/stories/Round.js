@@ -65,7 +65,7 @@ export const RoundBox = () => (
             },
           }}
         >
-          <Text color="brand">Individually rounded corners</Text>
+          <Text>Individually rounded corners</Text>
         </Box>
       </Grid>
     </Box>
