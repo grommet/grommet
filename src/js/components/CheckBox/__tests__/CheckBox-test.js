@@ -164,4 +164,22 @@ describe('CheckBox', () => {
     fireEvent.click(getByText('test-label'));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom theme', () => {
+    const customTheme = {
+      checkBox: {
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <CheckBox label="test-label" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

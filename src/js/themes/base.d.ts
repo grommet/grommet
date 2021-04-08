@@ -535,6 +535,7 @@ export interface ThemeType {
       checked?: any;
       indeterminate?: any;
     };
+    pad?: PadType;
     size?: string;
     toggle?: {
       background?: BackgroundType;

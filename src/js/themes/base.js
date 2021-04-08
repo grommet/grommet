@@ -610,6 +610,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      // pad: undefined,
       size: `${baseSpacing}px`,
       toggle: {
         // background: undefined

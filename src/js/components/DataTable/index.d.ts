@@ -42,6 +42,7 @@ export interface ColumnConfig<TRowType> {
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
   pin?: boolean;
+  plain?: boolean;
   primary?: boolean;
   property: string;
   render?: (datum: TRowType) => React.ReactNode;
