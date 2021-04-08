@@ -84,3 +84,7 @@ RoundLayer.story = {
     chromatic: { disable: true },
   },
 };
+
+export default {
+  title: 'Layout/Layer/Round',
+};
