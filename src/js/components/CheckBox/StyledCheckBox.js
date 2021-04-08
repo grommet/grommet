@@ -3,6 +3,18 @@ import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
+const fillStyle = fillContainer => {
+  if (fillContainer) {
+    return `
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      flex: 1 0 auto;
+    `;
+  }
+  return undefined;
+};
+
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
@@ -36,7 +48,11 @@ const StyledCheckBoxContainer = styled.label`
   flex-direction: row;
   align-items: center;
   user-select: none;
-  width: fit-content;
+  ${props =>
+    props.fillProp &&
+    fillStyle(props.fillProp) &&
+    `justify-content: space-between;`} ${props =>
+  !props.fillProp && 'width: fit-content;'}
   ${props =>
     (props.pad || props.theme.checkBox.pad) &&
     edgeStyle(

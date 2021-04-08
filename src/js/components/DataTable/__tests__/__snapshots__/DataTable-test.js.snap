@@ -3453,7 +3453,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jggAlD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dinWmP"
               disabled=""
             >
               <div
@@ -3517,7 +3517,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="select beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jggAlD"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dinWmP"
               disabled=""
             >
               <div
@@ -8945,7 +8945,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -9067,7 +9067,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -9178,7 +9178,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -9304,7 +9304,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -9391,7 +9391,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -9467,7 +9467,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -17161,7 +17161,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -17239,7 +17239,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -17294,7 +17294,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iXrDFu"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ghEdFu"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"

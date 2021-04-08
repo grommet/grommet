@@ -27,6 +27,13 @@ export const doc = CheckBox => {
       with the same name so form submissions work.`,
       )
       .defaultValue(false),
+    fill: PropTypes.bool
+      .description(
+        `Whether the checkbox expands to fill all of the available width and/or 
+          height, in order to have set the label and checkbox/toggle justify
+          content to space between.`,
+      )
+      .defaultValue(false),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),

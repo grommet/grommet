@@ -4934,6 +4934,16 @@ Same as React <input disabled={} />. Also adds a hidden input element
 boolean
 \`\`\`
 
+**fill**
+
+Whether the checkbox expands to fill all of the available width and/or 
+          height, in order to have set the label and checkbox/toggle justify
+          content to space between.
+
+\`\`\`
+boolean
+\`\`\`
+
 **id**
 
 The DOM id attribute value to use for the underlying <input/> element.

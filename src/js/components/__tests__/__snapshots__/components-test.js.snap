@@ -2295,6 +2295,14 @@ point",
         "name": "disabled",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the checkbox expands to fill all of the available width and/or 
+          height, in order to have set the label and checkbox/toggle justify
+          content to space between.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "The DOM id attribute value to use for the underlying <input/> element.",
         "format": "string",
         "name": "id",

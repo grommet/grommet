@@ -2612,7 +2612,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 euBdwh FormField__FormFieldContentBox-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dsPMvl"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jbIyUK StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -2851,7 +2851,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 euBdwh FormField__FormFieldContentBox-m9hood-1 iUyYoX"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 beIzsx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dsPMvl"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jbIyUK StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
