@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, normalizeColor } from '../../utils';
+import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
@@ -37,6 +37,15 @@ const StyledCheckBoxContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
+  ${props =>
+    (props.pad || props.theme.checkBox.pad) &&
+    edgeStyle(
+      'padding',
+      props.pad || props.theme.checkBox.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
   ${props => props.theme.checkBox.hover.border.color && hoverStyle}

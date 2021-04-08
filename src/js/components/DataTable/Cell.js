@@ -20,6 +20,7 @@ const Cell = memo(
     column: {
       align,
       pin: columnPin,
+      plain,
       footer,
       property,
       render,
@@ -92,6 +93,7 @@ const Cell = memo(
         border={normalizeProp('border', rowProp, border)}
         pad={normalizeProp('pad', rowProp, pad)}
         pin={pin}
+        plain={plain ? 'noPad' : undefined}
       >
         {content}
       </StyledDataTableCell>
