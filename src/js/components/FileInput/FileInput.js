@@ -171,7 +171,7 @@ const FileInput = forwardRef(
                 hoverIndicator
                 onClick={event => {
                   event.stopPropagation();
-                  if (onChange) onChange(event);
+                  if (onChange) onChange(event, files);
                   setFiles([]);
                   inputRef.current.focus();
                 }}
@@ -211,7 +211,7 @@ const FileInput = forwardRef(
                     const nextFiles = [...files];
                     nextFiles.splice(index, 1);
                     setFiles(nextFiles);
-                    if (onChange) onChange(event);
+                    if (onChange) onChange(event, files);
                     if (nextFiles.length === 0) inputRef.current.value = '';
                     inputRef.current.focus();
                   }}
