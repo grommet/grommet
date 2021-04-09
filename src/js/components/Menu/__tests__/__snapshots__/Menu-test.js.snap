@@ -595,6 +595,7 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -609,6 +610,7 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3098,6 +3100,7 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3112,6 +3115,7 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3126,6 +3130,7 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <a
+          aria-label=""
           class="c5"
           href="/test"
         >
@@ -3783,6 +3788,7 @@ exports[`Menu open on up close on esc 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3797,6 +3803,7 @@ exports[`Menu open on up close on esc 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -5273,6 +5280,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
         class="c5"
       >
         <button
+          aria-label=""
           class="c6"
           type="button"
         >
@@ -5287,6 +5295,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
         class="c5"
       >
         <button
+          aria-label=""
           class="c6"
           type="button"
         >
@@ -5809,6 +5818,7 @@ exports[`Menu with dropAlign top renders 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -5823,6 +5833,7 @@ exports[`Menu with dropAlign top renders 2`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >

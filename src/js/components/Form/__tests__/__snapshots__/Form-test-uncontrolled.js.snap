@@ -1252,6 +1252,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
+      aria-label=""
       class="c11"
       type="submit"
     >
@@ -1491,6 +1492,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1553,6 +1555,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -2813,6 +2816,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       </div>
     </div>
     <button
+      aria-label=""
       class="c27"
       type="reset"
     >
@@ -3021,6 +3025,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="reset"
     >
@@ -3208,6 +3213,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="c5"
       type="submit"
     >
@@ -3242,6 +3248,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -3276,6 +3283,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -3463,6 +3471,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="c5"
       type="submit"
     >
@@ -3524,6 +3533,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       </span>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -3711,6 +3721,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="c5"
       type="submit"
     >
@@ -3772,6 +3783,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       </span>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -3959,6 +3971,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="c5"
       type="submit"
     >
@@ -4016,6 +4029,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       </span>
     </div>
     <button
+      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -4222,6 +4236,7 @@ exports[`Form uncontrolled update 1`] = `
       </div>
     </div>
     <button
+      aria-label=""
       class="c5"
       type="submit"
     >

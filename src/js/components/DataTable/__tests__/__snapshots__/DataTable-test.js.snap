@@ -3211,6 +3211,7 @@ exports[`DataTable custom theme 1`] = `
               class="c6"
             >
               <button
+                aria-label=""
                 class="c7 c8"
                 type="button"
               >
@@ -3398,6 +3399,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledBox-sc-13pk1d4-0 dTCmQX"
             >
               <button
+                aria-label=""
                 class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0 cUzchw"
                 type="button"
               >
@@ -9688,6 +9690,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -9711,6 +9714,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -9850,6 +9854,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -9951,6 +9956,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -10297,6 +10303,7 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -10336,6 +10343,7 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -10475,6 +10483,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -10555,6 +10564,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -34253,6 +34263,7 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -34292,6 +34303,7 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -34638,6 +34650,7 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -34677,6 +34690,7 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35023,6 +35037,7 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35046,6 +35061,7 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35407,6 +35423,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35430,6 +35447,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35741,6 +35759,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35764,6 +35783,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label=""
               class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -35903,6 +35923,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >
@@ -36004,6 +36025,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 dTCmQX"
           >
             <button
+              aria-label=""
               class="StyledButton-sc-323bzc-0 gtpnsM Header__StyledHeaderCellButton-sc-1baku5q-0"
               type="button"
             >

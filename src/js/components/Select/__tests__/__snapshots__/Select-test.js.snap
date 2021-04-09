@@ -465,6 +465,7 @@ exports[`Select Clear option renders - bottom 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -481,6 +482,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -729,6 +731,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -745,6 +748,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -984,6 +988,7 @@ exports[`Select Clear option renders custom label 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -1000,6 +1005,7 @@ exports[`Select Clear option renders custom label 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -1239,6 +1245,7 @@ exports[`Select Clear option renders- top 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -1255,6 +1262,7 @@ exports[`Select Clear option renders- top 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2016,6 +2024,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 <button
+  aria-label=""
   class="c0 c1"
   role="menuitem"
   tabindex="-1"
@@ -2762,6 +2771,7 @@ exports[`Select complex options and children 3`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2772,6 +2782,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -3635,6 +3646,7 @@ exports[`Select default value clear 1`] = `
     id="test-select__select-drop"
   >
     <button
+      aria-label=""
       class="c4"
       type="button"
     >
@@ -3654,6 +3666,7 @@ exports[`Select default value clear 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -3670,6 +3683,7 @@ exports[`Select default value clear 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -4767,6 +4781,7 @@ exports[`Select disabled key 2`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         disabled=""
         role="menuitem"
@@ -4784,6 +4799,7 @@ exports[`Select disabled key 2`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c9 c6"
         role="menuitem"
         tabindex="-1"
@@ -5062,6 +5078,7 @@ exports[`Select disabled option value 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         disabled=""
         role="menuitem"
@@ -5079,6 +5096,7 @@ exports[`Select disabled option value 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c9 c6"
         role="menuitem"
         tabindex="-1"
@@ -5686,6 +5704,7 @@ exports[`Select large drop container height 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -5702,6 +5721,7 @@ exports[`Select large drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -5931,6 +5951,7 @@ exports[`Select medium drop container height 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -5947,6 +5968,7 @@ exports[`Select medium drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -6698,6 +6720,7 @@ exports[`Select onChange with valueKey string 2`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -6714,6 +6737,7 @@ exports[`Select onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -7212,6 +7236,7 @@ exports[`Select onChange without valueKey 2`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -7228,6 +7253,7 @@ exports[`Select onChange without valueKey 2`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -8282,6 +8308,7 @@ exports[`Select prop: onOpen 3`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -8298,6 +8325,7 @@ exports[`Select prop: onOpen 3`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -8337,6 +8365,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
+    aria-label=""
     class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
@@ -8353,6 +8382,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
+    aria-label=""
     class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
@@ -10777,6 +10807,7 @@ exports[`Select search 2`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -10793,6 +10824,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -11402,6 +11434,7 @@ exports[`Select search and select 2`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -11418,6 +11451,7 @@ exports[`Select search and select 2`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c8 c9"
         role="menuitem"
         tabindex="-1"
@@ -13860,6 +13894,7 @@ exports[`Select small drop container height 1`] = `
       tabindex="-1"
     >
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -13876,6 +13911,7 @@ exports[`Select small drop container height 1`] = `
         </div>
       </button>
       <button
+        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"

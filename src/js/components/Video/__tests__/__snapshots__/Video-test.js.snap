@@ -359,6 +359,7 @@ exports[`Video Configure Menu Button 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -804,6 +805,7 @@ exports[`Video End event handler 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -1249,6 +1251,7 @@ exports[`Video Play and Pause event handlers 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -1370,6 +1373,7 @@ exports[`Video Play and Pause event handlers 2`] = `
         class="StyledBox-sc-13pk1d4-0 htrgHk"
       >
         <button
+          aria-label=""
           class="StyledButton-sc-323bzc-0 eSUzDo"
           type="button"
         >
@@ -1858,6 +1862,7 @@ exports[`Video autoPlay renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -2296,6 +2301,7 @@ exports[`Video controls below renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -2742,6 +2748,7 @@ exports[`Video controls over renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3187,6 +3194,7 @@ exports[`Video duration event handler 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -3637,6 +3645,7 @@ exports[`Video fit  cover renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -4087,6 +4096,7 @@ exports[`Video fit contain renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -4533,6 +4543,7 @@ exports[`Video loop renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -4978,6 +4989,7 @@ exports[`Video mouse events handlers of controls 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -5099,6 +5111,7 @@ exports[`Video mouse events handlers of controls 2`] = `
         class="StyledBox-sc-13pk1d4-0 htrgHk"
       >
         <button
+          aria-label=""
           class="StyledButton-sc-323bzc-0 eSUzDo"
           type="button"
         >
@@ -5220,6 +5233,7 @@ exports[`Video mouse events handlers of controls 3`] = `
         class="StyledBox-sc-13pk1d4-0 htrgHk"
       >
         <button
+          aria-label=""
           class="StyledButton-sc-323bzc-0 eSUzDo"
           type="button"
         >
@@ -5665,6 +5679,7 @@ exports[`Video mute renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -6110,6 +6125,7 @@ exports[`Video renders 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -6555,6 +6571,7 @@ exports[`Video renders with theme 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -7000,6 +7017,7 @@ exports[`Video scrubber 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >
@@ -7121,6 +7139,7 @@ exports[`Video scrubber 2`] = `
         class="StyledBox-sc-13pk1d4-0 htrgHk"
       >
         <button
+          aria-label=""
           class="StyledButton-sc-323bzc-0 eSUzDo"
           type="button"
         >
@@ -7566,6 +7585,7 @@ exports[`Video timeUpdate event handler 1`] = `
         class="c4"
       >
         <button
+          aria-label=""
           class="c5"
           type="button"
         >

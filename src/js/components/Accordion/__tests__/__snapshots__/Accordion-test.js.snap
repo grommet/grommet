@@ -238,6 +238,7 @@ exports[`Accordion AccordionPanel 1`] = `
     >
       <button
         aria-expanded={false}
+        aria-label=""
         aria-selected={false}
         className="c3"
         onBlur={[Function]}
@@ -293,6 +294,7 @@ exports[`Accordion AccordionPanel 1`] = `
     >
       <button
         aria-expanded={false}
+        aria-label=""
         aria-selected={false}
         className="c3"
         onBlur={[Function]}
@@ -580,6 +582,7 @@ exports[`Accordion accordion border 1`] = `
     >
       <button
         aria-expanded={false}
+        aria-label=""
         aria-selected={false}
         className="c3"
         onBlur={[Function]}
@@ -872,6 +875,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1163,6 +1167,7 @@ exports[`Accordion blur styles 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1442,6 +1447,7 @@ exports[`Accordion change active index 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1486,6 +1492,7 @@ exports[`Accordion change active index 1`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -1545,6 +1552,7 @@ exports[`Accordion change active index 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1589,6 +1597,7 @@ exports[`Accordion change active index 2`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1873,6 +1882,7 @@ exports[`Accordion change to second Panel 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1922,6 +1932,7 @@ exports[`Accordion change to second Panel 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1983,6 +1994,7 @@ exports[`Accordion change to second Panel 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2032,6 +2044,7 @@ exports[`Accordion change to second Panel 2`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2364,6 +2377,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -2408,6 +2422,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -2464,6 +2479,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2508,6 +2524,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2717,6 +2734,7 @@ exports[`Accordion complex header 1`] = `
     >
       <button
         aria-expanded={false}
+        aria-label=""
         aria-selected={false}
         className="c3"
         onBlur={[Function]}
@@ -2740,6 +2758,7 @@ exports[`Accordion complex header 1`] = `
     >
       <button
         aria-expanded={true}
+        aria-label=""
         aria-selected={true}
         className="c3"
         onBlur={[Function]}
@@ -2983,6 +3002,7 @@ exports[`Accordion complex title 1`] = `
       >
         <button
           aria-expanded={false}
+          aria-label=""
           aria-selected={false}
           className="c4"
           onBlur={[Function]}
@@ -3032,6 +3052,7 @@ exports[`Accordion complex title 1`] = `
       >
         <button
           aria-expanded={false}
+          aria-label=""
           aria-selected={false}
           className="c4"
           onBlur={[Function]}
@@ -3319,6 +3340,7 @@ exports[`Accordion custom accordion 1`] = `
     >
       <button
         aria-expanded={false}
+        aria-label=""
         aria-selected={false}
         className="c3"
         onBlur={[Function]}
@@ -3616,6 +3638,7 @@ exports[`Accordion focus and hover styles 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -3895,6 +3918,7 @@ exports[`Accordion multiple panels 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -3939,6 +3963,7 @@ exports[`Accordion multiple panels 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -3995,6 +4020,7 @@ exports[`Accordion multiple panels 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4039,6 +4065,7 @@ exports[`Accordion multiple panels 2`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4148,6 +4175,7 @@ exports[`Accordion multiple panels 3`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4245,6 +4273,7 @@ exports[`Accordion multiple panels 3`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4304,6 +4333,7 @@ exports[`Accordion multiple panels 4`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4351,6 +4381,7 @@ exports[`Accordion multiple panels 4`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4457,6 +4488,7 @@ exports[`Accordion multiple panels 5`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4551,6 +4583,7 @@ exports[`Accordion multiple panels 5`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -4867,6 +4900,7 @@ exports[`Accordion set on hover 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -4916,6 +4950,7 @@ exports[`Accordion set on hover 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -4977,6 +5012,7 @@ exports[`Accordion set on hover 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5026,6 +5062,7 @@ exports[`Accordion set on hover 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5087,6 +5124,7 @@ exports[`Accordion set on hover 3`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5136,6 +5174,7 @@ exports[`Accordion set on hover 3`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5197,6 +5236,7 @@ exports[`Accordion set on hover 4`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5246,6 +5286,7 @@ exports[`Accordion set on hover 4`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5307,6 +5348,7 @@ exports[`Accordion set on hover 5`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5356,6 +5398,7 @@ exports[`Accordion set on hover 5`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -5605,6 +5648,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
       >
         <button
           aria-expanded="false"
+          aria-label=""
           aria-selected="false"
           class="c3"
           role="tab"
@@ -5888,6 +5932,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -6167,6 +6212,7 @@ exports[`Accordion wrapped panel 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -6211,6 +6257,7 @@ exports[`Accordion wrapped panel 1`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -6267,6 +6314,7 @@ exports[`Accordion wrapped panel 2`] = `
     >
       <button
         aria-expanded="true"
+        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -6365,6 +6413,7 @@ exports[`Accordion wrapped panel 2`] = `
     >
       <button
         aria-expanded="false"
+        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"

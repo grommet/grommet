@@ -92,10 +92,16 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
+const tipString = tip => {
+  if (typeof tip === 'string') {
+    return tip;
+  }
+  return '';
+};
+
 const Button = forwardRef(
   (
     {
-      a11yTitle,
       active,
       align = 'center',
       'aria-label': ariaLabel,
@@ -122,6 +128,7 @@ const Button = forwardRef(
       size,
       tip,
       type = 'button',
+      a11yTitle = tipString(tip), // can't alphabetize before tip defined
       as,
       ...rest
     },

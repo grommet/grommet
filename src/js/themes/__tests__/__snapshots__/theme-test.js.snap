@@ -1709,6 +1709,7 @@ exports[`Grommet grommet theme 1`] = `
   className="c0"
 >
   <button
+    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -1719,6 +1720,7 @@ exports[`Grommet grommet theme 1`] = `
     test
   </button>
   <button
+    aria-label=""
     className="c2"
     onBlur={[Function]}
     onFocus={[Function]}

@@ -1159,7 +1159,7 @@ reverse",
     ],
     "description": "A button.",
     "details": "You can provide a single function child that will be called with
-      'disabled', 'hover' and 'focus' keys. 
+      'disabled', 'hover' and 'focus' keys.
       This allows you to customize the rendering of the Button in those cases.",
     "intrinsicElement": "button",
     "name": "Button",
@@ -1267,10 +1267,10 @@ string",
       },
       Object {
         "description": "Function that can be called to render the visual representation.
-      Button can take in Children as a function, node, or object. 
-      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      Button can take in Children as a function, node, or object.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an
       argument that would then return a react element.
-      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`.
       When Button has children, it is styled as a \`plain\` button.
       ",
         "format": "function
@@ -1307,7 +1307,7 @@ function",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and/or 
+        "description": "Whether the button expands to fill all of the available width and/or
         height.",
         "format": "horizontal
 vertical
@@ -1440,9 +1440,9 @@ string
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
-          The plain button has no border and unless the icon prop exist it has 
-          no pad as well. 
-          When using the kind button (i.e. button.default on the theme), 
+          The plain button has no border and unless the icon prop exist it has
+          no pad as well.
+          When using the kind button (i.e. button.default on the theme),
           the usage of plain is deprecated.",
         "format": "boolean",
         "name": "plain",
@@ -1467,8 +1467,8 @@ string
         "name": "secondary",
       },
       Object {
-        "description": "The possible sizes of Button, that impacts the overall Button 
-      padding, border radius, text size and line height. 
+        "description": "The possible sizes of Button, that impacts the overall Button
+      padding, border radius, text size and line height.
       'size' will not impact any icon related sizing.",
         "format": "small
 medium
@@ -1485,7 +1485,9 @@ string",
         "name": "target",
       },
       Object {
-        "description": "tooltip or a hint when hovering over the button.",
+        "description": "tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.",
         "format": "{
   content: 
     node
@@ -1501,7 +1503,7 @@ string",
       },
       Object {
         "defaultValue": "button",
-        "description": "The type of button. Set the type to submit for the default button on 
+        "description": "The type of button. Set the type to submit for the default button on
                 forms.",
         "format": "button
 reset
