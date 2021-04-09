@@ -50,7 +50,19 @@
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "react/sort-comp": 0,
-    "semi": [2, "always"]
+    "semi": [2, "always"],
+    "no-restricted-imports": [
+      "error",{ "paths": [{
+        "name": "react",
+        "importNames": ["useLayoutEffect"],
+        "message": "Please use useIsomorphicLayoutEffect instead." }] }
+    ],
+    "no-restricted-syntax": [
+      "error", {
+        "selector": "ImportDeclaration[source.value=/use-isomorphic-layout-effect/] > ImportDefaultSpecifier[local.name!=\"useLayoutEffect\"]",
+        "message": "Must use `useLayoutEffect` as the name of the import from `*use-isomorphic-layout-effect` to leverage `eslint-plugin-react-hooks`"
+      }
+    ]
   },
   "overrides": [
     {
