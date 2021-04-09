@@ -3921,6 +3921,12 @@ string",
         "name": "multiple",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "To limit the number of files selected by the user.",
+        "format": "number",
+        "name": "maximumCount",
+      },
+      Object {
         "description": "The name attribute of the input. This is required when used within
       a Form.",
         "format": "string",

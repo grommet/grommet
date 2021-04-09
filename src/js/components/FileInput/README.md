@@ -64,6 +64,14 @@ boolean
 }
 ```
 
+**maximumCount**
+
+To limit the number of files selected by the user.
+
+```
+number
+```
+
 **name**
 
 The name attribute of the input. This is required when used within

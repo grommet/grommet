@@ -51,6 +51,9 @@ export const doc = FileInput => {
         number of files will be shown.`,
       )
       .defaultValue(undefined),
+    maximumCount: PropTypes.number
+      .description(`To limit the number of files selected by the user.`)
+      .defaultValue(undefined),
     name: PropTypes.string.description(
       `The name attribute of the input. This is required when used within
       a Form.`,
