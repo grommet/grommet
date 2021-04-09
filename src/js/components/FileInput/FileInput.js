@@ -250,7 +250,7 @@ const FileInput = forwardRef(
               } else {
                 filesToAdd = fileList;
               }
-              const nextFiles = multiple ? [...filesToAdd] : [];
+              const nextFiles = multiple ? [...files] : [];
               for (let i = 0; i < filesToAdd.length; i += 1) {
                 // avoid duplicates
                 const existing =
