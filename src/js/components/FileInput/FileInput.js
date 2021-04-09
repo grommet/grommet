@@ -241,9 +241,27 @@ const FileInput = forwardRef(
               event.persist();
               const fileList = event.target.files;
               let filesToAdd;
-              if (multiple && maximumCount && fileList.length >= maximumCount) {
+              if (!files.length) {
+                if (
+                  multiple &&
+                  maximumCount &&
+                  fileList.length >= maximumCount
+                ) {
+                  const newFileList = [];
+                  for (let i = 0; i < maximumCount; i += 1) {
+                    newFileList.push(fileList[i]);
+                  }
+                  filesToAdd = newFileList;
+                } else {
+                  filesToAdd = fileList;
+                }
+              } else if (
+                multiple &&
+                maximumCount &&
+                fileList.length >= maximumCount - files.length
+              ) {
                 const newFileList = [];
-                for (let i = 0; i < maximumCount; i += 1) {
+                for (let i = 0; i < maximumCount - files.length; i += 1) {
                   newFileList.push(fileList[i]);
                 }
                 filesToAdd = newFileList;
