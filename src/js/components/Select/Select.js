@@ -169,9 +169,9 @@ const Select = forwardRef(
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
         if (closeOnChange) onRequestClose();
-        // value must not be of type object to set value directly on the
+        // nextValue must not be of type object to set value directly on the
         // input. if it is an object, then the user has not provided necessary
-        // props to reduce complex option object
+        // props to reduce object option
         if (typeof nextValue !== 'object' && nextValue !== event.target.value) {
           // select registers changing option as a click event or keydown.
           // when in a form, we need to programatically trigger a change
