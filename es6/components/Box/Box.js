@@ -99,29 +99,25 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }
 
+  var themeProviderValue = _extends({}, theme);
+
   if (background || theme.darkChanged) {
     var dark = backgroundIsDark(background, theme);
     var darkChanged = dark !== undefined && dark !== theme.dark;
 
     if (darkChanged || theme.darkChanged) {
-      dark = dark === undefined ? theme.dark : dark;
-      contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          dark: dark,
-          background: background
-        })
-      }, contents);
+      themeProviderValue.dark = dark === undefined ? theme.dark : dark;
+      themeProviderValue.background = background;
     } else if (background) {
       // This allows DataTable to intelligently set the background of a pinned
       // header or footer.
-      contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-        value: _extends({}, theme, {
-          background: background
-        })
-      }, contents);
+      themeProviderValue.background = background;
     }
   }
 
+  contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+    value: themeProviderValue
+  }, contents);
   var content = /*#__PURE__*/React.createElement(StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
