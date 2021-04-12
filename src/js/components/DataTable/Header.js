@@ -108,6 +108,7 @@ const Header = forwardRef(
       onToggle,
       pad,
       pin: tablePin,
+      pinnedOffset,
       primaryProperty,
       selected,
       rowDetails,
@@ -321,6 +322,7 @@ const Header = forwardRef(
                   pad={pad}
                   pin={cellPin}
                   plain
+                  pinnedOffset={pinnedOffset && pinnedOffset[property]}
                   scope="col"
                   size={widths && widths[property] ? undefined : size}
                   style={

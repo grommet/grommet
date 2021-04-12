@@ -290,6 +290,40 @@ const DataTable = ({
       ? { style: { minWidth: '100%' } }
       : undefined;
 
+  const pinnedColumns = columns
+    .map(
+      (pinnedColumn, index) =>
+        pinnedColumn.pin && { property: pinnedColumn.property, id: index },
+    )
+    .filter(n => n);
+
+  const getPinnedOffset = () => {
+    const pinnedPropertiesOrder = [];
+    const pinnedColumnsProperties = {};
+    const firstRowCells = headerRef?.current?.firstChild?.cells || [];
+
+    if (firstRowCells.length !== 0) {
+      pinnedColumns.forEach(({ property, id }, index) => {
+        if (firstRowCells[id]) {
+          pinnedPropertiesOrder.push(property);
+          pinnedColumnsProperties[property] = {
+            width: firstRowCells[id].getBoundingClientRect()?.width,
+            left:
+              index === 0
+                ? 0
+                : pinnedColumnsProperties[pinnedPropertiesOrder[index - 1]]
+                    .left +
+                  pinnedColumnsProperties[pinnedPropertiesOrder[index - 1]]
+                    .width,
+          };
+        }
+      });
+    }
+    return pinnedColumnsProperties;
+  };
+
+  const pinnedOffset = getPinnedOffset();
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
@@ -311,6 +345,7 @@ const DataTable = ({
             groupState={groupState}
             pad={normalizeProp(pad, 'header')}
             pin={pin === true || pin === 'header'}
+            pinnedOffset={pinnedOffset}
             selected={selected}
             size={size}
             sort={sort}
@@ -342,6 +377,7 @@ const DataTable = ({
               groups={groups}
               groupState={groupState}
               pad={normalizeProp(pad, 'body')}
+              pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
               onSelect={
                 onSelect
@@ -375,6 +411,7 @@ const DataTable = ({
               }
               pad={normalizeProp(pad, 'body')}
               pinnedBackground={normalizeProp(background, 'pinned')}
+              pinnedOffset={pinnedOffset}
               placeholder={placeholder}
               primaryProperty={primaryProperty}
               rowProps={rowProps}
@@ -399,6 +436,7 @@ const DataTable = ({
               onSelect={onSelect}
               pad={normalizeProp(pad, 'footer')}
               pin={pin === true || pin === 'footer'}
+              pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
               scrollOffset={scrollOffset}
               selected={selected}

@@ -31,6 +31,7 @@ const Cell = memo(
     index,
     pad,
     pin: cellPin,
+    pinnedOffset,
     primaryProperty,
     rowProp,
     scope,
@@ -90,6 +91,7 @@ const Cell = memo(
               : backgroundProp,
           ) || background
         }
+        pinnedOffset={pinnedOffset}
         border={normalizeProp('border', rowProp, border)}
         pad={normalizeProp('pad', rowProp, pad)}
         pin={pin}
