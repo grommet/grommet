@@ -172,7 +172,10 @@ const Select = forwardRef(
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
         if (closeOnChange) onRequestClose();
-        if (name && nextValue !== event.target.value) {
+        // value must not be of type object to set value directly on the
+        // input. if it is an object, then the user has not provided necessary
+        // props to reduce complex option object
+        if (typeof nextValue !== 'object' && nextValue !== event.target.value) {
           // select registers changing option as a click event or keydown.
           // when in a form, we need to programatically trigger a change
           // event in order for the change event to be registered upstream
@@ -191,14 +194,7 @@ const Select = forwardRef(
         }
         setSearch();
       },
-      [
-        closeOnChange,
-        name,
-        onChange,
-        onRequestClose,
-        setValue,
-        triggerChangeEvent,
-      ],
+      [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
 
     let SelectIcon;
