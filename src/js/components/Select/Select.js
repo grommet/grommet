@@ -152,22 +152,19 @@ const Select = forwardRef(
       if (onClose) onClose();
     }, [onClose]);
 
-    const triggerChangeEvent = useCallback(
-      nextValue => {
-        // Calling set value function directly on input because React library
-        // overrides setter `event.target.value =` and loses original event
-        // target fidelity.
-        // https://stackoverflow.com/a/46012210
-        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype,
-          'value',
-        ).set;
-        nativeInputValueSetter.call(inputRef.current, nextValue);
-        const event = new Event('input', { bubbles: true });
-        inputRef.current.dispatchEvent(event);
-      },
-      [inputRef],
-    );
+    const triggerChangeEvent = useCallback(nextValue => {
+      // Calling set value function directly on input because React library
+      // overrides setter `event.target.value =` and loses original event
+      // target fidelity.
+      // https://stackoverflow.com/a/46012210
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, nextValue);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+    }, []);
 
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
