@@ -153,7 +153,6 @@ exports[`Button active + primary 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -232,7 +231,6 @@ exports[`Button active 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -309,7 +307,6 @@ exports[`Button as 1`] = `
   className="c0"
 >
   <span
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -384,7 +381,6 @@ exports[`Button basic 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -467,7 +463,6 @@ exports[`Button children function 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -601,7 +596,6 @@ exports[`Button children function with disabled prop 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     disabled={true}
     onBlur={[Function]}
@@ -618,7 +612,6 @@ exports[`Button children function with disabled prop 1`] = `
     </span>
   </button>
   <button
-    aria-label=""
     className="c3"
     onBlur={[Function]}
     onClick={[Function]}
@@ -856,7 +849,6 @@ exports[`Button color 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -868,7 +860,6 @@ exports[`Button color 1`] = `
     Test
   </button>
   <button
-    aria-label=""
     className="c2"
     onBlur={[Function]}
     onClick={[Function]}
@@ -880,7 +871,6 @@ exports[`Button color 1`] = `
     Test
   </button>
   <button
-    aria-label=""
     className="c3"
     onBlur={[Function]}
     onClick={[Function]}
@@ -892,7 +882,6 @@ exports[`Button color 1`] = `
     Test
   </button>
   <button
-    aria-label=""
     className="c4"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1222,7 +1211,6 @@ exports[`Button disabled 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     disabled={true}
     onBlur={[Function]}
@@ -1232,7 +1220,6 @@ exports[`Button disabled 1`] = `
     type="button"
   />
   <button
-    aria-label=""
     className="c2"
     disabled={true}
     onBlur={[Function]}
@@ -1244,7 +1231,6 @@ exports[`Button disabled 1`] = `
     Button
   </button>
   <button
-    aria-label=""
     className="c1"
     disabled={true}
     onBlur={[Function]}
@@ -1256,7 +1242,6 @@ exports[`Button disabled 1`] = `
     Button
   </button>
   <button
-    aria-label=""
     className="c3"
     disabled={true}
     onBlur={[Function]}
@@ -1268,7 +1253,6 @@ exports[`Button disabled 1`] = `
     Button
   </button>
   <button
-    aria-label=""
     className="c1"
     disabled={true}
     onBlur={[Function]}
@@ -1280,7 +1264,6 @@ exports[`Button disabled 1`] = `
     Button
   </button>
   <button
-    aria-label=""
     className="c4"
     disabled={true}
     onBlur={[Function]}
@@ -1292,7 +1275,6 @@ exports[`Button disabled 1`] = `
     <svg />
   </button>
   <button
-    aria-label=""
     className="c5"
     disabled={true}
     onBlur={[Function]}
@@ -1304,7 +1286,6 @@ exports[`Button disabled 1`] = `
     <svg />
   </button>
   <button
-    aria-label=""
     className="c6"
     disabled={true}
     onBlur={[Function]}
@@ -1316,7 +1297,6 @@ exports[`Button disabled 1`] = `
     <svg />
   </button>
   <button
-    aria-label=""
     className="c1"
     disabled={true}
     onBlur={[Function]}
@@ -1336,7 +1316,6 @@ exports[`Button disabled 1`] = `
     </div>
   </button>
   <button
-    aria-label=""
     className="c3"
     disabled={true}
     onBlur={[Function]}
@@ -1356,7 +1335,6 @@ exports[`Button disabled 1`] = `
     </div>
   </button>
   <button
-    aria-label=""
     className="c2"
     disabled={true}
     onBlur={[Function]}
@@ -1637,7 +1615,6 @@ exports[`Button fill 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -1646,7 +1623,6 @@ exports[`Button fill 1`] = `
     type="button"
   >
     <button
-      aria-label=""
       className="c2"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1655,7 +1631,6 @@ exports[`Button fill 1`] = `
       type="button"
     />
     <button
-      aria-label=""
       className="c3"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1664,7 +1639,6 @@ exports[`Button fill 1`] = `
       type="button"
     />
     <button
-      aria-label=""
       className="c4"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1673,7 +1647,6 @@ exports[`Button fill 1`] = `
       type="button"
     />
     <button
-      aria-label=""
       className="c5"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1745,7 +1718,6 @@ exports[`Button focus 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1812,7 +1784,6 @@ exports[`Button hoverIndicator as object with color 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1884,7 +1855,6 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1956,7 +1926,6 @@ exports[`Button hoverIndicator background 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -2028,7 +1997,6 @@ exports[`Button hoverIndicator color 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -2106,7 +2074,6 @@ exports[`Button href 1`] = `
   className="c0"
 >
   <a
-    aria-label=""
     className="c1"
     href="test"
     onBlur={[Function]}
@@ -2213,7 +2180,6 @@ exports[`Button icon label 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -2302,7 +2268,6 @@ exports[`Button primary 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -2412,7 +2377,6 @@ exports[`Button reverse icon label 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -2895,7 +2859,6 @@ exports[`Button size 1`] = `
   className="c0"
 >
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2906,7 +2869,6 @@ exports[`Button size 1`] = `
     Small
   </button>
   <button
-    aria-label=""
     className="c2"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2917,7 +2879,6 @@ exports[`Button size 1`] = `
     Medium
   </button>
   <button
-    aria-label=""
     className="c2"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2928,7 +2889,6 @@ exports[`Button size 1`] = `
     Default
   </button>
   <button
-    aria-label=""
     className="c3"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2939,7 +2899,6 @@ exports[`Button size 1`] = `
     Large
   </button>
   <button
-    aria-label=""
     className="c4"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2950,7 +2909,6 @@ exports[`Button size 1`] = `
     Small
   </button>
   <button
-    aria-label=""
     className="c5"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2961,7 +2919,6 @@ exports[`Button size 1`] = `
     Medium
   </button>
   <button
-    aria-label=""
     className="c5"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2972,7 +2929,6 @@ exports[`Button size 1`] = `
     Default
   </button>
   <button
-    aria-label=""
     className="c6"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -2983,7 +2939,6 @@ exports[`Button size 1`] = `
     Large
   </button>
   <button
-    aria-label=""
     className="c7"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3005,7 +2960,6 @@ exports[`Button size 1`] = `
     </svg>
   </button>
   <button
-    aria-label=""
     className="c7"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3027,7 +2981,6 @@ exports[`Button size 1`] = `
     </svg>
   </button>
   <button
-    aria-label=""
     className="c7"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3049,7 +3002,6 @@ exports[`Button size 1`] = `
     </svg>
   </button>
   <button
-    aria-label=""
     className="c7"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3071,7 +3023,6 @@ exports[`Button size 1`] = `
     </svg>
   </button>
   <button
-    aria-label=""
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3101,7 +3052,6 @@ exports[`Button size 1`] = `
     </div>
   </button>
   <button
-    aria-label=""
     className="c2"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3131,7 +3081,6 @@ exports[`Button size 1`] = `
     </div>
   </button>
   <button
-    aria-label=""
     className="c2"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3161,7 +3110,6 @@ exports[`Button size 1`] = `
     </div>
   </button>
   <button
-    aria-label=""
     className="c3"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -3345,7 +3293,6 @@ exports[`Button warns about invalid icon 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -3407,7 +3354,6 @@ exports[`Button warns about invalid label 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >

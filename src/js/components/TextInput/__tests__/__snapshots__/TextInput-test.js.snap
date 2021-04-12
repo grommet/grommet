@@ -428,7 +428,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -441,7 +440,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -649,7 +647,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -662,7 +659,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -947,7 +943,6 @@ exports[`TextInput close suggestion drop 2`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -960,7 +955,6 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -1264,7 +1258,6 @@ exports[`TextInput complex suggestions 2`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -1277,7 +1270,6 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -1962,7 +1954,6 @@ exports[`TextInput large drop height 1`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -1975,7 +1966,6 @@ exports[`TextInput large drop height 1`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -2164,7 +2154,6 @@ exports[`TextInput medium drop height 1`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -2177,7 +2166,6 @@ exports[`TextInput medium drop height 1`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -2658,7 +2646,6 @@ exports[`TextInput select suggestion 2`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -2671,7 +2658,6 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -3608,7 +3594,6 @@ exports[`TextInput small drop height 1`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -3621,7 +3606,6 @@ exports[`TextInput small drop height 1`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -3892,7 +3876,6 @@ exports[`TextInput suggestions 2`] = `
     >
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >
@@ -3905,7 +3888,6 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
-          aria-label=""
           class="c5"
           type="button"
         >

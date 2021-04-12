@@ -374,7 +374,6 @@ exports[`Carousel basic 1`] = `
         tabIndex="0"
       >
         <button
-          aria-label=""
           className="c8"
           disabled={true}
           onBlur={[Function]}
@@ -405,7 +404,6 @@ exports[`Carousel basic 1`] = `
             className="c11"
           >
             <button
-              aria-label=""
               className="c12"
               onBlur={[Function]}
               onClick={[Function]}
@@ -428,7 +426,6 @@ exports[`Carousel basic 1`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               className="c12"
               onBlur={[Function]}
               onClick={[Function]}
@@ -453,7 +450,6 @@ exports[`Carousel basic 1`] = `
           </div>
         </div>
         <button
-          aria-label=""
           className="c14"
           disabled={false}
           onBlur={[Function]}
@@ -856,7 +852,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
         tabIndex="0"
       >
         <button
-          aria-label=""
           className="c8"
           disabled={false}
           onBlur={[Function]}
@@ -887,7 +882,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             className="c11"
           >
             <button
-              aria-label=""
               className="c12"
               onBlur={[Function]}
               onClick={[Function]}
@@ -910,7 +904,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               className="c12"
               onBlur={[Function]}
               onClick={[Function]}
@@ -935,7 +928,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
           </div>
         </div>
         <button
-          aria-label=""
           className="c14"
           disabled={true}
           onBlur={[Function]}
@@ -1336,7 +1328,6 @@ exports[`Carousel navigate 1`] = `
         tabindex="0"
       >
         <button
-          aria-label=""
           class="c8"
           disabled=""
           type="button"
@@ -1362,7 +1353,6 @@ exports[`Carousel navigate 1`] = `
             class="c11"
           >
             <button
-              aria-label=""
               class="c12"
               type="button"
             >
@@ -1380,7 +1370,6 @@ exports[`Carousel navigate 1`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="c12"
               type="button"
             >
@@ -1400,7 +1389,6 @@ exports[`Carousel navigate 1`] = `
           </div>
         </div>
         <button
-          aria-label=""
           class="c14"
           type="button"
         >
@@ -1471,7 +1459,6 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
@@ -1496,7 +1483,6 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -1514,7 +1500,6 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -1534,7 +1519,6 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
@@ -1606,7 +1590,6 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
@@ -1632,7 +1615,6 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -1650,7 +1632,6 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -1670,7 +1651,6 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
@@ -2064,7 +2044,6 @@ exports[`Carousel play 1`] = `
         tabindex="0"
       >
         <button
-          aria-label=""
           class="c8"
           disabled=""
           type="button"
@@ -2090,7 +2069,6 @@ exports[`Carousel play 1`] = `
             class="c11"
           >
             <button
-              aria-label=""
               class="c12"
               type="button"
             >
@@ -2108,7 +2086,6 @@ exports[`Carousel play 1`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="c12"
               type="button"
             >
@@ -2128,7 +2105,6 @@ exports[`Carousel play 1`] = `
           </div>
         </div>
         <button
-          aria-label=""
           class="c14"
           type="button"
         >
@@ -2198,7 +2174,6 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 eRmxid"
           type="button"
         >
@@ -2223,7 +2198,6 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -2241,7 +2215,6 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
@@ -2261,7 +2234,6 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          aria-label=""
           class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
@@ -2622,7 +2594,6 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
             class="c9"
           >
             <button
-              aria-label=""
               class="c10"
               type="button"
             >
@@ -2640,7 +2611,6 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
               </svg>
             </button>
             <button
-              aria-label=""
               class="c12"
               type="button"
             >

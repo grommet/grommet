@@ -975,7 +975,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -992,7 +991,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -1491,7 +1489,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -1508,7 +1505,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2007,7 +2003,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2024,7 +2019,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2523,7 +2517,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2540,7 +2533,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -2591,7 +2583,6 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
         role="menuitem"
         tabindex="-1"
@@ -2608,7 +2599,6 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
         role="menuitem"
         tabindex="-1"
@@ -3147,7 +3137,6 @@ exports[`Select Controlled multiple values 3`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -3164,7 +3153,6 @@ exports[`Select Controlled multiple values 3`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -3663,7 +3651,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
       tabindex="-1"
     >
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"
@@ -3680,7 +3667,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
         </div>
       </button>
       <button
-        aria-label=""
         class="c5 c6"
         role="menuitem"
         tabindex="-1"

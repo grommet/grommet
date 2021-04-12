@@ -68,7 +68,6 @@ exports[`Button kind border on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -177,7 +176,6 @@ exports[`Button kind button icon colors 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -295,7 +293,6 @@ exports[`Button kind button with icon and align 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -386,7 +383,6 @@ exports[`Button kind default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   />
@@ -460,7 +456,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     disabled=""
     type="button"
@@ -475,7 +470,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
-    aria-label=""
     class="StyledButtonKind-sc-1vhfpnt-0 hMrilV"
     disabled=""
     type="button"
@@ -550,7 +544,6 @@ exports[`Button kind extend on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -729,21 +722,18 @@ exports[`Button kind fill 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
     Test
   </button>
   <button
-    aria-label=""
     class="c2"
     type="button"
   >
     Test
   </button>
   <button
-    aria-label=""
     class="c3"
     type="button"
   >
@@ -818,7 +808,6 @@ exports[`Button kind font on button default 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -891,7 +880,6 @@ exports[`Button kind font undefined 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -962,7 +950,6 @@ exports[`Button kind hover on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1103,7 +1090,6 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1136,7 +1122,6 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
-    aria-label=""
     class="StyledButtonKind-sc-1vhfpnt-0 jcRPDY"
     type="button"
   >
@@ -1229,7 +1214,6 @@ exports[`Button kind no border on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1304,7 +1288,6 @@ exports[`Button kind no padding on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1378,7 +1361,6 @@ exports[`Button kind opacity on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1454,7 +1436,6 @@ exports[`Button kind padding on default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1530,7 +1511,6 @@ exports[`Button kind primary button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   />
@@ -1594,7 +1574,6 @@ exports[`Button kind render of children 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
@@ -1678,7 +1657,6 @@ exports[`Button kind secondary button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   />
@@ -1896,28 +1874,24 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >
     Button
   </button>
   <button
-    aria-label=""
     class="c2"
     type="button"
   >
     Button
   </button>
   <button
-    aria-label=""
     class="c3"
     type="button"
   >
     Button
   </button>
   <button
-    aria-label=""
     class="c4"
     type="button"
   >
@@ -1990,7 +1964,6 @@ exports[`Button kind size of default button 1`] = `
   class="c0"
 >
   <button
-    aria-label=""
     class="c1"
     type="button"
   >

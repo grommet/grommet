@@ -218,7 +218,6 @@ exports[`Tabs Custom Tab component 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -236,7 +235,6 @@ exports[`Tabs Custom Tab component 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -482,7 +480,6 @@ exports[`Tabs Tab 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -500,7 +497,6 @@ exports[`Tabs Tab 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -752,7 +748,6 @@ exports[`Tabs alignControls 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -770,7 +765,6 @@ exports[`Tabs alignControls 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1016,7 +1010,6 @@ exports[`Tabs change to second tab 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -1034,7 +1027,6 @@ exports[`Tabs change to second tab 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1075,7 +1067,6 @@ exports[`Tabs change to second tab 2`] = `
     >
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1093,7 +1084,6 @@ exports[`Tabs change to second tab 2`] = `
       </button>
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1327,7 +1317,6 @@ exports[`Tabs complex title 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -1343,7 +1332,6 @@ exports[`Tabs complex title 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1529,7 +1517,6 @@ exports[`Tabs no Tab 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -1767,7 +1754,6 @@ exports[`Tabs set on hover 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -1785,7 +1771,6 @@ exports[`Tabs set on hover 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"
@@ -1826,7 +1811,6 @@ exports[`Tabs set on hover 2`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1844,7 +1828,6 @@ exports[`Tabs set on hover 2`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1885,7 +1868,6 @@ exports[`Tabs set on hover 3`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1903,7 +1885,6 @@ exports[`Tabs set on hover 3`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1944,7 +1925,6 @@ exports[`Tabs set on hover 4`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -1962,7 +1942,6 @@ exports[`Tabs set on hover 4`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2003,7 +1982,6 @@ exports[`Tabs set on hover 5`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2021,7 +1999,6 @@ exports[`Tabs set on hover 5`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="StyledButton-sc-323bzc-0 ebqXLG"
         role="tab"
@@ -2315,7 +2292,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -2333,7 +2309,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c7"
         disabled=""
@@ -2638,7 +2613,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -2656,7 +2630,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c7"
         disabled=""
@@ -3133,7 +3106,6 @@ exports[`Tabs should style as disabled 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -3151,7 +3123,6 @@ exports[`Tabs should style as disabled 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c7"
         disabled=""
@@ -3407,7 +3378,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
     >
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3 c4"
         role="tab"
@@ -3425,7 +3395,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
       </button>
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3 c8"
         role="tab"
@@ -3443,7 +3412,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3 c4"
         role="tab"
@@ -3719,7 +3687,6 @@ exports[`Tabs with icon + reverse 1`] = `
     >
       <button
         aria-expanded="true"
-        aria-label=""
         aria-selected="true"
         class="c3"
         role="tab"
@@ -3743,7 +3710,6 @@ exports[`Tabs with icon + reverse 1`] = `
       </button>
       <button
         aria-expanded="false"
-        aria-label=""
         aria-selected="false"
         class="c3"
         role="tab"

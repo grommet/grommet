@@ -96,7 +96,7 @@ const tipString = tip => {
   if (typeof tip === 'string') {
     return tip;
   }
-  return '';
+  return undefined;
 };
 
 const Button = forwardRef(
@@ -273,7 +273,7 @@ const Button = forwardRef(
           ref={ref}
           active={active}
           align={align}
-          aria-label={a11yTitle}
+          aria-label={ariaLabel || a11yTitle}
           colorValue={color}
           disabled={disabled}
           gap={gap}

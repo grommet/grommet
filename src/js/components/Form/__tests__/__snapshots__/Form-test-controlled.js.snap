@@ -178,7 +178,6 @@ exports[`Form controlled controlled 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -213,7 +212,6 @@ exports[`Form controlled controlled 2`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -248,7 +246,6 @@ exports[`Form controlled controlled 3`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -451,7 +448,6 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c6"
       type="submit"
     >
@@ -492,7 +488,6 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -533,7 +528,6 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -721,7 +715,6 @@ exports[`Form controlled controlled input 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -756,7 +749,6 @@ exports[`Form controlled controlled input 2`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -791,7 +783,6 @@ exports[`Form controlled controlled input 3`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -979,7 +970,6 @@ exports[`Form controlled controlled input lazy 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -1014,7 +1004,6 @@ exports[`Form controlled controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1049,7 +1038,6 @@ exports[`Form controlled controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1237,7 +1225,6 @@ exports[`Form controlled controlled lazy 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -1272,7 +1259,6 @@ exports[`Form controlled controlled lazy 2`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1307,7 +1293,6 @@ exports[`Form controlled controlled lazy 3`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1495,7 +1480,6 @@ exports[`Form controlled controlled onChange touched 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -1683,7 +1667,6 @@ exports[`Form controlled controlled onValidate 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -1745,7 +1728,6 @@ exports[`Form controlled controlled onValidate 2`] = `
       </span>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -1933,7 +1915,6 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -1995,7 +1976,6 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -2183,7 +2163,6 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
       </div>
     </div>
     <button
-      aria-label=""
       class="c5"
       type="submit"
     >
@@ -2241,7 +2220,6 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -2593,7 +2571,6 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      aria-label=""
       class="c11"
       type="submit"
     >
@@ -2833,7 +2810,6 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -2896,7 +2872,6 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      aria-label=""
       class="StyledButton-sc-323bzc-0 hmOcFG"
       type="submit"
     >
@@ -3048,14 +3023,12 @@ exports[`Form controlled lazy value 1`] = `
       />
     </div>
     <button
-      aria-label=""
       class="c3"
       type="button"
     >
       set
     </button>
     <button
-      aria-label=""
       class="c3"
       type="submit"
     >

@@ -65,7 +65,6 @@ exports[`RoutedButton renders 1`] = `
 >
   <div>
     <a
-      aria-label=""
       className="c1"
       disabled={false}
       href="/"

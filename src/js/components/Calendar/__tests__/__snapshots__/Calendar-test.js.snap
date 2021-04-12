@@ -13357,7 +13357,6 @@ exports[`Calendar header 1`] = `
         className="c3"
       >
         <button
-          aria-label=""
           className="c4"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -13391,7 +13390,6 @@ exports[`Calendar header 1`] = `
           </strong>
         </span>
         <button
-          aria-label=""
           className="c4"
           onBlur={[Function]}
           onFocus={[Function]}

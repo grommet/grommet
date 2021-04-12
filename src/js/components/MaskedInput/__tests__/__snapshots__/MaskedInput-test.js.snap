@@ -188,7 +188,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 }
 
 <button
-  aria-label=""
   class="c0"
   tabindex="-1"
   type="button"
@@ -896,7 +895,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
@@ -912,7 +910,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
@@ -1514,7 +1511,6 @@ exports[`MaskedInput mask 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
@@ -1530,7 +1526,6 @@ exports[`MaskedInput mask 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
@@ -2085,7 +2080,6 @@ exports[`MaskedInput option via mouse 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
@@ -2101,7 +2095,6 @@ exports[`MaskedInput option via mouse 2`] = `
       class="c4"
     >
       <button
-        aria-label=""
         class="c5"
         tabindex="-1"
         type="button"
