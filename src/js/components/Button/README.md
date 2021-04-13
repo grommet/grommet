@@ -2,7 +2,7 @@
 A button.
 
 You can provide a single function child that will be called with
-      'disabled', 'hover' and 'focus' keys.
+      'disabled', 'hover' and 'focus' keys. 
       This allows you to customize the rendering of the Button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
@@ -131,10 +131,10 @@ string
 **children**
 
 Function that can be called to render the visual representation.
-      Button can take in Children as a function, node, or object.
-      For example, 'disabled', 'hover', and 'focus' can be passed as an
+      Button can take in Children as a function, node, or object. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
       argument that would then return a react element.
-      `children={({ disabled, hover, focus }) => <Box...>{...}</Box>}`.
+      `children={({ disabled, hover, focus }) => <Box...>{...}</Box>}`. 
       When Button has children, it is styled as a `plain` button.
       
 
@@ -165,7 +165,7 @@ function
 
 Fill color for primary, label color for plain, border color otherwise.
        If button.default is defined in the theme, the color prop will
-       fill the background color for primary and secondary button types.
+       fill the background color for primary and secondary button types. 
        Color prop will change the text color for default button.
 
 ```
@@ -186,7 +186,7 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and/or
+Whether the button expands to fill all of the available width and/or 
         height.
 
 ```
@@ -339,9 +339,9 @@ function
 
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
-          The plain button has no border and unless the icon prop exist it has
-          no pad as well.
-          When using the kind button (i.e. button.default on the theme),
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
           the usage of plain is deprecated.
 
 ```
@@ -376,8 +376,8 @@ boolean
 
 **size**
 
-The possible sizes of Button, that impacts the overall Button
-      padding, border radius, text size and line height.
+The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.
 
 ```
@@ -598,8 +598,8 @@ undefined
 
 **button.active.primary**
 
-Adjustments to the primary Button style when the Button is
-    active. Only relevant for themes that have defined a value for
+Adjustments to the primary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -610,8 +610,8 @@ undefined
 
 **button.active.secondary**
 
-Adjustments to the secondary Button style when the Button is
-    active. Only relevant for themes that have defined a value for
+Adjustments to the secondary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -802,8 +802,8 @@ undefined
 
 **button.disabled.primary**
 
-Adjustments to the primary Button style when the Button is
-    disabled. Only relevant for themes that have defined a value for
+Adjustments to the primary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -814,8 +814,8 @@ undefined
 
 **button.disabled.secondary**
 
-Adjustments to the secondary Button style when the Button is
-    disabled. Only relevant for themes that have defined a value for
+Adjustments to the secondary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -876,8 +876,8 @@ undefined
 
 **button.hover.primary**
 
-Adjustments to the primary Button style when the Button is
-    hovered. Only relevant for themes that have defined a value for
+Adjustments to the primary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -888,8 +888,8 @@ undefined
 
 **button.hover.secondary**
 
-Adjustments to the secondary Button style when the Button is
-    hovered. Only relevant for themes that have defined a value for
+Adjustments to the secondary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
     button.default. Expects `{}`.
 
 Defaults to
@@ -920,7 +920,7 @@ Defaults to
 
 **button.primary.background.color**
 
-The color of the background for primary buttons. Only
+The color of the background for primary buttons. Only 
     relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
@@ -942,7 +942,7 @@ undefined
 
 **button.primary.border.color**
 
-The color of the border for primary buttons. Only relevant
+The color of the border for primary buttons. Only relevant 
     for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
@@ -1003,7 +1003,7 @@ undefined
 
 **button.secondary.background.color**
 
-The color of the background for secondary buttons. Only
+The color of the background for secondary buttons. Only 
     relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
@@ -1014,7 +1014,7 @@ undefined
 
 **button.secondary.background.opacity**
 
-The value used for secondary button background opacity.
+The value used for secondary button background opacity. 
     Only relevant for themes that have defined a value for button.default. Expects `number | string`.
 
 Defaults to
@@ -1025,7 +1025,7 @@ undefined
 
 **button.secondary.border.color**
 
-The color of the border for secondary buttons. Only
+The color of the border for secondary buttons. Only 
     relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
@@ -1036,7 +1036,7 @@ undefined
 
 **button.secondary.color**
 
-The color of the label for secondary buttons. Only
+The color of the label for secondary buttons. Only 
     relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
@@ -1047,7 +1047,7 @@ undefined
 
 **button.secondary.font.weight**
 
-The weight of the text label for secondary buttons. Only
+The weight of the text label for secondary buttons. Only 
     relevant for themes that have defined a value for button.default. Expects `string | number`.
 
 Defaults to
@@ -1058,7 +1058,7 @@ undefined
 
 **button.secondary.padding.horizontal**
 
-The horizontal padding for a secondary button. Only
+The horizontal padding for a secondary button. Only 
     relevant for themes that have defined a value for button.default. Expects `string`.
 
 Defaults to
@@ -1069,7 +1069,7 @@ Defaults to
 
 **button.secondary.padding.vertical**
 
-The vertical padding for a secondary button. Only
+The vertical padding for a secondary button. Only 
     relevant for themes that have defined a value for button.default. Expects `string`.
 
 Defaults to
@@ -1080,7 +1080,7 @@ Defaults to
 
 **button.secondary.extend**
 
-Any additional style for a secondary button. Only
+Any additional style for a secondary button. Only 
     relevant for themes that have defined a value for button.default. Expects `string | (props) => {}`.
 
 Defaults to
@@ -1228,8 +1228,8 @@ When using tip prop, any valid Box property for the Tip container. Expects `obje
 Defaults to
 
 ```
-{ background: 'background-contrast', elevation: 'small',
-    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' },
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
     round: 'small'}
 ```
 

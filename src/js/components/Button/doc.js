@@ -14,7 +14,7 @@ export const doc = Button => {
     .description('A button.')
     .details(
       `You can provide a single function child that will be called with
-      'disabled', 'hover' and 'focus' keys.
+      'disabled', 'hover' and 'focus' keys. 
       This allows you to customize the rendering of the Button in those cases.`,
     )
     .usage(
@@ -31,10 +31,10 @@ export const doc = Button => {
       PropTypes.node,
     ]).description(
       `Function that can be called to render the visual representation.
-      Button can take in Children as a function, node, or object.
-      For example, 'disabled', 'hover', and 'focus' can be passed as an
+      Button can take in Children as a function, node, or object. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
       argument that would then return a react element.
-      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
       When Button has children, it is styled as a \`plain\` button.
       `,
     ),
@@ -47,7 +47,7 @@ export const doc = Button => {
     color: colorPropType.description(
       `Fill color for primary, label color for plain, border color otherwise.
        If button.default is defined in the theme, the color prop will
-       fill the background color for primary and secondary button types.
+       fill the background color for primary and secondary button types. 
        Color prop will change the text color for default button.`,
     ),
     disabled: PropTypes.bool
@@ -58,7 +58,7 @@ export const doc = Button => {
       PropTypes.bool,
     ])
       .description(
-        `Whether the button expands to fill all of the available width and/or
+        `Whether the button expands to fill all of the available width and/or 
         height.`,
       )
       .defaultValue(false),
@@ -102,9 +102,9 @@ with plain Buttons.`,
       .description(
         `Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
-          The plain button has no border and unless the icon prop exist it has
-          no pad as well.
-          When using the kind button (i.e. button.default on the theme),
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
           the usage of plain is deprecated.`,
       )
       .defaultValue(false),
@@ -124,8 +124,8 @@ with plain Buttons.`,
       `Whether this is a secondary button.`,
     ),
     size: PropTypes.oneOf(['small', 'medium', 'large']).description(
-      `The possible sizes of Button, that impacts the overall Button
-      padding, border radius, text size and line height.
+      `The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.`,
     ),
     target: PropTypes.oneOfType([
@@ -238,15 +238,15 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.active.primary': {
-    description: `Adjustments to the primary Button style when the Button is
-    active. Only relevant for themes that have defined a value for
+    description: `Adjustments to the primary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.active.secondary': {
-    description: `Adjustments to the secondary Button style when the Button is
-    active. Only relevant for themes that have defined a value for
+    description: `Adjustments to the secondary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
@@ -334,15 +334,15 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.disabled.primary': {
-    description: `Adjustments to the primary Button style when the Button is
-    disabled. Only relevant for themes that have defined a value for
+    description: `Adjustments to the primary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.disabled.secondary': {
-    description: `Adjustments to the secondary Button style when the Button is
-    disabled. Only relevant for themes that have defined a value for
+    description: `Adjustments to the secondary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
@@ -370,15 +370,15 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.hover.primary': {
-    description: `Adjustments to the primary Button style when the Button is
-    hovered. Only relevant for themes that have defined a value for
+    description: `Adjustments to the primary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.hover.secondary': {
-    description: `Adjustments to the secondary Button style when the Button is
-    hovered. Only relevant for themes that have defined a value for
+    description: `Adjustments to the secondary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
     button.default.`,
     type: '{}',
     defaultValue: undefined,
@@ -394,7 +394,7 @@ export const themeDoc = {
     defaultValue: '4px',
   },
   'button.primary.background.color': {
-    description: `The color of the background for primary buttons. Only
+    description: `The color of the background for primary buttons. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
@@ -406,7 +406,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.primary.border.color': {
-    description: `The color of the border for primary buttons. Only relevant
+    description: `The color of the border for primary buttons. Only relevant 
     for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
@@ -434,46 +434,46 @@ export const themeDoc = {
     defaultValue: 'undefined',
   },
   'button.secondary.background.color': {
-    description: `The color of the background for secondary buttons. Only
+    description: `The color of the background for secondary buttons. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
   'button.secondary.background.opacity': {
-    description: `The value used for secondary button background opacity.
+    description: `The value used for secondary button background opacity. 
     Only relevant for themes that have defined a value for button.default.`,
     type: 'number | string',
     defaultValue: undefined,
   },
   'button.secondary.border.color': {
-    description: `The color of the border for secondary buttons. Only
+    description: `The color of the border for secondary buttons. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.secondary.color': {
-    description: `The color of the label for secondary buttons. Only
+    description: `The color of the label for secondary buttons. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.secondary.font.weight': {
-    description: `The weight of the text label for secondary buttons. Only
+    description: `The weight of the text label for secondary buttons. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | number',
   },
   'button.secondary.padding.horizontal': {
-    description: `The horizontal padding for a secondary button. Only
+    description: `The horizontal padding for a secondary button. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string',
     defaultValue: '22px',
   },
   'button.secondary.padding.vertical': {
-    description: `The vertical padding for a secondary button. Only
+    description: `The vertical padding for a secondary button. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string',
     defaultValue: '4px',
   },
   'button.secondary.extend': {
-    description: `Any additional style for a secondary button. Only
+    description: `Any additional style for a secondary button. Only 
     relevant for themes that have defined a value for button.default.`,
     type: 'string | (props) => {}',
     defaultValue: 'undefined',
@@ -548,8 +548,8 @@ duration and allowing it to change speed during its course.`,
     description:
       'When using tip prop, any valid Box property for the Tip container.',
     type: 'object',
-    defaultValue: `{ background: 'background-contrast', elevation: 'small',
-    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' },
+    defaultValue: `{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
     round: 'small'}`,
   },
   'tip.drop': {
