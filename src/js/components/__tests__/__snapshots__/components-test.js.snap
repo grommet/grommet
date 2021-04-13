@@ -1503,7 +1503,7 @@ string",
       },
       Object {
         "defaultValue": "button",
-        "description": "The type of button. Set the type to submit for the default button on
+        "description": "The type of button. Set the type to submit for the default button on 
                 forms.",
         "format": "button
 reset

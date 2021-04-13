@@ -146,7 +146,7 @@ with plain Buttons.`,
       used for the a11yTitle default value.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
-        `The type of button. Set the type to submit for the default button on
+        `The type of button. Set the type to submit for the default button on 
                 forms.`,
       )
       .defaultValue('button'),

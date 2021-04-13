@@ -2469,7 +2469,7 @@ string
 
 **type**
 
-The type of button. Set the type to submit for the default button on
+The type of button. Set the type to submit for the default button on 
                 forms. Defaults to \`button\`.
 
 \`\`\`
