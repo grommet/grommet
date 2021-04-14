@@ -29,9 +29,10 @@ export const doc = CheckBox => {
       .defaultValue(false),
     fill: PropTypes.bool
       .description(
-        `Whether the checkbox expands to fill all of the available width and/or 
-          height, in order to have set the label and checkbox/toggle justify
-          content to space between.`,
+        `Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container. When fill === true,
+         any additional space around the checkbox and label will be
+         applied as justify="between".`,
       )
       .defaultValue(undefined),
     id: PropTypes.string.description(

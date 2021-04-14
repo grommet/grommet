@@ -3,16 +3,13 @@ import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const fillStyle = fillContainer => {
-  if (fillContainer) {
+const fillStyle = () => {
     return `
       width: 100%;
       height: 100%;
       max-width: none;
       flex: 1 0 auto;
     `;
-  }
-  return undefined;
 };
 
 const disabledStyle = `
@@ -50,7 +47,7 @@ const StyledCheckBoxContainer = styled.label`
   user-select: none;
   ${props =>
     props.fill
-      ? fillStyle(props.fill) && `justify-content: space-between;`
+      ? fillStyle() && `justify-content: space-between;`
       : 'width: fit-content;'}
   ${props =>
     (props.pad || props.theme.checkBox.pad) &&
