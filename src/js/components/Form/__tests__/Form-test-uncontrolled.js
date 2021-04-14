@@ -507,7 +507,7 @@ describe('Form uncontrolled', () => {
           <FormField
             label="Size"
             name="test-select"
-            htmlFor="test-select__input"
+            htmlFor="test-select"
             required
             validate={val => {
               if (val === 'small')
