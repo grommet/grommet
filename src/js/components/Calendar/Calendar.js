@@ -191,7 +191,7 @@ const Calendar = forwardRef(
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    // function that runs inside the useEffect date and date state
+    // function that runs inside the useEffect for date and dates
     const dateCaller = (dat, callbackSetState) => {
       // convert values to UTC based on if date is string or array
       if (typeof dat === 'string') {
