@@ -766,6 +766,10 @@ small
 medium
 large
 xlarge
+2xl
+3xl
+4xl
+5xl
 string
 \`\`\`
 
@@ -844,6 +848,46 @@ Defaults to
 96px
 \`\`\`
 
+**avatar.size.2xl**
+
+The 2xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+120px
+\`\`\`
+
+**avatar.size.3xl**
+
+The 3xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+144px
+\`\`\`
+
+**avatar.size.4xl**
+
+The 4xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+168px
+\`\`\`
+
+**avatar.size.5xl**
+
+The 5xlarge size of the Avatar. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+192px
+\`\`\`
+
 **avatar.text.extend**
 
 Any additional style for the text. Expects \`string | (props) => {}\`.
@@ -871,7 +915,7 @@ The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \
 Defaults to
 
 \`\`\`
-small
+14px
 \`\`\`
 
 **avatar.text.size.small**
@@ -881,7 +925,7 @@ The size of the text that is mapped according to 'avatar.size.small'. Expects \`
 Defaults to
 
 \`\`\`
-medium
+18px
 \`\`\`
 
 **avatar.text.size.medium**
@@ -891,7 +935,7 @@ The size of the text that is mapped according to 'avatar.size.medium'. Expects \
 Defaults to
 
 \`\`\`
-large
+22px
 \`\`\`
 
 **avatar.text.size.large**
@@ -901,7 +945,7 @@ The size of the text that is mapped according to 'avatar.size.large'. Expects \`
 Defaults to
 
 \`\`\`
-xlarge
+26px
 \`\`\`
 
 **avatar.text.size.xlarge**
@@ -911,7 +955,47 @@ The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \
 Defaults to
 
 \`\`\`
-xxlarge
+34px
+\`\`\`
+
+**avatar.text.size.2xl**
+
+The size of the text that is mapped according to 'avatar.size.2xl'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+42px
+\`\`\`
+
+**avatar.text.size.3xl**
+
+The size of the text that is mapped according to 'avatar.size.3xl'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+54px
+\`\`\`
+
+**avatar.text.size.4xl**
+
+The size of the text that is mapped according to 'avatar.size.4xl'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+70px
+\`\`\`
+
+**avatar.text.size.5xl**
+
+The size of the text that is mapped according to 'avatar.size.5xl'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+90px
 \`\`\`
 ",
   "Box": "## Box
@@ -2129,6 +2213,9 @@ function
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
+       If button.default is defined in the theme, the color prop will
+       fill the background color for primary and secondary button types. 
+       Color prop will change the text color for default button.
 
 \`\`\`
 string
@@ -4883,6 +4970,90 @@ Function that will be called when the user clicks the check box. It
 function
 \`\`\`
 
+**pad**
+
+The amount of padding on the container 
+    surrounding the checkbox and its label. An object can be specified to 
+    distinguish horizontal padding, vertical padding, and padding on a 
+    particular side of the container. Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **reverse**
 
 Whether to show the label in front of the checkbox.
@@ -5038,6 +5209,16 @@ undefined
 **checkBox.icons.indeterminate**
 
 The icon to use when indeterminate. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.pad**
+
+The pad around the CheckBox and its label. Expects \`string | object\`.
 
 Defaults to
 
@@ -6684,7 +6865,8 @@ A description of the data. The order controls the column order.
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally.
+      to the left when the table is scrolled horizontally. 'plain' = true 
+      indicates that the body cells in the column will not apply pad.
 
 \`\`\`
 [{
@@ -6709,6 +6891,7 @@ A description of the data. The order controls the column order.
       aggregate: boolean
     },
   pin: boolean,
+  plain: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -7595,7 +7778,8 @@ Any properties to pass on to the underlying Drop when not inline. Defaults to \`
 The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.
 
 \`\`\`
 string
@@ -8045,6 +8229,143 @@ How to align the drop with respect to the target element. Not
 }
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
+**elevation**
+
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
+
+\`\`\`
+none
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -8086,6 +8407,15 @@ visible
 string
 \`\`\`
 
+**plain**
+
+Whether the drop element should have no background, 
+        elevation, margin or round.
+
+\`\`\`
+boolean
+\`\`\`
+
 **responsive**
 
 Whether to dynamically re-place when resized. Defaults to \`true\`.
@@ -8100,6 +8430,39 @@ Whether the drop should control focus.
 
 \`\`\`
 boolean
+\`\`\`
+
+**round**
+
+How much to round the corners.
+
+\`\`\`
+boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 \`\`\`
 
 **stretch**
@@ -8121,29 +8484,6 @@ Required. Target where the drop will be aligned to. This should be a React
 
 \`\`\`
 object
-\`\`\`
-
-**elevation**
-
-Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.
-
-\`\`\`
-none
-xsmall
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
-**plain**
-
-Whether the drop element should have no background nor elevation.
-
-\`\`\`
-boolean
 \`\`\`
 
 **trapFocus**
@@ -8178,7 +8518,10 @@ The background color of Drop. Expects \`string | { dark: string, light: string }
 Defaults to
 
 \`\`\`
-#ffffff
+{
+      dark: 'black',
+      light: 'white',
+    }
 \`\`\`
 
 **global.drop.border.radius**
@@ -8201,14 +8544,71 @@ Defaults to
 undefined
 \`\`\`
 
-**global.drop.shadowSize**
+**global.drop.intelligentMargin**
 
-Elevated height of the Drop. Expects \`string\`.
+Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for the Drop margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
+**global.drop.elevation**
+
+Elevated height above the underlying context, indicated
+    via a drop shadow. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 small
+\`\`\`
+
+**global.drop.margin**
+
+The margin of the drop from the target. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.shadowSize**
+
+Deprecated. Use 'global.drop.elevation' instead. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.drop.zIndex**
@@ -8530,7 +8930,7 @@ Provides custom rendering of the file. If not provided, the file's
       an argument. For example: (file) => <Text>{file.name}</Text>
 
 \`\`\`
-node
+function
 \`\`\`
   
 ## Intrinsic element
@@ -11266,7 +11666,8 @@ function
 
 **plain**
 
-Whether this is a plain Layer with no background color or border.
+Whether this is a plain Layer with no background color, border, or 
+        elevation.
 
 \`\`\`
 boolean
@@ -11344,7 +11745,7 @@ The rounding of the Layer corners. Expects \`string\`.
 Defaults to
 
 \`\`\`
-white
+4px
 \`\`\`
 
 **layer.border.intelligentRounding**
@@ -11608,8 +12009,7 @@ string
 Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />
+      'action = ({item, index}) => <Content />'
 
 \`\`\`
 function
@@ -11695,8 +12095,7 @@ Function that will be called when each data item is rendered.
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'
 
 \`\`\`
 function
@@ -15584,9 +15983,10 @@ string
 
 **message**
 
-The message that will be announced for screen readers when message 
-        is a string. When an object, the start message will be announced 
-        as the Spinner shows, and the end message as the spinner closes.
+When message is a string, the message will be announced for 
+        screen readers once the Spinner is loaded. 
+        When an object, the 'start' message will be announced 
+        as the Spinner appears, and the 'end' message as the spinner closes.
 
 \`\`\`
 string
@@ -16283,6 +16683,7 @@ Whether default styling context should be removed.
 
 \`\`\`
 boolean
+noPad
 \`\`\`
 
 **scope**
@@ -18103,7 +18504,6 @@ node
 **dropProps**
 
 Any valid Drop prop to style the Tip drop container. Defaults to \`{
-  \\"plain\\": true,
   \\"trapFocus\\": false
 }\`.
 
@@ -18113,7 +18513,7 @@ object
 
 **plain**
 
-Whether content should have default styling.
+Whether content should have default styling from tip.content.
 
 \`\`\`
 boolean
@@ -18123,7 +18523,8 @@ boolean
   
 **tip.content**
 
-Any valid Box property for the Tip container. Expects \`object\`.
+Any valid Box property for the Tip container. Not applicable 
+    when using Tip plain prop. Expects \`object\`.
 
 Defaults to
 
@@ -18135,12 +18536,17 @@ Defaults to
 
 **tip.drop**
 
-Any valid Drop property for the Tooltip. Expects \`object\`.
+Any valid Drop property for the Tip. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-{align: { top: 'bottom' }}
+{
+      align: { top: 'bottom' },   
+      background: 'none',
+      elevation: 'none',
+      margin: 'none'
+    }
 \`\`\`
 ",
   "Video": "## Video

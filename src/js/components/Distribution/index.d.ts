@@ -23,7 +23,12 @@ export interface DistributionProps {
   }[];
 }
 
-declare const Distribution: React.ComponentClass<DistributionProps &
-  JSX.IntrinsicElements['div']>;
+type divProps = Omit<JSX.IntrinsicElements['div'], 'children'>;
+
+export interface DistributionExtendedProps
+  extends DistributionProps,
+    divProps {}
+
+declare const Distribution: React.ComponentClass<DistributionExtendedProps>;
 
 export { Distribution };

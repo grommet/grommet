@@ -1,7 +1,14 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { OVERFLOW_VALUES } from '../Box/doc';
+
 import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
+import {
+  backgroundDoc,
+  roundPropType,
+  marginProp,
+} from '../../utils/prop-types';
 
 // if you update values here, make sure to update in Box/doc too.
 const dropOverflowPropTypes = PropTypes.oneOfType([
@@ -38,6 +45,15 @@ export const doc = Drop => {
         top: 'top',
         left: 'left',
       }),
+    background: backgroundDoc,
+    elevation: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
+      `Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.`,
+    ),
+    margin: marginProp,
     onClickOutside: PropTypes.func.description(
       'Function that will be invoked when the user clicks outside the drop.',
     ),
@@ -48,12 +64,19 @@ export const doc = Drop => {
     overflow: dropOverflowPropTypes
       .description('How to control the overflow inside the drop.')
       .defaultValue('auto'),
+    plain: PropTypes.bool
+      .description(
+        `Whether the drop element should have no background, 
+        elevation, margin or round.`,
+      )
+      .defaultValue(false),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
       .defaultValue(true),
     restrictFocus: PropTypes.bool
       .description('Whether the drop should control focus.')
       .defaultValue(false),
+    round: roundPropType,
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])])
       .description(
         `If set to true the drop element will be stretched to at least match the
@@ -66,18 +89,6 @@ export const doc = Drop => {
       `Target where the drop will be aligned to. This should be a React 
       reference.`,
     ).isRequired,
-    elevation: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description(
-      `Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.`,
-    ),
-    plain: PropTypes.bool
-      .description(
-        `Whether the drop element should have no background nor elevation.`,
-      )
-      .defaultValue(false),
     trapFocus: PropTypes.bool
       .description(`Traps keyboard focus inside of drop.`)
       .defaultValue(true),
@@ -95,7 +106,10 @@ export const themeDoc = {
   'global.drop.background': {
     description: 'The background color of Drop.',
     type: 'string | { dark: string, light: string }',
-    defaultValue: '#ffffff',
+    defaultValue: `{
+      dark: 'black',
+      light: 'white',
+    }`,
   },
   'global.drop.border.radius': {
     description: 'The border radius of the Drop container.',
@@ -107,10 +121,30 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'global.drop.shadowSize': {
-    description: 'Elevated height of the Drop.',
+  'global.drop.intelligentMargin': {
+    description: `Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
+  ...themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'),
+  'global.drop.elevation': {
+    description: `Elevated height above the underlying context, indicated
+    via a drop shadow.`,
     type: 'string',
     defaultValue: 'small',
+  },
+  'global.drop.margin': {
+    description: 'The margin of the drop from the target.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'global.drop.shadowSize': {
+    description: `Deprecated. Use 'global.drop.elevation' instead.`,
+    type: 'string',
   },
   'global.drop.zIndex': {
     description: 'The stack order of the Drop.',

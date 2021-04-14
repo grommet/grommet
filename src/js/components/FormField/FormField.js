@@ -8,7 +8,10 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { focusStyle, parseMetricToNum } from '../../utils';
+import { containsFocus } from '../../utils/DOM';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
+import { useForwardedRef } from '../../utils/refs';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -171,6 +174,7 @@ const FormField = forwardRef(
       validate,
     });
     const [focus, setFocus] = useState();
+    const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
@@ -380,14 +384,14 @@ const FormField = forwardRef(
 
     return (
       <FormFieldBox
-        ref={ref}
+        ref={formFieldRef}
         className={className}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
         onFocus={event => {
-          setFocus(true);
+          setFocus(containsFocus(formFieldRef.current));
           if (onFocus) onFocus(event);
         }}
         onBlur={event => {

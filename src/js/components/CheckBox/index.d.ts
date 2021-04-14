@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { A11yTitleType } from '../../utils';
+import { A11yTitleType, PadType } from '../../utils';
 
 export interface CheckBoxProps {
   a11yTitle?: A11yTitleType;
@@ -8,12 +8,16 @@ export interface CheckBoxProps {
   id?: string;
   label?: React.ReactNode;
   name?: string;
+  pad?: PadType;
   reverse?: boolean;
   toggle?: boolean;
   indeterminate?: boolean;
 }
 
-declare const CheckBox: React.FC<CheckBoxProps &
-  JSX.IntrinsicElements['input']>;
+type inputType = JSX.IntrinsicElements['input'];
+
+export interface CheckBoxExtendedProps extends CheckBoxProps, inputType {}
+
+declare const CheckBox: React.FC<CheckBoxExtendedProps>;
 
 export { CheckBox };
