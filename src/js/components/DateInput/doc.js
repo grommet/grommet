@@ -58,6 +58,9 @@ export const doc = DateInput => {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]).description('The date or date range value(s) in ISO8601 format.'),
+    disabled: PropTypes.bool.description(
+      'Whether the field should look disabled.',
+    ),
   };
 
   return DocumentedDateInput;
