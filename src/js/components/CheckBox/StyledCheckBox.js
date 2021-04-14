@@ -3,14 +3,12 @@ import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const fillStyle = () => {
-    return `
+const fillStyle = () => `
       width: 100%;
       height: 100%;
       max-width: none;
       flex: 1 0 auto;
     `;
-};
 
 const disabledStyle = `
   opacity: 0.5;
