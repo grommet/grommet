@@ -121,7 +121,15 @@ The date or date range value(s) in ISO8601 format.
 string
 [string]
 ```
-  
+
+**disabled**
+
+Whether the field should look disabled.
+
+```
+boolean
+```
+
 ## Intrinsic element
 
 ```
