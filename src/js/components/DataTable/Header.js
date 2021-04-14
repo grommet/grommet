@@ -139,9 +139,18 @@ const Header = forwardRef(
           )}
 
           {(selected || onSelect) && (
-            <TableCell background={background || cellProps.background}>
+            <TableCell
+              background={background || cellProps.background}
+              plain="noPad"
+              size="auto"
+            >
               {onSelect && (
                 <CheckBox
+                  a11yTitle={
+                    selected.length === data.length
+                      ? 'unselect all'
+                      : 'select all'
+                  }
                   checked={
                     selected.length > 0 &&
                     data.length > 0 &&
@@ -159,6 +168,7 @@ const Header = forwardRef(
                         data.map(datum => datumValue(datum, primaryProperty)),
                       );
                   }}
+                  pad={pad || theme.table.header.pad}
                 />
               )}
             </TableCell>

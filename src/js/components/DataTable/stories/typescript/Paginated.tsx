@@ -1,6 +1,6 @@
-import React, { ReactText, useState } from 'react';
+import React from 'react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import { Box, Grommet, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
@@ -24,22 +24,6 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'location',
     header: 'Location',
-    render: datum =>
-      datum.location ? (
-        <Box
-          pad={{ horizontal: 'small', vertical: 'xsmall' }}
-          onClick={() => {}}
-          hoverIndicator
-          fill
-        >
-          <Text truncate weight="bold">
-            {datum.location}
-          </Text>
-        </Box>
-      ) : (
-        undefined
-      ),
-    plain: true,
   },
   {
     property: 'date',
@@ -156,28 +140,25 @@ const DATA: RowType[] = [
   },
 ];
 
-export const OnSelectDataTable = () => {
-  // Type arguments can only be used in TypeScript files.
-  // Remove <ReactText[]> if you are not using Typescript.
-  const [select, setSelect] = useState<ReactText[]>([]);
-
+export const Paginated = () => {
+  const [select, setSelect] = React.useState([]);
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
+    <Grommet theme={grommet} full>
+      <Box pad="large">
         <DataTable
           columns={columns}
           data={DATA}
-          step={10}
-          select={select}
           onSelect={setSelect}
+          select={select}
+          sortable
+          step={3}
+          paginate
         />
       </Box>
     </Grommet>
   );
 };
 
-OnSelectDataTable.storyName = 'OnSelect';
-
 export default {
-  title: 'Visualizations/DataTable/OnSelect',
+  title: 'Visualizations/DataTable/Paginated',
 };

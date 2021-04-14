@@ -2213,6 +2213,9 @@ function
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
+       If button.default is defined in the theme, the color prop will
+       fill the background color for primary and secondary button types. 
+       Color prop will change the text color for default button.
 
 \`\`\`
 string
@@ -4967,6 +4970,90 @@ Function that will be called when the user clicks the check box. It
 function
 \`\`\`
 
+**pad**
+
+The amount of padding on the container 
+    surrounding the checkbox and its label. An object can be specified to 
+    distinguish horizontal padding, vertical padding, and padding on a 
+    particular side of the container. Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **reverse**
 
 Whether to show the label in front of the checkbox.
@@ -5122,6 +5209,16 @@ undefined
 **checkBox.icons.indeterminate**
 
 The icon to use when indeterminate. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.pad**
+
+The pad around the CheckBox and its label. Expects \`string | object\`.
 
 Defaults to
 
@@ -6768,7 +6865,8 @@ A description of the data. The order controls the column order.
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally.
+      to the left when the table is scrolled horizontally. 'plain' = true 
+      indicates that the body cells in the column will not apply pad.
 
 \`\`\`
 [{
@@ -6793,6 +6891,7 @@ A description of the data. The order controls the column order.
       aggregate: boolean
     },
   pin: boolean,
+  plain: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -6844,8 +6943,7 @@ Property to group data by. If object is specified
       'property' is used to group data by, 'expand' accepts array of
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
-       an array of keys of expanded groups. Cannot be used at the same
-       time as select/onSelect.
+       an array of keys of expanded groups.
 
 \`\`\`
 string
@@ -6910,8 +7008,7 @@ When supplied, causes checkboxes to be added to each row such that
       will be called with an array of primary key values, suitable to be
       passed to the 'select' property. If you are storing select state via
       a 'useState' hook, you can do something like:
-      '<DataTable select={select} onSelect={setSelect} />'. Cannot be used at 
-      the same time as groupBy.
+      '<DataTable select={select} onSelect={setSelect} />'.
 
 \`\`\`
 function
@@ -7082,8 +7179,7 @@ When supplied, causes checkboxes to be added to each row to indicate
       which rows are selected. The values in this array should match
       the 'primaryKey' or 'columns[].primary' keyed value for the row's data
       object. If 'onSelect' is provided, the CheckBoxes are enabled
-      and this function can be used to track select changes. Cannot be used at 
-      the same time as groupBy.
+      and this function can be used to track select changes.
 
 \`\`\`
 [
@@ -7682,7 +7778,8 @@ Any properties to pass on to the underlying Drop when not inline. Defaults to \`
 The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.
 
 \`\`\`
 string
@@ -8447,6 +8544,20 @@ Defaults to
 undefined
 \`\`\`
 
+**global.drop.intelligentMargin**
+
+Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **global.edgeSize**
 
 The possible sizes for the Drop margin. Expects \`object\`.
@@ -8819,7 +8930,7 @@ Provides custom rendering of the file. If not provided, the file's
       an argument. For example: (file) => <Text>{file.name}</Text>
 
 \`\`\`
-node
+function
 \`\`\`
   
 ## Intrinsic element
@@ -11555,7 +11666,8 @@ function
 
 **plain**
 
-Whether this is a plain Layer with no background color or border.
+Whether this is a plain Layer with no background color, border, or 
+        elevation.
 
 \`\`\`
 boolean
@@ -11633,7 +11745,7 @@ The rounding of the Layer corners. Expects \`string\`.
 Defaults to
 
 \`\`\`
-white
+4px
 \`\`\`
 
 **layer.border.intelligentRounding**
@@ -11897,8 +12009,7 @@ string
 Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />
+      'action = ({item, index}) => <Content />'
 
 \`\`\`
 function
@@ -11984,8 +12095,7 @@ Function that will be called when each data item is rendered.
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'
 
 \`\`\`
 function
@@ -16573,6 +16683,7 @@ Whether default styling context should be removed.
 
 \`\`\`
 boolean
+noPad
 \`\`\`
 
 **scope**

@@ -686,7 +686,7 @@ exports[`DateInput focus 1`] = `
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
-      value="7/2/2020"
+      value="07/02/2020"
     />
   </div>
 </div>
@@ -1992,7 +1992,7 @@ exports[`DateInput format 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy"
-      value="7/2/2020"
+      value="07/02/2020"
     />
   </div>
 </div>
@@ -2164,7 +2164,7 @@ exports[`DateInput format disabled 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy"
-      value="7/2/2020"
+      value="07/02/2020"
     />
   </div>
 </div>
@@ -2606,7 +2606,7 @@ exports[`DateInput format inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="mm/dd/yyyy"
-        value="7/2/2020"
+        value="07/02/2020"
       />
     </div>
     <div
@@ -5199,7 +5199,7 @@ exports[`DateInput range format 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy-mm/dd/yyyy"
-      value="7/2/2020-7/7/2020"
+      value="07/02/2020-07/07/2020"
     />
   </div>
 </div>
@@ -5659,7 +5659,7 @@ exports[`DateInput range format inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/2/2020-7/7/2020"
+        value="07/02/2020-07/07/2020"
       />
     </div>
     <div
@@ -8151,7 +8151,7 @@ exports[`DateInput select format 1`] = `
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
-      value="7/2/2020"
+      value="07/02/2020"
     />
   </div>
 </div>
@@ -8186,7 +8186,7 @@ exports[`DateInput select format 2`] = `
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
-      value="7/2/2020"
+      value="07/02/2020"
     />
   </div>
 </div>
@@ -9761,7 +9761,7 @@ exports[`DateInput select format inline 1`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
-        value="7/2/2020"
+        value="07/02/2020"
       />
     </div>
     <div
@@ -10567,7 +10567,7 @@ exports[`DateInput select format inline 2`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
-        value="7/20/2020"
+        value="07/20/2020"
       />
     </div>
     <div
@@ -11791,7 +11791,7 @@ exports[`DateInput select format inline range 1`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/2/2020-7/7/2020"
+        value="07/02/2020-07/07/2020"
       />
     </div>
     <div
@@ -12597,7 +12597,7 @@ exports[`DateInput select format inline range 2`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/10/2020-7/10/2020"
+        value="07/10/2020-07/10/2020"
       />
     </div>
     <div
@@ -14892,7 +14892,7 @@ exports[`DateInput type format inline 1`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
-        value="7/2/2020"
+        value="07/02/2020"
       />
     </div>
     <div
