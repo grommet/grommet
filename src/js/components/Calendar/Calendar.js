@@ -192,22 +192,24 @@ const Calendar = forwardRef(
     }, [activeDateProp]);
 
     // function that runs inside the useEffect for date and dates
-    const dateCaller = (dat, callbackSetState) => {
+    const dateCaller = (dateValue, callbackSetState) => {
       // convert values to UTC based on if date is string or array
-      if (typeof dat === 'string') {
-        callbackSetState(normalizeForTimezone(dat));
-      } else if (Array.isArray(dat)) {
-        if (Array.isArray(dat[0])) {
+      if (typeof dateValue === 'string') {
+        callbackSetState(normalizeForTimezone(dateValue));
+      } else if (Array.isArray(dateValue)) {
+        if (Array.isArray(dateValue[0])) {
           let from;
           let to;
-          [from, to] = dat[0].map(day => (day ? new Date(day) : undefined));
-          if (from) from = normalizeForTimezone(from, dat[0][0]);
-          if (to) to = normalizeForTimezone(to, dat[0][0]);
+          [from, to] = dateValue[0].map(day =>
+            day ? new Date(day) : undefined,
+          );
+          if (from) from = normalizeForTimezone(from, dateValue[0][0]);
+          if (to) to = normalizeForTimezone(to, dateValue[0][0]);
 
           callbackSetState([[from, to]]);
         } else {
           const dateArray = [];
-          dat.forEach(d => {
+          dateValue.forEach(d => {
             if (Array.isArray(d)) {
               let from;
               let to;
