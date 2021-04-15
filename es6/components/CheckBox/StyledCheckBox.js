@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+
+var fillStyle = function fillStyle() {
+  return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n    ";
+};
+
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var hoverStyle = css([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}"], function (props) {
   return normalizeColor(props.theme.checkBox.hover.border.color, props.theme);
@@ -24,7 +29,9 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 var StyledCheckBoxContainer = styled.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
+  return props.fill ? fillStyle() && "justify-content: space-between;" : 'width: fit-content;';
+}, function (props) {
   return (props.pad || props.theme.checkBox.pad) && edgeStyle('padding', props.pad || props.theme.checkBox.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.disabled && disabledStyle;

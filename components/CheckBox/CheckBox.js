@@ -43,6 +43,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _ref$defaultChecked = _ref.defaultChecked,
       defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
       disabled = _ref.disabled,
+      fill = _ref.fill,
       focusProp = _ref.focus,
       id = _ref.id,
       label = _ref.label,
@@ -54,7 +55,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "pad", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "pad", "reverse", "toggle", "indeterminate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -174,6 +175,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
     "aria-label": a11yTitle,
+    fill: fill,
     reverse: reverse
   }, (0, _object.removeUndefined)({
     htmlFor: id,

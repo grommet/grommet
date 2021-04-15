@@ -39,6 +39,22 @@ var InsideFormField = function InsideFormField(props) {
     name: "toggle",
     label: "CheckBox",
     toggle: true
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
+    label: "Toggle fill",
+    name: "toggle",
+    htmlFor: "check-box-toggle"
+  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
+    id: "check-box-fill-toggle",
+    name: "toggle",
+    label: "CheckBox",
+    toggle: true,
+    fill: true,
+    reverse: true
   }))), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Default",
     name: "checkbox",

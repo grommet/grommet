@@ -7,6 +7,7 @@ export var doc = function doc(CheckBox) {
     a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),
     disabled: PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\n      with the same name so form submissions work.").defaultValue(false),
+    fill: PropTypes.bool.description("Whether the checkbox and label expand to fill all of the available\n         width and/or height of their container.").defaultValue(undefined),
     id: PropTypes.string.description('The DOM id attribute value to use for the underlying <input/> element.'),
     label: PropTypes.node.description("Label text to place next to the control. \n      Can be used instead of a11yTitle to meet accessibility requirements"),
     name: PropTypes.string.description("The DOM name attribute value to use for the underlying <input/> \n      element."),

@@ -13,6 +13,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+var fillStyle = function fillStyle() {
+  return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n    ";
+};
+
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}"], function (props) {
   return (0, _utils.normalizeColor)(props.theme.checkBox.hover.border.color, props.theme);
@@ -40,7 +44,9 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProp
 var StyledCheckBoxContainer = _styledComponents["default"].label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
+  return props.fill ? fillStyle() && "justify-content: space-between;" : 'width: fit-content;';
+}, function (props) {
   return (props.pad || props.theme.checkBox.pad) && (0, _utils.edgeStyle)('padding', props.pad || props.theme.checkBox.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.disabled && disabledStyle;

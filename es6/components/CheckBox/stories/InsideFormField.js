@@ -29,6 +29,22 @@ export var InsideFormField = function InsideFormField(props) {
     name: "toggle",
     label: "CheckBox",
     toggle: true
+  }))), /*#__PURE__*/React.createElement(FormField, _extends({
+    label: "Toggle fill",
+    name: "toggle",
+    htmlFor: "check-box-toggle"
+  }, props), /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      horizontal: 'small',
+      vertical: 'xsmall'
+    }
+  }, /*#__PURE__*/React.createElement(CheckBox, {
+    id: "check-box-fill-toggle",
+    name: "toggle",
+    label: "CheckBox",
+    toggle: true,
+    fill: true,
+    reverse: true
   }))), /*#__PURE__*/React.createElement(FormField, {
     label: "Default",
     name: "checkbox",
