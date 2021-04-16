@@ -93,11 +93,7 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
 };
 
 const tipString = tip => {
-  if (typeof tip === 'string') {
-    return tip;
-  }
-  return undefined;
-};
+  return typeof tip === 'string' ? tip : undefined;
 
 const Button = forwardRef(
   (
