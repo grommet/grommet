@@ -30,7 +30,7 @@ export var doc = function doc(Button) {
       content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
       dropProps: PropTypes.shape({}),
       plain: PropTypes.bool
-    }), PropTypes.string]).description("tooltip or a hint when hovering over the button."),
+    }), PropTypes.string]).description("tooltip or a hint when hovering over the button. If the\n      value is a string and no a11yTitle value is provided, tip value will be\n      used for the a11yTitle default value."),
     type: PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n                forms.").defaultValue('button')
   });
   return DocumentedButton;

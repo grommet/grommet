@@ -39,7 +39,7 @@ var doc = function doc(Button) {
       content: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.node, _reactDesc.PropTypes.string]),
       dropProps: _reactDesc.PropTypes.shape({}),
       plain: _reactDesc.PropTypes.bool
-    }), _reactDesc.PropTypes.string]).description("tooltip or a hint when hovering over the button."),
+    }), _reactDesc.PropTypes.string]).description("tooltip or a hint when hovering over the button. If the\n      value is a string and no a11yTitle value is provided, tip value will be\n      used for the a11yTitle default value."),
     type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n                forms.").defaultValue('button')
   });
   return DocumentedButton;

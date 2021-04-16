@@ -91,8 +91,7 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
 };
 
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var a11yTitle = _ref.a11yTitle,
-      active = _ref.active,
+  var active = _ref.active,
       _ref$align = _ref.align,
       align = _ref$align === void 0 ? 'center' : _ref$align,
       ariaLabel = _ref['aria-label'],
@@ -122,8 +121,10 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       tip = _ref.tip,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
+      _ref$a11yTitle = _ref.a11yTitle,
+      a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "aria-label", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "align", "aria-label", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -266,7 +267,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       ref: ref,
       active: active,
       align: align,
-      "aria-label": a11yTitle,
+      "aria-label": ariaLabel || a11yTitle,
       colorValue: color,
       disabled: disabled,
       gap: gap,
