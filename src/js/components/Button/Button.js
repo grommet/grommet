@@ -92,9 +92,6 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
-const tipString = tip => {
-  return typeof tip === 'string' ? tip : undefined;
-
 const Button = forwardRef(
   (
     {
@@ -124,7 +121,8 @@ const Button = forwardRef(
       size,
       tip,
       type = 'button',
-      a11yTitle = tipString(tip), // can't alphabetize before tip defined
+      // can't alphabetize a11yTitle before tip is defined
+      a11yTitle = typeof tip === 'string' ? tip : undefined,
       as,
       ...rest
     },
