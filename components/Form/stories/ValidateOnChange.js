@@ -60,7 +60,26 @@ var ValidateOnChange = function ValidateOnChange() {
       if (lastName && lastName.length === 1) return 'must be >1 character';
       return undefined;
     }]
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "Size",
+    name: "select-size",
+    htmlFor: "select-size",
+    required: true,
+    validate: function validate(val) {
+      if (val === 'small') {
+        return {
+          message: 'Only 10 left in stock!',
+          status: 'info'
+        };
+      }
+
+      return undefined;
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+    name: "select-size",
+    id: "select-size",
+    options: ['small', 'medium', 'large']
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     margin: {

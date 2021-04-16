@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Form, FormField } from 'grommet';
+import { Box, Button, Grommet, Form, FormField, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var ValidateOnChange = function ValidateOnChange() {
   var _useState = useState(false),
@@ -48,7 +48,26 @@ export var ValidateOnChange = function ValidateOnChange() {
       if (lastName && lastName.length === 1) return 'must be >1 character';
       return undefined;
     }]
-  }), /*#__PURE__*/React.createElement(Box, {
+  }), /*#__PURE__*/React.createElement(FormField, {
+    label: "Size",
+    name: "select-size",
+    htmlFor: "select-size",
+    required: true,
+    validate: function validate(val) {
+      if (val === 'small') {
+        return {
+          message: 'Only 10 left in stock!',
+          status: 'info'
+        };
+      }
+
+      return undefined;
+    }
+  }, /*#__PURE__*/React.createElement(Select, {
+    name: "select-size",
+    id: "select-size",
+    options: ['small', 'medium', 'large']
+  })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
     margin: {
