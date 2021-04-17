@@ -33,6 +33,7 @@ const CheckBox = forwardRef(
       checked: checkedProp,
       defaultChecked = false,
       disabled,
+      fill,
       focus: focusProp,
       id,
       label,
@@ -40,6 +41,7 @@ const CheckBox = forwardRef(
       onBlur,
       onChange,
       onFocus,
+      pad,
       reverse,
       toggle,
       indeterminate,
@@ -193,10 +195,12 @@ const CheckBox = forwardRef(
     return (
       <StyledCheckBoxContainer
         aria-label={a11yTitle}
+        fill={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        pad={pad}
         {...themeableProps}
       >
         {first}

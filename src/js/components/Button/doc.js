@@ -141,7 +141,9 @@ with plain Buttons.`,
         plain: PropTypes.bool,
       }),
       PropTypes.string,
-    ]).description(`tooltip or a hint when hovering over the button.`),
+    ]).description(`tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
