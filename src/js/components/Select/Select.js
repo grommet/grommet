@@ -152,9 +152,33 @@ const Select = forwardRef(
       if (onClose) onClose();
     }, [onClose]);
 
+    const triggerChangeEvent = useCallback(nextValue => {
+      // Calling set value function directly on input because React library
+      // overrides setter `event.target.value =` and loses original event
+      // target fidelity.
+      // https://stackoverflow.com/a/46012210
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, nextValue);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+    }, []);
+
     const onSelectChange = useCallback(
       (event, { option, value: nextValue, selected: nextSelected }) => {
         if (closeOnChange) onRequestClose();
+        // nextValue must not be of type object to set value directly on the
+        // input. if it is an object, then the user has not provided necessary
+        // props to reduce object option
+        if (typeof nextValue !== 'object' && nextValue !== event.target.value) {
+          // select registers changing option as a click event or keydown.
+          // when in a form, we need to programatically trigger a change
+          // event in order for the change event to be registered upstream
+          // necessary for change validation in form
+          triggerChangeEvent(nextValue);
+        }
         setValue(nextValue);
         if (onChange) {
           event.persist();
@@ -167,7 +191,7 @@ const Select = forwardRef(
         }
         setSearch();
       },
-      [closeOnChange, onChange, onRequestClose, setValue],
+      [closeOnChange, onChange, onRequestClose, setValue, triggerChangeEvent],
     );
 
     let SelectIcon;
