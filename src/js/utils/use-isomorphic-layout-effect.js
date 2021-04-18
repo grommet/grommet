@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-imports */
-import React, { useEffect } from 'react';
+import { useLayoutEffect as vanillaUseLayoutEffect, useEffect } from 'react';
 
 /**
  * A substitute for React's useLayoutEffect, which does not generate warnings on
@@ -10,4 +10,6 @@ import React, { useEffect } from 'react';
  * @see https://github.com/grommet/grommet/issues/4765
  */
 export const useLayoutEffect =
-  typeof window !== 'undefined' ? React.useLayoutEffect : useEffect;
+  typeof window !== 'undefined' ? vanillaUseLayoutEffect : useEffect;
+
+export default useLayoutEffect;
