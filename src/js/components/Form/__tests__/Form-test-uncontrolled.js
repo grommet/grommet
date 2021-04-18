@@ -468,6 +468,9 @@ describe('Form uncontrolled', () => {
 
   test('validate on change', async () => {
     jest.useFakeTimers();
+    const onChange = jest.fn();
+    window.scrollTo = jest.fn();
+
     const { getByPlaceholderText, queryAllByText } = render(
       <Grommet>
         <Form validate="change">
@@ -501,6 +504,29 @@ describe('Form uncontrolled', () => {
               placeholder="email"
             />
           </FormField>
+          <FormField
+            label="Size"
+            name="test-select"
+            htmlFor="test-select"
+            required
+            validate={val => {
+              if (val === 'small')
+                return {
+                  message: 'good',
+                  status: 'info',
+                };
+              return undefined;
+            }}
+          >
+            <Select
+              a11yTitle="select form"
+              id="test-select"
+              name="test-select"
+              placeholder="test input"
+              options={['small', 'medium', 'large']}
+              onChange={onChange}
+            />
+          </FormField>
           <Button label="submit" type="submit" />
         </Form>
       </Grommet>,
@@ -524,8 +550,15 @@ describe('Form uncontrolled', () => {
       target: { value: 'a' },
     });
     act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+    // change value of select
+    fireEvent.click(getByPlaceholderText('test input'));
+    fireEvent.click(document.activeElement.querySelector('button'));
+    window.scrollTo.mockRestore();
+    act(() => jest.advanceTimersByTime(1000)); // allow validations to run
+
     expect(queryAllByText('required')).toHaveLength(1);
     expect(queryAllByText('must be >1 character')).toHaveLength(1);
+    expect(queryAllByText('good')).toHaveLength(1);
   });
 
   test('validate on blur', async () => {
