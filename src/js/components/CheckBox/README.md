@@ -37,6 +37,15 @@ Same as React <input disabled={} />. Also adds a hidden input element
 boolean
 ```
 
+**fill**
+
+Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.
+
+```
+boolean
+```
+
 **id**
 
 The DOM id attribute value to use for the underlying <input/> element.
