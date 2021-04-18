@@ -8,6 +8,7 @@ const fillStyle = () => `
       height: 100%;
       max-width: none;
       flex: 1 0 auto;
+      justify-content: space-between;
     `;
 
 const disabledStyle = `
@@ -43,10 +44,7 @@ const StyledCheckBoxContainer = styled.label`
   flex-direction: row;
   align-items: center;
   user-select: none;
-  ${props =>
-    props.fill
-      ? fillStyle() && `justify-content: space-between;`
-      : 'width: fit-content;'}
+  ${props => (props.fill ? fillStyle() : 'width: fit-content;')}
   ${props =>
     (props.pad || props.theme.checkBox.pad) &&
     edgeStyle(
