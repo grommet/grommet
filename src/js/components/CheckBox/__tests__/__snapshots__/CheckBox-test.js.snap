@@ -1919,7 +1919,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
   <label
     checked={false}
     className="c1"
-    fill="true"
     onClick={[Function]}
   >
     <span>
@@ -1951,7 +1950,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
   <label
     checked={false}
     className="c1"
-    fill="true"
     onClick={[Function]}
   >
     <div
