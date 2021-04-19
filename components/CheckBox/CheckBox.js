@@ -51,11 +51,15 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
+      _onMouseEnter = _ref.onMouseEnter,
+      _onMouseLeave = _ref.onMouseLeave,
+      _onMouseOut = _ref.onMouseOut,
+      _onMouseOver = _ref.onMouseOver,
       pad = _ref.pad,
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "pad", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -183,7 +187,19 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }), {
     checked: checked,
     onClick: stopLabelClick,
-    pad: pad
+    pad: pad,
+    onMouseEnter: function onMouseEnter(event) {
+      return _onMouseEnter == null ? void 0 : _onMouseEnter(event);
+    },
+    onMouseOver: function onMouseOver(event) {
+      return _onMouseOver == null ? void 0 : _onMouseOver(event);
+    },
+    onMouseLeave: function onMouseLeave(event) {
+      return _onMouseLeave == null ? void 0 : _onMouseLeave(event);
+    },
+    onMouseOut: function onMouseOut(event) {
+      return _onMouseOut == null ? void 0 : _onMouseOut(event);
+    }
   }, themeableProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
