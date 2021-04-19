@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { defaultProps } from '../../default-props'; // Note: since `fillStyle` is only used in one place, `justify-content` was
+// added to it to simplify its logic. If this is ever reused somewhere else,
+// consider the need of separating those once again.
 
 var fillStyle = function fillStyle() {
-  return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n    ";
+  return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n      justify-content: space-between;\n    ";
 };
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
@@ -30,7 +32,7 @@ var StyledCheckBoxContainer = styled.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
 })(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
-  return props.fill ? fillStyle() && "justify-content: space-between;" : 'width: fit-content;';
+  return props.fillProp ? fillStyle() : 'width: fit-content;';
 }, function (props) {
   return (props.pad || props.theme.checkBox.pad) && edgeStyle('padding', props.pad || props.theme.checkBox.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {

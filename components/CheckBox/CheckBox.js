@@ -179,7 +179,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
     "aria-label": a11yTitle,
-    fill: fill,
+    fillProp: fill,
     reverse: reverse
   }, (0, _object.removeUndefined)({
     htmlFor: id,
