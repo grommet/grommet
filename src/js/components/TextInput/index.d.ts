@@ -44,6 +44,7 @@ export interface TextInputProps
   suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
   textAlign?: TextAlignType;
   value?: string | number;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
 declare const TextInput: React.FC<TextInputProps>;
