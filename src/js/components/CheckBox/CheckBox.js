@@ -205,18 +205,10 @@ const CheckBox = forwardRef(
         checked={checked}
         onClick={stopLabelClick}
         pad={pad}
-        onMouseEnter={event => {
-          if (onMouseEnter) onMouseEnter(event);
-        }}
-        onMouseOver={event => {
-          if (onMouseOver) onMouseOver(event);
-        }}
-        onMouseLeave={event => {
-          if (onMouseLeave) onMouseLeave(event);
-        }}
-        onMouseOut={event => {
-          if (onMouseOut) onMouseOut(event);
-        }}
+        onMouseEnter={event => onMouseEnter?.(event)}
+        onMouseOver={event => onMouseOver?.(event)}
+        onMouseLeave={event => onMouseLeave?.(event)}
+        onMouseOut={event => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}
