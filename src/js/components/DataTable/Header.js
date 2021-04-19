@@ -88,6 +88,28 @@ const StyledContentBox = styled(Box)`
   ${props => props.extend}
 `;
 
+const calcBackground = (backgroundProp, pin, theme) => {
+  let background;
+  if (backgroundProp) background = backgroundProp;
+  else if (
+    pin.length > 0 &&
+    theme.dataTable.pinned &&
+    theme.dataTable.pinned.header
+  ) {
+    background = theme.dataTable.pinned.header.background;
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = {
+        ...background,
+        color: normalizeBackgroundColor(theme),
+      };
+    }
+  } else background = undefined;
+  return background;
+};
+
 const Header = forwardRef(
   (
     {
@@ -119,10 +141,7 @@ const Header = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
-
-    let background;
-    if (backgroundProp) background = backgroundProp;
-    else background = undefined;
+    const pin = tablePin ? ['top'] : [];
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
@@ -139,10 +158,14 @@ const Header = forwardRef(
           )}
 
           {(selected || onSelect) && (
-            <TableCell
-              background={background || cellProps.background}
+            <StyledDataTableCell
+              background={
+                calcBackground(backgroundProp, pin, theme) ||
+                cellProps.background
+              }
               plain="noPad"
               size="auto"
+              pin={pin}
             >
               {onSelect && (
                 <CheckBox
@@ -171,7 +194,7 @@ const Header = forwardRef(
                   pad={pad || theme.table.header.pad}
                 />
               )}
-            </TableCell>
+            </StyledDataTableCell>
           )}
           {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
           {columns.map(
@@ -297,27 +320,11 @@ const Header = forwardRef(
                   </Box>
                 );
               }
-              const pin = [];
-              if (tablePin) pin.push('top');
-              if (columnPin) pin.push('left');
+              const cellPin = [...pin];
+              if (columnPin) cellPin.push('left');
 
-              if (backgroundProp) background = backgroundProp;
-              else if (
-                pin.length > 0 &&
-                theme.dataTable.pinned &&
-                theme.dataTable.pinned.header
-              ) {
-                background = theme.dataTable.pinned.header.background;
-                if (!background.color && theme.background) {
-                  // theme context has an active background color but the
-                  // theme doesn't set an explicit color, repeat the context
-                  // background explicitly
-                  background = {
-                    ...background,
-                    color: normalizeBackgroundColor(theme),
-                  };
-                }
-              } else background = undefined;
+              const background = calcBackground(backgroundProp, cellPin, theme);
+
               return (
                 <StyledDataTableCell
                   key={property}
@@ -327,7 +334,7 @@ const Header = forwardRef(
                   background={background || cellProps.background}
                   border={border || cellProps.border}
                   pad={pad}
-                  pin={pin}
+                  pin={cellPin}
                   plain
                   scope="col"
                   size={widths && widths[property] ? undefined : size}

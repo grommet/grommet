@@ -3197,7 +3197,7 @@ exports[`DataTable custom theme 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c3"
+          class="c3 "
         />
         <th
           class="c4 "
@@ -3384,7 +3384,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gnXESi"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gnXESi StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cMrTAl StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6548,7 +6548,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </button>
         </td>
         <td
-          class="c7"
+          class="c7 "
         >
           <div
             class="c8"
@@ -7345,7 +7345,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </button>
         </td>
         <td
-          class="c7"
+          class="c7 "
         >
           <div
             class="c8"
@@ -8034,7 +8034,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </button>
         </td>
         <td
-          class="c7"
+          class="c7 "
         >
           <div
             class="c8"
@@ -8683,7 +8683,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           </button>
         </td>
         <td
-          class="c7"
+          class="c7 "
         >
           <div
             class="c8"
@@ -8937,7 +8937,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
@@ -9296,7 +9296,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </button>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
@@ -11558,7 +11558,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11571,7 +11571,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c19 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11631,14 +11631,6 @@ exports[`DataTable pin + background 1`] = `
 }
 
 .c16 {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.c17 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -11779,7 +11771,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c17"
+          class="c15 c16"
         >
           <div
             class="c11"
@@ -11913,7 +11905,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c18 "
+          class="c17 "
         >
           <div
             class="c11"
@@ -11946,7 +11938,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <th
-          class="c19 "
+          class="c18 "
           scope="col"
         >
           <div
@@ -12047,7 +12039,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c17"
+          class="c15 c16"
         >
           <div
             class="c11"
@@ -12117,7 +12109,7 @@ exports[`DataTable pin + background context 1`] = `
   flex-direction: column;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12133,7 +12125,7 @@ exports[`DataTable pin + background context 1`] = `
   flex-direction: column;
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12202,7 +12194,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c19 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12217,7 +12209,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c20 {
+.c19 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12232,7 +12224,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12247,7 +12239,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c23 {
+.c22 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12309,14 +12301,6 @@ exports[`DataTable pin + background context 1`] = `
 }
 
 .c16 {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.c17 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -12460,7 +12444,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c15 c17"
+            class="c15 c16"
           >
             <div
               class="c12"
@@ -12471,7 +12455,7 @@ exports[`DataTable pin + background context 1`] = `
     </table>
   </div>
   <div
-    class="c18"
+    class="c17"
   >
     <table
       class="c2 c3"
@@ -12483,7 +12467,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c19 c5"
+            class="c18 c5"
             scope="col"
           >
             <div
@@ -12497,7 +12481,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c19 c8"
+            class="c18 c8"
             scope="col"
           >
             <div
@@ -12585,7 +12569,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c20 c16"
+            class="c19 c16"
           >
             <div
               class="c12"
@@ -12598,7 +12582,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c20 c17"
+            class="c19 c16"
           >
             <div
               class="c12"
@@ -12609,7 +12593,7 @@ exports[`DataTable pin + background context 1`] = `
     </table>
   </div>
   <div
-    class="c21"
+    class="c20"
   >
     <table
       class="c2 c3"
@@ -12621,7 +12605,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c22 c5"
+            class="c21 c5"
             scope="col"
           >
             <div
@@ -12635,7 +12619,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c22 c8"
+            class="c21 c8"
             scope="col"
           >
             <div
@@ -12723,7 +12707,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c23 c16"
+            class="c22 c16"
           >
             <div
               class="c12"
@@ -12736,7 +12720,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c23 c17"
+            class="c22 c16"
           >
             <div
               class="c12"
@@ -12890,14 +12874,6 @@ exports[`DataTable pin 1`] = `
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.c16 {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
   z-index: 1;
 }
 
@@ -13035,7 +13011,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c14 c16"
+          class="c14 c15"
         >
           <div
             class="c11"
@@ -13303,7 +13279,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c14 c16"
+          class="c14 c15"
         >
           <div
             class="c11"
@@ -16982,7 +16958,7 @@ exports[`DataTable select 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c3"
+          class="c3 "
         >
           <div
             class="c4"
@@ -17153,7 +17129,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
