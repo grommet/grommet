@@ -17,7 +17,7 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
-import { datumValue, normalizeBackgroundColor } from './buildState';
+import { datumValue, calcPinnedBackground } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 
@@ -88,28 +88,6 @@ const StyledContentBox = styled(Box)`
   ${props => props.extend}
 `;
 
-const calcBackground = (backgroundProp, pin, theme) => {
-  let background;
-  if (backgroundProp) background = backgroundProp;
-  else if (
-    pin.length > 0 &&
-    theme.dataTable.pinned &&
-    theme.dataTable.pinned.header
-  ) {
-    background = theme.dataTable.pinned.header.background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
-    }
-  } else background = undefined;
-  return background;
-};
-
 const Header = forwardRef(
   (
     {
@@ -160,7 +138,7 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <StyledDataTableCell
               background={
-                calcBackground(backgroundProp, pin, theme) ||
+                calcPinnedBackground(backgroundProp, pin, theme, 'header') ||
                 cellProps.background
               }
               plain="noPad"
@@ -323,7 +301,12 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
-              const background = calcBackground(backgroundProp, cellPin, theme);
+              const background = calcPinnedBackground(
+                backgroundProp,
+                cellPin,
+                theme,
+                'header',
+              );
 
               return (
                 <StyledDataTableCell

@@ -8,29 +8,7 @@ import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
-import { normalizeBackgroundColor } from './buildState';
-
-const calcBackground = (backgroundProp, pin, theme) => {
-  let background;
-  if (backgroundProp) background = backgroundProp;
-  else if (
-    pin.length > 0 &&
-    theme.dataTable.pinned &&
-    theme.dataTable.pinned.footer
-  ) {
-    background = theme.dataTable.pinned.footer.background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
-    }
-  } else background = undefined;
-  return background;
-};
+import { calcPinnedBackground } from './buildState';
 
 const Footer = forwardRef(
   (
@@ -61,7 +39,12 @@ const Footer = forwardRef(
           )}
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={calcBackground(background, pin, theme)}
+              background={calcPinnedBackground(
+                background,
+                pin,
+                theme,
+                'footer',
+              )}
               pin={pin}
             />
           )}
