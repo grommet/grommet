@@ -156,7 +156,10 @@ describe('DateInput', () => {
     if (month < 10) month = `0${month}`;
 
     const year = new Date().getFullYear();
-    const timezoneOffset = new Date().getTimezoneOffset() / 60;
+
+    let timezoneOffset = new Date().getTimezoneOffset() / 60;
+    if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
+
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -173,8 +176,8 @@ describe('DateInput', () => {
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
-      `${year}-${month}-20T0${timezoneOffset}:00:00.000Z`,
-      `${year}-${month}-20T0${timezoneOffset}:00:00.000Z`,
+      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
+      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
     ]);
     expect(container.firstChild).toMatchSnapshot();
   });
