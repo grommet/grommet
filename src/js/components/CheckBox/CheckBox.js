@@ -41,6 +41,10 @@ const CheckBox = forwardRef(
       onBlur,
       onChange,
       onFocus,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOut,
+      onMouseOver,
       pad,
       reverse,
       toggle,
@@ -195,12 +199,16 @@ const CheckBox = forwardRef(
     return (
       <StyledCheckBoxContainer
         aria-label={a11yTitle}
-        fill={fill}
+        fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
         pad={pad}
+        onMouseEnter={event => onMouseEnter?.(event)}
+        onMouseOver={event => onMouseOver?.(event)}
+        onMouseLeave={event => onMouseLeave?.(event)}
+        onMouseOut={event => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}
