@@ -176,7 +176,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // input. if it is an object, then the user has not provided necessary
     // props to reduce object option
 
-    if (typeof nextValue !== 'object' && nextValue !== event.target.value) {
+    if (typeof nextValue !== 'object' && nextValue !== event.target.value && inputRef.current) {
       // select registers changing option as a click event or keydown.
       // when in a form, we need to programatically trigger a change
       // event in order for the change event to be registered upstream
