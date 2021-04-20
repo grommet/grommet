@@ -152,7 +152,9 @@ describe('DateInput', () => {
   test('dates initialized with empty array', () => {
     const onChange = jest.fn(event => event.value);
     // month is indexed from 0, so we add one
-    const month = new Date().getMonth() + 1;
+    let month = new Date().getMonth() + 1;
+    if (month < 10) month = `0${month}`;
+
     const year = new Date().getFullYear();
     const timezoneOffset = new Date().getTimezoneOffset() / 60;
     const { container, getByText } = render(
@@ -171,8 +173,8 @@ describe('DateInput', () => {
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
-      `${year}-0${month}-20T0${timezoneOffset}:00:00.000Z`,
-      `${year}-0${month}-20T0${timezoneOffset}:00:00.000Z`,
+      `${year}-${month}-20T0${timezoneOffset}:00:00.000Z`,
+      `${year}-${month}-20T0${timezoneOffset}:00:00.000Z`,
     ]);
     expect(container.firstChild).toMatchSnapshot();
   });
