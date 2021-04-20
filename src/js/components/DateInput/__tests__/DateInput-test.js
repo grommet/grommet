@@ -153,6 +153,7 @@ describe('DateInput', () => {
     const onChange = jest.fn(event => event.value);
     const month = new Date().getMonth();
     const year = new Date().getFullYear();
+    const timezoneOffset = new Date().getTimezoneOffset() / 60;
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -170,8 +171,8 @@ describe('DateInput', () => {
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
       // month is indexed from 0, so we add one
-      `${year}-0${month + 1}-20T07:00:00.000Z`,
-      `${year}-0${month + 1}-20T07:00:00.000Z`,
+      `${year}-0${month + 1}-20T0${timezoneOffset}:00:00.000Z`,
+      `${year}-0${month + 1}-20T0${timezoneOffset}:00:00.000Z`,
     ]);
     expect(container.firstChild).toMatchSnapshot();
   });
