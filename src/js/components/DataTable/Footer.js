@@ -45,6 +45,7 @@ const Footer = forwardRef(
                 theme,
                 'footer',
               )}
+              context="footer"
               pin={pin}
             />
           )}

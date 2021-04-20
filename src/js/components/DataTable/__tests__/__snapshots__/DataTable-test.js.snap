@@ -3196,8 +3196,9 @@ exports[`DataTable custom theme 1`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
-        <td
+        <th
           class="c3 "
+          scope="col"
         />
         <th
           class="c4 "
@@ -3383,8 +3384,9 @@ exports[`DataTable custom theme 2`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
-        <td
+        <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gnXESi StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          scope="col"
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cMrTAl StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6547,8 +6549,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             </div>
           </button>
         </td>
-        <td
+        <th
           class="c7 "
+          scope="col"
         >
           <div
             class="c8"
@@ -6582,7 +6585,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="c15 "
           scope="col"
@@ -7344,8 +7347,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             </div>
           </button>
         </td>
-        <td
+        <th
           class="c7 "
+          scope="col"
         >
           <div
             class="c8"
@@ -7379,7 +7383,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="c15 "
           scope="col"
@@ -8033,8 +8037,9 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
             </div>
           </button>
         </td>
-        <td
+        <th
           class="c7 "
+          scope="col"
         >
           <div
             class="c8"
@@ -8068,7 +8073,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="c15 "
           scope="col"
@@ -8682,8 +8687,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
             </div>
           </button>
         </td>
-        <td
+        <th
           class="c7 "
+          scope="col"
         >
           <div
             class="c8"
@@ -8706,7 +8712,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="c14 "
           scope="col"
@@ -8936,8 +8942,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             </div>
           </button>
         </td>
-        <td
+        <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          scope="col"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
@@ -8995,7 +9002,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
@@ -9295,8 +9302,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             </div>
           </button>
         </td>
-        <td
+        <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          scope="col"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
@@ -9319,7 +9327,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
@@ -16957,8 +16965,9 @@ exports[`DataTable select 1`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
-        <td
+        <th
           class="c3 "
+          scope="col"
         >
           <div
             class="c4"
@@ -16992,7 +17001,7 @@ exports[`DataTable select 1`] = `
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="c11 "
           scope="col"
@@ -17128,8 +17137,9 @@ exports[`DataTable select 2`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
-        <td
+        <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          scope="col"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 htEqSX"
@@ -17183,7 +17193,7 @@ exports[`DataTable select 2`] = `
               </div>
             </label>
           </div>
-        </td>
+        </th>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"

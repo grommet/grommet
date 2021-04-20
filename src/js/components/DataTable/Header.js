@@ -143,6 +143,8 @@ const Header = forwardRef(
               }
               plain="noPad"
               size="auto"
+              context="header"
+              scope="col"
               pin={pin}
             >
               {onSelect && (
