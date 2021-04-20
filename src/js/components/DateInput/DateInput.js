@@ -92,7 +92,9 @@ const DateInput = forwardRef(
         id={inline && !format ? id : undefined}
         range={range}
         date={range ? undefined : value}
-        dates={range ? [value] : undefined}
+        // when caller initializes with empty array, dates
+        // should be undefined
+        dates={range && value.length ? [value] : undefined}
         onSelect={
           disabled
             ? undefined
