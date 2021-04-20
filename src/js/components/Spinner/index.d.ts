@@ -8,6 +8,8 @@ export interface SpinnerProps {
   message?: string | { start?: string; end?: string };
 }
 
-declare const Spinner: React.FC<BoxProps & SpinnerProps>;
+export interface SpinnerExtendedProps extends BoxProps, SpinnerProps {}
+
+declare const Spinner: React.FC<SpinnerExtendedProps>;
 
 export { Spinner };
