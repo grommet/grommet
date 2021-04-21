@@ -24,7 +24,9 @@ export const formatToSchema = format => {
 
 // convert value into text representation using the schema
 export const valueToText = (value, schema) => {
-  if (!value) return '';
+  // when user initializes dates as empty array, we want to still
+  // show the placeholder text
+  if (!value || (Array.isArray(value) && !value.length)) return '';
   let text = '';
 
   const dates = (Array.isArray(value) ? value : [value]).map(v => new Date(v));
