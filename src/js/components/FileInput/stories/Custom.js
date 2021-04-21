@@ -5,6 +5,13 @@ import { Trash } from 'grommet-icons';
 
 const customTheme = {
   fileInput: {
+    button: {
+      pad: {
+        vertical: '4px',
+        horizontal: '8px',
+      },
+      default: {},
+    },
     background: '#f2f2f2',
     border: { size: 'medium' },
     pad: { horizontal: 'large', vertical: 'medium' },
