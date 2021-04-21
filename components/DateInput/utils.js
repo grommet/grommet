@@ -31,7 +31,9 @@ var formatToSchema = function formatToSchema(format) {
 exports.formatToSchema = formatToSchema;
 
 var valueToText = function valueToText(value, schema) {
-  if (!value) return '';
+  // when user initializes dates as empty array, we want to still
+  // show the placeholder text
+  if (!value || Array.isArray(value) && !value.length) return '';
   var text = '';
   var dates = (Array.isArray(value) ? value : [value]).map(function (v) {
     return new Date(v);

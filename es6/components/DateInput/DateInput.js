@@ -97,8 +97,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
     range: range,
-    date: range ? undefined : value,
-    dates: range ? [value] : undefined,
+    date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
+    // allowing the user to select both begin and end of the range
+    ,
+    dates: range && value.length ? [value] : undefined,
     onSelect: disabled ? undefined : function (nextValue) {
       var normalizedValue;
 
