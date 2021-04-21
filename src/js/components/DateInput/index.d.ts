@@ -17,7 +17,6 @@ export interface DateInputProps {
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
-  disabled?: boolean;
 }
 export interface DateInputExtendedProps
   extends DateInputProps,
