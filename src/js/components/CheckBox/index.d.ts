@@ -5,6 +5,7 @@ export interface CheckBoxProps {
   a11yTitle?: A11yTitleType;
   checked?: boolean;
   disabled?: boolean;
+  fill?: boolean;
   id?: string;
   label?: React.ReactNode;
   name?: string;
