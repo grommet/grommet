@@ -2,12 +2,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
-import { StyledDataTableFooter } from './StyledDataTable';
+import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
+import { calcPinnedBackground } from './buildState';
 var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
       border = _ref.border,
@@ -22,6 +24,8 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       selected = _ref.selected,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "primaryProperty", "selected"]);
 
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var pin = tablePin ? ['bottom'] : [];
   return /*#__PURE__*/React.createElement(StyledDataTableFooter, _extends({
     ref: ref,
     fillProp: fill,
@@ -31,12 +35,13 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
-  }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: background
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, {
+    background: calcPinnedBackground(background, pin, theme, 'footer'),
+    context: "footer",
+    pin: pin
   }), columns.map(function (column) {
-    var pin = [];
-    if (tablePin) pin.push('bottom');
-    if (column.pin) pin.push('left');
+    var cellPin = [].concat(pin);
+    if (column.pin) cellPin.push('left');
     return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
       background: background,

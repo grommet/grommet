@@ -1,7 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
+exports.calcPinnedBackground = exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
@@ -264,6 +266,31 @@ var normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
   if (background.light && background.dark) return background;
   if (background.color) return background.color;
   return undefined;
-};
+}; // calculate a header or footer cell background based
+// on the table background prop and whether it's pinned.
+// Pin is an array of side strings, empty if not pinned.
+// If pinned, the background comes from the
+// datable.pinned[themeContext].background in the theme
+// where themeContext is either 'header' or 'footer'.
+
 
 exports.normalizeBackgroundColor = normalizeBackgroundColor;
+
+var calcPinnedBackground = function calcPinnedBackground(backgroundProp, pin, theme, themeContext) {
+  var background;
+  if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
+    background = theme.dataTable.pinned[themeContext].background;
+
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = _extends({}, background, {
+        color: normalizeBackgroundColor(theme)
+      });
+    }
+  } else background = undefined;
+  return background;
+};
+
+exports.calcPinnedBackground = calcPinnedBackground;

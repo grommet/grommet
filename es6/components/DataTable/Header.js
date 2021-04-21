@@ -14,7 +14,7 @@ import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
-import { datumValue, normalizeBackgroundColor } from './buildState';
+import { datumValue, calcPinnedBackground } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors'; // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -119,8 +119,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       layoutProps = _separateThemeProps2[1],
       textProps = _separateThemeProps2[2];
 
-  var background;
-  if (backgroundProp) background = backgroundProp;else background = undefined;
+  var pin = tablePin ? ['top'] : [];
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
@@ -130,10 +129,13 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       return !groupState[k].expanded;
     }).length === 0,
     onToggle: onToggle
-  }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: background || cellProps.background,
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, {
+    background: calcPinnedBackground(backgroundProp, pin, theme, 'header') || cellProps.background,
     plain: "noPad",
-    size: "auto"
+    size: "auto",
+    context: "header",
+    scope: "col",
+    pin: pin
   }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
@@ -241,21 +243,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       }, searcher, resizer) : searcher || resizer);
     }
 
-    var pin = [];
-    if (tablePin) pin.push('top');
-    if (columnPin) pin.push('left');
-    if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
-      background = theme.dataTable.pinned.header.background;
-
-      if (!background.color && theme.background) {
-        // theme context has an active background color but the
-        // theme doesn't set an explicit color, repeat the context
-        // background explicitly
-        background = _extends({}, background, {
-          color: normalizeBackgroundColor(theme)
-        });
-      }
-    } else background = undefined;
+    var cellPin = [].concat(pin);
+    if (columnPin) cellPin.push('left');
+    var background = calcPinnedBackground(backgroundProp, cellPin, theme, 'header');
     return /*#__PURE__*/React.createElement(StyledDataTableCell, {
       key: property,
       align: align,
@@ -264,7 +254,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       background: background || cellProps.background,
       border: border || cellProps.border,
       pad: pad,
-      pin: pin,
+      pin: cellPin,
       plain: true,
       scope: "col",
       size: widths && widths[property] ? undefined : size,

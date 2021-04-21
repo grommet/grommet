@@ -5,6 +5,8 @@ exports.Footer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _defaultProps = require("../../default-props");
 
 var _TableRow = require("../TableRow");
@@ -14,6 +16,8 @@ var _TableCell = require("../TableCell");
 var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
+
+var _buildState = require("./buildState");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -37,6 +41,9 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       selected = _ref.selected,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "primaryProperty", "selected"]);
 
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
+  var pin = tablePin ? ['bottom'] : [];
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableFooter, _extends({
     ref: ref,
     fillProp: fill,
@@ -46,12 +53,13 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
-  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-    background: background
+  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
+    background: (0, _buildState.calcPinnedBackground)(background, pin, theme, 'footer'),
+    context: "footer",
+    pin: pin
   }), columns.map(function (column) {
-    var pin = [];
-    if (tablePin) pin.push('bottom');
-    if (column.pin) pin.push('left');
+    var cellPin = [].concat(pin);
+    if (column.pin) cellPin.push('left');
     return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
       key: column.property,
       background: background,
