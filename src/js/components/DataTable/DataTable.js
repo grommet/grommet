@@ -168,6 +168,9 @@ const DataTable = ({
   // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);
 
+  // multiple pinned columns offset
+  const [pinnedOffset, setPinnedOffset] = useState({});
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const nextScrollOffset =
@@ -189,6 +192,40 @@ const DataTable = ({
       } else setFooterHeight(0);
     }
   }, [footerRef, headerRef, placeholder]);
+
+  useEffect(() => {
+    const getPinnedOffset = () => {
+      const pinnedProperties = columns
+        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
+        .filter(n => n);
+
+      const pinnedColumnsProperties = {};
+      const firstRowCells = headerRef?.current?.firstChild?.cells || [];
+
+      if (firstRowCells.length !== 0) {
+        pinnedProperties.forEach((property, index) => {
+          const tableIndex = columns.findIndex(
+            column => column.property === property,
+          );
+
+          if (firstRowCells[tableIndex]) {
+            pinnedColumnsProperties[property] = {
+              width: firstRowCells[tableIndex].getBoundingClientRect()?.width,
+              left:
+                tableIndex === 0
+                  ? 0
+                  : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
+                    pinnedColumnsProperties[pinnedProperties[index - 1]].width,
+            };
+          }
+        });
+      }
+      return pinnedColumnsProperties;
+    };
+
+    setPinnedOffset(getPinnedOffset());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);
@@ -289,40 +326,6 @@ const DataTable = ({
     paginate && (fill === true || fill === 'horizontal')
       ? { style: { minWidth: '100%' } }
       : undefined;
-
-  const pinnedColumns = columns
-    .map(
-      (pinnedColumn, index) =>
-        pinnedColumn.pin && { property: pinnedColumn.property, id: index },
-    )
-    .filter(n => n);
-
-  const getPinnedOffset = () => {
-    const pinnedPropertiesOrder = [];
-    const pinnedColumnsProperties = {};
-    const firstRowCells = headerRef?.current?.firstChild?.cells || [];
-
-    if (firstRowCells.length !== 0) {
-      pinnedColumns.forEach(({ property, id }, index) => {
-        if (firstRowCells[id]) {
-          pinnedPropertiesOrder.push(property);
-          pinnedColumnsProperties[property] = {
-            width: firstRowCells[id].getBoundingClientRect()?.width,
-            left:
-              index === 0
-                ? 0
-                : pinnedColumnsProperties[pinnedPropertiesOrder[index - 1]]
-                    .left +
-                  pinnedColumnsProperties[pinnedPropertiesOrder[index - 1]]
-                    .width,
-          };
-        }
-      });
-    }
-    return pinnedColumnsProperties;
-  };
-
-  const pinnedOffset = getPinnedOffset();
 
   return (
     <Container {...containterProps}>

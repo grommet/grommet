@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  DataTable,
-  Grommet,
-  grommet,
-  Meter,
-  Text,
-  ResponsiveContext,
-} from 'grommet';
+import { Box, DataTable, Grommet, grommet, Meter, Text } from 'grommet';
 
 const data = [
   {
@@ -274,17 +266,12 @@ const handleClickRow = obj => {
   `);
 };
 
-const MultiplePins = () => {
-  const size = React.useContext(ResponsiveContext);
-  return (
-    <>
-      <Box>ResponsiveContext size: {size}</Box>
-      <Box>
-        Columns `id`, `Pool Name` and `Group Name` will become pinned columns
-        once the current ResponsiveContext size is `small`
-      </Box>
-      <Box height="medium" overflow="auto">
+export const MultiplePins = () => (
+  <Grommet theme={grommet}>
+    <Box align="center">
+      <Box height="medium" width="600px" overflow="auto">
         <DataTable
+          background={{ pinned: 'pink' }}
           data={data}
           columns={[
             {
@@ -292,19 +279,19 @@ const MultiplePins = () => {
               header: 'Id',
               primary: true,
               render: datum => datum.id.slice(datum.id.length - 5),
-              pin: size === 'small',
+              pin: true,
             },
             {
               property: 'poolName',
               header: 'Pool Name',
               render: datum => <Text truncate>{datum.poolName}</Text>,
               primary: true,
-              pin: size === 'small',
+              pin: true,
             },
             {
               property: 'groupName',
               header: 'Group Name',
-              pin: size === 'small',
+              pin: true,
             },
             ...columns,
           ]}
@@ -314,17 +301,11 @@ const MultiplePins = () => {
           sortable
         />
       </Box>
-    </>
-  );
-};
-
-export const grommetWrapper = () => (
-  <Grommet theme={grommet}>
-    <MultiplePins />
+    </Box>
   </Grommet>
 );
 
-grommetWrapper.storyName = 'Multiple pins';
+MultiplePins.storyName = 'Multiple pins';
 
 export default {
   title: 'Visualizations/DataTable/Multiple pins',
