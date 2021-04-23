@@ -356,4 +356,15 @@ describe('DateInput', () => {
     expect(tree).toMatchSnapshot();
     component.unmount();
   });
+
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput disabled />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    component.unmount();
+  });
 });
