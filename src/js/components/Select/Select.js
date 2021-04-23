@@ -186,23 +186,26 @@ const Select = forwardRef(
         setValue(nextValue);
         if (onChange) {
           event.persist();
-          let adjustedEvent;
-          // support for native event used by Preact
-          if (event instanceof Event) {
-            adjustedEvent = new event.constructor(event.type, event);
-            Object.defineProperties(adjustedEvent, {
-              target: { value: inputRef.current },
-              value: { value: nextValue },
-              option: { value: option },
-              selected: { value: nextSelected },
-            });
-          } else {
-            adjustedEvent = event;
-            adjustedEvent.target = inputRef.current;
-            adjustedEvent.value = nextValue;
-            adjustedEvent.option = option;
-            adjustedEvent.selected = nextSelected;
-          }
+          const adjustedEvent =
+            event instanceof Event
+              ? // native event
+                new event.constructor(event.type, event)
+              : // react SyntheticBaseEvent
+                new event.constructor(
+                  // eslint-disable-next-line no-underscore-dangle
+                  event._reactName,
+                  event.type,
+                  // eslint-disable-next-line no-underscore-dangle
+                  event._targetInst,
+                  event.nativeEvent,
+                  event.target,
+                );
+          Object.defineProperties(adjustedEvent, {
+            target: { value: inputRef.current },
+            value: { value: nextValue },
+            option: { value: option },
+            selected: { value: nextSelected },
+          });
           onChange(adjustedEvent);
         }
         setSearch();
