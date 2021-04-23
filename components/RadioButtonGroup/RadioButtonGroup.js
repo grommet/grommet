@@ -27,13 +27,14 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
+      defaultValue = _ref.defaultValue,
       disabled = _ref.disabled,
       name = _ref.name,
       _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
       gap = _ref.gap,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "name", "onChange", "options", "value", "gap"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "defaultValue", "disabled", "name", "onChange", "options", "value", "gap"]);
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
@@ -52,7 +53,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     }, o);
   });
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 
