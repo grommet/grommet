@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
@@ -146,7 +148,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     return overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
   }, [overflow, size, strokeWidth]); // set container size when we get ref or when size changes
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     if (containerRef.current && needContainerSize) {
       var containerNode = containerRef.current;
 

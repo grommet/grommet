@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
@@ -153,7 +155,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return clearTimeout(timer);
     };
   }, [interacting]);
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     var video = videoRef.current;
 
     if (video) {

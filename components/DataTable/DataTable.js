@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _Box = require("../Box");
 
 var _Text = require("../Text");
@@ -171,13 +173,13 @@ var DataTable = function DataTable(_ref) {
       setScrollOffset = _useState10[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
 
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     var _bodyRef$current$pare;
 
     var nextScrollOffset = ((_bodyRef$current$pare = bodyRef.current.parentElement) == null ? void 0 : _bodyRef$current$pare.clientWidth) - bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     if (placeholder) {
       if (headerRef.current) {
         var nextHeaderHeight = headerRef.current.getBoundingClientRect().height;

@@ -1,5 +1,6 @@
-import React, { forwardRef, useContext, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';

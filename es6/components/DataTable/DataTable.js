@@ -2,8 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState, Fragment } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState, Fragment } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';

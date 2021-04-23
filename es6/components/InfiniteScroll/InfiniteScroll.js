@@ -1,4 +1,5 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';
 import { Box } from '../Box';
 

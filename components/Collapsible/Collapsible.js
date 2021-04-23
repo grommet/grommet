@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
@@ -94,7 +96,7 @@ var Collapsible = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setSpeed(nextSpeed);
     }
   }, [animate, containerRef, dimension, open, theme]);
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     if (animate && size) {
       var container = containerRef.current;
       requestAnimationFrame(function () {

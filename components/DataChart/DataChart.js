@@ -5,6 +5,8 @@ exports.DataChart = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _Box = require("../Box");
 
 var _Chart = require("../Chart");
@@ -457,7 +459,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return result;
   }, [axis, data, series]); // for ie11, align the spacer Box height to the x-axis height
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     if (xRef.current && spacerRef.current) {
       var rect = xRef.current.getBoundingClientRect();
       spacerRef.current.style.height = rect.height + "px";

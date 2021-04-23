@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _utils = require("../../utils");
 
 var _LayerContainer = require("./LayerContainer");
@@ -43,7 +45,7 @@ var Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     return setLayerContainer((0, _utils.getNewContainer)(containerTarget, targetChildPosition));
   }, [containerTarget, targetChildPosition]); // just a few things to clean up when the Layer is unmounted
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     return function () {
       if (originalFocusedElement) {
         if (originalFocusedElement.focus) {

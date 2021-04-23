@@ -5,6 +5,8 @@ exports.InfiniteScroll = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -163,7 +165,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     }
   }, [lastPage, pendingLength, show, step, items.length]); // scroll to any 'show'
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     // ride out any animation delays, 100ms empirically measured
     var timer = setTimeout(function () {
       if (show && belowMarkerRef.current) {
@@ -190,7 +192,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
     };
   }, [renderPageBounds, show, step]); // calculate and keep track of page heights
 
-  (0, _react.useLayoutEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     // if don't have a belowMarker, we must have rendered everything already
     if (!belowMarkerRef.current) return; // calculate page heights for rendered pages
 
