@@ -946,6 +946,42 @@ describe('Select', () => {
     expect(container.firsChild).toMatchSnapshot();
   });
 
+  test('onChange with valueLabel', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          value={value}
+          valueLabel={<span>{value || 'none'}</span>}
+          options={['one', 'two']}
+          onChange={event => {
+            setValue(event.value);
+            onChange(event);
+          }}
+        />
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('none'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('one'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 'one',
+        option: 'one',
+      }),
+    );
+  });
+
   test('selected', () => {
     const { container, getByPlaceholderText } = render(
       <Grommet>
