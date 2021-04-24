@@ -79,3 +79,7 @@ export const Stacked = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Avatar/Stacked',
+};

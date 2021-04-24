@@ -14,7 +14,11 @@ for (let i = 1; i < 8; i += 1) {
 export const Simple = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <DataChart data={data} series="percent" />
+      <DataChart data={data} series={[{ property: 'percent' }, {}]} />
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Simple',
+};

@@ -23,6 +23,7 @@ const grommetInputNames = [
   'MaskedInput',
   'TextArea',
   'DateInput',
+  'FileInput',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -116,6 +117,18 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 const FormField = forwardRef(
   (
     {
@@ -132,6 +145,7 @@ const FormField = forwardRef(
       margin,
       name, // pass through in renderInput()
       onBlur,
+      onChange,
       onFocus,
       pad,
       required,
@@ -148,6 +162,7 @@ const FormField = forwardRef(
       info,
       inForm,
       onBlur: contextOnBlur,
+      onChange: contextOnChange,
     } = formContext.useFormField({
       error: errorProp,
       info: infoProp,
@@ -356,6 +371,13 @@ const FormField = forwardRef(
           }
         : {};
 
+    let { requiredIndicator } = theme.formField.label;
+    if (requiredIndicator === true)
+      // a11yTitle necessary so screenreader announces as "required"
+      // as opposed to "star"
+      // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
+      requiredIndicator = <Text a11yTitle="required">*</Text>;
+
     return (
       <FormFieldBox
         ref={ref}
@@ -373,6 +395,25 @@ const FormField = forwardRef(
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
+        onChange={
+          contextOnChange || onChange
+            ? event => {
+                event.persist();
+                if (onChange) onChange(event);
+                if (contextOnChange) {
+                  const debouncedFn = debounce(() => {
+                    contextOnChange(event);
+                    // A half second (500ms) debounce can be a helpful starting
+                    // point. You want to give the user time to fill out a
+                    // field, but capture their attention before they move on
+                    // past it. 2 second (2000ms) might be too long depending
+                    // on how fast people type, and 200ms would be an eye blink
+                  }, 500);
+                  debouncedFn();
+                }
+              }
+            : undefined
+        }
         {...containerRest}
       >
         {(label && component !== CheckBox) || help ? (
@@ -380,6 +421,7 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
+                {required && requiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />

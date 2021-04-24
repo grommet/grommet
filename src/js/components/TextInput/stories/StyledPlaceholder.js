@@ -13,6 +13,8 @@ export const StyledPlaceholder = () => (
   </Grommet>
 );
 
-StyledPlaceholder.story = {
-  name: 'Styled placeholder',
+StyledPlaceholder.storyName = 'Styled placeholder';
+
+export default {
+  title: 'Input/TextInput/Styled placeholder',
 };

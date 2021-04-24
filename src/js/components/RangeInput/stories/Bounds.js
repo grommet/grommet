@@ -64,3 +64,7 @@ export const Bounds = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/RangeInput/Bounds',
+};

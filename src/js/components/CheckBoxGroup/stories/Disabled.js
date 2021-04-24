@@ -23,3 +23,7 @@ export const Disabled = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/CheckBoxGroup/Disabled',
+};

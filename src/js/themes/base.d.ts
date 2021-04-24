@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  DirectionType,
   ElevationType,
   GapType,
   GraphColorsType,
@@ -21,6 +22,7 @@ import {
   RoundType,
   PadType,
   PropsOf,
+  AlignContentType,
 } from '../utils';
 
 import { BoxProps } from '../components/Box';
@@ -140,6 +142,74 @@ interface ButtonKindType {
     horizontal?: string;
   };
   extend?: ExtendType;
+}
+
+interface ButtonType {
+  border?: {
+    color?: ColorType;
+    width?: string;
+    radius?: string;
+  };
+  color?: ColorType;
+  extend?: ExtendType;
+  minWidth?: string;
+  maxWidth?: string;
+  padding?: {
+    vertical?: string;
+    horizontal?: string;
+  };
+  default?: ButtonKindType;
+  primary?: ButtonKindType;
+  secondary?: ButtonKindType;
+  option?: ButtonKindType;
+  active?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  disabled?: ButtonKindType & { opacity?: OpacityType };
+  hover?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  size?: {
+    small?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    medium?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    large?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+  };
+  transition?: {
+    timing?: string;
+    duration?: number;
+    properties?: string[];
+  };
+}
+interface FormFieldLabelType extends TextProps {
+  requiredIndicator?: boolean | JSX.Element | string;
 }
 
 export interface ThemeType {
@@ -375,70 +445,7 @@ export interface ThemeType {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
-  button?: {
-    border?: {
-      color?: ColorType;
-      width?: string;
-      radius?: string;
-    };
-    color?: ColorType;
-    extend?: ExtendType;
-    minWidth?: string;
-    maxWidth?: string;
-    padding?: {
-      vertical?: string;
-      horizontal?: string;
-    };
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-    option?: ButtonKindType;
-    active?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    disabled?: ButtonKindType & { opacity?: OpacityType };
-    hover?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    size?: {
-      small?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      medium?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      large?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-    };
-    transition?: {
-      timing?: string;
-      duration?: number;
-      properties?: string[];
-    };
-  };
+  button?: ButtonType;
   calendar?: {
     day?: {
       extend?: ExtendType;
@@ -612,6 +619,7 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
+    container?: BoxProps;
     header?: {
       background?: BackgroundType;
       border?: BorderType;
@@ -691,6 +699,31 @@ export interface ThemeType {
     extend?: ExtendType;
     maxHeight?: string;
   };
+  fileInput?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    dragOver?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    extend?: ExtendType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    icons?: {
+      remove?: any;
+    };
+    label?: TextProps & { extend?: ExtendType };
+    margin?: MarginType;
+    message?: TextProps & { extend?: ExtendType };
+    pad?: PadType;
+    round?: RoundType;
+  };
   formField?: {
     border?: BorderType;
     content?: {
@@ -729,7 +762,7 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
-    label?: TextProps;
+    label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
   };
@@ -911,6 +944,7 @@ export interface ThemeType {
     zIndex?: string;
   };
   list?: {
+    container?: BoxProps;
     item?: {
       background?: BackgroundType;
       border?:
@@ -947,6 +981,22 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+  };
+  pagination?: {
+    button?: ButtonType;
+    container?: BoxProps;
+    controls?: {
+      align?: AlignContentType;
+      direction?: DirectionType;
+      gap?: GapType;
+      pad?: PadType;
+      margin?: MarginType;
+    };
+    icons?: {
+      color?: ColorType;
+      next?: React.ReactNode;
+      previous?: React.ReactNode;
+    };
   };
   paragraph?: {
     extend?: ExtendType;
@@ -1192,27 +1242,27 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
-    '2xl?': {
+    '2xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '3xl?': {
+    '3xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '4xl?': {
+    '4xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '5xl?': {
+    '5xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '6xl?': {
+    '6xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;

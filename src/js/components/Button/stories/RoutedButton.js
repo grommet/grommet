@@ -18,3 +18,9 @@ export const RoutedButton = () => (
     </Box>
   </Grommet>
 );
+
+RoutedButton.storyName = 'Routed button';
+
+export default {
+  title: `Controls/Button/Routed button`,
+};

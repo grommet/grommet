@@ -28,3 +28,7 @@ export const Labelled = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Meter/Labelled',
+};

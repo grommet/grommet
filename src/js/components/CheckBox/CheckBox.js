@@ -31,6 +31,7 @@ const CheckBox = forwardRef(
     {
       a11yTitle,
       checked: checkedProp,
+      defaultChecked = false,
       disabled,
       focus: focusProp,
       id,
@@ -52,7 +53,7 @@ const CheckBox = forwardRef(
     const [checked, setChecked] = formContext.useFormInput(
       name,
       checkedProp,
-      false,
+      defaultChecked,
     );
 
     const [focus, setFocus] = useState(focusProp);

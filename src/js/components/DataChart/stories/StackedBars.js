@@ -45,3 +45,9 @@ export const StackedBars = () => (
     </Box>
   </Grommet>
 );
+
+StackedBars.storyName = 'Stacked bars';
+
+export default {
+  title: 'Visualizations/DataChart/Stacked bars',
+};

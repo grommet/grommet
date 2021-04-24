@@ -20,3 +20,7 @@ export const Fill = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/TextArea/Fill',
+};

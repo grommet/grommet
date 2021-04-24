@@ -20,3 +20,7 @@ export const Format = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/DateInput/Format',
+};

@@ -10,3 +10,7 @@ export const Simple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/CheckBoxGroup/Simple',
+};

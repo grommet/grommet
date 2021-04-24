@@ -45,6 +45,8 @@ export const MeterInTable = () => (
   </Grommet>
 );
 
-MeterInTable.story = {
-  name: 'Meter inside table',
+MeterInTable.storyName = 'Meter inside table';
+
+export default {
+  title: 'Visualizations/Table/Meter inside table',
 };

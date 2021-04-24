@@ -275,7 +275,12 @@ const SelectContainer = forwardRef(
           event.preventDefault();
 
           const nextActiveIndex = options.findIndex((e, index) => {
-            const label = typeof e === 'object' ? e.label : e;
+            let label;
+            if (typeof e === 'object') {
+              label = e.label || applyKey(e, labelKey);
+            } else {
+              label = e;
+            }
             return (
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
               !isDisabled(index)
@@ -291,7 +296,7 @@ const SelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, options, isDisabled, onSearch],
+      [onKeyDown, options, isDisabled, onSearch, labelKey],
     );
 
     const onActiveOption = useCallback(

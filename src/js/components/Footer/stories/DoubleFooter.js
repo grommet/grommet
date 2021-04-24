@@ -53,4 +53,8 @@ export const DoubleFooter = () => (
   </Grommet>
 );
 
-DoubleFooter.story = { name: 'Double footer' };
+DoubleFooter.storyName = 'Double footer';
+
+export default {
+  title: 'Layout/Footer/Double footer',
+};

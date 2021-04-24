@@ -55,4 +55,8 @@ export const MultipleValues = () => {
   );
 };
 
-MultipleValues.story = { name: 'Multiple values' };
+MultipleValues.storyName = 'Multiple values';
+
+export default {
+  title: 'Visualizations/Meter/Multiple values',
+};

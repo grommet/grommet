@@ -6,6 +6,7 @@ import {
   CheckBox,
   Form,
   FormField,
+  FileInput,
   Grommet,
   MaskedInput,
   RadioButtonGroup,
@@ -56,6 +57,9 @@ export const Uncontrolled = () => (
           <FormField label="Age" name="age" pad>
             <RangeInput name="age" min={15} max={75} />
           </FormField>
+          <FormField label="Image" name="image">
+            <FileInput name="image" />
+          </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
@@ -66,3 +70,7 @@ export const Uncontrolled = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/Form/Uncontrolled',
+};
