@@ -7150,6 +7150,12 @@ number
         "name": "value",
       },
       Object {
+        "description": "Search Value text to use in the search box to
+      search some option on the Select component.",
+        "format": "string",
+        "name": "searchValue",
+      },
+      Object {
         "description": "Provides custom rendering of the value. If not provided, Select
       will render the value automatically.",
         "format": "node",
