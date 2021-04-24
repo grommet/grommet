@@ -21,6 +21,10 @@ small
 medium
 large
 xlarge
+2xl
+3xl
+4xl
+5xl
 string
 ```
 
@@ -99,6 +103,46 @@ Defaults to
 96px
 ```
 
+**avatar.size.2xl**
+
+The 2xlarge size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+120px
+```
+
+**avatar.size.3xl**
+
+The 3xlarge size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+144px
+```
+
+**avatar.size.4xl**
+
+The 4xlarge size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+168px
+```
+
+**avatar.size.5xl**
+
+The 5xlarge size of the Avatar. Expects `string`.
+
+Defaults to
+
+```
+192px
+```
+
 **avatar.text.extend**
 
 Any additional style for the text. Expects `string | (props) => {}`.
@@ -126,7 +170,7 @@ The size of the text that is mapped according to 'avatar.size.xsmall'. Expects `
 Defaults to
 
 ```
-small
+14px
 ```
 
 **avatar.text.size.small**
@@ -136,7 +180,7 @@ The size of the text that is mapped according to 'avatar.size.small'. Expects `s
 Defaults to
 
 ```
-medium
+18px
 ```
 
 **avatar.text.size.medium**
@@ -146,7 +190,7 @@ The size of the text that is mapped according to 'avatar.size.medium'. Expects `
 Defaults to
 
 ```
-large
+22px
 ```
 
 **avatar.text.size.large**
@@ -156,7 +200,7 @@ The size of the text that is mapped according to 'avatar.size.large'. Expects `s
 Defaults to
 
 ```
-xlarge
+26px
 ```
 
 **avatar.text.size.xlarge**
@@ -166,5 +210,45 @@ The size of the text that is mapped according to 'avatar.size.xlarge'. Expects `
 Defaults to
 
 ```
-xxlarge
+34px
+```
+
+**avatar.text.size.2xl**
+
+The size of the text that is mapped according to 'avatar.size.2xl'. Expects `string`.
+
+Defaults to
+
+```
+42px
+```
+
+**avatar.text.size.3xl**
+
+The size of the text that is mapped according to 'avatar.size.3xl'. Expects `string`.
+
+Defaults to
+
+```
+54px
+```
+
+**avatar.text.size.4xl**
+
+The size of the text that is mapped according to 'avatar.size.4xl'. Expects `string`.
+
+Defaults to
+
+```
+70px
+```
+
+**avatar.text.size.5xl**
+
+The size of the text that is mapped according to 'avatar.size.5xl'. Expects `string`.
+
+Defaults to
+
+```
+90px
 ```

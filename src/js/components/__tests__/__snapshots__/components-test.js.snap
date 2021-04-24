@@ -1485,7 +1485,9 @@ string",
         "name": "target",
       },
       Object {
-        "description": "tooltip or a hint when hovering over the button.",
+        "description": "tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.",
         "format": "{
   content: 
     node
@@ -2295,6 +2297,13 @@ point",
         "name": "disabled",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "The DOM id attribute value to use for the underlying <input/> element.",
         "format": "string",
         "name": "id",
@@ -2317,6 +2326,86 @@ point",
       via event.target.checked. Same as React <input onChange={} />.",
         "format": "function",
         "name": "onChange",
+      },
+      Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
       },
       Object {
         "defaultValue": false,
@@ -3193,7 +3282,8 @@ string",
         "description": "The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.",
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.",
         "format": "string",
         "name": "format",
       },
@@ -3855,7 +3945,7 @@ string",
         "description": "Provides custom rendering of the file. If not provided, the file's
       name will be shown. It will be passed the browser File object as
       an argument. For example: (file) => <Text>{file.name}</Text>",
-        "format": "node",
+        "format": "function",
         "name": "renderFile",
       },
     ],
@@ -5353,7 +5443,8 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain Layer with no background color or border.",
+        "description": "Whether this is a plain Layer with no background color, border, or 
+        elevation.",
         "format": "boolean",
         "name": "plain",
       },
@@ -5514,8 +5605,7 @@ string",
         "description": "Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />",
+      'action = ({item, index}) => <Content />'",
         "format": "function",
         "name": "action",
       },
@@ -5587,8 +5677,7 @@ end
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      ",
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'",
         "format": "function",
         "name": "children",
       },
@@ -7476,9 +7565,10 @@ string",
       },
       Object {
         "defaultValue": undefined,
-        "description": "The message that will be announced for screen readers when message 
-        is a string. When an object, the start message will be announced 
-        as the Spinner shows, and the end message as the spinner closes.",
+        "description": "When message is a string, the message will be announced for 
+        screen readers once the Spinner is loaded. 
+        When an object, the 'start' message will be announced 
+        as the Spinner appears, and the 'end' message as the spinner closes.",
         "format": "string
 {
   start: string,
@@ -7545,7 +7635,8 @@ string",
       Object {
         "defaultValue": false,
         "description": "Whether default styling context should be removed.",
-        "format": "boolean",
+        "format": "boolean
+noPad",
         "name": "plain",
       },
       Object {
@@ -8306,7 +8397,6 @@ number",
       },
       Object {
         "defaultValue": Object {
-          "plain": true,
           "trapFocus": false,
         },
         "description": "Any valid Drop prop to style the Tip drop container.",
@@ -8315,7 +8405,7 @@ number",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether content should have default styling.",
+        "description": "Whether content should have default styling from tip.content.",
         "format": "boolean",
         "name": "plain",
       },

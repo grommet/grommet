@@ -32,7 +32,10 @@ export interface AnchorProps {
   weight?: 'normal' | 'bold' | number;
 }
 
-declare const Anchor: React.FC<AnchorProps &
-  Omit<JSX.IntrinsicElements['a'], 'color'>>;
+type aProps = Omit<JSX.IntrinsicElements['a'], 'color'>;
+
+export interface AnchorExtendedProps extends AnchorProps, aProps {}
+
+declare const Anchor: React.FC<AnchorExtendedProps>;
 
 export { Anchor };
