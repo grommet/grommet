@@ -80,6 +80,52 @@ const Form = forwardRef(
     }, [errorsProp, infosProp]);
     const validations = useRef({});
 
+    const buildValid = nextErrors => {
+      let valid = false;
+
+      valid = requiredFields
+        .filter(n => Object.keys(validations.current).includes(n))
+        .every(
+          field =>
+            value[field] && (value[field] !== '' || value[field] !== false),
+        );
+
+      if (Object.keys(nextErrors).length > 0) valid = false;
+      return valid;
+    };
+
+    useEffect(() => {
+      const validationsForSetFields = Object.entries(
+        validations.current,
+      ).filter(([n]) => value[n]);
+      if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
+        const [validatedErrors, validatedInfos] = validate(
+          validationsForSetFields,
+          value,
+        );
+
+        setValidationResults(prevValidationResults => {
+          const nextErrors = {
+            ...prevValidationResults.errors,
+            ...validatedErrors,
+          };
+          const nextInfos = {
+            ...prevValidationResults.infos,
+            ...validatedInfos,
+          };
+
+          const nextValidationResults = {
+            errors: nextErrors,
+            infos: nextInfos,
+            // Show form's validity when clicking on Submit
+            valid: buildValid(nextErrors),
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          return nextValidationResults;
+        });
+      }
+    }, []);
+
     // Currently, onBlur validation will trigger after a timeout of 120ms.
     useEffect(() => {
       const timer = setTimeout(() => {
@@ -116,24 +162,12 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
-            let valid = false;
-
-            valid = requiredFields
-              .filter(n => Object.keys(validations.current).includes(n))
-              .every(
-                field =>
-                  value[field] &&
-                  (value[field] !== '' || value[field] !== false),
-              );
-
-            if (Object.keys(nextErrors).length > 0) valid = false;
-
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
-              valid,
+              valid: buildValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
@@ -376,6 +410,7 @@ const Form = forwardRef(
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
+              valid: buildValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
             return nextValidationResults;
