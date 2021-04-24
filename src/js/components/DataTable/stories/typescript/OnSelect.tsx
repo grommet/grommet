@@ -24,6 +24,22 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'location',
     header: 'Location',
+    render: datum =>
+      datum.location ? (
+        <Box
+          pad={{ horizontal: 'small', vertical: 'xsmall' }}
+          onClick={() => {}}
+          hoverIndicator
+          fill
+        >
+          <Text truncate weight="bold">
+            {datum.location}
+          </Text>
+        </Box>
+      ) : (
+        undefined
+      ),
+    plain: true,
   },
   {
     property: 'date',

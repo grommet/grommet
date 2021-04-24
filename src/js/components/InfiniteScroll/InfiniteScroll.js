@@ -1,10 +1,5 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import {
   findScrollParent,
   findScrollParents,
@@ -151,12 +146,12 @@ const InfiniteScroll = ({
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
 
   useEffect(() => {
-    if (lastPage === 0 && pendingLength !== 0) {
+    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
       setPageHeights([]);
       setPendingLength(0);
       setRenderPageBounds([0, calculateLastPageBound(show, step)]);
     }
-  }, [lastPage, pendingLength, show, step]);
+  }, [lastPage, pendingLength, show, step, items.length]);
 
   // scroll to any 'show'
   useLayoutEffect(() => {

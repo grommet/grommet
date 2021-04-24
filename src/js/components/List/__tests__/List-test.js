@@ -421,4 +421,14 @@ describe('List events', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should not show paginate controls when length of data < step', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['entry-1', 'entry-2', 'entry-3']} paginate />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

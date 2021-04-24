@@ -158,6 +158,18 @@ const Form = forwardRef(
               )
               .map(n => delete nextInfos[n]);
 
+            let valid = false;
+
+            valid = requiredFields
+              .filter(n => Object.keys(validations.current).includes(n))
+              .every(
+                field =>
+                  value[field] &&
+                  (value[field] !== '' || value[field] !== false),
+              );
+
+            if (Object.keys(nextErrors).length > 0) valid = false;
+
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextValidationResults = {
