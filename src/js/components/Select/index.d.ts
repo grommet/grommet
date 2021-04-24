@@ -40,7 +40,7 @@ export interface SelectProps {
   onMore?: (...args: any[]) => any;
   onOpen?: (...args: any[]) => any;
   onSearch?: (search: string) => void;
-  searchValue?: string | JSX.Element | number | object;
+  searchValue?: string;
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
   placeholder?: PlaceHolderType;
