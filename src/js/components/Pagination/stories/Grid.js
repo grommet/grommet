@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
-import { Box, Card, Grid, Grommet, Pagination, Text } from 'grommet';
+import {
+  Box,
+  Card,
+  Grommet,
+  Pagination,
+  Text,
+  Grid as GrommetGrid,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const data = [];
@@ -17,7 +24,7 @@ const CardResult = ({ item }) => (
   </Card>
 );
 
-const PaginatedGrid = () => {
+export const Grid = () => {
   const [currentData, setCurrentData] = useState(data.slice(0, 10));
   const [indices, setIndices] = useState([0, 10]);
 
@@ -31,11 +38,16 @@ const PaginatedGrid = () => {
     <Grommet theme={grommet} full>
       <Box pad="large" gap="medium">
         <Box height={{ min: 'medium' }}>
-          <Grid columns="small" rows="small" gap="medium" justify="center">
+          <GrommetGrid
+            columns="small"
+            rows="small"
+            gap="medium"
+            justify="center"
+          >
             {currentData.map(datum => (
               <CardResult item={datum} key={datum.entry} />
             ))}
-          </Grid>
+          </GrommetGrid>
         </Box>
         <Box align="center" direction="row" justify="between">
           <Text>
@@ -47,8 +59,6 @@ const PaginatedGrid = () => {
     </Grommet>
   );
 };
-
-export { PaginatedGrid as Grid };
 
 export default {
   title: 'Controls/Pagination/Grid',
