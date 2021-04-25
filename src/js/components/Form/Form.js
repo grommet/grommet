@@ -117,7 +117,6 @@ const Form = forwardRef(
           const nextValidationResults = {
             errors: nextErrors,
             infos: nextInfos,
-            // Show form's validity when clicking on Submit
             valid: buildValid(nextErrors),
           };
           if (onValidate) onValidate(nextValidationResults);
@@ -410,6 +409,7 @@ const Form = forwardRef(
             const nextValidationResults = {
               errors: nextErrors,
               infos: nextInfos,
+              // Show form's validity when clicking on Submit
               valid: buildValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
