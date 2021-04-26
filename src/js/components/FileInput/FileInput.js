@@ -138,7 +138,7 @@ const FileInput = forwardRef(
       } else rightOffset = removeRef.current.getBoundingClientRect().width;
     }
 
-    // Show the number of files when more then one
+    // Show the number of files when more than one
 
     let message;
     if (!files.length) {
