@@ -109,18 +109,56 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       infos: infosProp
     });
   }, [errorsProp, infosProp]);
-  var validations = (0, _react.useRef)({}); // Currently, onBlur validation will trigger after a timeout of 120ms.
+  var validations = (0, _react.useRef)({});
+
+  var buildValid = function buildValid(nextErrors) {
+    var valid = false;
+    valid = requiredFields.filter(function (n) {
+      return Object.keys(validations.current).includes(n);
+    }).every(function (field) {
+      return value[field] && (value[field] !== '' || value[field] !== false);
+    });
+    if (Object.keys(nextErrors).length > 0) valid = false;
+    return valid;
+  };
+
+  (0, _react.useEffect)(function () {
+    var validationsForSetFields = Object.entries(validations.current).filter(function (_ref3) {
+      var n = _ref3[0];
+      return value[n];
+    });
+
+    if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
+      var _validate = validate(validationsForSetFields, value),
+          validatedErrors = _validate[0],
+          validatedInfos = _validate[1];
+
+      setValidationResults(function (prevValidationResults) {
+        var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
+
+        var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos);
+
+        var nextValidationResults = {
+          errors: nextErrors,
+          infos: nextInfos,
+          valid: buildValid(nextErrors)
+        };
+        if (onValidate) onValidate(nextValidationResults);
+        return nextValidationResults;
+      });
+    }
+  }, []); // Currently, onBlur validation will trigger after a timeout of 120ms.
 
   (0, _react.useEffect)(function () {
     var timer = setTimeout(function () {
       if (pendingValidation) {
         // run validations on the pending one and any other touched fields
-        var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
-          var n = _ref3[0];
+        var _validate2 = validate(Object.entries(validations.current).filter(function (_ref4) {
+          var n = _ref4[0];
           return touched[n] || pendingValidation.includes(n);
         }), value),
-            validatedErrors = _validate[0],
-            validatedInfos = _validate[1];
+            validatedErrors = _validate2[0],
+            validatedInfos = _validate2[1];
 
         setPendingValidation(undefined);
         setValidationResults(function (prevValidationResults) {
@@ -139,20 +177,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
             return !validations.current[n] || nextInfos[n] === undefined;
           }).map(function (n) {
             return delete nextInfos[n];
-          });
-          var valid = false;
-          valid = requiredFields.filter(function (n) {
-            return Object.keys(validations.current).includes(n);
-          }).every(function (field) {
-            return value[field] && (value[field] !== '' || value[field] !== false);
-          });
-          if (Object.keys(nextErrors).length > 0) valid = false; // keep any previous errors and infos for untouched keys,
+          }); // keep any previous errors and infos for untouched keys,
           // these may have come from a submit
 
           var nextValidationResults = {
             errors: nextErrors,
             infos: nextInfos,
-            valid: valid
+            valid: buildValid(nextErrors)
           };
           if (onValidate) onValidate(nextValidationResults);
           return nextValidationResults;
@@ -173,12 +204,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   (0, _react.useEffect)(function () {
     if (validateOn !== 'change') setPendingValidation(undefined);
     setValidationResults(function (prevValidationResults) {
-      var _validate2 = validate(Object.entries(validations.current).filter(function (_ref4) {
-        var n = _ref4[0];
+      var _validate3 = validate(Object.entries(validations.current).filter(function (_ref5) {
+        var n = _ref5[0];
         return prevValidationResults.errors[n] || prevValidationResults.infos[n];
       }), value),
-          nextErrors = _validate2[0],
-          nextInfos = _validate2[1];
+          nextErrors = _validate3[0],
+          nextInfos = _validate3[1];
 
       return {
         errors: _extends({}, prevValidationResults.errors, nextErrors),
@@ -269,12 +300,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }];
   };
 
-  var useFormField = function useFormField(_ref5) {
-    var errorArg = _ref5.error,
-        infoArg = _ref5.info,
-        name = _ref5.name,
-        required = _ref5.required,
-        validateArg = _ref5.validate;
+  var useFormField = function useFormField(_ref6) {
+    var errorArg = _ref6.error,
+        infoArg = _ref6.info,
+        name = _ref6.name,
+        required = _ref6.required,
+        validateArg = _ref6.validate;
     var error = errorArg || validationResults.errors[name];
     var info = infoArg || validationResults.infos[name];
     (0, _react.useEffect)(function () {
@@ -385,14 +416,16 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       event.preventDefault();
       setPendingValidation(undefined);
 
-      var _validate3 = validate(Object.entries(validations.current), value, true),
-          nextErrors = _validate3[0],
-          nextInfos = _validate3[1];
+      var _validate4 = validate(Object.entries(validations.current), value, true),
+          nextErrors = _validate4[0],
+          nextInfos = _validate4[1];
 
       setValidationResults(function () {
         var nextValidationResults = {
           errors: nextErrors,
-          infos: nextInfos
+          infos: nextInfos,
+          // Show form's validity when clicking on Submit
+          valid: buildValid(nextErrors)
         };
         if (onValidate) onValidate(nextValidationResults);
         return nextValidationResults;
