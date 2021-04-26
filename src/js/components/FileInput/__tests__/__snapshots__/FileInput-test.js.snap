@@ -64,7 +64,6 @@ exports[`FileInput accept 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -242,7 +241,6 @@ exports[`FileInput background 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -419,7 +417,6 @@ exports[`FileInput basic 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -596,7 +593,6 @@ exports[`FileInput border 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -773,7 +769,6 @@ exports[`FileInput disabled 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -952,7 +947,6 @@ exports[`FileInput margin 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -1129,7 +1123,6 @@ exports[`FileInput messages 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -1306,7 +1299,6 @@ exports[`FileInput multiple 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -1484,7 +1476,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {
@@ -1662,7 +1653,6 @@ exports[`FileInput pad 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 12px;
 }
 
 .c5:hover {

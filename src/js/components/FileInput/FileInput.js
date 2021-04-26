@@ -155,7 +155,7 @@ const FileInput = forwardRef(
         theme={theme}
         disabled={disabled}
         background={mergeTheme('background', 'color')}
-        border={mergeTheme('border', 'side')}
+        border={!plain ? mergeTheme('border', 'side') : undefined}
         margin={mergeTheme('margin')}
         pad={mergeTheme('pad')}
         round={mergeTheme('round', 'size')}
@@ -194,7 +194,7 @@ const FileInput = forwardRef(
                 <Anchor
                   alignSelf="center"
                   ref={controlRef}
-                  margin="small"
+                  margin={files.length ? 'small' : undefined}
                   onClick={() => {
                     inputRef.current.click();
                     inputRef.current.focus();

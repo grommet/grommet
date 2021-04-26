@@ -27,20 +27,6 @@ exports[`FormField abut 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
@@ -60,11 +46,7 @@ exports[`FormField abut 1`] = `
     className="c1 "
     onBlur={[Function]}
     onFocus={[Function]}
-  >
-    <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
-    />
-  </div>
+  />
 </div>
 `;
 
@@ -95,20 +77,6 @@ exports[`FormField abut with margin 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 12px;
@@ -128,11 +96,7 @@ exports[`FormField abut with margin 1`] = `
     className="c1 "
     onBlur={[Function]}
     onFocus={[Function]}
-  >
-    <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
-    />
-  </div>
+  />
 </div>
 `;
 

@@ -20,6 +20,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
+const FileInputName = 'FileInput';
+
 const grommetInputNames = [
   'TextInput',
   'Select',
@@ -245,6 +247,22 @@ const FormField = forwardRef(
       }
     }
 
+    // fileinput handle
+    // use fileinput plain use formfield to drive the border
+    let isFileInputComponent;
+    if (
+      children &&
+      Children.map(children, child => {
+        if (
+          child &&
+          child.type &&
+          FileInputName.indexOf(child.type.displayName) !== -1
+        )
+          isFileInputComponent = true;
+        return child;
+      })
+    );
+
     if (!themeBorder) {
       contents = (
         <Box {...themeContentProps} {...contentProps}>
@@ -287,19 +305,27 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
-    if (themeBorder) {
-      const innerProps =
-        themeBorder.position === 'inner'
-          ? {
-              border: {
-                ...themeBorder,
-                side: themeBorder.side || 'bottom',
-                color: borderColor,
-              },
-              round: formFieldTheme.round,
-              focus,
-            }
-          : {};
+    if (themeBorder && themeBorder.position === 'inner') {
+      const innerProps = isFileInputComponent
+        ? {
+            border: {
+              ...themeBorder,
+              side: theme.fileInput.border.side,
+              size: theme.fileInput.border.size,
+              style: theme.fileInput.border.style,
+              color: borderColor,
+            },
+            round: formFieldTheme.round,
+          }
+        : {
+            border: {
+              ...themeBorder,
+              side: themeBorder.side || 'bottom',
+              color: borderColor,
+            },
+            round: formFieldTheme.round,
+            focus,
+          };
       contents = (
         <FormFieldContentBox
           {...themeContentProps}
