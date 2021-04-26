@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination should allow user to control page via state with page + 
+exports[`Pagination should allow user to control page via state with page +
   onChange 1`] = `
 .c7 {
   display: inline-block;
@@ -3346,7 +3346,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   < step 1`] = `
 .c7 {
   display: inline-block;
@@ -3704,7 +3704,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   === 0 1`] = `
 .c7 {
   display: inline-block;
@@ -3983,7 +3983,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   === step 1`] = `
 .c7 {
   display: inline-block;
@@ -4883,7 +4883,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 </div>
 `;
 
-exports[`Pagination should display next page of results when "next" is 
+exports[`Pagination should display next page of results when "next" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -5333,7 +5333,7 @@ exports[`Pagination should display next page of results when "next" is
 </div>
 `;
 
-exports[`Pagination should display next page of results when "next" is 
+exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
@@ -5499,7 +5499,7 @@ exports[`Pagination should display next page of results when "next" is
 </div>
 `;
 
-exports[`Pagination should display page 'n' of results when "page n" is 
+exports[`Pagination should display page 'n' of results when "page n" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -5949,7 +5949,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
 </div>
 `;
 
-exports[`Pagination should display previous page of results when "previous" is 
+exports[`Pagination should display previous page of results when "previous" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -6399,7 +6399,7 @@ exports[`Pagination should display previous page of results when "previous" is
 </div>
 `;
 
-exports[`Pagination should display previous page of results when "previous" is 
+exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
@@ -6565,7 +6565,7 @@ exports[`Pagination should display previous page of results when "previous" is
 </div>
 `;
 
-exports[`Pagination should display the correct last page based on items length 
+exports[`Pagination should display the correct last page based on items length
   and step 1`] = `
 .c7 {
   display: inline-block;
@@ -9061,7 +9061,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 </div>
 `;
 
-exports[`Pagination should set page to last page if page prop > total possible 
+exports[`Pagination should set page to last page if page prop > total possible
   pages 1`] = `
 .c7 {
   display: inline-block;
