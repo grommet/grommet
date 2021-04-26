@@ -25,7 +25,7 @@ const ContentsBox = styled(Box)`
   position: relative;
   ${props => (props.disabled ? disabledStyle() : 'cursor: pointer;')}
   &:focus {
-    online: none;
+    outline: none;
   }
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
   ${props =>
