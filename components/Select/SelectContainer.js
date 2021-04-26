@@ -291,7 +291,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
           label = e;
         }
 
-        return label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
+        return typeof label === 'string' && label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
       });
 
       if (nextActiveIndex >= 0) {
