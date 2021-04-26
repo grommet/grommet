@@ -282,6 +282,7 @@ const SelectContainer = forwardRef(
               label = e;
             }
             return (
+              typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
               !isDisabled(index)
             );
