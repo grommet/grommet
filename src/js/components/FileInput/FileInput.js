@@ -134,7 +134,7 @@ const FileInput = forwardRef(
         rightOffset =
           controlRef.current.getBoundingClientRect().width +
           removeRef.current.getBoundingClientRect().width +
-          24;
+          2 * theme.global.edgeSize.small.replace('px', '');
       } else rightOffset = removeRef.current.getBoundingClientRect().width;
     }
 
