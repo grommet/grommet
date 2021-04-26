@@ -99,7 +99,7 @@ const Form = forwardRef(
       const nextErrors = errors;
       return Object.keys(nextErrors)
         .filter(n => !validations.current[n] || nextErrors[n] === undefined)
-        .map(n => delete nextErrors[n]);
+        .forEach(n => delete nextErrors[n]);
     };
 
     // Remove any infos that we don't have any validations for anymore.
@@ -107,7 +107,7 @@ const Form = forwardRef(
       const nextInfos = infos;
       return Object.keys(nextInfos)
         .filter(n => !validations.current[n] || nextInfos[n] === undefined)
-        .map(n => delete nextInfos[n]);
+        .forEach(n => delete nextInfos[n]);
     };
 
     useEffect(() => {
