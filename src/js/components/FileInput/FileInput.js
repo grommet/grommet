@@ -167,7 +167,7 @@ const FileInput = forwardRef(
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
-          <Box pad={{ right: 'small' }} direction="row" justify="between">
+          <Box direction="row" justify="between">
             <Message {...theme.fileInput.message}>{message}</Message>
             <Keyboard
               onSpace={event => {
@@ -194,7 +194,7 @@ const FileInput = forwardRef(
                 <Anchor
                   alignSelf="center"
                   ref={controlRef}
-                  margin={mergeTheme('margin')}
+                  margin="small"
                   onClick={() => {
                     inputRef.current.click();
                     inputRef.current.focus();

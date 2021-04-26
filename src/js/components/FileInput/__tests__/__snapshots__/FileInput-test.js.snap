@@ -50,7 +50,6 @@ exports[`FileInput accept 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -65,6 +64,7 @@ exports[`FileInput accept 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -143,12 +143,6 @@ exports[`FileInput accept 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -234,7 +228,6 @@ exports[`FileInput background 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -249,6 +242,7 @@ exports[`FileInput background 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -327,12 +321,6 @@ exports[`FileInput background 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -417,7 +405,6 @@ exports[`FileInput basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -432,6 +419,7 @@ exports[`FileInput basic 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -510,12 +498,6 @@ exports[`FileInput basic 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -600,7 +582,6 @@ exports[`FileInput border 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -615,6 +596,7 @@ exports[`FileInput border 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -693,12 +675,6 @@ exports[`FileInput border 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -783,7 +759,6 @@ exports[`FileInput disabled 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -798,6 +773,7 @@ exports[`FileInput disabled 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -876,12 +852,6 @@ exports[`FileInput disabled 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -968,7 +938,6 @@ exports[`FileInput margin 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -983,6 +952,7 @@ exports[`FileInput margin 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -1061,12 +1031,6 @@ exports[`FileInput margin 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -1151,7 +1115,6 @@ exports[`FileInput messages 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -1166,6 +1129,7 @@ exports[`FileInput messages 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -1244,12 +1208,6 @@ exports[`FileInput messages 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -1334,7 +1292,6 @@ exports[`FileInput multiple 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -1349,6 +1306,7 @@ exports[`FileInput multiple 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -1427,12 +1385,6 @@ exports[`FileInput multiple 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -1518,7 +1470,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -1533,6 +1484,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -1611,12 +1563,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
@@ -1702,7 +1648,6 @@ exports[`FileInput pad 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-right: 12px;
 }
 
 .c5 {
@@ -1717,6 +1662,7 @@ exports[`FileInput pad 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  margin: 12px;
 }
 
 .c5:hover {
@@ -1795,12 +1741,6 @@ exports[`FileInput pad 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding-right: 6px;
   }
 }
 
