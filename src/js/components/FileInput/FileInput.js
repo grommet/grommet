@@ -229,9 +229,9 @@ const FileInput = forwardRef(
           files.map((file, index) => (
             <Box
               key={file.name}
+              justify="between"
               direction="row"
               align="center"
-              justify="between"
             >
               {renderFile ? (
                 renderFile(file)
@@ -246,56 +246,58 @@ const FileInput = forwardRef(
                   {file.name}
                 </Label>
               )}
-              <Button
-                ref={index ? undefined : removeRef}
-                a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
-                icon={<RemoveIcon />}
-                hoverIndicator
-                onClick={event => {
-                  event.stopPropagation();
-                  const nextFiles = [...files];
-                  nextFiles.splice(index, 1);
-                  setFiles(nextFiles);
-                  if (nextFiles.length === 0) inputRef.current.value = '';
-                  inputRef.current.focus();
-                }}
-              />
-              {files.length < 2 && (
-                <Keyboard
-                  onSpace={event => {
-                    if (controlRef.current === event.target)
-                      inputRef.current.click();
+              <Box direction="row" align="center">
+                <Button
+                  ref={index ? undefined : removeRef}
+                  a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
+                  icon={<RemoveIcon />}
+                  hoverIndicator
+                  onClick={event => {
+                    event.stopPropagation();
+                    const nextFiles = [...files];
+                    nextFiles.splice(index, 1);
+                    setFiles(nextFiles);
+                    if (nextFiles.length === 0) inputRef.current.value = '';
+                    inputRef.current.focus();
                   }}
-                  onEnter={event => {
-                    if (controlRef.current === event.target)
-                      inputRef.current.click();
-                  }}
-                >
-                  {theme.fileInput.button ? (
-                    <Button
-                      ref={controlRef}
-                      kind={theme.fileInput.button}
-                      label={messages.browse || 'browse'}
-                      onClick={() => {
+                />
+                {files.length < 2 && (
+                  <Keyboard
+                    onSpace={event => {
+                      if (controlRef.current === event.target)
                         inputRef.current.click();
-                        inputRef.current.focus();
-                      }}
-                      {...rest}
-                    />
-                  ) : (
-                    <Anchor
-                      ref={controlRef}
-                      margin="small"
-                      onClick={() => {
+                    }}
+                    onEnter={event => {
+                      if (controlRef.current === event.target)
                         inputRef.current.click();
-                        inputRef.current.focus();
-                      }}
-                      tabIndex={0}
-                      label={messages.browse || 'browse'}
-                    />
-                  )}
-                </Keyboard>
-              )}
+                    }}
+                  >
+                    {theme.fileInput.button ? (
+                      <Button
+                        ref={controlRef}
+                        kind={theme.fileInput.button}
+                        label={messages.browse || 'browse'}
+                        onClick={() => {
+                          inputRef.current.click();
+                          inputRef.current.focus();
+                        }}
+                        {...rest}
+                      />
+                    ) : (
+                      <Anchor
+                        ref={controlRef}
+                        margin="small"
+                        onClick={() => {
+                          inputRef.current.click();
+                          inputRef.current.focus();
+                        }}
+                        tabIndex={0}
+                        label={messages.browse || 'browse'}
+                      />
+                    )}
+                  </Keyboard>
+                )}
+              </Box>
             </Box>
           ))}
         <StyledFileInput
