@@ -250,14 +250,13 @@ const FormField = forwardRef(
     let isFileInputComponent;
     if (
       children &&
-      Children.map(children, child => {
+      Children.forEach(children, child => {
         if (
           child &&
           child.type &&
           'FileInput'.indexOf(child.type.displayName) !== -1
         )
           isFileInputComponent = true;
-        return child;
       })
     );
 
