@@ -15,6 +15,7 @@ export * from './components/CheckBox';
 export * from './components/CheckBoxGroup';
 export * from './components/Clock';
 export * from './components/Collapsible';
+export * from './components/CurrencyInput';
 export * from './components/DataChart';
 export * from './components/DataTable';
 export * from './components/DateInput';

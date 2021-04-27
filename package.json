@@ -51,6 +51,7 @@
   "dependencies": {
     "grommet-icons": "^4.5.0",
     "hoist-non-react-statics": "^3.2.0",
+    "locale-currency": "^0.0.2",
     "markdown-to-jsx": "^6.11.4",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { A11yTitleType, GapType, GridAreaType, MarginType } from '../../utils';
+import { A11yTitleType, GridAreaType, MarginType } from '../../utils';
 import { ChartProps } from '../Chart';
 import { GridProps } from '../Grid';
 
