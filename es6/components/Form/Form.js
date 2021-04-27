@@ -109,6 +109,26 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     });
     if (Object.keys(nextErrors).length > 0) valid = false;
     return valid;
+  }; // Remove any errors that we don't have any validations for anymore.
+
+
+  var filterErrorValidations = function filterErrorValidations(errors) {
+    var nextErrors = errors;
+    return Object.keys(nextErrors).filter(function (n) {
+      return !validations.current[n] || nextErrors[n] === undefined;
+    }).forEach(function (n) {
+      return delete nextErrors[n];
+    });
+  }; // Remove any infos that we don't have any validations for anymore.
+
+
+  var filterInfoValidations = function filterInfoValidations(infos) {
+    var nextInfos = infos;
+    return Object.keys(nextInfos).filter(function (n) {
+      return !validations.current[n] || nextInfos[n] === undefined;
+    }).forEach(function (n) {
+      return delete nextInfos[n];
+    });
   };
 
   useEffect(function () {
@@ -125,8 +145,12 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setValidationResults(function (prevValidationResults) {
         var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
 
-        var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos);
+        var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos); // Remove any errors or infos that we don't have any validations
+        // for anymore. This can occur when fields are dynamically removed.
 
+
+        filterErrorValidations(nextErrors);
+        filterInfoValidations(nextInfos);
         var nextValidationResults = {
           errors: nextErrors,
           infos: nextInfos,
@@ -157,16 +181,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           // for anymore. This can occur when fields are dynamically removed.
 
 
-          Object.keys(nextErrors).filter(function (n) {
-            return !validations.current[n] || nextErrors[n] === undefined;
-          }).map(function (n) {
-            return delete nextErrors[n];
-          });
-          Object.keys(nextInfos).filter(function (n) {
-            return !validations.current[n] || nextInfos[n] === undefined;
-          }).map(function (n) {
-            return delete nextInfos[n];
-          }); // keep any previous errors and infos for untouched keys,
+          filterErrorValidations(nextErrors);
+          filterInfoValidations(nextInfos); // keep any previous errors and infos for untouched keys,
           // these may have come from a submit
 
           var nextValidationResults = {
