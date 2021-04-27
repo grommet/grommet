@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 
 export const ValidateOnMount = () => {
   const defaultValue = {
-    firstName: 'J',
+    firstName: 'Jo',
     lastName: '',
   };
 

@@ -144,7 +144,7 @@ const Form = forwardRef(
           return nextValidationResults;
         });
       }
-    }, []);
+    }, [requiredFields.length]);
 
     // Currently, onBlur validation will trigger after a timeout of 120ms.
     useEffect(() => {
