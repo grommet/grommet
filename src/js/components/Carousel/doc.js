@@ -20,10 +20,10 @@ export const doc = Carousel => {
 
   DocumentedCarousel.propTypes = {
     ...genericProps,
-    activeIndex: PropTypes.number.description(
+    activeChild: PropTypes.number.description(
       `If specified, Carousel will be a controlled component. This means
       that future slide changes will not work unless you subscribe to onChild
-      function and update activeIndex accordingly.`,
+      function and update activeChild accordingly.`,
     ),
     fill: PropTypes.bool.description(`Whether to expand to fill
       all of the available width and height in the parent container.`),

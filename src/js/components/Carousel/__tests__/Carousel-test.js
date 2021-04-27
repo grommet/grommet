@@ -119,7 +119,7 @@ describe('Carousel', () => {
         <Carousel
           id="test-carousel"
           controls="selectors"
-          activeIndex={1}
+          activeChild={1}
           onChild={setActiveSlide}
         >
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />

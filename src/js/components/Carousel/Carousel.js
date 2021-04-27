@@ -17,7 +17,7 @@ import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
 const Carousel = ({
-  activeIndex: activeChild,
+  activeChild,
   initialChild,
   onChild,
   play,

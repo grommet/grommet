@@ -14,7 +14,7 @@ export const Controlled = () => {
           <Text>{activeSlide}</Text>
           <Button label="+" onClick={() => setActiveSlide(activeSlide + 1)} />
         </Box>
-        <Carousel activeIndex={activeSlide} onChild={setActiveSlide}>
+        <Carousel activeChild={activeSlide} onChild={setActiveSlide}>
           <Box pad="xlarge" background="accent-1">
             <Attraction size="xlarge" />
           </Box>
