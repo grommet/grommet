@@ -20,8 +20,6 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
-const FileInputName = 'FileInput';
-
 const grommetInputNames = [
   'TextInput',
   'Select',
@@ -256,7 +254,7 @@ const FormField = forwardRef(
         if (
           child &&
           child.type &&
-          FileInputName.indexOf(child.type.displayName) !== -1
+          'FileInput'.indexOf(child.type.displayName) !== -1
         )
           isFileInputComponent = true;
         return child;
