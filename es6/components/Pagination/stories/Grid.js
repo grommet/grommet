@@ -17,7 +17,7 @@ var CardResult = function CardResult(_ref) {
   }, item.entry);
 };
 
-var PaginatedGrid = function PaginatedGrid() {
+export var PaginatedGrid = function PaginatedGrid() {
   var _useState = useState(data.slice(0, 10)),
       currentData = _useState[0],
       setCurrentData = _useState[1];
@@ -63,8 +63,7 @@ var PaginatedGrid = function PaginatedGrid() {
     onChange: handleChange
   }))));
 };
-
-export { PaginatedGrid as Grid };
+PaginatedGrid.storyName = 'Grid';
 export default {
   title: 'Controls/Pagination/Grid'
 };
