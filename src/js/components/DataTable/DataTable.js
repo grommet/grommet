@@ -169,7 +169,41 @@ const DataTable = ({
   const [scrollOffset, setScrollOffset] = useState(0);
 
   // multiple pinned columns offset
-  const [pinnedOffset, setPinnedOffset] = useState({});
+  const [pinnedOffset, setPinnedOffset] = useState();
+
+  const getPinnedOffset = useCallback(() => {
+    const pinnedProperties = columns
+      .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
+      .filter(n => n);
+
+    const pinnedColumnsProperties = {};
+    const firstRowCells = headerRef.current.firstChild.cells || [];
+
+    if (firstRowCells.length !== 0) {
+      pinnedProperties.forEach((property, index) => {
+        const tableIndex = columns.findIndex(
+          column => column.property === property,
+        );
+
+        if (firstRowCells[tableIndex]) {
+          pinnedColumnsProperties[property] = {
+            width: firstRowCells[tableIndex].getBoundingClientRect()?.width,
+            left:
+              tableIndex === 0
+                ? 0
+                : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
+                  pinnedColumnsProperties[pinnedProperties[index - 1]].width,
+          };
+        }
+      });
+      return pinnedColumnsProperties;
+    }
+    return undefined;
+  }, [columns]);
+
+  useEffect(() => {
+    setPinnedOffset(getPinnedOffset);
+  }, [getPinnedOffset]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
@@ -192,40 +226,6 @@ const DataTable = ({
       } else setFooterHeight(0);
     }
   }, [footerRef, headerRef, placeholder]);
-
-  useEffect(() => {
-    const getPinnedOffset = () => {
-      const pinnedProperties = columns
-        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
-        .filter(n => n);
-
-      const pinnedColumnsProperties = {};
-      const firstRowCells = headerRef?.current?.firstChild?.cells || [];
-
-      if (firstRowCells.length !== 0) {
-        pinnedProperties.forEach((property, index) => {
-          const tableIndex = columns.findIndex(
-            column => column.property === property,
-          );
-
-          if (firstRowCells[tableIndex]) {
-            pinnedColumnsProperties[property] = {
-              width: firstRowCells[tableIndex].getBoundingClientRect()?.width,
-              left:
-                tableIndex === 0
-                  ? 0
-                  : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
-                    pinnedColumnsProperties[pinnedProperties[index - 1]].width,
-            };
-          }
-        });
-      }
-      return pinnedColumnsProperties;
-    };
-
-    setPinnedOffset(getPinnedOffset());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);
