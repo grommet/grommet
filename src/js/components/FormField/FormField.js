@@ -302,27 +302,27 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
-    if (themeBorder && themeBorder.position === 'inner') {
-      const innerProps = isFileInputComponent
-        ? {
-            border: {
-              ...themeBorder,
-              side: theme.fileInput.border.side,
-              size: theme.fileInput.border.size,
-              style: theme.fileInput.border.style,
-              color: borderColor,
-            },
-            round: formFieldTheme.round,
-          }
-        : {
-            border: {
-              ...themeBorder,
-              side: themeBorder.side || 'bottom',
-              color: borderColor,
-            },
-            round: formFieldTheme.round,
-            focus,
-          };
+    if (themeBorder) {
+      const innerProps =
+        themeBorder.position === 'inner'
+          ? {
+              border: {
+                ...themeBorder,
+                size: isFileInputComponent
+                  ? theme.fileInput.border.size
+                  : undefined,
+                style: isFileInputComponent
+                  ? theme.fileInput.border.style
+                  : undefined,
+                side: isFileInputComponent
+                  ? theme.fileInput.border.side
+                  : themeBorder.side || 'bottom',
+                color: borderColor,
+              },
+              round: formFieldTheme.round,
+              focus,
+            }
+          : {};
       contents = (
         <FormFieldContentBox
           {...themeContentProps}
