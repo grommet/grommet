@@ -320,7 +320,7 @@ const FormField = forwardRef(
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus,
+              focus: isFileInputComponent ? undefined : focus,
             }
           : {};
       contents = (
