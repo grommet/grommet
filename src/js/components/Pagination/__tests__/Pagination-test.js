@@ -345,4 +345,25 @@ describe('Pagination', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`should change the page on prop change`, () => {
+    const { container, rerender, getByText } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={1} />
+      </Grommet>,
+    );
+
+    expect(getByText('1').className).not.toBe(getByText('3').className);
+    expect(getByText('2').className).toBe(getByText('3').className);
+
+    rerender(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={2} />
+      </Grommet>,
+    );
+
+    expect(getByText('1').className).toBe(getByText('3').className);
+    expect(getByText('2').className).not.toBe(getByText('3').className);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

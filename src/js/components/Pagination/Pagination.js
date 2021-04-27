@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -176,6 +176,10 @@ const Pagination = forwardRef(
       separator: control === 'more-prev' || control === 'more-next',
       ...navProps[control],
     }));
+
+    useEffect(() => {
+      setActivePage(pageProp || 1);
+    }, [pageProp]);
 
     return (
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
