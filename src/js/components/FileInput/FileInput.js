@@ -246,7 +246,7 @@ const FileInput = forwardRef(
                   {file.name}
                 </Label>
               )}
-              <Box flex="false" direction="row" align="center">
+              <Box flex={false} direction="row" align="center">
                 <Button
                   ref={index ? undefined : removeRef}
                   a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
