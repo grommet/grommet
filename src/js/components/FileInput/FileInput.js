@@ -261,7 +261,7 @@ const FileInput = forwardRef(
                     inputRef.current.focus();
                   }}
                 />
-                {files.length < 2 && (
+                {files.length === 1 && (
                   <Keyboard
                     onSpace={event => {
                       if (controlRef.current === event.target)
