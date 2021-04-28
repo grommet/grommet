@@ -135,10 +135,6 @@ exports[`FileInput accept 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -310,10 +306,6 @@ exports[`FileInput background 1`] = `
 .c2 {
   position: relative;
   cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -488,10 +480,6 @@ exports[`FileInput basic 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -664,10 +652,6 @@ exports[`FileInput border 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -838,10 +822,6 @@ exports[`FileInput disabled 1`] = `
   position: relative;
   opacity: 0.3;
   cursor: default;
-}
-
-.c2:focus {
-  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -1018,10 +998,6 @@ exports[`FileInput margin 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -1194,10 +1170,6 @@ exports[`FileInput messages 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -1368,10 +1340,6 @@ exports[`FileInput multiple 1`] = `
 .c2 {
   position: relative;
   cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -1547,10 +1515,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   cursor: pointer;
 }
 
-.c2:focus {
-  outline: none;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -1722,10 +1686,6 @@ exports[`FileInput pad 1`] = `
 .c2 {
   position: relative;
   cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
 }
 
 @media only screen and (max-width:768px) {
