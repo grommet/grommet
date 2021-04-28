@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { disabledStyle, useForwardedRef, unfocusStyle } from '../../utils';
+import { disabledStyle, useForwardedRef } from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
