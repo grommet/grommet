@@ -73,9 +73,12 @@ Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProp
 var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "xrlyjm-3"
-})(["", " &:focus{", "}"], function (props) {
+})(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, (0, _utils.focusStyle)({
+  skipSvgChildren: true,
+  forceOutline: true
+}), (0, _utils.unfocusStyle)({
   skipSvgChildren: true,
   forceOutline: true
 }));

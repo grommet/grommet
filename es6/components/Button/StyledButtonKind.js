@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, disabledStyle, focusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
+import { activeStyle, disabledStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var radiusStyle = function radiusStyle(props) {
@@ -182,7 +182,7 @@ var StyledButtonKind = styled.button.withConfig({
 }).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
@@ -198,7 +198,7 @@ var StyledButtonKind = styled.button.withConfig({
   return props.disabled && disabledStyle(props.theme.button.disabled.opacity);
 }, function (props) {
   return (!props.plain || props.focusIndicator) && focusStyle();
-}, function (props) {
+}, unfocusStyle(), function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);

@@ -30,7 +30,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var DetailControl = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "huiwg9-0"
-})(["&:focus{", "}"], (0, _utils.focusStyle)());
+})(["&:focus{", "}&:focus:not(:focus-visible){", "}"], (0, _utils.focusStyle)(), (0, _utils.unfocusStyle)());
 
 var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { backgroundStyle, fillStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
@@ -51,9 +51,12 @@ Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps); // focus s
 var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "xrlyjm-3"
-})(["", " &:focus{", "}"], function (props) {
+})(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, focusStyle({
+  skipSvgChildren: true,
+  forceOutline: true
+}), unfocusStyle({
   skipSvgChildren: true,
   forceOutline: true
 }));

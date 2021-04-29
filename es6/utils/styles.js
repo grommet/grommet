@@ -199,9 +199,10 @@ export var focusStyle = function focusStyle(_temp3) {
   }, !forceOutline && "\n  ::-moz-focus-inner {\n    border: 0;\n  }\n  ");
 }; // This is placed next to focusStyle for easy maintainability
 // of code since changes to focusStyle should be reflected in
-// unfocusStyle as well. However, this function is only being used
-// by List for an iterim state. It is not recommended to rely on
-// this function for other components.
+// unfocusStyle as well.
+// this function can be used to reset focus styles which is
+// applicable when turning the focus ring off when using the mouse
+// see https://nelo.is/writing/styling-better-focus-states/
 
 export var unfocusStyle = function unfocusStyle(_temp4) {
   var _ref4 = _temp4 === void 0 ? {} : _temp4,

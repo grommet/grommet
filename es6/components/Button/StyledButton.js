@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, backgroundStyle, disabledStyle, focusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
+import { activeStyle, backgroundStyle, disabledStyle, focusStyle, unfocusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var radiusStyle = function radiusStyle(props) {
@@ -90,7 +90,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 var StyledButton = styled.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -104,7 +104,7 @@ var StyledButton = styled.button.withConfig({
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {
   return (!props.plain || props.focusIndicator) && focusStyle();
-}, function (props) {
+}, unfocusStyle(), function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {
   return props.fillContainer && fillStyle(props.fillContainer);

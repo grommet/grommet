@@ -5,12 +5,12 @@ import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle } from '../../utils';
+import { focusStyle, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "huiwg9-0"
-})(["&:focus{", "}"], focusStyle());
+})(["&:focus{", "}&:focus:not(:focus-visible){", "}"], focusStyle(), unfocusStyle());
 
 var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
