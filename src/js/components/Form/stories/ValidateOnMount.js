@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Grommet, Form, FormField, Select } from 'grommet';
+import { Box, Button, Grommet, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const ValidateOnChange = () => {
+export const ValidateOnMount = () => {
+  const defaultValue = {
+    firstName: 'J',
+    lastName: '',
+  };
+
   const [valid, setValid] = useState(false);
+  const [value, setValue] = useState(defaultValue);
 
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            value={value}
             validate="change"
             onReset={event => console.log(event)}
-            onSubmit={({ value }) => console.log('Submit', value)}
+            onChange={(nextValue, { touched }) => {
+              console.log('Change', nextValue, touched);
+              setValue(nextValue);
+            }}
             onValidate={validationResults => {
               console.log('validationResults = ', validationResults);
               setValid(validationResults.valid);
@@ -46,24 +56,7 @@ export const ValidateOnChange = () => {
                 },
               ]}
             />
-            <FormField
-              label="Size"
-              name="select-size"
-              htmlFor="select-size"
-              required
-              validate={val => {
-                if (val === 'small') {
-                  return { message: 'Only 10 left in stock!', status: 'info' };
-                }
-                return undefined;
-              }}
-            >
-              <Select
-                name="select-size"
-                id="select-size"
-                options={['small', 'medium', 'large']}
-              />
-            </FormField>
+
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
               <Button label="Cancel" />
               <Button type="reset" label="Reset" />
@@ -76,8 +69,8 @@ export const ValidateOnChange = () => {
   );
 };
 
-ValidateOnChange.storyName = 'Validate on change';
+ValidateOnMount.storyName = 'Validate on mount';
 
 export default {
-  title: 'Input/Form/Validate on change',
+  title: 'Input/Form/Validate on mount',
 };

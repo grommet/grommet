@@ -12,6 +12,7 @@ import { RadioButtonGroup } from '..';
 
 describe('RadioButtonGroup', () => {
   afterEach(cleanup);
+
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -101,6 +102,19 @@ describe('RadioButtonGroup', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     component.unmount();
+  });
+
+  test('defaultValue', () => {
+    const { container } = render(
+      <Grommet>
+        <RadioButtonGroup
+          name="test"
+          options={['one', 'two']}
+          defaultValue="one"
+        />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
   });
 
   test('children', () => {

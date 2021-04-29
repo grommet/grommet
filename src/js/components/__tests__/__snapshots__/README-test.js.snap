@@ -2449,7 +2449,9 @@ string
 
 **tip**
 
-tooltip or a hint when hovering over the button.
+tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.
 
 \`\`\`
 {
@@ -4934,6 +4936,15 @@ Same as React <input disabled={} />. Also adds a hidden input element
 boolean
 \`\`\`
 
+**fill**
+
+Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **id**
 
 The DOM id attribute value to use for the underlying <input/> element.
@@ -4968,6 +4979,90 @@ Function that will be called when the user clicks the check box. It
 
 \`\`\`
 function
+\`\`\`
+
+**pad**
+
+The amount of padding on the container 
+    surrounding the checkbox and its label. An object can be specified to 
+    distinguish horizontal padding, vertical padding, and padding on a 
+    particular side of the container. Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
 \`\`\`
 
 **reverse**
@@ -5125,6 +5220,16 @@ undefined
 **checkBox.icons.indeterminate**
 
 The icon to use when indeterminate. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.pad**
+
+The pad around the CheckBox and its label. Expects \`string | object\`.
 
 Defaults to
 
@@ -6771,7 +6876,8 @@ A description of the data. The order controls the column order.
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally.
+      to the left when the table is scrolled horizontally. 'plain' = true 
+      indicates that the body cells in the column will not apply pad.
 
 \`\`\`
 [{
@@ -6796,6 +6902,7 @@ A description of the data. The order controls the column order.
       aggregate: boolean
     },
   pin: boolean,
+  plain: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -7682,7 +7789,8 @@ Any properties to pass on to the underlying Drop when not inline. Defaults to \`
 The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.
 
 \`\`\`
 string
@@ -8440,6 +8548,20 @@ Defaults to
 **global.drop.extend**
 
 Any additional style for Drop. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.intelligentMargin**
+
+Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target. Expects \`boolean\`.
 
 Defaults to
 
@@ -11634,7 +11756,7 @@ The rounding of the Layer corners. Expects \`string\`.
 Defaults to
 
 \`\`\`
-white
+4px
 \`\`\`
 
 **layer.border.intelligentRounding**
@@ -16572,6 +16694,7 @@ Whether default styling context should be removed.
 
 \`\`\`
 boolean
+noPad
 \`\`\`
 
 **scope**

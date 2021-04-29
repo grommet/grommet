@@ -2,7 +2,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -10,6 +9,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -421,7 +421,9 @@ const DataTable = ({
           )}
         </StyledDataTable>
       </OverflowContainer>
-      {paginate && items && <Pagination alignSelf="end" {...paginationProps} />}
+      {paginate && data.length > step && items && items.length ? (
+        <Pagination alignSelf="end" {...paginationProps} />
+      ) : null}
     </Container>
   );
 };

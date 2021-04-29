@@ -218,3 +218,36 @@ export const normalizeBackgroundColor = theme => {
   if (background.color) return background.color;
   return undefined;
 };
+
+// calculate a header or footer cell background based
+// on the table background prop and whether it's pinned.
+// Pin is an array of side strings, empty if not pinned.
+// If pinned, the background comes from the
+// datable.pinned[themeContext].background in the theme
+// where themeContext is either 'header' or 'footer'.
+export const calcPinnedBackground = (
+  backgroundProp,
+  pin,
+  theme,
+  themeContext,
+) => {
+  let background;
+  if (backgroundProp) background = backgroundProp;
+  else if (
+    pin.length > 0 &&
+    theme.dataTable.pinned &&
+    theme.dataTable.pinned.header
+  ) {
+    background = theme.dataTable.pinned[themeContext].background;
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = {
+        ...background,
+        color: normalizeBackgroundColor(theme),
+      };
+    }
+  } else background = undefined;
+  return background;
+};

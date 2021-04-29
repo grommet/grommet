@@ -3229,6 +3229,7 @@ exports[`Button tip 1`] = `
   class="c0"
 >
   <button
+    aria-label="tooltip"
     class="c1"
     type="button"
   >

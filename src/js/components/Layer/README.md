@@ -266,7 +266,7 @@ The rounding of the Layer corners. Expects `string`.
 Defaults to
 
 ```
-white
+4px
 ```
 
 **layer.border.intelligentRounding**
