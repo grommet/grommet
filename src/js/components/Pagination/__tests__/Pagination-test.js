@@ -347,14 +347,15 @@ describe('Pagination', () => {
   });
 
   test(`should change the page on prop change`, () => {
-    const { container, rerender, getByText } = render(
+    const { container, rerender } = render(
       <Grommet>
         <Pagination numberItems={NUM_ITEMS} page={1} />
       </Grommet>,
     );
 
-    expect(getByText('1').className).not.toBe(getByText('3').className);
-    expect(getByText('2').className).toBe(getByText('3').className);
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '1',
+    );
 
     rerender(
       <Grommet>
@@ -362,8 +363,9 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    expect(getByText('1').className).toBe(getByText('3').className);
-    expect(getByText('2').className).not.toBe(getByText('3').className);
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '2',
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });
