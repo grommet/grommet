@@ -42,6 +42,10 @@ const Pagination = forwardRef(
       Math.min(pageProp, totalPages) || 1,
     );
 
+    useEffect(() => {
+      setActivePage(pageProp || 1);
+    }, [pageProp]);
+
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
     const endPages = getPageIndices(
@@ -176,10 +180,6 @@ const Pagination = forwardRef(
       separator: control === 'more-prev' || control === 'more-next',
       ...navProps[control],
     }));
-
-    useEffect(() => {
-      setActivePage(pageProp || 1);
-    }, [pageProp]);
 
     return (
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
