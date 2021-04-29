@@ -40,6 +40,36 @@ var normalizeProp = function normalizeProp(prop, context) {
   return undefined;
 };
 
+function useGroupState(groups, groupBy) {
+  var _useState = useState(function () {
+    return buildGroupState(groups, groupBy);
+  }),
+      groupState = _useState[0],
+      setGroupState = _useState[1];
+
+  var _useState2 = useState({
+    groups: groups,
+    groupBy: groupBy
+  }),
+      prevDeps = _useState2[0],
+      setPrevDeps = _useState2[1];
+
+  var prevGroups = prevDeps.groups,
+      prevGroupBy = prevDeps.groupBy;
+
+  if (groups !== prevGroups || groupBy !== prevGroupBy) {
+    setPrevDeps({
+      groups: groups,
+      groupBy: groupBy
+    });
+    var nextGroupState = buildGroupState(groups, groupBy);
+    setGroupState(nextGroupState);
+    return [nextGroupState, setGroupState];
+  }
+
+  return [groupState, setGroupState];
+}
+
 var DataTable = function DataTable(_ref) {
   var background = _ref.background,
       border = _ref.border,
@@ -84,19 +114,19 @@ var DataTable = function DataTable(_ref) {
     }).length > 0;
   }, [columns]); // what column we are actively capturing filter input on
 
-  var _useState = useState(),
-      filtering = _useState[0],
-      setFiltering = _useState[1]; // the currently active filters
+  var _useState3 = useState(),
+      filtering = _useState3[0],
+      setFiltering = _useState3[1]; // the currently active filters
 
 
-  var _useState2 = useState(initializeFilters(columns)),
-      filters = _useState2[0],
-      setFilters = _useState2[1]; // which column we are sorting on, with direction
+  var _useState4 = useState(initializeFilters(columns)),
+      filters = _useState4[0],
+      setFilters = _useState4[1]; // which column we are sorting on, with direction
 
 
-  var _useState3 = useState(sortProp || {}),
-      sort = _useState3[0],
-      setSort = _useState3[1]; // the data filtered and sorted, if needed
+  var _useState5 = useState(sortProp || {}),
+      sort = _useState5[0],
+      setSort = _useState5[1]; // the data filtered and sorted, if needed
 
 
   var adjustedData = useMemo(function () {
@@ -111,44 +141,44 @@ var DataTable = function DataTable(_ref) {
     return buildGroups(columns, adjustedData, groupBy);
   }, [adjustedData, columns, groupBy]); // an object indicating which group values are expanded
 
-  var _useState4 = useState(buildGroupState(groups, groupBy)),
-      groupState = _useState4[0],
-      setGroupState = _useState4[1];
+  var _useGroupState = useGroupState(groups, groupBy),
+      groupState = _useGroupState[0],
+      setGroupState = _useGroupState[1];
 
-  var _useState5 = useState(select || onSelect && [] || undefined),
-      selected = _useState5[0],
-      setSelected = _useState5[1];
+  var _useState6 = useState(select || onSelect && [] || undefined),
+      selected = _useState6[0],
+      setSelected = _useState6[1];
 
   useEffect(function () {
     return setSelected(select || onSelect && [] || undefined);
   }, [onSelect, select]);
 
-  var _useState6 = useState([]),
-      rowExpand = _useState6[0],
-      setRowExpand = _useState6[1]; // any customized column widths
+  var _useState7 = useState([]),
+      rowExpand = _useState7[0],
+      setRowExpand = _useState7[1]; // any customized column widths
 
 
-  var _useState7 = useState({}),
-      widths = _useState7[0],
-      setWidths = _useState7[1]; // placeholder placement stuff
+  var _useState8 = useState({}),
+      widths = _useState8[0],
+      setWidths = _useState8[1]; // placeholder placement stuff
 
 
   var headerRef = useRef();
   var bodyRef = useRef();
   var footerRef = useRef();
 
-  var _useState8 = useState(),
-      headerHeight = _useState8[0],
-      setHeaderHeight = _useState8[1];
-
   var _useState9 = useState(),
-      footerHeight = _useState9[0],
-      setFooterHeight = _useState9[1]; // offset compensation when body overflows
+      headerHeight = _useState9[0],
+      setHeaderHeight = _useState9[1];
+
+  var _useState10 = useState(),
+      footerHeight = _useState10[0],
+      setFooterHeight = _useState10[1]; // offset compensation when body overflows
 
 
-  var _useState10 = useState(0),
-      scrollOffset = _useState10[0],
-      setScrollOffset = _useState10[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
+  var _useState11 = useState(0),
+      scrollOffset = _useState11[0],
+      setScrollOffset = _useState11[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   useLayoutEffect(function () {

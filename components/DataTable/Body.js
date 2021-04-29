@@ -190,7 +190,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     var isSelected = selected && selected.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(index);
     return /*#__PURE__*/_react["default"].createElement(Row, {
-      key: primaryValue || index,
+      key: index,
       rowRef: rowRef,
       primaryValue: primaryValue,
       isSelected: isSelected,
