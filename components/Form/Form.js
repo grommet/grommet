@@ -85,11 +85,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
   var _useState3 = (0, _react.useState)(defaultValidationResults),
       validationResults = _useState3[0],
-      setValidationResults = _useState3[1];
-
-  var _useState4 = (0, _react.useState)([]),
-      requiredFields = _useState4[0],
-      setRequiredFields = _useState4[1]; // when onBlur input validation is triggered, we need to complete any
+      setValidationResults = _useState3[1]; // when onBlur input validation is triggered, we need to complete any
   // potential click events before running the onBlur validation.
   // otherwise, click events like reset, etc. may not be registered.
   // for a detailed scenario/discussion,
@@ -98,9 +94,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   // awaiting validation.
 
 
-  var _useState5 = (0, _react.useState)(undefined),
-      pendingValidation = _useState5[0],
-      setPendingValidation = _useState5[1];
+  var _useState4 = (0, _react.useState)(undefined),
+      pendingValidation = _useState4[0],
+      setPendingValidation = _useState4[1];
 
   (0, _react.useEffect)(function () {
     setPendingValidation(undefined);
@@ -110,18 +106,17 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     });
   }, [errorsProp, infosProp]);
   var validations = (0, _react.useRef)({});
-
-  var buildValid = function buildValid(nextErrors) {
+  var requiredFields = (0, _react.useRef)([]);
+  var buildValid = (0, _react.useCallback)(function (nextErrors) {
     var valid = false;
-    valid = requiredFields.filter(function (n) {
+    valid = requiredFields.current.filter(function (n) {
       return Object.keys(validations.current).includes(n);
     }).every(function (field) {
       return value[field] && (value[field] !== '' || value[field] !== false);
     });
     if (Object.keys(nextErrors).length > 0) valid = false;
     return valid;
-  }; // Remove any errors that we don't have any validations for anymore.
-
+  }, [value]); // Remove any errors that we don't have any validations for anymore.
 
   var filterErrorValidations = function filterErrorValidations(errors) {
     var nextErrors = errors;
@@ -140,7 +135,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }).forEach(function (n) {
       return delete nextInfos[n];
     });
-  };
+  }; // On initial mount, when validateOn is change or blur,
+  // set validation results for any set fields and calculate whether
+  // the form is valid overall.
+
 
   (0, _react.useEffect)(function () {
     var validationsForSetFields = Object.entries(validations.current).filter(function (_ref3) {
@@ -150,27 +148,22 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
     if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
       var _validate = validate(validationsForSetFields, value),
-          validatedErrors = _validate[0],
-          validatedInfos = _validate[1];
+          errors = _validate[0],
+          infos = _validate[1];
 
-      setValidationResults(function (prevValidationResults) {
-        var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
+      filterErrorValidations(errors);
+      filterInfoValidations(infos);
+      var nextValidationResults = {
+        errors: errors,
+        infos: infos,
+        valid: buildValid(errors)
+      };
+      if (onValidate) onValidate(nextValidationResults);
+      setValidationResults(nextValidationResults);
+    } // We only want to run this for the value we have on initial mount.
+    // We don't want subsequent changes to the value to re-run this.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 
-        var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos); // Remove any errors or infos that we don't have any validations
-        // for anymore. This can occur when fields are dynamically removed.
-
-
-        filterErrorValidations(nextErrors);
-        filterInfoValidations(nextInfos);
-        var nextValidationResults = {
-          errors: nextErrors,
-          infos: nextInfos,
-          valid: buildValid(nextErrors)
-        };
-        if (onValidate) onValidate(nextValidationResults);
-        return nextValidationResults;
-      });
-    }
   }, []); // Currently, onBlur validation will trigger after a timeout of 120ms.
 
   (0, _react.useEffect)(function () {
@@ -186,16 +179,14 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
         setPendingValidation(undefined);
         setValidationResults(function (prevValidationResults) {
+          // keep any previous errors and infos for untouched keys,
+          // these may have come from a submit
           var nextErrors = _extends({}, prevValidationResults.errors, validatedErrors);
 
-          var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos); // Remove any errors or infos that we don't have any validations
-          // for anymore. This can occur when fields are dynamically removed.
-
+          var nextInfos = _extends({}, prevValidationResults.infos, validatedInfos);
 
           filterErrorValidations(nextErrors);
-          filterInfoValidations(nextInfos); // keep any previous errors and infos for untouched keys,
-          // these may have come from a submit
-
+          filterInfoValidations(nextInfos);
           var nextValidationResults = {
             errors: nextErrors,
             infos: nextInfos,
@@ -215,7 +206,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
+  }, [buildValid, pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
 
   (0, _react.useEffect)(function () {
     if (validateOn !== 'change') setPendingValidation(undefined);
@@ -266,9 +257,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   //
 
   var useFormInput = function useFormInput(name, componentValue, initialValue) {
-    var _useState6 = (0, _react.useState)(initialValue),
-        inputValue = _useState6[0],
-        setInputValue = _useState6[1];
+    var _useState5 = (0, _react.useState)(initialValue),
+        inputValue = _useState5[0],
+        setInputValue = _useState5[1];
 
     var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
     // component is driving the value via componentValue.
@@ -366,17 +357,11 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         return result;
       };
 
+      var index = requiredFields.current.indexOf(name);
+
       if (required) {
-        setRequiredFields(function (prevValue) {
-          return !prevValue.includes(name) ? [].concat(prevValue, [name]) : prevValue;
-        });
-      } else {
-        setRequiredFields(function (prevValue) {
-          return prevValue.filter(function (v) {
-            return v !== name;
-          });
-        });
-      }
+        if (index === -1) requiredFields.current.push(name);
+      } else if (index !== -1) requiredFields.current.splice(index, 1);
 
       if (validateArg || required) {
         validations.current[name] = validateField;
