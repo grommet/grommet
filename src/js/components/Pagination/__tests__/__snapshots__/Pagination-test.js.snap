@@ -170,6 +170,26 @@ exports[`Pagination should allow user to control page via state with page +
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -227,6 +247,26 @@ exports[`Pagination should allow user to control page via state with page +
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -619,6 +659,26 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -685,6 +745,26 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -742,6 +822,26 @@ exports[`Pagination should apply button kind style when referenced by a string 1
 }
 
 .c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1157,6 +1257,26 @@ exports[`Pagination should apply custom theme 1`] = `
   border: 0;
 }
 
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -1220,6 +1340,26 @@ exports[`Pagination should apply custom theme 1`] = `
   border: 0;
 }
 
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -1277,6 +1417,26 @@ exports[`Pagination should apply custom theme 1`] = `
 }
 
 .c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1703,6 +1863,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -1766,6 +1946,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -1826,6 +2026,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c15 {
   display: inline-block;
   box-sizing: border-box;
@@ -1880,6 +2100,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c15:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1946,6 +2186,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   display: inline-block;
   box-sizing: border-box;
@@ -2006,6 +2266,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c22 {
   display: inline-block;
   box-sizing: border-box;
@@ -2060,6 +2340,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c22:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c22:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) > circle,
+.c22:focus:not(:focus-visible) > ellipse,
+.c22:focus:not(:focus-visible) > line,
+.c22:focus:not(:focus-visible) > path,
+.c22:focus:not(:focus-visible) > polygon,
+.c22:focus:not(:focus-visible) > polyline,
+.c22:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2126,6 +2426,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c24:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) > circle,
+.c24:focus:not(:focus-visible) > ellipse,
+.c24:focus:not(:focus-visible) > line,
+.c24:focus:not(:focus-visible) > path,
+.c24:focus:not(:focus-visible) > polygon,
+.c24:focus:not(:focus-visible) > polyline,
+.c24:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c25 {
   display: inline-block;
   box-sizing: border-box;
@@ -2183,6 +2503,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c25:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c25:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible) > circle,
+.c25:focus:not(:focus-visible) > ellipse,
+.c25:focus:not(:focus-visible) > line,
+.c25:focus:not(:focus-visible) > path,
+.c25:focus:not(:focus-visible) > polygon,
+.c25:focus:not(:focus-visible) > polyline,
+.c25:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3453,6 +3793,26 @@ exports[`Pagination should disable next button if on last page 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -3516,6 +3876,26 @@ exports[`Pagination should disable next button if on last page 1`] = `
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -3570,6 +3950,26 @@ exports[`Pagination should disable next button if on last page 1`] = `
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3959,6 +4359,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -4019,6 +4439,26 @@ exports[`Pagination should disable previous and next controls when numberItems
 }
 
 .c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4317,6 +4757,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -4596,6 +5056,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -4656,6 +5136,26 @@ exports[`Pagination should disable previous and next controls when numberItems
 }
 
 .c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4987,6 +5487,26 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -5050,6 +5570,26 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -5107,6 +5647,26 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 }
 
 .c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5502,6 +6062,26 @@ exports[`Pagination should display next page of results when "next" is
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5559,6 +6139,26 @@ exports[`Pagination should display next page of results when "next" is
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5802,7 +6402,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             <svg
@@ -5828,7 +6428,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             1
@@ -5843,7 +6443,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             2
@@ -5857,7 +6457,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             3
@@ -5871,7 +6471,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             4
@@ -5885,7 +6485,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             5
@@ -5911,7 +6511,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             24
@@ -5925,7 +6525,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             <svg
@@ -6118,6 +6718,26 @@ exports[`Pagination should display page 'n' of results when "page n" is
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6175,6 +6795,26 @@ exports[`Pagination should display page 'n' of results when "page n" is
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6565,6 +7205,26 @@ exports[`Pagination should display previous page of results when "previous" is
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -6625,6 +7285,26 @@ exports[`Pagination should display previous page of results when "previous" is
 }
 
 .c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6868,7 +7548,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             <svg
@@ -6894,7 +7574,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             1
@@ -6909,7 +7589,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             2
@@ -6923,7 +7603,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             3
@@ -6937,7 +7617,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             4
@@ -6951,7 +7631,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             5
@@ -6977,7 +7657,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             24
@@ -6991,7 +7671,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
             type="button"
           >
             <svg
@@ -7212,6 +7892,26 @@ exports[`Pagination should display the correct last page based on items length
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -7275,6 +7975,26 @@ exports[`Pagination should display the correct last page based on items length
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -7332,6 +8052,26 @@ exports[`Pagination should display the correct last page based on items length
 }
 
 .c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7723,6 +8463,26 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -7783,6 +8543,26 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 }
 
 .c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8226,6 +9006,26 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -8286,6 +9086,26 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 }
 
 .c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8687,6 +9507,26 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -8747,6 +9587,26 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 }
 
 .c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9193,6 +10053,26 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -9256,6 +10136,26 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -9313,6 +10213,26 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 }
 
 .c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9711,6 +10631,26 @@ exports[`Pagination should set page to last page if page prop > total possible
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -9774,6 +10714,26 @@ exports[`Pagination should set page to last page if page prop > total possible
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -9828,6 +10788,26 @@ exports[`Pagination should set page to last page if page prop > total possible
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

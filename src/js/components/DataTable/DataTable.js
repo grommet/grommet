@@ -53,6 +53,23 @@ const normalizeProp = (prop, context) => {
   return undefined;
 };
 
+function useGroupState(groups, groupBy) {
+  const [groupState, setGroupState] = useState(() =>
+    buildGroupState(groups, groupBy),
+  );
+  const [prevDeps, setPrevDeps] = useState({ groups, groupBy });
+
+  const { groups: prevGroups, groupBy: prevGroupBy } = prevDeps;
+  if (groups !== prevGroups || groupBy !== prevGroupBy) {
+    setPrevDeps({ groups, groupBy });
+    const nextGroupState = buildGroupState(groups, groupBy);
+    setGroupState(nextGroupState);
+    return [nextGroupState, setGroupState];
+  }
+
+  return [groupState, setGroupState];
+}
+
 const DataTable = ({
   background,
   border,
@@ -124,9 +141,7 @@ const DataTable = ({
   ]);
 
   // an object indicating which group values are expanded
-  const [groupState, setGroupState] = useState(
-    buildGroupState(groups, groupBy),
-  );
+  const [groupState, setGroupState] = useGroupState(groups, groupBy);
 
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
