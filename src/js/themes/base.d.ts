@@ -514,6 +514,9 @@ export interface ThemeType {
       color?: ColorType;
       width?: string;
     };
+    label?: {
+      align: string;
+    };
     check?: {
       extend?: ExtendType;
       radius?: string;

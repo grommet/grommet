@@ -45,7 +45,11 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 const StyledCheckBoxContainer = styled.label`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: ${props =>
+    (props.theme.checkBox &&
+      props.theme.checkBox.label &&
+      props.theme.checkBox.label.align) ||
+    'center'};
   user-select: none;
   ${props => (props.fillProp ? fillStyle() : 'width: fit-content;')}
   ${props =>

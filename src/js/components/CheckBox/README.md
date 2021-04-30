@@ -328,6 +328,17 @@ Defaults to
 undefined
 ```
 
+**checkBox.label.alignment**
+
+Weather the checkbox is aligned center or
+       in line with the text. Expects `string`.
+
+Defaults to
+
+```
+center
+```
+
 **checkBox.pad**
 
 The pad around the CheckBox and its label. Expects `string | object`.

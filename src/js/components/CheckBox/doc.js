@@ -140,6 +140,12 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'checkBox.label.alignment': {
+    description: `Weather the checkbox is aligned center or
+       in line with the text.`,
+    type: 'string',
+    defaultValue: 'center',
+  },
   'checkBox.pad': {
     description: 'The pad around the CheckBox and its label.',
     type: 'string | object',
