@@ -73,6 +73,7 @@ const Select = forwardRef(
       onMore,
       onOpen,
       onSearch,
+      searchValue,
       open: propOpen,
       options: optionsProp,
       placeholder,
@@ -115,7 +116,8 @@ const Select = forwardRef(
     // to be referenced when filtered by search.
     useEffect(() => {
       if (!search) setAllOptions(optionsProp);
-    }, [optionsProp, search]);
+      if (searchValue) setSearch(searchValue);
+    }, [optionsProp, search, searchValue]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {

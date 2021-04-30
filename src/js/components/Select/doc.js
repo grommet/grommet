@@ -218,6 +218,10 @@ export const doc = Select => {
       when multiple. Passing an element allows the caller to control how
       the value is rendered. Passing an element is deprecated. Instead,
       use the 'valueLabel' property.`),
+    searchValue: PropTypes.string.description(
+      `Search Value text to use in the search box to
+      search some option on the Select component.`,
+    ),
     valueLabel: PropTypes.node.description(
       `Provides custom rendering of the value. If not provided, Select
       will render the value automatically.`,

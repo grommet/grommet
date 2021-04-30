@@ -326,6 +326,15 @@ const SelectContainer = forwardRef(
         }
       : {};
 
+    const onSearchProp = useCallback(
+      searchInputValue => {
+        setSearch(searchInputValue);
+        setActiveIndex(-1);
+        onSearch(searchInputValue);
+      },
+      [setSearch, setActiveIndex, onSearch],
+    );
+
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -348,12 +357,8 @@ const SelectContainer = forwardRef(
                 type="search"
                 value={search || ''}
                 placeholder={searchPlaceholder}
-                onChange={event => {
-                  const nextSearch = event.target.value;
-                  setSearch(nextSearch);
-                  setActiveIndex(-1);
-                  onSearch(nextSearch);
-                }}
+                onFocus={() => search && onSearchProp(search)}
+                onChange={event => onSearchProp(event.target.value)}
               />
             </Box>
           )}

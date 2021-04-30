@@ -201,6 +201,24 @@ describe('Select', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
+  test('search with search value prop', () => {
+    const onSearch = jest.fn();
+    const { getByPlaceholderText, getByTestId } = render(
+      <Select
+        id="test-select"
+        options={['one', 'two']}
+        onSearch={onSearch}
+        searchValue="two"
+        searchPlaceholder="search-placeholder"
+        data-testid="test"
+      />,
+    );
+    fireEvent.click(getByTestId('test'));
+
+    const searchInput = getByPlaceholderText('search-placeholder');
+    expect(searchInput.value).toBe('two');
+  });
+
   test('size', () => {
     const component = renderer.create(
       <Select
