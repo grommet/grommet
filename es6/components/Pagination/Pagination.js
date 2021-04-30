@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -47,8 +47,11 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState = useState(Math.min(pageProp, totalPages) || 1),
       activePage = _useState[0],
       setActivePage = _useState[1];
-  /* Define page indices to display */
 
+  useEffect(function () {
+    setActivePage(pageProp || 1);
+  }, [pageProp]);
+  /* Define page indices to display */
 
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
   var endPages = getPageIndices(Math.max(totalPages - numberEdgePages + 1, numberEdgePages + 1), totalPages);

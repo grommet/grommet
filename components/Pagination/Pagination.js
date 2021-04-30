@@ -63,8 +63,11 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _useState = (0, _react.useState)(Math.min(pageProp, totalPages) || 1),
       activePage = _useState[0],
       setActivePage = _useState[1];
-  /* Define page indices to display */
 
+  (0, _react.useEffect)(function () {
+    setActivePage(pageProp || 1);
+  }, [pageProp]);
+  /* Define page indices to display */
 
   var beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
   var endPages = getPageIndices(Math.max(totalPages - numberEdgePages + 1, numberEdgePages + 1), totalPages);
