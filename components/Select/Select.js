@@ -209,11 +209,32 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     if (onChange) {
       event.persist();
-      var adjustedEvent = event;
-      adjustedEvent.target = inputRef.current;
-      adjustedEvent.value = nextValue;
-      adjustedEvent.option = option;
-      adjustedEvent.selected = nextSelected;
+      var adjustedEvent; // support for native event used by Preact
+
+      if (event instanceof Event) {
+        adjustedEvent = new event.constructor(event.type, event);
+        Object.defineProperties(adjustedEvent, {
+          target: {
+            value: inputRef.current
+          },
+          value: {
+            value: nextValue
+          },
+          option: {
+            value: option
+          },
+          selected: {
+            value: nextSelected
+          }
+        });
+      } else {
+        adjustedEvent = event;
+        adjustedEvent.target = inputRef.current;
+        adjustedEvent.value = nextValue;
+        adjustedEvent.option = option;
+        adjustedEvent.selected = nextSelected;
+      }
+
       onChange(adjustedEvent);
     }
 
