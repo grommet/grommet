@@ -34,7 +34,10 @@ export interface LayerProps {
   target?: object;
 }
 
-declare const Layer: React.ComponentClass<LayerProps &
-  JSX.IntrinsicElements['div']>;
+type divProps = JSX.IntrinsicElements['div'];
+
+export interface LayerExtendedProps extends LayerProps, divProps {}
+
+declare const Layer: React.FC<LayerExtendedProps>;
 
 export { Layer };

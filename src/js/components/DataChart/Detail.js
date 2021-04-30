@@ -5,12 +5,15 @@ import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle } from '../../utils';
+import { focusStyle, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 
 const DetailControl = styled(Box)`
   &:focus {
     ${focusStyle()}
+  }
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
   }
 `;
 

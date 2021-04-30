@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
+import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
@@ -329,9 +330,10 @@ export const focusStyle = ({
 
 // This is placed next to focusStyle for easy maintainability
 // of code since changes to focusStyle should be reflected in
-// unfocusStyle as well. However, this function is only being used
-// by List for an iterim state. It is not recommended to rely on
-// this function for other components.
+// unfocusStyle as well.
+// this function can be used to reset focus styles which is
+// applicable when turning the focus ring off when using the mouse
+// see https://nelo.is/writing/styling-better-focus-states/
 export const unfocusStyle = ({
   forceOutline,
   justBorder,
@@ -605,6 +607,136 @@ export const kindPartStyles = (obj, theme, colorValue) => {
     styles.push(`opacity: ${opacity};`);
   }
   if (obj.extend) styles.push(obj.extend);
+  return styles;
+};
+
+const ROUND_MAP = {
+  full: '100%',
+};
+
+export const roundStyle = (data, responsive, theme) => {
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  const styles = [];
+  if (typeof data === 'object') {
+    const size =
+      ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'] ||
+      data.size;
+    const responsiveSize =
+      responsive &&
+      breakpoint &&
+      breakpoint.edgeSize[data.size] &&
+      (breakpoint.edgeSize[data.size] || data.size);
+    if (data.corner === 'top') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-top-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-top-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'bottom') {
+      styles.push(css`
+        border-bottom-left-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-bottom-left-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'left') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-bottom-left-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-left-radius: ${responsiveSize};
+          border-bottom-left-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner === 'right') {
+      styles.push(css`
+        border-top-right-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-top-right-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else if (data.corner) {
+      styles.push(css`
+        border-${data.corner}-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-${data.corner}-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    } else {
+      styles.push(css`
+        border-radius: ${size};
+      `);
+      if (responsiveSize) {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          border-radius: ${responsiveSize};
+        `,
+          ),
+        );
+      }
+    }
+  } else {
+    const size = data === true ? 'medium' : data;
+    styles.push(css`
+      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+    `);
+    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    if (responsiveSize) {
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
+        border-radius: ${responsiveSize};
+      `,
+        ),
+      );
+    }
+  }
   return styles;
 };
 

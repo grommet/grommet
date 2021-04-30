@@ -149,6 +149,39 @@ describe('DateInput', () => {
     component.unmount();
   });
 
+  test('dates initialized with empty array', () => {
+    const onChange = jest.fn(event => event.value);
+    // month is indexed from 0, so we add one
+    let month = new Date().getMonth() + 1;
+    if (month < 10) month = `0${month}`;
+
+    const year = new Date().getFullYear();
+
+    let timezoneOffset = new Date().getTimezoneOffset() / 60;
+    if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
+
+    const { container, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          value={[]}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('20'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith([
+      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
+      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
+    ]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('focus', () => {
     const onFocus = jest.fn();
     const { container, getByPlaceholderText } = render(
@@ -317,6 +350,17 @@ describe('DateInput', () => {
             disabled: true,
           }}
         />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    component.unmount();
+  });
+
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput disabled />
       </Grommet>,
     );
     const tree = component.toJSON();
