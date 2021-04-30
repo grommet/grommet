@@ -20,7 +20,6 @@ exports[`Collapsible onClick open default 1`] = `
   transition: max-height 200ms,opacity 200ms;
   opacity: 1;
   overflow: visible;
-  max-height: unset;
 }
 
 .c0 {
@@ -61,7 +60,7 @@ exports[`Collapsible onClick open default 2`] = `
 >
   <div
     aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 euNsBL"
+    class="StyledBox-sc-13pk1d4-0 dYebPD Collapsible__AnimatedBox-sc-15kniua-0 dXPxSw"
     style="max-height: 0px;"
   >
     <span
@@ -93,7 +92,6 @@ exports[`Collapsible open 1`] = `
   transition: max-height 200ms,opacity 200ms;
   opacity: 1;
   overflow: visible;
-  max-height: unset;
 }
 
 .c0 {
