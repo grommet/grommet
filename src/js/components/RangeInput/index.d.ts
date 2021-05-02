@@ -4,12 +4,12 @@ import { A11yTitleType } from '../../utils';
 export interface RangeInputProps {
   a11yTitle?: A11yTitleType;
   id?: string;
+  inputValue?: boolean;
   min?: number | string;
   max?: number | string;
   name?: string;
   step?: number;
   value?: number | string;
-  inputValue?: boolean;
 }
 
 declare const RangeInput: React.FC<RangeInputProps &
