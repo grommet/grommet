@@ -10,6 +10,17 @@ export const SearchWithControlledInput = () => {
   const [value, setValue] = useState('');
   const [searchValue, setSearchValue] = useState('two');
 
+  const handleSearchValue = text => {
+    if (!text) {
+      setOptions(defaultOptions);
+    } else {
+      const optionsFound = defaultOptions.filter(option => text === option);
+      setOptions(optionsFound);
+    }
+
+    setSearchValue(text);
+  };
+
   return (
     <Grommet full theme={grommet}>
       <Box pad="large" gap="medium" direction="row">
@@ -21,10 +32,7 @@ export const SearchWithControlledInput = () => {
           options={options}
           onChange={({ option }) => setValue(option)}
           onClose={() => setOptions(defaultOptions)}
-          onSearch={text => {
-            setSearchValue(text);
-            setOptions(defaultOptions.filter(option => text === option));
-          }}
+          onSearch={handleSearchValue}
         />
       </Box>
     </Grommet>
