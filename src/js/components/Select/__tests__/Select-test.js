@@ -203,20 +203,40 @@ describe('Select', () => {
 
   test('search with search value prop', () => {
     const onSearch = jest.fn();
-    const { getByPlaceholderText, getByTestId } = render(
-      <Select
-        id="test-select"
-        options={['one', 'two']}
-        onSearch={onSearch}
-        searchValue="two"
-        searchPlaceholder="search-placeholder"
-        data-testid="test"
-      />,
-    );
-    fireEvent.click(getByTestId('test'));
+
+    const Test = () => {
+      const [searchValue, setSearchValue] = React.useState('two');
+      const [options, setOptions] = React.useState(['one', 'two']);
+      return (
+        <Select
+          id="test-select"
+          options={options}
+          onSearch={arg => {
+            onSearch(arg);
+            setSearchValue(arg);
+            setOptions(['two']);
+          }}
+          searchValue={searchValue}
+          searchPlaceholder="search-placeholder"
+          data-testid="test-select"
+        />
+      );
+    };
+
+    const { getByPlaceholderText, getByTestId, container } = render(<Test />);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByTestId('test-select'));
 
     const searchInput = getByPlaceholderText('search-placeholder');
-    expect(searchInput.value).toBe('two');
+
+    expect(searchInput.value).toEqual('two');
+
+    fireEvent.change(searchInput, { target: { value: 'one' } });
+    expect(onSearch).toBeCalledWith('one');
+    expect(searchInput.value).toEqual('one');
+
+    expect(onSearch).toHaveBeenCalledTimes(1);
   });
 
   test('size', () => {
