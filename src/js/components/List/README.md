@@ -260,6 +260,15 @@ When supplied, this function will be called with an event object that
 function
 ```
 
+**onOrder**
+
+Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+
+```
+function
+```
+
 **pad**
 
 Item padding.

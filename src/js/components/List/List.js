@@ -1,7 +1,8 @@
-import React, { Fragment, useContext, useState } from 'react';
+import React, { Fragment, useContext, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
@@ -39,6 +40,9 @@ const StyledList = styled.ul`
 
 const StyledItem = styled(Box)`
   ${props => props.onClick && `cursor: pointer;`}
+  ${props =>
+    props.draggable &&
+    `cursor: grab;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -66,6 +70,16 @@ const normalize = (item, index, property) => {
   return item[property];
 };
 
+const reorder = (array, source, target) => {
+  const result = array.slice(0);
+  const tmp = result[source];
+  if (source < target)
+    for (let i = source; i < target; i += 1) result[i] = result[i + 1];
+  else for (let i = source; i > target; i -= 1) result[i] = result[i - 1];
+  result[target] = tmp;
+  return result;
+};
+
 const List = React.forwardRef(
   (
     {
@@ -77,6 +91,7 @@ const List = React.forwardRef(
       data,
       focus,
       itemProps,
+      onOrder,
       pad,
       paginate,
       primaryKey,
@@ -93,6 +108,7 @@ const List = React.forwardRef(
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
     const [itemFocus, setItemFocus] = useState();
+    const [dragging, setDragging] = useState();
 
     const [items, paginationProps] = usePagination({
       data,
@@ -104,6 +120,10 @@ const List = React.forwardRef(
 
     const Container = paginate ? StyledContainer : Fragment;
     const containterProps = paginate ? { ...theme.list.container } : undefined;
+
+    const [orderingData, setOrderingData] = useState();
+
+    const draggingRef = useRef();
 
     return (
       <Container {...containterProps}>
@@ -144,7 +164,7 @@ const List = React.forwardRef(
             {...rest}
           >
             <InfiniteScroll
-              items={!paginate ? data : items}
+              items={!paginate ? orderingData || data : items}
               onMore={onMore}
               scrollableAncestor="window"
               show={!paginate ? showProp : undefined}
@@ -216,7 +236,7 @@ const List = React.forwardRef(
 
                 let adjustedBackground =
                   background || theme.list.item.background;
-                if (active === index) {
+                if (active === index || dragging === index) {
                   adjustedBackground = theme.global.hover.background;
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
@@ -262,6 +282,70 @@ const List = React.forwardRef(
                   };
                 }
 
+                let orderProps;
+                let orderControls;
+                if (onOrder) {
+                  orderProps = {
+                    draggable: true,
+                    onDragStart: event => {
+                      event.dataTransfer.setData('text/plain', '');
+                      // allowed per
+                      // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_the_drag_effect
+                      // eslint-disable-next-line no-param-reassign
+                      event.dataTransfer.effectAllowed = 'move';
+                      setDragging(index);
+                    },
+                    onDragEnd: () => {
+                      setDragging(undefined);
+                      setOrderingData(undefined);
+                    },
+                    onDragOver: event => {
+                      if (dragging !== undefined) {
+                        event.preventDefault();
+                        if (dragging !== index) {
+                          // eslint-disable-next-line no-param-reassign
+                          event.dataTransfer.dropEffect = 'move';
+                          setOrderingData(
+                            reorder(orderingData || data, dragging, index),
+                          );
+                          setDragging(index);
+                        }
+                      }
+                    },
+                    onDrop: () => {
+                      onOrder(orderingData);
+                    },
+                    ref: dragging === index ? draggingRef : undefined,
+                  };
+
+                  const Up = theme.list.icons.up;
+                  const Down = theme.list.icons.down;
+                  orderControls = (
+                    <Box direction="row" align="center" justify="end">
+                      <Button
+                        icon={<Up />}
+                        hoverIndicator
+                        disabled={!index}
+                        onClick={() => onOrder(reorder(data, index, index - 1))}
+                      />
+                      <Button
+                        icon={<Down />}
+                        hoverIndicator
+                        disabled={index >= data.length - 1}
+                        onClick={() => onOrder(reorder(data, index, index + 1))}
+                      />
+                    </Box>
+                  );
+
+                  boxProps = {
+                    direction: 'row',
+                    align: 'center',
+                    gap: 'medium',
+                  };
+
+                  content = <Box flex>{content}</Box>;
+                }
+
                 return (
                   <StyledItem
                     key={index}
@@ -272,8 +356,11 @@ const List = React.forwardRef(
                     border={adjustedBorder}
                     {...boxProps}
                     {...clickProps}
+                    {...orderProps}
                   >
+                    {onOrder && <Text>{index + 1}</Text>}
                     {content}
+                    {orderControls}
                   </StyledItem>
                 );
               }}

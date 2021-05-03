@@ -981,6 +981,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
+      icons: {
+        down: FormDown,
+        up: FormUp,
+      },
       // extend: undefined,
     },
     maskedInput: {

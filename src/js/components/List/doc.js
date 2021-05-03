@@ -106,6 +106,10 @@ export const doc = List => {
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
     ),
+    onOrder: PropTypes.func.description(
+      `Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.`,
+    ),
     pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
       .description(

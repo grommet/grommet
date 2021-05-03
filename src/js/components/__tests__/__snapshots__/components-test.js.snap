@@ -5716,6 +5716,12 @@ end
         "name": "onClickItem",
       },
       Object {
+        "description": "Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.",
+        "format": "function",
+        "name": "onOrder",
+      },
+      Object {
         "description": "Item padding.",
         "format": "none
 xxsmall
