@@ -153,6 +153,7 @@ describe('Anchor', () => {
   test('size renders', () => {
     const component = renderer.create(
       <Grommet>
+        <Anchor size="10px" />
         <Anchor size="xsmall" />
         <Anchor size="small" />
         <Anchor size="medium" />

@@ -11,6 +11,9 @@ const SizeAnchor = () => (
           <Anchor size={size} label={size} href="#" />
         </Box>
       ))}
+      <Box margin="small">
+        <Anchor size="10px" label="Custom String 10px" href="#" />
+      </Box>
     </Box>
   </Grommet>
 );
