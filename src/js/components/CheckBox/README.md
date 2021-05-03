@@ -328,10 +328,9 @@ Defaults to
 undefined
 ```
 
-**checkBox.label.align**
+**checkBox.label.alignment**
 
-Weather the checkbox is aligned center or
-       in line with the text. Expects `string`.
+How to align the checkbox and label. Expects `string`.
 
 Defaults to
 

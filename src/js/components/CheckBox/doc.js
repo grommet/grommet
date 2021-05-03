@@ -141,8 +141,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'checkBox.label.alignment': {
-    description: `Weather the checkbox is aligned center or
-       in line with the text.`,
+    description: 'How to align the checkbox and label.',
     type: 'string',
     defaultValue: 'center',
   },
