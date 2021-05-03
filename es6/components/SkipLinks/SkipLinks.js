@@ -1,4 +1,4 @@
-import React, { cloneElement, useContext, useRef, useState } from 'react';
+import React, { Children, cloneElement, useContext, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -53,8 +53,8 @@ var SkipLinks = function SkipLinks(_ref) {
   }, /*#__PURE__*/React.createElement(Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/React.createElement(Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     gap: "medium"
-  }, children.map(function (element, index) {
-    return /*#__PURE__*/cloneElement(element, {
+  }, Children.map(children, function (child, index) {
+    return /*#__PURE__*/cloneElement(child, {
       key: "skip-link-" + index,
       onClick: removeLayer
     });

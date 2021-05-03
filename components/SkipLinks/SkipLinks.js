@@ -68,8 +68,8 @@ var SkipLinks = function SkipLinks(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     align: "center",
     gap: "medium"
-  }, children.map(function (element, index) {
-    return /*#__PURE__*/(0, _react.cloneElement)(element, {
+  }, _react.Children.map(children, function (child, index) {
+    return /*#__PURE__*/(0, _react.cloneElement)(child, {
       key: "skip-link-" + index,
       onClick: removeLayer
     });
