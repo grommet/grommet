@@ -54,7 +54,8 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   };
 
   return /*#__PURE__*/React.createElement(StyledCheckBoxGroup, _extends({
-    ref: ref
+    ref: ref,
+    role: "group"
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
 

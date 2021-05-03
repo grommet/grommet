@@ -126,7 +126,8 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     onLeft: focus ? onPrevious : undefined,
     onRight: focus ? onNext : undefined
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    ref: ref
+    ref: ref,
+    role: "radiogroup"
   }, theme.radioButtonGroup.container, {
     gap: gap || (theme.radioButtonGroup.container && theme.radioButtonGroup.container.gap ? theme.radioButtonGroup.container.gap : 'small')
   }, rest), options.map(function (_ref2, index) {

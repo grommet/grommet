@@ -21,10 +21,12 @@ export var FormControlled = function FormControlled() {
       );
     }
   }, /*#__PURE__*/React.createElement(FormField, {
+    id: "check-box-formfield-id",
     name: "controlled"
   }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
     id: "check-box-group-id",
     name: "controlled",
+    "aria-labelledby": "check-box-formfield-id",
     value: value,
     onChange: function onChange(_ref2) {
       var nextValue = _ref2.value;

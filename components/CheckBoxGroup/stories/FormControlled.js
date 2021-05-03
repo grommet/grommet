@@ -33,10 +33,12 @@ var FormControlled = function FormControlled() {
       );
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    id: "check-box-formfield-id",
     name: "controlled"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
     id: "check-box-group-id",
     name: "controlled",
+    "aria-labelledby": "check-box-formfield-id",
     value: value,
     onChange: function onChange(_ref2) {
       var nextValue = _ref2.value;

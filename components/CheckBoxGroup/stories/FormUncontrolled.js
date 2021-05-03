@@ -42,10 +42,13 @@ var FormUncontrolled = function FormUncontrolled() {
       return console.log('Submit object options', value, touched);
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    name: "drink"
+    name: "drink",
+    label: "Drink",
+    id: "drink-formfield-id"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
     name: "drink",
     valueKey: "id",
+    "aria-labelledby": "drink-formfield-id",
     options: [{
       label: 'Coffee',
       id: '1'
