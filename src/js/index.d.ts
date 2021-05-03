@@ -3,6 +3,7 @@ export * from './components/AccordionPanel';
 export * from './components/Anchor';
 export * from './components/Avatar';
 export * from './components/Box';
+export * from './components/BoxSnowpack';
 export * from './components/Button';
 export * from './components/Calendar';
 export * from './components/Carousel';
