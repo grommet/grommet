@@ -173,7 +173,7 @@ const RangeSelector = forwardRef(
         {...rest}
         tabIndex="-1"
         onClick={onChange ? onClick : undefined}
-        onTouchMove={onTouchMove}
+        onTouchMove={onChange ? onTouchMove : undefined}
       >
         <Box
           style={{ flex: `${lower - min} 0 0` }}
