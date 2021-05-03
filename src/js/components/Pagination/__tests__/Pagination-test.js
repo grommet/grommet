@@ -19,7 +19,7 @@ for (let i = 0; i < 95; i += 1) {
 describe('Pagination', () => {
   afterEach(cleanup);
 
-  test(`should display the correct last page based on items length 
+  test(`should display the correct last page based on items length
   and step`, () => {
     const { container, getByText } = render(
       <Grommet>
@@ -67,7 +67,7 @@ describe('Pagination', () => {
 
   test('should show correct page when "page" is provided ', () => {});
 
-  test(`should disable previous and next controls when numberItems 
+  test(`should disable previous and next controls when numberItems
   < step`, () => {
     const { container } = render(
       <Grommet>
@@ -87,7 +87,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should disable previous and next controls when numberItems 
+  test(`should disable previous and next controls when numberItems
   === step`, () => {
     const { container } = render(
       <Grommet>
@@ -107,7 +107,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should disable previous and next controls when numberItems 
+  test(`should disable previous and next controls when numberItems
   === 0`, () => {
     const { container } = render(
       <Grommet>
@@ -127,7 +127,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should set page to last page if page prop > total possible 
+  test(`should set page to last page if page prop > total possible
   pages`, () => {
     const numberItems = 500;
     const step = 50;
@@ -147,7 +147,7 @@ describe('Pagination', () => {
   });
 
   // how to not hard code so many values
-  test(`should allow user to control page via state with page + 
+  test(`should allow user to control page via state with page +
   onChange`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
@@ -167,7 +167,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should display next page of results when "next" is 
+  test(`should display next page of results when "next" is
   selected`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
@@ -193,7 +193,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should display previous page of results when "previous" is 
+  test(`should display previous page of results when "previous" is
   selected`, () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
@@ -219,7 +219,7 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should display page 'n' of results when "page n" is 
+  test(`should display page 'n' of results when "page n" is
   selected`, () => {
     const { container, getByText } = render(
       <Grommet>
@@ -343,6 +343,29 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should change the page on prop change`, () => {
+    const { container, rerender } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={1} />
+      </Grommet>,
+    );
+
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '1',
+    );
+
+    rerender(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={2} />
+      </Grommet>,
+    );
+
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '2',
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

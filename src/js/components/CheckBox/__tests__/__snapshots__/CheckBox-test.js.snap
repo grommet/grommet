@@ -127,6 +127,10 @@ exports[`CheckBox checked renders 1`] = `
     checked={true}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={true}
@@ -635,6 +639,10 @@ exports[`CheckBox defaultChecked 1`] = `
     checked={true}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={true}
@@ -829,6 +837,10 @@ exports[`CheckBox disabled renders 1`] = `
     className="c1"
     disabled={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -856,6 +868,10 @@ exports[`CheckBox disabled renders 1`] = `
     className="c1"
     disabled={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={true}
@@ -1054,6 +1070,10 @@ exports[`CheckBox indeterminate renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1089,6 +1109,10 @@ exports[`CheckBox indeterminate renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1252,6 +1276,10 @@ exports[`CheckBox label renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1278,6 +1306,10 @@ exports[`CheckBox label renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1565,6 +1597,10 @@ exports[`CheckBox renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1589,6 +1625,10 @@ exports[`CheckBox renders 1`] = `
     className="c1"
     htmlFor="test id"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -1739,6 +1779,10 @@ exports[`CheckBox reverse renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <span>
       test label
@@ -1837,6 +1881,12 @@ exports[`CheckBox reverse toggle fill 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1913,8 +1963,11 @@ exports[`CheckBox reverse toggle fill 1`] = `
   <label
     checked={false}
     className="c1"
-    fill={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <span>
       test label
@@ -1945,8 +1998,11 @@ exports[`CheckBox reverse toggle fill 1`] = `
   <label
     checked={false}
     className="c1"
-    fill={true}
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -2253,6 +2309,10 @@ exports[`CheckBox toggle renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}
@@ -2281,6 +2341,10 @@ exports[`CheckBox toggle renders 1`] = `
     checked={true}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={true}
@@ -2309,6 +2373,10 @@ exports[`CheckBox toggle renders 1`] = `
     checked={false}
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <div
       checked={false}

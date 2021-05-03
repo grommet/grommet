@@ -634,6 +634,254 @@ exports[`RadioButtonGroup children 1`] = `
 </div>
 `;
 
+exports[`RadioButtonGroup defaultValue 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled]) + div,
+.c2:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c6 {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    height: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <label
+        class="c2"
+        for="one"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            checked=""
+            class="c4"
+            id="one"
+            name="test"
+            type="radio"
+            value="one"
+          />
+          <div
+            class="c5 "
+          >
+            <svg
+              class="c6"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="6"
+              />
+            </svg>
+          </div>
+        </div>
+        <span
+          class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        >
+          one
+        </span>
+      </label>
+      <div
+        class="c7"
+      />
+      <label
+        class="c2"
+        for="two"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="two"
+            name="test"
+            type="radio"
+            value="two"
+          />
+          <div
+            class="c8 "
+          />
+        </div>
+        <span
+          class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        >
+          two
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`RadioButtonGroup number options 1`] = `
 .c0 {
   font-size: 18px;

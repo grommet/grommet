@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -41,6 +41,10 @@ const Pagination = forwardRef(
     const [activePage, setActivePage] = useState(
       Math.min(pageProp, totalPages) || 1,
     );
+
+    useEffect(() => {
+      setActivePage(pageProp || 1);
+    }, [pageProp]);
 
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
