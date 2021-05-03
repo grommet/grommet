@@ -515,7 +515,7 @@ export interface ThemeType {
       width?: string;
     };
     label?: {
-      align: string;
+      align?: string;
     };
     check?: {
       extend?: ExtendType;
