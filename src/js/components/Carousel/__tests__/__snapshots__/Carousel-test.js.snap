@@ -223,6 +223,26 @@ exports[`Carousel basic 1`] = `
   border: 0;
 }
 
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -260,6 +280,26 @@ exports[`Carousel basic 1`] = `
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -305,6 +345,26 @@ exports[`Carousel basic 1`] = `
 }
 
 .c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -704,6 +764,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   border: 0;
 }
 
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -741,6 +821,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -783,6 +883,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 }
 
 .c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1179,6 +1299,26 @@ exports[`Carousel navigate 1`] = `
   border: 0;
 }
 
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -1216,6 +1356,26 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1261,6 +1421,26 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1459,7 +1639,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eRmxid"
+          class="StyledButton-sc-323bzc-0 dANGjo"
           type="button"
         >
           <svg
@@ -1483,7 +1663,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -1500,7 +1680,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -1519,7 +1699,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 gynwPT"
+          class="StyledButton-sc-323bzc-0 hJhjnC"
           disabled=""
           type="button"
         >
@@ -1590,7 +1770,7 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gynwPT"
+          class="StyledButton-sc-323bzc-0 hJhjnC"
           disabled=""
           type="button"
         >
@@ -1615,7 +1795,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -1632,7 +1812,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -1651,7 +1831,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 eRmxid"
+          class="StyledButton-sc-323bzc-0 dANGjo"
           type="button"
         >
           <svg
@@ -1896,6 +2076,26 @@ exports[`Carousel play 1`] = `
   border: 0;
 }
 
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -1933,6 +2133,26 @@ exports[`Carousel play 1`] = `
 }
 
 .c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1978,6 +2198,26 @@ exports[`Carousel play 1`] = `
 }
 
 .c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2174,7 +2414,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eRmxid"
+          class="StyledButton-sc-323bzc-0 dANGjo"
           type="button"
         >
           <svg
@@ -2198,7 +2438,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -2215,7 +2455,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
               type="button"
             >
               <svg
@@ -2234,7 +2474,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 gynwPT"
+          class="StyledButton-sc-323bzc-0 hJhjnC"
           disabled=""
           type="button"
         >
@@ -2484,6 +2724,26 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -2521,6 +2781,26 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
 }
 
 .c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

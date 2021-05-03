@@ -172,7 +172,11 @@ const Select = forwardRef(
         // nextValue must not be of type object to set value directly on the
         // input. if it is an object, then the user has not provided necessary
         // props to reduce object option
-        if (typeof nextValue !== 'object' && nextValue !== event.target.value) {
+        if (
+          typeof nextValue !== 'object' &&
+          nextValue !== event.target.value &&
+          inputRef.current
+        ) {
           // select registers changing option as a click event or keydown.
           // when in a form, we need to programatically trigger a change
           // event in order for the change event to be registered upstream
@@ -182,11 +186,23 @@ const Select = forwardRef(
         setValue(nextValue);
         if (onChange) {
           event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.target = inputRef.current;
-          adjustedEvent.value = nextValue;
-          adjustedEvent.option = option;
-          adjustedEvent.selected = nextSelected;
+          let adjustedEvent;
+          // support for native event used by Preact
+          if (event instanceof Event) {
+            adjustedEvent = new event.constructor(event.type, event);
+            Object.defineProperties(adjustedEvent, {
+              target: { value: inputRef.current },
+              value: { value: nextValue },
+              option: { value: option },
+              selected: { value: nextSelected },
+            });
+          } else {
+            adjustedEvent = event;
+            adjustedEvent.target = inputRef.current;
+            adjustedEvent.value = nextValue;
+            adjustedEvent.option = option;
+            adjustedEvent.selected = nextSelected;
+          }
           onChange(adjustedEvent);
         }
         setSearch();

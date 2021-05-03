@@ -561,6 +561,52 @@ describe('Form uncontrolled', () => {
     expect(queryAllByText('good')).toHaveLength(1);
   });
 
+  test('validate on mount', async () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+
+    const defaultValue = {
+      firstName: 'J',
+      lastName: '',
+    };
+
+    const { queryAllByText } = render(
+      <Grommet>
+        <Form value={defaultValue} validate="change">
+          <FormField
+            label="First Name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              firstName => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+
+          <FormField
+            label="Last Name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              lastName => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(queryAllByText('must be >1 character')).toHaveLength(1);
+  });
+
   test('validate on blur', async () => {
     jest.useFakeTimers();
     const onFocus = jest.fn();
@@ -1354,5 +1400,73 @@ describe('Form uncontrolled', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`valid flag on component mount`, () => {
+    jest.useFakeTimers();
+    const onValidate = jest.fn();
+
+    const defaultValue = {
+      name: 'J',
+      mood: '',
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState(defaultValue);
+
+      return (
+        <Form
+          value={value}
+          validate="blur"
+          onChange={nextValue => {
+            setValue(nextValue);
+          }}
+          onValidate={onValidate}
+        >
+          <FormField
+            validate={[
+              name => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            name="name"
+          >
+            <TextInput name="name" placeholder="test name" />
+          </FormField>
+          <Button label="Focus out" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(onValidate).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        errors: { name: 'must be >1 character' },
+        infos: {},
+        valid: false,
+      }),
+    );
+
+    const nameField = getByPlaceholderText('test name');
+
+    nameField.focus();
+    fireEvent.change(nameField, { target: { value: 'John' } });
+    getByText('Focus out').focus();
+
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        errors: {},
+        infos: {},
+        valid: true,
+      }),
+    );
   });
 });

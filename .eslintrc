@@ -50,7 +50,13 @@
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "react/sort-comp": 0,
-    "semi": [2, "always"]
+    "semi": [2, "always"],
+    "no-restricted-imports": [
+      "error",{ "paths": [{
+        "name": "react",
+        "importNames": ["useLayoutEffect"],
+        "message": "Please import from use-isomorphic-layout-effect instead." }] }
+    ]
   },
   "overrides": [
     {
