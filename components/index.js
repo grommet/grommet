@@ -42,6 +42,14 @@ Object.keys(_Box).forEach(function (key) {
   exports[key] = _Box[key];
 });
 
+var _BoxSnowpack = require("./BoxSnowpack");
+
+Object.keys(_BoxSnowpack).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _BoxSnowpack[key]) return;
+  exports[key] = _BoxSnowpack[key];
+});
+
 var _Button = require("./Button");
 
 Object.keys(_Button).forEach(function (key) {
