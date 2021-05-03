@@ -23,6 +23,7 @@ import {
   PadType,
   PropsOf,
   AlignContentType,
+  AlignSelfType,
 } from '../utils';
 
 import { BoxProps } from '../components/Box';
@@ -515,7 +516,7 @@ export interface ThemeType {
       width?: string;
     };
     label?: {
-      align?: string;
+      align?: AlignSelfType;
     };
     check?: {
       extend?: ExtendType;
