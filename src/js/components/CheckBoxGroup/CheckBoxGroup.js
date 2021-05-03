@@ -60,6 +60,7 @@ export const CheckBoxGroup = forwardRef(
     return (
       <StyledCheckBoxGroup
         ref={ref}
+        role="group"
         {...theme.checkBoxGroup.container}
         gap={
           gap ||

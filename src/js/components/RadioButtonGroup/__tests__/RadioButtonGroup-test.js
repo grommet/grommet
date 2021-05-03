@@ -16,7 +16,7 @@ describe('RadioButtonGroup', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <RadioButtonGroup name="test" options={[]} />
+        <RadioButtonGroup name="test" options={['option1']} />
       </Grommet>,
     );
 
