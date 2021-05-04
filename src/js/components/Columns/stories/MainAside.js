@@ -11,6 +11,7 @@ import {
   Paragraph,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { Next, Previous } from 'grommet-icons';
 
 const paragraphFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -19,7 +20,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 
 export const MainAside = () => (
   <Grommet theme={grommet} full>
-    <Columns>
+    <Columns fill width="xlarge">
       <Main gap="medium">
         <Header border="bottom">
           <Box direction="row" align="center">
@@ -27,11 +28,28 @@ export const MainAside = () => (
           </Box>
           <Menu label="actions" />
         </Header>
-        <Columns center={false} aside="medium">
+        <Columns
+          columns={[
+            undefined,
+            {
+              hide: false,
+              width: 'medium',
+              responsive: { hide: true, width: 'auto' },
+            },
+          ]}
+        >
           <Box>
             <Paragraph>{paragraphFiller}</Paragraph>
+            <Box alignSelf="end">
+              <Columns.ControlButton child={1} icon={<Next />} />
+            </Box>
           </Box>
-          <Box pad={{ horizontal: 'medium' }} background="background-contrast">
+          <Box
+            as="aside"
+            pad={{ horizontal: 'medium' }}
+            background="background-contrast"
+          >
+            <Columns.ControlButton child={1} icon={<Previous />} />
             <Paragraph>{paragraphFiller}</Paragraph>
           </Box>
         </Columns>

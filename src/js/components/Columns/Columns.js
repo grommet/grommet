@@ -1,13 +1,14 @@
 import React, {
   Children,
-  cloneElement,
   forwardRef,
+  useCallback,
   useContext,
   useEffect,
+  useMemo,
+  useRef,
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Close } from 'grommet-icons/icons/Close';
 import { Menu } from 'grommet-icons/icons/Menu';
 
 import { defaultProps } from '../../default-props';
@@ -19,152 +20,143 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
 const ColumnsContext = React.createContext(undefined);
 
+const defaultMargin = { horizontal: 'medium' };
+
 const Columns = forwardRef(
   (
-    {
-      aside,
-      center = true,
-      children,
-      gap,
-      gutter = 'medium',
-      sidebar,
-      size, // for uniform columns
-      width = { max: 'xlarge' },
-      ...rest
-    },
+    { children, columns: columnsProp, margin = defaultMargin, width, ...rest },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const responsive = useContext(ResponsiveContext);
-    const edgeSize = `${parseMetricToNum(theme.global.edgeSize[gutter])}px`;
-    const [showSidebar, setShowSidebar] = useState(responsive !== 'small');
+    const childrenArray = useMemo(() => Children.toArray(children), [children]);
+    const containerRef = useRef();
 
-    useEffect(
-      () => setShowSidebar(responsive === 'small' ? false : undefined),
-      [responsive],
+    // normalize columns based on presence and responsive size
+    const columns = useMemo(
+      () =>
+        childrenArray.map((_, i) => {
+          if (!columnsProp || !columnsProp[i]) return {};
+          if (responsive === 'small')
+            return {
+              ...columnsProp[i],
+              ...columnsProp[i].responsive,
+              responsive: undefined,
+            };
+          return columnsProp[i];
+        }),
+      [childrenArray, columnsProp, responsive],
     );
 
-    const gridProps = {};
-    let content = children;
-    let sidebarLayer;
+    // where we track which children are hidden and how
+    // false - show
+    // undefined - show, allow to be hidden
+    // true - hide, allow to be shown
+    const [hidden, setHidden] = useState(columns.map(c => c.hide));
 
-    if (center) {
+    // align hidden with latest columns
+    useEffect(() => setHidden(columns.map(c => c.hide)), [columns]);
+
+    const showControl = useCallback(
+      childIndex => columns[childIndex].hide !== false,
+      [columns],
+    );
+
+    const toggleHidden = useCallback(
+      childIndex => {
+        const column = columns[childIndex];
+        const nextHidden = [...hidden];
+        nextHidden[childIndex] = hidden[childIndex] ? false : column.hide;
+        if (responsive === 'small') {
+          if (nextHidden[childIndex] === false && !column.layer) {
+            // hide all other visible columns
+            nextHidden.forEach((_, i) => {
+              if (i !== childIndex && nextHidden[i] !== true)
+                nextHidden[i] = 'suppress';
+            });
+          } else if (nextHidden[childIndex] === true && !column.layer) {
+            // show previously hidden columns
+            nextHidden.forEach((_, i) => {
+              if (i !== childIndex && nextHidden[i] === 'suppress')
+                nextHidden[i] = columns[i].hide;
+            });
+          }
+        }
+        setHidden(nextHidden);
+      },
+      [columns, hidden, responsive],
+    );
+
+    const inlineChildrenIndexes = columns
+      .map((_, i) => i)
+      .filter(i => !hidden[i] && !columns[i].layer);
+
+    const childGridColumns = inlineChildrenIndexes.map(
+      i => columns[i].width || 'flex',
+    );
+
+    const layerChildIndex = columns
+      .filter((column, i) => !hidden[i] && column.layer)
+      .map((_, i) => i)[0];
+
+    let layer;
+    if (layerChildIndex !== undefined) {
+      layer = (
+        <Layer
+          position={layerChildIndex ? 'right' : 'left'}
+          full="vertical"
+          responsive={false}
+          modal={false}
+          target={width ? containerRef.current : undefined}
+          onClickOutside={() => toggleHidden(layerChildIndex)}
+        >
+          {childrenArray[layerChildIndex]}
+        </Layer>
+      );
+    }
+
+    const gridProps = { columns: childGridColumns };
+    let content = inlineChildrenIndexes.map(i => childrenArray[i]);
+    if (width) {
+      const edgeSize = `${parseMetricToNum(
+        theme.global.edgeSize[margin.horizontal],
+      )}px`;
+
       gridProps.columns = [
         [edgeSize, 'flex'],
-        ['auto', width.max],
+        ['auto', width],
         [edgeSize, 'flex'],
       ];
       gridProps.rows = ['auto'];
       gridProps.areas = [{ name: 'content', start: [1, 0], end: [1, 0] }];
 
-      if (sidebar) {
-        let columns;
-        if (showSidebar !== undefined) {
-          // responsive small, set up the sidebar
-          columns = ['flex'];
-          if (showSidebar === true) {
-            sidebarLayer = (
-              <Layer
-                position="left"
-                full="vertical"
-                responsive={false}
-                modal={false}
-                onClickOutside={() => setShowSidebar(false)}
-              >
-                {sidebar}
-              </Layer>
-            );
-          }
-        } else columns = ['auto', 'flex'];
-        content = (
-          <Grid gridArea="content" columns={columns}>
-            {showSidebar === undefined && sidebar}
-            {content}
-          </Grid>
-        );
-      } else if (aside) {
-        content = (
-          <Grid gridArea="content" columns={['flex', aside]}>
-            {content}
-          </Grid>
-        );
-      } else if (size) {
-        content = (
-          <Grid gridArea="content" columns={size} gap={gap}>
-            {content}
-          </Grid>
-        );
-      } else {
-        content = cloneElement(Children.only(children), {
-          gridArea: 'content',
-        });
-      }
-    }
-    // !center
-    else if (sidebar) {
-      if (showSidebar !== undefined) {
-        // responsive small, set up the sidebar
-        gridProps.columns = ['flex'];
-        if (showSidebar === true) {
-          sidebarLayer = (
-            <Layer
-              position="left"
-              full="vertical"
-              // elevation="medium"
-              responsive={false}
-              modal={false}
-              onClickOutside={() => setShowSidebar(false)}
-            >
-              {sidebar}
-            </Layer>
-          );
-        }
-      } else {
-        gridProps.columns = ['auto', 'flex'];
-        content = [sidebar, content];
-      }
-    } else if (aside) {
-      if (responsive === 'small') {
-        gridProps.columns = ['auto'];
-      } else {
-        gridProps.columns = ['flex', ['auto', aside]];
-      }
+      content = (
+        <Grid ref={containerRef} gridArea="content" columns={childGridColumns}>
+          {content}
+        </Grid>
+      );
     }
 
     return (
-      <ColumnsContext.Provider value={{ setShowSidebar, showSidebar, sidebar }}>
+      <ColumnsContext.Provider value={{ showControl, toggleHidden }}>
         <Grid ref={ref} {...rest} {...gridProps}>
           {content}
-          {sidebarLayer}
+          {layer}
         </Grid>
       </ColumnsContext.Provider>
     );
   },
 );
 
-const SidebarToggleButton = ({ sidebar, ...rest }) => {
-  const { setShowSidebar, showSidebar } = useContext(ColumnsContext);
-  if (showSidebar === undefined) return null;
+const ControlButton = ({ child, ...rest }) => {
+  const { showControl, toggleHidden } = useContext(ColumnsContext);
+  if (!showControl(child)) return null;
   return (
-    <Button
-      icon={<Menu />}
-      {...rest}
-      onClick={() => setShowSidebar(!showSidebar)}
-    />
+    <Button icon={<Menu />} {...rest} onClick={() => toggleHidden(child)} />
   );
 };
 
-Columns.SidebarToggleButton = SidebarToggleButton;
-
-const SidebarCloseButton = ({ sidebar, ...rest }) => {
-  const { setShowSidebar, showSidebar } = useContext(ColumnsContext);
-  if (showSidebar === undefined) return null;
-  return (
-    <Button icon={<Close />} {...rest} onClick={() => setShowSidebar(false)} />
-  );
-};
-
-Columns.SidebarCloseButton = SidebarCloseButton;
+Columns.ControlButton = ControlButton;
 
 let ColumnsDoc;
 if (process.env.NODE_ENV !== 'production') {

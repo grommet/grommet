@@ -1,17 +1,22 @@
 import * as React from 'react';
-import { GridProps } from '../Grid';
+import { MarginType } from '../../utils';
 
+type widthType = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
 export interface ColumnsProps {
-  aside?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  center?: boolean;
-  gutter?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  sidebar?: React.ReactNode;
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  width?: { max?: string };
+  columns?: {
+    hide?: boolean;
+    layer?: boolean;
+    responsive?: { hide?: boolean; layer?: boolean };
+    width?: widthType;
+  }[];
+  margin?: MarginType;
+  width?: widthType;
 }
 
-declare const Columns: React.FC<GridProps &
-  ColumnsProps &
-  JSX.IntrinsicElements['div']>;
+type columnsProps = JSX.IntrinsicElements['div'];
+
+export interface ColumnsExtendedProps extends ColumnsProps, columnsProps {}
+
+declare const Columns: React.FC<ColumnsExtendedProps>;
 
 export { Columns };

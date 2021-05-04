@@ -18,7 +18,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 
 export const Single = () => (
   <Grommet theme={grommet}>
-    <Columns>
+    <Columns width="xlarge">
       <Main>
         <Header border="bottom">
           <Heading size="small">Welcome</Heading>

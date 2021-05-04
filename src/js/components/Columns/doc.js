@@ -1,11 +1,22 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
+
+const widthSizes = PropTypes.oneOfType([
+  PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  PropTypes.string,
+]);
 
 export const doc = Columns => {
   const DocumentedColumns = describe(Columns)
     .availableAt(getAvailableAtBadge('Columns', 'Layout'))
-    .description('Typical variations on responsive multiple column layouts.')
+    .description(
+      `
+      Responsive single or multiple column layout.
+      Control visibity of children via <Columns.ControlButton child={0} />.
+    `,
+    )
     .usage(
       `import { Columns } from 'grommet';
 <Columns />`,
@@ -13,41 +24,29 @@ export const doc = Columns => {
     .intrinsicElement('div');
 
   DocumentedColumns.propTypes = {
-    aside: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description('Maximum width of the last child.'),
-    center: PropTypes.bool
-      .description(
-        `
-      Whether to center the Columns component.
-    `,
-      )
-      .defaultValue(true),
-    gutter: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description(`
-      Minimum vertical gutters when 'center' is true.
-      `),
-    sidebar: PropTypes.node.description(`
-      If specified, a sidebar element. Use 'Columns.SidebarToggleButton'
-      to control whether the sidebar is shown in small responsive contexts.
-      Use 'Columns.SidebarCloseButton' to close the sidebar in small
-      responsive contexts.
-      `),
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description(`
-      The uniform minimum width of columns. Children will wrap as needed.
+    ...genericProps, // default margin is { horizontal: 'medium' }
+    columns: PropTypes.arrayOf(
+      PropTypes.shape({
+        hide: PropTypes.bool,
+        layer: PropTypes.bool,
+        responsive: PropTypes.shape({
+          hide: PropTypes.bool,
+          layer: PropTypes.bool,
+        }),
+        width: widthSizes,
+      }),
+    ).description(`
+      How each child should be handled.
+      'hide'
+        true - indicates that the child should be hidden on initial render
+        false - indicates that the child shouldn't be hideable,
+      'layer' indicates that the child should be shown in a layer.
+      'width' indicates that the child should have a fixed width.
+      'responsive' indicates how the child should behave when the responsive
+      size is small.
+      Control visibility of children via <Columns.ControlButton child={0} />.
     `),
-    width: PropTypes.shape({
-      max: PropTypes.oneOfType([
-        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-        PropTypes.string,
-      ]),
-    }).description(`Maximum width of the content when 'center' is true.`),
+    width: widthSizes.description(`Maximum width of the content.`),
   };
 
   return DocumentedColumns;
