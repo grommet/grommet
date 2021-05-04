@@ -1297,8 +1297,9 @@ function",
       Object {
         "defaultValue": undefined,
         "description": "An indicator to show on the top-right of the Button. For accessibility,
-         add an a11yTitle to the button that provides a useful message to 
-         screen readers. For example, \\"2 unread notifications\\".",
+         supplement the badge by an a11yTitle to the Button which provides a 
+         useful message to screen readers. For example, \\"2 unread 
+         notifications\\".",
         "format": "boolean
 element
 number
@@ -1472,7 +1473,7 @@ string
       Object {
         "description": "Icon element to place in the button. 
     For accessibility with screen readers, if using just an icon (no label), 
-    add an a11yTitle to the button that describes the icon.",
+    add an a11yTitle to the Button that describes the icon.",
         "format": "element",
         "name": "icon",
       },

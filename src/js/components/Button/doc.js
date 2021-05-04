@@ -57,8 +57,9 @@ export const doc = Button => {
     ])
       .description(
         `An indicator to show on the top-right of the Button. For accessibility,
-         add an a11yTitle to the button that provides a useful message to 
-         screen readers. For example, "2 unread notifications".`,
+         supplement the badge by an a11yTitle to the Button which provides a 
+         useful message to screen readers. For example, "2 unread 
+         notifications".`,
       )
       .defaultValue(undefined),
     color: colorPropType.description(
@@ -111,7 +112,7 @@ with plain Buttons.`,
     ),
     icon: PropTypes.element.description(`Icon element to place in the button. 
     For accessibility with screen readers, if using just an icon (no label), 
-    add an a11yTitle to the button that describes the icon.`),
+    add an a11yTitle to the Button that describes the icon.`),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -296,7 +297,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.badge.size.medium': {
-    description: `The minimum width and height of the badge.`,
+    description: `The minimum width and height of the badge when the badge 
+    contains a value.`,
     type: 'string',
     defaultValue: '24px',
   },
