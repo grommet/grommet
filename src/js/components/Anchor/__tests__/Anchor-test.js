@@ -153,13 +153,13 @@ describe('Anchor', () => {
   test('size renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Anchor size="10px" />
         <Anchor size="xsmall" />
         <Anchor size="small" />
         <Anchor size="medium" />
         <Anchor size="large" />
         <Anchor size="xlarge" />
         <Anchor size="xxlarge" />
+        <Anchor size="10px" />
       </Grommet>,
     );
     const tree = component.toJSON();
