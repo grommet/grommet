@@ -121,7 +121,8 @@ export const doc = Select => {
       PropTypes.func,
     ]).description(
       `When the options array contains objects, this property indicates how
-      to determine the label of each option. If a string is
+      to determine the label of each option. The label is what is displayed 
+      in the Select button and its dropdown options. If a string is
       provided, it is used as the key to retrieve each option's label.
       If a function is provided, it is called with the option and the
       return value indicates the label.`,
@@ -214,10 +215,12 @@ export const doc = Select => {
           PropTypes.number,
         ]),
       ),
-    ]).description(`Currently selected value. This can be an array
-      when multiple. Passing an element allows the caller to control how
-      the value is rendered. Passing an element is deprecated. Instead,
-      use the 'valueLabel' property.`),
+    ]).description(`Currently selected value. This should be an option from 
+    within the options array or an array of options when multiple. For example, 
+    if options is an array of objects, value should be an object. If value is 
+    an object, specify valueKey and labelKey. Passing an element allows 
+    the caller to control how the value is rendered. Passing an element is 
+    deprecated. Instead, use the 'valueLabel' property.`),
     valueLabel: PropTypes.node.description(
       `Provides custom rendering of the value. If not provided, Select
       will render the value automatically.`,
