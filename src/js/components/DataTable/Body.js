@@ -1,4 +1,5 @@
-import React, { forwardRef, Fragment, memo } from 'react';
+import React, { forwardRef, memo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -36,6 +37,7 @@ const Row = memo(
     primaryProperty,
     rowProps,
     data,
+    theme,
   }) => (
     <>
       <StyledDataTableRow
@@ -60,7 +62,7 @@ const Row = memo(
         onBlur={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
-          <TableCell background={background}>
+          <TableCell background={background} plain="noPad" size="auto">
             <CheckBox
               a11yTitle={`${
                 isSelected ? 'unselect' : 'select'
@@ -72,6 +74,13 @@ const Row = memo(
                   onSelect(selected.filter(s => s !== primaryValue));
                 } else onSelect([...selected, primaryValue]);
               }}
+              pad={
+                (rowProps &&
+                  rowProps[primaryValue] &&
+                  rowProps[primaryValue].pad) ||
+                pad ||
+                theme.table.body.pad
+              }
             />
           </TableCell>
         )}
@@ -147,6 +156,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
     return (
       <Keyboard
@@ -204,7 +214,7 @@ const Body = forwardRef(
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               return (
                 <Row
-                  key={primaryValue || index}
+                  key={index}
                   rowRef={rowRef}
                   primaryValue={primaryValue}
                   isSelected={isSelected}
@@ -228,6 +238,7 @@ const Body = forwardRef(
                   primaryProperty={primaryProperty}
                   rowProps={rowProps}
                   data={data}
+                  theme={theme}
                 />
               );
             }}

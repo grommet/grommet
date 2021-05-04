@@ -1,6 +1,7 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';
@@ -20,7 +21,7 @@ const Layer = forwardRef((props, ref) => {
   );
 
   // just a few things to clean up when the Layer is unmounted
-  useEffect(
+  useLayoutEffect(
     () => () => {
       if (originalFocusedElement) {
         if (originalFocusedElement.focus) {

@@ -16,6 +16,7 @@ Whether default styling context should be removed.
 
 ```
 boolean
+noPad
 ```
 
 **scope**

@@ -121,6 +121,15 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'global.drop.intelligentMargin': {
+    description: `Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
   ...themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'),
   'global.drop.elevation': {
     description: `Elevated height above the underlying context, indicated

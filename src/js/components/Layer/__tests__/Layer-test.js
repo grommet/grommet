@@ -175,8 +175,17 @@ describe('Layer', () => {
   });
 
   test('plain', () => {
+    // elevation should not be applied when Layer is plain
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+      },
+    };
+
     render(
-      <Grommet>
+      <Grommet theme={theme}>
         <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
