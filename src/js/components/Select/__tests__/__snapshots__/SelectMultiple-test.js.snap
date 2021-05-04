@@ -892,6 +892,12 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   flex: 0 0 auto;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -977,12 +983,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1451,6 +1451,12 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1536,12 +1542,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2005,6 +2005,12 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -2090,12 +2096,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2559,6 +2559,12 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -2644,12 +2650,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -3214,6 +3214,12 @@ exports[`Select Controlled multiple values 3`] = `
   flex: 0 0 auto;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -3299,12 +3305,6 @@ exports[`Select Controlled multiple values 3`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -3773,6 +3773,12 @@ exports[`Select Controlled multiple with empty results 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -3858,12 +3864,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {

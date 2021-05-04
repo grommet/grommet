@@ -161,6 +161,53 @@ string
 function
 ```
 
+**badge**
+
+An indicator to show on the top-right of the Button. For accessibility,
+         add an aria-label that provides a useful message to screen readers. 
+         For example, "2 unread notifications".
+
+```
+boolean
+element
+number
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  max: number,
+  value: number
+}
+```
+
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
@@ -312,7 +359,9 @@ string
 
 **icon**
 
-Icon element to place in the button.
+Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an aria-label that describes the icon.
 
 ```
 element
@@ -618,6 +667,45 @@ Defaults to
 
 ```
 undefined
+```
+
+**button.badge.background**
+
+The background of the badge. Expects `string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+brand
+```
+
+**button.badge.max**
+
+The max number to display in the badge. If max is 9 and badge 
+    has value of 10, 9+ will be displayed. Expects `number`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.badge.size.medium**
+
+The minimum width and height of the badge. Expects `string`.
+
+Defaults to
+
+```
+24px
 ```
 
 **button.border.color**

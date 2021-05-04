@@ -2983,6 +2983,24 @@ exports[`DataTable custom theme 1`] = `
   font-weight: bold;
 }
 
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  position: relative;
+  display: block;
+}
+
+.c14 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -3153,24 +3171,6 @@ exports[`DataTable custom theme 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  position: relative;
-  display: block;
-}
-
-.c14 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .c16 {
@@ -3481,7 +3481,7 @@ exports[`DataTable custom theme 2`] = `
                 />
               </div>
               <div
-                class="StyledStack__StyledStackLayer-ajspsk-1 hTMmIz"
+                class="StyledStack__StyledStackLayer-ajspsk-1 cnXgmX"
               >
                 <div
                   class="StyledBox-sc-13pk1d4-0 dvgOAt Resizer__InteractionBox-sc-8l808w-0 cCCmOy"
@@ -15912,6 +15912,24 @@ exports[`DataTable resizeable 1`] = `
   font-weight: bold;
 }
 
+.c8 {
+  position: relative;
+}
+
+.c9 {
+  position: relative;
+  display: block;
+}
+
+.c11 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .c3 {
   margin: 0;
   padding: 0;
@@ -15941,24 +15959,6 @@ exports[`DataTable resizeable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c8 {
-  position: relative;
-}
-
-.c9 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .c13 {

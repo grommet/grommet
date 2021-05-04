@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
+  backgroundPropType,
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
@@ -44,6 +45,22 @@ export const doc = Button => {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag or react component to use for the element.`,
     ),
+    badge: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.element,
+      PropTypes.number,
+      PropTypes.shape({
+        background: backgroundPropType,
+        max: PropTypes.number,
+        value: PropTypes.number,
+      }),
+    ])
+      .description(
+        `An indicator to show on the top-right of the Button. For accessibility,
+         add an aria-label that provides a useful message to screen readers. 
+         For example, "2 unread notifications".`,
+      )
+      .defaultValue(undefined),
     color: colorPropType.description(
       `Fill color for primary, label color for plain, border color otherwise.
        If button.default is defined in the theme, the color prop will
@@ -92,7 +109,9 @@ with plain Buttons.`,
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.',
     ),
-    icon: PropTypes.element.description('Icon element to place in the button.'),
+    icon: PropTypes.element.description(`Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an aria-label that describes the icon.`),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -250,6 +269,30 @@ export const themeDoc = {
     button.default.`,
     type: '{}',
     defaultValue: undefined,
+  },
+  'button.badge.background': {
+    description: `The background of the badge.`,
+    type: `string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }`,
+    defaultValue: 'brand',
+  },
+  'button.badge.max': {
+    description: `The max number to display in the badge. If max is 9 and badge 
+    has value of 10, 9+ will be displayed.`,
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'button.badge.size.medium': {
+    description: `The minimum width and height of the badge.`,
+    type: 'string',
+    defaultValue: '24px',
   },
   'button.border.color': {
     description: `The color of the border.`,

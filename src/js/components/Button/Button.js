@@ -3,7 +3,9 @@ import React, {
   Children,
   forwardRef,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
@@ -17,6 +19,8 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { Tip } from '../Tip';
 
 import { StyledButton } from './StyledButton';
@@ -92,12 +96,34 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
+const getDimension = (dimension, badgeProp, badgeRef, theme) => {
+  if (
+    typeof badgeProp === 'number' ||
+    (typeof badgeProp === 'object' && badgeProp.value)
+  ) {
+    // leave a small amount of horizontal space to pad content
+    const horizontalPad =
+      dimension === 'width'
+        ? parseInt(theme.global.edgeSize.xsmall.replace('px', ''), 10)
+        : 0;
+    // if content is tall/wide, let badge grow to fit. otherwise,
+    // make sure it's at least badge.size.medium dimensions
+    return `${Math.max(
+      Math.ceil(badgeRef.current.getBoundingClientRect()[dimension]) +
+        horizontalPad,
+      parseInt(theme.button.badge.size.medium.replace('px', ''), 10),
+    )}px`;
+  }
+  return `${badgeRef.current.getBoundingClientRect()[dimension]}px`;
+};
+
 const Button = forwardRef(
   (
     {
       active,
       align = 'center',
       'aria-label': ariaLabel,
+      badge: badgeProp,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -131,6 +157,7 @@ const Button = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
+    const badgeRef = useRef();
 
     if ((icon || label) && children) {
       console.warn(
@@ -343,9 +370,87 @@ const Button = forwardRef(
     }
     if (tip) {
       if (typeof tip === 'string') {
-        return <Tip content={tip}>{styledButtonResult}</Tip>;
+        styledButtonResult = <Tip content={tip}>{styledButtonResult}</Tip>;
       }
-      return <Tip {...tip}>{styledButtonResult}</Tip>;
+      styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
+    }
+
+    const defaultBadgeDimension =
+      typeof badgeProp === 'boolean'
+        ? // empty badge should be smaller
+          `${parseInt(theme.button.badge.size.medium.replace('px', ''), 10) /
+            2}px`
+        : theme.button.badge.size.medium;
+
+    const [badgeWidth, setBadgeWidth] = useState(defaultBadgeDimension);
+    // if badge has a number, we want to scale the badge to fit.
+    // width will also be used to know how far to horizontally offset the badge
+    useEffect(() => {
+      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean') {
+        setBadgeWidth(getDimension('width', badgeProp, badgeRef, theme));
+      }
+    }, [badgeProp, theme]);
+
+    const [badgeHeight, setBadgeHeight] = useState(defaultBadgeDimension);
+    // if badge has custom JSX, we want to scale the badge to fit.
+    // height will also be used to know how far to horizontally offset the badge
+    useEffect(() => {
+      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean')
+        setBadgeHeight(getDimension('height', badgeProp, badgeRef, theme));
+    }, [badgeProp, theme]);
+
+    if (badgeProp) {
+      const max = badgeProp.max || theme.button.badge.max;
+
+      let value;
+      if (typeof badgeProp === 'number') value = badgeProp;
+      else if (typeof badgeProp === 'object') value = badgeProp.value;
+
+      let badge;
+      if (value || typeof badgeProp === 'boolean') {
+        if (value) {
+          badge = (
+            <Text color="text-strong" size="small" ref={badgeRef}>
+              {value > max ? `${max}+` : value}
+            </Text>
+          );
+        }
+        badge = (
+          <Box
+            align="center"
+            background={badgeProp.background || theme.button.badge.background}
+            flex={false}
+            height={badgeHeight}
+            justify="center"
+            round
+            width={badgeWidth}
+          >
+            {badge}
+          </Box>
+        );
+        // caller has provided their own JSX and we will just render that
+      } else badge = <Box ref={badgeRef}>{badgeProp}</Box>;
+
+      // offset the badge by 50% of its height and width
+      const verticalOffset = `-${parseInt(badgeHeight.replace('px', ''), 10) /
+        2}px`;
+      const horizontalOffset = `-${parseInt(badgeWidth.replace('px', ''), 10) /
+        2}px`;
+
+      styledButtonResult = (
+        <Stack
+          anchor="top-right"
+          offset={{
+            top: verticalOffset,
+            bottom: verticalOffset,
+            left: horizontalOffset,
+            right: horizontalOffset,
+          }}
+        >
+          {styledButtonResult}
+          {badge}
+        </Stack>
+      );
     }
     return styledButtonResult;
   },

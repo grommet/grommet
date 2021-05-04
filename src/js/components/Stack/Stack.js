@@ -8,13 +8,14 @@ const buildStyledChildren = ({
   guidingIndex,
   interactiveChild,
   interactiveIndex,
+  offsetProp,
 }) => (child, index) => {
   const interactive =
     interactiveChild === undefined || interactiveIndex === index;
   const isGuidingIndex = index === guidingIndex;
   const props = isGuidingIndex
     ? { guiding: true, fillContainer: fill }
-    : { anchor };
+    : { anchor, offsetProp };
 
   return (
     <StyledStackLayer key={index} interactive={interactive} {...props}>
@@ -29,6 +30,7 @@ const Stack = ({
   fill,
   guidingChild,
   interactiveChild,
+  offset: offsetProp,
   ...rest
 }) => {
   const prunedChildren = Children.toArray(children).filter(c => c);
@@ -49,6 +51,7 @@ const Stack = ({
       guidingIndex,
       interactiveChild,
       interactiveIndex,
+      offsetProp,
     }),
   );
 

@@ -397,6 +397,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     button: {
+      badge: {
+        background: 'brand',
+        // max: undefined,
+        size: {
+          medium: `${baseSpacing}px`,
+        },
+      },
       size: {
         small: {
           border: {

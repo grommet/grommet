@@ -17,6 +17,10 @@ import { TipProps } from '../Tip';
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  badge?:
+    | boolean
+    | number
+    | { background?: BackgroundType; max?: number; value?: number };
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;

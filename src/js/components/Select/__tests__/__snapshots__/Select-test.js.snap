@@ -347,6 +347,12 @@ exports[`Select Clear option renders - bottom 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -432,12 +438,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -622,6 +622,12 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -707,12 +713,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -905,6 +905,12 @@ exports[`Select Clear option renders custom label 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -990,12 +996,6 @@ exports[`Select Clear option renders custom label 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1180,6 +1180,12 @@ exports[`Select Clear option renders- top 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1265,12 +1271,6 @@ exports[`Select Clear option renders- top 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2081,6 +2081,12 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   padding: 12px;
 }
 
+.c3 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -2144,12 +2150,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 
 .c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c3 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c1 {
@@ -3707,6 +3707,18 @@ exports[`Select default value clear 1`] = `
   flex: 0 0 auto;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -3850,18 +3862,6 @@ exports[`Select default value clear 1`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -4949,6 +4949,12 @@ exports[`Select disabled key 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -5094,12 +5100,6 @@ exports[`Select disabled key 2`] = `
 
 .c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -5284,6 +5284,12 @@ exports[`Select disabled option value 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -5429,12 +5435,6 @@ exports[`Select disabled option value 1`] = `
 
 .c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -6008,6 +6008,12 @@ exports[`Select large drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -6093,12 +6099,6 @@ exports[`Select large drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -6273,6 +6273,12 @@ exports[`Select medium drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -6358,12 +6364,6 @@ exports[`Select medium drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -7100,6 +7100,12 @@ exports[`Select onChange with valueKey string 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -7185,12 +7191,6 @@ exports[`Select onChange with valueKey string 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -7590,6 +7590,12 @@ exports[`Select onChange with valueLabel 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -7675,12 +7681,6 @@ exports[`Select onChange with valueLabel 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -8144,6 +8144,12 @@ exports[`Select onChange without valueKey 2`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -8229,12 +8235,6 @@ exports[`Select onChange without valueKey 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -9294,6 +9294,12 @@ exports[`Select prop: onOpen 3`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -9379,12 +9385,6 @@ exports[`Select prop: onOpen 3`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -11875,6 +11875,12 @@ exports[`Select search 2`] = `
   flex: 0 0 auto;
 }
 
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -11960,12 +11966,6 @@ exports[`Select search 2`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c6 {
@@ -12545,6 +12545,12 @@ exports[`Select search and select 2`] = `
   flex: 0 0 auto;
 }
 
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -12630,12 +12636,6 @@ exports[`Select search and select 2`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c6 {
@@ -15625,6 +15625,12 @@ exports[`Select small drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -15710,12 +15716,6 @@ exports[`Select small drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
