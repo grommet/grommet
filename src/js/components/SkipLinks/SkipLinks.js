@@ -1,4 +1,10 @@
-import React, { cloneElement, useContext, useRef, useState } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
@@ -51,8 +57,8 @@ const SkipLinks = ({ children, id, messages }) => {
           <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
         )}
         <Box align="center" gap="medium">
-          {children.map((element, index) =>
-            cloneElement(element, {
+          {Children.map(children, (child, index) =>
+            cloneElement(child, {
               key: `skip-link-${index}`,
               onClick: removeLayer,
             }),
