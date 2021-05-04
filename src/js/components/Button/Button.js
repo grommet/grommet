@@ -356,7 +356,7 @@ const Button = forwardRef(
         setBadgeHeight(getBadgeDimension('height', badgeProp, badgeRef, theme));
     }, [badgeProp, theme]);
 
-    // offset the badge so it overlaps content. when badge has content
+    // offset the badge so it overlaps content. when badge has content,
     // offset should be 50%. when badge is empty, offset by a smaller amount to
     // keep the badge closer to the content. this value was chosen as a
     // reasonable default after testing with various grommet icons.
