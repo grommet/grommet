@@ -1144,6 +1144,10 @@ reverse",
     "usage": "import { Box } from 'grommet';
 <Box />",
   },
+  "BoxSnowpack": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Button": Object {
     "availableAt": Array [
       Object {
