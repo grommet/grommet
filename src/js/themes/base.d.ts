@@ -145,6 +145,14 @@ interface ButtonKindType {
 }
 
 interface ButtonType {
+  badge?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    max?: number;
+    size?: {
+      medium?: string;
+    };
+  };
   border?: {
     color?: ColorType;
     width?: string;

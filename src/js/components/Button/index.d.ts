@@ -1,8 +1,10 @@
+import { element } from 'prop-types';
 import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
   BackgroundType,
+  BorderType,
   ColorType,
   FillType,
   GapType,
@@ -20,7 +22,14 @@ export interface ButtonProps {
   badge?:
     | boolean
     | number
-    | { background?: BackgroundType; max?: number; value?: number };
+    | {
+        background?: BackgroundType;
+        border?: BorderType;
+        max?: number;
+        target?: 'contents';
+        value?: boolean | number;
+      }
+    | JSX.Element;
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;

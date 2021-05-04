@@ -3262,8 +3262,8 @@ function
 **badge**
 
 An indicator to show on the top-right of the Button. For accessibility,
-         add an aria-label that provides a useful message to screen readers. 
-         For example, \\"2 unread notifications\\".
+         add an a11yTitle to the button that provides a useful message to 
+         screen readers. For example, \\"2 unread notifications\\".
 
 \`\`\`
 boolean
@@ -3459,7 +3459,7 @@ string
 
 Icon element to place in the button. 
     For accessibility with screen readers, if using just an icon (no label), 
-    add an aria-label that describes the icon.
+    add an a11yTitle to the button that describes the icon.
 
 \`\`\`
 element
@@ -3783,6 +3783,16 @@ Defaults to
 
 \`\`\`
 brand
+\`\`\`
+
+**button.badge.border**
+
+The border for the badge. Accepts any valid Box border value. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **button.badge.max**

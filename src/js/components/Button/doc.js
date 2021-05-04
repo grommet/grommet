@@ -57,8 +57,8 @@ export const doc = Button => {
     ])
       .description(
         `An indicator to show on the top-right of the Button. For accessibility,
-         add an aria-label that provides a useful message to screen readers. 
-         For example, "2 unread notifications".`,
+         add an a11yTitle to the button that provides a useful message to 
+         screen readers. For example, "2 unread notifications".`,
       )
       .defaultValue(undefined),
     color: colorPropType.description(
@@ -111,7 +111,7 @@ with plain Buttons.`,
     ),
     icon: PropTypes.element.description(`Icon element to place in the button. 
     For accessibility with screen readers, if using just an icon (no label), 
-    add an aria-label that describes the icon.`),
+    add an a11yTitle to the button that describes the icon.`),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -282,6 +282,12 @@ export const themeDoc = {
       size: cover | contain | string
     }`,
     defaultValue: 'brand',
+  },
+  'button.badge.border': {
+    description:
+      'The border for the badge. Accepts any valid Box border value.',
+    type: 'string | object',
+    defaultValue: undefined,
   },
   'button.badge.max': {
     description: `The max number to display in the badge. If max is 9 and badge 

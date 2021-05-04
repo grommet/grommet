@@ -96,11 +96,17 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
-const getDimension = (dimension, badgeProp, badgeRef, theme) => {
+const getBadgeDimension = (dimension, badgeProp, badgeRef, theme) => {
   if (
     typeof badgeProp === 'number' ||
     (typeof badgeProp === 'object' && badgeProp.value)
   ) {
+    const borderWidth = badgeProp.border
+      ? parseInt(
+          theme.global.borderSize[badgeProp.border.size].replace('px', ''),
+          10,
+        ) * 2
+      : 0;
     // leave a small amount of horizontal space to pad content
     const horizontalPad =
       dimension === 'width'
@@ -110,11 +116,51 @@ const getDimension = (dimension, badgeProp, badgeRef, theme) => {
     // make sure it's at least badge.size.medium dimensions
     return `${Math.max(
       Math.ceil(badgeRef.current.getBoundingClientRect()[dimension]) +
-        horizontalPad,
-      parseInt(theme.button.badge.size.medium.replace('px', ''), 10),
+        horizontalPad +
+        borderWidth,
+      parseInt(theme.button.badge.size.medium.replace('px', ''), 10) +
+        borderWidth,
     )}px`;
   }
   return `${badgeRef.current.getBoundingClientRect()[dimension]}px`;
+};
+
+const getBadge = (badgeProp, badgeRef, badgeHeight, badgeWidth, theme) => {
+  const max = badgeProp.max || theme.button.badge.max;
+
+  let value;
+  if (typeof badgeProp === 'number') value = badgeProp;
+  else if (typeof badgeProp === 'object') value = badgeProp.value;
+  let badge;
+  if (
+    typeof value === 'number' ||
+    typeof value === 'boolean' ||
+    typeof badgeProp === 'boolean'
+  ) {
+    if (typeof value === 'number') {
+      badge = (
+        <Text color="text-strong" size="small" weight="normal" ref={badgeRef}>
+          {value > max ? `${max}+` : value}
+        </Text>
+      );
+    }
+    badge = (
+      <Box
+        align="center"
+        background={badgeProp.background || theme.button.badge.background}
+        border={badgeProp.border || theme.button.badge.border}
+        flex={false}
+        height={badgeHeight}
+        justify="center"
+        round
+        width={badgeWidth}
+      >
+        {badge}
+      </Box>
+    );
+    // caller has provided their own JSX and we will just render that
+  } else badge = <Box ref={badgeRef}>{badgeProp}</Box>;
+  return badge;
 };
 
 const Button = forwardRef(
@@ -285,6 +331,70 @@ const Button = forwardRef(
       contents = first || second || children;
     }
 
+    const defaultBadgeDimension =
+      typeof badgeProp === 'boolean' ||
+      (badgeProp && badgeProp.value && typeof badgeProp.value === 'boolean')
+        ? // empty badge should be smaller. this value was chosen as a default
+          // after experimenting with various values
+          `${parseInt(theme.button.badge.size.medium.replace('px', ''), 10) /
+            2}px`
+        : theme.button.badge.size.medium;
+
+    const [badgeWidth, setBadgeWidth] = useState(defaultBadgeDimension);
+    // scale badge to fit its contents
+    // width informs how far to horizontally offset the badge
+    useEffect(() => {
+      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean') {
+        setBadgeWidth(getBadgeDimension('width', badgeProp, badgeRef, theme));
+      }
+    }, [badgeProp, theme]);
+
+    const [badgeHeight, setBadgeHeight] = useState(defaultBadgeDimension);
+    // height informs how far to vertically offset the badge
+    useEffect(() => {
+      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean')
+        setBadgeHeight(getBadgeDimension('height', badgeProp, badgeRef, theme));
+    }, [badgeProp, theme]);
+
+    // offset the badge so it overlaps content. when badge has content
+    // offset should be 50%. when badge is empty, offset by a smaller amount to
+    // keep the badge closer to the content. this value was chosen as a
+    // reasonable default after testing with various grommet icons.
+    const divisor =
+      typeof badgeProp === 'boolean' || (badgeProp && badgeProp.value === true)
+        ? 3.5
+        : 2;
+    const verticalOffset = `-${parseInt(badgeHeight.replace('px', ''), 10) /
+      divisor}px`;
+    const horizontalOffset = `-${parseInt(badgeWidth.replace('px', ''), 10) /
+      divisor}px`;
+
+    // set the badge relative to the button content
+    // as opposed to outer edge of button
+    if (badgeProp && badgeProp.target === 'contents') {
+      const badge = getBadge(
+        badgeProp,
+        badgeRef,
+        badgeHeight,
+        badgeWidth,
+        theme,
+      );
+      contents = (
+        <Stack
+          anchor="top-right"
+          offset={{
+            top: verticalOffset,
+            bottom: verticalOffset,
+            left: horizontalOffset,
+            right: horizontalOffset,
+          }}
+        >
+          {contents}
+          {badge}
+        </Stack>
+      );
+    }
+
     let styledButtonResult;
     if (kind) {
       styledButtonResult = (
@@ -295,6 +405,7 @@ const Button = forwardRef(
           active={active}
           align={align}
           aria-label={ariaLabel || a11yTitle}
+          badge={badgeProp}
           colorValue={color}
           disabled={disabled}
           gap={gap}
@@ -375,68 +486,17 @@ const Button = forwardRef(
       styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
     }
 
-    const defaultBadgeDimension =
-      typeof badgeProp === 'boolean'
-        ? // empty badge should be smaller
-          `${parseInt(theme.button.badge.size.medium.replace('px', ''), 10) /
-            2}px`
-        : theme.button.badge.size.medium;
-
-    const [badgeWidth, setBadgeWidth] = useState(defaultBadgeDimension);
-    // if badge has a number, we want to scale the badge to fit.
-    // width will also be used to know how far to horizontally offset the badge
-    useEffect(() => {
-      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean') {
-        setBadgeWidth(getDimension('width', badgeProp, badgeRef, theme));
-      }
-    }, [badgeProp, theme]);
-
-    const [badgeHeight, setBadgeHeight] = useState(defaultBadgeDimension);
-    // if badge has custom JSX, we want to scale the badge to fit.
-    // height will also be used to know how far to horizontally offset the badge
-    useEffect(() => {
-      if (badgeRef && badgeRef.current && typeof badgeProp !== 'boolean')
-        setBadgeHeight(getDimension('height', badgeProp, badgeRef, theme));
-    }, [badgeProp, theme]);
-
-    if (badgeProp) {
-      const max = badgeProp.max || theme.button.badge.max;
-
-      let value;
-      if (typeof badgeProp === 'number') value = badgeProp;
-      else if (typeof badgeProp === 'object') value = badgeProp.value;
-
-      let badge;
-      if (value || typeof badgeProp === 'boolean') {
-        if (value) {
-          badge = (
-            <Text color="text-strong" size="small" ref={badgeRef}>
-              {value > max ? `${max}+` : value}
-            </Text>
-          );
-        }
-        badge = (
-          <Box
-            align="center"
-            background={badgeProp.background || theme.button.badge.background}
-            flex={false}
-            height={badgeHeight}
-            justify="center"
-            round
-            width={badgeWidth}
-          >
-            {badge}
-          </Box>
-        );
-        // caller has provided their own JSX and we will just render that
-      } else badge = <Box ref={badgeRef}>{badgeProp}</Box>;
-
-      // offset the badge by 50% of its height and width
-      const verticalOffset = `-${parseInt(badgeHeight.replace('px', ''), 10) /
-        2}px`;
-      const horizontalOffset = `-${parseInt(badgeWidth.replace('px', ''), 10) /
-        2}px`;
-
+    // if the caller doesn't specify that they want
+    // the badge relative to the button content, set the badge
+    // relative to the outer edge of the button
+    if (badgeProp && badgeProp.target !== 'contents') {
+      const badge = getBadge(
+        badgeProp,
+        badgeRef,
+        badgeHeight,
+        badgeWidth,
+        theme,
+      );
       styledButtonResult = (
         <Stack
           anchor="top-right"

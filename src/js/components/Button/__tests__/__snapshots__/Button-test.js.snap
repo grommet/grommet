@@ -439,8 +439,8 @@ exports[`Button badge should be offset from top-right corner 1`] = `
 
 .c4 {
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: -3.4285714285714284px;
+  right: -3.4285714285714284px;
 }
 
 .c3 {
@@ -606,6 +606,7 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
   font-size: 14px;
   line-height: 20px;
   color: #FFFFFF;
+  font-weight: normal;
 }
 
 .c3 {
@@ -777,6 +778,7 @@ exports[`Button badge should display number content 1`] = `
   font-size: 14px;
   line-height: 20px;
   color: #FFFFFF;
+  font-weight: normal;
 }
 
 .c3 {
