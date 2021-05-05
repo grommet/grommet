@@ -490,11 +490,6 @@ exports[`Menu close by clicking outside 2`] = `
   width: 12px;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -517,6 +512,11 @@ exports[`Menu close by clicking outside 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3233,11 +3233,6 @@ exports[`Menu open and close on click 3`] = `
   width: 12px;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -3260,6 +3255,11 @@ exports[`Menu open and close on click 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3978,11 +3978,6 @@ exports[`Menu open on up close on esc 2`] = `
   width: 12px;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -4005,6 +4000,11 @@ exports[`Menu open on up close on esc 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -5663,11 +5663,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   width: 12px;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -5690,6 +5685,11 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -6204,11 +6204,6 @@ exports[`Menu with dropAlign top renders 2`] = `
   width: 12px;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -6231,6 +6226,11 @@ exports[`Menu with dropAlign top renders 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {

@@ -400,7 +400,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       badge: {
         background: 'brand',
         // border: undefined,
-        // max: undefined,
         size: {
           medium: `${baseSpacing}px`,
         },

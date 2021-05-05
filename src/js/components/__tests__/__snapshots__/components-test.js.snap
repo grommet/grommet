@@ -1335,8 +1335,46 @@ number
         string,
       light: string
     },
+  border: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    start
+    end
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right
+        start
+        end,
+      size: 
+        none
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
   max: number,
-  value: number
+  value: 
+    boolean
+    number
 }",
         "name": "badge",
       },

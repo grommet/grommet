@@ -2,6 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundPropType,
+  borderPropType,
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
@@ -51,8 +52,9 @@ export const doc = Button => {
       PropTypes.number,
       PropTypes.shape({
         background: backgroundPropType,
+        border: borderPropType,
         max: PropTypes.number,
-        value: PropTypes.number,
+        value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
       }),
     ])
       .description(
@@ -288,12 +290,6 @@ export const themeDoc = {
     description:
       'The border for the badge. Accepts any valid Box border value.',
     type: 'string | object',
-    defaultValue: undefined,
-  },
-  'button.badge.max': {
-    description: `The max number to display in the badge. If max is 9 and badge 
-    has value of 10, 9+ will be displayed.`,
-    type: 'number',
     defaultValue: undefined,
   },
   'button.badge.size.medium': {

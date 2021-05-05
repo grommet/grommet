@@ -372,7 +372,7 @@ describe('Button', () => {
   test(`badge should be offset from top-right corner`, () => {
     const { container } = render(
       <Grommet>
-        <Button aria-label="Button, alert" label="Button" badge />
+        <Button a11yTitle="Button, alert" label="Button" badge />
       </Grommet>,
     );
 
@@ -382,7 +382,7 @@ describe('Button', () => {
   test(`badge should display number content`, () => {
     const { container } = render(
       <Grommet>
-        <Button aria-label="Button, 2 unread alerts" label="Button" badge={2} />
+        <Button a11yTitle="Button, 2 unread alerts" label="Button" badge={2} />
       </Grommet>,
     );
 
@@ -393,9 +393,27 @@ describe('Button', () => {
     const { container } = render(
       <Grommet>
         <Button
-          aria-label="Button, 100 unread alerts"
+          a11yTitle="Button, 100 unread alerts"
           label="Button"
           badge={{ value: 100, max: 9 }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should apply background and border`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{
+            background: 'status-ok',
+            border: { color: '#FFF', size: 'small' },
+            value: 100,
+          }}
         />
       </Grommet>,
     );
@@ -407,7 +425,7 @@ describe('Button', () => {
     const { container } = render(
       <Grommet>
         <Button
-          aria-label="Button, Add user alert"
+          a11yTitle="Button, Add user alert"
           label="Button"
           badge={<Add />}
         />
@@ -417,15 +435,11 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`badge should be offset relative to contents when target === 
-  'contents'`, () => {
+  test(`badge should render relative to contents when button has no 
+  border or background`, () => {
     const { container } = render(
       <Grommet>
-        <Button
-          aria-label="Button, Add user alert"
-          icon={<Add />}
-          badge={{ value: 2, target: 'contents' }}
-        />
+        <Button a11yTitle="Button, Add user alert" icon={<Add />} badge />
       </Grommet>,
     );
 

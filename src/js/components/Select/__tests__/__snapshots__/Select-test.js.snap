@@ -347,12 +347,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -375,6 +369,12 @@ exports[`Select Clear option renders - bottom 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -622,12 +622,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -650,6 +644,12 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -905,12 +905,6 @@ exports[`Select Clear option renders custom label 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -933,6 +927,12 @@ exports[`Select Clear option renders custom label 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -1180,12 +1180,6 @@ exports[`Select Clear option renders- top 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1208,6 +1202,12 @@ exports[`Select Clear option renders- top 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3707,18 +3707,6 @@ exports[`Select default value clear 1`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -3741,6 +3729,18 @@ exports[`Select default value clear 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c4 {
@@ -4949,12 +4949,6 @@ exports[`Select disabled key 2`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -4977,6 +4971,12 @@ exports[`Select disabled key 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -5284,12 +5284,6 @@ exports[`Select disabled option value 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -5312,6 +5306,12 @@ exports[`Select disabled option value 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -6008,12 +6008,6 @@ exports[`Select large drop container height 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -6036,6 +6030,12 @@ exports[`Select large drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -6273,12 +6273,6 @@ exports[`Select medium drop container height 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -6301,6 +6295,12 @@ exports[`Select medium drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -7100,12 +7100,6 @@ exports[`Select onChange with valueKey string 2`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -7128,6 +7122,12 @@ exports[`Select onChange with valueKey string 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -7590,12 +7590,6 @@ exports[`Select onChange with valueLabel 2`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -7618,6 +7612,12 @@ exports[`Select onChange with valueLabel 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -8144,12 +8144,6 @@ exports[`Select onChange without valueKey 2`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -8172,6 +8166,12 @@ exports[`Select onChange without valueKey 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -9294,12 +9294,6 @@ exports[`Select prop: onOpen 3`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -9322,6 +9316,12 @@ exports[`Select prop: onOpen 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -11875,12 +11875,6 @@ exports[`Select search 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -11903,6 +11897,12 @@ exports[`Select search 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c8 {
@@ -12545,12 +12545,6 @@ exports[`Select search and select 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -12573,6 +12567,12 @@ exports[`Select search and select 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c8 {
@@ -15625,12 +15625,6 @@ exports[`Select small drop container height 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -15653,6 +15647,12 @@ exports[`Select small drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {

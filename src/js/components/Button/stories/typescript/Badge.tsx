@@ -43,13 +43,13 @@ export const Badge = () => (
     <Grommet theme={grommet}>
       <Box direction="row" align="center" pad="medium" gap="medium">
         <Button
-          aria-label="2 Available Updates"
+          a11yTitle="2 Available Updates"
           label="Updates"
           onClick={() => {}}
           badge={2}
         />
         <Button
-          aria-label="Settings, 1 Alert"
+          a11yTitle="Settings, 1 Alert"
           label="Settings"
           onClick={() => {}}
           badge={
@@ -59,24 +59,21 @@ export const Badge = () => (
           }
         />
         <Button
-          aria-label="20 Unread Notifications"
+          a11yTitle="20 Unread Notifications"
           icon={<Notification />}
           onClick={() => {}}
           badge={{
             target: 'contents',
             value: 20,
-            max: 9,
+            max: 15,
           }}
           hoverIndicator
         />
         <Button
-          aria-label="20 Unread Emails"
+          a11yTitle="20 Unread Emails"
           icon={<MailOption />}
           onClick={() => {}}
-          badge={{
-            target: 'contents',
-            value: true,
-          }}
+          badge
           hoverIndicator
         />
       </Box>
@@ -84,14 +81,14 @@ export const Badge = () => (
     <Grommet theme={customTheme}>
       <Box direction="row" align="center" pad="medium" gap="medium">
         <Button
-          aria-label="2 Updates Available"
+          a11yTitle="2 Updates Available"
           label="Updates"
           onClick={() => {}}
           badge={2}
           secondary
         />
         <Button
-          aria-label="100 Unread Notifications"
+          a11yTitle="100 Unread Notifications"
           label="Notifications"
           onClick={() => {}}
           badge={
@@ -102,36 +99,28 @@ export const Badge = () => (
           secondary
         />
         <Button
-          aria-label="100 Filters Applied"
+          a11yTitle="100 Filters Applied"
           icon={<Filter />}
           onClick={() => {}}
           badge={{
             background: 'status-warning',
             border: { color: '#FFF', size: 'small' },
             value: 100,
-            max: 9,
           }}
           secondary
         />
         <Button
-          aria-label="20 Unread Notifications"
+          a11yTitle="20 Unread Notifications"
           icon={<Notification />}
           onClick={() => {}}
-          badge={{
-            target: 'contents',
-            value: 20,
-            max: 9,
-          }}
+          badge={20}
           hoverIndicator
         />
         <Button
-          aria-label="20 Unread Emails"
+          a11yTitle="20 Unread Emails"
           icon={<MailOption />}
           onClick={() => {}}
-          badge={{
-            target: 'contents',
-            value: true,
-          }}
+          badge
           hoverIndicator
         />
       </Box>

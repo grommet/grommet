@@ -148,7 +148,6 @@ interface ButtonType {
   badge?: {
     background?: BackgroundType;
     border?: BorderType;
-    max?: number;
     size?: {
       medium?: string;
     };

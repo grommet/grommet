@@ -3302,8 +3302,46 @@ number
         string,
       light: string
     },
+  border: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    start
+    end
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right
+        start
+        end,
+      size: 
+        none
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
   max: number,
-  value: number
+  value: 
+    boolean
+    number
 }
 \`\`\`
 
@@ -3789,17 +3827,6 @@ brand
 **button.badge.border**
 
 The border for the badge. Accepts any valid Box border value. Expects \`string | object\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**button.badge.max**
-
-The max number to display in the badge. If max is 9 and badge 
-    has value of 10, 9+ will be displayed. Expects \`number\`.
 
 Defaults to
 
