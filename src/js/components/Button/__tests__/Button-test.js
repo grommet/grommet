@@ -416,4 +416,19 @@ describe('Button', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`badge should be offset relative to contents when target === 
+  'contents'`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          aria-label="Button, Add user alert"
+          icon={<Add />}
+          badge={{ value: 2, target: 'contents' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
