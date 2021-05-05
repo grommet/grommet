@@ -398,8 +398,9 @@ const Button = forwardRef(
     if (tip) {
       if (typeof tip === 'string') {
         styledButtonResult = <Tip content={tip}>{styledButtonResult}</Tip>;
+      } else {
+        styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
       }
-      styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
     }
 
     // if button has background or border, place badge relative
