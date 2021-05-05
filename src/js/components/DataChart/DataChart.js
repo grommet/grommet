@@ -1,10 +1,5 @@
-import React, {
-  forwardRef,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useMemo, useRef, useState } from 'react';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';

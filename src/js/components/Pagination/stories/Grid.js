@@ -17,7 +17,7 @@ const CardResult = ({ item }) => (
   </Card>
 );
 
-const PaginatedGrid = () => {
+export const PaginatedGrid = () => {
   const [currentData, setCurrentData] = useState(data.slice(0, 10));
   const [indices, setIndices] = useState([0, 10]);
 
@@ -48,7 +48,7 @@ const PaginatedGrid = () => {
   );
 };
 
-export { PaginatedGrid as Grid };
+PaginatedGrid.storyName = 'Grid';
 
 export default {
   title: 'Controls/Pagination/Grid',

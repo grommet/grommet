@@ -1274,5 +1274,40 @@ describe('Select', () => {
     expect(select.value).toEqual('');
   });
 
+  test('select option by typing should not break if caller passes JSX', () => {
+    jest.useFakeTimers();
+    const onChange = jest.fn();
+
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[<Box>JSX Element</Box>, 'one', 'two']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    // advance timers so select can open
+    act(() => jest.advanceTimersByTime(200));
+    // add content to search box
+    fireEvent.keyDown(document.activeElement, {
+      key: 't',
+      keyCode: 84,
+      which: 84,
+    });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   window.scrollTo.mockRestore();
 });

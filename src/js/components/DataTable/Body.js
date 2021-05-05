@@ -214,7 +214,7 @@ const Body = forwardRef(
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               return (
                 <Row
-                  key={primaryValue || index}
+                  key={index}
                   rowRef={rowRef}
                   primaryValue={primaryValue}
                   isSelected={isSelected}

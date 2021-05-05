@@ -186,11 +186,23 @@ const Select = forwardRef(
         setValue(nextValue);
         if (onChange) {
           event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.target = inputRef.current;
-          adjustedEvent.value = nextValue;
-          adjustedEvent.option = option;
-          adjustedEvent.selected = nextSelected;
+          let adjustedEvent;
+          // support for native event used by Preact
+          if (event instanceof Event) {
+            adjustedEvent = new event.constructor(event.type, event);
+            Object.defineProperties(adjustedEvent, {
+              target: { value: inputRef.current },
+              value: { value: nextValue },
+              option: { value: option },
+              selected: { value: nextSelected },
+            });
+          } else {
+            adjustedEvent = event;
+            adjustedEvent.target = inputRef.current;
+            adjustedEvent.value = nextValue;
+            adjustedEvent.option = option;
+            adjustedEvent.selected = nextSelected;
+          }
           onChange(adjustedEvent);
         }
         setSearch();
