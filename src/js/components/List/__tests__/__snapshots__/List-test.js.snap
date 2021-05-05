@@ -2390,6 +2390,26 @@ exports[`List events should apply pagination styling 1`] = `
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -2453,6 +2473,26 @@ exports[`List events should apply pagination styling 1`] = `
   border: 0;
 }
 
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   display: inline-block;
   box-sizing: border-box;
@@ -2510,6 +2550,26 @@ exports[`List events should apply pagination styling 1`] = `
 }
 
 .c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3424,6 +3484,26 @@ exports[`List events should paginate 1`] = `
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -3487,6 +3567,26 @@ exports[`List events should paginate 1`] = `
   border: 0;
 }
 
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   display: inline-block;
   box-sizing: border-box;
@@ -3544,6 +3644,26 @@ exports[`List events should paginate 1`] = `
 }
 
 .c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4302,6 +4422,26 @@ exports[`List events should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -4365,6 +4505,26 @@ exports[`List events should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   display: inline-block;
   box-sizing: border-box;
@@ -4422,6 +4582,26 @@ exports[`List events should render correct num items per page (step) 1`] = `
 }
 
 .c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5070,6 +5250,26 @@ exports[`List events should render new data when page changes 1`] = `
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -5133,6 +5333,26 @@ exports[`List events should render new data when page changes 1`] = `
   border: 0;
 }
 
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   display: inline-block;
   box-sizing: border-box;
@@ -5190,6 +5410,26 @@ exports[`List events should render new data when page changes 1`] = `
 }
 
 .c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5915,7 +6155,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               <svg
@@ -5941,7 +6181,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               1
@@ -5956,7 +6196,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               2
@@ -5971,7 +6211,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 DfZNm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 dqfRij StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               disabled=""
               type="button"
             >
@@ -6283,6 +6523,26 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border: 0;
 }
 
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -6346,6 +6606,26 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border: 0;
 }
 
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   display: inline-block;
   box-sizing: border-box;
@@ -6403,6 +6683,26 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 }
 
 .c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7146,6 +7446,26 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c15 {
   display: inline-block;
   box-sizing: border-box;
@@ -7209,6 +7529,26 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -7263,6 +7603,26 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 }
 
 .c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

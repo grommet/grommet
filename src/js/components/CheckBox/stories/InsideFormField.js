@@ -32,6 +32,23 @@ export const InsideFormField = props => (
             />
           </Box>
         </FormField>
+        <FormField
+          label="Toggle fill"
+          name="toggle"
+          htmlFor="check-box-toggle"
+          {...props}
+        >
+          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+            <CheckBox
+              id="check-box-fill-toggle"
+              name="toggle"
+              label="CheckBox"
+              toggle
+              fill
+              reverse
+            />
+          </Box>
+        </FormField>
         <FormField label="Default" name="checkbox" htmlFor="check-box" required>
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
             <CheckBox id="check-box" name="checkbox" label="Required" />

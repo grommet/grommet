@@ -1144,6 +1144,10 @@ reverse",
     "usage": "import { Box } from 'grommet';
 <Box />",
   },
+  "BoxSnowpack": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Button": Object {
     "availableAt": Array [
       Object {
@@ -1485,7 +1489,9 @@ string",
         "name": "target",
       },
       Object {
-        "description": "tooltip or a hint when hovering over the button.",
+        "description": "tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.",
         "format": "{
   content: 
     node
@@ -2293,6 +2299,13 @@ point",
       with the same name so form submissions work.",
         "format": "boolean",
         "name": "disabled",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.",
+        "format": "boolean",
+        "name": "fill",
       },
       Object {
         "description": "The DOM id attribute value to use for the underlying <input/> element.",
