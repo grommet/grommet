@@ -4100,10 +4100,10 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^5.6.0:
-  version "5.6.3"
-  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-5.6.3.tgz#5b1ef3a9ff60b617f9ee1397921951e6e2f08a8c"
-  integrity sha512-GjTWCxXD8bbOAIH8rPxIB0O96temNLis2fyCFHNwaSX762xx7mdZr8R6aEkBVjYVP5gY/l6tszPpMeCav6bNiQ==
+chromatic@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-5.8.0.tgz#12fa6117cb7b1a7f4352e4cb7decee7a5d080e31"
+  integrity sha512-9cDh6HIS66iGfjTFMRVgbLYoECYiM9JG7nfv6iQAnIAUM51aoE2oq/TFPcrKPtyiBQsdV+E2hibidkRHqlEjFQ==
   dependencies:
     "@actions/core" "^1.2.4"
     "@actions/github" "^4.0.0"
@@ -4133,6 +4133,7 @@ chromatic@^5.6.0:
     progress-stream "^2.0.0"
     semver "^7.3.4"
     slash "^3.0.0"
+    string-argv "^0.3.1"
     strip-ansi "6.0.0"
     tmp-promise "3.0.2"
     tree-kill "^1.2.2"
@@ -11449,6 +11450,11 @@ stream-shift@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
+
+string-argv@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
+  integrity sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==
 
 string-length@^4.0.1:
   version "4.0.1"
