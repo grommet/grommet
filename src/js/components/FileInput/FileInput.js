@@ -70,7 +70,6 @@ const FileInput = forwardRef(
       name,
       onChange,
       pad,
-      maximumCount,
       value: valueProp,
       ...rest
     },
@@ -82,6 +81,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
+    const maxCount = multiple && multiple.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -242,13 +242,9 @@ const FileInput = forwardRef(
               const fileList = event.target.files;
               let filesToAdd;
               if (!files.length) {
-                if (
-                  multiple &&
-                  maximumCount &&
-                  fileList.length >= maximumCount
-                ) {
+                if (multiple && maxCount && fileList.length >= maxCount) {
                   const newFileList = [];
-                  for (let i = 0; i < maximumCount; i += 1) {
+                  for (let i = 0; i < maxCount; i += 1) {
                     newFileList.push(fileList[i]);
                   }
                   filesToAdd = newFileList;
@@ -257,11 +253,11 @@ const FileInput = forwardRef(
                 }
               } else if (
                 multiple &&
-                maximumCount &&
-                fileList.length >= maximumCount - files.length
+                maxCount &&
+                fileList.length >= maxCount - files.length
               ) {
                 const newFileList = [];
-                for (let i = 0; i < maximumCount - files.length; i += 1) {
+                for (let i = 0; i < maxCount - files.length; i += 1) {
                   newFileList.push(fileList[i]);
                 }
                 filesToAdd = newFileList;
