@@ -9,7 +9,7 @@ export const Multiple = () => (
       <Box width="medium">
         <FileInput
           multiple={{
-            max: 5
+            max: 5,
           }}
           onChange={event => {
             const fileList = event.target.files;
