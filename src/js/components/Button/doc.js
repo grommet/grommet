@@ -59,8 +59,8 @@ export const doc = Button => {
     ])
       .description(
         `An indicator to show on the top-right of the Button. For accessibility,
-         supplement the badge by an a11yTitle to the Button which provides a 
-         useful message to screen readers. For example, "2 unread 
+         supplement the badge by adding an a11yTitle to the Button which 
+         provides a useful message to screen readers. For example, "2 unread 
          notifications".`,
       )
       .defaultValue(undefined),
