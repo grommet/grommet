@@ -6395,7 +6395,9 @@ string",
       },
       Object {
         "defaultValue": "medium",
-        "description": "The size of the Meter.",
+        "description": "
+        The size of the Meter. 'full' with type=\\"circle\\" creates a pie chart.
+      ",
         "format": "xsmall
 small
 medium
@@ -6408,7 +6410,8 @@ string",
         "defaultValue": "bar",
         "description": "The visual type of meter.",
         "format": "bar
-circle",
+circle
+pie",
         "name": "type",
       },
       Object {

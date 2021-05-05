@@ -186,7 +186,9 @@ string
 
 **thickness**
 
-The size of the Meter. Defaults to `medium`.
+
+        The size of the Meter. 'full' with type="circle" creates a pie chart.
+       Defaults to `medium`.
 
 ```
 xsmall
@@ -204,6 +206,7 @@ The visual type of meter. Defaults to `bar`.
 ```
 bar
 circle
+pie
 ```
 
 **value**
