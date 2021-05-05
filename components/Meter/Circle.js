@@ -29,12 +29,13 @@ var Circle = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       round = props.round,
       size = props.size,
       thickness = props.thickness,
+      type = props.type,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "type", "values"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
-  var height = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
+  var height = type === 'pie' ? width / 2 : (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
   var mid = width / 2;
   var radius = width / 2 - height / 2;
   var anglePer = 360 / max;

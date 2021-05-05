@@ -59,13 +59,14 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
       thickness: thickness,
       background: background
     }, rest));
-  } else if (type === 'circle') {
+  } else if (type === 'circle' || type === 'pie') {
     content = /*#__PURE__*/React.createElement(Circle, _extends({
       ref: ref,
       max: memoizedMax,
       values: values,
       size: size,
       thickness: thickness,
+      type: type,
       background: background
     }, rest));
   }

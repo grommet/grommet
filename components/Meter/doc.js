@@ -28,7 +28,7 @@ var doc = function doc(Meter) {
     round: _reactDesc.PropTypes.bool.description('Whether to round the line ends').defaultValue(false),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     thickness: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
-    type: _reactDesc.PropTypes.oneOf(['bar', 'circle']).description('The visual type of meter.').defaultValue('bar'),
+    type: _reactDesc.PropTypes.oneOf(['bar', 'circle', 'pie']).description('The visual type of meter.').defaultValue('bar'),
     value: _reactDesc.PropTypes.number.description("\n      The numeric value to represent. Ignored when 'values' is specified.\n    "),
     values: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       color: _reactDesc.PropTypes.string,
