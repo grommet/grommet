@@ -122,7 +122,7 @@ export const doc = Select => {
     ]).description(
       `When the options array contains objects, this property indicates how
       to determine the label of each option. The label is what is displayed 
-      in the Select button and its dropdown options. If a string is
+      visually for the user, both to indicate the selected value and in the options list. If a string is
       provided, it is used as the key to retrieve each option's label.
       If a function is provided, it is called with the option and the
       return value indicates the label.`,
