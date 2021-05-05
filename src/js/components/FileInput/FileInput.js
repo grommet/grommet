@@ -133,16 +133,19 @@ const FileInput = forwardRef(
           removeRef.current.getBoundingClientRect().width +
           2 * theme.global.edgeSize.small.replace('px', '');
       } else rightOffset = removeRef.current.getBoundingClientRect().width;
+    } else if (!files.length && controlRef.current) {
+      rightOffset =
+        controlRef.current.getBoundingClientRect().width +
+        2 * theme.global.edgeSize.small.replace('px', '');
     }
 
     // Show the number of files when more than one
 
     let message;
     if (!files.length) {
-      if (multiple)
-        message = 'Drop files here or' || messages.dropPromptMultiple;
+      if (multiple) message = 'Drag and drop' || messages.dropPromptMultiple;
       if (!multiple) {
-        message = 'Drop file here or' || messages.dropPrompt;
+        message = 'Drag and drop' || messages.dropPrompt;
       }
     } else message = `${files.length} items`;
 
@@ -164,7 +167,7 @@ const FileInput = forwardRef(
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
-          <Box direction="row" justify="between">
+          <Box fill direction="row" justify="between">
             <Message {...theme.fileInput.message}>{message}</Message>
             <Keyboard
               onSpace={event => {
@@ -191,7 +194,7 @@ const FileInput = forwardRef(
                 <Anchor
                   alignSelf="center"
                   ref={controlRef}
-                  margin={files.length ? 'small' : undefined}
+                  margin="small"
                   onClick={() => {
                     inputRef.current.click();
                     inputRef.current.focus();
