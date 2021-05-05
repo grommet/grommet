@@ -416,24 +416,24 @@ const Calendar = forwardRef(
               } else {
                 adjustedDate = undefined;
               }
-            } else if (Array.isArray(dateProp)) {
-              dateProp.forEach(d => {
-                if (!timeStamp.test(d)) {
-                  adjustedDate = formatToLocalYYYYMMDD(nextDate);
-                  if (d === adjustedDate) {
-                    nextDate = undefined;
-                  } else {
-                    adjustedDate = undefined;
-                  }
+            } 
+          } else if (Array.isArray(dateProp)) {
+            dateProp.forEach(d => {
+              if (!timeStamp.test(d)) {
+                adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                if (d === adjustedDate) {
+                  nextDate = undefined;
+                } else {
+                  adjustedDate = undefined;
                 }
-              });
-            } else {
-              adjustedDate = undefined;
-            }
+              }
+            });
+          } else {
+            adjustedDate = undefined;
           }
         }
         // everything down is a range
-        else if (!dates) {
+        else if (!dates && !date) {
           // if user supplies date, convert this into dates
           if (date && typeof date === 'string') {
             const priorDate = new Date(date);
@@ -457,47 +457,96 @@ const Calendar = forwardRef(
               if (activeDateProp) setActiveDate(activeDateProp);
             }
           } else if (activeDate === activeDates.start) {
+            console.log("ACTIVEDATE START")
             nextDates = [[selectedDate, undefined]];
             setActiveDate(activeDates.end);
           } else if (activeDate === activeDates.end) {
+            console.log("ACTIVEDATE END")
             nextDates = [[undefined, selectedDate]];
           }
           if (activeDateProp) setActiveDate(activeDateProp);
         } else {
           // have dates
-          const priorDates = dates[0].map(d => new Date(d));
-          const selDate = new Date(selectedDate);
-          if (selDate.getTime() === priorDates[0].getTime()) {
-            nextDates = [[undefined, dates[0][1]]];
-            setActiveDate(activeDates.start);
-          } else if (selDate.getTime() === priorDates[1].getTime()) {
-            nextDates = [[dates[0][0], undefined]];
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.start) {
-            if (selDate.getTime() > priorDates[1].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-            } else {
-              nextDates = [[selectedDate, dates[0][1]]];
-            }
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.end) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-              setActiveDate(activeDates.end);
-            } else {
-              nextDates = [[dates[0][0], selectedDate]];
+          console.log({dates, date})
+          if(dates){
+            console.log("DATES ARE PRESENT")
+            const priorDates = dates[0].map(d => new Date(d));
+            const selDate = new Date(selectedDate);
+            if (selDate.getTime() === priorDates[0].getTime()) {
+              nextDates = [[undefined, dates[0][1]]];
               setActiveDate(activeDates.start);
+            } else if (selDate.getTime() === priorDates[1].getTime()) {
+              nextDates = [[dates[0][0], undefined]];
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.start) {
+              if (selDate.getTime() > priorDates[1].getTime()) {
+                nextDates = [[selectedDate, undefined]];
+              } else {
+                nextDates = [[selectedDate, dates[0][1]]];
+              }
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.end) {
+              if (selDate.getTime() < priorDates[0].getTime()) {
+                nextDates = [[selectedDate, undefined]];
+                setActiveDate(activeDates.end);
+              } else {
+                nextDates = [[dates[0][0], selectedDate]];
+                setActiveDate(activeDates.start);
+              }
+              if (activeDateProp) setActiveDate(activeDateProp);
             }
-            if (activeDateProp) setActiveDate(activeDateProp);
+            // cleanup
+            if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+          }else if(date){
+            console.log("DATE IS PRESENT")
+            const priorDates = date[0].map(d => new Date(d));
+            const selDate = new Date(selectedDate);
+            if (selDate.getTime() === priorDates[0].getTime()) {
+              console.log("I AM CALLED")
+              nextDates = [[undefined, date[0][1]]];
+              setActiveDate(activeDates.start);
+            } else if (selDate.getTime() === priorDates[1].getTime()) {
+              console.log("I AM CALLED")
+              nextDates = [[date[0][0], undefined]];
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.start) {
+              console.log("I AM CALLED")
+              if (selDate.getTime() > priorDates[1].getTime()) {
+                nextDates = [[selectedDate, undefined]];
+              } else {
+                nextDates = [[selectedDate, date[0][1]]];
+              }
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.end) {
+              console.log("I AM CALLED")
+              if (selDate.getTime() < priorDates[0].getTime()) {
+                console.log("I AM CALLED")
+                nextDates = [[selectedDate, undefined]];
+                setActiveDate(activeDates.end);
+              } else {
+                console.log("I AM CALLED")
+                nextDates = [[date[0][0], selectedDate]];
+                setActiveDate(activeDates.start);
+              }
+              if (activeDateProp) setActiveDate(activeDateProp);
+            }
+            // cleanup
+            if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
           }
-          // cleanup
-          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
         }
 
-        setDates(nextDates);
-        if (!dates) setDate(nextDate);
+        if(dates) setDates(nextDates);
+        if(date && typeof date === "string"){
+          setDate(nextDate);
+        }else if(date && Array.isArray(date)){
+          setDate(nextDates)
+        }else{
+          setDate(undefined)
+        }
         setActive(new Date(selectedDate));
         if (onSelect) {
           let adjustedDates;
