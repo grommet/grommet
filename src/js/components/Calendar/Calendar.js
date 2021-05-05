@@ -416,7 +416,7 @@ const Calendar = forwardRef(
               } else {
                 adjustedDate = undefined;
               }
-            } 
+            }
           } else if (Array.isArray(dateProp)) {
             dateProp.forEach(d => {
               if (!timeStamp.test(d)) {
@@ -457,19 +457,19 @@ const Calendar = forwardRef(
               if (activeDateProp) setActiveDate(activeDateProp);
             }
           } else if (activeDate === activeDates.start) {
-            console.log("ACTIVEDATE START")
+            console.log('ACTIVEDATE START');
             nextDates = [[selectedDate, undefined]];
             setActiveDate(activeDates.end);
           } else if (activeDate === activeDates.end) {
-            console.log("ACTIVEDATE END")
+            console.log('ACTIVEDATE END');
             nextDates = [[undefined, selectedDate]];
           }
           if (activeDateProp) setActiveDate(activeDateProp);
         } else {
           // have dates
-          console.log({dates, date})
-          if(dates){
-            console.log("DATES ARE PRESENT")
+          console.log({ dates, date });
+          if (dates) {
+            console.log('DATES ARE PRESENT');
             const priorDates = dates[0].map(d => new Date(d));
             const selDate = new Date(selectedDate);
             if (selDate.getTime() === priorDates[0].getTime()) {
@@ -499,21 +499,21 @@ const Calendar = forwardRef(
             }
             // cleanup
             if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
-          }else if(date){
-            console.log("DATE IS PRESENT")
+          } else if (date) {
+            console.log('DATE IS PRESENT');
             const priorDates = date[0].map(d => new Date(d));
             const selDate = new Date(selectedDate);
             if (selDate.getTime() === priorDates[0].getTime()) {
-              console.log("I AM CALLED")
+              console.log('I AM CALLED');
               nextDates = [[undefined, date[0][1]]];
               setActiveDate(activeDates.start);
             } else if (selDate.getTime() === priorDates[1].getTime()) {
-              console.log("I AM CALLED")
+              console.log('I AM CALLED');
               nextDates = [[date[0][0], undefined]];
               setActiveDate(activeDates.end);
               if (activeDateProp) setActiveDate(activeDateProp);
             } else if (activeDate === activeDates.start) {
-              console.log("I AM CALLED")
+              console.log('I AM CALLED');
               if (selDate.getTime() > priorDates[1].getTime()) {
                 nextDates = [[selectedDate, undefined]];
               } else {
@@ -522,13 +522,13 @@ const Calendar = forwardRef(
               setActiveDate(activeDates.end);
               if (activeDateProp) setActiveDate(activeDateProp);
             } else if (activeDate === activeDates.end) {
-              console.log("I AM CALLED")
+              console.log('I AM CALLED');
               if (selDate.getTime() < priorDates[0].getTime()) {
-                console.log("I AM CALLED")
+                console.log('I AM CALLED');
                 nextDates = [[selectedDate, undefined]];
                 setActiveDate(activeDates.end);
               } else {
-                console.log("I AM CALLED")
+                console.log('I AM CALLED');
                 nextDates = [[date[0][0], selectedDate]];
                 setActiveDate(activeDates.start);
               }
@@ -539,13 +539,13 @@ const Calendar = forwardRef(
           }
         }
 
-        if(dates) setDates(nextDates);
-        if(date && typeof date === "string"){
+        if (dates) setDates(nextDates);
+        if (date && typeof date === 'string') {
           setDate(nextDate);
-        }else if(date && Array.isArray(date)){
-          setDate(nextDates)
-        }else{
-          setDate(undefined)
+        } else if (date && Array.isArray(date)) {
+          setDate(nextDates);
+        } else {
+          setDate(undefined);
         }
         setActive(new Date(selectedDate));
         if (onSelect) {
