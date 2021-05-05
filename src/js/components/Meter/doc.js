@@ -52,11 +52,7 @@ export const doc = Meter => {
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ])
-      .description(
-        `
-        The size of the Meter. 'full' with type="circle" creates a pie chart.
-      `,
-      )
+      .description('The size of the Meter.')
       .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle', 'pie'])
       .description('The visual type of meter.')

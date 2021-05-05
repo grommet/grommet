@@ -6395,9 +6395,7 @@ string",
       },
       Object {
         "defaultValue": "medium",
-        "description": "
-        The size of the Meter. 'full' with type=\\"circle\\" creates a pie chart.
-      ",
+        "description": "The size of the Meter.",
         "format": "xsmall
 small
 medium
