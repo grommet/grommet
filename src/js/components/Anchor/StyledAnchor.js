@@ -13,15 +13,9 @@ const sizeStyle = props => {
   if (props.size) {
     const size = props.size || 'medium';
     const data = props.theme.text[size];
-    if (data) {
-      return css`
-        font-size: ${data.size};
-        line-height: ${data.height};
-      `;
-    }
     return css`
-      font-size: ${size};
-      line-height: normal;
+      font-size: ${data ? data.size : size};
+      line-height: ${data ? data.height : 'normal'};
     `;
   }
   return css`
