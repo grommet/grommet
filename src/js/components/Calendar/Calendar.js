@@ -185,8 +185,9 @@ const Calendar = forwardRef(
     // set activeDate when caller changes it, allows us to change
     // it internally too
     const [activeDate, setActiveDate] = useState(
-      dateProp && typeof dateProp === "string" && range ? 
-        activeDates.end : activeDates.start,
+      dateProp && typeof dateProp === 'string' && range
+        ? activeDates.end
+        : activeDates.start,
     );
     useEffect(() => {
       if (activeDateProp) setActiveDate(activeDateProp);
@@ -434,10 +435,9 @@ const Calendar = forwardRef(
           }
         }
         // everything down is a range
-        else if (!dates && !date) {
+        else if (!dates && !Array.isArray(date)) {
           // if user supplies date, convert this into dates
-          if (date && typeof date === 'string') {
-            console.log("I AM CALLED")
+          if (date) {
             const priorDate = new Date(date);
             const selDate = new Date(selectedDate);
             if (activeDate === activeDates.start) {
@@ -459,18 +459,15 @@ const Calendar = forwardRef(
               if (activeDateProp) setActiveDate(activeDateProp);
             }
           } else if (activeDate === activeDates.start) {
-            console.log("I AM CALLED")
             nextDates = [[selectedDate, undefined]];
             setActiveDate(activeDates.end);
           } else if (activeDate === activeDates.end) {
-            console.log("I AM CALLED")
             nextDates = [[undefined, selectedDate]];
           }
           if (activeDateProp) setActiveDate(activeDateProp);
-        } else {
+        } else if (dates || date) {
           // have dates
           if (dates) {
-            console.log("I AM CALLED")
             const priorDates = dates[0].map(d => new Date(d));
             const selDate = new Date(selectedDate);
             if (selDate.getTime() === priorDates[0].getTime()) {
@@ -501,7 +498,6 @@ const Calendar = forwardRef(
             // cleanup
             if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
           } else if (date && Array.isArray(date)) {
-            console.log("I AM CALLED")
             const priorDates = date[0].map(d => new Date(d));
             const selDate = new Date(selectedDate);
             if (selDate.getTime() === priorDates[0].getTime()) {
@@ -534,16 +530,11 @@ const Calendar = forwardRef(
           }
         }
 
-        if (dates) setDates(nextDates);
+        setDates(nextDates);
         if (date && typeof date === 'string') {
-          console.log("I AM CALLED")
           setDate(nextDate);
         } else if (date && Array.isArray(date)) {
-          console.log("I AM CALLED")
           setDate(nextDates);
-        } else {
-          console.log("I AM CALLED")
-          setDate(undefined);
         }
         setActive(new Date(selectedDate));
         if (onSelect) {
@@ -559,7 +550,6 @@ const Calendar = forwardRef(
           } else {
             adjustedDates = nextDates;
           }
-          console.log({ adjustedDates, adjustedDate, nextDate })
           onSelect(adjustedDates || adjustedDate || nextDate);
         }
       },

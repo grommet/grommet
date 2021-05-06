@@ -169,8 +169,7 @@ function
 
 **date**
 
-The selected date in ISO8601 format. You can also pass
-     multiple dates as an array same as a dates prop.
+The selected date or array of dates in ISO8601 format.
 
 ```
 string
