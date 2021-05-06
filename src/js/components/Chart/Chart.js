@@ -269,7 +269,12 @@ const Chart = React.forwardRef(
               }
               opacity={
                 (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
+                // eslint-disable-next-line no-nested-ternary
+                (valueOpacity === true
+                  ? theme.global.opacity.medium
+                  : valueOpacity === false
+                  ? undefined
+                  : valueOpacity)
               }
             >
               <title>{label}</title>
@@ -453,7 +458,12 @@ const Chart = React.forwardRef(
               fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
               opacity={
                 (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
+                // eslint-disable-next-line no-nested-ternary
+                (valueOpacity === true
+                  ? theme.global.opacity.medium
+                  : valueOpacity === false
+                  ? undefined
+                  : valueOpacity)
               }
             >
               <title>{label}</title>
@@ -481,12 +491,19 @@ const Chart = React.forwardRef(
       else if (color) colorName = color;
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
-    const opacity =
-      propsOpacity || (color && color.opacity)
-        ? theme.global.opacity[propsOpacity || color.opacity] ||
-          propsOpacity ||
-          color.opacity
-        : undefined;
+
+    let opacity;
+    if (propsOpacity === true) {
+      opacity = theme.global.opacity.medium;
+    } else if (propsOpacity) {
+      opacity = theme.global.opacity[propsOpacity]
+        ? theme.global.opacity[propsOpacity]
+        : propsOpacity;
+    } else if (color && color.opacity) {
+      opacity = theme.global.opacity[color.opacity]
+        ? theme.global.opacity[color.opacity]
+        : color.opacity;
+    } else opacity = undefined;
 
     let stroke;
     if (type !== 'point') {

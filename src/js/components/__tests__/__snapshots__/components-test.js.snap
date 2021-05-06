@@ -2029,7 +2029,7 @@ string",
         "name": "onHover",
       },
       Object {
-        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "description": "What opacity to apply to the visuals. Supersedes 'color.opacity'",
         "format": "weak
 medium
 strong
@@ -2241,7 +2241,8 @@ point",
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
