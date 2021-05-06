@@ -708,7 +708,7 @@ Defaults to
 undefined
 ```
 
-**button.badge.background**
+**button.badge.container.background**
 
 The background of the badge. Expects `string | { dark: string, light: string } | {
       color: { dark: string, light: string } | string,
@@ -726,9 +726,19 @@ Defaults to
 brand
 ```
 
-**button.badge.border**
+**button.badge.container.border**
 
 The border for the badge. Accepts any valid Box border value. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.badge.container.pad**
+
+When badge has a value, the amount of horizontal pad to apply. Expects `string`.
 
 Defaults to
 
@@ -745,6 +755,17 @@ Defaults to
 
 ```
 24px
+```
+
+**button.badge.text.size.medium**
+
+The size of the text that is mapped according to 
+    'button.badge.size.medium'. Expects `string`.
+
+Defaults to
+
+```
+14px
 ```
 
 **button.border.color**

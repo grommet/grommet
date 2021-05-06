@@ -398,10 +398,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     button: {
       badge: {
-        background: 'brand',
-        // border: undefined,
+        container: {
+          background: 'brand',
+          // border: undefined,
+          pad: 'xsmall',
+        },
         size: {
           medium: `${baseSpacing}px`,
+        },
+        text: {
+          size: {
+            medium: 'small', // 14px
+          },
         },
       },
       size: {

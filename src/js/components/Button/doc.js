@@ -273,7 +273,7 @@ export const themeDoc = {
     type: '{}',
     defaultValue: undefined,
   },
-  'button.badge.background': {
+  'button.badge.container.background': {
     description: `The background of the badge.`,
     type: `string | { dark: string, light: string } | {
       color: { dark: string, light: string } | string,
@@ -286,10 +286,16 @@ export const themeDoc = {
     }`,
     defaultValue: 'brand',
   },
-  'button.badge.border': {
+  'button.badge.container.border': {
     description:
       'The border for the badge. Accepts any valid Box border value.',
     type: 'string | object',
+    defaultValue: undefined,
+  },
+  'button.badge.container.pad': {
+    description:
+      'When badge has a value, the amount of horizontal pad to apply.',
+    type: 'string',
     defaultValue: undefined,
   },
   'button.badge.size.medium': {
@@ -297,6 +303,12 @@ export const themeDoc = {
     contains a value.`,
     type: 'string',
     defaultValue: '24px',
+  },
+  'button.badge.text.size.medium': {
+    description: `The size of the text that is mapped according to 
+    'button.badge.size.medium'.`,
+    type: 'string',
+    defaultValue: '14px',
   },
   'button.border.color': {
     description: `The color of the border.`,

@@ -16,7 +16,9 @@ const getBadgeDimension = (dimension, content, badgeContentRef, theme) => {
     // leave a small amount of horizontal space to pad content
     const horizontalPad =
       dimension === 'width'
-        ? parseMetricToNum(theme.global.edgeSize.xsmall)
+        ? parseMetricToNum(
+            theme.global.edgeSize[theme.button.badge.container.pad],
+          )
         : 0;
     // if content is tall/wide, let badge grow to fit. otherwise,
     // make sure it's at least badge.size.medium dimensions
@@ -91,7 +93,7 @@ export const Badge = ({ children, content }) => {
       badge = (
         <Text
           color="text-strong"
-          size="small"
+          size={theme.button.badge.text.size.medium}
           weight="normal"
           ref={badgeContentRef}
         >
@@ -102,8 +104,10 @@ export const Badge = ({ children, content }) => {
     badge = (
       <Box
         align="center"
-        background={content.background || theme.button.badge.background}
-        border={content.border || theme.button.badge.border}
+        background={
+          content.background || theme.button.badge.container.background
+        }
+        border={content.border || theme.button.badge.container.border}
         flex={false}
         height={height}
         justify="center"
