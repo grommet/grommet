@@ -302,6 +302,11 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    // If fileinput is wrapped in a formfield we want to use
+    // the border style from the fileInput.theme. We also do not
+    // want the foocus around the formfield since the the focus
+    // is on the anchor/button inside fileinput
+
     if (themeBorder) {
       const innerProps =
         themeBorder.position === 'inner'
