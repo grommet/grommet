@@ -26,7 +26,6 @@ export interface ButtonProps {
         background?: BackgroundType;
         border?: BorderType;
         max?: number;
-        target?: 'contents';
         value?: boolean | number;
       }
     | JSX.Element;
