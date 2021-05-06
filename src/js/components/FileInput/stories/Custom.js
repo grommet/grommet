@@ -6,6 +6,9 @@ import { Trash } from 'grommet-icons';
 const customTheme = {
   fileInput: {
     button: {
+      hover: {
+        color: 'pink',
+      },
       border: {
         color: 'skyblue',
         width: '1px',
