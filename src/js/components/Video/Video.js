@@ -3,11 +3,11 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';

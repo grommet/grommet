@@ -352,6 +352,20 @@ Defaults to
 undefined
 ```
 
+**global.drop.intelligentMargin**
+
+Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target. Expects `boolean`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.edgeSize**
 
 The possible sizes for the Drop margin. Expects `object`.

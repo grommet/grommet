@@ -26,13 +26,27 @@ describe('Avatar', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('size renders', () => {
+  test('size', () => {
     const component = renderer.create(
       <Grommet>
         <Avatar size="xsmall" src={src} />
         <Avatar size="small" src={src} />
         <Avatar src={src} />
         <Avatar size="large" src={src} />
+        <Avatar size="xlarge" src={src} />
+        <Avatar size="2xl" src={src} />
+        <Avatar size="3xl" src={src} />
+        <Avatar size="4xl" src={src} />
+        <Avatar size="5xl" src={src} />
+
+        <Avatar size="small">S</Avatar>
+        <Avatar size="medium">S</Avatar>
+        <Avatar size="large">S</Avatar>
+        <Avatar size="xlarge">S</Avatar>
+        <Avatar size="2xl">S</Avatar>
+        <Avatar size="3xl">S</Avatar>
+        <Avatar size="4xl">S</Avatar>
+        <Avatar size="5xl">S</Avatar>
       </Grommet>,
     );
     const tree = component.toJSON();

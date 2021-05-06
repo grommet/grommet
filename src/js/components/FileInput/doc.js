@@ -59,7 +59,7 @@ export const doc = FileInput => {
       `Function that will be called when one or more files are added to 
       the input. The file(s) can be found in event.target.files.`,
     ),
-    renderFile: PropTypes.node.description(
+    renderFile: PropTypes.func.description(
       `Provides custom rendering of the file. If not provided, the file's
       name will be shown. It will be passed the browser File object as
       an argument. For example: (file) => <Text>{file.name}</Text>`,

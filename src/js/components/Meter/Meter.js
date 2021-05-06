@@ -51,7 +51,7 @@ const Meter = forwardRef(
           {...rest}
         />
       );
-    } else if (type === 'circle') {
+    } else if (type === 'circle' || type === 'pie') {
       content = (
         <Circle
           ref={ref}
@@ -59,6 +59,7 @@ const Meter = forwardRef(
           values={values}
           size={size}
           thickness={thickness}
+          type={type}
           background={background}
           {...rest}
         />

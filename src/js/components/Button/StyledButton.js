@@ -5,6 +5,7 @@ import {
   backgroundStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   getHoverIndicatorStyle,
   normalizeColor,
@@ -206,9 +207,13 @@ const StyledButton = styled.button`
     props.theme.button &&
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
-  
+
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+  }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
   }
 
   ${props =>

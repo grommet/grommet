@@ -187,7 +187,8 @@ function
 
 **plain**
 
-Whether this is a plain Layer with no background color or border.
+Whether this is a plain Layer with no background color, border, or 
+        elevation.
 
 ```
 boolean
@@ -265,7 +266,7 @@ The rounding of the Layer corners. Expects `string`.
 Defaults to
 
 ```
-white
+4px
 ```
 
 **layer.border.intelligentRounding**

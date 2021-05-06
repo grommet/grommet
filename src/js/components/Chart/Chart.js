@@ -1,12 +1,7 @@
-import React, {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';

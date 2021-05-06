@@ -33,10 +33,11 @@ export const FormUncontrolled = () => (
           console.log('Submit object options', value, touched)
         }
       >
-        <FormField name="drink">
+        <FormField name="drink" label="Drink" id="drink-formfield-id">
           <CheckBoxGroup
             name="drink"
             valueKey="id"
+            aria-labelledby="drink-formfield-id"
             options={[
               { label: 'Coffee', id: '1' },
               { label: 'Tea', id: '2' },

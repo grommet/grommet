@@ -27,6 +27,40 @@ const dropKeyFrames = keyframes`
   }
 `;
 
+// The desired margin may be adjusted depending on drops alignment
+const marginStyle = (theme, align, data, responsive, marginProp) => {
+  const margin = theme.global.edgeSize[data] || data;
+  let adjustedMargin = {};
+  // if user provides CSS string such as '50px 12px', apply that always
+  const customCSS = typeof margin === 'string' && margin.split(' ').length > 1;
+  if (
+    theme.global.drop.intelligentMargin === true &&
+    !customCSS &&
+    typeof margin === 'string'
+  ) {
+    if (align.top === 'bottom') adjustedMargin.top = margin;
+    else if (align.bottom === 'top') adjustedMargin.bottom = margin;
+    if (align.right === 'left') adjustedMargin.left = `-${margin}`;
+    else if (align.left === 'right') adjustedMargin.left = margin;
+    if (!Object.keys(adjustedMargin)) adjustedMargin = 'none';
+  } else {
+    return edgeStyle(
+      'margin',
+      marginProp || theme.global.drop.margin,
+      responsive,
+      theme.global.edgeSize.responsiveBreakpoint,
+      theme,
+    );
+  }
+  return edgeStyle(
+    'margin',
+    adjustedMargin,
+    responsive,
+    theme.global.edgeSize.responsiveBreakpoint,
+    theme,
+  );
+};
+
 const StyledDrop = styled.div`
   ${baseStyle}
 
@@ -50,12 +84,12 @@ const StyledDrop = styled.div`
     !props.plain &&
     (props.margin || props.theme.global.drop.margin) &&
     props.theme.global &&
-    edgeStyle(
-      'margin',
-      props.margin || props.theme.global.drop.margin,
-      props.responsive,
-      props.theme.global.edgeSize.responsiveBreakpoint,
+    marginStyle(
       props.theme,
+      props.alignProp,
+      props.theme.global.drop.margin,
+      props.responsive,
+      props.margin,
     )}
 
   opacity: 0;
