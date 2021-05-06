@@ -37,6 +37,143 @@ How to align the drop with respect to the target element. Not
 }
 ```
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+```
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+```
+
+**elevation**
+
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
+
+```
+none
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -78,6 +215,15 @@ visible
 string
 ```
 
+**plain**
+
+Whether the drop element should have no background, 
+        elevation, margin or round.
+
+```
+boolean
+```
+
 **responsive**
 
 Whether to dynamically re-place when resized. Defaults to `true`.
@@ -92,6 +238,39 @@ Whether the drop should control focus.
 
 ```
 boolean
+```
+
+**round**
+
+How much to round the corners.
+
+```
+boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 ```
 
 **stretch**
@@ -113,29 +292,6 @@ Required. Target where the drop will be aligned to. This should be a React
 
 ```
 object
-```
-
-**elevation**
-
-Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.
-
-```
-none
-xsmall
-small
-medium
-large
-xlarge
-string
-```
-
-**plain**
-
-Whether the drop element should have no background nor elevation.
-
-```
-boolean
 ```
 
 **trapFocus**
@@ -170,7 +326,10 @@ The background color of Drop. Expects `string | { dark: string, light: string }`
 Defaults to
 
 ```
-#ffffff
+{
+      dark: 'black',
+      light: 'white',
+    }
 ```
 
 **global.drop.border.radius**
@@ -193,14 +352,57 @@ Defaults to
 undefined
 ```
 
-**global.drop.shadowSize**
+**global.edgeSize**
 
-Elevated height of the Drop. Expects `string`.
+The possible sizes for the Drop margin. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+```
+
+**global.drop.elevation**
+
+Elevated height above the underlying context, indicated
+    via a drop shadow. Expects `string`.
 
 Defaults to
 
 ```
 small
+```
+
+**global.drop.margin**
+
+The margin of the drop from the target. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.drop.shadowSize**
+
+Deprecated. Use 'global.drop.elevation' instead. Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **global.drop.zIndex**
