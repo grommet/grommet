@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { disabledStyle, useForwardedRef } from '../../utils';
+import { disabledStyle, useForwardedRef, unfocusStyle } from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -24,6 +24,9 @@ import { StyledFileInput } from './StyledFileInput';
 const ContentsBox = styled(Box)`
   position: relative;
   ${props => (props.disabled ? disabledStyle() : 'cursor: pointer;')}
+  &:focus {
+    ${unfocusStyle()}
+  }
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
   ${props =>
     props.hover &&
@@ -188,7 +191,6 @@ const FileInput = forwardRef(
                     inputRef.current.click();
                     inputRef.current.focus();
                   }}
-                  {...rest}
                 />
               ) : (
                 <Anchor
@@ -199,7 +201,6 @@ const FileInput = forwardRef(
                     inputRef.current.click();
                     inputRef.current.focus();
                   }}
-                  tabIndex={0}
                   label={messages.browse || 'browse'}
                 />
               )}
@@ -281,7 +282,6 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        {...rest}
                       />
                     ) : (
                       <Anchor
@@ -291,7 +291,6 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        tabIndex={0}
                         label={messages.browse || 'browse'}
                       />
                     )}
