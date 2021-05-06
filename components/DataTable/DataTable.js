@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _defaultProps = require("../../default-props");
+
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 
 var _Box = require("../Box");
@@ -124,7 +126,8 @@ var DataTable = function DataTable(_ref) {
       step = _ref$step === void 0 ? 50 : _ref$step,
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"]);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme; // property name of the primary property
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme; // property name of the primary property
+
 
   var primaryProperty = (0, _react.useMemo)(function () {
     return (0, _buildState.normalizePrimaryProperty)(columns, primaryKey);
