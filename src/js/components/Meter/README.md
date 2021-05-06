@@ -209,7 +209,7 @@ circle
 **direction**
 
 The direction of the Meter you want to display.
-       The default direction is horizontal.But, direction works only
+       The default direction is horizontal.Currently, direction works only
        when 'type' of Meter is 'bar'.
 
 ```

@@ -56,8 +56,8 @@ export const MultipleValues = () => {
   );
 };
 
-MultipleValues.storyName = 'New Story';
+MultipleValues.storyName = 'Vertical Bar Multiple';
 
 export default {
-  title: 'Visualizations/Meter/New Story',
+  title: 'Visualizations/Meter/Vertical Bar Multiple',
 };

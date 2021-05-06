@@ -19,10 +19,10 @@ const Meter = forwardRef(
     {
       background = { color: 'light-2', opacity: 'medium' },
       color,
+      direction = 'horizontal',
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
-      direction = 'horizontal',
       value,
       values: valuesProp,
       ...rest
