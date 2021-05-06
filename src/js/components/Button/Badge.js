@@ -13,18 +13,42 @@ const getBadgeDimension = (dimension, content, badgeContentRef, theme) => {
     const borderWidth = content.border
       ? parseMetricToNum(theme.global.borderSize[content.border.size]) * 2
       : 0;
-    // leave a small amount of horizontal space to pad content
-    const horizontalPad =
-      dimension === 'width'
-        ? parseMetricToNum(
-            theme.global.edgeSize[theme.button.badge.container.pad],
-          )
-        : 0;
+    // leave space to pad content, must be incorporated in width as opposed
+    // to conventional pad on Box
+    let { pad } = theme.button.badge.container;
+    if (typeof pad === 'string')
+      pad = parseMetricToNum(theme.global.edgeSize[pad] || pad);
+    else if (dimension === 'height') {
+      if (pad.top)
+        pad = parseMetricToNum(theme.global.edgeSize[pad.top] || pad.top);
+      if (pad.bottom)
+        pad += parseMetricToNum(
+          theme.global.edgeSize[pad.bottom] || pad.bottom,
+        );
+      else if (pad.vertical) {
+        pad =
+          parseMetricToNum(
+            theme.global.edgeSize[pad.vertical] || pad.vertical,
+          ) * 2;
+      } else pad = 0;
+    } else if (dimension === 'width') {
+      if (pad.left)
+        pad = parseMetricToNum(theme.global.edgeSize[pad.left] || pad.left);
+      if (pad.right)
+        pad += parseMetricToNum(theme.global.edgeSize[pad.right] || pad.right);
+      else if (pad.horizontal) {
+        pad =
+          parseMetricToNum(
+            theme.global.edgeSize[pad.horizontal] || pad.horizontal,
+          ) * 2;
+      } else pad = 0;
+    }
+
     // if content is tall/wide, let badge grow to fit. otherwise,
     // make sure it's at least badge.size.medium dimensions
     return `${Math.max(
       Math.ceil(badgeContentRef.current.getBoundingClientRect()[dimension]) +
-        horizontalPad +
+        pad +
         borderWidth,
       parseMetricToNum(theme.button.badge.size.medium) + borderWidth,
     )}px`;

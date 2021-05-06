@@ -401,7 +401,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: {
           background: 'brand',
           // border: undefined,
-          pad: 'xsmall',
+          pad: { horizontal: 'xxsmall' },
         },
         size: {
           medium: `${baseSpacing}px`,

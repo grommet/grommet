@@ -293,10 +293,9 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.badge.container.pad': {
-    description:
-      'When badge has a value, the amount of horizontal pad to apply.',
-    type: 'string',
-    defaultValue: undefined,
+    description: 'When badge has a value, the amount of pad to apply.',
+    type: 'string | object',
+    defaultValue: `{ horizontal: 'xxsmall' }`,
   },
   'button.badge.size.medium': {
     description: `The minimum width and height of the badge when the badge 

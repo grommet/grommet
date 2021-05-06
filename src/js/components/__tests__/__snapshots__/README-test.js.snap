@@ -3836,12 +3836,12 @@ undefined
 
 **button.badge.container.pad**
 
-When badge has a value, the amount of horizontal pad to apply. Expects \`string\`.
+When badge has a value, the amount of pad to apply. Expects \`string | object\`.
 
 Defaults to
 
 \`\`\`
-undefined
+{ horizontal: 'xxsmall' }
 \`\`\`
 
 **button.badge.size.medium**
