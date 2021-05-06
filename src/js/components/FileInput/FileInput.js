@@ -3,7 +3,12 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { disabledStyle, useForwardedRef, unfocusStyle } from '../../utils';
+import {
+  disabledStyle,
+  parseMetricToNum,
+  useForwardedRef,
+  unfocusStyle,
+} from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -134,12 +139,12 @@ const FileInput = forwardRef(
         rightOffset =
           controlRef.current.getBoundingClientRect().width +
           removeRef.current.getBoundingClientRect().width +
-          2 * theme.global.edgeSize.small.replace('px', '');
+          parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else rightOffset = removeRef.current.getBoundingClientRect().width;
     } else if (!files.length && controlRef.current) {
       rightOffset =
         controlRef.current.getBoundingClientRect().width +
-        2 * theme.global.edgeSize.small.replace('px', '');
+        parseMetricToNum(theme.global.edgeSize.small) * 2;
     }
 
     // Show the number of files when more than one
