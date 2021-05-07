@@ -29,90 +29,60 @@ const StyledStack = styled.div`
 StyledStack.defaultProps = {};
 Object.setPrototypeOf(StyledStack.defaultProps, defaultProps);
 
-const offsetStyle = (anchor, offset) => {
-  let bottom;
-  let left;
-  let right;
-  let top;
-  if (offset) {
-    bottom = offset.bottom;
-    left = offset.left;
-    right = offset.right;
-    top = offset.top;
-  }
-
-  if (anchor === 'center') {
-    return `
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  `;
-  }
-  if (anchor === 'left') {
-    return `
-    top: 50%;
-    left: ${left || '0'};
-    transform: translateY(-50%);
-  `;
-  }
-  if (anchor === 'right') {
-    return `
-      top: 50%;
-      right: ${right || '0'};
-      transform: translateY(-50%);
-    `;
-  }
-  if (anchor === 'top') {
-    return `
-      top: ${top || '0'};
-      left: 50%;
-      transform: translateX(-50%);
-    `;
-  }
-  if (anchor === 'bottom') {
-    return `
-      bottom: ${bottom || '0'};
-      left: 50%;
-      transform: translateX(-50%);
-    `;
-  }
-  if (anchor === 'top-left') {
-    return `
-      top: ${top || '0'};
-      left: ${left || '0'};
-    `;
-  }
-  if (anchor === 'bottom-left') {
-    return `
-      bottom: ${bottom || '0'};
-      left: ${left || '0'};
-    `;
-  }
-  if (anchor === 'top-right') {
-    return `
-      top: ${top || '0'};
-      right: ${right || '0'};
-    `;
-  }
-  if (anchor === 'bottom-right') {
-    return `
-      bottom: ${bottom || '0'};
-      right: ${right || '0'};
-    `;
-  }
-  return `
+const styleMap = {
+  fill: `
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-  `;
+  `,
+  center: `
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  `,
+  left: `
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  `,
+  right: `
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  `,
+  top: `
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  `,
+  bottom: `
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  `,
+  'top-left': `
+    top: 0;
+    left: 0;
+  `,
+  'bottom-left': `
+    bottom: 0;
+    left: 0;
+  `,
+  'top-right': `
+    top: 0;
+    right: 0;
+  `,
+  'bottom-right': `
+    bottom: 0;
+    right: 0;
+  `,
 };
 
 const StyledStackLayer = styled.div`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
-  ${props =>
-    !props.guiding && `${offsetStyle(props.anchor, props.offsetProp)};`}
+  ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
   ${props =>
     props.fillContainer &&
     `

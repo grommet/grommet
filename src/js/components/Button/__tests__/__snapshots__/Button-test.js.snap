@@ -440,8 +440,8 @@ exports[`Button badge should apply background and border 1`] = `
 
 .c4 {
   position: absolute;
-  top: -14px;
-  right: -14px;
+  top: 0;
+  right: 0;
 }
 
 .c6 {
@@ -569,6 +569,7 @@ exports[`Button badge should apply background and border 1`] = `
     </div>
     <div
       class="c4"
+      style="top: -14px; right: -14px;"
     >
       <div
         class="c5"
@@ -626,8 +627,8 @@ exports[`Button badge should be offset from top-right corner 1`] = `
 
 .c4 {
   position: absolute;
-  top: -3.4285714285714284px;
-  right: -3.4285714285714284px;
+  top: 0;
+  right: 0;
 }
 
 .c3 {
@@ -734,6 +735,7 @@ exports[`Button badge should be offset from top-right corner 1`] = `
     </div>
     <div
       class="c4"
+      style="top: -3px; right: -3px;"
     >
       <div
         class="c5"
@@ -785,8 +787,8 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
 
 .c4 {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 0;
+  right: 0;
 }
 
 .c6 {
@@ -900,6 +902,7 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
     </div>
     <div
       class="c4"
+      style="top: -12px; right: -12px;"
     >
       <div
         class="c5"
@@ -957,8 +960,8 @@ exports[`Button badge should display number content 1`] = `
 
 .c4 {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 0;
+  right: 0;
 }
 
 .c6 {
@@ -1072,6 +1075,7 @@ exports[`Button badge should display number content 1`] = `
     </div>
     <div
       class="c4"
+      style="top: -12px; right: -12px;"
     >
       <div
         class="c5"
@@ -1147,8 +1151,8 @@ exports[`Button badge should render custom element 1`] = `
 
 .c4 {
   position: absolute;
-  top: -0px;
-  right: -0px;
+  top: 0;
+  right: 0;
 }
 
 .c3 {
@@ -1249,6 +1253,7 @@ exports[`Button badge should render custom element 1`] = `
     </div>
     <div
       class="c4"
+      style="top: -0px; right: -0px;"
     >
       <div
         class="c5"
@@ -1348,8 +1353,8 @@ exports[`Button badge should render relative to contents when button has no
 
 .c5 {
   position: absolute;
-  top: -3.4285714285714284px;
-  right: -3.4285714285714284px;
+  top: 0;
+  right: 0;
 }
 
 .c1 {
@@ -1457,6 +1462,7 @@ exports[`Button badge should render relative to contents when button has no
       </div>
       <div
         class="c5"
+        style="top: -3px; right: -3px;"
       >
         <div
           class="c6"

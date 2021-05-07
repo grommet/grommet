@@ -63,7 +63,6 @@ export const Badge = () => (
           icon={<Notification />}
           onClick={() => {}}
           badge={{
-            target: 'contents',
             value: 20,
             max: 15,
           }}

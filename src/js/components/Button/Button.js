@@ -301,13 +301,13 @@ const Button = forwardRef(
       kind,
       primary,
     );
-
     // set the badge relative to the button content
     // when the button doesn't have background or border
     // (!kind && icon && !label) is necessary because for old button logic,
     // if button has icon but not label, it will be considered "plain",
     // so no border or background will be applied
-    if (badgeProp && ((!background && !border) || (!kind && icon && !label))) {
+    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    if (badgeProp && innerBadge) {
       contents = <Badge content={badgeProp}>{contents}</Badge>;
     }
 
@@ -405,7 +405,7 @@ const Button = forwardRef(
 
     // if button has background or border, place badge relative
     // to outer edge of button
-    if (badgeProp && (background || border) && !(!kind && icon && !label)) {
+    if (badgeProp && !innerBadge) {
       styledButtonResult = (
         <Badge content={badgeProp}>{styledButtonResult}</Badge>
       );

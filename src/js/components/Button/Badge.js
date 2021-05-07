@@ -59,6 +59,7 @@ const getBadgeDimension = (dimension, content, badgeContentRef, theme) => {
 export const Badge = ({ children, content }) => {
   const theme = useContext(ThemeContext);
   const badgeContentRef = useRef();
+  const stackRef = useRef();
 
   const defaultBadgeDimension =
     typeof content === 'boolean' ||
@@ -77,30 +78,47 @@ export const Badge = ({ children, content }) => {
   // width informs how far to horizontally offset the badge
   // height informs how far to vertically offset the badge
   useEffect(() => {
-    if (
-      badgeContentRef &&
-      badgeContentRef.current &&
-      typeof content !== 'boolean'
-    ) {
-      setBadgeDimension([
-        getBadgeDimension('width', content, badgeContentRef, theme),
-        getBadgeDimension('height', content, badgeContentRef, theme),
-      ]);
-    }
+    const onResize = () => {
+      if (
+        badgeContentRef &&
+        badgeContentRef.current &&
+        typeof content !== 'boolean'
+      ) {
+        setBadgeDimension([
+          getBadgeDimension('width', content, badgeContentRef, theme),
+          getBadgeDimension('height', content, badgeContentRef, theme),
+        ]);
+      }
+    };
+
+    window.addEventListener('resize', onResize);
+    onResize();
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
   }, [content, theme]);
 
-  // offset the badge so it overlaps content. when badge has content,
-  // offset should be 50%. when badge is empty, offset by a smaller amount to
-  // keep the badge closer to the content. this value was chosen as a
-  // reasonable default after testing with various grommet icons.
-  const divisor =
-    typeof content === 'boolean' || (content && content.value === true)
-      ? 3.5
-      : 2;
-  const offset = {
-    horizontal: `-${parseMetricToNum(width) / divisor}px`,
-    vertical: `-${parseMetricToNum(height) / divisor}px`,
-  };
+  // offset the badge so it overlaps content
+  useEffect(() => {
+    if (stackRef && stackRef.current) {
+      // when badge has content, offset should be 50%.
+      // when badge is empty, offset by a smaller amount to keep the badge
+      // closer to the content. this value was chosen as a reasonable default
+      // after testing with various grommet icons.
+      const divisor =
+        typeof content === 'boolean' || (content && content.value === true)
+          ? 3.5
+          : 2;
+      const offset = {
+        right: `-${Math.round(parseMetricToNum(width) / divisor)}px`,
+        top: `-${Math.round(parseMetricToNum(height) / divisor)}px`,
+      };
+      // second child of Stack is the div that receives absolute positioning
+      // and contains our badge content
+      stackRef.current.children[1].style.top = offset.top;
+      stackRef.current.children[1].style.right = offset.right;
+    }
+  }, [content, height, width]);
 
   let value;
   if (typeof content === 'number') value = content;
@@ -145,15 +163,7 @@ export const Badge = ({ children, content }) => {
   } else badge = <Box ref={badgeContentRef}>{content}</Box>;
 
   return (
-    <Stack
-      anchor="top-right"
-      offset={{
-        top: offset.vertical,
-        bottom: offset.vertical,
-        left: offset.horizontal,
-        right: offset.horizontal,
-      }}
-    >
+    <Stack ref={stackRef} anchor="top-right">
       {children}
       {badge}
     </Stack>
