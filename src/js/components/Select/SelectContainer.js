@@ -274,7 +274,6 @@ const SelectContainer = forwardRef(
       event => {
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
-        console.log('nextactiveIndex', nextActiveIndex);
         while (
           nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
