@@ -19,7 +19,7 @@ export interface MeterProps {
   round?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
   thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  type?: 'bar' | 'circle';
+  type?: 'bar' | 'circle' | 'pie';
   value?: number;
   values?: {
     color?: string;

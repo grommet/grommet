@@ -10,8 +10,8 @@ export const doc = TableCell => {
     .intrinsicElement('td');
 
   DocumentedTableCell.propTypes = {
-    plain: PropTypes.bool
-      .description('Whether default styling context should be removed.')
+    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['noPad'])])
+      .description(`Whether default styling context should be removed.`)
       .defaultValue(false),
     scope: PropTypes.oneOf(['col', 'row'])
       .description(`For header cells, what scope the header is for.

@@ -204,6 +204,7 @@ The visual type of meter. Defaults to `bar`.
 ```
 bar
 circle
+pie
 ```
 
 **direction**

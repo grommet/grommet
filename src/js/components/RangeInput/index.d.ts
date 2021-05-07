@@ -11,7 +11,10 @@ export interface RangeInputProps {
   value?: number | string;
 }
 
-declare const RangeInput: React.FC<RangeInputProps &
-  JSX.IntrinsicElements['input']>;
+export interface RangeInputExtendedProps
+  extends RangeInputProps,
+    Omit<JSX.IntrinsicElements['input'], 'step' | 'value'> {}
+
+declare const RangeInput: React.FC<RangeInputExtendedProps>;
 
 export { RangeInput };

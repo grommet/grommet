@@ -109,6 +109,17 @@ describe('CheckBox', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('reverse toggle fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <CheckBox label="test label" reverse fill toggle />
+        <CheckBox fill toggle label="test label" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('indeterminate renders', () => {
     const component = renderer.create(
       <Grommet>
@@ -162,6 +173,24 @@ describe('CheckBox', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('test-label'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      checkBox: {
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <CheckBox label="test-label" />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });
