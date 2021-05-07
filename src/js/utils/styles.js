@@ -330,9 +330,10 @@ export const focusStyle = ({
 
 // This is placed next to focusStyle for easy maintainability
 // of code since changes to focusStyle should be reflected in
-// unfocusStyle as well. However, this function is only being used
-// by List for an iterim state. It is not recommended to rely on
-// this function for other components.
+// unfocusStyle as well.
+// this function can be used to reset focus styles which is
+// applicable when turning the focus ring off when using the mouse
+// see https://nelo.is/writing/styling-better-focus-states/
 export const unfocusStyle = ({
   forceOutline,
   justBorder,

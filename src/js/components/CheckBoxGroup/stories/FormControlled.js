@@ -16,10 +16,11 @@ export const FormControlled = () => {
             console.log('Submit', values, touched)
           }
         >
-          <FormField name="controlled">
+          <FormField id="check-box-formfield-id" name="controlled">
             <CheckBoxGroup
               id="check-box-group-id"
               name="controlled"
+              aria-labelledby="check-box-formfield-id"
               value={value}
               onChange={({ value: nextValue }) => setValue(nextValue)}
               options={['Maui', 'Jerusalem', 'Wuhan']}
