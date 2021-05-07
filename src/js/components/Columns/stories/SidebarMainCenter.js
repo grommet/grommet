@@ -43,7 +43,7 @@ export const SidebarMainCenter = () => (
         header={
           <Header>
             <Text weight="bold">App</Text>
-            <Columns.ControlButton child={0} icon={<Close />} />
+            <Columns.ToggleButton child={0} icon={<Close />} />
           </Header>
         }
         footer={
@@ -62,7 +62,7 @@ export const SidebarMainCenter = () => (
       <Main pad={{ horizontal: 'medium' }}>
         <Header border="bottom">
           <Box direction="row" align="center">
-            <Columns.ControlButton child={0} />
+            <Columns.ToggleButton child={0} />
             <Heading size="small">Welcome</Heading>
           </Box>
           <Menu label="actions" />

@@ -148,7 +148,7 @@ const Columns = forwardRef(
   },
 );
 
-const ControlButton = ({ child, ...rest }) => {
+const ToggleButton = ({ child, ...rest }) => {
   const { showControl, toggleHidden } = useContext(ColumnsContext);
   if (!showControl(child)) return null;
   return (
@@ -156,7 +156,7 @@ const ControlButton = ({ child, ...rest }) => {
   );
 };
 
-Columns.ControlButton = ControlButton;
+Columns.ToggleButton = ToggleButton;
 
 let ColumnsDoc;
 if (process.env.NODE_ENV !== 'production') {

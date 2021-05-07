@@ -41,7 +41,7 @@ export const MainAside = () => (
           <Box>
             <Paragraph>{paragraphFiller}</Paragraph>
             <Box alignSelf="end">
-              <Columns.ControlButton child={1} icon={<Next />} />
+              <Columns.ToggleButton child={1} icon={<Next />} />
             </Box>
           </Box>
           <Box
@@ -49,7 +49,7 @@ export const MainAside = () => (
             pad={{ horizontal: 'medium' }}
             background="background-contrast"
           >
-            <Columns.ControlButton child={1} icon={<Previous />} />
+            <Columns.ToggleButton child={1} icon={<Previous />} />
             <Paragraph>{paragraphFiller}</Paragraph>
           </Box>
         </Columns>
