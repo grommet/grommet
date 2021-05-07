@@ -138,23 +138,17 @@ const SelectContainer = forwardRef(
         if (activeIndex !== -1 && list) {
           const buttonNode = list.children[activeIndex];
           const optionsNode = list;
-          if (
-            buttonNode &&
-            isNodeAfterScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          ) {
-            optionsNode.scrollTo(
-              0,
-              buttonNode.offsetTop -
-                (optionsNode.getBoundingClientRect().height -
-                  buttonNode.getBoundingClientRect().height),
-            );
-          } else if (
-            buttonNode &&
-            isNodeBeforeScroll(buttonNode, optionsNode) &&
-            optionsNode.scrollTo
-          )
-            optionsNode.scrollTo(0, buttonNode.offsetTop);
+          if (buttonNode && optionsNode.scrollTo) {
+            if (isNodeAfterScroll(buttonNode, optionsNode)) {
+              optionsNode.scrollTo(
+                0,
+                buttonNode.offsetTop -
+                  (optionsNode.getBoundingClientRect().height -
+                    buttonNode.getBoundingClientRect().height),
+              );
+            } else if (isNodeBeforeScroll(buttonNode, optionsNode))
+              optionsNode.scrollTo(0, buttonNode.offsetTop);
+          }
         }
       }, 50);
       return () => clearTimeout(timer);
