@@ -2323,55 +2323,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   border: 0;
 }
 
-.c8 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  outline: none;
-  border: none;
-}
-
-.c8::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c8:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c8::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c8::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c8:-moz-placeholder,
-.c8::-moz-placeholder {
-  opacity: 1;
-}
-
-.c7 {
-  position: relative;
-  width: 100%;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2429,6 +2380,55 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
+  opacity: 1;
+}
+
+.c7 {
+  position: relative;
+  width: 100%;
 }
 
 .c9 {

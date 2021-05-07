@@ -2728,73 +2728,152 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/columns&module=%2Fsrc%2FColumns.js",
       },
     ],
-    "description": "Typical variations on responsive multiple column layouts.",
+    "description": "
+      Responsive single or multiple column layout.
+      Control visibity of children via <Columns.ControlButton child={0} />.
+    ",
     "intrinsicElement": "div",
     "name": undefined,
     "properties": Array [
       Object {
-        "description": "Maximum width of the last child.",
-        "format": "xsmall
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
 small
 medium
 large
 xlarge
-string",
-        "name": "aside",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "
-      Whether to center the Columns component.
-    ",
-        "format": "boolean",
-        "name": "center",
-      },
-      Object {
-        "description": "
-      Minimum vertical gutters when 'center' is true.
-      ",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gutter",
-      },
-      Object {
-        "description": "
-      If specified, a sidebar element. Use 'Columns.SidebarToggleButton'
-      to control whether the sidebar is shown in small responsive contexts.
-      Use 'Columns.SidebarCloseButton' to close the sidebar in small
-      responsive contexts.
-      ",
-        "format": "node",
-        "name": "sidebar",
-      },
-      Object {
-        "description": "
-      The uniform minimum width of columns. Children will wrap as needed.
-    ",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "Maximum width of the content when 'center' is true.",
-        "format": "{
-  max: 
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge
     string
-}",
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "
+      How each child should be handled.
+      'hide'
+        true - indicates that the child should be hidden on initial render
+        false - indicates that the child shouldn't be hideable,
+      'layer' indicates that the child should be shown in a layer.
+      'width' indicates that the child should have a fixed width.
+      'responsive' indicates how the child should behave when the responsive
+      size is small.
+      Control visibility of children via <Columns.ControlButton child={0} />.
+    ",
+        "format": "[{
+  hide: boolean,
+  layer: boolean,
+  responsive: 
+    {
+      hide: boolean,
+      layer: boolean
+    },
+  width: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}]",
+        "name": "columns",
+      },
+      Object {
+        "description": "Maximum width of the content.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
         "name": "width",
       },
     ],
