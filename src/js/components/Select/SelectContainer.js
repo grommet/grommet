@@ -8,7 +8,12 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import {
+  selectedStyle,
+  setFocusWithoutScroll,
+  isNodeBeforeScroll,
+  isNodeAfterScroll,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -126,6 +131,35 @@ const SelectContainer = forwardRef(
       return undefined;
     }, [keyboardNavigation]);
 
+    // make sure options are visible in scroll
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        const list = optionsRef.current;
+        if (activeIndex !== -1 && list) {
+          const buttonNode = list.children[activeIndex];
+          const optionsNode = list;
+          if (
+            buttonNode &&
+            isNodeAfterScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
+          ) {
+            optionsNode.scrollTo(
+              0,
+              buttonNode.offsetTop -
+                (optionsNode.getBoundingClientRect().height -
+                  buttonNode.getBoundingClientRect().height),
+            );
+          } else if (
+            buttonNode &&
+            isNodeBeforeScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
+          )
+            optionsNode.scrollTo(0, buttonNode.offsetTop);
+        }
+      }, 50);
+      return () => clearTimeout(timer);
+    }, [activeIndex]);
+
     const optionLabel = useCallback(
       index => applyKey(options[index], labelKey),
       [labelKey, options],
@@ -240,6 +274,7 @@ const SelectContainer = forwardRef(
       event => {
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
+        console.log('nextactiveIndex', nextActiveIndex);
         while (
           nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
