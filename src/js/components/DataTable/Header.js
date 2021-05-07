@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -106,6 +112,7 @@ const Header = forwardRef(
       onSelect,
       onSort,
       onToggle,
+      onWidths,
       pad,
       pin: tablePin,
       pinnedOffset,
@@ -120,6 +127,20 @@ const Header = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+
+    const [cellWidths, setCellWidths] = useState([]);
+
+    const updateWidths = useCallback(
+      width => setCellWidths(values => [...values, width]),
+      [],
+    );
+
+    useEffect(() => {
+      if (onWidths && cellWidths.length !== 0) {
+        onWidths(cellWidths);
+      }
+    }, [cellWidths, onWidths]);
+
     const pin = tablePin ? ['top'] : [];
 
     return (
@@ -142,6 +163,7 @@ const Header = forwardRef(
                 calcPinnedBackground(backgroundProp, pin, theme, 'header') ||
                 cellProps.background
               }
+              onWidth={updateWidths}
               plain="noPad"
               size="auto"
               context="header"
@@ -319,6 +341,7 @@ const Header = forwardRef(
                   verticalAlign={verticalAlign}
                   background={background || cellProps.background}
                   border={border || cellProps.border}
+                  onWidth={updateWidths}
                   pad={pad}
                   pin={cellPin}
                   plain

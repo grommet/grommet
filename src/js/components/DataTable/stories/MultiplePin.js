@@ -209,6 +209,8 @@ const columns = [
       // bytes to tebibytes
       (datum.pinnable / 2 ** 40).toFixed([1]),
     align: 'end',
+    pin: true,
+    footer: 'Pinnable',
   },
   {
     property: 'pinned',
@@ -280,6 +282,7 @@ export const MultiplePins = () => (
               primary: true,
               render: datum => datum.id.slice(datum.id.length - 5),
               pin: true,
+              // footer: { aggregate: true },
             },
             {
               property: 'poolName',
@@ -298,6 +301,7 @@ export const MultiplePins = () => (
           fill
           onClickRow={({ datum }) => handleClickRow(datum)}
           pin
+          onSelect={() => {}}
           sortable
         />
       </Box>

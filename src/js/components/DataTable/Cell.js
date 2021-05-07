@@ -56,9 +56,9 @@ const Cell = memo(
       content = <Text {...textProps}>{content}</Text>;
     }
 
-    let pin;
-    if (cellPin) pin = cellPin;
-    else if (columnPin) pin = ['left'];
+    const pin = [];
+    if (cellPin) pin.push(...cellPin);
+    if (columnPin) pin.push('left');
 
     let background;
     if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {

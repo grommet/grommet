@@ -171,39 +171,39 @@ const DataTable = ({
   // multiple pinned columns offset
   const [pinnedOffset, setPinnedOffset] = useState();
 
-  const getPinnedOffset = useCallback(() => {
-    const pinnedProperties = columns
-      .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
-      .filter(n => n);
+  const getPinnedOffset = useCallback(
+    columnWidths => {
+      const pinnedProperties = columns
+        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
+        .filter(n => n);
 
-    const pinnedColumnsProperties = {};
-    const firstRowCells = headerRef.current.firstChild.cells || [];
+      const pinnedColumnsProperties = {};
 
-    if (firstRowCells.length !== 0) {
-      pinnedProperties.forEach((property, index) => {
-        const tableIndex = columns.findIndex(
-          column => column.property === property,
-        );
+      if (columnWidths !== []) {
+        pinnedProperties.forEach((property, index) => {
+          const hasSelectColumn = Boolean(select || onSelect);
 
-        if (firstRowCells[tableIndex]) {
-          pinnedColumnsProperties[property] = {
-            width: firstRowCells[tableIndex].getBoundingClientRect()?.width,
-            left:
-              tableIndex === 0
-                ? 0
-                : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
-                  pinnedColumnsProperties[pinnedProperties[index - 1]].width,
-          };
-        }
-      });
-      return pinnedColumnsProperties;
-    }
-    return undefined;
-  }, [columns]);
+          const tableIndex =
+            columns.findIndex(column => column.property === property) +
+            hasSelectColumn;
 
-  useEffect(() => {
-    setPinnedOffset(getPinnedOffset);
-  }, [getPinnedOffset]);
+          if (columnWidths[tableIndex]) {
+            pinnedColumnsProperties[property] = {
+              width: columnWidths[tableIndex],
+              left:
+                index === 0
+                  ? 0
+                  : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
+                    pinnedColumnsProperties[pinnedProperties[index - 1]].width,
+            };
+          }
+        });
+
+        setPinnedOffset(pinnedColumnsProperties);
+      }
+    },
+    [columns, setPinnedOffset, select, onSelect],
+  );
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
@@ -366,6 +366,7 @@ const DataTable = ({
             }
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
+            onWidths={getPinnedOffset}
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
