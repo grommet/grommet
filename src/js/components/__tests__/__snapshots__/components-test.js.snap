@@ -6494,7 +6494,8 @@ string",
         "defaultValue": "bar",
         "description": "The visual type of meter.",
         "format": "bar
-circle",
+circle
+pie",
         "name": "type",
       },
       Object {
