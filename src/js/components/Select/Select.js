@@ -306,7 +306,19 @@ const Select = forwardRef(
             background={theme.select.background}
           >
             <Box direction="row" flex basis="auto">
-              {selectValue || (
+              {selectValue ? (
+                <>
+                  {selectValue}
+                  <input
+                    type="text"
+                    style={{ display: 'none' }}
+                    id={id ? `${id}__input` : undefined}
+                    value={inputValue}
+                    ref={inputRef}
+                    readOnly
+                  />
+                </>
+              ) : (
                 <SelectTextInput
                   a11yTitle={
                     a11yTitle &&
