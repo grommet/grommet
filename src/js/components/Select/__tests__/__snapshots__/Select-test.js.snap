@@ -7499,6 +7499,13 @@ exports[`Select onChange with valueLabel 1`] = `
         <span>
           none
         </span>
+        <input
+          id="test-select__input"
+          readonly=""
+          style="display: none;"
+          type="text"
+          value=""
+        />
       </div>
       <div
         class="c5"
@@ -13565,6 +13572,13 @@ exports[`Select select an option with complex options 1`] = `
       <span>
         one
       </span>
+      <input
+        id="test-select__input"
+        readonly=""
+        style="display: none;"
+        type="text"
+        value=""
+      />
     </div>
     <div
       class="c3"
