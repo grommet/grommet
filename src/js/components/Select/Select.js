@@ -26,6 +26,10 @@ const SelectTextInput = styled(TextInput)`
   cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
+const HiddenInput = styled.input`
+  display: none;
+`;
+
 const StyledSelectDropButton = styled(DropButton)`
   ${props => !props.callerPlain && controlBorderStyle};
   ${props =>
@@ -309,9 +313,8 @@ const Select = forwardRef(
               {selectValue ? (
                 <>
                   {selectValue}
-                  <input
+                  <HiddenInput
                     type="text"
-                    style={{ display: 'none' }}
                     id={id ? `${id}__input` : undefined}
                     value={inputValue}
                     ref={inputRef}
