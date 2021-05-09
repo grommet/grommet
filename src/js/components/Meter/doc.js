@@ -34,7 +34,9 @@ export const doc = Meter => {
       }),
     color: PropTypes.string.description(
       `The color of the value region.
-      This is only valid when used with 'value'`,
+      This is only valid when used with 'value'.
+      Linear Gradients can be used when passing '#grad-id', where
+      'id' corresponds to the gradient object in theme.`,
     ),
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
       'The maximum value for the Meter.',
@@ -74,7 +76,7 @@ export const doc = Meter => {
       'value' is the actual numeric value.
       'label' is a text string describing it.
       'color' indicates the color name to use. If not specified a default one
-      will be chosen.
+      will be chosen. A gradient can be used just as referred by 'color' prop.
       'onClick' will be called when the user clicks on it.
       Set 'highlight' to call attention to it.
       'onHover' will be called with a boolean argument indicating when the
@@ -96,7 +98,7 @@ export const themeDoc = {
     }`,
   },
   'global.edgeSize': {
-    description: `The border-radius of the styled Meter. thickness, height and 
+    description: `The border-radius of the styled Meter. thickness, height and
     width of the Bar Meter, height of the Circle Meter.`,
     type: 'object',
     defaultValue: `{
@@ -138,6 +140,23 @@ export const themeDoc = {
   'meter.extend': {
     description: 'Any additional style for Meter.',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'meter.gradients': {
+    description: `Custom linear gradients used for the Meter.
+    Should follow the pattern: {
+      random: {
+        props: {
+          id: 'random',
+        },
+        stops: [
+          { offset: '45%', stopColor: 'purple' },
+          { offset: '95%', stopColor: 'blue' },
+        ],
+      }
+    }
+     'props' can also contain any valid <linearContainer /> property,
+     and 'stops' can contain any valid <stop /> property. `,
     defaultValue: undefined,
   },
 };

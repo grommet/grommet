@@ -21,6 +21,7 @@ const Bar = forwardRef((props, ref) => {
   const someHighlight = (values || []).some(v => v.highlight);
 
   let start = capOffset;
+  const svgDefs = [];
   const paths = (values || [])
     .filter(v => v.value > 0)
     .map((valueArg, index) => {
@@ -40,15 +41,35 @@ const Bar = forwardRef((props, ref) => {
       }
       start += delta;
 
+      const stroke = strokeProps(
+        someHighlight && !highlight ? background : colorName,
+        theme,
+      );
+
+      const gradientStroke = colorName.match(/^grad-(\w+)/);
+
+      if (gradientStroke) {
+        const { props: gradientProps, stops: gradientStops } = (theme.meter
+          .gradients &&
+          theme.meter.gradients[gradientStroke[1]]) ?? { props: {}, stops: [] };
+
+        const gradKey = `g-${index}`;
+        svgDefs.push(
+          <linearGradient key={gradKey} {...gradientProps}>
+            {gradientStops.map((stop, stopIndex) => {
+              const stopKey = `${gradKey}-${stopIndex}`;
+              return <stop key={stopKey} {...stop} />;
+            })}
+          </linearGradient>,
+        );
+      }
+
       return (
         <path
           key={key}
           d={d}
           fill="none"
-          {...strokeProps(
-            someHighlight && !highlight ? background : colorName,
-            theme,
-          )}
+          {...stroke}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'butt'}
           {...hoverProps}
@@ -68,6 +89,7 @@ const Bar = forwardRef((props, ref) => {
       round={round ? { size: thickness } : undefined}
       {...rest}
     >
+      {svgDefs.length !== 0 && <defs>{svgDefs}</defs>}
       <path
         d={`M ${capOffset},${mid} L ${width - capOffset},${mid}`}
         fill="none"

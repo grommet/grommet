@@ -12,7 +12,8 @@ const StyledMeter = styled.svg`
   max-width: 100%;
   overflow: hidden;
 
-  ${genericStyles} ${props => props.round && roundStyle}
+  ${genericStyles}
+  ${props => props.round && roundStyle}
 
   path {
     transition: stroke 0.3s, stroke-width 0.3s;
