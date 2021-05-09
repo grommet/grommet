@@ -105,6 +105,7 @@ const RadioButtonGroup = forwardRef(
       >
         <Box
           ref={ref}
+          role="radiogroup"
           {...theme.radioButtonGroup.container}
           gap={
             gap ||
