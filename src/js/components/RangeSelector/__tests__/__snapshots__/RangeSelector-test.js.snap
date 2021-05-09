@@ -147,7 +147,6 @@ exports[`RangeSelector basic 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -386,7 +385,6 @@ exports[`RangeSelector color 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -730,7 +728,6 @@ exports[`RangeSelector direction 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -821,7 +818,6 @@ exports[`RangeSelector direction 1`] = `
   </div>
   <div
     className="c8 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -1666,7 +1662,6 @@ exports[`RangeSelector invert 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -1757,7 +1752,6 @@ exports[`RangeSelector invert 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -1996,7 +1990,6 @@ exports[`RangeSelector max 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -2235,7 +2228,6 @@ exports[`RangeSelector min 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -2509,7 +2501,6 @@ exports[`RangeSelector opacity 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -2600,7 +2591,6 @@ exports[`RangeSelector opacity 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -2691,7 +2681,6 @@ exports[`RangeSelector opacity 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -3124,7 +3113,6 @@ exports[`RangeSelector round 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -3215,7 +3203,6 @@ exports[`RangeSelector round 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -3306,7 +3293,6 @@ exports[`RangeSelector round 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -3397,7 +3383,6 @@ exports[`RangeSelector round 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -3488,7 +3473,6 @@ exports[`RangeSelector round 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4130,7 +4114,6 @@ exports[`RangeSelector size 1`] = `
 >
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4221,7 +4204,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4312,7 +4294,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4403,7 +4384,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4494,7 +4474,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4585,7 +4564,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
@@ -4676,7 +4654,6 @@ exports[`RangeSelector size 1`] = `
   </div>
   <div
     className="c1 c2"
-    onTouchMove={[Function]}
     tabIndex="-1"
   >
     <div
