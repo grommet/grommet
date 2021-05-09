@@ -879,20 +879,6 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </th>
-        <th
-          class="c3 "
-          scope="col"
-        >
-          <div
-            class="c4"
-          >
-            <span
-              class="c5"
-            >
-              object 2
-            </span>
-          </div>
-        </th>
       </tr>
     </thead>
     <tbody
@@ -928,19 +914,6 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </td>
-        <td
-          class="c7 "
-        >
-          <div
-            class="c8"
-          >
-            <span
-              class="c5"
-            >
-              10
-            </span>
-          </div>
-        </td>
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -972,19 +945,6 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </td>
-        <td
-          class="c7 "
-        >
-          <div
-            class="c8"
-          >
-            <span
-              class="c5"
-            >
-              20
-            </span>
-          </div>
-        </td>
       </tr>
     </tbody>
     <tfoot
@@ -1012,13 +972,6 @@ exports[`DataTable aggregate with nested object 1`] = `
               3
             </span>
           </div>
-        </td>
-        <td
-          class="c10 "
-        >
-          <div
-            class="c8"
-          />
         </td>
       </tr>
     </tfoot>
