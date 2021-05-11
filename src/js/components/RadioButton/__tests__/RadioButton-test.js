@@ -106,10 +106,8 @@ describe('RadioButton', () => {
   test('background-color themed', () => {
     const customTheme = {
       radioButton: {
-        check: {
-          background: {
-            color: 'red',
-          },
+        background: {
+          color: 'red',
         },
       },
     };
