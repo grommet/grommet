@@ -135,27 +135,7 @@ exports[`FileInput accept 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -169,7 +149,6 @@ exports[`FileInput accept 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -177,10 +156,11 @@ exports[`FileInput accept 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -330,27 +310,7 @@ exports[`FileInput background 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -364,7 +324,6 @@ exports[`FileInput background 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -372,10 +331,11 @@ exports[`FileInput background 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -524,27 +484,7 @@ exports[`FileInput basic 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -558,7 +498,6 @@ exports[`FileInput basic 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -566,10 +505,11 @@ exports[`FileInput basic 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -718,27 +658,7 @@ exports[`FileInput border 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -752,7 +672,6 @@ exports[`FileInput border 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -760,10 +679,11 @@ exports[`FileInput border 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -915,26 +835,6 @@ exports[`FileInput disabled 1`] = `
   cursor: default;
 }
 
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
@@ -947,7 +847,6 @@ exports[`FileInput disabled 1`] = `
   <div
     class="c1 c2"
     disabled=""
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -955,10 +854,11 @@ exports[`FileInput disabled 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -1108,27 +1008,7 @@ exports[`FileInput margin 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1142,7 +1022,6 @@ exports[`FileInput margin 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -1150,10 +1029,11 @@ exports[`FileInput margin 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -1302,27 +1182,7 @@ exports[`FileInput messages 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1336,7 +1196,6 @@ exports[`FileInput messages 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -1348,6 +1207,7 @@ exports[`FileInput messages 1`] = `
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         test browse
       </a>
@@ -1496,27 +1356,7 @@ exports[`FileInput multiple 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1530,7 +1370,6 @@ exports[`FileInput multiple 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -1538,10 +1377,11 @@ exports[`FileInput multiple 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop files here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -1691,27 +1531,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1725,7 +1545,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -1733,10 +1552,11 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop files here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
@@ -1886,27 +1706,7 @@ exports[`FileInput pad 1`] = `
 
 .c2 {
   position: relative;
-  cursor: pointer;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus::-moz-focus-inner {
-  border: 0;
+  cursor: auto;
 }
 
 @media only screen and (max-width:768px) {
@@ -1920,7 +1720,6 @@ exports[`FileInput pad 1`] = `
 >
   <div
     class="c1 c2"
-    tabindex="-1"
   >
     <div
       class="c3"
@@ -1928,10 +1727,11 @@ exports[`FileInput pad 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"
+        tabindex="0"
       >
         browse
       </a>
