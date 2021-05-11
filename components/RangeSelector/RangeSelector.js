@@ -98,50 +98,49 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     return result;
   }, [direction, max, min, step]);
-  (0, _react.useEffect)(function () {
-    var mouseMove = function mouseMove(event) {
-      var value = valueForMouseCoord(event);
-      var nextValues;
+  var onMouseMove = (0, _react.useCallback)(function (event) {
+    var value = valueForMouseCoord(event);
+    var nextValues;
 
-      if (changing === 'lower' && value <= values[1] && value !== moveValue) {
-        nextValues = [value, values[1]];
-      } else if (changing === 'upper' && value >= values[0] && value !== moveValue) {
-        nextValues = [values[0], value];
-      } else if (changing === 'selection' && value !== moveValue) {
-        if (value === max) {
-          nextValues = [max - (values[1] - values[0]), max];
-        } else if (value === min) {
-          nextValues = [min, min + (values[1] - values[0])];
-        } else {
-          var delta = value - moveValue;
+    if (changing === 'lower' && value <= values[1] && value !== moveValue) {
+      nextValues = [value, values[1]];
+    } else if (changing === 'upper' && value >= values[0] && value !== moveValue) {
+      nextValues = [values[0], value];
+    } else if (changing === 'selection' && value !== moveValue) {
+      if (value === max) {
+        nextValues = [max - (values[1] - values[0]), max];
+      } else if (value === min) {
+        nextValues = [min, min + (values[1] - values[0])];
+      } else {
+        var delta = value - moveValue;
 
-          if (values[0] + delta >= min && values[1] + delta <= max) {
-            nextValues = [values[0] + delta, values[1] + delta];
-          }
+        if (values[0] + delta >= min && values[1] + delta <= max) {
+          nextValues = [values[0] + delta, values[1] + delta];
         }
       }
+    }
 
-      if (nextValues) {
-        setMoveValue(value);
-        onChange(nextValues);
-      }
-    };
-
-    var mouseUp = function mouseUp() {
+    if (nextValues) {
+      setMoveValue(value);
+      onChange(nextValues);
+    }
+  }, [values, changing, moveValue, max, min, setMoveValue, onChange, valueForMouseCoord]);
+  (0, _react.useEffect)(function () {
+    var onMouseUp = function onMouseUp() {
       return setChanging(undefined);
     };
 
     if (changing) {
-      window.addEventListener('mousemove', mouseMove);
-      window.addEventListener('mouseup', mouseUp);
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
       return function () {
-        window.removeEventListener('mousemove', mouseMove);
-        window.removeEventListener('mouseup', mouseUp);
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
       };
     }
 
     return undefined;
-  }, [changing, max, min, moveValue, onChange, valueForMouseCoord, values]);
+  }, [changing, onMouseMove]);
   var onClick = (0, _react.useCallback)(function (event) {
     var value = valueForMouseCoord(event);
 
@@ -153,6 +152,10 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onChange([values[0], value]);
     }
   }, [lastChange, onChange, valueForMouseCoord, values]);
+  var onTouchMove = (0, _react.useCallback)(function (event) {
+    var touchEvent = event.changedTouches[0];
+    onMouseMove(touchEvent);
+  }, [onMouseMove]);
   var lower = values[0],
       upper = values[1]; // It needs to be true when vertical, due to how browsers manage height
   // const fill = direction === 'vertical' ? true : 'horizontal';
@@ -171,7 +174,8 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     fill: true
   }, rest, {
     tabIndex: "-1",
-    onClick: onChange ? onClick : undefined
+    onClick: onChange ? onClick : undefined,
+    onTouchMove: onChange ? onTouchMove : undefined
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     style: {
       flex: lower - min + " 0 0"
@@ -192,6 +196,9 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     thickness: thickness,
     edge: "lower",
     onMouseDown: onChange ? function () {
+      return setChanging('lower');
+    } : undefined,
+    onTouchStart: onChange ? function () {
       return setChanging('lower');
     } : undefined,
     onDecrease: onChange && lower - step >= min ? function () {
@@ -226,6 +233,9 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     thickness: thickness,
     edge: "upper",
     onMouseDown: onChange ? function () {
+      return setChanging('upper');
+    } : undefined,
+    onTouchStart: onChange ? function () {
       return setChanging('upper');
     } : undefined,
     onDecrease: onChange && upper - step >= lower ? function () {
