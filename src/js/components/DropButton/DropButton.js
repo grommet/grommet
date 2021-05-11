@@ -9,7 +9,7 @@ const defaultDropAlign = { top: 'top', left: 'left' };
 const DropButton = forwardRef(
   (
     {
-      a11yTitle,
+      a11yTitle = 'Open Drop',
       onAlign,
       disabled,
       dropAlign = defaultDropAlign,
@@ -68,7 +68,7 @@ const DropButton = forwardRef(
         <Button
           id={id}
           ref={buttonRef}
-          a11yTitle={a11yTitle || 'Open Drop'}
+          a11yTitle={a11yTitle}
           disabled={disabled}
           {...rest}
           onClick={onClickInternal}
