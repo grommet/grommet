@@ -34,50 +34,59 @@ const Bar = forwardRef((props, ref) => {
       ? capOffset
       : (max * (length - 2 * capOffset)) / max;
 
-  const paths = (values || []).reduce((acc, valueArg, index) => {
-    if (valueArg.value > 0) {
-      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
-      const key = `p-${index}`;
-      const delta = (value * (length - 2 * capOffset)) / max;
-      const d =
-        direction === 'horizontal'
-          ? `M ${start},${mid} L ${start + delta},${mid}`
-          : `M ${mid},${start} L ${mid},${start - delta}`;
-      const colorName =
-        color || defaultColor(index, theme, values ? values.length : 0);
-      let hoverProps;
-      if (onHover) {
-        hoverProps = {
-          onMouseOver: () => onHover(true),
-          onMouseLeave: () => onHover(false),
-        };
-      }
-      if (direction === 'horizontal') {
-        start += delta;
-      } else {
-        start -= delta;
-      }
+  const paths = (values || [])
+    .reduce((acc, valueArg, index) => {
+      if (valueArg.value > 0) {
+        const {
+          color,
+          highlight,
+          label,
+          onHover,
+          value,
+          ...pathRest
+        } = valueArg;
+        const key = `p-${index}`;
+        const delta = (value * (length - 2 * capOffset)) / max;
+        const d =
+          direction === 'horizontal'
+            ? `M ${start},${mid} L ${start + delta},${mid}`
+            : `M ${mid},${start} L ${mid},${start - delta}`;
+        const colorName =
+          color || defaultColor(index, theme, values ? values.length : 0);
+        let hoverProps;
+        if (onHover) {
+          hoverProps = {
+            onMouseOver: () => onHover(true),
+            onMouseLeave: () => onHover(false),
+          };
+        }
+        if (direction === 'horizontal') {
+          start += delta;
+        } else {
+          start -= delta;
+        }
 
-      const result = (
-        <path
-          key={key}
-          d={d}
-          fill="none"
-          {...strokeProps(
-            someHighlight && !highlight ? background : colorName,
-            theme,
-          )}
-          strokeWidth={direction === 'horizontal' ? thickness : length}
-          strokeLinecap={round ? 'round' : 'butt'}
-          {...hoverProps}
-          {...pathRest}
-        />
-      );
+        const result = (
+          <path
+            key={key}
+            d={d}
+            fill="none"
+            {...strokeProps(
+              someHighlight && !highlight ? background : colorName,
+              theme,
+            )}
+            strokeWidth={direction === 'horizontal' ? thickness : length}
+            strokeLinecap={round ? 'round' : 'butt'}
+            {...hoverProps}
+            {...pathRest}
+          />
+        );
 
-      acc.push(result);
-    }
-    return acc;
-  }, []);
+        acc.push(result);
+      }
+      return acc;
+    }, [])
+    .reverse(); // reverse so the caps looks right
 
   let width;
   if (direction === 'horizontal') {
