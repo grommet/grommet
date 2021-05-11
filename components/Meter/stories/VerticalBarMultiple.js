@@ -32,9 +32,8 @@ var MultipleValues = function MultipleValues() {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    anchor: "center"
+    pad: "large",
+    gap: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "bar",
     background: "light-2",
@@ -72,7 +71,7 @@ var MultipleValues = function MultipleValues() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     size: "xxlarge",
     weight: "bold"
-  }, active || total), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "GB")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, label || 'total')))));
+  }, active || total), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "GB")), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, label || 'total'))));
 };
 
 exports.MultipleValues = MultipleValues;

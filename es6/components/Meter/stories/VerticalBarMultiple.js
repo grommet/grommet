@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grommet, Box, Meter, Stack, Text } from 'grommet';
+import { Grommet, Box, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var MultipleValues = function MultipleValues() {
   var total = 100;
@@ -20,9 +20,8 @@ export var MultipleValues = function MultipleValues() {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Stack, {
-    anchor: "center"
+    pad: "large",
+    gap: "medium"
   }, /*#__PURE__*/React.createElement(Meter, {
     type: "bar",
     background: "light-2",
@@ -60,7 +59,7 @@ export var MultipleValues = function MultipleValues() {
   }, /*#__PURE__*/React.createElement(Text, {
     size: "xxlarge",
     weight: "bold"
-  }, active || total), /*#__PURE__*/React.createElement(Text, null, "GB")), /*#__PURE__*/React.createElement(Text, null, label || 'total')))));
+  }, active || total), /*#__PURE__*/React.createElement(Text, null, "GB")), /*#__PURE__*/React.createElement(Text, null, label || 'total'))));
 };
 MultipleValues.storyName = 'Vertical Bar Multiple';
 export default {
