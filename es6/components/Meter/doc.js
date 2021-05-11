@@ -21,6 +21,7 @@ export var doc = function doc(Meter) {
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle', 'pie']).description('The visual type of meter.').defaultValue('bar'),
+    direction: PropTypes.oneOf(['horizontal', 'vertical']).description("The direction of the Meter you want to display.\n       The default direction is horizontal.Currently, direction works only\n       when 'type' of Meter is 'bar'."),
     value: PropTypes.number.description("\n      The numeric value to represent. Ignored when 'values' is specified.\n    "),
     values: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string,

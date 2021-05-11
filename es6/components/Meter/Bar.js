@@ -13,72 +13,90 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
       max = props.max,
       round = props.round,
       size = props.size,
-      thickness = props.thickness,
+      thicknessProp = props.thickness,
+      direction = props.direction,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "direction", "values"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  var height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness); // account for the round cap, if any
+  var length = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
+  var thickness = parseMetricToNum(theme.global.edgeSize[thicknessProp] || thicknessProp); // account for the round cap, if any
 
-  var capOffset = round ? height / 2 : 0;
-  var mid = height / 2;
+  var capOffset = round ? thickness / 2 : 0;
+  var mid = thickness / 2;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
-  var start = capOffset;
-  var paths = (values || []).filter(function (v) {
-    return v.value > 0;
-  }).map(function (valueArg, index) {
-    var color = valueArg.color,
-        highlight = valueArg.highlight,
-        label = valueArg.label,
-        onHover = valueArg.onHover,
-        value = valueArg.value,
-        pathRest = _objectWithoutPropertiesLoose(valueArg, ["color", "highlight", "label", "onHover", "value"]);
+  var start = direction === 'horizontal' ? capOffset : max * (length - 2 * capOffset) / max;
+  var paths = (values || []).reduce(function (acc, valueArg, index) {
+    if (valueArg.value > 0) {
+      var color = valueArg.color,
+          highlight = valueArg.highlight,
+          label = valueArg.label,
+          onHover = valueArg.onHover,
+          value = valueArg.value,
+          pathRest = _objectWithoutPropertiesLoose(valueArg, ["color", "highlight", "label", "onHover", "value"]);
 
-    var key = "p-" + index;
-    var delta = value * (width - 2 * capOffset) / max;
-    var d = "M " + start + "," + mid + " L " + (start + delta) + "," + mid;
-    var colorName = color || defaultColor(index, theme, values ? values.length : 0);
-    var hoverProps;
+      var key = "p-" + index;
+      var delta = value * (length - 2 * capOffset) / max;
+      var d = direction === 'horizontal' ? "M " + start + "," + mid + " L " + (start + delta) + "," + mid : "M " + mid + "," + start + " L " + mid + "," + (start - delta);
+      var colorName = color || defaultColor(index, theme, values ? values.length : 0);
+      var hoverProps;
 
-    if (onHover) {
-      hoverProps = {
-        onMouseOver: function onMouseOver() {
-          return onHover(true);
-        },
-        onMouseLeave: function onMouseLeave() {
-          return onHover(false);
-        }
-      };
+      if (onHover) {
+        hoverProps = {
+          onMouseOver: function onMouseOver() {
+            return onHover(true);
+          },
+          onMouseLeave: function onMouseLeave() {
+            return onHover(false);
+          }
+        };
+      }
+
+      if (direction === 'horizontal') {
+        start += delta;
+      } else {
+        start -= delta;
+      }
+
+      var result = /*#__PURE__*/React.createElement("path", _extends({
+        key: key,
+        d: d,
+        fill: "none"
+      }, strokeProps(someHighlight && !highlight ? background : colorName, theme), {
+        strokeWidth: direction === 'horizontal' ? thickness : length,
+        strokeLinecap: round ? 'round' : 'butt'
+      }, hoverProps, pathRest));
+      acc.push(result);
     }
 
-    start += delta;
-    return /*#__PURE__*/React.createElement("path", _extends({
-      key: key,
-      d: d,
-      fill: "none"
-    }, strokeProps(someHighlight && !highlight ? background : colorName, theme), {
-      strokeWidth: height,
-      strokeLinecap: round ? 'round' : 'butt'
-    }, hoverProps, pathRest));
-  }).reverse(); // reverse so the caps looks right
+    return acc;
+  }, []).reverse(); // reverse so the caps looks right
 
+  var width;
+
+  if (direction === 'horizontal') {
+    width = size === 'full' ? '100%' : length;
+  } else {
+    width = size === 'full' ? '100%' : thickness;
+  }
+
+  var backgroundPath = direction === 'horizontal' ? "M " + capOffset + "," + mid + " L " + (length - capOffset) + "," + mid : "M " + mid + "," + capOffset + " L " + mid + "," + (length - capOffset);
   return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
-    viewBox: "0 0 " + width + " " + height,
+    viewBox: direction === 'horizontal' ? "0 0 " + length + " " + thickness : "0 0 " + thickness + " " + length,
     preserveAspectRatio: "none",
-    width: size === 'full' ? '100%' : width,
-    height: height,
+    width: width,
+    height: direction === 'horizontal' ? thickness : length,
     round: round ? {
-      size: thickness
+      size: thicknessProp
     } : undefined
   }, rest), /*#__PURE__*/React.createElement("path", _extends({
-    d: "M " + capOffset + "," + mid + " L " + (width - capOffset) + "," + mid,
+    d: backgroundPath,
     fill: "none"
   }, strokeProps(background, theme), {
-    strokeWidth: height,
+    strokeWidth: thickness,
     strokeLinecap: round ? 'round' : 'square'
   })), paths);
 });

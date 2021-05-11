@@ -37,6 +37,8 @@ var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     opacity: 'medium'
   } : _ref$background,
       color = _ref.color,
+      _ref$direction = _ref.direction,
+      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? 'medium' : _ref$size,
       _ref$thickness = _ref.thickness,
@@ -45,7 +47,7 @@ var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       value = _ref.value,
       valuesProp = _ref.values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "color", "size", "thickness", "type", "value", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "color", "direction", "size", "thickness", "type", "value", "values"]);
 
   // normalize values to an array of objects
   var values = (0, _react.useMemo)(function () {
@@ -68,7 +70,8 @@ var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       values: values,
       size: size,
       thickness: thickness,
-      background: background
+      background: background,
+      direction: direction
     }, rest));
   } else if (type === 'circle' || type === 'pie') {
     content = /*#__PURE__*/_react["default"].createElement(_Circle.Circle, _extends({

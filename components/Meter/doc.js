@@ -29,6 +29,7 @@ var doc = function doc(Meter) {
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     thickness: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     type: _reactDesc.PropTypes.oneOf(['bar', 'circle', 'pie']).description('The visual type of meter.').defaultValue('bar'),
+    direction: _reactDesc.PropTypes.oneOf(['horizontal', 'vertical']).description("The direction of the Meter you want to display.\n       The default direction is horizontal.Currently, direction works only\n       when 'type' of Meter is 'bar'."),
     value: _reactDesc.PropTypes.number.description("\n      The numeric value to represent. Ignored when 'values' is specified.\n    "),
     values: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       color: _reactDesc.PropTypes.string,
