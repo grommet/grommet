@@ -114,7 +114,7 @@
     "jest-axe": "^4.1.0",
     "jest-cli": "^26.6.3",
     "jest-styled-components": "^7.0.4",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.3",
     "postcss": "^8.2.10",
     "pre-commit": "^1.2.2",
     "prettier": "^1.16.4",
