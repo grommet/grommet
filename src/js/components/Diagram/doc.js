@@ -18,6 +18,10 @@ export const doc = Diagram => {
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
+        animation: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.oneOf(['pulse']),
+        ]),
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
