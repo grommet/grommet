@@ -2,7 +2,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -10,6 +9,9 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
+
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -52,6 +54,23 @@ const normalizeProp = (prop, context) => {
   }
   return undefined;
 };
+
+function useGroupState(groups, groupBy) {
+  const [groupState, setGroupState] = useState(() =>
+    buildGroupState(groups, groupBy),
+  );
+  const [prevDeps, setPrevDeps] = useState({ groups, groupBy });
+
+  const { groups: prevGroups, groupBy: prevGroupBy } = prevDeps;
+  if (groups !== prevGroups || groupBy !== prevGroupBy) {
+    setPrevDeps({ groups, groupBy });
+    const nextGroupState = buildGroupState(groups, groupBy);
+    setGroupState(nextGroupState);
+    return [nextGroupState, setGroupState];
+  }
+
+  return [groupState, setGroupState];
+}
 
 const DataTable = ({
   background,
@@ -124,9 +143,7 @@ const DataTable = ({
   ]);
 
   // an object indicating which group values are expanded
-  const [groupState, setGroupState] = useState(
-    buildGroupState(groups, groupBy),
-  );
+  const [groupState, setGroupState] = useGroupState(groups, groupBy);
 
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,

@@ -4,6 +4,7 @@ import {
   activeStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
@@ -249,7 +250,11 @@ const StyledButtonKind = styled.button.withConfig({
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle()}
   }
-  
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

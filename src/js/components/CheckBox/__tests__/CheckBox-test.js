@@ -109,6 +109,17 @@ describe('CheckBox', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('reverse toggle fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <CheckBox label="test label" reverse fill toggle />
+        <CheckBox fill toggle label="test label" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('indeterminate renders', () => {
     const component = renderer.create(
       <Grommet>

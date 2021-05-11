@@ -1,12 +1,7 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';

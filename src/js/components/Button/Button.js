@@ -95,7 +95,6 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
 const Button = forwardRef(
   (
     {
-      a11yTitle,
       active,
       align = 'center',
       'aria-label': ariaLabel,
@@ -122,6 +121,8 @@ const Button = forwardRef(
       size,
       tip,
       type = 'button',
+      // can't alphabetize a11yTitle before tip is defined
+      a11yTitle = typeof tip === 'string' ? tip : undefined,
       as,
       ...rest
     },
@@ -266,7 +267,7 @@ const Button = forwardRef(
           ref={ref}
           active={active}
           align={align}
-          aria-label={a11yTitle}
+          aria-label={ariaLabel || a11yTitle}
           colorValue={color}
           disabled={disabled}
           gap={gap}

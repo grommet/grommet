@@ -12,13 +12,14 @@ export interface MeterProps {
   alignSelf?: AlignSelfType;
   background?: string | { color?: string; opacity?: OpacityType };
   color?: string;
+  direction?: 'horizontal' | 'vertical';
   gridArea?: GridAreaType;
   margin?: MarginType;
   max?: number;
   round?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
   thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  type?: 'bar' | 'circle';
+  type?: 'bar' | 'circle' | 'pie';
   value?: number;
   values?: {
     color?: string;

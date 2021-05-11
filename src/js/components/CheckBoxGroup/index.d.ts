@@ -18,7 +18,7 @@ export interface CheckBoxGroupProps {
   labelKey?: string;
   name?: string;
   onChange?: (event?: OnChangeEvent) => void;
-  options: CheckBoxType[];
+  options: (CheckBoxType | string)[];
   valueKey?: string;
 }
 

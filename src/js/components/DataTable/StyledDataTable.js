@@ -4,6 +4,7 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
@@ -104,6 +105,10 @@ const StyledDataTableBody = styled(TableBody)`
 
   &:focus {
     ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
 `;
 
