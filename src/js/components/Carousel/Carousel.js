@@ -34,7 +34,7 @@ const Carousel = ({
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
-    activeIndex: activeChild || initialChild,
+    activeIndex: activeChild !== undefined ? activeChild : initialChild,
   });
 
   const { activeIndex, priorActiveIndex } = indexes;
