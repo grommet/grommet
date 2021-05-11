@@ -8,13 +8,23 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 const Circle = forwardRef((props, ref) => {
-  const { background, max, round, size, thickness, values, ...rest } = props;
+  const {
+    background,
+    max,
+    round,
+    size,
+    thickness,
+    type,
+    values,
+    ...rest
+  } = props;
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  const height = parseMetricToNum(
-    theme.global.edgeSize[thickness] || thickness,
-  );
+  const height =
+    type === 'pie'
+      ? width / 2
+      : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
   const radius = width / 2 - height / 2;
   const anglePer = 360 / max;
