@@ -12,6 +12,7 @@ export interface MeterProps {
   alignSelf?: AlignSelfType;
   background?: string | { color?: string; opacity?: OpacityType };
   color?: string;
+  direction?: 'horizontal' | 'vertical';
   gridArea?: GridAreaType;
   margin?: MarginType;
   max?: number;
