@@ -3,12 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import {
-  disabledStyle,
-  parseMetricToNum,
-  useForwardedRef,
-  unfocusStyle,
-} from '../../utils';
+import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -28,10 +23,7 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ContentsBox = styled(Box)`
   position: relative;
-  ${props => (props.disabled ? disabledStyle() : 'cursor: pointer;')}
-  &:focus {
-    ${unfocusStyle()}
-  }
+  ${props => (props.disabled ? disabledStyle() : 'cursor: auto;')}
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
   ${props =>
     props.hover &&
@@ -151,15 +143,14 @@ const FileInput = forwardRef(
 
     let message;
     if (!files.length) {
-      if (multiple) message = 'Drag and drop' || messages.dropPromptMultiple;
+      if (multiple) message = messages.dropPromptMultiple || 'Drag and drop';
       if (!multiple) {
-        message = 'Drag and drop' || messages.dropPrompt;
+        message = messages.dropPrompt || 'Drag and drop';
       }
     } else message = `${files.length} items`;
 
     return (
       <ContentsBox
-        tabIndex={-1}
         theme={theme}
         disabled={disabled}
         background={mergeTheme('background', 'color')}
@@ -199,6 +190,7 @@ const FileInput = forwardRef(
                 />
               ) : (
                 <Anchor
+                  tabIndex={0}
                   alignSelf="center"
                   ref={controlRef}
                   margin="small"
@@ -290,6 +282,7 @@ const FileInput = forwardRef(
                       />
                     ) : (
                       <Anchor
+                        tabIndex={0}
                         ref={controlRef}
                         margin="small"
                         onClick={() => {
