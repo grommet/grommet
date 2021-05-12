@@ -32,7 +32,7 @@ export interface CalendarProps {
   animate?: AnimateType;
   bounds?: string[];
   children?: (args: RenderProps) => React.ReactNode;
-  date?: string | string[];
+  date?: string | (string | string[])[];
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
