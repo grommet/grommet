@@ -62,6 +62,40 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('opacity', () => {
+    const { container } = render(
+      <Grommet>
+        <Chart opacity values={VALUES} />
+        <Chart opacity={false} values={VALUES} />
+        <Chart opacity="strong" values={VALUES} />
+        <Chart
+          type="bar"
+          values={[
+            { value: [7, 100], label: 'one hundred', opacity: true },
+            { value: [6, 70], label: 'seventy', opacity: 'medium' },
+            { value: [5, 60], label: 'sixty', opacity: 'weak' },
+            { value: [4, 80], label: 'eighty', opacity: 'strong' },
+            { value: [3, 40], label: 'forty', opacity: false },
+            { value: [2, 0], label: 'zero', opacity: 0.3 },
+          ]}
+        />
+        <Chart
+          type="point"
+          point="circle"
+          values={[
+            { value: [7, 100], label: 'one hundred', opacity: true },
+            { value: [6, 70], label: 'seventy', opacity: 'medium' },
+            { value: [5, 60], label: 'sixty', opacity: 'weak' },
+            { value: [4, 80], label: 'eighty', opacity: 'strong' },
+            { value: [3, 40], label: 'forty', opacity: false },
+            { value: [2, 0], label: 'zero', opacity: 0.3 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('type', () => {
     const component = renderer.create(
       <Grommet>

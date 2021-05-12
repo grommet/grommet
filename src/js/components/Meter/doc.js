@@ -54,9 +54,13 @@ export const doc = Meter => {
     ])
       .description('The size of the Meter.')
       .defaultValue('medium'),
-    type: PropTypes.oneOf(['bar', 'circle'])
+    type: PropTypes.oneOf(['bar', 'circle', 'pie'])
       .description('The visual type of meter.')
       .defaultValue('bar'),
+    direction: PropTypes.oneOf(['horizontal', 'vertical'])
+      .description(`The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.`),
     value: PropTypes.number.description(`
       The numeric value to represent. Ignored when 'values' is specified.
     `),
