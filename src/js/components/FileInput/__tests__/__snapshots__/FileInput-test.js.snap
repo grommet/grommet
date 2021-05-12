@@ -47,7 +47,6 @@ exports[`FileInput accept 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -222,7 +221,6 @@ exports[`FileInput background 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -396,7 +394,6 @@ exports[`FileInput basic 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -570,7 +567,6 @@ exports[`FileInput border 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -744,7 +740,6 @@ exports[`FileInput disabled 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -920,7 +915,6 @@ exports[`FileInput margin 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1094,7 +1088,6 @@ exports[`FileInput messages 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1268,7 +1261,6 @@ exports[`FileInput multiple 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1443,7 +1435,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1618,7 +1609,6 @@ exports[`FileInput pad 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;

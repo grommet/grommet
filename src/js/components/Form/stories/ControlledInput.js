@@ -107,9 +107,16 @@ export const ControlledInput = () => {
                 onChange={event => setAge(event.target.value)}
               />
             </FormField>
-            <FormField required label="FileInput" name="file" pad>
+            <FormField
+              htmlFor="file"
+              required
+              label="FileInput"
+              name="file"
+              pad
+            >
               <FileInput
                 name="file"
+                id="file"
                 onChange={event => setFile(event.target.files)}
               />
             </FormField>

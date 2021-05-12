@@ -166,7 +166,7 @@ const FileInput = forwardRef(
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
-          <Box fill direction="row" justify="between">
+          <Box fill="horizontal" direction="row" justify="between">
             <Message {...theme.fileInput.message}>{message}</Message>
             <Keyboard
               onSpace={event => {
