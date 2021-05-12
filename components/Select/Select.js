@@ -39,9 +39,15 @@ var SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).wi
 })(["cursor:", ";"], function (props) {
   return props.defaultCursor ? 'default' : 'pointer';
 });
+
+var HiddenInput = _styledComponents["default"].input.withConfig({
+  displayName: "Select__HiddenInput",
+  componentId: "sc-17idtfo-1"
+})(["display:none;"]);
+
 var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "Select__StyledSelectDropButton",
-  componentId: "sc-17idtfo-1"
+  componentId: "sc-17idtfo-2"
 })(["", ";", ";", ";"], function (props) {
   return !props.callerPlain && _utils.controlBorderStyle;
 }, function (props) {
@@ -330,7 +336,13 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     direction: "row",
     flex: true,
     basis: "auto"
-  }, selectValue || /*#__PURE__*/_react["default"].createElement(SelectTextInput, _extends({
+  }, selectValue ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, selectValue, /*#__PURE__*/_react["default"].createElement(HiddenInput, {
+    type: "text",
+    id: id ? id + "__input" : undefined,
+    value: inputValue,
+    ref: inputRef,
+    readOnly: true
+  })) : /*#__PURE__*/_react["default"].createElement(SelectTextInput, _extends({
     a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
     // but not have disabled styling come from TextInput
     // Disabled can be a bool or an array of options to disable.
