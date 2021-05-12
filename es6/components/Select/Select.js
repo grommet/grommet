@@ -261,6 +261,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onUp: onRequestOpen
   }, /*#__PURE__*/React.createElement(StyledSelectDropButton, {
     ref: ref,
+    a11yTitle: a11yTitle,
     id: id,
     disabled: disabled === true || undefined,
     dropAlign: dropAlign,
