@@ -194,11 +194,12 @@ const Calendar = forwardRef(
     }, [activeDateProp]);
 
     // function that runs inside the useEffect for date and dates
-    const dateCaller = (dateValue, callbackSetState) => {
+    const normalizeDate = dateValue => {
       // convert values to UTC based on if date is string or array
       if (typeof dateValue === 'string') {
-        callbackSetState(normalizeForTimezone(dateValue));
-      } else if (Array.isArray(dateValue)) {
+        return normalizeForTimezone(dateValue);
+      }
+      if (Array.isArray(dateValue)) {
         if (Array.isArray(dateValue[0])) {
           let from;
           let to;
@@ -208,36 +209,36 @@ const Calendar = forwardRef(
           if (from) from = normalizeForTimezone(from, dateValue[0][0]);
           if (to) to = normalizeForTimezone(to, dateValue[0][0]);
 
-          callbackSetState([[from, to]]);
-        } else {
-          const dateArray = [];
-          dateValue.forEach(d => {
-            if (Array.isArray(d)) {
-              let from;
-              let to;
-              [from, to] = d.map(day => new Date(day));
-              from = normalizeForTimezone(from, d[0]);
-              to = normalizeForTimezone(to, d[0]);
-              dateArray.push([from, to]);
-            } else {
-              dateArray.push(normalizeForTimezone(d));
-            }
-          });
-          callbackSetState(dateArray);
+          return [[from, to]];
         }
-      } else callbackSetState(undefined);
+        const dateArray = [];
+        dateValue.forEach(d => {
+          if (Array.isArray(d)) {
+            let from;
+            let to;
+            [from, to] = d.map(day => new Date(day));
+            from = normalizeForTimezone(from, d[0]);
+            to = normalizeForTimezone(to, d[0]);
+            dateArray.push([from, to]);
+          } else {
+            dateArray.push(normalizeForTimezone(d));
+          }
+        });
+        return dateArray;
+      }
+      return undefined;
     };
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
     useEffect(() => {
-      dateCaller(dateProp, setDate);
+      setDate(normalizeDate(dateProp));
     }, [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
     useEffect(() => {
-      dateCaller(datesProp, setDates);
+      setDates(normalizeDate(datesProp));
     }, [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
