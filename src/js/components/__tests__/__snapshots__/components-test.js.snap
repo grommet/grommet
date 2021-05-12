@@ -6413,6 +6413,14 @@ pie",
         "name": "type",
       },
       Object {
+        "description": "The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.",
+        "format": "horizontal
+vertical",
+        "name": "direction",
+      },
+      Object {
         "description": "
       The numeric value to represent. Ignored when 'values' is specified.
     ",
