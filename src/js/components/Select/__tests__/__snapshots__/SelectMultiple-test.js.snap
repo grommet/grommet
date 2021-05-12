@@ -4477,7 +4477,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-label="test"
     class="c1 c2"
     type="button"
   >

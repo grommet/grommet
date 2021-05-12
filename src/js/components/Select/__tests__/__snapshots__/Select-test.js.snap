@@ -2412,7 +2412,7 @@ exports[`Select basic 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-label="Select"
   className="c0 c1"
   id="test-select"
   onBlur={[Function]}
@@ -15252,7 +15252,7 @@ exports[`Select should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-label="test"
     class="c1 c2"
     type="button"
   >

@@ -256,6 +256,7 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
+          a11yTitle={a11yTitle}
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
