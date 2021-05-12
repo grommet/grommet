@@ -17,6 +17,7 @@ const RadioButtonGroup = forwardRef(
   (
     {
       children,
+      defaultValue,
       disabled,
       name,
       onChange,
@@ -42,7 +43,11 @@ const RadioButtonGroup = forwardRef(
         : { disabled, ...o },
     );
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(
+      name,
+      valueProp,
+      defaultValue || '',
+    );
 
     const [focus, setFocus] = useState();
 
@@ -100,6 +105,7 @@ const RadioButtonGroup = forwardRef(
       >
         <Box
           ref={ref}
+          role="radiogroup"
           {...theme.radioButtonGroup.container}
           gap={
             gap ||
