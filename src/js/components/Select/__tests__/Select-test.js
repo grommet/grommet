@@ -978,6 +978,9 @@ describe('Select', () => {
       expect.objectContaining({
         value: 'one',
         option: 'one',
+        target: expect.objectContaining({
+          value: 'one',
+        }),
       }),
     );
   });
