@@ -1,10 +1,8 @@
-import { element } from 'prop-types';
 import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
   BackgroundType,
-  BorderType,
   ColorType,
   FillType,
   GapType,

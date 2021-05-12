@@ -23,6 +23,11 @@ const sides = [
   'end',
 ];
 
+const padShapeSides = {};
+sides.forEach(side => {
+  padShapeSides[side] = PropTypes.oneOf(sizes);
+});
+
 const borderTypes = [
   PropTypes.bool,
   PropTypes.oneOf(sides),
@@ -38,11 +43,6 @@ const borderTypes = [
     size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
   }),
 ];
-
-const padShapeSides = {};
-sides.forEach(side => {
-  padShapeSides[side] = PropTypes.oneOf(sizes);
-});
 
 export const doc = List => {
   const DocumentedList = describe(List)
