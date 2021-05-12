@@ -498,7 +498,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`badge should apply background and border`, () => {
+  test(`badge should apply background`, () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -517,7 +517,6 @@ describe('Button kind', () => {
           label="Button"
           badge={{
             background: 'status-ok',
-            border: { color: '#FFF', size: 'small' },
             value: 100,
           }}
         />

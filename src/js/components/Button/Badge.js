@@ -1,64 +1,19 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useContext, useRef, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { parseMetricToNum } from '../../utils';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
-const getBadgeDimension = (dimension, content, badgeContentRef, theme) => {
-  if (
-    typeof content === 'number' ||
-    (typeof content === 'object' && content.value)
-  ) {
-    const borderWidth = content.border
-      ? parseMetricToNum(theme.global.borderSize[content.border.size]) * 2
-      : 0;
-    // leave space to pad content, must be incorporated in width as opposed
-    // to conventional pad on Box
-    let { pad } = theme.button.badge.container;
-    if (typeof pad === 'string')
-      pad = parseMetricToNum(theme.global.edgeSize[pad] || pad);
-    else if (dimension === 'height') {
-      if (pad.top)
-        pad = parseMetricToNum(theme.global.edgeSize[pad.top] || pad.top);
-      if (pad.bottom)
-        pad += parseMetricToNum(
-          theme.global.edgeSize[pad.bottom] || pad.bottom,
-        );
-      else if (pad.vertical) {
-        pad =
-          parseMetricToNum(
-            theme.global.edgeSize[pad.vertical] || pad.vertical,
-          ) * 2;
-      } else pad = 0;
-    } else if (dimension === 'width') {
-      if (pad.left)
-        pad = parseMetricToNum(theme.global.edgeSize[pad.left] || pad.left);
-      if (pad.right)
-        pad += parseMetricToNum(theme.global.edgeSize[pad.right] || pad.right);
-      else if (pad.horizontal) {
-        pad =
-          parseMetricToNum(
-            theme.global.edgeSize[pad.horizontal] || pad.horizontal,
-          ) * 2;
-      } else pad = 0;
-    }
-
-    // if content is tall/wide, let badge grow to fit. otherwise,
-    // make sure it's at least badge.size.medium dimensions
-    return `${Math.max(
-      Math.ceil(badgeContentRef.current.getBoundingClientRect()[dimension]) +
-        pad +
-        borderWidth,
-      parseMetricToNum(theme.button.badge.size.medium) + borderWidth,
-    )}px`;
-  }
-  return `${badgeContentRef.current.getBoundingClientRect()[dimension]}px`;
-};
+const StyledBadgeContainer = styled(Box)`
+  ${props => props.theme.button.badge.container.extend}
+`;
 
 export const Badge = ({ children, content }) => {
   const theme = useContext(ThemeContext);
-  const badgeContentRef = useRef();
+  const contentRef = useRef();
   const stackRef = useRef();
 
   const defaultBadgeDimension =
@@ -69,37 +24,58 @@ export const Badge = ({ children, content }) => {
         `${parseMetricToNum(theme.button.badge.size.medium) / 2}px`
       : theme.button.badge.size.medium;
 
-  const [[width, height], setBadgeDimension] = useState([
-    defaultBadgeDimension,
-    defaultBadgeDimension,
-  ]);
+  // size should drive height, match width to height by default
+  // allow width to grow when content is wide
+  const [height, setHeight] = useState(defaultBadgeDimension);
+  const [width, setWidth] = useState(height);
 
-  // scale badge to fit its contents
-  // width informs how far to horizontally offset the badge
-  // height informs how far to vertically offset the badge
-  useEffect(() => {
+  // scale badge to fit its contents, leaving space horizontally
+  // that is proportional to vertical space
+  useLayoutEffect(() => {
     const onResize = () => {
-      if (
-        badgeContentRef &&
-        badgeContentRef.current &&
-        typeof content !== 'boolean'
-      ) {
-        setBadgeDimension([
-          getBadgeDimension('width', content, badgeContentRef, theme),
-          getBadgeDimension('height', content, badgeContentRef, theme),
-        ]);
+      if (contentRef && contentRef.current) {
+        if (
+          typeof content === 'number' ||
+          (typeof content === 'object' && content.value)
+        ) {
+          const {
+            height: contentHeight,
+            width: contentWidth,
+          } = contentRef.current.getBoundingClientRect();
+
+          // only adjust the width if contentHeight > 0
+          // jest returns 0 for all getBoundingClientRect values,
+          // so this ensures snapshots are closer to correct values
+          if (contentHeight) {
+            // height of content includes extra space around font from
+            // line-height. account for this extra space with 2.5 multiplier
+            // to add proportional horizontal space
+            const verticalSpace =
+              (parseMetricToNum(height) - contentHeight) * 2.5;
+
+            setWidth(
+              `${Math.max(
+                parseMetricToNum(width),
+                Math.ceil(contentWidth + verticalSpace),
+              )}px`,
+            );
+          }
+        } else {
+          // caller has provided custom JSX
+          setWidth(`${contentRef.current.getBoundingClientRect().width}px`);
+          setHeight(`${contentRef.current.getBoundingClientRect().height}px`);
+        }
       }
     };
-
     window.addEventListener('resize', onResize);
     onResize();
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [content, theme]);
+  }, [content, height, width]);
 
   // offset the badge so it overlaps content
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (stackRef && stackRef.current) {
       // when badge has content, offset should be 50%.
       // when badge is empty, offset by a smaller amount to keep the badge
@@ -137,30 +113,34 @@ export const Badge = ({ children, content }) => {
           color="text-strong"
           size={theme.button.badge.text.size.medium}
           weight="normal"
-          ref={badgeContentRef}
+          ref={contentRef}
         >
           {value > max ? `${max}+` : value}
         </Text>
       );
     }
     badge = (
-      <Box
+      <StyledBadgeContainer
         align="center"
         background={
           content.background || theme.button.badge.container.background
         }
-        border={content.border || theme.button.badge.container.border}
         flex={false}
-        height={height}
+        height={{ min: height }}
         justify="center"
         round
-        width={width}
+        pad={
+          !(typeof value === 'boolean' || typeof content === 'boolean')
+            ? theme.button.badge.container.pad
+            : undefined
+        }
+        width={{ min: width }}
       >
         {badge}
-      </Box>
+      </StyledBadgeContainer>
     );
     // caller has provided their own JSX and we will just render that
-  } else badge = <Box ref={badgeContentRef}>{content}</Box>;
+  } else badge = <Box ref={contentRef}>{content}</Box>;
 
   return (
     <Stack ref={stackRef} anchor="top-right">

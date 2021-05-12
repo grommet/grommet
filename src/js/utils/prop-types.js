@@ -77,42 +77,6 @@ export const backgroundDoc = backgroundPropType.description(`Either a color
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
 
-const sizes = [
-  'none',
-  'xxsmall',
-  'xsmall',
-  'small',
-  'medium',
-  'large',
-  'xlarge',
-];
-const sides = [
-  'horizontal',
-  'vertical',
-  'top',
-  'bottom',
-  'left',
-  'right',
-  'start',
-  'end',
-];
-
-export const borderPropType = PropTypes.oneOfType([
-  PropTypes.bool,
-  PropTypes.oneOf(sides),
-  PropTypes.shape({
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        dark: PropTypes.string,
-        light: PropTypes.string,
-      }),
-    ]),
-    side: PropTypes.oneOf(sides),
-    size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
-  }),
-]);
-
 export const MARGIN_SIZES = [
   'xxsmall',
   'xsmall',

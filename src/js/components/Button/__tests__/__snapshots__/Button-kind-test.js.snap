@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button kind badge should apply background and border 1`] = `
+exports[`Button kind badge should apply background 1`] = `
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14,14 +14,13 @@ exports[`Button kind badge should apply background and border 1`] = `
   align-items: center;
   background-color: #00C781;
   color: #444444;
-  border: solid 2px #FFF;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 28px;
-  width: 28px;
+  min-height: 24px;
+  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -138,20 +137,6 @@ exports[`Button kind badge should apply background and border 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    border: solid 2px #FFF;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
@@ -176,10 +161,10 @@ exports[`Button kind badge should apply background and border 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -14px; right: -14px;"
+      style="top: -12px; right: -12px;"
     >
       <div
-        class="c5"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
       >
         <span
           class="c6"
@@ -211,8 +196,8 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  min-height: 12px;
+  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -349,7 +334,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
       style="top: -3px; right: -3px;"
     >
       <div
-        class="c5"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
       />
     </div>
   </div>
@@ -375,8 +360,8 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  min-height: 24px;
+  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -520,7 +505,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
       >
         <span
           class="c6"
@@ -552,8 +537,8 @@ exports[`Button kind badge should display number content 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
+  min-height: 24px;
+  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -697,7 +682,7 @@ exports[`Button kind badge should display number content 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
       >
         <span
           class="c6"
@@ -953,8 +938,8 @@ exports[`Button kind badge should render relative to contents when button has no
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 12px;
-  width: 12px;
+  min-height: 12px;
+  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1097,7 +1082,7 @@ exports[`Button kind badge should render relative to contents when button has no
         style="top: -3px; right: -3px;"
       >
         <div
-          class="c6"
+          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
         />
       </div>
     </div>

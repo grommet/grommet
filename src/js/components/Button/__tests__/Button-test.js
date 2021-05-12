@@ -403,7 +403,7 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`badge should apply background and border`, () => {
+  test(`badge should apply background`, () => {
     const { container } = render(
       <Grommet>
         <Button
@@ -411,7 +411,6 @@ describe('Button', () => {
           label="Button"
           badge={{
             background: 'status-ok',
-            border: { color: '#FFF', size: 'small' },
             value: 100,
           }}
         />

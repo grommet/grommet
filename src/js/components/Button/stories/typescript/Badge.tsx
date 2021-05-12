@@ -103,7 +103,6 @@ export const Badge = () => (
           onClick={() => {}}
           badge={{
             background: 'status-warning',
-            border: { color: '#FFF', size: 'small' },
             value: 100,
           }}
           secondary

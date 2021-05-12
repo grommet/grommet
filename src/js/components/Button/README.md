@@ -204,42 +204,6 @@ number
         string,
       light: string
     },
-  border: 
-    boolean
-    horizontal
-    vertical
-    top
-    bottom
-    left
-    right
-    start
-    end
-    {
-      color: 
-        string
-        {
-          dark: string,
-          light: string
-        },
-      side: 
-        horizontal
-        vertical
-        top
-        bottom
-        left
-        right
-        start
-        end,
-      size: 
-        none
-        xxsmall
-        xsmall
-        small
-        medium
-        large
-        xlarge
-        string
-    },
   max: number,
   value: 
     boolean
@@ -726,9 +690,9 @@ Defaults to
 brand
 ```
 
-**button.badge.container.border**
+**button.badge.container.extend**
 
-The border for the badge. Accepts any valid Box border value. Expects `string | object`.
+Any additional styles for the badge. Expects `string | object`.
 
 Defaults to
 
@@ -743,13 +707,14 @@ When badge has a value, the amount of pad to apply. Expects `string | object`.
 Defaults to
 
 ```
-{ horizontal: 'xxsmall' }
+undefined
 ```
 
 **button.badge.size.medium**
 
 The minimum width and height of the badge when the badge 
-    contains a value. Expects `string`.
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value. Expects `string`.
 
 Defaults to
 

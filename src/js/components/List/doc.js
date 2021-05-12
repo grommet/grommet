@@ -1,10 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  borderPropType,
-  genericProps,
-  padPropType,
-} from '../../utils/prop-types';
+import { genericProps, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = [
@@ -25,6 +21,22 @@ const sides = [
   'right',
   'start',
   'end',
+];
+
+const borderTypes = [
+  PropTypes.bool,
+  PropTypes.oneOf(sides),
+  PropTypes.shape({
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ]),
+    side: PropTypes.oneOf(sides),
+    size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+  }),
 ];
 
 const padShapeSides = {};
@@ -60,7 +72,7 @@ export const doc = List => {
       `Item background. An array value indicates that items should have
       different backgrounds, modulo the array index.`,
     ),
-    border: borderPropType.description(`Item border.`),
+    border: PropTypes.oneOfType(borderTypes).description(`Item border.`),
     data: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
     ).description('Array of data objects.'),

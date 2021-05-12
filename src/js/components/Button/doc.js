@@ -2,7 +2,6 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundPropType,
-  borderPropType,
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
@@ -52,7 +51,6 @@ export const doc = Button => {
       PropTypes.number,
       PropTypes.shape({
         background: backgroundPropType,
-        border: borderPropType,
         max: PropTypes.number,
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
       }),
@@ -286,20 +284,20 @@ export const themeDoc = {
     }`,
     defaultValue: 'brand',
   },
-  'button.badge.container.border': {
-    description:
-      'The border for the badge. Accepts any valid Box border value.',
-    type: 'string | object',
+  'button.badge.container.extend': {
+    description: `Any additional styles for the badge.`,
+    type: `string | object`,
     defaultValue: undefined,
   },
   'button.badge.container.pad': {
     description: 'When badge has a value, the amount of pad to apply.',
     type: 'string | object',
-    defaultValue: `{ horizontal: 'xxsmall' }`,
+    defaultValue: undefined,
   },
   'button.badge.size.medium': {
     description: `The minimum width and height of the badge when the badge 
-    contains a value.`,
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value.`,
     type: 'string',
     defaultValue: '24px',
   },

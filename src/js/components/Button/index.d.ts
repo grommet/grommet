@@ -24,7 +24,6 @@ export interface ButtonProps {
     | number
     | {
         background?: BackgroundType;
-        border?: BorderType;
         max?: number;
         value?: boolean | number;
       }

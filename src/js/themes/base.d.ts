@@ -146,10 +146,18 @@ interface ButtonKindType {
 
 interface ButtonType {
   badge?: {
-    background?: BackgroundType;
-    border?: BorderType;
+    container?: {
+      background?: BackgroundType;
+      pad?: PadType;
+      extend?: ExtendType;
+    };
     size?: {
       medium?: string;
+    };
+    text?: {
+      size?: {
+        medium?: string;
+      };
     };
   };
   border?: {
