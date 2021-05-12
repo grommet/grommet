@@ -2029,7 +2029,7 @@ string",
         "name": "onHover",
       },
       Object {
-        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "description": "What opacity to apply to the visuals. Supersedes 'color.opacity'",
         "format": "weak
 medium
 strong
@@ -2241,7 +2241,8 @@ point",
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
@@ -6408,8 +6409,17 @@ string",
         "defaultValue": "bar",
         "description": "The visual type of meter.",
         "format": "bar
-circle",
+circle
+pie",
         "name": "type",
+      },
+      Object {
+        "description": "The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.",
+        "format": "horizontal
+vertical",
+        "name": "direction",
       },
       Object {
         "description": "

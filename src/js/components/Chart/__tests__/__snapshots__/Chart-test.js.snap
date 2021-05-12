@@ -999,6 +999,317 @@ exports[`Chart gap 1`] = `
 </div>
 `;
 
+exports[`Chart opacity 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    0
+    <g
+      fill="none"
+      opacity="0.4"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    0
+    <g
+      fill="none"
+      opacity="0.8"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    0
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+        opacity="0.4"
+      >
+        <title>
+          one hundred
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+        opacity="0.4"
+      >
+        <title>
+          seventy
+        </title>
+        <path
+          d="M 329.1428571428571,192 L 329.1428571428571,57.599999999999994"
+        />
+      </g>
+      <g
+        fill="none"
+        opacity="0.1"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 274.2857142857143,192 L 274.2857142857143,76.80000000000001"
+        />
+      </g>
+      <g
+        fill="none"
+        opacity="0.8"
+      >
+        <title>
+          eighty
+        </title>
+        <path
+          d="M 219.42857142857142,192 L 219.42857142857142,38.400000000000006"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          forty
+        </title>
+        <path
+          d="M 164.57142857142856,192 L 164.57142857142856,115.2"
+        />
+      </g>
+      <g
+        fill="none"
+        opacity="0.3"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 109.71428571428571,192 L 109.71428571428571,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    0
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+    >
+      <g
+        opacity="0.4"
+        stroke="none"
+      >
+        <title>
+          one hundred
+        </title>
+        <circle
+          cx="384"
+          cy="0"
+          r="12"
+        />
+      </g>
+      <g
+        opacity="0.4"
+        stroke="none"
+      >
+        <title>
+          seventy
+        </title>
+        <circle
+          cx="329.1428571428571"
+          cy="57.599999999999994"
+          r="12"
+        />
+      </g>
+      <g
+        opacity="0.1"
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx="274.2857142857143"
+          cy="76.80000000000001"
+          r="12"
+        />
+      </g>
+      <g
+        opacity="0.8"
+        stroke="none"
+      >
+        <title>
+          eighty
+        </title>
+        <circle
+          cx="219.42857142857142"
+          cy="38.400000000000006"
+          r="12"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          forty
+        </title>
+        <circle
+          cx="164.57142857142856"
+          cy="115.2"
+          r="12"
+        />
+      </g>
+      <g
+        opacity="0.3"
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx="109.71428571428571"
+          cy="192"
+          r="12"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Chart pad 1`] = `
 .c0 {
   font-size: 18px;

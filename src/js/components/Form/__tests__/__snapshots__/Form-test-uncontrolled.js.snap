@@ -752,7 +752,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
         class="c2 FormField__FormFieldContentBox-m9hood-1"
       >
         <button
-          aria-label="Open Drop"
+          aria-label="test"
           class="c3 "
           type="button"
         >
@@ -2798,6 +2798,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         <div
           class="c19"
           id="test-radiobuttongroup"
+          role="radiogroup"
         >
           <label
             class="c20"
@@ -2921,7 +2922,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       >
         <button
           aria-label="Open Drop"
-          class="StyledButton-sc-323bzc-0 gYrxne Select__StyledSelectDropButton-sc-17idtfo-1 dYfCep"
+          class="StyledButton-sc-323bzc-0 gYrxne Select__StyledSelectDropButton-sc-17idtfo-2 lbRXvO"
           id="test-select"
           type="button"
         >
@@ -3018,6 +3019,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         <div
           class="StyledBox-sc-13pk1d4-0 dYebPD"
           id="test-radiobuttongroup"
+          role="radiogroup"
         >
           <label
             class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 hnWETW"
