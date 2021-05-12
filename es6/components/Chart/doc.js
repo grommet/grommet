@@ -24,7 +24,7 @@ export var doc = function doc(Chart) {
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between data points. This\n      is only used when the size specifies width as 'auto'."),
     onClick: PropTypes.func.description("Called when the user clicks on the\n     visualization. Clicking on individual bars or points are handled via\n     values[].onClick for those types of charts."),
     onHover: PropTypes.func.description("Called with a boolean argument\n      indicating when the user hovers onto or away from it.\n      This is only available when the type is line or area."),
-    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool]).description("What opacity to apply to the visuals. Supercedes 'color.opacity'"),
+    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool]).description("What opacity to apply to the visuals. Supersedes 'color.opacity'"),
     overflow: PropTypes.bool.description("Whether the chart strokes should overflow the component. Set this\n      to true for precise positioning when stacking charts or including\n      precise axes. Set this to false to have the graphical elements\n      align with the component boundaries.").defaultValue(false),
     pad: padPropType.description("Spacing around the outer edge of the drawing coordinate area.\n      Related to 'overflow', this allows control over how much space\n      is available for bars and points to overflow into."),
     pattern: patternPropType.description("When using an 'area' type, what pattern to fill the area with."),
@@ -45,7 +45,7 @@ export var doc = function doc(Chart) {
       // for accessibility of bars and points
       onClick: PropTypes.func,
       onHover: PropTypes.func,
-      opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
       thickness: thicknessType,
       value: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.arrayOf(PropTypes.number).isRequired]).isRequired
     })])).description("Array of value objects describing the data.\n      'value' is a tuple indicating the coordinate of the value or a triple\n      indicating the x coordinate and a range of two y coordinates.\n      'label' is a text string describing it.\n      'onHover' and 'onClick' only work when type='bar'.\n      'color', 'opacity', and 'thickness' allow bar and point charts to have\n      color variation per-value.").isRequired

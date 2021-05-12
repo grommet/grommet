@@ -10,12 +10,12 @@ var values = [{
   value: [10, 30],
   thickness: 29,
   color: 'status-critical',
-  opacity: 'medium'
+  opacity: true
 }, {
   value: [11, 37],
   thickness: 68,
   color: 'status-critical',
-  opacity: 'medium'
+  opacity: 0.4
 }, {
   value: [13, 10],
   thickness: 'small',

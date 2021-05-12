@@ -191,6 +191,11 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var useGradient = color && Array.isArray(color);
   var patternId;
 
+  function getOpacity(valueOpacity) {
+    return valueOpacity && theme.global.opacity[valueOpacity] || ( // eslint-disable-next-line no-nested-ternary
+    valueOpacity === true ? theme.global.opacity.medium : valueOpacity === false ? undefined : valueOpacity);
+  }
+
   var renderBars = function renderBars() {
     return (values || []).filter(function (_ref2) {
       var value = _ref2.value;
@@ -235,7 +240,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         fill: "none",
         stroke: valueColor ? (0, _utils.normalizeColor)(valueColor, theme) : undefined,
         strokeWidth: valueThickness ? (0, _utils.parseMetricToNum)(theme.global.edgeSize[valueThickness] || valueThickness) : undefined,
-        opacity: valueOpacity && theme.global.opacity[valueOpacity] || valueOpacity
+        opacity: getOpacity(valueOpacity)
       }, /*#__PURE__*/_react["default"].createElement("title", null, label), /*#__PURE__*/_react["default"].createElement("path", _extends({
         d: d
       }, hoverProps, clickProps, valueRest, {
@@ -408,7 +413,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         key: key,
         stroke: "none",
         fill: valueColor ? (0, _utils.normalizeColor)(valueColor, theme) : undefined,
-        opacity: valueOpacity && theme.global.opacity[valueOpacity] || valueOpacity
+        opacity: getOpacity(valueOpacity)
       }, /*#__PURE__*/_react["default"].createElement("title", null, label), renderPoint(value[0], value[1]), value[2] !== undefined && renderPoint(value[0], value[2]));
     });
   };
@@ -432,7 +437,16 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
   }
 
-  var opacity = propsOpacity || color && color.opacity ? theme.global.opacity[propsOpacity || color.opacity] || propsOpacity || color.opacity : undefined;
+  var opacity;
+
+  if (propsOpacity === true) {
+    opacity = theme.global.opacity.medium;
+  } else if (propsOpacity) {
+    opacity = theme.global.opacity[propsOpacity] ? theme.global.opacity[propsOpacity] : propsOpacity;
+  } else if (color && color.opacity) {
+    opacity = theme.global.opacity[color.opacity] ? theme.global.opacity[color.opacity] : color.opacity;
+  } else opacity = undefined;
+
   var stroke;
 
   if (type !== 'point') {

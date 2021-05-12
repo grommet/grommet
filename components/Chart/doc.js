@@ -33,7 +33,7 @@ var doc = function doc(Chart) {
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between data points. This\n      is only used when the size specifies width as 'auto'."),
     onClick: _reactDesc.PropTypes.func.description("Called when the user clicks on the\n     visualization. Clicking on individual bars or points are handled via\n     values[].onClick for those types of charts."),
     onHover: _reactDesc.PropTypes.func.description("Called with a boolean argument\n      indicating when the user hovers onto or away from it.\n      This is only available when the type is line or area."),
-    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool]).description("What opacity to apply to the visuals. Supercedes 'color.opacity'"),
+    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool]).description("What opacity to apply to the visuals. Supersedes 'color.opacity'"),
     overflow: _reactDesc.PropTypes.bool.description("Whether the chart strokes should overflow the component. Set this\n      to true for precise positioning when stacking charts or including\n      precise axes. Set this to false to have the graphical elements\n      align with the component boundaries.").defaultValue(false),
     pad: _propTypes.padPropType.description("Spacing around the outer edge of the drawing coordinate area.\n      Related to 'overflow', this allows control over how much space\n      is available for bars and points to overflow into."),
     pattern: _propTypes.patternPropType.description("When using an 'area' type, what pattern to fill the area with."),
@@ -54,7 +54,7 @@ var doc = function doc(Chart) {
       // for accessibility of bars and points
       onClick: _reactDesc.PropTypes.func,
       onHover: _reactDesc.PropTypes.func,
-      opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]),
+      opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool]),
       thickness: thicknessType,
       value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number.isRequired, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number).isRequired]).isRequired
     })])).description("Array of value objects describing the data.\n      'value' is a tuple indicating the coordinate of the value or a triple\n      indicating the x coordinate and a range of two y coordinates.\n      'label' is a text string describing it.\n      'onHover' and 'onClick' only work when type='bar'.\n      'color', 'opacity', and 'thickness' allow bar and point charts to have\n      color variation per-value.").isRequired
