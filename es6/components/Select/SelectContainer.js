@@ -258,7 +258,6 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, [activeIndex, isDisabled]);
   var onKeyDownOption = useCallback(function (event) {
     if (!onSearch) {
-      event.preventDefault();
       var nextActiveIndex = options.findIndex(function (e, index) {
         var label;
 
@@ -272,6 +271,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       });
 
       if (nextActiveIndex >= 0) {
+        event.preventDefault();
         setActiveIndex(nextActiveIndex);
         setKeyboardNavigation(true);
       }
