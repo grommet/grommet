@@ -5603,7 +5603,7 @@ function
 
 **opacity**
 
-What opacity to apply to the visuals. Supercedes 'color.opacity'
+What opacity to apply to the visuals. Supersedes 'color.opacity'
 
 \`\`\`
 weak
@@ -5839,7 +5839,8 @@ Required. Array of value objects describing the data.
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
@@ -14442,6 +14443,18 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+pie
+\`\`\`
+
+**direction**
+
+The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.
+
+\`\`\`
+horizontal
+vertical
 \`\`\`
 
 **value**
