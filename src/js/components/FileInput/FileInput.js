@@ -121,8 +121,13 @@ const FileInput = forwardRef(
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
     // unreachable by mouse click.
+    // If browse anchor or button is greater then remove button then
+    // rightoffset will take the larger width
     let rightOffset;
-    if (removeRef.current) {
+    if (removeRef.current && controlRef.current) {
+      const rightOffsetBrowse = controlRef.current.getBoundingClientRect()
+        .width;
+      const rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
       if (rightPad && typeof rightPad === 'string')
         rightOffset =
           removeRef.current.getBoundingClientRect().width +
@@ -131,6 +136,10 @@ const FileInput = forwardRef(
         rightOffset =
           controlRef.current.getBoundingClientRect().width +
           removeRef.current.getBoundingClientRect().width +
+          parseMetricToNum(theme.global.edgeSize.small) * 2;
+      } else if (rightOffsetBrowse > rightOffsetRemove) {
+        rightOffset =
+          controlRef.current.getBoundingClientRect().width +
           parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else rightOffset = removeRef.current.getBoundingClientRect().width;
     } else if (!files.length && controlRef.current) {
