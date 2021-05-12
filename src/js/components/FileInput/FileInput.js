@@ -260,6 +260,11 @@ const FileInput = forwardRef(
                 for (let i = 0; i < maxCount - files.length; i += 1) {
                   newFileList.push(fileList[i]);
                 }
+                // if the maximun value exceeds then 
+                // remove files from the event also.
+                if(!newFileList.length){
+                  event.target.value = "";
+                }
                 filesToAdd = newFileList;
               } else {
                 filesToAdd = fileList;
