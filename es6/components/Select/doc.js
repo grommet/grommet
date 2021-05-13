@@ -31,7 +31,7 @@ export var doc = function doc(Select) {
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline."),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.func, PropTypes.node]).description("A custom icon to be used when rendering the select. You can use false to\n       not render an icon at all."),
-    labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to determine the label of each option. If a string is\n      provided, it is used as the key to retrieve each option's label.\n      If a function is provided, it is called with the option and the\n      return value indicates the label."),
+    labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to retrieve the label for each option.\n      If a string is provided, it is used as the key to retrieve\n      a property of an\n      option object, which should be a string.\n      If a function is provided, it is called with the option and should\n      return a string or a React node.\n      The label is what is displayed to the user in the options list\n      drop down and for the selected option itself."),
     messages: PropTypes.shape({
       multiple: PropTypes.string
     }).description('Custom messages.'),
@@ -51,12 +51,12 @@ export var doc = function doc(Select) {
     selected: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Index of the currently selected option. When multiple, the set of\n      options selected. NOTE: This is deprecated in favor of indicating\n      the selected values via the 'value' property."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the text and icon.'),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.element, // deprecated, use valueLabel
-    PropTypes.object, PropTypes.number, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]))]).description("Currently selected value. This can be an array\n      when multiple. Passing an element allows the caller to control how\n      the value is rendered. Passing an element is deprecated. Instead,\n      use the 'valueLabel' property."),
+    PropTypes.object, PropTypes.number, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.number]))]).description("The currently selected value.\n    When 'valueKey' sets 'reduce', the value(s) here should match what the\n    'valueKey' would return for the corresponding selected option object.\n    Otherwise, the value should be one (or multiple, when multiple = true)\n    of the options from the options array.\n    Passing an element allows the caller to control how the value is rendered.\n    Passing an element is deprecated. Instead, use the 'valueLabel' property."),
     valueLabel: PropTypes.node.description("Provides custom rendering of the value. If not provided, Select\n      will render the value automatically."),
     valueKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.shape({
       key: PropTypes.string,
       reduce: PropTypes.bool
-    })]).description("When the options array contains objects, this property indicates how\n      to determine the value of each option. If a string is\n      provided, it is used as the key to retrieve each option's value.\n      If a function is provided, it is called with the option and the\n      return value indicates the value. If reduce is true, the value\n      coming via the key will be used for the onChange value and the value\n      property is expected to be reduced to align."),
+    })]).description("When the options array contains objects, this property indicates how\n      to retrieve the value of each option.\n      If a string is provided, it is used as the key to retrieve a\n      property of an option object.\n      If a function is provided, it is called with the option and should\n      return the value.\n      If reduce is true, this value will be used for the 'value'\n      delivered via 'onChange'."),
     emptySearchMessage: PropTypes.string.description("Empty option message to display when no matching results were found").defaultValue('No matches found')
   });
   return DocumentedSelect;

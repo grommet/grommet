@@ -116,10 +116,22 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var inputRef = (0, _react.useRef)();
   var formContext = (0, _react.useContext)(_FormContext.FormContext); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
+  // When 'valueKey' sets 'reduce', the value(s) here should match
+  // what the 'valueKey' would return for the corresponding
+  // selected option object.
+  // Otherwise, the value(s) should match the selected options.
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // valuedValue is the value mapped with any valueKey applied
+  // When the options array contains objects, this property indicates how
+  // to retrieve the value of each option.
+  // If a string is provided, it is used as the key to retrieve a
+  // property of an option object.
+  // If a function is provided, it is called with the option and should
+  // return the value.
+  // If reduce is true, this value will be used for the 'value'
+  // delivered via 'onChange'.
 
 
   var valuedValue = (0, _react.useMemo)(function () {
@@ -268,6 +280,14 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     return undefined;
   }, [value, valueLabel]); // text to show
+  // When the options array contains objects, this property indicates how
+  // to retrieve the value of each option.
+  // If a string is provided, it is used as the key to retrieve a
+  // property of an option object.
+  // If a function is provided, it is called with the option and should
+  // return the value.
+  // If reduce is true, this value will be used for the 'value'
+  // delivered via 'onChange'.
 
   var inputValue = (0, _react.useMemo)(function () {
     if (!selectValue) {
