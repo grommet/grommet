@@ -1666,8 +1666,12 @@ end",
         "name": "children",
       },
       Object {
-        "description": "The selected date in ISO8601 format",
-        "format": "string",
+        "description": "The selected date or array of dates in ISO8601 format.",
+        "format": "string
+[
+  string
+  [string]
+]",
         "name": "date",
       },
       Object {
