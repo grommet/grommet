@@ -176,41 +176,45 @@ const FileInput = forwardRef(
       >
         {(!files.length || files.length > 1) && (
           <Box fill="horizontal" direction="row" justify="between">
-            <Message {...theme.fileInput.message}>{message}</Message>
-            <Keyboard
-              onSpace={event => {
-                if (controlRef.current === event.target)
-                  inputRef.current.click();
-              }}
-              onEnter={event => {
-                if (controlRef.current === event.target)
-                  inputRef.current.click();
-              }}
-            >
-              {theme.fileInput.button ? (
-                <Button
-                  ref={controlRef}
-                  kind={theme.fileInput.button}
-                  label={messages.browse || 'browse'}
-                  onClick={() => {
-                    inputRef.current.click();
-                    inputRef.current.focus();
+            {files.length <= aggregateThreshold && (
+              <>
+                <Message {...theme.fileInput.message}>{message}</Message>
+                <Keyboard
+                  onSpace={event => {
+                    if (controlRef.current === event.target)
+                      inputRef.current.click();
                   }}
-                />
-              ) : (
-                <Anchor
-                  tabIndex={0}
-                  alignSelf="center"
-                  ref={controlRef}
-                  margin="small"
-                  onClick={() => {
-                    inputRef.current.click();
-                    inputRef.current.focus();
+                  onEnter={event => {
+                    if (controlRef.current === event.target)
+                      inputRef.current.click();
                   }}
-                  label={messages.browse || 'browse'}
-                />
-              )}
-            </Keyboard>
+                >
+                  {theme.fileInput.button ? (
+                    <Button
+                      ref={controlRef}
+                      kind={theme.fileInput.button}
+                      label={messages.browse || 'browse'}
+                      onClick={() => {
+                        inputRef.current.click();
+                        inputRef.current.focus();
+                      }}
+                    />
+                  ) : (
+                    <Anchor
+                      tabIndex={0}
+                      alignSelf="center"
+                      ref={controlRef}
+                      margin="small"
+                      onClick={() => {
+                        inputRef.current.click();
+                        inputRef.current.focus();
+                      }}
+                      label={messages.browse || 'browse'}
+                    />
+                  )}
+                </Keyboard>
+              </>
+            )}
           </Box>
         )}
         {files.length > aggregateThreshold && (
