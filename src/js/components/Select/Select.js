@@ -26,6 +26,10 @@ const SelectTextInput = styled(TextInput)`
   cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
+const HiddenInput = styled.input`
+  display: none;
+`;
+
 const StyledSelectDropButton = styled(DropButton)`
   ${props => !props.callerPlain && controlBorderStyle};
   ${props =>
@@ -273,6 +277,7 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
+          a11yTitle={a11yTitle}
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
@@ -327,7 +332,18 @@ const Select = forwardRef(
             background={theme.select.background}
           >
             <Box direction="row" flex basis="auto">
-              {selectValue || (
+              {selectValue ? (
+                <>
+                  {selectValue}
+                  <HiddenInput
+                    type="text"
+                    id={id ? `${id}__input` : undefined}
+                    value={inputValue}
+                    ref={inputRef}
+                    readOnly
+                  />
+                </>
+              ) : (
                 <SelectTextInput
                   a11yTitle={
                     a11yTitle &&
