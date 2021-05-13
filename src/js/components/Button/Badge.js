@@ -32,6 +32,9 @@ export const Badge = ({ children, content }) => {
   // scale badge to fit its contents, leaving space horizontally
   // that is proportional to vertical space
   useLayoutEffect(() => {
+    // when window resizes and hits a responsive breakpoint, width of the badge
+    // can change (because pad is responsive, etc.). we want to recalculate
+    // width since badge offset is reliant on its dimensions.
     const onResize = () => {
       if (contentRef && contentRef.current) {
         if (
