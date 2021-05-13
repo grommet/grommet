@@ -20,8 +20,8 @@ exports[`List background array 1`] = `
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -45,7 +45,7 @@ exports[`List background array 1`] = `
   max-width: 100%;
   background-color: #FD6FFF;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -69,7 +69,7 @@ exports[`List background array 1`] = `
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -96,8 +96,8 @@ exports[`List background array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -117,7 +117,7 @@ exports[`List background array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -137,7 +137,7 @@ exports[`List background array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -205,8 +205,8 @@ exports[`List background string 1`] = `
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -230,7 +230,7 @@ exports[`List background string 1`] = `
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -257,8 +257,8 @@ exports[`List background string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -278,7 +278,7 @@ exports[`List background string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -410,7 +410,7 @@ exports[`List border boolean true 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -437,7 +437,7 @@ exports[`List border boolean true 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border: solid 1px rgba(0,0,0,0.33);
+    border: solid 1px [object Object];
   }
 }
 
@@ -578,8 +578,8 @@ exports[`List border side 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -601,7 +601,7 @@ exports[`List border side 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -628,8 +628,8 @@ exports[`List border side 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -649,7 +649,7 @@ exports[`List border side 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -705,8 +705,8 @@ exports[`List children render 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -728,7 +728,7 @@ exports[`List children render 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -755,8 +755,8 @@ exports[`List children render 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -776,7 +776,7 @@ exports[`List children render 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -832,8 +832,8 @@ exports[`List data objects 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -855,7 +855,7 @@ exports[`List data objects 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -882,8 +882,8 @@ exports[`List data objects 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -903,7 +903,7 @@ exports[`List data objects 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -959,8 +959,8 @@ exports[`List data strings 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -982,7 +982,7 @@ exports[`List data strings 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1009,8 +1009,8 @@ exports[`List data strings 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1030,7 +1030,7 @@ exports[`List data strings 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1112,8 +1112,8 @@ exports[`List events ArrowDown key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1136,9 +1136,9 @@ exports[`List events ArrowDown key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1174,8 +1174,8 @@ exports[`List events ArrowDown key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1219,7 +1219,7 @@ exports[`List events ArrowDown key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1278,8 +1278,8 @@ exports[`List events ArrowDown key on last element 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1302,9 +1302,9 @@ exports[`List events ArrowDown key on last element 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1340,8 +1340,8 @@ exports[`List events ArrowDown key on last element 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1373,7 +1373,7 @@ exports[`List events ArrowDown key on last element 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1432,7 +1432,7 @@ exports[`List events ArrowUp key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1455,10 +1455,10 @@ exports[`List events ArrowUp key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1506,7 +1506,7 @@ exports[`List events ArrowUp key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1538,8 +1538,8 @@ exports[`List events ArrowUp key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1598,8 +1598,8 @@ exports[`List events Enter key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1622,7 +1622,7 @@ exports[`List events Enter key 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1658,8 +1658,8 @@ exports[`List events Enter key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1679,7 +1679,7 @@ exports[`List events Enter key 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1729,13 +1729,13 @@ exports[`List events Enter key 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 itidwz List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 gjGJvx List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 jYYRCN List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       beta
@@ -1762,8 +1762,8 @@ exports[`List events focus and blur 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1786,9 +1786,9 @@ exports[`List events focus and blur 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1825,8 +1825,8 @@ exports[`List events focus and blur 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1858,7 +1858,7 @@ exports[`List events focus and blur 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -1908,13 +1908,13 @@ exports[`List events focus and blur 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 itidwz List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 dwEPUd List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       beta
@@ -1941,8 +1941,8 @@ exports[`List events mouse events 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1965,9 +1965,9 @@ exports[`List events mouse events 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2003,8 +2003,8 @@ exports[`List events mouse events 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -2036,7 +2036,7 @@ exports[`List events mouse events 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -2086,13 +2086,13 @@ exports[`List events mouse events 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 itidwz List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 dwEPUd List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       beta
@@ -2201,8 +2201,8 @@ exports[`List events should apply pagination styling 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2224,7 +2224,7 @@ exports[`List events should apply pagination styling 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2421,7 +2421,7 @@ exports[`List events should apply pagination styling 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -2612,8 +2612,8 @@ exports[`List events should apply pagination styling 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -2633,7 +2633,7 @@ exports[`List events should apply pagination styling 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -3079,8 +3079,8 @@ exports[`List events should not show paginate controls when length of data < ste
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3102,7 +3102,7 @@ exports[`List events should not show paginate controls when length of data < ste
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3129,8 +3129,8 @@ exports[`List events should not show paginate controls when length of data < ste
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -3150,7 +3150,7 @@ exports[`List events should not show paginate controls when length of data < ste
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -3297,8 +3297,8 @@ exports[`List events should paginate 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3320,7 +3320,7 @@ exports[`List events should paginate 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3515,7 +3515,7 @@ exports[`List events should paginate 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -3706,8 +3706,8 @@ exports[`List events should paginate 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -3727,7 +3727,7 @@ exports[`List events should paginate 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -4235,8 +4235,8 @@ exports[`List events should render correct num items per page (step) 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4258,7 +4258,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4453,7 +4453,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -4644,8 +4644,8 @@ exports[`List events should render correct num items per page (step) 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -4665,7 +4665,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -5063,8 +5063,8 @@ exports[`List events should render new data when page changes 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5086,7 +5086,7 @@ exports[`List events should render new data when page changes 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5281,7 +5281,7 @@ exports[`List events should render new data when page changes 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -5472,8 +5472,8 @@ exports[`List events should render new data when page changes 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -5493,7 +5493,7 @@ exports[`List events should render new data when page changes 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -5912,227 +5912,227 @@ exports[`List events should render new data when page changes 2`] = `
       class="List__StyledList-sc-130gdqg-0 hnhbzG"
     >
       <li
-        class="StyledBox-sc-13pk1d4-0 jBwehH List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 fwGppr List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-50
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-51
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-52
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-53
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-54
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-55
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-56
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-57
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-58
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-59
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-60
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-61
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-62
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-63
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-64
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-65
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-66
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-67
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-68
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-69
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-70
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-71
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-72
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-73
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-74
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-75
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-76
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-77
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-78
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-79
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-80
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-81
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-82
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-83
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-84
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-85
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-86
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-87
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-88
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-89
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-90
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-91
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-92
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-93
       </li>
       <li
-        class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+        class="StyledBox-sc-13pk1d4-0 ivLbHJ List__StyledItem-sc-130gdqg-1 eAQvPD"
       >
         entry-94
       </li>
@@ -6196,7 +6196,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 jSGkfF StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               2
@@ -6336,8 +6336,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6359,7 +6359,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6554,7 +6554,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -6745,8 +6745,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -6766,7 +6766,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -7274,8 +7274,8 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7297,7 +7297,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7477,7 +7477,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -7665,8 +7665,8 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -7686,7 +7686,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8080,8 +8080,8 @@ exports[`List itemProps 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8105,8 +8105,8 @@ exports[`List itemProps 1`] = `
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 2px rgba(0,0,0,0.33);
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-top: solid 2px [object Object];
+  border-bottom: solid 2px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8130,8 +8130,8 @@ exports[`List itemProps 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8151,8 +8151,8 @@ exports[`List itemProps 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-top: solid 2px rgba(0,0,0,0.33);
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-top: solid 2px [object Object];
+    border-bottom: solid 2px [object Object];
   }
 }
 
@@ -8200,8 +8200,8 @@ exports[`List margin object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8223,7 +8223,7 @@ exports[`List margin object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8251,8 +8251,8 @@ exports[`List margin object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8272,7 +8272,7 @@ exports[`List margin object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8328,8 +8328,8 @@ exports[`List margin string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8351,7 +8351,7 @@ exports[`List margin string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8378,8 +8378,8 @@ exports[`List margin string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8399,7 +8399,7 @@ exports[`List margin string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8455,8 +8455,8 @@ exports[`List onClickItem 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8479,7 +8479,7 @@ exports[`List onClickItem 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8515,8 +8515,8 @@ exports[`List onClickItem 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8536,7 +8536,7 @@ exports[`List onClickItem 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8586,13 +8586,13 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 itidwz List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 brxWKH"
+      class="StyledBox-sc-13pk1d4-0 dwEPUd List__StyledItem-sc-130gdqg-1 brxWKH"
       tabindex="-1"
     >
       beta
@@ -8619,8 +8619,8 @@ exports[`List pad object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8640,7 +8640,7 @@ exports[`List pad object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8665,8 +8665,8 @@ exports[`List pad object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8679,7 +8679,7 @@ exports[`List pad object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8728,8 +8728,8 @@ exports[`List pad string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8748,7 +8748,7 @@ exports[`List pad string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8772,8 +8772,8 @@ exports[`List pad string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8785,7 +8785,7 @@ exports[`List pad string 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8833,8 +8833,8 @@ exports[`List primaryKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8856,7 +8856,7 @@ exports[`List primaryKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -8889,8 +8889,8 @@ exports[`List primaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8910,7 +8910,7 @@ exports[`List primaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -8978,8 +8978,8 @@ exports[`List secondaryKey 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -9009,7 +9009,7 @@ exports[`List secondaryKey 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -9061,8 +9061,8 @@ exports[`List secondaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
@@ -9082,7 +9082,7 @@ exports[`List secondaryKey 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 

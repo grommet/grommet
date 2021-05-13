@@ -1490,7 +1490,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1505,8 +1505,8 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1521,8 +1521,8 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.33);
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px [object Object];
+  border-right: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1537,7 +1537,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1552,7 +1552,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1567,7 +1567,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1582,7 +1582,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1612,7 +1612,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 2px rgba(0,0,0,0.33);
+  border: solid 2px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1627,7 +1627,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 4px rgba(0,0,0,0.33);
+  border: solid 4px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1642,7 +1642,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 12px rgba(0,0,0,0.33);
+  border: solid 12px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1657,7 +1657,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 24px rgba(0,0,0,0.33);
+  border: solid 24px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1672,7 +1672,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: dotted 1px rgba(0,0,0,0.33);
+  border: dotted 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1687,7 +1687,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: double 1px rgba(0,0,0,0.33);
+  border: double 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1702,7 +1702,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: dashed 1px rgba(0,0,0,0.33);
+  border: dashed 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1756,50 +1756,50 @@ exports[`Box border 1`] = `
   position: absolute;
   width: 100%;
   top: 5.5px;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
 }
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
+    border: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-left: solid 1px rgba(0,0,0,0.33);
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px [object Object];
+    border-right: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-top: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-left: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px [object Object];
   }
 }
 
@@ -1811,43 +1811,43 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border: solid 2px rgba(0,0,0,0.33);
+    border: solid 2px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c10 {
-    border: solid 4px rgba(0,0,0,0.33);
+    border: solid 4px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c11 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 6px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c12 {
-    border: solid 12px rgba(0,0,0,0.33);
+    border: solid 12px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c13 {
-    border: dotted 1px rgba(0,0,0,0.33);
+    border: dotted 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c14 {
-    border: double 1px rgba(0,0,0,0.33);
+    border: double 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c15 {
-    border: dashed 1px rgba(0,0,0,0.33);
+    border: dashed 1px [object Object];
   }
 }
 
@@ -1871,7 +1871,7 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c18:after {
-    border-top: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
   }
 }
 
@@ -2863,7 +2863,7 @@ exports[`Box hoverIndicator 1`] = `
 }
 
 .c2:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 

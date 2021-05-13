@@ -1,5 +1,3 @@
-import { rgba } from 'polished';
-
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -17,8 +15,7 @@ import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
-import { deepFreeze, deepMerge } from '../utils/object';
-import { parseMetricToNum } from '../utils/mixins';
+import { getRGBA, deepFreeze, deepMerge, parseMetricToNum } from '../utils';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -50,7 +47,7 @@ const lightColors = [
 const focusColor = accentColors[0];
 
 const colors = {
-  active: rgba(221, 221, 221, 0.5),
+  active: getRGBA(221, 221, 221, 0.5),
   'background-back': {
     dark: '#33333308',
     light: '#EDEDED',
@@ -67,8 +64,8 @@ const colors = {
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: rgba(255, 255, 255, 0.33),
-    light: rgba(0, 0, 0, 0.33),
+    dark: getRGBA(255, 255, 255, 0.33),
+    light: getRGBA(0, 0, 0, 0.33),
   },
   brand: brandColor,
   control: {

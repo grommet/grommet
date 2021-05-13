@@ -35,7 +35,7 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -59,7 +59,7 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -104,18 +104,18 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
@@ -168,7 +168,7 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -192,7 +192,7 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -237,18 +237,18 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
@@ -303,7 +303,7 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -327,7 +327,7 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -372,18 +372,18 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
@@ -451,7 +451,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -475,7 +475,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -520,18 +520,18 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
@@ -584,7 +584,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -608,7 +608,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -653,18 +653,18 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
@@ -983,7 +983,7 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-webkit-slider-thumb {
@@ -1007,7 +1007,7 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
 }
 
 .c1::-moz-range-thumb {
@@ -1052,18 +1052,18 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: undefined;
   border-color: transparent;
 }
 

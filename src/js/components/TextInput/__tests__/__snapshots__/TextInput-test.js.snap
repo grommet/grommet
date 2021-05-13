@@ -13,7 +13,7 @@ exports[`TextInput a11yTitle 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -94,7 +94,7 @@ exports[`TextInput basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -184,7 +184,7 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -486,7 +486,7 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 eZRMGn"
+      class="StyledTextInput-sc-1x30a0s-0 hWFcYq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -739,7 +739,7 @@ exports[`TextInput close suggestion drop 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -1041,7 +1041,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 eZRMGn"
+      class="StyledTextInput-sc-1x30a0s-0 hWFcYq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1074,7 +1074,7 @@ exports[`TextInput complex suggestions 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -1380,7 +1380,7 @@ exports[`TextInput disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   opacity: 0.3;
   cursor: default;
@@ -1473,7 +1473,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -1555,7 +1555,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 eZRMGn"
+      class="StyledTextInput-sc-1x30a0s-0 hWFcYq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1612,7 +1612,7 @@ exports[`TextInput icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -1761,7 +1761,7 @@ exports[`TextInput icon reverse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -2326,7 +2326,7 @@ exports[`TextInput select a suggestion with onSelect 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -2422,7 +2422,7 @@ exports[`TextInput select a suggestion with onSuggestionSelect 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -2520,7 +2520,7 @@ exports[`TextInput select suggestion 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2824,7 +2824,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 fcSdEK"
+      class="StyledTextInput-sc-1x30a0s-0 kRqZYH"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2857,7 +2857,7 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -2953,7 +2953,7 @@ exports[`TextInput should have padding when plain 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3050,7 +3050,7 @@ exports[`TextInput should hide non-string placeholder when having a value 1`] = 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -3146,7 +3146,7 @@ exports[`TextInput should not have accessibility violations 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -3241,7 +3241,7 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3340,7 +3340,7 @@ exports[`TextInput should only show default placeholder when placeholder is a
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -3424,7 +3424,7 @@ exports[`TextInput should only show default placeholder when placeholder is a
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 eZRMGn"
+      class="StyledTextInput-sc-1x30a0s-0 hWFcYq"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
@@ -3458,7 +3458,7 @@ exports[`TextInput should show non-string placeholder 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -3796,7 +3796,7 @@ exports[`TextInput suggestions 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -4108,7 +4108,7 @@ exports[`TextInput textAlign end 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   text-align: right;
 }

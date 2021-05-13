@@ -271,45 +271,45 @@ exports[`Grid border 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px [object Object];
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
+  border-bottom: solid 1px [object Object];
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  border-left: solid 1px rgba(0,0,0,0.33);
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px [object Object];
+  border-right: solid 1px [object Object];
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  border-left: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px [object Object];
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c7 {
   display: grid;
   box-sizing: border-box;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px [object Object];
 }
 
 .c8 {
@@ -321,43 +321,43 @@ exports[`Grid border 1`] = `
 .c9 {
   display: grid;
   box-sizing: border-box;
-  border: solid 2px rgba(0,0,0,0.33);
+  border: solid 2px [object Object];
 }
 
 .c10 {
   display: grid;
   box-sizing: border-box;
-  border: solid 4px rgba(0,0,0,0.33);
+  border: solid 4px [object Object];
 }
 
 .c11 {
   display: grid;
   box-sizing: border-box;
-  border: solid 12px rgba(0,0,0,0.33);
+  border: solid 12px [object Object];
 }
 
 .c12 {
   display: grid;
   box-sizing: border-box;
-  border: solid 24px rgba(0,0,0,0.33);
+  border: solid 24px [object Object];
 }
 
 .c13 {
   display: grid;
   box-sizing: border-box;
-  border: dotted 1px rgba(0,0,0,0.33);
+  border: dotted 1px [object Object];
 }
 
 .c14 {
   display: grid;
   box-sizing: border-box;
-  border: double 1px rgba(0,0,0,0.33);
+  border: double 1px [object Object];
 }
 
 .c15 {
   display: grid;
   box-sizing: border-box;
-  border: dashed 1px rgba(0,0,0,0.33);
+  border: dashed 1px [object Object];
 }
 
 .c16 {
@@ -369,45 +369,45 @@ exports[`Grid border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
+    border: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
+    border-bottom: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-left: solid 1px rgba(0,0,0,0.33);
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px [object Object];
+    border-right: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-top: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-left: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px [object Object];
   }
 }
 
@@ -419,43 +419,43 @@ exports[`Grid border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border: solid 2px rgba(0,0,0,0.33);
+    border: solid 2px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c10 {
-    border: solid 4px rgba(0,0,0,0.33);
+    border: solid 4px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c11 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 6px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c12 {
-    border: solid 12px rgba(0,0,0,0.33);
+    border: solid 12px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c13 {
-    border: dotted 1px rgba(0,0,0,0.33);
+    border: dotted 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c14 {
-    border: double 1px rgba(0,0,0,0.33);
+    border: double 1px [object Object];
   }
 }
 
 @media only screen and (max-width:768px) {
   .c15 {
-    border: dashed 1px rgba(0,0,0,0.33);
+    border: dashed 1px [object Object];
   }
 }
 

@@ -23,7 +23,7 @@ exports[`TextArea Event tests onFocus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -107,7 +107,7 @@ exports[`TextArea basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -195,7 +195,7 @@ exports[`TextArea disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -290,7 +290,7 @@ exports[`TextArea fill 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   height: 100%;
 }
@@ -379,7 +379,7 @@ exports[`TextArea focusIndicator 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -467,7 +467,7 @@ exports[`TextArea placeholder 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -556,7 +556,7 @@ exports[`TextArea plain 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -648,7 +648,7 @@ exports[`TextArea resize false 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   resize: none;
 }
@@ -737,7 +737,7 @@ exports[`TextArea resize horizontal 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   resize: horizontal;
 }
@@ -826,7 +826,7 @@ exports[`TextArea resize true 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   resize: both;
 }
@@ -915,7 +915,7 @@ exports[`TextArea resize vertical 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
   resize: vertical;
 }
@@ -1006,7 +1006,7 @@ exports[`TextArea size large 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -1097,7 +1097,7 @@ exports[`TextArea size medium 1`] = `
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -1188,7 +1188,7 @@ exports[`TextArea size small 1`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 

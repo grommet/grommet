@@ -265,7 +265,7 @@ exports[`Grommet custom theme 1`] = `
   padding: 11px;
   font-weight: bold;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 

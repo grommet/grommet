@@ -1,8 +1,6 @@
-import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-import { deepFreeze } from '../utils/object';
-import { normalizeColor } from '../utils/colors';
+import { normalizeColor, deepFreeze, getRGBA } from '../utils';
 
 const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 const neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
@@ -17,7 +15,7 @@ const statusColors = {
 const backgroundColor = '#111111';
 
 const colors = {
-  active: rgba(102, 102, 102, 0.5),
+  active: getRGBA(102, 102, 102, 0.5),
   background: backgroundColor,
   black: '#000000',
   brand: '#FD6FFF',
@@ -76,7 +74,7 @@ export const dark = deepFreeze({
   layer: {
     background: backgroundColor,
     overlay: {
-      background: rgba(48, 48, 48, 0.5),
+      background: getRGBA(48, 48, 48, 0.5),
     },
   },
 });

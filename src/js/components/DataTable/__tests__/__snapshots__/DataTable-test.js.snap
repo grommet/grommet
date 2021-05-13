@@ -53,7 +53,7 @@ exports[`DataTable !primaryKey 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -271,7 +271,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   max-width: 400px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -287,7 +287,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   max-width: 200px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -522,7 +522,7 @@ exports[`DataTable aggregate 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -547,7 +547,7 @@ exports[`DataTable aggregate 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -780,7 +780,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -805,7 +805,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1087,7 +1087,7 @@ exports[`DataTable background 1`] = `
   text-align: start;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1116,7 +1116,7 @@ exports[`DataTable background 1`] = `
   text-align: start;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1129,7 +1129,7 @@ exports[`DataTable background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1156,7 +1156,7 @@ exports[`DataTable background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1171,7 +1171,7 @@ exports[`DataTable background 1`] = `
   text-align: start;
   background-color: #81FCED;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1672,7 +1672,7 @@ exports[`DataTable basic 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1889,7 +1889,7 @@ exports[`DataTable border 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1902,7 +1902,7 @@ exports[`DataTable border 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2550,7 +2550,7 @@ exports[`DataTable click 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2687,7 +2687,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -2823,7 +2823,7 @@ exports[`DataTable custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-inline-end: solid 1px rgba(0,0,0,0.33);
+  border-inline-end: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3110,7 +3110,7 @@ exports[`DataTable custom theme 1`] = `
   overflow: hidden;
   text-align: start;
   background: skyblue;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c4 {
@@ -3441,7 +3441,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gnXESi StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ctEqJp StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         />
         <th
@@ -3477,7 +3477,7 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 edcLsf"
+                  class="StyledBox-sc-13pk1d4-0 juvWMw"
                 />
               </div>
               <div
@@ -3732,7 +3732,7 @@ exports[`DataTable fill 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -3757,7 +3757,7 @@ exports[`DataTable fill 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4276,7 +4276,7 @@ exports[`DataTable footer 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4301,7 +4301,7 @@ exports[`DataTable footer 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4483,8 +4483,6 @@ exports[`DataTable groupBy 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -4600,7 +4598,7 @@ exports[`DataTable groupBy 1`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -4654,7 +4652,7 @@ exports[`DataTable groupBy 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -4664,7 +4662,7 @@ exports[`DataTable groupBy 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4921,11 +4919,11 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jsTfv"
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -4933,7 +4931,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -4947,7 +4945,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -4961,7 +4959,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -4987,7 +4985,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -4995,7 +4993,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -5038,7 +5036,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -5046,7 +5044,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -5094,8 +5092,6 @@ exports[`DataTable groupBy expand 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -5211,7 +5207,7 @@ exports[`DataTable groupBy expand 1`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -5265,7 +5261,7 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -5275,7 +5271,7 @@ exports[`DataTable groupBy expand 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -5620,8 +5616,6 @@ exports[`DataTable groupBy property 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -5737,7 +5731,7 @@ exports[`DataTable groupBy property 1`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -5791,7 +5785,7 @@ exports[`DataTable groupBy property 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -5801,7 +5795,7 @@ exports[`DataTable groupBy property 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6058,11 +6052,11 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jsTfv"
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -6070,7 +6064,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6084,7 +6078,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6098,7 +6092,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6124,7 +6118,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -6132,7 +6126,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6175,7 +6169,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -6183,7 +6177,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6282,7 +6276,7 @@ exports[`DataTable groupBy toggle 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6532,8 +6526,6 @@ exports[`DataTable groupBy toggle 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c3 g {
@@ -6603,7 +6595,7 @@ exports[`DataTable groupBy toggle 2`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -6657,7 +6649,7 @@ exports[`DataTable groupBy toggle 2`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -6698,7 +6690,7 @@ exports[`DataTable groupBy toggle 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6712,7 +6704,7 @@ exports[`DataTable groupBy toggle 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6734,8 +6726,6 @@ exports[`DataTable groupBy toggle 2`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c4 g {
@@ -6824,7 +6814,7 @@ exports[`DataTable groupBy toggle 2`] = `
 }
 
 .c2:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -7040,7 +7030,7 @@ exports[`DataTable groupBy toggle 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -7054,7 +7044,7 @@ exports[`DataTable groupBy toggle 3`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -7263,8 +7253,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -7472,7 +7460,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -7585,7 +7573,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -7597,7 +7585,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: 1px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c15 {
@@ -7606,7 +7594,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8130,8 +8118,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -8313,7 +8299,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -8426,7 +8412,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -8438,7 +8424,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: 1px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c15 {
@@ -8447,7 +8433,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8812,8 +8798,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -9021,7 +9005,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -9134,7 +9118,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -9146,7 +9130,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   width: 1px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c15 {
@@ -9155,7 +9139,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -9526,8 +9510,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c6 g {
@@ -9709,7 +9691,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -9814,7 +9796,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -9826,7 +9808,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   width: 1px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c14 {
@@ -9835,7 +9817,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -10184,11 +10166,11 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jsTfv"
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10196,7 +10178,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10210,7 +10192,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iddqml StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10271,7 +10253,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10285,7 +10267,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10311,7 +10293,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10319,7 +10301,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10422,7 +10404,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10430,7 +10412,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10544,11 +10526,11 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jsTfv"
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10556,7 +10538,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10570,7 +10552,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iddqml StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10596,7 +10578,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10610,7 +10592,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10636,7 +10618,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10644,7 +10626,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10712,7 +10694,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
+            class="StyledButton-sc-323bzc-0 bMSmzI"
             type="button"
           >
             <div
@@ -10720,7 +10702,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 iknUQp"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10921,7 +10903,7 @@ exports[`DataTable onSort 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -11142,7 +11124,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11243,7 +11225,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11548,7 +11530,7 @@ exports[`DataTable onSort external 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -11791,7 +11773,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11871,7 +11853,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -12055,7 +12037,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 12px;
 }
 
@@ -12074,7 +12056,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding: 12px;
 }
 
@@ -12084,7 +12066,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -12109,7 +12091,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -12122,7 +12104,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12623,7 +12605,7 @@ exports[`DataTable paths 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12842,7 +12824,7 @@ exports[`DataTable pin + background 1`] = `
   text-align: start;
   background-color: blue;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12882,7 +12864,7 @@ exports[`DataTable pin + background 1`] = `
   text-align: start;
   background-color: green;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12895,7 +12877,7 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12908,7 +12890,7 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13495,7 +13477,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(237,237,237,0.8);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13522,7 +13504,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(237,237,237,0.8);
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13537,7 +13519,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(255,255,255,0.8);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13552,7 +13534,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(255,255,255,0.8);
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13567,7 +13549,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(51,51,51,0.8);
   color: #f8f8f8;
-  border-bottom: solid 1px rgba(255,255,255,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -13582,7 +13564,7 @@ exports[`DataTable pin + background context 1`] = `
   text-align: start;
   background-color: rgba(51,51,51,0.8);
   color: #f8f8f8;
-  border-top: solid 1px rgba(255,255,255,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -14131,7 +14113,7 @@ exports[`DataTable pin 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -14156,7 +14138,7 @@ exports[`DataTable pin 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -14718,7 +14700,7 @@ exports[`DataTable placeholder 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -14743,7 +14725,7 @@ exports[`DataTable placeholder 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -15114,7 +15096,7 @@ exports[`DataTable primaryKey 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -15334,7 +15316,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   max-width: 66.66%;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -15350,7 +15332,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   max-width: 33.33%;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -15603,7 +15585,7 @@ exports[`DataTable replace 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -15830,7 +15812,7 @@ exports[`DataTable resizeable 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-inline-end: solid 1px rgba(0,0,0,0.33);
+  border-inline-end: solid 1px [object Object];
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -15918,7 +15900,7 @@ exports[`DataTable resizeable 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -16187,8 +16169,6 @@ exports[`DataTable rowDetails 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c11 g {
@@ -16310,7 +16290,7 @@ exports[`DataTable rowDetails 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -16363,7 +16343,7 @@ exports[`DataTable rowDetails 1`] = `
   max-width: 48px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -16373,7 +16353,7 @@ exports[`DataTable rowDetails 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -16742,8 +16722,6 @@ exports[`DataTable rowDetails condtional 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c11 g {
@@ -16865,7 +16843,7 @@ exports[`DataTable rowDetails condtional 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -16918,7 +16896,7 @@ exports[`DataTable rowDetails condtional 1`] = `
   max-width: 48px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 0px;
 }
 
@@ -16928,7 +16906,7 @@ exports[`DataTable rowDetails condtional 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -17351,7 +17329,7 @@ exports[`DataTable rowProps 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -17366,7 +17344,7 @@ exports[`DataTable rowProps 1`] = `
   text-align: start;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding: 48px;
 }
 
@@ -17388,7 +17366,7 @@ exports[`DataTable rowProps 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -17570,8 +17548,6 @@ exports[`DataTable search 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: rgba(0,0,0,0.33);
-  stroke: rgba(0,0,0,0.33);
 }
 
 .c9 g {
@@ -17703,7 +17679,7 @@ exports[`DataTable search 1`] = `
 }
 
 .c8:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
 }
 
@@ -17753,7 +17729,7 @@ exports[`DataTable search 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -17934,7 +17910,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -17984,7 +17960,7 @@ exports[`DataTable search 2`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid;
   border-radius: 4px;
 }
 
@@ -18311,7 +18287,7 @@ exports[`DataTable select 1`] = `
   width: 1px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
 }
 
 .c11 {
@@ -18320,7 +18296,7 @@ exports[`DataTable select 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -18573,7 +18549,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iddqml StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -18630,7 +18606,7 @@ exports[`DataTable select 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -19103,7 +19079,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -19261,7 +19237,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -21149,7 +21125,7 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -21317,7 +21293,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -21833,7 +21809,7 @@ exports[`DataTable should paginate 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -21991,7 +21967,7 @@ exports[`DataTable should paginate 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -24121,7 +24097,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -24279,7 +24255,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -25363,7 +25339,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -25521,7 +25497,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -27352,7 +27328,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
           >
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
               scope="col"
             >
               <div
@@ -27366,7 +27342,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               </div>
             </th>
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
               scope="col"
             >
               <div
@@ -28841,7 +28817,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 jSGkfF StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               2
@@ -29200,7 +29176,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -29358,7 +29334,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -31473,7 +31449,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.4);
+  background-color: active;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -31628,7 +31604,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -33453,7 +33429,7 @@ exports[`DataTable sort 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -33862,7 +33838,7 @@ exports[`DataTable sort external 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -34271,7 +34247,7 @@ exports[`DataTable sort nested object 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -34679,7 +34655,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -35043,7 +35019,7 @@ exports[`DataTable sortable 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -35264,7 +35240,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -35365,7 +35341,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 CIlMR StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -35552,7 +35528,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   max-width: 384px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -35568,7 +35544,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   max-width: 192px;
   overflow: hidden;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -35828,7 +35804,7 @@ exports[`DataTable units 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -35853,7 +35829,7 @@ exports[`DataTable units 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px [object Object];
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
