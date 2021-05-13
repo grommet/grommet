@@ -54,7 +54,7 @@ var padStyle = function padStyle(_ref) {
 
 
 var basicStyle = function basicStyle(props) {
-  return css(["border:none;", ";", " ", " > svg{vertical-align:bottom;}"], radiusStyle(props), padStyle(props), fontStyle(props));
+  return css(["border:none;", ";", " ", " ", ""], radiusStyle(props), padStyle(props), fontStyle(props), props.badge ? "\n  svg {\n    vertical-align: bottom;\n  }" : "> svg {\n    vertical-align: bottom;\n  }");
 };
 
 var getPath = function getPath(theme, path) {

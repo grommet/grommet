@@ -2,7 +2,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { Children } from 'react';
+import React, { Children, forwardRef } from 'react';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
 var buildStyledChildren = function buildStyledChildren(_ref) {
@@ -27,7 +27,7 @@ var buildStyledChildren = function buildStyledChildren(_ref) {
   };
 };
 
-var Stack = function Stack(_ref2) {
+var Stack = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var anchor = _ref2.anchor,
       children = _ref2.children,
       fill = _ref2.fill,
@@ -55,10 +55,11 @@ var Stack = function Stack(_ref2) {
     interactiveIndex: interactiveIndex
   }));
   return /*#__PURE__*/React.createElement(StyledStack, _extends({
+    ref: ref,
     fillContainer: fill
   }, rest), styledChildren);
-};
-
+});
+Stack.displayName = 'Stack';
 var StackDoc;
 
 if (process.env.NODE_ENV !== 'production') {

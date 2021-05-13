@@ -15,6 +15,8 @@ var _Box = require("../Box");
 
 var _Tip = require("../Tip");
 
+var _Badge = require("./Badge");
+
 var _StyledButton = require("./StyledButton");
 
 var _StyledButtonKind = require("./StyledButtonKind");
@@ -90,11 +92,42 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
   return result[1] || undefined;
 };
 
+var getPropertyColor = function getPropertyColor(property, paths, theme, kind, primary) {
+  if (paths === void 0) {
+    paths = [];
+  }
+
+  var result;
+
+  if (kind) {
+    var obj = typeof kind === 'object' && kind || theme.button; // index 0 is default state
+
+    if (paths[0]) {
+      var parts = paths[0].split('.');
+
+      while (obj && parts.length) {
+        obj = obj[parts.shift()];
+      }
+    }
+
+    if (obj) {
+      result = obj[property] || obj[property] && obj[property].color;
+    }
+  } else if (primary && theme && theme.button && theme.button.primary) {
+    result = theme.button.primary[property] || theme.button.primary[property] && theme.button.primary[property].color;
+  } else {
+    result = theme && theme.button && theme.button[property] || theme && theme.button && theme.button[property] && theme.button[property].color;
+  }
+
+  return result;
+};
+
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var active = _ref.active,
       _ref$align = _ref.align,
       align = _ref$align === void 0 ? 'center' : _ref$align,
       ariaLabel = _ref['aria-label'],
+      badgeProp = _ref.badge,
       color = _ref.color,
       children = _ref.children,
       disabled = _ref.disabled,
@@ -124,7 +157,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _ref$a11yTitle = _ref.a11yTitle,
       a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["active", "align", "aria-label", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -259,6 +292,21 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     contents = first || second || children;
   }
 
+  var background = getPropertyColor('background', themePaths && themePaths.base, theme, kind, primary);
+  var border = getPropertyColor('border', themePaths && themePaths.base, theme, kind, primary); // set the badge relative to the button content
+  // when the button doesn't have background or border
+  // (!kind && icon && !label) is necessary because for old button logic,
+  // if button has icon but not label, it will be considered "plain",
+  // so no border or background will be applied
+
+  var innerBadge = !background && !border || !kind && icon && !label;
+
+  if (badgeProp && innerBadge) {
+    contents = /*#__PURE__*/_react["default"].createElement(_Badge.Badge, {
+      content: badgeProp
+    }, contents);
+  }
+
   var styledButtonResult;
 
   if (kind) {
@@ -268,6 +316,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       active: active,
       align: align,
       "aria-label": ariaLabel || a11yTitle,
+      badge: badgeProp,
       colorValue: color,
       disabled: disabled,
       gap: gap,
@@ -332,12 +381,20 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   if (tip) {
     if (typeof tip === 'string') {
-      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
+      styledButtonResult = /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
         content: tip
       }, styledButtonResult);
+    } else {
+      styledButtonResult = /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tip, styledButtonResult);
     }
+  } // if button has background or border, place badge relative
+  // to outer edge of button
 
-    return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tip, styledButtonResult);
+
+  if (badgeProp && !innerBadge) {
+    styledButtonResult = /*#__PURE__*/_react["default"].createElement(_Badge.Badge, {
+      content: badgeProp
+    }, styledButtonResult);
   }
 
   return styledButtonResult;

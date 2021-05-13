@@ -19,6 +19,11 @@ var doc = function doc(Button) {
     children: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object, _reactDesc.PropTypes.node]).description("Function that can be called to render the visual representation.\n      Button can take in Children as a function, node, or object. \n      For example, 'disabled', 'hover', and 'focus' can be passed as an \n      argument that would then return a react element.\n      `children={({ disabled, hover, focus }) => <Box...>{...}</Box>}`. \n      When Button has children, it is styled as a `plain` button.\n      "),
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element."),
+    badge: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.element, _reactDesc.PropTypes.number, _reactDesc.PropTypes.shape({
+      background: _propTypes.backgroundPropType,
+      max: _reactDesc.PropTypes.number,
+      value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.number])
+    })]).description("An indicator to show on the top-right of the Button. For accessibility,\n         supplement the badge by adding an a11yTitle to the Button which \n         provides a useful message to screen readers. For example, \"2 unread \n         notifications\".").defaultValue(undefined),
     color: _propTypes.colorPropType.description("Fill color for primary, label color for plain, border color otherwise.\n       If button.default is defined in the theme, the color prop will\n       fill the background color for primary and secondary button types. \n       Color prop will change the text color for default button."),
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description("Whether the button expands to fill all of the available width and/or \n        height.").defaultValue(false),
@@ -26,7 +31,7 @@ var doc = function doc(Button) {
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     hoverIndicator: _propTypes.hoverIndicatorPropType.description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: _reactDesc.PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
-    icon: _reactDesc.PropTypes.element.description('Icon element to place in the button.'),
+    icon: _reactDesc.PropTypes.element.description("Icon element to place in the button. \n    For accessibility with screen readers, if using just an icon (no label), \n    add an a11yTitle to the Button that describes the icon."),
     label: _reactDesc.PropTypes.node.description('Label text to place in the button.'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. Not setting this property and not specifying a href\n        causes the Button to be disabled."),
     plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\n          Non plain button will show both pad and border.\n          The plain button has no border and unless the icon prop exist it has \n          no pad as well. \n          When using the kind button (i.e. button.default on the theme), \n          the usage of plain is deprecated.").defaultValue(false),
@@ -137,6 +142,31 @@ var themeDoc = _extends({
     description: "Adjustments to the secondary Button style when the Button is \n    active. Only relevant for themes that have defined a value for \n    button.default.",
     type: '{}',
     defaultValue: undefined
+  },
+  'button.badge.container.background': {
+    description: "The background of the badge.",
+    type: "string | { dark: string, light: string } | {\n      color: { dark: string, light: string } | string,\n      dark: bool,\n      image: string,\n      position: string,\n      opacity: bool | string,\n      repeat: no-repeat | repeat,\n      size: cover | contain | string\n    }",
+    defaultValue: 'brand'
+  },
+  'button.badge.container.extend': {
+    description: "Any additional styles for the badge.",
+    type: "string | object",
+    defaultValue: undefined
+  },
+  'button.badge.container.pad': {
+    description: 'When badge has a value, the amount of pad to apply.',
+    type: 'string | object',
+    defaultValue: undefined
+  },
+  'button.badge.size.medium': {
+    description: "The minimum width and height of the badge when the badge \n    contains a value. If badge is a boolean, the default width and height will\n    be one half of this value.",
+    type: 'string',
+    defaultValue: '24px'
+  },
+  'button.badge.text.size.medium': {
+    description: "The size of the text that is mapped according to \n    'button.badge.size.medium'.",
+    type: 'string',
+    defaultValue: '14px'
   },
   'button.border.color': {
     description: "The color of the border.",

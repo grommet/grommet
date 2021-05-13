@@ -37,7 +37,7 @@ var buildStyledChildren = function buildStyledChildren(_ref) {
   };
 };
 
-var Stack = function Stack(_ref2) {
+var Stack = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var anchor = _ref2.anchor,
       children = _ref2.children,
       fill = _ref2.fill,
@@ -65,10 +65,11 @@ var Stack = function Stack(_ref2) {
     interactiveIndex: interactiveIndex
   }));
   return /*#__PURE__*/_react["default"].createElement(_StyledStack.StyledStack, _extends({
+    ref: ref,
     fillContainer: fill
   }, rest), styledChildren);
-};
-
+});
+Stack.displayName = 'Stack';
 var StackDoc;
 
 if (process.env.NODE_ENV !== 'production') {
