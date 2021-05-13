@@ -127,7 +127,7 @@ exports[`Accordion AccordionPanel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -233,7 +233,7 @@ exports[`Accordion AccordionPanel 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -423,8 +423,8 @@ exports[`Accordion accordion border 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: -1px;
-  border-top: solid 1px [object Object];
-  border-bottom: solid 1px [object Object];
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -579,8 +579,8 @@ exports[`Accordion accordion border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top: solid 1px [object Object];
-    border-bottom: solid 1px [object Object];
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -799,7 +799,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -905,7 +905,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1105,7 +1105,7 @@ exports[`Accordion blur styles 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1211,7 +1211,7 @@ exports[`Accordion blur styles 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1415,7 +1415,7 @@ exports[`Accordion change active index 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1514,7 +1514,7 @@ exports[`Accordion change active index 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1677,7 +1677,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
     <div
@@ -1722,7 +1722,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 2
       </div>
@@ -1858,7 +1858,7 @@ exports[`Accordion change to second Panel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1964,7 +1964,7 @@ exports[`Accordion change to second Panel 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2134,7 +2134,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -2234,7 +2234,7 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
         style=""
       >
         <div
@@ -2377,7 +2377,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2476,7 +2476,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2636,7 +2636,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
     <div
@@ -2731,7 +2731,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 2
       </div>
@@ -2779,7 +2779,7 @@ exports[`Accordion complex header 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2857,7 +2857,7 @@ exports[`Accordion complex header 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -3047,7 +3047,7 @@ exports[`Accordion complex title 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(255,255,255,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3139,7 +3139,7 @@ exports[`Accordion complex title 1`] = `
 
 @media only screen and (max-width:768px) {
   .c8 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(255,255,255,0.33);
   }
 }
 
@@ -3383,7 +3383,7 @@ exports[`Accordion custom accordion 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3489,7 +3489,7 @@ exports[`Accordion custom accordion 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -3694,7 +3694,7 @@ exports[`Accordion focus and hover styles 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3801,7 +3801,7 @@ exports[`Accordion focus and hover styles 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -4005,7 +4005,7 @@ exports[`Accordion multiple panels 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4104,7 +4104,7 @@ exports[`Accordion multiple panels 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -4264,7 +4264,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
     <div
@@ -4359,7 +4359,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 2
       </div>
@@ -4468,7 +4468,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 1
       </div>
@@ -4515,7 +4515,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 2
       </div>
@@ -4574,7 +4574,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 1
       </div>
@@ -4670,7 +4670,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
   </div>
@@ -4776,7 +4776,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
     <div
@@ -4820,7 +4820,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
   </div>
@@ -4989,7 +4989,7 @@ exports[`Accordion set on hover 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5095,7 +5095,7 @@ exports[`Accordion set on hover 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -5265,7 +5265,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5314,7 +5314,7 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5375,7 +5375,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5424,7 +5424,7 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5485,7 +5485,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5534,7 +5534,7 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5595,7 +5595,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5644,7 +5644,7 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         <div
           aria-hidden="true"
@@ -5767,7 +5767,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5859,7 +5859,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -6043,7 +6043,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6150,7 +6150,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -6354,7 +6354,7 @@ exports[`Accordion wrapped panel 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6453,7 +6453,7 @@ exports[`Accordion wrapped panel 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -6664,7 +6664,7 @@ exports[`Accordion wrapped panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       >
         Panel body 
         1
@@ -6711,7 +6711,7 @@ exports[`Accordion wrapped panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc"
+        class="StyledBox-sc-13pk1d4-0 wTreE"
       />
     </div>
   </div>

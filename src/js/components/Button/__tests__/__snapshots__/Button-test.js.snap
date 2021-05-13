@@ -125,7 +125,7 @@ exports[`Button active + primary 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -223,7 +223,7 @@ exports[`Button active 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2408,7 +2408,7 @@ exports[`Button hoverIndicator background 1`] = `
 }
 
 .c1:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 

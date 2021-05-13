@@ -672,12 +672,7 @@ exports[`Chart color 1`] = `
       >
         <stop
           offset={0}
-          stopColor={
-            Object {
-              "dark": undefined,
-              "light": undefined,
-            }
-          }
+          stopColor="rgba(0, 0, 0, 0.33)"
         />
         <stop
           offset={1}

@@ -1132,7 +1132,7 @@ exports[`Button kind hover on default button 1`] = `
 }
 
 .c1:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
 }
 

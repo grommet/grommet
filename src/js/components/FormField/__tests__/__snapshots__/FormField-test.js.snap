@@ -19,7 +19,7 @@ exports[`FormField abut 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
-  border: solid 12px [object Object];
+  border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -49,7 +49,7 @@ exports[`FormField abut 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 6px [object Object];
+    border: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -87,7 +87,7 @@ exports[`FormField abut with margin 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 24px;
-  border: solid 12px [object Object];
+  border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -117,7 +117,7 @@ exports[`FormField abut with margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: solid 6px [object Object];
+    border: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -197,7 +197,7 @@ exports[`FormField contentProps 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -442,7 +442,7 @@ exports[`FormField custom error and info icon and container 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -614,7 +614,7 @@ exports[`FormField custom formfield 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -634,7 +634,7 @@ exports[`FormField custom formfield 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -688,7 +688,7 @@ exports[`FormField custom input margin 1`] = `
   max-width: 100%;
   margin-top: 48px;
   margin-bottom: 48px;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -717,7 +717,7 @@ exports[`FormField custom input margin 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -769,7 +769,7 @@ exports[`FormField custom input margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -844,7 +844,7 @@ exports[`FormField custom label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -872,7 +872,7 @@ exports[`FormField custom label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -917,7 +917,7 @@ exports[`FormField custom label 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -992,7 +992,7 @@ exports[`FormField default 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1012,7 +1012,7 @@ exports[`FormField default 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1057,7 +1057,7 @@ exports[`FormField default 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1133,7 +1133,7 @@ exports[`FormField disabled 1`] = `
   max-width: 100%;
   background-color: rgba(204,204,204,0.4);
   color: #444444;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1153,7 +1153,7 @@ exports[`FormField disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1200,7 +1200,7 @@ exports[`FormField disabled 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1283,7 +1283,7 @@ exports[`FormField disabled with custom label 1`] = `
   max-width: 100%;
   background-color: rgba(204,204,204,0.4);
   color: #444444;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1311,7 +1311,7 @@ exports[`FormField disabled with custom label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1358,7 +1358,7 @@ exports[`FormField disabled with custom label 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1434,7 +1434,7 @@ exports[`FormField empty margin 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1450,7 +1450,7 @@ exports[`FormField empty margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1585,7 +1585,7 @@ exports[`FormField help 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1608,7 +1608,7 @@ exports[`FormField help 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1665,7 +1665,7 @@ exports[`FormField htmlFor 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1681,7 +1681,7 @@ exports[`FormField htmlFor 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1733,7 +1733,7 @@ exports[`FormField info 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1759,7 +1759,7 @@ exports[`FormField info 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1816,7 +1816,7 @@ exports[`FormField label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1841,7 +1841,7 @@ exports[`FormField label 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1898,7 +1898,7 @@ exports[`FormField margin 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1914,7 +1914,7 @@ exports[`FormField margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1966,7 +1966,7 @@ exports[`FormField pad 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1983,7 +1983,7 @@ exports[`FormField pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2070,7 +2070,7 @@ exports[`FormField pad with border undefined 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2190,7 +2190,7 @@ exports[`FormField required 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2210,7 +2210,7 @@ exports[`FormField required 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2255,7 +2255,7 @@ exports[`FormField required 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2335,7 +2335,7 @@ exports[`FormField should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2351,7 +2351,7 @@ exports[`FormField should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2401,7 +2401,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2435,7 +2435,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2480,7 +2480,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2588,7 +2588,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2617,7 +2617,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2662,7 +2662,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 

@@ -117,7 +117,7 @@ exports[`TableCell plain renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -174,7 +174,7 @@ exports[`TableCell renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -199,7 +199,7 @@ exports[`TableCell renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px [object Object];
+  border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -278,7 +278,7 @@ exports[`TableCell scope renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -613,7 +613,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   text-align: inherit;
   vertical-align: top;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -627,7 +627,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   text-align: inherit;
   vertical-align: middle;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -641,7 +641,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   text-align: inherit;
   vertical-align: bottom;
   text-align: start;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;

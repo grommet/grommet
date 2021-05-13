@@ -1558,7 +1558,7 @@ exports[`DateInput dates initialized with empty array 2`] = `
             >
               <button
                 aria-label="Sat May 01 2021"
-                class="StyledButton-sc-323bzc-0 egyPbf"
+                class="StyledButton-sc-323bzc-0 egeuHr"
                 tabindex="-1"
                 type="button"
               >
@@ -2349,7 +2349,7 @@ exports[`DateInput dropProps should pass props to Drop
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -2512,7 +2512,7 @@ exports[`DateInput focus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -3870,7 +3870,7 @@ exports[`DateInput format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -4039,7 +4039,7 @@ exports[`DateInput format disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
   opacity: 0.3;
@@ -4500,7 +4500,7 @@ exports[`DateInput format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -7177,7 +7177,7 @@ exports[`DateInput range format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -7653,7 +7653,7 @@ exports[`DateInput range format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -10213,7 +10213,7 @@ exports[`DateInput select format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -10346,7 +10346,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 bUDxII"
+      class="StyledMaskedInput-sc-99vkfa-0 eVBatt"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -11879,7 +11879,7 @@ exports[`DateInput select format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -12807,7 +12807,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bUDxII"
+        class="StyledMaskedInput-sc-99vkfa-0 eVBatt"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -12953,7 +12953,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 egyPbf"
+                  class="StyledButton-sc-323bzc-0 egeuHr"
                   tabindex="-1"
                   type="button"
                 >
@@ -13949,7 +13949,7 @@ exports[`DateInput select format inline range 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -14877,7 +14877,7 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bUDxII"
+        class="StyledMaskedInput-sc-99vkfa-0 eVBatt"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
@@ -15007,7 +15007,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 egyPbf"
+                  class="StyledButton-sc-323bzc-0 egeuHr"
                   tabindex="-1"
                   type="button"
                 >
@@ -17130,7 +17130,7 @@ exports[`DateInput type format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -18058,7 +18058,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bUDxII"
+        class="StyledMaskedInput-sc-99vkfa-0 eVBatt"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"

@@ -165,7 +165,7 @@ exports[`Select 0 value 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -207,7 +207,7 @@ exports[`Select 0 value 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -390,7 +390,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -665,7 +665,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -948,7 +948,7 @@ exports[`Select Clear option renders custom label 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -1223,7 +1223,7 @@ exports[`Select Clear option renders- top 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -1552,7 +1552,7 @@ exports[`Select Search timeout 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1604,7 +1604,7 @@ exports[`Select Search timeout 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -1702,7 +1702,7 @@ exports[`Select Search timeout 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -1945,7 +1945,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1997,7 +1997,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -2097,7 +2097,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -2358,7 +2358,7 @@ exports[`Select basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2400,7 +2400,7 @@ exports[`Select basic 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -2637,7 +2637,7 @@ exports[`Select complex options and children 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2679,7 +2679,7 @@ exports[`Select complex options and children 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -2741,7 +2741,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 evcIFL"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
@@ -2756,7 +2756,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2879,7 +2879,7 @@ exports[`Select complex options and children 3`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -3209,7 +3209,7 @@ exports[`Select dark 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3261,7 +3261,7 @@ exports[`Select dark 1`] = `
 }
 
 .c3 {
-  border: 1px solid;
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
 }
 
@@ -3504,7 +3504,7 @@ exports[`Select default value 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3556,7 +3556,7 @@ exports[`Select default value 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -3808,7 +3808,7 @@ exports[`Select default value clear 1`] = `
 }
 
 .c8:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -4167,7 +4167,7 @@ exports[`Select default value object options 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4219,7 +4219,7 @@ exports[`Select default value object options 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4449,7 +4449,7 @@ exports[`Select disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4491,7 +4491,7 @@ exports[`Select disabled 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -4554,7 +4554,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eyQMsp Select__StyledSelectDropButton-sc-17idtfo-2 evcIFL"
+  class="StyledButton-sc-323bzc-0 eyQMsp Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   disabled=""
   id="test-select"
   type="button"
@@ -4570,7 +4570,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 cANsmG"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4766,7 +4766,7 @@ exports[`Select disabled key 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4818,7 +4818,7 @@ exports[`Select disabled key 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -5052,7 +5052,7 @@ exports[`Select disabled key 2`] = `
 }
 
 .c9:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -5387,7 +5387,7 @@ exports[`Select disabled option value 1`] = `
 }
 
 .c9:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -5566,7 +5566,7 @@ exports[`Select empty results search 1`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -5809,7 +5809,7 @@ exports[`Select keyboard navigation timeout 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -5861,7 +5861,7 @@ exports[`Select keyboard navigation timeout 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -6051,7 +6051,7 @@ exports[`Select large drop container height 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -6316,7 +6316,7 @@ exports[`Select medium drop container height 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -6635,7 +6635,7 @@ exports[`Select modifies select control style on open 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -6687,7 +6687,7 @@ exports[`Select modifies select control style on open 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   background: purple;
 }
@@ -6917,7 +6917,7 @@ exports[`Select onChange with valueKey string 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -6969,7 +6969,7 @@ exports[`Select onChange with valueKey string 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -7143,7 +7143,7 @@ exports[`Select onChange with valueKey string 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -7474,7 +7474,7 @@ exports[`Select onChange with valueLabel 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -7644,7 +7644,7 @@ exports[`Select onChange with valueLabel 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -7972,7 +7972,7 @@ exports[`Select onChange without valueKey 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -8024,7 +8024,7 @@ exports[`Select onChange without valueKey 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -8198,7 +8198,7 @@ exports[`Select onChange without valueKey 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -8526,7 +8526,7 @@ exports[`Select prop: onClose 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -8568,7 +8568,7 @@ exports[`Select prop: onClose 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -8804,7 +8804,7 @@ exports[`Select prop: onClose 2`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -8846,7 +8846,7 @@ exports[`Select prop: onClose 2`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -9087,7 +9087,7 @@ exports[`Select prop: onOpen 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -9129,7 +9129,7 @@ exports[`Select prop: onOpen 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -9191,7 +9191,7 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 evcIFL"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
@@ -9206,7 +9206,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9348,7 +9348,7 @@ exports[`Select prop: onOpen 3`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -9518,7 +9518,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 hrPhkX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -9534,7 +9534,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 hrPhkX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -9720,7 +9720,7 @@ exports[`Select renders custom icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -9762,7 +9762,7 @@ exports[`Select renders custom icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -9998,7 +9998,7 @@ exports[`Select renders custom up and down icons 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -10050,7 +10050,7 @@ exports[`Select renders custom up and down icons 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -10117,7 +10117,7 @@ exports[`Select renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 evcIFL"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     type="button"
   >
     <div
@@ -10131,7 +10131,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -10378,7 +10378,7 @@ exports[`Select renders default icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -10420,7 +10420,7 @@ exports[`Select renders default icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -10657,7 +10657,7 @@ exports[`Select renders styled select options backwards compatible with legacy
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -10709,7 +10709,7 @@ exports[`Select renders styled select options backwards compatible with legacy
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -10940,7 +10940,7 @@ exports[`Select renders styled select options combining select.options.box &&
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -10992,7 +10992,7 @@ exports[`Select renders styled select options combining select.options.box &&
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -11221,7 +11221,7 @@ exports[`Select renders styled select options using select.options.container 1`]
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -11273,7 +11273,7 @@ exports[`Select renders styled select options using select.options.container 1`]
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -11449,7 +11449,7 @@ exports[`Select renders without icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -11491,7 +11491,7 @@ exports[`Select renders without icon 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -11699,7 +11699,7 @@ exports[`Select search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -11741,7 +11741,7 @@ exports[`Select search 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -11929,7 +11929,7 @@ exports[`Select search 2`] = `
 }
 
 .c8:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -11993,7 +11993,7 @@ exports[`Select search 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -12189,7 +12189,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 jrhxpC"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value=""
 />
@@ -12198,7 +12198,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 jrhxpC"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value="o"
 />
@@ -12369,7 +12369,7 @@ exports[`Select search and select 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -12411,7 +12411,7 @@ exports[`Select search and select 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -12599,7 +12599,7 @@ exports[`Select search and select 2`] = `
 }
 
 .c8:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -12663,7 +12663,7 @@ exports[`Select search and select 2`] = `
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -12854,7 +12854,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 jrhxpC"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value=""
 />
@@ -12863,7 +12863,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 jrhxpC"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value="t"
 />
@@ -13034,7 +13034,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -13076,7 +13076,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -13300,7 +13300,7 @@ exports[`Select select an option 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -13342,7 +13342,7 @@ exports[`Select select an option 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -13774,7 +13774,7 @@ exports[`Select select an option with enter 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -13816,7 +13816,7 @@ exports[`Select select an option with enter 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -14040,7 +14040,7 @@ exports[`Select select an option with keypress 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -14082,7 +14082,7 @@ exports[`Select select an option with keypress 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -14306,7 +14306,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -14348,7 +14348,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -14572,7 +14572,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -14624,7 +14624,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -14693,7 +14693,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 evcIFL"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     id="test-select"
     type="button"
   >
@@ -14708,7 +14708,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -14905,7 +14905,7 @@ exports[`Select selected 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -14957,7 +14957,7 @@ exports[`Select selected 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -15185,7 +15185,7 @@ exports[`Select should not have accessibility violations 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -15237,7 +15237,7 @@ exports[`Select should not have accessibility violations 1`] = `
 }
 
 .c2 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -15465,7 +15465,7 @@ exports[`Select size 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -15507,7 +15507,7 @@ exports[`Select size 1`] = `
 }
 
 .c1 {
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -15690,7 +15690,7 @@ exports[`Select small drop container height 1`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 

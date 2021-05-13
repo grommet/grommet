@@ -533,7 +533,7 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -3276,7 +3276,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -4021,7 +4021,7 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -5706,7 +5706,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 .c6:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -6247,7 +6247,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 }
 
 .c5:hover {
-  background-color: active;
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 

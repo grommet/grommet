@@ -1,6 +1,6 @@
 import { CaretDownFill, CaretUpFill, FormCheckmark } from 'grommet-icons';
 
-import { normalizeColor, getRGBA } from '../../../utils';
+import { normalizeColor } from '../../../utils';
 
 import { SearchInput } from './components/SearchInput';
 
@@ -10,7 +10,7 @@ export const theme = {
       selected: 'neutral-3',
       border: '#e0e0e0',
       focus: '#2196F3',
-      gray: getRGBA(0, 0, 0, 0.54),
+      gray: 'rgba(0, 0, 0, 0.54)',
     },
     control: {
       border: {

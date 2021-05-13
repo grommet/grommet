@@ -34,7 +34,7 @@ exports[`Form accessibility Box with TextInput in Form should
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -68,7 +68,7 @@ exports[`Form accessibility Box with TextInput in Form should
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
@@ -131,7 +131,7 @@ exports[`Form accessibility Box with TextInput in Form should
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -198,7 +198,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -311,7 +311,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -401,7 +401,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -421,7 +421,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -466,7 +466,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -563,7 +563,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -681,7 +681,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -730,7 +730,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -835,7 +835,7 @@ exports[`Form accessibility TextInput in Form should have
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -855,7 +855,7 @@ exports[`Form accessibility TextInput in Form should have
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -900,7 +900,7 @@ exports[`Form accessibility TextInput in Form should have
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -964,7 +964,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -979,7 +979,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1168,7 +1168,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1213,13 +1213,13 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1311,14 +1311,14 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="name"
             placeholder="test name"
             value=""
@@ -1330,7 +1330,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bogpOF FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 glaFmo"
@@ -1422,7 +1422,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1442,7 +1442,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1487,7 +1487,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1550,14 +1550,14 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="name"
             placeholder="test name"
             value=""
@@ -1569,7 +1569,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bogpOF FormField__FormFieldContentBox-m9hood-1 iUyYoX"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1 iUyYoX"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 glaFmo"
@@ -1686,7 +1686,7 @@ exports[`Form uncontrolled errors 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1804,7 +1804,7 @@ exports[`Form uncontrolled infos 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1834,7 +1834,7 @@ exports[`Form uncontrolled infos 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1879,7 +1879,7 @@ exports[`Form uncontrolled infos 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2092,7 +2092,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2167,7 +2167,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2548,7 +2548,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2597,7 +2597,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2610,7 +2610,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 
 @media only screen and (max-width:768px) {
   .c12 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2918,7 +2918,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         Select Size
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <button
           aria-label="Open Drop"
@@ -2937,7 +2937,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 gSoyj Select__SelectTextInput-sc-17idtfo-0 bIurki"
+                  class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"
@@ -2979,7 +2979,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         CheckBox
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bogpOF FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 glaFmo"
@@ -3014,7 +3014,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         RadioButtonGroup
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bogpOF FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 dYebPD"
@@ -3145,7 +3145,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3237,7 +3237,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3282,7 +3282,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -3328,14 +3328,14 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="test"
             placeholder="test input"
             value=""
@@ -3362,14 +3362,14 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="test"
             placeholder="test input"
             value=""
@@ -3420,7 +3420,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3512,7 +3512,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3557,7 +3557,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -3610,7 +3610,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="test"
             placeholder="test input"
             value=""
@@ -3688,7 +3688,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3780,7 +3780,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3825,7 +3825,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -3878,7 +3878,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="test"
             placeholder="test input"
             value=""
@@ -3956,7 +3956,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4048,7 +4048,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4093,7 +4093,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -4139,14 +4139,14 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bScuJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gSoyj"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW"
             name="test"
             placeholder="test input"
             value=""
@@ -4220,7 +4220,7 @@ exports[`Form uncontrolled update 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4312,7 +4312,7 @@ exports[`Form uncontrolled update 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4357,7 +4357,7 @@ exports[`Form uncontrolled update 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -4585,7 +4585,7 @@ exports[`Form uncontrolled with field 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px [object Object];
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4605,7 +4605,7 @@ exports[`Form uncontrolled with field 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid;
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4650,7 +4650,7 @@ exports[`Form uncontrolled with field 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px [object Object];
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
