@@ -13604,6 +13604,11 @@ exports[`Calendar header 1`] = `
   justify-content: space-between;
 }
 
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -13720,11 +13725,6 @@ exports[`Calendar header 1`] = `
 
 .c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 14px;
-  line-height: 20px;
 }
 
 .c1 {

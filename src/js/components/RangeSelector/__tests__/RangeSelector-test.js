@@ -209,4 +209,39 @@ describe('RangeSelector', () => {
     fireEvent.mouseUp(document);
     expect(onChange).toBeCalled();
   });
+
+  test('handle touch gestures', () => {
+    const onChange = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RangeSelector values={[10, 20]} onChange={onChange} />
+      </Grommet>,
+    );
+    const rangeContainer = container.firstChild.firstChild;
+
+    const lowerControl = getByLabelText('Lower Bounds');
+    fireEvent.touchStart(lowerControl);
+    fireEvent.touchMove(rangeContainer, {
+      changedTouches: [
+        {
+          clientX: 0,
+          clientY: 0,
+        },
+      ],
+    });
+    expect(onChange).toBeCalled();
+
+    const upperControl = getByLabelText('Upper Bounds');
+    fireEvent.touchStart(upperControl);
+    fireEvent.touchMove(rangeContainer, {
+      changedTouches: [
+        {
+          clientX: 0,
+          clientY: 0,
+        },
+      ],
+    });
+    expect(onChange).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
