@@ -78,8 +78,17 @@ const basicStyle = props => css`
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  > svg {
+  // when button has badge, the SVG won't necessarily
+  // be the direct descendant
+  ${
+    props.badge
+      ? `
+  svg {
     vertical-align: bottom;
+  }`
+      : `> svg {
+    vertical-align: bottom;
+  }`
   }
 `;
 
