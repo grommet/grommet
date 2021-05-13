@@ -112,7 +112,7 @@ var StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell
   return props.context === 'header' && props.theme.dataTable && props.theme.dataTable.header && props.theme.dataTable.header.extend;
 }, function (props) {
   return props.pin && props.pin.length > 0 && "\n    position: sticky;\n    " + props.pin.map(function (p) {
-    return p + ": 0;";
+    return p + ": " + (props.pinnedOffset && props.pinnedOffset[p] && props.pinnedOffset[p] + "px" || 0) + ";";
   }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n    " + (props.theme.dataTable && props.theme.dataTable.pinned && props.theme.dataTable.pinned[props.context] && props.theme.dataTable.pinned[props.context].extend ? props.theme.dataTable.pinned[props.context].extend : '') + "\n  ";
 });
 exports.StyledDataTableCell = StyledDataTableCell;

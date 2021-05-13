@@ -44,6 +44,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       index = _ref.index,
       pad = _ref.pad,
       cellPin = _ref.pin,
+      pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       rowProp = _ref.rowProp,
       scope = _ref.scope;
@@ -66,8 +67,9 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     content = /*#__PURE__*/_react["default"].createElement(_Text.Text, textProps, content);
   }
 
-  var pin;
-  if (cellPin) pin = cellPin;else if (columnPin) pin = ['left'];
+  var pin = [];
+  if (cellPin) pin.push.apply(pin, cellPin);
+  if (columnPin) pin.push('left');
   var background;
 
   if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
@@ -91,6 +93,7 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     verticalAlign: verticalAlign,
     size: size,
     background: normalizeProp('background', rowProp, Array.isArray(backgroundProp) ? backgroundProp[index % backgroundProp.length] : backgroundProp) || background,
+    pinnedOffset: pinnedOffset,
     border: normalizeProp('border', rowProp, border),
     pad: normalizeProp('pad', rowProp, pad),
     pin: pin,

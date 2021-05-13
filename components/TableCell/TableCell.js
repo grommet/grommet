@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
+
 var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
@@ -37,18 +39,27 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       children = _ref.children,
       className = _ref.className,
       colSpan = _ref.colSpan,
+      onWidth = _ref.onWidth,
       pad = _ref.pad,
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "className", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "scope", "size", "verticalAlign"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var tableContext = (0, _react.useContext)(_TableContext.TableContext);
   var cellRef = (0, _utils.useForwardedRef)(ref);
-  var containerRef = (0, _react.useRef)(); // if window resizes, recalculate cell height so that content
+  var containerRef = (0, _react.useRef)();
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    if (onWidth) {
+      var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+
+      onWidth(width);
+    }
+  }, [cellRef, onWidth]); // if window resizes, recalculate cell height so that content
   // will continue to fill the height if the dimensions of the cell
   // have changed
 

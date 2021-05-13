@@ -179,8 +179,38 @@ var DataTable = function DataTable(_ref) {
 
   var _useState11 = useState(0),
       scrollOffset = _useState11[0],
-      setScrollOffset = _useState11[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
+      setScrollOffset = _useState11[1]; // multiple pinned columns offset
 
+
+  var _useState12 = useState(),
+      pinnedOffset = _useState12[0],
+      setPinnedOffset = _useState12[1];
+
+  var onHeaderWidths = useCallback(function (columnWidths) {
+    var pinnedProperties = columns.map(function (pinnedColumn) {
+      return pinnedColumn.pin && pinnedColumn.property;
+    }).filter(function (n) {
+      return n;
+    });
+    var nextPinnedOffset = {};
+
+    if (columnWidths !== []) {
+      pinnedProperties.forEach(function (property, index) {
+        var hasSelectColumn = Boolean(select || onSelect);
+        var columnIndex = columns.findIndex(function (column) {
+          return column.property === property;
+        }) + hasSelectColumn;
+
+        if (columnWidths[columnIndex]) {
+          nextPinnedOffset[property] = {
+            width: columnWidths[columnIndex],
+            left: index === 0 ? 0 : nextPinnedOffset[pinnedProperties[index - 1]].left + nextPinnedOffset[pinnedProperties[index - 1]].width
+          };
+        }
+      });
+      setPinnedOffset(nextPinnedOffset);
+    }
+  }, [columns, setPinnedOffset, select, onSelect]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   useLayoutEffect(function () {
     var _bodyRef$current$pare;
@@ -330,6 +360,7 @@ var DataTable = function DataTable(_ref) {
     groupState: groupState,
     pad: normalizeProp(pad, 'header'),
     pin: pin === true || pin === 'header',
+    pinnedOffset: pinnedOffset,
     selected: selected,
     size: size,
     sort: sort,
@@ -343,6 +374,7 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups,
+    onWidths: onHeaderWidths,
     primaryProperty: primaryProperty,
     scrollOffset: scrollOffset,
     rowDetails: rowDetails
@@ -355,6 +387,7 @@ var DataTable = function DataTable(_ref) {
     groups: groups,
     groupState: groupState,
     pad: normalizeProp(pad, 'body'),
+    pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
     onSelect: onSelect ? function (nextSelected) {
       setSelected(nextSelected);
@@ -378,6 +411,7 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     pad: normalizeProp(pad, 'body'),
     pinnedBackground: normalizeProp(background, 'pinned'),
+    pinnedOffset: pinnedOffset,
     placeholder: placeholder,
     primaryProperty: primaryProperty,
     rowProps: rowProps,
@@ -399,6 +433,7 @@ var DataTable = function DataTable(_ref) {
     onSelect: onSelect,
     pad: normalizeProp(pad, 'footer'),
     pin: pin === true || pin === 'footer',
+    pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
     scrollOffset: scrollOffset,
     selected: selected,

@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useEffect, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
@@ -21,17 +22,26 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
       children = _ref.children,
       className = _ref.className,
       colSpan = _ref.colSpan,
+      onWidth = _ref.onWidth,
       pad = _ref.pad,
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "className", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "scope", "size", "verticalAlign"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var tableContext = useContext(TableContext);
   var cellRef = useForwardedRef(ref);
-  var containerRef = useRef(); // if window resizes, recalculate cell height so that content
+  var containerRef = useRef();
+  useLayoutEffect(function () {
+    if (onWidth) {
+      var _cellRef$current$getB = cellRef.current.getBoundingClientRect(),
+          width = _cellRef$current$getB.width;
+
+      onWidth(width);
+    }
+  }, [cellRef, onWidth]); // if window resizes, recalculate cell height so that content
   // will continue to fill the height if the dimensions of the cell
   // have changed
 

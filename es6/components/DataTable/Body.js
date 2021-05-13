@@ -32,6 +32,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       rowExpand = _ref.rowExpand,
       columns = _ref.columns,
       pinnedBackground = _ref.pinnedBackground,
+      pinnedOffset = _ref.pinnedOffset,
       border = _ref.border,
       pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
@@ -100,6 +101,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       datum: datum,
       index: index,
       pad: pad,
+      pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty,
       rowProp: rowProps && rowProps[primaryValue],
       scope: column.primary || column.property === primaryProperty ? 'row' : undefined
@@ -121,6 +123,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       onSelect = _ref2.onSelect,
       pad = _ref2.pad,
       pinnedBackground = _ref2.pinnedBackground,
+      pinnedOffset = _ref2.pinnedOffset,
       primaryProperty = _ref2.primaryProperty,
       rowProps = _ref2.rowProps,
       selected = _ref2.selected,
@@ -130,7 +133,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       step = _ref2.step,
       rowExpand = _ref2.rowExpand,
       setRowExpand = _ref2.setRowExpand,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -194,7 +197,8 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       primaryProperty: primaryProperty,
       rowProps: rowProps,
       data: data,
-      theme: theme
+      theme: theme,
+      pinnedOffset: pinnedOffset
     });
   })));
 });

@@ -127,14 +127,16 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       onSelect = _ref2.onSelect,
       onSort = _ref2.onSort,
       onToggle = _ref2.onToggle,
+      onWidths = _ref2.onWidths,
       pad = _ref2.pad,
       tablePin = _ref2.pin,
+      pinnedOffset = _ref2.pinnedOffset,
       primaryProperty = _ref2.primaryProperty,
       selected = _ref2.selected,
       rowDetails = _ref2.rowDetails,
       sort = _ref2.sort,
       widths = _ref2.widths,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "rowDetails", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pad", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -143,6 +145,20 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       layoutProps = _separateThemeProps2[1],
       textProps = _separateThemeProps2[2];
 
+  var _useState = (0, _react.useState)([]),
+      cellWidths = _useState[0],
+      setCellWidths = _useState[1];
+
+  var updateWidths = (0, _react.useCallback)(function (width) {
+    return setCellWidths(function (values) {
+      return [].concat(values, [width]);
+    });
+  }, []);
+  (0, _react.useEffect)(function () {
+    if (onWidths && cellWidths.length !== 0) {
+      onWidths(cellWidths);
+    }
+  }, [cellWidths, onWidths]);
   var pin = tablePin ? ['top'] : [];
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     ref: ref,
@@ -155,6 +171,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     onToggle: onToggle
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
     background: (0, _buildState.calcPinnedBackground)(backgroundProp, pin, theme, 'header') || cellProps.background,
+    onWidth: updateWidths,
     plain: "noPad",
     size: "auto",
     context: "header",
@@ -277,9 +294,11 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       verticalAlign: verticalAlign,
       background: background || cellProps.background,
       border: border || cellProps.border,
+      onWidth: updateWidths,
       pad: pad,
       pin: cellPin,
       plain: true,
+      pinnedOffset: pinnedOffset && pinnedOffset[property],
       scope: "col",
       size: widths && widths[property] ? undefined : size,
       style: widths && widths[property] ? {

@@ -35,12 +35,13 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       groups = _ref.groups,
       groupState = _ref.groupState,
       pad = _ref.pad,
+      pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       onSelect = _ref.onSelect,
       onToggle = _ref.onToggle,
       selected = _ref.selected,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onSelect", "onToggle", "selected", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "pinnedOffset", "primaryProperty", "onSelect", "onToggle", "selected", "size"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
@@ -96,6 +97,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         column: column,
         datum: group.datum,
         pad: pad,
+        pinnedOffset: pinnedOffset && pinnedOffset[column.property],
         scope: column.property === groupBy ? 'row' : undefined
       });
     })) : null;

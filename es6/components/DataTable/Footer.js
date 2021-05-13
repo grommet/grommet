@@ -20,9 +20,10 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onSelect = _ref.onSelect,
       pad = _ref.pad,
       tablePin = _ref.pin,
+      pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       selected = _ref.selected,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "primaryProperty", "selected"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "pinnedOffset", "primaryProperty", "selected"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var pin = tablePin ? ['bottom'] : [];
@@ -51,6 +52,7 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       datum: footerValues,
       pad: pad,
       pin: pin.length ? pin : undefined,
+      pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty
     });
   })));
