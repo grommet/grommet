@@ -19,7 +19,7 @@ var sizeStyle = function sizeStyle(props) {
   if (props.size) {
     var size = props.size || 'medium';
     var data = props.theme.text[size];
-    return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
+    return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data ? data.size : size, data ? data.height : 'normal');
   }
 
   return (0, _styledComponents.css)(["font-size:inherit;line-height:inherit;"]);

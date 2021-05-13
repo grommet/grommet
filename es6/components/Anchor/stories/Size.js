@@ -8,7 +8,7 @@ var SizeAnchor = function SizeAnchor() {
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(function (size) {
+  }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '10px'].map(function (size) {
     return /*#__PURE__*/React.createElement(Box, {
       key: size,
       margin: "small"
