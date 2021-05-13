@@ -8,7 +8,7 @@ export var Range = function Range() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Calendar, {
-    dates: [['2020-04-03', '2020-04-08']],
+    date: [['2020-04-03', '2020-04-08']],
     range: true
   })));
 };

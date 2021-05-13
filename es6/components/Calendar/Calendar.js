@@ -33,7 +33,18 @@ var normalizeReference = function normalizeReference(reference, date, dates) {
   if (reference) {
     normalizedReference = new Date(reference);
   } else if (date) {
-    normalizedReference = new Date(date);
+    if (typeof date === 'string') {
+      normalizedReference = new Date(date);
+    } else if (Array.isArray(date)) {
+      if (typeof date[0] === 'string') {
+        normalizedReference = new Date(date[0]);
+      } else if (Array.isArray(date[0])) {
+        normalizedReference = new Date(date[0][0] ? date[0][0] : date[0][1]);
+      } else {
+        normalizedReference = new Date();
+        normalizedReference.setHours(0, 0, 0, 0);
+      }
+    }
   } else if (dates && dates.length > 0) {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
@@ -148,20 +159,69 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme; // set activeDate when caller changes it, allows us to change
   // it internally too
 
-  var _useState = useState(dateProp && range ? activeDates.end : activeDates.start),
+  var _useState = useState(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
       activeDate = _useState[0],
       setActiveDate = _useState[1];
 
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
-  }, [activeDateProp]); // set date when caller changes it, allows us to change it internally too
+  }, [activeDateProp]); // function that runs inside the useEffect for date and dates
+
+  var normalizeDate = function normalizeDate(dateValue) {
+    // convert values to UTC based on if date is string or array
+    if (typeof dateValue === 'string') {
+      return normalizeForTimezone(dateValue);
+    }
+
+    if (Array.isArray(dateValue)) {
+      if (Array.isArray(dateValue[0])) {
+        var from;
+        var to;
+
+        var _dateValue$0$map = dateValue[0].map(function (day) {
+          return day ? new Date(day) : undefined;
+        });
+
+        from = _dateValue$0$map[0];
+        to = _dateValue$0$map[1];
+        if (from) from = normalizeForTimezone(from, dateValue[0][0]);
+        if (to) to = normalizeForTimezone(to, dateValue[0][0]);
+        return [[from, to]];
+      }
+
+      var dateArray = [];
+      dateValue.forEach(function (d) {
+        if (Array.isArray(d)) {
+          var _from;
+
+          var _to;
+
+          var _d$map = d.map(function (day) {
+            return new Date(day);
+          });
+
+          _from = _d$map[0];
+          _to = _d$map[1];
+          _from = normalizeForTimezone(_from, d[0]);
+          _to = normalizeForTimezone(_to, d[0]);
+          dateArray.push([_from, _to]);
+        } else {
+          dateArray.push(normalizeForTimezone(d));
+        }
+      });
+      return dateArray;
+    }
+
+    return undefined;
+  }; // set date when caller changes it, allows us to change it internally too
+
 
   var _useState2 = useState(dateProp),
       date = _useState2[0],
       setDate = _useState2[1];
 
   useEffect(function () {
-    return setDate(normalizeForTimezone(dateProp));
+    setDate(normalizeDate(dateProp));
   }, [dateProp]); // set dates when caller changes it, allows us to change it internally too
 
   var _useState3 = useState(datesProp),
@@ -169,45 +229,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       setDates = _useState3[1];
 
   useEffect(function () {
-    // convert all values to UTC
-    if (Array.isArray(datesProp)) {
-      if (Array.isArray(datesProp[0])) {
-        var from;
-        var to;
-
-        var _datesProp$0$map = datesProp[0].map(function (day) {
-          return day ? new Date(day) : undefined;
-        });
-
-        from = _datesProp$0$map[0];
-        to = _datesProp$0$map[1];
-        if (from) from = normalizeForTimezone(from, datesProp[0][0]);
-        if (to) to = normalizeForTimezone(to, datesProp[0][0]);
-        setDates([[from, to]]);
-      } else {
-        var datesArray = [];
-        datesProp.forEach(function (d) {
-          if (Array.isArray(d)) {
-            var _from;
-
-            var _to;
-
-            var _d$map = d.map(function (day) {
-              return new Date(day);
-            });
-
-            _from = _d$map[0];
-            _to = _d$map[1];
-            _from = normalizeForTimezone(_from, d[0]);
-            _to = normalizeForTimezone(_to, d[0]);
-            datesArray.push([_from, _to]);
-          } else {
-            datesArray.push(normalizeForTimezone(d));
-          }
-        });
-        setDates(datesArray);
-      }
-    } else setDates(undefined);
+    setDates(normalizeDate(datesProp));
   }, [datesProp]); // set reference based on what the caller passed or date/dates.
 
   var _useState4 = useState(normalizeReference(referenceProp, date, dates)),
@@ -372,7 +394,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
             }
           }
         });
-      } else if (dateProp) {
+      } else if (typeof dateProp === 'string') {
         if (!timeStamp.test(dateProp)) {
           adjustedDate = formatToLocalYYYYMMDD(selectedDate);
 
@@ -381,12 +403,24 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           } else {
             adjustedDate = undefined;
           }
-        } else {
-          adjustedDate = undefined;
         }
+      } else if (Array.isArray(dateProp)) {
+        dateProp.forEach(function (d) {
+          if (!timeStamp.test(d)) {
+            adjustedDate = formatToLocalYYYYMMDD(nextDate);
+
+            if (d === adjustedDate) {
+              nextDate = undefined;
+            } else {
+              adjustedDate = undefined;
+            }
+          }
+        });
+      } else {
+        adjustedDate = undefined;
       }
     } // everything down is a range
-    else if (!dates) {
+    else if (!dates && !Array.isArray(date)) {
         // if user supplies date, convert this into dates
         if (date) {
           var priorDate = new Date(date);
@@ -420,48 +454,61 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         }
 
         if (activeDateProp) setActiveDate(activeDateProp);
-      } else {
-        // have dates
-        var priorDates = dates[0].map(function (d) {
-          return new Date(d);
-        });
+      } else if (dates || date) {
+        var handleSelection = function handleSelection(dateValue) {
+          var priorDates = dateValue[0].map(function (d) {
+            return new Date(d);
+          });
+          var selDate = new Date(selectedDate);
 
-        var _selDate = new Date(selectedDate);
-
-        if (_selDate.getTime() === priorDates[0].getTime()) {
-          nextDates = [[undefined, dates[0][1]]];
-          setActiveDate(activeDates.start);
-        } else if (_selDate.getTime() === priorDates[1].getTime()) {
-          nextDates = [[dates[0][0], undefined]];
-          setActiveDate(activeDates.end);
-          if (activeDateProp) setActiveDate(activeDateProp);
-        } else if (activeDate === activeDates.start) {
-          if (_selDate.getTime() > priorDates[1].getTime()) {
-            nextDates = [[selectedDate, undefined]];
-          } else {
-            nextDates = [[selectedDate, dates[0][1]]];
-          }
-
-          setActiveDate(activeDates.end);
-          if (activeDateProp) setActiveDate(activeDateProp);
-        } else if (activeDate === activeDates.end) {
-          if (_selDate.getTime() < priorDates[0].getTime()) {
-            nextDates = [[selectedDate, undefined]];
-            setActiveDate(activeDates.end);
-          } else {
-            nextDates = [[dates[0][0], selectedDate]];
+          if (selDate.getTime() === priorDates[0].getTime()) {
+            nextDates = [[undefined, dateValue[0][1]]];
             setActiveDate(activeDates.start);
-          }
+          } else if (selDate.getTime() === priorDates[1].getTime()) {
+            nextDates = [[dateValue[0][0], undefined]];
+            setActiveDate(activeDates.end);
+            if (activeDateProp) setActiveDate(activeDateProp);
+          } else if (activeDate === activeDates.start) {
+            if (selDate.getTime() > priorDates[1].getTime()) {
+              nextDates = [[selectedDate, undefined]];
+            } else {
+              nextDates = [[selectedDate, dateValue[0][1]]];
+            }
 
-          if (activeDateProp) setActiveDate(activeDateProp);
-        } // cleanup
+            setActiveDate(activeDates.end);
+            if (activeDateProp) setActiveDate(activeDateProp);
+          } else if (activeDate === activeDates.end) {
+            if (selDate.getTime() < priorDates[0].getTime()) {
+              nextDates = [[selectedDate, undefined]];
+              setActiveDate(activeDates.end);
+            } else {
+              nextDates = [[dateValue[0][0], selectedDate]];
+              setActiveDate(activeDates.start);
+            }
+
+            if (activeDateProp) setActiveDate(activeDateProp);
+          } // cleanup
 
 
-        if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+        }; // have dates
+
+
+        if (dates) {
+          handleSelection(dates);
+        } else if (date && Array.isArray(date)) {
+          handleSelection(date);
+        }
       }
 
     setDates(nextDates);
-    if (!dates) setDate(nextDate);
+
+    if (date && typeof date === 'string') {
+      setDate(nextDate);
+    } else if (date && Array.isArray(date)) {
+      setDate(nextDates);
+    }
+
     setActive(new Date(selectedDate));
 
     if (onSelect) {

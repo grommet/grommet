@@ -11,7 +11,7 @@ export var doc = function doc(Calendar) {
     animate: PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),
     bounds: PropTypes.arrayOf(PropTypes.string).description("An array of two numbers indicating the limits on\n        navigation in ISO8601 format"),
     children: PropTypes.func.description("Function that will be called to render each day.\n      It will be passed `({date, day, isInRange, isSelected})` where `date`\n      is a string containing an ISO8601 date for the day being rendered, `day`\n      is a number containing the day of the month being rendered, `isInRange`\n      is a boolean indicating whether the date is within a selected range of\n      dates, and `isSelected` is a boolean indicating whether this date\n      is selected."),
-    date: PropTypes.string.description('The selected date in ISO8601 format'),
+    date: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]))]).description("The selected date or array of dates in ISO8601 format."),
     dates: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])).description("Multiple selected dates in ISO8601 format.\n      Items that are an array indicate a range of dates."),
     disabled: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])).description("Multiple dates in ISO8601 format that should not be\n        selectable. Items that are an array indicate a range of dates."),
     daysOfWeek: PropTypes.bool.description("Whether to show the days of the week.").defaultValue(false),
