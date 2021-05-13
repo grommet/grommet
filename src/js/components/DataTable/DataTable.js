@@ -171,35 +171,35 @@ const DataTable = ({
   // multiple pinned columns offset
   const [pinnedOffset, setPinnedOffset] = useState();
 
-  const getPinnedOffset = useCallback(
+  const onHeaderWidths = useCallback(
     columnWidths => {
       const pinnedProperties = columns
         .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
         .filter(n => n);
 
-      const pinnedColumnsProperties = {};
+      const nextPinnedOffset = {};
 
       if (columnWidths !== []) {
         pinnedProperties.forEach((property, index) => {
           const hasSelectColumn = Boolean(select || onSelect);
 
-          const tableIndex =
+          const columnIndex =
             columns.findIndex(column => column.property === property) +
             hasSelectColumn;
 
-          if (columnWidths[tableIndex]) {
-            pinnedColumnsProperties[property] = {
-              width: columnWidths[tableIndex],
+          if (columnWidths[columnIndex]) {
+            nextPinnedOffset[property] = {
+              width: columnWidths[columnIndex],
               left:
                 index === 0
                   ? 0
-                  : pinnedColumnsProperties[pinnedProperties[index - 1]].left +
-                    pinnedColumnsProperties[pinnedProperties[index - 1]].width,
+                  : nextPinnedOffset[pinnedProperties[index - 1]].left +
+                    nextPinnedOffset[pinnedProperties[index - 1]].width,
             };
           }
         });
 
-        setPinnedOffset(pinnedColumnsProperties);
+        setPinnedOffset(nextPinnedOffset);
       }
     },
     [columns, setPinnedOffset, select, onSelect],
@@ -366,7 +366,7 @@ const DataTable = ({
             }
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
-            onWidths={getPinnedOffset}
+            onWidths={onHeaderWidths}
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
