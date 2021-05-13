@@ -8,12 +8,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import {
-  selectedStyle,
-  setFocusWithoutScroll,
-  isNodeBeforeScroll,
-  isNodeAfterScroll,
-} from '../../utils';
+import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -130,29 +125,6 @@ const SelectContainer = forwardRef(
       }
       return undefined;
     }, [keyboardNavigation]);
-
-    // make sure options are visible in scroll
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        const list = optionsRef.current;
-        if (activeIndex !== -1 && list) {
-          const buttonNode = list.children[activeIndex];
-          const optionsNode = list;
-          if (buttonNode && optionsNode.scrollTo) {
-            if (isNodeAfterScroll(buttonNode, optionsNode)) {
-              optionsNode.scrollTo(
-                0,
-                buttonNode.offsetTop -
-                  (optionsNode.getBoundingClientRect().height -
-                    buttonNode.getBoundingClientRect().height),
-              );
-            } else if (isNodeBeforeScroll(buttonNode, optionsNode))
-              optionsNode.scrollTo(0, buttonNode.offsetTop);
-          }
-        }
-      }, 50);
-      return () => clearTimeout(timer);
-    }, [activeIndex]);
 
     const optionLabel = useCallback(
       index => applyKey(options[index], labelKey),
