@@ -51,7 +51,7 @@ const trackColorStyle = props => {
     // Since the track color was changed from border-with-opacity to just border
     // this condition is used to make sure we are applying the opacity correctly
     // for 'border' color (for backward compatibility purposes).
-    if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
+    if (color === 'rgba(0, 0, 0, 0.2)') return `background: ${color}`;
 
     // no bounds are defined but color may have changed
     return `background: ${getRGBA(
