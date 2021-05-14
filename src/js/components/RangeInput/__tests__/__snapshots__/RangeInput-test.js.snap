@@ -119,6 +119,10 @@ exports[`RangeInput onBlur 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
 <div
   class="c0"
 >
@@ -250,6 +254,10 @@ exports[`RangeInput onChange 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
 }
 
 <div
@@ -419,6 +427,30 @@ exports[`RangeInput onFocus 1`] = `
   border-color: transparent;
 }
 
+.c1:focus::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus-visible {
+  outline: 0;
+}
+
 <div
   class="c0"
 >
@@ -550,6 +582,10 @@ exports[`RangeInput renders 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
 }
 
 <div
@@ -685,6 +721,10 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
 <div>
   <div
     class="c0"
@@ -816,6 +856,10 @@ exports[`RangeInput track themed 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(125,76,219,1);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
 }
 
 <div
@@ -951,6 +995,10 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
 <div
   className="c0"
 >
@@ -1082,6 +1130,10 @@ exports[`RangeInput with min and max offset 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
 }
 
 <div

@@ -204,6 +204,14 @@ const StyledRangeInput = styled.input`
     border-color: transparent;
   }
 
+  &:focus::-webkit-slider-thumb {
+    ${props => props.focus && focusStyle()}
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
