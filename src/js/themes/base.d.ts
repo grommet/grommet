@@ -516,7 +516,7 @@ export interface ThemeType {
       width?: string;
     };
     label?: {
-      align?: AlignSelfType;
+      align?: AlignContentType;
     };
     check?: {
       extend?: ExtendType;
