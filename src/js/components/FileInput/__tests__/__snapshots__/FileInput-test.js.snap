@@ -46,6 +46,9 @@ exports[`FileInput accept 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -220,6 +223,9 @@ exports[`FileInput background 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -393,6 +399,9 @@ exports[`FileInput basic 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -566,6 +575,9 @@ exports[`FileInput border 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -739,6 +751,9 @@ exports[`FileInput disabled 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -914,6 +929,9 @@ exports[`FileInput margin 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1087,6 +1105,9 @@ exports[`FileInput messages 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1260,6 +1281,9 @@ exports[`FileInput multiple 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1434,6 +1458,9 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1608,6 +1635,9 @@ exports[`FileInput pad 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
