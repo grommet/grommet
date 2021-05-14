@@ -23,7 +23,6 @@ import {
   PadType,
   PropsOf,
   AlignContentType,
-  AlignSelfType,
 } from '../utils';
 
 import { BoxProps } from '../components/Box';
