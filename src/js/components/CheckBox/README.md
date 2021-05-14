@@ -328,7 +328,7 @@ Defaults to
 undefined
 ```
 
-**checkBox.label.alignment**
+**checkBox.label.align**
 
 How to align the checkbox and label. Expects `string`.
 
