@@ -9773,6 +9773,16 @@ Defaults to
 undefined
 \`\`\`
 
+**formField.error.border.color**
+
+The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'status-critical' },
+\`\`\`
+
 **formField.error.color**
 
 The color of the FormField error. Expects \`string | {'dark': string, 'light': string}\`.

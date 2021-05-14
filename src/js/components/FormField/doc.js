@@ -159,6 +159,11 @@ export const themeDoc = {
     type: 'string | boolean | number',
     defaultValue: undefined,
   },
+  'formField.error.border.color': {
+    description: 'The border color of the error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'white', light: 'status-critical' },",
+  },
   'formField.error.color': {
     description: 'The color of the FormField error.',
     type: "string | {'dark': string, 'light': string}",
