@@ -112,7 +112,10 @@ const Carousel = ({
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
-          <CurrentIcon color={activeIndex === index ? iconColor : undefined} />
+          <CurrentIcon
+            color={activeIndex === index ? iconColor : undefined}
+            a11yTitle={`Slide ${index + 1}`}
+          />
         }
         onClick={onSelect(index)}
       />,

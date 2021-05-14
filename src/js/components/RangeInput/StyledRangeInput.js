@@ -108,6 +108,7 @@ const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
+  ${props => props.focus && focusStyle()}
   ${props =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
@@ -203,7 +204,6 @@ const StyledRangeInput = styled.input`
     border-color: transparent;
   }
 
-  ${props => props.focus && focusStyle()}
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
