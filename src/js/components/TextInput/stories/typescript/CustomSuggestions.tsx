@@ -74,10 +74,31 @@ const folks = [
   },
 ];
 
+const formatSuggestions = (suggestedFolks, value) =>
+  suggestedFolks
+    .filter(({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0)
+    .map(({ name, imageUrl }, index, list) => ({
+      label: (
+        <Box
+          direction="row"
+          align="center"
+          gap="small"
+          border={index < list.length - 1 ? 'bottom' : undefined}
+          pad="small"
+        >
+          <Image width="48px" src={imageUrl} style={{ borderRadius: '100%' }} />
+          <Text>
+            <strong>{name}</strong>
+          </Text>
+        </Box>
+      ),
+      value: name,
+    }));
+
 export const CustomSuggestions = () => {
   const [value, setValue] = useState('');
   const [suggestionOpen, setSuggestionOpen] = useState(false);
-  const [suggestedFolks, setSuggestedFolks] = useState([]);
+  const [suggestions, setSuggestions] = useState([]);
   const boxRef = useRef();
 
   const onChange = useCallback(event => {
@@ -85,10 +106,12 @@ export const CustomSuggestions = () => {
     setValue(newValue);
 
     if (!newValue.trim()) {
-      setSuggestedFolks([]);
+      setSuggestions([]);
     } else {
       // simulate an async call to the backend
-      setTimeout(() => setSuggestedFolks(folks), 300);
+      setTimeout(() => {
+        setSuggestions(formatSuggestions(folks, newValue));
+      }, 300);
     }
   }, []);
 
@@ -97,38 +120,15 @@ export const CustomSuggestions = () => {
     [],
   );
 
-  const onSuggestionsOpen = useCallback(() => setSuggestionOpen(true), []);
-  const onSuggestionsClose = useCallback(() => setSuggestionOpen(false), []);
+  const onSuggestionsOpen = useCallback(() => {
+    setSuggestions(formatSuggestions(folks, value));
+    setSuggestionOpen(true);
+  }, [value]);
 
-  const suggestions = useMemo(
-    () =>
-      suggestedFolks
-        .filter(
-          ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
-        )
-        .map(({ name, imageUrl }, index, list) => ({
-          label: (
-            <Box
-              direction="row"
-              align="center"
-              gap="small"
-              border={index < list.length - 1 ? 'bottom' : undefined}
-              pad="small"
-            >
-              <Image
-                width="48px"
-                src={imageUrl}
-                style={{ borderRadius: '100%' }}
-              />
-              <Text>
-                <strong>{name}</strong>
-              </Text>
-            </Box>
-          ),
-          value: name,
-        })),
-    [suggestedFolks, value],
-  );
+  const onSuggestionsClose = useCallback(() => {
+    setSuggestions([]);
+    setSuggestionOpen(false);
+  }, []);
 
   return (
     <Grommet full theme={myCustomTheme}>
