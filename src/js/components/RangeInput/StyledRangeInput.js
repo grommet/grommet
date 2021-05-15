@@ -38,7 +38,9 @@ const trackColorStyle = props => {
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     !props.theme.rangeInput.track.lower &&
-    !props.theme.rangeInput.track.upper
+    !props.theme.rangeInput.track.upper &&
+    props.theme.rangeInput.track.color &&
+    typeof props.theme.rangeInput.track.color === "string"
   ) {
     const color = rgba(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
@@ -54,10 +56,43 @@ const trackColorStyle = props => {
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       props.theme.rangeInput.track.opacity || 1,
     )}`;
+  } else if (
+    props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    !props.theme.rangeInput.track.lower &&
+    props.theme.rangeInput.track.colors &&
+    Array.isArray(props.theme.rangeInput.track.colors) 
+  ) {
+    const max = props.max || 100; // 'max' defaults to 100 in case not specified
+    const min = props.min || 0; // 'min' defaults to 0 in case not specified
+    const thumbPosition = `${((props.value - min) / (max - min)) * 100}`;
+    // const lowerTrackColor = normalizeColor(props.theme.rangeInput.track.color, props.theme)
+    const upperTrackColor = getBoundColor(props, 'upper');
+    const arrayOfTrackColors = props.theme.rangeInput.track.colors;
+    let lowerTrackColor;
+    let valuePercentage = 0;
+    let result = `background: linear-gradient(to right,`;
+    for (let index = 0; index < arrayOfTrackColors.length; index++) {
+      const { value, color } = arrayOfTrackColors[index];
+      result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
+      if(props.value >= value){
+        valuePercentage = ((value - min) / (max - min)) * 100;
+        result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
+      }else{
+        result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
+      }
+      if(index === (arrayOfTrackColors.length - 1) && props.value >= value){
+        result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
+      }
+    }
+    console.log({result})
+    // linear-gradient( to right,green, green 20%,blue 20%, blue 50%, lightgray 50%,lightgray)
+    return result;
   }
 
   const max = props.max || 100; // 'max' defaults to 100 in case not specified
   const min = props.min || 0; // 'min' defaults to 0 in case not specified
+  console.log(props.value)
   const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
 
   const lowerTrackColor = getBoundColor(props, 'lower');
