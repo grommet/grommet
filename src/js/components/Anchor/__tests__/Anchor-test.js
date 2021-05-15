@@ -151,6 +151,7 @@ describe('Anchor', () => {
         <Anchor size="large" />
         <Anchor size="xlarge" />
         <Anchor size="xxlarge" />
+        <Anchor size="10px" />
       </Grommet>,
     );
     expect(container).toMatchSnapshot();
