@@ -68,6 +68,16 @@ const DateInput = forwardRef(
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
+    // updates the text value if the value prop changes
+    useEffect(() => {
+      if (schema) {
+        setTextValue(valueToText(value, schema));
+      } else {
+        setTextValue(undefined);
+      }
+    }, [value, schema]);
+
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
     // To track this, we keep track of the internalValue from interacting
