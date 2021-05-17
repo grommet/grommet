@@ -27,6 +27,9 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse,
   color: 
     string
     {
