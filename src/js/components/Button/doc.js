@@ -60,12 +60,14 @@ export const doc = Button => {
          boolean, the badge will be a circle with background color 'brand'. 
          When badge is a number, that number will appear inside the badge. When 
          badge is an object, background refers to the background color of the 
-         badge, value refers to the number that will appear inside the badge, 
-         and max refers to the max value that can appear inside the badge. 
-         For example, if value is 10 and max is 9, the content in the badge 
-         will be displayed as 9+. For accessibility, supplement the badge by 
-         adding an a11yTitle to the Button which provides a useful message to 
-         screen readers. For example, "2 unread notifications".`,
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         "2 unread notifications".`,
       )
       .defaultValue(undefined),
     color: colorPropType.description(
