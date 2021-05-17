@@ -69,19 +69,33 @@ const trackColorStyle = props => {
     // const lowerTrackColor = normalizeColor(props.theme.rangeInput.track.color, props.theme)
     const upperTrackColor = getBoundColor(props, 'upper');
     const arrayOfTrackColors = props.theme.rangeInput.track.colors;
-    let lowerTrackColor;
     let valuePercentage = 0;
     let result = `background: linear-gradient(to right,`;
     for (let index = 0; index < arrayOfTrackColors.length; index++) {
       const { value, color } = arrayOfTrackColors[index];
-      result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
+      // result += `${(props.value >= value) ? normalizeColor(color, props.theme): upperTrackColor} ${valuePercentage}%,`;
+      result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
+      // if(props.value === min) {
+      //   result = `background: linear-gradient(to right,${upperTrackColor} ${thumbPosition}%, ${upperTrackColor})`;
+      // } else 
+      // if(props.value >= min && index === 0 && props.value <= value){
+      //   console.log("Min called")
+      //   result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
+      //   valuePercentage = ((value - min) / (max - min)) * 100;
+      //   result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
+      // }else 
       if(props.value >= value){
+        console.log("value called ",value, color, props.value)
+        // result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
         valuePercentage = ((value - min) / (max - min)) * 100;
         result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
       }else{
-        result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
+        console.log("else is called")
+        result += `${upperTrackColor} ${thumbPosition}%, ${upperTrackColor})`;
+        break;
       }
-      if(index === (arrayOfTrackColors.length - 1) && props.value >= value){
+      if(index === (arrayOfTrackColors.length - 1) && (arrayOfTrackColors[arrayOfTrackColors.length - 1].value <= props.value)){
+        console.log("Last if called")
         result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
       }
     }

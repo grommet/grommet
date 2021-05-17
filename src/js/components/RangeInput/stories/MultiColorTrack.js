@@ -8,10 +8,6 @@ const rangeInputTheme = {
   rangeInput: {
     track: {
       height: '10px',
-    //   lower: {
-    //     color: 'brand',
-    //     opacity: 0.7,
-    //   },
       upper: {
         color: 'dark-4',
         opacity: 0.3,
@@ -25,7 +21,7 @@ const rangeInputTheme = {
   },
 };
 
-export const Bounds2 = () => {
+export const MultiColorTrack = () => {
   const [value, setValue] = React.useState(3);
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
@@ -71,6 +67,8 @@ export const Bounds2 = () => {
   );
 };
 
+MultiColorTrack.storyName = 'MultiColorTrack';
+
 export default {
-  title: 'Input/RangeInput/Bounds2',
+  title: 'Input/RangeInput/MultiColorTrack',
 };
