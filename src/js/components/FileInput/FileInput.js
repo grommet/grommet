@@ -161,6 +161,7 @@ const FileInput = forwardRef(
     return (
       <ContentsBox
         theme={theme}
+        flex={false}
         disabled={disabled}
         background={mergeTheme('background', 'color')}
         border={!plain ? mergeTheme('border', 'side') : undefined}
@@ -175,7 +176,7 @@ const FileInput = forwardRef(
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
-          <Box flex={false} fill="horizontal" direction="row" justify="between">
+          <Box fill="horizontal" direction="row" justify="between">
             {files.length <= aggregateThreshold && (
               <>
                 <Message {...theme.fileInput.message}>{message}</Message>
