@@ -121,7 +121,7 @@ const FileInput = forwardRef(
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
     // unreachable by mouse click.
-    // If browse anchor or button is greater then remove button then
+    // If browse anchor or button is greater than remove button then
     // rightoffset will take the larger width
     let rightOffset;
     if (removeRef.current && controlRef.current) {
