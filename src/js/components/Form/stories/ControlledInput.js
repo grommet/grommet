@@ -25,7 +25,7 @@ export const ControlledInput = () => {
   const [size, setSize] = useState('');
   const [comments, setComments] = useState('');
   const [age, setAge] = useState('');
-  const [setFile] = useState('');
+  const [setFile] = useState({});
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -40,7 +40,7 @@ export const ControlledInput = () => {
               setSize('');
               setComments('');
               setAge('');
-              setFile('');
+              setFile({});
             }}
             onSubmit={event =>
               console.log('Submit', event.value, event.touched)

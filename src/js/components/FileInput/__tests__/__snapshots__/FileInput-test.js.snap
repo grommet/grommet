@@ -137,7 +137,7 @@ exports[`FileInput accept 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -314,7 +314,7 @@ exports[`FileInput background 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -490,7 +490,7 @@ exports[`FileInput basic 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -666,7 +666,7 @@ exports[`FileInput border 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -1020,7 +1020,7 @@ exports[`FileInput margin 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -1196,7 +1196,7 @@ exports[`FileInput messages 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -1372,7 +1372,7 @@ exports[`FileInput multiple 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -1549,7 +1549,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
@@ -1726,7 +1726,7 @@ exports[`FileInput pad 1`] = `
 
 .c2 {
   position: relative;
-  cursor: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {

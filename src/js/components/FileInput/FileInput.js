@@ -23,7 +23,7 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ContentsBox = styled(Box)`
   position: relative;
-  ${props => (props.disabled ? disabledStyle() : 'cursor: auto;')}
+  ${props => (props.disabled ? disabledStyle() : 'cursor: pointer;')}
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
   ${props =>
     props.hover &&
@@ -129,19 +129,16 @@ const FileInput = forwardRef(
         .width;
       const rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
       if (rightPad && typeof rightPad === 'string')
-        rightOffset =
-          removeRef.current.getBoundingClientRect().width +
-          rightPad.replace('px', '');
+        rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
       if (files.length === 1 || files.length > aggregateThreshold) {
         rightOffset =
-          controlRef.current.getBoundingClientRect().width +
-          removeRef.current.getBoundingClientRect().width +
+          rightOffsetBrowse +
+          rightOffsetRemove +
           parseMetricToNum(theme.global.edgeSize.small) * 2;
       } else if (rightOffsetBrowse > rightOffsetRemove) {
         rightOffset =
-          controlRef.current.getBoundingClientRect().width +
-          parseMetricToNum(theme.global.edgeSize.small) * 2;
-      } else rightOffset = removeRef.current.getBoundingClientRect().width;
+          rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
+      } else rightOffset = rightOffsetRemove;
     } else if (!files.length && controlRef.current) {
       rightOffset =
         controlRef.current.getBoundingClientRect().width +
