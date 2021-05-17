@@ -208,7 +208,8 @@ const StyledRangeInput = styled.input`
     ${props => props.focus && focusStyle()}
   }
 
-  &:focus-visible {
+  &:focus-visible,
+  &:focus {
     outline: 0;
   }
 
