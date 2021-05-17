@@ -10,7 +10,6 @@ import {
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
-  FileInput,
   Select,
   TextArea,
   TextInput,
@@ -25,7 +24,6 @@ export const ControlledInput = () => {
   const [size, setSize] = useState('');
   const [comments, setComments] = useState('');
   const [age, setAge] = useState('');
-  const [setFile] = useState({});
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -40,7 +38,6 @@ export const ControlledInput = () => {
               setSize('');
               setComments('');
               setAge('');
-              setFile({});
             }}
             onSubmit={event =>
               console.log('Submit', event.value, event.touched)
@@ -105,19 +102,6 @@ export const ControlledInput = () => {
                 max={75}
                 value={age}
                 onChange={event => setAge(event.target.value)}
-              />
-            </FormField>
-            <FormField
-              htmlFor="file"
-              required
-              label="FileInput"
-              name="file"
-              pad
-            >
-              <FileInput
-                name="file"
-                id="file"
-                onChange={event => setFile(event.target.files)}
               />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
