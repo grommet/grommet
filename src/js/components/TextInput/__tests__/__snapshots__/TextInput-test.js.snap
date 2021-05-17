@@ -3446,6 +3446,11 @@ exports[`TextInput should show non-string placeholder 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3529,11 +3534,6 @@ exports[`TextInput should show non-string placeholder 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   pointer-events: none;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 <div

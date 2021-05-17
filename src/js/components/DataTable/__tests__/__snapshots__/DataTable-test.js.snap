@@ -2983,6 +2983,24 @@ exports[`DataTable custom theme 1`] = `
   font-weight: bold;
 }
 
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  position: relative;
+  display: block;
+}
+
+.c14 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -3153,24 +3171,6 @@ exports[`DataTable custom theme 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  position: relative;
-  display: block;
-}
-
-.c14 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .c16 {
@@ -12889,19 +12889,6 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c18 {
   margin: 0;
   padding: 0;
@@ -12966,6 +12953,14 @@ exports[`DataTable pin + background 1`] = `
 }
 
 .c16 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c17 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -13106,7 +13101,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c16"
+          class="c15 c17"
         >
           <div
             class="c11"
@@ -13240,7 +13235,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c15 "
         >
           <div
             class="c11"
@@ -13374,7 +13369,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 c16"
+          class="c15 c17"
         >
           <div
             class="c11"
@@ -13444,7 +13439,7 @@ exports[`DataTable pin + background context 1`] = `
   flex-direction: column;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13460,7 +13455,7 @@ exports[`DataTable pin + background context 1`] = `
   flex-direction: column;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13529,7 +13524,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c19 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13544,7 +13539,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c19 {
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13559,7 +13554,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c21 {
+.c22 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13574,7 +13569,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c23 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13640,6 +13635,14 @@ exports[`DataTable pin + background context 1`] = `
 }
 
 .c16 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c17 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -13783,7 +13786,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c15 c16"
+            class="c15 c17"
           >
             <div
               class="c12"
@@ -13794,7 +13797,7 @@ exports[`DataTable pin + background context 1`] = `
     </table>
   </div>
   <div
-    class="c17"
+    class="c18"
   >
     <table
       class="c2 c3"
@@ -13806,7 +13809,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 c5"
+            class="c19 c5"
             scope="col"
           >
             <div
@@ -13820,7 +13823,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c18 c8"
+            class="c19 c8"
             scope="col"
           >
             <div
@@ -13908,7 +13911,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c19 c16"
+            class="c20 c16"
           >
             <div
               class="c12"
@@ -13921,7 +13924,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c19 c16"
+            class="c20 c17"
           >
             <div
               class="c12"
@@ -13932,7 +13935,7 @@ exports[`DataTable pin + background context 1`] = `
     </table>
   </div>
   <div
-    class="c20"
+    class="c21"
   >
     <table
       class="c2 c3"
@@ -13944,7 +13947,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c21 c5"
+            class="c22 c5"
             scope="col"
           >
             <div
@@ -13958,7 +13961,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c21 c8"
+            class="c22 c8"
             scope="col"
           >
             <div
@@ -14046,7 +14049,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c22 c16"
+            class="c23 c16"
           >
             <div
               class="c12"
@@ -14059,7 +14062,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c22 c16"
+            class="c23 c17"
           >
             <div
               class="c12"
@@ -14217,6 +14220,14 @@ exports[`DataTable pin 1`] = `
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c16 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
   z-index: 1;
 }
 
@@ -14354,7 +14365,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c14 c15"
+          class="c14 c16"
         >
           <div
             class="c11"
@@ -14622,7 +14633,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c14 c15"
+          class="c14 c16"
         >
           <div
             class="c11"
@@ -15912,6 +15923,24 @@ exports[`DataTable resizeable 1`] = `
   font-weight: bold;
 }
 
+.c8 {
+  position: relative;
+}
+
+.c9 {
+  position: relative;
+  display: block;
+}
+
+.c11 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .c3 {
   margin: 0;
   padding: 0;
@@ -15941,24 +15970,6 @@ exports[`DataTable resizeable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c8 {
-  position: relative;
-}
-
-.c9 {
-  position: relative;
-  display: block;
-}
-
-.c11 {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .c13 {
@@ -28800,7 +28811,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               <svg
@@ -28826,7 +28837,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 bRhwnD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               1
@@ -28841,7 +28852,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 eZIHPR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 cCFJmp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               type="button"
             >
               2
@@ -28856,7 +28867,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 dqfRij StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 kNKMzf StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
               disabled=""
               type="button"
             >
