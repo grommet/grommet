@@ -3,8 +3,6 @@
 exports.__esModule = true;
 exports.base = exports.generate = void 0;
 
-var _polished = require("polished");
-
 var _Actions = require("grommet-icons/icons/Actions");
 
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
@@ -58,7 +56,7 @@ var darkColors = ['#333333', '#555555', '#777777', '#999999', '#999999', '#99999
 var lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA', '#DADADA', '#DADADA'];
 var focusColor = accentColors[0];
 var colors = {
-  active: (0, _polished.rgba)(221, 221, 221, 0.5),
+  active: 'rgba(221, 221, 221, 0.5)',
   'background-back': {
     dark: '#33333308',
     light: '#EDEDED'
@@ -75,8 +73,8 @@ var colors = {
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: (0, _polished.rgba)(255, 255, 255, 0.33),
-    light: (0, _polished.rgba)(0, 0, 0, 0.33)
+    dark: 'rgba(255, 255, 255, 0.33)',
+    light: 'rgba(0, 0, 0, 0.33)'
   },
   brand: brandColor,
   control: {

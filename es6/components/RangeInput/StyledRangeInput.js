@@ -1,6 +1,5 @@
-import { rgba } from 'polished';
 import styled, { css } from 'styled-components';
-import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import { focusStyle, normalizeColor, parseMetricToNum, getRGBA } from '../../utils';
 import { defaultProps } from '../../default-props'; // opacity of the bound trumps the track opacity
 
 var getBoundOpacity = function getBoundOpacity(props, bound) {
@@ -9,23 +8,23 @@ var getBoundOpacity = function getBoundOpacity(props, bound) {
 
 var getBoundColor = function getBoundColor(props, bound) {
   if (props.theme.rangeInput && props.theme.rangeInput.track && props.theme.rangeInput.track[bound] && props.theme.rangeInput.track[bound].color) {
-    return rgba(normalizeColor(props.theme.rangeInput.track[bound].color, props.theme), getBoundOpacity(props, bound));
+    return getRGBA(normalizeColor(props.theme.rangeInput.track[bound].color, props.theme), getBoundOpacity(props, bound));
   } // If bound color is undefined pick the default track color with bound opacity
 
 
-  return rgba(normalizeColor(props.theme.rangeInput.track.color, props.theme), getBoundOpacity(props, bound));
+  return getRGBA(normalizeColor(props.theme.rangeInput.track.color, props.theme), getBoundOpacity(props, bound));
 };
 
 var trackColorStyle = function trackColorStyle(props) {
   // backward compatibility in case no bounds are defined
   if (props.theme.rangeInput && props.theme.rangeInput.track && !props.theme.rangeInput.track.lower && !props.theme.rangeInput.track.upper) {
-    var color = rgba(normalizeColor(props.theme.rangeInput.track.color, props.theme), 0.2); // Since the track color was changed from border-with-opacity to just border
+    var color = getRGBA(normalizeColor(props.theme.rangeInput.track.color, props.theme), 0.2); // Since the track color was changed from border-with-opacity to just border
     // this condition is used to make sure we are applying the opacity correctly
     // for 'border' color (for backward compatibility purposes).
 
-    if (color === 'rgba(0,0,0,0.2)') return "background: " + color; // no bounds are defined but color may have changed
+    if (color === 'rgba(0, 0, 0, 0.2)') return "background: " + color; // no bounds are defined but color may have changed
 
-    return "background: " + rgba(normalizeColor(props.theme.rangeInput.track.color, props.theme), props.theme.rangeInput.track.opacity || 1);
+    return "background: " + getRGBA(normalizeColor(props.theme.rangeInput.track.color, props.theme), props.theme.rangeInput.track.opacity || 1);
   }
 
   var max = props.max || 100; // 'max' defaults to 100 in case not specified

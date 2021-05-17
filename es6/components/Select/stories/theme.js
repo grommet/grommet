@@ -1,4 +1,3 @@
-import { rgba } from 'polished';
 import { CaretDownFill } from "grommet-icons/es6/icons/CaretDownFill";
 import { CaretUpFill } from "grommet-icons/es6/icons/CaretUpFill";
 import { FormCheckmark } from "grommet-icons/es6/icons/FormCheckmark";
@@ -10,7 +9,7 @@ export var theme = {
       selected: 'neutral-3',
       border: '#e0e0e0',
       focus: '#2196F3',
-      gray: rgba(0, 0, 0, 0.54)
+      gray: 'rgba(0, 0, 0, 0.54)'
     },
     control: {
       border: {

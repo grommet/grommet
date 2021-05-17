@@ -3,8 +3,6 @@
 exports.__esModule = true;
 exports.theme = void 0;
 
-var _polished = require("polished");
-
 var _grommetIcons = require("grommet-icons");
 
 var _utils = require("../../../utils");
@@ -17,7 +15,7 @@ var theme = {
       selected: 'neutral-3',
       border: '#e0e0e0',
       focus: '#2196F3',
-      gray: (0, _polished.rgba)(0, 0, 0, 0.54)
+      gray: 'rgba(0, 0, 0, 0.54)'
     },
     control: {
       border: {

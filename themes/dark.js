@@ -3,8 +3,6 @@
 exports.__esModule = true;
 exports.dark = void 0;
 
-var _polished = require("polished");
-
 var _styledComponents = require("styled-components");
 
 var _object = require("../utils/object");
@@ -23,7 +21,7 @@ var statusColors = {
 };
 var backgroundColor = '#111111';
 var colors = {
-  active: (0, _polished.rgba)(102, 102, 102, 0.5),
+  active: 'rgba(102, 102, 102, 0.5)',
   background: backgroundColor,
   black: '#000000',
   brand: '#FD6FFF',
@@ -82,7 +80,7 @@ var dark = (0, _object.deepFreeze)({
   layer: {
     background: backgroundColor,
     overlay: {
-      background: (0, _polished.rgba)(48, 48, 48, 0.5)
+      background: 'rgba(48, 48, 48, 0.5)'
     }
   }
 });
