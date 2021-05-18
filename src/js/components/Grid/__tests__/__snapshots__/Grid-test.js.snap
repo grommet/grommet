@@ -789,6 +789,103 @@ exports[`Grid gap renders 1`] = `
 </div>
 `;
 
+exports[`Grid height 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  height: 96px;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  height: 192px;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  height: 384px;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  height: 768px;
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  height: 1152px;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  height: 111px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Grid height object 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  max-height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+</div>
+`;
+
 exports[`Grid justify renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -1229,6 +1326,104 @@ exports[`Grid rows renders with warning 1`] = `
   display: grid;
   box-sizing: border-box;
   grid-template-rows: 1fr;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Grid width 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  width: 96px;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  width: 192px;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  width: 384px;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  width: 768px;
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  width: 1152px;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  width: 111px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Grid width object 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100px;
 }
 
 <div

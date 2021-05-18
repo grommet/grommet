@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { borderStyle, edgeStyle, genericStyles } from '../../utils';
+import {
+  borderStyle,
+  edgeStyle,
+  genericStyles,
+  heightStyle,
+  widthStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
@@ -247,6 +253,8 @@ const StyledGrid = styled.div.attrs(props => ({
       props.theme,
     )}
   ${props => props.rowsProp && rowsStyle(props)}
+  ${props => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${props => props.widthProp && widthStyle(props.widthProp, props.theme)}
   ${props => props.theme.grid && props.theme.grid.extend}
 `;
 

@@ -818,6 +818,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -4705,6 +4714,47 @@ string",
         "name": "gap",
       },
       Object {
+        "description": "A fixed height.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "height",
+      },
+      Object {
         "defaultValue": "stretch",
         "description": "How to align the individual items inside the grid when there is extra
 space in the row axis.",
@@ -4872,6 +4922,47 @@ function",
         "format": "string
 function",
         "name": "as",
+      },
+      Object {
+        "description": "A fixed width.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "width",
       },
     ],
     "usage": "import { Grid } from 'grommet';

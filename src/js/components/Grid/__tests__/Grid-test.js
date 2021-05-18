@@ -309,4 +309,54 @@ describe('Grid', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('width', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid width="xsmall" />
+        <Grid width="small" />
+        <Grid width="medium" />
+        <Grid width="large" />
+        <Grid width="xlarge" />
+        <Grid width="111px" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('width object', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid width={{ width: '100px', max: '100%' }} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('height', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid height="xsmall" />
+        <Grid height="small" />
+        <Grid height="medium" />
+        <Grid height="large" />
+        <Grid height="xlarge" />
+        <Grid height="111px" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('height object', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid height={{ height: '100px', max: '100%' }} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
