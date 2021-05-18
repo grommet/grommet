@@ -55,6 +55,7 @@ const animationObjectStyle = (animation, theme) => {
     )}
       ${normalizeTiming(animation.delay, '0s')}
       ${animationEnding(animation.type)}
+      
     `;
   }
   return '';
@@ -64,13 +65,18 @@ const animationItemStyle = (item, theme) =>
   animationObjectStyle({ type: item }, theme);
 
 const animationStyle = css`
-  ${props => css`
-    path {
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      animation: ${animationItemStyle(props.animation, props.theme)};
-    }
-  `};
+  ${props =>
+    props.animation === 'draw'
+      ? css`
+          path {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: ${animationItemStyle(props.animation, props.theme)};
+          }
+        `
+      : css`
+          animation: ${animationItemStyle(props.animation, props.theme)};
+        `}
 `;
 
 const StyledDiagram = styled.svg`
