@@ -17,12 +17,18 @@ const animationEnding = type => {
   if (type === 'pulse') {
     return 'alternate infinite';
   }
+  if (type === 'draw') {
+    return 'linear forwards';
+  }
   return 'fowards';
 };
 
 const animationBounds = (type, size = 'medium') => {
   if (type === 'pulse') {
     return ['transform: scale(1);', `transform: scale(${PULSE_SIZES[size]})`];
+  }
+  if (type === 'draw') {
+    return ['', `stroke-dashoffset: 0`];
   }
   return [];
 };
@@ -59,7 +65,11 @@ const animationItemStyle = (item, theme) =>
 
 const animationStyle = css`
   ${props => css`
-    animation: ${animationItemStyle(props.animation, props.theme)};
+    path {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: ${animationItemStyle(props.animation, props.theme)};
+    }
   `};
 `;
 

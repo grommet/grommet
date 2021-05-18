@@ -20,7 +20,7 @@ export const doc = Diagram => {
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
         animation: PropTypes.oneOfType([
           PropTypes.bool,
-          PropTypes.oneOf(['pulse']),
+          PropTypes.oneOf(['pulse', 'draw']),
         ]),
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])

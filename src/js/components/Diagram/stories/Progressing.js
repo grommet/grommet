@@ -72,7 +72,7 @@ export const Progressing = () => {
               ))}
             </Box>
           </Box>
-          <Diagram connections={connections} />
+          <Diagram animation="draw" connections={connections} />
         </Stack>
       </Box>
     </Grommet>
