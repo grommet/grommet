@@ -3366,7 +3366,8 @@ string",
     horizontal,
   animation: 
     boolean
-    pulse,
+    pulse
+    draw,
   color: 
     string
     {

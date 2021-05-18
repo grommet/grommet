@@ -29,7 +29,8 @@ Required. Array of objects describing the connections.
     horizontal,
   animation: 
     boolean
-    pulse,
+    pulse
+    draw,
   color: 
     string
     {
