@@ -22,6 +22,7 @@ const Footer = forwardRef(
       onSelect,
       pad,
       pin: tablePin,
+      pinnedOffset,
       primaryProperty,
       selected,
       ...rest
@@ -52,6 +53,7 @@ const Footer = forwardRef(
           {columns.map(column => {
             const cellPin = [...pin];
             if (column.pin) cellPin.push('left');
+
             return (
               <Cell
                 key={column.property}
@@ -62,6 +64,7 @@ const Footer = forwardRef(
                 datum={footerValues}
                 pad={pad}
                 pin={pin.length ? pin : undefined}
+                pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                 primaryProperty={primaryProperty}
               />
             );

@@ -1144,10 +1144,6 @@ reverse",
     "usage": "import { Box } from 'grommet';
 <Box />",
   },
-  "BoxSnowpack": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
   "Button": Object {
     "availableAt": Array [
       Object {
@@ -1295,6 +1291,62 @@ function",
         "name": "as",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".",
+        "format": "boolean
+element
+number
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  max: number,
+  value: 
+    boolean
+    number
+}",
+        "name": "badge",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -1425,7 +1477,9 @@ string
         "name": "href",
       },
       Object {
-        "description": "Icon element to place in the button.",
+        "description": "Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.",
         "format": "element",
         "name": "icon",
       },
@@ -1670,8 +1724,12 @@ end",
         "name": "children",
       },
       Object {
-        "description": "The selected date in ISO8601 format",
-        "format": "string",
+        "description": "The selected date or array of dates in ISO8601 format.",
+        "format": "string
+[
+  string
+  [string]
+]",
         "name": "date",
       },
       Object {
@@ -2029,7 +2087,7 @@ string",
         "name": "onHover",
       },
       Object {
-        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "description": "What opacity to apply to the visuals. Supersedes 'color.opacity'",
         "format": "weak
 medium
 strong
@@ -2241,7 +2299,8 @@ point",
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
@@ -6417,6 +6476,14 @@ pie",
         "name": "type",
       },
       Object {
+        "description": "The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.",
+        "format": "horizontal
+vertical",
+        "name": "direction",
+      },
+      Object {
         "description": "
       The numeric value to represent. Ignored when 'values' is specified.
     ",
@@ -7361,10 +7428,14 @@ node",
       },
       Object {
         "description": "When the options array contains objects, this property indicates how
-      to determine the label of each option. If a string is
-      provided, it is used as the key to retrieve each option's label.
-      If a function is provided, it is called with the option and the
-      return value indicates the label.",
+      to retrieve the label for each option.
+      If a string is provided, it is used as the key to retrieve
+      a property of an
+      option object, which should be a string.
+      If a function is provided, it is called with the option and should
+      return a string or a React node.
+      The label is what is displayed to the user in the options list
+      drop down and for the selected option itself.",
         "format": "string
 function",
         "name": "labelKey",
@@ -7481,10 +7552,13 @@ string",
         "name": "size",
       },
       Object {
-        "description": "Currently selected value. This can be an array
-      when multiple. Passing an element allows the caller to control how
-      the value is rendered. Passing an element is deprecated. Instead,
-      use the 'valueLabel' property.",
+        "description": "The currently selected value.
+    When 'valueKey' sets 'reduce', the value(s) here should match what the
+    'valueKey' would return for the corresponding selected option object.
+    Otherwise, the value should be one (or multiple, when multiple = true)
+    of the options from the options array.
+    Passing an element allows the caller to control how the value is rendered.
+    Passing an element is deprecated. Instead, use the 'valueLabel' property.",
         "format": "string
 element
 object
@@ -7504,12 +7578,13 @@ number
       },
       Object {
         "description": "When the options array contains objects, this property indicates how
-      to determine the value of each option. If a string is
-      provided, it is used as the key to retrieve each option's value.
-      If a function is provided, it is called with the option and the
-      return value indicates the value. If reduce is true, the value
-      coming via the key will be used for the onChange value and the value
-      property is expected to be reduced to align.",
+      to retrieve the value of each option.
+      If a string is provided, it is used as the key to retrieve a
+      property of an option object.
+      If a function is provided, it is called with the option and should
+      return the value.
+      If reduce is true, this value will be used for the 'value'
+      delivered via 'onChange'.",
         "format": "string
 function
 {
@@ -7589,7 +7664,172 @@ string",
     "usage": "import { Spinner } from 'grommet';
 <Spinner/>",
   },
-  "Stack": [Function],
+  "Stack": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Stack&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/stack&module=%2Fsrc%2FStack.js",
+      },
+    ],
+    "description": "A container that stacks contents on top of each other. One child is
+      designated as the \`guidingChild\` which determines the size. All
+      other children are placed within that size, either above or below
+      based on their order. Stack is typically used to decorate Meter, Chart,
+      or icons.",
+    "intrinsicElement": "div",
+    "name": "Stack",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Where to anchor children from. If not specified, children
+      fill the guiding child's area.",
+        "format": "center
+left
+right
+top
+bottom
+top-left
+bottom-left
+top-right
+bottom-right",
+        "name": "anchor",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to expand to fill
+      all of the available width and height in the parent container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
+        "defaultValue": "first",
+        "description": "Which child to guide layout from. All other children
+      will be positioned within that area. Defaults to 'first'.",
+        "format": "number
+first
+last",
+        "name": "guidingChild",
+      },
+      Object {
+        "description": "Which child to restrict user interaction to. All other children
+      will have user interaction disabled.",
+        "format": "number
+first
+last",
+        "name": "interactiveChild",
+      },
+    ],
+    "usage": "import { Stack } from 'grommet';
+<Stack />",
+  },
   "Tab": Object {
     "description": "One tab within Tabs.",
     "intrinsicElement": "button",

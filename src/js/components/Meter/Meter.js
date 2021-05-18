@@ -19,6 +19,7 @@ const Meter = forwardRef(
     {
       background = { color: 'light-2', opacity: 'medium' },
       color,
+      direction = 'horizontal',
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
@@ -36,7 +37,6 @@ const Meter = forwardRef(
     }, [color, value, valuesProp]);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
-
     let content;
     if (type === 'bar') {
       content = (
@@ -47,6 +47,7 @@ const Meter = forwardRef(
           size={size}
           thickness={thickness}
           background={background}
+          direction={direction}
           {...rest}
         />
       );
