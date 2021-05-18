@@ -609,6 +609,22 @@ exports[`Anchor size renders 1`] = `
   text-decoration: underline;
 }
 
+.c7 {
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: normal;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c7:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 <div
   className="c0"
 >
@@ -647,6 +663,12 @@ exports[`Anchor size renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
     size="xxlarge"
+  />
+  <a
+    className="c7"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="10px"
   />
 </div>
 `;

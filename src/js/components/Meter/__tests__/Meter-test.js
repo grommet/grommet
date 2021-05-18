@@ -153,4 +153,14 @@ describe('Meter', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('vertical', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Meter direction="vertical" values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

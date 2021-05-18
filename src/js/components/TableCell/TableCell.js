@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useEffect, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
@@ -24,6 +25,7 @@ const TableCell = forwardRef(
       children,
       className, // so StyledDataTableCell is applied to td/th
       colSpan,
+      onWidth,
       pad,
       plain,
       scope,
@@ -37,6 +39,13 @@ const TableCell = forwardRef(
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
+
+    useLayoutEffect(() => {
+      if (onWidth) {
+        const { width } = cellRef.current.getBoundingClientRect();
+        onWidth(width);
+      }
+    }, [cellRef, onWidth]);
 
     // if window resizes, recalculate cell height so that content
     // will continue to fill the height if the dimensions of the cell
