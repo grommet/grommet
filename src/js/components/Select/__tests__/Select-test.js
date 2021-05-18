@@ -444,6 +444,7 @@ describe('Select', () => {
 
   test('select an option with keypress', () => {
     const onChange = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = function() {};
     const { getByPlaceholderText, container } = render(
       <Select
         id="test-select"
@@ -472,6 +473,7 @@ describe('Select', () => {
 
   test('select an object with label key specific with keypress', () => {
     const onChange = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = function() {};
     const options = [
       { id: 1, name: 'one' },
       { id: 2, name: 'two' },
@@ -511,6 +513,7 @@ describe('Select', () => {
 
   test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = function() {};
     const { getByPlaceholderText, container } = render(
       <Select
         id="test-select"

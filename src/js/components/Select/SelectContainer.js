@@ -279,6 +279,18 @@ const SelectContainer = forwardRef(
             } else {
               label = e;
             }
+
+            if (optionsRef.current) {
+              if (
+                optionsRef.current.childNodes[
+                  index
+                ].childNodes[0].childNodes[0].textContent
+                  .charAt(0)
+                  .toLowerCase() === event.key.toLowerCase()
+              ) {
+                optionsRef.current.childNodes[index].scrollIntoView(true);
+              }
+            }
             return (
               typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
