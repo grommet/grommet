@@ -23,7 +23,7 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ContentsBox = styled(Box)`
   position: relative;
-  ${props => (props.disabled ? disabledStyle() : 'cursor: pointer;')}
+  ${props => props.disabled && disabledStyle()}
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
   ${props =>
     props.hover &&
@@ -168,8 +168,8 @@ const FileInput = forwardRef(
         align={files.length ? 'stretch' : 'center'}
         justify="center"
         hover={hover}
-        onMouseOver={() => setHover(true)}
-        onMouseOut={() => setHover(false)}
+        onMouseOver={disabled ? undefined : () => setHover(true)}
+        onMouseOut={disabled ? undefined : () => setHover(false)}
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
