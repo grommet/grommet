@@ -185,6 +185,14 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'layer.intelligentID': {
+    description: `Opt in that would assure that the id is placed on 
+    on DOM node, currently we have id being placed on both
+    StyledContainer, StyledLayer, so id would only be placed on
+    StyledContainer for accessibility.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
   'layer.overlay.background': {
     description: 'The background of the Layer overlay.',
     type: 'string',

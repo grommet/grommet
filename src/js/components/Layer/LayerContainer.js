@@ -197,7 +197,7 @@ const LayerContainer = forwardRef(
     content = (
       <StyledLayer
         ref={layerRef}
-        id={id}
+        id={theme.layer.intelligentID ? undefined : id}
         plain={plain}
         position={position}
         responsive={responsive}

@@ -976,6 +976,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         zIndex: '20',
       },
       // extend: undefined,
+      // intelligentID: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },

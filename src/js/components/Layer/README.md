@@ -323,6 +323,19 @@ Defaults to
 undefined
 ```
 
+**layer.intelligentID**
+
+Opt in that would assure that the id is placed on 
+    on DOM node, currently we have id being placed on both
+    StyledContainer, StyledLayer, so id would only be placed on
+    StyledContainer for accessibility. Expects `boolean`.
+
+Defaults to
+
+```
+undefined
+```
+
 **layer.overlay.background**
 
 The background of the Layer overlay. Expects `string`.
