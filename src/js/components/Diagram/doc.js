@@ -68,6 +68,16 @@ export const themeDoc = {
     type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
   },
+  'global.animation': {
+    description: 'The animation configuration for Diagram.',
+    type: 'object',
+    defaultValue: `{
+      duration: '1s',
+      draw: {
+        duration: '0.1s',
+      },
+    }`,
+  },
   'global.colors': {
     description: 'Color options.',
     type: 'object',
