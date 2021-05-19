@@ -14,7 +14,7 @@ const locations = [
 export const Order = () => {
   const [ordered, setOrder] = useState(locations);
   return (
-    <Grommet theme={grommet}>
+    <Grommet theme={grommet} role="application">
       <Box align="center" pad="large">
         <List data={ordered} onOrder={setOrder} />
       </Box>

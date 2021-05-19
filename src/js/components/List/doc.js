@@ -108,7 +108,10 @@ export const doc = List => {
     ),
     onOrder: PropTypes.func.description(
       `Use this to indicate that the user should be allowed to re-order the
-      data items. This cannot be used with 'paginate' or 'onClickItem'.`,
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.`,
     ),
     pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
