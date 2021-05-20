@@ -208,9 +208,12 @@ const StyledRangeInput = styled.input`
     ${props => props.focus && focusStyle()}
   }
 
-  &:focus-visible,
-  &:focus {
+  &:focus-visible {
     outline: 0;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}

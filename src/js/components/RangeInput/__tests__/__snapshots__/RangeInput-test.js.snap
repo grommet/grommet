@@ -119,9 +119,12 @@ exports[`RangeInput onBlur 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -257,9 +260,12 @@ exports[`RangeInput onChange 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -449,9 +455,12 @@ exports[`RangeInput onFocus 1`] = `
   border: 0;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -587,9 +596,12 @@ exports[`RangeInput renders 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -725,9 +737,12 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div>
@@ -863,9 +878,12 @@ exports[`RangeInput track themed 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -1001,9 +1019,12 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -1139,9 +1160,12 @@ exports[`RangeInput with min and max offset 1`] = `
   border-color: transparent;
 }
 
-.c1:focus-visible,
-.c1:focus {
+.c1:focus-visible {
   outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
