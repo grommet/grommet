@@ -66,6 +66,17 @@ Whether to take the whole viewport.
 boolean
 ```
 
+**options**
+
+Opt in that would assure that the id is placed on 
+      on DOM node. For example in Layer we currently we have id
+      being placed on both StyledContainer, StyledLayer, so id
+      would only be placed on StyledContainer for accessibility.
+
+```
+object
+```
+
 **plain**
 
 Whether or not Grommet should apply a global font-family, font-size,

@@ -21,6 +21,14 @@ export const doc = Grommet => {
     full: PropTypes.bool
       .description('Whether to take the whole viewport.')
       .defaultValue(false),
+    options: PropTypes.object
+      .description(
+        `Opt in that would assure that the id is placed on 
+      on DOM node. For example in Layer we currently we have id
+      being placed on both StyledContainer, StyledLayer, so id
+      would only be placed on StyledContainer for accessibility.`,
+      )
+      .defaultValue(undefined),
     plain: PropTypes.bool
       .description(
         `Whether or not Grommet should apply a global font-family, font-size,
