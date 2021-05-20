@@ -667,6 +667,9 @@ export var generate = function generate(baseSpacing, scale) {
         radius: '4px',
         thickness: '4px'
       },
+      label: {
+        align: 'center'
+      },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
       // gap: undefined

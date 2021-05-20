@@ -31,7 +31,9 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 var StyledCheckBoxContainer = styled.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
+  return props.theme.checkBox.label.align;
+}, function (props) {
   return props.fillProp ? fillStyle() : 'width: fit-content;';
 }, function (props) {
   return (props.pad || props.theme.checkBox.pad) && edgeStyle('padding', props.pad || props.theme.checkBox.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
