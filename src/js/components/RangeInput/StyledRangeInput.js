@@ -211,7 +211,7 @@ const StyledRangeInput = styled.input`
   &:focus-visible {
     outline: 0;
   }
-
+  // to remove browser default on safari
   &:focus {
     outline: none;
   }
