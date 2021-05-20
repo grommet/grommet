@@ -5362,6 +5362,16 @@ Defaults to
 undefined
 \`\`\`
 
+**checkBox.label.align**
+
+How to align the checkbox and label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+center
+\`\`\`
+
 **checkBox.pad**
 
 The pad around the CheckBox and its label. Expects \`string | object\`.
