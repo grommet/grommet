@@ -42,17 +42,16 @@ export const doc = FileInput => {
       PropTypes.bool,
       PropTypes.shape({
         aggregateThreshold: PropTypes.number,
-      }),
+        max: PropTypes.number
+      })
     ])
       .description(
         `Whether to allow multiple files. If an object is supplied,
         'aggregageThreshold' indicates the maximum number of individual
         files to show. Above this, only a single message describing the
-        number of files will be shown.`,
+        number of files will be shown.And if the object 'max' is supplied.
+        it will limit the number of files selected by the user.`,
       )
-      .defaultValue(undefined),
-    maximumCount: PropTypes.number
-      .description(`To limit the number of files selected by the user.`)
       .defaultValue(undefined),
     name: PropTypes.string.description(
       `The name attribute of the input. This is required when used within

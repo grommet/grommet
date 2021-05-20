@@ -9956,21 +9956,15 @@ Custom messages for FileInput. Used for accessibility by screen
 Whether to allow multiple files. If an object is supplied,
         'aggregageThreshold' indicates the maximum number of individual
         files to show. Above this, only a single message describing the
-        number of files will be shown.
+        number of files will be shown.And if the object 'max' is supplied.
+        it will limit the number of files selected by the user.
 
 \`\`\`
 boolean
 {
-  aggregateThreshold: number
+  aggregateThreshold: number,
+  max: number
 }
-\`\`\`
-
-**maximumCount**
-
-To limit the number of files selected by the user.
-
-\`\`\`
-number
 \`\`\`
 
 **name**

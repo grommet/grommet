@@ -3926,18 +3926,14 @@ string",
         "description": "Whether to allow multiple files. If an object is supplied,
         'aggregageThreshold' indicates the maximum number of individual
         files to show. Above this, only a single message describing the
-        number of files will be shown.",
+        number of files will be shown.And if the object 'max' is supplied.
+        it will limit the number of files selected by the user.",
         "format": "boolean
 {
-  aggregateThreshold: number
+  aggregateThreshold: number,
+  max: number
 }",
         "name": "multiple",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "To limit the number of files selected by the user.",
-        "format": "number",
-        "name": "maximumCount",
       },
       Object {
         "description": "The name attribute of the input. This is required when used within
