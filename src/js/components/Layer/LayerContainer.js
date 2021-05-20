@@ -11,6 +11,7 @@ import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -49,6 +50,7 @@ const LayerContainer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
+    const { singleId } = useContext(OptionsContext);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -197,7 +199,7 @@ const LayerContainer = forwardRef(
     content = (
       <StyledLayer
         ref={layerRef}
-        id={theme.layer.intelligentID ? undefined : id}
+        id={singleId ? undefined : id}
         plain={plain}
         position={position}
         responsive={responsive}

@@ -18,6 +18,7 @@ import {
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -50,6 +51,7 @@ const Grommet = forwardRef((props, ref) => {
     full,
     containerTarget = typeof document === 'object' ? document.body : undefined,
     theme: themeProp,
+    options = {},
     ...rest
   } = props;
 
@@ -114,10 +116,12 @@ const Grommet = forwardRef((props, ref) => {
       <ResponsiveContext.Provider value={responsive}>
         <RootsContext.Provider value={[grommetRef.current]}>
           <ContainerTargetContext.Provider value={containerTarget}>
-            <StyledGrommet full={full} {...rest} ref={grommetRef}>
-              {children}
-            </StyledGrommet>
-            {full && <FullGlobalStyle />}
+            <OptionsContext.Provider value={options}>
+              <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                {children}
+              </StyledGrommet>
+              {full && <FullGlobalStyle />}
+            </OptionsContext.Provider>
           </ContainerTargetContext.Provider>
         </RootsContext.Provider>
       </ResponsiveContext.Provider>
