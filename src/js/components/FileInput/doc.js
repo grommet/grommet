@@ -42,8 +42,8 @@ export const doc = FileInput => {
       PropTypes.bool,
       PropTypes.shape({
         aggregateThreshold: PropTypes.number,
-        max: PropTypes.number
-      })
+        max: PropTypes.number,
+      }),
     ])
       .description(
         `Whether to allow multiple files. If an object is supplied,
