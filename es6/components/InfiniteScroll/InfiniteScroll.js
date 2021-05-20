@@ -14,14 +14,14 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       onMore = _ref.onMore,
       renderMarker = _ref.renderMarker,
       replace = _ref.replace,
-      showProp = _ref.show,
+      show = _ref.show,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step;
 
   // item index to be made visible initially
-  var _useState = useState(showProp),
-      show = _useState[0],
-      setShow = _useState[1]; // the last page we have items for
+  var _useState = useState(),
+      scrollShow = _useState[0],
+      setScrollShow = _useState[1]; // the last page we have items for
 
 
   var lastPage = useMemo(function () {
@@ -156,7 +156,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   useLayoutEffect(function () {
     // ride out any animation delays, 100ms empirically measured
     var timer = setTimeout(function () {
-      if (show && belowMarkerRef.current) {
+      if (show && belowMarkerRef.current && show !== scrollShow) {
         // calculate show index based on beginPage
         var showIndex = show - renderPageBounds[0] * step + (renderPageBounds[0] ? 1 : 0);
         var showNode = belowMarkerRef.current.parentNode.children.item(showIndex);
@@ -171,7 +171,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
           } // clean up after having shown
 
 
-          setShow(undefined);
+          setScrollShow(show);
         }
       }
     }, 100);
