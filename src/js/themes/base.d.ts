@@ -960,7 +960,6 @@ export interface ThemeType {
       zIndex?: string;
     };
     extend?: ExtendType;
-    intelligentID?: boolean;
     overlay?: {
       background?: BackgroundType;
     };
