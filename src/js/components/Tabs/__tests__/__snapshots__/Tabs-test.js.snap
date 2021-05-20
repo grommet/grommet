@@ -79,6 +79,18 @@ exports[`Tabs Custom Tab component 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -135,18 +147,6 @@ exports[`Tabs Custom Tab component 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -361,6 +361,18 @@ exports[`Tabs Tab 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -417,18 +429,6 @@ exports[`Tabs Tab 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -646,6 +646,18 @@ exports[`Tabs alignControls 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -702,18 +714,6 @@ exports[`Tabs alignControls 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -931,6 +931,18 @@ exports[`Tabs change to second tab 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -987,18 +999,6 @@ exports[`Tabs change to second tab 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -1735,6 +1735,18 @@ exports[`Tabs set on hover 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -1791,18 +1803,6 @@ exports[`Tabs set on hover 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -2245,6 +2245,18 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: blue;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2361,18 +2373,6 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 
 .c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  color: blue;
 }
 
 .c0 {
@@ -2598,6 +2598,18 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: blue;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2722,18 +2734,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 
 .c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  color: blue;
 }
 
 .c0 {
@@ -3160,6 +3160,18 @@ exports[`Tabs should style as disabled 1`] = `
   padding-bottom: 6px;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -3276,18 +3288,6 @@ exports[`Tabs should style as disabled 1`] = `
 
 .c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -3511,6 +3511,18 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   padding-bottom: 6px;
 }
 
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -3567,18 +3579,6 @@ exports[`Tabs styled component should change tab color when active 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {
@@ -3842,6 +3842,18 @@ exports[`Tabs with icon + reverse 1`] = `
   width: 12px;
 }
 
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -3898,18 +3910,6 @@ exports[`Tabs with icon + reverse 1`] = `
 
 .c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #7D4CDB;
 }
 
 .c0 {

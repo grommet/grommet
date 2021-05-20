@@ -1478,6 +1478,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -2210,6 +2219,64 @@ string
 function
 \`\`\`
 
+**badge**
+
+An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".
+
+\`\`\`
+boolean
+element
+number
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  max: number,
+  value: 
+    boolean
+    number
+}
+\`\`\`
+
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
@@ -2361,7 +2428,9 @@ string
 
 **icon**
 
-Icon element to place in the button.
+Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.
 
 \`\`\`
 element
@@ -2667,6 +2736,67 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**button.badge.container.background**
+
+The background of the badge. Expects \`string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+brand
+\`\`\`
+
+**button.badge.container.extend**
+
+Any additional styles for the badge. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.badge.container.pad**
+
+When badge has a value, the amount of pad to apply. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.badge.size.medium**
+
+The minimum width and height of the badge when the badge 
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**button.badge.text.size.medium**
+
+The size of the text that is mapped according to 
+    'button.badge.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
 \`\`\`
 
 **button.border.color**
@@ -3523,10 +3653,14 @@ function
 
 **date**
 
-The selected date in ISO8601 format
+The selected date or array of dates in ISO8601 format.
 
 \`\`\`
 string
+[
+  string
+  [string]
+]
 \`\`\`
 
 **dates**
@@ -4554,7 +4688,7 @@ function
 
 **opacity**
 
-What opacity to apply to the visuals. Supercedes 'color.opacity'
+What opacity to apply to the visuals. Supersedes 'color.opacity'
 
 \`\`\`
 weak
@@ -4790,7 +4924,8 @@ Required. Array of value objects describing the data.
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
@@ -10314,6 +10449,50 @@ none
 string
 \`\`\`
 
+**height**
+
+A fixed height.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
+\`\`\`
+
 **justify**
 
 How to align the individual items inside the grid when there is extra
@@ -10498,6 +10677,50 @@ The DOM tag or react component to use for the element. Defaults to \`div\`.
 \`\`\`
 string
 function
+\`\`\`
+
+**width**
+
+A fixed width.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
   
 ## Intrinsic element
@@ -13403,6 +13626,18 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+pie
+\`\`\`
+
+**direction**
+
+The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.
+
+\`\`\`
+horizontal
+vertical
 \`\`\`
 
 **value**
@@ -15419,10 +15654,14 @@ node
 **labelKey**
 
 When the options array contains objects, this property indicates how
-      to determine the label of each option. If a string is
-      provided, it is used as the key to retrieve each option's label.
-      If a function is provided, it is called with the option and the
-      return value indicates the label.
+      to retrieve the label for each option.
+      If a string is provided, it is used as the key to retrieve
+      a property of an
+      option object, which should be a string.
+      If a function is provided, it is called with the option and should
+      return a string or a React node.
+      The label is what is displayed to the user in the options list
+      drop down and for the selected option itself.
 
 \`\`\`
 string
@@ -15588,10 +15827,13 @@ string
 
 **value**
 
-Currently selected value. This can be an array
-      when multiple. Passing an element allows the caller to control how
-      the value is rendered. Passing an element is deprecated. Instead,
-      use the 'valueLabel' property.
+The currently selected value.
+    When 'valueKey' sets 'reduce', the value(s) here should match what the
+    'valueKey' would return for the corresponding selected option object.
+    Otherwise, the value should be one (or multiple, when multiple = true)
+    of the options from the options array.
+    Passing an element allows the caller to control how the value is rendered.
+    Passing an element is deprecated. Instead, use the 'valueLabel' property.
 
 \`\`\`
 string
@@ -15617,12 +15859,13 @@ node
 **valueKey**
 
 When the options array contains objects, this property indicates how
-      to determine the value of each option. If a string is
-      provided, it is used as the key to retrieve each option's value.
-      If a function is provided, it is called with the option and the
-      return value indicates the value. If reduce is true, the value
-      coming via the key will be used for the onChange value and the value
-      property is expected to be reduced to align.
+      to retrieve the value of each option.
+      If a string is provided, it is used as the key to retrieve a
+      property of an option object.
+      If a function is provided, it is called with the option and should
+      return the value.
+      If reduce is true, this value will be used for the 'value'
+      delivered via 'onChange'.
 
 \`\`\`
 string

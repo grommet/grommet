@@ -11,9 +11,11 @@ import {
   focusStyle,
   genericStyles,
   getHoverIndicatorStyle,
+  heightStyle,
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
+  widthStyle,
 } from '../../utils';
 
 import { getBreakpointStyle } from '../../utils/responsive';
@@ -347,47 +349,6 @@ const interactiveStyle = css`
   }
 `;
 
-const getSize = (props, size) => props.theme.global.size[size] || size;
-
-const heightObjectStyle = css`
-  ${props =>
-    props.heightProp.max &&
-    css`
-      max-height: ${getSize(props, props.heightProp.max)};
-    `};
-  ${props =>
-    props.heightProp.min &&
-    css`
-      min-height: ${getSize(props, props.heightProp.min)};
-    `};
-`;
-
-const heightStyle = css`
-  height: ${props => getSize(props, props.heightProp)};
-`;
-
-const widthObjectStyle = css`
-  ${props =>
-    props.widthProp.max &&
-    css`
-      max-width: ${getSize(props, props.widthProp.max)};
-    `};
-  ${props =>
-    props.widthProp.min &&
-    css`
-      min-width: ${getSize(props, props.widthProp.min)};
-    `};
-  ${props =>
-    props.widthProp.width &&
-    css`
-      width: ${getSize(props, props.widthProp.width)};
-    `};
-`;
-
-const widthStyle = css`
-  width: ${props => getSize(props, props.widthProp)};
-`;
-
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
@@ -407,12 +368,8 @@ const StyledBox = styled.div`
       : borderStyle(props.border, props.responsive, props.theme))}
   ${props =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
-  ${props =>
-    props.heightProp &&
-    (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle)}
-  ${props =>
-    props.widthProp &&
-    (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle)}
+  ${props => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${props => props.widthProp && widthStyle(props.widthProp, props.theme)}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}

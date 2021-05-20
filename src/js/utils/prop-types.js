@@ -217,3 +217,33 @@ export const roundPropType = PropTypes.oneOfType([
 ])
   .description('How much to round the corners.')
   .defaultValue(undefined);
+
+const dimSizeType = PropTypes.oneOf([
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+  'xxlarge',
+]);
+
+export const heightPropType = PropTypes.oneOfType([
+  dimSizeType,
+  PropTypes.string,
+  PropTypes.shape({
+    height: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+    min: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+    max: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+  }),
+]);
+
+export const widthPropType = PropTypes.oneOfType([
+  dimSizeType,
+  PropTypes.string,
+  PropTypes.shape({
+    width: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+    min: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+    max: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
+  }),
+]);

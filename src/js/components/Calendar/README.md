@@ -169,10 +169,14 @@ function
 
 **date**
 
-The selected date in ISO8601 format
+The selected date or array of dates in ISO8601 format.
 
 ```
 string
+[
+  string
+  [string]
+]
 ```
 
 **dates**
