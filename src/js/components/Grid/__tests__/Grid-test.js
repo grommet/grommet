@@ -311,7 +311,7 @@ describe('Grid', () => {
   });
 
   test('width', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Grid width="xsmall" />
         <Grid width="small" />
@@ -321,22 +321,20 @@ describe('Grid', () => {
         <Grid width="111px" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('width object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Grid width={{ width: '100px', max: '100%' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('height', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Grid height="xsmall" />
         <Grid height="small" />
@@ -346,17 +344,15 @@ describe('Grid', () => {
         <Grid height="111px" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('height object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Grid height={{ height: '100px', max: '100%' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

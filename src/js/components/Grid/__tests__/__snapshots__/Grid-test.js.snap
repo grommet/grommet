@@ -836,27 +836,29 @@ exports[`Grid height 1`] = `
   height: 111px;
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-  />
-  <div
-    className="c2"
-  />
-  <div
-    className="c3"
-  />
-  <div
-    className="c4"
-  />
-  <div
-    className="c5"
-  />
-  <div
-    className="c6"
-  />
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+    <div
+      class="c3"
+    />
+    <div
+      class="c4"
+    />
+    <div
+      class="c5"
+    />
+    <div
+      class="c6"
+    />
+  </div>
 </div>
 `;
 
@@ -877,12 +879,14 @@ exports[`Grid height object 1`] = `
   max-height: 100%;
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-  />
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+  </div>
 </div>
 `;
 
@@ -1384,27 +1388,29 @@ exports[`Grid width 1`] = `
   width: 111px;
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-  />
-  <div
-    className="c2"
-  />
-  <div
-    className="c3"
-  />
-  <div
-    className="c4"
-  />
-  <div
-    className="c5"
-  />
-  <div
-    className="c6"
-  />
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+    <div
+      class="c3"
+    />
+    <div
+      class="c4"
+    />
+    <div
+      class="c5"
+    />
+    <div
+      class="c6"
+    />
+  </div>
 </div>
 `;
 
@@ -1426,11 +1432,13 @@ exports[`Grid width object 1`] = `
   width: 100px;
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-  />
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+  </div>
 </div>
 `;
