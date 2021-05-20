@@ -8,12 +8,14 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       border = props.border,
       fill = props.fill,
+      height = props.height,
       _props$responsive = props.responsive,
       responsive = _props$responsive === void 0 ? true : _props$responsive,
       rows = props.rows,
       tag = props.tag,
       as = props.as,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "border", "fill", "responsive", "rows", "tag", "as"]);
+      width = props.width,
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"]);
 
   return /*#__PURE__*/React.createElement(StyledGrid, _extends({
     ref: ref,
@@ -21,8 +23,10 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
     as: !as && tag ? tag : as,
     border: border,
     fillContainer: fill,
+    heightProp: height,
     responsive: responsive,
-    rowsProp: rows
+    rowsProp: rows,
+    widthProp: width
   }, rest));
 });
 Grid.displayName = 'Grid';

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.textAlignStyle = exports.roundStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.heightStyle = exports.widthStyle = exports.textAlignStyle = exports.roundStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -461,3 +461,43 @@ var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (
   return TEXT_ALIGN_MAP[props.textAlign];
 });
 exports.textAlignStyle = textAlignStyle;
+
+var getSize = function getSize(theme, size) {
+  return theme.global.size[size] || size;
+};
+
+var widthObjectStyle = function widthObjectStyle(width, theme) {
+  var result = [];
+  if (width.max) result.push((0, _styledComponents.css)(["max-width:", ";"], getSize(theme, width.max)));
+  if (width.min) result.push((0, _styledComponents.css)(["min-width:", ";"], getSize(theme, width.min)));
+  if (width.width) result.push((0, _styledComponents.css)(["width:", ";"], getSize(theme, width.width)));
+  return result;
+};
+
+var widthStringStyle = function widthStringStyle(width, theme) {
+  return (0, _styledComponents.css)(["width:", ";"], getSize(theme, width));
+};
+
+var widthStyle = function widthStyle(width, theme) {
+  return typeof width === 'object' ? widthObjectStyle(width, theme) : widthStringStyle(width, theme);
+};
+
+exports.widthStyle = widthStyle;
+
+var heightObjectStyle = function heightObjectStyle(height, theme) {
+  var result = [];
+  if (height.max) result.push((0, _styledComponents.css)(["max-height:", ";"], getSize(theme, height.max)));
+  if (height.min) result.push((0, _styledComponents.css)(["min-height:", ";"], getSize(theme, height.min)));
+  if (height.width) result.push((0, _styledComponents.css)(["height:", ";"], getSize(theme, height.height)));
+  return result;
+};
+
+var heightStringStyle = function heightStringStyle(height, theme) {
+  return (0, _styledComponents.css)(["height:", ";"], getSize(theme, height));
+};
+
+var heightStyle = function heightStyle(height, theme) {
+  return typeof height === 'object' ? heightObjectStyle(height, theme) : heightStringStyle(height, theme);
+};
+
+exports.heightStyle = heightStyle;

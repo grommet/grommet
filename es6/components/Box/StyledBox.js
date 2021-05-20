@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
 import { getBreakpointStyle } from '../../utils/responsive';
 import { roundStyle } from '../../utils/styles';
 var ALIGN_MAP = {
@@ -283,29 +283,6 @@ var animationStyle = css(["", ";"], function (props) {
 });
 var interactiveStyle = css(["cursor:pointer;&:hover{", "}"], function (props) {
   return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
-});
-
-var getSize = function getSize(props, size) {
-  return props.theme.global.size[size] || size;
-};
-
-var heightObjectStyle = css(["", ";", ";"], function (props) {
-  return props.heightProp.max && css(["max-height:", ";"], getSize(props, props.heightProp.max));
-}, function (props) {
-  return props.heightProp.min && css(["min-height:", ";"], getSize(props, props.heightProp.min));
-});
-var heightStyle = css(["height:", ";"], function (props) {
-  return getSize(props, props.heightProp);
-});
-var widthObjectStyle = css(["", ";", ";", ";"], function (props) {
-  return props.widthProp.max && css(["max-width:", ";"], getSize(props, props.widthProp.max));
-}, function (props) {
-  return props.widthProp.min && css(["min-width:", ";"], getSize(props, props.widthProp.min));
-}, function (props) {
-  return props.widthProp.width && css(["width:", ";"], getSize(props, props.widthProp.width));
-});
-var widthStyle = css(["width:", ";"], function (props) {
-  return getSize(props, props.widthProp);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = styled.div.withConfig({
@@ -326,9 +303,9 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
 }, function (props) {
-  return props.heightProp && (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle);
+  return props.heightProp && heightStyle(props.heightProp, props.theme);
 }, function (props) {
-  return props.widthProp && (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle);
+  return props.widthProp && widthStyle(props.widthProp, props.theme);
 }, function (props) {
   return props.flex !== undefined && flexStyle;
 }, function (props) {

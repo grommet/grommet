@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
+exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -108,3 +108,21 @@ var roundPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _
 })]).description('How much to round the corners.').defaultValue(undefined);
 
 exports.roundPropType = roundPropType;
+
+var dimSizeType = _reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']);
+
+var heightPropType = _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+  height: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string]),
+  min: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string]),
+  max: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string])
+})]);
+
+exports.heightPropType = heightPropType;
+
+var widthPropType = _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+  width: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string]),
+  min: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string]),
+  max: _reactDesc.PropTypes.oneOfType([dimSizeType, _reactDesc.PropTypes.string])
+})]);
+
+exports.widthPropType = widthPropType;

@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { backgroundDoc, elevationPropType, genericProps, getBorderPropType, hoverIndicatorPropType, padPropType, roundPropType } from '../../utils/prop-types';
+import { backgroundDoc, elevationPropType, genericProps, getBorderPropType, heightPropType, hoverIndicatorPropType, padPropType, roundPropType, widthPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -38,10 +38,7 @@ export var doc = function doc(Box) {
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     focusIndicator: PropTypes.bool.description("When interactive via 'onClick', whether it should receive a focus\n        outline.").defaultValue(true),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between child elements. This\n        should not be used in conjunction with 'wrap' as the gap elements\n        will not wrap gracefully. If a child is a Fragment,\n        Box will not add a gap between the children of the Fragment."),
-    height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string, PropTypes.shape({
-      min: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]),
-      max: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string])
-    })]).description('A fixed height.'),
+    height: heightPropType.description('A fixed height.'),
     hoverIndicator: hoverIndicatorPropType.description("When 'onClick' has been specified, the hover indicator to apply\n        when the user is mousing over the box.").defaultValue(false),
     justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']).description('How to align the contents along the main axis.').defaultValue('stretch'),
     onClick: PropTypes.func.description("Click handler. Setting this property adds additional attributes to\n      the DOM for accessibility."),
@@ -51,11 +48,7 @@ export var doc = function doc(Box) {
     round: roundPropType,
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description('The DOM tag or react component to use for the element.').defaultValue('div'),
-    width: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string, PropTypes.shape({
-      width: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]),
-      min: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]),
-      max: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string])
-    })]).description('A fixed width.'),
+    width: widthPropType.description('A fixed width.'),
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])]).description("Whether children can wrap if they can't all fit.").defaultValue(false)
   });
   return DocumentedBox;

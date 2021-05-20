@@ -297,29 +297,6 @@ var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
 });
 var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", "}"], function (props) {
   return props.hoverIndicator && (0, _utils.getHoverIndicatorStyle)(props.hoverIndicator, props.theme);
-});
-
-var getSize = function getSize(props, size) {
-  return props.theme.global.size[size] || size;
-};
-
-var heightObjectStyle = (0, _styledComponents.css)(["", ";", ";"], function (props) {
-  return props.heightProp.max && (0, _styledComponents.css)(["max-height:", ";"], getSize(props, props.heightProp.max));
-}, function (props) {
-  return props.heightProp.min && (0, _styledComponents.css)(["min-height:", ";"], getSize(props, props.heightProp.min));
-});
-var heightStyle = (0, _styledComponents.css)(["height:", ";"], function (props) {
-  return getSize(props, props.heightProp);
-});
-var widthObjectStyle = (0, _styledComponents.css)(["", ";", ";", ";"], function (props) {
-  return props.widthProp.max && (0, _styledComponents.css)(["max-width:", ";"], getSize(props, props.widthProp.max));
-}, function (props) {
-  return props.widthProp.min && (0, _styledComponents.css)(["min-width:", ";"], getSize(props, props.widthProp.min));
-}, function (props) {
-  return props.widthProp.width && (0, _styledComponents.css)(["width:", ";"], getSize(props, props.widthProp.width));
-});
-var widthStyle = (0, _styledComponents.css)(["width:", ";"], function (props) {
-  return getSize(props, props.widthProp);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = _styledComponents["default"].div.withConfig({
@@ -340,9 +317,9 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.directionProp && directionStyle(props.directionProp, props.theme);
 }, function (props) {
-  return props.heightProp && (typeof props.heightProp === 'object' ? heightObjectStyle : heightStyle);
+  return props.heightProp && (0, _utils.heightStyle)(props.heightProp, props.theme);
 }, function (props) {
-  return props.widthProp && (typeof props.widthProp === 'object' ? widthObjectStyle : widthStyle);
+  return props.widthProp && (0, _utils.widthStyle)(props.widthProp, props.theme);
 }, function (props) {
   return props.flex !== undefined && flexStyle;
 }, function (props) {

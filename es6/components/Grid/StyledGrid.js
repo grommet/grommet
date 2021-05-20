@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { borderStyle, edgeStyle, genericStyles } from '../../utils';
+import { borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var fillStyle = function fillStyle(fill) {
@@ -195,7 +195,7 @@ var StyledGrid = styled.div.attrs(function (props) {
 }).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
-})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.border && (Array.isArray(props.border) ? props.border.map(function (border) {
     return borderStyle(border, props.responsive, props.theme);
   }) : borderStyle(props.border, props.responsive, props.theme));
@@ -219,6 +219,10 @@ var StyledGrid = styled.div.attrs(function (props) {
   return props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.rowsProp && rowsStyle(props);
+}, function (props) {
+  return props.heightProp && heightStyle(props.heightProp, props.theme);
+}, function (props) {
+  return props.widthProp && widthStyle(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.grid && props.theme.grid.extend;
 });

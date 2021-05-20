@@ -206,7 +206,7 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
 }).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
-})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.border && (Array.isArray(props.border) ? props.border.map(function (border) {
     return (0, _utils.borderStyle)(border, props.responsive, props.theme);
   }) : (0, _utils.borderStyle)(props.border, props.responsive, props.theme));
@@ -230,6 +230,10 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
   return props.pad && (0, _utils.edgeStyle)('padding', props.pad, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 }, function (props) {
   return props.rowsProp && rowsStyle(props);
+}, function (props) {
+  return props.heightProp && (0, _utils.heightStyle)(props.heightProp, props.theme);
+}, function (props) {
+  return props.widthProp && (0, _utils.widthStyle)(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.grid && props.theme.grid.extend;
 });

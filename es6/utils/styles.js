@@ -416,3 +416,39 @@ var TEXT_ALIGN_MAP = {
 export var textAlignStyle = css(["text-align:", ";"], function (props) {
   return TEXT_ALIGN_MAP[props.textAlign];
 });
+
+var getSize = function getSize(theme, size) {
+  return theme.global.size[size] || size;
+};
+
+var widthObjectStyle = function widthObjectStyle(width, theme) {
+  var result = [];
+  if (width.max) result.push(css(["max-width:", ";"], getSize(theme, width.max)));
+  if (width.min) result.push(css(["min-width:", ";"], getSize(theme, width.min)));
+  if (width.width) result.push(css(["width:", ";"], getSize(theme, width.width)));
+  return result;
+};
+
+var widthStringStyle = function widthStringStyle(width, theme) {
+  return css(["width:", ";"], getSize(theme, width));
+};
+
+export var widthStyle = function widthStyle(width, theme) {
+  return typeof width === 'object' ? widthObjectStyle(width, theme) : widthStringStyle(width, theme);
+};
+
+var heightObjectStyle = function heightObjectStyle(height, theme) {
+  var result = [];
+  if (height.max) result.push(css(["max-height:", ";"], getSize(theme, height.max)));
+  if (height.min) result.push(css(["min-height:", ";"], getSize(theme, height.min)));
+  if (height.width) result.push(css(["height:", ";"], getSize(theme, height.height)));
+  return result;
+};
+
+var heightStringStyle = function heightStringStyle(height, theme) {
+  return css(["height:", ";"], getSize(theme, height));
+};
+
+export var heightStyle = function heightStyle(height, theme) {
+  return typeof height === 'object' ? heightObjectStyle(height, theme) : heightStringStyle(height, theme);
+};
