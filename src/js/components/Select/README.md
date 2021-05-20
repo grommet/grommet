@@ -282,10 +282,14 @@ node
 **labelKey**
 
 When the options array contains objects, this property indicates how
-      to determine the label of each option. If a string is
-      provided, it is used as the key to retrieve each option's label.
-      If a function is provided, it is called with the option and the
-      return value indicates the label.
+      to retrieve the label for each option.
+      If a string is provided, it is used as the key to retrieve
+      a property of an
+      option object, which should be a string.
+      If a function is provided, it is called with the option and should
+      return a string or a React node.
+      The label is what is displayed to the user in the options list
+      drop down and for the selected option itself.
 
 ```
 string
@@ -451,10 +455,13 @@ string
 
 **value**
 
-Currently selected value. This can be an array
-      when multiple. Passing an element allows the caller to control how
-      the value is rendered. Passing an element is deprecated. Instead,
-      use the 'valueLabel' property.
+The currently selected value.
+    When 'valueKey' sets 'reduce', the value(s) here should match what the
+    'valueKey' would return for the corresponding selected option object.
+    Otherwise, the value should be one (or multiple, when multiple = true)
+    of the options from the options array.
+    Passing an element allows the caller to control how the value is rendered.
+    Passing an element is deprecated. Instead, use the 'valueLabel' property.
 
 ```
 string
@@ -480,12 +487,13 @@ node
 **valueKey**
 
 When the options array contains objects, this property indicates how
-      to determine the value of each option. If a string is
-      provided, it is used as the key to retrieve each option's value.
-      If a function is provided, it is called with the option and the
-      return value indicates the value. If reduce is true, the value
-      coming via the key will be used for the onChange value and the value
-      property is expected to be reduced to align.
+      to retrieve the value of each option.
+      If a string is provided, it is used as the key to retrieve a
+      property of an option object.
+      If a function is provided, it is called with the option and should
+      return the value.
+      If reduce is true, this value will be used for the 'value'
+      delivered via 'onChange'.
 
 ```
 string
