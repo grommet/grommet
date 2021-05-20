@@ -223,7 +223,14 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     } else if (disabled && formFieldTheme.disabled) {
       themeContentProps.background = formFieldTheme.disabled.background;
     }
-  }
+  } // fileinput handle
+  // use fileinput plain use formfield to drive the border
+
+
+  var isFileInputComponent;
+  if (children && Children.forEach(children, function (child) {
+    if (child && child.type && 'FileInput'.indexOf(child.type.displayName) !== -1) isFileInputComponent = true;
+  })) ;
 
   if (!themeBorder) {
     contents = /*#__PURE__*/React.createElement(Box, _extends({}, themeContentProps, contentProps), contents);
@@ -249,16 +256,21 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
   var abut;
   var abutMargin;
-  var outerStyle = style;
+  var outerStyle = style; // If fileinput is wrapped in a formfield we want to use
+  // the border style from the fileInput.theme. We also do not
+  // want the foocus around the formfield since the the focus
+  // is on the anchor/button inside fileinput
 
   if (themeBorder) {
     var innerProps = themeBorder.position === 'inner' ? {
       border: _extends({}, themeBorder, {
-        side: themeBorder.side || 'bottom',
+        size: isFileInputComponent ? theme.fileInput.border.size : undefined,
+        style: isFileInputComponent ? theme.fileInput.border.style : undefined,
+        side: isFileInputComponent ? theme.fileInput.border.side : themeBorder.side || 'bottom',
         color: borderColor
       }),
       round: formFieldTheme.round,
-      focus: focus
+      focus: isFileInputComponent ? undefined : focus
     } : {};
     contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps), contents);
     var mergedMargin = margin || formFieldTheme.margin;

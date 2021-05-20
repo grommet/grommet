@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { disabledStyle, focusStyle, useForwardedRef } from '../../utils';
+import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -22,9 +22,9 @@ import { StyledFileInput } from './StyledFileInput'; // We want the interaction 
 var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
-})(["position:relative;", " &:focus{", "}", ";", ";", ";"], function (props) {
-  return props.disabled ? disabledStyle() : 'cursor: pointer;';
-}, focusStyle, function (props) {
+})(["position:relative;", " ", ";", ";", ";"], function (props) {
+  return props.disabled && disabledStyle();
+}, function (props) {
   return props.theme.fileInput && props.theme.fileInput.extend;
 }, function (props) {
   return props.hover && props.theme.fileInput && props.theme.fileInput.hover && props.theme.fileInput.hover.extend;
@@ -113,46 +113,94 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   } // rightPad needs to be included in the rightOffset
   // otherwise input may cover the RemoveButton, making it
   // unreachable by mouse click.
+  // If browse anchor or button is greater than remove button then
+  // rightoffset will take the larger width
 
 
   var rightOffset;
 
-  if (removeRef.current) {
-    if (rightPad && typeof rightPad === 'string') rightOffset = removeRef.current.getBoundingClientRect().width + rightPad.replace('px', '');else rightOffset = removeRef.current.getBoundingClientRect().width;
-  }
+  if (removeRef.current && controlRef.current) {
+    var rightOffsetBrowse = controlRef.current.getBoundingClientRect().width;
+    var rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
+    if (rightPad && typeof rightPad === 'string') rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
 
-  return /*#__PURE__*/React.createElement(Keyboard, {
-    onSpace: function onSpace(event) {
-      if (controlRef.current === event.target) inputRef.current.click();
-    },
-    onEnter: function onEnter(event) {
-      if (controlRef.current === event.target) inputRef.current.click();
+    if (files.length === 1 || files.length > aggregateThreshold) {
+      rightOffset = rightOffsetBrowse + rightOffsetRemove + parseMetricToNum(theme.global.edgeSize.small) * 2;
+    } else if (rightOffsetBrowse > rightOffsetRemove) {
+      rightOffset = rightOffsetBrowse + parseMetricToNum(theme.global.edgeSize.small) * 2;
+    } else rightOffset = rightOffsetRemove;
+  } else if (!files.length && controlRef.current) {
+    rightOffset = controlRef.current.getBoundingClientRect().width + parseMetricToNum(theme.global.edgeSize.small) * 2;
+  } // Show the number of files when more than one
+
+
+  var message;
+
+  if (!files.length) {
+    if (multiple) message = messages.dropPromptMultiple || 'Drag and drop';
+
+    if (!multiple) {
+      message = messages.dropPrompt || 'Drag and drop';
     }
-  }, /*#__PURE__*/React.createElement(ContentsBox, {
-    ref: controlRef,
-    tabIndex: !plain ? 0 : undefined,
+  } else message = files.length + " items";
+
+  return /*#__PURE__*/React.createElement(ContentsBox, {
     theme: theme,
+    flex: false,
     disabled: disabled,
     background: mergeTheme('background', 'color'),
-    border: mergeTheme('border', 'side'),
+    border: !plain ? mergeTheme('border', 'side') : undefined,
     margin: mergeTheme('margin'),
     pad: mergeTheme('pad'),
     round: mergeTheme('round', 'size'),
     align: files.length ? 'stretch' : 'center',
     justify: "center",
     hover: hover,
-    onMouseOver: function onMouseOver() {
+    onMouseOver: disabled ? undefined : function () {
       return setHover(true);
     },
-    onMouseOut: function onMouseOut() {
+    onMouseOut: disabled ? undefined : function () {
       return setHover(false);
     },
     dragOver: dragOver
-  }, files.length > aggregateThreshold && /*#__PURE__*/React.createElement(Box, {
+  }, (!files.length || files.length > 1) && /*#__PURE__*/React.createElement(Box, {
+    fill: "horizontal",
     direction: "row",
-    align: "center",
     justify: "between"
-  }, /*#__PURE__*/React.createElement(Label, theme.fileInput.label, files.length, " ", messages.files || 'files'), /*#__PURE__*/React.createElement(Button, {
+  }, files.length <= aggregateThreshold && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Message, theme.fileInput.message, message), /*#__PURE__*/React.createElement(Keyboard, {
+    onSpace: function onSpace(event) {
+      if (controlRef.current === event.target) inputRef.current.click();
+    },
+    onEnter: function onEnter(event) {
+      if (controlRef.current === event.target) inputRef.current.click();
+    }
+  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+    ref: controlRef,
+    kind: theme.fileInput.button,
+    label: messages.browse || 'browse',
+    onClick: function onClick() {
+      inputRef.current.click();
+      inputRef.current.focus();
+    }
+  }) : /*#__PURE__*/React.createElement(Anchor, {
+    tabIndex: 0,
+    alignSelf: "center",
+    ref: controlRef,
+    margin: "small",
+    onClick: function onClick() {
+      inputRef.current.click();
+      inputRef.current.focus();
+    },
+    label: messages.browse || 'browse'
+  })))), files.length > aggregateThreshold && /*#__PURE__*/React.createElement(Box, {
+    justify: "between",
+    direction: "row",
+    align: "center"
+  }, /*#__PURE__*/React.createElement(Label, theme.fileInput.label, files.length, " ", messages.files || 'files'), /*#__PURE__*/React.createElement(Box, {
+    flex: false,
+    direction: "row",
+    align: "center"
+  }, /*#__PURE__*/React.createElement(Button, {
     ref: removeRef,
     a11yTitle: messages.removeAll || 'remove all',
     icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
@@ -162,16 +210,45 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setFiles([]);
       inputRef.current.focus();
     }
-  })), files.length > 0 && files.length <= aggregateThreshold && files.map(function (file, index) {
+  }), /*#__PURE__*/React.createElement(Keyboard, {
+    onSpace: function onSpace(event) {
+      if (controlRef.current === event.target) inputRef.current.click();
+    },
+    onEnter: function onEnter(event) {
+      if (controlRef.current === event.target) inputRef.current.click();
+    }
+  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+    ref: controlRef,
+    kind: theme.fileInput.button,
+    label: messages.browse || 'browse',
+    onClick: function onClick() {
+      inputRef.current.click();
+      inputRef.current.focus();
+    }
+  }) : /*#__PURE__*/React.createElement(Anchor, {
+    tabIndex: 0,
+    alignSelf: "center",
+    ref: controlRef,
+    margin: "small",
+    onClick: function onClick() {
+      inputRef.current.click();
+      inputRef.current.focus();
+    },
+    label: messages.browse || 'browse'
+  })))), files.length > 0 && files.length <= aggregateThreshold && files.map(function (file, index) {
     return /*#__PURE__*/React.createElement(Box, {
       key: file.name,
+      justify: "between",
       direction: "row",
-      align: "center",
-      justify: "between"
+      align: "center"
     }, renderFile ? renderFile(file) : /*#__PURE__*/React.createElement(Label, _extends({
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
-    }, theme.fileInput.label), file.name), /*#__PURE__*/React.createElement(Button, {
+    }, theme.fileInput.label), file.name), /*#__PURE__*/React.createElement(Box, {
+      flex: false,
+      direction: "row",
+      align: "center"
+    }, /*#__PURE__*/React.createElement(Button, {
       ref: index ? undefined : removeRef,
       a11yTitle: (messages.remove || 'remove') + " " + file.name,
       icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
@@ -184,10 +261,32 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (nextFiles.length === 0) inputRef.current.value = '';
         inputRef.current.focus();
       }
-    }));
-  }), !files.length && /*#__PURE__*/React.createElement(Message, theme.fileInput.message, multiple ? messages.dropPromptMultiple || 'Drop files here or' : messages.dropPrompt || 'Drop file here or', ' ', /*#__PURE__*/React.createElement(Anchor, {
-    label: messages.browse || 'browse'
-  })), /*#__PURE__*/React.createElement(StyledFileInput, _extends({
+    }), files.length === 1 && /*#__PURE__*/React.createElement(Keyboard, {
+      onSpace: function onSpace(event) {
+        if (controlRef.current === event.target) inputRef.current.click();
+      },
+      onEnter: function onEnter(event) {
+        if (controlRef.current === event.target) inputRef.current.click();
+      }
+    }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+      ref: controlRef,
+      kind: theme.fileInput.button,
+      label: messages.browse || 'browse',
+      onClick: function onClick() {
+        inputRef.current.click();
+        inputRef.current.focus();
+      }
+    }) : /*#__PURE__*/React.createElement(Anchor, {
+      tabIndex: 0,
+      ref: controlRef,
+      margin: "small",
+      onClick: function onClick() {
+        inputRef.current.click();
+        inputRef.current.focus();
+      },
+      label: messages.browse || 'browse'
+    }))));
+  }), /*#__PURE__*/React.createElement(StyledFileInput, _extends({
     ref: inputRef,
     type: "file",
     id: id,
@@ -224,7 +323,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setDragOver(false);
       if (_onChange) _onChange(event);
     }
-  }))));
+  })));
 });
 FileInput.defaultProps = {
   messages: {

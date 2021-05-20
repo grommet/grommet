@@ -75,6 +75,7 @@ export var Uncontrolled = function Uncontrolled() {
     min: 15,
     max: 75
   })), /*#__PURE__*/React.createElement(FormField, {
+    required: true,
     label: "Image",
     name: "image"
   }, /*#__PURE__*/React.createElement(FileInput, {

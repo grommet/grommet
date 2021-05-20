@@ -3,6 +3,19 @@ import { Box, Grommet, FileInput, Text } from 'grommet';
 import { Trash } from "grommet-icons/es6/icons/Trash";
 var customTheme = {
   fileInput: {
+    button: {
+      hover: {
+        color: 'accent-2'
+      },
+      border: {
+        color: 'skyblue',
+        width: '1px'
+      },
+      pad: {
+        vertical: '4px',
+        horizontal: '8px'
+      }
+    },
     background: '#f2f2f2',
     border: {
       size: 'medium'

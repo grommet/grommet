@@ -86,6 +86,7 @@ var Uncontrolled = function Uncontrolled() {
     min: 15,
     max: 75
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    required: true,
     label: "Image",
     name: "image"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
