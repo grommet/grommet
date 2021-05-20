@@ -8,71 +8,117 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 const Bar = forwardRef((props, ref) => {
-  const { background, max, round, size, thickness, values, ...rest } = props;
+  const {
+    background,
+    max,
+    round,
+    size,
+    thickness: thicknessProp,
+    direction,
+    values,
+    ...rest
+  } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const width =
+  const length =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  const height = parseMetricToNum(
-    theme.global.edgeSize[thickness] || thickness,
+  const thickness = parseMetricToNum(
+    theme.global.edgeSize[thicknessProp] || thicknessProp,
   );
   // account for the round cap, if any
-  const capOffset = round ? height / 2 : 0;
-  const mid = height / 2;
+  const capOffset = round ? thickness / 2 : 0;
+  const mid = thickness / 2;
+
   const someHighlight = (values || []).some(v => v.highlight);
+  let start =
+    direction === 'horizontal'
+      ? capOffset
+      : (max * (length - 2 * capOffset)) / max;
 
-  let start = capOffset;
   const paths = (values || [])
-    .filter(v => v.value > 0)
-    .map((valueArg, index) => {
-      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
+    .reduce((acc, valueArg, index) => {
+      if (valueArg.value > 0) {
+        const {
+          color,
+          highlight,
+          label,
+          onHover,
+          value,
+          ...pathRest
+        } = valueArg;
+        const key = `p-${index}`;
+        const delta = (value * (length - 2 * capOffset)) / max;
+        const d =
+          direction === 'horizontal'
+            ? `M ${start},${mid} L ${start + delta},${mid}`
+            : `M ${mid},${start} L ${mid},${start - delta}`;
+        const colorName =
+          color || defaultColor(index, theme, values ? values.length : 0);
+        let hoverProps;
+        if (onHover) {
+          hoverProps = {
+            onMouseOver: () => onHover(true),
+            onMouseLeave: () => onHover(false),
+          };
+        }
+        if (direction === 'horizontal') {
+          start += delta;
+        } else {
+          start -= delta;
+        }
 
-      const key = `p-${index}`;
-      const delta = (value * (width - 2 * capOffset)) / max;
-      const d = `M ${start},${mid} L ${start + delta},${mid}`;
-      const colorName =
-        color || defaultColor(index, theme, values ? values.length : 0);
-      let hoverProps;
-      if (onHover) {
-        hoverProps = {
-          onMouseOver: () => onHover(true),
-          onMouseLeave: () => onHover(false),
-        };
+        const result = (
+          <path
+            key={key}
+            d={d}
+            fill="none"
+            {...strokeProps(
+              someHighlight && !highlight ? background : colorName,
+              theme,
+            )}
+            strokeWidth={direction === 'horizontal' ? thickness : length}
+            strokeLinecap={round ? 'round' : 'butt'}
+            {...hoverProps}
+            {...pathRest}
+          />
+        );
+
+        acc.push(result);
       }
-      start += delta;
-
-      return (
-        <path
-          key={key}
-          d={d}
-          fill="none"
-          {...strokeProps(
-            someHighlight && !highlight ? background : colorName,
-            theme,
-          )}
-          strokeWidth={height}
-          strokeLinecap={round ? 'round' : 'butt'}
-          {...hoverProps}
-          {...pathRest}
-        />
-      );
-    })
+      return acc;
+    }, [])
     .reverse(); // reverse so the caps looks right
+
+  let width;
+  if (direction === 'horizontal') {
+    width = size === 'full' ? '100%' : length;
+  } else {
+    width = size === 'full' ? '100%' : thickness;
+  }
+
+  const backgroundPath =
+    direction === 'horizontal'
+      ? `M ${capOffset},${mid} L ${length - capOffset},${mid}`
+      : `M ${mid},${capOffset} L ${mid},${length - capOffset}`;
 
   return (
     <StyledMeter
       ref={ref}
-      viewBox={`0 0 ${width} ${height}`}
+      viewBox={
+        direction === 'horizontal'
+          ? `0 0 ${length} ${thickness}`
+          : `0 0 ${thickness} ${length}`
+      }
       preserveAspectRatio="none"
-      width={size === 'full' ? '100%' : width}
-      height={height}
-      round={round ? { size: thickness } : undefined}
+      width={width}
+      height={direction === 'horizontal' ? thickness : length}
+      round={round ? { size: thicknessProp } : undefined}
       {...rest}
     >
       <path
-        d={`M ${capOffset},${mid} L ${width - capOffset},${mid}`}
+        d={backgroundPath}
         fill="none"
         {...strokeProps(background, theme)}
-        strokeWidth={height}
+        strokeWidth={thickness}
         strokeLinecap={round ? 'round' : 'square'}
       />
       {paths}

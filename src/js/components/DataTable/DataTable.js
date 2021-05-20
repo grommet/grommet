@@ -9,6 +9,8 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
+
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -166,6 +168,43 @@ const DataTable = ({
   // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);
 
+  // multiple pinned columns offset
+  const [pinnedOffset, setPinnedOffset] = useState();
+
+  const onHeaderWidths = useCallback(
+    columnWidths => {
+      const pinnedProperties = columns
+        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
+        .filter(n => n);
+
+      const nextPinnedOffset = {};
+
+      if (columnWidths !== []) {
+        pinnedProperties.forEach((property, index) => {
+          const hasSelectColumn = Boolean(select || onSelect);
+
+          const columnIndex =
+            columns.findIndex(column => column.property === property) +
+            hasSelectColumn;
+
+          if (columnWidths[columnIndex]) {
+            nextPinnedOffset[property] = {
+              width: columnWidths[columnIndex],
+              left:
+                index === 0
+                  ? 0
+                  : nextPinnedOffset[pinnedProperties[index - 1]].left +
+                    nextPinnedOffset[pinnedProperties[index - 1]].width,
+            };
+          }
+        });
+
+        setPinnedOffset(nextPinnedOffset);
+      }
+    },
+    [columns, setPinnedOffset, select, onSelect],
+  );
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const nextScrollOffset =
@@ -309,6 +348,7 @@ const DataTable = ({
             groupState={groupState}
             pad={normalizeProp(pad, 'header')}
             pin={pin === true || pin === 'header'}
+            pinnedOffset={pinnedOffset}
             selected={selected}
             size={size}
             sort={sort}
@@ -326,6 +366,7 @@ const DataTable = ({
             }
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
+            onWidths={onHeaderWidths}
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
@@ -340,6 +381,7 @@ const DataTable = ({
               groups={groups}
               groupState={groupState}
               pad={normalizeProp(pad, 'body')}
+              pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
               onSelect={
                 onSelect
@@ -373,6 +415,7 @@ const DataTable = ({
               }
               pad={normalizeProp(pad, 'body')}
               pinnedBackground={normalizeProp(background, 'pinned')}
+              pinnedOffset={pinnedOffset}
               placeholder={placeholder}
               primaryProperty={primaryProperty}
               rowProps={rowProps}
@@ -397,6 +440,7 @@ const DataTable = ({
               onSelect={onSelect}
               pad={normalizeProp(pad, 'footer')}
               pin={pin === true || pin === 'footer'}
+              pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
               scrollOffset={scrollOffset}
               selected={selected}

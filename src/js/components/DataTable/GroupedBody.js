@@ -18,6 +18,7 @@ export const GroupedBody = forwardRef(
       groups,
       groupState,
       pad,
+      pinnedOffset,
       primaryProperty,
       onSelect,
       onToggle,
@@ -92,6 +93,7 @@ export const GroupedBody = forwardRef(
                     column={column}
                     datum={group.datum}
                     pad={pad}
+                    pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                     scope={column.property === groupBy ? 'row' : undefined}
                   />
                 ))}

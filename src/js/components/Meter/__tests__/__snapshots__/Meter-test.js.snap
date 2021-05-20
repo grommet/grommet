@@ -1419,3 +1419,55 @@ exports[`Meter type 1`] = `
   </svg>
 </div>
 `;
+
+exports[`Meter vertical 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={384}
+    preserveAspectRatio="none"
+    viewBox="0 0 24 384"
+    width={24}
+  >
+    <path
+      d="M 12,0 L 12,384"
+      fill="none"
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={24}
+    />
+    <path
+      d="M 12,384 L 12,307.2"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={384}
+    />
+  </svg>
+</div>
+`;
