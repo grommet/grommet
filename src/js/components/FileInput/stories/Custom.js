@@ -7,7 +7,7 @@ const customTheme = {
   fileInput: {
     button: {
       hover: {
-        color: 'pink',
+        color: 'accent-2',
       },
       border: {
         color: 'skyblue',
