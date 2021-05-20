@@ -368,4 +368,80 @@ describe('Button', () => {
     expect(cursorStyle).not.toBe('pointer');
     expect(cursorStyle).toBe('default');
   });
+
+  test(`badge should be offset from top-right corner`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, alert" label="Button" badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display number content`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, 2 unread alerts" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display "+" when number is greater than max`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{ value: 100, max: 9 }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should apply background`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{
+            background: 'status-ok',
+            value: 100,
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render custom element`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, Add user alert"
+          label="Button"
+          badge={<Add />}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render relative to contents when button has no 
+  border or background`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, Add user alert" icon={<Add />} badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

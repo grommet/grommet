@@ -7,10 +7,12 @@ import {
   FillType,
   GapType,
   GridAreaType,
+  HeightType,
   JustifyContentType,
   MarginType,
   PadType,
   PolymorphicType,
+  WidthType,
 } from '../../utils';
 
 export interface GridProps {
@@ -69,6 +71,7 @@ export interface GridProps {
   fill?: FillType;
   gap?: GapType | { row?: GapType; column?: GapType };
   gridArea?: GridAreaType;
+  height?: HeightType;
   justify?: 'start' | 'center' | 'end' | 'stretch';
   justifyContent?: JustifyContentType;
   margin?: MarginType;
@@ -100,6 +103,7 @@ export interface GridProps {
     | 'xlarge'
     | string;
   tag?: PolymorphicType;
+  width?: WidthType;
 }
 
 type divProps = JSX.IntrinsicElements['div'];
