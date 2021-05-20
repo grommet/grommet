@@ -7,10 +7,11 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Carousel) {
   var DocumentedCarousel = describe(Carousel).availableAt(getAvailableAtBadge('Carousel', 'Media')).description("A carousel that cycles through children. Child components\n      would typically be Images. It is the caller's responsibility to ensure\n      that all children are the same size.").usage("import { Carousel } from 'grommet';\n<Carousel />").intrinsicElement('div');
   DocumentedCarousel.propTypes = _extends({}, genericProps, {
+    activeChild: PropTypes.number.description("If specified, Carousel will be a controlled component. This means\n      that future slide changes will not work unless you subscribe to onChild\n      function and update activeChild accordingly."),
     fill: PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
     play: PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
     initialChild: PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0."),
-    onChild: PropTypes.func.description("If specified, this function will \n      be called with the active index when the currently active carousel \n      changes."),
+    onChild: PropTypes.func.description("If specified, this function will\n      be called with the active index when the currently active carousel\n      changes. Helpful when using Carousel as a controlled component."),
     controls: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['arrows', 'selectors'])]).description("Whether to show carousel controls and which type of controls.").defaultValue(true)
   });
   return DocumentedCarousel;
@@ -32,7 +33,7 @@ export var themeDoc = _extends({
     defaultValue: '<Previous />'
   },
   'carousel.icons.current': {
-    description: "The icon to use on the middle navigation control. \n      One icon per carousel image.",
+    description: "The icon to use on the middle navigation control.\n      One icon per carousel image.",
     type: 'element',
     defaultValue: '<Next />'
   },

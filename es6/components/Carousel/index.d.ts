@@ -8,6 +8,7 @@ import {
 
 export interface CarouselProps {
   a11yTitle?: A11yTitleType;
+  activeIndex?: number;
   alignSelf?: AlignSelfType;
   controls?: boolean | 'arrows' | 'selectors';
   gridArea?: GridAreaType;

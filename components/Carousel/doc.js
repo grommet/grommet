@@ -16,10 +16,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(Carousel) {
   var DocumentedCarousel = (0, _reactDesc.describe)(Carousel).availableAt((0, _mixins.getAvailableAtBadge)('Carousel', 'Media')).description("A carousel that cycles through children. Child components\n      would typically be Images. It is the caller's responsibility to ensure\n      that all children are the same size.").usage("import { Carousel } from 'grommet';\n<Carousel />").intrinsicElement('div');
   DocumentedCarousel.propTypes = _extends({}, _propTypes.genericProps, {
+    activeChild: _reactDesc.PropTypes.number.description("If specified, Carousel will be a controlled component. This means\n      that future slide changes will not work unless you subscribe to onChild\n      function and update activeChild accordingly."),
     fill: _reactDesc.PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
     play: _reactDesc.PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
     initialChild: _reactDesc.PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0."),
-    onChild: _reactDesc.PropTypes.func.description("If specified, this function will \n      be called with the active index when the currently active carousel \n      changes."),
+    onChild: _reactDesc.PropTypes.func.description("If specified, this function will\n      be called with the active index when the currently active carousel\n      changes. Helpful when using Carousel as a controlled component."),
     controls: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['arrows', 'selectors'])]).description("Whether to show carousel controls and which type of controls.").defaultValue(true)
   });
   return DocumentedCarousel;
@@ -44,7 +45,7 @@ var themeDoc = _extends({
     defaultValue: '<Previous />'
   },
   'carousel.icons.current': {
-    description: "The icon to use on the middle navigation control. \n      One icon per carousel image.",
+    description: "The icon to use on the middle navigation control.\n      One icon per carousel image.",
     type: 'element',
     defaultValue: '<Next />'
   },

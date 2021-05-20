@@ -28,7 +28,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Carousel = function Carousel(_ref) {
-  var initialChild = _ref.initialChild,
+  var activeChild = _ref.activeChild,
+      initialChild = _ref.initialChild,
       onChild = _ref.onChild,
       play = _ref.play,
       children = _ref.children,
@@ -36,7 +37,7 @@ var Carousel = function Carousel(_ref) {
       fill = _ref.fill,
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["activeChild", "initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"]);
 
   var theme = (0, _react.useContext)(_contexts.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -47,7 +48,7 @@ var Carousel = function Carousel(_ref) {
   var timerRef = (0, _react.useRef)();
 
   var _useState2 = (0, _react.useState)({
-    activeIndex: initialChild
+    activeIndex: activeChild !== undefined ? activeChild : initialChild
   }),
       indexes = _useState2[0],
       setIndexes = _useState2[1];
@@ -55,6 +56,21 @@ var Carousel = function Carousel(_ref) {
   var activeIndex = indexes.activeIndex,
       priorActiveIndex = indexes.priorActiveIndex;
   var lastIndex = _react.Children.count(children) - 1;
+
+  if (activeIndex !== activeChild && activeChild !== undefined) {
+    if (activeChild >= 0 && activeChild <= lastIndex) {
+      setIndexes({
+        activeIndex: activeChild,
+        priorActiveIndex: activeIndex
+      });
+    }
+  }
+
+  var onChildChange = (0, _react.useCallback)(function (index) {
+    if (onChild) {
+      onChild(index);
+    }
+  }, [onChild]);
   (0, _react.useEffect)(function () {
     if (play) {
       var timer = setInterval(function () {
@@ -63,11 +79,13 @@ var Carousel = function Carousel(_ref) {
             activeIndex: activeIndex + 1,
             priorActiveIndex: activeIndex
           });
+          onChildChange(activeIndex + 1);
         } else {
           setIndexes({
             activeIndex: 0,
             priorActiveIndex: activeIndex
           });
+          onChildChange(0);
         }
       }, play);
       timerRef.current = timer;
@@ -77,11 +95,7 @@ var Carousel = function Carousel(_ref) {
     }
 
     return function () {};
-  }, [activeIndex, play, children, lastIndex]);
-  (0, _react.useEffect)(function () {
-    if (onChild) onChild(activeIndex);
-    return function () {}; // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
+  }, [activeIndex, play, children, lastIndex, onChildChange]);
 
   var onRight = function onRight() {
     if (activeIndex >= lastIndex) {
@@ -93,6 +107,7 @@ var Carousel = function Carousel(_ref) {
       activeIndex: activeIndex + 1,
       priorActiveIndex: activeIndex
     });
+    onChildChange(activeIndex + 1);
   };
 
   var onLeft = function onLeft() {
@@ -105,15 +120,19 @@ var Carousel = function Carousel(_ref) {
       activeIndex: activeIndex - 1,
       priorActiveIndex: activeIndex
     });
+    onChildChange(activeIndex - 1);
   };
 
   var onSelect = function onSelect(index) {
     return function () {
-      clearInterval(timerRef.current);
-      setIndexes({
-        activeIndex: index,
-        priorActiveIndex: activeIndex
-      });
+      if (activeIndex !== index) {
+        clearInterval(timerRef.current);
+        setIndexes({
+          activeIndex: index,
+          priorActiveIndex: activeIndex
+        });
+        onChildChange(index);
+      }
     };
   };
 
