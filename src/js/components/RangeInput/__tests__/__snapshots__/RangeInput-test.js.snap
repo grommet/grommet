@@ -682,6 +682,142 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 </div>
 `;
 
+exports[`RangeInput showLabel 1`] = `
+.c1 {
+  position: absolute;
+  top: 90%;
+  left: calc(50% + (-7px));
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+}
+
+.c0::-moz-focus-outer {
+  border: none;
+}
+
+.c0::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c0::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c0::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c0::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c0::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c0:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c0::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c0::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div>
+  <input
+    class="c0"
+    max="20"
+    min="10"
+    step="1"
+    type="range"
+    value="15"
+  />
+  <label
+    class="c1"
+    max="20"
+    min="10"
+    step="1"
+    value="15"
+  >
+    15%
+  </label>
+</div>
+`;
+
 exports[`RangeInput track themed 1`] = `
 .c0 {
   font-size: 18px;
