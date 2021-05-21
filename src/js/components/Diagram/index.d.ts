@@ -8,7 +8,15 @@ export type DiagramConnectionType = 'direct' | 'curved' | 'rectilinear';
 export interface DiagramProps {
   connections: {
     anchor?: DiagramConnectionAnchor;
-    animation?: boolean | 'pulse' | 'draw';
+    animation?:
+      | boolean
+      | 'pulse'
+      | 'draw'
+      | {
+          type?: 'pulse' | 'draw';
+          delay?: number;
+          duration?: number;
+        };
     color?: ColorType;
     fromTarget: string | object;
     label?: string;

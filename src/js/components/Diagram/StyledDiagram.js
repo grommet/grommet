@@ -3,12 +3,20 @@ import styled, { css } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { animationObjectStyle } from '../../utils';
 
-const animationItemStyle = (item, theme) =>
-  animationObjectStyle({ type: item }, theme);
+const animationItemStyle = (item, theme) => {
+  if (typeof item === 'string') {
+    return animationObjectStyle({ type: item }, theme);
+  }
+  if (typeof item === 'object') {
+    return animationObjectStyle(item, theme);
+  }
+  return '';
+};
 
+// Bug:
 const animationStyle = css`
   ${props =>
-    props.animation === 'draw'
+    props.animation === 'draw' || props.animation.type === 'draw'
       ? css`
           path {
             stroke-dasharray: 500;

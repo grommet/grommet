@@ -30,7 +30,14 @@ Required. Array of objects describing the connections.
   animation: 
     boolean
     pulse
-    draw,
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: number,
+      duration: number
+    },
   color: 
     string
     {

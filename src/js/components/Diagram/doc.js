@@ -21,6 +21,11 @@ export const doc = Diagram => {
         animation: PropTypes.oneOfType([
           PropTypes.bool,
           PropTypes.oneOf(['pulse', 'draw']),
+          PropTypes.shape({
+            type: PropTypes.oneOf(['pulse', 'draw']),
+            delay: PropTypes.number,
+            duration: PropTypes.number,
+          }),
         ]),
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])

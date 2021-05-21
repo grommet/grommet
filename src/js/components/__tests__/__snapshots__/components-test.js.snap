@@ -3435,7 +3435,14 @@ string",
   animation: 
     boolean
     pulse
-    draw,
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: number,
+      duration: number
+    },
   color: 
     string
     {
