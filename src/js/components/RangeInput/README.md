@@ -72,6 +72,14 @@ The step interval between values.
 number
 ```
 
+**showLabel**
+
+Whether to show the Label with Range Thumb or not.
+
+```
+boolean
+```
+
 **value**
 
 The current value.
@@ -198,6 +206,16 @@ Defaults to
 
 ```
 border
+```
+
+**rangeInput.track.colors**
+
+The array of track colors based on the thumb value. Expects `{ color: string, opacity: number, value: number }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **rangeInput.track.opacity**

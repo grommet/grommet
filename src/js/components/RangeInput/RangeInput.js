@@ -5,15 +5,16 @@ import { StyledRangeInput, StyledRangeLabel } from './StyledRangeInput';
 
 const RangeInput = forwardRef(
   (
-    { 
-      a11yTitle, 
-      name, 
-      onChange, 
-      onFocus, 
-      onBlur, 
+    {
+      a11yTitle,
+      name,
+      onChange,
+      onFocus,
+      onBlur,
       value: valueProp,
-      showLabel =  false, 
-      ...rest },
+      showLabel = false,
+      ...rest
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -22,34 +23,34 @@ const RangeInput = forwardRef(
 
     const [focus, setFocus] = useState();
     return (
-      <Fragment>
-      <StyledRangeInput
-        aria-label={a11yTitle}
-        ref={ref}
-        name={name}
-        focus={focus}
-        value={value}
-        {...rest}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
-        onChange={event => {
-          setValue(event.target.value);
-          if (onChange) onChange(event);
-        }}
-        type="range"
-      />
-      {
-        showLabel && (
-          <StyledRangeLabel value={value} {...rest}> {`${value}%`} </StyledRangeLabel>
-        )
-      }
-      </Fragment>
+      <>
+        <StyledRangeInput
+          aria-label={a11yTitle}
+          ref={ref}
+          name={name}
+          focus={focus}
+          value={value}
+          {...rest}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onChange={event => {
+            setValue(event.target.value);
+            if (onChange) onChange(event);
+          }}
+          type="range"
+        />
+        {showLabel && (
+          <StyledRangeLabel value={value} {...rest}>
+            {`${value}%`}
+          </StyledRangeLabel>
+        )}
+      </>
     );
   },
 );

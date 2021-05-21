@@ -7049,6 +7049,12 @@ string",
         "name": "step",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether to show the Label with Range Thumb or not.",
+        "format": "boolean",
+        "name": "showLabel",
+      },
+      Object {
         "description": "The current value.",
         "format": "number
 string",

@@ -13,22 +13,22 @@ const rangeInputTheme = {
         opacity: 0.3,
       },
       colors: [
-          { value: 3, color: "green" },
-          { value: 7, color: "red" },
-          { value: 10, color: "yellow" }
-      ]
+        { value: 3, color: '#FF0000', opacity: '0.8' },
+        { value: 7, color: '#FFFF00', opacity: '0.6' },
+        { value: 10, color: '#00FF00', opacity: '0.6' },
+      ],
+    },
+    label: {
+      extend: {
+        color: '#7D4CDB',
+      },
     },
   },
   box: {
     extend: {
-      position: "relative"
-    }
+      position: 'relative',
+    },
   },
-  rangeInputLabel: {
-    extend: {
-      color: "#7D4CDB"
-    }
-  }
 };
 
 export const MultiColorTrack = () => {
@@ -58,7 +58,7 @@ export const MultiColorTrack = () => {
             step={1}
             value={value}
             onChange={onChange}
-            showLabel={true}
+            showLabel
           />
         </Box>
         <Button

@@ -34,6 +34,9 @@ export const doc = RangeInput => {
       via 'event.target.value'.`,
     ),
     step: PropTypes.number.description('The step interval between values.'),
+    showLabel: PropTypes.bool
+      .description('Whether to show the Label with Range Thumb or not.')
+      .defaultValue(false),
     value: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.string,
@@ -77,6 +80,11 @@ export const themeDoc = {
     description: 'The color of the track.',
     type: 'string | { dark: string, light: string }',
     defaultValue: 'border',
+  },
+  'rangeInput.track.colors': {
+    description: 'The array of track colors based on the thumb value.',
+    type: '{ color: string, opacity: number, value: number }',
+    defaultValue: undefined,
   },
   'rangeInput.track.opacity': {
     description: 'The opacity of the track color.',
