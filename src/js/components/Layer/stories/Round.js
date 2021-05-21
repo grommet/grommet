@@ -6,7 +6,6 @@ import { FormClose } from 'grommet-icons';
 
 const customTheme = deepMerge(grommet, {
   layer: {
-    intelligentID: true,
     border: {
       radius: 'large',
       intelligentRounding: true,
