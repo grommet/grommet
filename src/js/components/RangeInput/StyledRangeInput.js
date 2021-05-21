@@ -70,47 +70,29 @@ const trackColorStyle = props => {
     const max = props.max || 100; // 'max' defaults to 100 in case not specified
     const min = props.min || 0; // 'min' defaults to 0 in case not specified
     const thumbPosition = `${((props.value - min) / (max - min)) * 100}`;
-    // const lowerTrackColor = normalizeColor(props.theme.rangeInput.track.color, props.theme)
     const upperTrackColor = getBoundColor(props, 'upper');
     const arrayOfTrackColors = props.theme.rangeInput.track.colors;
     let valuePercentage = 0;
     let result = `background: linear-gradient(to right,`;
     for (let index = 0; index < arrayOfTrackColors.length; index++) {
       const { value, color } = arrayOfTrackColors[index];
-      // result += `${(props.value >= value) ? normalizeColor(color, props.theme): upperTrackColor} ${valuePercentage}%,`;
       result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
-      // if(props.value === min) {
-      //   result = `background: linear-gradient(to right,${upperTrackColor} ${thumbPosition}%, ${upperTrackColor})`;
-      // } else 
-      // if(props.value >= min && index === 0 && props.value <= value){
-      //   console.log("Min called")
-      //   result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
-      //   valuePercentage = ((value - min) / (max - min)) * 100;
-      //   result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
-      // }else 
       if(props.value >= value){
-        console.log("value called ",value, color, props.value)
-        // result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
         valuePercentage = ((value - min) / (max - min)) * 100;
-        result += `${normalizeColor(color, props.theme)} ${(props.value >= value) ? valuePercentage : thumbPosition}%,`;
+        result += `${normalizeColor(color, props.theme)} ${valuePercentage}%,`;
       }else{
-        console.log("else is called")
         result += `${upperTrackColor} ${thumbPosition}%, ${upperTrackColor})`;
         break;
       }
       if(index === (arrayOfTrackColors.length - 1) && (arrayOfTrackColors[arrayOfTrackColors.length - 1].value <= props.value)){
-        console.log("Last if called")
         result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
       }
     }
-    console.log({result})
-    // linear-gradient( to right,green, green 20%,blue 20%, blue 50%, lightgray 50%,lightgray)
     return result;
   }
 
   const max = props.max || 100; // 'max' defaults to 100 in case not specified
   const min = props.min || 0; // 'min' defaults to 0 in case not specified
-  console.log(props.value)
   const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
 
   const lowerTrackColor = getBoundColor(props, 'lower');
@@ -166,6 +148,24 @@ const firefoxMicrosoftThumbStyle = css`
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
 `;
+
+const StyledRangeLabel = styled.label`
+  position: absolute;
+  top: 90%;
+  ${props => {
+    const max = props.max || 100; // 'max' defaults to 100 in case not specified
+    const min = props.min || 0; // 'min' defaults to 0 in case not specified
+    const thumbPosition = ((props.value - min) * 100)/ (max - min);
+    const labelPosition = `calc(${thumbPosition}% + (${8 - thumbPosition * 0.30}px))`;
+    return `left: ${labelPosition};`
+  }}
+  ${props =>
+    props.theme.rangeInputLabel &&
+    props.theme.rangeInputLabel.extend}
+`;
+
+StyledRangeLabel.defaultProps = {};
+Object.setPrototypeOf(StyledRangeLabel.defaultProps, defaultProps);
 
 /* eslint-disable max-len */
 const StyledRangeInput = styled.input`
@@ -264,4 +264,4 @@ const StyledRangeInput = styled.input`
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 
-export { StyledRangeInput };
+export { StyledRangeInput, StyledRangeLabel };

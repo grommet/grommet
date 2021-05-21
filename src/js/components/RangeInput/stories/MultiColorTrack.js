@@ -19,6 +19,16 @@ const rangeInputTheme = {
       ]
     },
   },
+  box: {
+    extend: {
+      position: "relative"
+    }
+  },
+  rangeInputLabel: {
+    extend: {
+      color: "#7D4CDB"
+    }
+  }
 };
 
 export const MultiColorTrack = () => {
@@ -41,7 +51,6 @@ export const MultiColorTrack = () => {
             } else setIsSubtractDisabled(true);
           }}
         />
-        {value}
         <Box align="center" width="medium">
           <RangeInput
             min={0}
@@ -49,6 +58,7 @@ export const MultiColorTrack = () => {
             step={1}
             value={value}
             onChange={onChange}
+            showLabel={true}
           />
         </Box>
         <Button

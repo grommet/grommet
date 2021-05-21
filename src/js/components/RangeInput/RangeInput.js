@@ -1,11 +1,19 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState, Fragment } from 'react';
 
 import { FormContext } from '../Form/FormContext';
-import { StyledRangeInput } from './StyledRangeInput';
+import { StyledRangeInput, StyledRangeLabel } from './StyledRangeInput';
 
 const RangeInput = forwardRef(
   (
-    { a11yTitle, name, onChange, onFocus, onBlur, value: valueProp, ...rest },
+    { 
+      a11yTitle, 
+      name, 
+      onChange, 
+      onFocus, 
+      onBlur, 
+      value: valueProp,
+      showLabel =  false, 
+      ...rest },
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -14,6 +22,7 @@ const RangeInput = forwardRef(
 
     const [focus, setFocus] = useState();
     return (
+      <Fragment>
       <StyledRangeInput
         aria-label={a11yTitle}
         ref={ref}
@@ -35,6 +44,12 @@ const RangeInput = forwardRef(
         }}
         type="range"
       />
+      {
+        showLabel && (
+          <StyledRangeLabel value={value} {...rest}> {`${value}%`} </StyledRangeLabel>
+        )
+      }
+      </Fragment>
     );
   },
 );
