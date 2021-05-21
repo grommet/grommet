@@ -61,7 +61,6 @@ export const RoundLayer = () => {
           position={position}
           onClickOutside={onClose}
           onEsc={onClose}
-          id="new layer"
         >
           <Box
             pad="medium"
