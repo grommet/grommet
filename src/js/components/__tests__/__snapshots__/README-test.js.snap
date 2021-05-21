@@ -1478,6 +1478,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -2212,10 +2221,18 @@ function
 
 **badge**
 
-An indicator to show on the top-right of the Button. For accessibility,
-         supplement the badge by adding an a11yTitle to the Button which 
-         provides a useful message to screen readers. For example, \\"2 unread 
-         notifications\\".
+An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".
 
 \`\`\`
 boolean
@@ -4281,6 +4298,16 @@ xlarge
 string
 \`\`\`
 
+**activeChild**
+
+If specified, Carousel will be a controlled component. This means
+      that future slide changes will not work unless you subscribe to onChild
+      function and update activeChild accordingly.
+
+\`\`\`
+number
+\`\`\`
+
 **fill**
 
 Whether to expand to fill
@@ -4311,9 +4338,9 @@ number
 
 **onChild**
 
-If specified, this function will 
-      be called with the active index when the currently active carousel 
-      changes.
+If specified, this function will
+      be called with the active index when the currently active carousel
+      changes. Helpful when using Carousel as a controlled component.
 
 \`\`\`
 function
@@ -4368,7 +4395,7 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. 
+The icon to use on the middle navigation control.
       One icon per carousel image. Expects \`element\`.
 
 Defaults to
@@ -5343,6 +5370,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**checkBox.label.align**
+
+How to align the checkbox and label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+center
 \`\`\`
 
 **checkBox.pad**
@@ -10422,6 +10459,50 @@ none
 string
 \`\`\`
 
+**height**
+
+A fixed height.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
+\`\`\`
+
 **justify**
 
 How to align the individual items inside the grid when there is extra
@@ -10606,6 +10687,50 @@ The DOM tag or react component to use for the element. Defaults to \`div\`.
 \`\`\`
 string
 function
+\`\`\`
+
+**width**
+
+A fixed width.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
   
 ## Intrinsic element

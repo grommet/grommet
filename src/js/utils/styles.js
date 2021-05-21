@@ -749,3 +749,71 @@ const TEXT_ALIGN_MAP = {
 export const textAlignStyle = css`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
+
+const getSize = (theme, size) => theme.global.size[size] || size;
+
+const widthObjectStyle = (width, theme) => {
+  const result = [];
+  if (width.max)
+    result.push(
+      css`
+        max-width: ${getSize(theme, width.max)};
+      `,
+    );
+  if (width.min)
+    result.push(
+      css`
+        min-width: ${getSize(theme, width.min)};
+      `,
+    );
+  if (width.width)
+    result.push(
+      css`
+        width: ${getSize(theme, width.width)};
+      `,
+    );
+  return result;
+};
+
+const widthStringStyle = (width, theme) =>
+  css`
+    width: ${getSize(theme, width)};
+  `;
+
+export const widthStyle = (width, theme) =>
+  typeof width === 'object'
+    ? widthObjectStyle(width, theme)
+    : widthStringStyle(width, theme);
+
+const heightObjectStyle = (height, theme) => {
+  const result = [];
+  if (height.max)
+    result.push(
+      css`
+        max-height: ${getSize(theme, height.max)};
+      `,
+    );
+  if (height.min)
+    result.push(
+      css`
+        min-height: ${getSize(theme, height.min)};
+      `,
+    );
+  if (height.width)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  return result;
+};
+
+const heightStringStyle = (height, theme) =>
+  css`
+    height: ${getSize(theme, height)};
+  `;
+
+export const heightStyle = (height, theme) =>
+  typeof height === 'object'
+    ? heightObjectStyle(height, theme)
+    : heightStringStyle(height, theme);
