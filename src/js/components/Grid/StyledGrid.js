@@ -125,8 +125,10 @@ const getRepeatSize = (size, props) => {
   const gaps = gapSizes(props);
   let min;
   let max;
+  let minFill;
   if (Array.isArray(size)) {
     min = normalizeSize(size[0], props);
+    if (min.search(/px/) !== -1) minFill = true;
     max = normalizeSize(size[1], props);
     if (gaps[1] !== undefined) {
       // account for the column gap when using fractional sizes, e.g. 1/3
@@ -137,6 +139,7 @@ const getRepeatSize = (size, props) => {
     }
   } else {
     min = normalizeSize(size, props);
+    if (min.search(/px/) !== -1) minFill = true;
     max = '1fr';
     if (gaps[1] !== undefined) {
       // account for column gap with fractional sizes, e.g. 1/3
@@ -144,7 +147,7 @@ const getRepeatSize = (size, props) => {
         min = `calc(${min} - (${gaps[1]} * (1 - ${size})))`;
     }
   }
-  if (min.indexOf('%') === -1) {
+  if (minFill) {
     // ensure we never go beyond the container width,
     // for mobile/narrow situations
     min = `min(${min}, 100%)`;
