@@ -298,6 +298,31 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('type format inline short', () => {
+    const onChange = jest.fn(event => event.value);
+    const { container, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="m/d/yy"
+          value={DATE}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('m/d/yy'), {
+      target: { value: '7/21/20' },
+    });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-21T07:00:00.000Z');
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('select format inline range', () => {
     const onChange = jest.fn(event => event.value);
     const { container, getByText } = render(

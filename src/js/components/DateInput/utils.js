@@ -139,7 +139,8 @@ export const textToValue = (text, schema) => {
   let index = 0;
   schema.forEach(part => {
     if (index < text.length) {
-      const char = part[0].toLowerCase();
+      const lower = part.toLowerCase();
+      const char = lower[0];
       if (parts[char] !== undefined) parts = addDate(parts);
 
       if (char === 'm') {
@@ -151,6 +152,10 @@ export const textToValue = (text, schema) => {
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
+        if (lower === 'yy' && parts.y.length === 2) {
+          // convert to full year, pivot at 69 based on POSIX strptime()
+          parts.y = `${parts.y < 69 ? 20 : 19}${parts.y}`;
+        }
       } else if (text.slice(index, index + part.length) === part) {
         index += part.length;
       } else {
