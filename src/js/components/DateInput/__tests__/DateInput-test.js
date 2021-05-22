@@ -295,6 +295,8 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy'), {
       target: { value: '07/21/2020' },
     });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-21T08:00:00.000Z');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -319,7 +321,7 @@ describe('DateInput', () => {
     });
 
     expect(onChange).toHaveBeenCalled();
-    expect(onChange).toHaveReturnedWith('2020-07-21T07:00:00.000Z');
+    expect(onChange).toHaveReturnedWith('2020-07-21T08:00:00.000Z');
     expect(container.firstChild).toMatchSnapshot();
   });
 

@@ -109,7 +109,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema) => {
+export const textToValue = (text, schema, valueProp) => {
   if (!text) return undefined;
 
   let result;
@@ -126,12 +126,18 @@ export const textToValue = (text, schema) => {
       parts.d > 31
     )
       return parts;
-    const date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    if (!result) result = date;
+    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
+    // match time and timezone of any supplied valueProp
+    if (valueProp) {
+      const valueDate = new Date(valueProp).toISOString();
+      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
+    }
     // single
-    else if (Array.isArray(result)) result.push(date);
+    if (!result) result = date;
     // second
-    else result = [result, date]; // third and beyond, unused?
+    else if (Array.isArray(result)) result.push(date);
+    // third and beyond, unused?
+    else result = [result, date];
     return {};
   };
 

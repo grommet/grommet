@@ -145,7 +145,7 @@ const DateInput = forwardRef(
             onChange={event => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
-              const nextValue = textToValue(nextTextValue, schema);
+              const nextValue = textToValue(nextTextValue, schema, value);
               // update value even when undefined
               setValue(nextValue);
               setInternalValue(nextValue || '');
