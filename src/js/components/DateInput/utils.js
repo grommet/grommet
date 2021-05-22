@@ -22,6 +22,29 @@ export const formatToSchema = format => {
   return result;
 };
 
+const masks = {
+  m: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^1[0-2]$`) },
+  mm: { length: [1, 2], regexp: new RegExp(`^[0-1]$|^0[1-9]$|^1[0-2]$`) },
+  d: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^[1-2][0-9]$|^3[0-1]$`) },
+  dd: {
+    length: [1, 2],
+    regexp: new RegExp(`^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$`),
+  },
+  yy: { length: [1, 2], regexp: new RegExp(`^[0-9]{1,2}$`) },
+  yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
+};
+
+export const schemaToMask = schema => {
+  if (!schema) return undefined;
+  return schema.map(part => {
+    const lower = part.toLowerCase();
+    const char = lower[0];
+    if (char === 'm' || char === 'd' || char === 'y')
+      return { placeholder: part, ...masks[lower] };
+    return { fixed: part };
+  });
+};
+
 // convert value into text representation using the schema
 export const valueToText = (value, schema) => {
   // when user initializes dates as empty array, we want to still
