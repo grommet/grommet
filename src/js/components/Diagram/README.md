@@ -36,7 +36,8 @@ Required. Array of objects describing the connections.
         pulse
         draw,
       delay: number,
-      duration: number
+      duration: number,
+      size: string
     },
   color: 
     string
@@ -106,12 +107,7 @@ The animation configuration for Diagram. Expects `object`.
 Defaults to
 
 ```
-{
-      duration: '1s',
-      draw: {
-        duration: '0.1s',
-      },
-    }
+duration: 2s
 ```
 
 **global.colors**

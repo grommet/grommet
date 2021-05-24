@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { animationObjectStyle } from '../../utils';
+import { animationObjectStyle } from '../../utils/animations';
 
 const animationItemStyle = (item, theme) => {
   if (typeof item === 'string') {
@@ -13,7 +13,6 @@ const animationItemStyle = (item, theme) => {
   return '';
 };
 
-// Bug:
 const animationStyle = css`
   ${props =>
     props.animation === 'draw' || props.animation.type === 'draw'

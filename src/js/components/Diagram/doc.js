@@ -25,6 +25,7 @@ export const doc = Diagram => {
             type: PropTypes.oneOf(['pulse', 'draw']),
             delay: PropTypes.number,
             duration: PropTypes.number,
+            size: PropTypes.string,
           }),
         ]),
         color: colorPropType,
@@ -76,12 +77,7 @@ export const themeDoc = {
   'global.animation': {
     description: 'The animation configuration for Diagram.',
     type: 'object',
-    defaultValue: `{
-      duration: '1s',
-      draw: {
-        duration: '0.1s',
-      },
-    }`,
+    defaultValue: 'duration: 2s',
   },
   'global.colors': {
     description: 'Color options.',

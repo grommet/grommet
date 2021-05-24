@@ -3441,7 +3441,8 @@ string",
         pulse
         draw,
       delay: number,
-      duration: number
+      duration: number,
+      size: string
     },
   color: 
     string

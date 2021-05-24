@@ -82,6 +82,10 @@ export const Progressing = () => {
   );
 };
 
+Progressing.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Diagram/Progressing',
 };

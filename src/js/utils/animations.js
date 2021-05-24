@@ -32,7 +32,6 @@ const ZOOM_SIZES = {
   xlarge: 0.5,
 };
 
-// Animation Bounds
 export const animationBounds = (type, size = 'medium') => {
   if (type === 'draw') {
     return ['', `stroke-dashoffset: 0`];
@@ -95,7 +94,6 @@ export const animationBounds = (type, size = 'medium') => {
   return [];
 };
 
-// Normalize Timing
 export const normalizeTiming = (time, defaultTiming) =>
   time ? `${time / 1000.0}s` : defaultTiming;
 
@@ -116,7 +114,6 @@ export const animationEnding = type => {
   return 'forwards';
 };
 
-// AnimationObjectStyle
 export const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
@@ -140,5 +137,3 @@ export const animationObjectStyle = (animation, theme) => {
   }
   return '';
 };
-
-// Animation Style

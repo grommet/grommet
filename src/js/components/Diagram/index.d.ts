@@ -16,6 +16,7 @@ export interface DiagramProps {
           type?: 'pulse' | 'draw';
           delay?: number;
           duration?: number;
+          size?: string;
         };
     color?: ColorType;
     fromTarget: string | object;
