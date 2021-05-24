@@ -164,6 +164,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     dragOver: dragOver
   }, (!files.length || files.length > 1) && /*#__PURE__*/React.createElement(Box, {
+    align: "center",
     fill: "horizontal",
     direction: "row",
     justify: "between"
