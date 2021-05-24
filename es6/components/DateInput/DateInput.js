@@ -14,7 +14,7 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-import { formatToSchema, valueToText, textToValue } from './utils';
+import { formatToSchema, schemaToMask, valueToText, textToValue } from './utils';
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var buttonProps = _ref.buttonProps,
       calendarProps = _ref.calendarProps,
@@ -50,22 +50,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, [format]); // mask is only used when a format is provided
 
   var mask = useMemo(function () {
-    if (!schema) return undefined;
-    return schema.map(function (part) {
-      var _char = part[0].toLowerCase();
-
-      if (_char === 'm' || _char === 'd' || _char === 'y') {
-        return {
-          placeholder: part,
-          length: [1, part.length],
-          regexp: new RegExp("^[0-9]{1," + part.length + "}$")
-        };
-      }
-
-      return {
-        fixed: part
-      };
-    });
+    return schemaToMask(schema);
   }, [schema]); // textValue is only used when a format is provided
 
   var _useState = useState(schema ? valueToText(value, schema) : undefined),
@@ -165,7 +150,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var nextValue = textToValue(nextTextValue, schema); // update value even when undefined
+      var nextValue = textToValue(nextTextValue, schema, value); // update value even when undefined
 
       setValue(nextValue);
       setInternalValue(nextValue || '');

@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
@@ -20,6 +22,45 @@ export var formatToSchema = function formatToSchema(format) {
 
   if (part) result.push(part);
   return result;
+};
+var masks = {
+  m: {
+    length: [1, 2],
+    regexp: new RegExp("^[1-9]$|^1[0-2]$")
+  },
+  mm: {
+    length: [1, 2],
+    regexp: new RegExp("^[0-1]$|^0[1-9]$|^1[0-2]$")
+  },
+  d: {
+    length: [1, 2],
+    regexp: new RegExp("^[1-9]$|^[1-2][0-9]$|^3[0-1]$")
+  },
+  dd: {
+    length: [1, 2],
+    regexp: new RegExp("^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$")
+  },
+  yy: {
+    length: [1, 2],
+    regexp: new RegExp("^[0-9]{1,2}$")
+  },
+  yyyy: {
+    length: [1, 4],
+    regexp: new RegExp("^[0-9]{1,4}$")
+  }
+};
+export var schemaToMask = function schemaToMask(schema) {
+  if (!schema) return undefined;
+  return schema.map(function (part) {
+    var lower = part.toLowerCase();
+    var _char = lower[0];
+    if (_char === 'm' || _char === 'd' || _char === 'y') return _extends({
+      placeholder: part
+    }, masks[lower]);
+    return {
+      fixed: part
+    };
+  });
 }; // convert value into text representation using the schema
 
 export var valueToText = function valueToText(value, schema) {
@@ -33,10 +74,10 @@ export var valueToText = function valueToText(value, schema) {
   var dateIndex = 0;
   var parts = {};
   schema.forEach(function (part) {
-    var _char = part[0].toLowerCase(); // advance dateIndex if we already have this part
+    var _char2 = part[0].toLowerCase(); // advance dateIndex if we already have this part
 
 
-    while (dateIndex < dates.length && (Number.isNaN(dates[dateIndex].date) || (_char === 'm' || _char === 'd' || _char === 'y') && parts[part])) {
+    while (dateIndex < dates.length && (Number.isNaN(dates[dateIndex].date) || (_char2 === 'm' || _char2 === 'd' || _char2 === 'y') && parts[part])) {
       dateIndex += 1;
       parts = {};
     }
@@ -78,18 +119,24 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-export var textToValue = function textToValue(text, schema) {
+export var textToValue = function textToValue(text, schema, valueProp) {
   if (!text) return undefined;
   var result;
 
   var addDate = function addDate(parts) {
     // do a little sanity checking on the values
     if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31) return parts;
-    var date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    if (!result) result = date; // single
-    else if (Array.isArray(result)) result.push(date); // second
-      else result = [result, date]; // third and beyond, unused?
+    var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
+    if (valueProp) {
+      var valueDate = new Date(valueProp).toISOString();
+      date = date.split('T')[0] + "T" + valueDate.split('T')[1];
+    } // single
+
+
+    if (!result) result = date; // second
+    else if (Array.isArray(result)) result.push(date); // third and beyond, unused?
+      else result = [result, date];
     return {};
   };
 
@@ -97,19 +144,24 @@ export var textToValue = function textToValue(text, schema) {
   var index = 0;
   schema.forEach(function (part) {
     if (index < text.length) {
-      var _char2 = part[0].toLowerCase();
+      var lower = part.toLowerCase();
+      var _char3 = lower[0];
+      if (parts[_char3] !== undefined) parts = addDate(parts);
 
-      if (parts[_char2] !== undefined) parts = addDate(parts);
-
-      if (_char2 === 'm') {
+      if (_char3 === 'm') {
         parts.m = pullDigits(text, index);
         index += parts.m.length;
-      } else if (_char2 === 'd') {
+      } else if (_char3 === 'd') {
         parts.d = pullDigits(text, index);
         index += parts.d.length;
-      } else if (_char2 === 'y') {
+      } else if (_char3 === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
+
+        if (lower === 'yy' && parts.y.length === 2) {
+          // convert to full year, pivot at 69 based on POSIX strptime()
+          parts.y = "" + (parts.y < 69 ? 20 : 19) + parts.y;
+        }
       } else if (text.slice(index, index + part.length) === part) {
         index += part.length;
       } else {

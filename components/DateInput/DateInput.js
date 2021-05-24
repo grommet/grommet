@@ -73,22 +73,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
   }, [format]); // mask is only used when a format is provided
 
   var mask = (0, _react.useMemo)(function () {
-    if (!schema) return undefined;
-    return schema.map(function (part) {
-      var _char = part[0].toLowerCase();
-
-      if (_char === 'm' || _char === 'd' || _char === 'y') {
-        return {
-          placeholder: part,
-          length: [1, part.length],
-          regexp: new RegExp("^[0-9]{1," + part.length + "}$")
-        };
-      }
-
-      return {
-        fixed: part
-      };
-    });
+    return (0, _utils2.schemaToMask)(schema);
   }, [schema]); // textValue is only used when a format is provided
 
   var _useState = (0, _react.useState)(schema ? (0, _utils2.valueToText)(value, schema) : undefined),
@@ -189,7 +174,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema); // update value even when undefined
+      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, value); // update value even when undefined
 
       setValue(nextValue);
       setInternalValue(nextValue || '');
