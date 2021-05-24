@@ -181,6 +181,23 @@ exports[`Carousel basic 1`] = `
   justify-content: center;
 }
 
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -366,23 +383,6 @@ exports[`Carousel basic 1`] = `
 
 .c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-.c5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 <div
@@ -719,6 +719,23 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   justify-content: center;
 }
 
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -904,23 +921,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 
 .c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c5 {
-  position: relative;
-  display: block;
 }
 
 <div
@@ -1257,6 +1257,23 @@ exports[`Carousel navigate 1`] = `
   justify-content: center;
 }
 
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -1442,23 +1459,6 @@ exports[`Carousel navigate 1`] = `
 
 .c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-.c5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 <div
@@ -2034,6 +2034,23 @@ exports[`Carousel play 1`] = `
   justify-content: center;
 }
 
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -2219,23 +2236,6 @@ exports[`Carousel play 1`] = `
 
 .c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-.c5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 <div
@@ -2591,6 +2591,20 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   overflow: hidden;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2665,23 +2679,21 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   justify-content: center;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-transform: translateX(-200%);
-  -ms-transform: translateX(-200%);
-  transform: translateX(-200%);
-  -webkit-animation: cowwqN 1s 0s forwards;
-  animation: cowwqN 1s 0s forwards;
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .c12 {
@@ -2802,23 +2814,6 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
 
 .c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-.c5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 <div

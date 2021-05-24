@@ -40,21 +40,6 @@ describe('Grid', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('rows renders with warning', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
-      <Grommet>
-        <Grid rows={['flex']} fill={false} />
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(
-      'Grid needs `fill` when using fractional row sizes',
-    );
-  });
-
   test('columns renders', () => {
     const component = renderer.create(
       <Grommet>
@@ -63,9 +48,12 @@ describe('Grid', () => {
         <Grid columns={['1/4', '3/4']} />
         <Grid columns={[['1/2', '2/4'], '1/4', '3/4']} />
         <Grid columns="small" />
+        <Grid columns="1/3" />
         <Grid columns="flex" />
         <Grid columns={{ count: 'fit', size: 'small' }} />
         <Grid columns={{ count: 'fill', size: ['small', 'medium'] }} />
+        <Grid columns={{ count: 'fit', size: ['small', '1/2'] }} />
+        <Grid columns={{ count: 'fit', size: ['1/4', 'medium'] }} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -308,5 +296,51 @@ describe('Grid', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('width', () => {
+    const { container } = render(
+      <Grommet>
+        <Grid width="xsmall" />
+        <Grid width="small" />
+        <Grid width="medium" />
+        <Grid width="large" />
+        <Grid width="xlarge" />
+        <Grid width="111px" />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  test('width object', () => {
+    const { container } = render(
+      <Grommet>
+        <Grid width={{ width: '100px', max: '100%' }} />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  test('height', () => {
+    const { container } = render(
+      <Grommet>
+        <Grid height="xsmall" />
+        <Grid height="small" />
+        <Grid height="medium" />
+        <Grid height="large" />
+        <Grid height="xlarge" />
+        <Grid height="111px" />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  test('height object', () => {
+    const { container } = render(
+      <Grommet>
+        <Grid height={{ height: '100px', max: '100%' }} />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

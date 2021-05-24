@@ -1,7 +1,11 @@
-import { rgba } from 'polished';
 import styled, { css } from 'styled-components';
 
-import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import {
+  focusStyle,
+  normalizeColor,
+  parseMetricToNum,
+  getRGBA,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
@@ -20,13 +24,13 @@ const getBoundColor = (props, bound) => {
     props.theme.rangeInput.track[bound] &&
     props.theme.rangeInput.track[bound].color
   ) {
-    return rgba(
+    return getRGBA(
       normalizeColor(props.theme.rangeInput.track[bound].color, props.theme),
       getBoundOpacity(props, bound),
     );
   }
   // If bound color is undefined pick the default track color with bound opacity
-  return rgba(
+  return getRGBA(
     normalizeColor(props.theme.rangeInput.track.color, props.theme),
     getBoundOpacity(props, bound),
   );
@@ -40,17 +44,17 @@ const trackColorStyle = props => {
     !props.theme.rangeInput.track.lower &&
     !props.theme.rangeInput.track.upper
   ) {
-    const color = rgba(
+    const color = getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       0.2,
     );
     // Since the track color was changed from border-with-opacity to just border
     // this condition is used to make sure we are applying the opacity correctly
     // for 'border' color (for backward compatibility purposes).
-    if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
+    if (color === 'rgba(0, 0, 0, 0.2)') return `background: ${color}`;
 
     // no bounds are defined but color may have changed
-    return `background: ${rgba(
+    return `background: ${getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       props.theme.rangeInput.track.opacity || 1,
     )}`;

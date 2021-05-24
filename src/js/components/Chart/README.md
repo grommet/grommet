@@ -240,7 +240,7 @@ function
 
 **opacity**
 
-What opacity to apply to the visuals. Supercedes 'color.opacity'
+What opacity to apply to the visuals. Supersedes 'color.opacity'
 
 ```
 weak
@@ -476,7 +476,8 @@ Required. Array of value objects describing the data.
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
