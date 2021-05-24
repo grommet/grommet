@@ -60,10 +60,13 @@ rtl
 
 **full**
 
-Whether to take the whole viewport.
+Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.
 
 ```
 boolean
+min
 ```
 
 **plain**

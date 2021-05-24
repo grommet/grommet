@@ -6,7 +6,7 @@ export var doc = function doc(Grommet) {
   DocumentedGrommet.propTypes = {
     background: backgroundDoc,
     dir: PropTypes.oneOf(['rtl']).description('Layout direction for right to left contexts'),
-    full: PropTypes.bool.description('Whether to take the whole viewport.').defaultValue(false),
+    full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]).description("Whether to take the whole viewport. 'min' indicates it should\n        take at minimum the whole viewport, allowing the viewport to\n        control scrolling.").defaultValue(false),
     plain: PropTypes.bool.description("Whether or not Grommet should apply a global font-family, font-size,\n        and line-height.").defaultValue(false),
     cssVars: PropTypes.bool.description('Whether to expose the css variables.').defaultValue(false),
     theme: PropTypes.object.description('Custom styles for Grommet app component.'),
