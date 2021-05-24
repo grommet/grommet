@@ -21,6 +21,7 @@ describe('List', () => {
     const { container, getByText } = render(
       <Grommet>
         <List
+          aria-label="List"
           data={[{ a: 'alpha' }, { a: 'beta' }]}
           onClickItem={onClickItem}
         />

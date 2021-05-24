@@ -80,6 +80,12 @@ const reorder = (array, source, target) => {
   return result;
 };
 
+// Determine the primary content for a row. If the List
+// has a primaryKey defined this returns the item data
+// based on this primary key. If no primaryKey property
+// is defined this will return unknown. The intent of
+// the content from the primary key is that it is unique
+// within the list.
 const getPrimaryContent = (item, index, primaryKey) => {
   let primaryContent;
   if (primaryKey) {
@@ -94,16 +100,16 @@ const getPrimaryContent = (item, index, primaryKey) => {
 };
 
 
-const chooseKey = (item, index, primaryContent) => {
+const getKey = (item, index, primaryContent) => {
   if (typeof primaryContent === 'string') {
     return primaryContent;
   } 
   return (typeof item === 'string') ? item : index;
 };
 
-const chooseItemId = (item, index, primaryKey) => {
+const getItemId = (item, index, primaryKey) => {
   const primaryContent = getPrimaryContent(item, index, primaryKey);
-  return chooseKey(item, index, primaryContent);
+  return getKey(item, index, primaryContent);
 };
 
 
@@ -133,6 +139,15 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
+
+    // active will be the index of the current 'active'
+    // control in the list. If the onOrder property is defined
+    // this will be the index of up or down control for ordering
+    // items in the list. In this case the item index of that
+    // control would be the active index / 2.
+    // If onOrder is not defined but onClickItem is (e.g. the
+    // List items are likely selectable), active will be the
+    // index of the item which is currently active.
     const [active, setActive] = useState();
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
@@ -164,13 +179,13 @@ const List = React.forwardRef(
       // We need to figure out an id of the thing that will be shown as active
       if (onOrder) {
         // figure out which arrow button will be the active one.
-        const btnId = (active % 2) ? 'MoveDown' : 'MoveUp';
+        const buttonId = (active % 2) ? 'MoveDown' : 'MoveUp';
         const itemIndex = Math.trunc(active / 2);
         activeId = 
-          `${chooseItemId(data[itemIndex], itemIndex, primaryKey)}${btnId}`;
+          `${getItemId(data[itemIndex], itemIndex, primaryKey)}${buttonId}`;
       } else if (onClickItem) {
         // The whole list item is active. Figure out an id
-        activeId = chooseItemId(data[active], active, primaryKey);
+        activeId = getItemId(data[active], active, primaryKey);
       }
       ariaProps['aria-activedescendant'] = activeId;
     }
@@ -183,6 +198,10 @@ const List = React.forwardRef(
               ? event => {
                   if (onOrder) {
                     const index = Math.trunc(active / 2);
+                    // Call onOrder with the re-ordered data.
+                    // Update the active control index so that the
+                    // active control will stay on the same item
+                    // even though it moved up or down.
                     if (active % 2) {
                       onOrder(reorder(data, index, index + 1));
                       setActive(Math.min(active + 2, data.length * 2 - 2));
@@ -289,7 +308,7 @@ const List = React.forwardRef(
                   content = item;
                 }
 
-                const key = chooseKey(item, index, itemId);
+                const key = getKey(item, index, itemId);
 
                 if (action) {
                   content = [
@@ -324,6 +343,7 @@ const List = React.forwardRef(
                 let clickProps;
                 if (onClickItem && !onOrder) {
                   clickProps = {
+                    role: 'option',
                     tabIndex: -1,
                     active: active === index,
                     onClick: event => {

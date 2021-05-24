@@ -13408,6 +13408,28 @@ Defaults to
 undefined
 \`\`\`
 
+**list.icons.down**
+
+The icon to use for the move down button
+    in re-ordable lists. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+FormDown
+\`\`\`
+
+**list.icons.up**
+
+The icon to use for the move up button
+    in re-ordable lists. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+FormUp
+\`\`\`
+
 **list.item.background**
 
 Background color for list items. Expects \`string | [string]\`.

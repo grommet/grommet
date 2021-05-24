@@ -186,6 +186,18 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'list.icons.down': {
+    description: `The icon to use for the move down button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormDown',
+  },
+  'list.icons.up': {
+    description: `The icon to use for the move up button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormUp',
+  },
   'list.item.background': {
     description: 'Background color for list items.',
     type: 'string | [string]',

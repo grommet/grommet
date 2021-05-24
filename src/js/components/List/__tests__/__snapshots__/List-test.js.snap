@@ -1258,12 +1258,14 @@ exports[`List events ArrowDown key 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1414,12 +1416,14 @@ exports[`List events ArrowDown key on last element 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1582,12 +1586,14 @@ exports[`List events ArrowUp key 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1723,12 +1729,14 @@ exports[`List events Enter key 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1749,12 +1757,14 @@ exports[`List events Enter key 2`] = `
   >
     <li
       class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 gjGJvx List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1906,12 +1916,14 @@ exports[`List events focus and blur 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -1931,12 +1943,14 @@ exports[`List events focus and blur 2`] = `
   >
     <li
       class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -2087,12 +2101,14 @@ exports[`List events mouse events 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -2112,12 +2128,14 @@ exports[`List events mouse events 2`] = `
   >
     <li
       class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -11932,12 +11950,14 @@ exports[`List onClickItem 1`] = `
   >
     <li
       class="c2 c3"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="c4 c3"
+      role="option"
       tabindex="-1"
     >
       beta
@@ -11957,12 +11977,14 @@ exports[`List onClickItem 2`] = `
   >
     <li
       class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      role="option"
       tabindex="-1"
     >
       beta
