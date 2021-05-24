@@ -7,7 +7,7 @@ export interface GrommetProps {
   containerTarget?: HTMLElement;
   cssVars?: boolean;
   dir?: 'rtl';
-  full?: boolean;
+  full?: boolean | 'min';
   plain?: boolean;
   theme?: ThemeType;
   themeMode?: 'dark' | 'light';
