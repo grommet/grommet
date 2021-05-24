@@ -173,7 +173,12 @@ const FileInput = forwardRef(
         dragOver={dragOver}
       >
         {(!files.length || files.length > 1) && (
-          <Box fill="horizontal" direction="row" justify="between">
+          <Box
+            align="center"
+            fill="horizontal"
+            direction="row"
+            justify="between"
+          >
             {files.length <= aggregateThreshold && (
               <>
                 <Message {...theme.fileInput.message}>{message}</Message>
