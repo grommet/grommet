@@ -1756,14 +1756,14 @@ exports[`List events Enter key 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 gjGJvx List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fMGZPN List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
@@ -1942,14 +1942,14 @@ exports[`List events focus and blur 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
@@ -2127,14 +2127,14 @@ exports[`List events mouse events 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
@@ -11976,14 +11976,14 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gCbaiH List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 cIGhzN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
