@@ -59,22 +59,34 @@ var justifyContentStyle = css(["justify-content:", ";"], function (props) {
   return JUSTIFY_CONTENT_MAP[props.justifyContent];
 });
 
-var gapStyle = function gapStyle(props) {
+var gapSizes = function gapSizes(props) {
+  var result = [];
+
   if (typeof props.gap === 'string') {
-    var gapSize = props.theme.global.edgeSize[props.gap] || props.gap;
-    return "grid-gap: " + gapSize + " " + gapSize + ";";
+    var size = props.theme.global.edgeSize[props.gap] || props.gap;
+    result[0] = size;
+    result[1] = size;
+  } else if (props.gap) {
+    if (props.gap.row) result[0] = props.theme.global.edgeSize[props.gap.row] || props.gap.row;
+    if (props.gap.column) result[1] = props.theme.global.edgeSize[props.gap.column] || props.gap.column;
   }
 
-  if (props.gap.row && props.gap.column) {
-    return "\n      grid-row-gap: " + (props.theme.global.edgeSize[props.gap.row] || props.gap.row) + ";\n      grid-column-gap: " + (props.theme.global.edgeSize[props.gap.column] || props.gap.column) + ";\n    ";
+  return result;
+};
+
+var gapStyle = function gapStyle(props) {
+  var sizes = gapSizes(props);
+
+  if (sizes[0] !== undefined && sizes[1] !== undefined) {
+    return "grid-gap: " + sizes[0] + " " + sizes[1] + ";";
   }
 
-  if (props.gap.row) {
-    return "\n      grid-row-gap: " + (props.theme.global.edgeSize[props.gap.row] || props.gap.row) + ";\n    ";
+  if (sizes[0] !== undefined) {
+    return "grid-row-gap: " + sizes[0] + ";";
   }
 
-  if (props.gap.column) {
-    return "\n      grid-column-gap: " + (props.theme.global.edgeSize[props.gap.column] || props.gap.column) + ";\n    ";
+  if (sizes[1] !== undefined) {
+    return "grid-column-gap: " + sizes[1] + ";";
   }
 
   return '';
@@ -91,66 +103,77 @@ var SIZE_MAP = {
   '2/3': '66.66%'
 };
 
-var getRepeatCount = function getRepeatCount(count) {
-  return typeof count === 'number' ? count : "auto-" + count;
+var normalizeSize = function normalizeSize(size, props) {
+  return SIZE_MAP[size] || props.theme.global.size[size] || size;
 };
 
-var getRepeatSize = function getRepeatSize(size, theme) {
+var getRepeatCount = function getRepeatCount(count) {
+  return typeof count === 'number' ? count : "auto-" + (count || 'fit');
+};
+
+var getRepeatSize = function getRepeatSize(size, props) {
   if (size === 'flex') return '1fr';
+  var gaps = gapSizes(props);
   var min;
   var max;
+  var minFill;
 
   if (Array.isArray(size)) {
-    min = theme.global.size[size[0]] || size[0];
-    max = theme.global.size[size[1]] || size[1];
+    min = normalizeSize(size[0], props);
+    if (min.search(/px/) !== -1) minFill = true;
+    max = normalizeSize(size[1], props);
+
+    if (gaps[1] !== undefined) {
+      // account for the column gap when using fractional sizes, e.g. 1/3
+      if (size[0].indexOf('/') !== -1) min = "calc(" + min + " - (" + gaps[1] + " * (1 - " + size[0] + ")))";
+      if (size[1].indexOf('/') !== -1) max = "calc(" + max + " - (" + gaps[1] + " * (1 - " + size[1] + ")))";
+    }
   } else {
-    min = theme.global.size[size] || size;
+    min = normalizeSize(size, props);
+    if (min.search(/px/) !== -1) minFill = true;
     max = '1fr';
+
+    if (gaps[1] !== undefined) {
+      // account for column gap with fractional sizes, e.g. 1/3
+      if (size.indexOf('/') !== -1) min = "calc(" + min + " - (" + gaps[1] + " * (1 - " + size + ")))";
+    }
   }
 
-  if (min.search(/\d/) !== -1) {
+  if (minFill) {
+    // ensure we never go beyond the container width,
+    // for mobile/narrow situations
     min = "min(" + min + ", 100%)";
   }
 
   return "minmax(" + min + ", " + max + ")";
 };
 
-var sizeFor = function sizeFor(size, props, isRow) {
-  var mapped = SIZE_MAP[size];
-
-  if (isRow && mapped && (!props.fillContainer || props.fillContainer === 'horizontal')) {
-    console.warn('Grid needs `fill` when using fractional row sizes');
-  }
-
-  return mapped || props.theme.global.size[size] || size;
-};
-
 var columnsStyle = function columnsStyle(props) {
   if (Array.isArray(props.columns)) {
     return css(["grid-template-columns:", ";"], props.columns.map(function (s) {
       if (Array.isArray(s)) {
-        return "minmax(" + sizeFor(s[0], props) + ", " + sizeFor(s[1], props) + ")";
+        return "minmax(" + normalizeSize(s[0], props) + ", " + normalizeSize(s[1], props) + ")";
       }
 
-      return sizeFor(s, props);
+      return normalizeSize(s, props);
     }).join(' '));
   }
 
   if (typeof props.columns === 'object') {
-    return css(["grid-template-columns:repeat( ", ",", " );"], getRepeatCount(props.columns.count), getRepeatSize(props.columns.size, props.theme));
+    return css(["grid-template-columns:repeat( ", ",", " );"], getRepeatCount(props.columns.count), getRepeatSize(props.columns.size, props));
   }
 
-  return css(["grid-template-columns:repeat( auto-fill,", " );"], getRepeatSize(props.columns, props.theme));
+  return css(["grid-template-columns:repeat( auto-fill,", " );"], getRepeatSize(props.columns, props));
 };
 
 var rowsStyle = function rowsStyle(props) {
   if (Array.isArray(props.rowsProp)) {
     return css(["grid-template-rows:", ";"], props.rowsProp.map(function (s) {
       if (Array.isArray(s)) {
-        return "minmax(" + sizeFor(s[0], props, true) + ", " + sizeFor(s[1], props, true) + ")";
+        return "minmax(" + normalizeSize(s[0], props) + ", " + normalizeSize(s[1], props) + ")";
       }
 
-      return sizeFor(s, props, true);
+      return normalizeSize(s, props);
     }).join(' '));
   }
 

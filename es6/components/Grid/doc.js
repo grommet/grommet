@@ -21,9 +21,9 @@ export var doc = function doc(Grid) {
       end: PropTypes.arrayOf(PropTypes.number)
     })), PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))]).description("Grid areas.\n      Either area names and column,row coordinates.\n      Or, an array of string arrays that specify named grid areas."),
     border: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all']), BORDER_SHAPE, PropTypes.arrayOf(BORDER_SHAPE)]).description("Include a border."),
-    columns: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(fixedSizes), PropTypes.shape({
+    columns: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.oneOf(sizes), PropTypes.shape({
       count: PropTypes.oneOfType([PropTypes.oneOf(['fit', 'fill']), PropTypes.number]),
-      size: PropTypes.oneOfType([PropTypes.oneOf(fixedSizes), PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.string])
+      size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string])), PropTypes.string])
     }), PropTypes.string]).description("Column sizes.\n      If an array value is an array, the inner array indicates the\n      minimum and maximum sizes for the column.\n      Specifying a single string will repeat multiple columns\n      of that size, as long as there is room for more.\n      Specifying an object allows indicating how the columns\n      stretch to fit the available space."),
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     gap: PropTypes.oneOfType([PropTypes.oneOf(edgeSizes), PropTypes.shape({
