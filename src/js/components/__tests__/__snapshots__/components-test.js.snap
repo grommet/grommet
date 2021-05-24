@@ -5046,8 +5046,11 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
       },
       Object {
         "defaultValue": false,
-        "description": "Whether to take the whole viewport.",
-        "format": "boolean",
+        "description": "Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.",
+        "format": "boolean
+min",
         "name": "full",
       },
       Object {
