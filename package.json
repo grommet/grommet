@@ -93,7 +93,7 @@
     "copy-webpack-plugin": "^5.0.4",
     "copyfiles": "^2.4.1",
     "core-js": "^3.12.1",
-    "cross-env": "^5.1.6",
+    "cross-env": "^7.0.3",
     "del": "^5.1.0",
     "elliptic": "^6.5.4",
     "eslint": "^7.18.0",
