@@ -18,7 +18,7 @@ export const CenterLayer = () => {
   const onClose2 = () => setOpen2(undefined);
 
   return (
-    <Grommet options={{ singleId: true }} theme={grommet} full>
+    <Grommet options={{ layer: { singleId: true } }} theme={grommet} full>
       <Box fill align="center" justify="center">
         <Button
           icon={<Trash />}

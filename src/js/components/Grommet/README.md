@@ -68,10 +68,10 @@ boolean
 
 **options**
 
-Opt in that would assure that the id is placed on 
-      on DOM node. For example in Layer we currently we have id
-      being placed on both StyledContainer, StyledLayer, so id
-      would only be placed on StyledContainer for accessibility.
+Additional configurations that will be applied throughout the 
+        application. If options.layer.singleId === true, id on Layer will be 
+        placed on StyledLayer and '{id}__container' will be placed on 
+        StyledContainer.
 
 ```
 object
