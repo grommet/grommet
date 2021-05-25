@@ -45,13 +45,15 @@ const deviceResponsive = (userAgent, theme) => {
   return undefined;
 };
 
+const defaultOptions = {};
+
 const Grommet = forwardRef((props, ref) => {
   const {
     children,
     full,
     containerTarget = typeof document === 'object' ? document.body : undefined,
     theme: themeProp,
-    options = {},
+    options = defaultOptions,
     ...rest
   } = props;
 
