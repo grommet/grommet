@@ -604,6 +604,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: '4px',
         thickness: '4px',
       },
+      label: {
+        align: 'center',
+      },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
       // gap: undefined

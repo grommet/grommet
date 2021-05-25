@@ -110,4 +110,29 @@ describe('Carousel', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should work as controlled carousel', () => {
+    const setActiveSlide = jest.fn();
+
+    render(
+      <Grommet>
+        <Carousel
+          id="test-carousel"
+          controls="selectors"
+          activeChild={1}
+          onChild={setActiveSlide}
+        >
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
+      </Grommet>,
+    );
+
+    const button = document
+      .getElementById('test-carousel')
+      .querySelector('button');
+
+    fireEvent.click(button);
+    expect(setActiveSlide).toBeCalledWith(0);
+  });
 });
