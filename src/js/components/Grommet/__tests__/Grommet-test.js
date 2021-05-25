@@ -81,6 +81,13 @@ describe('Grommet', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('full min', () => {
+    const component = renderer.create(
+      <Grommet full="min">Grommet App</Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('background', () => {
     const component = renderer.create(
       <Grommet full background="#0000ff">

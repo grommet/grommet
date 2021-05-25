@@ -20,6 +20,11 @@ export const doc = Carousel => {
 
   DocumentedCarousel.propTypes = {
     ...genericProps,
+    activeChild: PropTypes.number.description(
+      `If specified, Carousel will be a controlled component. This means
+      that future slide changes will not work unless you subscribe to onChild
+      function and update activeChild accordingly.`,
+    ),
     fill: PropTypes.bool.description(`Whether to expand to fill
       all of the available width and height in the parent container.`),
     play: PropTypes.number.description(`If specified, the number of
@@ -27,9 +32,9 @@ export const doc = Carousel => {
       will loop through all children indefinitely.`),
     initialChild: PropTypes.number.description(`If specified, the index of
       the first element to be shown. Defaults to 0.`),
-    onChild: PropTypes.func.description(`If specified, this function will 
-      be called with the active index when the currently active carousel 
-      changes.`),
+    onChild: PropTypes.func.description(`If specified, this function will
+      be called with the active index when the currently active carousel
+      changes. Helpful when using Carousel as a controlled component.`),
     controls: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['arrows', 'selectors']),
@@ -60,7 +65,7 @@ export const themeDoc = {
     defaultValue: '<Previous />',
   },
   'carousel.icons.current': {
-    description: `The icon to use on the middle navigation control. 
+    description: `The icon to use on the middle navigation control.
       One icon per carousel image.`,
     type: 'element',
     defaultValue: '<Next />',

@@ -126,6 +126,16 @@ xlarge
 string
 ```
 
+**activeChild**
+
+If specified, Carousel will be a controlled component. This means
+      that future slide changes will not work unless you subscribe to onChild
+      function and update activeChild accordingly.
+
+```
+number
+```
+
 **fill**
 
 Whether to expand to fill
@@ -156,9 +166,9 @@ number
 
 **onChild**
 
-If specified, this function will 
-      be called with the active index when the currently active carousel 
-      changes.
+If specified, this function will
+      be called with the active index when the currently active carousel
+      changes. Helpful when using Carousel as a controlled component.
 
 ```
 function
@@ -213,7 +223,7 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. 
+The icon to use on the middle navigation control.
       One icon per carousel image. Expects `element`.
 
 Defaults to

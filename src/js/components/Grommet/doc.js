@@ -18,8 +18,12 @@ export const doc = Grommet => {
     dir: PropTypes.oneOf(['rtl']).description(
       'Layout direction for right to left contexts',
     ),
-    full: PropTypes.bool
-      .description('Whether to take the whole viewport.')
+    full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])])
+      .description(
+        `Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.`,
+      )
       .defaultValue(false),
     options: PropTypes.object
       .description(
