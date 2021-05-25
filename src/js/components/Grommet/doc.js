@@ -28,9 +28,9 @@ export const doc = Grommet => {
     options: PropTypes.object
       .description(
         `Additional configurations that will be applied throughout the 
-        application. If options.layer.singleId === true, id on Layer will be 
-        placed on StyledLayer and '{id}__container' will be placed on 
-        StyledContainer.`,
+        application. If options.layer.singleId === true, Layer id will be 
+        placed on the outermost Layer div and '{id}__container' will be placed 
+        on the div that creates the visible portion of the Layer.`,
       )
       .defaultValue(undefined),
     plain: PropTypes.bool
