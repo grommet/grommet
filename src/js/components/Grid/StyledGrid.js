@@ -127,15 +127,16 @@ const getRepeatSize = (size, props) => {
   let max;
   let minFill;
   if (Array.isArray(size)) {
-    min = normalizeSize(size[0], props);
+    const [minSize = 'auto', maxSize = 'auto'] = size;
+    min = normalizeSize(minSize, props);
     if (min.search(/px/) !== -1) minFill = true;
-    max = normalizeSize(size[1], props);
+    max = normalizeSize(maxSize, props);
     if (gaps[1] !== undefined) {
       // account for the column gap when using fractional sizes, e.g. 1/3
-      if (size[0].indexOf('/') !== -1)
-        min = `calc(${min} - (${gaps[1]} * (1 - ${size[0]})))`;
-      if (size[1].indexOf('/') !== -1)
-        max = `calc(${max} - (${gaps[1]} * (1 - ${size[1]})))`;
+      if (minSize.indexOf('/') !== -1)
+        min = `calc(${min} - (${gaps[1]} * (1 - ${minSize})))`;
+      if (maxSize.indexOf('/') !== -1)
+        max = `calc(${max} - (${gaps[1]} * (1 - ${maxSize})))`;
     }
   } else {
     min = normalizeSize(size, props);
