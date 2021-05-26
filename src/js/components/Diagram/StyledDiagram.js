@@ -16,29 +16,39 @@ const animationItemStyle = (item, theme) => {
   return '';
 };
 
-const animationStyle = css`
-  ${props =>
-    props.animation === 'draw' ||
-    props.animation.type === 'draw' ||
-    props.animation === true
-      ? css`
-          path {
-            stroke-dasharray: 500;
-            stroke-dashoffset: 500;
-            animation: ${animationItemStyle(props.animation, props.theme)};
-          }
-        `
-      : css`
-          animation: ${animationItemStyle(props.animation, props.theme)};
-        `}
-`;
+const availableAnimations = [true, 'draw', 'pulse'];
+
+const animationStyle = props => {
+  const animationType = props.animation.type || props.animation;
+  if (!availableAnimations.includes(animationType)) {
+    return 'Not available for Diagram';
+  }
+  if (animationType === 'draw' || animationType === true) {
+    return css`
+      path {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: ${animationItemStyle(animationType, props.theme)};
+      }
+    `;
+  }
+  return css`
+    animation: ${animationItemStyle(props.animation, props.theme)};
+  `;
+};
+
+const handleConnection = connections => {
+  console.log('Anything');
+  console.log(connections);
+};
 
 const StyledDiagram = styled.svg`
   max-width: 100%;
   width: 100%;
   height: 100%;
 
-  ${props => props.animation && animationStyle}
+  ${props => props.connections && handleConnection(props.connections)}
+  ${props => props.animation && animationStyle(props)}
   ${props => props.theme.diagram && props.theme.diagram.extend};
 `;
 

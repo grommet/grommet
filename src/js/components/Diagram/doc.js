@@ -15,13 +15,19 @@ export const doc = Diagram => {
     .intrinsicElement('svg');
 
   DocumentedDiagram.propTypes = {
+    animation: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['pulse', 'draw']),
+      PropTypes.shape({
+        type: PropTypes.oneOf(['pulse', 'draw']),
+        delay: PropTypes.number,
+        duration: PropTypes.number,
+        size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      }),
+    ]).description('Animation to be used by entire Diagram'),
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-        // this makes it look like animation can be used at the connection level
-        // even though not implemented.
-        // debugging: trying to move animation to sibling-level of connections,
-        // causing all sorts of issues on storybook
         animation: PropTypes.oneOfType([
           PropTypes.bool,
           PropTypes.oneOf(['pulse', 'draw']),
@@ -65,6 +71,7 @@ export const doc = Diagram => {
       `Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.`,
     ).isRequired,
