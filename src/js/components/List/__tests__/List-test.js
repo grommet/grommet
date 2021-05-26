@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
+
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { List } from '..';
@@ -430,6 +431,87 @@ describe('List events', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder', () => {
+  let onOrder;
+  let App;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={newData => { setOrdered(newData); onOrder(newData); }}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  afterEach(cleanup);
+
+  test('Mouse move down', () => {
+    const { container } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(container.querySelector('#alphaMoveDown'));
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move down', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // alpha's down arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move up', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // beta's up arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 });
