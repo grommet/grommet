@@ -88,15 +88,6 @@ exports[`Layer animation fadeIn 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -159,20 +150,11 @@ exports[`Layer animation fadeIn 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -265,15 +247,6 @@ exports[`Layer animation false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -336,20 +309,11 @@ exports[`Layer animation false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -444,15 +408,6 @@ exports[`Layer animation slide 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -515,20 +470,11 @@ exports[`Layer animation slide 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -623,15 +569,6 @@ exports[`Layer animation true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -694,20 +631,11 @@ exports[`Layer animation true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -802,15 +730,6 @@ exports[`Layer custom margin 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -873,20 +792,11 @@ exports[`Layer custom margin 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -980,15 +890,6 @@ exports[`Layer custom theme 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1051,20 +952,11 @@ exports[`Layer custom theme 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1148,15 +1040,6 @@ exports[`Layer dark context 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1216,20 +1099,11 @@ exports[`Layer dark context 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1285,15 +1159,6 @@ exports[`Layer focus on layer 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1384,15 +1249,6 @@ exports[`Layer hidden 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1436,20 +1292,11 @@ exports[`Layer hidden 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1466,7 +1313,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 dfssdJ"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 gdKOJB"
+    class="StyledLayer__StyledContainer-rmtehz-2 ctojMk"
     data-g-portal-id="0"
     id="hidden-test"
   >
@@ -1514,20 +1361,11 @@ exports[`Layer hidden 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1609,15 +1447,6 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1682,20 +1511,11 @@ exports[`Layer invoke onClickOutside when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1768,15 +1588,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100%;
     width: 100%;
   }
@@ -1818,20 +1629,11 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`]
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -1924,15 +1726,6 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2000,20 +1793,11 @@ exports[`Layer invoke onClickOutside when modal={true} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2097,15 +1881,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100%;
     width: 100%;
   }
@@ -2150,20 +1925,11 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2470,15 +2236,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2585,20 +2342,11 @@ exports[`Layer invokes onEsc when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2750,15 +2498,6 @@ exports[`Layer margin large 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2821,20 +2560,11 @@ exports[`Layer margin large 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -2929,15 +2659,6 @@ exports[`Layer margin medium 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3000,20 +2721,11 @@ exports[`Layer margin medium 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3108,15 +2820,6 @@ exports[`Layer margin none 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3179,20 +2882,11 @@ exports[`Layer margin none 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3287,15 +2981,6 @@ exports[`Layer margin small 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3358,20 +3043,11 @@ exports[`Layer margin small 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3466,15 +3142,6 @@ exports[`Layer margin xsmall 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3537,20 +3204,11 @@ exports[`Layer margin xsmall 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3634,15 +3292,6 @@ exports[`Layer non-modal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3702,20 +3351,11 @@ exports[`Layer non-modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3771,15 +3411,6 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3890,15 +3521,6 @@ exports[`Layer plain 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -3961,20 +3583,11 @@ exports[`Layer plain 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4069,15 +3682,6 @@ exports[`Layer position: bottom - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4140,20 +3744,11 @@ exports[`Layer position: bottom - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4249,15 +3844,6 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4320,20 +3906,11 @@ exports[`Layer position: bottom - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4430,15 +4007,6 @@ exports[`Layer position: bottom - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4501,20 +4069,11 @@ exports[`Layer position: bottom - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4610,15 +4169,6 @@ exports[`Layer position: bottom - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4681,20 +4231,11 @@ exports[`Layer position: bottom - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4789,15 +4330,6 @@ exports[`Layer position: bottom-left - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4860,20 +4392,11 @@ exports[`Layer position: bottom-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -4969,15 +4492,6 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5040,20 +4554,11 @@ exports[`Layer position: bottom-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5150,15 +4655,6 @@ exports[`Layer position: bottom-left - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5221,20 +4717,11 @@ exports[`Layer position: bottom-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5330,15 +4817,6 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5401,20 +4879,11 @@ exports[`Layer position: bottom-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5509,15 +4978,6 @@ exports[`Layer position: bottom-right - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5580,20 +5040,11 @@ exports[`Layer position: bottom-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5689,15 +5140,6 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5760,20 +5202,11 @@ exports[`Layer position: bottom-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5870,15 +5303,6 @@ exports[`Layer position: bottom-right - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -5941,20 +5365,11 @@ exports[`Layer position: bottom-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6050,15 +5465,6 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6121,20 +5527,11 @@ exports[`Layer position: bottom-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6229,15 +5626,6 @@ exports[`Layer position: center - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6300,20 +5688,11 @@ exports[`Layer position: center - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6409,15 +5788,6 @@ exports[`Layer position: center - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6480,20 +5850,11 @@ exports[`Layer position: center - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6587,15 +5948,6 @@ exports[`Layer position: center - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6658,20 +6010,11 @@ exports[`Layer position: center - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6767,15 +6110,6 @@ exports[`Layer position: center - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6838,20 +6172,11 @@ exports[`Layer position: center - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -6946,15 +6271,6 @@ exports[`Layer position: end - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7017,20 +6333,11 @@ exports[`Layer position: end - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7126,15 +6433,6 @@ exports[`Layer position: end - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7197,20 +6495,11 @@ exports[`Layer position: end - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7307,15 +6596,6 @@ exports[`Layer position: end - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7378,20 +6658,11 @@ exports[`Layer position: end - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7487,15 +6758,6 @@ exports[`Layer position: end - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7558,20 +6820,11 @@ exports[`Layer position: end - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7666,15 +6919,6 @@ exports[`Layer position: left - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7737,20 +6981,11 @@ exports[`Layer position: left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7846,15 +7081,6 @@ exports[`Layer position: left - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -7917,20 +7143,11 @@ exports[`Layer position: left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8027,15 +7244,6 @@ exports[`Layer position: left - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8098,20 +7306,11 @@ exports[`Layer position: left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8207,15 +7406,6 @@ exports[`Layer position: left - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8278,20 +7468,11 @@ exports[`Layer position: left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8386,15 +7567,6 @@ exports[`Layer position: right - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8457,20 +7629,11 @@ exports[`Layer position: right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8566,15 +7729,6 @@ exports[`Layer position: right - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8637,20 +7791,11 @@ exports[`Layer position: right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8747,15 +7892,6 @@ exports[`Layer position: right - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8818,20 +7954,11 @@ exports[`Layer position: right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8927,15 +8054,6 @@ exports[`Layer position: right - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -8998,20 +8116,11 @@ exports[`Layer position: right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9106,15 +8215,6 @@ exports[`Layer position: start - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9177,20 +8277,11 @@ exports[`Layer position: start - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9286,15 +8377,6 @@ exports[`Layer position: start - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9357,20 +8439,11 @@ exports[`Layer position: start - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9467,15 +8540,6 @@ exports[`Layer position: start - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9538,20 +8602,11 @@ exports[`Layer position: start - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9647,15 +8702,6 @@ exports[`Layer position: start - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9718,20 +8764,11 @@ exports[`Layer position: start - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9826,15 +8863,6 @@ exports[`Layer position: top - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -9897,20 +8925,11 @@ exports[`Layer position: top - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10006,15 +9025,6 @@ exports[`Layer position: top - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10077,20 +9087,11 @@ exports[`Layer position: top - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10187,15 +9188,6 @@ exports[`Layer position: top - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10258,20 +9250,11 @@ exports[`Layer position: top - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10367,15 +9350,6 @@ exports[`Layer position: top - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10438,20 +9412,11 @@ exports[`Layer position: top - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10546,15 +9511,6 @@ exports[`Layer position: top-left - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10617,20 +9573,11 @@ exports[`Layer position: top-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10726,15 +9673,6 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10797,20 +9735,11 @@ exports[`Layer position: top-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10907,15 +9836,6 @@ exports[`Layer position: top-left - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -10978,20 +9898,11 @@ exports[`Layer position: top-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11087,15 +9998,6 @@ exports[`Layer position: top-left - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11158,20 +10060,11 @@ exports[`Layer position: top-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11266,15 +10159,6 @@ exports[`Layer position: top-right - full: false 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11337,20 +10221,11 @@ exports[`Layer position: top-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11446,15 +10321,6 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11517,20 +10383,11 @@ exports[`Layer position: top-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11627,15 +10484,6 @@ exports[`Layer position: top-right - full: true 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11698,20 +10546,11 @@ exports[`Layer position: top-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11807,15 +10646,6 @@ exports[`Layer position: top-right - full: vertical 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11878,20 +10708,11 @@ exports[`Layer position: top-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11986,15 +10807,6 @@ exports[`Layer should apply background 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12057,20 +10869,11 @@ exports[`Layer should apply background 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12343,15 +11146,6 @@ exports[`Layer should render correct border radius for position: bottom -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12415,20 +11209,11 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12525,15 +11310,6 @@ exports[`Layer should render correct border radius for position: bottom -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12597,20 +11373,11 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12708,15 +11475,6 @@ exports[`Layer should render correct border radius for position: bottom -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12780,20 +11538,11 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12890,15 +11639,6 @@ exports[`Layer should render correct border radius for position: bottom -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -12962,20 +11702,11 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13071,15 +11802,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13143,20 +11865,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13253,15 +11966,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13325,20 +12029,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13436,15 +12131,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13508,20 +12194,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13618,15 +12295,6 @@ exports[`Layer should render correct border radius for position: bottom-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13690,20 +12358,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13799,15 +12458,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13871,20 +12521,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -13981,15 +12622,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14053,20 +12685,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14164,15 +12787,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14236,20 +12850,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14346,15 +12951,6 @@ exports[`Layer should render correct border radius for position: bottom-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14418,20 +13014,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14527,15 +13114,6 @@ exports[`Layer should render correct border radius for position: center -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14599,20 +13177,11 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14709,15 +13278,6 @@ exports[`Layer should render correct border radius for position: center -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14781,20 +13341,11 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14889,15 +13440,6 @@ exports[`Layer should render correct border radius for position: center -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -14961,20 +13503,11 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15071,15 +13604,6 @@ exports[`Layer should render correct border radius for position: center -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15143,20 +13667,11 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15253,15 +13768,6 @@ exports[`Layer should render correct border radius for position: end -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15325,20 +13831,11 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15435,15 +13932,6 @@ exports[`Layer should render correct border radius for position: end -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15507,20 +13995,11 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15618,15 +14097,6 @@ exports[`Layer should render correct border radius for position: end -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15690,20 +14160,11 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15800,15 +14261,6 @@ exports[`Layer should render correct border radius for position: end -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15872,20 +14324,11 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -15981,15 +14424,6 @@ exports[`Layer should render correct border radius for position: left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16053,20 +14487,11 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16163,15 +14588,6 @@ exports[`Layer should render correct border radius for position: left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16235,20 +14651,11 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16346,15 +14753,6 @@ exports[`Layer should render correct border radius for position: left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16418,20 +14816,11 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16528,15 +14917,6 @@ exports[`Layer should render correct border radius for position: left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16600,20 +14980,11 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16709,15 +15080,6 @@ exports[`Layer should render correct border radius for position: right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16781,20 +15143,11 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16891,15 +15244,6 @@ exports[`Layer should render correct border radius for position: right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -16963,20 +15307,11 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17074,15 +15409,6 @@ exports[`Layer should render correct border radius for position: right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17146,20 +15472,11 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17256,15 +15573,6 @@ exports[`Layer should render correct border radius for position: right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17328,20 +15636,11 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17438,15 +15737,6 @@ exports[`Layer should render correct border radius for position: start -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17510,20 +15800,11 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17620,15 +15901,6 @@ exports[`Layer should render correct border radius for position: start -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17692,20 +15964,11 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17803,15 +16066,6 @@ exports[`Layer should render correct border radius for position: start -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17875,20 +16129,11 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -17985,15 +16230,6 @@ exports[`Layer should render correct border radius for position: start -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18057,20 +16293,11 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18166,15 +16393,6 @@ exports[`Layer should render correct border radius for position: top -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18238,20 +16456,11 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18348,15 +16557,6 @@ exports[`Layer should render correct border radius for position: top -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18420,20 +16620,11 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18531,15 +16722,6 @@ exports[`Layer should render correct border radius for position: top -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18603,20 +16785,11 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18713,15 +16886,6 @@ exports[`Layer should render correct border radius for position: top -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18785,20 +16949,11 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18894,15 +17049,6 @@ exports[`Layer should render correct border radius for position: top-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -18966,20 +17112,11 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19076,15 +17213,6 @@ exports[`Layer should render correct border radius for position: top-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19148,20 +17276,11 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19259,15 +17378,6 @@ exports[`Layer should render correct border radius for position: top-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19331,20 +17441,11 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19441,15 +17542,6 @@ exports[`Layer should render correct border radius for position: top-left -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19513,20 +17605,11 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19622,15 +17705,6 @@ exports[`Layer should render correct border radius for position: top-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19694,20 +17768,11 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19804,15 +17869,6 @@ exports[`Layer should render correct border radius for position: top-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19876,20 +17932,11 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -19987,15 +18034,6 @@ exports[`Layer should render correct border radius for position: top-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -20059,20 +18097,11 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -20169,15 +18198,6 @@ exports[`Layer should render correct border radius for position: top-right -
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -20241,20 +18261,11 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -20340,15 +18351,6 @@ exports[`Layer target 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100%;
     width: 100%;
   }
@@ -20393,20 +18395,11 @@ exports[`Layer target 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -20481,15 +18474,6 @@ exports[`Layer target not modal 1`] = `
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100%;
     width: 100%;
   }
@@ -20531,20 +18515,11 @@ exports[`Layer target not modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
