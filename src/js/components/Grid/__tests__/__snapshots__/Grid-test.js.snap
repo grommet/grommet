@@ -575,19 +575,37 @@ exports[`Grid columns renders 1`] = `
 .c6 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,1fr );
+  grid-template-columns: repeat( auto-fill,minmax(33.33%,1fr) );
 }
 
 .c7 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),1fr) );
+  grid-template-columns: repeat( auto-fill,1fr );
 }
 
 .c8 {
   display: grid;
   box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),1fr) );
+}
+
+.c9 {
+  display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat( auto-fill,minmax(min(192px,100%),384px) );
+}
+
+.c10 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),50%) );
+}
+
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(25%,384px) );
 }
 
 <div
@@ -616,6 +634,15 @@ exports[`Grid columns renders 1`] = `
   />
   <div
     className="c8"
+  />
+  <div
+    className="c9"
+  />
+  <div
+    className="c10"
+  />
+  <div
+    className="c11"
   />
 </div>
 `;
@@ -741,8 +768,7 @@ exports[`Grid gap renders 1`] = `
 .c10 {
   display: grid;
   box-sizing: border-box;
-  grid-row-gap: 12px;
-  grid-column-gap: 24px;
+  grid-gap: 12px 24px;
 }
 
 .c11 {
@@ -1311,32 +1337,6 @@ exports[`Grid rows renders 1`] = `
   />
   <div
     className="c3"
-  />
-</div>
-`;
-
-exports[`Grid rows renders with warning 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: grid;
-  box-sizing: border-box;
-  grid-template-rows: 1fr;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
   />
 </div>
 `;
