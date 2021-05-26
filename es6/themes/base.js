@@ -1096,6 +1096,10 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'small'
         } // extend: undefined,
 
+      },
+      icons: {
+        down: FormDown,
+        up: FormUp
       } // extend: undefined,
 
     },

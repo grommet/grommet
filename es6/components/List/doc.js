@@ -29,6 +29,7 @@ export var doc = function doc(List) {
     itemProps: PropTypes.shape({}).description("Item specific background, border, and pad, keyed by data index.\n      For example:\n      { 27: { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on List."),
     onMore: PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data items have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed."),
     onClickItem: PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'item' property containing the data value associated with\n      the clicked item and an 'index' property containing the index in 'data'\n      of the clicked item. You should not include interactive elements, like\n      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can\n      cause confusion with overlapping interactive elements."),
+    onOrder: PropTypes.func.description("Use this to indicate that the user should be allowed to re-order the\n      data items. This cannot be used with 'paginate' or 'onClickItem'.\n      The function will be called with the array of items in their new order\n      when the user moves items via drag and drop or the move up/down\n      controls."),
     pad: PropTypes.oneOfType([padPropType]).description("Item padding."),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).description("Whether to paginate the data. If providing an object, any Box props or \n    Pagination props are valid and will be used to style the underlying \n    pagination component.").defaultValue(undefined),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When a string is supplied, it indicates the property in a data item\n      object to use to get the primary content. If a function is supplied, it\n      will be called with the current data item object and should return\n      a React element that will be rendered as the primary content."),
@@ -65,6 +66,16 @@ export var themeDoc = {
     description: 'Any additional style for the list.',
     type: 'string | (props) => {}',
     defaultValue: undefined
+  },
+  'list.icons.down': {
+    description: "The icon to use for the move down button\n    in re-ordable lists.",
+    type: 'React.Element',
+    defaultValue: 'FormDown'
+  },
+  'list.icons.up': {
+    description: "The icon to use for the move up button\n    in re-ordable lists.",
+    type: 'React.Element',
+    defaultValue: 'FormUp'
   },
   'list.item.background': {
     description: 'Background color for list items.',

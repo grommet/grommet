@@ -1120,6 +1120,10 @@ var generate = function generate(baseSpacing, scale) {
           vertical: 'small'
         } // extend: undefined,
 
+      },
+      icons: {
+        down: _FormDown.FormDown,
+        up: _FormUp.FormUp
       } // extend: undefined,
 
     },
