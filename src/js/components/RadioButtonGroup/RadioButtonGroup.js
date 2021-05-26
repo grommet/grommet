@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
@@ -60,6 +66,14 @@ const RadioButtonGroup = forwardRef(
       return result;
     }, [options, value]);
 
+    useEffect(() => {
+      // if tab comes back to radiobuttongroup when there still is no selection,
+      // we want focus to be on the first radiobutton
+      if (focus && !valueIndex) {
+        optionRefs.current[0].focus();
+      }
+    }, [focus, valueIndex]);
+
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {
         const nextIndex = valueIndex + 1;
@@ -117,38 +131,42 @@ const RadioButtonGroup = forwardRef(
                 ...optionRest
               },
               index,
-            ) => (
-              <RadioButton
-                ref={aRef => {
-                  optionRefs.current[index] = aRef;
-                }}
-                key={optionValue}
-                name={name}
-                label={!children ? label : undefined}
-                disabled={optionDisabled}
-                checked={optionValue === value}
-                focus={
-                  focus &&
-                  (optionValue === value ||
-                    (value === undefined && !index) ||
-                    // when nothing has been selected, focus
-                    // on the first radiobutton
-                    (value === '' && index === 0))
-                }
-                focusIndicator={focusIndicator}
-                id={id}
-                value={optionValue}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onChange={event => {
-                  setValue(optionValue);
-                  if (onChange) onChange(event);
-                }}
-                {...optionRest}
-              >
-                {children ? state => children(optionsProp[index], state) : null}
-              </RadioButton>
-            ),
+            ) => {
+              const focusable =
+                optionValue === value ||
+                (value === undefined && !index) ||
+                // when nothing has been selected, focus
+                // on the first radiobutton
+                (value === '' && index === 0);
+              return (
+                <RadioButton
+                  ref={aRef => {
+                    optionRefs.current[index] = aRef;
+                  }}
+                  key={optionValue}
+                  name={name}
+                  label={!children ? label : undefined}
+                  disabled={optionDisabled}
+                  checked={optionValue === value}
+                  focus={focus && focusable}
+                  focusIndicator={focusIndicator}
+                  id={id}
+                  value={optionValue}
+                  onFocus={onFocus}
+                  onBlur={onBlur}
+                  onChange={event => {
+                    setValue(optionValue);
+                    if (onChange) onChange(event);
+                  }}
+                  tabIndex={focusable ? '0' : '-1'} // necessary for Firefox
+                  {...optionRest}
+                >
+                  {children
+                    ? state => children(optionsProp[index], state)
+                    : null}
+                </RadioButton>
+              );
+            },
           )}
         </Box>
       </Keyboard>
