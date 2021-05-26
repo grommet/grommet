@@ -1478,6 +1478,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -4295,6 +4304,16 @@ xlarge
 string
 \`\`\`
 
+**activeChild**
+
+If specified, Carousel will be a controlled component. This means
+      that future slide changes will not work unless you subscribe to onChild
+      function and update activeChild accordingly.
+
+\`\`\`
+number
+\`\`\`
+
 **fill**
 
 Whether to expand to fill
@@ -4325,9 +4344,9 @@ number
 
 **onChild**
 
-If specified, this function will 
-      be called with the active index when the currently active carousel 
-      changes.
+If specified, this function will
+      be called with the active index when the currently active carousel
+      changes. Helpful when using Carousel as a controlled component.
 
 \`\`\`
 function
@@ -4382,7 +4401,7 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. 
+The icon to use on the middle navigation control.
       One icon per carousel image. Expects \`element\`.
 
 Defaults to
@@ -5357,6 +5376,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**checkBox.label.align**
+
+How to align the checkbox and label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+center
 \`\`\`
 
 **checkBox.pad**
@@ -10364,6 +10393,15 @@ small
 medium
 large
 xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto
 {
   count: 
     fit
@@ -10375,6 +10413,15 @@ xlarge
     medium
     large
     xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
     [
       xsmall
       small
@@ -10440,6 +10487,50 @@ none
     string
 }
 string
+\`\`\`
+
+**height**
+
+A fixed height.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 \`\`\`
 
 **justify**
@@ -10627,6 +10718,50 @@ The DOM tag or react component to use for the element. Defaults to \`div\`.
 string
 function
 \`\`\`
+
+**width**
+
+A fixed width.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
+\`\`\`
   
 ## Intrinsic element
 
@@ -10748,10 +10883,13 @@ rtl
 
 **full**
 
-Whether to take the whole viewport.
+Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.
 
 \`\`\`
 boolean
+min
 \`\`\`
 
 **plain**

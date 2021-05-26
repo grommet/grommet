@@ -478,6 +478,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall

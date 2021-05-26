@@ -57,7 +57,7 @@ export const Uncontrolled = () => (
           <FormField label="Age" name="age" pad>
             <RangeInput name="age" min={15} max={75} />
           </FormField>
-          <FormField label="Image" name="image">
+          <FormField required label="Image" name="image">
             <FileInput name="image" />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
