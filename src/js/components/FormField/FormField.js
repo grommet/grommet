@@ -27,6 +27,7 @@ const grommetInputNames = [
   'TextArea',
   'DateInput',
   'FileInput',
+  'RadioButtonGroup',
 ];
 const grommetInputPadNames = [
   'CheckBox',

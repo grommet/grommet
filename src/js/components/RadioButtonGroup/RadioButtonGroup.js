@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
@@ -19,6 +13,7 @@ const RadioButtonGroup = forwardRef(
       children,
       defaultValue,
       disabled,
+      focusIndicator = true,
       name,
       onChange,
       options: optionsProp,
@@ -65,25 +60,19 @@ const RadioButtonGroup = forwardRef(
       return result;
     }, [options, value]);
 
-    useEffect(() => {
-      if (focus && valueIndex >= 0) optionRefs.current[valueIndex].focus();
-    }, [focus, valueIndex]);
-
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {
         const nextIndex = valueIndex + 1;
-        const nextValue = options[nextIndex].value;
-        setValue(nextValue);
-        if (onChange) onChange({ target: { value: nextValue } });
+        // ensure change event occurs
+        optionRefs.current[nextIndex].click();
       }
     };
 
     const onPrevious = () => {
       if (valueIndex > 0) {
         const nextIndex = valueIndex - 1;
-        const nextValue = options[nextIndex].value;
-        setValue(nextValue);
-        if (onChange) onChange({ target: { value: nextValue } });
+        // ensure change event occurs
+        optionRefs.current[nextIndex].click();
       }
     };
 
@@ -91,10 +80,12 @@ const RadioButtonGroup = forwardRef(
       // Delay just a wee bit so Chrome doesn't missing turning the button on.
       // Chrome behaves differently in that focus is given to radio buttons
       // when the user selects one, unlike Safari and Firefox.
-      setTimeout(() => !focus && setFocus(true), 1);
+      setTimeout(() => {
+        setFocus(true);
+      }, 1);
     };
 
-    const onBlur = () => focus && setFocus(false);
+    const onBlur = () => setFocus(false);
     return (
       <Keyboard
         target="document"
@@ -138,8 +129,13 @@ const RadioButtonGroup = forwardRef(
                 checked={optionValue === value}
                 focus={
                   focus &&
-                  (optionValue === value || (value === undefined && !index))
+                  (optionValue === value ||
+                    (value === undefined && !index) ||
+                    // when nothing has been selected, focus
+                    // on the first radiobutton
+                    (value === '' && index === 0))
                 }
+                focusIndicator={focusIndicator}
                 id={id}
                 value={optionValue}
                 onFocus={onFocus}
