@@ -371,6 +371,12 @@ exports[`Select Clear option renders - bottom 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -432,12 +438,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -646,6 +646,12 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -707,12 +713,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -929,6 +929,12 @@ exports[`Select Clear option renders custom label 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -990,12 +996,6 @@ exports[`Select Clear option renders custom label 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -1204,6 +1204,12 @@ exports[`Select Clear option renders- top 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1265,12 +1271,6 @@ exports[`Select Clear option renders- top 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -2081,6 +2081,12 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   padding: 12px;
 }
 
+.c3 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -2144,12 +2150,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 
 .c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c3 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c1 {
@@ -2412,7 +2412,7 @@ exports[`Select basic 1`] = `
 }
 
 <button
-  aria-label="Open Drop"
+  aria-label="Select"
   className="c0 c1"
   id="test-select"
   onBlur={[Function]}
@@ -2741,7 +2741,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
@@ -2756,7 +2756,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3731,6 +3731,18 @@ exports[`Select default value clear 1`] = `
   animation-delay: 0.01s;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -3850,18 +3862,6 @@ exports[`Select default value clear 1`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -4554,7 +4554,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eyQMsp Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+  class="StyledButton-sc-323bzc-0 eyQMsp Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   disabled=""
   id="test-select"
   type="button"
@@ -4570,7 +4570,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 cANsmG"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4973,6 +4973,12 @@ exports[`Select disabled key 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5094,12 +5100,6 @@ exports[`Select disabled key 2`] = `
 
 .c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -5308,6 +5308,12 @@ exports[`Select disabled option value 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5429,12 +5435,6 @@ exports[`Select disabled option value 1`] = `
 
 .c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -6032,6 +6032,12 @@ exports[`Select large drop container height 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6093,12 +6099,6 @@ exports[`Select large drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -6297,6 +6297,12 @@ exports[`Select medium drop container height 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6358,12 +6364,6 @@ exports[`Select medium drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -7124,6 +7124,12 @@ exports[`Select onChange with valueKey string 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7185,12 +7191,6 @@ exports[`Select onChange with valueKey string 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -7307,7 +7307,7 @@ exports[`Select onChange with valueKey string 3`] = `
 `;
 
 exports[`Select onChange with valueLabel 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7318,25 +7318,25 @@ exports[`Select onChange with valueLabel 1`] = `
   stroke: #7D4CDB;
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7382,7 +7382,7 @@ exports[`Select onChange with valueLabel 1`] = `
   flex-basis: auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7469,13 +7469,17 @@ exports[`Select onChange with valueLabel 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  display: none;
+}
+
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7499,14 +7503,21 @@ exports[`Select onChange with valueLabel 1`] = `
         <span>
           none
         </span>
+        <input
+          class="c5"
+          id="test-select__input"
+          readonly=""
+          type="text"
+          value=""
+        />
       </div>
       <div
-        class="c5"
+        class="c6"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="c6"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <polyline
@@ -7614,6 +7625,12 @@ exports[`Select onChange with valueLabel 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7675,12 +7692,6 @@ exports[`Select onChange with valueLabel 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -8168,6 +8179,12 @@ exports[`Select onChange without valueKey 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -8229,12 +8246,6 @@ exports[`Select onChange without valueKey 2`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -9180,7 +9191,7 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
@@ -9195,7 +9206,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9318,6 +9329,12 @@ exports[`Select prop: onOpen 3`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -9379,12 +9396,6 @@ exports[`Select prop: onOpen 3`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {
@@ -10106,7 +10117,7 @@ exports[`Select renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     type="button"
   >
     <div
@@ -10120,7 +10131,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -11899,6 +11910,12 @@ exports[`Select search 2`] = `
   animation-delay: 0.01s;
 }
 
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -11960,12 +11977,6 @@ exports[`Select search 2`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c6 {
@@ -12178,7 +12189,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value=""
 />
@@ -12187,7 +12198,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value="o"
 />
@@ -12569,6 +12580,12 @@ exports[`Select search and select 2`] = `
   animation-delay: 0.01s;
 }
 
+.c11 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -12630,12 +12647,6 @@ exports[`Select search and select 2`] = `
 
 .c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c11 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c6 {
@@ -12843,7 +12854,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value=""
 />
@@ -12852,7 +12863,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hLxDZb"
+  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
   type="search"
   value="t"
 />
@@ -13391,7 +13402,7 @@ exports[`Select select an option 1`] = `
 `;
 
 exports[`Select select an option with complex options 1`] = `
-.c4 {
+.c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -13402,25 +13413,25 @@ exports[`Select select an option with complex options 1`] = `
   stroke: #7D4CDB;
 }
 
-.c4 g {
+.c5 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -13466,7 +13477,7 @@ exports[`Select select an option with complex options 1`] = `
   flex-basis: auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13543,8 +13554,12 @@ exports[`Select select an option with complex options 1`] = `
   border: 0;
 }
 
+.c3 {
+  display: none;
+}
+
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -13565,14 +13580,21 @@ exports[`Select select an option with complex options 1`] = `
       <span>
         one
       </span>
+      <input
+        class="c3"
+        id="test-select__input"
+        readonly=""
+        type="text"
+        value=""
+      />
     </div>
     <div
-      class="c3"
+      class="c4"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c4"
+        class="c5"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -14671,7 +14693,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     id="test-select"
     type="button"
   >
@@ -14686,7 +14708,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -15230,7 +15252,7 @@ exports[`Select should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-label="test"
     class="c1 c2"
     type="button"
   >
@@ -15649,6 +15671,12 @@ exports[`Select small drop container height 1`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -15710,12 +15738,6 @@ exports[`Select small drop container height 1`] = `
 
 .c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c3 {

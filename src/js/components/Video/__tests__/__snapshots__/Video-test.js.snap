@@ -136,6 +136,34 @@ exports[`Video Configure Menu Button 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -257,34 +285,6 @@ exports[`Video Configure Menu Button 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -633,6 +633,34 @@ exports[`Video End event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -754,34 +782,6 @@ exports[`Video End event handler 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -1118,6 +1118,34 @@ exports[`Video Play and Pause event handlers 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1239,34 +1267,6 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -1766,6 +1766,34 @@ exports[`Video autoPlay renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1887,34 +1915,6 @@ exports[`Video autoPlay renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -2250,6 +2250,34 @@ exports[`Video controls below renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2371,34 +2399,6 @@ exports[`Video controls below renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -2731,6 +2731,34 @@ exports[`Video controls over renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2852,34 +2880,6 @@ exports[`Video controls over renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -3216,6 +3216,34 @@ exports[`Video duration event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3337,34 +3365,6 @@ exports[`Video duration event handler 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -3701,6 +3701,34 @@ exports[`Video fit  cover renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3822,34 +3850,6 @@ exports[`Video fit  cover renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -4191,6 +4191,34 @@ exports[`Video fit contain renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4312,34 +4340,6 @@ exports[`Video fit contain renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -4681,6 +4681,34 @@ exports[`Video loop renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4802,34 +4830,6 @@ exports[`Video loop renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -5167,6 +5167,34 @@ exports[`Video mouse events handlers of controls 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5288,34 +5316,6 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -5894,6 +5894,34 @@ exports[`Video mute renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6015,34 +6043,6 @@ exports[`Video mute renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -6379,6 +6379,34 @@ exports[`Video renders 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6500,34 +6528,6 @@ exports[`Video renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -6864,6 +6864,34 @@ exports[`Video renders with theme 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6985,34 +7013,6 @@ exports[`Video renders with theme 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -7349,6 +7349,34 @@ exports[`Video scrubber 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7470,34 +7498,6 @@ exports[`Video scrubber 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {
@@ -7955,6 +7955,34 @@ exports[`Video timeUpdate event handler 1`] = `
   padding: 12px;
 }
 
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -8076,34 +8104,6 @@ exports[`Video timeUpdate event handler 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c0 {

@@ -11,10 +11,12 @@ import {
   FillType,
   GapType,
   GridAreaType,
+  HeightType,
   MarginType,
   PadType,
   PolymorphicType,
   RoundType,
+  WidthType,
 } from '../../utils';
 
 export interface BoxProps {
@@ -92,35 +94,7 @@ export interface BoxProps {
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  height?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
+  height?: HeightType;
   hoverIndicator?:
     | { background?: BackgroundType; elevation?: ElevationType }
     | BackgroundType
@@ -149,44 +123,7 @@ export interface BoxProps {
   round?: RoundType;
   tag?: PolymorphicType;
   as?: PolymorphicType;
-  width?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        width?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
+  width?: WidthType;
   wrap?: boolean | 'reverse';
 }
 

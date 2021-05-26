@@ -1,5 +1,6 @@
 import React, {
   Children,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -16,6 +17,7 @@ import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
 const Carousel = ({
+  activeChild,
   initialChild,
   onChild,
   play,
@@ -32,11 +34,29 @@ const Carousel = ({
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
-    activeIndex: initialChild,
+    activeIndex: activeChild !== undefined ? activeChild : initialChild,
   });
 
   const { activeIndex, priorActiveIndex } = indexes;
   const lastIndex = Children.count(children) - 1;
+
+  if (activeIndex !== activeChild && activeChild !== undefined) {
+    if (activeChild >= 0 && activeChild <= lastIndex) {
+      setIndexes({
+        activeIndex: activeChild,
+        priorActiveIndex: activeIndex,
+      });
+    }
+  }
+
+  const onChildChange = useCallback(
+    index => {
+      if (onChild) {
+        onChild(index);
+      }
+    },
+    [onChild],
+  );
 
   useEffect(() => {
     if (play) {
@@ -46,11 +66,13 @@ const Carousel = ({
             activeIndex: activeIndex + 1,
             priorActiveIndex: activeIndex,
           });
+          onChildChange(activeIndex + 1);
         } else {
           setIndexes({
             activeIndex: 0,
             priorActiveIndex: activeIndex,
           });
+          onChildChange(0);
         }
       }, play);
 
@@ -61,13 +83,7 @@ const Carousel = ({
       };
     }
     return () => {};
-  }, [activeIndex, play, children, lastIndex]);
-
-  useEffect(() => {
-    if (onChild) onChild(activeIndex);
-    return () => {};
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
+  }, [activeIndex, play, children, lastIndex, onChildChange]);
 
   const onRight = () => {
     if (activeIndex >= lastIndex) {
@@ -78,6 +94,7 @@ const Carousel = ({
       activeIndex: activeIndex + 1,
       priorActiveIndex: activeIndex,
     });
+    onChildChange(activeIndex + 1);
   };
 
   const onLeft = () => {
@@ -89,11 +106,15 @@ const Carousel = ({
       activeIndex: activeIndex - 1,
       priorActiveIndex: activeIndex,
     });
+    onChildChange(activeIndex - 1);
   };
 
   const onSelect = index => () => {
-    clearInterval(timerRef.current);
-    setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
+    if (activeIndex !== index) {
+      clearInterval(timerRef.current);
+      setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
+      onChildChange(index);
+    }
   };
 
   const showArrows = controls && controls !== 'selectors';
