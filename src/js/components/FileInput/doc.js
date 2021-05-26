@@ -49,8 +49,10 @@ export const doc = FileInput => {
         `Whether to allow multiple files. If an object is supplied,
         'aggregageThreshold' indicates the maximum number of individual
         files to show. Above this, only a single message describing the
-        number of files will be shown.And if the object 'max' is supplied.
-        it will limit the number of files selected by the user.`,
+        number of files will be shown.And if an object is supplied, 
+        'max' indicates the maximum number of files that can be added.
+        If the user has reached the max, no additional files will 
+        be able to be added.`,
       )
       .defaultValue(undefined),
     name: PropTypes.string.description(
