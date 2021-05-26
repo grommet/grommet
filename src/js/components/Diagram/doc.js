@@ -18,6 +18,10 @@ export const doc = Diagram => {
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
+        // this makes it look like animation can be used at the connection level
+        // even though not implemented.
+        // debugging: trying to move animation to sibling-level of connections,
+        // causing all sorts of issues on storybook
         animation: PropTypes.oneOfType([
           PropTypes.bool,
           PropTypes.oneOf(['pulse', 'draw']),
@@ -25,7 +29,13 @@ export const doc = Diagram => {
             type: PropTypes.oneOf(['pulse', 'draw']),
             delay: PropTypes.number,
             duration: PropTypes.number,
-            size: PropTypes.string,
+            size: PropTypes.oneOf([
+              'xsmall',
+              'small',
+              'medium',
+              'large',
+              'xlarge',
+            ]),
           }),
         ]),
         color: colorPropType,
@@ -77,7 +87,12 @@ export const themeDoc = {
   'global.animation': {
     description: 'The animation configuration for Diagram.',
     type: 'object',
-    defaultValue: 'duration: 2s',
+    defaultValue: `{
+      duration: '1s',
+      draw: {
+        duration: '0.1s',
+      },
+    }`,
   },
   'global.colors': {
     description: 'Color options.',

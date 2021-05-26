@@ -72,10 +72,7 @@ export const Progressing = () => {
               ))}
             </Box>
           </Box>
-          <Diagram
-            animation={{ type: 'draw', duration: 2000 }}
-            connections={connections}
-          />
+          <Diagram animation={true} connections={connections} />
         </Stack>
       </Box>
     </Grommet>

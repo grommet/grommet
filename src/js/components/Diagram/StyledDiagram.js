@@ -10,12 +10,17 @@ const animationItemStyle = (item, theme) => {
   if (typeof item === 'object') {
     return animationObjectStyle(item, theme);
   }
+  if (typeof item === 'boolean') {
+    return animationObjectStyle({ type: 'draw' }, theme);
+  }
   return '';
 };
 
 const animationStyle = css`
   ${props =>
-    props.animation === 'draw' || props.animation.type === 'draw'
+    props.animation === 'draw' ||
+    props.animation.type === 'draw' ||
+    props.animation === true
       ? css`
           path {
             stroke-dasharray: 500;

@@ -37,7 +37,12 @@ Required. Array of objects describing the connections.
         draw,
       delay: number,
       duration: number,
-      size: string
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
     },
   color: 
     string
@@ -107,7 +112,12 @@ The animation configuration for Diagram. Expects `object`.
 Defaults to
 
 ```
-duration: 2s
+{
+      duration: '1s',
+      draw: {
+        duration: '0.1s',
+      },
+    }
 ```
 
 **global.colors**

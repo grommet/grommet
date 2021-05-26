@@ -3442,7 +3442,12 @@ string",
         draw,
       delay: number,
       duration: number,
-      size: string
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
     },
   color: 
     string
