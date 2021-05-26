@@ -365,16 +365,45 @@ const FileInput = forwardRef(
           onChange={event => {
             event.persist();
             const fileList = event.target.files;
+            let filesToAdd;
+            if (!files.length) {
+              if (multiple && max && fileList.length >= max) {
+                const newFileList = [];
+                for (let i = 0; i < max; i += 1) {
+                  newFileList.push(fileList[i]);
+                }
+                filesToAdd = newFileList;
+              } else {
+                filesToAdd = fileList;
+              }
+            } else if (
+              multiple &&
+              max &&
+              fileList.length >= max - files.length
+            ) {
+              const newFileList = [];
+              for (let i = 0; i < max - files.length; i += 1) {
+                newFileList.push(fileList[i]);
+              }
+              // if the maximun value exceeds then 
+              // remove files from the event also.
+              if(!newFileList.length){
+                event.target.value = "";
+              }
+              filesToAdd = newFileList;
+            } else {
+              filesToAdd = fileList;
+            }
             const nextFiles = multiple ? [...files] : [];
-            for (let i = 0; i < fileList.length; i += 1) {
+            for (let i = 0; i < filesToAdd.length; i += 1) {
               // avoid duplicates
               const existing =
                 nextFiles.filter(
                   file =>
-                    file.name === fileList[i].name &&
-                    file.size === fileList[i].size,
+                    file.name === filesToAdd[i].name &&
+                    file.size === filesToAdd[i].size,
                 ).length > 0;
-              if (!existing) nextFiles.push(fileList[i]);
+              if (!existing) nextFiles.push(filesToAdd[i]);
             }
             setFiles(nextFiles);
             setDragOver(false);
