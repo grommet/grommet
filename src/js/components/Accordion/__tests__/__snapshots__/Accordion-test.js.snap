@@ -1674,7 +1674,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -1718,7 +1718,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -2134,7 +2134,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -2183,7 +2183,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -2639,7 +2639,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -2683,7 +2683,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4279,7 +4279,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -4323,7 +4323,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4432,7 +4432,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4529,7 +4529,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -4588,7 +4588,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -4635,7 +4635,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4741,7 +4741,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4835,7 +4835,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5283,7 +5283,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5332,7 +5332,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5393,7 +5393,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5442,7 +5442,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5503,7 +5503,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5552,7 +5552,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5613,7 +5613,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5662,7 +5662,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -6640,7 +6640,7 @@ exports[`Accordion wrapped panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -6738,7 +6738,7 @@ exports[`Accordion wrapped panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bGZzwd"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
