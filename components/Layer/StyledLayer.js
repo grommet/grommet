@@ -469,7 +469,7 @@ var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";ma
 });
 
 var responsiveContainerStyle = function responsiveContainerStyle(props) {
-  return (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:", ";width:", ";"], !props.layerTarget ? '100vh' : '100%', !props.layerTarget ? '100vw' : '100%');
+  return (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;height:", ";width:", ";"], !props.layerTarget ? '100vh' : '100%', !props.layerTarget ? '100vw' : '100%');
 };
 
 var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
