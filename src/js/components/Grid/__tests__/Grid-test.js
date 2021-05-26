@@ -54,6 +54,8 @@ describe('Grid', () => {
         <Grid columns={{ count: 'fill', size: ['small', 'medium'] }} />
         <Grid columns={{ count: 'fit', size: ['small', '1/2'] }} />
         <Grid columns={{ count: 'fit', size: ['1/4', 'medium'] }} />
+        {/* designer scenario */}
+        <Grid columns={{ count: 'fill', size: [] }} />
       </Grommet>,
     );
     const tree = component.toJSON();
