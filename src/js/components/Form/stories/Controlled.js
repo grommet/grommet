@@ -72,7 +72,7 @@ export const Controlled = () => {
             <FormField label="Comments" name="comments">
               <TextArea name="comments" />
             </FormField>
-            <FormField label="Age" name="age" pad>
+            <FormField label="Age" name="age" pad focusIndicator={false}>
               <RangeInput name="age" min={15} max={75} />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
