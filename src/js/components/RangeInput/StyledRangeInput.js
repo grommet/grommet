@@ -152,25 +152,6 @@ const firefoxMicrosoftThumbStyle = css`
     props.theme.rangeInput.thumb.extend}
 `;
 
-const StyledRangeLabel = styled.label`
-  position: absolute;
-  top: 90%;
-  ${props => {
-    // 'max' defaults to 100 in case not specified
-    const max = props.max || 100;
-    // 'min' defaults to 0 in case not specified
-    const min = props.min || 0;
-    const thumbPosition = ((props.value - min) * 100) / (max - min);
-    const labelPosition = `calc(${thumbPosition}% + (${8 -
-      thumbPosition * 0.3}px))`;
-    return `left: ${labelPosition};`;
-  }}
-  ${props =>
-    props.theme.rangeInput &&
-    props.theme.rangeInput.label &&
-    props.theme.rangeInput.label.extend}
-`;
-
 /* eslint-disable max-len */
 const StyledRangeInput = styled.input`
   box-sizing: border-box;
@@ -268,4 +249,4 @@ const StyledRangeInput = styled.input`
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 
-export { StyledRangeInput, StyledRangeLabel };
+export { StyledRangeInput };

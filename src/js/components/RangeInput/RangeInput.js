@@ -1,7 +1,7 @@
-import React, { forwardRef, useContext, useState, Fragment } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 
 import { FormContext } from '../Form/FormContext';
-import { StyledRangeInput, StyledRangeLabel } from './StyledRangeInput';
+import { StyledRangeInput } from './StyledRangeInput';
 
 const RangeInput = forwardRef(
   (
@@ -23,34 +23,27 @@ const RangeInput = forwardRef(
 
     const [focus, setFocus] = useState();
     return (
-      <>
-        <StyledRangeInput
-          aria-label={a11yTitle}
-          ref={ref}
-          name={name}
-          focus={focus}
-          value={value}
-          {...rest}
-          onFocus={event => {
-            setFocus(true);
-            if (onFocus) onFocus(event);
-          }}
-          onBlur={event => {
-            setFocus(false);
-            if (onBlur) onBlur(event);
-          }}
-          onChange={event => {
-            setValue(event.target.value);
-            if (onChange) onChange(event);
-          }}
-          type="range"
-        />
-        {showLabel && (
-          <StyledRangeLabel value={value} {...rest}>
-            {`${value}%`}
-          </StyledRangeLabel>
-        )}
-      </>
+      <StyledRangeInput
+        aria-label={a11yTitle}
+        ref={ref}
+        name={name}
+        focus={focus}
+        value={value}
+        {...rest}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={event => {
+          setFocus(false);
+          if (onBlur) onBlur(event);
+        }}
+        onChange={event => {
+          setValue(event.target.value);
+          if (onChange) onChange(event);
+        }}
+        type="range"
+      />
     );
   },
 );
