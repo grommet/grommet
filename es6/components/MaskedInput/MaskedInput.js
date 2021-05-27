@@ -159,8 +159,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       placeholder = _ref.placeholder,
       plain = _ref.plain,
       reverse = _ref.reverse,
+      textAlign = _ref.textAlign,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicator", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicator", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "textAlign", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
@@ -357,7 +358,8 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     placeholder: placeholder || renderPlaceholder(),
     icon: icon,
     reverse: reverse,
-    focus: focus
+    focus: focus,
+    textAlign: textAlign
   }, rest, {
     value: value,
     theme: theme,

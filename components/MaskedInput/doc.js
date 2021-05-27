@@ -32,6 +32,7 @@ var doc = function doc(MaskedInput) {
     })).description("Describes the structure of the mask. If a regexp is provided, it should\n      allow both the final full string element as well as partial strings\n      as the user types characters one by one. When using regexp to match number\n      values make sure that the option values are numbers as well."),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon should be reversed so that the icon is at the\n      end of the input."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the text.'),
+    textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the input.').defaultValue('start'),
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]).description("What text to put in the input. The caller should ensure that it\n      is initially valid with respect to the mask.")
   };
   return DocumentedMaskedInput;

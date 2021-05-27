@@ -12,12 +12,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var StyledMaskedInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
-})(["", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
   return props.plain && _utils.plainInputStyle;
 }, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.maskedInput.disabled && props.theme.maskedInput.disabled.opacity);
+}, function (props) {
+  return props.textAlign && _utils.textAlignStyle;
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
