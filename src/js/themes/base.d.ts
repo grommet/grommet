@@ -544,10 +544,8 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
-      label?: {
-        background?: {
-          color?: ColorType;
-        };
+      background?: {
+        color?: ColorType;
       };
     };
     icon?: {

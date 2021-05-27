@@ -35,9 +35,8 @@ const hoverStyle = css`
       normalizeColor(
         !props.disabled &&
           props.theme.checkBox.hover &&
-          props.theme.checkBox.hover.label &&
-          props.theme.checkBox.hover.label.background &&
-          props.theme.checkBox.hover.label.background.color,
+          props.theme.checkBox.hover.background &&
+          props.theme.checkBox.hover.background.color,
         props.theme,
       )};
   }
@@ -96,9 +95,8 @@ const StyledCheckBoxContainer = styled.label`
     background-color: ${normalizeColor(
       !props.disabled &&
         props.theme.checkBox.hover &&
-        props.theme.checkBox.hover.label &&
-        props.theme.checkBox.hover.label.background &&
-        props.theme.checkBox.hover.label.background.color,
+        props.theme.checkBox.hover.background &&
+        props.theme.checkBox.hover.background.color,
       props.theme,
     )};`}
   ${props => props.theme.checkBox.extend}

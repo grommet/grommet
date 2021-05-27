@@ -288,10 +288,10 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
-**checkBox.hover.label.background.color**
+**checkBox.hover.background.color**
 
-The hover background color for the box surrounding CheckBox 
-    and its label. Expects `string | { 'dark': string, 'light': string }`.
+The background color of the Box surrounding the RadioButton 
+    when hovered over. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 
