@@ -33,6 +33,28 @@ const StyledRadioButtonContainer = styled.label`
         props.theme,
       )};
   }
+  // when the RadioButton has focus but there is no focusIndicator,
+  // apply the hover styling instead so that keyboard users know
+  // which RadioButton is active
+  ${props =>
+    props.focus &&
+    !props.focusIndicator &&
+    `
+      input:not([disabled]) + div,
+      input:not([disabled]) + span {
+      border-color: ${normalizeColor(
+        props.theme.radioButton.hover.border.color,
+        props.theme,
+      )};
+    }
+    background-color: ${normalizeColor(
+      !props.disabled &&
+        props.theme.radioButton.hover &&
+        props.theme.radioButton.hover.background &&
+        props.theme.radioButton.hover.background.color,
+      props.theme,
+    )};
+    `}
   ${props => props.theme.radioButton.container.extend};
 `;
 
