@@ -5332,6 +5332,17 @@ Defaults to
 { dark: 'white', light: 'black' }
 \`\`\`
 
+**checkBox.hover.label.background.color**
+
+The hover background color for the box surrounding CheckBox 
+    and its label. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **checkBox.icon.size**
 
 The size of the checked icon. Expects \`string\`.

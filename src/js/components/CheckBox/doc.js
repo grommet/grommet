@@ -120,6 +120,12 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
+  'checkBox.hover.label.background.color': {
+    description: `The hover background color for the box surrounding CheckBox 
+    and its label.`,
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
   'checkBox.icon.size': {
     description: 'The size of the checked icon.',
     type: 'string',

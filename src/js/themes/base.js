@@ -617,6 +617,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        // label: {
+        //   background: undefined,
+        // }
       },
       icon: {
         // size: undefined,

@@ -21,6 +21,8 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = [
+  'CheckBox',
+  'CheckBoxGroup',
   'TextInput',
   'Select',
   'MaskedInput',
