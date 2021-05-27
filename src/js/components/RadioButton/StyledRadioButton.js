@@ -33,8 +33,9 @@ const StyledRadioButtonContainer = styled.label`
         props.theme,
       )};
   }
-  // when the radiobutton has focus but there is no focusIndicator,
-  // apply the hover styling instead
+  // when the RadioButton has focus but there is no focusIndicator,
+  // apply the hover styling instead so that keyboard users know
+  // which RadioButton is active
   ${props =>
     props.focus &&
     !props.focusIndicator &&

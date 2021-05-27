@@ -50,6 +50,7 @@ const RadioButtonGroup = forwardRef(
       defaultValue || '',
     );
 
+    // track if focus is on one of the radio buttons
     const [focus, setFocus] = useState();
 
     const optionRefs = useRef([]);
@@ -67,8 +68,8 @@ const RadioButtonGroup = forwardRef(
     }, [options, value]);
 
     useEffect(() => {
-      // if tab comes back to radiobuttongroup when there still is no selection,
-      // we want focus to be on the first radiobutton
+      // if tab comes back to RadioButtonGroup when there still is no selection,
+      // we want focus to be on the first RadioButton
       if (focus && !valueIndex) {
         optionRefs.current[0].focus();
       }
@@ -132,10 +133,12 @@ const RadioButtonGroup = forwardRef(
               },
               index,
             ) => {
+              // if focus is within the RadioButtonGroup, determine
+              // which radio button should be the active one
               const focusable =
                 optionValue === value ||
                 (value === undefined && !index) ||
-                // when nothing has been selected, focus
+                // when nothing has been selected, show focus
                 // on the first radiobutton
                 (value === '' && index === 0);
               return (
@@ -149,6 +152,11 @@ const RadioButtonGroup = forwardRef(
                   disabled={optionDisabled}
                   checked={optionValue === value}
                   focus={focus && focusable}
+                  // when contained in a FormField, focusIndicator = false,
+                  // so that the FormField has focus style. However, we still
+                  // need to visually indicate when a RadioButton is active.
+                  // In RadioButton, if focus = true but focusIndicator = false,
+                  // we will apply the hover treament.
                   focusIndicator={focusIndicator}
                   id={id}
                   value={optionValue}
