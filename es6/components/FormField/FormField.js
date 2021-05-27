@@ -16,7 +16,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
-var grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea', 'DateInput', 'FileInput'];
+var grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
 
 var isGrommetInput = function isGrommetInput(comp) {

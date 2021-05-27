@@ -14,11 +14,12 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       children = _ref.children,
       disabled = _ref.disabled,
       focus = _ref.focus,
+      focusIndicator = _ref.focusIndicator,
       id = _ref.id,
       label = _ref.label,
       name = _ref.name,
       onChange = _ref.onChange,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "children", "disabled", "focus", "focusIndicator", "id", "label", "name", "onChange"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -45,6 +46,8 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
         event.stopPropagation();
       }
     },
+    focus: focus,
+    focusIndicator: focusIndicator,
     onMouseEnter: function onMouseEnter() {
       return setHover(true);
     },
@@ -72,7 +75,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     checked: checked,
     hover: hover
   }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, {
-    focus: focus,
+    focus: focus && focusIndicator,
     as: Box,
     align: "center",
     justify: "center",

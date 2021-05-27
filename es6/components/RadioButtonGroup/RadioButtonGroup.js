@@ -13,12 +13,14 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       defaultValue = _ref.defaultValue,
       disabled = _ref.disabled,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       name = _ref.name,
       _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
       gap = _ref.gap,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "defaultValue", "disabled", "name", "onChange", "options", "value", "gap"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"]);
 
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize options to always use an object
@@ -37,7 +39,8 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
-      setValue = _formContext$useFormI[1];
+      setValue = _formContext$useFormI[1]; // track if focus is on one of the radio buttons
+
 
   var _useState = useState(),
       focus = _useState[0],
@@ -57,32 +60,26 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return result;
   }, [options, value]);
   useEffect(function () {
-    if (focus && valueIndex >= 0) optionRefs.current[valueIndex].focus();
+    // if tab comes back to RadioButtonGroup when there still is no selection,
+    // we want focus to be on the first RadioButton
+    if (focus && !valueIndex) {
+      optionRefs.current[0].focus();
+    }
   }, [focus, valueIndex]);
 
   var onNext = function onNext() {
     if (valueIndex !== undefined && valueIndex < options.length - 1) {
-      var nextIndex = valueIndex + 1;
-      var nextValue = options[nextIndex].value;
-      setValue(nextValue);
-      if (_onChange) _onChange({
-        target: {
-          value: nextValue
-        }
-      });
+      var nextIndex = valueIndex + 1; // ensure change event occurs
+
+      optionRefs.current[nextIndex].click();
     }
   };
 
   var onPrevious = function onPrevious() {
     if (valueIndex > 0) {
-      var nextIndex = valueIndex - 1;
-      var nextValue = options[nextIndex].value;
-      setValue(nextValue);
-      if (_onChange) _onChange({
-        target: {
-          value: nextValue
-        }
-      });
+      var nextIndex = valueIndex - 1; // ensure change event occurs
+
+      optionRefs.current[nextIndex].click();
     }
   };
 
@@ -91,12 +88,12 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // Chrome behaves differently in that focus is given to radio buttons
     // when the user selects one, unlike Safari and Firefox.
     setTimeout(function () {
-      return !focus && setFocus(true);
+      setFocus(true);
     }, 1);
   };
 
   var onBlur = function onBlur() {
-    return focus && setFocus(false);
+    return setFocus(false);
   };
 
   return /*#__PURE__*/React.createElement(Keyboard, {
@@ -117,6 +114,11 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
         optionValue = _ref2.value,
         optionRest = _objectWithoutPropertiesLoose(_ref2, ["disabled", "id", "label", "value"]);
 
+    // if focus is within the RadioButtonGroup, determine
+    // which radio button should be the active one
+    var focusable = optionValue === value || value === undefined && !index || // when nothing has been selected, show focus
+    // on the first radiobutton
+    value === '' && index === 0;
     return /*#__PURE__*/React.createElement(RadioButton, _extends({
       ref: function ref(aRef) {
         optionRefs.current[index] = aRef;
@@ -126,7 +128,13 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       label: !children ? label : undefined,
       disabled: optionDisabled,
       checked: optionValue === value,
-      focus: focus && (optionValue === value || value === undefined && !index),
+      focus: focus && focusable // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a RadioButton is active.
+      // In RadioButton, if focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      ,
+      focusIndicator: focusIndicator,
       id: id,
       value: optionValue,
       onFocus: onFocus,
@@ -134,7 +142,9 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange: function onChange(event) {
         setValue(optionValue);
         if (_onChange) _onChange(event);
-      }
+      },
+      tabIndex: focusable ? '0' : '-1' // necessary for Firefox
+
     }, optionRest), children ? function (state) {
       return children(optionsProp[index], state);
     } : null);
