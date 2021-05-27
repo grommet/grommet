@@ -23,20 +23,12 @@ const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
     border-color: ${props =>
-      normalizeColor(
-        props.theme.checkBox.hover &&
-          props.theme.checkBox.hover.border &&
-          props.theme.checkBox.hover.border.color,
-        props.theme,
-      )};
+      normalizeColor(props.theme.checkBox.hover?.border?.color, props.theme)};
   }
   :hover {
     background-color: ${props =>
       normalizeColor(
-        !props.disabled &&
-          props.theme.checkBox.hover &&
-          props.theme.checkBox.hover.background &&
-          props.theme.checkBox.hover.background.color,
+        !props.disabled && props.theme.checkBox.hover?.background?.color,
         props.theme,
       )};
   }
@@ -85,18 +77,13 @@ const StyledCheckBoxContainer = styled.label`
     input:not([disabled]) + div,
     input:not([disabled]) + span {
       border-color: ${normalizeColor(
-        props.theme.checkBox.hover &&
-          props.theme.checkBox.hover.border &&
-          props.theme.checkBox.hover.border.color,
+        props.theme.checkBox.hover?.border?.color,
         props.theme,
       )};
     }
      
     background-color: ${normalizeColor(
-      !props.disabled &&
-        props.theme.checkBox.hover &&
-        props.theme.checkBox.hover.background &&
-        props.theme.checkBox.hover.background.color,
+      !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,
     )};`}
   ${props => props.theme.checkBox.extend}
