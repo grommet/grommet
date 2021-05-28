@@ -106,6 +106,13 @@ export const doc = List => {
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
     ),
+    onOrder: PropTypes.func.description(
+      `Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.`,
+    ),
     pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
       .description(
@@ -178,6 +185,18 @@ export const themeDoc = {
     description: 'Any additional style for the list.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
+  },
+  'list.icons.down': {
+    description: `The icon to use for the move down button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormDown',
+  },
+  'list.icons.up': {
+    description: `The icon to use for the move up button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormUp',
   },
   'list.item.background': {
     description: 'Background color for list items.',

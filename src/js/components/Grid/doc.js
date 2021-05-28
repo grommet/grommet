@@ -112,14 +112,14 @@ space in the column axis.`,
           PropTypes.string,
         ]),
       ),
-      PropTypes.oneOf(fixedSizes),
+      PropTypes.oneOf(sizes),
       PropTypes.shape({
         count: PropTypes.oneOfType([
           PropTypes.oneOf(['fit', 'fill']),
           PropTypes.number,
         ]),
         size: PropTypes.oneOfType([
-          PropTypes.oneOf(fixedSizes),
+          PropTypes.oneOf(sizes),
           PropTypes.arrayOf(
             PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
           ),

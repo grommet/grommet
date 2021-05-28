@@ -5,6 +5,7 @@ import {
   getInputPadBySide,
   inputStyle,
   plainInputStyle,
+  textAlignStyle,
 } from '../../utils';
 
 export const StyledMaskedInput = styled.input`
@@ -21,6 +22,7 @@ export const StyledMaskedInput = styled.input`
       props.theme.maskedInput.disabled &&
         props.theme.maskedInput.disabled.opacity,
     )}
+  ${props => props.textAlign && textAlignStyle}
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
