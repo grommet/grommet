@@ -9,6 +9,12 @@ module.exports = {
       },
     },
   ],
+  core: {
+    builder: 'webpack5',
+  },
+  features: {
+    postcss: false,
+  },
   stories: [
     '../src/js/components/**/stories/typescript/*.tsx',
     '../src/js/components/**/stories/*.@(ts|tsx|js|jsx)',

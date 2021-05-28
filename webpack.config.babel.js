@@ -25,15 +25,18 @@ export default {
     'react-dom': 'ReactDOM',
     'styled-components': 'styled',
   },
+  output: {
+    clean: true,
+  },
   resolve: {
+    fallback: {
+      fs: false,
+      net: false,
+      tls: false,
+    },
     extensions: ['.js', '.json'],
   },
   plugins,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-  },
   module: {
     rules: [
       {
