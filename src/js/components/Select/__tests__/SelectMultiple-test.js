@@ -27,9 +27,9 @@ describe('Select Controlled', () => {
         /* disabling nested-interactive rule because the
         TextInput is only being used to display the value
         and is setup to prevent user interaction */
-        'nested-interactive': { enabled: false }
-      }
-    })
+        'nested-interactive': { enabled: false },
+      },
+    });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });

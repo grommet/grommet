@@ -23,9 +23,9 @@ describe('RangeSelector', () => {
         /* disabling aria-allowed-attr rule to allow
         EdgeSelector to have aria labels "Lower Bounds"
         and "Upper Bounds" */
-        'aria-allowed-attr': { enabled: false }
-      }
-    })
+        'aria-allowed-attr': { enabled: false },
+      },
+    });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });
