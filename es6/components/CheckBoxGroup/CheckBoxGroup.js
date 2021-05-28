@@ -10,13 +10,15 @@ import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var valueProp = _ref.value,
       disabledProp = _ref.disabled,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       gap = _ref.gap,
       labelKey = _ref.labelKey,
       valueKey = _ref.valueKey,
       onChange = _ref.onChange,
       optionsProp = _ref.options,
       name = _ref.name,
-      rest = _objectWithoutPropertiesLoose(_ref, ["value", "disabled", "gap", "labelKey", "valueKey", "onChange", "options", "name"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"]);
 
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
@@ -81,7 +83,13 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       key: key
     }, optionProps, {
       disabled: disabled,
-      checked: checked,
+      checked: checked // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a CheckBox is active.
+      // In CheckBox, if focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      ,
+      focusIndicator: focusIndicator,
       label: label,
       onChange: function onChange(event) {
         return onCheckBoxChange(event, valueOption, optionProps);

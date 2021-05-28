@@ -9,8 +9,14 @@ var fillStyle = function fillStyle() {
 };
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
-var hoverStyle = css([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}"], function (props) {
-  return normalizeColor(props.theme.checkBox.hover.border.color, props.theme);
+var hoverStyle = css([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}:hover{background-color:", ";}"], function (props) {
+  var _props$theme$checkBox, _props$theme$checkBox2;
+
+  return normalizeColor((_props$theme$checkBox = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox2 = _props$theme$checkBox.border) == null ? void 0 : _props$theme$checkBox2.color, props.theme);
+}, function (props) {
+  var _props$theme$checkBox3, _props$theme$checkBox4;
+
+  return normalizeColor(!props.disabled && ((_props$theme$checkBox3 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox4 = _props$theme$checkBox3.background) == null ? void 0 : _props$theme$checkBox4.color), props.theme);
 });
 var StyledCheckBoxIcon = styled.svg.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxIcon",
@@ -31,7 +37,7 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 var StyledCheckBoxContainer = styled.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return props.theme.checkBox.label.align;
 }, function (props) {
   return props.fillProp ? fillStyle() : 'width: fit-content;';
@@ -41,8 +47,10 @@ var StyledCheckBoxContainer = styled.label.withConfig({
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';
-}, function (props) {
-  return props.theme.checkBox.hover.border.color && hoverStyle;
+}, hoverStyle, function (props) {
+  var _props$theme$checkBox5, _props$theme$checkBox6, _props$theme$checkBox7, _props$theme$checkBox8;
+
+  return props.focus && !props.focusIndicator && "\n    input:not([disabled]) + div,\n    input:not([disabled]) + span {\n      border-color: " + normalizeColor((_props$theme$checkBox5 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox6 = _props$theme$checkBox5.border) == null ? void 0 : _props$theme$checkBox6.color, props.theme) + ";\n    }\n     \n    background-color: " + normalizeColor(!props.disabled && ((_props$theme$checkBox7 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox8 = _props$theme$checkBox7.background) == null ? void 0 : _props$theme$checkBox8.color), props.theme) + ";";
 }, function (props) {
   return props.theme.checkBox.extend;
 });
@@ -66,7 +74,7 @@ var StyledCheckBoxBox = styled.div.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
   componentId: "sc-1dbk5ju-3"
 })(["", ";", ";"], function (props) {
-  return props.focus && focusStyle();
+  return props.focus && props.focusIndicator && focusStyle();
 }, function (props) {
   return props.theme.checkBox.check.extend;
 });
@@ -88,7 +96,7 @@ var StyledCheckBoxToggle = styled.span.withConfig({
 }, function (props) {
   return props.theme.checkBox.toggle.background ? normalizeColor(props.theme.checkBox.toggle.background, props.theme) : 'transparent';
 }, function (props) {
-  return props.focus && focusStyle();
+  return props.focus && props.focusIndicator && focusStyle();
 }, function (props) {
   return props.theme.checkBox.toggle.extend;
 });

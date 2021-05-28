@@ -29,6 +29,8 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       disabled = _ref.disabled,
       fill = _ref.fill,
       focusProp = _ref.focus,
+      _ref$focusIndicator = _ref.focusIndicator,
+      focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       id = _ref.id,
       label = _ref.label,
       name = _ref.name,
@@ -43,7 +45,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
@@ -72,6 +74,12 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     checked: checked,
     disabled: disabled,
     focus: focus,
+    // when contained in a FormField, focusIndicator = false,
+    // so that the FormField has focus style. However, we still
+    // need to visually indicate when a CheckBox is active.
+    // If focus = true but focusIndicator = false,
+    // we will apply the hover treament.
+    focusIndicator: focusIndicator,
     reverse: reverse,
     toggle: toggle,
     indeterminate: indeterminate

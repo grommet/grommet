@@ -75,6 +75,11 @@ var themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: "{ dark: 'white', light: 'black' }"
   },
+  'checkBox.hover.background.color': {
+    description: "The background color of the Box surrounding the RadioButton \n    when hovered over.",
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined
+  },
   'checkBox.icon.size': {
     description: 'The size of the checked icon.',
     type: 'string',

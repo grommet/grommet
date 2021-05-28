@@ -679,7 +679,8 @@ export var generate = function generate(baseSpacing, scale) {
             dark: 'white',
             light: 'black'
           }
-        }
+        } // background: undefined,
+
       },
       icon: {// size: undefined,
         // extend: undefined,
