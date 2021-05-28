@@ -245,121 +245,111 @@ exports[`Accordion AccordionPanel 1`] = `
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-    role="tablist"
+    class="c0"
   >
     <div
-      className="c2"
+      class="c1"
+      role="tablist"
     >
-      <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
+      <div
+        class="c2"
       >
-        <div
-          className="c4"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
           <div
-            className="c5"
+            class="c4"
           >
-            <h4
-              className="c6"
+            <div
+              class="c5"
             >
-              Panel 1
-            </h4>
-          </div>
-          <div
-            className="c7"
-          >
-            <svg
-              aria-label="FormDown"
-              className="c8"
-              viewBox="0 0 24 24"
+              <h4
+                class="c6"
+              >
+                Panel 1
+              </h4>
+            </div>
+            <div
+              class="c7"
             >
-              <polyline
-                fill="none"
-                points="18 9 12 15 6 9"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
+              <svg
+                aria-label="FormDown"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-      </button>
-      <div
-        className="c9"
-      >
+        </button>
         <div
-          aria-hidden={true}
-          className="c1 c10"
-          open={false}
-        />
+          class="c9"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c10"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
+      <div
+        class="c2"
       >
-        <div
-          className="c4"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
           <div
-            className="c5"
+            class="c4"
           >
-            <h4
-              className="c6"
+            <div
+              class="c5"
             >
-              Panel 2
-            </h4>
-          </div>
-          <div
-            className="c7"
-          >
-            <svg
-              aria-label="FormDown"
-              className="c8"
-              viewBox="0 0 24 24"
+              <h4
+                class="c6"
+              >
+                Panel 2
+              </h4>
+            </div>
+            <div
+              class="c7"
             >
-              <polyline
-                fill="none"
-                points="18 9 12 15 6 9"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
+              <svg
+                aria-label="FormDown"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-      </button>
-      <div
-        className="c9"
-      >
+        </button>
         <div
-          aria-hidden={true}
-          className="c1 c10"
-          open={false}
-        />
+          class="c9"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c10"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -606,66 +596,62 @@ exports[`Accordion accordion border 1`] = `
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-    role="tablist"
+    class="c0"
   >
     <div
-      className="c2"
+      class="c1"
+      role="tablist"
     >
-      <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
+      <div
+        class="c2"
       >
-        <div
-          className="c4"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
           <div
-            className="c5"
+            class="c4"
           >
-            <h4
-              className="c6"
+            <div
+              class="c5"
             >
-              Panel 1
-            </h4>
-          </div>
-          <div
-            className="c7"
-          >
-            <svg
-              aria-label="FormDown"
-              className="c8"
-              viewBox="0 0 24 24"
+              <h4
+                class="c6"
+              >
+                Panel 1
+              </h4>
+            </div>
+            <div
+              class="c7"
             >
-              <polyline
-                fill="none"
-                points="18 9 12 15 6 9"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
+              <svg
+                aria-label="FormDown"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-      </button>
-      <div
-        className="c1"
-      >
+        </button>
         <div
-          aria-hidden={true}
-          className="c1 c9"
-          open={false}
-        />
+          class="c1"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c9"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -2861,59 +2847,51 @@ exports[`Accordion complex header 1`] = `
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-    role="tablist"
+    class="c0"
   >
     <div
-      className="c2"
+      class="c1"
+      role="tablist"
     >
-      <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
-      >
-        <div>
-          Panel 1 header
-        </div>
-      </button>
       <div
-        className="c4"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
+        class="c2"
       >
-        <div>
-          Panel 2 header
-        </div>
-      </button>
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
+        >
+          <div>
+            Panel 1 header
+          </div>
+        </button>
+        <div
+          class="c4"
+        />
+      </div>
       <div
-        className="c4"
+        class="c2"
       >
-        Panel body 2
+        <button
+          aria-expanded="true"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
+        >
+          <div>
+            Panel 2 header
+          </div>
+        </button>
+        <div
+          class="c4"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>
@@ -3143,112 +3121,102 @@ exports[`Accordion complex title 1`] = `
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
+    class="c0"
   >
     <div
-      className="c2"
-      role="tablist"
+      class="c1"
     >
       <div
-        className="c3"
+        class="c2"
+        role="tablist"
       >
-        <button
-          aria-expanded={false}
-          aria-selected={false}
-          className="c4"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="tab"
-          type="button"
-        >
-          <div
-            className="c5"
-          >
-            <div>
-              Panel 1 complex
-            </div>
-            <div
-              className="c6"
-            >
-              <svg
-                aria-label="FormDown"
-                className="c7"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
         <div
-          className="c8"
+          class="c3"
         >
+          <button
+            aria-expanded="false"
+            aria-selected="false"
+            class="c4"
+            role="tab"
+            type="button"
+          >
+            <div
+              class="c5"
+            >
+              <div>
+                Panel 1 complex
+              </div>
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
           <div
-            aria-hidden={true}
-            className="c2 c9"
-            open={false}
-          />
+            class="c8"
+          >
+            <div
+              aria-hidden="true"
+              class="c2 c9"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        className="c3"
-      >
-        <button
-          aria-expanded={false}
-          aria-selected={false}
-          className="c4"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          role="tab"
-          type="button"
-        >
-          <div
-            className="c5"
-          >
-            <div>
-              Panel 2 complex
-            </div>
-            <div
-              className="c6"
-            >
-              <svg
-                aria-label="FormDown"
-                className="c7"
-                viewBox="0 0 24 24"
-              >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
         <div
-          className="c8"
+          class="c3"
         >
+          <button
+            aria-expanded="false"
+            aria-selected="false"
+            class="c4"
+            role="tab"
+            type="button"
+          >
+            <div
+              class="c5"
+            >
+              <div>
+                Panel 2 complex
+              </div>
+              <div
+                class="c6"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
           <div
-            aria-hidden={true}
-            className="c2 c9"
-            open={false}
-          />
+            class="c8"
+          >
+            <div
+              aria-hidden="true"
+              class="c2 c9"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -3501,66 +3469,62 @@ exports[`Accordion custom accordion 1`] = `
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-    role="tablist"
+    class="c0"
   >
     <div
-      className="c2"
+      class="c1"
+      role="tablist"
     >
-      <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
+      <div
+        class="c2"
       >
-        <div
-          className="c4"
+        <button
+          aria-expanded="false"
+          aria-selected="false"
+          class="c3"
+          role="tab"
+          type="button"
         >
           <div
-            className="c5"
+            class="c4"
           >
-            <h3
-              className="c6"
+            <div
+              class="c5"
             >
-              Panel 1
-            </h3>
-          </div>
-          <div
-            className="c7"
-          >
-            <svg
-              aria-label="FormDown"
-              className="c8"
-              viewBox="0 0 24 24"
+              <h3
+                class="c6"
+              >
+                Panel 1
+              </h3>
+            </div>
+            <div
+              class="c7"
             >
-              <polyline
-                fill="none"
-                points="18 9 12 15 6 9"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
+              <svg
+                aria-label="FormDown"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
-      </button>
-      <div
-        className="c9"
-      >
+        </button>
         <div
-          aria-hidden={true}
-          className="c1 c10"
-          open={false}
-        />
+          class="c9"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c10"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -4852,13 +4816,15 @@ exports[`Accordion no AccordionPanel 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
-    role="tablist"
-  />
+    class="c0"
+  >
+    <div
+      class="c1"
+      role="tablist"
+    />
+  </div>
 </div>
 `;
 
