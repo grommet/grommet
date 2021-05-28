@@ -142,7 +142,7 @@ var StyledCheckBoxKnob = _styledComponents["default"].span.withConfig({
 }, function (props) {
   return props.theme.checkBox.size;
 }, function (props) {
-  return (0, _utils.normalizeColor)(props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'], props.theme);
+  return (0, _utils.normalizeColor)(props.theme.checkBox.toggle.color, props.theme);
 }, function (props) {
   return props.theme.checkBox.toggle.radius;
 }, function (props) {
