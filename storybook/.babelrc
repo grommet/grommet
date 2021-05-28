@@ -4,7 +4,6 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    ["@babel/plugin-proposal-private-property-in-object", { "loose": false }],
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-logical-assignment-operators",
