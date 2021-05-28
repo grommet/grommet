@@ -152,10 +152,7 @@ const StyledCheckBoxKnob = styled.span`
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
   background: ${props =>
-    normalizeColor(
-      props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'],
-      props.theme,
-    )};
+    normalizeColor(props.theme.checkBox.toggle.color, props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   ${props => props.theme.checkBox.toggle.knob.extend};
 `;
