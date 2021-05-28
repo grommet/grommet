@@ -90,7 +90,6 @@
     "babel-plugin-transform-imports": "^2.0.0",
     "bundlesize": "^0.18.1",
     "chromatic": "^5.8.0",
-    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^9.0.0",
     "copyfiles": "^2.4.1",
     "core-js": "^3.12.1",

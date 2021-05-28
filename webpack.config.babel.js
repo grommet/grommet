@@ -1,9 +1,7 @@
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const plugins = [
-  new CleanWebpackPlugin(),
   new CopyWebpackPlugin({
     patterns: [
       { from: './README.md' },
@@ -26,6 +24,9 @@ export default {
     react: 'React',
     'react-dom': 'ReactDOM',
     'styled-components': 'styled',
+  },
+  output: {
+    clean: true,
   },
   resolve: {
     fallback: {
