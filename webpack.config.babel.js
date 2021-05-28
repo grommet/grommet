@@ -4,11 +4,13 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const plugins = [
   new CleanWebpackPlugin(),
-  new CopyWebpackPlugin([
-    { from: './README.md' },
-    { from: './package.json' },
-    { from: './tools', to: 'tools' },
-  ]),
+  new CopyWebpackPlugin({
+    patterns: [
+      { from: './README.md' },
+      { from: './package.json' },
+      { from: './tools', to: 'tools' },
+    ],
+  }),
 ];
 
 export default {
@@ -26,14 +28,14 @@ export default {
     'styled-components': 'styled',
   },
   resolve: {
+    fallback: {
+      fs: false,
+      net: false,
+      tls: false,
+    },
     extensions: ['.js', '.json'],
   },
   plugins,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-  },
   module: {
     rules: [
       {

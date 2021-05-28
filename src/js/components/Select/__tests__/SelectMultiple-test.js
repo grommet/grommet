@@ -22,7 +22,14 @@ describe('Select Controlled', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" multiple />
       </Grommet>,
     );
-    const results = await axe(container);
+    const results = await axe(container, {
+      rules: {
+        /* disabling nested-interactive rule because the
+        TextInput is only being used to display the value
+        and is setup to prevent user interaction */
+        'nested-interactive': { enabled: false }
+      }
+    })
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });

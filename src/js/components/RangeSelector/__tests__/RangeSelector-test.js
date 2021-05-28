@@ -18,7 +18,14 @@ describe('RangeSelector', () => {
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
-    const results = await axe(container);
+    const results = await axe(container, {
+      rules: {
+        /* disabling aria-allowed-attr rule to allow
+        EdgeSelector to have aria labels "Lower Bounds"
+        and "Upper Bounds" */
+        'aria-allowed-attr': { enabled: false }
+      }
+    })
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });

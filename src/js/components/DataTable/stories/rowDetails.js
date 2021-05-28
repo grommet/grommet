@@ -36,9 +36,11 @@ export const ControlledDataTable = () => {
               property: 'checkbox',
               render: datum => (
                 <CheckBox
+                  /* eslint-disable react/destructuring-assignment */
                   key={datum.name}
                   checked={checked.indexOf(datum.name) !== -1}
                   onChange={e => onCheck(e, datum.name)}
+                  /* eslint-enable react/destructuring-assignment */
                 />
               ),
               header: (

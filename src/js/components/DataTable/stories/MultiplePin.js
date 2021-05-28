@@ -177,6 +177,7 @@ const columns = [
   {
     property: 'arrays',
     header: 'Arrays',
+    // eslint-disable-next-line react/destructuring-assignment
     render: datum => <Text truncate>{datum.arrays}</Text>,
     sortable: false,
   },
@@ -227,6 +228,7 @@ const columns = [
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
+          // eslint-disable-next-line react/destructuring-assignment
           values={[{ value: datum.pinned / datum.pinnable, color: 'graph-2' }]}
           max={1}
           thickness="small"
@@ -248,6 +250,7 @@ const columns = [
     ),
     align: 'end',
     render: datum => (
+      // eslint-disable-next-line react/destructuring-assignment
       <Text truncate>{datum.savings[1] && `${datum.savings[1].value}`}</Text>
     ),
   },
@@ -287,6 +290,7 @@ export const MultiplePins = () => (
             {
               property: 'poolName',
               header: 'Pool Name',
+              // eslint-disable-next-line react/destructuring-assignment
               render: datum => <Text truncate>{datum.poolName}</Text>,
               primary: true,
               pin: true,

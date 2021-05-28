@@ -1657,10 +1657,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cWYUcs"
+    class="StyledButtonKind-sc-1vhfpnt-0 iNGjnM"
     disabled=""
     type="button"
   >
@@ -2469,18 +2469,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hOaacV"
+    class="StyledButtonKind-sc-1vhfpnt-0 lkFpUp"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iQEJEP"
+      class="StyledBox-sc-13pk1d4-0 jncmfT"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-ofa7kd-0 dcacLZ"
+        class="StyledIcon-ofa7kd-0 htxtFB"
         viewBox="0 0 24 24"
       >
         <path
@@ -2491,7 +2491,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hjorfk"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kaiRIg"
       />
       label
     </div>

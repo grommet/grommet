@@ -32,6 +32,7 @@ export const columns = [
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
+          // eslint-disable-next-line react/destructuring-assignment
           values={[{ value: datum.percent }]}
           thickness="small"
           size="small"
@@ -219,6 +220,7 @@ export const storageColumns = [
   {
     property: 'poolName',
     header: 'Pool Name',
+    // eslint-disable-next-line react/destructuring-assignment
     render: datum => <Text truncate>{datum.poolName}</Text>,
   },
   {
@@ -264,13 +266,15 @@ export const storageColumns = [
             flex={false}
             margin="xsmall"
           >
-            {Math.trunc((datum.pinned / datum.pinnable) * 100)}
+            {// eslint-disable-next-line react/destructuring-assignment
+            Math.trunc((datum.pinned / datum.pinnable) * 100)}
           </Box>
         }
       >
         <Box pad={{ vertical: 'xsmall' }}>
           <Meter
             values={[
+              // eslint-disable-next-line react/destructuring-assignment
               { value: datum.pinned / datum.pinnable, color: 'graph-0' },
             ]}
             max={1}
@@ -294,6 +298,7 @@ export const storageColumns = [
     ),
     align: 'end',
     render: datum => (
+      // eslint-disable-next-line react/destructuring-assignment
       <Text truncate>{datum.savings[1] && `${datum.savings[1].value}`}</Text>
     ),
   },

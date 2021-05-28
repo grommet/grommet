@@ -34,6 +34,7 @@ export const ControlledDataTable = () => {
           columns={[
             {
               property: 'checkbox',
+              /* eslint-disable react/destructuring-assignment */
               render: datum => (
                 <CheckBox
                   key={datum.name}
@@ -41,6 +42,7 @@ export const ControlledDataTable = () => {
                   onChange={e => onCheck(e, datum.name)}
                 />
               ),
+              /* eslint-enable react/destructuring-assignment */
               header: (
                 <CheckBox
                   checked={checked.length === DATA.length}

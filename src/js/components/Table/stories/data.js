@@ -46,6 +46,7 @@ export const columns = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
+    // eslint-disable-next-line react/destructuring-assignment
     format: datum => <Text weight="bold">{datum.name}</Text>,
   },
   {

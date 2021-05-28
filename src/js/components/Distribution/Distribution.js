@@ -109,11 +109,13 @@ const Distribution = ({
 
 Distribution.defaultProps = {
   basis: undefined,
+  /* eslint-disable react/destructuring-assignment */
   children: value => (
     <Box fill border>
       <Text>{value.value}</Text>
     </Box>
   ),
+  /* eslint-enable react/destructuring-assignment */
   direction: 'row',
   gap: 'xsmall',
   values: [],

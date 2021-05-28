@@ -2,7 +2,8 @@
   "presets": ["./tools/grommet-babel-preset-es2015", "@babel/preset-react"],
   "plugins": [
     ["styled-components", { "useDisplayName": false }],
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-private-methods", { "loose": false }]
   ],
   "env": {
     "es6": {

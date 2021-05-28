@@ -40,6 +40,7 @@ const columns = [
       <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
         <Meter
           values={[
+            // eslint-disable-next-line react/destructuring-assignment
             { value: datum.percent, color: `accent-${(datum.key % 4) + 1}` },
           ]}
           thickness="small"
