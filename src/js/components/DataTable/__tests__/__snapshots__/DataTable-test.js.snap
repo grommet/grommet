@@ -2687,7 +2687,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -3441,7 +3441,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gnXESi StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jgTAbK StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         />
         <th
@@ -3477,7 +3477,7 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 edcLsf"
+                  class="StyledBox-sc-13pk1d4-0 faBYyD"
                 />
               </div>
               <div
@@ -3511,7 +3511,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bKvCBC"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJitRX"
               disabled=""
             >
               <div
@@ -3575,7 +3575,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="select beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bKvCBC"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eJitRX"
               disabled=""
             >
               <div
@@ -4921,7 +4921,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
         >
           <button
             aria-label="expand"
@@ -4933,7 +4933,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -4947,7 +4947,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -4961,7 +4961,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -4995,7 +4995,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -5046,7 +5046,7 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6058,7 +6058,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
         >
           <button
             aria-label="expand"
@@ -6070,7 +6070,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6084,7 +6084,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6098,7 +6098,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6132,7 +6132,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6183,7 +6183,7 @@ exports[`DataTable groupBy property 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -6698,7 +6698,7 @@ exports[`DataTable groupBy toggle 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -6712,7 +6712,7 @@ exports[`DataTable groupBy toggle 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -7040,7 +7040,7 @@ exports[`DataTable groupBy toggle 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -7054,7 +7054,7 @@ exports[`DataTable groupBy toggle 3`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10184,7 +10184,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
         >
           <button
             aria-label="expand"
@@ -10196,7 +10196,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10210,7 +10210,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 loEAQa StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10219,7 +10219,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -10271,7 +10271,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10285,7 +10285,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10319,7 +10319,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10341,7 +10341,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -10430,7 +10430,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10452,7 +10452,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -10544,7 +10544,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jqMKIY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
         >
           <button
             aria-label="expand"
@@ -10556,7 +10556,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10570,7 +10570,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 loEAQa StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10579,7 +10579,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -10596,7 +10596,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10610,7 +10610,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -10644,7 +10644,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10666,7 +10666,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -10720,7 +10720,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 fOayzd"
+                class="StyledIcon-ofa7kd-0 erYbrt"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -10742,7 +10742,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -11142,7 +11142,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11243,7 +11243,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11791,7 +11791,7 @@ exports[`DataTable onSort external 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -11871,7 +11871,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -17945,7 +17945,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -18584,7 +18584,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dXtGdS StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 loEAQa StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -18593,7 +18593,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -18641,7 +18641,7 @@ exports[`DataTable select 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -18671,7 +18671,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -18726,7 +18726,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fYMEIj"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jGrNxy"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -27363,7 +27363,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
           >
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
               scope="col"
             >
               <div
@@ -27377,7 +27377,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               </div>
             </th>
             <th
-              class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+              class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
               scope="col"
             >
               <div
@@ -35275,7 +35275,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div
@@ -35376,7 +35376,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
           scope="col"
         >
           <div

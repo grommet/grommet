@@ -20,7 +20,10 @@ export interface DateInputProps {
 }
 export interface DateInputExtendedProps
   extends DateInputProps,
-    Omit<JSX.IntrinsicElements['input'], 'defaultValue' | 'onChange' | 'value'> {}
+    Omit<
+      JSX.IntrinsicElements['input'],
+      'defaultValue' | 'onChange' | 'value'
+    > {}
 
 declare const DateInput: React.FC<DateInputExtendedProps>;
 
