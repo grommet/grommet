@@ -177,7 +177,7 @@ const InfiniteScroll = ({
       }
     }, 100);
     return () => clearTimeout(timer);
-  }, [renderPageBounds, show, step, scrollShow]);
+  }, [renderPageBounds, show, step]);
 
   // calculate and keep track of page heights
   useLayoutEffect(() => {
