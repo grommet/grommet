@@ -10346,7 +10346,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 eojFNt"
+      class="StyledMaskedInput-sc-99vkfa-0 cRmZta"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -12807,7 +12807,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eojFNt"
+        class="StyledMaskedInput-sc-99vkfa-0 cRmZta"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -14877,7 +14877,7 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eojFNt"
+        class="StyledMaskedInput-sc-99vkfa-0 cRmZta"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
@@ -18058,7 +18058,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eojFNt"
+        class="StyledMaskedInput-sc-99vkfa-0 cRmZta"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -20110,7 +20110,7 @@ exports[`DateInput type format inline short 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eojFNt"
+        class="StyledMaskedInput-sc-99vkfa-0 cRmZta"
         id="item"
         name="item"
         placeholder="m/d/yy"
