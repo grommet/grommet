@@ -5332,6 +5332,17 @@ Defaults to
 { dark: 'white', light: 'black' }
 \`\`\`
 
+**checkBox.hover.background.color**
+
+The background color of the Box surrounding the RadioButton 
+    when hovered over. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **checkBox.icon.size**
 
 The size of the checked icon. Expects \`string\`.
@@ -12942,6 +12953,16 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**textAlign**
+
+How to align the text inside the input. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
 \`\`\`
 
 **value**

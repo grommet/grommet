@@ -35,6 +35,7 @@ const CheckBox = forwardRef(
       disabled,
       fill,
       focus: focusProp,
+      focusIndicator = true,
       id,
       label,
       name,
@@ -83,6 +84,12 @@ const CheckBox = forwardRef(
       checked,
       disabled,
       focus,
+      // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a CheckBox is active.
+      // If focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      focusIndicator,
       reverse,
       toggle,
       indeterminate,
