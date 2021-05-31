@@ -106,6 +106,58 @@ describe('RangeInput', () => {
     expect(onChange).toBeCalledTimes(1);
   });
 
+  test('inputDirection', () => {
+    const INPUT_DIRECTIONS = {
+      right: 'row',
+      left: 'row-reverse',
+      above: 'column-reverse',
+      below: 'column',
+    };
+
+    const getStyle = container => {
+      const containers = container.getElementsByTagName('div');
+      const rangeInputBoxContainer = containers.item(1);
+      const style = window.getComputedStyle(rangeInputBoxContainer);
+
+      return style;
+    };
+
+    const Test = ({ inputDirection }) => (
+      <Grommet>
+        <RangeInput
+          data-testid="range-input"
+          min={0}
+          max={10}
+          step={1}
+          value={5}
+          inputValue
+          inputDirection={inputDirection}
+        />
+      </Grommet>
+    );
+
+    const expectFlexDirection = (container, direction) => {
+      const style = getStyle(container);
+      expect(style.flexDirection).toBe(direction);
+    };
+
+    const { container } = render(<Test />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    expectFlexDirection(container, 'row');
+
+    Object.entries(INPUT_DIRECTIONS).forEach(
+      ([inputDirection, flexDirection]) => {
+        const { container: newContainer } = render(
+          <Test inputDirection={inputDirection} />,
+        );
+
+        expect(newContainer.firstChild).toMatchSnapshot();
+        expectFlexDirection(newContainer, flexDirection);
+      },
+    );
+  });
+
   test('inputValue', () => {
     const onChange = jest.fn();
     const { container, getByTestId } = render(

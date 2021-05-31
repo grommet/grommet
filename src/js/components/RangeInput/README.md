@@ -81,6 +81,15 @@ number
 string
 ```
 
+**inputDirection**
+
+The input direction informed that will define
+      the input number direction relative to range input.
+
+```
+string
+```
+
 **inputValue**
 
 The input number type to inform range input value.

@@ -38,6 +38,10 @@ export const doc = RangeInput => {
       PropTypes.number,
       PropTypes.string,
     ]).description('The current value.'),
+    inputDirection: PropTypes.oneOfType([PropTypes.string]).description(
+      `The input direction informed that will define
+      the input number direction relative to range input.`,
+    ),
     inputValue: PropTypes.oneOfType([PropTypes.bool]).description(
       `The input number type to inform range input value.
       The default value is false.`,

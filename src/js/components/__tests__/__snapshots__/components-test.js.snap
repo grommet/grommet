@@ -6655,6 +6655,12 @@ string",
         "name": "value",
       },
       Object {
+        "description": "The input direction informed that will define
+      the input number direction relative to range input.",
+        "format": "string",
+        "name": "inputDirection",
+      },
+      Object {
         "description": "The input number type to inform range input value.
       The default value is false.",
         "format": "boolean",

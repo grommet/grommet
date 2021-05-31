@@ -4,6 +4,20 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 
+const DIRECTIONS = {
+  RIGHT: 'right',
+  LEFT: 'left',
+  ABOVE: 'above',
+  BELOW: 'below',
+};
+
+const INPUT_DIRECTIONS = {
+  [DIRECTIONS.RIGHT]: 'row',
+  [DIRECTIONS.LEFT]: 'row-reverse',
+  [DIRECTIONS.ABOVE]: 'column-reverse',
+  [DIRECTIONS.BELOW]: 'column',
+};
+
 const allowedKeysToOpenInputValue = [
   'ArrowRight',
   'ArrowLeft',
@@ -24,6 +38,7 @@ const RangeInput = forwardRef(
       min = 0,
       max = 100,
       step = 1,
+      inputDirection,
       inputValue = false,
       value: valueProp,
       ...rest
@@ -31,6 +46,14 @@ const RangeInput = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+
+    const inputDirectionSelected =
+      INPUT_DIRECTIONS[inputDirection] || INPUT_DIRECTIONS.right;
+
+    const isFillInput =
+      inputDirection === DIRECTIONS.ABOVE || inputDirection === DIRECTIONS.BELOW
+        ? 'horizontal'
+        : false;
 
     const [value, setValue] = formContext.useFormInput(name, valueProp);
 
@@ -50,7 +73,7 @@ const RangeInput = forwardRef(
     };
 
     return (
-      <>
+      <Box fill direction={inputDirectionSelected} align="center">
         <StyledRangeInput
           aria-label={a11yTitle}
           ref={ref}
@@ -91,10 +114,11 @@ const RangeInput = forwardRef(
           type="range"
         />
         {inputValue && showInputValue && (
-          <Box align="center" width="small">
+          <Box align="start" fill={isFillInput}>
             <TextInput
               id="input-range-value"
               type="number"
+              style={{ border: 'none' }}
               min={min}
               max={max}
               step={step}
@@ -113,7 +137,7 @@ const RangeInput = forwardRef(
             />
           </Box>
         )}
-      </>
+      </Box>
     );
   },
 );

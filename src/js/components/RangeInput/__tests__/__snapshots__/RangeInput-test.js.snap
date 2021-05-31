@@ -12,6 +12,26 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -23,22 +43,22 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -51,18 +71,18 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -77,7 +97,7 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -92,15 +112,15 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -109,12 +129,12 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -122,15 +142,19 @@ exports[`RangeInput allowed keys to close inputValue 1`] = `
 <div
   class="c0"
 >
-  <input
+  <div
     class="c1"
-    data-testid="range-input"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
 </div>
 `;
 
@@ -146,6 +170,26 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -157,22 +201,22 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -185,18 +229,18 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -211,7 +255,7 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -226,15 +270,15 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -243,12 +287,12 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -256,19 +300,23 @@ exports[`RangeInput allowed keys to open inputValue 1`] = `
 <div
   class="c0"
 >
-  <input
+  <div
     class="c1"
-    data-testid="range-input"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
 </div>
 `;
 
-exports[`RangeInput inputValue 1`] = `
+exports[`RangeInput inputDirection 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -279,7 +327,639 @@ exports[`RangeInput inputValue 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
 .c2 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+}
+
+.c2::-moz-focus-outer {
+  border: none;
+}
+
+.c2::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c2::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c2::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeInput inputDirection 2`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+}
+
+.c2::-moz-focus-outer {
+  border: none;
+}
+
+.c2::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c2::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c2::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeInput inputDirection 3`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+}
+
+.c2::-moz-focus-outer {
+  border: none;
+}
+
+.c2::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c2::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c2::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeInput inputDirection 4`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+}
+
+.c2::-moz-focus-outer {
+  border: none;
+}
+
+.c2::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c2::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c2::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeInput inputDirection 5`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -295,10 +975,187 @@ exports[`RangeInput inputValue 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 192px;
+  width: 100%;
+  height: 100%;
 }
 
-.c4 {
+.c2 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+}
+
+.c2::-moz-focus-outer {
+  border: none;
+}
+
+.c2::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-webkit-slider-thumb {
+  margin-top: -10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c2::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c2:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c2::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c2::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeInput inputValue 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -314,38 +1171,38 @@ exports[`RangeInput inputValue 1`] = `
   border-radius: 4px;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -357,22 +1214,22 @@ exports[`RangeInput inputValue 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -385,18 +1242,18 @@ exports[`RangeInput inputValue 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -411,7 +1268,7 @@ exports[`RangeInput inputValue 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -426,15 +1283,15 @@ exports[`RangeInput inputValue 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -443,12 +1300,12 @@ exports[`RangeInput inputValue 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -456,31 +1313,35 @@ exports[`RangeInput inputValue 1`] = `
 <div
   class="c0"
 >
-  <input
-    class="c1"
-    data-testid="range-input"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
   <div
-    class="c2"
+    class="c1"
   >
+    <input
+      class="c2"
+      data-testid="range-input"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
     <div
       class="c3"
     >
-      <input
-        autocomplete="off"
+      <div
         class="c4"
-        id="input-range-value"
-        max="10"
-        min="0"
-        step="1"
-        type="number"
-        value="5"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="c5"
+          id="input-range-value"
+          max="10"
+          min="0"
+          step="1"
+          type="number"
+          value="5"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -498,6 +1359,26 @@ exports[`RangeInput onBlur 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -509,22 +1390,22 @@ exports[`RangeInput onBlur 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -537,18 +1418,18 @@ exports[`RangeInput onBlur 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -563,7 +1444,7 @@ exports[`RangeInput onBlur 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -578,15 +1459,15 @@ exports[`RangeInput onBlur 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -595,12 +1476,12 @@ exports[`RangeInput onBlur 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -608,14 +1489,18 @@ exports[`RangeInput onBlur 1`] = `
 <div
   class="c0"
 >
-  <input
+  <div
     class="c1"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
+  >
+    <input
+      class="c2"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
 </div>
 `;
 
@@ -631,6 +1516,26 @@ exports[`RangeInput onChange 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -642,22 +1547,22 @@ exports[`RangeInput onChange 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -670,18 +1575,18 @@ exports[`RangeInput onChange 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -696,7 +1601,7 @@ exports[`RangeInput onChange 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -711,15 +1616,15 @@ exports[`RangeInput onChange 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -728,12 +1633,12 @@ exports[`RangeInput onChange 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -741,14 +1646,18 @@ exports[`RangeInput onChange 1`] = `
 <div
   class="c0"
 >
-  <input
+  <div
     class="c1"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
+  >
+    <input
+      class="c2"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
 </div>
 `;
 
@@ -764,6 +1673,26 @@ exports[`RangeInput onFocus 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -777,22 +1706,22 @@ exports[`RangeInput onFocus 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -805,18 +1734,18 @@ exports[`RangeInput onFocus 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -831,7 +1760,7 @@ exports[`RangeInput onFocus 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -846,15 +1775,15 @@ exports[`RangeInput onFocus 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -863,42 +1792,46 @@ exports[`RangeInput onFocus 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1 > circle,
-.c1 > ellipse,
-.c1 > line,
-.c1 > path,
-.c1 > polygon,
-.c1 > polyline,
-.c1 > rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
 <div
   class="c0"
 >
-  <input
+  <div
     class="c1"
-    max="10"
-    min="0"
-    step="1"
-    type="range"
-    value="5"
-  />
+  >
+    <input
+      class="c2"
+      max="10"
+      min="0"
+      step="1"
+      type="range"
+      value="5"
+    />
+  </div>
 </div>
 `;
 
@@ -914,6 +1847,26 @@ exports[`RangeInput renders 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -925,22 +1878,22 @@ exports[`RangeInput renders 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -953,18 +1906,18 @@ exports[`RangeInput renders 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -979,7 +1932,7 @@ exports[`RangeInput renders 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -994,15 +1947,15 @@ exports[`RangeInput renders 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1011,12 +1964,12 @@ exports[`RangeInput renders 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -1024,18 +1977,22 @@ exports[`RangeInput renders 1`] = `
 <div
   className="c0"
 >
-  <input
+  <div
     className="c1"
-    max={100}
-    min={0}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    step={1}
-    type="range"
-    value="50"
-  />
+  >
+    <input
+      className="c2"
+      max={100}
+      min={0}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      step={1}
+      type="range"
+      value="50"
+    />
+  </div>
 </div>
 `;
 
@@ -1051,6 +2008,26 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1062,22 +2039,22 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1090,18 +2067,18 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1116,7 +2093,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1131,15 +2108,15 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1148,12 +2125,12 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -1162,15 +2139,19 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   <div
     class="c0"
   >
-    <input
-      aria-label="test"
+    <div
       class="c1"
-      max="100"
-      min="0"
-      step="1"
-      type="range"
-      value="50"
-    />
+    >
+      <input
+        aria-label="test"
+        class="c2"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="50"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -1187,6 +2168,26 @@ exports[`RangeInput track themed 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1198,22 +2199,22 @@ exports[`RangeInput track themed 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,1);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1226,18 +2227,18 @@ exports[`RangeInput track themed 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,1);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1252,7 +2253,7 @@ exports[`RangeInput track themed 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1267,15 +2268,15 @@ exports[`RangeInput track themed 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1284,12 +2285,12 @@ exports[`RangeInput track themed 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(125,76,219,1);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(125,76,219,1);
   border-color: transparent;
 }
@@ -1297,18 +2298,22 @@ exports[`RangeInput track themed 1`] = `
 <div
   className="c0"
 >
-  <input
+  <div
     className="c1"
-    max={100}
-    min={0}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    step={1}
-    type="range"
-    value="10"
-  />
+  >
+    <input
+      className="c2"
+      max={100}
+      min={0}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      step={1}
+      type="range"
+      value="10"
+    />
+  </div>
 </div>
 `;
 
@@ -1324,6 +2329,26 @@ exports[`RangeInput track themed with color and opacity 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1335,22 +2360,22 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,0.3);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1363,18 +2388,18 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,0.3);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1389,7 +2414,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1404,15 +2429,15 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1421,12 +2446,12 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(125,76,219,0.3);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(125,76,219,0.3);
   border-color: transparent;
 }
@@ -1434,18 +2459,22 @@ exports[`RangeInput track themed with color and opacity 1`] = `
 <div
   className="c0"
 >
-  <input
+  <div
     className="c1"
-    max={100}
-    min={0}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    step={1}
-    type="range"
-    value="10"
-  />
+  >
+    <input
+      className="c2"
+      max={100}
+      min={0}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      step={1}
+      type="range"
+      value="10"
+    />
+  </div>
 </div>
 `;
 
@@ -1461,6 +2490,26 @@ exports[`RangeInput with min and max offset 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1472,22 +2521,22 @@ exports[`RangeInput with min and max offset 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1500,18 +2549,18 @@ exports[`RangeInput with min and max offset 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+.c2::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1526,7 +2575,7 @@ exports[`RangeInput with min and max offset 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1541,15 +2590,15 @@ exports[`RangeInput with min and max offset 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1558,12 +2607,12 @@ exports[`RangeInput with min and max offset 1`] = `
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
@@ -1571,17 +2620,21 @@ exports[`RangeInput with min and max offset 1`] = `
 <div
   className="c0"
 >
-  <input
+  <div
     className="c1"
-    max={20}
-    min={10}
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    step={1}
-    type="range"
-    value={15}
-  />
+  >
+    <input
+      className="c2"
+      max={20}
+      min={10}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      step={1}
+      type="range"
+      value={15}
+    />
+  </div>
 </div>
 `;

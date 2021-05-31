@@ -11,7 +11,14 @@ export const SimpleRangeUseInputValue = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <RangeInput value={value} onChange={onChange} inputValue />
+        <RangeInput
+          value={value}
+          onChange={onChange}
+          inputValue
+          inputDirection="right"
+          max={100}
+          min={0}
+        />
       </Box>
     </Grommet>
   );
