@@ -5,6 +5,9 @@ import { grommet } from 'grommet/themes';
 
 const defaultOptions = ['one', 'two', 'three'];
 
+const filterOptions = (textA, textB) =>
+  textA.toLowerCase().includes(textB.toLowerCase());
+
 export const SearchWithControlledInput = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
@@ -14,7 +17,9 @@ export const SearchWithControlledInput = () => {
     if (!text) {
       setOptions(defaultOptions);
     } else {
-      const optionsFound = defaultOptions.filter(option => text === option);
+      const optionsFound = defaultOptions.filter(option =>
+        filterOptions(option, text),
+      );
       setOptions(optionsFound);
     }
 
