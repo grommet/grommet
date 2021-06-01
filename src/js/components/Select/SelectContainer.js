@@ -382,11 +382,15 @@ const SelectContainer = forwardRef(
                   // as an option Button kind property.
                   let child;
                   if (children)
-                    child = children(option, index, options, {
-                      active: optionActive,
-                      disabled: optionDisabled,
-                      selected: optionSelected,
-                    });
+                    child = (
+                      <OptionBox selected={optionSelected}>
+                        {children(option, index, options, {
+                          active: optionActive,
+                          disabled: optionDisabled,
+                          selected: optionSelected,
+                        })}
+                      </OptionBox>
+                    );
                   else if (theme.select.options)
                     child = (
                       <OptionBox
@@ -398,6 +402,7 @@ const SelectContainer = forwardRef(
                         </Text>
                       </OptionBox>
                     );
+
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (

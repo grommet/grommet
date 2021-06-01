@@ -2987,9 +2987,13 @@ exports[`Select complex options and children 3`] = `
         tabindex="-1"
         type="button"
       >
-        <span>
-          one
-        </span>
+        <div
+          class="c2 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span>
+            one
+          </span>
+        </div>
       </button>
       <button
         class="c5 c6"
@@ -2997,9 +3001,13 @@ exports[`Select complex options and children 3`] = `
         tabindex="-1"
         type="button"
       >
-        <span>
-          two
-        </span>
+        <div
+          class="c2 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span>
+            two
+          </span>
+        </div>
       </button>
       <div
         class="c7"
