@@ -10966,15 +10966,6 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }
@@ -11037,20 +11028,11 @@ exports[`Layer should only place id on StyledLayer when singleId === true 2`] = 
   }
 }
 @media only screen and (max-width: 768px) {
-  .xWjcQ {
+  .jcjRmN {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-animation: none;
-    animation: none;
     height: 100vh;
     width: 100vw;
   }

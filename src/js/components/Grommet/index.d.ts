@@ -8,7 +8,11 @@ export interface GrommetProps {
   cssVars?: boolean;
   dir?: 'rtl';
   full?: boolean | 'min';
-  options?: object;
+  options?: {
+    layer?: {
+      singleId?: boolean;
+    };
+  };
   plain?: boolean;
   theme?: ThemeType;
   themeMode?: 'dark' | 'light';

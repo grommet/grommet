@@ -50,6 +50,8 @@ const LayerContainer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
+    // layerOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
     const { layer: layerOptions } = useContext(OptionsContext);
     const anchorRef = useRef();
     const containerRef = useRef();
@@ -174,6 +176,9 @@ const LayerContainer = forwardRef(
         ref={ref || containerRef}
         background={background}
         elevation={theme.layer.container.elevation}
+        // layerOptions was created to preserve backwards compatibility but
+        // should not be supported in v3. In v3, this should always be
+        // ${id}__container
         id={layerOptions && layerOptions.singleId ? `${id}__container` : id}
         full={full}
         margin={margin}
