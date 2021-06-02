@@ -17,6 +17,8 @@ var _StyledGrommet = require("./StyledGrommet");
 
 var _RootsContext = require("../../contexts/RootsContext");
 
+var _OptionsContext = require("../../contexts/OptionsContext");
+
 var _templateObject;
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -56,13 +58,16 @@ var deviceResponsive = function deviceResponsive(userAgent, theme) {
   return undefined;
 };
 
+var defaultOptions = {};
 var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var children = props.children,
       full = props.full,
       _props$containerTarge = props.containerTarget,
       containerTarget = _props$containerTarge === void 0 ? typeof document === 'object' ? document.body : undefined : _props$containerTarge,
       themeProp = props.theme,
-      rest = _objectWithoutPropertiesLoose(props, ["children", "full", "containerTarget", "theme"]);
+      _props$options = props.options,
+      options = _props$options === void 0 ? defaultOptions : _props$options,
+      rest = _objectWithoutPropertiesLoose(props, ["children", "full", "containerTarget", "theme", "options"]);
 
   var background = props.background,
       dir = props.dir,
@@ -119,11 +124,13 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     value: [grommetRef.current]
   }, /*#__PURE__*/_react["default"].createElement(_contexts.ContainerTargetContext.Provider, {
     value: containerTarget
+  }, /*#__PURE__*/_react["default"].createElement(_OptionsContext.OptionsContext.Provider, {
+    value: options
   }, /*#__PURE__*/_react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null)))));
+  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null))))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

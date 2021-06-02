@@ -15,6 +15,8 @@ var _Keyboard = require("../Keyboard");
 
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 
+var _OptionsContext = require("../../contexts/OptionsContext");
+
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
@@ -55,7 +57,12 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
+  var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext); // layerOptions was created to preserve backwards compatibility but
+  // should not be supported in v3
+
+  var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
+      layerOptions = _useContext.layer;
+
   var anchorRef = (0, _react.useRef)();
   var containerRef = (0, _react.useRef)();
   var layerRef = (0, _react.useRef)();
@@ -172,8 +179,11 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,
     background: background,
-    elevation: theme.layer.container.elevation,
-    id: id,
+    elevation: theme.layer.container.elevation // layerOptions was created to preserve backwards compatibility but
+    // should not be supported in v3. In v3, this should always be
+    // ${id}__container
+    ,
+    id: layerOptions && layerOptions.singleId ? id + "__container" : id,
     full: full,
     margin: margin,
     modal: modal

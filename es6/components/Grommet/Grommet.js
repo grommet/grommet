@@ -13,6 +13,7 @@ import { deepMerge, backgroundIsDark, getBreakpoint, getDeviceBreakpoint, normal
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 var FullGlobalStyle = createGlobalStyle(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
@@ -40,13 +41,16 @@ var deviceResponsive = function deviceResponsive(userAgent, theme) {
   return undefined;
 };
 
+var defaultOptions = {};
 var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   var children = props.children,
       full = props.full,
       _props$containerTarge = props.containerTarget,
       containerTarget = _props$containerTarge === void 0 ? typeof document === 'object' ? document.body : undefined : _props$containerTarge,
       themeProp = props.theme,
-      rest = _objectWithoutPropertiesLoose(props, ["children", "full", "containerTarget", "theme"]);
+      _props$options = props.options,
+      options = _props$options === void 0 ? defaultOptions : _props$options,
+      rest = _objectWithoutPropertiesLoose(props, ["children", "full", "containerTarget", "theme", "options"]);
 
   var background = props.background,
       dir = props.dir,
@@ -103,11 +107,13 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     value: [grommetRef.current]
   }, /*#__PURE__*/React.createElement(ContainerTargetContext.Provider, {
     value: containerTarget
+  }, /*#__PURE__*/React.createElement(OptionsContext.Provider, {
+    value: options
   }, /*#__PURE__*/React.createElement(StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null)))));
+  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null))))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

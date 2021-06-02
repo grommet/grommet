@@ -8,6 +8,7 @@ import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
@@ -36,7 +37,12 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  var size = useContext(ResponsiveContext);
+  var size = useContext(ResponsiveContext); // layerOptions was created to preserve backwards compatibility but
+  // should not be supported in v3
+
+  var _useContext = useContext(OptionsContext),
+      layerOptions = _useContext.layer;
+
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
@@ -152,8 +158,11 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     background: background,
-    elevation: theme.layer.container.elevation,
-    id: id,
+    elevation: theme.layer.container.elevation // layerOptions was created to preserve backwards compatibility but
+    // should not be supported in v3. In v3, this should always be
+    // ${id}__container
+    ,
+    id: layerOptions && layerOptions.singleId ? id + "__container" : id,
     full: full,
     margin: margin,
     modal: modal

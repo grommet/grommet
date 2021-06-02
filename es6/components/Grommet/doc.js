@@ -7,6 +7,11 @@ export var doc = function doc(Grommet) {
     background: backgroundDoc,
     dir: PropTypes.oneOf(['rtl']).description('Layout direction for right to left contexts'),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]).description("Whether to take the whole viewport. 'min' indicates it should\n        take at minimum the whole viewport, allowing the viewport to\n        control scrolling.").defaultValue(false),
+    options: PropTypes.shape({
+      layer: PropTypes.shape({
+        singleId: PropTypes.bool
+      })
+    }).description("Provides a way to assign a unique id to a single DOM node. Currently, \n        this is only supported for Layer. This prop was created to preserve \n        backwards compatibility with existing behavior by allowing users to \n        opt-in to newer behavior.").defaultValue(undefined),
     plain: PropTypes.bool.description("Whether or not Grommet should apply a global font-family, font-size,\n        and line-height.").defaultValue(false),
     cssVars: PropTypes.bool.description('Whether to expose the css variables.').defaultValue(false),
     theme: PropTypes.object.description('Custom styles for Grommet app component.'),

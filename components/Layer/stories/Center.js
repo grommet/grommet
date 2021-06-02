@@ -39,6 +39,11 @@ var CenterLayer = function CenterLayer() {
   };
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    options: {
+      layer: {
+        singleId: true
+      }
+    },
     theme: _themes.grommet,
     full: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -51,6 +56,7 @@ var CenterLayer = function CenterLayer() {
     onClick: onOpen,
     plain: true
   })), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+    id: "hello world",
     position: "center",
     onClickOutside: onClose,
     onEsc: onClose
