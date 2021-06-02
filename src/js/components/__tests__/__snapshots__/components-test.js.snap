@@ -5092,6 +5092,20 @@ min",
         "name": "full",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.",
+        "format": "{
+  layer: 
+    {
+      singleId: boolean
+    }
+}",
+        "name": "options",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether or not Grommet should apply a global font-family, font-size,
         and line-height.",
