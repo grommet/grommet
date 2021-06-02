@@ -181,7 +181,16 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   if (connectionPoints) {
     paths = connections.map(
       (
-        { anchor, color, offset, round, thickness, type, ...connectionRest },
+        {
+          anchor,
+          animation,
+          color,
+          offset,
+          round,
+          thickness,
+          type,
+          ...connectionRest
+        },
         index,
       ) => {
         let path;
@@ -189,6 +198,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
         delete cleanedRest.fromTarget;
         delete cleanedRest.toTarget;
         const points = connectionPoints[index];
+
         if (points) {
           const offsetWidth = offset
             ? parseMetricToNum(theme.global.edgeSize[offset])
@@ -211,21 +221,37 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
-          path = (
-            <path
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              {...cleanedRest}
-              stroke={normalizeColor(colorName, theme)}
-              strokeWidth={strokeWidth}
-              strokeLinecap={round ? 'round' : 'butt'}
-              strokeLinejoin={round ? 'round' : 'miter'}
-              fill="none"
-              d={d}
-            />
-          );
+          if (animation) {
+            path = (
+              <path
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                animation={animation}
+                {...cleanedRest}
+                stroke={normalizeColor(colorName, theme)}
+                strokeWidth={strokeWidth}
+                strokeLinecap={round ? 'round' : 'butt'}
+                strokeLinejoin={round ? 'round' : 'miter'}
+                fill="none"
+                d={d}
+              />
+            );
+          } else {
+            path = (
+              <path
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                {...cleanedRest}
+                stroke={normalizeColor(colorName, theme)}
+                strokeWidth={strokeWidth}
+                strokeLinecap={round ? 'round' : 'butt'}
+                strokeLinejoin={round ? 'round' : 'miter'}
+                fill="none"
+                d={d}
+              />
+            );
+          }
         }
-
         return path;
       },
     );
@@ -236,6 +262,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       ref={svgRef}
       viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
       preserveAspectRatio="xMinYMin meet"
+      connections={paths}
       {...rest}
     >
       <g>{paths}</g>

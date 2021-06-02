@@ -116,6 +116,7 @@ export const animationEnding = type => {
 
 export const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
+
   if (bounds) {
     const animationTransition = css`
       from {

@@ -51,7 +51,11 @@ export const Progressing = () => {
 
   if (topRow.length >= 3) {
     connections.push(
-      connection('3', '5', { anchor: 'horizontal', color: 'brand' }),
+      connection('3', '5', {
+        anchor: 'horizontal',
+        animation: { type: 'pulse', duration: 500, size: 'small' },
+        color: 'brand',
+      }),
     );
   }
 
@@ -72,7 +76,10 @@ export const Progressing = () => {
               ))}
             </Box>
           </Box>
-          <Diagram animation connections={connections} />
+          <Diagram
+            animation={{ type: 'draw', duration: 2000 }}
+            connections={connections}
+          />
         </Stack>
       </Box>
     </Grommet>
