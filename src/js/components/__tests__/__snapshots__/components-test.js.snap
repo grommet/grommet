@@ -5896,6 +5896,15 @@ end
         "name": "onClickItem",
       },
       Object {
+        "description": "Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.",
+        "format": "function",
+        "name": "onOrder",
+      },
+      Object {
         "description": "Item padding.",
         "format": "none
 xxsmall
@@ -6127,6 +6136,14 @@ large
 xlarge
 string",
         "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
       },
       Object {
         "description": "What text to put in the input. The caller should ensure that it

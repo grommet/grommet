@@ -135,6 +135,16 @@ xlarge
 string
 ```
 
+**textAlign**
+
+How to align the text inside the input. Defaults to `start`.
+
+```
+start
+center
+end
+```
+
 **value**
 
 What text to put in the input. The caller should ensure that it

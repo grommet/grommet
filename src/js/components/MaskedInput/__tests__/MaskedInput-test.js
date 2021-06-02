@@ -428,4 +428,14 @@ describe('MaskedInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('textAlign end', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput value="1234" textAlign="end" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
