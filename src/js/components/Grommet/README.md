@@ -69,6 +69,22 @@ boolean
 min
 ```
 
+**options**
+
+Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.
+
+```
+{
+  layer: 
+    {
+      singleId: boolean
+    }
+}
+```
+
 **plain**
 
 Whether or not Grommet should apply a global font-family, font-size,
