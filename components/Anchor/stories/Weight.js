@@ -32,15 +32,15 @@ var WeightAnchor = function WeightAnchor() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#",
     label: "Anchor weight 200",
-    weight: "200"
+    weight: 200
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#",
     label: "Anchor weight 400",
-    weight: "400"
+    weight: 400
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
     href: "#",
     label: "Anchor weight 600",
-    weight: "600"
+    weight: 600
   })));
 };
 

@@ -109,15 +109,13 @@ var RoundLayer = function RoundLayer() {
 };
 
 exports.RoundLayer = RoundLayer;
-RoundLayer.story = {
-  name: 'Border Radius',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+RoundLayer.storyName = 'Border Radius';
+RoundLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
 var _default = {
-  title: 'Layout/Layer/Round'
+  title: 'Layout/Layer/Border Radius'
 };
 exports["default"] = _default;

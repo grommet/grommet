@@ -94,14 +94,12 @@ export var RoundLayer = function RoundLayer() {
     onClick: onClose
   }), /*#__PURE__*/React.createElement(Text, null, "Hi, I am a Layer!"))));
 };
-RoundLayer.story = {
-  name: 'Border Radius',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+RoundLayer.storyName = 'Border Radius';
+RoundLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
 export default {
-  title: 'Layout/Layer/Round'
+  title: 'Layout/Layer/Border Radius'
 };
