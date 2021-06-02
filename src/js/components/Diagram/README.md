@@ -109,6 +109,23 @@ svg
 ```
 ## Theme
   
+**diagram.animation**
+
+The animation configuration for Diagram. Expects `object`.
+
+Defaults to
+
+```
+{
+      pulse: {
+        duration: '2s',
+      },     
+      draw: {
+        duration: '0.1s',
+      },
+    }
+```
+
 **diagram.extend**
 
 Any additional style for Diagram. Expects `string | (props) => {}`.
@@ -127,21 +144,6 @@ Defaults to
 
 ```
 accent-1
-```
-
-**global.animation**
-
-The animation configuration for Diagram. Expects `object`.
-
-Defaults to
-
-```
-{
-      duration: '1s',
-      draw: {
-        duration: '0.1s',
-      },
-    }
 ```
 
 **global.colors**

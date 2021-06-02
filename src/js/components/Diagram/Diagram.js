@@ -221,36 +221,20 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
-          if (animation) {
-            path = (
-              <path
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                animation={animation}
-                {...cleanedRest}
-                stroke={normalizeColor(colorName, theme)}
-                strokeWidth={strokeWidth}
-                strokeLinecap={round ? 'round' : 'butt'}
-                strokeLinejoin={round ? 'round' : 'miter'}
-                fill="none"
-                d={d}
-              />
-            );
-          } else {
-            path = (
-              <path
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                {...cleanedRest}
-                stroke={normalizeColor(colorName, theme)}
-                strokeWidth={strokeWidth}
-                strokeLinecap={round ? 'round' : 'butt'}
-                strokeLinejoin={round ? 'round' : 'miter'}
-                fill="none"
-                d={d}
-              />
-            );
-          }
+          path = (
+            <path
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              animation={animation ? animation : undefined}
+              {...cleanedRest}
+              stroke={normalizeColor(colorName, theme)}
+              strokeWidth={strokeWidth}
+              strokeLinecap={round ? 'round' : 'butt'}
+              strokeLinejoin={round ? 'round' : 'miter'}
+              fill="none"
+              d={d}
+            />
+          );
         }
         return path;
       },

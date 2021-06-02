@@ -39,7 +39,7 @@ export const Progressing = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       dispatch();
-    }, 2000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [dispatch]);
 
@@ -62,7 +62,11 @@ export const Progressing = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="start" pad="large">
-        <Text> Adding and removing nodes</Text>
+        <Text>
+          {' '}
+          Adding and removing nodes. This diagram uses the draw animation and
+          the last connection has its own animation using pulse.
+        </Text>
         <Stack>
           <Box>
             <Box direction="row">
@@ -77,7 +81,7 @@ export const Progressing = () => {
             </Box>
           </Box>
           <Diagram
-            animation={{ type: 'draw', duration: 2000 }}
+            animation={{ type: 'draw', duration: 3000 }}
             connections={connections}
           />
         </Stack>

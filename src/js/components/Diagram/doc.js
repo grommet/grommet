@@ -3,6 +3,23 @@ import { describe, PropTypes } from 'react-desc';
 import { colorPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
+const ANIMATION_PROP = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.oneOf(['pulse', 'draw']),
+  PropTypes.shape({
+    type: PropTypes.oneOf(['pulse', 'draw']),
+    delay: PropTypes.number,
+    duration: PropTypes.number,
+    size: PropTypes.oneOf([
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+    ]).description('Size is only applicable when using "pulse"'),
+  }),
+]);
+
 export const doc = Diagram => {
   const DocumentedDiagram = describe(Diagram)
     .availableAt(getAvailableAtBadge('Diagram', 'Visualizations'))
@@ -15,35 +32,13 @@ export const doc = Diagram => {
     .intrinsicElement('svg');
 
   DocumentedDiagram.propTypes = {
-    animation: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['pulse', 'draw']),
-      PropTypes.shape({
-        type: PropTypes.oneOf(['pulse', 'draw']),
-        delay: PropTypes.number,
-        duration: PropTypes.number,
-        size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      }),
-    ]).description('Animation to be used by entire Diagram'),
+    animation: ANIMATION_PROP.description(
+      'Animation to be used by entire Diagram',
+    ),
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-        animation: PropTypes.oneOfType([
-          PropTypes.bool,
-          PropTypes.oneOf(['pulse', 'draw']),
-          PropTypes.shape({
-            type: PropTypes.oneOf(['pulse', 'draw']),
-            delay: PropTypes.number,
-            duration: PropTypes.number,
-            size: PropTypes.oneOf([
-              'xsmall',
-              'small',
-              'medium',
-              'large',
-              'xlarge',
-            ]),
-          }),
-        ]),
+        animation: ANIMATION_PROP,
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
@@ -81,6 +76,18 @@ export const doc = Diagram => {
 };
 
 export const themeDoc = {
+  'diagram.animation': {
+    description: 'The animation configuration for Diagram.',
+    type: 'object',
+    defaultValue: `{
+      pulse: {
+        duration: '2s',
+      },     
+      draw: {
+        duration: '0.1s',
+      },
+    }`,
+  },
   'diagram.extend': {
     description: 'Any additional style for Diagram.',
     type: 'string | (props) => {}',
@@ -90,16 +97,6 @@ export const themeDoc = {
     description: 'The color of the connection line.',
     type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
-  },
-  'global.animation': {
-    description: 'The animation configuration for Diagram.',
-    type: 'object',
-    defaultValue: `{
-      duration: '1s',
-      draw: {
-        duration: '0.1s',
-      },
-    }`,
   },
   'global.colors': {
     description: 'Color options.',
