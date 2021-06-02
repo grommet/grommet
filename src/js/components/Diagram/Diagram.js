@@ -225,7 +225,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             <path
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              animation={animation ? animation : undefined}
+              animation={animation || undefined}
               {...cleanedRest}
               stroke={normalizeColor(colorName, theme)}
               strokeWidth={strokeWidth}
