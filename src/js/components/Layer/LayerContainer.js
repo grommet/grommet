@@ -11,6 +11,7 @@ import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -49,6 +50,9 @@ const LayerContainer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
+    // layerOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
+    const { layer: layerOptions } = useContext(OptionsContext);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -172,7 +176,10 @@ const LayerContainer = forwardRef(
         ref={ref || containerRef}
         background={background}
         elevation={theme.layer.container.elevation}
-        id={id}
+        // layerOptions was created to preserve backwards compatibility but
+        // should not be supported in v3. In v3, this should always be
+        // ${id}__container
+        id={layerOptions && layerOptions.singleId ? `${id}__container` : id}
         full={full}
         margin={margin}
         modal={modal}
