@@ -117,11 +117,12 @@ Defaults to
 
 ```
 {
+      duration: '1s',
       pulse: {
-        duration: '2s',
+        duration: 1000,
       },     
       draw: {
-        duration: '0.1s',
+        duration: 2000,
       },
     }
 ```

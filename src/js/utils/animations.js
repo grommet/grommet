@@ -126,13 +126,23 @@ export const animationObjectStyle = (animation, theme) => {
         ${bounds[1]};
       }
     `;
-    return css`${keyframes`${animationTransition}`}
-    ${normalizeTiming(
-      animation.duration,
-      (theme.global.animation[animation.type]
+
+    const defaultDuration = () => {
+      if (theme.diagram.animation !== undefined) {
+        return normalizeTiming(
+          theme.diagram.animation[animation.type]
+            ? theme.diagram.animation[animation.type].duration
+            : undefined,
+          theme.diagram.animation.duration,
+        );
+      }
+      return theme.global.animation[animation.type]
         ? theme.global.animation[animation.type].duration
-        : undefined) || theme.global.animation.duration,
-    )}
+        : theme.global.animation.duration;
+    };
+
+    return css`${keyframes`${animationTransition}`}
+    ${normalizeTiming(animation.duration, defaultDuration)}
     ${normalizeTiming(animation.delay, '0s')}
     ${animationEnding(animation.type)}`;
   }
