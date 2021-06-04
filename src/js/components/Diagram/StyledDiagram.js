@@ -16,14 +16,9 @@ const animationItemStyle = (animationType, theme) => {
   return '';
 };
 
-const availableAnimations = [true, 'draw', 'pulse'];
-
 const animationStyle = props => {
   const animationType = props.animation.type || props.animation;
 
-  if (!availableAnimations.includes(animationType)) {
-    return 'Not available for Diagram';
-  }
   if (animationType === 'draw' || animationType === true) {
     return css`
       path {
@@ -38,6 +33,8 @@ const animationStyle = props => {
   `;
 };
 
+const availableAnimations = [true, 'draw', 'pulse'];
+
 const connectionStyle = (connections, theme) =>
   connections.map((connection, index) => {
     if (connection !== undefined && connection.props.animation !== undefined) {
@@ -45,7 +42,7 @@ const connectionStyle = (connections, theme) =>
       const animationType = type || connection.props.animation;
 
       if (!availableAnimations.includes(animationType)) {
-        return 'Not available for Diagram';
+        return '';
       }
       if (animationType === 'draw' || animationType === true) {
         return css`
@@ -72,9 +69,14 @@ const StyledDiagram = styled.svg`
   width: 100%;
   height: 100%;
 
+  /* connection's animation comes first to override Diagram's animations */
   ${props =>
     props.connections && connectionStyle(props.connections, props.theme)}
-  ${props => props.animation && animationStyle(props)}
+  ${props =>
+    props.animation &&
+    availableAnimations.includes(props.animation.type || props.animation)
+      ? animationStyle(props)
+      : ''}
   ${props => props.theme.diagram && props.theme.diagram.extend};
 `;
 

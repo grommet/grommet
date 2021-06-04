@@ -63,7 +63,6 @@ export const Progressing = () => {
     <Grommet theme={grommet}>
       <Box align="start" pad="large">
         <Text>
-          {' '}
           Adding and removing nodes. This diagram uses the draw animation and
           the last connection has its own animation using pulse.
         </Text>

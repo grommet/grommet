@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { colorPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-const ANIMATION_PROP = PropTypes.oneOfType([
+const animationPropType = PropTypes.oneOfType([
   PropTypes.bool,
   PropTypes.oneOf(['pulse', 'draw']),
   PropTypes.shape({
@@ -32,13 +32,13 @@ export const doc = Diagram => {
     .intrinsicElement('svg');
 
   DocumentedDiagram.propTypes = {
-    animation: ANIMATION_PROP.description(
+    animation: animationPropType.description(
       'Animation to be used by entire Diagram',
     ),
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-        animation: ANIMATION_PROP,
+        animation: animationPropType,
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
