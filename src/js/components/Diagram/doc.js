@@ -77,10 +77,9 @@ export const doc = Diagram => {
 
 export const themeDoc = {
   'diagram.animation': {
-    description: 'The animation configuration for Diagram.',
+    description: 'Any animation specific configuration for Diagram.',
     type: 'object',
-    defaultValue: `{
-      duration: '1s',
+    defaultValue: `{      
       pulse: {
         duration: 1000,
       },     
@@ -98,6 +97,13 @@ export const themeDoc = {
     description: 'The color of the connection line.',
     type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
+  },
+  'global.animation': {
+    description: 'The animation configuration for Diagram.',
+    type: 'string',
+    defaultValue: `{
+      duration: '1s'
+    }`,
   },
   'global.colors': {
     description: 'Color options.',

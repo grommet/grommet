@@ -111,13 +111,12 @@ svg
   
 **diagram.animation**
 
-The animation configuration for Diagram. Expects `object`.
+Any animation specific configuration for Diagram. Expects `object`.
 
 Defaults to
 
 ```
-{
-      duration: '1s',
+{      
       pulse: {
         duration: 1000,
       },     
@@ -145,6 +144,18 @@ Defaults to
 
 ```
 accent-1
+```
+
+**global.animation**
+
+The animation configuration for Diagram. Expects `string`.
+
+Defaults to
+
+```
+{
+      duration: '1s'
+    }
 ```
 
 **global.colors**
