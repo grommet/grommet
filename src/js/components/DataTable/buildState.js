@@ -84,12 +84,34 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
-    const before = direction === 'asc' ? 1 : -1;
-    const after = direction === 'asc' ? -1 : 1;
+    const sortAsc = direction === 'asc';
+    const before = sortAsc ? 1 : -1;
+    const after = sortAsc ? -1 : 1;
     result.sort((d1, d2) => {
-      if (datumValue(d1, property) > datumValue(d2, property)) return before;
-      if (datumValue(d1, property) < datumValue(d2, property)) return after;
-      return 0;
+      const d1Val = datumValue(d1, property);
+      const d2Val = datumValue(d2, property);
+      const d1IsString = typeof d1Val === 'string';
+      const d2IsString = typeof d2Val === 'string';
+      const d1ValProc = d1IsString ? d1Val.toLowerCase() : d1Val;
+      const d2ValProc = d2IsString ? d2Val.toLowerCase() : d2Val;
+      switch (true) {
+        case d1IsString && d2IsString:
+          if (sortAsc) {
+            return d1ValProc.localeCompare(d2ValProc, undefined, {
+              sensitivity: 'base',
+            });
+          }
+          return d2ValProc.localeCompare(d1ValProc, undefined, {
+            sensitivity: 'base',
+          });
+
+        case d1ValProc > d2ValProc:
+          return before;
+        case d1ValProc < d2ValProc:
+          return after;
+        default:
+          return 0;
+      }
     });
   }
 

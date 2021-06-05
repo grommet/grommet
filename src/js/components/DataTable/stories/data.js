@@ -71,6 +71,27 @@ for (let i = 0; i < 40; i += 1) {
 
 export const DATA = [
   {
+    name: 'zoey',
+    location: '',
+    date: '',
+    percent: 0,
+    paid: 0,
+  },
+  {
+    name: 'aaron',
+    location: '',
+    date: '',
+    percent: 0,
+    paid: 0,
+  },
+  {
+    name: 'Zelda',
+    location: '',
+    date: '',
+    percent: 0,
+    paid: 0,
+  },
+  {
     name: 'Alan',
     location: '',
     date: '',
