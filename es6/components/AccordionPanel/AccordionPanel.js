@@ -112,6 +112,9 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, label)) : label, AccordionIcon && /*#__PURE__*/React.createElement(Box, {
     pad: {
       horizontal: 'small'
+    },
+    width: {
+      min: 'fit-content'
     }
   }, /*#__PURE__*/React.createElement(AccordionIcon, {
     color: iconColor
