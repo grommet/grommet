@@ -25,12 +25,18 @@ for (let i = 0; i < 40; i += 1) {
 
 export const OnClickItemList = () => {
   const [clicked, setClicked] = React.useState();
+
+  const handleClick = event => {
+    setClicked(event.item);
+    alert('Modal Example');
+  };
+
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large" gap="large">
         <List
           data={data.slice(0, 10)}
-          onClickItem={event => setClicked(event.item)}
+          onClickItem={event => handleClick(event.item)}
         />
 
         {clicked && JSON.stringify(clicked, null, 2)}
