@@ -288,6 +288,17 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**checkBox.hover.background.color**
+
+The background color of the Box surrounding the RadioButton 
+    when hovered over. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **checkBox.icon.size**
 
 The size of the checked icon. Expects `string`.

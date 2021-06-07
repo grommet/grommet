@@ -25,6 +25,16 @@ export const doc = Grommet => {
         control scrolling.`,
       )
       .defaultValue(false),
+    options: PropTypes.shape({
+      layer: PropTypes.shape({ singleId: PropTypes.bool }),
+    })
+      .description(
+        `Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.`,
+      )
+      .defaultValue(undefined),
     plain: PropTypes.bool
       .description(
         `Whether or not Grommet should apply a global font-family, font-size,

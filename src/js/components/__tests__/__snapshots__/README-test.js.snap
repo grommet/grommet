@@ -5332,6 +5332,17 @@ Defaults to
 { dark: 'white', light: 'black' }
 \`\`\`
 
+**checkBox.hover.background.color**
+
+The background color of the Box surrounding the RadioButton 
+    when hovered over. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **checkBox.icon.size**
 
 The size of the checked icon. Expects \`string\`.
@@ -10880,6 +10891,22 @@ boolean
 min
 \`\`\`
 
+**options**
+
+Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.
+
+\`\`\`
+{
+  layer: 
+    {
+      singleId: boolean
+    }
+}
+\`\`\`
+
 **plain**
 
 Whether or not Grommet should apply a global font-family, font-size,
@@ -12415,6 +12442,18 @@ When supplied, this function will be called with an event object that
 function
 \`\`\`
 
+**onOrder**
+
+Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.
+
+\`\`\`
+function
+\`\`\`
+
 **pad**
 
 Item padding.
@@ -12609,6 +12648,28 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**list.icons.down**
+
+The icon to use for the move down button
+    in re-ordable lists. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+FormDown
+\`\`\`
+
+**list.icons.up**
+
+The icon to use for the move up button
+    in re-ordable lists. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+FormUp
 \`\`\`
 
 **list.item.background**
@@ -12852,6 +12913,16 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**textAlign**
+
+How to align the text inside the input. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
 \`\`\`
 
 **value**
