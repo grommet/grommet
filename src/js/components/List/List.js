@@ -147,6 +147,7 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
+    const [lastActive, setLastActive] = useState();
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -157,22 +158,6 @@ const List = React.forwardRef(
       // let any specifications from paginate prop override component
       ...paginate,
     });
-
-    // const handleClickOutside = (event, item, index) => {
-    //   // WIP: As user stated in thread,
-    //   // we should disable the active styling if user clicks out
-    //   if (listRef.current && !listRef.current.contains(event.target)) {
-    //     // User clicked outside of the list
-    //   }
-    //   event.persist();
-    //   const adjustedEvent = event;
-    //   adjustedEvent.item = item;
-    //   adjustedEvent.index = index;
-    //   onClickItem(adjustedEvent);
-    //   // put focus on the List container to meet WCAG
-    //   // accessibility guidelines that focus remains on `ul`
-    //   listRef.current.focus();
-    // };
 
     const Container = paginate ? StyledContainer : Fragment;
     const containterProps = paginate ? { ...theme.list.container } : undefined;
@@ -370,14 +355,20 @@ const List = React.forwardRef(
                       // accessibility guidelines that focus remains on `ul`
                       listRef.current.focus();
                     },
-                    onMouseOver: () => setActive(index),
-                    onMouseOut: () => setActive(index),
+                    onMouseOver: () => {
+                      setLastActive(undefined);
+                      setActive(index);
+                    },
+                    onMouseOut: () => {
+                      setActive(lastActive);
+                    },
                     onFocus: () => {
                       setActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
-                      setActive(index);
+                      setLastActive(active);
+                      setActive(undefined);
                       setItemFocus(false);
                     },
                   };

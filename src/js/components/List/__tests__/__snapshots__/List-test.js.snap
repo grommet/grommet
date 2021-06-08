@@ -1937,7 +1937,6 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <ul
-    aria-activedescendant="1"
     class="List__StyledList-sc-130gdqg-0 cZBHzF"
     role="listbox"
     tabindex="0"
@@ -1950,7 +1949,7 @@ exports[`List events focus and blur 2`] = `
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fMGZPN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
@@ -2123,7 +2122,6 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <ul
-    aria-activedescendant="1"
     class="List__StyledList-sc-130gdqg-0 cZBHzF"
     role="listbox"
     tabindex="0"
@@ -2136,7 +2134,7 @@ exports[`List events mouse events 2`] = `
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fMGZPN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
       role="option"
       tabindex="-1"
     >
