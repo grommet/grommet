@@ -44,6 +44,7 @@ const Row = memo(
       <StyledDataTableRow
         ref={rowRef}
         size={size}
+        tabIndex={-1}
         active={active}
         onClick={
           onClickRow

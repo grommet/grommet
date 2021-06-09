@@ -164,6 +164,7 @@ const DataTable = ({
   const footerRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
+  // const [lastActive, setLastActive] = useState();
 
   // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);

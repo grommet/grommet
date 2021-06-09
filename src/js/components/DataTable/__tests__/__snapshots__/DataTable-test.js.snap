@@ -146,6 +146,7 @@ exports[`DataTable !primaryKey 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -176,6 +177,7 @@ exports[`DataTable !primaryKey 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -398,6 +400,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -429,6 +432,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -628,6 +632,7 @@ exports[`DataTable aggregate 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -659,6 +664,7 @@ exports[`DataTable aggregate 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -900,6 +906,7 @@ exports[`DataTable aggregate with nested object 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -944,6 +951,7 @@ exports[`DataTable aggregate with nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1252,6 +1260,7 @@ exports[`DataTable background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1283,6 +1292,7 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1386,6 +1396,7 @@ exports[`DataTable background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1417,6 +1428,7 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -1520,6 +1532,7 @@ exports[`DataTable background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -1551,6 +1564,7 @@ exports[`DataTable background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -1765,6 +1779,7 @@ exports[`DataTable basic 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1796,6 +1811,7 @@ exports[`DataTable basic 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -1996,6 +2012,7 @@ exports[`DataTable border 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c3 "
@@ -2027,6 +2044,7 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c3 "
@@ -2130,6 +2148,7 @@ exports[`DataTable border 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -2161,6 +2180,7 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -2264,6 +2284,7 @@ exports[`DataTable border 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c10 "
@@ -2295,6 +2316,7 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c10 "
@@ -2398,6 +2420,7 @@ exports[`DataTable border 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c10 "
@@ -2429,6 +2452,7 @@ exports[`DataTable border 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c10 "
@@ -2634,6 +2658,7 @@ exports[`DataTable click 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -2652,6 +2677,7 @@ exports[`DataTable click 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -2708,6 +2734,7 @@ exports[`DataTable click 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 jOATMa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -2726,6 +2753,7 @@ exports[`DataTable click 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 jOATMa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -3313,6 +3341,7 @@ exports[`DataTable custom theme 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c19"
@@ -3377,6 +3406,7 @@ exports[`DataTable custom theme 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c19"
@@ -3501,6 +3531,7 @@ exports[`DataTable custom theme 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -3565,6 +3596,7 @@ exports[`DataTable custom theme 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -3856,6 +3888,7 @@ exports[`DataTable fill 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -3887,6 +3920,7 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -3990,6 +4024,7 @@ exports[`DataTable fill 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -4021,6 +4056,7 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -4124,6 +4160,7 @@ exports[`DataTable fill 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -4155,6 +4192,7 @@ exports[`DataTable fill 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -4382,6 +4420,7 @@ exports[`DataTable footer 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -4413,6 +4452,7 @@ exports[`DataTable footer 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -6380,6 +6420,7 @@ exports[`DataTable groupBy toggle 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -6411,6 +6452,7 @@ exports[`DataTable groupBy toggle 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -6442,6 +6484,7 @@ exports[`DataTable groupBy toggle 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -6473,6 +6516,7 @@ exports[`DataTable groupBy toggle 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -7127,6 +7171,7 @@ exports[`DataTable groupBy toggle 3`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c1 "
@@ -7158,6 +7203,7 @@ exports[`DataTable groupBy toggle 3`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c1 "
@@ -7189,6 +7235,7 @@ exports[`DataTable groupBy toggle 3`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c1 "
@@ -7220,6 +7267,7 @@ exports[`DataTable groupBy toggle 3`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c1 "
@@ -11032,6 +11080,7 @@ exports[`DataTable onSort 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -11063,6 +11112,7 @@ exports[`DataTable onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -11094,6 +11144,7 @@ exports[`DataTable onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -11272,6 +11323,7 @@ exports[`DataTable onSort 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -11303,6 +11355,7 @@ exports[`DataTable onSort 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -11334,6 +11387,7 @@ exports[`DataTable onSort 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -11681,6 +11735,7 @@ exports[`DataTable onSort external 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -11712,6 +11767,7 @@ exports[`DataTable onSort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -11743,6 +11799,7 @@ exports[`DataTable onSort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -11900,6 +11957,7 @@ exports[`DataTable onSort external 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -11931,6 +11989,7 @@ exports[`DataTable onSort external 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -11962,6 +12021,7 @@ exports[`DataTable onSort external 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -12203,6 +12263,7 @@ exports[`DataTable pad 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -12234,6 +12295,7 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -12337,6 +12399,7 @@ exports[`DataTable pad 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -12368,6 +12431,7 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -12471,6 +12535,7 @@ exports[`DataTable pad 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -12502,6 +12567,7 @@ exports[`DataTable pad 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c12 "
@@ -12716,6 +12782,7 @@ exports[`DataTable paths 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -12747,6 +12814,7 @@ exports[`DataTable paths 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -13020,6 +13088,7 @@ exports[`DataTable pin + background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13051,6 +13120,7 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13154,6 +13224,7 @@ exports[`DataTable pin + background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13185,6 +13256,7 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13288,6 +13360,7 @@ exports[`DataTable pin + background 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13319,6 +13392,7 @@ exports[`DataTable pin + background 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -13705,6 +13779,7 @@ exports[`DataTable pin + background context 1`] = `
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -13736,6 +13811,7 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -13843,6 +13919,7 @@ exports[`DataTable pin + background context 1`] = `
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -13874,6 +13951,7 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -13981,6 +14059,7 @@ exports[`DataTable pin + background context 1`] = `
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -14012,6 +14091,7 @@ exports[`DataTable pin + background context 1`] = `
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          tabindex="-1"
         >
           <th
             class="c10 c11"
@@ -14284,6 +14364,7 @@ exports[`DataTable pin 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14315,6 +14396,7 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14418,6 +14500,7 @@ exports[`DataTable pin 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14449,6 +14532,7 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14552,6 +14636,7 @@ exports[`DataTable pin 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14583,6 +14668,7 @@ exports[`DataTable pin 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 c10"
@@ -14844,6 +14930,7 @@ exports[`DataTable placeholder 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -14875,6 +14962,7 @@ exports[`DataTable placeholder 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -14992,6 +15080,7 @@ exports[`DataTable placeholder 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -15023,6 +15112,7 @@ exports[`DataTable placeholder 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -15218,6 +15308,7 @@ exports[`DataTable primaryKey 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -15249,6 +15340,7 @@ exports[`DataTable primaryKey 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -15472,6 +15564,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -15503,6 +15596,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -15707,6 +15801,7 @@ exports[`DataTable replace 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -15738,6 +15833,7 @@ exports[`DataTable replace 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c7 "
@@ -16125,6 +16221,7 @@ exports[`DataTable resizeable 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c16 "
@@ -16156,6 +16253,7 @@ exports[`DataTable resizeable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c16 "
@@ -16499,6 +16597,7 @@ exports[`DataTable rowDetails 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -16556,6 +16655,7 @@ exports[`DataTable rowDetails 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -16628,6 +16728,7 @@ exports[`DataTable rowDetails 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -16685,6 +16786,7 @@ exports[`DataTable rowDetails 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -17054,6 +17156,7 @@ exports[`DataTable rowDetails condtional 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -17111,6 +17214,7 @@ exports[`DataTable rowDetails condtional 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -17186,6 +17290,7 @@ exports[`DataTable rowDetails condtional 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -17243,6 +17348,7 @@ exports[`DataTable rowDetails condtional 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c8"
@@ -17480,6 +17586,7 @@ exports[`DataTable rowProps 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c7 "
@@ -17511,6 +17618,7 @@ exports[`DataTable rowProps 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c10 "
@@ -17874,6 +17982,7 @@ exports[`DataTable search 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -17892,6 +18001,7 @@ exports[`DataTable search 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -17910,6 +18020,7 @@ exports[`DataTable search 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -18089,6 +18200,7 @@ exports[`DataTable search 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -18469,6 +18581,7 @@ exports[`DataTable select 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c15"
@@ -18524,6 +18637,7 @@ exports[`DataTable select 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <td
           class="c15"
@@ -18661,6 +18775,7 @@ exports[`DataTable select 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -18716,6 +18831,7 @@ exports[`DataTable select 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -19428,6 +19544,7 @@ exports[`DataTable should apply pagination styling 1`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19459,6 +19576,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19490,6 +19608,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19521,6 +19640,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19552,6 +19672,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19583,6 +19704,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19614,6 +19736,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19645,6 +19768,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19676,6 +19800,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19707,6 +19832,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19738,6 +19864,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19769,6 +19896,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19800,6 +19928,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19831,6 +19960,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19862,6 +19992,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19893,6 +20024,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19924,6 +20056,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19955,6 +20088,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -19986,6 +20120,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20017,6 +20152,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20048,6 +20184,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20079,6 +20216,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20110,6 +20248,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20141,6 +20280,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20172,6 +20312,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20203,6 +20344,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20234,6 +20376,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20265,6 +20408,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20296,6 +20440,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20327,6 +20472,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20358,6 +20504,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20389,6 +20536,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20420,6 +20568,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20451,6 +20600,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20482,6 +20632,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20513,6 +20664,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20544,6 +20696,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20575,6 +20728,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20606,6 +20760,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20637,6 +20792,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20668,6 +20824,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20699,6 +20856,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20730,6 +20888,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20761,6 +20920,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20792,6 +20952,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20823,6 +20984,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20854,6 +21016,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20885,6 +21048,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20916,6 +21080,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -20947,6 +21112,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -21427,6 +21593,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -21458,6 +21625,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -21489,6 +21657,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22152,6 +22321,7 @@ exports[`DataTable should paginate 1`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22183,6 +22353,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22214,6 +22385,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22245,6 +22417,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22276,6 +22449,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22307,6 +22481,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22338,6 +22513,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22369,6 +22545,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22400,6 +22577,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22431,6 +22609,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22462,6 +22641,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22493,6 +22673,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22524,6 +22705,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22555,6 +22737,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22586,6 +22769,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22617,6 +22801,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22648,6 +22833,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22679,6 +22865,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22710,6 +22897,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22741,6 +22929,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22772,6 +22961,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22803,6 +22993,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22834,6 +23025,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22865,6 +23057,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22896,6 +23089,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22927,6 +23121,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22958,6 +23153,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -22989,6 +23185,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23020,6 +23217,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23051,6 +23249,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23082,6 +23281,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23113,6 +23313,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23144,6 +23345,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23175,6 +23377,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23206,6 +23409,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23237,6 +23441,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23268,6 +23473,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23299,6 +23505,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23330,6 +23537,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23361,6 +23569,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23392,6 +23601,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23423,6 +23633,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23454,6 +23665,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23485,6 +23697,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23516,6 +23729,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23547,6 +23761,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23578,6 +23793,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23609,6 +23825,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23640,6 +23857,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -23671,6 +23889,7 @@ exports[`DataTable should paginate 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24440,6 +24659,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24471,6 +24691,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24502,6 +24723,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24533,6 +24755,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24564,6 +24787,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24595,6 +24819,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24626,6 +24851,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24657,6 +24883,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24688,6 +24915,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24719,6 +24947,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24750,6 +24979,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24781,6 +25011,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24812,6 +25043,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -24843,6 +25075,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25682,6 +25915,7 @@ exports[`DataTable should render new data when page changes 1`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25713,6 +25947,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25744,6 +25979,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25775,6 +26011,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25806,6 +26043,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25837,6 +26075,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25868,6 +26107,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25899,6 +26139,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25930,6 +26171,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25961,6 +26203,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -25992,6 +26235,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26023,6 +26267,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26054,6 +26299,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26085,6 +26331,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26116,6 +26363,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26147,6 +26395,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26178,6 +26427,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26209,6 +26459,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26240,6 +26491,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26271,6 +26523,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26302,6 +26555,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26333,6 +26587,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26364,6 +26619,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26395,6 +26651,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26426,6 +26683,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26457,6 +26715,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26488,6 +26747,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26519,6 +26779,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26550,6 +26811,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26581,6 +26843,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26612,6 +26875,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26643,6 +26907,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26674,6 +26939,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26705,6 +26971,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26736,6 +27003,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26767,6 +27035,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26798,6 +27067,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26829,6 +27099,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26860,6 +27131,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26891,6 +27163,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26922,6 +27195,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26953,6 +27227,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -26984,6 +27259,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27015,6 +27291,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27046,6 +27323,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27077,6 +27355,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27108,6 +27387,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27139,6 +27419,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27170,6 +27451,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27201,6 +27483,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -27397,6 +27680,7 @@ exports[`DataTable should render new data when page changes 2`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27428,6 +27712,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27459,6 +27744,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27490,6 +27776,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27521,6 +27808,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27552,6 +27840,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27583,6 +27872,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27614,6 +27904,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27645,6 +27936,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27676,6 +27968,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27707,6 +28000,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27738,6 +28032,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27769,6 +28064,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27800,6 +28096,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27831,6 +28128,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27862,6 +28160,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27893,6 +28192,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27924,6 +28224,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27955,6 +28256,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -27986,6 +28288,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28017,6 +28320,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28048,6 +28352,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28079,6 +28384,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28110,6 +28416,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28141,6 +28448,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28172,6 +28480,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28203,6 +28512,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28234,6 +28544,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28265,6 +28576,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28296,6 +28608,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28327,6 +28640,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28358,6 +28672,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28389,6 +28704,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28420,6 +28736,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28451,6 +28768,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28482,6 +28800,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28513,6 +28832,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28544,6 +28864,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28575,6 +28896,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28606,6 +28928,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28637,6 +28960,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28668,6 +28992,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28699,6 +29024,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28730,6 +29056,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -28761,6 +29088,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+            tabindex="-1"
           >
             <th
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -29519,6 +29847,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29550,6 +29879,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29581,6 +29911,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29612,6 +29943,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29643,6 +29975,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29674,6 +30007,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29705,6 +30039,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29736,6 +30071,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29767,6 +30103,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29798,6 +30135,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29829,6 +30167,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29860,6 +30199,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29891,6 +30231,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29922,6 +30263,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29953,6 +30295,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -29984,6 +30327,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30015,6 +30359,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30046,6 +30391,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30077,6 +30423,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30108,6 +30455,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30139,6 +30487,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30170,6 +30519,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30201,6 +30551,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30232,6 +30583,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30263,6 +30615,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30294,6 +30647,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30325,6 +30679,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30356,6 +30711,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30387,6 +30743,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30418,6 +30775,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30449,6 +30807,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30480,6 +30839,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30511,6 +30871,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30542,6 +30903,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30573,6 +30935,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30604,6 +30967,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30635,6 +30999,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30666,6 +31031,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30697,6 +31063,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30728,6 +31095,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30759,6 +31127,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30790,6 +31159,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30821,6 +31191,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30852,6 +31223,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30883,6 +31255,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30914,6 +31287,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30945,6 +31319,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -30976,6 +31351,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31007,6 +31383,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31038,6 +31415,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31789,6 +32167,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31820,6 +32199,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31851,6 +32231,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31882,6 +32263,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31913,6 +32295,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31944,6 +32327,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -31975,6 +32359,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32006,6 +32391,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32037,6 +32423,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32068,6 +32455,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32099,6 +32487,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32130,6 +32519,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32161,6 +32551,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32192,6 +32583,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32223,6 +32615,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32254,6 +32647,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32285,6 +32679,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32316,6 +32711,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32347,6 +32743,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32378,6 +32775,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32409,6 +32807,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32440,6 +32839,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32471,6 +32871,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32502,6 +32903,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32533,6 +32935,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32564,6 +32967,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32595,6 +32999,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32626,6 +33031,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32657,6 +33063,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32688,6 +33095,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32719,6 +33127,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32750,6 +33159,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32781,6 +33191,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32812,6 +33223,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32843,6 +33255,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32874,6 +33287,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32905,6 +33319,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32936,6 +33351,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32967,6 +33383,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -32998,6 +33415,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33029,6 +33447,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33060,6 +33479,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33091,6 +33511,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33122,6 +33543,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33153,6 +33575,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           </tr>
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            tabindex="-1"
           >
             <th
               class="c9 "
@@ -33597,6 +34020,7 @@ exports[`DataTable sort 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -33628,6 +34052,7 @@ exports[`DataTable sort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -33659,6 +34084,7 @@ exports[`DataTable sort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34006,6 +34432,7 @@ exports[`DataTable sort external 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34037,6 +34464,7 @@ exports[`DataTable sort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34068,6 +34496,7 @@ exports[`DataTable sort external 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34414,6 +34843,7 @@ exports[`DataTable sort nested object 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34445,6 +34875,7 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34476,6 +34907,7 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34822,6 +35254,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34853,6 +35286,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -34884,6 +35318,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c11 "
@@ -35165,6 +35600,7 @@ exports[`DataTable sortable 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -35196,6 +35632,7 @@ exports[`DataTable sortable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -35227,6 +35664,7 @@ exports[`DataTable sortable 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -35405,6 +35843,7 @@ exports[`DataTable sortable 2`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -35436,6 +35875,7 @@ exports[`DataTable sortable 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -35467,6 +35907,7 @@ exports[`DataTable sortable 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 iYhgEa"
+        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -35690,6 +36131,7 @@ exports[`DataTable themeColumnSizes 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -35721,6 +36163,7 @@ exports[`DataTable themeColumnSizes 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c8 "
@@ -35954,6 +36397,7 @@ exports[`DataTable units 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
@@ -35985,6 +36429,7 @@ exports[`DataTable units 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        tabindex="-1"
       >
         <th
           class="c9 "
