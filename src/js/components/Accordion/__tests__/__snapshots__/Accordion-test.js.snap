@@ -116,6 +116,9 @@ exports[`Accordion AccordionPanel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -475,6 +478,9 @@ exports[`Accordion accordion border 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -774,6 +780,9 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1080,6 +1089,9 @@ exports[`Accordion blur styles 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1390,6 +1402,9 @@ exports[`Accordion change active index 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1645,7 +1660,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -1689,7 +1704,7 @@ exports[`Accordion change active index 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -1833,6 +1848,9 @@ exports[`Accordion change to second Panel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2102,7 +2120,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -2151,7 +2169,7 @@ exports[`Accordion change to second Panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -2352,6 +2370,9 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2604,7 +2625,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -2648,7 +2669,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -3014,6 +3035,9 @@ exports[`Accordion complex title 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3340,6 +3364,9 @@ exports[`Accordion custom accordion 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3647,6 +3674,9 @@ exports[`Accordion focus and hover styles 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3958,6 +3988,9 @@ exports[`Accordion multiple panels 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4210,7 +4243,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -4254,7 +4287,7 @@ exports[`Accordion multiple panels 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4363,7 +4396,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4460,7 +4493,7 @@ exports[`Accordion multiple panels 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -4519,7 +4552,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormUp"
@@ -4566,7 +4599,7 @@ exports[`Accordion multiple panels 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4672,7 +4705,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -4766,7 +4799,7 @@ exports[`Accordion multiple panels 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -4944,6 +4977,9 @@ exports[`Accordion set on hover 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -5213,7 +5249,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5262,7 +5298,7 @@ exports[`Accordion set on hover 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5323,7 +5359,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5372,7 +5408,7 @@ exports[`Accordion set on hover 3`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5433,7 +5469,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5482,7 +5518,7 @@ exports[`Accordion set on hover 4`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5543,7 +5579,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5592,7 +5628,7 @@ exports[`Accordion set on hover 5`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
@@ -5722,6 +5758,9 @@ exports[`Accordion should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -5998,6 +6037,9 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -6309,6 +6351,9 @@ exports[`Accordion wrapped panel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -6561,7 +6606,7 @@ exports[`Accordion wrapped panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             .c0 {
   display: inline-block;
@@ -6659,7 +6704,7 @@ exports[`Accordion wrapped panel 2`] = `
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 ctgNBJ"
+            class="StyledBox-sc-13pk1d4-0 dhNqiW"
           >
             <svg
               aria-label="FormDown"
