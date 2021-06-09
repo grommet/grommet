@@ -2,20 +2,20 @@ import React from 'react';
 
 import { grommet, Box, Text, Grommet } from 'grommet';
 
-export const TipOnText = () => (
+const alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
+
+export const Tip = () => (
   <Grommet theme={grommet}>
-    <Box align="center" width="small" pad="small">
-      <Text truncate tip="a b c d e f g h i j k l m n o p q r s t u v w x y z">
-        a b c d e f g h i j k l m n o p q r s t u v w x y z
-      </Text>
-    </Box>
-    <Box align="center" pad="medium" gap="large">
+    <Box align="center" pad="medium" gap="xlarge">
+      <Box width="small">
+        <Text tip={alphabet} truncate>
+          {alphabet}
+        </Text>
+      </Box>
       <Text
-        label="Tip Drop props"
-        onClick={() => {}}
         tip={{ dropProps: { align: { left: 'right' } }, content: 'tooltip' }}
       >
-        Tip Drop props
+        Tip with dropProps
       </Text>
       <Text
         tip={{
@@ -36,18 +36,16 @@ export const TipOnText = () => (
           ),
         }}
       >
-        Tip Content
+        Tip with content prop
       </Text>
     </Box>
   </Grommet>
 );
 
-TipOnText.storyName = 'Tip on text';
-
-TipOnText.parameters = {
+Tip.parameters = {
   chromatic: { disable: true },
 };
 
 export default {
-  title: `Type/Text/Tip on text`,
+  title: `Type/Text/Tip`,
 };
