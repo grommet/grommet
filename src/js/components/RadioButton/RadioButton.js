@@ -22,6 +22,7 @@ const RadioButton = forwardRef(
       children,
       disabled,
       focus,
+      focusIndicator,
       id,
       label,
       name,
@@ -55,6 +56,8 @@ const RadioButton = forwardRef(
             event.stopPropagation();
           }
         }}
+        focus={focus}
+        focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
@@ -82,7 +85,7 @@ const RadioButton = forwardRef(
             children({ checked, hover })
           ) : (
             <StyledRadioButtonBox
-              focus={focus}
+              focus={focus && focusIndicator}
               as={Box}
               align="center"
               justify="center"

@@ -106,6 +106,8 @@ TypedForm.parameters = {
   chromatic: { disable: true },
 };
 
+TypedForm.storyName = 'Typed Form';
+
 export default {
-  title: 'Input/Form/Typed',
+  title: 'Input/Form/Typed Form',
 };

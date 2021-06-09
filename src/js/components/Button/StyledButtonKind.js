@@ -4,6 +4,7 @@ import {
   activeStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
@@ -77,8 +78,17 @@ const basicStyle = props => css`
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  > svg {
+  // when button has badge, the SVG won't necessarily
+  // be the direct descendant
+  ${
+    props.badge
+      ? `
+  svg {
     vertical-align: bottom;
+  }`
+      : `> svg {
+    vertical-align: bottom;
+  }`
   }
 `;
 
@@ -249,7 +259,11 @@ const StyledButtonKind = styled.button.withConfig({
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle()}
   }
-  
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

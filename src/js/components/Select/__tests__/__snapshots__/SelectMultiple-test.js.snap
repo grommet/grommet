@@ -133,6 +133,26 @@ exports[`Select Controlled deselect an option 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -376,6 +396,26 @@ exports[`Select Controlled multiple 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -637,6 +677,26 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -814,7 +874,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -856,6 +916,12 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -872,11 +938,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -899,10 +960,87 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -919,12 +1057,14 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   outline: none;
 }
 
-.c8 {
+.c6 {
   background-color: #7D4CDB;
   color: #FFFFFF;
+  display: block;
+  width: 100%;
 }
 
-.c6 {
+.c10 {
   display: block;
   width: 100%;
 }
@@ -981,33 +1121,33 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         type="button"
       >
         <div
-          class="c7 c8"
+          class="c7"
         >
           <span
-            class="c9"
+            class="c8"
           >
             Value1
           </span>
         </div>
       </button>
       <button
-        class="c5 c6"
+        class="c9 c10"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c7 "
+          class="c7"
         >
           <span
-            class="c9"
+            class="c8"
           >
             Value2
           </span>
         </div>
       </button>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -1153,6 +1293,26 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1375,6 +1535,12 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1418,10 +1584,24 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   border: 0;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1495,7 +1675,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1511,7 +1691,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1667,6 +1847,26 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1889,6 +2089,12 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1932,10 +2138,24 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   border: 0;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2009,7 +2229,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -2025,7 +2245,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -2181,6 +2401,26 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2403,6 +2643,12 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2446,10 +2692,24 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   border: 0;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2523,7 +2783,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -2539,7 +2799,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -2583,13 +2843,13 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+        class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="StyledBox-sc-13pk1d4-0 kNEzzP"
         >
           <span
             class="StyledText-sc-1sadyjn-0 fEvqji"
@@ -2599,13 +2859,13 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
-        class="StyledButton-sc-323bzc-0 jvgufq SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+        class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="StyledBox-sc-13pk1d4-0 kNEzzP"
         >
           <span
             class="StyledText-sc-1sadyjn-0 fEvqji"
@@ -2764,6 +3024,26 @@ exports[`Select Controlled multiple values 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2880,7 +3160,7 @@ exports[`Select Controlled multiple values 1`] = `
 exports[`Select Controlled multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
@@ -2895,7 +3175,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 iuIygK Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2976,7 +3256,7 @@ exports[`Select Controlled multiple values 3`] = `
   padding: 12px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3018,6 +3298,12 @@ exports[`Select Controlled multiple values 3`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3034,11 +3320,6 @@ exports[`Select Controlled multiple values 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -3061,10 +3342,24 @@ exports[`Select Controlled multiple values 3`] = `
   border: 0;
 }
 
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3081,12 +3376,9 @@ exports[`Select Controlled multiple values 3`] = `
   outline: none;
 }
 
-.c8 {
+.c6 {
   background-color: #7D4CDB;
   color: #FFFFFF;
-}
-
-.c6 {
   display: block;
   width: 100%;
 }
@@ -3143,10 +3435,10 @@ exports[`Select Controlled multiple values 3`] = `
         type="button"
       >
         <div
-          class="c7 c8"
+          class="c7"
         >
           <span
-            class="c9"
+            class="c8"
           >
             one
           </span>
@@ -3159,17 +3451,17 @@ exports[`Select Controlled multiple values 3`] = `
         type="button"
       >
         <div
-          class="c7 c8"
+          class="c7"
         >
           <span
-            class="c9"
+            class="c8"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c10"
+        class="c9"
       />
     </div>
   </div>
@@ -3315,6 +3607,26 @@ exports[`Select Controlled multiple with empty results 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3537,6 +3849,12 @@ exports[`Select Controlled multiple with empty results 2`] = `
   animation-delay: 0.01s;
 }
 
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3580,10 +3898,24 @@ exports[`Select Controlled multiple with empty results 2`] = `
   border: 0;
 }
 
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3657,7 +3989,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -3673,7 +4005,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -3829,6 +4161,26 @@ exports[`Select Controlled select another option 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4078,6 +4430,26 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -4157,7 +4529,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   class="c0"
 >
   <button
-    aria-label="Open Drop"
+    aria-label="test"
     class="c1 c2"
     type="button"
   >

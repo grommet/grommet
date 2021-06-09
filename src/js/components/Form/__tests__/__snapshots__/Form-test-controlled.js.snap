@@ -93,6 +93,26 @@ exports[`Form controlled controlled 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -196,14 +216,14 @@ exports[`Form controlled controlled 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -212,7 +232,7 @@ exports[`Form controlled controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -230,14 +250,14 @@ exports[`Form controlled controlled 3`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -246,7 +266,7 @@ exports[`Form controlled controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -354,6 +374,26 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
 }
 
 .c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -472,14 +512,14 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             id="test"
             name="test"
             value="v"
@@ -488,7 +528,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -512,14 +552,14 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             id="test"
             name="test"
             value="v"
@@ -528,7 +568,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -627,6 +667,26 @@ exports[`Form controlled controlled input 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -733,14 +793,14 @@ exports[`Form controlled controlled input 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -749,7 +809,7 @@ exports[`Form controlled controlled input 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -767,14 +827,14 @@ exports[`Form controlled controlled input 3`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -783,7 +843,7 @@ exports[`Form controlled controlled input 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -882,6 +942,26 @@ exports[`Form controlled controlled input lazy 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -988,14 +1068,14 @@ exports[`Form controlled controlled input lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -1004,7 +1084,7 @@ exports[`Form controlled controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -1022,14 +1102,14 @@ exports[`Form controlled controlled input lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -1038,7 +1118,7 @@ exports[`Form controlled controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -1137,6 +1217,26 @@ exports[`Form controlled controlled lazy 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1243,14 +1343,14 @@ exports[`Form controlled controlled lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -1259,7 +1359,7 @@ exports[`Form controlled controlled lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -1277,14 +1377,14 @@ exports[`Form controlled controlled lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value="v"
@@ -1293,7 +1393,7 @@ exports[`Form controlled controlled lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -1392,6 +1492,26 @@ exports[`Form controlled controlled onChange touched 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1582,6 +1702,26 @@ exports[`Form controlled controlled onValidate 1`] = `
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1692,7 +1832,7 @@ exports[`Form controlled controlled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value=""
@@ -1728,7 +1868,7 @@ exports[`Form controlled controlled onValidate 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -1827,6 +1967,26 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1940,7 +2100,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value=""
@@ -1976,7 +2136,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -2075,6 +2235,26 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2181,14 +2361,14 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="test"
             placeholder="test input"
             value=""
@@ -2220,7 +2400,7 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -2435,6 +2615,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2590,14 +2790,14 @@ exports[`Form controlled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="name"
             placeholder="test name"
             value=""
@@ -2609,10 +2809,10 @@ exports[`Form controlled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 euBdwh FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 cBQiTh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jbIyUK StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -2810,7 +3010,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -2829,14 +3029,14 @@ exports[`Form controlled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gmReJc FormField__FormFieldContentBox-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 wTreE FormField__FormFieldContentBox-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iuIygK"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE"
             name="name"
             placeholder="test name"
             value=""
@@ -2848,10 +3048,10 @@ exports[`Form controlled dynamicly removed fields using blur validation
       class="StyledBox-sc-13pk1d4-0 dLXLoO FormField__FormFieldBox-m9hood-0 jGEMXj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 euBdwh FormField__FormFieldContentBox-m9hood-1 iUyYoX"
+        class="StyledBox-sc-13pk1d4-0 fYhoox FormField__FormFieldContentBox-m9hood-1 iUyYoX"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 khDdKn"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 jbIyUK StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
@@ -2862,7 +3062,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 cSDzSd"
+              class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
             />
           </div>
           <span>
@@ -2872,7 +3072,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hmOcFG"
+      class="StyledButton-sc-323bzc-0 ejZTQL"
       type="submit"
     >
       Submit
@@ -2938,6 +3138,26 @@ exports[`Form controlled lazy value 1`] = `
 }
 
 .c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

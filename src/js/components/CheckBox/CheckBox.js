@@ -33,13 +33,20 @@ const CheckBox = forwardRef(
       checked: checkedProp,
       defaultChecked = false,
       disabled,
+      fill,
       focus: focusProp,
+      focusIndicator = true,
       id,
       label,
       name,
       onBlur,
       onChange,
       onFocus,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOut,
+      onMouseOver,
+      pad,
       reverse,
       toggle,
       indeterminate,
@@ -77,6 +84,12 @@ const CheckBox = forwardRef(
       checked,
       disabled,
       focus,
+      // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a CheckBox is active.
+      // If focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      focusIndicator,
       reverse,
       toggle,
       indeterminate,
@@ -193,10 +206,16 @@ const CheckBox = forwardRef(
     return (
       <StyledCheckBoxContainer
         aria-label={a11yTitle}
+        fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        pad={pad}
+        onMouseEnter={event => onMouseEnter?.(event)}
+        onMouseOver={event => onMouseOver?.(event)}
+        onMouseLeave={event => onMouseLeave?.(event)}
+        onMouseOut={event => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}

@@ -12,6 +12,7 @@ const customTheme = deepMerge(grommet, {
       zIndex: '13',
       elevation: 'large', // impacting the elevation
       margin: 'xsmall',
+      intelligentMargin: true,
     },
   },
 });

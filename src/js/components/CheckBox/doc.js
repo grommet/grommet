@@ -1,5 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = CheckBox => {
@@ -26,6 +27,12 @@ export const doc = CheckBox => {
       with the same name so form submissions work.`,
       )
       .defaultValue(false),
+    fill: PropTypes.bool
+      .description(
+        `Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.`,
+      )
+      .defaultValue(undefined),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),
@@ -41,6 +48,12 @@ export const doc = CheckBox => {
       `Function that will be called when the user clicks the check box. It
       will be passed a React event object. The current state can be accessed
       via event.target.checked. Same as React <input onChange={} />.`,
+    ),
+    pad: padPropType.description(
+      `The amount of padding on the container 
+    surrounding the checkbox and its label. An object can be specified to 
+    distinguish horizontal padding, vertical padding, and padding on a 
+    particular side of the container.`,
     ),
     reverse: PropTypes.bool
       .description('Whether to show the label in front of the checkbox.')
@@ -107,6 +120,12 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
+  'checkBox.hover.background.color': {
+    description: `The background color of the Box surrounding the RadioButton 
+    when hovered over.`,
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
   'checkBox.icon.size': {
     description: 'The size of the checked icon.',
     type: 'string',
@@ -125,6 +144,16 @@ export const themeDoc = {
   'checkBox.icons.indeterminate': {
     description: 'The icon to use when indeterminate.',
     type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'checkBox.label.align': {
+    description: 'How to align the checkbox and label.',
+    type: 'string',
+    defaultValue: 'center',
+  },
+  'checkBox.pad': {
+    description: 'The pad around the CheckBox and its label.',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'checkBox.size': {

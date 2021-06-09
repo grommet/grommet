@@ -109,26 +109,26 @@ const Box = forwardRef(
       });
     }
 
+    const themeProviderValue = { ...theme };
+
     if (background || theme.darkChanged) {
-      let dark = backgroundIsDark(background, theme);
+      const dark = backgroundIsDark(background, theme);
       const darkChanged = dark !== undefined && dark !== theme.dark;
       if (darkChanged || theme.darkChanged) {
-        dark = dark === undefined ? theme.dark : dark;
-        contents = (
-          <ThemeContext.Provider value={{ ...theme, dark, background }}>
-            {contents}
-          </ThemeContext.Provider>
-        );
+        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
+        themeProviderValue.background = background;
       } else if (background) {
         // This allows DataTable to intelligently set the background of a pinned
         // header or footer.
-        contents = (
-          <ThemeContext.Provider value={{ ...theme, background }}>
-            {contents}
-          </ThemeContext.Provider>
-        );
+        themeProviderValue.background = background;
       }
     }
+
+    contents = (
+      <ThemeContext.Provider value={themeProviderValue}>
+        {contents}
+      </ThemeContext.Provider>
+    );
 
     let content = (
       <StyledBox

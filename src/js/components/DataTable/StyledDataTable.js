@@ -4,6 +4,7 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
@@ -105,6 +106,10 @@ const StyledDataTableBody = styled(TableBody)`
   &:focus {
     ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
 `;
 
 StyledDataTableBody.defaultProps = {};
@@ -155,7 +160,15 @@ const StyledDataTableCell = styled(TableCell)`
     props.pin.length > 0 &&
     `
     position: sticky;
-    ${props.pin.map(p => `${p}: 0;`).join(' ')}
+    ${props.pin
+      .map(
+        p =>
+          `${p}: ${(props.pinnedOffset &&
+            props.pinnedOffset[p] &&
+            `${props.pinnedOffset[p]}px`) ||
+            0};`,
+      )
+      .join(' ')}
     z-index: ${Object.keys(props.pin).length};
     ${
       props.theme.dataTable &&

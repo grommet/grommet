@@ -3,7 +3,9 @@ import { describe, PropTypes } from 'react-desc';
 import {
   genericProps,
   getBorderPropType,
+  heightPropType,
   padPropType,
+  widthPropType,
 } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
@@ -110,14 +112,14 @@ space in the column axis.`,
           PropTypes.string,
         ]),
       ),
-      PropTypes.oneOf(fixedSizes),
+      PropTypes.oneOf(sizes),
       PropTypes.shape({
         count: PropTypes.oneOfType([
           PropTypes.oneOf(['fit', 'fill']),
           PropTypes.number,
         ]),
         size: PropTypes.oneOfType([
-          PropTypes.oneOf(fixedSizes),
+          PropTypes.oneOf(sizes),
           PropTypes.arrayOf(
             PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
           ),
@@ -154,6 +156,7 @@ space in the column axis.`,
       }),
       PropTypes.string,
     ]).description('Gap sizes between rows and/or columns.'),
+    height: heightPropType.description('A fixed height.'),
     justify: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
       .description(
         `How to align the individual items inside the grid when there is extra
@@ -200,6 +203,7 @@ space in the row axis.`,
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
+    width: widthPropType.description('A fixed width.'),
   };
 
   return DocumentedGrid;

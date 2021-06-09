@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -8,7 +7,6 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { Add, Next } from 'grommet-icons';
 import { cleanup, fireEvent, render } from '@testing-library/react';
-import { findAllByType } from '../../../utils';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
@@ -43,27 +41,26 @@ describe('Button', () => {
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button label="Test" onClick={() => {}} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children function', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}}>{() => <Text>Test</Text>}</Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children function with disabled prop', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}} disabled>
           {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
@@ -73,8 +70,8 @@ describe('Button', () => {
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('warns about invalid label', () => {
@@ -116,17 +113,17 @@ describe('Button', () => {
   });
 
   test('primary', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button primary label="Test" onClick={() => {}} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button color="accent-1" label="Test" onClick={() => {}} />
         <Button color="accent-1" primary label="Test" onClick={() => {}} />
@@ -134,23 +131,21 @@ describe('Button', () => {
         <Button color="#123" primary label="Test" onClick={() => {}} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fill', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <Button>
-          <Button fill />
-          <Button fill={false} />
-          <Button fill="horizontal" />
-          <Button fill="vertical" />
-        </Button>
+        <Button fill />
+        <Button fill={false} />
+        <Button fill="horizontal" />
+        <Button fill="vertical" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus', () => {
@@ -176,7 +171,7 @@ describe('Button', () => {
   });
 
   test('disabled', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button disabled />
         <Button disabled primary label="Button" />
@@ -191,124 +186,122 @@ describe('Button', () => {
         <Button disabled icon={<svg />} label="Button" primary />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('active', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button active label="Button" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('active + primary', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button active primary label="Button" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('icon label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('reverse icon label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button reverse icon={<svg />} label="Test" onClick={() => {}} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('href', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button href="test" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('hoverIndicator background', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}} hoverIndicator="background">
           hoverIndicator
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('hoverIndicator as object with color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}} hoverIndicator={{ color: 'brand' }}>
           hoverIndicator
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('hoverIndicator as object with invalid color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}} hoverIndicator={{ color: 'invalid' }}>
           hoverIndicator
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('hoverIndicator color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button onClick={() => {}} hoverIndicator="dark-3">
           hoverIndicator
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClick', () => {
     const onClick = jest.fn();
-    const component = renderer.create(
+    const { getByRole } = render(
       <Grommet>
         <Button label="Test" onClick={onClick} />
       </Grommet>,
     );
-    const tree = component.toJSON();
 
-    const button = findAllByType(tree, 'button');
-    button[0].props.onClick();
+    fireEvent.click(getByRole('button'));
     expect(onClick).toBeCalled();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button size="small" label="Small" />
         <Button size="medium" label="Medium" />
@@ -329,29 +322,28 @@ describe('Button', () => {
       </Grommet>,
     );
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('as', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button as="span" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('a11yTitle', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button a11yTitle="Title" />
         <Button aria-label="Title" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test(`disabled state cursor should indicate the button cannot be
@@ -367,5 +359,81 @@ describe('Button', () => {
     const cursorStyle = window.getComputedStyle(button)._values.cursor;
     expect(cursorStyle).not.toBe('pointer');
     expect(cursorStyle).toBe('default');
+  });
+
+  test(`badge should be offset from top-right corner`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, alert" label="Button" badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display number content`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, 2 unread alerts" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should display "+" when number is greater than max`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{ value: 100, max: 9 }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should apply background`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, 100 unread alerts"
+          label="Button"
+          badge={{
+            background: 'status-ok',
+            value: 100,
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render custom element`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          a11yTitle="Button, Add user alert"
+          label="Button"
+          badge={<Add />}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`badge should render relative to contents when button has no
+  border or background`, () => {
+    const { container } = render(
+      <Grommet>
+        <Button a11yTitle="Button, Add user alert" icon={<Add />} badge />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

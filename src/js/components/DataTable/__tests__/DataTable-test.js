@@ -489,6 +489,42 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('groupBy toggle', () => {
+    function TestComponent() {
+      const [groupBy, setGroupBy] = React.useState();
+      const toggle = () => setGroupBy(groupBy === undefined ? 'a' : undefined);
+
+      return (
+        <Grommet>
+          <button type="button" onClick={toggle}>
+            toggle
+          </button>
+          <DataTable
+            columns={[
+              { property: 'a', header: 'A' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1.1 },
+              { a: 'one', b: 1.2 },
+              { a: 'two', b: 2.1 },
+              { a: 'two', b: 2.2 },
+            ]}
+            groupBy={groupBy}
+          />
+        </Grommet>
+      );
+    }
+    const { container, getByText } = render(<TestComponent />);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('toggle'));
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('toggle'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('click', () => {
     const onClickRow = jest.fn();
     const { container, getByText } = render(
@@ -1113,6 +1149,44 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('Go to next page'));
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when data is empty array', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[]}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when length of data < step', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: `entry-1`, b: 1 },
+            { a: `entry-2`, b: 2 },
+            { a: `entry-3`, b: 3 },
+          ]}
+          paginate
+        />
+      </Grommet>,
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });

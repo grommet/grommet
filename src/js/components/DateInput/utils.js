@@ -22,9 +22,34 @@ export const formatToSchema = format => {
   return result;
 };
 
+const masks = {
+  m: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^1[0-2]$`) },
+  mm: { length: [1, 2], regexp: new RegExp(`^[0-1]$|^0[1-9]$|^1[0-2]$`) },
+  d: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^[1-2][0-9]$|^3[0-1]$`) },
+  dd: {
+    length: [1, 2],
+    regexp: new RegExp(`^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$`),
+  },
+  yy: { length: [1, 2], regexp: new RegExp(`^[0-9]{1,2}$`) },
+  yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
+};
+
+export const schemaToMask = schema => {
+  if (!schema) return undefined;
+  return schema.map(part => {
+    const lower = part.toLowerCase();
+    const char = lower[0];
+    if (char === 'm' || char === 'd' || char === 'y')
+      return { placeholder: part, ...masks[lower] };
+    return { fixed: part };
+  });
+};
+
 // convert value into text representation using the schema
 export const valueToText = (value, schema) => {
-  if (!value) return '';
+  // when user initializes dates as empty array, we want to still
+  // show the placeholder text
+  if (!value || (Array.isArray(value) && !value.length)) return '';
   let text = '';
 
   const dates = (Array.isArray(value) ? value : [value]).map(v => new Date(v));
@@ -37,22 +62,34 @@ export const valueToText = (value, schema) => {
     while (
       dateIndex < dates.length &&
       (Number.isNaN(dates[dateIndex].date) ||
-        ((char === 'm' || char === 'd' || char === 'y') && parts[char]))
+        ((char === 'm' || char === 'd' || char === 'y') && parts[part]))
     ) {
       dateIndex += 1;
       parts = {};
     }
     const date = dates[dateIndex];
 
-    if (date && char === 'm') {
+    if (date && part === 'm') {
       text += date.getMonth() + 1;
-      parts[char] = true;
-    } else if (date && char === 'd') {
+      parts[part] = true;
+    } else if (date && part === 'mm') {
+      text += `0${date.getMonth() + 1}`.slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'd') {
       text += date.getDate();
-      parts[char] = true;
-    } else if (date && char === 'y') {
+      parts[part] = true;
+    } else if (date && part === 'dd') {
+      text += `0${date.getDate()}`.slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yy') {
+      text += date
+        .getFullYear()
+        .toString()
+        .slice(-2);
+      parts[part] = true;
+    } else if (date && part === 'yyyy') {
       text += date.getFullYear();
-      parts[char] = true;
+      parts[part] = true;
     } else text += part;
   });
 
@@ -72,7 +109,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema) => {
+export const textToValue = (text, schema, valueProp) => {
   if (!text) return undefined;
 
   let result;
@@ -89,12 +126,18 @@ export const textToValue = (text, schema) => {
       parts.d > 31
     )
       return parts;
-    const date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    if (!result) result = date;
+    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
+    // match time and timezone of any supplied valueProp
+    if (valueProp) {
+      const valueDate = new Date(valueProp).toISOString();
+      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
+    }
     // single
-    else if (Array.isArray(result)) result.push(date);
+    if (!result) result = date;
     // second
-    else result = [result, date]; // third and beyond, unused?
+    else if (Array.isArray(result)) result.push(date);
+    // third and beyond, unused?
+    else result = [result, date];
     return {};
   };
 
@@ -102,7 +145,8 @@ export const textToValue = (text, schema) => {
   let index = 0;
   schema.forEach(part => {
     if (index < text.length) {
-      const char = part[0].toLowerCase();
+      const lower = part.toLowerCase();
+      const char = lower[0];
       if (parts[char] !== undefined) parts = addDate(parts);
 
       if (char === 'm') {
@@ -114,6 +158,10 @@ export const textToValue = (text, schema) => {
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
+        if (lower === 'yy' && parts.y.length === 2) {
+          // convert to full year, pivot at 69 based on POSIX strptime()
+          parts.y = `${parts.y < 69 ? 20 : 19}${parts.y}`;
+        }
       } else if (text.slice(index, index + part.length) === part) {
         index += part.length;
       } else {
