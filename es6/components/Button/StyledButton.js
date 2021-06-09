@@ -97,7 +97,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.primary && primaryStyle(props);
 }, function (props) {
-  return !props.disabled && !props.focus && hoverStyle;
+  return !props.disabled && !props.selected && !props.focus && hoverStyle;
 }, function (props) {
   return !props.disabled && props.active && activeButtonStyle(props);
 }, function (props) {

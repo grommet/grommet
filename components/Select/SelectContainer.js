@@ -39,16 +39,12 @@ var OptionsBox = _styledComponents["default"].div.withConfig({
   componentId: "sc-1wi0ul8-0"
 })(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
 
-var OptionBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
-  displayName: "SelectContainer__OptionBox",
-  componentId: "sc-1wi0ul8-1"
-})(["", ""], function (props) {
-  return props.selected && _utils.selectedStyle;
-});
 var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "SelectContainer__SelectOption",
-  componentId: "sc-1wi0ul8-2"
-})(["display:block;width:100%;"]);
+  componentId: "sc-1wi0ul8-1"
+})(["", " display:block;width:100%;"], function (props) {
+  return props.selected && props.textComponent && _utils.selectedStyle;
+});
 
 var ClearButton = function ClearButton(_ref) {
   var clear = _ref.clear,
@@ -368,13 +364,20 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     // as an option Button kind property.
 
     var child;
-    if (children) child = children(option, index, options, {
-      active: optionActive,
-      disabled: optionDisabled,
-      selected: optionSelected
-    });else if (theme.select.options) child = /*#__PURE__*/_react["default"].createElement(OptionBox, _extends({}, selectOptionsStyle, {
-      selected: optionSelected
-    }), /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.options.text, optionLabel(index))); // if we have a child, turn on plain, and hoverIndicator
+    var textComponent = false;
+
+    if (children) {
+      child = children(option, index, options, {
+        active: optionActive,
+        disabled: optionDisabled,
+        selected: optionSelected
+      });
+      if (typeof child === 'string' || child.props && child.props.children && typeof child.props.children === 'string') textComponent = true;
+    } else if (theme.select.options) {
+      child = /*#__PURE__*/_react["default"].createElement(_Box.Box, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.options.text, optionLabel(index)));
+      textComponent = true;
+    } // if we have a child, turn on plain, and hoverIndicator
+
 
     return /*#__PURE__*/_react["default"].createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
     , {
@@ -392,7 +395,8 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       selected: optionSelected,
       option: option,
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
-      onClick: !optionDisabled ? selectOption(index) : undefined
+      onClick: !optionDisabled ? selectOption(index) : undefined,
+      textComponent: textComponent
     }, child);
   }) : /*#__PURE__*/_react["default"].createElement(SelectOption, {
     key: "search_empty",
@@ -401,7 +405,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     hoverIndicator: "background",
     disabled: true,
     option: emptySearchMessage
-  }, /*#__PURE__*/_react["default"].createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage)))), clear && clear.position === 'bottom' && value && /*#__PURE__*/_react["default"].createElement(ClearButton, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, selectOptionsStyle, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage)))), clear && clear.position === 'bottom' && value && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     clear: clear,
     name: name,
     onClear: onClear,
