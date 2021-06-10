@@ -55,7 +55,7 @@ Custom messages for FileInput. Used for accessibility by screen
 Whether to allow multiple files. If an object is supplied,
         'aggregageThreshold' indicates the maximum number of individual
         files to show. Above this, only a single message describing the
-        number of files will be shown.And if an object is supplied, 
+        number of files will be shown. If an object is supplied, 
         'max' indicates the maximum number of files that can be added.
         If the user has reached the max, no additional files will 
         be able to be added.
