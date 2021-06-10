@@ -19,9 +19,13 @@ const Row = memo(
     rowRef,
     size,
     active,
+    lastActive,
+    itemFocus,
     onClickRow,
     datum,
     setActive,
+    setLastActive,
+    setItemFocus,
     selected,
     onSelect,
     background,
@@ -44,8 +48,10 @@ const Row = memo(
       <StyledDataTableRow
         ref={rowRef}
         size={size}
-        tabIndex={-1}
+        itemFocus={itemFocus}
+        tabIndex={onClickRow ? 0 : undefined}
         active={active}
+        lastActive={lastActive}
         onClick={
           onClickRow
             ? event => {
@@ -58,10 +64,32 @@ const Row = memo(
               }
             : undefined
         }
-        onMouseEnter={onClickRow ? () => setActive(index) : undefined}
-        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
-        onFocus={onClickRow ? () => setActive(index) : undefined}
-        onBlur={onClickRow ? () => setActive(undefined) : undefined}
+        onMouseEnter={
+          onClickRow
+            ? () => {
+                setLastActive(undefined);
+                setActive(index);
+              }
+            : undefined
+        }
+        onMouseLeave={onClickRow ? () => setActive(lastActive) : undefined}
+        onFocus={
+          onClickRow
+            ? () => {
+                setActive(index);
+                setItemFocus(true);
+              }
+            : undefined
+        }
+        onBlur={
+          onClickRow
+            ? () => {
+                setLastActive(active);
+                setActive(undefined);
+                setItemFocus(false);
+              }
+            : undefined
+        }
       >
         {(selected || onSelect) && (
           <TableCell background={background} plain="noPad" size="auto">
@@ -162,6 +190,9 @@ const Body = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
+    const [lastActive, setLastActive] = React.useState();
+    const [itemFocus, setItemFocus] = React.useState();
+
     return (
       <Keyboard
         onEnter={
@@ -226,9 +257,13 @@ const Body = forwardRef(
                   index={index}
                   size={size}
                   active={active >= 0 ? active === index : undefined}
+                  lastActive={lastActive}
+                  itemFocus={itemFocus}
                   onClickRow={onClickRow}
                   datum={datum}
                   setActive={setActive}
+                  setLastActive={setLastActive}
+                  setItemFocus={setItemFocus}
                   selected={selected}
                   onSelect={onSelect}
                   background={background}
