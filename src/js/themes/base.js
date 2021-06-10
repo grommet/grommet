@@ -617,6 +617,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        // background: undefined,
       },
       icon: {
         // size: undefined,
@@ -996,6 +997,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: 'horizontal',
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
+      },
+      icons: {
+        down: FormDown,
+        up: FormUp,
       },
       // extend: undefined,
     },

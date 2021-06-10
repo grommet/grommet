@@ -544,6 +544,9 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      background?: {
+        color?: ColorType;
+      };
     };
     icon?: {
       size?: string;
@@ -982,6 +985,10 @@ export interface ThemeType {
           };
       pad?: PadType;
       extend?: ExtendType;
+    };
+    icons?: {
+      down?: React.ReactNode;
+      up?: React.ReactNode;
     };
     extend?: ExtendType;
   };

@@ -511,7 +511,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -527,7 +527,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -795,7 +795,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -811,7 +811,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1070,7 +1070,7 @@ exports[`Select Clear option renders custom label 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1086,7 +1086,7 @@ exports[`Select Clear option renders custom label 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1345,7 +1345,7 @@ exports[`Select Clear option renders- top 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -1361,7 +1361,7 @@ exports[`Select Clear option renders- top 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -2182,7 +2182,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   type="button"
 >
   <div
-    class="c2 SelectContainer__OptionBox-sc-1wi0ul8-1"
+    class="c2"
   >
     <span
       class="c3"
@@ -2756,7 +2756,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3689,7 +3689,7 @@ exports[`Select default value clear 1`] = `
   padding: 12px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3864,6 +3864,64 @@ exports[`Select default value clear 1`] = `
   border: 0;
 }
 
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   max-height: inherit;
 }
@@ -3878,12 +3936,14 @@ exports[`Select default value clear 1`] = `
   outline: none;
 }
 
-.c12 {
-  background-color: #7D4CDB;
-  color: #FFFFFF;
+.c9 {
+  display: block;
+  width: 100%;
 }
 
-.c9 {
+.c13 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
   display: block;
   width: 100%;
 }
@@ -3960,7 +4020,7 @@ exports[`Select default value clear 1`] = `
         type="button"
       >
         <div
-          class="c10 "
+          class="c10"
         >
           <span
             class="c11"
@@ -3970,13 +4030,13 @@ exports[`Select default value clear 1`] = `
         </div>
       </button>
       <button
-        class="c8 c9"
+        class="c12 c13"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 c12"
+          class="c10"
         >
           <span
             class="c11"
@@ -3986,7 +4046,7 @@ exports[`Select default value clear 1`] = `
         </div>
       </button>
       <div
-        class="c13"
+        class="c14"
       />
     </div>
   </div>
@@ -4570,7 +4630,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 cANsmG"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5174,7 +5234,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -5190,7 +5250,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -5509,7 +5569,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -5525,7 +5585,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -6172,7 +6232,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -6188,7 +6248,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -6437,7 +6497,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -6453,7 +6513,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -7264,7 +7324,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -7280,7 +7340,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -7765,7 +7825,7 @@ exports[`Select onChange with valueLabel 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -7781,7 +7841,7 @@ exports[`Select onChange with valueLabel 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -8319,7 +8379,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -8335,7 +8395,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -9206,7 +9266,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9469,7 +9529,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -9485,7 +9545,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -9518,13 +9578,13 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fEvqji"
@@ -9534,13 +9594,13 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fEvqji"
@@ -10131,7 +10191,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -11868,7 +11928,7 @@ exports[`Select search 2`] = `
   padding: 12px;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11979,6 +12039,64 @@ exports[`Select search 2`] = `
   border: 0;
 }
 
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -12062,12 +12180,14 @@ exports[`Select search 2`] = `
   outline: none;
 }
 
-.c12 {
-  background-color: #7D4CDB;
-  color: #FFFFFF;
+.c9 {
+  display: block;
+  width: 100%;
 }
 
-.c9 {
+.c13 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
   display: block;
   width: 100%;
 }
@@ -12144,7 +12264,7 @@ exports[`Select search 2`] = `
         type="button"
       >
         <div
-          class="c10 "
+          class="c10"
         >
           <span
             class="c11"
@@ -12154,13 +12274,13 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
-        class="c8 c9"
+        class="c12 c13"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 c12"
+          class="c10"
         >
           <span
             class="c11"
@@ -12170,7 +12290,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <div
-        class="c13"
+        class="c14"
       />
     </div>
   </div>
@@ -12189,7 +12309,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value=""
 />
@@ -12198,7 +12318,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value="o"
 />
@@ -12809,7 +12929,7 @@ exports[`Select search and select 2`] = `
         type="button"
       >
         <div
-          class="c10 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c10"
         >
           <span
             class="c11"
@@ -12825,7 +12945,7 @@ exports[`Select search and select 2`] = `
         type="button"
       >
         <div
-          class="c10 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c10"
         >
           <span
             class="c11"
@@ -12854,7 +12974,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value=""
 />
@@ -12863,7 +12983,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 CGMPz"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value="t"
 />
@@ -14708,7 +14828,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 laYMFW Select__SelectTextInput-sc-17idtfo-0 bIurki"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -15811,7 +15931,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
@@ -15827,7 +15947,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+          class="c7"
         >
           <span
             class="c8"
