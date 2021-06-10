@@ -199,7 +199,7 @@ const StyledButton = styled.button`
   ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
-  ${props => !props.disabled && !props.focus && hoverStyle}
+  ${props => !props.disabled && !props.selected && !props.focus && hoverStyle}
 
   ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
