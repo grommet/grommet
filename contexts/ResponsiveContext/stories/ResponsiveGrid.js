@@ -11,6 +11,8 @@ var _themes = require("grommet/themes");
 
 var _grommet = require("grommet");
 
+var _excluded = ["children", "areas"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -37,7 +39,7 @@ var customBreakpoints = (0, _utils.deepMerge)(_themes.grommet, {
 var ResponsiveGrid = function ResponsiveGrid(_ref) {
   var children = _ref.children,
       areas = _ref.areas,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "areas"]);
+      props = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var size = _react["default"].useContext(_grommet.ResponsiveContext);
 

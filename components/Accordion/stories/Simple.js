@@ -9,6 +9,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _excluded = ["animate", "multiple"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -16,7 +18,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Simple = function Simple(props) {
   var animate = props.animate,
       multiple = props.multiple,
-      rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet

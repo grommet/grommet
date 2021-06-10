@@ -1,3 +1,5 @@
+var _excluded = ["children", "title", "subTitle", "size"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -108,7 +110,7 @@ var Identifier = function Identifier(_ref2) {
       title = _ref2.title,
       subTitle = _ref2.subTitle,
       size = _ref2.size,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "title", "subTitle", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
 
   return /*#__PURE__*/React.createElement(Box, _extends({
     gap: "small",

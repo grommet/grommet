@@ -1,3 +1,5 @@
+var _excluded = ["color", "direction", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -35,7 +37,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       step = _ref$step === void 0 ? 1 : _ref$step,
       _ref$values = _ref.values,
       values = _ref$values === void 0 ? [] : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "direction", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 

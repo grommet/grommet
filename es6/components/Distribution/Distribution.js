@@ -1,3 +1,5 @@
+var _excluded = ["basis", "children", "direction", "fill", "gap", "values"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -29,7 +31,7 @@ var Distribution = function Distribution(_ref2) {
       fill = _ref2.fill,
       gap = _ref2.gap,
       values = _ref2.values,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["basis", "children", "direction", "fill", "gap", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
 
   if (values.length === 1) {
     var value = values[0];

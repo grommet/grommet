@@ -1,3 +1,5 @@
+var _excluded = ["background", "color", "direction", "size", "thickness", "type", "value", "values"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -36,7 +38,7 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       value = _ref.value,
       valuesProp = _ref.values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "color", "direction", "size", "thickness", "type", "value", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   // normalize values to an array of objects
   var values = useMemo(function () {

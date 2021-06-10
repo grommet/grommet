@@ -1,3 +1,5 @@
+var _excluded = ["path", "method"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -27,7 +29,7 @@ var RoutedAnchor = /*#__PURE__*/function (_Component) {
     var _this$props = this.props,
         path = _this$props.path,
         method = _this$props.method,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["path", "method"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, _excluded);
 
     if (process.env.NODE_ENV !== 'production') {
       console.warn("This component will be deprecated in the upcoming releases. \n        Please refer to https://github.com/grommet/grommet/issues/2855 \n        for more information.");

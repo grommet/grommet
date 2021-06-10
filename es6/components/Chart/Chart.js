@@ -1,3 +1,7 @@
+var _excluded = ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
+    _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
+    _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -40,7 +44,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var containerRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize variables
@@ -188,7 +192,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           valueOpacity = valueArg.opacity,
           valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
 
       var key = "p-" + index; // Math.min/max are to handle negative values
 
@@ -339,7 +343,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           valueOpacity = valueArg.opacity,
           valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded3);
 
       var key = "p-" + index;
       var hoverProps;

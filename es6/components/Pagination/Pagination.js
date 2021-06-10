@@ -1,3 +1,5 @@
+var _excluded = ["a11yTitle", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -37,7 +39,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size = _ref.size,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 10 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   /* Calculate total number pages */

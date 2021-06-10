@@ -1,3 +1,6 @@
+var _excluded = ["value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+    _excluded2 = ["value"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -18,7 +21,7 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange = _ref.onChange,
       optionsProp = _ref.options,
       name = _ref.name,
-      rest = _objectWithoutPropertiesLoose(_ref, ["value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
@@ -72,7 +75,7 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     "'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead."); // value shouldn't propagate the input field and the onChange option
 
     var omit = option.value,
-        optionRest = _objectWithoutPropertiesLoose(option, ["value"]);
+        optionRest = _objectWithoutPropertiesLoose(option, _excluded2);
 
     var optionProps = _extends({}, optionRest, {
       label: label,

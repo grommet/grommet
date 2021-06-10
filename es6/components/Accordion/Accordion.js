@@ -1,3 +1,5 @@
+var _excluded = ["activeIndex", "animate", "children", "multiple", "onActive"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -17,7 +19,7 @@ var Accordion = /*#__PURE__*/forwardRef(function (_ref, ref) {
       children = _ref.children,
       multiple = _ref.multiple,
       onActive = _ref.onActive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["activeIndex", "animate", "children", "multiple", "onActive"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useState = useState([]),
       activeIndexes = _useState[0],

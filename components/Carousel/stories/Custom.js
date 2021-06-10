@@ -9,6 +9,8 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
+var _excluded = ["controls"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -33,7 +35,7 @@ var customTheme = {
 
 var CustomCarousel = function CustomCarousel(_ref) {
   var controls = _ref.controls,
-      rest = _objectWithoutPropertiesLoose(_ref, ["controls"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme

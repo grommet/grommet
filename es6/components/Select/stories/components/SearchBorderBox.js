@@ -1,3 +1,5 @@
+var _excluded = ["children", "searching"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -18,7 +20,7 @@ var defaultStyle = css(["position:relative;outline:none;&:after{content:'';posit
 export var SearchBorderBox = function SearchBorderBox(_ref) {
   var children = _ref.children,
       searching = _ref.searching,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "searching"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useState = useState(false),
       focus = _useState[0],

@@ -17,9 +17,13 @@ var _StyledChart = require("./StyledChart");
 
 var _utils2 = require("./utils");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+var _excluded = ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
+    _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
+    _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -57,7 +61,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var containerRef = (0, _utils.useForwardedRef)(ref);
 
@@ -207,7 +211,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           valueOpacity = valueArg.opacity,
           valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
 
       var key = "p-" + index; // Math.min/max are to handle negative values
 
@@ -358,7 +362,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           valueOpacity = valueArg.opacity,
           valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded3);
 
       var key = "p-" + index;
       var hoverProps;

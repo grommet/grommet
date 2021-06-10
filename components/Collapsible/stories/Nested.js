@@ -11,6 +11,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _excluded = ["label", "open", "submenu"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -21,7 +23,7 @@ var MenuButton = function MenuButton(_ref) {
   var label = _ref.label,
       open = _ref.open,
       submenu = _ref.submenu,
-      rest = _objectWithoutPropertiesLoose(_ref, ["label", "open", "submenu"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var Icon = open ? _grommetIcons.FormDown : _grommetIcons.FormNext;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({

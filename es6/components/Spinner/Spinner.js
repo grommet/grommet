@@ -1,3 +1,7 @@
+var _excluded = ["ref", "size"],
+    _excluded2 = ["children", "color", "size", "message"],
+    _excluded3 = ["size", "color"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -11,7 +15,7 @@ import { defaultProps } from '../../default-props';
 var BasicSpinner = function BasicSpinner(_ref) {
   var ref = _ref.ref,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["ref", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/React.createElement(Box, _extends({
     height: size,
@@ -41,7 +45,7 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       colorProp = _ref2.color,
       size = _ref2.size,
       message = _ref2.message,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "color", "size", "message"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
@@ -55,7 +59,7 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _theme$spinner$contai = theme.spinner.container,
       sizeThemeProp = _theme$spinner$contai.size,
       colorThemeProp = _theme$spinner$contai.color,
-      themeProps = _objectWithoutPropertiesLoose(_theme$spinner$contai, ["size", "color"]);
+      themeProps = _objectWithoutPropertiesLoose(_theme$spinner$contai, _excluded3);
 
   var normalizedSize = size || sizeThemeProp;
   var spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;

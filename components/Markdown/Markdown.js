@@ -29,6 +29,8 @@ var _TableHeader = require("../TableHeader");
 
 var _TableRow = require("../TableRow");
 
+var _excluded = ["components", "options", "theme"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -39,7 +41,7 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
   var components = _ref.components,
       options = _ref.options,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["components", "options", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var heading = [1, 2, 3, 4].reduce(function (obj, level) {
     var result = _extends({}, obj);

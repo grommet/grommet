@@ -1,3 +1,6 @@
+var _excluded = ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"],
+    _excluded2 = ["disabled", "id", "label", "value"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -20,7 +23,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       optionsProp = _ref.options,
       valueProp = _ref.value,
       gap = _ref.gap,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize options to always use an object
@@ -112,7 +115,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
         id = _ref2.id,
         label = _ref2.label,
         optionValue = _ref2.value,
-        optionRest = _objectWithoutPropertiesLoose(_ref2, ["disabled", "id", "label", "value"]);
+        optionRest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
     // if focus is within the RadioButtonGroup, determine
     // which radio button should be the active one

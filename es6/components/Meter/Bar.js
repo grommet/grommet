@@ -1,3 +1,6 @@
+var _excluded = ["background", "max", "round", "size", "thickness", "direction", "values"],
+    _excluded2 = ["color", "highlight", "label", "onHover", "value"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -16,7 +19,7 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
       thicknessProp = props.thickness,
       direction = props.direction,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "direction", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var length = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -35,7 +38,7 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
           label = valueArg.label,
           onHover = valueArg.onHover,
           value = valueArg.value,
-          pathRest = _objectWithoutPropertiesLoose(valueArg, ["color", "highlight", "label", "onHover", "value"]);
+          pathRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
 
       var key = "p-" + index;
       var delta = value * (length - 2 * capOffset) / max;

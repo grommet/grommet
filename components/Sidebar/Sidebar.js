@@ -9,6 +9,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _Box = require("../Box");
 
+var _excluded = ["children", "footer", "header"];
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -19,7 +21,7 @@ var Sidebar = function Sidebar(_ref) {
   var children = _ref.children,
       footer = _ref.footer,
       header = _ref.header,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "footer", "header"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     pad: "small",

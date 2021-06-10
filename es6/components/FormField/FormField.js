@@ -1,3 +1,7 @@
+var _excluded = ["error", "info", "message", "type"],
+    _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
+    _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -53,7 +57,7 @@ var Message = function Message(_ref) {
       info = _ref.info,
       message = _ref.message,
       type = _ref.type,
-      rest = _objectWithoutPropertiesLoose(_ref, ["error", "info", "message", "type"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -85,7 +89,7 @@ var Input = function Input(_ref2) {
       invalid = _ref2.invalid,
       name = _ref2.name,
       _onChange = _ref2.onChange,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["component", "disabled", "invalid", "name", "onChange"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   var formContext = useContext(FormContext);
 
@@ -154,7 +158,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       required = _ref3.required,
       style = _ref3.style,
       validate = _ref3.validate,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);

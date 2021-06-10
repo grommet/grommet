@@ -5,6 +5,8 @@ exports.Keyboard = void 0;
 
 var _react = require("react");
 
+var _excluded = ["capture", "target", "children", "onKeyDown"];
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var KEYS = {
@@ -26,7 +28,7 @@ var Keyboard = function Keyboard(_ref) {
       target = _ref.target,
       children = _ref.children,
       onKeyDown = _ref.onKeyDown,
-      restProps = _objectWithoutPropertiesLoose(_ref, ["capture", "target", "children", "onKeyDown"]);
+      restProps = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var onKeyDownHandler = (0, _react.useCallback)(function (event) {
     var key = event.keyCode ? event.keyCode : event.which;

@@ -1,3 +1,5 @@
+var _excluded = ["animate", "multiple"];
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
@@ -6,7 +8,7 @@ import { grommet } from 'grommet/themes';
 export var Simple = function Simple(props) {
   var animate = props.animate,
       multiple = props.multiple,
-      rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet

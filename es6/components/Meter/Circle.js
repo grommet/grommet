@@ -1,3 +1,6 @@
+var _excluded = ["background", "max", "round", "size", "thickness", "type", "values"],
+    _excluded2 = ["color", "highlight", "label", "onHover", "value"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -16,7 +19,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
       thickness = props.thickness,
       type = props.type,
       values = props.values,
-      rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var theme = useContext(ThemeContext);
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -39,7 +42,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
         label = valueArg.label,
         onHover = valueArg.onHover,
         value = valueArg.value,
-        pathRest = _objectWithoutPropertiesLoose(valueArg, ["color", "highlight", "label", "onHover", "value"]);
+        pathRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
 
     var key = "p-" + index;
     var colorName = color || defaultColor(index, theme, values ? values.length : 0);

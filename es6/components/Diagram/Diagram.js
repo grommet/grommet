@@ -1,3 +1,6 @@
+var _excluded = ["connections"],
+    _excluded2 = ["anchor", "color", "offset", "round", "thickness", "type"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -54,7 +57,7 @@ var findTarget = function findTarget(target) {
 
 var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var connections = _ref.connections,
-      rest = _objectWithoutPropertiesLoose(_ref, ["connections"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -179,7 +182,7 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
           round = _ref3.round,
           thickness = _ref3.thickness,
           type = _ref3.type,
-          connectionRest = _objectWithoutPropertiesLoose(_ref3, ["anchor", "color", "offset", "round", "thickness", "type"]);
+          connectionRest = _objectWithoutPropertiesLoose(_ref3, _excluded2);
 
       var path;
 

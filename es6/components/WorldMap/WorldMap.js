@@ -1,3 +1,8 @@
+var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
+    _excluded2 = ["location"],
+    _excluded3 = ["color", "onClick", "onHover"],
+    _excluded4 = ["color", "coords", "key", "name", "onClick", "onHover"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -201,7 +206,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       hoverColor = _ref3.hoverColor,
       onSelectPlace = _ref3.onSelectPlace,
       placesProp = _ref3.places,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
 
   var theme = React.useContext(ThemeContext);
   var world = React.useMemo(buildWorld, []);
@@ -228,7 +233,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     if (placesProp) {
       setPlaces(placesProp.map(function (_ref4) {
         var location = _ref4.location,
-            place = _objectWithoutPropertiesLoose(_ref4, ["location"]);
+            place = _objectWithoutPropertiesLoose(_ref4, _excluded2);
 
         var coords = latLonToCoord(location, world.origin, world.extent);
         return _extends({
@@ -274,7 +279,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         continentColor = _ref6.color,
         onClick = _ref6.onClick,
         onHover = _ref6.onHover,
-        restContinents = _objectWithoutPropertiesLoose(_ref6, ["color", "onClick", "onHover"]);
+        restContinents = _objectWithoutPropertiesLoose(_ref6, _excluded3);
 
     var active = activeContinent && activeContinent === name;
     var interactiveProps = {};
@@ -306,7 +311,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         name = place.name,
         onClick = place.onClick,
         onHover = place.onHover,
-        restPlace = _objectWithoutPropertiesLoose(place, ["color", "coords", "key", "name", "onClick", "onHover"]);
+        restPlace = _objectWithoutPropertiesLoose(place, _excluded4);
 
     var d = "M" + FACTOR * coords[0] + ", " + FACTOR * coords[1] + " h0";
     var active = activePlace && activePlace === name;

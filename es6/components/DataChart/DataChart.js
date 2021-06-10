@@ -1,3 +1,6 @@
+var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "pad", "series", "size"],
+    _excluded2 = ["property", "type", "x", "y"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -37,7 +40,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       padProp = _ref.pad,
       seriesProp = _ref.series,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "pad", "series", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   // legend interaction, if any
   var _useState = useState(),
@@ -509,7 +512,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
         type = _ref9.type,
         x = _ref9.x,
         y = _ref9.y,
-        chartRest = _objectWithoutPropertiesLoose(_ref9, ["property", "type", "x", "y"]);
+        chartRest = _objectWithoutPropertiesLoose(_ref9, _excluded2);
 
     if (type === 'bars') {
       // reverse to ensure area Charts are stacked in the right order

@@ -1,3 +1,5 @@
+var _excluded = ["hidden", "restrictScroll", "children", "trapFocus"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -12,7 +14,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       restrictScroll = _ref$restrictScroll === void 0 ? false : _ref$restrictScroll,
       children = _ref.children,
       trapFocus = _ref.trapFocus,
-      rest = _objectWithoutPropertiesLoose(_ref, ["hidden", "restrictScroll", "children", "trapFocus"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useState = useState(''),
       bodyOverflowStyle = _useState[0],

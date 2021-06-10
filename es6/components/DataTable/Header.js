@@ -1,3 +1,6 @@
+var _excluded = ["background", "border", "color", "font", "gap", "units"],
+    _excluded2 = ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pad", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -27,7 +30,7 @@ var separateThemeProps = function separateThemeProps(theme) {
       font = _theme$dataTable$head.font,
       gap = _theme$dataTable$head.gap,
       units = _theme$dataTable$head.units,
-      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, ["background", "border", "color", "font", "gap", "units"]);
+      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, _excluded);
 
   var cellProps = {
     background: background,
@@ -112,7 +115,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       rowDetails = _ref2.rowDetails,
       sort = _ref2.sort,
       widths = _ref2.widths,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pad", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 

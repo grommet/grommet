@@ -1,3 +1,5 @@
+var _excluded = ["a11yTitle", "onAlign", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -25,7 +27,7 @@ var DropButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onClick = _ref.onClick,
       onClose = _ref.onClose,
       onOpen = _ref.onOpen,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "onAlign", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var buttonRef = useForwardedRef(ref);
 

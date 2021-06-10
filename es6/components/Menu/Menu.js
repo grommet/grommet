@@ -1,3 +1,6 @@
+var _excluded = ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
+    _excluded2 = ["align"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -55,7 +58,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       open = props.open,
       plain = props.plain,
       size = props.size,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
@@ -63,7 +66,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
 
   var _theme$menu$drop = theme.menu.drop,
       themeDropAlign = _theme$menu$drop.align,
-      themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, ["align"]);
+      themeDropProps = _objectWithoutPropertiesLoose(_theme$menu$drop, _excluded2);
 
   var align = dropProps && dropProps.align || dropAlign || themeDropAlign;
   var controlButtonIndex = useMemo(function () {

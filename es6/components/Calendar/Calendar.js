@@ -1,3 +1,5 @@
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -154,7 +156,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
       _ref3$size = _ref3.size,
       size = _ref3$size === void 0 ? 'medium' : _ref3$size,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme; // set activeDate when caller changes it, allows us to change
   // it internally too

@@ -1,3 +1,5 @@
+var _excluded = ["align", "children", "height", "justify", "round", "size", "src", "width"];
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -20,7 +22,7 @@ var Avatar = function Avatar(_ref) {
       size = _ref$size === void 0 ? 'medium' : _ref$size,
       src = _ref.src,
       width = _ref.width,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "height", "justify", "round", "size", "src", "width"]);
+      rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var avatarSize = theme.avatar.size[size] || size;

@@ -1,3 +1,5 @@
+var _excluded = ["children", "full", "containerTarget", "theme", "options"];
+
 var _templateObject;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -50,7 +52,7 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       themeProp = props.theme,
       _props$options = props.options,
       options = _props$options === void 0 ? defaultOptions : _props$options,
-      rest = _objectWithoutPropertiesLoose(props, ["children", "full", "containerTarget", "theme", "options"]);
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var background = props.background,
       dir = props.dir,
