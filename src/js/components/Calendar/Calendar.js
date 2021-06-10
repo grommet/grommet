@@ -124,6 +124,8 @@ const CalendarDay = ({
   <StyledDayContainer sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
+        tabIndex={0}
+        aria-label={buttonProps.a11yTitle}
         disabledProp={buttonProps.disabled}
         inRange={isInRange}
         otherMonth={otherMonth}
@@ -787,7 +789,6 @@ const Calendar = forwardRef(
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
-              tabIndex={0}
               focus={focus}
               onFocus={() => {
                 setFocus(true);
