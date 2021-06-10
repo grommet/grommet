@@ -64,8 +64,8 @@ export const Progressing = () => {
       <Box align="start" pad="large">
         <Paragraph>
           Adding and removing nodes with animated connections. 
-          The animation "draw" is applied to the entire diagram, however, 
-          the last connection receives its own animation "pulse".
+          The animation {`'draw'`} is applied to the entire diagram, however, 
+          the last connection receives its own animation {`'pulse'`}.
         </Paragraph>
         <Stack>
           <Box>
