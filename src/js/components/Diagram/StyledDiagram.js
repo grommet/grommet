@@ -37,19 +37,14 @@ const connectionStyle = (connection, index, theme) => {
   const { type } = connection.props.animation;
   const animationType = type || connection.props.animation;
 
-  if (animationType === 'draw' || animationType === true) {
-    return css`
-      path:nth-child(${index + 1}) {
-        stroke-dasharray: 500;
-        stroke-dashoffset: 500;
-        animation: ${animationItemStyle(connection.props.animation, theme)};
-      }
-    `;
-  }
   return css`
     path:nth-child(${index + 1}) {
-      stroke-dasharray: 0;
-      stroke-dashoffset: 0;
+      stroke-dasharray: ${animationType === 'draw' || animationType === true
+        ? 500
+        : 0};
+      stroke-dashoffset: ${animationType === 'draw' || animationType === true
+        ? 500
+        : 0};
       animation: ${animationItemStyle(connection.props.animation, theme)};
     }
   `;
