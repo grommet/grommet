@@ -178,7 +178,11 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
     themishObj.background = theme.global.hover.background;
-  else themishObj.background = hoverIndicator;
+  else if (hoverIndicator.color || hoverIndicator.background) {
+    if (hoverIndicator.background)
+      themishObj.background = hoverIndicator.background;
+    if (hoverIndicator.color) themishObj.color = hoverIndicator.color;
+  } else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
     return css`
