@@ -145,7 +145,10 @@ var hoverIndicatorStyle = function hoverIndicatorStyle(_ref3) {
   var hoverIndicator = _ref3.hoverIndicator,
       theme = _ref3.theme;
   var themishObj = {};
-  if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover.background;else themishObj.background = hoverIndicator;
+  if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover.background;else if (hoverIndicator.color || hoverIndicator.background) {
+    if (hoverIndicator.background) themishObj.background = hoverIndicator.background;
+    if (hoverIndicator.color) themishObj.color = hoverIndicator.color;
+  } else themishObj.background = hoverIndicator;
   var styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0) return css(["&:hover{", "}"], styles);
   return '';
