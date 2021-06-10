@@ -62,10 +62,11 @@ export const Progressing = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="start" pad="large">
-        <Text>
-          Adding and removing nodes. This diagram uses the draw animation and
-          the last connection has its own animation using pulse.
-        </Text>
+        <Paragraph>
+          Adding and removing nodes with animated connections. 
+          The animation 'draw' is applied to the entire diagram, however, 
+          the last connection receives its own animation 'pulse'.
+        </Paragraph>
         <Stack>
           <Box>
             <Box direction="row">
