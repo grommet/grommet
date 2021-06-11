@@ -17,24 +17,31 @@ const animationItemStyle = (animationType, theme) => {
 };
 
 const animationStyle = props => {
-  const animationType = props.animation.type || props.animation;
+  const animationCopy = props.animation;
+  if (typeof props.animation === 'object') {
+    animationCopy.type = animationCopy.type || 'draw';
+  }
+  const animationType = animationCopy.type || animationCopy;
 
   if (animationType === 'draw' || animationType === true) {
     return css`
       path {
         stroke-dasharray: 500;
         stroke-dashoffset: 500;
-        animation: ${animationItemStyle(props.animation, props.theme)};
+        animation: ${animationItemStyle(animationCopy, props.theme)};
       }
     `;
   }
   return css`
-    animation: ${animationItemStyle(props.animation, props.theme)};
+    animation: ${animationItemStyle(animationCopy, props.theme)};
   `;
 };
 
 const connectionStyle = (connection, index, theme) => {
-  const { type } = connection.props.animation;
+  let { type } = connection.props.animation;
+  if (typeof connection.props.animation === 'object') {
+    type = type || 'draw';
+  }
   const animationType = type || connection.props.animation;
 
   return css`
@@ -58,25 +65,31 @@ const StyledDiagram = styled.svg`
   height: 100%;
 
   /* connection's animation comes first to override Diagram's animations */
-  ${props =>
-    props.connections &&
-    props.connections.map((connection, index) => {
-      if (
-        connection !== undefined &&
-        connection.props.animation !== undefined &&
-        availableAnimations.includes(
-          connection.props.animation.type || connection.props.animation,
-        )
-      ) {
-        return connectionStyle(connection, index, props.theme);
-      }
-      return '';
-    })}
-  ${props =>
-    props.animation &&
-    availableAnimations.includes(props.animation.type || props.animation)
-      ? animationStyle(props)
-      : ''}
+ ${props =>
+   props.connections &&
+   props.connections.map((connection, index) => {
+     if (connection !== undefined && connection.props.animation) {
+       const { animation } = connection.props;
+       // setting type to 'draw' if user doesn't specify a type
+       if (typeof animation === 'object') {
+         // copying 'connection' to avoid linter error
+         const connectionCopy = connection;
+         connectionCopy.props.animation.type = animation.type || 'draw';
+         return availableAnimations.includes(animation.type || animation)
+           ? connectionStyle(connectionCopy, index, props.theme)
+           : '';
+       }
+       return connectionStyle(connection, index, props.theme);
+     }
+     return '';
+   })}
+
+    ${props =>
+      props.animation &&
+      (availableAnimations.includes(props.animation.type || props.animation) ||
+        Object.keys(props.animation).length !== 0)
+        ? animationStyle(props)
+        : ''}
   ${props => props.theme.diagram && props.theme.diagram.extend};
 `;
 
