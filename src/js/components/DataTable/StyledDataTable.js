@@ -83,9 +83,11 @@ const StyledDataTableRow = styled(TableRow)`
     `
     cursor: pointer;
   `}
-  ${props =>
-    props.itemFocus &&
-    focusStyle({ forceOutline: true, skipSvgChildren: true })}}
+  &:focus {
+    ${props =>
+      props.tabIndex >= 0 &&
+      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
   &:hover {
     ${props => props.onClickRow && !props.active && hoverStyle}
   }

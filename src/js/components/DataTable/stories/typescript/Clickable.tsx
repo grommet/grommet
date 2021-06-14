@@ -140,11 +140,6 @@ const DATA: RowType[] = [
   },
 ];
 
-const handleClickRow = event => {
-  console.log(event.datum);
-  alert('Modal Example');
-};
-
 export const ClickableDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
@@ -153,7 +148,7 @@ export const ClickableDataTable = () => (
         columns={columns}
         data={DATA}
         step={10}
-        onClickRow={event => handleClickRow(event)}
+        onClickRow={event => console.log(event.datum)}
       />
     </Box>
   </Grommet>
