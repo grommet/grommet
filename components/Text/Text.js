@@ -7,7 +7,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledText = require("./StyledText");
 
-var _excluded = ["color", "tag", "as", "a11yTitle"];
+var _Tip = require("../Tip");
+
+var _excluded = ["color", "tag", "as", "tip", "a11yTitle"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -21,16 +23,30 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var color = _ref.color,
       tag = _ref.tag,
       as = _ref.as,
-      a11yTitle = _ref.a11yTitle,
+      tip = _ref.tip,
+      _ref$a11yTitle = _ref.a11yTitle,
+      a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledText.StyledText, _extends({
+  var styledTextResult = /*#__PURE__*/_react["default"].createElement(_StyledText.StyledText, _extends({
     as: !as && tag ? tag : as,
     colorProp: color,
     "aria-label": a11yTitle
   }, rest, {
     ref: ref
   }));
+
+  if (tip) {
+    if (typeof tip === 'string') {
+      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
+        content: tip
+      }, styledTextResult);
+    }
+
+    return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tip, styledTextResult);
+  }
+
+  return styledTextResult;
 });
 Text.displayName = 'Text';
 Text.defaultProps = {

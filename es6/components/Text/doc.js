@@ -22,6 +22,11 @@ export var doc = function doc(Text) {
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the component.').defaultValue('start'),
+    tip: PropTypes.oneOfType([PropTypes.shape({
+      content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+      dropProps: PropTypes.shape({}),
+      plain: PropTypes.bool
+    }), PropTypes.string]).description("tooltip or a hint when hovering over the text. If the\n        value is a string and no a11yTitle value is provided, tip value will be\n        used for the a11yTitle default value."),
     truncate: PropTypes.bool.description("Restrict the text to a single line and truncate with ellipsis if it\nis too long to all fit. For truncate to be applied, Text needs to be \ncontained within a layout component (such as Box or a generic div).").defaultValue(false),
     weight: PropTypes.oneOfType([PropTypes.oneOf(['normal', 'bold']), PropTypes.number]).description('Font weight'),
     wordBreak: PropTypes.oneOf(['normal', 'break-all', 'keep-all', 'break-word']).description('Whether words should break when reaching the end of a line.').defaultValue('normal')
