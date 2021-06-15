@@ -8445,6 +8445,23 @@ end",
         "name": "textAlign",
       },
       Object {
+        "description": "tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
+      },
+      Object {
         "defaultValue": false,
         "description": "Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
