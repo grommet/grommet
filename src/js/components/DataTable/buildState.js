@@ -92,26 +92,19 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
       const d2Val = datumValue(d2, property);
       const d1IsString = typeof d1Val === 'string';
       const d2IsString = typeof d2Val === 'string';
-      const d1ValProc = d1IsString ? d1Val.toLowerCase() : d1Val;
-      const d2ValProc = d2IsString ? d2Val.toLowerCase() : d2Val;
-      switch (true) {
-        case d1IsString && d2IsString:
-          if (sortAsc) {
-            return d1ValProc.localeCompare(d2ValProc, undefined, {
-              sensitivity: 'base',
-            });
-          }
-          return d2ValProc.localeCompare(d1ValProc, undefined, {
+      if (d1IsString && d2IsString) {
+        if (sortAsc) {
+          return d1Val.localeCompare(d2Val, undefined, {
             sensitivity: 'base',
           });
-
-        case d1ValProc > d2ValProc:
-          return before;
-        case d1ValProc < d2ValProc:
-          return after;
-        default:
-          return 0;
+        }
+        return d2Val.localeCompare(d1Val, undefined, {
+          sensitivity: 'base',
+        });
       }
+      if (d1Val > d2Val) return before;
+      if (d1Val < d2Val) return after;
+      return 0;
     });
   }
 
