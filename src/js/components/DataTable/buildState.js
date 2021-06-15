@@ -92,7 +92,7 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
       const d2Val = datumValue(d2, property);
       if (typeof d1Val === 'string' && typeof d2Val === 'string') {
         const sortResult = d1Val.localeCompare(d2Val, undefined, {
-          sensitivity: 'base'
+          sensitivity: 'base',
         });
         return sortAsc ? sortResult : -sortResult;
       }
