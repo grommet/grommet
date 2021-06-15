@@ -2,19 +2,7 @@ import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
 
 const Image = forwardRef(
-  (
-    {
-      a11yTitle,
-      'aria-label': ariaLabel,
-      fallback,
-      onError,
-      opacity,
-      fill,
-      src,
-      ...rest
-    },
-    ref,
-  ) => {
+  ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
     const [imageMissing, setImageMissing] = useState(false);
     const handleError = event => {
       if (onError) {
@@ -27,7 +15,7 @@ const Image = forwardRef(
     };
     return (
       <StyledImage
-        aria-label={ariaLabel || a11yTitle}
+        aria-label={a11yTitle}
         {...rest}
         {...extraProps}
         ref={ref}

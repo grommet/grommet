@@ -45,7 +45,6 @@ const Select = forwardRef(
   (
     {
       a11yTitle,
-      'aria-label': ariaLabel,
       alignSelf,
       children,
       clear = false,
@@ -89,7 +88,7 @@ const Select = forwardRef(
     },
     ref,
   ) => {
-    const label = ariaLabel || a11yTitle;
+    const label = a11yTitle;
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
