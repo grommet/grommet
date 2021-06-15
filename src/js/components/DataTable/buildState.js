@@ -90,17 +90,11 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     result.sort((d1, d2) => {
       const d1Val = datumValue(d1, property);
       const d2Val = datumValue(d2, property);
-      const d1IsString = typeof d1Val === 'string';
-      const d2IsString = typeof d2Val === 'string';
-      if (d1IsString && d2IsString) {
-        if (sortAsc) {
-          return d1Val.localeCompare(d2Val, undefined, {
-            sensitivity: 'base',
-          });
-        }
-        return d2Val.localeCompare(d1Val, undefined, {
-          sensitivity: 'base',
+      if (typeof d1Val === 'string' && typeof d2Val === 'string') {
+        const sortResult = d1Val.localeCompare(d2Val, undefined, {
+          sensitivity: 'base'
         });
+        return sortAsc ? sortResult : -sortResult;
       }
       if (d1Val > d2Val) return before;
       if (d1Val < d2Val) return after;
