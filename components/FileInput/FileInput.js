@@ -230,6 +230,9 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     hoverIndicator: true,
     onClick: function onClick(event) {
       event.stopPropagation();
+      if (_onChange) _onChange(event, {
+        files: []
+      });
       setFiles([]);
       inputRef.current.focus();
     }
@@ -281,6 +284,9 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         var nextFiles = [].concat(files);
         nextFiles.splice(index, 1);
         setFiles(nextFiles);
+        if (_onChange) _onChange(event, {
+          files: nextFiles
+        });
         if (nextFiles.length === 0) inputRef.current.value = '';
         inputRef.current.focus();
       }
@@ -344,7 +350,9 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       setFiles(nextFiles);
       setDragOver(false);
-      if (_onChange) _onChange(event);
+      if (_onChange) _onChange(event, {
+        files: nextFiles
+      });
     }
   })));
 });

@@ -14,11 +14,12 @@ export var Multiple = function Multiple() {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
     multiple: true,
-    onChange: function onChange(event) {
-      var fileList = event.target.files;
+    onChange: function onChange(event, _ref) {
+      var files = _ref.files;
+      console.log(event);
 
-      for (var i = 0; i < fileList.length; i += 1) {
-        var file = fileList[i];
+      for (var i = 0; i < files.length; i += 1) {
+        var file = files[i];
         console.log(file.name);
       }
     }

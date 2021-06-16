@@ -35,7 +35,7 @@ var doc = function doc(FileInput) {
       aggregateThreshold: _reactDesc.PropTypes.number
     })]).description("Whether to allow multiple files. If an object is supplied,\n        'aggregageThreshold' indicates the maximum number of individual\n        files to show. Above this, only a single message describing the\n        number of files will be shown.").defaultValue(undefined),
     name: _reactDesc.PropTypes.string.description("The name attribute of the input. This is required when used within\n      a Form."),
-    onChange: _reactDesc.PropTypes.func.description("Function that will be called when one or more files are added to \n      the input. The file(s) can be found in event.target.files."),
+    onChange: _reactDesc.PropTypes.func.description("Function that will be called when one or more files are added to \n      or removed from the input. It will be passed two arguments: the event \n      and an object with key 'files'. The file(s) can be found in \n      event.target.files or by deconstructing files from the second argument. \n      For example: (event, { files }) => {}."),
     renderFile: _reactDesc.PropTypes.func.description("Provides custom rendering of the file. If not provided, the file's\n      name will be shown. It will be passed the browser File object as\n      an argument. For example: (file) => <Text>{file.name}</Text>")
   };
   return DocumentedFileInput;
