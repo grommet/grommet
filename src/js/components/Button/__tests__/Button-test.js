@@ -3,39 +3,39 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import { Add, Next } from 'grommet-icons';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <Button a11yTitle="Test button" label="Test" onClick={() => {}} />
       </Grommet>,
     );
 
-    fireEvent.click(getByText('Test'));
+    fireEvent.click(screen.getByText('Test'));
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   test('passes through the aria-label prop', async () => {
     const TEST_LABEL = 'Test Label';
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <Button aria-label={TEST_LABEL} label="Test" onClick={() => {}} />
       </Grommet>,
     );
 
-    const button = container.querySelector('button');
-    expect(button.getAttribute('aria-label')).toEqual(TEST_LABEL);
+    const button = screen.getByRole('button', { name: TEST_LABEL });
+    expect(button).toHaveAttribute('aria-label', TEST_LABEL);
 
-    fireEvent.click(getByText('Test'));
+    fireEvent.click(button);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -46,16 +46,20 @@ describe('Button', () => {
         <Button label="Test" onClick={() => {}} />
       </Grommet>,
     );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children function', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}}>{() => <Text>Test</Text>}</Button>
+        <Button onClick={() => {}}>
+          {() => <div data-testid="children function" />}
+        </Button>
       </Grommet>,
     );
 
+    expect(screen.getByTestId('children function')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -63,13 +67,24 @@ describe('Button', () => {
     const { container } = render(
       <Grommet>
         <Button onClick={() => {}} disabled>
-          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+          {({ disabled }) => (
+            <Text>{`Button#1 ${disabled ? 'Disabled' : 'not Disabled'}`}</Text>
+          )}
         </Button>
         <Button onClick={() => {}}>
-          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+          {({ disabled }) => (
+            <Text>{`Button#2 ${disabled ? 'Disabled' : 'not Disabled'}`}</Text>
+          )}
         </Button>
       </Grommet>,
     );
+
+    expect(
+      screen.getByRole('button', { name: 'Button#1 Disabled' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Button#2 not Disabled' }),
+    ).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -115,21 +130,61 @@ describe('Button', () => {
   test('primary', () => {
     const { container } = render(
       <Grommet>
-        <Button primary label="Test" onClick={() => {}} />
+        <Button primary label="Primary Button" onClick={() => {}} />
       </Grommet>,
     );
 
+    expect(screen.getByRole('button', { name: 'Primary Button' })).toHaveStyle({
+      'background-color': '#7D4CDB',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('color', () => {
     const { container } = render(
       <Grommet>
-        <Button color="accent-1" label="Test" onClick={() => {}} />
-        <Button color="accent-1" primary label="Test" onClick={() => {}} />
-        <Button color="#111111" primary label="Test" onClick={() => {}} />
-        <Button color="#123" primary label="Test" onClick={() => {}} />
+        <Button color="accent-1" label="accent-1" onClick={() => {}} />
+        <Button
+          color="accent-1"
+          primary
+          label="primary accent-1"
+          onClick={() => {}}
+        />
+        <Button
+          color="#111111"
+          primary
+          label="custom color #1"
+          onClick={() => {}}
+        />
+        <Button
+          color="#123"
+          primary
+          label="custom color #2"
+          onClick={() => {}}
+        />
       </Grommet>,
+    );
+
+    expect(screen.getByRole('button', { name: 'accent-1' })).toHaveStyle({
+      'background-color': 'transparent',
+    });
+
+    expect(
+      screen.getByRole('button', { name: 'primary accent-1' }),
+    ).toHaveStyle({
+      'background-color': '#6FFFB0',
+    });
+
+    expect(screen.getByRole('button', { name: 'custom color #1' })).toHaveStyle(
+      {
+        'background-color': '#111111',
+      },
+    );
+
+    expect(screen.getByRole('button', { name: 'custom color #2' })).toHaveStyle(
+      {
+        'background-color': '#123',
+      },
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -138,35 +193,71 @@ describe('Button', () => {
   test('fill', () => {
     const { container } = render(
       <Grommet>
-        <Button fill />
-        <Button fill={false} />
-        <Button fill="horizontal" />
-        <Button fill="vertical" />
+        <Button fill label="fill" />
+        <Button fill={false} label="fill false" />
+        <Button fill="horizontal" label="fill horizontal" />
+        <Button fill="vertical" label="fill vertical" />
       </Grommet>,
     );
+
+    expect(screen.getByRole('button', { name: 'fill' })).toHaveStyle({
+      width: '100%',
+      height: '100%',
+    });
+
+    expect(screen.getByRole('button', { name: 'fill false' })).not.toHaveStyle({
+      width: '100%',
+      height: '100%',
+    });
+
+    expect(screen.getByRole('button', { name: 'fill horizontal' })).toHaveStyle(
+      {
+        width: '100%',
+      },
+    );
+
+    expect(screen.getByRole('button', { name: 'fill vertical' })).toHaveStyle({
+      height: '100%',
+    });
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus', () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
-        <Button label="Test" onClick={() => {}} />
+        <Button label="Test focus" onClick={() => {}} />
       </Grommet>,
     );
 
-    fireEvent.focus(getByText('Test'));
+    const button = screen.getByRole('button', { name: 'Test focus' });
+
+    expect(button).not.toHaveFocus();
+    expect(document.body).toHaveFocus();
+
+    userEvent.tab();
+
+    expect(button).toHaveFocus();
+    expect(document.body).not.toHaveFocus();
+
+    expect(button).toHaveStyleRule('box-shadow', '0 0 2px 2px #6FFFB0', {
+      modifier: ':focus',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('tip', () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <Button label="Default Tip" onClick={() => {}} tip="tooltip" />
       </Grommet>,
     );
 
-    fireEvent.mouseOver(getByText('Default Tip'));
+    expect(screen.queryByText('tooltip')).not.toBeInTheDocument();
+
+    fireEvent.mouseOver(screen.getByText('Default Tip'));
+    expect(screen.getByText('tooltip')).toBeInTheDocument();
+
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -186,6 +277,11 @@ describe('Button', () => {
         <Button disabled icon={<svg />} label="Button" primary />
       </Grommet>,
     );
+
+    const allButtons = screen.getAllByRole('button');
+
+    expect(allButtons).toHaveLength(11);
+    allButtons.forEach(button => expect(button).toBeDisabled());
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -213,30 +309,44 @@ describe('Button', () => {
   test('icon label', () => {
     const { container } = render(
       <Grommet>
-        <Button icon={<svg />} label="Test" onClick={() => {}} />
+        <Button
+          icon={<svg data-testid="icon" />}
+          label="Test"
+          onClick={() => {}}
+        />
       </Grommet>,
     );
 
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('reverse icon label', () => {
     const { container } = render(
       <Grommet>
-        <Button reverse icon={<svg />} label="Test" onClick={() => {}} />
+        <Button
+          reverse
+          icon={<svg data-testid="icon" />}
+          label="Test"
+          onClick={() => {}}
+        />
       </Grommet>,
     );
 
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('href', () => {
     const { container } = render(
       <Grommet>
-        <Button href="test" />
+        <Button href="test" label="Button as link" />
       </Grommet>,
     );
 
+    expect(
+      screen.getByRole('link', { name: 'Button as link' }),
+    ).toHaveAttribute('href', 'test');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -249,6 +359,11 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(
+      screen.getByRole('button', { name: 'hoverIndicator' }),
+    ).toHaveStyleRule('background-color', 'rgba(221,221,221,0.4)', {
+      modifier: ':hover',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -261,6 +376,11 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(
+      screen.getByRole('button', { name: 'hoverIndicator' }),
+    ).toHaveStyleRule('background-color', 'rgba(125,76,219,1)', {
+      modifier: ':hover',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -290,13 +410,13 @@ describe('Button', () => {
 
   test('onClick', () => {
     const onClick = jest.fn();
-    const { getByRole } = render(
+    render(
       <Grommet>
         <Button label="Test" onClick={onClick} />
       </Grommet>,
     );
 
-    fireEvent.click(getByRole('button'));
+    fireEvent.click(screen.getByRole('button'));
     expect(onClick).toBeCalled();
   });
 
@@ -332,6 +452,7 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -343,18 +464,27 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    const allButtons = screen.getAllByRole('button', { name: 'Title' });
+
+    expect(allButtons).toHaveLength(2);
+    allButtons.forEach(button =>
+      expect(button).toHaveAttribute('aria-label', 'Title'),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test(`disabled state cursor should indicate the button cannot be
   clicked`, () => {
-    const { getByText } = render(
+    render(
       <Grommet>
         <Button disabled label="Button" />
       </Grommet>,
     );
 
-    const button = getByText('Button');
+    const button = screen.getByRole('button', { name: 'Button' });
+
+    expect(button).toHaveStyle({ cursor: 'default' });
+
     // eslint-disable-next-line no-underscore-dangle
     const cursorStyle = window.getComputedStyle(button)._values.cursor;
     expect(cursorStyle).not.toBe('pointer');
@@ -378,6 +508,7 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(screen.getByText('2')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -392,6 +523,7 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(screen.getByText('9+')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -418,11 +550,12 @@ describe('Button', () => {
         <Button
           a11yTitle="Button, Add user alert"
           label="Button"
-          badge={<Add />}
+          badge={<Add data-testid="badge" />}
         />
       </Grommet>,
     );
 
+    expect(screen.getByTestId('badge')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
