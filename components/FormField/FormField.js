@@ -268,8 +268,13 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
     borderColor = formFieldTheme.disabled.border.color;
-  } else if (error && themeBorder && themeBorder.error.color) {
-    borderColor = themeBorder.error.color || 'status-critical';
+  } else if ( // backward compatibility check
+  error && themeBorder && themeBorder.error.color || error && formFieldTheme.error && formFieldTheme.error.border) {
+    if (themeBorder.error.color && formFieldTheme.error.border === undefined) {
+      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (formFieldTheme.error.border && formFieldTheme.error.border.color) {
+      borderColor = formFieldTheme.error.border.color || 'status-critical';
+    }
   } else if (focus && formFieldTheme.focus && formFieldTheme.focus.border && formFieldTheme.focus.border.color) {
     borderColor = formFieldTheme.focus.border.color;
   } else {

@@ -48,7 +48,7 @@ var themeDoc = {
     defaultValue: 'border'
   },
   'formField.border.error.color': {
-    description: 'The border color of the error.',
+    description: "The border color of the error. Deprecated, use \n    error.border.color instead.",
     type: "string | {'dark': string, 'light': string}",
     defaultValue: "{ dark: 'white', light: 'status-critical' },"
   },
@@ -101,6 +101,11 @@ var themeDoc = {
     description: 'The opacity of the FormField background when there is an error.',
     type: 'string | boolean | number',
     defaultValue: undefined
+  },
+  'formField.error.border.color': {
+    description: 'The border color of the error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'white', light: 'status-critical' },"
   },
   'formField.error.color': {
     description: 'The color of the FormField error.',
