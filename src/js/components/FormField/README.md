@@ -263,7 +263,7 @@ border
 **formField.border.error.color**
 
 The border color of the error. Deprecated, use 
-    error.border.color instead Expects `string | {'dark': string, 'light': string}`.
+    error.border.color instead. Expects `string | {'dark': string, 'light': string}`.
 
 Defaults to
 
