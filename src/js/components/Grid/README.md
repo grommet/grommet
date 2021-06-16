@@ -306,6 +306,15 @@ small
 medium
 large
 xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto
 {
   count: 
     fit
@@ -317,6 +326,15 @@ xlarge
     medium
     large
     xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
     [
       xsmall
       small
@@ -382,6 +400,50 @@ none
     string
 }
 string
+```
+
+**height**
+
+A fixed height.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 ```
 
 **justify**
@@ -568,6 +630,50 @@ The DOM tag or react component to use for the element. Defaults to `div`.
 ```
 string
 function
+```
+
+**width**
+
+A fixed width.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}
 ```
   
 ## Intrinsic element

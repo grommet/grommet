@@ -397,6 +397,11 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "visibility": "visible",
+          }
+        }
       >
         <div
           className="c4"
@@ -413,6 +418,11 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
       >
         <div
           className="c6"
@@ -935,6 +945,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
       >
         <div
           className="c4"
@@ -951,6 +966,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c3"
+        style={
+          Object {
+            "visibility": "visible",
+          }
+        }
       >
         <div
           className="c6"
@@ -1473,6 +1493,7 @@ exports[`Carousel navigate 1`] = `
     >
       <div
         class="c3"
+        style="visibility: visible;"
       >
         <div
           class="c4"
@@ -1489,6 +1510,7 @@ exports[`Carousel navigate 1`] = `
     >
       <div
         class="c3"
+        style="visibility: hidden;"
       >
         <div
           class="c6"
@@ -1604,6 +1626,7 @@ exports[`Carousel navigate 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 csgqhr"
@@ -1620,6 +1643,7 @@ exports[`Carousel navigate 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 hggYQt"
@@ -1735,6 +1759,7 @@ exports[`Carousel navigate 3`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 gWwFrB"
@@ -1751,6 +1776,7 @@ exports[`Carousel navigate 3`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 csgqhr"
@@ -2249,6 +2275,7 @@ exports[`Carousel play 1`] = `
     >
       <div
         class="c3"
+        style="visibility: visible;"
       >
         <div
           class="c4"
@@ -2265,6 +2292,7 @@ exports[`Carousel play 1`] = `
     >
       <div
         class="c3"
+        style="visibility: hidden;"
       >
         <div
           class="c6"
@@ -2379,6 +2407,7 @@ exports[`Carousel play 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 csgqhr"
@@ -2395,6 +2424,7 @@ exports[`Carousel play 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 hggYQt"
@@ -2591,6 +2621,20 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   overflow: hidden;
 }
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2663,25 +2707,6 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-transform: translateX(-200%);
-  -ms-transform: translateX(-200%);
-  transform: translateX(-200%);
-  -webkit-animation: cowwqN 1s 0s forwards;
-  animation: cowwqN 1s 0s forwards;
 }
 
 .c1 {
@@ -2833,6 +2858,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
     >
       <div
         class="c3"
+        style="visibility: visible;"
       >
         <div
           class="c4"
@@ -2849,6 +2875,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
     >
       <div
         class="c3"
+        style="visibility: hidden;"
       >
         <div
           class="c6"

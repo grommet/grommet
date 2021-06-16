@@ -23,7 +23,14 @@ const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
     border-color: ${props =>
-      normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
+      normalizeColor(props.theme.checkBox.hover?.border?.color, props.theme)};
+  }
+  :hover {
+    background-color: ${props =>
+      normalizeColor(
+        !props.disabled && props.theme.checkBox.hover?.background?.color,
+        props.theme,
+      )};
   }
 `;
 
@@ -45,7 +52,7 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 const StyledCheckBoxContainer = styled.label`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: ${props => props.theme.checkBox.label.align};
   user-select: none;
   ${props => (props.fillProp ? fillStyle() : 'width: fit-content;')}
   ${props =>
@@ -59,7 +66,26 @@ const StyledCheckBoxContainer = styled.label`
     )}
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
-  ${props => props.theme.checkBox.hover.border.color && hoverStyle}
+  ${hoverStyle}
+  // when the CheckBox has focus but there is no focusIndicator,
+  // apply the hover styling instead so that keyboard users know
+  // which CheckBox is active
+  ${props =>
+    props.focus &&
+    !props.focusIndicator &&
+    `
+    input:not([disabled]) + div,
+    input:not([disabled]) + span {
+      border-color: ${normalizeColor(
+        props.theme.checkBox.hover?.border?.color,
+        props.theme,
+      )};
+    }
+     
+    background-color: ${normalizeColor(
+      !props.disabled && props.theme.checkBox.hover?.background?.color,
+      props.theme,
+    )};`}
   ${props => props.theme.checkBox.extend}
 `;
 
@@ -87,7 +113,7 @@ StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
 const StyledCheckBoxBox = styled.div`
-  ${props => props.focus && focusStyle()};
+  ${props => props.focus && props.focusIndicator && focusStyle()};
   ${props => props.theme.checkBox.check.extend};
 `;
 
@@ -109,7 +135,7 @@ const StyledCheckBoxToggle = styled.span`
       ? normalizeColor(props.theme.checkBox.toggle.background, props.theme)
       : 'transparent'};
 
-  ${props => props.focus && focusStyle()};
+  ${props => props.focus && props.focusIndicator && focusStyle()};
   ${props => props.theme.checkBox.toggle.extend};
 `;
 
@@ -126,10 +152,7 @@ const StyledCheckBoxKnob = styled.span`
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
   background: ${props =>
-    normalizeColor(
-      props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'],
-      props.theme,
-    )};
+    normalizeColor(props.theme.checkBox.toggle.color, props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   ${props => props.theme.checkBox.toggle.knob.extend};
 `;
