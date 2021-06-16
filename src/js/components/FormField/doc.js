@@ -103,7 +103,8 @@ export const themeDoc = {
     defaultValue: 'border',
   },
   'formField.border.error.color': {
-    description: 'The border color of the error.',
+    description: `The border color of the error. Deprecated, use 
+    error.border.color instead`,
     type: "string | {'dark': string, 'light': string}",
     defaultValue: "{ dark: 'white', light: 'status-critical' },",
   },
