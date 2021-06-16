@@ -165,7 +165,7 @@ describe('DateInput', () => {
         <DateInput
           id="item"
           name="item"
-          value={[]}
+          defaultValue={[]}
           inline
           onChange={onChange}
         />
@@ -216,7 +216,7 @@ describe('DateInput', () => {
         <DateInput
           id="item"
           name="item"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -237,7 +237,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -259,7 +259,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           onChange={onChange}
         />
       </Grommet>,
@@ -284,7 +284,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -308,7 +308,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="m/d/yy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -334,7 +334,7 @@ describe('DateInput', () => {
           name="item"
           format="mm/dd/yyyy-mm/dd/yyyy"
           range
-          value={DATES}
+          defaultValue={DATES}
           inline
           onChange={onChange}
         />
