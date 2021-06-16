@@ -27,6 +27,12 @@ export const doc = CheckBox => {
       with the same name so form submissions work.`,
       )
       .defaultValue(false),
+    fill: PropTypes.bool
+      .description(
+        `Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.`,
+      )
+      .defaultValue(undefined),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),
@@ -114,6 +120,12 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
+  'checkBox.hover.background.color': {
+    description: `The background color of the Box surrounding the RadioButton 
+    when hovered over.`,
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
   'checkBox.icon.size': {
     description: 'The size of the checked icon.',
     type: 'string',
@@ -133,6 +145,11 @@ export const themeDoc = {
     description: 'The icon to use when indeterminate.',
     type: 'React.Element',
     defaultValue: undefined,
+  },
+  'checkBox.label.align': {
+    description: 'How to align the checkbox and label.',
+    type: 'string',
+    defaultValue: 'center',
   },
   'checkBox.pad': {
     description: 'The pad around the CheckBox and its label.',

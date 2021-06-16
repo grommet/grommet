@@ -65,15 +65,15 @@ exports[`Anchor disabled renders 1`] = `
   text-decoration: none;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-  />
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+      disabled=""
+    />
+  </div>
 </div>
 `;
 
@@ -188,31 +188,65 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+        style="display: inline-flex;"
+      >
+        <svg
+          color="#7D4CDB"
+        />
+        <span
+          class="c3"
+        />
+        Test
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Anchor is clickable 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
+    class="c1"
+    href="#"
   >
-    <span
-      className="c2"
-      style={
-        Object {
-          "display": "inline-flex",
-        }
-      }
-    >
-      <svg
-        color="#7D4CDB"
-      />
-      <span
-        className="c3"
-      />
-      Test
-    </span>
+    Test
   </a>
 </div>
 `;
@@ -244,17 +278,17 @@ exports[`Anchor primary renders 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
+<div>
+  <div
+    class="c0"
   >
-    Test
-  </a>
+    <a
+      class="c1"
+      href="#"
+    >
+      Test
+    </a>
+  </div>
 </div>
 `;
 
@@ -285,14 +319,14 @@ exports[`Anchor renders 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-  />
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+    />
+  </div>
 </div>
 `;
 
@@ -323,17 +357,17 @@ exports[`Anchor renders tag 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <span
-    className="c1"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
+<div>
+  <div
+    class="c0"
   >
-    Test
-  </span>
+    <span
+      class="c1"
+      href="#"
+    >
+      Test
+    </span>
+  </div>
 </div>
 `;
 
@@ -365,13 +399,11 @@ exports[`Anchor renders with children 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
+    class="c1"
     href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     children
   </a>
@@ -433,32 +465,27 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
+<div>
+  <div
+    class="c0"
   >
-    <span
-      className="c2"
-      style={
-        Object {
-          "display": "inline-flex",
-        }
-      }
+    <a
+      class="c1"
     >
-      Test
       <span
-        className="c3"
-      />
-      <svg
-        color="#7D4CDB"
-      />
-    </span>
-  </a>
+        class="c2"
+        style="display: inline-flex;"
+      >
+        Test
+        <span
+          class="c3"
+        />
+        <svg
+          color="#7D4CDB"
+        />
+      </span>
+    </a>
+  </div>
 </div>
 `;
 
@@ -609,45 +636,48 @@ exports[`Anchor size renders 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="xsmall"
-  />
-  <a
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="small"
-  />
-  <a
-    className="c3"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="medium"
-  />
-  <a
-    className="c4"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="large"
-  />
-  <a
-    className="c5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="xlarge"
-  />
-  <a
-    className="c6"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    size="xxlarge"
-  />
+.c7 {
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: normal;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c7:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+    />
+    <a
+      class="c2"
+    />
+    <a
+      class="c3"
+    />
+    <a
+      class="c4"
+    />
+    <a
+      class="c5"
+    />
+    <a
+      class="c6"
+    />
+    <a
+      class="c7"
+    />
+  </div>
 </div>
 `;
 
@@ -791,32 +821,28 @@ exports[`Anchor weight renders 1`] = `
   text-decoration: underline;
 }
 
-<div
-  className="c0"
->
-  <a
-    className="c1"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
+<div>
+  <div
+    class="c0"
   >
-    Normal
-  </a>
-  <a
-    className="c2"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
-  >
-    Bold
-  </a>
-  <a
-    className="c3"
-    href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
-  >
-    Bold
-  </a>
+    <a
+      class="c1"
+      href="#"
+    >
+      Normal
+    </a>
+    <a
+      class="c2"
+      href="#"
+    >
+      Bold
+    </a>
+    <a
+      class="c3"
+      href="#"
+    >
+      Bold
+    </a>
+  </div>
 </div>
 `;

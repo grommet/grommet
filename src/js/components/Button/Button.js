@@ -19,6 +19,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 
+import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 
@@ -92,13 +93,40 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
+const getPropertyColor = (property, paths = [], theme, kind, primary) => {
+  let result;
+  if (kind) {
+    let obj = (typeof kind === 'object' && kind) || theme.button;
+    // index 0 is default state
+    if (paths[0]) {
+      const parts = paths[0].split('.');
+      while (obj && parts.length) obj = obj[parts.shift()];
+    }
+    if (obj) {
+      result = obj[property] || (obj[property] && obj[property].color);
+    }
+  } else if (primary && theme && theme.button && theme.button.primary) {
+    result =
+      theme.button.primary[property] ||
+      (theme.button.primary[property] && theme.button.primary[property].color);
+  } else {
+    result =
+      (theme && theme.button && theme.button[property]) ||
+      (theme &&
+        theme.button &&
+        theme.button[property] &&
+        theme.button[property].color);
+  }
+  return result;
+};
+
 const Button = forwardRef(
   (
     {
-      a11yTitle,
       active,
       align = 'center',
       'aria-label': ariaLabel,
+      badge: badgeProp,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -122,6 +150,8 @@ const Button = forwardRef(
       size,
       tip,
       type = 'button',
+      // can't alphabetize a11yTitle before tip is defined
+      a11yTitle = typeof tip === 'string' ? tip : undefined,
       as,
       ...rest
     },
@@ -257,6 +287,30 @@ const Button = forwardRef(
       contents = first || second || children;
     }
 
+    const background = getPropertyColor(
+      'background',
+      themePaths && themePaths.base,
+      theme,
+      kind,
+      primary,
+    );
+    const border = getPropertyColor(
+      'border',
+      themePaths && themePaths.base,
+      theme,
+      kind,
+      primary,
+    );
+    // set the badge relative to the button content
+    // when the button doesn't have background or border
+    // (!kind && icon && !label) is necessary because for old button logic,
+    // if button has icon but not label, it will be considered "plain",
+    // so no border or background will be applied
+    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    if (badgeProp && innerBadge) {
+      contents = <Badge content={badgeProp}>{contents}</Badge>;
+    }
+
     let styledButtonResult;
     if (kind) {
       styledButtonResult = (
@@ -266,7 +320,8 @@ const Button = forwardRef(
           ref={ref}
           active={active}
           align={align}
-          aria-label={a11yTitle}
+          aria-label={ariaLabel || a11yTitle}
+          badge={badgeProp}
           colorValue={color}
           disabled={disabled}
           gap={gap}
@@ -342,9 +397,18 @@ const Button = forwardRef(
     }
     if (tip) {
       if (typeof tip === 'string') {
-        return <Tip content={tip}>{styledButtonResult}</Tip>;
+        styledButtonResult = <Tip content={tip}>{styledButtonResult}</Tip>;
+      } else {
+        styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
       }
-      return <Tip {...tip}>{styledButtonResult}</Tip>;
+    }
+
+    // if button has background or border, place badge relative
+    // to outer edge of button
+    if (badgeProp && !innerBadge) {
+      styledButtonResult = (
+        <Badge content={badgeProp}>{styledButtonResult}</Badge>
+      );
     }
     return styledButtonResult;
   },

@@ -16,7 +16,12 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-import { formatToSchema, valueToText, textToValue } from './utils';
+import {
+  formatToSchema,
+  schemaToMask,
+  valueToText,
+  textToValue,
+} from './utils';
 
 const DateInput = forwardRef(
   (
@@ -49,20 +54,7 @@ const DateInput = forwardRef(
     const schema = useMemo(() => formatToSchema(format), [format]);
 
     // mask is only used when a format is provided
-    const mask = useMemo(() => {
-      if (!schema) return undefined;
-      return schema.map(part => {
-        const char = part[0].toLowerCase();
-        if (char === 'm' || char === 'd' || char === 'y') {
-          return {
-            placeholder: part,
-            length: [1, part.length],
-            regexp: new RegExp(`^[0-9]{1,${part.length}}$`),
-          };
-        }
-        return { fixed: part };
-      });
-    }, [schema]);
+    const mask = useMemo(() => schemaToMask(schema), [schema]);
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
@@ -92,7 +84,9 @@ const DateInput = forwardRef(
         id={inline && !format ? id : undefined}
         range={range}
         date={range ? undefined : value}
-        dates={range ? [value] : undefined}
+        // when caller initializes with empty array, dates should be undefined
+        // allowing the user to select both begin and end of the range
+        dates={range && value.length ? [value] : undefined}
         onSelect={
           disabled
             ? undefined
@@ -151,7 +145,7 @@ const DateInput = forwardRef(
             onChange={event => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
-              const nextValue = textToValue(nextTextValue, schema);
+              const nextValue = textToValue(nextTextValue, schema, value);
               // update value even when undefined
               setValue(nextValue);
               setInternalValue(nextValue || '');

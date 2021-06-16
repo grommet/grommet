@@ -17,7 +17,9 @@ const RadioButtonGroup = forwardRef(
   (
     {
       children,
+      defaultValue,
       disabled,
+      focusIndicator = true,
       name,
       onChange,
       options: optionsProp,
@@ -42,8 +44,13 @@ const RadioButtonGroup = forwardRef(
         : { disabled, ...o },
     );
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(
+      name,
+      valueProp,
+      defaultValue || '',
+    );
 
+    // track if focus is on one of the radio buttons
     const [focus, setFocus] = useState();
 
     const optionRefs = useRef([]);
@@ -61,24 +68,26 @@ const RadioButtonGroup = forwardRef(
     }, [options, value]);
 
     useEffect(() => {
-      if (focus && valueIndex >= 0) optionRefs.current[valueIndex].focus();
+      // if tab comes back to RadioButtonGroup when there still is no selection,
+      // we want focus to be on the first RadioButton
+      if (focus && !valueIndex) {
+        optionRefs.current[0].focus();
+      }
     }, [focus, valueIndex]);
 
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {
         const nextIndex = valueIndex + 1;
-        const nextValue = options[nextIndex].value;
-        setValue(nextValue);
-        if (onChange) onChange({ target: { value: nextValue } });
+        // ensure change event occurs
+        optionRefs.current[nextIndex].click();
       }
     };
 
     const onPrevious = () => {
       if (valueIndex > 0) {
         const nextIndex = valueIndex - 1;
-        const nextValue = options[nextIndex].value;
-        setValue(nextValue);
-        if (onChange) onChange({ target: { value: nextValue } });
+        // ensure change event occurs
+        optionRefs.current[nextIndex].click();
       }
     };
 
@@ -86,10 +95,12 @@ const RadioButtonGroup = forwardRef(
       // Delay just a wee bit so Chrome doesn't missing turning the button on.
       // Chrome behaves differently in that focus is given to radio buttons
       // when the user selects one, unlike Safari and Firefox.
-      setTimeout(() => !focus && setFocus(true), 1);
+      setTimeout(() => {
+        setFocus(true);
+      }, 1);
     };
 
-    const onBlur = () => focus && setFocus(false);
+    const onBlur = () => setFocus(false);
     return (
       <Keyboard
         target="document"
@@ -100,6 +111,7 @@ const RadioButtonGroup = forwardRef(
       >
         <Box
           ref={ref}
+          role="radiogroup"
           {...theme.radioButtonGroup.container}
           gap={
             gap ||
@@ -120,33 +132,49 @@ const RadioButtonGroup = forwardRef(
                 ...optionRest
               },
               index,
-            ) => (
-              <RadioButton
-                ref={aRef => {
-                  optionRefs.current[index] = aRef;
-                }}
-                key={optionValue}
-                name={name}
-                label={!children ? label : undefined}
-                disabled={optionDisabled}
-                checked={optionValue === value}
-                focus={
-                  focus &&
-                  (optionValue === value || (value === undefined && !index))
-                }
-                id={id}
-                value={optionValue}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onChange={event => {
-                  setValue(optionValue);
-                  if (onChange) onChange(event);
-                }}
-                {...optionRest}
-              >
-                {children ? state => children(optionsProp[index], state) : null}
-              </RadioButton>
-            ),
+            ) => {
+              // if focus is within the RadioButtonGroup, determine
+              // which radio button should be the active one
+              const focusable =
+                optionValue === value ||
+                (value === undefined && !index) ||
+                // when nothing has been selected, show focus
+                // on the first radiobutton
+                (value === '' && index === 0);
+              return (
+                <RadioButton
+                  ref={aRef => {
+                    optionRefs.current[index] = aRef;
+                  }}
+                  key={optionValue}
+                  name={name}
+                  label={!children ? label : undefined}
+                  disabled={optionDisabled}
+                  checked={optionValue === value}
+                  focus={focus && focusable}
+                  // when contained in a FormField, focusIndicator = false,
+                  // so that the FormField has focus style. However, we still
+                  // need to visually indicate when a RadioButton is active.
+                  // In RadioButton, if focus = true but focusIndicator = false,
+                  // we will apply the hover treament.
+                  focusIndicator={focusIndicator}
+                  id={id}
+                  value={optionValue}
+                  onFocus={onFocus}
+                  onBlur={onBlur}
+                  onChange={event => {
+                    setValue(optionValue);
+                    if (onChange) onChange(event);
+                  }}
+                  tabIndex={focusable ? '0' : '-1'} // necessary for Firefox
+                  {...optionRest}
+                >
+                  {children
+                    ? state => children(optionsProp[index], state)
+                    : null}
+                </RadioButton>
+              );
+            },
           )}
         </Box>
       </Keyboard>

@@ -37,6 +37,15 @@ Same as React <input disabled={} />. Also adds a hidden input element
 boolean
 ```
 
+**fill**
+
+Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.
+
+```
+boolean
+```
+
 **id**
 
 The DOM id attribute value to use for the underlying <input/> element.
@@ -279,6 +288,17 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**checkBox.hover.background.color**
+
+The background color of the Box surrounding the RadioButton 
+    when hovered over. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **checkBox.icon.size**
 
 The size of the checked icon. Expects `string`.
@@ -317,6 +337,16 @@ Defaults to
 
 ```
 undefined
+```
+
+**checkBox.label.align**
+
+How to align the checkbox and label. Expects `string`.
+
+Defaults to
+
+```
+center
 ```
 
 **checkBox.pad**

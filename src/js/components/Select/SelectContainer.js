@@ -30,11 +30,8 @@ const OptionsBox = styled.div`
   outline: none;
 `;
 
-const OptionBox = styled(Box)`
-  ${props => props.selected && selectedStyle}
-`;
-
 const SelectOption = styled(Button)`
+  ${props => props.selected && props.textComponent && selectedStyle}
   display: block;
   width: 100%;
 `;
@@ -272,8 +269,6 @@ const SelectContainer = forwardRef(
     const onKeyDownOption = useCallback(
       event => {
         if (!onSearch) {
-          event.preventDefault();
-
           const nextActiveIndex = options.findIndex((e, index) => {
             let label;
             if (typeof e === 'object') {
@@ -282,12 +277,14 @@ const SelectContainer = forwardRef(
               label = e;
             }
             return (
+              typeof label === 'string' &&
               label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
               !isDisabled(index)
             );
           });
 
           if (nextActiveIndex >= 0) {
+            event.preventDefault();
             setActiveIndex(nextActiveIndex);
             setKeyboardNavigation(true);
           }
@@ -381,23 +378,31 @@ const SelectContainer = forwardRef(
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
                   let child;
-                  if (children)
+                  let textComponent = false;
+                  if (children) {
                     child = children(option, index, options, {
                       active: optionActive,
                       disabled: optionDisabled,
                       selected: optionSelected,
                     });
-                  else if (theme.select.options)
+                    if (
+                      typeof child === 'string' ||
+                      (child.props &&
+                        child.props.children &&
+                        typeof child.props.children === 'string')
+                    )
+                      textComponent = true;
+                  } else if (theme.select.options) {
                     child = (
-                      <OptionBox
-                        {...selectOptionsStyle}
-                        selected={optionSelected}
-                      >
+                      <Box {...selectOptionsStyle}>
                         <Text {...theme.select.options.text}>
                           {optionLabel(index)}
                         </Text>
-                      </OptionBox>
+                      </Box>
                     );
+                    textComponent = true;
+                  }
+
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (
@@ -422,6 +427,7 @@ const SelectContainer = forwardRef(
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined
                       }
+                      textComponent={textComponent}
                     >
                       {child}
                     </SelectOption>
@@ -437,11 +443,11 @@ const SelectContainer = forwardRef(
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...selectOptionsStyle}>
+                <Box {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>
-                </OptionBox>
+                </Box>
               </SelectOption>
             )}
           </OptionsBox>

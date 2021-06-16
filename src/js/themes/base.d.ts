@@ -145,6 +145,21 @@ interface ButtonKindType {
 }
 
 interface ButtonType {
+  badge?: {
+    container?: {
+      background?: BackgroundType;
+      pad?: PadType;
+      extend?: ExtendType;
+    };
+    size?: {
+      medium?: string;
+    };
+    text?: {
+      size?: {
+        medium?: string;
+      };
+    };
+  };
   border?: {
     color?: ColorType;
     width?: string;
@@ -514,6 +529,9 @@ export interface ThemeType {
       color?: ColorType;
       width?: string;
     };
+    label?: {
+      align?: AlignContentType;
+    };
     check?: {
       extend?: ExtendType;
       radius?: string;
@@ -524,6 +542,9 @@ export interface ThemeType {
     gap?: GapType;
     hover?: {
       border?: {
+        color?: ColorType;
+      };
+      background?: {
         color?: ColorType;
       };
     };
@@ -964,6 +985,10 @@ export interface ThemeType {
           };
       pad?: PadType;
       extend?: ExtendType;
+    };
+    icons?: {
+      down?: React.ReactNode;
+      up?: React.ReactNode;
     };
     extend?: ExtendType;
   };

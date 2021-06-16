@@ -32,6 +32,7 @@ const Row = memo(
     rowExpand,
     columns,
     pinnedBackground,
+    pinnedOffset,
     border,
     pad,
     primaryProperty,
@@ -108,6 +109,7 @@ const Row = memo(
             datum={datum}
             index={index}
             pad={pad}
+            pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
             primaryProperty={primaryProperty}
             rowProp={rowProps && rowProps[primaryValue]}
             scope={
@@ -143,6 +145,7 @@ const Body = forwardRef(
       onSelect,
       pad,
       pinnedBackground,
+      pinnedOffset,
       primaryProperty,
       rowProps,
       selected,
@@ -214,7 +217,7 @@ const Body = forwardRef(
               const isRowExpanded = rowExpand && rowExpand.includes(index);
               return (
                 <Row
-                  key={primaryValue || index}
+                  key={index}
                   rowRef={rowRef}
                   primaryValue={primaryValue}
                   isSelected={isSelected}
@@ -239,6 +242,7 @@ const Body = forwardRef(
                   rowProps={rowProps}
                   data={data}
                   theme={theme}
+                  pinnedOffset={pinnedOffset}
                 />
               );
             }}

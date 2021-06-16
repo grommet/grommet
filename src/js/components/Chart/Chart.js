@@ -1,12 +1,7 @@
-import React, {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
@@ -218,6 +213,18 @@ const Chart = React.forwardRef(
     const useGradient = color && Array.isArray(color);
     let patternId;
 
+    function getOpacity(valueOpacity) {
+      return (
+        (valueOpacity && theme.global.opacity[valueOpacity]) ||
+        // eslint-disable-next-line no-nested-ternary
+        (valueOpacity === true
+          ? theme.global.opacity.medium
+          : valueOpacity === false
+          ? undefined
+          : valueOpacity)
+      );
+    }
+
     const renderBars = () =>
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
@@ -272,10 +279,7 @@ const Chart = React.forwardRef(
                     )
                   : undefined
               }
-              opacity={
-                (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
-              }
+              opacity={getOpacity(valueOpacity)}
             >
               <title>{label}</title>
               <path
@@ -456,10 +460,7 @@ const Chart = React.forwardRef(
               key={key}
               stroke="none"
               fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
-              opacity={
-                (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
-              }
+              opacity={getOpacity(valueOpacity)}
             >
               <title>{label}</title>
               {renderPoint(value[0], value[1])}
@@ -486,12 +487,19 @@ const Chart = React.forwardRef(
       else if (color) colorName = color;
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
-    const opacity =
-      propsOpacity || (color && color.opacity)
-        ? theme.global.opacity[propsOpacity || color.opacity] ||
-          propsOpacity ||
-          color.opacity
-        : undefined;
+
+    let opacity;
+    if (propsOpacity === true) {
+      opacity = theme.global.opacity.medium;
+    } else if (propsOpacity) {
+      opacity = theme.global.opacity[propsOpacity]
+        ? theme.global.opacity[propsOpacity]
+        : propsOpacity;
+    } else if (color && color.opacity) {
+      opacity = theme.global.opacity[color.opacity]
+        ? theme.global.opacity[color.opacity]
+        : color.opacity;
+    } else opacity = undefined;
 
     let stroke;
     if (type !== 'point') {

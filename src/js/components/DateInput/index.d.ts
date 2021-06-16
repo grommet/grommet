@@ -18,7 +18,13 @@ export interface DateInputProps {
   onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
 }
+export interface DateInputExtendedProps
+  extends DateInputProps,
+    Omit<
+      JSX.IntrinsicElements['input'],
+      'defaultValue' | 'onChange' | 'value'
+    > {}
 
-declare const DateInput: React.FC<DateInputProps>;
+declare const DateInput: React.FC<DateInputExtendedProps>;
 
 export { DateInput };

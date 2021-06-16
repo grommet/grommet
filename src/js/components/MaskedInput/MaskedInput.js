@@ -176,6 +176,7 @@ const MaskedInput = forwardRef(
       placeholder,
       plain,
       reverse,
+      textAlign,
       value: valueProp,
       ...rest
     },
@@ -372,6 +373,7 @@ const MaskedInput = forwardRef(
             icon={icon}
             reverse={reverse}
             focus={focus}
+            textAlign={textAlign}
             {...rest}
             value={value}
             theme={theme}

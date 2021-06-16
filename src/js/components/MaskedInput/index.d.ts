@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Omit, TextAlignType } from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface MaskedInputProps {
@@ -19,6 +20,7 @@ export interface MaskedInputProps {
   plain?: boolean;
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  textAlign?: TextAlignType;
   value?: string | number;
 }
 

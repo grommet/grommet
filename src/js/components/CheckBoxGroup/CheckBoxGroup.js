@@ -10,6 +10,7 @@ export const CheckBoxGroup = forwardRef(
     {
       value: valueProp,
       disabled: disabledProp,
+      focusIndicator = true,
       gap,
       labelKey,
       valueKey,
@@ -60,6 +61,7 @@ export const CheckBoxGroup = forwardRef(
     return (
       <StyledCheckBoxGroup
         ref={ref}
+        role="group"
         {...theme.checkBoxGroup.container}
         gap={
           gap ||
@@ -91,6 +93,12 @@ export const CheckBoxGroup = forwardRef(
               {...optionProps}
               disabled={disabled}
               checked={checked}
+              // when contained in a FormField, focusIndicator = false,
+              // so that the FormField has focus style. However, we still
+              // need to visually indicate when a CheckBox is active.
+              // In CheckBox, if focus = true but focusIndicator = false,
+              // we will apply the hover treament.
+              focusIndicator={focusIndicator}
               label={label}
               onChange={event =>
                 onCheckBoxChange(event, valueOption, optionProps)

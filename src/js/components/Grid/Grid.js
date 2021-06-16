@@ -7,10 +7,12 @@ const Grid = forwardRef((props, ref) => {
     a11yTitle,
     border,
     fill, // munged to avoid styled-components putting it in the DOM
+    height, // munged to avoid styled-components putting it in the DOM
     responsive = true,
     rows, // munged to avoid styled-components putting it in the DOM
     tag,
     as,
+    width, // munged to avoid styled-components putting it in the DOM
     ...rest
   } = props;
 
@@ -21,8 +23,10 @@ const Grid = forwardRef((props, ref) => {
       as={!as && tag ? tag : as}
       border={border}
       fillContainer={fill}
+      heightProp={height}
       responsive={responsive}
       rowsProp={rows}
+      widthProp={width}
       {...rest}
     />
   );

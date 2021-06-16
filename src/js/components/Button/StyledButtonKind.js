@@ -4,6 +4,7 @@ import {
   activeStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
@@ -77,8 +78,17 @@ const basicStyle = props => css`
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  > svg {
+  // when button has badge, the SVG won't necessarily
+  // be the direct descendant
+  ${
+    props.badge
+      ? `
+  svg {
     vertical-align: bottom;
+  }`
+      : `> svg {
+    vertical-align: bottom;
+  }`
   }
 `;
 
@@ -168,7 +178,11 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
     themishObj.background = theme.global.hover.background;
-  else themishObj.background = hoverIndicator;
+  else if (hoverIndicator.color || hoverIndicator.background) {
+    if (hoverIndicator.background)
+      themishObj.background = hoverIndicator.background;
+    if (hoverIndicator.color) themishObj.color = hoverIndicator.color;
+  } else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
     return css`
@@ -249,7 +263,11 @@ const StyledButtonKind = styled.button.withConfig({
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle()}
   }
-  
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

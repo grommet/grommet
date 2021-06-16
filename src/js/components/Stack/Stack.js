@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, forwardRef } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
@@ -23,41 +23,41 @@ const buildStyledChildren = ({
   );
 };
 
-const Stack = ({
-  anchor,
-  children,
-  fill,
-  guidingChild,
-  interactiveChild,
-  ...rest
-}) => {
-  const prunedChildren = Children.toArray(children).filter(c => c);
-  const toChildIndex = child => {
-    let index = child;
-    if (index === 'first' || !index) index = 0;
-    else if (index === 'last') index = prunedChildren.length - 1;
-    return index;
-  };
+const Stack = forwardRef(
+  (
+    { anchor, children, fill, guidingChild, interactiveChild, ...rest },
+    ref,
+  ) => {
+    const prunedChildren = Children.toArray(children).filter(c => c);
+    const toChildIndex = child => {
+      let index = child;
+      if (index === 'first' || !index) index = 0;
+      else if (index === 'last') index = prunedChildren.length - 1;
+      return index;
+    };
 
-  const guidingIndex = toChildIndex(guidingChild);
-  const interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
+    const guidingIndex = toChildIndex(guidingChild);
+    const interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
 
-  const styledChildren = prunedChildren.map(
-    buildStyledChildren({
-      anchor,
-      fill,
-      guidingIndex,
-      interactiveChild,
-      interactiveIndex,
-    }),
-  );
+    const styledChildren = prunedChildren.map(
+      buildStyledChildren({
+        anchor,
+        fill,
+        guidingIndex,
+        interactiveChild,
+        interactiveIndex,
+      }),
+    );
 
-  return (
-    <StyledStack fillContainer={fill} {...rest}>
-      {styledChildren}
-    </StyledStack>
-  );
-};
+    return (
+      <StyledStack ref={ref} fillContainer={fill} {...rest}>
+        {styledChildren}
+      </StyledStack>
+    );
+  },
+);
+
+Stack.displayName = 'Stack';
 
 let StackDoc;
 if (process.env.NODE_ENV !== 'production') {
