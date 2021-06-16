@@ -137,6 +137,7 @@ var Carousel = function Carousel(_ref) {
       onClick: onSelect(index)
     }));
     var animation;
+    var visibility = 'visible';
 
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
@@ -156,10 +157,14 @@ var Carousel = function Carousel(_ref) {
         type: 'fadeOut',
         duration: 0
       };
+      visibility = 'hidden';
     }
 
     return /*#__PURE__*/React.createElement(Box, {
       fill: fill,
+      style: {
+        visibility: visibility
+      },
       overflow: "hidden"
     }, /*#__PURE__*/React.createElement(Box, {
       fill: fill,
