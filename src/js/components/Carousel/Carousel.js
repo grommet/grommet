@@ -140,6 +140,7 @@ const Carousel = ({
     );
 
     let animation;
+    let visibility = 'visible';
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         animation = {
@@ -155,10 +156,11 @@ const Carousel = ({
       };
     } else {
       animation = { type: 'fadeOut', duration: 0 };
+      visibility = 'hidden';
     }
 
     return (
-      <Box fill={fill} overflow="hidden">
+      <Box fill={fill} style={{ visibility }} overflow="hidden">
         <Box fill={fill} animation={animation}>
           {child}
         </Box>
