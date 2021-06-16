@@ -105,11 +105,22 @@ var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort
         direction = sort.direction;
     result = result === data ? [].concat(data) : result; // don't sort caller's data
 
-    var before = direction === 'asc' ? 1 : -1;
-    var after = direction === 'asc' ? -1 : 1;
+    var sortAsc = direction === 'asc';
+    var before = sortAsc ? 1 : -1;
+    var after = sortAsc ? -1 : 1;
     result.sort(function (d1, d2) {
-      if (datumValue(d1, property) > datumValue(d2, property)) return before;
-      if (datumValue(d1, property) < datumValue(d2, property)) return after;
+      var d1Val = datumValue(d1, property);
+      var d2Val = datumValue(d2, property);
+
+      if (typeof d1Val === 'string' && typeof d2Val === 'string') {
+        var sortResult = d1Val.localeCompare(d2Val, undefined, {
+          sensitivity: 'base'
+        });
+        return sortAsc ? sortResult : -sortResult;
+      }
+
+      if (d1Val > d2Val) return before;
+      if (d1Val < d2Val) return after;
       return 0;
     });
   }
