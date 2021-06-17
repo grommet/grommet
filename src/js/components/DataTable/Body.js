@@ -14,9 +14,13 @@ import { datumValue } from './buildState';
 
 const Row = memo(
   ({
+    setItemFocus,
+    lastActive,
+    setLastActive,
     primaryValue,
     index,
     rowRef,
+    tableRef,
     size,
     active,
     onClickRow,
@@ -44,7 +48,7 @@ const Row = memo(
       <StyledDataTableRow
         ref={rowRef}
         size={size}
-        tabIndex={onClickRow ? 0 : undefined}
+        tabIndex={onClickRow ? -1 : undefined}
         active={active}
         onClick={
           onClickRow
@@ -55,13 +59,37 @@ const Row = memo(
                 adjustedEvent.datum = datum;
                 adjustedEvent.index = index;
                 onClickRow(adjustedEvent);
+                // putting focus on tbody for WCAG guideline
+                tableRef.current.focus();
               }
             : undefined
         }
-        onMouseEnter={onClickRow ? () => setActive(index) : undefined}
-        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
-        onFocus={onClickRow ? () => setActive(index) : undefined}
-        onBlur={onClickRow ? () => setActive(undefined) : undefined}
+        onMouseEnter={
+          onClickRow
+            ? () => {
+                setLastActive(undefined);
+                setActive(index);
+              }
+            : undefined
+        }
+        onMouseLeave={onClickRow ? () => setActive(lastActive) : undefined}
+        onFocus={
+          onClickRow
+            ? () => {
+                setActive(index);
+                setItemFocus(true);
+              }
+            : undefined
+        }
+        onBlur={
+          onClickRow
+            ? () => {
+                setLastActive(index);
+                setActive(undefined);
+                setItemFocus(false);
+              }
+            : undefined
+        }
       >
         {(selected || onSelect) && (
           <TableCell background={background} plain="noPad" size="auto">
@@ -162,6 +190,8 @@ const Body = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
+    const [lastActive, setLastActive] = React.useState();
+    const [itemFocus, setItemFocus] = React.useState();
 
     return (
       <Keyboard
@@ -220,10 +250,15 @@ const Body = forwardRef(
               return (
                 <Row
                   key={index}
+                  tableRef={ref}
+                  lastActive={lastActive}
+                  setLastActive={setLastActive}
                   rowRef={rowRef}
                   primaryValue={primaryValue}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
+                  itemFocus={itemFocus}
+                  setItemFocus={setItemFocus}
                   index={index}
                   size={size}
                   active={active >= 0 ? active === index : undefined}

@@ -4,7 +4,6 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
-  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
@@ -30,6 +29,7 @@ const StyledDataTable = styled(Table)`
     props.theme.dataTable &&
     props.theme.dataTable.body &&
     props.theme.dataTable.body.extend};
+  
 `;
 
 StyledDataTable.defaultProps = {};
@@ -83,11 +83,11 @@ const StyledDataTableRow = styled(TableRow)`
     `
     cursor: pointer;
   `}
+
   &:focus {
-    ${props =>
-      props.tabIndex >= 0 &&
-      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+    ${props => props.tabIndex < 0 && hoverStyle}
   }
+
   &:hover {
     ${props => props.onClickRow && !props.active && hoverStyle}
   }
@@ -108,12 +108,18 @@ const StyledDataTableBody = styled(TableBody)`
     overflow: auto;
   `}
 
-  &:focus {
-    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
-  }
+  ${props =>
+    props.itemFocus &&
+    focusStyle({
+      forceOutline: true,
+      skipSvgChildren: true,
+    })}
 
-  &:focus:not(:focus-visible) {
-    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
+  // Puts focus on tbody
+  &:focus {
+    ${props =>
+      props.tabIndex >= 0 &&
+      focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
 `;
 

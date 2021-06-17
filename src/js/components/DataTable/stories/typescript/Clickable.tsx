@@ -140,19 +140,25 @@ const DATA: RowType[] = [
   },
 ];
 
-export const ClickableDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      {/* eslint-disable no-alert */}
-      <DataTable
-        columns={columns}
-        data={DATA}
-        step={10}
-        onClickRow={event => console.log(event.datum)}
-      />
-    </Box>
-  </Grommet>
-);
+export const ClickableDataTable = () => {
+  const handleClick = () => {
+    alert('Modal Example');
+  };
+
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        {/* eslint-disable no-alert */}
+        <DataTable
+          columns={columns}
+          data={DATA}
+          step={10}
+          onClickRow={event => handleClick()}
+        />
+      </Box>
+    </Grommet>
+  );
+};
 
 ClickableDataTable.storyName = 'Clickable';
 
