@@ -354,10 +354,11 @@ describe('DateInput', () => {
         </Grommet>
       );
     };
-    const { container, getByText } = render(<Test />);
+    const { container, getByDisplayValue, getByText } = render(<Test />);
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByText('first'));
+    expect(getByDisplayValue('07/01/2020')).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
     expect(onChange).not.toHaveBeenCalled();
   });
