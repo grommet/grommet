@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 
@@ -8,12 +8,12 @@ import { ResponsiveContext } from '..';
 
 describe('ResponsiveContext', () => {
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <ResponsiveContext.Consumer>{size => size}</ResponsiveContext.Consumer>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

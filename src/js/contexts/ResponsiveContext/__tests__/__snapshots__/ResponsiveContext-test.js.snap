@@ -12,8 +12,8 @@ exports[`ResponsiveContext basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  medium
+  small
 </div>
 `;
