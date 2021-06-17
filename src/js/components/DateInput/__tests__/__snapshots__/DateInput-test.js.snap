@@ -14100,7 +14100,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -14116,7 +14116,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     3
                   </div>
@@ -14132,7 +14132,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     4
                   </div>
@@ -14152,7 +14152,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     5
                   </div>
@@ -14168,7 +14168,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     6
                   </div>
@@ -14184,7 +14184,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     7
                   </div>
@@ -14232,7 +14232,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     10
                   </div>
@@ -17281,7 +17281,7 @@ exports[`DateInput type format inline 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -17597,7 +17597,7 @@ exports[`DateInput type format inline 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     21
                   </div>
@@ -19333,7 +19333,7 @@ exports[`DateInput type format inline short 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -19649,7 +19649,7 @@ exports[`DateInput type format inline short 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     21
                   </div>
