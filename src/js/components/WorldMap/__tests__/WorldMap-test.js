@@ -1,13 +1,11 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { WorldMap } from '..';
 
 describe('WorldMap', () => {
-  afterEach(cleanup);
-
   test('default', () => {
     const { container } = render(
       <Grommet>
