@@ -128,8 +128,10 @@ export const textToValue = (text, schema, valueProp) => {
       return parts;
     let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
     // match time and timezone of any supplied valueProp
-    if (valueProp) {
-      const valueDate = new Date(valueProp).toISOString();
+    if ((Array.isArray(valueProp) && valueProp.length) || valueProp) {
+      const valueDate = new Date(
+        Array.isArray(valueProp) ? valueProp[0] : valueProp,
+      ).toISOString();
       date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
     }
     // single

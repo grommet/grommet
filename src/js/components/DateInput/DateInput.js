@@ -60,18 +60,23 @@ const DateInput = forwardRef(
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
-    // To track this, we keep track of the internalValue from interacting
-    // within this component. If the value has changed outside of this
-    // component, we reset the textValue.
-    const [internalValue, setInternalValue] = useState(value);
+    // To handle this, we see if we have a value and the text value
+    // associated with it doesn't align to it, then we update the text value.
+    // We compare using textToValue to avoid "06/01/2021" not
+    // matching "06/1/2021".
     useEffect(() => {
-      if (schema && !!value !== !!internalValue) {
-        setTextValue(valueToText(value, schema));
-        setInternalValue(value);
+      if (schema && value) {
+        const nextTextValue = valueToText(value, schema);
+        if (
+          textToValue(textValue, schema, value) !==
+          textToValue(nextTextValue, schema, value)
+        )
+          setTextValue(nextTextValue);
       }
-    }, [internalValue, schema, value]);
+    }, [schema, textValue, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -99,7 +104,6 @@ const DateInput = forwardRef(
                 else normalizedValue = nextValue;
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
-                setInternalValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) setOpen(false);
               }
@@ -148,7 +152,6 @@ const DateInput = forwardRef(
               const nextValue = textToValue(nextTextValue, schema, value);
               // update value even when undefined
               setValue(nextValue);
-              setInternalValue(nextValue || '');
               if (onChange) {
                 event.persist(); // extract from React synthetic event pool
                 const adjustedEvent = event;
