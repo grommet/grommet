@@ -26,9 +26,12 @@ export const RangeFormat = () => {
             value={value}
             format="mm/dd/yyyy-mm/dd/yyyy"
             buttonProps={{
-              label: `${dateFormat.format(
-                new Date(value[0]),
-              )} - ${dateFormat.format(new Date(value[1]))}`,
+              label:
+                value.length === 2
+                  ? `${dateFormat.format(
+                      new Date(value[0]),
+                    )} - ${dateFormat.format(new Date(value[1]))}`
+                  : 'unset',
             }}
             onChange={onChange}
           />

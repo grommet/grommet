@@ -47,16 +47,16 @@ export const schemaToMask = schema => {
 
 // convert value into text representation using the schema
 export const valueToText = (value, schema) => {
+  let text = '';
   // when user initializes dates as empty array, we want to still
   // show the placeholder text
-  if (!value || (Array.isArray(value) && !value.length)) return '';
-  let text = '';
+  if (!value || (Array.isArray(value) && !value.length)) return text;
 
   const dates = (Array.isArray(value) ? value : [value]).map(v => new Date(v));
 
   let dateIndex = 0;
   let parts = {};
-  schema.forEach(part => {
+  schema.every(part => {
     const char = part[0].toLowerCase();
     // advance dateIndex if we already have this part
     while (
@@ -90,7 +90,15 @@ export const valueToText = (value, schema) => {
     } else if (date && part === 'yyyy') {
       text += date.getFullYear();
       parts[part] = true;
-    } else text += part;
+    } else if (
+      !date &&
+      (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')
+    ) {
+      return false;
+    } else {
+      text += part;
+    }
+    return true;
   });
 
   return text;
@@ -109,12 +117,13 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, valueProp) => {
-  if (!text) return undefined;
+export const textToValue = (text, schema, valueProp, range) => {
+  if (!text) return range ? [] : undefined;
 
   let result;
+
   const addDate = parts => {
-    // do a little sanity checking on the values
+    // do a little sanity checking on the values, of not ready yet, leave as is
     if (
       !parts.m ||
       !parts.d ||
@@ -126,18 +135,26 @@ export const textToValue = (text, schema, valueProp) => {
       parts.d > 31
     )
       return parts;
+    // parts look legit
     let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
     // match time and timezone of any supplied valueProp
-    if (valueProp) {
-      const valueDate = new Date(valueProp).toISOString();
+    if (
+      valueProp &&
+      ((Array.isArray(valueProp) && valueProp[0]) || !Array.isArray(valueProp))
+    ) {
+      const valueDate = new Date(
+        Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp,
+      ).toISOString();
       date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
     }
-    // single
-    if (!result) result = date;
-    // second
-    else if (Array.isArray(result)) result.push(date);
-    // third and beyond, unused?
-    else result = [result, date];
+    if (!range) {
+      if (!result) result = date;
+    } else {
+      if (!result) result = [];
+      result.push(date);
+    }
+    // we've consumed these parts, return an empty object in case we need
+    // to start building up another one for a range
     return {};
   };
 
@@ -171,7 +188,13 @@ export const textToValue = (text, schema, valueProp) => {
       }
     }
   });
-  addDate(parts);
+  parts = addDate(parts);
 
   return result;
 };
+
+export const valuesAreEqual = (value1, value2) =>
+  (Array.isArray(value1) &&
+    Array.isArray(value2) &&
+    value1.every((d1, i) => d1 === value2[i])) ||
+  value1 === value2;

@@ -7,9 +7,11 @@ import 'regenerator-runtime/runtime';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
+import { Button } from '../../Button';
 import { DateInput } from '..';
 
 const DATE = '2020-07-02T00:00:00-08:00';
+const DATE_FIRST = '2020-07-01T00:00:00-08:00';
 const DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 
 describe('DateInput', () => {
@@ -147,7 +149,7 @@ describe('DateInput', () => {
         <DateInput
           id="item"
           name="item"
-          value={[]}
+          defaultValue={[]}
           inline
           onChange={onChange}
         />
@@ -198,7 +200,7 @@ describe('DateInput', () => {
         <DateInput
           id="item"
           name="item"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -219,7 +221,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -241,7 +243,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           onChange={onChange}
         />
       </Grommet>,
@@ -266,7 +268,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -290,7 +292,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="m/d/yy"
-          value={DATE}
+          defaultValue={DATE}
           inline
           onChange={onChange}
         />
@@ -307,6 +309,30 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('type format inline partial', () => {
+    const onChange = jest.fn(event => event.value);
+    const { container, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          defaultValue={DATE}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy'), {
+      target: { value: '07/21/202' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith(undefined);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('select format inline range', () => {
     const onChange = jest.fn(event => event.value);
     const { container, getByText } = render(
@@ -315,8 +341,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy-mm/dd/yyyy"
-          range
-          value={DATES}
+          defaultValue={DATES}
           inline
           onChange={onChange}
         />
@@ -332,6 +357,90 @@ describe('DateInput', () => {
       '2020-07-10T08:00:00.000Z',
     ]);
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('type format inline range', () => {
+    const onChange = jest.fn(event => event.value);
+    const { container, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          defaultValue={DATES}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-07/23/2020' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith([
+      '2020-07-21T08:00:00.000Z',
+      '2020-07-23T08:00:00.000Z',
+    ]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('type format inline range partial', () => {
+    const onChange = jest.fn(event => event.value);
+    const { container, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          defaultValue={DATES}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-07' },
+    });
+    expect(onChange).toHaveNthReturnedWith(1, ['2020-07-21T08:00:00.000Z']);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-' },
+    });
+    expect(onChange).toHaveNthReturnedWith(2, ['2020-07-21T08:00:00.000Z']);
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled format inline', () => {
+    const onChange = jest.fn(event => event.value);
+    const Test = () => {
+      const [value, setValue] = React.useState(DATE);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+            onChange={onChange}
+          />
+          <Button label="first" onClick={() => setValue(DATE_FIRST)} />
+        </Grommet>
+      );
+    };
+    const { container, getByDisplayValue, getByText } = render(<Test />);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('first'));
+    expect(getByDisplayValue('07/01/2020')).not.toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   test(`dropProps should pass props to Drop 
