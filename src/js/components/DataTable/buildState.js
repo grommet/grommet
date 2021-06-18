@@ -228,6 +228,61 @@ export const normalizeBackgroundColor = theme => {
   return undefined;
 };
 
+export const normalizeRowProp = (name, rowProp, prop) => {
+  if (rowProp && rowProp[name]) return rowProp[name];
+  return prop;
+};
+
+const tableContextNames = ['header', 'body', 'footer'];
+const cellPropertyNames = ['background', 'border', 'pad'];
+
+// Convert property specific cell props to context specific cell props.
+// For example, background={{ header: { background } }}
+// will become cellProps.header.background
+// Pinned flavors are included as cellProps.header.pinned.background
+export const normalizeCellProps = (props, theme) => {
+  const result = {};
+  tableContextNames.forEach(context => {
+    result[context] = { pinned: {} };
+    cellPropertyNames.forEach(propName => {
+      let value =
+        props?.[propName]?.[context] ||
+        theme?.dataTable?.[context]?.[propName] ||
+        theme?.table?.[context]?.[propName];
+      if (value !== undefined) result[context][propName] = value;
+
+      // pinned case
+      value =
+        props?.[propName]?.pinned?.[context] ||
+        (context === 'body' && props?.[propName]?.pinned) ||
+        theme?.dataTable?.pinned?.[context]?.[propName];
+      if (value !== undefined) result[context].pinned[propName] = value;
+    });
+  });
+  return result;
+};
+
+export const normalizeRowCellProps = (rowProps, cellProps, index) => {
+  const result = { pinned: {} };
+  ['background', 'border', 'pad'].forEach(propName => {
+    const row = rowProps && rowProps[propName];
+    const cell = cellProps[propName];
+    let value =
+      (row && (Array.isArray(row) ? row[index % row.length] : row)) ||
+      (Array.isArray(cell) ? cell[index % cell.length] : cell);
+    if (value !== undefined) result[propName] = value;
+
+    const rowPin = rowProps && rowProps.pinned && rowProps.pinned[propName];
+    const cellPin = cellProps.pinned[propName];
+    value =
+      (rowPin &&
+        (Array.isArray(rowPin) ? rowPin[index % rowPin.length] : rowPin)) ||
+      (Array.isArray(cellPin) ? cellPin[index % cellPin.length] : cellPin);
+    if (value !== undefined) result.pinned[propName] = value;
+  });
+  return result;
+};
+
 // calculate a header or footer cell background based
 // on the table background prop and whether it's pinned.
 // Pin is an array of side strings, empty if not pinned.

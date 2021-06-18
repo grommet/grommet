@@ -1,34 +1,32 @@
-import React, { forwardRef, Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, Fragment } from 'react';
 
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { CheckBox } from '../CheckBox/CheckBox';
 import { TableCell } from '../TableCell';
-import { datumValue } from './buildState';
+import { datumValue, normalizeRowCellProps } from './buildState';
 
 export const GroupedBody = forwardRef(
   (
     {
-      background,
-      border,
+      cellProps: cellPropsProp,
       columns,
       groupBy,
       groups,
       groupState,
-      pad,
       pinnedOffset,
       primaryProperty,
       onSelect,
       onToggle,
+      rowProps,
       selected,
       size,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    let rowIndex = 0;
     return (
       <StyledDataTableBody ref={ref} size={size} {...rest}>
         {groups.map(group => {
@@ -50,17 +48,29 @@ export const GroupedBody = forwardRef(
             groupSelected.length > 0 &&
             group.data.length > 0 &&
             groupSelected.length === group.data.length;
+          let cellProps = normalizeRowCellProps(
+            rowProps,
+            cellPropsProp,
+            rowIndex,
+          );
 
           let content =
             memberCount > 1 ? (
               <StyledDataTableRow key={group.key} size={size}>
                 <ExpanderCell
+                  background={cellProps.background}
+                  border={cellProps.border}
                   context={expanded ? 'groupHeader' : 'body'}
                   expanded={expanded}
+                  index={rowIndex}
                   onToggle={onToggle(group.key)}
                 />
                 {(selected || onSelect) && (
-                  <TableCell background={background} plain="noPad" size="auto">
+                  <TableCell
+                    background={cellProps.background}
+                    plain="noPad"
+                    size="auto"
+                  >
                     <CheckBox
                       a11yTitle={`${isGroupSelected ? 'unselect' : 'select'} ${
                         group.key
@@ -80,25 +90,27 @@ export const GroupedBody = forwardRef(
                           onSelect([...selected, ...primaryKeys]);
                         }
                       }}
-                      pad={pad || theme.table.body.pad}
+                      pad={cellProps.pad}
                     />
                   </TableCell>
                 )}
                 {columns.map(column => (
                   <Cell
                     key={column.property}
-                    background={background}
-                    border={border}
+                    background={cellProps.background}
+                    border={cellProps.border}
                     context={expanded ? 'groupHeader' : 'body'}
                     column={column}
                     datum={group.datum}
-                    pad={pad}
+                    index={rowIndex}
+                    pad={cellProps.pad}
                     pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                     scope={column.property === groupBy ? 'row' : undefined}
                   />
                 ))}
               </StyledDataTableRow>
             ) : null;
+          if (memberCount > 1) rowIndex += 1;
 
           if (memberCount === 1 || expanded) {
             content = (
@@ -114,15 +126,25 @@ export const GroupedBody = forwardRef(
                     memberCount > 1 && index === memberCount - 1
                       ? 'groupEnd'
                       : 'body';
+                  cellProps = normalizeRowCellProps(
+                    rowProps,
+                    cellPropsProp,
+                    rowIndex,
+                  );
+                  rowIndex += 1;
                   return (
                     <StyledDataTableRow
                       key={datum[primaryProperty]}
                       size={size}
                     >
-                      <ExpanderCell context={context} />
+                      <ExpanderCell
+                        background={cellProps.background}
+                        border={cellProps.border}
+                        context={context}
+                      />
                       {(selected || onSelect) && (
                         <TableCell
-                          background={background}
+                          background={cellProps.background}
                           plain="noPad"
                           size="auto"
                         >
@@ -139,19 +161,19 @@ export const GroupedBody = forwardRef(
                                 );
                               } else onSelect([...selected, primaryValue]);
                             }}
-                            pad={pad || theme.table.body.pad}
+                            pad={cellProps.pad}
                           />
                         </TableCell>
                       )}
                       {columns.map(column => (
                         <Cell
                           key={column.property}
-                          background={background}
-                          border={border}
+                          background={cellProps.background}
+                          border={cellProps.border}
                           context={context}
                           column={column}
                           datum={datum}
-                          pad={pad}
+                          pad={cellProps.pad}
                           scope={column.primary ? 'row' : undefined}
                         />
                       ))}

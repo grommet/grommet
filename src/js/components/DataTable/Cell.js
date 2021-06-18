@@ -5,17 +5,15 @@ import { defaultProps } from '../../default-props';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
-import { datumValue, normalizeBackgroundColor } from './buildState';
+import {
+  datumValue,
+  // normalizeBackgroundColor,
+} from './buildState';
 import { TableContext } from '../Table/TableContext';
-
-const normalizeProp = (name, rowProp, prop) => {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
 
 const Cell = memo(
   ({
-    background: backgroundProp,
+    background,
     border,
     column: {
       align,
@@ -28,12 +26,10 @@ const Cell = memo(
       size,
     },
     datum,
-    index,
     pad,
     pin: cellPin,
     pinnedOffset,
     primaryProperty,
-    rowProp,
     scope,
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -60,19 +56,19 @@ const Cell = memo(
     if (cellPin) pin.push(...cellPin);
     if (columnPin) pin.push('left');
 
-    let background;
-    if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-      background = theme.dataTable.pinned[context].background;
-      if (!background.color && theme.background) {
-        // theme context has an active background color but the
-        // theme doesn't set an explicit color, repeat the context
-        // background explicitly
-        background = {
-          ...background,
-          color: normalizeBackgroundColor(theme),
-        };
-      }
-    } else background = undefined;
+    // let background;
+    // if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    //   background = theme.dataTable.pinned[context].background;
+    //   if (!background.color && theme.background) {
+    //     // theme context has an active background color but the
+    //     // theme doesn't set an explicit color, repeat the context
+    //     // background explicitly
+    //     background = {
+    //       ...background,
+    //       color: normalizeBackgroundColor(theme),
+    //     };
+    //   }
+    // } else background = undefined;
 
     return (
       <StyledDataTableCell
@@ -82,18 +78,10 @@ const Cell = memo(
         context={context}
         verticalAlign={verticalAlign}
         size={size}
-        background={
-          normalizeProp(
-            'background',
-            rowProp,
-            Array.isArray(backgroundProp)
-              ? backgroundProp[index % backgroundProp.length]
-              : backgroundProp,
-          ) || background
-        }
+        background={background}
         pinnedOffset={pinnedOffset}
-        border={normalizeProp('border', rowProp, border)}
-        pad={normalizeProp('pad', rowProp, pad)}
+        border={border}
+        pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
       >

@@ -31,28 +31,29 @@ import { normalizeColor } from '../../utils/colors';
 // part of header cell they should style
 const separateThemeProps = theme => {
   const {
-    background,
-    border,
+    background, // covered by cellProps
+    border, // covered by cellProps
     color,
     font,
     gap, // gap is used for space between header cell elements only
+    pad, // covered by cellProps
     units,
     ...rest
   } = theme.dataTable.header;
 
-  const cellProps = { background, border };
+  // const cellProps = { background, border };
   const textProps = { color, ...font };
   const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps, iconProps];
+  return [layoutProps, textProps, iconProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 const buttonStyle = ({ theme }) => {
   const styles = [];
-  const [, layoutProps, , iconProps] = separateThemeProps(theme);
+  const [layoutProps, , iconProps] = separateThemeProps(theme);
 
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
@@ -97,8 +98,7 @@ const StyledContentBox = styled(Box)`
 const Header = forwardRef(
   (
     {
-      background: backgroundProp,
-      border,
+      cellProps,
       columns,
       data,
       fill,
@@ -113,7 +113,6 @@ const Header = forwardRef(
       onSort,
       onToggle,
       onWidths,
-      pad,
       pin: tablePin,
       pinnedOffset,
       primaryProperty,
@@ -126,7 +125,8 @@ const Header = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+    const [layoutProps, textProps] = separateThemeProps(theme);
+    console.log('!!! Header', cellProps);
 
     const [cellWidths, setCellWidths] = useState([]);
 
@@ -148,6 +148,8 @@ const Header = forwardRef(
         <StyledDataTableRow>
           {groups && (
             <ExpanderCell
+              background={cellProps.background}
+              border={cellProps.border}
               context="header"
               expanded={
                 Object.keys(groupState).filter(k => !groupState[k].expanded)
@@ -160,8 +162,12 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <StyledDataTableCell
               background={
-                calcPinnedBackground(backgroundProp, pin, theme, 'header') ||
-                cellProps.background
+                calcPinnedBackground(
+                  cellProps.background,
+                  pin,
+                  theme,
+                  'header',
+                )
               }
               onWidth={updateWidths}
               plain="noPad"
@@ -194,7 +200,7 @@ const Header = forwardRef(
                         data.map(datum => datumValue(datum, primaryProperty)),
                       );
                   }}
-                  pad={pad || theme.table.header.pad}
+                  pad={cellProps.pad}
                 />
               )}
             </StyledDataTableCell>
@@ -327,7 +333,7 @@ const Header = forwardRef(
               if (columnPin) cellPin.push('left');
 
               const background = calcPinnedBackground(
-                backgroundProp,
+                cellProps.background,
                 cellPin,
                 theme,
                 'header',
@@ -340,9 +346,9 @@ const Header = forwardRef(
                   context="header"
                   verticalAlign={verticalAlign}
                   background={background || cellProps.background}
-                  border={border || cellProps.border}
+                  border={cellProps.border}
                   onWidth={updateWidths}
-                  pad={pad}
+                  pad={cellProps.pad}
                   pin={cellPin}
                   plain
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}

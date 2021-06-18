@@ -13,14 +13,12 @@ import { calcPinnedBackground } from './buildState';
 const Footer = forwardRef(
   (
     {
-      background,
-      border,
+      cellProps,
       columns,
       fill,
       footerValues,
       groups,
       onSelect,
-      pad,
       pin: tablePin,
       pinnedOffset,
       primaryProperty,
@@ -31,17 +29,25 @@ const Footer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const pin = tablePin ? ['bottom'] : [];
+    console.log('!!! Footer', cellProps);
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={tablePin} {...rest}>
         <TableRow>
           {groups && (
-            <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
+            <TableCell
+              plain
+              size="xxsmall"
+              pad="none"
+              verticalAlign="top"
+              background={cellProps.background}
+              border={cellProps.border}
+            />
           )}
           {(selected || onSelect) && (
             <StyledDataTableCell
               background={calcPinnedBackground(
-                background,
+                cellProps.background,
                 pin,
                 theme,
                 'footer',
@@ -57,12 +63,17 @@ const Footer = forwardRef(
             return (
               <Cell
                 key={column.property}
-                background={background}
-                border={border}
+                background={
+                  (column.pin && cellProps.pinned.background) ||
+                  cellProps.background
+                }
+                border={
+                  (column.pin && cellProps.pinned.border) || cellProps.border
+                }
                 context="footer"
                 column={column}
                 datum={footerValues}
-                pad={pad}
+                pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
                 pin={pin.length ? pin : undefined}
                 pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                 primaryProperty={primaryProperty}

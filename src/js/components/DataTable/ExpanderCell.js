@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { Blank } from 'grommet-icons';
 
 import { defaultProps } from '../../default-props';
 
@@ -7,13 +8,25 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
+import { normalizeRowProp } from './buildState';
 
-const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
+const ExpanderCell = ({
+  background,
+  border,
+  context,
+  expanded,
+  onToggle,
+  pad,
+  rowProp,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
     content = <ExpandIcon color={normalizeColor('border', theme)} />;
+  } else {
+    content = <Blank />;
   }
   const normalizedThemeProps = {
     ...theme.table[context],
@@ -23,7 +36,14 @@ const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
   delete normalizedThemeProps.border;
   delete normalizedThemeProps.pad;
   content = (
-    <Box {...normalizedThemeProps} {...rest} align="center" pad="xsmall">
+    <Box
+      {...normalizedThemeProps}
+      {...rest}
+      align="center"
+      fill
+      pad={pad}
+      background={background}
+    >
       {content}
     </Box>
   );
@@ -46,7 +66,7 @@ const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
       size="xxsmall"
       plain
       verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-      pad="none"
+      pad="noPad"
     >
       {content}
     </TableCell>
