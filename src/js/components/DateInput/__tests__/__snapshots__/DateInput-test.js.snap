@@ -279,6 +279,2139 @@ exports[`DateInput buttonProps should pass props to Button
 </div>
 `;
 
+exports[`DateInput controlled format inline 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c12 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c13 {
+  position: relative;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  opacity: 0.5;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <svg
+          aria-label="Calendar"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <input
+        autocomplete="off"
+        class="c5"
+        id="item"
+        name="item"
+        placeholder="mm/dd/yyyy"
+        value="07/02/2020"
+      />
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c1"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <h3
+              class="c9"
+            >
+              July 2020
+            </h3>
+          </div>
+          <div
+            class="c10"
+          >
+            <button
+              aria-label="June 2020"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Previous"
+                class="c4"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="August 2020"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Next"
+                class="c4"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c12"
+          tabindex="0"
+        >
+          <div
+            class="c13"
+          >
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Jun 28 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Jun 29 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Jun 30 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Jul 01 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Jul 02 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c19"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Jul 03 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Jul 04 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Jul 05 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Jul 06 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Jul 07 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Jul 08 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Jul 09 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    9
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Jul 10 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    10
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Jul 11 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    11
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Jul 12 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    12
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Jul 13 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    13
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Jul 14 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    14
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Jul 15 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    15
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Jul 16 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    16
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Jul 17 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    17
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Jul 18 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    18
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Jul 19 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    19
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Jul 20 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    20
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Jul 21 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    21
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Jul 22 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    22
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Jul 23 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    23
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Jul 24 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    24
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Jul 25 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    25
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Jul 26 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    26
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Jul 27 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    27
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Jul 28 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Jul 29 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Jul 30 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Jul 31 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c18"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Aug 01 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="c14"
+            >
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sun Aug 02 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Mon Aug 03 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Tue Aug 04 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Wed Aug 05 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Thu Aug 06 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Fri Aug 07 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                class="c15"
+              >
+                <button
+                  aria-label="Sat Aug 08 2020"
+                  class="c16"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="c17"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="c20"
+    type="button"
+  >
+    first
+  </button>
+</div>
+`;
+
+exports[`DateInput controlled format inline 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 dYebPD"
+  >
+    <div
+      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dOerlP"
+    >
+      <div
+        class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kUaPnG"
+      >
+        <svg
+          aria-label="Calendar"
+          class="StyledIcon-ofa7kd-0 dEeaTZ"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <input
+        autocomplete="off"
+        class="StyledMaskedInput-sc-99vkfa-0 jiFKVa"
+        id="item"
+        name="item"
+        placeholder="mm/dd/yyyy"
+        value="07/01/2020"
+      />
+    </div>
+    <div
+      class="StyledCalendar-sc-1y4xhmp-0 ilcdZY"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dYebPD"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 jmuHez"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 dgFLYH"
+          >
+            <h3
+              class="StyledHeading-sc-1rdh4aw-0 nltgZ"
+            >
+              July 2020
+            </h3>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 cYAyEW"
+          >
+            <button
+              aria-label="June 2020"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
+              type="button"
+            >
+              <svg
+                aria-label="Previous"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="August 2020"
+              class="StyledButton-sc-323bzc-0 jLnPHV"
+              type="button"
+            >
+              <svg
+                aria-label="Next"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+          tabindex="0"
+        >
+          <div
+            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
+          >
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Jun 28 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Jun 29 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Jun 30 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Jul 01 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Jul 02 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Jul 03 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Jul 04 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Jul 05 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Jul 06 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Jul 07 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Jul 08 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Jul 09 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    9
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Jul 10 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    10
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Jul 11 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    11
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Jul 12 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    12
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Jul 13 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    13
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Jul 14 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    14
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Jul 15 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    15
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Jul 16 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    16
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Jul 17 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    17
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Jul 18 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    18
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Jul 19 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    19
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Jul 20 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    20
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Jul 21 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    21
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Jul 22 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    22
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Jul 23 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    23
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Jul 24 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    24
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Jul 25 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    25
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Jul 26 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    26
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Jul 27 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    27
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Jul 28 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Jul 29 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Jul 30 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Jul 31 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Aug 01 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kYtnmh"
+            >
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sun Aug 02 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Mon Aug 03 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Tue Aug 04 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Wed Aug 05 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Thu Aug 06 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Fri Aug 07 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 jJnkzh"
+              >
+                <button
+                  aria-label="Sat Aug 08 2020"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 bqmutY"
+                  >
+                    8
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="StyledButton-sc-323bzc-0 iEDGYZ"
+    type="button"
+  >
+    first
+  </button>
+</div>
+`;
+
 exports[`DateInput dates initialized with empty array 1`] = `
 .c8 {
   display: inline-block;
@@ -14100,7 +16233,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -14116,7 +16249,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     3
                   </div>
@@ -14132,7 +16265,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     4
                   </div>
@@ -14152,7 +16285,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     5
                   </div>
@@ -14168,7 +16301,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 cBuIEd"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     6
                   </div>
@@ -14184,7 +16317,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     7
                   </div>
@@ -14232,7 +16365,7 @@ exports[`DateInput select format inline range 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     10
                   </div>
@@ -17281,7 +19414,7 @@ exports[`DateInput type format inline 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -17597,7 +19730,7 @@ exports[`DateInput type format inline 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     21
                   </div>
@@ -19333,7 +21466,7 @@ exports[`DateInput type format inline short 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
                   >
                     2
                   </div>
@@ -19649,7 +21782,7 @@ exports[`DateInput type format inline short 2`] = `
                   type="button"
                 >
                   <div
-                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dGMUSn"
+                    class="StyledCalendar__StyledDay-sc-1y4xhmp-5 dyzXnK"
                   >
                     21
                   </div>
