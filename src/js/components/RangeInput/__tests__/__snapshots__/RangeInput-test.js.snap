@@ -1338,6 +1338,7 @@ exports[`RangeInput inputValue 1`] = `
           max="10"
           min="0"
           step="1"
+          style="padding: 0px 12px;"
           type="number"
           value="5"
         />

@@ -118,7 +118,7 @@ const RangeInput = forwardRef(
             <TextInput
               id="input-range-value"
               type="number"
-              style={{ border: 'none' }}
+              style={{ border: 'none', padding: '0 12px' }}
               min={min}
               max={max}
               step={step}

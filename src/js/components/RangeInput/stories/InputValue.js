@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const SimpleRangeUseInputValue = () => {
+export const InputValue = () => {
   const [value, setValue] = React.useState(5);
 
   const onChange = event => setValue(event.target.value);
@@ -24,6 +24,8 @@ export const SimpleRangeUseInputValue = () => {
   );
 };
 
+InputValue.storyName = 'Input Value';
+
 export default {
-  title: 'Input/RangeInput/SimpleRangeUseInputValue',
+  title: 'Input/RangeInput/Input Value',
 };
