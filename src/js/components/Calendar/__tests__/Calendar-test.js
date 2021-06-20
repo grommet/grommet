@@ -16,7 +16,7 @@ const DATES = [
 ];
 
 describe('Calendar', () => {
-  test('Calendar should have no accessbility violations', async () => {
+  test('Calendar should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
@@ -213,7 +213,7 @@ describe('Calendar', () => {
   test('first day sunday week monday', () => {
     // When the first day of the month is Sunday,
     // and the request of firstDayOfWeek
-    // is Monday, we are verifing we are not missing a week, issue 3253.
+    // is Monday, we are verifying we are not missing a week, issue 3253.
     const { container } = render(
       <Grommet>
         <Calendar
