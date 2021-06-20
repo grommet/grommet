@@ -1,6 +1,5 @@
 import React from 'react';
-import { cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Favorite } from 'grommet-icons';
@@ -16,18 +15,18 @@ describe('Avatar', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Avatar />
         <Avatar id="test id" name="test name" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Avatar size="xsmall" src={src} />
         <Avatar size="small" src={src} />
@@ -49,12 +48,12 @@ describe('Avatar', () => {
         <Avatar size="5xl">S</Avatar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Avatar src={src} round={false} />
         <Avatar src={src} round="xsmall" />
@@ -64,12 +63,12 @@ describe('Avatar', () => {
         <Avatar src={src} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('text renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Avatar background="dark-2">
           <Text alignSelf="center" size="xlarge">
@@ -83,22 +82,22 @@ describe('Avatar', () => {
         </Avatar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('icon renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Avatar src={<Favorite color="accent-2" />} background="accent-4" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('stack renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Stack anchor="bottom-right">
           <Box>
@@ -112,8 +111,8 @@ describe('Avatar', () => {
         </Stack>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('text size changes according to theme', () => {
@@ -129,7 +128,7 @@ describe('Avatar', () => {
       },
     };
 
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={theme}>
         <Box>
           <Avatar>T1</Avatar>
@@ -139,7 +138,7 @@ describe('Avatar', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
