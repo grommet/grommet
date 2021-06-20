@@ -1,13 +1,11 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 
 describe('Box', () => {
-  afterEach(cleanup);
-
   test('default', () => {
     const { container } = render(
       <Grommet>
