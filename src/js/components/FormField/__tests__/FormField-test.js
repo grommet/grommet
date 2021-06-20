@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import styled from 'styled-components';
 import 'jest-styled-components';
@@ -17,8 +17,6 @@ const CustomFormField = styled(FormField)`
 `;
 
 describe('FormField', () => {
-  afterEach(cleanup);
-
   test(`should have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
