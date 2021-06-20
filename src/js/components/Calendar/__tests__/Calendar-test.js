@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -32,14 +31,13 @@ describe('Calendar', () => {
 
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
@@ -47,100 +45,92 @@ describe('Calendar', () => {
     // have disabled date be distinct from selected date
     const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dates', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar dates={DATES} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('daysOfWeek', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar daysOfWeek dates={DATES} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar size="small" date={DATE} animate={false} />
         <Calendar size="medium" date={DATE} animate={false} />
         <Calendar size="large" date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fill', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar fill date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('firstDayOfWeek', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar firstDayOfWeek={0} date={DATE} animate={false} />
         <Calendar firstDayOfWeek={1} date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('reference', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar reference={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('showAdjacentDays', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('header', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar
           date={DATE}
@@ -180,22 +170,20 @@ describe('Calendar', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} fill animate={false}>
           {({ day }) => <Box>{day}</Box>}
         </Calendar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('select date', () => {
