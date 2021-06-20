@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -38,8 +38,6 @@ const STYLED_VALUES = [
 ];
 
 describe('Chart', () => {
-  afterEach(cleanup);
-
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
