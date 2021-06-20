@@ -1,6 +1,5 @@
 import React from 'react';
-import { cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Box } from '../../Box';
@@ -15,7 +14,7 @@ const customTheme = {
   global: {
     font: {
       family: `-apple-system,
-           BlinkMacSystemFont, 
+           BlinkMacSystemFont,
            "Segoe UI"`,
     },
   },
@@ -43,41 +42,41 @@ describe('Card', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Card />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('header', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Card>
           <CardHeader>header</CardHeader>
         </Card>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('footer', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Card>
           <CardFooter>footer</CardFooter>
         </Card>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Card>
           <Box>
@@ -86,12 +85,12 @@ describe('Card', () => {
         </Card>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('all', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Card>
           <CardHeader>header</CardHeader>
@@ -100,12 +99,12 @@ describe('Card', () => {
         </Card>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Themed', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={customTheme}>
         <Card width="small">
           <CardHeader>header</CardHeader>
@@ -114,7 +113,7 @@ describe('Card', () => {
         </Card>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
