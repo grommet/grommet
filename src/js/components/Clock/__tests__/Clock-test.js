@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, act } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -11,8 +11,6 @@ const TIME2 = 'T18:23';
 const DATE = '2018-02-22T18:23:34-10:00';
 
 describe('Clock', () => {
-  afterEach(cleanup);
-
   test('time', () => {
     const { container } = render(
       <Grommet>
