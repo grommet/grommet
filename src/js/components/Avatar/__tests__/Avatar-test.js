@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Favorite } from 'grommet-icons';
@@ -12,8 +12,6 @@ import { Avatar } from '..';
 const src = '';
 
 describe('Avatar', () => {
-  afterEach(cleanup);
-
   test('renders', () => {
     const { container } = render(
       <Grommet>
