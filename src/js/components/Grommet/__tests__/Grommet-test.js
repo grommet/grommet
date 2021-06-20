@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
@@ -44,8 +44,6 @@ const SSRTester = ({ ua }) => (
 );
 
 describe('Grommet', () => {
-  afterEach(cleanup);
-
   test('basic', () => {
     const { container } = render(<Grommet />);
     expect(container.firstChild).toMatchSnapshot();
