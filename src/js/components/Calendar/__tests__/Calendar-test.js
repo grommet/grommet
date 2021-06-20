@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
 
@@ -16,8 +16,6 @@ const DATES = [
 ];
 
 describe('Calendar', () => {
-  afterEach(cleanup);
-
   test('Calendar should have no accessbility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -523,8 +521,6 @@ describe('Calendar Keyboard events', () => {
       </Grommet>
     );
   });
-
-  afterEach(cleanup);
 
   test('onEnter', async () => {
     const { getByText } = render(<App />);
