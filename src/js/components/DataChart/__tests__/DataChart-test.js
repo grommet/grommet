@@ -11,8 +11,17 @@ const data = [
 ];
 
 describe('DataChart', () => {
+  let warnSpy;
+
+  beforeEach(() => {
+    warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+  });
+
+  afterEach(() => {
+    warnSpy.mockRestore();
+  });
+
   test('default', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <DataChart data={data} series="a" />
@@ -20,11 +29,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('nothing', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <DataChart data={data} />
@@ -37,11 +44,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('gap', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
@@ -51,11 +56,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('pad', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
@@ -65,11 +68,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('size', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
@@ -80,11 +81,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('axis', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {[
@@ -102,11 +101,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('dates', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const dateData = [];
     for (let i = 0; i < 4; i += 1) {
       const digits = ((i % 12) + 1).toString().padStart(2, 0);
@@ -137,11 +134,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('guide', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {[
@@ -157,11 +152,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('legend', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {[true, false].map((legend, i) => (
@@ -172,11 +165,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('detail', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {[true, false].map((detail, i) => (
@@ -187,11 +178,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('axis x granularity', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(count => (
@@ -206,11 +195,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('type', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         {['bar', 'line', 'area'].map(type => (
@@ -225,11 +212,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('bars', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <DataChart
@@ -241,11 +226,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('bars colors', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <DataChart
@@ -265,11 +248,9 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 
   test('bars invalid', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <DataChart
@@ -281,6 +262,5 @@ describe('DataChart', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    warnSpy.mockRestore();
   });
 });
