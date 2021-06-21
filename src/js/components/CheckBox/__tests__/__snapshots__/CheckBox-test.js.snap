@@ -121,36 +121,24 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={true}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -633,36 +621,24 @@ exports[`CheckBox defaultChecked 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={true}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -830,72 +806,48 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      checked={false}
-      className="c2 c3"
-      disabled={true}
+      class="c2 c3"
+      disabled=""
     >
       <input
-        checked={false}
-        className="c4"
-        disabled={true}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
+        disabled=""
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
-        disabled={true}
+        class="c5 "
+        disabled=""
       />
     </div>
   </label>
   <label
-    checked={true}
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      checked={true}
-      className="c2 c3"
-      disabled={true}
+      class="c2 c3"
+      disabled=""
     >
       <input
-        checked={true}
-        className="c4"
-        disabled={true}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
+        disabled=""
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c6 "
-        disabled={true}
+        class="c6 "
+        disabled=""
       >
         <svg
-          checked={true}
-          className="c7"
-          disabled={true}
+          class="c7"
+          disabled=""
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -1064,36 +1016,23 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={false}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -1106,33 +1045,20 @@ exports[`CheckBox indeterminate renders 1`] = `
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c7 c3"
+      class="c7 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={false}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -1270,32 +1196,20 @@ exports[`CheckBox label renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
     <span>
@@ -1303,29 +1217,17 @@ exports[`CheckBox label renders 1`] = `
     </span>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
     <div>
@@ -1591,62 +1493,38 @@ exports[`CheckBox renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    htmlFor="test id"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    for="test id"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
+        class="c4"
         id="test id"
         name="test name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
   </label>
@@ -1773,35 +1651,23 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <span>
       test label
     </span>
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
   </label>
@@ -1958,71 +1824,45 @@ exports[`CheckBox reverse toggle fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <span>
       test label
     </span>
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c7 c3"
+      class="c7 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
@@ -2303,100 +2143,62 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
   </label>
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={true}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={true}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c7 c3"
+      class="c7 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
