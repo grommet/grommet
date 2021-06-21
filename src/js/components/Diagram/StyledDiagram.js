@@ -1,17 +1,17 @@
 import styled, { css } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { animationObjectStyle } from '../../utils/animations';
+import { animationObjectStyle } from '../../utils/animation';
 
 const animationItemStyle = (animationType, theme) => {
   if (typeof animationType === 'string') {
-    return animationObjectStyle({ type: animationType }, theme);
+    return animationObjectStyle({ type: animationType }, theme, theme.diagram);
   }
   if (typeof animationType === 'object') {
-    return animationObjectStyle(animationType, theme);
+    return animationObjectStyle(animationType, theme, theme.diagram);
   }
   if (typeof animationType === 'boolean') {
-    return animationObjectStyle({ type: 'draw' }, theme);
+    return animationObjectStyle({ type: 'draw' }, theme, theme.diagram);
   }
   return '';
 };
@@ -90,7 +90,7 @@ const StyledDiagram = styled.svg`
         Object.keys(props.animation).length !== 0)
         ? animationStyle(props)
         : ''}
-  ${props => props.theme.diagram && props.theme.diagram.extend};
+  ${props => props.theme.diagram && props.theme.diagram.extend}
 `;
 
 StyledDiagram.defaultProps = {};

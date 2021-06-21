@@ -3429,8 +3429,12 @@ draw
   type: 
     pulse
     draw,
-  delay: number,
-  duration: number,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
   size: 
     xsmall
     small
@@ -3461,8 +3465,12 @@ draw
       type: 
         pulse
         draw,
-      delay: number,
-      duration: number,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
       size: 
         xsmall
         small

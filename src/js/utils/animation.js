@@ -7,7 +7,6 @@ const PULSE_SIZES = {
   large: 1.5,
   xlarge: 2,
 };
-
 const SLIDE_SIZES = {
   xsmall: 1,
   small: 5,
@@ -15,7 +14,6 @@ const SLIDE_SIZES = {
   large: 50,
   xlarge: 200,
 };
-
 const JIGGLE_SIZES = {
   xsmall: 0.1,
   small: 1,
@@ -23,7 +21,6 @@ const JIGGLE_SIZES = {
   large: 400,
   xlarge: 1000,
 };
-
 const ZOOM_SIZES = {
   xsmall: 0.001,
   small: 0.01,
@@ -31,7 +28,6 @@ const ZOOM_SIZES = {
   large: 0.1,
   xlarge: 0.5,
 };
-
 export const animationBounds = (type, size = 'medium') => {
   if (type === 'draw') {
     return ['', `stroke-dashoffset: 0`];
@@ -95,9 +91,8 @@ export const animationBounds = (type, size = 'medium') => {
 };
 
 export const normalizeTiming = (time, defaultTiming) =>
-  time ? `${time / 1000.0}s` : defaultTiming;
+  typeof time === 'number' ? `${time / 1000.0}s` : time || defaultTiming;
 
-// Animation Ending
 export const animationEnding = type => {
   if (type === 'draw') {
     return 'linear forwards';
@@ -114,8 +109,10 @@ export const animationEnding = type => {
   return 'forwards';
 };
 
-export const animationObjectStyle = (animation, theme) => {
+export const animationObjectStyle = (animation, theme, themeObj) => {
   const bounds = animationBounds(animation.type, animation.size);
+  const animationTheme =
+    (themeObj && themeObj.animation) || theme.global.animation;
 
   if (bounds) {
     const animationTransition = css`
@@ -127,22 +124,16 @@ export const animationObjectStyle = (animation, theme) => {
       }
     `;
 
-    const defaultDuration = () => {
-      if (theme.diagram.animation !== undefined) {
-        return normalizeTiming(
-          theme.diagram.animation[animation.type]
-            ? theme.diagram.animation[animation.type].duration
-            : undefined,
-          theme.diagram.animation.duration,
-        );
-      }
-      return theme.global.animation[animation.type]
-        ? theme.global.animation[animation.type].duration
-        : theme.global.animation.duration;
-    };
+    const defaultDuration = () =>
+      normalizeTiming(
+        animationTheme[animation.type]
+          ? animationTheme[animation.type].duration
+          : animation.duration,
+        animationTheme.duration,
+      );
 
     return css`${keyframes`${animationTransition}`}
-    ${normalizeTiming(animation.duration, defaultDuration)}
+    ${normalizeTiming(animation.duration, defaultDuration())}
     ${normalizeTiming(animation.delay, '0s')}
     ${animationEnding(animation.type)}`;
   }

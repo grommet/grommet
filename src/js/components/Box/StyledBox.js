@@ -22,7 +22,7 @@ import { getBreakpointStyle } from '../../utils/responsive';
 
 import { roundStyle } from '../../utils/styles';
 
-import { animationBounds, animationObjectStyle } from '../../utils/animations';
+import { animationBounds, animationObjectStyle } from '../../utils/animation';
 
 const ALIGN_MAP = {
   baseline: 'baseline',

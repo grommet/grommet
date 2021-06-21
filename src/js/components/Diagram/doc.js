@@ -8,8 +8,8 @@ const animationPropType = PropTypes.oneOfType([
   PropTypes.oneOf(['pulse', 'draw']),
   PropTypes.shape({
     type: PropTypes.oneOf(['pulse', 'draw']),
-    delay: PropTypes.number,
-    duration: PropTypes.number,
+    delay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    duration: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     size: PropTypes.oneOf([
       'xsmall',
       'small',

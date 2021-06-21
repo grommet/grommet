@@ -25,8 +25,12 @@ draw
   type: 
     pulse
     draw,
-  delay: number,
-  duration: number,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
   size: 
     xsmall
     small
@@ -59,8 +63,12 @@ Required. Array of objects describing the connections.
       type: 
         pulse
         draw,
-      delay: number,
-      duration: number,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
       size: 
         xsmall
         small

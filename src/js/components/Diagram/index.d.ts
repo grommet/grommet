@@ -10,8 +10,8 @@ export type DiagramAnimationType =
   | 'draw'
   | {
       type?: 'pulse' | 'draw';
-      delay?: number;
-      duration?: number;
+      delay?: number | string;
+      duration?: number | string;
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
     };
 
