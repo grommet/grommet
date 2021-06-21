@@ -3,8 +3,15 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  render,
+  fireEvent,
+  screen,
+} from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
@@ -17,6 +24,7 @@ import { Select } from '../../Select';
 import { CheckBox } from '../../CheckBox';
 import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { Box } from '../../Box';
+import { DateInput } from '../../DateInput';
 
 describe('Form accessibility', () => {
   afterEach(cleanup);
@@ -418,6 +426,35 @@ describe('Form uncontrolled', () => {
       target: { value: '1' },
     });
     expect(queryByText('required')).toBeNull();
+  });
+
+  test('should not submit when field is required and value is "[]"', () => {
+    const onSubmit = jest.fn();
+    render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField
+            label="Date Range"
+            htmlFor="date-range"
+            name="date-range"
+            required
+          >
+            <DateInput
+              name="date-range"
+              value={[]}
+              format="mm/dd/yyyy-mm/dd/yyyy"
+            />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(screen.queryByText('required')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+    expect(onSubmit).not.toHaveBeenCalled();
+    expect(screen.getByText('required')).toBeInTheDocument();
   });
 
   test('reset clears form', () => {
