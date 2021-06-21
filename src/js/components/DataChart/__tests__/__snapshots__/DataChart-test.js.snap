@@ -156,55 +156,56 @@ exports[`DataChart axis 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -227,15 +228,15 @@ exports[`DataChart axis 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -243,25 +244,25 @@ exports[`DataChart axis 1`] = `
     </div>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <div
-      className="c7"
+      class="c7"
     >
       <svg
-        className="c8"
-        height={192}
+        class="c8"
+        height="192"
         preserveAspectRatio="none"
         viewBox="0 0 384 192"
-        width={384}
+        width="384"
       >
         0
         <g
           fill="none"
           stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="96"
         >
           <g
             fill="none"
@@ -284,28 +285,28 @@ exports[`DataChart axis 1`] = `
     </div>
   </div>
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c6"
+      class="c6"
     >
       <div
-        className="c7"
+        class="c7"
       >
         <svg
-          className="c8"
-          height={192}
+          class="c8"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -328,64 +329,64 @@ exports[`DataChart axis 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      class="c9"
     >
       <div
-        className="c10"
+        class="c10"
       >
         0
       </div>
       <div
-        className="c10"
+        class="c10"
       >
         1
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
       />
     </div>
     <div
-      className="c6"
+      class="c6"
     >
       <div
-        className="c7"
+        class="c7"
       >
         <svg
-          className="c8"
-          height={192}
+          class="c8"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -409,28 +410,28 @@ exports[`DataChart axis 1`] = `
     </div>
   </div>
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c6"
+      class="c6"
     >
       <div
-        className="c7"
+        class="c7"
       >
         <svg
-          className="c8"
-          height={192}
+          class="c8"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -453,79 +454,79 @@ exports[`DataChart axis 1`] = `
       </div>
     </div>
     <div
-      className="c9"
+      class="c9"
     >
       <div
-        className="c10"
+        class="c10"
       >
         0
       </div>
       <div
-        className="c10"
+        class="c10"
       >
         1
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           1.7
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           1.4
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           1.1
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
       />
     </div>
     <div
-      className="c6"
+      class="c6"
     >
       <div
-        className="c7"
+        class="c7"
       >
         <svg
-          className="c8"
-          height={192}
+          class="c8"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -675,62 +676,62 @@ exports[`DataChart axis x granularity 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           />
         </svg>
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -745,38 +746,38 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c6"
+        class="c6"
       >
         0
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -799,43 +800,43 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c6"
+        class="c6"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         1
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -866,48 +867,48 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c6"
+        class="c6"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         1
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         2
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="96"
           >
             <g
               fill="none"
@@ -946,53 +947,53 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c6"
+        class="c6"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         1
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         2
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         3
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1039,48 +1040,48 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         2
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         4
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1135,43 +1136,43 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         5
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1234,53 +1235,53 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         2
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         4
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         6
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1351,43 +1352,43 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         7
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1466,58 +1467,58 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         2
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         4
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         6
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         8
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={48}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="48"
           >
             <g
               fill="none"
@@ -1604,53 +1605,53 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         3
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         6
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         9
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={24}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="24"
           >
             <g
               fill="none"
@@ -1745,48 +1746,48 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         5
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         10
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={24}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="24"
           >
             <g
               fill="none"
@@ -1889,43 +1890,43 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         11
       </div>
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <svg
-          className="c4"
-          height={192}
+          class="c4"
+          height="192"
           preserveAspectRatio="none"
           viewBox="0 0 384 192"
-          width={384}
+          width="384"
         >
           0
           <g
             fill="none"
             stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={24}
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="24"
           >
             <g
               fill="none"
@@ -2036,30 +2037,30 @@ exports[`DataChart axis x granularity 1`] = `
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div
-        className="c7"
+        class="c7"
       >
         0
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         3
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         6
       </div>
       <div
-        className="c6"
+        class="c6"
       >
         9
       </div>
       <div
-        className="c8"
+        class="c8"
       >
         12
       </div>
@@ -2238,55 +2239,56 @@ exports[`DataChart bars 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           240K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#00873D"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -2308,22 +2310,22 @@ exports[`DataChart bars 1`] = `
           </svg>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -2346,15 +2348,15 @@ exports[`DataChart bars 1`] = `
         </div>
       </div>
       <div
-        className="c10"
+        class="c10"
       >
         <div
-          className="c11"
+          class="c11"
         >
           0
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           1
         </div>
@@ -2534,55 +2536,56 @@ exports[`DataChart bars colors 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           240K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#00739D"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -2604,22 +2607,22 @@ exports[`DataChart bars colors 1`] = `
           </svg>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#00873D"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -2642,15 +2645,15 @@ exports[`DataChart bars colors 1`] = `
         </div>
       </div>
       <div
-        className="c10"
+        class="c10"
       >
         <div
-          className="c11"
+          class="c11"
         >
           0
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           1
         </div>
@@ -2830,95 +2833,96 @@ exports[`DataChart bars invalid 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#3D138D"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             />
           </svg>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#00873D"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             />
           </svg>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -2941,15 +2945,15 @@ exports[`DataChart bars invalid 1`] = `
         </div>
       </div>
       <div
-        className="c10"
+        class="c10"
       >
         <div
-          className="c11"
+          class="c11"
         >
           0
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           1
         </div>
@@ -3230,83 +3234,84 @@ exports[`DataChart dates 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3345,15 +3350,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -3361,80 +3366,81 @@ exports[`DataChart dates 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3473,15 +3479,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -3489,80 +3495,81 @@ exports[`DataChart dates 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3601,15 +3608,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -3617,80 +3624,81 @@ exports[`DataChart dates 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3729,15 +3737,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -3745,80 +3753,81 @@ exports[`DataChart dates 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3857,15 +3866,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -3873,80 +3882,81 @@ exports[`DataChart dates 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           350K
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0K
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -3985,15 +3995,15 @@ exports[`DataChart dates 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           3
         </div>
@@ -4159,55 +4169,56 @@ exports[`DataChart default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -4230,15 +4241,15 @@ exports[`DataChart default 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -4506,55 +4517,56 @@ exports[`DataChart detail 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -4576,50 +4588,39 @@ exports[`DataChart detail 1`] = `
           </svg>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <div
-            className="c10 c11"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={0}
+            class="c10 c11"
+            tabindex="0"
           >
             <div
-              className="c12"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOver={[Function]}
+              class="c12"
             >
               <div
-                className="c13"
+                class="c13"
               />
             </div>
             <div
-              className="c12"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOver={[Function]}
+              class="c12"
             >
               <div
-                className="c13"
+                class="c13"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -4627,52 +4628,53 @@ exports[`DataChart detail 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -4695,15 +4697,15 @@ exports[`DataChart detail 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -4869,55 +4871,56 @@ exports[`DataChart gap 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -4940,15 +4943,15 @@ exports[`DataChart gap 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -4956,52 +4959,53 @@ exports[`DataChart gap 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5024,15 +5028,15 @@ exports[`DataChart gap 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -5040,52 +5044,53 @@ exports[`DataChart gap 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5108,15 +5113,15 @@ exports[`DataChart gap 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -5376,83 +5381,84 @@ exports[`DataChart guide 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5475,15 +5481,15 @@ exports[`DataChart guide 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -5491,52 +5497,53 @@ exports[`DataChart guide 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5559,15 +5566,15 @@ exports[`DataChart guide 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -5575,66 +5582,67 @@ exports[`DataChart guide 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
+              class="c9"
             />
             <div
-              className="c9"
+              class="c9"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5657,15 +5665,15 @@ exports[`DataChart guide 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -5673,75 +5681,76 @@ exports[`DataChart guide 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <div
-            className="c10"
+            class="c10"
           >
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
             <div
-              className="c11"
+              class="c11"
             />
           </div>
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           <svg
-            className="c13"
-            height={192}
+            class="c13"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -5764,15 +5773,15 @@ exports[`DataChart guide 1`] = `
         </div>
       </div>
       <div
-        className="c14"
+        class="c14"
       >
         <div
-          className="c15"
+          class="c15"
         >
           0
         </div>
         <div
-          className="c15"
+          class="c15"
         >
           1
         </div>
@@ -6019,58 +6028,59 @@ exports[`DataChart legend 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c1"
+        class="c1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <div
-            className="c4"
+            class="c4"
           >
             2
           </div>
           <div
-            className="c4"
+            class="c4"
           >
             0.8
           </div>
         </div>
         <div
-          className="c5"
+          class="c5"
+          style="height: 0px;"
         />
       </div>
       <div
-        className="c1"
+        class="c1"
       >
         <div
-          className="c6"
+          class="c6"
         >
           <div
-            className="c7"
+            class="c7"
           >
             <svg
-              className="c8"
-              height={192}
+              class="c8"
+              height="192"
               preserveAspectRatio="none"
               viewBox="0 0 384 192"
-              width={384}
+              width="384"
             >
               0
               <g
                 fill="none"
                 stroke="#6FFFB0"
-                strokeLinecap="butt"
-                strokeLinejoin="miter"
-                strokeWidth={96}
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-width="96"
               >
                 <g
                   fill="none"
@@ -6093,15 +6103,15 @@ exports[`DataChart legend 1`] = `
           </div>
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           <div
-            className="c10"
+            class="c10"
           >
             0
           </div>
           <div
-            className="c10"
+            class="c10"
           >
             1
           </div>
@@ -6109,27 +6119,27 @@ exports[`DataChart legend 1`] = `
       </div>
     </div>
     <div
-      className="c11"
+      class="c11"
     >
       <div
-        className="c12"
+        class="c12"
       >
         <svg
           fill="#6FFFB0"
-          height={12}
+          height="12"
           stroke="none"
           viewBox="0 0 96 12"
-          width={96}
+          width="96"
         >
           <path
             d="M 0 0 L 96 0 L 96 12 L 0 12 Z"
           />
         </svg>
         <div
-          className="c13"
+          class="c13"
         />
         <span
-          className="c14"
+          class="c14"
         >
           a
         </span>
@@ -6137,52 +6147,53 @@ exports[`DataChart legend 1`] = `
     </div>
   </div>
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c1"
+      class="c1"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c1"
+      class="c1"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -6205,15 +6216,15 @@ exports[`DataChart legend 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -6379,64 +6390,65 @@ exports[`DataChart nothing 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <div
-          className="c5"
+          class="c5"
         >
           2
         </div>
         <div
-          className="c5"
+          class="c5"
         >
           0.8
         </div>
       </div>
       <div
-        className="c6"
+        class="c6"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c1"
+        class="c1"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -6459,15 +6471,15 @@ exports[`DataChart nothing 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -6475,10 +6487,10 @@ exports[`DataChart nothing 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -6699,55 +6711,56 @@ exports[`DataChart pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -6770,15 +6783,15 @@ exports[`DataChart pad 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -6786,52 +6799,53 @@ exports[`DataChart pad 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c11"
+          class="c11"
         >
           2
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -6854,15 +6868,15 @@ exports[`DataChart pad 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -6870,52 +6884,53 @@ exports[`DataChart pad 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c12"
+          class="c12"
         >
           2
         </div>
         <div
-          className="c12"
+          class="c12"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -6938,15 +6953,15 @@ exports[`DataChart pad 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7150,55 +7165,56 @@ exports[`DataChart size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={0}
+            class="c8"
+            height="0"
             preserveAspectRatio="none"
             viewBox="0 0 0 0"
-            width={0}
+            width="0"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -7221,15 +7237,15 @@ exports[`DataChart size 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7237,52 +7253,53 @@ exports[`DataChart size 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c11"
+        class="c11"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 0 192"
-            width={0}
+            width="0"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -7305,15 +7322,15 @@ exports[`DataChart size 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7321,52 +7338,53 @@ exports[`DataChart size 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c12"
+        class="c12"
       >
         <div
-          className="c13"
+          class="c13"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 288 192"
-            width={288}
+            width="288"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -7389,15 +7407,15 @@ exports[`DataChart size 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7590,55 +7608,56 @@ exports[`DataChart type 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           2
         </div>
         <div
-          className="c4"
+          class="c4"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -7661,15 +7680,15 @@ exports[`DataChart type 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7677,52 +7696,53 @@ exports[`DataChart type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c11"
+          class="c11"
         >
           2
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="none"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g
                 fill="none"
@@ -7737,15 +7757,15 @@ exports[`DataChart type 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>
@@ -7753,52 +7773,53 @@ exports[`DataChart type 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c11"
+          class="c11"
         >
           2
         </div>
         <div
-          className="c11"
+          class="c11"
         >
           0.8
         </div>
       </div>
       <div
-        className="c5"
+        class="c5"
+        style="height: 0px;"
       />
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c6"
+        class="c6"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
-            className="c8"
-            height={192}
+            class="c8"
+            height="192"
             preserveAspectRatio="none"
             viewBox="0 0 384 192"
-            width={384}
+            width="384"
           >
             0
             <g
               fill="#6FFFB0"
               stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-width="96"
             >
               <g>
                 <path
@@ -7810,15 +7831,15 @@ exports[`DataChart type 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        class="c9"
       >
         <div
-          className="c10"
+          class="c10"
         >
           0
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           1
         </div>

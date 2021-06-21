@@ -40,10 +40,10 @@ exports[`Avatar icon renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   />
 </div>
 `;
@@ -86,13 +86,13 @@ exports[`Avatar renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
     id="test id"
     name="test name"
   />
@@ -302,25 +302,25 @@ exports[`Avatar round renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c2 StyledAvatar-sc-1suyamb-1"
+    class="c2 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c4 StyledAvatar-sc-1suyamb-1"
+    class="c4 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c5 StyledAvatar-sc-1suyamb-1"
+    class="c5 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c6 StyledAvatar-sc-1suyamb-1"
+    class="c6 StyledAvatar-sc-1suyamb-1"
   />
 </div>
 `;
@@ -861,103 +861,103 @@ exports[`Avatar size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c2 StyledAvatar-sc-1suyamb-1"
+    class="c2 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c4 StyledAvatar-sc-1suyamb-1"
+    class="c4 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c5 StyledAvatar-sc-1suyamb-1"
+    class="c5 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c6 StyledAvatar-sc-1suyamb-1"
+    class="c6 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c7 StyledAvatar-sc-1suyamb-1"
+    class="c7 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c8 StyledAvatar-sc-1suyamb-1"
+    class="c8 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c9 StyledAvatar-sc-1suyamb-1"
+    class="c9 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c10 StyledAvatar-sc-1suyamb-1"
+    class="c10 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c11 "
+      class="c11 "
     >
       S
     </span>
   </div>
   <div
-    className="c12 StyledAvatar-sc-1suyamb-1"
+    class="c12 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c13 "
+      class="c13 "
     >
       S
     </span>
   </div>
   <div
-    className="c14 StyledAvatar-sc-1suyamb-1"
+    class="c14 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c15 "
+      class="c15 "
     >
       S
     </span>
   </div>
   <div
-    className="c16 StyledAvatar-sc-1suyamb-1"
+    class="c16 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c17 "
+      class="c17 "
     >
       S
     </span>
   </div>
   <div
-    className="c18 StyledAvatar-sc-1suyamb-1"
+    class="c18 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c19 "
+      class="c19 "
     >
       S
     </span>
   </div>
   <div
-    className="c20 StyledAvatar-sc-1suyamb-1"
+    class="c20 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c21 "
+      class="c21 "
     >
       S
     </span>
   </div>
   <div
-    className="c22 StyledAvatar-sc-1suyamb-1"
+    class="c22 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c23 "
+      class="c23 "
     >
       S
     </span>
   </div>
   <div
-    className="c24 StyledAvatar-sc-1suyamb-1"
+    class="c24 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c25 "
+      class="c25 "
     >
       S
     </span>
@@ -1097,37 +1097,37 @@ exports[`Avatar stack renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <div
-            className="c5 StyledAvatar-sc-1suyamb-1"
+            class="c5 StyledAvatar-sc-1suyamb-1"
           />
           <div
-            className="c6"
+            class="c6"
           />
         </div>
         <div
-          className="c6"
+          class="c6"
         />
       </div>
     </div>
     <div
-      className="c7"
+      class="c7"
     >
       <div
-        className="c8 StyledAvatar-sc-1suyamb-1"
+        class="c8 StyledAvatar-sc-1suyamb-1"
       />
     </div>
   </div>
@@ -1210,22 +1210,22 @@ exports[`Avatar text renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       R
     </span>
   </div>
   <div
-    className="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       SY
     </span>
@@ -1395,43 +1395,43 @@ exports[`Avatar text size changes according to theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2 StyledAvatar-sc-1suyamb-1"
+      class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        className="c3 "
+        class="c3 "
       >
         T1
       </span>
     </div>
     <div
-      className="c4 StyledAvatar-sc-1suyamb-1"
+      class="c4 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        className="c5 "
+        class="c5 "
       >
         T2
       </span>
     </div>
     <div
-      className="c6 StyledAvatar-sc-1suyamb-1"
+      class="c6 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        className="c7 "
+        class="c7 "
       >
         T3
       </span>
     </div>
     <div
-      className="c8 StyledAvatar-sc-1suyamb-1"
+      class="c8 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        className="c9 "
+        class="c9 "
       >
         T4
       </span>

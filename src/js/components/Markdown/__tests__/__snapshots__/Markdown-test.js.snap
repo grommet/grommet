@@ -145,102 +145,97 @@ exports[`Markdown renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     <h1
-      className="c1"
+      class="c1"
       id="h1"
     >
       H1
     </h1>
     <p
-      className="c2"
+      class="c2"
     >
       Paragraph
     </p>
     <h2
-      className="c3"
+      class="c3"
       id="h2"
     >
       H2
     </h2>
     <h3
-      className="c4"
+      class="c4"
       id="h3"
     >
       H3
     </h3>
     <h4
-      className="c5"
+      class="c5"
       id="h4"
     >
       H4
     </h4>
     <p
-      className="c2"
+      class="c2"
     >
       <a
-        className="c6"
+        class="c6"
         href="#"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         a link
       </a>
     </p>
     <blockquote>
       <p
-        className="c2"
+        class="c2"
       >
         i carry your heart with me
       </p>
     </blockquote>
     <p
-      className="c2"
+      class="c2"
     >
       <img
         alt="alt text"
-        className=""
+        class=""
         src="//v2.grommet.io/assets/IMG_4245.jpg"
         title="Markdown Image"
       />
     </p>
     <table
-      className="c7"
+      class="c7"
     >
       <thead
-        className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
       >
         <tr
-          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               Markdown
             </div>
           </td>
           <td
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               Less
             </div>
           </td>
           <td
-            className="c8"
+            class="c8"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               Pretty
             </div>
@@ -248,17 +243,16 @@ exports[`Markdown renders 1`] = `
         </tr>
       </thead>
       <tbody
-        className="StyledTable__StyledTableBody-sc-1m3u5g-3"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3"
       >
         <tr
-          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               <em>
                 Still
@@ -266,11 +260,10 @@ exports[`Markdown renders 1`] = `
             </div>
           </td>
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               <code>
                 renders
@@ -278,11 +271,10 @@ exports[`Markdown renders 1`] = `
             </div>
           </td>
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               <strong>
                 nicely
@@ -291,34 +283,31 @@ exports[`Markdown renders 1`] = `
           </td>
         </tr>
         <tr
-          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               1
             </div>
           </td>
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               2
             </div>
           </td>
           <td
-            className="c10"
+            class="c10"
           >
             <div
-              className="c9"
-              style={Object {}}
+              class="c9"
             >
               3
             </div>
