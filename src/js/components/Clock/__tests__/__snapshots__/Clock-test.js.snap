@@ -35,108 +35,92 @@ exports[`Clock hourLimit 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       0
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       6
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
@@ -646,212 +630,180 @@ exports[`Clock time 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       0
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       0
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
@@ -883,31 +835,25 @@ exports[`Clock type analog precision hours size huge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="huge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -937,31 +883,25 @@ exports[`Clock type analog precision hours size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="large"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -991,31 +931,25 @@ exports[`Clock type analog precision hours size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="medium"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1045,31 +979,25 @@ exports[`Clock type analog precision hours size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="small"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1099,31 +1027,25 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1153,31 +1075,25 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xsmall"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1207,31 +1123,25 @@ exports[`Clock type analog precision hours size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xxlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1268,46 +1178,35 @@ exports[`Clock type analog precision minutes size huge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="huge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1344,46 +1243,35 @@ exports[`Clock type analog precision minutes size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="large"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1420,46 +1308,35 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="medium"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1496,46 +1373,35 @@ exports[`Clock type analog precision minutes size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="small"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1572,46 +1438,35 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1648,46 +1503,35 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xsmall"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1724,46 +1568,35 @@ exports[`Clock type analog precision minutes size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xxlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1807,61 +1640,45 @@ exports[`Clock type analog precision seconds size huge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="huge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -1905,61 +1722,45 @@ exports[`Clock type analog precision seconds size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="large"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2003,61 +1804,45 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="medium"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2101,61 +1886,45 @@ exports[`Clock type analog precision seconds size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="small"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2199,61 +1968,45 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2297,61 +2050,45 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xsmall"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2395,61 +2132,45 @@ exports[`Clock type analog precision seconds size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="xMidYMid meet"
-    size="xxlarge"
     version="1.1"
     viewBox="0 0 96 96"
-    width={96}
+    width="96"
   >
     <line
-      className="c2"
+      class="c2"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(204deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={9}
+      stroke-linecap="round"
+      style="transform: rotate(204deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="9"
     />
     <line
-      className="c3"
+      class="c3"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(138deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={12}
+      stroke-linecap="round"
+      style="transform: rotate(138deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="12"
     />
     <line
-      className="c4"
+      class="c4"
       stroke="#000000"
-      strokeLinecap="round"
-      style={
-        Object {
-          "transform": "rotate(191.5deg)",
-          "transformOrigin": "48px 48px",
-        }
-      }
-      x1={48}
-      x2={48}
-      y1={48}
-      y2={24}
+      stroke-linecap="round"
+      style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
+      x1="48"
+      x2="48"
+      y1="48"
+      y2="24"
     />
   </svg>
 </div>
@@ -2490,56 +2211,48 @@ exports[`Clock type digital custom size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="customSize"
+      class="c2"
     >
       4
     </div>
@@ -2582,20 +2295,18 @@ exports[`Clock type digital precision hours size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       8
     </div>
@@ -2638,20 +2349,18 @@ exports[`Clock type digital precision hours size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
@@ -2694,20 +2403,18 @@ exports[`Clock type digital precision hours size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       8
     </div>
@@ -2750,20 +2457,18 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       8
     </div>
@@ -2806,20 +2511,18 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       8
     </div>
@@ -2862,20 +2565,18 @@ exports[`Clock type digital precision hours size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       8
     </div>
@@ -2918,38 +2619,33 @@ exports[`Clock type digital precision minutes size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       3
     </div>
@@ -2992,38 +2688,33 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
@@ -3066,38 +2757,33 @@ exports[`Clock type digital precision minutes size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       3
     </div>
@@ -3140,38 +2826,33 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       3
     </div>
@@ -3214,38 +2895,33 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       3
     </div>
@@ -3288,38 +2964,33 @@ exports[`Clock type digital precision minutes size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       3
     </div>
@@ -3362,56 +3033,48 @@ exports[`Clock type digital precision seconds size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="large"
+      class="c2"
     >
       4
     </div>
@@ -3454,56 +3117,48 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="medium"
+      class="c2"
     >
       4
     </div>
@@ -3546,56 +3201,48 @@ exports[`Clock type digital precision seconds size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="small"
+      class="c2"
     >
       4
     </div>
@@ -3638,56 +3285,48 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xlarge"
+      class="c2"
     >
       4
     </div>
@@ -3730,56 +3369,48 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xsmall"
+      class="c2"
     >
       4
     </div>
@@ -3822,56 +3453,48 @@ exports[`Clock type digital precision seconds size xxlarge 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       1
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       8
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       2
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       :
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       3
     </div>
     <div
-      className="c2"
-      size="xxlarge"
+      class="c2"
     >
       4
     </div>

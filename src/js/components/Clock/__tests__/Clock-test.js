@@ -1,7 +1,6 @@
 import React from 'react';
+import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, render, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Clock } from '..';
@@ -12,10 +11,8 @@ const TIME2 = 'T18:23';
 const DATE = '2018-02-22T18:23:34-10:00';
 
 describe('Clock', () => {
-  afterEach(cleanup);
-
   test('time', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Clock run={false} type="digital" time={DURATION} />
         <Clock run={false} type="digital" time={TIME} />
@@ -23,17 +20,19 @@ describe('Clock', () => {
         <Clock run={false} type="digital" time={DATE} />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('hourLimit', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Clock run={false} type="digital" time={DURATION} hourLimit={12} />
         <Clock run={false} type="digital" time={DURATION} hourLimit={24} />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('run', () => {
@@ -60,7 +59,7 @@ describe('Clock', () => {
       ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].forEach(
         size =>
           test(`type ${type} precision ${precision} size ${size}`, () => {
-            const component = renderer.create(
+            const { container } = render(
               <Grommet>
                 <Clock
                   run={false}
@@ -71,7 +70,8 @@ describe('Clock', () => {
                 />
               </Grommet>,
             );
-            expect(component.toJSON()).toMatchSnapshot();
+
+            expect(container.firstChild).toMatchSnapshot();
           }),
       ),
     ),
@@ -79,7 +79,7 @@ describe('Clock', () => {
 
   ['hours', 'minutes', 'seconds'].forEach(precision =>
     test(`type analog precision ${precision} size huge`, () => {
-      const component = renderer.create(
+      const { container } = render(
         <Grommet>
           <Clock
             run={false}
@@ -90,7 +90,8 @@ describe('Clock', () => {
           />
         </Grommet>,
       );
-      expect(component.toJSON()).toMatchSnapshot();
+
+      expect(container.firstChild).toMatchSnapshot();
     }),
   );
 
@@ -108,11 +109,12 @@ describe('Clock', () => {
       },
     };
 
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={override}>
         <Clock type="digital" run={false} time={DURATION} size="customSize" />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

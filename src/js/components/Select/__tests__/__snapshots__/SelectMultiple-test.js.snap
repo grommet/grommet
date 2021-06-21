@@ -486,57 +486,44 @@ exports[`Select Controlled multiple 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <polyline
           fill="none"
           points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
