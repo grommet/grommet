@@ -14,13 +14,13 @@ import { datumValue } from './buildState';
 
 const Row = memo(
   ({
-    setItemFocus,
+    tableRef,
     lastActive,
     setLastActive,
+    setItemFocus,
     primaryValue,
     index,
     rowRef,
-    tableRef,
     size,
     active,
     onClickRow,
@@ -48,7 +48,7 @@ const Row = memo(
       <StyledDataTableRow
         ref={rowRef}
         size={size}
-        tabIndex={onClickRow ? -1 : undefined}
+        tabIndex={onClickRow ? -1 : undefined} // needed to use onFocus & onBlur
         active={active}
         onClick={
           onClickRow
@@ -59,8 +59,8 @@ const Row = memo(
                 adjustedEvent.datum = datum;
                 adjustedEvent.index = index;
                 onClickRow(adjustedEvent);
-                // putting focus on tbody for WCAG guideline
                 tableRef.current.focus();
+                console.log(document.activeElement, tableRef);
               }
             : undefined
         }
@@ -84,6 +84,7 @@ const Row = memo(
         onBlur={
           onClickRow
             ? () => {
+                // cant set lastActive to active since 1 === true / 0 === false
                 setLastActive(index);
                 setActive(undefined);
                 setItemFocus(false);
@@ -205,6 +206,7 @@ const Body = forwardRef(
               }
             : undefined
         }
+        onTab={() => setActive(undefined)}
         onUp={
           onClickRow && active
             ? () => {
@@ -226,6 +228,7 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
+          itemFocus={itemFocus}
           {...rest}
         >
           <InfiniteScroll
@@ -253,12 +256,11 @@ const Body = forwardRef(
                   tableRef={ref}
                   lastActive={lastActive}
                   setLastActive={setLastActive}
+                  setItemFocus={setItemFocus}
                   rowRef={rowRef}
                   primaryValue={primaryValue}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
-                  itemFocus={itemFocus}
-                  setItemFocus={setItemFocus}
                   index={index}
                   size={size}
                   active={active >= 0 ? active === index : undefined}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import { Grommet, Box, Button, DataTable, Layer, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
@@ -141,9 +141,7 @@ const DATA: RowType[] = [
 ];
 
 export const ClickableDataTable = () => {
-  const handleClick = () => {
-    alert('Modal Example');
-  };
+  const [show, setShow] = React.useState(false);
 
   return (
     <Grommet theme={grommet}>
@@ -153,8 +151,16 @@ export const ClickableDataTable = () => {
           columns={columns}
           data={DATA}
           step={10}
-          onClickRow={event => handleClick()}
+          onClickRow={event => setShow(true)}
         />
+        {show && (
+          <Layer
+            onEsc={() => setShow(false)}
+            onClickOutside={() => setShow(false)}
+          >
+            <Button label="close" onClick={() => setShow(false)} />
+          </Layer>
+        )}
       </Box>
     </Grommet>
   );

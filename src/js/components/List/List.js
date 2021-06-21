@@ -22,11 +22,13 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
+  // Customizes to make table have a focus border color of green
   &:focus {
     ${props =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -220,11 +222,13 @@ const List = React.forwardRef(
                 }
               : undefined
           }
+          onTab={() => setActive(undefined)}
           onUp={
             (onClickItem || onOrder) && active
               ? () => {
                   const min = onOrder ? 1 : 0;
                   setActive(Math.max(active - 1, min));
+                  setLastActive(active);
                 }
               : undefined
           }
@@ -234,6 +238,7 @@ const List = React.forwardRef(
                   const min = onOrder ? 1 : 0;
                   const max = onOrder ? data.length * 2 - 2 : data.length - 1;
                   setActive(active >= min ? Math.min(active + 1, max) : min);
+                  setLastActive(active);
                 }
               : undefined
           }
@@ -243,7 +248,13 @@ const List = React.forwardRef(
             as={as || 'ul'}
             itemFocus={itemFocus}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
-            onBlur={onOrder ? () => setActive(undefined) : undefined}
+            onBlur={
+              onOrder
+                ? () => {
+                    setActive(undefined);
+                  }
+                : undefined
+            }
             {...ariaProps}
             {...rest}
           >
