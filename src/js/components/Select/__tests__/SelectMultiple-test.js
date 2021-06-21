@@ -1,10 +1,9 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
 import { act, cleanup, render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import 'jest-styled-components';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -28,7 +27,7 @@ describe('Select Controlled', () => {
   });
 
   test('multiple', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         multiple
@@ -37,7 +36,8 @@ describe('Select Controlled', () => {
         value={[]}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('multiple values', () => {
@@ -418,7 +418,7 @@ describe('Select Controlled', () => {
     expect(onChange).toHaveBeenNthCalledWith(3, [{ id: 21, name: 'Value21' }]);
   });
 
-  test(`should allow multiple selections when options are 
+  test(`should allow multiple selections when options are
   loaded lazily`, () => {
     jest.useFakeTimers();
     const onChange = jest.fn();
