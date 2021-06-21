@@ -37,23 +37,30 @@ const FOLDER = path.resolve('src/js/components');
 
 components(FOLDER).forEach(component => {
   /* eslint-disable */
-  const { doc, themeDoc } = require(path.join(FOLDER, component, 'doc.js'));
-  const componentModule = require(path.join(FOLDER, component, 'index.js'));
-  // we use the second array element since the first is '__esModule'.
-  const Component =
-    componentModule[
-      Object.keys(componentModule).filter(k => k === component)[0]
-    ];
-  /* eslint-enable */
+  try {
+    const { doc, themeDoc } = require(path.join(FOLDER, component, 'doc.js'));
+    const componentModule = require(path.join(FOLDER, component, 'index.js'));
 
-  const readmeDestination = path.join(FOLDER, component, 'README.md');
+    // we use the second array element since the first is '__esModule'.
+    const Component =
+      componentModule[
+        Object.keys(componentModule).filter(k => k === component)[0]
+      ];
+    /* eslint-enable */
 
-  const DocumentedComponent = doc(Component);
+    const readmeDestination = path.join(FOLDER, component, 'README.md');
 
-  const readmeContent = themeDoc
-    ? `${replaceHoc(DocumentedComponent.toMarkdown())}\n${toMarkdown(themeDoc)}`
-    : `${replaceHoc(DocumentedComponent.toMarkdown())}`;
-  del(readmeDestination).then(() =>
-    fs.writeFileSync(readmeDestination, readmeContent),
-  );
+    const DocumentedComponent = doc(Component);
+
+    const readmeContent = themeDoc
+      ? `${replaceHoc(DocumentedComponent.toMarkdown())}\n${toMarkdown(
+          themeDoc,
+        )}`
+      : `${replaceHoc(DocumentedComponent.toMarkdown())}`;
+    del(readmeDestination).then(() =>
+      fs.writeFileSync(readmeDestination, readmeContent),
+    );
+  } catch (ex) {
+    // don't make changes to README.md if doc.js file isn't found
+  }
 });
