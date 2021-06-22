@@ -23,7 +23,7 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
-import { datumValue, calcPinnedBackground } from './buildState';
+import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 
@@ -113,7 +113,7 @@ const Header = forwardRef(
       onSort,
       onToggle,
       onWidths,
-      pin: tablePin,
+      pin: pinProp,
       pinnedOffset,
       primaryProperty,
       selected,
@@ -140,7 +140,7 @@ const Header = forwardRef(
       }
     }, [cellWidths, onWidths]);
 
-    const pin = tablePin ? ['top'] : [];
+    const pin = pinProp ? ['top'] : [];
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
@@ -161,14 +161,7 @@ const Header = forwardRef(
 
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={
-                calcPinnedBackground(
-                  cellProps.background,
-                  pin,
-                  theme,
-                  'header',
-                )
-              }
+              background={cellProps.background}
               onWidth={updateWidths}
               plain="noPad"
               size="auto"
@@ -332,20 +325,13 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
-              const background = calcPinnedBackground(
-                cellProps.background,
-                cellPin,
-                theme,
-                'header',
-              );
-
               return (
                 <StyledDataTableCell
                   key={property}
                   align={align}
                   context="header"
                   verticalAlign={verticalAlign}
-                  background={background || cellProps.background}
+                  background={cellProps.background}
                   border={cellProps.border}
                   onWidth={updateWidths}
                   pad={cellProps.pad}

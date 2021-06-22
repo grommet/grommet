@@ -9,25 +9,19 @@ import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
 
-const ExpanderCell = ({
-  background,
-  border,
-  context,
-  expanded,
-  onToggle,
-  pad,
-  rowProp,
-  ...rest
-}) => {
+// ExpanderControl is separated from ExpanderCell to give TableCell a chance
+// to set the ThemeContext dark context.
+const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
-    console.log('!!! ExpanderCell', theme.dark, normalizeColor('border', theme));
     content = <ExpandIcon color={normalizeColor('border', theme)} />;
   } else {
     content = <Blank />;
   }
+
   const normalizedThemeProps = {
     ...theme.table[context],
     ...theme.dataTable[context],
@@ -35,6 +29,7 @@ const ExpanderCell = ({
   delete normalizedThemeProps.background;
   delete normalizedThemeProps.border;
   delete normalizedThemeProps.pad;
+
   content = (
     <Box
       {...normalizedThemeProps}
@@ -46,13 +41,13 @@ const ExpanderCell = ({
       {content}
     </Box>
   );
+
   if (onToggle) {
     content = (
       <Button
         fill
         a11yTitle={expanded ? 'collapse' : 'expand'}
         hoverIndicator
-        disabled={!onToggle}
         onClick={onToggle}
         plain
       >
@@ -60,7 +55,11 @@ const ExpanderCell = ({
       </Button>
     );
   }
-  return (
+
+  return content;
+};
+
+const ExpanderCell = ({ background, border, context, ...rest }) => (
     <TableCell
       background={background}
       border={border}
@@ -68,10 +67,9 @@ const ExpanderCell = ({
       plain="noPad"
       verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
     >
-      {content}
+      <ExpanderControl context={context} {...rest} />
     </TableCell>
   );
-};
 
 ExpanderCell.displayName = 'ExpanderCell';
 

@@ -117,8 +117,8 @@ const DataTable = ({
 
   // cell styling properties: background, border, pad
   const cellProps = useMemo(
-    () => normalizeCellProps({ background, border, pad }, theme),
-    [background, border, pad, theme],
+    () => normalizeCellProps({ background, border, pad, pin }, theme),
+    [background, border, pad, pin, theme],
   );
 
   // if groupBy, an array with one item per unique groupBy key value

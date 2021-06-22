@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { defaultProps } from '../../default-props';
 
@@ -8,7 +7,6 @@ import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
-import { calcPinnedBackground } from './buildState';
 
 const Footer = forwardRef(
   (
@@ -19,7 +17,7 @@ const Footer = forwardRef(
       footerValues,
       groups,
       onSelect,
-      pin: tablePin,
+      pin: pinProp,
       pinnedOffset,
       primaryProperty,
       selected,
@@ -27,11 +25,10 @@ const Footer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const pin = tablePin ? ['bottom'] : [];
+    const pin = pinProp ? ['bottom'] : [];
 
     return (
-      <StyledDataTableFooter ref={ref} fillProp={fill} pin={tablePin} {...rest}>
+      <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
         <TableRow>
           {groups && (
             <TableCell
@@ -45,12 +42,7 @@ const Footer = forwardRef(
           )}
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={calcPinnedBackground(
-                cellProps.background,
-                pin,
-                theme,
-                'footer',
-              )}
+              background={cellProps.background}
               context="footer"
               pin={pin}
             />

@@ -138,7 +138,6 @@ const TableCell = forwardRef(
         // header or footer.
         themeProviderValue.background = cellProps.background;
       }
-      if (dark) console.log('!!! TableCell', cellProps.background, themeProviderValue.dark);
     }
 
     return (

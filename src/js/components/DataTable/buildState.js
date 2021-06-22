@@ -239,7 +239,6 @@ const cellPropertyNames = ['background', 'border', 'pad'];
 // Convert property specific cell props to context specific cell props.
 // For example, background={{ header: { background } }}
 // will become cellProps.header.background
-// Pinned flavors are included as cellProps.header.pinned.background
 export const normalizeCellProps = (props, theme) => {
   const result = {};
   tableContextNames.forEach(context => {
@@ -253,10 +252,30 @@ export const normalizeCellProps = (props, theme) => {
 
       // pinned case
       value =
-        props?.[propName]?.pinned?.[context] ||
-        (context === 'body' && props?.[propName]?.pinned) ||
-        theme?.dataTable?.pinned?.[context]?.[propName];
-      if (value !== undefined) result[context].pinned[propName] = value;
+          props?.[propName]?.pinned?.[context] ||
+          (context === 'body' && props?.[propName]?.pinned) ||
+          theme?.dataTable?.pinned?.[context]?.[propName];
+      if (value !== undefined) {
+
+        if (
+          propName === 'background' &&
+          theme.background &&
+          value.opacity &&
+          !value.color
+        )
+          // theme context has an active background color but the
+          // theme doesn't set an explicit color, repeat the context
+          // background explicitly
+          value.color = normalizeBackgroundColor(theme);
+
+        if (context === 'body')
+          // in case we have pinned columns, store the pinned stuff in
+          // cellProps.body.pinned
+          result[context].pinned[propName] = value;
+        else if (props.pin === true || props.pin === context)
+          // this context is pinned, use the pinned value directly
+          result[context][propName] = value;  
+      }
     });
   });
   return result;
@@ -281,37 +300,4 @@ export const normalizeRowCellProps = (rowProps, cellProps, index) => {
     if (value !== undefined) result.pinned[propName] = value;
   });
   return result;
-};
-
-// calculate a header or footer cell background based
-// on the table background prop and whether it's pinned.
-// Pin is an array of side strings, empty if not pinned.
-// If pinned, the background comes from the
-// datable.pinned[themeContext].background in the theme
-// where themeContext is either 'header' or 'footer'.
-export const calcPinnedBackground = (
-  backgroundProp,
-  pin,
-  theme,
-  themeContext,
-) => {
-  let background;
-  if (backgroundProp) background = backgroundProp;
-  else if (
-    pin.length > 0 &&
-    theme.dataTable.pinned &&
-    theme.dataTable.pinned.header
-  ) {
-    background = theme.dataTable.pinned[themeContext].background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
-    }
-  } else background = undefined;
-  return background;
 };
