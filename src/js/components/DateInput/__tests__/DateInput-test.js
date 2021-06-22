@@ -412,8 +412,15 @@ describe('DateInput', () => {
       target: { value: '07/21/2020-' },
     });
     expect(onChange).toHaveNthReturnedWith(2, ['2020-07-21T08:00:00.000Z']);
-    expect(onChange).toHaveBeenCalledTimes(2);
     expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07//2020-07/27/2021' },
+    });
+    expect(onChange).toHaveNthReturnedWith(3, []);
+    expect(container.firstChild).toMatchSnapshot();
+
+    expect(onChange).toHaveBeenCalledTimes(3);
   });
 
   test('controlled format inline', () => {

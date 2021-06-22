@@ -190,6 +190,7 @@ export const textToValue = (text, schema, valueProp, range) => {
   });
   parts = addDate(parts);
 
+  if (!result) return range ? [] : undefined;
   return result;
 };
 
