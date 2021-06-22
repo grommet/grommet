@@ -246,17 +246,21 @@ export const normalizeCellProps = (props, theme) => {
     cellPropertyNames.forEach(propName => {
       let value =
         props?.[propName]?.[context] ||
+        // if the propName is used without context, it applies to all contexts
+        (tableContextNames.every(n => !props?.[propName]?.[n]) &&
+          props?.[propName]) ||
         theme?.dataTable?.[context]?.[propName] ||
         theme?.table?.[context]?.[propName];
       if (value !== undefined) result[context][propName] = value;
 
       // pinned case
       value =
-          props?.[propName]?.pinned?.[context] ||
-          (context === 'body' && props?.[propName]?.pinned) ||
-          theme?.dataTable?.pinned?.[context]?.[propName];
+        props?.[propName]?.pinned?.[context] ||
+        (context === 'body' &&
+          tableContextNames.every(n => !props?.[propName]?.pinned?.[n]) &&
+          props?.[propName]?.pinned) ||
+        theme?.dataTable?.pinned?.[context]?.[propName];
       if (value !== undefined) {
-
         if (
           propName === 'background' &&
           theme.background &&
@@ -274,7 +278,7 @@ export const normalizeCellProps = (props, theme) => {
           result[context].pinned[propName] = value;
         else if (props.pin === true || props.pin === context)
           // this context is pinned, use the pinned value directly
-          result[context][propName] = value;  
+          result[context][propName] = value;
       }
     });
   });
