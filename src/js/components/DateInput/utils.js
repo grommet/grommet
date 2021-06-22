@@ -123,7 +123,7 @@ export const textToValue = (text, schema, valueProp, range) => {
   let result;
 
   const addDate = parts => {
-    // do a little sanity checking on the values, of not ready yet, leave as is
+    // do a little sanity checking on the values, if not ready yet, leave as is
     if (
       !parts.m ||
       !parts.d ||
