@@ -77,7 +77,7 @@ export const doc = Diagram => {
 
 export const themeDoc = {
   'diagram.animation': {
-    description: 'Any animation specific configuration for Diagram.',
+    description: 'Configuration for draw and pulse animations in Diagram.',
     type: 'object',
     defaultValue: `{      
       pulse: {
@@ -100,7 +100,7 @@ export const themeDoc = {
   },
   'global.animation': {
     description: 'The animation configuration for Diagram.',
-    type: 'string',
+    type: 'object',
     defaultValue: `{
       duration: '1s'
     }`,

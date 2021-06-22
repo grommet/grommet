@@ -90,7 +90,10 @@ export const Animated = () => {
                 ))}
               </Box>
             </Box>
-            <Diagram animation={{ duration: 3000 }} connections={connections} />
+            <Diagram
+              animation={{ type: 'draw', duration: 3000 }}
+              connections={connections}
+            />
           </Stack>
         </Box>
       </Box>

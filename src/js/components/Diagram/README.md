@@ -119,7 +119,7 @@ svg
   
 **diagram.animation**
 
-Any animation specific configuration for Diagram. Expects `object`.
+Configuration for draw and pulse animations in Diagram. Expects `object`.
 
 Defaults to
 
@@ -156,7 +156,7 @@ accent-1
 
 **global.animation**
 
-The animation configuration for Diagram. Expects `string`.
+The animation configuration for Diagram. Expects `object`.
 
 Defaults to
 
