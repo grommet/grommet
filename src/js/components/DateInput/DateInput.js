@@ -19,6 +19,7 @@ import { useForwardedRef } from '../../utils';
 import {
   formatToSchema,
   schemaToMask,
+  valuesAreEqual,
   valueToText,
   textToValue,
 } from './utils';
@@ -50,6 +51,9 @@ const DateInput = forwardRef(
     const ref = useForwardedRef(refArg);
     const [value, setValue] = useFormInput(name, valueArg, defaultValue);
 
+    // do we expect multiple dates?
+    const range = Array.isArray(value) || (format && format.includes('-'));
+
     // parse format and build a formal schema we can use elsewhere
     const schema = useMemo(() => formatToSchema(format), [format]);
 
@@ -68,20 +72,25 @@ const DateInput = forwardRef(
     // We compare using textToValue to avoid "06/01/2021" not
     // matching "06/1/2021".
     useEffect(() => {
-      if (schema && value) {
+      if (
+        schema &&
+        value &&
+        ((Array.isArray(value) && value[0]) || !Array.isArray(value))
+      ) {
         const nextTextValue = valueToText(value, schema);
         if (
-          textToValue(textValue, schema, value) !==
-          textToValue(nextTextValue, schema, value)
-        )
+          !valuesAreEqual(
+            textToValue(textValue, schema, value, range),
+            textToValue(nextTextValue, schema, value, range),
+          )
+        ) {
           setTextValue(nextTextValue);
+        }
       }
-    }, [schema, textValue, value]);
+    }, [range, schema, textValue, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
-
-    const range = Array.isArray(value);
 
     const calendar = (
       <Calendar
@@ -149,7 +158,12 @@ const DateInput = forwardRef(
             onChange={event => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
-              const nextValue = textToValue(nextTextValue, schema, value);
+              const nextValue = textToValue(
+                nextTextValue,
+                schema,
+                value,
+                range,
+              );
               // update value even when undefined
               setValue(nextValue);
               if (onChange) {
