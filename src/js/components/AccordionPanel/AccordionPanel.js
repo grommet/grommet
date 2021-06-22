@@ -137,7 +137,10 @@ const AccordionPanel = forwardRef(
                 label
               )}
               {AccordionIcon && (
-                <Box pad={{ horizontal: 'small' }}>
+                <Box
+                  pad={{ horizontal: 'small' }}
+                  width={{ min: 'fit-content' }}
+                >
                   <AccordionIcon color={iconColor} />
                 </Box>
               )}

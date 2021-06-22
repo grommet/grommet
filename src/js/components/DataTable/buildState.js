@@ -84,11 +84,20 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
-    const before = direction === 'asc' ? 1 : -1;
-    const after = direction === 'asc' ? -1 : 1;
+    const sortAsc = direction === 'asc';
+    const before = sortAsc ? 1 : -1;
+    const after = sortAsc ? -1 : 1;
     result.sort((d1, d2) => {
-      if (datumValue(d1, property) > datumValue(d2, property)) return before;
-      if (datumValue(d1, property) < datumValue(d2, property)) return after;
+      const d1Val = datumValue(d1, property);
+      const d2Val = datumValue(d2, property);
+      if (typeof d1Val === 'string' && typeof d2Val === 'string') {
+        const sortResult = d1Val.localeCompare(d2Val, undefined, {
+          sensitivity: 'base',
+        });
+        return sortAsc ? sortResult : -sortResult;
+      }
+      if (d1Val > d2Val) return before;
+      if (d1Val < d2Val) return after;
       return 0;
     });
   }

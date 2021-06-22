@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.17.2",
+  "version": "2.17.3",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -25,7 +25,7 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
     "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
@@ -56,18 +56,19 @@
     "react-desc": "^4.1.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/node": "^7.14.2",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-do-expressions": "^7.12.1",
+    "@babel/plugin-proposal-do-expressions": "^7.14.0",
     "@babel/plugin-proposal-export-default-from": "^7.12.1",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.12.1",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
-    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.14.2",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.2",
     "@babel/plugin-proposal-pipeline-operator": "^7.12.1",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
     "@storybook/addon-storysource": "^6.2.9",
     "@storybook/addons": "^6.2.9",
     "@storybook/react": "^6.2.9",
@@ -78,10 +79,8 @@
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
-    "@types/storybook__react": "^5.2.1",
     "@types/styled-components": "^5.1.8",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
