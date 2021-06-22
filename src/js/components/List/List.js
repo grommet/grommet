@@ -22,7 +22,7 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
-  // Customizes to make table have a focus border color of green
+  // Customizes to make list have a focus border color of green
   &:focus {
     ${props =>
       props.tabIndex >= 0 &&
