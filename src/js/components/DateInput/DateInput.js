@@ -62,7 +62,7 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(value, schema, range) : undefined,
+      schema ? valueToText(value, schema) : undefined,
     );
 
     // We need to distinguish between the caller changing a Form value
@@ -111,8 +111,7 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
-                if (schema)
-                  setTextValue(valueToText(normalizedValue, schema, range));
+                if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) setOpen(false);
