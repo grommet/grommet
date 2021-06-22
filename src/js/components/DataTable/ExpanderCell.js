@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Blank } from 'grommet-icons';
+import { Blank } from 'grommet-icons/icons/Blank';
 
 import { defaultProps } from '../../default-props';
 
