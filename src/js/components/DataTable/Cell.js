@@ -56,20 +56,6 @@ const Cell = memo(
     if (cellPin) pin.push(...cellPin);
     if (columnPin) pin.push('left');
 
-    // let background;
-    // if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-    //   background = theme.dataTable.pinned[context].background;
-    //   if (!background.color && theme.background) {
-    //     // theme context has an active background color but the
-    //     // theme doesn't set an explicit color, repeat the context
-    //     // background explicitly
-    //     background = {
-    //       ...background,
-    //       color: normalizeBackgroundColor(theme),
-    //     };
-    //   }
-    // } else background = undefined;
-
     return (
       <StyledDataTableCell
         scope={scope}
