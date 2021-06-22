@@ -340,7 +340,10 @@ const Form = forwardRef(
           if (
             required &&
             // false is for CheckBox
-            (value2 === undefined || value2 === '' || value2 === false)
+            (value2 === undefined ||
+              value2 === '' ||
+              value2 === false ||
+              (Array.isArray(value2) && !value2.length))
           ) {
             result = messages.required;
           } else if (validateArg) {
