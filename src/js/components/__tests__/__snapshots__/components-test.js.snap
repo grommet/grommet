@@ -8949,17 +8949,6 @@ contain",
         "name": "mute",
       },
       Object {
-        "defaultValue": Object {
-          "closeMenu": "close menu",
-          "fullScreen": "full screen",
-          "openMenu": "open menu",
-          "pauseButton": "pause",
-          "playButton": "play",
-          "progressMeter": "video progress",
-          "scrubber": "scrubber",
-          "volumeDown": "volume down",
-          "volumeUp": "volume up",
-        },
         "description": "Custom messages. Used for accessibility by screen readers.",
         "format": "{
   closeMenu: string,

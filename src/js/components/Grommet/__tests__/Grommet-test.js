@@ -9,6 +9,7 @@ import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
 import { grommet } from '../../../themes/grommet';
+import { MessageContext } from '../../../contexts/MessageContext';
 
 const TestAnnouncer = ({ announce }) => {
   React.useEffect(() => announce('hello', 'assertive'));
@@ -133,5 +134,39 @@ describe('Grommet', () => {
       expect(component.toJSON()).toMatchSnapshot();
       component.unmount();
     });
+  });
+
+  test('messages', () => {
+    const component = renderer.create(
+      <Grommet messages={{
+          messages: {
+            grommet: {
+              test: {
+                label: 'My Label',
+              },
+            },
+          },
+        }}
+      >
+        <MessageContext.Consumer>
+          {({format}) => format({id: 'grommet.test.label'})}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('message format function', () => {
+    const messages = {
+      "grommet.test.label": "My Label",
+    };
+    const component = renderer.create(
+      <Grommet messages={{ format: opts => messages[opts.id] }}>
+        <MessageContext.Consumer>
+          {({format}) => format({id: 'grommet.test.label'})}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

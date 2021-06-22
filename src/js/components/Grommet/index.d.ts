@@ -13,6 +13,10 @@ export interface GrommetProps {
       singleId?: boolean;
     };
   };
+  messages?: {
+    messages?: object;
+    format: (...args: any[]) => void;
+  };
   plain?: boolean;
   theme?: ThemeType;
   themeMode?: 'dark' | 'light';
