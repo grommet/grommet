@@ -123,7 +123,8 @@ export const textToValue = (text, schema, valueProp, range) => {
   let result;
 
   const addDate = parts => {
-    // do a little sanity checking on the values, if not ready yet, leave as is
+    // Do a little sanity checking on the parts first.
+    // If not valid, leave as is.
     if (
       !parts.m ||
       !parts.d ||
@@ -135,7 +136,7 @@ export const textToValue = (text, schema, valueProp, range) => {
       parts.d > 31
     )
       return parts;
-    // parts look legit
+
     let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
     // match time and timezone of any supplied valueProp
     if (
