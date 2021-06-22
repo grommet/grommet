@@ -9094,7 +9094,10 @@ string
 **onChange**
 
 Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.
 
 \`\`\`
 function
@@ -9713,7 +9716,8 @@ border
 
 **formField.border.error.color**
 
-The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+The border color of the error. Deprecated, use 
+    error.border.color instead. Expects \`string | {'dark': string, 'light': string}\`.
 
 Defaults to
 
@@ -9819,6 +9823,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**formField.error.border.color**
+
+The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'status-critical' },
 \`\`\`
 
 **formField.error.color**
@@ -17868,6 +17882,26 @@ How to align the text inside the component. Defaults to \`start\`.
 start
 center
 end
+\`\`\`
+
+**tip**
+
+tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.
+
+\`\`\`
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string
 \`\`\`
 
 **truncate**
