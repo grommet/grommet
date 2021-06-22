@@ -1,9 +1,17 @@
-import React, { forwardRef, useMemo, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { parseMetricToNum } from '../../utils';
 import { Detail } from './Detail';
 import { Legend } from './Legend';
 import { XAxis } from './XAxis';
@@ -37,6 +45,8 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
 
@@ -376,6 +386,23 @@ const DataChart = forwardRef(
       return result;
     }, [chartProps, charts, padProp]);
 
+    // The thickness of the Detail segments. We need to convert to numbers
+    // to be able to compare across charts where some might be using T-shirt
+    // labels and others might be pixel values.
+    const detailThickness = useMemo(() => {
+      let result = 0;
+      if (detail) {
+        charts.forEach((_, index) => {
+          const { thickness } = chartProps[index];
+          result = Math.max(
+            result,
+            parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+          );
+        });
+      }
+      return `${result}px`;
+    }, [charts, chartProps, detail, theme]);
+
     const dateFormats = useMemo(() => {
       const result = {};
       const full = axis && axis.x && axis.x.granularity === 'coarse';
@@ -517,7 +544,7 @@ const DataChart = forwardRef(
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
-            pad={pad}
+            thickness={detailThickness}
           />
         )}
       </Stack>

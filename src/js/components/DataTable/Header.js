@@ -156,6 +156,7 @@ const Header = forwardRef(
                   .length === 0
               }
               onToggle={onToggle}
+              pad={cellProps.pad}
             />
           )}
 

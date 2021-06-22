@@ -8,7 +8,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
-import { normalizeRowProp } from './buildState';
 
 const ExpanderCell = ({
   background,
@@ -41,8 +40,8 @@ const ExpanderCell = ({
       {...rest}
       align="center"
       fill
-      pad={pad}
       background={background}
+      pad={pad}
     >
       {content}
     </Box>
@@ -63,10 +62,10 @@ const ExpanderCell = ({
   }
   return (
     <TableCell
+      border={border}
       size="xxsmall"
-      plain
+      plain="noPad"
       verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-      pad="noPad"
     >
       {content}
     </TableCell>

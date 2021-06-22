@@ -90,6 +90,7 @@ const Row = memo(
                 setRowExpand([...rowExpand, index]);
               }
             }}
+            pad={cellProps.pad}
           />
         )}
         {columns.map(column => (

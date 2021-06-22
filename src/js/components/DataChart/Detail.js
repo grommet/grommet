@@ -21,10 +21,10 @@ const Detail = ({
   activeProperty,
   axis,
   data,
-  pad,
   series,
   seriesStyles,
   renderValue,
+  thickness,
 }) => {
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
@@ -75,7 +75,7 @@ const Detail = ({
               key={i}
               align="center"
               responsive={false}
-              pad={{ horizontal: pad.horizontal }}
+              width={thickness}
               onMouseOver={event => {
                 activeIndex.current = event.currentTarget;
                 setDetailIndex(i);

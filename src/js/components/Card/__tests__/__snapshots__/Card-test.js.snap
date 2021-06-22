@@ -141,23 +141,23 @@ exports[`Card Themed 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <header
-      className="c2"
+      class="c2"
     >
       header
     </header>
     <div
-      className="c3"
+      class="c3"
     >
       body
     </div>
     <footer
-      className="c4"
+      class="c4"
     >
       footer
     </footer>
@@ -242,23 +242,23 @@ exports[`Card all 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <header
-      className="c2"
+      class="c2"
     >
       header
     </header>
     <div
-      className="c3"
+      class="c3"
     >
       body
     </div>
     <footer
-      className="c2"
+      class="c2"
     >
       footer
     </footer>
@@ -320,16 +320,16 @@ exports[`Card children 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <span
-        className="c3"
+        class="c3"
       >
         test
       </span>
@@ -398,13 +398,13 @@ exports[`Card footer 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <footer
-      className="c2"
+      class="c2"
     >
       footer
     </footer>
@@ -472,13 +472,13 @@ exports[`Card header 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <header
-      className="c2"
+      class="c2"
     >
       header
     </header>
@@ -521,10 +521,10 @@ exports[`Card renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;

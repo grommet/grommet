@@ -64,6 +64,7 @@ export const GroupedBody = forwardRef(
                   expanded={expanded}
                   index={rowIndex}
                   onToggle={onToggle(group.key)}
+                  pad={cellProps.pad}
                 />
                 {(selected || onSelect) && (
                   <TableCell
@@ -141,6 +142,7 @@ export const GroupedBody = forwardRef(
                         background={cellProps.background}
                         border={cellProps.border}
                         context={context}
+                        pad={cellProps.pad}
                       />
                       {(selected || onSelect) && (
                         <TableCell
