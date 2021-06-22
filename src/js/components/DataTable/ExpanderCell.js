@@ -23,6 +23,7 @@ const ExpanderCell = ({
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+    console.log('!!! ExpanderCell', theme.dark, normalizeColor('border', theme));
     content = <ExpandIcon color={normalizeColor('border', theme)} />;
   } else {
     content = <Blank />;
@@ -40,7 +41,6 @@ const ExpanderCell = ({
       {...rest}
       align="center"
       fill
-      background={background}
       pad={pad}
     >
       {content}
@@ -62,6 +62,7 @@ const ExpanderCell = ({
   }
   return (
     <TableCell
+      background={background}
       border={border}
       size="xxsmall"
       plain="noPad"

@@ -29,7 +29,6 @@ const Footer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const pin = tablePin ? ['bottom'] : [];
-    console.log('!!! Footer', cellProps);
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={tablePin} {...rest}>

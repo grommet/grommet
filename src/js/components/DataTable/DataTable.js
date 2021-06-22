@@ -120,7 +120,6 @@ const DataTable = ({
     () => normalizeCellProps({ background, border, pad }, theme),
     [background, border, pad, theme],
   );
-  console.log('!!! DataTable', cellProps);
 
   // if groupBy, an array with one item per unique groupBy key value
   const groups = useMemo(() => buildGroups(columns, adjustedData, groupBy), [

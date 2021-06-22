@@ -126,7 +126,6 @@ const Header = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [layoutProps, textProps] = separateThemeProps(theme);
-    console.log('!!! Header', cellProps);
 
     const [cellWidths, setCellWidths] = useState([]);
 
