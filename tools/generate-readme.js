@@ -61,6 +61,19 @@ components(FOLDER).forEach(component => {
       fs.writeFileSync(readmeDestination, readmeContent),
     );
   } catch (ex) {
-    // don't make changes to README.md if doc.js file isn't found
+    /*
+    Catching and ignoring the exception is intentional. This is related to 
+    the removal of react-desc. 
+    
+    As components have react-desc removed and no longer have doc files, the 
+    catch block will trigger. In this case nothing went wrong, it was 
+    expected that as react-desc is removed components will no longer have 
+    doc files in grommet, so we don't want to throw an error ro warning to 
+    console. 
+    
+    This block was added to maintain backwards compatibility for components 
+    that still use react-desc. Once react-desc is completely removed it can 
+    be removed as well.
+    */
   }
 });
