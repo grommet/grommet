@@ -228,35 +228,85 @@ export const normalizeBackgroundColor = theme => {
   return undefined;
 };
 
-// calculate a header or footer cell background based
-// on the table background prop and whether it's pinned.
-// Pin is an array of side strings, empty if not pinned.
-// If pinned, the background comes from the
-// datable.pinned[themeContext].background in the theme
-// where themeContext is either 'header' or 'footer'.
-export const calcPinnedBackground = (
-  backgroundProp,
-  pin,
-  theme,
-  themeContext,
+export const normalizeRowProp = (name, rowProp, prop) => {
+  if (rowProp && rowProp[name]) return rowProp[name];
+  return prop;
+};
+
+const tableContextNames = ['header', 'body', 'footer'];
+const cellPropertyNames = ['background', 'border', 'pad'];
+
+// Convert property specific cell props to context specific cell props.
+// For example, background={{ header: { background } }}
+// will become cellProps.header.background
+export const normalizeCellProps = (props, theme) => {
+  const result = {};
+  tableContextNames.forEach(context => {
+    result[context] = { pinned: {} };
+    cellPropertyNames.forEach(propName => {
+      let value =
+        props?.[propName]?.[context] ||
+        // if the propName is used without context, it applies to all contexts
+        (tableContextNames.every(n => !props?.[propName]?.[n]) &&
+          props?.[propName]) ||
+        theme?.dataTable?.[context]?.[propName] ||
+        theme?.table?.[context]?.[propName];
+      if (value !== undefined) result[context][propName] = value;
+
+      // pinned case
+      value =
+        props?.[propName]?.pinned?.[context] ||
+        (context === 'body' &&
+          tableContextNames.every(n => !props?.[propName]?.pinned?.[n]) &&
+          props?.[propName]?.pinned) ||
+        theme?.dataTable?.pinned?.[context]?.[propName];
+      if (value !== undefined) {
+        if (
+          propName === 'background' &&
+          theme.background &&
+          value.opacity &&
+          !value.color
+        )
+          // theme context has an active background color but the
+          // theme doesn't set an explicit color, repeat the context
+          // background explicitly
+          value.color = normalizeBackgroundColor(theme);
+
+        if (context === 'body')
+          // in case we have pinned columns, store the pinned stuff in
+          // cellProps.body.pinned
+          result[context].pinned[propName] = value;
+        else if (props.pin === true || props.pin === context)
+          // this context is pinned, use the pinned value directly
+          result[context][propName] = value;
+      }
+    });
+  });
+  return result;
+};
+
+export const normalizeRowCellProps = (
+  rowProps,
+  cellProps,
+  primaryKey,
+  index,
 ) => {
-  let background;
-  if (backgroundProp) background = backgroundProp;
-  else if (
-    pin.length > 0 &&
-    theme.dataTable.pinned &&
-    theme.dataTable.pinned.header
-  ) {
-    background = theme.dataTable.pinned[themeContext].background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
-    }
-  } else background = undefined;
-  return background;
+  const result = { pinned: {} };
+  ['background', 'border', 'pad'].forEach(propName => {
+    const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
+    const cell = cellProps[propName];
+    let value =
+      (row && (Array.isArray(row) ? row[index % row.length] : row)) ||
+      (Array.isArray(cell) ? cell[index % cell.length] : cell);
+    if (value !== undefined) result[propName] = value;
+
+    const rowPin = rowProps && rowProps.pinned && rowProps.pinned[propName];
+    const cellPin = cellProps.pinned[propName];
+    value =
+      (rowPin &&
+        (Array.isArray(rowPin) ? rowPin[index % rowPin.length] : rowPin)) ||
+      (Array.isArray(cellPin) ? cellPin[index % cellPin.length] : cellPin);
+    if (value !== undefined) result.pinned[propName] = value;
+  });
+  return result;
 };
