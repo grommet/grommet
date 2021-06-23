@@ -5,10 +5,7 @@ import { defaultProps } from '../../default-props';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
-import {
-  datumValue,
-  // normalizeBackgroundColor,
-} from './buildState';
+import { datumValue } from './buildState';
 import { TableContext } from '../Table/TableContext';
 
 const Cell = memo(

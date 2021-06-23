@@ -41,7 +41,6 @@ const separateThemeProps = theme => {
     ...rest
   } = theme.dataTable.header;
 
-  // const cellProps = { background, border };
   const textProps = { color, ...font };
   const iconProps = { color };
   const layoutProps = { ...rest };
