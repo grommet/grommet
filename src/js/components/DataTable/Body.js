@@ -210,6 +210,7 @@ const Body = forwardRef(
               const cellProps = normalizeRowCellProps(
                 rowProps,
                 cellPropsProp,
+                primaryValue,
                 index,
               );
               return (

@@ -51,6 +51,7 @@ export const GroupedBody = forwardRef(
           let cellProps = normalizeRowCellProps(
             rowProps,
             cellPropsProp,
+            undefined,
             rowIndex,
           );
 
@@ -130,6 +131,7 @@ export const GroupedBody = forwardRef(
                   cellProps = normalizeRowCellProps(
                     rowProps,
                     cellPropsProp,
+                    primaryValue,
                     rowIndex,
                   );
                   rowIndex += 1;

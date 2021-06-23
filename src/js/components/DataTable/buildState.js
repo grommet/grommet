@@ -285,10 +285,15 @@ export const normalizeCellProps = (props, theme) => {
   return result;
 };
 
-export const normalizeRowCellProps = (rowProps, cellProps, index) => {
+export const normalizeRowCellProps = (
+  rowProps,
+  cellProps,
+  primaryKey,
+  index,
+) => {
   const result = { pinned: {} };
   ['background', 'border', 'pad'].forEach(propName => {
-    const row = rowProps && rowProps[propName];
+    const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
     const cell = cellProps[propName];
     let value =
       (row && (Array.isArray(row) ? row[index % row.length] : row)) ||

@@ -21,7 +21,7 @@ export const StyledDataTable = () => (
           footer: { color: 'dark-3', opacity: 'strong' },
         }}
         border={{ body: 'bottom' }}
-        groupBy="location"
+        groupBy={{ property: 'location', expand: ['Palo Alto'] }}
         rowProps={{ Eric: { background: 'accent-2', pad: 'small' } }}
       />
     </Box>
