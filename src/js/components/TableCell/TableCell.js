@@ -125,58 +125,49 @@ const TableCell = forwardRef(
       );
     }
 
-    content = (
-      <StyledTableCell
-        ref={cellRef}
-        as={scope ? 'th' : undefined}
-        scope={scope}
-        size={size}
-        colSpan={colSpan}
-        tableContext={tableContext}
-        tableContextTheme={tableContextTheme}
-        {...(plain === true ? mergedProps : {})}
-        {...cellProps}
-        className={className}
-      >
-        {plain || !Object.keys(mergedProps).length ? (
-          content
-        ) : (
-          <Box
-            {...mergedProps}
-            align={align}
-            justify={verticalAlignToJustify[verticalAlign]}
-          >
-            {children}
-          </Box>
-        )}
-      </StyledTableCell>
-    );
+    const themeProviderValue = { ...theme };
 
     if (cellProps.background || theme.darkChanged) {
-      let themeProviderValue;
       const dark = backgroundIsDark(cellProps.background, theme);
       const darkChanged = dark !== undefined && dark !== theme.dark;
       if (darkChanged || theme.darkChanged) {
-        themeProviderValue = { ...theme };
         themeProviderValue.dark = dark === undefined ? theme.dark : dark;
         themeProviderValue.background = cellProps.background;
       } else if (cellProps.background) {
         // This allows DataTable to intelligently set the background of a pinned
         // header or footer.
-        themeProviderValue = { ...theme };
         themeProviderValue.background = cellProps.background;
-      }
-
-      if (themeProviderValue) {
-        content = (
-          <ThemeContext.Provider value={themeProviderValue}>
-            {content}
-          </ThemeContext.Provider>
-        );
       }
     }
 
-    return content;
+    return (
+      <ThemeContext.Provider value={themeProviderValue}>
+        <StyledTableCell
+          ref={cellRef}
+          as={scope ? 'th' : undefined}
+          scope={scope}
+          size={size}
+          colSpan={colSpan}
+          tableContext={tableContext}
+          tableContextTheme={tableContextTheme}
+          {...(plain === true ? mergedProps : {})}
+          {...cellProps}
+          className={className}
+        >
+          {plain || !Object.keys(mergedProps).length ? (
+            content
+          ) : (
+            <Box
+              {...mergedProps}
+              align={align}
+              justify={verticalAlignToJustify[verticalAlign]}
+            >
+              {children}
+            </Box>
+          )}
+        </StyledTableCell>
+      </ThemeContext.Provider>
+    );
   },
 );
 

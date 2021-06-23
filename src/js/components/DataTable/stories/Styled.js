@@ -22,7 +22,10 @@ export const StyledDataTable = () => (
         }}
         border={{ body: 'bottom' }}
         groupBy={{ property: 'location', expand: ['Palo Alto'] }}
-        rowProps={{ Eric: { background: 'accent-2', pad: 'small' } }}
+        rowProps={{
+          Eric: { background: ['accent-2', 'accent-3'], pad: 'small' },
+          Jet: { background: ['accent-2', 'accent-3'], pad: 'small' },
+        }}
       />
     </Box>
   </Grommet>
