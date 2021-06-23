@@ -642,7 +642,12 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
           rowProps={{
-            one: { background: 'accent-1', border: 'bottom', pad: 'large' },
+            one: {
+              background: 'accent-1',
+              border: 'bottom',
+              pad: 'large',
+              className: 'custom-table-row',
+            },
           }}
         />
       </Grommet>,

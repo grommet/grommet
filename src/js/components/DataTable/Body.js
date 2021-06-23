@@ -42,6 +42,7 @@ const Row = memo(
   }) => (
     <>
       <StyledDataTableRow
+        className={rowProps && rowProps[primaryValue]?.className}
         ref={rowRef}
         size={size}
         active={active}
