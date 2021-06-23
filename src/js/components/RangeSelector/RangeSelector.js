@@ -193,7 +193,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'grommet.rangeSelector.lower', messages })}
+          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
           tabIndex={0}
           ref={ref}
           color={color}
@@ -237,7 +237,7 @@ const RangeSelector = forwardRef(
           }
         />
         <EdgeControl
-          a11yTitle={format({ id: 'grommet.rangeSelector.upper', messages })}
+          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
           tabIndex={0}
           color={color}
           direction={direction}

@@ -55,7 +55,7 @@ const SkipLinks = ({ children, id, messages }) => {
     >
       <Box {...theme.skipLinks.container}>
         <Text {...theme.skipLinks.label}>{
-          format({ id: 'grommet.skipLinks.skipTo', messages })}
+          format({ id: 'skipLinks.skipTo', messages })}
         </Text>
         <Box align="center" gap="medium">
           {Children.map(children, (child, index) =>

@@ -327,7 +327,7 @@ const Form = forwardRef(
           } else if (aValidate.regexp) {
             if (!aValidate.regexp.test(value2)) {
               result = aValidate.message ||
-              format({ id: 'grommet.form.invalid', messages });
+              format({ id: 'form.invalid', messages });
               if (aValidate.status) {
                 result = { message: result, status: aValidate.status };
               }
@@ -346,7 +346,7 @@ const Form = forwardRef(
               value2 === false ||
               (Array.isArray(value2) && !value2.length))
           ) {
-            result = format({ id: 'grommet.form.required', messages });
+            result = format({ id: 'form.required', messages });
           } else if (validateArg) {
             if (Array.isArray(validateArg)) {
               validateArg.some(aValidate => {

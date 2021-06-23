@@ -240,7 +240,7 @@ const Menu = forwardRef((props, ref) => {
         }}
         a11yTitle={
           a11yTitle ||
-          format({ id: 'grommet.menu.closeMenu', messages })
+          format({ id: 'menu.closeMenu', messages })
         }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
@@ -276,7 +276,7 @@ const Menu = forwardRef((props, ref) => {
         {...buttonProps}
         a11yTitle={
           a11yTitle ||
-          format({ id: 'grommet.menu.openMenu', messages })
+          format({ id: 'menu.openMenu', messages })
         }
         onAlign={setAlignControlMirror}
         disabled={disabled}

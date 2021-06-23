@@ -275,7 +275,7 @@ const Video = forwardRef(
                   <Icons.Pause
                     color={iconColor}
                     a11yTitle={format({
-                      id: 'grommet.video.pauseButton',
+                      id: 'video.pauseButton',
                       messages,
                     })}
                   />
@@ -283,7 +283,7 @@ const Video = forwardRef(
                   <Icons.Play
                     color={iconColor}
                     a11yTitle={format({
-                      id: 'grommet.video.playButton',
+                      id: 'video.playButton',
                       messages,
                     })}
                   />
@@ -297,7 +297,7 @@ const Video = forwardRef(
                 <Stack>
                   <Meter
                     aria-label={format({
-                      id: 'grommet.video.progressMeter',
+                      id: 'video.progressMeter',
                       messages,
                     })}
                     background={
@@ -314,7 +314,7 @@ const Video = forwardRef(
                   />
                   <StyledVideoScrubber
                     aria-label={format({
-                      id: 'grommet.video.scrubber',
+                      id: 'video.scrubber',
                       messages,
                     })}
                     ref={scrubberRef}
@@ -340,8 +340,8 @@ const Video = forwardRef(
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
               messages={{
-                openMenu: format({id: 'grommet.video.openMenu', messages}),
-                closeMenu: format({id: 'grommet.video.closeMenu', messages}),
+                openMenu: format({id: 'video.openMenu', messages}),
+                closeMenu: format({id: 'video.closeMenu', messages}),
               }}
               items={[
                 {
@@ -349,7 +349,7 @@ const Video = forwardRef(
                     <Icons.Volume
                       color={iconColor}
                       a11yTitle={format({
-                        id: 'grommet.video.volumeUp',
+                        id: 'video.volumeUp',
                         messages,
                       })}
                     />
@@ -362,7 +362,7 @@ const Video = forwardRef(
                     <Icons.ReduceVolume
                       color={iconColor}
                       a11yTitle={format({
-                        id: 'grommet.video.volumeDown',
+                        id: 'video.volumeDown',
                         messages,
                       })}
                     />
@@ -376,7 +376,7 @@ const Video = forwardRef(
                     <Icons.FullScreen
                       color={iconColor}
                       a11yTitle={format({
-                        id: 'grommet.video.fullScreen',
+                        id: 'video.fullScreen',
                         messages,
                       })}
                     />

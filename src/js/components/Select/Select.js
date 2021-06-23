@@ -264,7 +264,7 @@ const Select = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        return format({ id: 'grommet.select.multiple', messages });
+        return format({ id: 'select.multiple', messages });
       }
       return undefined;
     }, [

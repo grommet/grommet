@@ -153,8 +153,8 @@ const FileInput = forwardRef(
     if (!files.length) {
       message = format({
         id: multiple ?
-          'grommet.fileInput.dropPromptMultiple' :
-          'grommet.fileInput.dropPrompt',
+          'fileInput.dropPromptMultiple' :
+          'fileInput.dropPrompt',
         messages,
       });
     } else message = `${files.length} items`;
@@ -201,7 +201,7 @@ const FileInput = forwardRef(
                       ref={controlRef}
                       kind={theme.fileInput.button}
                       label={format({
-                        id: 'grommet.fileInput.browse',
+                        id: 'fileInput.browse',
                         messages,
                       })}
                       onClick={() => {
@@ -220,7 +220,7 @@ const FileInput = forwardRef(
                         inputRef.current.focus();
                       }}
                       label={format({
-                        id: 'grommet.fileInput.browse',
+                        id: 'fileInput.browse',
                         messages,
                       })}
                     />
@@ -234,7 +234,7 @@ const FileInput = forwardRef(
           <Box justify="between" direction="row" align="center">
             <Label {...theme.fileInput.label}>
               {files.length} {format({
-                id: 'grommet.fileInput.files',
+                id: 'fileInput.files',
                 messages,
               })}
             </Label>
@@ -242,7 +242,7 @@ const FileInput = forwardRef(
               <Button
                 ref={removeRef}
                 a11yTitle={format({
-                  id: 'grommet.fileInput.removeAll',
+                  id: 'fileInput.removeAll',
                   messages,
                 })}
                 icon={<RemoveIcon />}
@@ -269,7 +269,7 @@ const FileInput = forwardRef(
                     ref={controlRef}
                     kind={theme.fileInput.button}
                     label={format({
-                      id: 'grommet.fileInput.browse',
+                      id: 'fileInput.browse',
                       messages,
                     })}
                     onClick={() => {
@@ -288,7 +288,7 @@ const FileInput = forwardRef(
                       inputRef.current.focus();
                     }}
                     label={format({
-                      id: 'grommet.fileInput.browse',
+                      id: 'fileInput.browse',
                       messages,
                     })}
                   />
@@ -323,7 +323,7 @@ const FileInput = forwardRef(
                 <Button
                   ref={index ? undefined : removeRef}
                   a11yTitle={`${format({
-                    id: 'grommet.fileInput.remove',
+                    id: 'fileInput.remove',
                     messages,
                   })} ${file.name}`}
                   icon={<RemoveIcon />}
@@ -354,7 +354,7 @@ const FileInput = forwardRef(
                         ref={controlRef}
                         kind={theme.fileInput.button}
                         label={format({
-                          id: 'grommet.fileInput.browse',
+                          id: 'fileInput.browse',
                           messages,
                         })}
                         onClick={() => {
@@ -372,7 +372,7 @@ const FileInput = forwardRef(
                           inputRef.current.focus();
                         }}
                         label={format({
-                          id: 'grommet.fileInput.browse',
+                          id: 'fileInput.browse',
                           messages,
                         })}
                       />

@@ -130,11 +130,11 @@ const TextInput = forwardRef(
     const openDrop = useCallback(() => {
       setShowDrop(true);
       announce(format({
-        id: 'grommet.textInput.suggestionIsOpen',
+        id: 'textInput.suggestionIsOpen',
         messages,
       }));
       announce(`${suggestions.length} ${format({
-        id: 'grommet.textInput.suggestionsCount',
+        id: 'textInput.suggestionsCount',
         messages,
       })}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
@@ -149,9 +149,8 @@ const TextInput = forwardRef(
     const closeDrop = useCallback(() => {
       setSuggestionsAtClose(suggestions); // must be before closing drop
       setShowDrop(false);
-      if (messages?.onSuggestionsClose) onSuggestionsClose(); // UNDOCUMENTED?
       if (onSuggestionsClose) onSuggestionsClose();
-    }, [messages, onSuggestionsClose, suggestions]);
+    }, [onSuggestionsClose, suggestions]);
 
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
@@ -226,7 +225,7 @@ const TextInput = forwardRef(
       if (activeSuggestionIndex >= 0) {
         const label = stringLabel(suggestions[activeSuggestionIndex]);
         announce(`${label} ${format({
-          id: 'grommet.textInput.enterSelect',
+          id: 'textInput.enterSelect',
           messages,
       })}`);
       }
@@ -445,7 +444,7 @@ const TextInput = forwardRef(
                 setFocus(true);
                 if (suggestions && suggestions.length > 0) {
                   announce(format({
-                    id: 'grommet.textInput.suggestionsExist',
+                    id: 'textInput.suggestionsExist',
                     messages,
                   }));
                   openDrop();

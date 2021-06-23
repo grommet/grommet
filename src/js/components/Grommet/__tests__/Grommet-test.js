@@ -140,16 +140,14 @@ describe('Grommet', () => {
     const component = renderer.create(
       <Grommet messages={{
           messages: {
-            grommet: {
-              test: {
-                label: 'My Label',
-              },
+            test: {
+              label: 'My Label',
             },
           },
         }}
       >
         <MessageContext.Consumer>
-          {({format}) => format({id: 'grommet.test.label'})}
+          {({format}) => format({id: 'test.label'})}
         </MessageContext.Consumer>
       </Grommet>,
     );
@@ -158,12 +156,12 @@ describe('Grommet', () => {
 
   test('message format function', () => {
     const messages = {
-      "grommet.test.label": "My Label",
+      "test.label": "My Label",
     };
     const component = renderer.create(
       <Grommet messages={{ format: opts => messages[opts.id] }}>
         <MessageContext.Consumer>
-          {({format}) => format({id: 'grommet.test.label'})}
+          {({format}) => format({id: 'test.label'})}
         </MessageContext.Consumer>
       </Grommet>,
     );

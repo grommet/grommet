@@ -83,7 +83,7 @@ const Tabs = forwardRef(
     }
 
     const tabContentTitle = `${activeTitle || ''} ${
-      format({ id: 'grommet.tabs.tabContents', messages})}`;
+      format({ id: 'tabs.tabContents', messages})}`;
 
     return (
       <StyledTabs

@@ -2,6 +2,14 @@ import React from 'react';
 
 import defaultMessages from '../../languages/default.json';
 
+// opts:
+//   id: message id
+//   messages: (optional) an object of message overrides
+//   values: (optional) currently unused but in the future
+//     will be an object with substitution values for 
+//     positional variables in the message text.
+//   defaultMessage: (optional) default message to use if
+//     the message isn't found elsewhere.
 export const format = (opts, messages) => {
   // Message id's are hierarchical. For the component-specific
   // message objects passed as opts.messages, just use the last

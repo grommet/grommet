@@ -1,50 +1,48 @@
 {
-  "grommet": {
-    "fileInput": {
-      "browse": "browse",
-      "dropPrompt": "Drop file here or",
-      "dropPromptMultiple": "Drop files here or",
-      "files": "files",
-      "remove": "remove",
-      "removeAll": "remove all"
-    },
-    "form": {
-      "invalid": "invalid",
-      "required": "required"
-    },
-    "menu": {
-      "openMenu": "Open Menu",
-      "closeMenu": "Close Menu"
-    },
-    "rangeSelector": {
-      "lower": "Lower Bounds",
-      "upper": "Upper Bounds"
-    },
-    "select": {
-      "multiple": "multiple"
-    },
-    "skipLinks": {
-      "skipTo": "Skip To:"
-    },
-    "tabs": {
-      "tabContents": "Tab Contents"
-    },
-    "textInput": {
-      "enterSelect": "(Press Enter to Select)",
-      "suggestionsCount": "suggestions available",
-      "suggestionsExist": "This input has suggestions use arrow keys to navigate",
-      "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
-    },
-    "video": {
-      "closeMenu": "close menu",
-      "fullScreen": "full screen",
-      "progressMeter": "video progress",
-      "scrubber": "scrubber",
-      "openMenu": "open menu",
-      "pauseButton": "pause",
-      "playButton": "play",
-      "volumeDown": "volume down",
-      "volumeUp": "volume up"
-    }
+  "fileInput": {
+    "browse": "browse",
+    "dropPrompt": "Drop file here or",
+    "dropPromptMultiple": "Drop files here or",
+    "files": "files",
+    "remove": "remove",
+    "removeAll": "remove all"
+  },
+  "form": {
+    "invalid": "invalid",
+    "required": "required"
+  },
+  "menu": {
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "rangeSelector": {
+    "lower": "Lower Bounds",
+    "upper": "Upper Bounds"
+  },
+  "select": {
+    "multiple": "multiple"
+  },
+  "skipLinks": {
+    "skipTo": "Skip To:"
+  },
+  "tabs": {
+    "tabContents": "Tab Contents"
+  },
+  "textInput": {
+    "enterSelect": "(Press Enter to Select)",
+    "suggestionsCount": "suggestions available",
+    "suggestionsExist": "This input has suggestions use arrow keys to navigate",
+    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
+  },
+  "video": {
+    "closeMenu": "close menu",
+    "fullScreen": "full screen",
+    "progressMeter": "video progress",
+    "scrubber": "scrubber",
+    "openMenu": "open menu",
+    "pauseButton": "pause",
+    "playButton": "play",
+    "volumeDown": "volume down",
+    "volumeUp": "volume up"
   }
 }
