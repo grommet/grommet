@@ -29,13 +29,9 @@ export const columns = [
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: ({ percent }) => (
       <Box pad={{ vertical: 'xsmall' }}>
-        <Meter
-          values={[{ value: datum.percent }]}
-          thickness="small"
-          size="small"
-        />
+        <Meter values={[{ value: percent }]} thickness="small" size="small" />
       </Box>
     ),
   },
@@ -48,6 +44,13 @@ export const columns = [
     footer: { aggregate: true },
   },
 ];
+
+export const groupColumns = [...columns];
+const first = groupColumns[0];
+groupColumns[0] = { ...groupColumns[1] };
+groupColumns[1] = { ...first };
+groupColumns[0].footer = groupColumns[1].footer;
+delete groupColumns[1].footer;
 
 const locations = [
   'Boise',
@@ -219,7 +222,7 @@ export const storageColumns = [
   {
     property: 'poolName',
     header: 'Pool Name',
-    render: datum => <Text truncate>{datum.poolName}</Text>,
+    render: ({ poolName }) => <Text truncate>{poolName}</Text>,
   },
   {
     property: 'size',
@@ -249,7 +252,7 @@ export const storageColumns = [
         </Text>
       </Box>
     ),
-    render: datum => (
+    render: ({ pinnable, pinned }) => (
       <Tip
         plain
         dropProps={{ align: { left: 'right' }, stretch: false }}
@@ -264,15 +267,13 @@ export const storageColumns = [
             flex={false}
             margin="xsmall"
           >
-            {Math.trunc((datum.pinned / datum.pinnable) * 100)}
+            {Math.trunc((pinned / pinnable) * 100)}
           </Box>
         }
       >
         <Box pad={{ vertical: 'xsmall' }}>
           <Meter
-            values={[
-              { value: datum.pinned / datum.pinnable, color: 'graph-0' },
-            ]}
+            values={[{ value: pinned / pinnable, color: 'graph-0' }]}
             max={1}
             thickness="small"
             size="small"
@@ -293,8 +294,8 @@ export const storageColumns = [
       </Text>
     ),
     align: 'end',
-    render: datum => (
-      <Text truncate>{datum.savings[1] && `${datum.savings[1].value}`}</Text>
+    render: ({ savings }) => (
+      <Text truncate>{savings[1] && `${savings[1].value}`}</Text>
     ),
   },
 ];

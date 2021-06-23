@@ -177,7 +177,7 @@ const columns = [
   {
     property: 'arrays',
     header: 'Arrays',
-    render: datum => <Text truncate>{datum.arrays}</Text>,
+    render: ({ arrays }) => <Text truncate>{arrays}</Text>,
     sortable: false,
   },
   {
@@ -224,10 +224,10 @@ const columns = [
         </Text>
       </Box>
     ),
-    render: datum => (
+    render: ({ pinnable, pinned }) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
-          values={[{ value: datum.pinned / datum.pinnable, color: 'graph-2' }]}
+          values={[{ value: pinned / pinnable, color: 'graph-2' }]}
           max={1}
           thickness="small"
           size="small"
@@ -247,8 +247,8 @@ const columns = [
       </Text>
     ),
     align: 'end',
-    render: datum => (
-      <Text truncate>{datum.savings[1] && `${datum.savings[1].value}`}</Text>
+    render: ({ savings }) => (
+      <Text truncate>{savings[1] && `${savings[1].value}`}</Text>
     ),
   },
 ];
@@ -282,12 +282,11 @@ export const MultiplePins = () => (
               primary: true,
               render: datum => datum.id.slice(datum.id.length - 5),
               pin: true,
-              // footer: { aggregate: true },
             },
             {
               property: 'poolName',
               header: 'Pool Name',
-              render: datum => <Text truncate>{datum.poolName}</Text>,
+              render: ({ poolName }) => <Text truncate>{poolName}</Text>,
               primary: true,
               pin: true,
             },

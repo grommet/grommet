@@ -36,12 +36,10 @@ const columns = [
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: ({ key, percent }) => (
       <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
         <Meter
-          values={[
-            { value: datum.percent, color: `accent-${(datum.key % 4) + 1}` },
-          ]}
+          values={[{ value: percent, color: `accent-${(key % 4) + 1}` }]}
           thickness="small"
           size="xxsmall"
           type="circle"
