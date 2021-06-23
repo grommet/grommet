@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { defaultProps } from '../../default-props';
 
@@ -8,20 +7,17 @@ import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
-import { calcPinnedBackground } from './buildState';
 
 const Footer = forwardRef(
   (
     {
-      background,
-      border,
+      cellProps,
       columns,
       fill,
       footerValues,
       groups,
       onSelect,
-      pad,
-      pin: tablePin,
+      pin: pinProp,
       pinnedOffset,
       primaryProperty,
       selected,
@@ -29,23 +25,24 @@ const Footer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const pin = tablePin ? ['bottom'] : [];
+    const pin = pinProp ? ['bottom'] : [];
 
     return (
-      <StyledDataTableFooter ref={ref} fillProp={fill} pin={tablePin} {...rest}>
+      <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
         <TableRow>
           {groups && (
-            <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
+            <TableCell
+              plain
+              size="xxsmall"
+              pad="none"
+              verticalAlign="top"
+              background={cellProps.background}
+              border={cellProps.border}
+            />
           )}
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={calcPinnedBackground(
-                background,
-                pin,
-                theme,
-                'footer',
-              )}
+              background={cellProps.background}
               context="footer"
               pin={pin}
             />
@@ -57,12 +54,17 @@ const Footer = forwardRef(
             return (
               <Cell
                 key={column.property}
-                background={background}
-                border={border}
+                background={
+                  (column.pin && cellProps.pinned.background) ||
+                  cellProps.background
+                }
+                border={
+                  (column.pin && cellProps.pinned.border) || cellProps.border
+                }
                 context="footer"
                 column={column}
                 datum={footerValues}
-                pad={pad}
+                pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
                 pin={pin.length ? pin : undefined}
                 pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
                 primaryProperty={primaryProperty}
