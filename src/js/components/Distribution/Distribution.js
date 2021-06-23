@@ -111,6 +111,7 @@ Distribution.defaultProps = {
   basis: undefined,
   children: value => (
     <Box fill border>
+      {/* eslint-disable-next-line react/destructuring-assignment */}
       <Text>{value.value}</Text>
     </Box>
   ),

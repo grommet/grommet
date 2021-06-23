@@ -46,7 +46,7 @@ export const columns = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
-    format: datum => <Text weight="bold">{datum.name}</Text>,
+    format: ({ name }) => <Text weight="bold">{name}</Text>,
   },
   {
     property: 'email',
