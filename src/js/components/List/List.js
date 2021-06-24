@@ -22,11 +22,13 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
+  // Customizes to make list have a focus border color of green
   &:focus {
     ${props =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -99,19 +101,17 @@ const getPrimaryContent = (item, index, primaryKey) => {
   return primaryContent;
 };
 
-
 const getKey = (item, index, primaryContent) => {
   if (typeof primaryContent === 'string') {
     return primaryContent;
-  } 
-  return (typeof item === 'string') ? item : index;
+  }
+  return typeof item === 'string' ? item : index;
 };
 
 const getItemId = (item, index, primaryKey) => {
   const primaryContent = getPrimaryContent(item, index, primaryKey);
   return getKey(item, index, primaryContent);
 };
-
 
 const List = React.forwardRef(
   (
@@ -149,6 +149,7 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
+    const [lastActive, setLastActive] = useState();
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -166,12 +167,11 @@ const List = React.forwardRef(
     const [orderingData, setOrderingData] = useState();
 
     const draggingRef = useRef();
-    
+
     const ariaProps = {
       role: onClickItem || onOrder ? 'listbox' : 'list',
     };
-    
-    
+
     if (active >= 0) {
       let activeId;
       // We have an item that is 'focused' within the list. This could
@@ -179,10 +179,13 @@ const List = React.forwardRef(
       // We need to figure out an id of the thing that will be shown as active
       if (onOrder) {
         // figure out which arrow button will be the active one.
-        const buttonId = (active % 2) ? 'MoveDown' : 'MoveUp';
+        const buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
         const itemIndex = Math.trunc(active / 2);
-        activeId = 
-          `${getItemId(data[itemIndex], itemIndex, primaryKey)}${buttonId}`;
+        activeId = `${getItemId(
+          data[itemIndex],
+          itemIndex,
+          primaryKey,
+        )}${buttonId}`;
       } else if (onClickItem) {
         // The whole list item is active. Figure out an id
         activeId = getItemId(data[active], active, primaryKey);
@@ -209,8 +212,7 @@ const List = React.forwardRef(
                       onOrder(reorder(data, index, index - 1));
                       setActive(Math.max(active - 2, 1));
                     }
-                  }
-                  else {
+                  } else {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -220,11 +222,13 @@ const List = React.forwardRef(
                 }
               : undefined
           }
+          onTab={() => setActive(undefined)}
           onUp={
             (onClickItem || onOrder) && active
               ? () => {
                   const min = onOrder ? 1 : 0;
                   setActive(Math.max(active - 1, min));
+                  setLastActive(active);
                 }
               : undefined
           }
@@ -232,10 +236,9 @@ const List = React.forwardRef(
             (onClickItem || onOrder) && data && data.length
               ? () => {
                   const min = onOrder ? 1 : 0;
-                  const max = onOrder ? (data.length * 2) - 2 : data.length - 1;
-                  setActive(
-                    active >= min ? Math.min(active + 1, max) : min,
-                  );
+                  const max = onOrder ? data.length * 2 - 2 : data.length - 1;
+                  setActive(active >= min ? Math.min(active + 1, max) : min);
+                  setLastActive(active);
                 }
               : undefined
           }
@@ -245,7 +248,13 @@ const List = React.forwardRef(
             as={as || 'ul'}
             itemFocus={itemFocus}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
-            onBlur={onOrder ? () => setActive(undefined) : undefined}
+            onBlur={
+              onOrder
+                ? () => {
+                    setActive(undefined);
+                  }
+                : undefined
+            }
             {...ariaProps}
             {...rest}
           >
@@ -357,13 +366,22 @@ const List = React.forwardRef(
                       // accessibility guidelines that focus remains on `ul`
                       listRef.current.focus();
                     },
-                    onMouseOver: () => setActive(index),
-                    onMouseOut: () => setActive(undefined),
-                    onFocus: () => {
+                    onMouseOver: () => {
+                      setLastActive(undefined);
                       setActive(index);
+                    },
+                    onMouseOut: () => {
+                      console.log('Mouse Out');
+                      setActive(lastActive);
+                    },
+                    onFocus: () => {
+                      console.log('On Focus');
+                      setActive(lastActive || index);
+                      setLastActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
+                      console.log('On Blur');
                       setActive(undefined);
                       setItemFocus(false);
                     },
@@ -415,7 +433,7 @@ const List = React.forwardRef(
                     <Box direction="row" align="center" justify="end">
                       <Button
                         id={`${key}MoveUp`}
-                        a11yTitle={`${index+1} ${key} move up`}
+                        a11yTitle={`${index + 1} ${key} move up`}
                         icon={<Up />}
                         hoverIndicator
                         focusIndicator={false}
@@ -426,10 +444,10 @@ const List = React.forwardRef(
                           onOrder(reorder(data, index, index - 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index*2)}
+                        onMouseOver={() => setActive(index * 2)}
                         onMouseOut={() => setActive(undefined)}
                         onFocus={() => {
-                          setActive(index*2);
+                          setActive(index * 2);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -439,21 +457,21 @@ const List = React.forwardRef(
                       />
                       <Button
                         id={`${key}MoveDown`}
-                        a11yTitle={`${index+1} ${key} move down`}
+                        a11yTitle={`${index + 1} ${key} move down`}
                         icon={<Down />}
                         hoverIndicator
                         focusIndicator={false}
                         disabled={index >= data.length - 1}
-                        active={active === (index * 2 + 1)}
+                        active={active === index * 2 + 1}
                         onClick={event => {
                           event.stopPropagation();
                           onOrder(reorder(data, index, index + 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index*2+1)}
+                        onMouseOver={() => setActive(index * 2 + 1)}
                         onMouseOut={() => setActive(undefined)}
                         onFocus={() => {
-                          setActive(index*2+1);
+                          setActive(index * 2 + 1);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -462,7 +480,7 @@ const List = React.forwardRef(
                         }}
                       />
                     </Box>
-                  );  
+                  );
 
                   boxProps = {
                     direction: 'row',

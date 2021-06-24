@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List } from 'grommet';
+import { Grommet, Box, List, Layer, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const locations = [
@@ -25,14 +25,27 @@ for (let i = 0; i < 40; i += 1) {
 
 export const OnClickItemList = () => {
   const [clicked, setClicked] = React.useState();
+  const [show, setShow] = React.useState();
+
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large" gap="large">
         <List
           data={data.slice(0, 10)}
-          onClickItem={event => setClicked(event.item)}
+          onClickItem={event => {
+            setShow(true);
+            setClicked(event.item);
+          }}
         />
 
+        {show && (
+          <Layer
+            onEsc={() => setShow(false)}
+            onClickOutside={() => setShow(false)}
+          >
+            <Button label="close" onClick={() => setShow(false)} />
+          </Layer>
+        )}
         {clicked && JSON.stringify(clicked, null, 2)}
       </Box>
     </Grommet>
