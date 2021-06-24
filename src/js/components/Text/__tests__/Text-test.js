@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { axe } from 'jest-axe';
@@ -151,4 +151,15 @@ test('renders weight', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('renders tip', () => {
+  const { container, getByText } = render(
+    <Grommet>
+      <Text tip="tooltip">Default Tip</Text>
+    </Grommet>,
+  );
+
+  fireEvent.mouseOver(getByText('Default Tip'));
+  expect(container.firstChild).toMatchSnapshot();
 });

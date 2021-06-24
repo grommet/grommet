@@ -76,7 +76,10 @@ string
 **onChange**
 
 Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.
 
 ```
 function

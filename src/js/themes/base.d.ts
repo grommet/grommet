@@ -775,6 +775,11 @@ export interface ThemeType {
     };
     error?: {
       background?: BackgroundType;
+      border?: BorderType & {
+        error?: {
+          color?: ColorType;
+        };
+      };
       color?: ColorType;
       margin?: MarginType;
       container?: BoxProps;

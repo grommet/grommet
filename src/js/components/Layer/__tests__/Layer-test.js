@@ -510,4 +510,15 @@ describe('Layer', () => {
     expect(onEsc).toBeCalledTimes(1);
     expectPortal('esc-test').toMatchSnapshot();
   });
+
+  test('should only place id on StyledLayer when singleId === true', () => {
+    render(
+      <Grommet options={{ layer: { singleId: true } }}>
+        <Layer id="singleId-test" animation={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('singleId-test').toMatchSnapshot();
+  });
 });

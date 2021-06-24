@@ -177,6 +177,11 @@ const InfiniteScroll = ({
       }
     }, 100);
     return () => clearTimeout(timer);
+    // Omitting scrollShow as a dependency due to concern that setScrollShow
+    // is being called within the timer. If left included, re-renders and other
+    // dependency values could change in an unpredictable manner during timer
+    // and potentially result in an infinite loop.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [renderPageBounds, show, step]);
 
   // calculate and keep track of page heights
