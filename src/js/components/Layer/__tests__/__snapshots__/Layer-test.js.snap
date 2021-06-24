@@ -2294,9 +2294,9 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
             class="c11"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />

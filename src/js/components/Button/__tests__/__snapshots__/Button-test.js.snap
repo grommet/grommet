@@ -1229,7 +1229,7 @@ exports[`Button badge should render custom element 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1418,7 +1418,7 @@ exports[`Button badge should render relative to contents when button has no
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -4531,7 +4531,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4548,7 +4548,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4565,7 +4565,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4582,7 +4582,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4605,9 +4605,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4630,9 +4630,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4655,9 +4655,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4680,9 +4680,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />

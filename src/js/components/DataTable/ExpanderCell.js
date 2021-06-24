@@ -31,13 +31,7 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   delete normalizedThemeProps.pad;
 
   content = (
-    <Box
-      {...normalizedThemeProps}
-      {...rest}
-      align="center"
-      fill
-      pad={pad}
-    >
+    <Box {...normalizedThemeProps} {...rest} align="center" fill pad={pad}>
       {content}
     </Box>
   );
@@ -60,16 +54,16 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
 };
 
 const ExpanderCell = ({ background, border, context, ...rest }) => (
-    <TableCell
-      background={background}
-      border={border}
-      size="xxsmall"
-      plain="noPad"
-      verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
-    >
-      <ExpanderControl context={context} {...rest} />
-    </TableCell>
-  );
+  <TableCell
+    background={background}
+    border={border}
+    size="xxsmall"
+    plain="noPad"
+    verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
+  >
+    <ExpanderControl context={context} {...rest} />
+  </TableCell>
+);
 
 ExpanderCell.displayName = 'ExpanderCell';
 
