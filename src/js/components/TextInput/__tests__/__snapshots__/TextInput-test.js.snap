@@ -479,14 +479,14 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 lnZjZd"
+      class="StyledTextInput-sc-1x30a0s-0 flGWOp"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1034,14 +1034,14 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 lnZjZd"
+      class="StyledTextInput-sc-1x30a0s-0 flGWOp"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1548,14 +1548,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 lnZjZd"
+      class="StyledTextInput-sc-1x30a0s-0 flGWOp"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2817,14 +2817,14 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 bzNjNY"
+      class="StyledTextInput-sc-1x30a0s-0 kOmfSU"
       data-testid="test-input"
       id="item"
       name="item"
@@ -3417,14 +3417,14 @@ exports[`TextInput should only show default placeholder when placeholder is a
 exports[`TextInput should only show default placeholder when placeholder is a
   string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 lnZjZd"
+      class="StyledTextInput-sc-1x30a0s-0 flGWOp"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
