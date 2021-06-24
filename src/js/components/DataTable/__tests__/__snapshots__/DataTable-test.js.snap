@@ -3136,10 +3136,6 @@ exports[`DataTable custom theme 1`] = `
   height: auto;
 }
 
-.c8 {
-  padding: 6px 12px;
-}
-
 .c8:hover {
   background-color: rgba(242,242,242,1);
   color: #444444;
@@ -3392,7 +3388,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledBox-sc-13pk1d4-0 dTCmQX"
             >
               <button
-                class="StyledButton-sc-323bzc-0 czWhCV Header__StyledHeaderCellButton-sc-1baku5q-0 cUzchw"
+                class="StyledButton-sc-323bzc-0 czWhCV Header__StyledHeaderCellButton-sc-1baku5q-0 fnelTZ"
                 type="button"
               >
                 <div
@@ -4388,7 +4384,7 @@ exports[`DataTable footer 1`] = `
 `;
 
 exports[`DataTable groupBy 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4399,25 +4395,25 @@ exports[`DataTable groupBy 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4432,7 +4428,25 @@ exports[`DataTable groupBy 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4448,10 +4462,15 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4468,7 +4487,7 @@ exports[`DataTable groupBy 1`] = `
   flex: 1 0 auto;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4482,12 +4501,12 @@ exports[`DataTable groupBy 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4511,48 +4530,48 @@ exports[`DataTable groupBy 1`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4567,10 +4586,9 @@ exports[`DataTable groupBy 1`] = `
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4583,7 +4601,7 @@ exports[`DataTable groupBy 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4593,10 +4611,9 @@ exports[`DataTable groupBy 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4622,8 +4639,16 @@ exports[`DataTable groupBy 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -4648,52 +4673,57 @@ exports[`DataTable groupBy 1`] = `
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               B
             </span>
@@ -4708,50 +4738,55 @@ exports[`DataTable groupBy 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -4759,50 +4794,55 @@ exports[`DataTable groupBy 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -4825,30 +4865,35 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hMeowX"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -4887,30 +4932,35 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -4938,30 +4988,35 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -4991,7 +5046,7 @@ exports[`DataTable groupBy 2`] = `
 `;
 
 exports[`DataTable groupBy expand 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5002,25 +5057,59 @@ exports[`DataTable groupBy expand 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c14 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c14 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c14 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5035,7 +5124,25 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5051,10 +5158,15 @@ exports[`DataTable groupBy expand 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5071,7 +5183,7 @@ exports[`DataTable groupBy expand 1`] = `
   flex: 1 0 auto;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5085,12 +5197,12 @@ exports[`DataTable groupBy expand 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5114,48 +5226,48 @@ exports[`DataTable groupBy expand 1`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5170,10 +5282,9 @@ exports[`DataTable groupBy expand 1`] = `
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5186,7 +5297,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5196,10 +5307,9 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5211,7 +5321,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5221,7 +5331,6 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
-  padding: 0px;
 }
 
 .c1 {
@@ -5238,8 +5347,16 @@ exports[`DataTable groupBy expand 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -5264,52 +5381,57 @@ exports[`DataTable groupBy expand 1`] = `
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               B
             </span>
@@ -5324,51 +5446,56 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="collapse"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="collapse"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormUp"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(1 0 0 -1 0 24)"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormUp"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                    transform="matrix(1 0 0 -1 0 24)"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -5376,33 +5503,44 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
           <div
-            class="c5"
-          />
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c14"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               1.1
             </span>
@@ -5413,33 +5551,44 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c13"
+          class="c15"
         >
           <div
-            class="c5"
-          />
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c14"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               1.2
             </span>
@@ -5450,50 +5599,55 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -5509,7 +5663,7 @@ Array [
 `;
 
 exports[`DataTable groupBy property 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5520,25 +5674,25 @@ exports[`DataTable groupBy property 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5553,7 +5707,25 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5569,10 +5741,15 @@ exports[`DataTable groupBy property 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5589,7 +5766,7 @@ exports[`DataTable groupBy property 1`] = `
   flex: 1 0 auto;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5603,12 +5780,12 @@ exports[`DataTable groupBy property 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5632,48 +5809,48 @@ exports[`DataTable groupBy property 1`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5688,10 +5865,9 @@ exports[`DataTable groupBy property 1`] = `
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5704,7 +5880,7 @@ exports[`DataTable groupBy property 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5714,10 +5890,9 @@ exports[`DataTable groupBy property 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5743,8 +5918,16 @@ exports[`DataTable groupBy property 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -5769,52 +5952,57 @@ exports[`DataTable groupBy property 1`] = `
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               B
             </span>
@@ -5829,50 +6017,55 @@ exports[`DataTable groupBy property 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -5880,50 +6073,55 @@ exports[`DataTable groupBy property 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c10"
+          class="c11"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c9"
+              class="c10"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           />
         </td>
       </tr>
@@ -5946,30 +6144,35 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hMeowX"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6008,30 +6211,35 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6059,30 +6267,35 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6405,7 +6618,7 @@ exports[`DataTable groupBy toggle 2`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
-        .c3 {
+        .c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6416,30 +6629,48 @@ exports[`DataTable groupBy toggle 2`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c3 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c3 *[fill-rule],
-.c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6455,10 +6686,15 @@ exports[`DataTable groupBy toggle 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6482,48 +6718,48 @@ exports[`DataTable groupBy toggle 2`] = `
   flex: 1 0 auto;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6538,12 +6774,19 @@ exports[`DataTable groupBy toggle 2`] = `
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 3px;
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -6554,28 +6797,33 @@ exports[`DataTable groupBy toggle 2`] = `
 <td
           class="c0"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c1"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c2"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c3"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c4"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hEkqiG StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -6607,7 +6855,7 @@ exports[`DataTable groupBy toggle 2`] = `
         </th>
       </tr>
     </thead>
-    .c3 {
+    .c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6618,30 +6866,30 @@ exports[`DataTable groupBy toggle 2`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c3 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c3 *[fill-rule],
-.c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6655,7 +6903,25 @@ exports[`DataTable groupBy toggle 2`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6671,15 +6937,20 @@ exports[`DataTable groupBy toggle 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6703,52 +6974,52 @@ exports[`DataTable groupBy toggle 2`] = `
   flex: 1 0 auto;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c4 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6770,12 +7041,19 @@ exports[`DataTable groupBy toggle 2`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    padding: 3px;
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -6792,48 +7070,53 @@ exports[`DataTable groupBy toggle 2`] = `
         <td
           class="c0"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c1"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c2"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c3"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c4"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c4 "
+          class="c5 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c4 "
+          class="c5 "
         >
           <div
-            class="c5"
+            class="c6"
           />
         </td>
       </tr>
@@ -6843,48 +7126,53 @@ exports[`DataTable groupBy toggle 2`] = `
         <td
           class="c0"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c1"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c2"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c3"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c4"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c4 "
+          class="c5 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c6"
           >
             <span
-              class="c6"
+              class="c7"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c4 "
+          class="c5 "
         >
           <div
-            class="c5"
+            class="c6"
           />
         </td>
       </tr>
@@ -6976,6 +7264,10 @@ exports[`DataTable groupBy toggle 3`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -7120,7 +7412,7 @@ exports[`DataTable groupBy toggle 3`] = `
 
 exports[`DataTable onSelect + groupBy should render indeterminate checkbox on table and 
   group if subset of group items are selected 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7131,25 +7423,59 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c22 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c22 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c22 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7164,26 +7490,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 6px;
-}
-
-.c8 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7199,6 +7506,30 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c10 {
@@ -7280,7 +7611,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex-direction: column;
 }
 
-.c23 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7311,7 +7642,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7335,48 +7666,48 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7450,10 +7781,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7487,7 +7817,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c19 {
@@ -7512,7 +7841,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c22 {
+.c23 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7522,7 +7851,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: bottom;
   text-align: start;
-  padding: 0px;
 }
 
 .c1 {
@@ -7539,8 +7867,16 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -7551,7 +7887,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c23 {
+  .c24 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -7577,35 +7913,40 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -7676,35 +8017,40 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c18"
         >
-          <button
-            aria-label="collapse"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="collapse"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormUp"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(1 0 0 -1 0 24)"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormUp"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                    transform="matrix(1 0 0 -1 0 24)"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -7766,14 +8112,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c18"
         >
           <div
-            class="c5"
-          />
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c22"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -7826,17 +8183,28 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c22"
+          class="c23"
         >
           <div
-            class="c5"
-          />
+            class="c4"
+            style="height: 0px;"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-hidden="true"
+                class="c22"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -7852,7 +8220,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   type="checkbox"
                 />
                 <div
-                  class="c23 "
+                  class="c24 "
                 >
                   <svg
                     class="c14"
@@ -7902,34 +8270,39 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c18"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -7979,7 +8352,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 
 exports[`DataTable onSelect + groupBy should render indeterminate checkbox on table and 
   group when controlled 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7990,25 +8363,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8023,26 +8396,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 6px;
-}
-
-.c8 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8058,6 +8412,30 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c10 {
@@ -8144,7 +8522,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8168,48 +8546,48 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8283,10 +8661,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8320,7 +8697,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c19 {
@@ -8359,8 +8735,16 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -8391,35 +8775,40 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -8490,34 +8879,39 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c18"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -8577,34 +8971,39 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         <td
           class="c18"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -8653,7 +9052,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 `;
 
 exports[`DataTable onSelect + groupBy should select all items within a group 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -8664,25 +9063,25 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8697,26 +9096,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 6px;
-}
-
-.c8 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8732,6 +9112,30 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c10 {
@@ -8844,7 +9248,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8868,48 +9272,48 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8983,10 +9387,9 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9020,7 +9423,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c19 {
@@ -9059,8 +9461,16 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -9097,35 +9507,40 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -9196,34 +9611,39 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         <td
           class="c18"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -9283,34 +9703,39 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
         <td
           class="c18"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c19"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -9359,7 +9784,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 `;
 
 exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -9370,25 +9795,25 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   stroke: rgba(0,0,0,0.33);
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9403,26 +9828,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 6px;
-}
-
-.c8 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9438,6 +9844,30 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c10 {
@@ -9524,7 +9954,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -9548,48 +9978,48 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9655,10 +10085,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   vertical-align: top;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 0px;
 }
 
-.c7 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9692,7 +10121,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
 .c18 {
@@ -9731,8 +10159,16 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 3px;
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -9763,35 +10199,40 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         <td
           class="c3"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
-          class="c7 "
+          class="c8 "
           scope="col"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -9851,34 +10292,39 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         <td
           class="c17"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c18"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -9927,34 +10373,39 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
         <td
           class="c17"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c4"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c5"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c6"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="c18"
         >
           <div
-            class="c8"
+            class="c4"
             style="height: 0px;"
           >
             <label
@@ -10016,30 +10467,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hMeowX"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 loEAQa StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -10069,6 +10525,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10139,30 +10599,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -10191,6 +10656,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10250,30 +10719,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -10302,6 +10776,10 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10376,30 +10854,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cayICk"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hMeowX"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 loEAQa StyledDataTable__StyledDataTableCell-xrlyjm-6 dOXSQl"
@@ -10464,30 +10947,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -10540,30 +11028,35 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 dbdphC"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fCtKNy"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kkKFnd"
         >
-          <button
-            aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iBsscY"
-            type="button"
+          <div
+            class="StyledBox-sc-13pk1d4-0 htEqSX"
+            style="height: 0px;"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 iWfWRW"
+            <button
+              aria-label="expand"
+              class="StyledButton-sc-323bzc-0 iBsscY"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 erYbrt"
-                viewBox="0 0 24 24"
+              <div
+                class="StyledBox-sc-13pk1d4-0 hnfKzQ"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="StyledIcon-ofa7kd-0 erYbrt"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 iyVIiw"
@@ -12695,6 +13188,19 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c18 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -13014,7 +13520,7 @@ exports[`DataTable pin + background 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c14 c9"
+          class="c17 c9"
         >
           <div
             class="c10"
@@ -13027,7 +13533,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c14 "
+          class="c17 "
         >
           <div
             class="c10"
@@ -13046,7 +13552,7 @@ exports[`DataTable pin + background 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c3 c9"
+          class="c18 c9"
           scope="col"
         >
           <div
@@ -13060,7 +13566,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <th
-          class="c17 "
+          class="c18 "
           scope="col"
         >
           <div
@@ -13247,7 +13753,7 @@ exports[`DataTable pin + background context 1`] = `
   flex-direction: column;
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13316,37 +13822,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: rgba(255,255,255,0.8);
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c19 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: rgba(255,255,255,0.8);
-  color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13361,7 +13837,7 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
-.c22 {
+.c20 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -13593,7 +14069,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 c5"
+            class="c4 c5"
             scope="col"
           >
             <div
@@ -13607,7 +14083,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c18 c8"
+            class="c4 c8"
             scope="col"
           >
             <div
@@ -13695,7 +14171,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c19 c15"
+            class="c14 c15"
           >
             <div
               class="c11"
@@ -13708,7 +14184,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c19 c16"
+            class="c14 c16"
           >
             <div
               class="c11"
@@ -13719,7 +14195,7 @@ exports[`DataTable pin + background context 1`] = `
     </table>
   </div>
   <div
-    class="c20"
+    class="c18"
   >
     <table
       class="c2 c3"
@@ -13731,7 +14207,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c21 c5"
+            class="c19 c5"
             scope="col"
           >
             <div
@@ -13745,7 +14221,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c21 c8"
+            class="c19 c8"
             scope="col"
           >
             <div
@@ -13833,7 +14309,7 @@ exports[`DataTable pin + background context 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c22 c15"
+            class="c20 c15"
           >
             <div
               class="c11"
@@ -13846,7 +14322,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c22 c16"
+            class="c20 c16"
           >
             <div
               class="c11"
@@ -15927,7 +16403,7 @@ exports[`DataTable resizeable 1`] = `
 `;
 
 exports[`DataTable rowDetails 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -15938,25 +16414,25 @@ exports[`DataTable rowDetails 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -15988,7 +16464,25 @@ exports[`DataTable rowDetails 1`] = `
   flex: 1 0 auto;
 }
 
-.c9 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16004,10 +16498,15 @@ exports[`DataTable rowDetails 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16026,13 +16525,13 @@ exports[`DataTable rowDetails 1`] = `
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -16056,48 +16555,48 @@ exports[`DataTable rowDetails 1`] = `
   flex: 1 0 auto;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -16137,10 +16636,9 @@ exports[`DataTable rowDetails 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -16166,8 +16664,16 @@ exports[`DataTable rowDetails 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 3px;
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -16231,34 +16737,39 @@ exports[`DataTable rowDetails 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16268,14 +16779,14 @@ exports[`DataTable rowDetails 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               1.1
             </span>
@@ -16288,35 +16799,40 @@ exports[`DataTable rowDetails 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="collapse"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="collapse"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormUp"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(1 0 0 -1 0 24)"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormUp"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                    transform="matrix(1 0 0 -1 0 24)"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16326,14 +16842,14 @@ exports[`DataTable rowDetails 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               1.2
             </span>
@@ -16344,11 +16860,11 @@ exports[`DataTable rowDetails 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c11"
+          class="c12"
           colspan="3"
         >
           <div
-            class="c12"
+            class="c13"
           >
             one
           </div>
@@ -16360,34 +16876,39 @@ exports[`DataTable rowDetails 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16397,14 +16918,14 @@ exports[`DataTable rowDetails 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               2.1
             </span>
@@ -16417,34 +16938,39 @@ exports[`DataTable rowDetails 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16454,14 +16980,14 @@ exports[`DataTable rowDetails 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               2.2
             </span>
@@ -16474,7 +17000,7 @@ exports[`DataTable rowDetails 1`] = `
 `;
 
 exports[`DataTable rowDetails condtional 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -16485,25 +17011,25 @@ exports[`DataTable rowDetails condtional 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16535,7 +17061,25 @@ exports[`DataTable rowDetails condtional 1`] = `
   flex: 1 0 auto;
 }
 
-.c9 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16551,10 +17095,15 @@ exports[`DataTable rowDetails condtional 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16573,13 +17122,13 @@ exports[`DataTable rowDetails condtional 1`] = `
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -16603,48 +17152,48 @@ exports[`DataTable rowDetails condtional 1`] = `
   flex: 1 0 auto;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -16684,10 +17233,9 @@ exports[`DataTable rowDetails condtional 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  padding: 0px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -16713,8 +17261,16 @@ exports[`DataTable rowDetails condtional 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 3px;
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -16778,34 +17334,39 @@ exports[`DataTable rowDetails condtional 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16815,14 +17376,14 @@ exports[`DataTable rowDetails condtional 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               1.1
             </span>
@@ -16835,35 +17396,40 @@ exports[`DataTable rowDetails condtional 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="collapse"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="collapse"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormUp"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                  transform="matrix(1 0 0 -1 0 24)"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormUp"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                    transform="matrix(1 0 0 -1 0 24)"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16873,14 +17439,14 @@ exports[`DataTable rowDetails condtional 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               1.2
             </span>
@@ -16891,11 +17457,11 @@ exports[`DataTable rowDetails condtional 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c11"
+          class="c12"
           colspan="3"
         >
           <div
-            class="c12"
+            class="c13"
           >
             one
              : 
@@ -16910,34 +17476,39 @@ exports[`DataTable rowDetails condtional 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -16947,14 +17518,14 @@ exports[`DataTable rowDetails condtional 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               2.1
             </span>
@@ -16967,34 +17538,39 @@ exports[`DataTable rowDetails condtional 1`] = `
         <td
           class="c7"
         >
-          <button
-            aria-label="expand"
+          <div
             class="c8"
-            type="button"
+            style="height: 0px;"
           >
-            <div
+            <button
+              aria-label="expand"
               class="c9"
+              type="button"
             >
-              <svg
-                aria-label="FormDown"
+              <div
                 class="c10"
-                viewBox="0 0 24 24"
               >
-                <polyline
-                  fill="none"
-                  points="18 9 12 15 6 9"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </button>
+                <svg
+                  aria-label="FormDown"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
         </td>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
               class="c6"
@@ -17004,14 +17580,14 @@ exports[`DataTable rowDetails condtional 1`] = `
           </div>
         </td>
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               2.2
             </span>

@@ -371,14 +371,17 @@ const List = React.forwardRef(
                       setActive(index);
                     },
                     onMouseOut: () => {
+                      console.log('Mouse Out');
                       setActive(lastActive);
                     },
                     onFocus: () => {
-                      setActive(index);
+                      console.log('On Focus');
+                      setActive(lastActive || index);
+                      setLastActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
-                      setLastActive(active);
+                      console.log('On Blur');
                       setActive(undefined);
                       setItemFocus(false);
                     },
