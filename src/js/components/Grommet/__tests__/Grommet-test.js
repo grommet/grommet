@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
@@ -62,9 +62,7 @@ describe('Grommet', () => {
   });
 
   test('themeMode', () => {
-    const { container } = render(
-      <Grommet theme={grommet} themeMode="dark" />,
-    );
+    const { container } = render(<Grommet theme={grommet} themeMode="dark" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -79,9 +77,7 @@ describe('Grommet', () => {
   });
 
   test('full min', () => {
-    const { container } = render(
-      <Grommet full="min">Grommet App</Grommet>,
-    );
+    const { container } = render(<Grommet full="min">Grommet App</Grommet>);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -126,8 +122,11 @@ describe('Grommet', () => {
     /* eslint-enable max-len */
   ].forEach(ua => {
     test(`ssr rendering ${ua.substring(0, 25)}`, () => {
-      const {container} = render(<SSRTester ua={ua} />);
-      expect(container.firstChild).toMatchSnapshot();
+      act(() => {
+        const { container } = render(<SSRTester ua={ua} />);
+
+        expect(container.firstChild).toMatchSnapshot();
+      });
     });
   });
 });
