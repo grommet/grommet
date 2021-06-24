@@ -31,7 +31,7 @@ export const Messages = () => (
       </Box>
     </Grommet>
     <Grommet messages={{
-      format: opts => messageBundle[opts.id],
+      format: options => messageBundle[options.id],
     }}
     >
       <Heading level={2}>Message function</Heading>

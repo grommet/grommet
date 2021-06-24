@@ -2,7 +2,7 @@ import React from 'react';
 
 import defaultMessages from '../../languages/default.json';
 
-// opts:
+// options:
 //   id: message id
 //   messages: (optional) an object of message overrides
 //   values: (optional) currently unused but in the future
@@ -10,9 +10,9 @@ import defaultMessages from '../../languages/default.json';
 //     positional variables in the message text.
 //   defaultMessage: (optional) default message to use if
 //     the message isn't found elsewhere.
-export const format = (opts, messages) => {
+export const format = (options, messages) => {
   // Message id's are hierarchical. For the component-specific
-  // message objects passed as opts.messages, just use the last
+  // message objects passed as options.messages, just use the last
   // component in the id for backwards compatibility.
   // 
   // For overall messages passed to grommet, use the hierarchical
@@ -24,7 +24,7 @@ export const format = (opts, messages) => {
   // this format function to get the grommet messages from
   // their bundles that way and don't need to pass the messages
   // themselves in this property, just the format function.
-  const idParts = opts.id?.split('.') || [];
+  const idParts = options.id?.split('.') || [];
   const baseId = idParts[idParts?.length -1];
   let messageObj = messages;
   idParts.forEach(idPart => {
@@ -32,15 +32,15 @@ export const format = (opts, messages) => {
       messageObj = messageObj[idPart];
     }
   });
-  const message = (opts.messages ? opts.messages[baseId] : undefined) ||
+  const message = (options.messages ? options.messages[baseId] : undefined) ||
     messageObj ||
-    opts.defaultMessage;
+    options.defaultMessage;
   return message;
 };
 
 const defaultValue = {
   messages: defaultMessages,
-  format: opts => format(opts, defaultMessages),
+  format: options => format(options, defaultMessages),
 };
 
 export const MessageContext = React.createContext(defaultValue);
