@@ -329,9 +329,9 @@ exports[`Menu close by clicking outside 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -638,9 +638,9 @@ exports[`Menu close by clicking outside 2`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -870,9 +870,9 @@ exports[`Menu close on tab 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -1060,9 +1060,9 @@ exports[`Menu custom a11yTitle 1`] = `
           class="c5"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -1256,9 +1256,9 @@ exports[`Menu custom message 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -1451,9 +1451,9 @@ exports[`Menu custom theme icon color 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -1637,9 +1637,9 @@ exports[`Menu custom theme with default button 1`] = `
         className="c4"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -1830,9 +1830,9 @@ exports[`Menu disabled 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2036,9 +2036,9 @@ exports[`Menu gap between icon and label 1`] = `
           class="c5"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2373,9 +2373,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2409,9 +2409,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2445,9 +2445,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2481,9 +2481,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2517,9 +2517,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2553,9 +2553,9 @@ exports[`Menu justify content 1`] = `
         className="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2844,9 +2844,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3034,9 +3034,9 @@ exports[`Menu open and close on click 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3072,9 +3072,9 @@ exports[`Menu open and close on click 2`] = `
         class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3381,9 +3381,9 @@ exports[`Menu open and close on click 3`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -3627,9 +3627,9 @@ exports[`Menu open on down close on esc 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3817,9 +3817,9 @@ exports[`Menu open on up close on esc 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4126,9 +4126,9 @@ exports[`Menu open on up close on esc 2`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -4370,9 +4370,9 @@ exports[`Menu reverse icon and label 1`] = `
           class="c5"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4561,9 +4561,9 @@ exports[`Menu select an item 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4751,9 +4751,9 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4952,9 +4952,9 @@ exports[`Menu should apply themed drop props 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -5121,9 +5121,9 @@ exports[`Menu should have no accessibility violations 1`] = `
           class="c4"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -5312,9 +5312,9 @@ exports[`Menu tab through menu until it closes 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -5502,9 +5502,9 @@ exports[`Menu with dropAlign bottom renders 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -5843,9 +5843,9 @@ exports[`Menu with dropAlign bottom renders 2`] = `
             class="c11"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -6043,9 +6043,9 @@ exports[`Menu with dropAlign top renders 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -6352,9 +6352,9 @@ exports[`Menu with dropAlign top renders 2`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
