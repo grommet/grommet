@@ -267,9 +267,9 @@ exports[`Select 0 value 1`] = `
         className="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -1674,9 +1674,9 @@ exports[`Select Search timeout 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2048,9 +2048,9 @@ exports[`Select applies custom global.hover theme to options 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2460,9 +2460,9 @@ exports[`Select basic 1`] = `
         className="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -2726,9 +2726,9 @@ exports[`Select complex options and children 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2775,9 +2775,9 @@ exports[`Select complex options and children 2`] = `
         class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3325,9 +3325,9 @@ exports[`Select dark 1`] = `
             className="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               strokeWidth="2"
             />
@@ -3606,9 +3606,9 @@ exports[`Select default value 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4329,9 +4329,9 @@ exports[`Select default value object options 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4599,9 +4599,9 @@ exports[`Select disabled 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4649,9 +4649,9 @@ exports[`Select disabled 2`] = `
         class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4928,9 +4928,9 @@ exports[`Select disabled key 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -5987,9 +5987,9 @@ exports[`Select keyboard navigation timeout 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -6799,9 +6799,9 @@ exports[`Select modifies select control style on open 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -7079,9 +7079,9 @@ exports[`Select onChange with valueKey string 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -7580,9 +7580,9 @@ exports[`Select onChange with valueLabel 1`] = `
           class="c7"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -8134,9 +8134,9 @@ exports[`Select onChange without valueKey 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -8687,9 +8687,9 @@ exports[`Select prop: onClose 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -8968,9 +8968,9 @@ exports[`Select prop: onClose 2`] = `
             class="c8"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -9236,9 +9236,9 @@ exports[`Select prop: onOpen 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -9285,9 +9285,9 @@ exports[`Select prop: onOpen 2`] = `
         class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -9881,9 +9881,9 @@ exports[`Select renders custom icon 1`] = `
         className="c8"
         viewBox="0 0 24 24"
       >
-        <polygon
+        <path
+          d="M22 8 12 20 2 8z"
           fill="none"
-          points="22 8 12 20 2 8"
           stroke="#000"
           strokeWidth="2"
         />
@@ -10158,9 +10158,9 @@ exports[`Select renders custom up and down icons 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -10259,12 +10259,11 @@ exports[`Select renders custom up and down icons 2`] = `
           class="c0"
           viewBox="0 0 24 24"
         >
-          <polygon
+          <path
+            d="M22 16 12 4 2 16z"
             fill="none"
-            points="22 4 12 16 2 4"
             stroke="#000"
             stroke-width="2"
-            transform="matrix(1 0 0 -1 0 20)"
           />
         </svg>
       </div>
@@ -10539,9 +10538,9 @@ exports[`Select renders default icon 1`] = `
         className="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />
@@ -10820,9 +10819,9 @@ exports[`Select renders styled select options backwards compatible with legacy
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11103,9 +11102,9 @@ exports[`Select renders styled select options combining select.options.box &&
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11384,9 +11383,9 @@ exports[`Select renders styled select options using select.options.container 1`]
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11848,9 +11847,9 @@ exports[`Select search 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -12578,9 +12577,9 @@ exports[`Select search and select 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13243,9 +13242,9 @@ exports[`Select select an object with label key specific with keypress 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13509,9 +13508,9 @@ exports[`Select select an option 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13717,9 +13716,9 @@ exports[`Select select an option with complex options 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13983,9 +13982,9 @@ exports[`Select select an option with enter 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14249,9 +14248,9 @@ exports[`Select select an option with keypress 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14515,9 +14514,9 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14794,9 +14793,9 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -14847,9 +14846,9 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
           class="StyledIcon-ofa7kd-0 fuviCN"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15127,9 +15126,9 @@ exports[`Select selected 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15405,9 +15404,9 @@ exports[`Select should not have accessibility violations 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15687,9 +15686,9 @@ exports[`Select size 1`] = `
         className="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           strokeWidth="2"
         />

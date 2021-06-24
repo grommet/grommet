@@ -352,12 +352,11 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -475,9 +474,9 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -922,12 +921,11 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1045,9 +1043,9 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -1528,12 +1526,11 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1651,9 +1648,9 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c14"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2686,12 +2683,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2809,9 +2805,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2846,12 +2842,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2969,9 +2964,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3006,12 +3001,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3129,9 +3123,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3495,12 +3489,11 @@ exports[`Pagination should change the page on prop change 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3618,9 +3611,9 @@ exports[`Pagination should change the page on prop change 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4095,12 +4088,11 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4220,9 +4212,9 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4575,12 +4567,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4618,9 +4609,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4890,12 +4881,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4917,9 +4907,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5272,12 +5262,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5315,9 +5304,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5794,12 +5783,11 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5917,9 +5905,9 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6284,12 +6272,11 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -6407,9 +6394,9 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6450,12 +6437,11 @@ exports[`Pagination should display next page of results when "next" is
               class="StyledIcon-ofa7kd-0 eMJPUV"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -6573,9 +6559,9 @@ exports[`Pagination should display next page of results when "next" is
               class="StyledIcon-ofa7kd-0 eMJPUV"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6940,12 +6926,11 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7063,9 +7048,9 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7430,12 +7415,11 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7553,9 +7537,9 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7596,12 +7580,11 @@ exports[`Pagination should display previous page of results when "previous" is
               class="StyledIcon-ofa7kd-0 eMJPUV"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7719,9 +7702,9 @@ exports[`Pagination should display previous page of results when "previous" is
               class="StyledIcon-ofa7kd-0 eMJPUV"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8199,12 +8182,11 @@ exports[`Pagination should display the correct last page based on items length
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -8322,9 +8304,9 @@ exports[`Pagination should display the correct last page based on items length
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8688,12 +8670,11 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -8865,9 +8846,9 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -9231,12 +9212,11 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9366,9 +9346,9 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -9732,12 +9712,11 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9881,9 +9860,9 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -10360,12 +10339,11 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -10455,9 +10433,9 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -10933,12 +10911,11 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -11058,9 +11035,9 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
