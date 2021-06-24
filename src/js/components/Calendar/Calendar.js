@@ -645,7 +645,7 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else if (
-        /* Do not show adjacent days in 6th row if all days 
+        /* Do not show adjacent days in 6th row if all days
         fall in the next month */
         showAdjacentDays === 'trim' &&
         otherMonth &&
@@ -769,7 +769,11 @@ const Calendar = forwardRef(
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
-            onEnter={() => selectDate(active.toISOString())}
+            onEnter={() =>
+              active !== undefined
+                ? selectDate(active.toISOString())
+                : undefined
+            }
             onUp={event => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
