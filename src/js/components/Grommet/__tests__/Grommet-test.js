@@ -132,7 +132,7 @@ describe('Grommet', () => {
   });
 
   test('messages', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet messages={{
           messages: {
             test: {
@@ -146,20 +146,24 @@ describe('Grommet', () => {
         </MessageContext.Consumer>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('message format function', () => {
     const messages = {
       "test.label": "My Label",
     };
-    const component = renderer.create(
+    const { container } = render(
+      <Grommet full background="#0000ff">
+        Grommet App
+      </Grommet>,
+    
       <Grommet messages={{ format: opts => messages[opts.id] }}>
         <MessageContext.Consumer>
           {({format}) => format({id: 'test.label'})}
         </MessageContext.Consumer>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
