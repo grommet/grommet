@@ -4786,9 +4786,9 @@ exports[`DataTable groupBy 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -4853,9 +4853,9 @@ exports[`DataTable groupBy 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -4909,9 +4909,9 @@ exports[`DataTable groupBy 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -4980,9 +4980,9 @@ exports[`DataTable groupBy 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -5047,9 +5047,9 @@ exports[`DataTable groupBy 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -5103,9 +5103,9 @@ exports[`DataTable groupBy 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -5502,9 +5502,9 @@ exports[`DataTable groupBy expand 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -5569,12 +5569,11 @@ exports[`DataTable groupBy expand 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -5722,9 +5721,9 @@ exports[`DataTable groupBy expand 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6081,9 +6080,9 @@ exports[`DataTable groupBy property 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6148,9 +6147,9 @@ exports[`DataTable groupBy property 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6204,9 +6203,9 @@ exports[`DataTable groupBy property 1`] = `
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6275,9 +6274,9 @@ exports[`DataTable groupBy property 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6342,9 +6341,9 @@ exports[`DataTable groupBy property 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6398,9 +6397,9 @@ exports[`DataTable groupBy property 2`] = `
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -6934,9 +6933,9 @@ exports[`DataTable groupBy toggle 2`] = `
                   class="c4"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -7215,9 +7214,9 @@ exports[`DataTable groupBy toggle 2`] = `
                   class="c5"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -7271,9 +7270,9 @@ exports[`DataTable groupBy toggle 2`] = `
                   class="c5"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -8074,9 +8073,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -8178,12 +8177,11 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -8431,9 +8429,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -8944,9 +8942,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -9048,9 +9046,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -9140,9 +9138,9 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -9684,9 +9682,9 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -9788,9 +9786,9 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -9880,9 +9878,9 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10384,9 +10382,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10477,9 +10475,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10558,9 +10556,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                   class="c7"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10654,9 +10652,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10786,9 +10784,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -10906,9 +10904,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -11041,9 +11039,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -11134,9 +11132,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -11215,9 +11213,9 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -11723,12 +11721,11 @@ exports[`DataTable onSort 2`] = `
                   class="c0"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -12132,12 +12129,11 @@ exports[`DataTable onSort external 1`] = `
                   class="c9"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -12352,9 +12348,9 @@ exports[`DataTable onSort external 2`] = `
                   class="c0"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17026,9 +17022,9 @@ exports[`DataTable rowDetails 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17088,12 +17084,11 @@ exports[`DataTable rowDetails 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -17165,9 +17160,9 @@ exports[`DataTable rowDetails 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17227,9 +17222,9 @@ exports[`DataTable rowDetails 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17631,9 +17626,9 @@ exports[`DataTable rowDetails condtional 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17693,12 +17688,11 @@ exports[`DataTable rowDetails condtional 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -17773,9 +17767,9 @@ exports[`DataTable rowDetails condtional 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -17835,9 +17829,9 @@ exports[`DataTable rowDetails condtional 1`] = `
                   class="c12"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -18434,7 +18428,7 @@ exports[`DataTable search 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M13.8,13.8 L18,18 L13.8,13.8 Z M10.5,15 C12.9852814,15 15,12.9852814 15,10.5 C15,8.01471863 12.9852814,6 10.5,6 C8.01471863,6 6,8.01471863 6,10.5 C6,12.9852814 8.01471863,15 10.5,15 Z"
+                  d="M13.8 13.8 18 18l-4.2-4.2zM10.5 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -21594,12 +21588,11 @@ exports[`DataTable should apply pagination styling 1`] = `
                 class="c19"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -21649,9 +21642,9 @@ exports[`DataTable should apply pagination styling 1`] = `
                 class="c23"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -24318,12 +24311,11 @@ exports[`DataTable should paginate 1`] = `
                 class="c19"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -24373,9 +24365,9 @@ exports[`DataTable should paginate 1`] = `
                 class="c23"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -25490,12 +25482,11 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
                 class="c19"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -25615,9 +25606,9 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
                 class="c23"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -27848,12 +27839,11 @@ exports[`DataTable should render new data when page changes 1`] = `
                 class="c19"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -27903,9 +27893,9 @@ exports[`DataTable should render new data when page changes 1`] = `
                 class="c23"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -29395,12 +29385,11 @@ exports[`DataTable should render new data when page changes 2`] = `
                 class="StyledIcon-ofa7kd-0 jehgOx"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -29452,9 +29441,9 @@ exports[`DataTable should render new data when page changes 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -31685,12 +31674,11 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
                 class="c19"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -31740,9 +31728,9 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
                 class="c23"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -33787,12 +33775,11 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -33844,9 +33831,9 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
                 class="c22"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -34131,12 +34118,11 @@ exports[`DataTable sort 1`] = `
                   class="c9"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -34540,12 +34526,11 @@ exports[`DataTable sort external 1`] = `
                   class="c9"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>
@@ -34972,9 +34957,9 @@ exports[`DataTable sort nested object 1`] = `
                   class="c9"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -35380,9 +35365,9 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c9"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 9-6 6-6-6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -35939,12 +35924,11 @@ exports[`DataTable sortable 2`] = `
                   class="c0"
                   viewBox="0 0 24 24"
                 >
-                  <polyline
+                  <path
+                    d="m18 15-6-6-6 6"
                     fill="none"
-                    points="18 9 12 15 6 9"
                     stroke="#000"
                     stroke-width="2"
-                    transform="matrix(1 0 0 -1 0 24)"
                   />
                 </svg>
               </div>

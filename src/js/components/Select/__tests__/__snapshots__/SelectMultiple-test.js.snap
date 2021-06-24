@@ -254,9 +254,9 @@ exports[`Select Controlled deselect an option 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -519,9 +519,9 @@ exports[`Select Controlled multiple 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -798,9 +798,9 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -1417,9 +1417,9 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -1971,9 +1971,9 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2525,9 +2525,9 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -3132,9 +3132,9 @@ exports[`Select Controlled multiple values 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3181,9 +3181,9 @@ exports[`Select Controlled multiple values 2`] = `
         class="StyledIcon-ofa7kd-0 jLSzwp"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3731,9 +3731,9 @@ exports[`Select Controlled multiple with empty results 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4272,9 +4272,9 @@ exports[`Select Controlled select another option 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4549,9 +4549,9 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />

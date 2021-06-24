@@ -120,7 +120,7 @@ exports[`DateInput basic 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+        d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -269,7 +269,7 @@ exports[`DateInput buttonProps should pass props to Button
       viewBox="0 0 24 24"
     >
       <path
-        d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+        d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -807,7 +807,7 @@ exports[`DateInput controlled format inline 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -854,12 +854,11 @@ exports[`DateInput controlled format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -873,9 +872,9 @@ exports[`DateInput controlled format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -1619,7 +1618,7 @@ exports[`DateInput controlled format inline 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1666,12 +1665,11 @@ exports[`DateInput controlled format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -1685,9 +1683,9 @@ exports[`DateInput controlled format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -2782,12 +2780,11 @@ exports[`DateInput dates initialized with empty array 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2801,9 +2798,9 @@ exports[`DateInput dates initialized with empty array 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3557,12 +3554,11 @@ exports[`DateInput dates initialized with empty array 2`] = `
               class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3576,9 +3572,9 @@ exports[`DateInput dates initialized with empty array 2`] = `
               class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4415,7 +4411,7 @@ exports[`DateInput disabled 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+        d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4572,7 +4568,7 @@ exports[`DateInput dropProps should pass props to Drop
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -4751,7 +4747,7 @@ exports[`DateInput focus 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -5206,12 +5202,11 @@ exports[`DateInput focus 2`] = `
               class="c9"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5225,9 +5220,9 @@ exports[`DateInput focus 2`] = `
               class="c9"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6093,7 +6088,7 @@ exports[`DateInput format 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -6260,7 +6255,7 @@ exports[`DateInput format disabled 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -6739,7 +6734,7 @@ exports[`DateInput format inline 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -6786,12 +6781,11 @@ exports[`DateInput format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -6805,9 +6799,9 @@ exports[`DateInput format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -7916,12 +7910,11 @@ exports[`DateInput inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7935,9 +7928,9 @@ exports[`DateInput inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8775,7 +8768,7 @@ exports[`DateInput range 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+        d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -8931,7 +8924,7 @@ exports[`DateInput range format 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -9427,7 +9420,7 @@ exports[`DateInput range format inline 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -9474,12 +9467,11 @@ exports[`DateInput range format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -9493,9 +9485,9 @@ exports[`DateInput range format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -10622,12 +10614,11 @@ exports[`DateInput range inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -10641,9 +10632,9 @@ exports[`DateInput range inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -11507,7 +11498,7 @@ exports[`DateInput select format 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -11542,7 +11533,7 @@ exports[`DateInput select format 2`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+          d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -11997,12 +11988,11 @@ exports[`DateInput select format 3`] = `
               class="c9"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -12016,9 +12006,9 @@ exports[`DateInput select format 3`] = `
               class="c9"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -13197,7 +13187,7 @@ exports[`DateInput select format inline 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -13244,12 +13234,11 @@ exports[`DateInput select format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -13263,9 +13252,9 @@ exports[`DateInput select format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -14003,7 +13992,7 @@ exports[`DateInput select format inline 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -14050,12 +14039,11 @@ exports[`DateInput select format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -14069,9 +14057,9 @@ exports[`DateInput select format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -15267,7 +15255,7 @@ exports[`DateInput select format inline range 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -15314,12 +15302,11 @@ exports[`DateInput select format inline range 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -15333,9 +15320,9 @@ exports[`DateInput select format inline range 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -16073,7 +16060,7 @@ exports[`DateInput select format inline range 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -16120,12 +16107,11 @@ exports[`DateInput select format inline range 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -16139,9 +16125,9 @@ exports[`DateInput select format inline range 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -17250,12 +17236,11 @@ exports[`DateInput select inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -17269,9 +17254,9 @@ exports[`DateInput select inline 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -18448,7 +18433,7 @@ exports[`DateInput type format inline 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -18495,12 +18480,11 @@ exports[`DateInput type format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -18514,9 +18498,9 @@ exports[`DateInput type format inline 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -19254,7 +19238,7 @@ exports[`DateInput type format inline 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -19301,12 +19285,11 @@ exports[`DateInput type format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -19320,9 +19303,9 @@ exports[`DateInput type format inline 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -20500,7 +20483,7 @@ exports[`DateInput type format inline partial 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -20547,12 +20530,11 @@ exports[`DateInput type format inline partial 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -20566,9 +20548,9 @@ exports[`DateInput type format inline partial 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -21306,7 +21288,7 @@ exports[`DateInput type format inline partial 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -21353,12 +21335,11 @@ exports[`DateInput type format inline partial 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -21372,9 +21353,9 @@ exports[`DateInput type format inline partial 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -33209,7 +33190,7 @@ exports[`DateInput type format inline range 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -33256,12 +33237,11 @@ exports[`DateInput type format inline range 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -33275,9 +33255,9 @@ exports[`DateInput type format inline range 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -34015,7 +33995,7 @@ exports[`DateInput type format inline range 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -34062,12 +34042,11 @@ exports[`DateInput type format inline range 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -34081,9 +34060,9 @@ exports[`DateInput type format inline range 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -35279,7 +35258,7 @@ exports[`DateInput type format inline range partial 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -35326,12 +35305,11 @@ exports[`DateInput type format inline range partial 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -35345,9 +35323,9 @@ exports[`DateInput type format inline range partial 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -36085,7 +36063,7 @@ exports[`DateInput type format inline range partial 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -36132,12 +36110,11 @@ exports[`DateInput type format inline range partial 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -36151,9 +36128,9 @@ exports[`DateInput type format inline range partial 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -36891,7 +36868,7 @@ exports[`DateInput type format inline range partial 3`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -36938,12 +36915,11 @@ exports[`DateInput type format inline range partial 3`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -36957,9 +36933,9 @@ exports[`DateInput type format inline range partial 3`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -37697,7 +37673,7 @@ exports[`DateInput type format inline range partial 4`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -37744,12 +37720,11 @@ exports[`DateInput type format inline range partial 4`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -37763,9 +37738,9 @@ exports[`DateInput type format inline range partial 4`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -49582,7 +49557,7 @@ exports[`DateInput type format inline short 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -49629,12 +49604,11 @@ exports[`DateInput type format inline short 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -49648,9 +49622,9 @@ exports[`DateInput type format inline short 1`] = `
                 class="c4"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -50388,7 +50362,7 @@ exports[`DateInput type format inline short 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+            d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -50435,12 +50409,11 @@ exports[`DateInput type format inline short 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -50454,9 +50427,9 @@ exports[`DateInput type format inline short 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />

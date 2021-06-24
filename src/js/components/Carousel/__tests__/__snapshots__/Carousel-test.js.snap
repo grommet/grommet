@@ -442,12 +442,11 @@ exports[`Carousel basic 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -467,7 +466,7 @@ exports[`Carousel basic 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -484,7 +483,7 @@ exports[`Carousel basic 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -502,9 +501,9 @@ exports[`Carousel basic 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -957,12 +956,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -982,7 +980,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -999,7 +997,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1018,9 +1016,9 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1475,12 +1473,11 @@ exports[`Carousel navigate 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -1500,7 +1497,7 @@ exports[`Carousel navigate 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1517,7 +1514,7 @@ exports[`Carousel navigate 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1535,9 +1532,9 @@ exports[`Carousel navigate 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1607,12 +1604,11 @@ exports[`Carousel navigate 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -1632,7 +1628,7 @@ exports[`Carousel navigate 2`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1649,7 +1645,7 @@ exports[`Carousel navigate 2`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1668,9 +1664,9 @@ exports[`Carousel navigate 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1741,12 +1737,11 @@ exports[`Carousel navigate 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -1766,7 +1761,7 @@ exports[`Carousel navigate 3`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1783,7 +1778,7 @@ exports[`Carousel navigate 3`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1801,9 +1796,9 @@ exports[`Carousel navigate 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -2257,12 +2252,11 @@ exports[`Carousel play 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -2282,7 +2276,7 @@ exports[`Carousel play 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2299,7 +2293,7 @@ exports[`Carousel play 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2317,9 +2311,9 @@ exports[`Carousel play 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -2388,12 +2382,11 @@ exports[`Carousel play 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -2413,7 +2406,7 @@ exports[`Carousel play 2`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2430,7 +2423,7 @@ exports[`Carousel play 2`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2449,9 +2442,9 @@ exports[`Carousel play 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -2846,7 +2839,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2863,7 +2856,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"

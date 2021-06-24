@@ -3020,12 +3020,11 @@ exports[`List events should apply pagination styling 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -3075,9 +3074,9 @@ exports[`List events should apply pagination styling 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -4110,12 +4109,11 @@ exports[`List events should paginate 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -4165,9 +4163,9 @@ exports[`List events should paginate 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -4869,12 +4867,11 @@ exports[`List events should render correct num items per page (step) 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -4994,9 +4991,9 @@ exports[`List events should render correct num items per page (step) 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -5878,12 +5875,11 @@ exports[`List events should render new data when page changes 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -5933,9 +5929,9 @@ exports[`List events should render new data when page changes 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -9544,12 +9540,11 @@ exports[`List events should render new data when page changes 2`] = `
                 class="StyledIcon-ofa7kd-0 jehgOx"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -9601,9 +9596,9 @@ exports[`List events should render new data when page changes 2`] = `
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -10485,12 +10480,11 @@ exports[`List events should show correct item index when "show" is a number 1`] 
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -10540,9 +10534,9 @@ exports[`List events should show correct item index when "show" is a number 1`] 
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -11372,12 +11366,11 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
                 class="c13"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -11429,9 +11422,9 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
                 class="c17"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -12351,12 +12344,11 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12372,9 +12364,9 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12421,12 +12413,11 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12443,9 +12434,9 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12507,12 +12498,11 @@ exports[`List onOrder Keyboard move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12528,9 +12518,9 @@ exports[`List onOrder Keyboard move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12577,12 +12567,11 @@ exports[`List onOrder Keyboard move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12599,9 +12588,9 @@ exports[`List onOrder Keyboard move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12663,12 +12652,11 @@ exports[`List onOrder Keyboard move down 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12684,9 +12672,9 @@ exports[`List onOrder Keyboard move down 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12733,12 +12721,11 @@ exports[`List onOrder Keyboard move down 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12755,9 +12742,9 @@ exports[`List onOrder Keyboard move down 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13127,12 +13114,11 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13148,9 +13134,9 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13197,12 +13183,11 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13219,9 +13204,9 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13283,12 +13268,11 @@ exports[`List onOrder Keyboard move up 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13304,9 +13288,9 @@ exports[`List onOrder Keyboard move up 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13353,12 +13337,11 @@ exports[`List onOrder Keyboard move up 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13375,9 +13358,9 @@ exports[`List onOrder Keyboard move up 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13439,12 +13422,11 @@ exports[`List onOrder Keyboard move up 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13460,9 +13442,9 @@ exports[`List onOrder Keyboard move up 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13509,12 +13491,11 @@ exports[`List onOrder Keyboard move up 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13531,9 +13512,9 @@ exports[`List onOrder Keyboard move up 3`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13903,12 +13884,11 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13924,9 +13904,9 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13973,12 +13953,11 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13995,9 +13974,9 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -14058,12 +14037,11 @@ exports[`List onOrder Mouse move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -14079,9 +14057,9 @@ exports[`List onOrder Mouse move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -14128,12 +14106,11 @@ exports[`List onOrder Mouse move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -14150,9 +14127,9 @@ exports[`List onOrder Mouse move down 2`] = `
             class="StyledIcon-ofa7kd-0 hVBrNB"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />

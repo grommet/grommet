@@ -872,7 +872,7 @@ exports[`Button kind badge should render custom element 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1070,7 +1070,7 @@ exports[`Button kind badge should render relative to contents when button has no
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1315,7 +1315,7 @@ exports[`Button kind button icon colors 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -1452,7 +1452,7 @@ exports[`Button kind button with icon and align 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -2674,7 +2674,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12,22 L12,2 M2,12 L22,12"
+          d="M12 22V2M2 12h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -2706,7 +2706,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12,22 L12,2 M2,12 L22,12"
+          d="M12 22V2M2 12h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
