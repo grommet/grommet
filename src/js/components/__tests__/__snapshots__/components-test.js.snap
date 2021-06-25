@@ -8446,7 +8446,8 @@ element",
         "description": "How to align the text inside the component.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
       Object {
