@@ -5296,7 +5296,8 @@ string",
         "description": "How to align the text inside the heading.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
       Object {
