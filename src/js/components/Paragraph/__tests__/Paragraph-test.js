@@ -52,6 +52,7 @@ test('Paragraph textAlign renders', () => {
       <Paragraph textAlign="start" />
       <Paragraph textAlign="center" />
       <Paragraph textAlign="end" />
+      <Paragraph textAlign="justify" />
     </Grommet>,
   );
   const tree = component.toJSON();

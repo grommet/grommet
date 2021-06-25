@@ -6986,7 +6986,8 @@ string",
         "description": "How to align the text inside the paragraph.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
     ],

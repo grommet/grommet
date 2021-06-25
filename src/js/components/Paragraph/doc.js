@@ -31,7 +31,7 @@ export const doc = Paragraph => {
     ])
       .description('The size of the Paragraph text.')
       .defaultValue('medium'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the paragraph.')
       .defaultValue('start'),
   };
