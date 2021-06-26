@@ -80,6 +80,24 @@ The current value.
 number
 string
 ```
+
+**inputDirection**
+
+The input direction informed that will define
+      the input number direction relative to range input.
+
+```
+string
+```
+
+**inputValue**
+
+The input number type to inform range input value.
+      The default value is false.
+
+```
+boolean
+```
   
 ## Intrinsic element
 
