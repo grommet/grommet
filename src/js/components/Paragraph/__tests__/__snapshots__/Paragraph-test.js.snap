@@ -54,25 +54,25 @@ exports[`Paragraph margin renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <p
-    className="c1"
+    class="c1"
   />
   <p
-    className="c2"
+    class="c2"
   />
   <p
-    className="c3"
+    class="c3"
   />
   <p
-    className="c4"
+    class="c4"
   />
   <p
-    className="c5"
+    class="c5"
   />
   <p
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -95,10 +95,10 @@ exports[`Paragraph renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <p
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -151,33 +151,28 @@ exports[`Paragraph size renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <p
-    className="c1"
-    size="small"
+    class="c1"
   />
   <p
-    className="c2"
-    size="medium"
+    class="c2"
   />
   <p
-    className="c3"
-    size="large"
+    class="c3"
   />
   <p
-    className="c4"
-    size="xlarge"
+    class="c4"
   />
   <p
-    className="c5"
-    size="xxlarge"
+    class="c5"
   />
   <p
-    className="c6"
+    class="c6"
   />
   <p
-    className="c2"
+    class="c2"
   />
 </div>
 `;
@@ -215,16 +210,16 @@ exports[`Paragraph textAlign renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <p
-    className="c1"
+    class="c1"
   />
   <p
-    className="c2"
+    class="c2"
   />
   <p
-    className="c3"
+    class="c3"
   />
 </div>
 `;
