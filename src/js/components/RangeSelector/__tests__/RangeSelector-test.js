@@ -1,8 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -18,99 +17,101 @@ describe('RangeSelector', () => {
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
+
     const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector color="accent-1" values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('direction', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector direction="horizontal" values={[20, 30]} />
         <RangeSelector direction="vertical" values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('invert', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('max', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector max={50} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('min', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector min={10} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('opacity', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {['weak', 'medium', 'strong'].map(opacity => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           'xxsmall',
@@ -125,8 +126,8 @@ describe('RangeSelector', () => {
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('step renders correct values', () => {
