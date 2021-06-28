@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
+import { Grommet, Box, Diagram, Stack, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Node = ({ id, ...rest }) => (
@@ -39,7 +39,7 @@ export const Progressing = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       dispatch();
-    }, 2000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [dispatch]);
 
@@ -51,14 +51,22 @@ export const Progressing = () => {
 
   if (topRow.length >= 3) {
     connections.push(
-      connection('3', '5', { anchor: 'horizontal', color: 'brand' }),
+      connection('3', '5', {
+        anchor: 'horizontal',
+        animation: { type: 'pulse', duration: 500, size: 'small' },
+        color: 'brand',
+      }),
     );
   }
 
   return (
     <Grommet theme={grommet}>
       <Box align="start" pad="large">
-        <Text> Adding and removing nodes</Text>
+        <Paragraph>
+          Adding and removing nodes with animated connections. The animation
+          &apos;draw&apos; is applied to the entire diagram, however, the last
+          connection receives its own animation type of &apos;pulse&apos;.
+        </Paragraph>
         <Stack>
           <Box>
             <Box direction="row">
@@ -72,11 +80,18 @@ export const Progressing = () => {
               ))}
             </Box>
           </Box>
-          <Diagram connections={connections} />
+          <Diagram
+            animation={{ type: 'draw', duration: 3000 }}
+            connections={connections}
+          />
         </Stack>
       </Box>
     </Grommet>
   );
+};
+
+Progressing.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {

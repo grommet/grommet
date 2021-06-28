@@ -3421,10 +3421,35 @@ string",
     "name": "Diagram",
     "properties": Array [
       Object {
+        "description": "Animation to be used by entire Diagram",
+        "format": "boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "animation",
+      },
+      Object {
         "defaultValue": Array [],
         "description": "Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.",
         "format": "[{
@@ -3432,6 +3457,27 @@ string",
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
