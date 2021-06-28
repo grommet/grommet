@@ -27,10 +27,10 @@ exports[`Heading accepts ref 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -63,10 +63,10 @@ exports[`Heading color renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -98,10 +98,10 @@ exports[`Heading fill renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -178,31 +178,31 @@ exports[`Heading level renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h2
-    className="c2"
+    class="c2"
   />
   <h3
-    className="c3"
+    class="c3"
   />
   <h4
-    className="c4"
+    class="c4"
   />
   <h1
-    className="c1"
+    class="c1"
   />
   <h2
-    className="c2"
+    class="c2"
   />
   <h3
-    className="c3"
+    class="c3"
   />
   <h4
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -395,31 +395,31 @@ exports[`Heading margin renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h1
-    className="c2"
+    class="c2"
   />
   <h1
-    className="c3"
+    class="c3"
   />
   <h1
-    className="c4"
+    class="c4"
   />
   <h1
-    className="c5"
+    class="c5"
   />
   <h1
-    className="c6"
+    class="c6"
   />
   <h1
-    className="c7"
+    class="c7"
   />
   <h1
-    className="c8"
+    class="c8"
   />
 </div>
 `;
@@ -451,10 +451,10 @@ exports[`Heading renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -643,75 +643,58 @@ exports[`Heading size renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
-    size="small"
+    class="c1"
   />
   <h1
-    className="c2"
-    size="medium"
+    class="c2"
   />
   <h1
-    className="c3"
-    size="large"
+    class="c3"
   />
   <h1
-    className="c4"
-    size="xlarge"
+    class="c4"
   />
   <h2
-    className="c5"
-    size="small"
+    class="c5"
   />
   <h2
-    className="c1"
-    size="medium"
+    class="c1"
   />
   <h2
-    className="c2"
-    size="large"
+    class="c2"
   />
   <h2
-    className="c6"
-    size="xlarge"
+    class="c6"
   />
   <h3
-    className="c7"
-    size="small"
+    class="c7"
   />
   <h3
-    className="c8"
-    size="medium"
+    class="c8"
   />
   <h3
-    className="c9"
-    size="large"
+    class="c9"
   />
   <h3
-    className="c10"
-    size="xlarge"
+    class="c10"
   />
   <h4
-    className="c11"
-    size="small"
+    class="c11"
   />
   <h4
-    className="c11"
-    size="medium"
+    class="c11"
   />
   <h4
-    className="c11"
-    size="large"
+    class="c11"
   />
   <h4
-    className="c11"
-    size="xlarge"
+    class="c11"
   />
   <h1
-    className="c12"
-    size="77px"
+    class="c12"
   />
 </div>
 `;
@@ -776,16 +759,16 @@ exports[`Heading textAlign renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h1
-    className="c2"
+    class="c2"
   />
   <h1
-    className="c3"
+    class="c3"
   />
 </div>
 `;
@@ -835,15 +818,15 @@ exports[`Heading truncate renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </h1>
   <h1
-    className="c2"
+    class="c2"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </h1>
@@ -926,19 +909,19 @@ exports[`Theme based font family renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h2
-    className="c2"
+    class="c2"
   />
   <h3
-    className="c3"
+    class="c3"
   />
   <h4
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -1015,19 +998,19 @@ exports[`Theme based font weight renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h2
-    className="c2"
+    class="c2"
   />
   <h3
-    className="c3"
+    class="c3"
   />
   <h4
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -1108,19 +1091,19 @@ exports[`Theme color renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h2
-    className="c2"
+    class="c2"
   />
   <h3
-    className="c3"
+    class="c3"
   />
   <h4
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -1159,13 +1142,13 @@ exports[`responsive renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <h1
-    className="c1"
+    class="c1"
   />
   <h1
-    className="c2"
+    class="c2"
   />
 </div>
 `;
