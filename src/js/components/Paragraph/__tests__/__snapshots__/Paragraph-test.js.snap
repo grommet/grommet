@@ -209,6 +209,13 @@ exports[`Paragraph textAlign renders 1`] = `
   text-align: right;
 }
 
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  text-align: justify;
+}
+
 <div
   class="c0"
 >
@@ -220,6 +227,9 @@ exports[`Paragraph textAlign renders 1`] = `
   />
   <p
     class="c3"
+  />
+  <p
+    class="c4"
   />
 </div>
 `;

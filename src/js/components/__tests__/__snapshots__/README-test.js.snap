@@ -11216,6 +11216,7 @@ How to align the text inside the heading. Defaults to \`start\`.
 start
 center
 end
+justify
 \`\`\`
 
 **truncate**
@@ -14431,6 +14432,7 @@ How to align the text inside the paragraph. Defaults to \`start\`.
 start
 center
 end
+justify
 \`\`\`
   
 ## Intrinsic element
@@ -17884,6 +17886,7 @@ How to align the text inside the component. Defaults to \`start\`.
 start
 center
 end
+justify
 \`\`\`
 
 **tip**

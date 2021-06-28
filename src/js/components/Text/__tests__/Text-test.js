@@ -70,6 +70,7 @@ test('renders textAlign', () => {
       <Text textAlign="start" />
       <Text textAlign="center" />
       <Text textAlign="end" />
+      <Text textAlign="justify" />
     </Grommet>,
   );
   const tree = component.toJSON();

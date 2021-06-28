@@ -77,6 +77,7 @@ test('Heading textAlign renders', () => {
       <Heading textAlign="start" />
       <Heading textAlign="center" />
       <Heading textAlign="end" />
+      <Heading textAlign="justify" />
     </Grommet>,
   );
 

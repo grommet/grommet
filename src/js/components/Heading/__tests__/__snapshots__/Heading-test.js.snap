@@ -734,6 +734,14 @@ exports[`Heading textAlign renders 1`] = `
   text-align: right;
 }
 
+.c4 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  text-align: justify;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     font-size: 34px;
@@ -758,6 +766,14 @@ exports[`Heading textAlign renders 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -769,6 +785,9 @@ exports[`Heading textAlign renders 1`] = `
   />
   <h1
     class="c3"
+  />
+  <h1
+    class="c4"
   />
 </div>
 `;
