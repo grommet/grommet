@@ -343,6 +343,12 @@ exports[`renders textAlign 1`] = `
   text-align: right;
 }
 
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+}
+
 <div
   className="c0"
 >
@@ -354,6 +360,9 @@ exports[`renders textAlign 1`] = `
   />
   <span
     className="c3"
+  />
+  <span
+    className="c4"
   />
 </div>
 `;

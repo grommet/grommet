@@ -95,7 +95,7 @@ export const doc = Text => {
     ])
       .description(`The DOM tag or react component to use for the element.`)
       .defaultValue('span'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the component.')
       .defaultValue('start'),
     tip: PropTypes.oneOfType([

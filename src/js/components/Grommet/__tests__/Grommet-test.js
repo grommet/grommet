@@ -8,6 +8,7 @@ import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
 import { grommet } from '../../../themes/grommet';
+import { MessageContext } from '../../../contexts/MessageContext';
 
 const TestAnnouncer = ({ announce }) => {
   React.useEffect(() => announce('hello', 'assertive'));
@@ -128,5 +129,41 @@ describe('Grommet', () => {
         expect(container.firstChild).toMatchSnapshot();
       });
     });
+  });
+
+  test('messages', () => {
+    const { container } = render(
+      <Grommet messages={{
+          messages: {
+            test: {
+              label: 'My Label',
+            },
+          },
+        }}
+      >
+        <MessageContext.Consumer>
+          {({format}) => format({id: 'test.label'})}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('message format function', () => {
+    const messages = {
+      "test.label": "My Label",
+    };
+    const { container } = render(
+      <Grommet full background="#0000ff">
+        Grommet App
+      </Grommet>,
+    
+      <Grommet messages={{ format: opts => messages[opts.id] }}>
+        <MessageContext.Consumer>
+          {({format}) => format({id: 'test.label'})}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

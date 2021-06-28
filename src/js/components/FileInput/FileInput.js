@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
 
@@ -73,6 +74,7 @@ const FileInput = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
+    const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
@@ -149,10 +151,12 @@ const FileInput = forwardRef(
 
     let message;
     if (!files.length) {
-      if (multiple) message = messages.dropPromptMultiple || 'Drag and drop';
-      if (!multiple) {
-        message = messages.dropPrompt || 'Drag and drop';
-      }
+      message = format({
+        id: multiple ?
+          'fileInput.dropPromptMultiple' :
+          'fileInput.dropPrompt',
+        messages,
+      });
     } else message = `${files.length} items`;
 
     return (
@@ -196,7 +200,10 @@ const FileInput = forwardRef(
                     <Button
                       ref={controlRef}
                       kind={theme.fileInput.button}
-                      label={messages.browse || 'browse'}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
                       onClick={() => {
                         inputRef.current.click();
                         inputRef.current.focus();
@@ -212,7 +219,10 @@ const FileInput = forwardRef(
                         inputRef.current.click();
                         inputRef.current.focus();
                       }}
-                      label={messages.browse || 'browse'}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
                     />
                   )}
                 </Keyboard>
@@ -223,12 +233,18 @@ const FileInput = forwardRef(
         {files.length > aggregateThreshold && (
           <Box justify="between" direction="row" align="center">
             <Label {...theme.fileInput.label}>
-              {files.length} {messages.files || 'files'}
+              {files.length} {format({
+                id: 'fileInput.files',
+                messages,
+              })}
             </Label>
             <Box flex={false} direction="row" align="center">
               <Button
                 ref={removeRef}
-                a11yTitle={messages.removeAll || 'remove all'}
+                a11yTitle={format({
+                  id: 'fileInput.removeAll',
+                  messages,
+                })}
                 icon={<RemoveIcon />}
                 hoverIndicator
                 onClick={event => {
@@ -252,7 +268,10 @@ const FileInput = forwardRef(
                   <Button
                     ref={controlRef}
                     kind={theme.fileInput.button}
-                    label={messages.browse || 'browse'}
+                    label={format({
+                      id: 'fileInput.browse',
+                      messages,
+                    })}
                     onClick={() => {
                       inputRef.current.click();
                       inputRef.current.focus();
@@ -268,7 +287,10 @@ const FileInput = forwardRef(
                       inputRef.current.click();
                       inputRef.current.focus();
                     }}
-                    label={messages.browse || 'browse'}
+                    label={format({
+                      id: 'fileInput.browse',
+                      messages,
+                    })}
                   />
                 )}
               </Keyboard>
@@ -300,7 +322,10 @@ const FileInput = forwardRef(
               <Box flex={false} direction="row" align="center">
                 <Button
                   ref={index ? undefined : removeRef}
-                  a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
+                  a11yTitle={`${format({
+                    id: 'fileInput.remove',
+                    messages,
+                  })} ${file.name}`}
                   icon={<RemoveIcon />}
                   hoverIndicator
                   onClick={event => {
@@ -328,7 +353,10 @@ const FileInput = forwardRef(
                       <Button
                         ref={controlRef}
                         kind={theme.fileInput.button}
-                        label={messages.browse || 'browse'}
+                        label={format({
+                          id: 'fileInput.browse',
+                          messages,
+                        })}
                         onClick={() => {
                           inputRef.current.click();
                           inputRef.current.focus();
@@ -343,7 +371,10 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        label={messages.browse || 'browse'}
+                        label={format({
+                          id: 'fileInput.browse',
+                          messages,
+                        })}
                       />
                     )}
                   </Keyboard>
@@ -388,14 +419,6 @@ const FileInput = forwardRef(
 );
 
 FileInput.defaultProps = {
-  messages: {
-    browse: 'browse',
-    dropPrompt: 'Drop file here or',
-    dropPromptMultiple: 'Drop files here or',
-    files: 'files',
-    remove: 'remove',
-    removeAll: 'remove all',
-  },
 };
 
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
