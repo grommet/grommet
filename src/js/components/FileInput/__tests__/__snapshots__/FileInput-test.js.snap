@@ -1239,7 +1239,7 @@ exports[`FileInput messages 1`] = `
       <span
         class="c4 "
       >
-        Drag and drop
+        Drop file here or
       </span>
       <a
         class="c5"

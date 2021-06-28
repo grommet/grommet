@@ -1,26 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
+import { Box, Diagram, Grommet, Stack, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { Diamond } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
 
 import { data } from './data';
-
-const customTheme = deepMerge(grommet, {
-  diagram: {
-    extend: `@keyframes
-  example {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  path {
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    animation: example 3s linear forwards;
-  }`,
-  },
-});
 
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
@@ -86,7 +70,7 @@ export const Animated = () => {
   }
 
   return (
-    <Grommet theme={customTheme}>
+    <Grommet theme={grommet}>
       <Box align="center">
         <Box pad="large">
           <Stack>
@@ -106,7 +90,10 @@ export const Animated = () => {
                 ))}
               </Box>
             </Box>
-            <Diagram connections={connections} />
+            <Diagram
+              animation={{ type: 'draw', duration: 3000 }}
+              connections={connections}
+            />
           </Stack>
         </Box>
       </Box>
