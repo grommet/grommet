@@ -1,14 +1,14 @@
 import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
-import { axe } from 'jest-axe';
 import { Add, Next } from 'grommet-icons';
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
