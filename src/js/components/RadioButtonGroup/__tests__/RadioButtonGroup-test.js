@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import 'jest-styled-components';
@@ -11,8 +11,6 @@ import { Box } from '../../Box';
 import { RadioButtonGroup } from '..';
 
 describe('RadioButtonGroup', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
