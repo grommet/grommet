@@ -1,17 +1,15 @@
 import React, {
   forwardRef,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
+import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
 
-const defaultMessages = {
-  invalid: 'invalid',
-  required: 'required',
-};
 const defaultValue = {};
 const defaultTouched = {};
 const defaultValidationResults = {
@@ -50,7 +48,7 @@ const Form = forwardRef(
       children,
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
-      messages = defaultMessages,
+      messages,
       onChange,
       onReset,
       onSubmit,
@@ -61,6 +59,8 @@ const Form = forwardRef(
     },
     ref,
   ) => {
+    const { format } = useContext(MessageContext);
+
     const [valueState, setValueState] = useState(valueProp || defaultValue);
     const value = useMemo(() => valueProp || valueState, [
       valueProp,
@@ -326,7 +326,8 @@ const Form = forwardRef(
             result = aValidate(value2, data);
           } else if (aValidate.regexp) {
             if (!aValidate.regexp.test(value2)) {
-              result = aValidate.message || messages.invalid;
+              result = aValidate.message ||
+              format({ id: 'form.invalid', messages });
               if (aValidate.status) {
                 result = { message: result, status: aValidate.status };
               }
@@ -345,7 +346,7 @@ const Form = forwardRef(
               value2 === false ||
               (Array.isArray(value2) && !value2.length))
           ) {
-            result = messages.required;
+            result = format({ id: 'form.required', messages });
           } else if (validateArg) {
             if (Array.isArray(validateArg)) {
               validateArg.some(aValidate => {

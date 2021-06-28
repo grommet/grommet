@@ -24,6 +24,7 @@ import {
   StyledVideoControls,
   StyledVideoScrubber,
 } from './StyledVideo';
+import { MessageContext } from '../../contexts/MessageContext';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -63,6 +64,7 @@ const Video = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const [captions, setCaptions] = useState([]);
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
@@ -272,12 +274,18 @@ const Video = forwardRef(
                 playing ? (
                   <Icons.Pause
                     color={iconColor}
-                    a11yTitle={messages.pauseButton}
+                    a11yTitle={format({
+                      id: 'video.pauseButton',
+                      messages,
+                    })}
                   />
                 ) : (
                   <Icons.Play
                     color={iconColor}
-                    a11yTitle={messages.playButton}
+                    a11yTitle={format({
+                      id: 'video.playButton',
+                      messages,
+                    })}
                   />
                 )
               }
@@ -288,7 +296,10 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label={messages.progressMeter}
+                    aria-label={format({
+                      id: 'video.progressMeter',
+                      messages,
+                    })}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -302,7 +313,10 @@ const Video = forwardRef(
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
-                    aria-label={messages.scrubber}
+                    aria-label={format({
+                      id: 'video.scrubber',
+                      messages,
+                    })}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
@@ -326,15 +340,18 @@ const Video = forwardRef(
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
               messages={{
-                openMenu: messages.openMenu,
-                closeMenu: messages.closeMenu,
+                openMenu: format({id: 'video.openMenu', messages}),
+                closeMenu: format({id: 'video.closeMenu', messages}),
               }}
               items={[
                 {
                   icon: (
                     <Icons.Volume
                       color={iconColor}
-                      a11yTitle={messages.volumeUp}
+                      a11yTitle={format({
+                        id: 'video.volumeUp',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
@@ -344,7 +361,10 @@ const Video = forwardRef(
                   icon: (
                     <Icons.ReduceVolume
                       color={iconColor}
-                      a11yTitle={messages.volumeDown}
+                      a11yTitle={format({
+                        id: 'video.volumeDown',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: volume >= VOLUME_STEP ? quieter : undefined,
@@ -355,7 +375,10 @@ const Video = forwardRef(
                   icon: (
                     <Icons.FullScreen
                       color={iconColor}
-                      a11yTitle={messages.fullScreen}
+                      a11yTitle={format({
+                        id: 'video.fullScreen',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: fullscreen,
@@ -440,17 +463,6 @@ const Video = forwardRef(
 );
 
 Video.defaultProps = {
-  messages: {
-    closeMenu: 'close menu',
-    fullScreen: 'full screen',
-    progressMeter: 'video progress',
-    scrubber: 'scrubber',
-    openMenu: 'open menu',
-    pauseButton: 'pause',
-    playButton: 'play',
-    volumeDown: 'volume down',
-    volumeUp: 'volume up',
-  },
 };
 
 Video.displayName = 'Video';
