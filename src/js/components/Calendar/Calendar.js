@@ -121,10 +121,9 @@ const CalendarDay = ({
   otherMonth,
   buttonProps = {},
 }) => (
-  <StyledDayContainer sizeProp={size} fillContainer={fill}>
+  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
-        tabIndex={0}
         aria-label={buttonProps.a11yTitle}
         disabledProp={buttonProps.disabled}
         inRange={isInRange}
@@ -142,14 +141,14 @@ const CalendarDay = ({
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
     return (
-      <StyledDayContainer sizeProp={size} fillContainer={fill}>
+      <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
         {children}
       </StyledDayContainer>
     );
   }
 
   return (
-    <StyledDayContainer sizeProp={size} fillContainer={fill}>
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
       <CalendarDayButton fill={fill} {...buttonProps}>
         {children}
       </CalendarDayButton>
@@ -604,6 +603,7 @@ const Calendar = forwardRef(
       while (days.length < 7) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={days.length}
             sizeProp={size}
             fillContainer={fill}
@@ -615,7 +615,7 @@ const Calendar = forwardRef(
         );
         day = addDays(day, 1);
       }
-      return <StyledWeek>{days}</StyledWeek>;
+      return <StyledWeek role="row">{days}</StyledWeek>;
     };
 
     const weeks = [];
@@ -627,7 +627,7 @@ const Calendar = forwardRef(
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push(
-            <StyledWeek key={day.getTime()} fillContainer={fill}>
+            <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
               {days}
             </StyledWeek>,
           );
@@ -639,6 +639,7 @@ const Calendar = forwardRef(
       if (!showAdjacentDays && otherMonth) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -658,6 +659,7 @@ const Calendar = forwardRef(
       ) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -751,7 +753,7 @@ const Calendar = forwardRef(
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek key={day.getTime()} fillContainer={fill}>
+      <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
         {days}
       </StyledWeek>,
     );
@@ -786,6 +788,8 @@ const Calendar = forwardRef(
             onRight={() => active && setActive(addDays(active, 1))}
           >
             <StyledWeeksContainer
+              role="grid"
+              aria-label={activeDate}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
