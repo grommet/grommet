@@ -1,3 +1,4 @@
+export * from './animation';
 export * from './mixins';
 export * from './background';
 export * from './border';

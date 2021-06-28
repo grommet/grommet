@@ -121,8 +121,8 @@ exports[`Carousel basic 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  -webkit-animation: hftlBD 0s 0s forwards;
+  animation: hftlBD 0s 0s forwards;
 }
 
 .c7 {
@@ -622,8 +622,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  -webkit-animation: hftlBD 0s 0s forwards;
+  animation: hftlBD 0s 0s forwards;
 }
 
 .c6 {
@@ -1151,8 +1151,8 @@ exports[`Carousel navigate 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  -webkit-animation: hftlBD 0s 0s forwards;
+  animation: hftlBD 0s 0s forwards;
 }
 
 .c7 {
@@ -1931,8 +1931,8 @@ exports[`Carousel play 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  -webkit-animation: hftlBD 0s 0s forwards;
+  animation: hftlBD 0s 0s forwards;
 }
 
 .c7 {
@@ -2577,8 +2577,8 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  -webkit-animation: hftlBD 0s 0s forwards;
+  animation: hftlBD 0s 0s forwards;
 }
 
 .c7 {

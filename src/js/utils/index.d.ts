@@ -227,7 +227,7 @@ export type RoundType =
         | 'bottom-right';
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
     };
-export type TextAlignType = 'start' | 'center' | 'end';
+export type TextAlignType = 'start' | 'center' | 'end' | 'justify';
 export type ThicknessType =
   | 'hair'
   | 'xsmall'

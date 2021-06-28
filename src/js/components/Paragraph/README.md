@@ -173,6 +173,7 @@ How to align the text inside the paragraph. Defaults to `start`.
 start
 center
 end
+justify
 ```
   
 ## Intrinsic element
