@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 
@@ -42,8 +42,6 @@ const defaultButtonTheme = {
 
 describe('Menu', () => {
   beforeEach(createPortal);
-
-  afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
