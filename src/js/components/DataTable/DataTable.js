@@ -25,6 +25,7 @@ import {
   buildGroupState,
   filterAndSortData,
   initializeFilters,
+  normalizeCellProps,
   normalizePrimaryProperty,
 } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
@@ -33,27 +34,6 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
-
-const contexts = ['header', 'body', 'footer'];
-
-const normalizeProp = (prop, context) => {
-  if (prop) {
-    if (prop[context]) {
-      return prop[context];
-    }
-
-    // if prop[context] wasn't defined, but other values
-    // exist on the prop, return undefined so that background
-    // for context will defaultto theme values instead
-    // note: need to include `pinned` since it is not a
-    // defined context
-    if (contexts.some(c => prop[c] || prop.pinned)) {
-      return undefined;
-    }
-    return prop;
-  }
-  return undefined;
-};
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -134,6 +114,12 @@ const DataTable = ({
     adjustedData,
     columns,
   ]);
+
+  // cell styling properties: background, border, pad
+  const cellProps = useMemo(
+    () => normalizeCellProps({ background, border, pad, pin }, theme),
+    [background, border, pad, pin, theme],
+  );
 
   // if groupBy, an array with one item per unique groupBy key value
   const groups = useMemo(() => buildGroups(columns, adjustedData, groupBy), [
@@ -337,8 +323,7 @@ const DataTable = ({
         >
           <Header
             ref={headerRef}
-            background={normalizeProp(background, 'header')}
-            border={normalizeProp(border, 'header')}
+            cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
             fill={fill}
@@ -346,7 +331,6 @@ const DataTable = ({
             filters={filters}
             groups={groups}
             groupState={groupState}
-            pad={normalizeProp(pad, 'header')}
             pin={pin === true || pin === 'header'}
             pinnedOffset={pinnedOffset}
             selected={selected}
@@ -374,13 +358,11 @@ const DataTable = ({
           {groups ? (
             <GroupedBody
               ref={bodyRef}
-              background={normalizeProp(background, 'body')}
-              border={normalizeProp(border, 'body')}
+              cellProps={cellProps.body}
               columns={columns}
               groupBy={groupBy.property ? groupBy.property : groupBy}
               groups={groups}
               groupState={groupState}
-              pad={normalizeProp(pad, 'body')}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
               onSelect={
@@ -392,14 +374,14 @@ const DataTable = ({
                   : undefined
               }
               onToggle={onToggleGroup}
+              rowProps={rowProps}
               selected={selected}
               size={size}
             />
           ) : (
             <Body
               ref={bodyRef}
-              background={normalizeProp(background, 'body')}
-              border={normalizeProp(border, 'body')}
+              cellProps={cellProps.body}
               columns={columns}
               data={!paginate ? adjustedData : items}
               onMore={onMore}
@@ -413,8 +395,7 @@ const DataTable = ({
                     }
                   : undefined
               }
-              pad={normalizeProp(pad, 'body')}
-              pinnedBackground={normalizeProp(background, 'pinned')}
+              pinnedCellProps={cellProps.pinned}
               pinnedOffset={pinnedOffset}
               placeholder={placeholder}
               primaryProperty={primaryProperty}
@@ -431,14 +412,12 @@ const DataTable = ({
           {showFooter && (
             <Footer
               ref={footerRef}
-              background={normalizeProp(background, 'footer')}
-              border={normalizeProp(border, 'footer')}
+              cellProps={cellProps.footer}
               columns={columns}
               fill={fill}
               footerValues={footerValues}
               groups={groups}
               onSelect={onSelect}
-              pad={normalizeProp(pad, 'footer')}
               pin={pin === true || pin === 'footer'}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}

@@ -15,10 +15,7 @@ export const ServedDataTable = () => {
     if (search) {
       // The function below escapes regular expression special characters:
       // [ \ ^ $ . | ? * + ( )
-      const escapedText = text => {
-        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-        return new RegExp(escapedText, 'i');
-      };
+      const escapedText = text => text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
       const expressions = Object.keys(search).map(property => ({
         property,
         // Create the regular expression with modified value which handles

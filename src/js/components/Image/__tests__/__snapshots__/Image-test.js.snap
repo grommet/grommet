@@ -25,22 +25,22 @@ exports[`Image fillProp renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
   <img
-    className=""
+    class=""
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
   <img
-    className="c2"
+    class="c2"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
   <img
-    className="c3"
+    class="c3"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -74,14 +74,14 @@ exports[`Image fit renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
   <img
-    className="c2"
+    class="c2"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -103,10 +103,10 @@ exports[`Image opacity of 0.3 renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -124,10 +124,10 @@ exports[`Image opacity of false renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className=""
+    class=""
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -149,10 +149,10 @@ exports[`Image opacity of medium renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -174,10 +174,10 @@ exports[`Image opacity of strong renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -199,10 +199,10 @@ exports[`Image opacity of true renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -224,10 +224,10 @@ exports[`Image opacity of weak renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className="c1"
+    class="c1"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -245,10 +245,10 @@ exports[`Image renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
-    className=""
+    class=""
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -266,11 +266,11 @@ exports[`Image renders with aria-label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <img
     aria-label="aria-label-text"
-    className=""
+    class=""
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>

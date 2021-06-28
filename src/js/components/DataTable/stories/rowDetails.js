@@ -34,11 +34,11 @@ export const ControlledDataTable = () => {
           columns={[
             {
               property: 'checkbox',
-              render: datum => (
+              render: ({ name }) => (
                 <CheckBox
-                  key={datum.name}
-                  checked={checked.indexOf(datum.name) !== -1}
-                  onChange={e => onCheck(e, datum.name)}
+                  key={name}
+                  checked={checked.indexOf(name) !== -1}
+                  onChange={e => onCheck(e, name)}
                 />
               ),
               header: (
