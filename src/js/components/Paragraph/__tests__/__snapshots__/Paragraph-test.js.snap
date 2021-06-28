@@ -229,7 +229,7 @@ exports[`Paragraph textAlign renders 1`] = `
     class="c3"
   />
   <p
-    className="c4"
+    class="c4"
   />
 </div>
 `;
