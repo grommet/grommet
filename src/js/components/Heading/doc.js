@@ -46,7 +46,7 @@ correctness and accessibility. This size property allows for stylistic
 adjustments.`,
       )
       .defaultValue('medium'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the heading.')
       .defaultValue('start'),
     truncate: PropTypes.bool
