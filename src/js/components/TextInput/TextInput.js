@@ -32,6 +32,7 @@ import {
   StyledIcon,
   StyledSuggestions,
 } from './StyledTextInput';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const renderLabel = suggestion => {
   if (suggestion && typeof suggestion === 'object') {
@@ -64,14 +65,6 @@ const ContainerBox = styled(Box)`
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
-const defaultMessages = {
-  enterSelect: '(Press Enter to Select)',
-  suggestionsCount: 'suggestions available',
-  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-  suggestionIsOpen:
-    'Suggestions drop is open, continue to use arrow keys to navigate',
-};
-
 const TextInput = forwardRef(
   (
     {
@@ -85,7 +78,7 @@ const TextInput = forwardRef(
       focusIndicator = true,
       icon,
       id,
-      messages = defaultMessages,
+      messages,
       name,
       onBlur,
       onChange,
@@ -107,6 +100,7 @@ const TextInput = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
     const inputRef = useForwardedRef(ref);
@@ -135,13 +129,19 @@ const TextInput = forwardRef(
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
-      announce(messages.suggestionIsOpen);
-      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      announce(format({
+        id: 'textInput.suggestionIsOpen',
+        messages,
+      }));
+      announce(`${suggestions.length} ${format({
+        id: 'textInput.suggestionsCount',
+        messages,
+      })}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
     }, [
       announce,
-      messages.suggestionsCount,
-      messages.suggestionIsOpen,
+      messages,
+      format,
       onSuggestionsOpen,
       suggestions,
     ]);
@@ -149,9 +149,8 @@ const TextInput = forwardRef(
     const closeDrop = useCallback(() => {
       setSuggestionsAtClose(suggestions); // must be before closing drop
       setShowDrop(false);
-      if (messages.onSuggestionsClose) onSuggestionsClose();
       if (onSuggestionsClose) onSuggestionsClose();
-    }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]);
+    }, [onSuggestionsClose, suggestions]);
 
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
@@ -225,9 +224,12 @@ const TextInput = forwardRef(
     useEffect(() => {
       if (activeSuggestionIndex >= 0) {
         const label = stringLabel(suggestions[activeSuggestionIndex]);
-        announce(`${label} ${messages.enterSelect}`);
+        announce(`${label} ${format({
+          id: 'textInput.enterSelect',
+          messages,
+      })}`);
       }
-    }, [activeSuggestionIndex, announce, messages, suggestions]);
+    }, [activeSuggestionIndex, announce, messages, format, suggestions]);
 
     // make sure activeSuggestion is visible in scroll
     useEffect(() => {
@@ -441,7 +443,10 @@ const TextInput = forwardRef(
               if (!focus) {
                 setFocus(true);
                 if (suggestions && suggestions.length > 0) {
-                  announce(messages.suggestionsExist);
+                  announce(format({
+                    id: 'textInput.suggestionsExist',
+                    messages,
+                  }));
                   openDrop();
                 }
                 if (onFocus) onFocus(event);

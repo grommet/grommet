@@ -15,6 +15,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -69,6 +70,7 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
@@ -236,7 +238,10 @@ const Menu = forwardRef((props, ref) => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={a11yTitle || messages.closeMenu || 'Close Menu'}
+        a11yTitle={
+          a11yTitle ||
+          format({ id: 'menu.closeMenu', messages })
+        }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -269,7 +274,10 @@ const Menu = forwardRef((props, ref) => {
         ref={ref}
         {...rest}
         {...buttonProps}
-        a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
+        a11yTitle={
+          a11yTitle ||
+          format({ id: 'menu.openMenu', messages })
+        }
         onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
@@ -362,10 +370,7 @@ const Menu = forwardRef((props, ref) => {
 
 Menu.defaultProps = {
   items: [],
-  messages: {
-    openMenu: 'Open Menu',
-    closeMenu: 'Close Menu',
-  },
+  messages: undefined,
   justifyContent: 'start',
 };
 

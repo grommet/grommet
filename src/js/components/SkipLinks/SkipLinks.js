@@ -11,11 +11,12 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [showLayer, setShowLayer] = useState(false);
-
+  const { format } = useContext(MessageContext);
   const layerRef = useRef(null);
 
   const onFocus = () => {
@@ -53,9 +54,9 @@ const SkipLinks = ({ children, id, messages }) => {
       responsive={false}
     >
       <Box {...theme.skipLinks.container}>
-        {messages.skipTo && (
-          <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
-        )}
+        <Text {...theme.skipLinks.label}>{
+          format({ id: 'skipLinks.skipTo', messages })}
+        </Text>
         <Box align="center" gap="medium">
           {Children.map(children, (child, index) =>
             cloneElement(child, {
@@ -70,9 +71,6 @@ const SkipLinks = ({ children, id, messages }) => {
 };
 
 SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To:',
-  },
 };
 
 let SkipLinksDoc;
