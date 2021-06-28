@@ -743,6 +743,7 @@ export const roundStyle = (data, responsive, theme) => {
 const TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
+  justify: 'justify',
   start: 'left',
 };
 
