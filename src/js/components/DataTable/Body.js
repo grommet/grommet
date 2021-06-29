@@ -14,10 +14,6 @@ import { datumValue, normalizeRowCellProps } from './buildState';
 
 const Row = memo(
   ({
-    tableRef,
-    lastActive,
-    setLastActive,
-    setItemFocus,
     cellProps,
     primaryValue,
     index,
@@ -26,12 +22,14 @@ const Row = memo(
     active,
     onClickRow,
     datum,
-    setActive,
     selected,
     onSelect,
     isSelected,
     rowDetails,
     isRowExpanded,
+    tableBodyRef,
+    setActive,
+    setLastActive,
     setRowExpand,
     rowExpand,
     columns,
@@ -43,7 +41,6 @@ const Row = memo(
       <StyledDataTableRow
         ref={rowRef}
         size={size}
-        tabIndex={onClickRow ? -1 : undefined} // needed to use onFocus & onBlur
         active={active}
         onClick={
           onClickRow
@@ -54,8 +51,7 @@ const Row = memo(
                 adjustedEvent.datum = datum;
                 adjustedEvent.index = index;
                 onClickRow(adjustedEvent);
-                tableRef.current.focus();
-                console.log(document.activeElement, tableRef);
+                tableBodyRef.current.focus();
               }
             : undefined
         }
@@ -67,25 +63,7 @@ const Row = memo(
               }
             : undefined
         }
-        onMouseLeave={onClickRow ? () => setActive(lastActive) : undefined}
-        onFocus={
-          onClickRow
-            ? () => {
-                setActive(index);
-                setItemFocus(true);
-              }
-            : undefined
-        }
-        onBlur={
-          onClickRow
-            ? () => {
-                // cant set lastActive to active since 1 === true / 0 === false
-                setLastActive(index);
-                setActive(undefined);
-                setItemFocus(false);
-              }
-            : undefined
-        }
+        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
           <TableCell
@@ -184,7 +162,6 @@ const Body = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
-    const [itemFocus, setItemFocus] = React.useState();
 
     return (
       <Keyboard
@@ -198,7 +175,6 @@ const Body = forwardRef(
               }
             : undefined
         }
-        onTab={() => setActive(undefined)}
         onUp={
           onClickRow && active
             ? () => {
@@ -220,7 +196,11 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
-          itemFocus={itemFocus}
+          onFocus={() => (lastActive ? setActive(lastActive) : undefined)}
+          onBlur={() => {
+            if (active) setLastActive(active);
+            setActive(undefined);
+          }}
           {...rest}
         >
           <InfiniteScroll
@@ -251,10 +231,9 @@ const Body = forwardRef(
               return (
                 <Row
                   key={index}
-                  tableRef={ref}
-                  lastActive={lastActive}
+                  tableBodyRef={ref}
                   setLastActive={setLastActive}
-                  setItemFocus={setItemFocus}
+                  setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}
                   primaryValue={primaryValue}
@@ -265,7 +244,6 @@ const Body = forwardRef(
                   active={active >= 0 ? active === index : undefined}
                   onClickRow={onClickRow}
                   datum={datum}
-                  setActive={setActive}
                   selected={selected}
                   onSelect={onSelect}
                   rowDetails={rowDetails}

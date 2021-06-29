@@ -2574,7 +2574,6 @@ exports[`DataTable click 1`] = `
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
-        tabindex="-1"
       >
         <th
           class="c8 "
@@ -2593,7 +2592,6 @@ exports[`DataTable click 1`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 c7"
-        tabindex="-1"
       >
         <th
           class="c8 "
@@ -2645,12 +2643,11 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iPqkUG"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 dKfeXf"
       tabindex="0"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cWEPUG"
-        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hkXmPk StyledDataTable__StyledDataTableCell-xrlyjm-6 dKSGhN"
@@ -2669,7 +2666,6 @@ exports[`DataTable click 2`] = `
       </tr>
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cWEPUG"
-        tabindex="-1"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hkXmPk StyledDataTable__StyledDataTableCell-xrlyjm-6 dKSGhN"
@@ -3429,7 +3425,7 @@ exports[`DataTable custom theme 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -4926,7 +4922,7 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -6204,7 +6200,7 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -10591,7 +10587,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -10939,7 +10935,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -11582,7 +11578,7 @@ exports[`DataTable onSort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -12201,7 +12197,7 @@ exports[`DataTable onSort external 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -18359,7 +18355,7 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -18923,7 +18919,7 @@ exports[`DataTable select 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -27607,7 +27603,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -35553,7 +35549,7 @@ exports[`DataTable sortable 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iNzoDB"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cHkyVs"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
