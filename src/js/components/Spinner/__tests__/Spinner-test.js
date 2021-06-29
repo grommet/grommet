@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
@@ -10,8 +10,6 @@ import { Grommet } from '../../Grommet';
 import { Spinner } from '..';
 
 describe('Spinner', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
