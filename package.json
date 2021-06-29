@@ -122,7 +122,6 @@
     "react-dev-utils": "^11.0.2",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
-    "react-test-renderer": "^17.0.1",
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^2.40.0",
