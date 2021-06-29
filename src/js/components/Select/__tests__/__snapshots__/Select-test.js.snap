@@ -220,58 +220,45 @@ exports[`Select 0 value 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
           placeholder="test select"
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
-          value={0}
+          value="0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
           d="m18 9-6 6-6-6"
           fill="none"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -2413,58 +2400,45 @@ exports[`Select basic 1`] = `
 
 <button
   aria-label="Select"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
           aria-label="Select"
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
           d="m18 9-6 6-6-6"
           fill="none"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -3273,63 +3247,50 @@ exports[`Select dark 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <button
       aria-label="Open Drop"
-      className="c2 c3"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
+      class="c2 c3"
       type="button"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <div
-          className="c5"
+          class="c5"
         >
           <div
-            className="c6"
+            class="c6"
           >
             <input
-              autoComplete="off"
-              className="c7 c8"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
+              autocomplete="off"
+              class="c7 c8"
               placeholder="Select"
-              readOnly={true}
-              tabIndex="-1"
+              readonly=""
+              tabindex="-1"
               type="text"
               value=""
             />
           </div>
         </div>
         <div
-          className="c9"
-          style={
-            Object {
-              "minWidth": "auto",
-            }
-          }
+          class="c9"
+          style="min-width: auto;"
         >
           <svg
             aria-label="FormDown"
-            className="c10"
+            class="c10"
             viewBox="0 0 24 24"
           >
             <path
               d="m18 9-6 6-6-6"
               fill="none"
               stroke="#000"
-              strokeWidth="2"
+              stroke-width="2"
             />
           </svg>
         </div>
@@ -9835,57 +9796,44 @@ exports[`Select renders custom icon 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="CaretDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
           d="M22 8 12 20 2 8z"
           fill="none"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -10492,57 +10440,44 @@ exports[`Select renders default icon 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
           d="m18 9-6 6-6-6"
           fill="none"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -11556,34 +11491,25 @@ exports[`Select renders without icon 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
@@ -15639,58 +15565,44 @@ exports[`Select size 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0 c1"
+  class="c0 c1"
   id="test-select"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
   type="button"
 >
   <div
-    className="c2"
+    class="c2"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <input
-          autoComplete="off"
-          className="c5 c6"
+          autocomplete="off"
+          class="c5 c6"
           id="test-select__input"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          size="large"
-          tabIndex="-1"
+          readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
+      class="c7"
+      style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
           d="m18 9-6 6-6-6"
           fill="none"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
