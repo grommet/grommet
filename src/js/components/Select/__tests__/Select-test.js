@@ -1,9 +1,8 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
@@ -15,7 +14,6 @@ import { Select } from '..';
 describe('Select', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -23,27 +21,31 @@ describe('Select', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
+
     const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dark', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box fill background="dark-1" align="center" justify="center">
           <Select placeholder="Select" options={['one', 'two']} />
         </Box>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('prop: onOpen', () => {
@@ -96,7 +98,7 @@ describe('Select', () => {
   });
 
   test('0 value', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         placeholder="test select"
@@ -104,7 +106,8 @@ describe('Select', () => {
         value={0}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('search', () => {
@@ -202,7 +205,7 @@ describe('Select', () => {
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         size="large"
@@ -212,7 +215,8 @@ describe('Select', () => {
         onChange={() => {}}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   ['small', 'medium', 'large'].forEach(dropHeight => {
@@ -599,24 +603,27 @@ describe('Select', () => {
   });
 
   test('renders without icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={false} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders custom icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders default icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('modifies select control style on open', () => {
