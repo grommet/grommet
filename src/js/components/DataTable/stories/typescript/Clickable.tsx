@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Button, DataTable, Layer, Meter, Text } from 'grommet';
+import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
@@ -140,31 +140,19 @@ const DATA: RowType[] = [
   },
 ];
 
-export const ClickableDataTable = () => {
-  const [show, setShow] = React.useState(false);
-
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        {/* eslint-disable no-alert */}
-        <DataTable
-          columns={columns}
-          data={DATA}
-          step={10}
-          onClickRow={event => setShow(true)}
-        />
-        {show && (
-          <Layer
-            onEsc={() => setShow(false)}
-            onClickOutside={() => setShow(false)}
-          >
-            <Button label="close" onClick={() => setShow(false)} />
-          </Layer>
-        )}
-      </Box>
-    </Grommet>
-  );
-};
+export const ClickableDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      {/* eslint-disable no-alert */}
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        onClickRow={event => console.log(event.datum)}
+      />
+    </Box>
+  </Grommet>
+);
 
 ClickableDataTable.storyName = 'Clickable';
 

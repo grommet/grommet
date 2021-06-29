@@ -4,6 +4,7 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
@@ -81,15 +82,10 @@ const StyledDataTableRow = styled(TableRow)`
     props.onClick &&
     `
     cursor: pointer;
-  `}  
-
-  // Possible Remove: might not be needed due to onMouseEnter
-  // deleting changes nothing so far
+  `}
   &:hover {
     ${props => props.onClickRow && !props.active && hoverStyle}
   }
-
-  // Allows navigation/hovering through table and applies hoverstyle to each
   ${props => props.active && hoverStyle}
 `;
 
@@ -106,17 +102,13 @@ const StyledDataTableBody = styled(TableBody)`
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
   `}
-  
-  // Needed to give focus to tbody when holding click down
-  ${props =>
-    props.itemFocus &&
-    focusStyle({ forceOutline: true, skipSvgChildren: true })}
 
-  // Needed to give outline styling
   &:focus {
-    ${props =>
-      props.tabIndex >= 0 &&
-      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
 `;
 
