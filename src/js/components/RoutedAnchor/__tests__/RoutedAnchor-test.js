@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { render, screen, fireEvent, createEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -40,8 +39,17 @@ class FakeRouter extends Component {
 describe('RoutedAnchor', () => {
   const replace = jest.fn();
   const push = jest.fn();
+  let warnSpy;
+
+  beforeEach(() => {
+    warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+  });
+
+  afterEach(() => {
+    warnSpy.mockRestore();
+  });
+
   test('renders', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <FakeRouter push={push} replace={replace}>
@@ -51,13 +59,10 @@ describe('RoutedAnchor', () => {
     );
 
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
-
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('is clickable', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     const onClick = jest.fn();
     render(
@@ -77,13 +82,10 @@ describe('RoutedAnchor', () => {
     expect(onClick).toBeCalledTimes(1);
     expect(push).toBeCalledTimes(1);
     expect(preventDefault).toBeCalledTimes(1);
-
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
   });
 
   test('skips onClick if right clicked', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const onClick = jest.fn();
     render(
       <Grommet>
@@ -99,13 +101,10 @@ describe('RoutedAnchor', () => {
     userEvent.click(anchor, { metaKey: true });
 
     expect(onClick).not.toHaveBeenCalled();
-
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
   });
 
   test('calls router context push', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     render(
       <Grommet>
@@ -124,11 +123,9 @@ describe('RoutedAnchor', () => {
     expect(preventDefault).toHaveBeenCalled();
     expect(push).toHaveBeenCalledWith('/');
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
   });
 
   test('calls router context replace', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     render(
       <Grommet>
@@ -147,6 +144,5 @@ describe('RoutedAnchor', () => {
     expect(preventDefault).toHaveBeenCalled();
     expect(replace).toHaveBeenCalledWith('/');
     expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
   });
 });
