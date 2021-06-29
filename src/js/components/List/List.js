@@ -22,13 +22,11 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
-  // Customizes to make list have a focus border color of green
   &:focus {
     ${props =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
-
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -149,7 +147,6 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
-    const [lastActive, setLastActive] = useState();
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -227,7 +224,6 @@ const List = React.forwardRef(
               ? () => {
                   const min = onOrder ? 1 : 0;
                   setActive(Math.max(active - 1, min));
-                  setLastActive(active);
                 }
               : undefined
           }
@@ -237,7 +233,6 @@ const List = React.forwardRef(
                   const min = onOrder ? 1 : 0;
                   const max = onOrder ? data.length * 2 - 2 : data.length - 1;
                   setActive(active >= min ? Math.min(active + 1, max) : min);
-                  setLastActive(active);
                 }
               : undefined
           }
@@ -247,19 +242,7 @@ const List = React.forwardRef(
             as={as || 'ul'}
             itemFocus={itemFocus}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
-            onBlur={
-              onOrder
-                ? () => {
-                    setActive(undefined);
-                  }
-                : () => {
-                    if (active) setLastActive(active);
-                    setActive(undefined);
-                  }
-            }
-            onFocus={() => {
-              if (lastActive) setActive(lastActive);
-            }}
+            onBlur={onOrder ? () => setActive(undefined) : undefined}
             {...ariaProps}
             {...rest}
           >
@@ -371,17 +354,13 @@ const List = React.forwardRef(
                       // accessibility guidelines that focus remains on `ul`
                       listRef.current.focus();
                     },
-                    onMouseOver: () => {
-                      setLastActive(undefined);
-                      setActive(index);
-                    },
+                    onMouseOver: () => setActive(index),
                     onMouseOut: () => setActive(undefined),
                     onFocus: () => {
                       setActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
-                      setLastActive(active);
                       setActive(undefined);
                       setItemFocus(false);
                     },
