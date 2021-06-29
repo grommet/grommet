@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
@@ -14,7 +14,6 @@ import { Select } from '..';
 describe('Select', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
