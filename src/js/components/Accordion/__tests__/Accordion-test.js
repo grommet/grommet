@@ -92,7 +92,7 @@ describe('Accordion', () => {
   });
 
   test('change to second Panel', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
@@ -347,7 +347,7 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false} onActive={onActive}>
-          {[1, 2].map(index => (
+          {[1, 2].map((index) => (
             <Panel key={index} index={index} />
           ))}
         </Accordion>

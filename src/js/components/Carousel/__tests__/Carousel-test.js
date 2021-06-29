@@ -93,7 +93,7 @@ describe('Carousel', () => {
   });
 
   test('play', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
