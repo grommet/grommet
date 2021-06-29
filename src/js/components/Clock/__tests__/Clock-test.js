@@ -36,7 +36,7 @@ describe('Clock', () => {
   });
 
   test('run', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { container } = render(
       <Grommet>
         <Clock type="analog" run="forward" time={DURATION} />
@@ -54,10 +54,10 @@ describe('Clock', () => {
     // give some time for the clock to move and use the callback
   });
 
-  ['analog', 'digital'].forEach(type =>
-    ['hours', 'minutes', 'seconds'].forEach(precision =>
+  ['analog', 'digital'].forEach((type) =>
+    ['hours', 'minutes', 'seconds'].forEach((precision) =>
       ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].forEach(
-        size =>
+        (size) =>
           test(`type ${type} precision ${precision} size ${size}`, () => {
             const { container } = render(
               <Grommet>
@@ -77,7 +77,7 @@ describe('Clock', () => {
     ),
   );
 
-  ['hours', 'minutes', 'seconds'].forEach(precision =>
+  ['hours', 'minutes', 'seconds'].forEach((precision) =>
     test(`type analog precision ${precision} size huge`, () => {
       const { container } = render(
         <Grommet>
