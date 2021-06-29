@@ -1,6 +1,5 @@
 import React from 'react';
-import { cleanup } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Avatar } from '../../Avatar';
@@ -13,37 +12,37 @@ describe('Sidebar', () => {
   afterEach(cleanup);
 
   test('renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Sidebar id="test id" name="test name" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('header', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Sidebar header={<Avatar src={src} />} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('footer', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Sidebar footer={<Avatar src={src} />} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Sidebar>
           <Avatar src={src} />
@@ -51,12 +50,12 @@ describe('Sidebar', () => {
         </Sidebar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('all', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Sidebar
           footer={<Avatar>SY</Avatar>}
@@ -67,7 +66,7 @@ describe('Sidebar', () => {
         </Sidebar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
