@@ -158,16 +158,12 @@ exports[`TextArea basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -252,17 +248,13 @@ exports[`TextArea disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
-    disabled={true}
+    class="c1"
+    disabled=""
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -342,16 +334,12 @@ exports[`TextArea fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -430,16 +418,12 @@ exports[`TextArea focusIndicator 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -518,16 +502,12 @@ exports[`TextArea placeholder 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
     placeholder="placeholder"
   />
 </div>
@@ -611,16 +591,12 @@ exports[`TextArea plain 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -700,16 +676,12 @@ exports[`TextArea resize false 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -789,16 +761,12 @@ exports[`TextArea resize horizontal 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -878,16 +846,12 @@ exports[`TextArea resize true 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -967,16 +931,12 @@ exports[`TextArea resize vertical 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -1057,17 +1017,12 @@ exports[`TextArea size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="large"
   />
 </div>
 `;
@@ -1148,17 +1103,12 @@ exports[`TextArea size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="medium"
   />
 </div>
 `;
@@ -1239,17 +1189,12 @@ exports[`TextArea size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="small"
   />
 </div>
 `;
