@@ -34,6 +34,7 @@ export const OnClickItemList = () => {
           data={data.slice(0, 10)}
           onClickItem={event => {
             setShow(true);
+            console.log('=== Modal Opened ===');
             setClicked(event.item);
           }}
         />

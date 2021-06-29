@@ -222,7 +222,6 @@ const List = React.forwardRef(
                 }
               : undefined
           }
-          onTab={() => setActive(undefined)}
           onUp={
             (onClickItem || onOrder) && active
               ? () => {
@@ -253,8 +252,14 @@ const List = React.forwardRef(
                 ? () => {
                     setActive(undefined);
                   }
-                : undefined
+                : () => {
+                    if (active) setLastActive(active);
+                    setActive(undefined);
+                  }
             }
+            onFocus={() => {
+              if (lastActive) setActive(lastActive);
+            }}
             {...ariaProps}
             {...rest}
           >
@@ -370,18 +375,13 @@ const List = React.forwardRef(
                       setLastActive(undefined);
                       setActive(index);
                     },
-                    onMouseOut: () => {
-                      console.log('Mouse Out');
-                      setActive(lastActive);
-                    },
+                    onMouseOut: () => setActive(undefined),
                     onFocus: () => {
-                      console.log('On Focus');
-                      setActive(lastActive || index);
-                      setLastActive(index);
+                      setActive(index);
                       setItemFocus(true);
                     },
                     onBlur: () => {
-                      console.log('On Blur');
+                      setLastActive(active);
                       setActive(undefined);
                       setItemFocus(false);
                     },
