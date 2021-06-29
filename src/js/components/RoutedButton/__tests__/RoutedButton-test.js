@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
+import { createEvent, fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
-
-import { findAllByType } from '../../../utils';
 
 import { Grommet, RoutedButton } from '../..';
 
@@ -40,22 +39,22 @@ describe('RoutedButton', () => {
   const push = jest.fn();
   const replace = jest.fn();
   const warning = `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
+         Please refer to https://github.com/grommet/grommet/issues/2855
          for more information.`;
+
   test('renders', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
 
     expect(warnSpy).toBeCalledWith(warning);
+    expect(container.firstChild).toMatchSnapshot();
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -67,21 +66,24 @@ describe('RoutedButton', () => {
     const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
     const onClick = jest.fn();
-    const component = renderer.create(
+    render(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    const anchor = findAllByType(tree, 'a');
-    anchor[0].props.onClick({ preventDefault });
-    expect(onClick).toBeCalled();
-    expect(push).toBeCalled();
-    expect(preventDefault).toBeCalled();
 
-    expect(warnSpy).toBeCalledWith(warning);
+    const anchor = screen.getByRole('link');
+
+    const clickEvent = createEvent.click(anchor);
+    clickEvent.preventDefault = preventDefault;
+    fireEvent(anchor, clickEvent);
+
+    expect(onClick).toBeCalled();
+    expect(push).toHaveBeenCalled();
+    expect(preventDefault).toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -92,25 +94,21 @@ describe('RoutedButton', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
     const onClick = jest.fn();
-    const component = renderer.create(
+    render(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
-    const tree = component.toJSON();
 
-    const anchor = findAllByType(tree, 'a');
-    anchor[0].props.onClick({
-      ctrlKey: true,
-    });
-    anchor[0].props.onClick({
-      metaKey: true,
-    });
-    expect(onClick).not.toBeCalled();
+    const anchor = screen.getByRole('link');
 
-    expect(warnSpy).toBeCalledWith(warning);
+    userEvent.click(anchor, { ctrlKey: true });
+    userEvent.click(anchor, { metaKey: true });
+
+    expect(onClick).not.toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -121,23 +119,24 @@ describe('RoutedButton', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
-    const component = renderer.create(
+    render(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
     );
-    const tree = component.toJSON();
 
-    const button = findAllByType(tree, 'a');
-    button[0].props.onClick({
-      preventDefault,
-    });
-    expect(preventDefault).toBeCalled();
-    expect(push).toBeCalledWith('/');
+    const anchor = screen.getByRole('link');
 
-    expect(warnSpy).toBeCalledWith(warning);
+    const clickEvent = createEvent.click(anchor);
+    clickEvent.preventDefault = preventDefault;
+    fireEvent(anchor, clickEvent);
+
+    expect(preventDefault).toHaveBeenCalled();
+    expect(push).toHaveBeenCalledWith('/');
+
+    expect(warnSpy).toHaveBeenCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -148,23 +147,23 @@ describe('RoutedButton', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
-    const component = renderer.create(
+    render(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>,
     );
-    const tree = component.toJSON();
 
-    const button = findAllByType(tree, 'a');
-    button[0].props.onClick({
-      preventDefault,
-    });
-    expect(preventDefault).toBeCalled();
-    expect(replace).toBeCalledWith('/');
+    const anchor = screen.getByRole('link');
 
-    expect(warnSpy).toBeCalledWith(warning);
+    const clickEvent = createEvent.click(anchor);
+    clickEvent.preventDefault = preventDefault;
+    fireEvent(anchor, clickEvent);
+
+    expect(preventDefault).toHaveBeenCalled();
+    expect(replace).toHaveBeenCalledWith('/');
+    expect(warnSpy).toHaveBeenCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
