@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -9,8 +9,6 @@ import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
 
 describe('TextArea', () => {
-  afterEach(cleanup);
-
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -106,7 +104,6 @@ describe('TextArea', () => {
   });
 
   describe('Event tests', () => {
-    afterEach(cleanup);
     const keyEvent = {
       key: 'Backspace',
       keyCode: 8,
