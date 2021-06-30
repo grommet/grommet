@@ -17,6 +17,15 @@ import { TipProps } from '../Tip';
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  badge?:
+    | boolean
+    | number
+    | {
+        background?: BackgroundType;
+        max?: number;
+        value?: boolean | number;
+      }
+    | JSX.Element;
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;
@@ -40,9 +49,14 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-declare const Button: React.FC<ButtonProps &
-  Omit<JSX.IntrinsicElements['button'], 'color'>>;
+export interface ButtonExtendedProps
+  extends ButtonProps,
+    Omit<JSX.IntrinsicElements['button'], 'color'> {}
+
+// Keep type alias for backwards compatibility.
 export type ButtonType = ButtonProps &
   Omit<JSX.IntrinsicElements['button'], 'color'>;
+
+declare const Button: React.FC<ButtonExtendedProps>;
 
 export { Button };

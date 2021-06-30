@@ -129,8 +129,7 @@ string
 Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      `action = ({item, index}) => <Content />`
-    />
+      'action = ({item, index}) => <Content />'
 
 ```
 function
@@ -216,8 +215,7 @@ Function that will be called when each data item is rendered.
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      `children={(item, index, { active }) => <Box ...>{...}</Box>}`
-      
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'
 
 ```
 function
@@ -257,6 +255,18 @@ When supplied, this function will be called with an event object that
       of the clicked item. You should not include interactive elements, like
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.
+
+```
+function
+```
+
+**onOrder**
+
+Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.
 
 ```
 function
@@ -456,6 +466,28 @@ Defaults to
 
 ```
 undefined
+```
+
+**list.icons.down**
+
+The icon to use for the move down button
+    in re-ordable lists. Expects `React.Element`.
+
+Defaults to
+
+```
+FormDown
+```
+
+**list.icons.up**
+
+The icon to use for the move up button
+    in re-ordable lists. Expects `React.Element`.
+
+Defaults to
+
+```
+FormUp
 ```
 
 **list.item.background**

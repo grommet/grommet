@@ -50,6 +50,26 @@ exports[`DropButton close by clicking outside 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 <button
   aria-label="Open Drop"
   class="c0"
@@ -123,14 +143,29 @@ exports[`DropButton closed 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 <button
   aria-label="Open Drop"
-  className="c0"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
+  class="c0"
   type="button"
 >
   Dropper
@@ -182,6 +217,26 @@ exports[`DropButton disabled 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -242,6 +297,26 @@ exports[`DropButton open and close 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -318,14 +393,33 @@ exports[`DropButton opened 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <button
   aria-label="Open Drop"
-  className="c0"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onMouseOut={[Function]}
-  onMouseOver={[Function]}
+  class="c0"
   type="button"
 >
   Dropper
@@ -379,6 +473,26 @@ exports[`DropButton opened ref 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -459,6 +573,26 @@ exports[`DropButton ref function 1`] = `
   border: 0;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -533,6 +667,26 @@ exports[`DropButton should have no accessibility violations 1`] = `
 }
 
 .c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

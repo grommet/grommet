@@ -485,6 +485,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -515,13 +524,18 @@ When 'onClick' has been specified, the hover indicator to apply
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -537,6 +551,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 ```

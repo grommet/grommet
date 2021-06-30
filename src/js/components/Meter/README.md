@@ -204,6 +204,18 @@ The visual type of meter. Defaults to `bar`.
 ```
 bar
 circle
+pie
+```
+
+**direction**
+
+The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.
+
+```
+horizontal
+vertical
 ```
 
 **value**

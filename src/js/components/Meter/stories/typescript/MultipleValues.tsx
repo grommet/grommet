@@ -19,18 +19,18 @@ export const MultipleValues = () => {
             values={[
               {
                 value: 70,
-                onHover: over => {
+                onHover: (over) => {
                   setActive(over ? 70 : 0);
                   setLabel(over ? 'in use' : undefined);
                 },
-                onClick: event => {
+                onClick: () => {
                   setHighlight(() => !highlight);
                 },
                 highlight,
               },
               {
                 value: 30,
-                onHover: over => {
+                onHover: (over) => {
                   setActive(over ? 30 : 0);
                   setLabel(over ? 'available' : undefined);
                 },

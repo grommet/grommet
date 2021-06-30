@@ -45,7 +45,7 @@ export const TypedForm = () => {
               console.log('Change', nextValue, touched);
               setValue(nextValue);
             }}
-            onSubmit={event =>
+            onSubmit={(event) =>
               console.log('onSubmit', event.value, event.touched)
             }
           >
@@ -78,7 +78,7 @@ export const TypedForm = () => {
               label="Size"
               name="size"
               component={Select}
-              onChange={event => console.log(event)}
+              onChange={(event) => console.log(event)}
               options={['small', 'medium', 'large', 'xlarge']}
             />
             <FormField label="Comments" name="comments" component={TextArea} />
@@ -106,6 +106,8 @@ TypedForm.parameters = {
   chromatic: { disable: true },
 };
 
+TypedForm.storyName = 'Typed Form';
+
 export default {
-  title: 'Input/Form/Typed',
+  title: 'Input/Form/Typed Form',
 };

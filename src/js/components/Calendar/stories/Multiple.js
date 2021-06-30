@@ -11,7 +11,7 @@ export const Multiple = () => {
       <Box align="center" pad="large">
         <Calendar
           dates={dates}
-          onSelect={date => {
+          onSelect={(date) => {
             const nextDates = [...dates];
             const index = nextDates.indexOf(date);
             if (index === -1) {
@@ -22,7 +22,7 @@ export const Multiple = () => {
             setDates(nextDates);
             console.log('Select', date, nextDates);
           }}
-          bounds={['2018-09-08', '2020-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
         />
       </Box>
     </Grommet>

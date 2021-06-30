@@ -21,7 +21,6 @@ const theme = deepMerge(grommet, {
       pad: { horizontal: 'small', vertical: 'xsmall' },
       background: tooltipColor,
       border: false,
-      // extend: `color: white;`,
     },
   },
 });
@@ -101,7 +100,7 @@ const TipContent = ({ size }) => (
 export const ResponsiveTip = () => (
   <Grommet theme={theme} full>
     <ResponsiveContext.Consumer>
-      {size => (
+      {(size) => (
         <Box
           pad="large"
           gap="medium"

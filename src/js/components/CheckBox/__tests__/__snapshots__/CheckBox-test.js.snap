@@ -121,32 +121,24 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={true}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -326,24 +318,24 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dCVoGl"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jbIyUK StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+      class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+        class="StyledBox-sc-13pk1d4-0 ejlWkN StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 UuYxY"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 uDaMI"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 eCVLGk"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -353,6 +345,153 @@ exports[`CheckBox controlled 2`] = `
           />
         </svg>
       </div>
+    </div>
+    <span>
+      test-label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`CheckBox custom theme 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c3 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+  >
+    <div
+      class="c2 c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <div
+        class="c5 "
+      />
     </div>
     <span>
       test-label
@@ -482,32 +621,24 @@ exports[`CheckBox defaultChecked 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={true}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -675,64 +806,48 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      checked={false}
-      className="c2 c3"
-      disabled={true}
+      class="c2 c3"
+      disabled=""
     >
       <input
-        checked={false}
-        className="c4"
-        disabled={true}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
+        disabled=""
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
-        disabled={true}
+        class="c5 "
+        disabled=""
       />
     </div>
   </label>
   <label
-    checked={true}
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      checked={true}
-      className="c2 c3"
-      disabled={true}
+      class="c2 c3"
+      disabled=""
     >
       <input
-        checked={true}
-        className="c4"
-        disabled={true}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
+        disabled=""
         type="checkbox"
       />
       <div
-        checked={true}
-        className="c6 "
-        disabled={true}
+        class="c6 "
+        disabled=""
       >
         <svg
-          checked={true}
-          className="c7"
-          disabled={true}
+          class="c7"
+          disabled=""
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -901,32 +1016,23 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={false}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -939,29 +1045,20 @@ exports[`CheckBox indeterminate renders 1`] = `
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c7 c3"
+      class="c7 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       >
         <svg
-          checked={false}
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -1099,28 +1196,20 @@ exports[`CheckBox label renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
     <span>
@@ -1128,25 +1217,17 @@ exports[`CheckBox label renders 1`] = `
     </span>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
     <div>
@@ -1412,54 +1493,38 @@ exports[`CheckBox renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    htmlFor="test id"
-    onClick={[Function]}
+    class="c1"
+    for="test id"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
+        class="c4"
         id="test id"
         name="test name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
   </label>
@@ -1586,33 +1651,224 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <span>
       test label
     </span>
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <div
-        checked={false}
-        className="c5 "
+        class="c5 "
       />
     </div>
+  </label>
+</div>
+`;
+
+exports[`CheckBox reverse toggle fill 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  border: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  border-radius: 24px;
+  background-color: transparent;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: relative;
+  display: inherit;
+  top: -2px;
+  left: -2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 24px;
+  height: 24px;
+  background: #d9d9d9;
+  border-radius: 24px;
+}
+
+.c3 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-right: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+  >
+    <span>
+      test label
+    </span>
+    <div
+      class="c2 c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <span
+        class="c5"
+      >
+        <span
+          class="c6"
+        />
+      </span>
+    </div>
+  </label>
+  <label
+    class="c1"
+  >
+    <div
+      class="c7 c3"
+    >
+      <input
+        class="c4"
+        type="checkbox"
+      />
+      <span
+        class="c5"
+      >
+        <span
+          class="c6"
+        />
+      </span>
+    </div>
+    <span>
+      test label
+    </span>
   </label>
 </div>
 `;
@@ -1887,88 +2143,62 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
   </label>
   <label
-    checked={true}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={true}
-      className="c2 c3"
+      class="c2 c3"
     >
       <input
-        checked={true}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        checked=""
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={true}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={true}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>
   </label>
   <label
-    checked={false}
-    className="c1"
-    onClick={[Function]}
+    class="c1"
   >
     <div
-      checked={false}
-      className="c7 c3"
+      class="c7 c3"
     >
       <input
-        checked={false}
-        className="c4"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
+        class="c4"
         type="checkbox"
       />
       <span
-        checked={false}
-        className="c5"
+        class="c5"
       >
         <span
-          checked={false}
-          className="c6"
+          class="c6"
         />
       </span>
     </div>

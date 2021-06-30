@@ -23,24 +23,27 @@ exports[`TextArea Event tests onFocus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
-.c1 > circle,
-.c1 > ellipse,
-.c1 > line,
-.c1 > path,
-.c1 > polygon,
-.c1 > polyline,
-.c1 > rect {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -108,6 +111,26 @@ exports[`TextArea basic 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -135,16 +158,12 @@ exports[`TextArea basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -182,6 +201,26 @@ exports[`TextArea disabled 1`] = `
   cursor: default;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -209,17 +248,13 @@ exports[`TextArea disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
-    disabled={true}
+    class="c1"
+    disabled=""
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -252,6 +287,26 @@ exports[`TextArea fill 1`] = `
   height: 100%;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -279,16 +334,12 @@ exports[`TextArea fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -320,6 +371,26 @@ exports[`TextArea focusIndicator 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -347,16 +418,12 @@ exports[`TextArea focusIndicator 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -388,6 +455,26 @@ exports[`TextArea placeholder 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -415,16 +502,12 @@ exports[`TextArea placeholder 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
     placeholder="placeholder"
   />
 </div>
@@ -461,6 +544,26 @@ exports[`TextArea plain 1`] = `
   -webkit-appearance: none;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -488,16 +591,12 @@ exports[`TextArea plain 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -530,6 +629,26 @@ exports[`TextArea resize false 1`] = `
   resize: none;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -557,16 +676,12 @@ exports[`TextArea resize false 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -599,6 +714,26 @@ exports[`TextArea resize horizontal 1`] = `
   resize: horizontal;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -626,16 +761,12 @@ exports[`TextArea resize horizontal 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -668,6 +799,26 @@ exports[`TextArea resize true 1`] = `
   resize: both;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -695,16 +846,12 @@ exports[`TextArea resize true 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -737,6 +884,26 @@ exports[`TextArea resize vertical 1`] = `
   resize: vertical;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -764,16 +931,12 @@ exports[`TextArea resize vertical 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -807,6 +970,26 @@ exports[`TextArea size large 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -834,17 +1017,12 @@ exports[`TextArea size large 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="large"
   />
 </div>
 `;
@@ -878,6 +1056,26 @@ exports[`TextArea size medium 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -905,17 +1103,12 @@ exports[`TextArea size medium 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="medium"
   />
 </div>
 `;
@@ -949,6 +1142,26 @@ exports[`TextArea size small 1`] = `
   border-radius: 4px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -976,17 +1189,12 @@ exports[`TextArea size small 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <textarea
-    className="c1"
+    class="c1"
     id="item"
     name="item"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    size="small"
   />
 </div>
 `;

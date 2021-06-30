@@ -8,7 +8,7 @@ const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOfType([
     PropTypes.oneOf(sizes),
     PropTypes.string,
@@ -16,15 +16,15 @@ sides.forEach(side => {
 });
 
 const padShapeParts = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   padShapeParts[part] = {};
-  sides.forEach(side => {
+  sides.forEach((side) => {
     padShapeParts[part][side] = PropTypes.oneOf(sizes);
   });
 });
 
 const backgroundShape = {};
-[...parts, 'pinned'].forEach(part => {
+[...parts, 'pinned'].forEach((part) => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
@@ -52,11 +52,11 @@ const borderTypes = [
 ];
 
 const borderShape = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   borderShape[part] = PropTypes.oneOfType(borderTypes);
 });
 
-export const doc = DataTable => {
+export const doc = (DataTable) => {
   const DocumentedDataTable = describe(DataTable)
     .availableAt(getAvailableAtBadge('DataTable', 'Visualizations'))
     .description('A data driven table.')
@@ -102,6 +102,7 @@ export const doc = DataTable => {
           }),
         ]),
         pin: PropTypes.bool,
+        plain: PropTypes.bool,
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
@@ -141,7 +142,8 @@ export const doc = DataTable => {
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally.`,
+      to the left when the table is scrolled horizontally. 'plain' = true 
+      indicates that the body cells in the column will not apply pad.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
@@ -160,7 +162,7 @@ export const doc = DataTable => {
         onExpand: PropTypes.func,
       }),
     ]).description(`Property to group data by. If object is specified
-      'property' is used to group data by, 'expand' accepts array of 
+      'property' is used to group data by, 'expand' accepts array of
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.`),
@@ -171,6 +173,10 @@ export const doc = DataTable => {
       Anchor or Button inside table cells as that can cause confusion with
       overlapping interactive elements.`,
     ),
+    rowDetails: PropTypes.func.description(
+      `When supplied, this function will be called with row data. Function can
+      return a React Element which will be rendered on expanding the row.`,
+    ),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.
@@ -178,7 +184,7 @@ export const doc = DataTable => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or 
+      browser, such as columns.search, sortable, groupBy, or
       columns.aggregate.`,
     ),
     onSearch: PropTypes.func.description(
@@ -366,15 +372,15 @@ export const themeDoc = {
   },
   'dataTable.header.background': {
     description: 'Any valid Box background value.',
-    type: `string | 
+    type: `string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }`,
     defaultValue: undefined,
@@ -410,17 +416,17 @@ export const themeDoc = {
     defaultValue: 'small',
   },
   'dataTable.header.hover.background': {
-    description: `The hover background color of the header cell contents, if 
+    description: `The hover background color of the header cell contents, if
     clickable. Any valid Box background options apply.`,
-    type: `string | 
+    type: `string |
     { dark: string, light: string } |
-    { 
-      color: { dark: string, light: string } | string, 
-      dark: bool, 
-      image: string, 
-      position: string, 
-      opacity: bool | string, 
-      repeat: no-repeat | repeat, 
+    {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
       size: cover | contain | string
     }`,
     defaultValue: undefined,
@@ -445,13 +451,13 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.resize.hover.side': {
-    description: `The side of the resizer when hovered over. If color or size 
+    description: `The side of the resizer when hovered over. If color or size
     are defined, this will default to 'end' which is the recommended value.`,
     type: 'string',
     defaultValue: undefined,
   },
   'dataTable.resize.hover.size': {
-    description: `The size of the resizer when hovered over. Size values 
+    description: `The size of the resizer when hovered over. Size values
     correspond with those accepted by Box border.`,
     type: 'string',
     defaultValue: undefined,
@@ -483,15 +489,15 @@ export const themeDoc = {
   },
   'dataTable.pinned.body.background': {
     description: 'Any valid Box background options apply.',
-    type: `string | 
+    type: `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`,
     defaultValue: undefined,
@@ -503,15 +509,15 @@ export const themeDoc = {
   },
   'dataTable.pinned.header.background': {
     description: 'Any valid Box background options apply.',
-    type: `string | 
+    type: `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`,
     defaultValue: undefined,
@@ -523,15 +529,15 @@ export const themeDoc = {
   },
   'dataTable.pinned.footer.background': {
     description: 'Any valid Box background options apply.',
-    type: `string | 
+    type: `string |
       { dark: string, light: string } |
-      { 
-        color: { dark: string, light: string } | string, 
-        dark: bool, 
-        image: string, 
-        position: string, 
-        opacity: bool | string, 
-        repeat: no-repeat | repeat, 
+      {
+        color: { dark: string, light: string } | string,
+        dark: bool,
+        image: string,
+        position: string,
+        opacity: bool | string,
+        repeat: no-repeat | repeat,
         size: cover | contain | string
       }`,
     defaultValue: undefined,

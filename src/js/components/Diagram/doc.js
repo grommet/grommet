@@ -3,7 +3,24 @@ import { describe, PropTypes } from 'react-desc';
 import { colorPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Diagram => {
+const animationPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.oneOf(['pulse', 'draw']),
+  PropTypes.shape({
+    type: PropTypes.oneOf(['pulse', 'draw']),
+    delay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    duration: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    size: PropTypes.oneOf([
+      'xsmall',
+      'small',
+      'medium',
+      'large',
+      'xlarge',
+    ]).description('Size is only applicable when using "pulse"'),
+  }),
+]);
+
+export const doc = (Diagram) => {
   const DocumentedDiagram = describe(Diagram)
     .availableAt(getAvailableAtBadge('Diagram', 'Visualizations'))
     .description(
@@ -15,9 +32,13 @@ export const doc = Diagram => {
     .intrinsicElement('svg');
 
   DocumentedDiagram.propTypes = {
+    animation: animationPropType.description(
+      'Animation to be used by entire Diagram',
+    ),
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
+        animation: animationPropType,
         color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
@@ -45,6 +66,7 @@ export const doc = Diagram => {
       `Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.`,
     ).isRequired,
@@ -54,6 +76,18 @@ export const doc = Diagram => {
 };
 
 export const themeDoc = {
+  'diagram.animation': {
+    description: 'Configuration for draw and pulse animations in Diagram.',
+    type: 'object',
+    defaultValue: `{      
+      pulse: {
+        duration: 1000,
+      },     
+      draw: {
+        duration: 2000,
+      },
+    }`,
+  },
   'diagram.extend': {
     description: 'Any additional style for Diagram.',
     type: 'string | (props) => {}',
@@ -63,6 +97,13 @@ export const themeDoc = {
     description: 'The color of the connection line.',
     type: 'string | {dark: string, light: string}',
     defaultValue: 'accent-1',
+  },
+  'global.animation': {
+    description: 'The animation configuration for Diagram.',
+    type: 'object',
+    defaultValue: `{
+      duration: '1s'
+    }`,
   },
   'global.colors': {
     description: 'Color options.',

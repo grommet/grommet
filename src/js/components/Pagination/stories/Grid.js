@@ -17,7 +17,7 @@ const CardResult = ({ item }) => (
   </Card>
 );
 
-const PaginatedGrid = () => {
+export const PaginatedGrid = () => {
   const [currentData, setCurrentData] = useState(data.slice(0, 10));
   const [indices, setIndices] = useState([0, 10]);
 
@@ -32,7 +32,7 @@ const PaginatedGrid = () => {
       <Box pad="large" gap="medium">
         <Box height={{ min: 'medium' }}>
           <Grid columns="small" rows="small" gap="medium" justify="center">
-            {currentData.map(datum => (
+            {currentData.map((datum) => (
               <CardResult item={datum} key={datum.entry} />
             ))}
           </Grid>
@@ -48,7 +48,7 @@ const PaginatedGrid = () => {
   );
 };
 
-export { PaginatedGrid as Grid };
+PaginatedGrid.storyName = 'Grid';
 
 export default {
   title: 'Controls/Pagination/Grid',

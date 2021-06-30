@@ -145,6 +145,21 @@ interface ButtonKindType {
 }
 
 interface ButtonType {
+  badge?: {
+    container?: {
+      background?: BackgroundType;
+      pad?: PadType;
+      extend?: ExtendType;
+    };
+    size?: {
+      medium?: string;
+    };
+    text?: {
+      size?: {
+        medium?: string;
+      };
+    };
+  };
   border?: {
     color?: ColorType;
     width?: string;
@@ -287,6 +302,8 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
+      intelligentMargin?: boolean;
+      margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
     };
@@ -512,6 +529,9 @@ export interface ThemeType {
       color?: ColorType;
       width?: string;
     };
+    label?: {
+      align?: AlignContentType;
+    };
     check?: {
       extend?: ExtendType;
       radius?: string;
@@ -524,6 +544,9 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      background?: {
+        color?: ColorType;
+      };
     };
     icon?: {
       size?: string;
@@ -533,6 +556,7 @@ export interface ThemeType {
       checked?: any;
       indeterminate?: any;
     };
+    pad?: PadType;
     size?: string;
     toggle?: {
       background?: BackgroundType;
@@ -725,7 +749,11 @@ export interface ThemeType {
     round?: RoundType;
   };
   formField?: {
-    border?: BorderType;
+    border?: BorderType & {
+      error?: {
+        color?: ColorType;
+      };
+    };
     content?: {
       margin?: MarginType;
       pad?: PadType;
@@ -747,6 +775,11 @@ export interface ThemeType {
     };
     error?: {
       background?: BackgroundType;
+      border?: BorderType & {
+        error?: {
+          color?: ColorType;
+        };
+      };
       color?: ColorType;
       margin?: MarginType;
       container?: BoxProps;
@@ -765,6 +798,7 @@ export interface ThemeType {
     label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
+    extend?: ExtendType;
   };
   grommet?: {
     extend?: ExtendType;
@@ -957,6 +991,10 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    icons?: {
+      down?: React.ReactNode;
+      up?: React.ReactNode;
+    };
     extend?: ExtendType;
   };
   maskedInput?: {
@@ -970,6 +1008,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    drop?: DropProps;
     extend?: ExtendType;
     icons?: {
       down?: any;

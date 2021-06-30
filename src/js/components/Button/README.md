@@ -161,9 +161,70 @@ string
 function
 ```
 
+**badge**
+
+An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         "2 unread notifications".
+
+```
+boolean
+element
+number
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  max: number,
+  value: 
+    boolean
+    number
+}
+```
+
 **color**
 
 Fill color for primary, label color for plain, border color otherwise.
+       If button.default is defined in the theme, the color prop will
+       fill the background color for primary and secondary button types. 
+       Color prop will change the text color for default button.
 
 ```
 string
@@ -226,13 +287,18 @@ with plain Buttons.
 boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -248,6 +314,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 ```
@@ -262,7 +370,9 @@ string
 
 **icon**
 
-Icon element to place in the button.
+Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.
 
 ```
 element
@@ -350,7 +460,9 @@ string
 
 **tip**
 
-tooltip or a hint when hovering over the button.
+tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.
 
 ```
 {
@@ -546,7 +658,9 @@ undefined
 
 **button.active.primary**
 
-Adjustments to the primary Button style when the Button is active. Expects `{}`.
+Adjustments to the primary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
@@ -556,12 +670,75 @@ undefined
 
 **button.active.secondary**
 
-Adjustments to the secondary Button style when the Button is active. Expects `{}`.
+Adjustments to the secondary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
 ```
 undefined
+```
+
+**button.badge.container.background**
+
+The background of the badge. Expects `string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+brand
+```
+
+**button.badge.container.extend**
+
+Any additional styles for the badge. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.badge.container.pad**
+
+When badge has a value, the amount of pad to apply. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.badge.size.medium**
+
+The minimum width and height of the badge when the badge 
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**button.badge.text.size.medium**
+
+The size of the text that is mapped according to 
+    'button.badge.size.medium'. Expects `string`.
+
+Defaults to
+
+```
+14px
 ```
 
 **button.border.color**
@@ -746,7 +923,9 @@ undefined
 
 **button.disabled.primary**
 
-Adjustments to the primary Button style when the Button is disabled. Expects `{}`.
+Adjustments to the primary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
@@ -756,7 +935,9 @@ undefined
 
 **button.disabled.secondary**
 
-Adjustments to the secondary Button style when the Button is disabled. Expects `{}`.
+Adjustments to the secondary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
@@ -816,7 +997,9 @@ undefined
 
 **button.hover.primary**
 
-Adjustments to the primary Button style when the Button is hovered. Expects `{}`.
+Adjustments to the primary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
@@ -826,7 +1009,9 @@ undefined
 
 **button.hover.secondary**
 
-Adjustments to the secondary Button style when the Button is hovered. Expects `{}`.
+Adjustments to the secondary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default. Expects `{}`.
 
 Defaults to
 
@@ -856,7 +1041,8 @@ Defaults to
 
 **button.primary.background.color**
 
-The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
+The color of the background for primary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -866,7 +1052,8 @@ undefined
 
 **button.primary.background.opacity**
 
-The value used for primary button background opacity. Expects `number | string`.
+The value used for primary button background opacity.
+    Only relevant for themes that have defined a value for button.default. Expects `number | string`.
 
 Defaults to
 
@@ -876,7 +1063,8 @@ undefined
 
 **button.primary.border.color**
 
-The color of the border for primary buttons. Expects `string | { dark: string, light: string }`.
+The color of the border for primary buttons. Only relevant 
+    for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -936,7 +1124,8 @@ undefined
 
 **button.secondary.background.color**
 
-The color of the background for secondary buttons. Expects `string | { dark: string, light: string }`.
+The color of the background for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -946,7 +1135,8 @@ undefined
 
 **button.secondary.background.opacity**
 
-The value used for secondary button background opacity. Expects `number | string`.
+The value used for secondary button background opacity. 
+    Only relevant for themes that have defined a value for button.default. Expects `number | string`.
 
 Defaults to
 
@@ -956,7 +1146,8 @@ undefined
 
 **button.secondary.border.color**
 
-The color of the border for secondary buttons. Expects `string | { dark: string, light: string }`.
+The color of the border for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -966,7 +1157,8 @@ undefined
 
 **button.secondary.color**
 
-The color of the label for secondary buttons. Expects `string | { dark: string, light: string }`.
+The color of the label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -976,7 +1168,8 @@ undefined
 
 **button.secondary.font.weight**
 
-The weight of the text label for secondary buttons. Expects `string | number`.
+The weight of the text label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | number`.
 
 Defaults to
 
@@ -986,7 +1179,8 @@ undefined
 
 **button.secondary.padding.horizontal**
 
-The horizontal padding for a secondary button. Expects `string`.
+The horizontal padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects `string`.
 
 Defaults to
 
@@ -996,7 +1190,8 @@ Defaults to
 
 **button.secondary.padding.vertical**
 
-The vertical padding for a secondary button. Expects `string`.
+The vertical padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects `string`.
 
 Defaults to
 
@@ -1006,7 +1201,8 @@ Defaults to
 
 **button.secondary.extend**
 
-Any additional style for a secondary button. Expects `string | (props) => {}`.
+Any additional style for a secondary button. Only 
+    relevant for themes that have defined a value for button.default. Expects `string | (props) => {}`.
 
 Defaults to
 

@@ -14,7 +14,7 @@ const customHeading = deepMerge(grommet, {
 export const CustomSizeCalendar = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
@@ -24,7 +24,7 @@ export const CustomSizeCalendar = () => {
         <Calendar
           date={date}
           onSelect={onSelect}
-          bounds={['2018-09-08', '2020-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
         />
       </Box>
     </Grommet>

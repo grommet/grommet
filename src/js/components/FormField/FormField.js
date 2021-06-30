@@ -8,7 +8,10 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { focusStyle, parseMetricToNum } from '../../utils';
+import { containsFocus } from '../../utils/DOM';
+import { focusStyle } from '../../utils/styles';
+import { parseMetricToNum } from '../../utils/mixins';
+import { useForwardedRef } from '../../utils/refs';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -18,12 +21,15 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = [
+  'CheckBox',
+  'CheckBoxGroup',
   'TextInput',
   'Select',
   'MaskedInput',
   'TextArea',
   'DateInput',
   'FileInput',
+  'RadioButtonGroup',
 ];
 const grommetInputPadNames = [
   'CheckBox',
@@ -32,22 +38,22 @@ const grommetInputPadNames = [
   'RangeInput',
 ];
 
-const isGrommetInput = comp =>
+const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
-  ${props => props.theme.formField && props.theme.formField.extend}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
 const StyledMessageContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&
     props.theme.formField[props.messageType].container.extend}
@@ -99,7 +105,7 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     ? { focusIndicator: false, onChange, plain: true }
     : {
         value,
-        onChange: event => {
+        onChange: (event) => {
           setValue(
             event.value !== undefined ? event.value : event.target.value,
           );
@@ -171,6 +177,7 @@ const FormField = forwardRef(
       validate,
     });
     const [focus, setFocus] = useState();
+    const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
@@ -187,7 +194,7 @@ const FormField = forwardRef(
     let contents =
       (themeBorder &&
         children &&
-        Children.map(children, child => {
+        Children.map(children, (child) => {
           if (
             child &&
             child.type &&
@@ -241,6 +248,21 @@ const FormField = forwardRef(
       }
     }
 
+    // fileinput handle
+    // use fileinput plain use formfield to drive the border
+    let isFileInputComponent;
+    if (
+      children &&
+      Children.forEach(children, (child) => {
+        if (
+          child &&
+          child.type &&
+          'FileInput'.indexOf(child.type.displayName) !== -1
+        )
+          isFileInputComponent = true;
+      })
+    );
+
     if (!themeBorder) {
       contents = (
         <Box {...themeContentProps} {...contentProps}>
@@ -257,8 +279,22 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
-    } else if (error && themeBorder && themeBorder.error.color) {
-      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      // backward compatibility check
+      (error && themeBorder && themeBorder.error.color) ||
+      (error && formFieldTheme.error && formFieldTheme.error.border)
+    ) {
+      if (
+        themeBorder.error.color &&
+        formFieldTheme.error.border === undefined
+      ) {
+        borderColor = themeBorder.error.color || 'status-critical';
+      } else if (
+        formFieldTheme.error.border &&
+        formFieldTheme.error.border.color
+      ) {
+        borderColor = formFieldTheme.error.border.color || 'status-critical';
+      }
     } else if (
       focus &&
       formFieldTheme.focus &&
@@ -283,17 +319,30 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    // If fileinput is wrapped in a formfield we want to use
+    // the border style from the fileInput.theme. We also do not
+    // want the foocus around the formfield since the the focus
+    // is on the anchor/button inside fileinput
+
     if (themeBorder) {
       const innerProps =
         themeBorder.position === 'inner'
           ? {
               border: {
                 ...themeBorder,
-                side: themeBorder.side || 'bottom',
+                size: isFileInputComponent
+                  ? theme.fileInput.border.size
+                  : undefined,
+                style: isFileInputComponent
+                  ? theme.fileInput.border.style
+                  : undefined,
+                side: isFileInputComponent
+                  ? theme.fileInput.border.side
+                  : themeBorder.side || 'bottom',
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus,
+              focus: isFileInputComponent ? undefined : focus,
             }
           : {};
       contents = (
@@ -380,24 +429,24 @@ const FormField = forwardRef(
 
     return (
       <FormFieldBox
-        ref={ref}
+        ref={formFieldRef}
         className={className}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        onFocus={event => {
-          setFocus(true);
+        onFocus={(event) => {
+          setFocus(containsFocus(formFieldRef.current));
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
         onChange={
           contextOnChange || onChange
-            ? event => {
+            ? (event) => {
                 event.persist();
                 if (onChange) onChange(event);
                 if (contextOnChange) {
@@ -426,9 +475,7 @@ const FormField = forwardRef(
             )}
             <Message message={help} {...formFieldTheme.help} />
           </>
-        ) : (
-          undefined
-        )}
+        ) : undefined}
         {contents}
         <Message type="error" message={error} {...formFieldTheme.error} />
         <Message type="info" message={info} {...formFieldTheme.info} />

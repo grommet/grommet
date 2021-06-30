@@ -34,14 +34,18 @@ const Distribution = ({
   }
   if (values.length > 1) {
     const reducer = (accumulator, { value }) => accumulator + (value || 0);
-    const total = values.reduce(reducer, 0);
+    const total = values
+      .filter((v) => Object.prototype.hasOwnProperty.call(v, 'value'))
+      .reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
     // total
     let subTotal = 0;
     let subIndex;
     values.some((v, index) => {
-      subTotal += v.value;
+      subTotal += Object.prototype.hasOwnProperty.call(v, 'value')
+        ? v.value
+        : 0;
       if (subTotal >= total * 0.4) {
         subIndex = index + 1;
         return true;
@@ -59,7 +63,9 @@ const Distribution = ({
     }
 
     let childBasis;
-    if (subTotal === total) {
+    if (subTotal === 0) {
+      childBasis = ['0px', '0px'];
+    } else if (subTotal === total) {
       childBasis = ['full', '0px'];
     } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
@@ -103,8 +109,9 @@ const Distribution = ({
 
 Distribution.defaultProps = {
   basis: undefined,
-  children: value => (
+  children: (value) => (
     <Box fill border>
+      {/* eslint-disable-next-line react/destructuring-assignment */}
       <Text>{value.value}</Text>
     </Box>
   ),

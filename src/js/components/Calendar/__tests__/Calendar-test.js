@@ -1,12 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
 
@@ -17,9 +16,7 @@ const DATES = [
 ];
 
 describe('Calendar', () => {
-  afterEach(cleanup);
-
-  test('Calendar should have no accessbility violations', async () => {
+  test('Calendar should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
@@ -32,14 +29,13 @@ describe('Calendar', () => {
 
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
@@ -47,100 +43,92 @@ describe('Calendar', () => {
     // have disabled date be distinct from selected date
     const disabledDate = new Date(DATE);
     disabledDate.setDate(disabledDate.getDate() + 1);
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dates', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar dates={DATES} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('daysOfWeek', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar daysOfWeek dates={DATES} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar size="small" date={DATE} animate={false} />
         <Calendar size="medium" date={DATE} animate={false} />
         <Calendar size="large" date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fill', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar fill date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('firstDayOfWeek', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar firstDayOfWeek={0} date={DATE} animate={false} />
         <Calendar firstDayOfWeek={1} date={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('reference', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar reference={DATE} animate={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('showAdjacentDays', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays={false} />
         <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('header', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar
           date={DATE}
@@ -180,22 +168,20 @@ describe('Calendar', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Calendar date={DATE} fill animate={false}>
           {({ day }) => <Box>{day}</Box>}
         </Calendar>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('select date', () => {
@@ -227,7 +213,7 @@ describe('Calendar', () => {
   test('first day sunday week monday', () => {
     // When the first day of the month is Sunday,
     // and the request of firstDayOfWeek
-    // is Monday, we are verifing we are not missing a week, issue 3253.
+    // is Monday, we are verifying we are not missing a week, issue 3253.
     const { container } = render(
       <Grommet>
         <Calendar
@@ -242,7 +228,7 @@ describe('Calendar', () => {
   });
 
   test('change months', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { container, getByLabelText } = render(
       <Grommet>
         <Calendar date={DATE} />
@@ -428,6 +414,51 @@ describe('Calendar', () => {
     ]);
   });
 
+  test('range as array with date', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          date={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range="array"
+          animate={false}
+        />
+      </Grommet>,
+    );
+    // select date greater than January 1st
+    // activeDate by default is start
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-03T/),
+        expect.stringMatching(/^2020-01-05T/),
+      ],
+    ]);
+    // select date less than January 3rd
+    // activeDate is end, since this is before the start
+    // date we should update the date
+    fireEvent.click(getByLabelText('Wed Jan 01 2020'));
+    expect(onSelect).toBeCalledWith([
+      [expect.stringMatching(/^2020-01-01T/), undefined],
+    ]);
+
+    // should select end date again
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-01T/),
+        expect.stringMatching(/^2020-01-03T/),
+      ],
+    ]);
+
+    // should select start date, if great than end date, clear end date
+    fireEvent.click(getByLabelText('Sun Jan 05 2020'));
+    expect(onSelect).toBeCalledWith([
+      [expect.stringMatching(/^2020-01-05T/), undefined],
+    ]);
+  });
+
   test('activeDate start', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
@@ -490,8 +521,6 @@ describe('Calendar Keyboard events', () => {
       </Grommet>
     );
   });
-
-  afterEach(cleanup);
 
   test('onEnter', async () => {
     const { getByText } = render(<App />);

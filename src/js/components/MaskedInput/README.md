@@ -74,6 +74,14 @@ Function that will be called when the user types or pastes text.
 function
 ```
 
+**focusIndicator**
+
+Whether the plain MaskedInput should receive a focus outline.
+
+```
+boolean
+```
+
 **onBlur**
 
 Function that will be called when the user leaves the field.
@@ -127,6 +135,16 @@ xlarge
 string
 ```
 
+**textAlign**
+
+How to align the text inside the input. Defaults to `start`.
+
+```
+start
+center
+end
+```
+
 **value**
 
 What text to put in the input. The caller should ensure that it
@@ -176,7 +194,7 @@ undefined
 
 **maskedInput.container.extend**
 
-Any additional style for the container surrounding the input 
+Any additional style for the container surrounding the input
     and, if present, icon. Expects `string | (props) => {}`.
 
 Defaults to

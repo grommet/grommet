@@ -7,6 +7,22 @@ import {
   MarginType,
 } from '../../utils';
 
+export interface RenderProps {
+  date: Date;
+  day: number;
+  isInRange: boolean;
+  isSelected: boolean;
+}
+
+export interface HeaderProps {
+  date: Date;
+  locale?: string;
+  onPreviousMonth: () => void;
+  onNextMonth: () => void;
+  previousInBound: boolean;
+  nextInBound: boolean;
+}
+
 export interface CalendarProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -15,14 +31,14 @@ export interface CalendarProps {
   activeDate?: 'start' | 'end';
   animate?: AnimateType;
   bounds?: string[];
-  children?: (...args: any[]) => any;
-  date?: string;
+  children?: (args: RenderProps) => React.ReactNode;
+  date?: string | (string | string[])[];
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
   fill?: boolean;
   firstDayOfWeek?: 0 | 1;
-  header?: (...args: any[]) => any;
+  header?: (args: HeaderProps) => React.ReactNode;
   locale?: string;
   onReference?: (reference: string) => void;
   onSelect?: (select: string | string[]) => any;
@@ -32,9 +48,14 @@ export interface CalendarProps {
   size?: 'small' | 'medium' | 'large' | string;
 }
 
-declare const Calendar: React.ComponentClass<CalendarProps &
-  JSX.IntrinsicElements['div']>;
+export interface CalendarExtendedProps
+  extends CalendarProps,
+    Omit<JSX.IntrinsicElements['div'], keyof CalendarProps> {}
+
+// Keep type alias for backwards compatibility.
 export type CalendarType = CalendarProps &
   Omit<JSX.IntrinsicElements['div'], 'onSelect'>;
+
+declare const Calendar: React.ComponentClass<CalendarExtendedProps>;
 
 export { Calendar };

@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { Omit, TextAlignType } from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface MaskedInputProps {
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropProps?: DropProps;
+  focusIndicator?: boolean;
   icon?: JSX.Element;
   id?: string;
   mask?: Array<{
@@ -18,12 +20,17 @@ export interface MaskedInputProps {
   plain?: boolean;
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  textAlign?: TextAlignType;
   value?: string | number;
 }
 
-declare const MaskedInput: React.ComponentClass<MaskedInputProps &
-  Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>>;
-export type MaskedInputType = MaskedInputProps &
-  Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>;
+export interface MaskedInputExtendedProps
+  extends MaskedInputProps,
+    Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps> {}
+
+// Keep type alias for backwards compatibility.
+export type MaskedInputType = MaskedInputExtendedProps;
+
+declare const MaskedInput: React.FC<MaskedInputExtendedProps>;
 
 export { MaskedInput };

@@ -1,5 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button a11yTitle 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Title"
+    class="c1"
+    type="button"
+  />
+  <button
+    aria-label="Title"
+    class="c1"
+    type="button"
+  />
+</div>
+`;
+
 exports[`Button active + primary 1`] = `
 .c1 {
   display: inline-block;
@@ -55,6 +151,26 @@ exports[`Button active + primary 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -66,14 +182,10 @@ exports[`Button active + primary 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Button
@@ -133,6 +245,26 @@ exports[`Button active 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -144,14 +276,10 @@ exports[`Button active 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Button
@@ -209,6 +337,26 @@ exports[`Button as 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -220,16 +368,1074 @@ exports[`Button as 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   />
+</div>
+`;
+
+exports[`Button badge should apply background 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #00C781;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 24px;
+  min-width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  font-weight: normal;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, 100 unread alerts"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: -12px; right: -12px;"
+    >
+      <div
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+      >
+        <span
+          class="c6"
+        >
+          9+
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Button badge should be offset from top-right corner 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 12px;
+  min-width: 12px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, alert"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: -3px; right: -3px;"
+    >
+      <div
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Button badge should display "+" when number is greater than max 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 24px;
+  min-width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, 100 unread alerts"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: -12px; right: -12px;"
+    >
+      <div
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+      >
+        <span
+          class="c6"
+        >
+          9+
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Button badge should display number content 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 24px;
+  min-width: 24px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, 2 unread alerts"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: -12px; right: -12px;"
+    >
+      <div
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+      >
+        <span
+          class="c6"
+        >
+          2
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Button badge should render custom element 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, Add user alert"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: -0px; right: -0px;"
+    >
+      <div
+        class="c5"
+      >
+        <svg
+          aria-label="Add"
+          class="c6"
+          data-testid="badge"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 22V2M2 12h20"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Button badge should render relative to contents when button has no
+  border or background 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 12px;
+  min-width: 12px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Button, Add user alert"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <svg
+          aria-label="Add"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 22V2M2 12h20"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="c5"
+        style="top: -3px; right: -3px;"
+      >
+        <div
+          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        />
+      </div>
+    </div>
+  </button>
 </div>
 `;
 
@@ -283,6 +1489,26 @@ exports[`Button basic 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -294,15 +1520,10 @@ exports[`Button basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Test
@@ -360,9 +1581,24 @@ exports[`Button children function 1`] = `
   border: 0;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -376,27 +1612,25 @@ exports[`Button children function 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
-    <span
-      className="c2"
-    >
-      Test
-    </span>
+    <div
+      data-testid="children function"
+    />
   </button>
 </div>
 `;
 
 exports[`Button children function with disabled prop 1`] = `
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -441,6 +1675,26 @@ exports[`Button children function with disabled prop 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -493,9 +1747,24 @@ exports[`Button children function with disabled prop 1`] = `
   border: 0;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -509,37 +1778,27 @@ exports[`Button children function with disabled prop 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
     type="button"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      Disabled
+      Button#1 Disabled
     </span>
   </button>
   <button
-    className="c3"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
     type="button"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      Test
+      Button#2 not Disabled
     </span>
   </button>
 </div>
@@ -595,6 +1854,26 @@ exports[`Button color 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: inline-block;
   box-sizing: border-box;
@@ -644,6 +1923,26 @@ exports[`Button color 1`] = `
 }
 
 .c2:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -699,6 +1998,26 @@ exports[`Button color 1`] = `
   border: 0;
 }
 
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -751,6 +2070,26 @@ exports[`Button color 1`] = `
   border: 0;
 }
 
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -762,51 +2101,31 @@ exports[`Button color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
-    Test
+    accent-1
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
-    Test
+    primary accent-1
   </button>
   <button
-    className="c3"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
     type="button"
   >
-    Test
+    custom color #1
   </button>
   <button
-    className="c4"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c4"
     type="button"
   >
-    Test
+    custom color #2
   </button>
 </div>
 `;
@@ -891,6 +2210,26 @@ exports[`Button disabled 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: inline-block;
   box-sizing: border-box;
@@ -941,6 +2280,26 @@ exports[`Button disabled 1`] = `
   border: 0;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -978,6 +2337,26 @@ exports[`Button disabled 1`] = `
 }
 
 .c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1023,6 +2402,26 @@ exports[`Button disabled 1`] = `
   border: 0;
 }
 
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1061,6 +2460,26 @@ exports[`Button disabled 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1113,6 +2532,26 @@ exports[`Button disabled 1`] = `
   border: 0;
 }
 
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1124,149 +2563,105 @@ exports[`Button disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
     type="button"
   />
   <button
-    className="c2"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
+    disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    className="c3"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
+    disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    className="c4"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c4"
+    disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    className="c5"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c5"
+    disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    className="c6"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c6"
+    disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    className="c1"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
+    disabled=""
     type="button"
   >
     <div
-      className="c7"
+      class="c7"
     >
       <svg />
       <div
-        className="c8"
+        class="c8"
       />
       Button
     </div>
   </button>
   <button
-    className="c3"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
+    disabled=""
     type="button"
   >
     <div
-      className="c7"
+      class="c7"
     >
       <svg />
       <div
-        className="c8"
+        class="c8"
       />
       Button
     </div>
   </button>
   <button
-    className="c2"
-    disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
+    disabled=""
     type="button"
   >
     <div
-      className="c7"
+      class="c7"
     >
       <svg
         color="#f8f8f8"
       />
       <div
-        className="c8"
+        class="c8"
       />
       Button
     </div>
@@ -1276,44 +2671,6 @@ exports[`Button disabled 1`] = `
 
 exports[`Button fill 1`] = `
 .c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1344,6 +2701,75 @@ exports[`Button fill 1`] = `
   flex: 1 0 auto;
 }
 
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
 .c2:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
@@ -1365,6 +2791,26 @@ exports[`Button fill 1`] = `
 }
 
 .c2:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1391,6 +2837,7 @@ exports[`Button fill 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
 }
 
 .c3:hover {
@@ -1417,6 +2864,26 @@ exports[`Button fill 1`] = `
   border: 0;
 }
 
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -1440,7 +2907,7 @@ exports[`Button fill 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  width: 100%;
+  height: 100%;
 }
 
 .c4:hover {
@@ -1467,53 +2934,23 @@ exports[`Button fill 1`] = `
   border: 0;
 }
 
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  height: 100%;
-}
-
-.c5:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c5:focus {
+.c4:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
+  box-shadow: none;
 }
 
-.c5:focus::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1528,48 +2965,31 @@ exports[`Button fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
-    <button
-      className="c2"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      type="button"
-    />
-    <button
-      className="c3"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      type="button"
-    />
-    <button
-      className="c4"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      type="button"
-    />
-    <button
-      className="c5"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      type="button"
-    />
+    fill
+  </button>
+  <button
+    class="c2"
+    type="button"
+  >
+    fill false
+  </button>
+  <button
+    class="c3"
+    type="button"
+  >
+    fill horizontal
+  </button>
+  <button
+    class="c4"
+    type="button"
+  >
+    fill vertical
   </button>
 </div>
 `;
@@ -1620,6 +3040,26 @@ exports[`Button focus 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1637,7 +3077,7 @@ exports[`Button focus 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    Test focus
   </button>
 </div>
 `;
@@ -1686,6 +3126,26 @@ exports[`Button hoverIndicator as object with color 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1697,15 +3157,10 @@ exports[`Button hoverIndicator as object with color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     hoverIndicator
@@ -1757,6 +3212,26 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1768,15 +3243,10 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     hoverIndicator
@@ -1828,6 +3298,26 @@ exports[`Button hoverIndicator background 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1839,15 +3329,10 @@ exports[`Button hoverIndicator background 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     hoverIndicator
@@ -1899,6 +3384,26 @@ exports[`Button hoverIndicator color 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1910,15 +3415,10 @@ exports[`Button hoverIndicator color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     hoverIndicator
@@ -1976,6 +3476,26 @@ exports[`Button href 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1987,16 +3507,14 @@ exports[`Button href 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
+    class="c1"
     href="test"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
-  />
+  >
+    Button as link
+  </a>
 </div>
 `;
 
@@ -2082,6 +3600,26 @@ exports[`Button icon label 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2093,23 +3631,20 @@ exports[`Button icon label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
-      <svg />
+      <svg
+        data-testid="icon"
+      />
       <div
-        className="c3"
+        class="c3"
       />
       Test
     </div>
@@ -2170,6 +3705,26 @@ exports[`Button primary 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2181,18 +3736,13 @@ exports[`Button primary 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
-    Test
+    Primary Button
   </button>
 </div>
 `;
@@ -2279,6 +3829,26 @@ exports[`Button reverse icon label 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2290,25 +3860,22 @@ exports[`Button reverse icon label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
       Test
       <div
-        className="c3"
+        class="c3"
       />
-      <svg />
+      <svg
+        data-testid="icon"
+      />
     </div>
   </button>
 </div>
@@ -2464,6 +4031,26 @@ exports[`Button size 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: inline-block;
   box-sizing: border-box;
@@ -2513,6 +4100,26 @@ exports[`Button size 1`] = `
   border: 0;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -2559,6 +4166,26 @@ exports[`Button size 1`] = `
 }
 
 .c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2614,6 +4241,26 @@ exports[`Button size 1`] = `
   border: 0;
 }
 
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2663,6 +4310,26 @@ exports[`Button size 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2718,6 +4385,26 @@ exports[`Button size 1`] = `
   border: 0;
 }
 
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2761,6 +4448,26 @@ exports[`Button size 1`] = `
   border: 0;
 }
 
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2772,284 +4479,220 @@ exports[`Button size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     Small
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     Medium
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     Default
   </button>
   <button
-    className="c3"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
     type="button"
   >
     Large
   </button>
   <button
-    className="c4"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c4"
     type="button"
   >
     Small
   </button>
   <button
-    className="c5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c5"
     type="button"
   >
     Medium
   </button>
   <button
-    className="c5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c5"
     type="button"
   >
     Default
   </button>
   <button
-    className="c6"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c6"
     type="button"
   >
     Large
   </button>
   <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c7"
     type="button"
   >
     <svg
       aria-label="Add"
-      className="c8"
+      class="c8"
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
-        strokeWidth="2"
+        stroke-width="2"
       />
     </svg>
   </button>
   <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c7"
     type="button"
   >
     <svg
       aria-label="Add"
-      className="c8"
+      class="c8"
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
-        strokeWidth="2"
+        stroke-width="2"
       />
     </svg>
   </button>
   <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c7"
     type="button"
   >
     <svg
       aria-label="Add"
-      className="c8"
+      class="c8"
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
-        strokeWidth="2"
+        stroke-width="2"
       />
     </svg>
   </button>
   <button
-    className="c7"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c7"
     type="button"
   >
     <svg
       aria-label="Add"
-      className="c8"
+      class="c8"
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
-        strokeWidth="2"
+        stroke-width="2"
       />
     </svg>
   </button>
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c9"
+      class="c9"
     >
       Small
       <div
-        className="c10"
+        class="c10"
       />
       <svg
         aria-label="Next"
-        className="c11"
+        class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     <div
-      className="c9"
+      class="c9"
     >
       Medium
       <div
-        className="c10"
+        class="c10"
       />
       <svg
         aria-label="Next"
-        className="c11"
+        class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     <div
-      className="c9"
+      class="c9"
     >
       Default
       <div
-        className="c10"
+        class="c10"
       />
       <svg
         aria-label="Next"
-        className="c11"
+        class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
-    className="c3"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c3"
     type="button"
   >
     <div
-      className="c9"
+      class="c9"
     >
       Large
       <div
-        className="c10"
+        class="c10"
       />
       <svg
         aria-label="Next"
-        className="c11"
+        class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -3107,6 +4750,26 @@ exports[`Button tip 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3133,6 +4796,10 @@ exports[`Button tip 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -3141,6 +4808,7 @@ exports[`Button tip 1`] = `
   class="c0"
 >
   <button
+    aria-label="tooltip"
     class="c1"
     type="button"
   >
@@ -3187,6 +4855,26 @@ exports[`Button warns about invalid icon 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3248,6 +4936,26 @@ exports[`Button warns about invalid label 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

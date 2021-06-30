@@ -262,7 +262,8 @@ border
 
 **formField.border.error.color**
 
-The border color of the error. Expects `string | {'dark': string, 'light': string}`.
+The border color of the error. Deprecated, use 
+    error.border.color instead. Expects `string | {'dark': string, 'light': string}`.
 
 Defaults to
 
@@ -370,6 +371,16 @@ Defaults to
 undefined
 ```
 
+**formField.error.border.color**
+
+The border color of the error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'status-critical' },
+```
+
 **formField.error.color**
 
 The color of the FormField error. Expects `string | {'dark': string, 'light': string}`.
@@ -399,6 +410,67 @@ Defaults to
 
 ```
 undefined
+```
+
+**formField.error.size**
+
+The size of the error message to be displayed.
+     The default size is medium. Expects `string`.
+
+Defaults to
+
+```
+medium
+```
+
+**formField.error.size.xsmall**
+
+The size of a 'xsmall' error message. Expects `string`.
+
+Defaults to
+
+```
+12px
+```
+
+**formField.error.size.small**
+
+The size of a 'small' error message. Expects `string`.
+
+Defaults to
+
+```
+14px
+```
+
+**formField.error.size.medium**
+
+The size of a 'medium' error message. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**formField.error.size.large**
+
+The size of a 'large' error message. Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**formField.error.size.xlarge**
+
+The size of a 'xlarge' error message. Expects `string`.
+
+Defaults to
+
+```
+26px
 ```
 
 **formField.info.container**

@@ -33,7 +33,7 @@ type BorderType =
       size?: SizeType;
     };
 
-export interface ListProps {
+export interface ListProps<ListItemType> {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: string;
@@ -42,7 +42,7 @@ export interface ListProps {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  data?: string[] | {}[];
+  data?: ListItemType[];
   gridArea?: GridAreaType;
   itemProps?: {
     [_: string]: { background?: string; border?: BorderType; pad?: PadType };
@@ -51,17 +51,25 @@ export interface ListProps {
   onMore?: () => void;
   onClickItem?:
     | ((event: React.MouseEvent) => void)
-    | ((event: { item?: {}; index?: number }) => void);
+    | ((event: { item?: ListItemType; index?: number }) => void);
+  onOrder?: () => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
-  primaryKey?: string | ((item: any) => React.ReactElement);
-  secondaryKey?: string | ((item: any) => React.ReactElement);
+  primaryKey?: string | ((item: ListItemType) => React.ReactElement);
+  secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };
   step?: number;
-  action?: (item: any, index: number) => void;
+  action?: (item: ListItemType, index: number) => void;
 }
 
-declare const List: React.ComponentClass<ListProps &
-  JSX.IntrinsicElements['ul']>;
+type ulProps = JSX.IntrinsicElements['ul'];
+
+export interface ListExtendedProps<ListItemType>
+  extends ListProps<ListItemType>,
+    ulProps {}
+
+declare const List: <ListItemType = string | {}>(
+  p: React.PropsWithChildren<ListExtendedProps<ListItemType>>,
+) => React.ReactElement<ListExtendedProps<ListItemType>>;
 
 export { List };

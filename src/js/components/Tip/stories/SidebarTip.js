@@ -26,6 +26,9 @@ const customTheme = {
     font: {
       family: `-apple-system, BlinkMacSystemFont`,
     },
+    colors: {
+      text: 'black',
+    },
   },
   tip: {
     drop: {
@@ -72,7 +75,7 @@ const SidebarHeader = () => (
   </Box>
 );
 
-const iconsMap = color => [
+const iconsMap = (color) => [
   <Analytics color={color} />,
   <Stakeholder color={color} />,
   <Calculator color={color} />,

@@ -44,7 +44,7 @@ const FakeLayer = ({ children, dataTestid, ...rest }) => {
   );
 };
 
-const TargetLayer = props => {
+const TargetLayer = (props) => {
   const [target, setTarget] = React.useState();
   let layer;
   if (target) {
@@ -81,8 +81,8 @@ describe('Layer', () => {
 
   const fullOptions = [true, false, 'horizontal', 'vertical'];
 
-  positions.forEach(position =>
-    fullOptions.forEach(full => {
+  positions.forEach((position) =>
+    fullOptions.forEach((full) => {
       test(`position: ${position} - full: ${full}`, () => {
         render(
           <Grommet>
@@ -116,7 +116,7 @@ describe('Layer', () => {
     }),
   );
 
-  ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin =>
+  ['none', 'xsmall', 'small', 'medium', 'large'].forEach((margin) =>
     test(`margin ${margin}`, () => {
       render(
         <Grommet>
@@ -175,8 +175,17 @@ describe('Layer', () => {
   });
 
   test('plain', () => {
+    // elevation should not be applied when Layer is plain
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+      },
+    };
+
     render(
-      <Grommet>
+      <Grommet theme={theme}>
         <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
@@ -209,7 +218,7 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
-  ['slide', 'fadeIn', false, true].forEach(animation =>
+  ['slide', 'fadeIn', false, true].forEach((animation) =>
     test(`animation ${animation}`, () => {
       render(
         <Grommet>
@@ -237,7 +246,7 @@ describe('Layer', () => {
     expect(onEsc).toBeCalled();
   });
 
-  test('is accessible', done => {
+  test('is accessible', (done) => {
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
@@ -462,7 +471,7 @@ describe('Layer', () => {
   });
 
   test('invokes onEsc when modal={false}', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     window.scrollTo = jest.fn();
     const onEsc = jest.fn();
     const { getByText, queryByText } = render(
@@ -500,5 +509,16 @@ describe('Layer', () => {
     });
     expect(onEsc).toBeCalledTimes(1);
     expectPortal('esc-test').toMatchSnapshot();
+  });
+
+  test('should only place id on StyledLayer when singleId === true', () => {
+    render(
+      <Grommet options={{ layer: { singleId: true } }}>
+        <Layer id="singleId-test" animation={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('singleId-test').toMatchSnapshot();
   });
 });

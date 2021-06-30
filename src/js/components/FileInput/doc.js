@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = FileInput => {
+export const doc = (FileInput) => {
   const DocumentedFileInput = describe(FileInput)
     .availableAt(getAvailableAtBadge('FileInput', 'Input'))
     .description('A control to input one or more files.')
@@ -57,9 +57,12 @@ export const doc = FileInput => {
     ),
     onChange: PropTypes.func.description(
       `Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.`,
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.`,
     ),
-    renderFile: PropTypes.node.description(
+    renderFile: PropTypes.func.description(
       `Provides custom rendering of the file. If not provided, the file's
       name will be shown. It will be passed the browser File object as
       an argument. For example: (file) => <Text>{file.name}</Text>`,

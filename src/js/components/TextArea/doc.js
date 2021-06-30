@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = TextArea => {
+export const doc = (TextArea) => {
   const DocumentedTextArea = describe(TextArea)
     .availableAt(getAvailableAtBadge('TextArea', 'Input'))
     .description('A control to input multiple lines of text.')
@@ -23,7 +23,7 @@ export const doc = TextArea => {
       .description('Whether the width and height should fill the container.')
       .defaultValue(false),
     focusIndicator: PropTypes.bool.description(
-      'Whether the plain textarea should receive a focus outline.',
+      'Whether the plain TextArea should receive a focus outline.',
     ),
     name: PropTypes.string.description('The name attribute of the textarea.'),
     onChange: PropTypes.func.description(

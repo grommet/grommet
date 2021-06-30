@@ -824,6 +824,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -854,13 +863,18 @@ with plain Buttons.",
         "format": "boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -876,6 +890,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }",
         "name": "hoverIndicator",
@@ -1007,7 +1063,7 @@ string",
         "name": "responsive",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "How much to round the corners.",
         "format": "boolean
 xsmall
@@ -1250,6 +1306,62 @@ function",
         "name": "as",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".",
+        "format": "boolean
+element
+number
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  max: number,
+  value: 
+    boolean
+    number
+}",
+        "name": "badge",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -1301,13 +1413,18 @@ with plain Buttons.",
         "format": "boolean
 string
 background
+string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
   image: string,
-  light: string,
   position: string,
   opacity: 
     string
@@ -1323,6 +1440,48 @@ background
   size: 
     cover
     contain
+    string,
+  light: string
+}
+{
+  background: 
+    string
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      dark: 
+        boolean
+        string,
+      image: string,
+      position: string,
+      opacity: 
+        string
+        boolean
+        number
+        weak
+        medium
+        strong,
+      repeat: 
+        no-repeat
+        repeat
+        string,
+      size: 
+        cover
+        contain
+        string,
+      light: string
+    },
+  elevation: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }",
         "name": "hoverIndicator",
@@ -1333,7 +1492,9 @@ background
         "name": "href",
       },
       Object {
-        "description": "Icon element to place in the button.",
+        "description": "Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.",
         "format": "element",
         "name": "icon",
       },
@@ -1397,7 +1558,9 @@ string",
         "name": "target",
       },
       Object {
-        "description": "tooltip or a hint when hovering over the button.",
+        "description": "tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.",
         "format": "{
   content: 
     node
@@ -1576,8 +1739,12 @@ end",
         "name": "children",
       },
       Object {
-        "description": "The selected date in ISO8601 format",
-        "format": "string",
+        "description": "The selected date or array of dates in ISO8601 format.",
+        "format": "string
+[
+  string
+  [string]
+]",
         "name": "date",
       },
       Object {
@@ -1935,7 +2102,7 @@ string",
         "name": "onHover",
       },
       Object {
-        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "description": "What opacity to apply to the visuals. Supersedes 'color.opacity'",
         "format": "weak
 medium
 strong
@@ -2147,7 +2314,8 @@ point",
     onHover: function,
     opacity: 
       string
-      number,
+      number
+      boolean,
     thickness: 
       hair
       xsmall
@@ -2207,6 +2375,13 @@ point",
         "name": "disabled",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Whether the checkbox and label expand to fill all of the available
+         width and/or height of their container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "The DOM id attribute value to use for the underlying <input/> element.",
         "format": "string",
         "name": "id",
@@ -2229,6 +2404,86 @@ point",
       via event.target.checked. Same as React <input onChange={} />.",
         "format": "function",
         "name": "onChange",
+      },
+      Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
       },
       Object {
         "defaultValue": false,
@@ -3105,7 +3360,8 @@ string",
         "description": "The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.",
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      This property should be used when in a Form.",
         "format": "string",
         "name": "format",
       },
@@ -3171,10 +3427,35 @@ string",
     "name": "Diagram",
     "properties": Array [
       Object {
+        "description": "Animation to be used by entire Diagram",
+        "format": "boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "animation",
+      },
+      Object {
         "defaultValue": Array [],
         "description": "Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.",
         "format": "[{
@@ -3182,6 +3463,27 @@ string",
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -3264,6 +3566,134 @@ string",
         "name": "align",
       },
       Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
+        "format": "none
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "elevation",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
         "description": "Function that will be invoked when the user clicks outside the drop.",
         "format": "function",
         "name": "onClickOutside",
@@ -3297,6 +3727,13 @@ string",
         "name": "overflow",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the drop element should have no background, 
+        elevation, margin or round.",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to dynamically re-place when resized.",
         "format": "boolean",
@@ -3307,6 +3744,37 @@ string",
         "description": "Whether the drop should control focus.",
         "format": "boolean",
         "name": "restrictFocus",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "How much to round the corners.",
+        "format": "boolean
+xsmall
+small
+medium
+large
+xlarge
+full
+string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
+        "name": "round",
       },
       Object {
         "defaultValue": true,
@@ -3324,24 +3792,6 @@ align",
         "format": "object",
         "name": "target",
         "required": true,
-      },
-      Object {
-        "description": "Elevated height of the target, indicated via a drop shadow. 
-      Only applicable if the Drop isn't plain.",
-        "format": "none
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "elevation",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the drop element should have no background nor elevation.",
-        "format": "boolean",
-        "name": "plain",
       },
       Object {
         "defaultValue": true,
@@ -3611,7 +4061,10 @@ string",
       },
       Object {
         "description": "Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.",
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.",
         "format": "function",
         "name": "onChange",
       },
@@ -3619,7 +4072,7 @@ string",
         "description": "Provides custom rendering of the file. If not provided, the file's
       name will be shown. It will be passed the browser File object as
       an argument. For example: (file) => <Text>{file.name}</Text>",
-        "format": "node",
+        "format": "function",
         "name": "renderFile",
       },
     ],
@@ -4250,6 +4703,15 @@ small
 medium
 large
 xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto
 {
   count: 
     fit
@@ -4261,6 +4723,15 @@ xlarge
     medium
     large
     xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
     [
       xsmall
       small
@@ -4321,6 +4792,47 @@ none
 }
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "A fixed height.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "height",
       },
       Object {
         "defaultValue": "stretch",
@@ -4491,6 +5003,47 @@ function",
 function",
         "name": "as",
       },
+      Object {
+        "description": "A fixed width.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "width",
+      },
     ],
     "usage": "import { Grid } from 'grommet';
 <Grid />",
@@ -4555,9 +5108,26 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
       },
       Object {
         "defaultValue": false,
-        "description": "Whether to take the whole viewport.",
-        "format": "boolean",
+        "description": "Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.",
+        "format": "boolean
+min",
         "name": "full",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.",
+        "format": "{
+  layer: 
+    {
+      singleId: boolean
+    }
+}",
+        "name": "options",
       },
       Object {
         "defaultValue": false,
@@ -4597,6 +5167,125 @@ light",
       shadow root).",
         "format": "object",
         "name": "containerTarget",
+      },
+      Object {
+        "defaultValue": Object {
+          "messages": Object {
+            "fileInput": Object {
+              "browse": "browse",
+              "dropPrompt": "Drop file here or",
+              "dropPromptMultiple": "Drop files here or",
+              "files": "files",
+              "remove": "remove",
+              "removeAll": "remove all",
+            },
+            "form": Object {
+              "invalid": "invalid",
+              "required": "required",
+            },
+            "menu": Object {
+              "closeMenu": "Close Menu",
+              "openMenu": "Open Menu",
+            },
+            "rangeSelector": Object {
+              "lower": "Lower Bounds",
+              "upper": "Upper Bounds",
+            },
+            "select": Object {
+              "multiple": "multiple",
+            },
+            "skipLinks": Object {
+              "skipTo": "Skip To:",
+            },
+            "tabs": Object {
+              "tabContents": "Tab Contents",
+            },
+            "textInput": Object {
+              "enterSelect": "(Press Enter to Select)",
+              "suggestionIsOpen": "Suggestions drop is open, continue to use
+            arrow keys to navigate",
+              "suggestionsCount": "suggestions available",
+              "suggestionsExist": "This input has suggestions use arrow keys
+            to navigate",
+            },
+            "video": Object {
+              "closeMenu": "close menu",
+              "fullScreen": "full screen",
+              "openMenu": "open menu",
+              "pauseButton": "pause",
+              "playButton": "play",
+              "progressMeter": "video progress",
+              "scrubber": "scrubber",
+              "volumeDown": "volume down",
+              "volumeUp": "volume up",
+            },
+          },
+        },
+        "description": "Custom messages for grommet components. Use this property to
+define messages or a function to get localized messages
+for any grommet children components.",
+        "format": "{
+  format: function,
+  messages: 
+    {
+      fileInput: 
+        {
+          browse: string,
+          dropPrompt: string,
+          dropPromptMultiple: string,
+          files: string,
+          remove: string,
+          removeAll: string
+        },
+      form: 
+        {
+          invalid: string,
+          required: string
+        },
+      menu: 
+        {
+          openMenu: string,
+          closeMenu: string
+        },
+      rangeSelector: 
+        {
+          lower: string,
+          upper: string
+        },
+      select: 
+        {
+          multiple: string
+        },
+      skipLinks: 
+        {
+          skipTo: string
+        },
+      tabs: 
+        {
+          tabContents: string
+        },
+      textInput: 
+        {
+          enterSelect: string,
+          suggestionsCount: string,
+          suggestionsExist: string,
+          suggestionIsOpen: string
+        },
+      video: 
+        {
+          closeMenu: string,
+          fullScreen: string,
+          progressMeter: string,
+          scrubber: string,
+          openMenu: string,
+          pauseButton: string,
+          playButton: string,
+          volumeDown: string,
+          volumeUp: string
+        }
+    }
+}",
+        "name": "messages",
       },
     ],
     "usage": "import { Grommet } from 'grommet';
@@ -4785,7 +5474,8 @@ string",
         "description": "How to align the text inside the heading.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
       Object {
@@ -5124,7 +5814,8 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain Layer with no background color or border.",
+        "description": "Whether this is a plain Layer with no background color, border, or 
+        elevation.",
         "format": "boolean",
         "name": "plain",
       },
@@ -5285,8 +5976,7 @@ string",
         "description": "Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />",
+      'action = ({item, index}) => <Content />'",
         "format": "function",
         "name": "action",
       },
@@ -5358,8 +6048,7 @@ end
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      ",
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'",
         "format": "function",
         "name": "children",
       },
@@ -5392,6 +6081,15 @@ end
       cause confusion with overlapping interactive elements.",
         "format": "function",
         "name": "onClickItem",
+      },
+      Object {
+        "description": "Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.",
+        "format": "function",
+        "name": "onOrder",
       },
       Object {
         "description": "Item padding.",
@@ -5581,6 +6279,11 @@ string",
         "name": "onChange",
       },
       Object {
+        "description": "Whether the plain MaskedInput should receive a focus outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
+      },
+      Object {
         "description": "Function that will be called when the user leaves the field.",
         "format": "function",
         "name": "onBlur",
@@ -5620,6 +6323,14 @@ large
 xlarge
 string",
         "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
       },
       Object {
         "description": "What text to put in the input. The caller should ensure that it
@@ -5831,7 +6542,7 @@ one of top or bottom should be specified.",
         "name": "dropTarget",
       },
       Object {
-        "defaultValue": Object {},
+        "defaultValue": undefined,
         "description": "Any valid Drop prop.",
         "format": "object",
         "name": "dropProps",
@@ -6081,8 +6792,17 @@ string",
         "defaultValue": "bar",
         "description": "The visual type of meter.",
         "format": "bar
-circle",
+circle
+pie",
         "name": "type",
+      },
+      Object {
+        "description": "The direction of the Meter you want to display.
+       The default direction is horizontal.Currently, direction works only
+       when 'type' of Meter is 'bar'.",
+        "format": "horizontal
+vertical",
+        "name": "direction",
       },
       Object {
         "description": "
@@ -6445,7 +7165,8 @@ string",
         "description": "How to align the text inside the paragraph.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
     ],
@@ -7029,10 +7750,14 @@ node",
       },
       Object {
         "description": "When the options array contains objects, this property indicates how
-      to determine the label of each option. If a string is
-      provided, it is used as the key to retrieve each option's label.
-      If a function is provided, it is called with the option and the
-      return value indicates the label.",
+      to retrieve the label for each option.
+      If a string is provided, it is used as the key to retrieve
+      a property of an
+      option object, which should be a string.
+      If a function is provided, it is called with the option and should
+      return a string or a React node.
+      The label is what is displayed to the user in the options list
+      drop down and for the selected option itself.",
         "format": "string
 function",
         "name": "labelKey",
@@ -7149,10 +7874,13 @@ string",
         "name": "size",
       },
       Object {
-        "description": "Currently selected value. This can be an array
-      when multiple. Passing an element allows the caller to control how
-      the value is rendered. Passing an element is deprecated. Instead,
-      use the 'valueLabel' property.",
+        "description": "The currently selected value.
+    When 'valueKey' sets 'reduce', the value(s) here should match what the
+    'valueKey' would return for the corresponding selected option object.
+    Otherwise, the value should be one (or multiple, when multiple = true)
+    of the options from the options array.
+    Passing an element allows the caller to control how the value is rendered.
+    Passing an element is deprecated. Instead, use the 'valueLabel' property.",
         "format": "string
 element
 object
@@ -7172,12 +7900,13 @@ number
       },
       Object {
         "description": "When the options array contains objects, this property indicates how
-      to determine the value of each option. If a string is
-      provided, it is used as the key to retrieve each option's value.
-      If a function is provided, it is called with the option and the
-      return value indicates the value. If reduce is true, the value
-      coming via the key will be used for the onChange value and the value
-      property is expected to be reduced to align.",
+      to retrieve the value of each option.
+      If a string is provided, it is used as the key to retrieve a
+      property of an option object.
+      If a function is provided, it is called with the option and should
+      return the value.
+      If reduce is true, this value will be used for the 'value'
+      delivered via 'onChange'.",
         "format": "string
 function
 {
@@ -7242,9 +7971,10 @@ string",
       },
       Object {
         "defaultValue": undefined,
-        "description": "The message that will be announced for screen readers when message 
-        is a string. When an object, the start message will be announced 
-        as the Spinner shows, and the end message as the spinner closes.",
+        "description": "When message is a string, the message will be announced for 
+        screen readers once the Spinner is loaded. 
+        When an object, the 'start' message will be announced 
+        as the Spinner appears, and the 'end' message as the spinner closes.",
         "format": "string
 {
   start: string,
@@ -7256,7 +7986,172 @@ string",
     "usage": "import { Spinner } from 'grommet';
 <Spinner/>",
   },
-  "Stack": [Function],
+  "Stack": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Stack&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/stack&module=%2Fsrc%2FStack.js",
+      },
+    ],
+    "description": "A container that stacks contents on top of each other. One child is
+      designated as the \`guidingChild\` which determines the size. All
+      other children are placed within that size, either above or below
+      based on their order. Stack is typically used to decorate Meter, Chart,
+      or icons.",
+    "intrinsicElement": "div",
+    "name": "Stack",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Where to anchor children from. If not specified, children
+      fill the guiding child's area.",
+        "format": "center
+left
+right
+top
+bottom
+top-left
+bottom-left
+top-right
+bottom-right",
+        "name": "anchor",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to expand to fill
+      all of the available width and height in the parent container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
+        "defaultValue": "first",
+        "description": "Which child to guide layout from. All other children
+      will be positioned within that area. Defaults to 'first'.",
+        "format": "number
+first
+last",
+        "name": "guidingChild",
+      },
+      Object {
+        "description": "Which child to restrict user interaction to. All other children
+      will have user interaction disabled.",
+        "format": "number
+first
+last",
+        "name": "interactiveChild",
+      },
+    ],
+    "usage": "import { Stack } from 'grommet';
+<Stack />",
+  },
   "Tab": Object {
     "description": "One tab within Tabs.",
     "intrinsicElement": "button",
@@ -7311,7 +8206,8 @@ string",
       Object {
         "defaultValue": false,
         "description": "Whether default styling context should be removed.",
-        "format": "boolean",
+        "format": "boolean
+noPad",
         "name": "plain",
       },
       Object {
@@ -7728,8 +8624,26 @@ element",
         "description": "How to align the text inside the component.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
+      },
+      Object {
+        "description": "tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
       },
       Object {
         "defaultValue": false,
@@ -7794,7 +8708,7 @@ break-word",
         "name": "fill",
       },
       Object {
-        "description": "Whether the plain textarea should receive a focus outline.",
+        "description": "Whether the plain TextArea should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7933,7 +8847,7 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Whether the plain text input should receive a focus outline.",
+        "description": "Whether the plain TextInput should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
       },
@@ -7968,7 +8882,7 @@ string",
         "description": "Note: This function is deprecated, use onSuggestionSelect instead.
       Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect 
+      When used in conjunction with onSuggestionSelect
       this will default to React's onSelect",
         "format": "function",
         "name": "onSelect",
@@ -7997,7 +8911,7 @@ string",
       Object {
         "description": "Whether this is a plain input with no border or outline.
       Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient 
+      Only use this when the containing context provides sufficient
       affordance.",
         "format": "boolean
 full",
@@ -8072,7 +8986,6 @@ number",
       },
       Object {
         "defaultValue": Object {
-          "plain": true,
           "trapFocus": false,
         },
         "description": "Any valid Drop prop to style the Tip drop container.",
@@ -8081,7 +8994,7 @@ number",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether content should have default styling.",
+        "description": "Whether content should have default styling from tip.content.",
         "format": "boolean",
         "name": "plain",
       },
@@ -8237,17 +9150,6 @@ contain",
         "name": "mute",
       },
       Object {
-        "defaultValue": Object {
-          "closeMenu": "close menu",
-          "fullScreen": "full screen",
-          "openMenu": "open menu",
-          "pauseButton": "pause",
-          "playButton": "play",
-          "progressMeter": "video progress",
-          "scrubber": "scrubber",
-          "volumeDown": "volume down",
-          "volumeUp": "volume up",
-        },
         "description": "Custom messages. Used for accessibility by screen readers.",
         "format": "{
   closeMenu: string,
