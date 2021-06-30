@@ -26,15 +26,15 @@ exports[`Box a11yTitle 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
     aria-label="Test"
-    className="c1"
+    class="c1"
   />
   <div
     aria-label="Test"
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -141,22 +141,22 @@ exports[`Box align 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
 </div>
 `;
@@ -275,25 +275,25 @@ exports[`Box alignContent 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -378,19 +378,19 @@ exports[`Box alignSelf 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -688,52 +688,52 @@ exports[`Box animation 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
 </div>
 `;
@@ -764,10 +764,10 @@ exports[`Box as 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <header
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -1166,70 +1166,70 @@ exports[`Box background 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
   <div
-    className="c16"
+    class="c16"
   />
   <div
-    className="c17"
+    class="c17"
   />
   <div
-    className="c18"
+    class="c18"
   />
   <div
-    className="c19"
+    class="c19"
   />
   <div
-    className="c20"
+    class="c20"
   />
   <div
-    className="c21"
+    class="c21"
   />
 </div>
 `;
@@ -1450,62 +1450,62 @@ exports[`Box basis 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
     <div
-      className="c3"
+      class="c3"
     />
     <div
-      className="c4"
+      class="c4"
     />
     <div
-      className="c5"
+      class="c5"
     />
     <div
-      className="c6"
+      class="c6"
     />
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c8"
+      class="c8"
     />
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c9"
+      class="c9"
     />
     <div
-      className="c9"
+      class="c9"
     />
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c10"
+      class="c10"
     />
     <div
-      className="c11"
+      class="c11"
     />
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c12"
+      class="c12"
     />
     <div
-      className="c13"
+      class="c13"
     />
   </div>
 </div>
@@ -1922,75 +1922,75 @@ exports[`Box border 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
   <div
-    className="c16"
+    class="c16"
   />
   <div
-    className="c17"
+    class="c17"
   >
     <div
-      className="c17"
+      class="c17"
     >
       one
     </div>
     <div
-      className="c18"
+      class="c18"
     />
     <div
-      className="c17"
+      class="c17"
     >
       two
     </div>
@@ -2024,10 +2024,10 @@ exports[`Box default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -2133,22 +2133,22 @@ exports[`Box direction 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
 </div>
 `;
@@ -2287,31 +2287,31 @@ exports[`Box elevation 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c8"
+      class="c8"
     />
   </div>
 </div>
@@ -2389,22 +2389,22 @@ exports[`Box fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
     <div
-      className="c1"
+      class="c1"
     />
     <div
-      className="c3"
+      class="c3"
     />
     <div
-      className="c4"
+      class="c4"
     />
   </div>
 </div>
@@ -2555,31 +2555,31 @@ exports[`Box flex 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
     <div
-      className="c3"
+      class="c3"
     />
     <div
-      className="c4"
+      class="c4"
     />
     <div
-      className="c5"
+      class="c5"
     />
     <div
-      className="c6"
+      class="c6"
     />
     <div
-      className="c7"
+      class="c7"
     />
     <div
-      className="c8"
+      class="c8"
     />
   </div>
 </div>
@@ -2641,58 +2641,58 @@ exports[`Box gap 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     />
   </div>
   <span
-    className="c2"
+    class="c2"
   >
     <span>
       first
     </span>
     <span
-      className="c3"
+      class="c3"
     />
     <span>
       second
@@ -2728,10 +2728,10 @@ exports[`Box gridArea 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -2838,25 +2838,25 @@ exports[`Box height 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -2967,43 +2967,27 @@ exports[`Box hoverIndicator 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+      class="c2"
+      tabindex="0"
     />
     <div
-      className="c3"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+      class="c3"
+      tabindex="0"
     />
     \\
     <div
-      className="c4"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+      class="c4"
+      tabindex="0"
     />
     <div
-      className="c5"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+      class="c5"
+      tabindex="0"
     />
   </div>
 </div>
@@ -3129,25 +3113,25 @@ exports[`Box justify 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -3568,55 +3552,55 @@ exports[`Box margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
 </div>
 `;
@@ -4100,55 +4084,55 @@ exports[`Box pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
 </div>
 `;
@@ -4179,13 +4163,13 @@ exports[`Box responsive 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -4530,64 +4514,64 @@ exports[`Box round 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
   <div
-    className="c16"
+    class="c16"
   />
   <div
-    className="c17"
+    class="c17"
   />
   <div
-    className="c18"
+    class="c18"
   />
 </div>
 `;
@@ -4694,25 +4678,25 @@ exports[`Box width 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -4744,10 +4728,10 @@ exports[`Box width object 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -4812,16 +4796,16 @@ exports[`Box wrap 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
 </div>
 `;

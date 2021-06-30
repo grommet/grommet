@@ -6,7 +6,7 @@ import { backgroundDoc } from '../../utils/prop-types';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
-export const doc = Layer => {
+export const doc = (Layer) => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer', 'Layout'))
     .description(
@@ -154,7 +154,7 @@ export const themeDoc = {
   'layer.border.radius': {
     description: 'The rounding of the Layer corners.',
     type: 'string',
-    defaultValue: 'white',
+    defaultValue: '4px',
   },
   'layer.border.intelligentRounding': {
     description: `Whether the border-radius of the Layer should adapt based on 

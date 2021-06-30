@@ -8,7 +8,7 @@ const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOfType([
     PropTypes.oneOf(sizes),
     PropTypes.string,
@@ -16,15 +16,15 @@ sides.forEach(side => {
 });
 
 const padShapeParts = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   padShapeParts[part] = {};
-  sides.forEach(side => {
+  sides.forEach((side) => {
     padShapeParts[part][side] = PropTypes.oneOf(sizes);
   });
 });
 
 const backgroundShape = {};
-[...parts, 'pinned'].forEach(part => {
+[...parts, 'pinned'].forEach((part) => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
@@ -52,11 +52,11 @@ const borderTypes = [
 ];
 
 const borderShape = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   borderShape[part] = PropTypes.oneOfType(borderTypes);
 });
 
-export const doc = DataTable => {
+export const doc = (DataTable) => {
   const DocumentedDataTable = describe(DataTable)
     .availableAt(getAvailableAtBadge('DataTable', 'Visualizations'))
     .description('A data driven table.')
@@ -102,6 +102,7 @@ export const doc = DataTable => {
           }),
         ]),
         pin: PropTypes.bool,
+        plain: PropTypes.bool,
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
@@ -141,7 +142,8 @@ export const doc = DataTable => {
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
       'pin' indicates that this column should not scroll out of view
-      to the left when the table is scrolled horizontally.`,
+      to the left when the table is scrolled horizontally. 'plain' = true 
+      indicates that the body cells in the column will not apply pad.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',

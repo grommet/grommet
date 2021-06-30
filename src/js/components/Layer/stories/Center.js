@@ -18,7 +18,7 @@ export const CenterLayer = () => {
   const onClose2 = () => setOpen2(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    <Grommet options={{ layer: { singleId: true } }} theme={grommet} full>
       <Box fill align="center" justify="center">
         <Button
           icon={<Trash />}
@@ -32,7 +32,12 @@ export const CenterLayer = () => {
         />
       </Box>
       {open && (
-        <Layer position="center" onClickOutside={onClose} onEsc={onClose}>
+        <Layer
+          id="hello world"
+          position="center"
+          onClickOutside={onClose}
+          onEsc={onClose}
+        >
           <Box pad="medium" gap="small" width="medium">
             <Heading level={3} margin="none">
               Confirm

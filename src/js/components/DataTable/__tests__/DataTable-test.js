@@ -231,7 +231,7 @@ describe('DataTable', () => {
             {
               property: 'b.value',
               header: 'Value',
-              render: datum => datum.b && datum.b.value,
+              render: (datum) => datum.b && datum.b.value,
             },
           ]}
           data={[
@@ -267,7 +267,7 @@ describe('DataTable', () => {
             {
               property: 'b.value',
               header: 'Value',
-              render: datum => datum.b && datum.b.value,
+              render: (datum) => datum.b && datum.b.value,
             },
           ]}
           data={[
@@ -394,7 +394,7 @@ describe('DataTable', () => {
             {
               property: 'obj2.value',
               header: 'object 2',
-              render: datum => datum.obj2.value,
+              render: (datum) => datum.obj2.value,
             },
           ]}
           data={[
@@ -422,7 +422,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          rowDetails={row => <Box>{row.a}</Box>}
+          rowDetails={(row) => <Box>{row.a}</Box>}
           primaryKey="b"
         />
       </Grommet>,
@@ -446,7 +446,7 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          rowDetails={row => {
+          rowDetails={(row) => {
             if (row.b === '1.1') {
               return <Box> {row.a} </Box>;
             }
@@ -489,6 +489,42 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('groupBy toggle', () => {
+    function TestComponent() {
+      const [groupBy, setGroupBy] = React.useState();
+      const toggle = () => setGroupBy(groupBy === undefined ? 'a' : undefined);
+
+      return (
+        <Grommet>
+          <button type="button" onClick={toggle}>
+            toggle
+          </button>
+          <DataTable
+            columns={[
+              { property: 'a', header: 'A' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1.1 },
+              { a: 'one', b: 1.2 },
+              { a: 'two', b: 2.1 },
+              { a: 'two', b: 2.2 },
+            ]}
+            groupBy={groupBy}
+          />
+        </Grommet>
+      );
+    }
+    const { container, getByText } = render(<TestComponent />);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('toggle'));
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('toggle'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('click', () => {
     const onClickRow = jest.fn();
     const { container, getByText } = render(
@@ -515,7 +551,7 @@ describe('DataTable', () => {
           'accent-1',
           ['accent-1', 'accent-2'],
           { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
-        ].map(background => (
+        ].map((background) => (
           <DataTable
             key={JSON.stringify(background)}
             columns={[
@@ -545,7 +581,7 @@ describe('DataTable', () => {
             header: 'top',
             body: { color: 'accent-1', side: 'top', size: 'small' },
           },
-        ].map(border => (
+        ].map((border) => (
           <DataTable
             key={JSON.stringify(border)}
             columns={[
@@ -574,7 +610,7 @@ describe('DataTable', () => {
             header: 'small',
             body: { vertical: 'small', horizontal: 'medium' },
           },
-        ].map(pad => (
+        ].map((pad) => (
           <DataTable
             key={JSON.stringify(pad)}
             columns={[
@@ -662,7 +698,7 @@ describe('DataTable', () => {
   });
 
   test('groupBy onExpand', () => {
-    const onExpand = jest.fn(groupState => groupState);
+    const onExpand = jest.fn((groupState) => groupState);
     const { getAllByLabelText } = render(
       <Grommet>
         <DataTable
@@ -770,7 +806,7 @@ describe('DataTable', () => {
   test('fill', () => {
     const { container } = render(
       <Grommet>
-        {[true, 'horizontal', 'vertical'].map(fill => (
+        {[true, 'horizontal', 'vertical'].map((fill) => (
           <DataTable
             key={JSON.stringify(fill)}
             columns={[
@@ -792,7 +828,7 @@ describe('DataTable', () => {
   test('pin', () => {
     const { container } = render(
       <Grommet>
-        {[true, 'header', 'footer'].map(pin => (
+        {[true, 'header', 'footer'].map((pin) => (
           <DataTable
             key={JSON.stringify(pin)}
             columns={[
@@ -831,7 +867,7 @@ describe('DataTable', () => {
 
     const { container } = render(
       <Grommet theme={theme}>
-        {[true, 'header', 'footer'].map(pin => (
+        {[true, 'header', 'footer'].map((pin) => (
           <DataTable
             background={{ pinned: 'red' }}
             key={JSON.stringify(pin)}
@@ -858,7 +894,7 @@ describe('DataTable', () => {
           'background-back',
           'background-front',
           { color: 'background-back', dark: true },
-        ].map(contextBackground => (
+        ].map((contextBackground) => (
           <Box key={contextBackground} background={contextBackground}>
             <DataTable
               columns={[
@@ -1068,8 +1104,9 @@ describe('DataTable', () => {
       </Grommet>,
     );
 
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
     expect(container.firstChild).toMatchSnapshot();
@@ -1113,6 +1150,44 @@ describe('DataTable', () => {
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('Go to next page'));
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when data is empty array', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[]}
+          paginate
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when length of data < step', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: `entry-1`, b: 1 },
+            { a: `entry-2`, b: 2 },
+            { a: `entry-3`, b: 3 },
+          ]}
+          paginate
+        />
+      </Grommet>,
+    );
 
     expect(container.firstChild).toMatchSnapshot();
   });

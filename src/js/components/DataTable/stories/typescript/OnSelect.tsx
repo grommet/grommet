@@ -24,18 +24,32 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'location',
     header: 'Location',
+    render: (datum) =>
+      datum.location ? (
+        <Box
+          pad={{ horizontal: 'small', vertical: 'xsmall' }}
+          onClick={() => {}}
+          hoverIndicator
+          fill
+        >
+          <Text truncate weight="bold">
+            {datum.location}
+          </Text>
+        </Box>
+      ) : undefined,
+    plain: true,
   },
   {
     property: 'date',
     header: 'Date',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: (datum) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
           values={[{ value: datum.percent }]}
@@ -48,7 +62,7 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },

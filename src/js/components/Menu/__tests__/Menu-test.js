@@ -1,13 +1,13 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
+import { fireEvent, render } from '@testing-library/react';
+import { getByText as getByTextDOM } from '@testing-library/dom';
+import { axe } from 'jest-axe';
+
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-
-import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import { getByText as getByTextDOM } from '@testing-library/dom';
+import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
+
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
@@ -43,8 +43,6 @@ const defaultButtonTheme = {
 describe('Menu', () => {
   beforeEach(createPortal);
 
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -58,7 +56,7 @@ describe('Menu', () => {
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Menu
           icon={<svg />}
@@ -68,11 +66,12 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom message', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Menu
           label="Test Menu"
@@ -81,7 +80,8 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom a11yTitle', () => {
@@ -94,8 +94,10 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
+
     const menuWithLabel = getByLabelText('My Menu');
     expect(menuWithLabel).toBeTruthy();
+
     expect(container).toMatchSnapshot();
   });
 
@@ -115,10 +117,10 @@ describe('Menu', () => {
   });
 
   test('justify content', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
-          justifyContent => (
+          (justifyContent) => (
             <Menu
               key={justifyContent}
               label={`${justifyContent} Menu`}
@@ -130,7 +132,8 @@ describe('Menu', () => {
         )}
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('gap between icon and label', () => {
@@ -183,7 +186,7 @@ describe('Menu', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const { getByText, container } = render(
       <Grommet>
         <Menu
@@ -547,7 +550,7 @@ describe('Menu', () => {
   });
 
   test('custom theme icon color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={customTheme}>
         <Menu
           label="Test Menu"
@@ -555,11 +558,12 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom theme with default button', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={defaultButtonTheme}>
         <Menu
           label="Test Menu"
@@ -567,18 +571,20 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('menu with children when custom theme has default button', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={defaultButtonTheme}>
         <Menu items={[{ label: 'Item 1' }, { label: 'Item 2' }]}>
           {() => <>Test Menu</>}
         </Menu>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('should apply themed drop props', () => {
@@ -591,6 +597,7 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });

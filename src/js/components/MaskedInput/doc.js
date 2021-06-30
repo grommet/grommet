@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = MaskedInput => {
+export const doc = (MaskedInput) => {
   const DocumentedMaskedInput = describe(MaskedInput)
     .availableAt(getAvailableAtBadge('MaskedInput', 'Input'))
     .description('An input field with formalized syntax.')
@@ -64,6 +64,9 @@ export const doc = MaskedInput => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the text.'),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+      .description('How to align the text inside the input.')
+      .defaultValue('start'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,

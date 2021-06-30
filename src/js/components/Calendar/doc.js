@@ -4,7 +4,7 @@ import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Calendar => {
+export const doc = (Calendar) => {
   const DocumentedCalendar = describe(Calendar)
     .availableAt(getAvailableAtBadge('Calendar', 'Visualizations'))
     .description(
@@ -43,7 +43,15 @@ export const doc = Calendar => {
       dates, and \`isSelected\` is a boolean indicating whether this date
       is selected.`,
     ),
-    date: PropTypes.string.description('The selected date in ISO8601 format'),
+    date: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.arrayOf(PropTypes.string),
+        ]),
+      ),
+    ]).description(`The selected date or array of dates in ISO8601 format.`),
     dates: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,

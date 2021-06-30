@@ -18,7 +18,7 @@ import {
 
 import { normalizeColor } from '../../utils';
 
-const stopLabelClick = event => {
+const stopLabelClick = (event) => {
   // prevents clicking on the label trigging the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
   if (event.target.type !== 'checkbox') {
@@ -34,13 +34,20 @@ const CheckBox = forwardRef(
       checked: checkedProp,
       defaultChecked = false,
       disabled,
+      fill,
       focus: focusProp,
+      focusIndicator = true,
       id,
       label,
       name,
       onBlur,
       onChange,
       onFocus,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOut,
+      onMouseOver,
+      pad,
       reverse,
       toggle,
       indeterminate,
@@ -78,6 +85,12 @@ const CheckBox = forwardRef(
       checked,
       disabled,
       focus,
+      // when contained in a FormField, focusIndicator = false,
+      // so that the FormField has focus style. However, we still
+      // need to visually indicate when a CheckBox is active.
+      // If focus = true but focusIndicator = false,
+      // we will apply the hover treament.
+      focusIndicator,
       reverse,
       toggle,
       indeterminate,
@@ -88,10 +101,8 @@ const CheckBox = forwardRef(
       hidden = <input name={name} type="hidden" value="true" />;
     }
 
-    const {
-      checked: CheckedIcon,
-      indeterminate: IndeterminateIcon,
-    } = theme.checkBox.icons;
+    const { checked: CheckedIcon, indeterminate: IndeterminateIcon } =
+      theme.checkBox.icons;
 
     let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
@@ -167,15 +178,15 @@ const CheckBox = forwardRef(
             disabled,
           })}
           {...themeableProps}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          onChange={event => {
+          onChange={(event) => {
             setChecked(event.target.checked);
             if (onChange) onChange(event);
           }}
@@ -194,10 +205,16 @@ const CheckBox = forwardRef(
     return (
       <StyledCheckBoxContainer
         aria-label={ariaLabel || a11yTitle}
+        fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
         onClick={stopLabelClick}
+        pad={pad}
+        onMouseEnter={(event) => onMouseEnter?.(event)}
+        onMouseOver={(event) => onMouseOver?.(event)}
+        onMouseLeave={(event) => onMouseLeave?.(event)}
+        onMouseOut={(event) => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}

@@ -151,8 +151,9 @@ describe('Pagination', () => {
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
     fireEvent.click(getByText(expectedPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(expectedPage);
     expect(container.firstChild).toMatchSnapshot();
@@ -241,8 +242,9 @@ describe('Pagination', () => {
 
     const desiredPage = '2';
     fireEvent.click(getByText(desiredPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(desiredPage);
     expect(container.firstChild).toMatchSnapshot();
@@ -355,6 +357,29 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should change the page on prop change`, () => {
+    const { container, rerender } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={1} />
+      </Grommet>,
+    );
+
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '1',
+    );
+
+    rerender(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={2} />
+      </Grommet>,
+    );
+
+    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
+      '2',
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

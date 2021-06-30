@@ -52,9 +52,10 @@ const timeStamp = new RegExp(/T.*/);
 
 const normalizeForTimezone = (date, refDate) => {
   if (!date) return undefined;
-  return (!timeStamp.test(refDate || date)
-    ? localTimezoneToUTC(new Date(date))
-    : new Date(date)
+  return (
+    !timeStamp.test(refDate || date)
+      ? localTimezoneToUTC(new Date(date))
+      : new Date(date)
   ).toISOString();
 };
 
@@ -63,7 +64,18 @@ const normalizeReference = (reference, date, dates) => {
   if (reference) {
     normalizedReference = new Date(reference);
   } else if (date) {
-    normalizedReference = new Date(date);
+    if (typeof date === 'string') {
+      normalizedReference = new Date(date);
+    } else if (Array.isArray(date)) {
+      if (typeof date[0] === 'string') {
+        normalizedReference = new Date(date[0]);
+      } else if (Array.isArray(date[0])) {
+        normalizedReference = new Date(date[0][0] ? date[0][0] : date[0][1]);
+      } else {
+        normalizedReference = new Date();
+        normalizedReference.setHours(0, 0, 0, 0);
+      }
+    }
   } else if (dates && dates.length > 0) {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
@@ -99,7 +111,7 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = props => <Button tabIndex={-1} plain {...props} />;
+const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
 
 const CalendarDay = ({
   children,
@@ -174,48 +186,60 @@ const Calendar = forwardRef(
     // set activeDate when caller changes it, allows us to change
     // it internally too
     const [activeDate, setActiveDate] = useState(
-      dateProp && range ? activeDates.end : activeDates.start,
+      dateProp && typeof dateProp === 'string' && range
+        ? activeDates.end
+        : activeDates.start,
     );
     useEffect(() => {
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
+    // function that runs inside the useEffect for date and dates
+    const normalizeDate = (dateValue) => {
+      // convert values to UTC based on if date is string or array
+      if (typeof dateValue === 'string') {
+        return normalizeForTimezone(dateValue);
+      }
+      if (Array.isArray(dateValue)) {
+        if (Array.isArray(dateValue[0])) {
+          let from;
+          let to;
+          [from, to] = dateValue[0].map((day) =>
+            day ? new Date(day) : undefined,
+          );
+          if (from) from = normalizeForTimezone(from, dateValue[0][0]);
+          if (to) to = normalizeForTimezone(to, dateValue[0][0]);
+
+          return [[from, to]];
+        }
+        const dateArray = [];
+        dateValue.forEach((d) => {
+          if (Array.isArray(d)) {
+            let from;
+            let to;
+            [from, to] = d.map((day) => new Date(day));
+            from = normalizeForTimezone(from, d[0]);
+            to = normalizeForTimezone(to, d[0]);
+            dateArray.push([from, to]);
+          } else {
+            dateArray.push(normalizeForTimezone(d));
+          }
+        });
+        return dateArray;
+      }
+      return undefined;
+    };
+
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
-    useEffect(() => setDate(normalizeForTimezone(dateProp)), [dateProp]);
+    useEffect(() => {
+      setDate(normalizeDate(dateProp));
+    }, [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
     useEffect(() => {
-      // convert all values to UTC
-      if (Array.isArray(datesProp)) {
-        if (Array.isArray(datesProp[0])) {
-          let from;
-          let to;
-          [from, to] = datesProp[0].map(day =>
-            day ? new Date(day) : undefined,
-          );
-          if (from) from = normalizeForTimezone(from, datesProp[0][0]);
-          if (to) to = normalizeForTimezone(to, datesProp[0][0]);
-
-          setDates([[from, to]]);
-        } else {
-          const datesArray = [];
-          datesProp.forEach(d => {
-            if (Array.isArray(d)) {
-              let from;
-              let to;
-              [from, to] = d.map(day => new Date(day));
-              from = normalizeForTimezone(from, d[0]);
-              to = normalizeForTimezone(to, d[0]);
-              datesArray.push([from, to]);
-            } else {
-              datesArray.push(normalizeForTimezone(d));
-            }
-          });
-          setDates(datesArray);
-        }
-      } else setDates(undefined);
+      setDates(normalizeDate(datesProp));
     }, [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
@@ -230,10 +254,10 @@ const Calendar = forwardRef(
 
     // normalize bounds
     const [bounds, setBounds] = useState(
-      boundsProp ? boundsProp.map(b => normalizeForTimezone(b)) : undefined,
+      boundsProp ? boundsProp.map((b) => normalizeForTimezone(b)) : undefined,
     );
     useEffect(() => {
-      if (boundsProp) setBounds(boundsProp.map(b => normalizeForTimezone(b)));
+      if (boundsProp) setBounds(boundsProp.map((b) => normalizeForTimezone(b)));
       else setBounds(undefined);
     }, [boundsProp]);
 
@@ -361,7 +385,7 @@ const Calendar = forwardRef(
     const [active, setActive] = useState();
 
     const changeReference = useCallback(
-      nextReference => {
+      (nextReference) => {
         if (betweenDates(nextReference, bounds)) {
           setReference(nextReference);
           if (onReference) onReference(nextReference.toISOString());
@@ -370,7 +394,7 @@ const Calendar = forwardRef(
       [onReference, bounds],
     );
     const selectDate = useCallback(
-      selectedDate => {
+      (selectedDate) => {
         let nextDates;
         let nextDate;
         // output date with no timestamp if that's how user provided it
@@ -378,7 +402,7 @@ const Calendar = forwardRef(
         if (!range) {
           nextDate = selectedDate;
           if (datesProp) {
-            datesProp.forEach(d => {
+            datesProp.forEach((d) => {
               if (!timeStamp.test(d)) {
                 adjustedDate = formatToLocalYYYYMMDD(nextDate);
                 if (d === adjustedDate) {
@@ -388,7 +412,7 @@ const Calendar = forwardRef(
                 }
               }
             });
-          } else if (dateProp) {
+          } else if (typeof dateProp === 'string') {
             if (!timeStamp.test(dateProp)) {
               adjustedDate = formatToLocalYYYYMMDD(selectedDate);
               if (dateProp === adjustedDate) {
@@ -396,13 +420,24 @@ const Calendar = forwardRef(
               } else {
                 adjustedDate = undefined;
               }
-            } else {
-              adjustedDate = undefined;
             }
+          } else if (Array.isArray(dateProp)) {
+            dateProp.forEach((d) => {
+              if (!timeStamp.test(d)) {
+                adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                if (d === adjustedDate) {
+                  nextDate = undefined;
+                } else {
+                  adjustedDate = undefined;
+                }
+              }
+            });
+          } else {
+            adjustedDate = undefined;
           }
         }
         // everything down is a range
-        else if (!dates) {
+        else if (!dates && !Array.isArray(date)) {
           // if user supplies date, convert this into dates
           if (date) {
             const priorDate = new Date(date);
@@ -432,41 +467,52 @@ const Calendar = forwardRef(
             nextDates = [[undefined, selectedDate]];
           }
           if (activeDateProp) setActiveDate(activeDateProp);
-        } else {
-          // have dates
-          const priorDates = dates[0].map(d => new Date(d));
-          const selDate = new Date(selectedDate);
-          if (selDate.getTime() === priorDates[0].getTime()) {
-            nextDates = [[undefined, dates[0][1]]];
-            setActiveDate(activeDates.start);
-          } else if (selDate.getTime() === priorDates[1].getTime()) {
-            nextDates = [[dates[0][0], undefined]];
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.start) {
-            if (selDate.getTime() > priorDates[1].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-            } else {
-              nextDates = [[selectedDate, dates[0][1]]];
-            }
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.end) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-              setActiveDate(activeDates.end);
-            } else {
-              nextDates = [[dates[0][0], selectedDate]];
+        } else if (dates || date) {
+          const handleSelection = (dateValue) => {
+            const priorDates = dateValue[0].map((d) => new Date(d));
+            const selDate = new Date(selectedDate);
+            if (selDate.getTime() === priorDates[0].getTime()) {
+              nextDates = [[undefined, dateValue[0][1]]];
               setActiveDate(activeDates.start);
+            } else if (selDate.getTime() === priorDates[1].getTime()) {
+              nextDates = [[dateValue[0][0], undefined]];
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.start) {
+              if (selDate.getTime() > priorDates[1].getTime()) {
+                nextDates = [[selectedDate, undefined]];
+              } else {
+                nextDates = [[selectedDate, dateValue[0][1]]];
+              }
+              setActiveDate(activeDates.end);
+              if (activeDateProp) setActiveDate(activeDateProp);
+            } else if (activeDate === activeDates.end) {
+              if (selDate.getTime() < priorDates[0].getTime()) {
+                nextDates = [[selectedDate, undefined]];
+                setActiveDate(activeDates.end);
+              } else {
+                nextDates = [[dateValue[0][0], selectedDate]];
+                setActiveDate(activeDates.start);
+              }
+              if (activeDateProp) setActiveDate(activeDateProp);
             }
-            if (activeDateProp) setActiveDate(activeDateProp);
+            // cleanup
+            if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+          };
+          // have dates
+          if (dates) {
+            handleSelection(dates);
+          } else if (date && Array.isArray(date)) {
+            handleSelection(date);
           }
-          // cleanup
-          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
         }
 
         setDates(nextDates);
-        if (!dates) setDate(nextDate);
+        if (date && typeof date === 'string') {
+          setDate(nextDate);
+        } else if (date && Array.isArray(date)) {
+          setDate(nextDates);
+        }
         setActive(new Date(selectedDate));
         if (onSelect) {
           let adjustedDates;
@@ -477,7 +523,7 @@ const Calendar = forwardRef(
             range === true
           ) {
             // return string for backwards compatibility
-            [adjustedDates] = nextDates[0].filter(d => d);
+            [adjustedDates] = nextDates[0].filter((d) => d);
           } else {
             adjustedDates = nextDates;
           }
@@ -600,7 +646,7 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else if (
-        /* Do not show adjacent days in 6th row if all days 
+        /* Do not show adjacent days in 6th row if all days
         fall in the next month */
         showAdjacentDays === 'trim' &&
         otherMonth &&
@@ -724,13 +770,17 @@ const Calendar = forwardRef(
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
-            onEnter={() => selectDate(active.toISOString())}
-            onUp={event => {
+            onEnter={() =>
+              active !== undefined
+                ? selectDate(active.toISOString())
+                : undefined
+            }
+            onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
             }}
-            onDown={event => {
+            onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));

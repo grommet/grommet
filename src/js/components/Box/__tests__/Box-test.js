@@ -1,26 +1,23 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '..';
 
 describe('Box', () => {
-  afterEach(cleanup);
-
   test('default', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('direction', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box direction="row" />
         <Box direction="row-responsive" />
@@ -29,46 +26,45 @@ describe('Box', () => {
         <Box direction="row-reverse" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('a11yTitle', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box a11yTitle="Test" />
         <Box aria-label="Test" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('responsive', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box responsive />
         <Box responsive={false} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('wrap', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        {[true, false, 'reverse'].map(wrap => (
+        {[true, false, 'reverse'].map((wrap) => (
           <Box key={`${wrap}`} wrap={wrap} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('justify', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box justify="start" />
         <Box justify="center" />
@@ -78,12 +74,12 @@ describe('Box', () => {
         <Box justify="end" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('align', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box align="start" />
         <Box align="center" />
@@ -92,12 +88,12 @@ describe('Box', () => {
         <Box align="end" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('alignContent', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box alignContent="start" />
         <Box alignContent="center" />
@@ -107,12 +103,12 @@ describe('Box', () => {
         <Box alignContent="end" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('alignSelf', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box alignSelf="start" />
         <Box alignSelf="center" />
@@ -120,13 +116,13 @@ describe('Box', () => {
         <Box alignSelf="end" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   /* eslint-disable max-len */
   test('background', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box background="brand" />
         <Box background="accent-1" />
@@ -199,13 +195,13 @@ describe('Box', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   /* eslint-enable max-len */
 
   test('basis', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box>
           <Box basis="xsmall" />
@@ -231,12 +227,12 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('flex', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box>
           <Box flex />
@@ -249,12 +245,12 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fill', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box>
           <Box fill />
@@ -264,14 +260,14 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('gap', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map(gap => (
+        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map((gap) => (
           <Box key={gap} gap={gap} direction="row">
             <Box />
           </Box>
@@ -282,12 +278,12 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('margin', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box margin="small" />
         <Box margin="medium" />
@@ -329,12 +325,12 @@ describe('Box', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box pad="small" />
         <Box pad="medium" />
@@ -378,22 +374,22 @@ describe('Box', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('gridArea', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box gridArea="header" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box round />
         <Box round="xsmall" />
@@ -416,12 +412,12 @@ describe('Box', () => {
         <Box round={{ size: 'xlarge' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box border="all" />
         <Box border="horizontal" />
@@ -452,12 +448,12 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('elevation', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box elevation="none" />
         <Box elevation="xsmall" />
@@ -470,36 +466,37 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('as', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box as="header" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('tag proxied', () => {
-    const tagComponent = renderer.create(
+    const { container: tagComponent } = render(
       <Grommet>
         <Box tag="header" />
       </Grommet>,
     );
-    const asComponent = renderer.create(
+    const { container: asComponent } = render(
       <Grommet>
         <Box as="header" />
       </Grommet>,
     );
-    expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
+
+    expect(tagComponent).toEqual(asComponent);
   });
 
   test('animation', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           'fadeIn',
@@ -514,7 +511,7 @@ describe('Box', () => {
           'slideRight',
           'zoomIn',
           'zoomOut',
-        ].map(type => (
+        ].map((type) => (
           <Box key={type} animation={type} />
         ))}
         <Box animation={['fadeIn', 'slideUp']} />
@@ -527,12 +524,12 @@ describe('Box', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('width', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box width="xsmall" />
         <Box width="small" />
@@ -542,22 +539,22 @@ describe('Box', () => {
         <Box width="111px" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('width object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box width={{ width: '100px' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('height', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box height="xsmall" />
         <Box height="small" />
@@ -567,8 +564,8 @@ describe('Box', () => {
         <Box height="111px" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClick', () => {
@@ -586,7 +583,7 @@ describe('Box', () => {
   });
 
   test('hoverIndicator', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box>
           <Box onClick={() => {}} hoverIndicator />
@@ -605,7 +602,7 @@ describe('Box', () => {
         </Box>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

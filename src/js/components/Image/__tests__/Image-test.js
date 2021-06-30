@@ -1,11 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
 
@@ -27,51 +26,51 @@ test('image should have no violations', async () => {
 });
 
 test('Image renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Image src={SRC} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Image renders with aria-label', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Image a11yTitle="aria-label-text" src={SRC} />
       <Image aria-label="aria-label-text" src={SRC} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Image fit renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Image fit="cover" src={SRC} />
       <Image fit="contain" src={SRC} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
-opacityTypes.forEach(opacity => {
+opacityTypes.forEach((opacity) => {
   test(`Image opacity of ${opacity} renders`, () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Image opacity={opacity} src={SRC} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
 
 test('Image fillProp renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Image fill src={SRC} />
       <Image fill={false} src={SRC} />
@@ -79,8 +78,8 @@ test('Image fillProp renders', () => {
       <Image fill="vertical" src={SRC} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Image onError', () => {

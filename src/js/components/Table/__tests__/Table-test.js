@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import {
@@ -13,74 +13,73 @@ import {
 } from '../..';
 
 test('Table renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Table a11yTitle renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table a11yTitle="test" />
       <Table aria-label="test" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Table caption renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table caption="Caption" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableHeader renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableHeader />
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableFooter renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableFooter />
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableBody renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableBody />
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableRow renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableBody>
@@ -89,12 +88,12 @@ test('TableRow renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableCell renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableHeader>
@@ -115,12 +114,12 @@ test('TableCell renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableCell scope renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableHeader>
@@ -136,12 +135,12 @@ test('TableCell scope renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableCell size renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableBody>
@@ -182,12 +181,12 @@ test('TableCell size renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableCell verticalAlign renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableHeader>
@@ -200,12 +199,12 @@ test('TableCell verticalAlign renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('TableCell plain renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Table>
         <TableHeader>
@@ -216,6 +215,6 @@ test('TableCell plain renders', () => {
       </Table>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });

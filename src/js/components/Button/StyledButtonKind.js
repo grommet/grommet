@@ -4,13 +4,14 @@ import {
   activeStyle,
   disabledStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const radiusStyle = props => {
+const radiusStyle = (props) => {
   const size = props.sizeProp;
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
@@ -27,7 +28,7 @@ const radiusStyle = props => {
   return '';
 };
 
-const fontStyle = props => {
+const fontStyle = (props) => {
   const size = props.sizeProp || 'medium';
   const data = props.theme.text[size];
   return css`
@@ -71,15 +72,22 @@ const padStyle = ({ sizeProp: size, theme, kind }) => {
 
 // The > svg rule is to ensure Buttons with just an icon don't add additional
 // vertical height internally.
-const basicStyle = props => css`
+const basicStyle = (props) => css`
   border: none;
   ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}
 
-  > svg {
+  // when button has badge, the SVG won't necessarily
+  // be the direct descendant
+  ${props.badge
+    ? `
+  svg {
     vertical-align: bottom;
-  }
+  }`
+    : `> svg {
+    vertical-align: bottom;
+  }`}
 `;
 
 const getPath = (theme, path) => {
@@ -109,7 +117,7 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   const themeObj = typeof kind === 'object' ? kind : theme.button;
 
   const pad = padFromTheme(size, theme, themeObj);
-  themePaths.base.forEach(themePath => {
+  themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
@@ -136,7 +144,7 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
     }
   }
 
-  themePaths.hover.forEach(themePath => {
+  themePaths.hover.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
 
     if (obj) {
@@ -168,7 +176,11 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
     themishObj.background = theme.global.hover.background;
-  else themishObj.background = hoverIndicator;
+  else if (hoverIndicator.color || hoverIndicator.background) {
+    if (hoverIndicator.background)
+      themishObj.background = hoverIndicator.background;
+    if (hoverIndicator.color) themishObj.color = hoverIndicator.color;
+  } else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
     return css`
@@ -179,7 +191,7 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   return '';
 };
 
-const fillStyle = fillContainer => {
+const fillStyle = (fillContainer) => {
   if (fillContainer === 'horizontal') {
     return 'width: 100%;';
   }
@@ -228,29 +240,33 @@ const StyledButtonKind = styled.button.withConfig({
   text-transform: none;
 
   ${genericStyles}
-  ${props => props.plain && plainStyle(props)}
+  ${(props) => props.plain && plainStyle(props)}
   // set baseline activeStyle for all buttons including plain buttons
   // buttons with kind will have active styling overridden by kindStyle
   // if they have specific state styles
-  ${props => !props.disabled && props.active && activeStyle}
-  ${props => !props.plain && basicStyle(props)}
-  ${props => !props.plain && kindStyle(props)}
-  ${props =>
+  ${(props) => !props.disabled && props.active && activeStyle}
+  ${(props) => !props.plain && basicStyle(props)}
+  ${(props) => !props.plain && kindStyle(props)}
+  ${(props) =>
     !props.plain &&
     props.align &&
     `
     text-align: ${props.align};
     `}
-  ${props =>
+  ${(props) =>
     !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
-  ${props =>
+  ${(props) =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 
   &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
   }
-  
-  ${props =>
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
+  ${(props) =>
     !props.plain &&
     props.theme.button.transition &&
     `
@@ -258,8 +274,8 @@ const StyledButtonKind = styled.button.withConfig({
     transition-duration: ${props.theme.button.transition.duration}s;
     transition-timing-function: ${props.theme.button.transition.timing};
   `}
-  ${props => props.fillContainer && fillStyle(props.fillContainer)}
-  ${props => props.theme.button && props.theme.button.extend}
+  ${(props) => props.fillContainer && fillStyle(props.fillContainer)}
+  ${(props) => props.theme.button && props.theme.button.extend}
 `;
 
 StyledButtonKind.defaultProps = {};

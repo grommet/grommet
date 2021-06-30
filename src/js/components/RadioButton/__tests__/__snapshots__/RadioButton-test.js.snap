@@ -239,24 +239,21 @@ exports[`RadioButton background-color themed 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
       />
       <div
-        className="c4 c5"
+        class="c4 c5"
       />
     </div>
   </label>
@@ -360,47 +357,41 @@ exports[`RadioButton basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
   </label>
   <label
-    className="c1"
-    htmlFor="test id"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
+    for="test id"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         id="test id"
         name="test"
         type="radio"
         value="2"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
   </label>
@@ -511,36 +502,33 @@ exports[`RadioButton checked 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        checked={true}
-        className="c3"
+        checked=""
+        class="c3"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        className="c4 "
+        class="c4 "
       >
         <svg
-          className="c5"
+          class="c5"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
           <circle
-            cx={12}
-            cy={12}
-            r={6}
+            cx="12"
+            cy="12"
+            r="6"
           />
         </svg>
       </div>
@@ -660,46 +648,40 @@ exports[`RadioButton children 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        className="c4"
+        class="c4"
       />
     </div>
   </label>
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        checked={true}
-        className="c3"
+        checked=""
+        class="c3"
         name="test"
         type="radio"
         value="2"
       />
       <div
-        className="c5"
+        class="c5"
       />
     </div>
   </label>
@@ -842,60 +824,54 @@ exports[`RadioButton disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
-        disabled={true}
+        class="c3"
+        disabled=""
         name="test"
         type="radio"
         value="1"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
   </label>
   <label
-    className="c1"
-    disabled={true}
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
+    disabled=""
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        checked={true}
-        className="c3"
-        disabled={true}
+        checked=""
+        class="c3"
+        disabled=""
         name="test"
         type="radio"
         value="2"
       />
       <div
-        className="c5 "
+        class="c5 "
       >
         <svg
-          className="c6"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
           <circle
-            cx={12}
-            cy={12}
-            r={6}
+            cx="12"
+            cy="12"
+            r="6"
           />
         </svg>
       </div>
@@ -1008,50 +984,44 @@ exports[`RadioButton label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
         value="1"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
     <span
-      className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+      class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
     >
       test label
     </span>
   </label>
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
         value="2"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
     <div>
@@ -1169,28 +1139,25 @@ exports[`RadioButton label themed 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <label
-    className="c1"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="c1"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <input
-        className="c3"
+        class="c3"
         name="test"
         type="radio"
       />
       <div
-        className="c4 "
+        class="c4 "
       />
     </div>
     <span
-      className="c5"
+      class="c5"
     >
       test
     </span>
@@ -1294,27 +1261,25 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   }
 }
 
-<div>
-  <div
-    class="c0"
+<div
+  class="c0"
+>
+  <label
+    class="c1"
   >
-    <label
-      class="c1"
+    <div
+      class="c2 "
     >
+      <input
+        aria-label="test"
+        class="c3"
+        name="test"
+        type="radio"
+      />
       <div
-        class="c2 "
-      >
-        <input
-          aria-label="test"
-          class="c3"
-          name="test"
-          type="radio"
-        />
-        <div
-          class="c4 "
-        />
-      </div>
-    </label>
-  </div>
+        class="c4 "
+      />
+    </div>
+  </label>
 </div>
 `;

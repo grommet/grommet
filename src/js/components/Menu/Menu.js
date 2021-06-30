@@ -15,6 +15,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -24,7 +25,7 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
-  ${props => props.theme.menu.extend};
+  ${(props) => props.theme.menu.extend};
 `;
 
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
@@ -70,6 +71,7 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
@@ -116,7 +118,7 @@ const Menu = forwardRef((props, ref) => {
     setOpen(true);
   }, []);
 
-  const onSelectMenuItem = event => {
+  const onSelectMenuItem = (event) => {
     if (isOpen) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
@@ -128,10 +130,10 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const isTab = event =>
+  const isTab = (event) =>
     event.keyCode === constants.tab || event.which === constants.tab;
 
-  const onNextMenuItem = event => {
+  const onNextMenuItem = (event) => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -164,7 +166,7 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const onPreviousMenuItem = event => {
+  const onPreviousMenuItem = (event) => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -233,11 +235,13 @@ const Menu = forwardRef((props, ref) => {
   const controlMirror = (
     <Box flex={false}>
       <Button
-        ref={r => {
+        ref={(r) => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={ariaLabel || a11yTitle || messages.closeMenu || 'Close Menu'}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
+        }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -270,7 +274,9 @@ const Menu = forwardRef((props, ref) => {
         ref={ref}
         {...rest}
         {...buttonProps}
-        a11yTitle={ariaLabel || a11yTitle || messages.openMenu || 'Open Menu'}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
+        }
         onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
@@ -281,7 +287,7 @@ const Menu = forwardRef((props, ref) => {
         onClose={onDropClose}
         dropContent={
           <Keyboard
-            onTab={event =>
+            onTab={(event) =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
             onEnter={onSelectMenuItem}
@@ -305,16 +311,14 @@ const Menu = forwardRef((props, ref) => {
                       {item.icon}
                       {!item.reverse && item.label}
                     </Box>
-                  ) : (
-                    undefined
-                  );
+                  ) : undefined;
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (
                     // eslint-disable-next-line react/no-array-index-key
                     <Box key={index} flex={false}>
                       <Button
-                        ref={r => {
+                        ref={(r) => {
                           buttonRefs[index] = r;
                         }}
                         onFocus={() => setActiveItemIndex(index)}
@@ -363,10 +367,7 @@ const Menu = forwardRef((props, ref) => {
 
 Menu.defaultProps = {
   items: [],
-  messages: {
-    openMenu: 'Open Menu',
-    closeMenu: 'Close Menu',
-  },
+  messages: undefined,
   justifyContent: 'start',
 };
 

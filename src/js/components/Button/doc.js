@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
+  backgroundPropType,
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
@@ -8,7 +9,7 @@ import {
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Button => {
+export const doc = (Button) => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button', 'Controls'))
     .description('A button.')
@@ -44,6 +45,31 @@ export const doc = Button => {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag or react component to use for the element.`,
     ),
+    badge: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.element,
+      PropTypes.number,
+      PropTypes.shape({
+        background: backgroundPropType,
+        max: PropTypes.number,
+        value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+      }),
+    ])
+      .description(
+        `An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         "2 unread notifications".`,
+      )
+      .defaultValue(undefined),
     color: colorPropType.description(
       `Fill color for primary, label color for plain, border color otherwise.
        If button.default is defined in the theme, the color prop will
@@ -92,7 +118,9 @@ with plain Buttons.`,
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.',
     ),
-    icon: PropTypes.element.description('Icon element to place in the button.'),
+    icon: PropTypes.element.description(`Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.`),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -141,7 +169,9 @@ with plain Buttons.`,
         plain: PropTypes.bool,
       }),
       PropTypes.string,
-    ]).description(`tooltip or a hint when hovering over the button.`),
+    ]).description(`tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
@@ -248,6 +278,42 @@ export const themeDoc = {
     button.default.`,
     type: '{}',
     defaultValue: undefined,
+  },
+  'button.badge.container.background': {
+    description: `The background of the badge.`,
+    type: `string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }`,
+    defaultValue: 'brand',
+  },
+  'button.badge.container.extend': {
+    description: `Any additional styles for the badge.`,
+    type: `string | object`,
+    defaultValue: undefined,
+  },
+  'button.badge.container.pad': {
+    description: 'When badge has a value, the amount of pad to apply.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'button.badge.size.medium': {
+    description: `The minimum width and height of the badge when the badge 
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value.`,
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'button.badge.text.size.medium': {
+    description: `The size of the text that is mapped according to 
+    'button.badge.size.medium'.`,
+    type: 'string',
+    defaultValue: '14px',
   },
   'button.border.color': {
     description: `The color of the border.`,

@@ -186,6 +186,27 @@ How to align the text inside the component. Defaults to `start`.
 start
 center
 end
+justify
+```
+
+**tip**
+
+tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.
+
+```
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string
 ```
 
 **truncate**

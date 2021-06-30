@@ -11,7 +11,7 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const InsideFormField = props => (
+export const InsideFormField = (props) => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form
@@ -29,6 +29,23 @@ export const InsideFormField = props => (
               name="toggle"
               label="CheckBox"
               toggle
+            />
+          </Box>
+        </FormField>
+        <FormField
+          label="Toggle fill"
+          name="toggle"
+          htmlFor="check-box-toggle"
+          {...props}
+        >
+          <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+            <CheckBox
+              id="check-box-fill-toggle"
+              name="toggle"
+              label="CheckBox"
+              toggle
+              fill
+              reverse
             />
           </Box>
         </FormField>

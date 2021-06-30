@@ -5,6 +5,19 @@ import { Trash } from 'grommet-icons';
 
 const customTheme = {
   fileInput: {
+    button: {
+      hover: {
+        color: 'accent-2',
+      },
+      border: {
+        color: 'skyblue',
+        width: '1px',
+      },
+      pad: {
+        vertical: '4px',
+        horizontal: '8px',
+      },
+    },
     background: '#f2f2f2',
     border: { size: 'medium' },
     pad: { horizontal: 'large', vertical: 'medium' },
@@ -30,13 +43,13 @@ export const Custom = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <FileInput
-          renderFile={file => (
+          renderFile={(file) => (
             <Box direction="row" gap="small">
               <Text weight="bold">{file.name}</Text>
               <Text color="text-weak">{file.size} bytes</Text>
             </Box>
           )}
-          onChange={event => {
+          onChange={(event) => {
             const fileList = event.target.files;
             for (let i = 0; i < fileList.length; i += 1) {
               const file = fileList[i];

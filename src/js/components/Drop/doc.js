@@ -20,7 +20,7 @@ const dropOverflowPropTypes = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-export const doc = Drop => {
+export const doc = (Drop) => {
   const DocumentedDrop = describe(Drop)
     .availableAt(getAvailableAtBadge('Drop', 'Controls'))
     .description('A container that is overlaid next to a target.')
@@ -119,6 +119,15 @@ export const themeDoc = {
   'global.drop.extend': {
     description: 'Any additional style for Drop.',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'global.drop.intelligentMargin': {
+    description: `Whether the margin of the Drop
+    should adapt based on the Drop's alignment
+    with respect to its target. Margin will
+    only be applied on the side of the Drop that
+    is adjacent to its target.`,
+    type: 'boolean',
     defaultValue: undefined,
   },
   ...themeDocUtils.edgeStyle('The possible sizes for the Drop margin.'),

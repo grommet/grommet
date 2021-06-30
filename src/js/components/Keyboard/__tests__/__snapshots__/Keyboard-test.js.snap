@@ -24,11 +24,9 @@ exports[`Keyboard onDown 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <span
-    onKeyDown={[Function]}
-  >
+  <span>
     hi
   </span>
 </div>
@@ -46,11 +44,9 @@ exports[`Keyboard onKeyDown 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <span
-    onKeyDown={[Function]}
-  >
+  <span>
     hi
   </span>
 </div>
