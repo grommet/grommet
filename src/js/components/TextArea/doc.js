@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = TextArea => {
+export const doc = (TextArea) => {
   const DocumentedTextArea = describe(TextArea)
     .availableAt(getAvailableAtBadge('TextArea', 'Input'))
     .description('A control to input multiple lines of text.')
@@ -46,7 +46,7 @@ Only use this when the containing context provides sufficient affordance.`,
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description('The size of the TextArea.'),
+    ]).description('The size of the text.'),
   };
 
   return DocumentedTextArea;

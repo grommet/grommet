@@ -122,6 +122,18 @@ The date or date range value(s) in ISO8601 format.
 string
 [string]
 ```
+
+**size**
+
+The size of the text.
+
+```
+small
+medium
+large
+xlarge
+string
+```
   
 ## Intrinsic element
 

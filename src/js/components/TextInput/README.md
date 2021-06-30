@@ -215,7 +215,7 @@ boolean
 
 **size**
 
-The size of the TextInput.
+The size of the text.
 
 ```
 small

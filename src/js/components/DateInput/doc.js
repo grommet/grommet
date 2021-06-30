@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = DateInput => {
+export const doc = (DateInput) => {
   const DocumentedDateInput = describe(DateInput)
     .availableAt(getAvailableAtBadge('DateInput', 'Input'))
     .description('A control to input a single date or a date range.')
@@ -59,6 +59,10 @@ export const doc = DateInput => {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]).description('The date or date range value(s) in ISO8601 format.'),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The size of the text.'),
   };
 
   return DocumentedDateInput;

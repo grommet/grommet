@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = TextInput => {
+export const doc = (TextInput) => {
   const DocumentedTextInput = describe(TextInput)
     .availableAt(getAvailableAtBadge('TextInput', 'Input'))
     .description(
@@ -116,7 +116,7 @@ export const doc = TextInput => {
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description('The size of the TextInput.'),
+    ]).description('The size of the text.'),
     suggestions: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.shape({

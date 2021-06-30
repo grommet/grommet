@@ -8016,6 +8016,18 @@ The date or date range value(s) in ISO8601 format.
 string
 [string]
 \`\`\`
+
+**size**
+
+The size of the text.
+
+\`\`\`
+small
+medium
+large
+xlarge
+string
+\`\`\`
   
 ## Intrinsic element
 
@@ -18330,7 +18342,7 @@ boolean
 
 **size**
 
-The size of the TextArea.
+The size of the text.
 
 \`\`\`
 small
@@ -18757,7 +18769,7 @@ boolean
 
 **size**
 
-The size of the TextInput.
+The size of the text.
 
 \`\`\`
 small

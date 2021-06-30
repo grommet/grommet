@@ -97,7 +97,7 @@ boolean
 
 **size**
 
-The size of the TextArea.
+The size of the text.
 
 ```
 small
