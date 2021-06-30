@@ -438,4 +438,13 @@ describe('MaskedInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <MaskedInput />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

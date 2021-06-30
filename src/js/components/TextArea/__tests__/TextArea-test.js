@@ -198,4 +198,13 @@ describe('TextArea', () => {
       expect(onBlur).toHaveBeenCalledTimes(1);
     });
   });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <TextArea />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
