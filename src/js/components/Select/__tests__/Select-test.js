@@ -49,7 +49,7 @@ describe('Select', () => {
   });
 
   test('prop: onOpen', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -74,7 +74,7 @@ describe('Select', () => {
   });
 
   test('prop: onClose', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -111,7 +111,7 @@ describe('Select', () => {
   });
 
   test('search', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -140,7 +140,7 @@ describe('Select', () => {
   });
 
   test('search and select', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const onChange = jest.fn();
     const Test = () => {
@@ -151,7 +151,7 @@ describe('Select', () => {
           placeholder="test select"
           options={options}
           onChange={onChange}
-          onSearch={arg => {
+          onSearch={(arg) => {
             onSearch(arg);
             setOptions(['two']);
           }}
@@ -187,7 +187,7 @@ describe('Select', () => {
         options={[{ test: 'one' }, { test: 'two' }]}
         onChange={onChange}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -219,7 +219,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  ['small', 'medium', 'large'].forEach(dropHeight => {
+  ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
         <Select
@@ -330,7 +330,7 @@ describe('Select', () => {
   });
 
   test('disabled key', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const Test = () => {
       const [value] = React.useState();
       return (
@@ -374,7 +374,7 @@ describe('Select', () => {
         placeholder="test select"
         options={[{ test: 'one' }, { test: 'two' }]}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     // before opening
@@ -963,7 +963,7 @@ describe('Select', () => {
           value={value}
           valueLabel={<span>{value || 'none'}</span>}
           options={['one', 'two']}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.value);
             onChange(event);
           }}
@@ -1009,7 +1009,7 @@ describe('Select', () => {
   });
 
   test('keyboard navigation timeout', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     // scrollIntoView is not implemented in jsdom, so we need to mock.
     // Select keyboard / keyboard nav timeout uses InfiniteScroll which
     // has scrollIntoView as part of its implementation.
@@ -1039,7 +1039,7 @@ describe('Select', () => {
   });
 
   test('Search timeout', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
@@ -1069,7 +1069,7 @@ describe('Select', () => {
   });
 
   test('disabled option value', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { getByPlaceholderText } = render(
       <Grommet>
         <Select
@@ -1285,7 +1285,7 @@ describe('Select', () => {
   });
 
   test('select option by typing should not break if caller passes JSX', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onChange = jest.fn();
 
     const { getByPlaceholderText, container } = render(

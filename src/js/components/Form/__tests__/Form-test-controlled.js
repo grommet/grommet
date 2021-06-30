@@ -17,7 +17,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -51,7 +54,10 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" required>
@@ -89,7 +95,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -127,7 +136,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -159,7 +171,10 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -194,7 +209,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState('');
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -237,7 +252,7 @@ describe('Form controlled', () => {
       const [value, setValue] = React.useState('');
       React.useEffect(() => setValue('test'), []);
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -306,7 +321,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField label="test" name="test" id="test" htmlFor="test" />
@@ -337,7 +355,10 @@ describe('Form controlled', () => {
     const onReset = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Grommet>
           <Form
@@ -401,7 +422,7 @@ describe('Form controlled', () => {
 
   test(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 
@@ -411,7 +432,7 @@ describe('Form controlled', () => {
         <Form
           validate="blur"
           value={value}
-          onChange={nextValue => {
+          onChange={(nextValue) => {
             const adjustedValue = { ...nextValue };
             if (!adjustedValue.toggle) delete adjustedValue.mood;
             else if (!adjustedValue.mood) adjustedValue.mood = '';
