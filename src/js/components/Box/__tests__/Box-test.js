@@ -71,11 +71,21 @@ describe('Box', () => {
   test('align', () => {
     const { container } = render(
       <Grommet>
+        {/* Mapped values */}
         <Box align="start" />
         <Box align="center" />
         <Box align="baseline" />
         <Box align="stretch" />
         <Box align="end" />
+        {/* Any valid CSS align-items strings */}
+        <Box align="normal" />
+        <Box align="first baseline" />
+        <Box align="last baseline" />
+        <Box align="safe center" />
+        <Box align="unsafe center" />
+        <Box align="inherit" />
+        <Box align="initial" />
+        <Box align="unset" />
       </Grommet>,
     );
 
@@ -85,15 +95,27 @@ describe('Box', () => {
   test('alignContent', () => {
     const { container } = render(
       <Grommet>
+        {/* Mapped values */}
         <Box alignContent="start" />
         <Box alignContent="center" />
         <Box alignContent="between" />
         <Box alignContent="around" />
         <Box alignContent="stretch" />
         <Box alignContent="end" />
-        <Box alignContent="around" />
         <Box alignContent="baseline" />
         <Box alignContent="evenly" />
+        {/* Any valid CSS align-content strings */}
+        <Box alignContent="normal" />
+        <Box alignContent="first baseline" />
+        <Box alignContent="last baseline" />
+        <Box alignContent="space-between" />
+        <Box alignContent="space-around" />
+        <Box alignContent="space-evenly" />
+        <Box alignContent="safe center" />
+        <Box alignContent="unsafe center" />
+        <Box alignContent="inherit" />
+        <Box alignContent="initial" />
+        <Box alignContent="unset" />
       </Grommet>,
     );
 
