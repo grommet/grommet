@@ -649,4 +649,26 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+  
+  test('renders size', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput size="xsmall" />
+        <TextInput size="small" />
+        <TextInput size="medium" />
+        <TextInput size="large" />
+        <TextInput size="xlarge" />
+        <TextInput size="xxlarge" />
+        <TextInput size="2xl" />
+        <TextInput size="3xl" />
+        <TextInput size="4xl" />
+        <TextInput size="5xl" />
+        <TextInput size="6xl" />
+        <TextInput size="16px" />
+        <TextInput size="1rem" />
+        <TextInput size="100%" />
+      </Grommet>,
+    );
+    expect(container.children).toMatchSnapshot();
+  });
 });

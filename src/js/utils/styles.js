@@ -416,6 +416,13 @@ const placeholderStyle = css`
 
 const inputSizeStyle = (props) => {
   const data = props.theme.text[props.size];
+
+  if (!data) {
+    return css`
+      font-size: ${props.size};
+    `;
+  }
+
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
