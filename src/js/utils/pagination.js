@@ -26,7 +26,7 @@ export const usePagination = ({ data, page, step, ...rest }) => {
 
   const paginationProps = {
     numberItems: data && data.length,
-    onChange: event => setActivePage(event.page),
+    onChange: (event) => setActivePage(event.page),
     page,
     step,
     ...rest, // let anything coming from paginate prop override component

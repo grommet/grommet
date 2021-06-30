@@ -29,7 +29,7 @@ import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
-const separateThemeProps = theme => {
+const separateThemeProps = (theme) => {
   const {
     background, // covered by cellProps
     border, // covered by cellProps
@@ -86,12 +86,12 @@ const buttonStyle = ({ theme }) => {
 };
 
 const StyledHeaderCellButton = styled(Button)`
-  ${props => buttonStyle(props)}
+  ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
 const StyledContentBox = styled(Box)`
-  ${props => props.extend}
+  ${(props) => props.extend}
 `;
 
 const Header = forwardRef(
@@ -129,7 +129,7 @@ const Header = forwardRef(
     const [cellWidths, setCellWidths] = useState([]);
 
     const updateWidths = useCallback(
-      width => setCellWidths(values => [...values, width]),
+      (width) => setCellWidths((values) => [...values, width]),
       [],
     );
 
@@ -150,7 +150,7 @@ const Header = forwardRef(
               border={cellProps.border}
               context="header"
               expanded={
-                Object.keys(groupState).filter(k => !groupState[k].expanded)
+                Object.keys(groupState).filter((k) => !groupState[k].expanded)
                   .length === 0
               }
               onToggle={onToggle}
@@ -189,7 +189,7 @@ const Header = forwardRef(
                     // if none are selected, select all data
                     else
                       onSelect(
-                        data.map(datum => datumValue(datum, primaryProperty)),
+                        data.map((datum) => datumValue(datum, primaryProperty)),
                       );
                   }}
                   pad={cellProps.pad}
@@ -215,9 +215,7 @@ const Header = forwardRef(
                 <Text {...textProps} {...theme.dataTable.header.units}>
                   {units}
                 </Text>
-              ) : (
-                undefined
-              );
+              ) : undefined;
               if (typeof header === 'string') {
                 content = <Text {...textProps}>{header}</Text>;
                 if (

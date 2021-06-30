@@ -4,7 +4,7 @@ import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Carousel => {
+export const doc = (Carousel) => {
   const DocumentedCarousel = describe(Carousel)
     .availableAt(getAvailableAtBadge('Carousel', 'Media'))
     .description(

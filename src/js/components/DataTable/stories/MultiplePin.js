@@ -190,7 +190,7 @@ const columns = [
         </Text>
       </Text>
     ),
-    render: datum =>
+    render: (datum) =>
       // bytes to tebibytes
       (datum.size / 2 ** 40).toFixed([1]),
     align: 'end',
@@ -205,7 +205,7 @@ const columns = [
         </Text>
       </Text>
     ),
-    render: datum =>
+    render: (datum) =>
       // bytes to tebibytes
       (datum.pinnable / 2 ** 40).toFixed([1]),
     align: 'end',
@@ -253,7 +253,7 @@ const columns = [
   },
 ];
 
-const handleClickRow = obj => {
+const handleClickRow = (obj) => {
   // eslint-disable-next-line no-alert
   alert(`
   Record was clicked:
@@ -280,7 +280,7 @@ export const MultiplePins = () => (
               property: 'id',
               header: 'Id',
               primary: true,
-              render: datum => datum.id.slice(datum.id.length - 5),
+              render: (datum) => datum.id.slice(datum.id.length - 5),
               pin: true,
             },
             {

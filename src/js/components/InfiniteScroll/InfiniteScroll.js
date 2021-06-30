@@ -24,10 +24,10 @@ const InfiniteScroll = ({
   const [scrollShow, setScrollShow] = useState();
 
   // the last page we have items for
-  const lastPage = useMemo(() => Math.floor(items.length / step), [
-    items.length,
-    step,
-  ]);
+  const lastPage = useMemo(
+    () => Math.floor(items.length / step),
+    [items.length, step],
+  );
 
   // the pages we are rendering
   const [renderPageBounds, setRenderPageBounds] = useState([
@@ -118,13 +118,15 @@ const InfiniteScroll = ({
     // might not be there yet or might have already rendered everything
     if (belowMarkerRef.current) {
       scrollParents = findScrollParents(belowMarkerRef.current);
-      scrollParents.forEach(sp => sp.addEventListener('scroll', debounce));
+      scrollParents.forEach((sp) => sp.addEventListener('scroll', debounce));
     }
     window.addEventListener('resize', debounce);
     evaluate();
     return () => {
       if (scrollParents) {
-        scrollParents.forEach(sp => sp.removeEventListener('scroll', debounce));
+        scrollParents.forEach((sp) =>
+          sp.removeEventListener('scroll', debounce),
+        );
       }
       window.removeEventListener('resize', debounce);
       clearTimeout(timer);
@@ -161,9 +163,8 @@ const InfiniteScroll = ({
         // calculate show index based on beginPage
         const showIndex =
           show - renderPageBounds[0] * step + (renderPageBounds[0] ? 1 : 0);
-        const showNode = belowMarkerRef.current.parentNode.children.item(
-          showIndex,
-        );
+        const showNode =
+          belowMarkerRef.current.parentNode.children.item(showIndex);
         if (showNode) {
           const scrollParent = findScrollParent(showNode);
           if (isNodeBeforeScroll(showNode, scrollParent)) {
@@ -314,7 +315,7 @@ const InfiniteScroll = ({
         // Since the caller might have included a ref in what their
         // renderMarker returns, we have to take care of both refs.
         // https://github.com/facebook/react/issues/8873#issuecomment-489579878
-        ref: node => {
+        ref: (node) => {
           // Keep your own reference
           belowMarkerRef.current = node;
           // Call the original ref, if any

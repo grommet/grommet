@@ -47,10 +47,10 @@ const Chart = React.forwardRef(
 
     const values = useMemo(() => normalizeValues(propsValues), [propsValues]);
 
-    const bounds = useMemo(() => normalizeBounds(propsBounds, values), [
-      propsBounds,
-      values,
-    ]);
+    const bounds = useMemo(
+      () => normalizeBounds(propsBounds, values),
+      [propsBounds, values],
+    );
 
     const strokeWidth = useMemo(
       () => parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
@@ -434,24 +434,30 @@ const Chart = React.forwardRef(
               return <circle cx={cx} cy={cy} r={off} {...props} />;
             let d;
             if (point === 'diamond')
-              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${cy +
-                off} L ${cx - off} ${cy} Z`;
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${
+                cy + off
+              } L ${cx - off} ${cy} Z`;
             else if (point === 'star') {
               const off1 = off / 3;
               const off2 = off1 * 2;
-              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${cx +
-                off} ${cy - off1} L ${cx - off} ${cy - off1} L ${cx +
-                off2} ${cy + off} Z`;
+              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${
+                cx + off
+              } ${cy - off1} L ${cx - off} ${cy - off1} L ${cx + off2} ${
+                cy + off
+              } Z`;
             } else if (point === 'triangle')
-              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${cx -
-                off} ${cy + off} Z`;
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${
+                cx - off
+              } ${cy + off} Z`;
             else if (point === 'triangleDown')
-              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy -
-                off} L ${cx} ${cy + off} Z`;
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${
+                cy - off
+              } L ${cx} ${cy + off} Z`;
             // square
             else
-              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${cx +
-                off} ${cy + off} L ${cx - off} ${cy + off} Z`;
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${
+                cx + off
+              } ${cy + off} L ${cx - off} ${cy + off} Z`;
             return <path d={d} />;
           };
 
@@ -533,7 +539,7 @@ const Chart = React.forwardRef(
     const defs = [];
     let gradientRect;
     if (useGradient && size[1]) {
-      const uniqueGradientId = color.map(element => element.color).join('-');
+      const uniqueGradientId = color.map((element) => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
       defs.push(

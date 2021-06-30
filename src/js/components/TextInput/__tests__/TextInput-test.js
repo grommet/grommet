@@ -36,9 +36,12 @@ describe('TextInput', () => {
 
   test('a11yTitle', () => {
     const { container } = render(
-      <TextInput a11yTitle="aria-test" name="item" />,
+      <>
+        <TextInput a11yTitle="aria-test" name="item" />,
+        <TextInput aria-label="aria-test" name="item" />,
+      </>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('disabled', () => {
@@ -58,7 +61,7 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('suggestions', done => {
+  test('suggestions', (done) => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = render(
@@ -90,7 +93,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('complex suggestions', done => {
+  test('complex suggestions', (done) => {
     const { getByTestId, container } = render(
       <Grommet>
         <TextInput
@@ -118,7 +121,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('close suggestion drop', done => {
+  test('close suggestion drop', (done) => {
     const { getByTestId, container } = render(
       <Grommet>
         <TextInput
@@ -149,7 +152,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('let escape events propagage if there are no suggestions', done => {
+  test('let escape events propagage if there are no suggestions', (done) => {
     const callback = jest.fn();
     const { getByTestId } = render(
       <Grommet>
@@ -171,7 +174,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('calls onSuggestionsOpen', done => {
+  test('calls onSuggestionsOpen', (done) => {
     const onSuggestionsOpen = jest.fn();
     const { getByTestId } = render(
       <Grommet>
@@ -193,7 +196,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('calls onSuggestionsClose', done => {
+  test('calls onSuggestionsClose', (done) => {
     const onSuggestionsClose = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
@@ -226,7 +229,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('select suggestion', done => {
+  test('select suggestion', (done) => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
@@ -470,8 +473,8 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  ['small', 'medium', 'large'].forEach(dropHeight => {
-    test(`${dropHeight} drop height`, done => {
+  ['small', 'medium', 'large'].forEach((dropHeight) => {
+    test(`${dropHeight} drop height`, (done) => {
       const { getByTestId } = render(
         <TextInput
           data-testid="test-input"

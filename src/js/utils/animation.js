@@ -93,7 +93,7 @@ export const animationBounds = (type, size = 'medium') => {
 export const normalizeTiming = (time, defaultTiming) =>
   typeof time === 'number' ? `${time / 1000.0}s` : time || defaultTiming;
 
-export const animationEnding = type => {
+export const animationEnding = (type) => {
   if (type === 'draw') {
     return 'linear forwards';
   }
@@ -132,10 +132,12 @@ export const animationObjectStyle = (animation, theme, themeObj) => {
         animationTheme.duration,
       );
 
-    return css`${keyframes`${animationTransition}`}
-    ${normalizeTiming(animation.duration, defaultDuration())}
+    return css`
+      ${keyframes`${animationTransition}`}
+      ${normalizeTiming(animation.duration, defaultDuration())}
     ${normalizeTiming(animation.delay, '0s')}
-    ${animationEnding(animation.type)}`;
+    ${animationEnding(animation.type)}
+    `;
   }
   return '';
 };

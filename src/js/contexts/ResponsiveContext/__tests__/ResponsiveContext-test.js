@@ -19,7 +19,7 @@ describe('ResponsiveContext', () => {
       const { container } = render(
         <Grommet>
           <ResponsiveContext.Consumer>
-            {size => size}
+            {(size) => size}
           </ResponsiveContext.Consumer>
         </Grommet>,
       );
@@ -40,7 +40,7 @@ describe('ResponsiveContext', () => {
       const { container } = render(
         <Grommet>
           <ResponsiveContext.Consumer>
-            {size => size}
+            {(size) => size}
           </ResponsiveContext.Consumer>
         </Grommet>,
       );
@@ -61,7 +61,7 @@ describe('ResponsiveContext', () => {
       const { container } = render(
         <Grommet>
           <ResponsiveContext.Consumer>
-            {size => size}
+            {(size) => size}
           </ResponsiveContext.Consumer>
         </Grommet>,
       );

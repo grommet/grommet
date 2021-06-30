@@ -230,14 +230,14 @@ const Button = forwardRef(
       return colorIsDark(backgroundColor, theme);
     };
 
-    const onMouseOverButton = event => {
+    const onMouseOverButton = (event) => {
       setHover(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutButton = event => {
+    const onMouseOutButton = (event) => {
       setHover(false);
       if (onMouseOut) {
         onMouseOut(event);
@@ -332,11 +332,11 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
@@ -371,11 +371,11 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}

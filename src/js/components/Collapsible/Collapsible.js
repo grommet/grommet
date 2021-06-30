@@ -14,7 +14,7 @@ import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 
 const AnimatedBox = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.shouldOpen
       ? `visibility: hidden;
       position: absolute;

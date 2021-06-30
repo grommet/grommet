@@ -33,7 +33,7 @@ export const datumValue = (datum, property) => {
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
   let result;
-  columns.forEach(column => {
+  columns.forEach((column) => {
     // remember the first key property
     if (column.primary && !result) {
       result = column.property;
@@ -48,9 +48,9 @@ export const normalizePrimaryProperty = (columns, primaryKey) => {
 };
 
 // initialize filters with empty strings
-export const initializeFilters = columns => {
+export const initializeFilters = (columns) => {
   const result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.search) {
       result[column.property] = '';
     }
@@ -59,7 +59,7 @@ export const initializeFilters = columns => {
 };
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
-const escapeRegExp = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = (input) => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // filter data based on filters then sort
 export const filterAndSortData = (data, filters, onSearch, sort) => {
@@ -67,15 +67,15 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   if (!onSearch) {
     const regexps = {};
     Object.keys(filters)
-      .filter(n => filters[n])
-      .forEach(n => {
+      .filter((n) => filters[n])
+      .forEach((n) => {
         regexps[n] = new RegExp(escapeRegExp(filters[n]), 'i');
       });
     if (Object.keys(regexps).length > 0) {
       result = data.filter(
-        datum =>
+        (datum) =>
           !Object.keys(regexps).some(
-            property => !regexps[property].test(datumValue(datum, property)),
+            (property) => !regexps[property].test(datumValue(datum, property)),
           ),
       );
     }
@@ -129,11 +129,11 @@ const reducersInitValues = {
 const aggregateColumn = (column, data) => {
   let value;
   if (column.aggregate === 'avg') {
-    value = data.map(d => datumValue(d, column.property)).reduce(sumReducer);
+    value = data.map((d) => datumValue(d, column.property)).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data
-      .map(d => datumValue(d, column.property))
+      .map((d) => datumValue(d, column.property))
       .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
@@ -142,7 +142,7 @@ const aggregateColumn = (column, data) => {
 // aggregate all columns that can
 const aggregate = (columns, data) => {
   let result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.aggregate) {
       const value = aggregateColumn(column, data);
       result = set(result, column.property, value);
@@ -157,7 +157,7 @@ export const buildFooterValues = (columns, data) => {
   const aggregateValues = aggregate(columns, data);
 
   let result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.footer) {
       if (typeof column.footer === 'string') {
         result = set(result, column.property, column.footer);
@@ -178,7 +178,7 @@ export const buildGroups = (columns, data, groupBy) => {
   if (groupBy) {
     result = [];
     const groupMap = {};
-    data.forEach(datum => {
+    data.forEach((datum) => {
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
       const groupValue = datumValue(datum, groupByProperty);
       if (!groupMap[groupValue]) {
@@ -191,9 +191,9 @@ export const buildGroups = (columns, data, groupBy) => {
     });
 
     // include any aggregate column values across the data for each group
-    columns.forEach(column => {
+    columns.forEach((column) => {
       if (column.aggregate) {
-        result.forEach(group => {
+        result.forEach((group) => {
           const { datum } = group;
           datum[column.property] = aggregateColumn(column, group.data);
         });
@@ -213,14 +213,14 @@ export const buildGroupState = (groups, groupBy) => {
     });
   }
   if (groupBy && groupBy.expand) {
-    groupBy.expand.forEach(value => {
+    groupBy.expand.forEach((value) => {
       result[value] = { expanded: true };
     });
   }
   return result;
 };
 
-export const normalizeBackgroundColor = theme => {
+export const normalizeBackgroundColor = (theme) => {
   const { background } = theme; // context background
   if (typeof background === 'string') return background;
   if (background.light && background.dark) return background;
@@ -241,13 +241,13 @@ const cellPropertyNames = ['background', 'border', 'pad'];
 // will become cellProps.header.background
 export const normalizeCellProps = (props, theme) => {
   const result = {};
-  tableContextNames.forEach(context => {
+  tableContextNames.forEach((context) => {
     result[context] = { pinned: {} };
-    cellPropertyNames.forEach(propName => {
+    cellPropertyNames.forEach((propName) => {
       let value =
         props?.[propName]?.[context] ||
         // if the propName is used without context, it applies to all contexts
-        (tableContextNames.every(n => !props?.[propName]?.[n]) &&
+        (tableContextNames.every((n) => !props?.[propName]?.[n]) &&
           props?.[propName]) ||
         theme?.dataTable?.[context]?.[propName] ||
         theme?.table?.[context]?.[propName];
@@ -257,7 +257,7 @@ export const normalizeCellProps = (props, theme) => {
       value =
         props?.[propName]?.pinned?.[context] ||
         (context === 'body' &&
-          tableContextNames.every(n => !props?.[propName]?.pinned?.[n]) &&
+          tableContextNames.every((n) => !props?.[propName]?.pinned?.[n]) &&
           props?.[propName]?.pinned) ||
         theme?.dataTable?.pinned?.[context]?.[propName];
       if (value !== undefined) {
@@ -292,7 +292,7 @@ export const normalizeRowCellProps = (
   index,
 ) => {
   const result = { pinned: {} };
-  ['background', 'border', 'pad'].forEach(propName => {
+  ['background', 'border', 'pad'].forEach((propName) => {
     const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
     const cell = cellProps[propName];
     let value =

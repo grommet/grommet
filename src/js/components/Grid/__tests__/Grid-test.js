@@ -27,6 +27,17 @@ describe('Grid', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('aria-label renders', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Grid aria-label="My Grid" />
+      </Grommet>,
+    );
+    const gridWithLabel = getByLabelText('My Grid');
+    expect(gridWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('rows renders', () => {
     const { container } = render(
       <Grommet>

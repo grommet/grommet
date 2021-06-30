@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = MaskedInput => {
+export const doc = (MaskedInput) => {
   const DocumentedMaskedInput = describe(MaskedInput)
     .availableAt(getAvailableAtBadge('MaskedInput', 'Input'))
     .description('An input field with formalized syntax.')

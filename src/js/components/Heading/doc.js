@@ -4,7 +4,7 @@ import { colorPropType, genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Heading => {
+export const doc = (Heading) => {
   const DocumentedHeading = describe(Heading)
     .availableAt(getAvailableAtBadge('Heading', 'Type'))
     .description('Heading text structured in levels.')

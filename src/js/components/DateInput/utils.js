@@ -2,7 +2,7 @@
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
 
-export const formatToSchema = format => {
+export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
 
@@ -34,9 +34,9 @@ const masks = {
   yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
 };
 
-export const schemaToMask = schema => {
+export const schemaToMask = (schema) => {
   if (!schema) return undefined;
-  return schema.map(part => {
+  return schema.map((part) => {
     const lower = part.toLowerCase();
     const char = lower[0];
     if (char === 'm' || char === 'd' || char === 'y')
@@ -52,11 +52,13 @@ export const valueToText = (value, schema) => {
   // show the placeholder text
   if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map(v => new Date(v));
+  const dates = (Array.isArray(value) ? value : [value]).map(
+    (v) => new Date(v),
+  );
 
   let dateIndex = 0;
   let parts = {};
-  schema.every(part => {
+  schema.every((part) => {
     const char = part[0].toLowerCase();
     // advance dateIndex if we already have this part
     while (
@@ -82,10 +84,7 @@ export const valueToText = (value, schema) => {
       text += `0${date.getDate()}`.slice(-2);
       parts[part] = true;
     } else if (date && part === 'yy') {
-      text += date
-        .getFullYear()
-        .toString()
-        .slice(-2);
+      text += date.getFullYear().toString().slice(-2);
       parts[part] = true;
     } else if (date && part === 'yyyy') {
       text += date.getFullYear();
@@ -122,7 +121,7 @@ export const textToValue = (text, schema, valueProp, range) => {
 
   let result;
 
-  const addDate = parts => {
+  const addDate = (parts) => {
     // Do a little sanity checking on the parts first.
     // If not valid, leave as is.
     if (
@@ -161,7 +160,7 @@ export const textToValue = (text, schema, valueProp, range) => {
 
   let parts = {};
   let index = 0;
-  schema.forEach(part => {
+  schema.forEach((part) => {
     if (index < text.length) {
       const lower = part.toLowerCase();
       const char = lower[0];

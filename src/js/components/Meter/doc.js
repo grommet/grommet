@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Meter => {
+export const doc = (Meter) => {
   const DocumentedMeter = describe(Meter)
     .availableAt(getAvailableAtBadge('Meter', 'Visualizations'))
     .description('A graphical meter.')

@@ -21,7 +21,7 @@ test('Heading accepts ref', () => {
     <Grommet>
       <Heading ref={ref} />
     </Grommet>,
-    { createNodeMock: el => el },
+    { createNodeMock: (el) => el },
   );
 
   expect(ref.current).not.toBeNull();
@@ -233,7 +233,7 @@ test('Throws a warning when heading.level is undefined in the theme.', () => {
   const customTheme = {
     heading: {
       level: {
-        '6': undefined,
+        6: undefined,
       },
     },
   };

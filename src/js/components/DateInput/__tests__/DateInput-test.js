@@ -134,7 +134,7 @@ describe('DateInput', () => {
   });
 
   test('dates initialized with empty array', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     // month is indexed from 0, so we add one
     let month = new Date().getMonth() + 1;
     if (month < 10) month = `0${month}`;
@@ -194,7 +194,7 @@ describe('DateInput', () => {
   });
 
   test('select inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -214,7 +214,7 @@ describe('DateInput', () => {
   });
 
   test('select format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -236,7 +236,7 @@ describe('DateInput', () => {
   });
 
   test('select format', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText, getByText } = render(
       <Grommet>
         <DateInput
@@ -261,7 +261,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -285,7 +285,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline short', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -310,7 +310,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline partial', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -334,7 +334,7 @@ describe('DateInput', () => {
   });
 
   test('select format inline range', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -360,7 +360,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline range', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -387,7 +387,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline range partial', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -424,7 +424,7 @@ describe('DateInput', () => {
   });
 
   test('controlled format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const Test = () => {
       const [value, setValue] = React.useState(DATE);
       return (

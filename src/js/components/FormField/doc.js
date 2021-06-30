@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { marginProp } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = FormField => {
+export const doc = (FormField) => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField', 'Input'))
     .description(

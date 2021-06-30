@@ -18,7 +18,7 @@ export const MultipleValues = () => {
           values={[
             {
               value: 50,
-              onHover: over => {
+              onHover: (over) => {
                 setActive(over ? 50 : 0);
                 setLabel(over ? 'in use' : undefined);
               },
@@ -29,7 +29,7 @@ export const MultipleValues = () => {
             },
             {
               value: 30,
-              onHover: over => {
+              onHover: (over) => {
                 setActive(over ? 30 : 0);
                 setLabel(over ? 'available' : undefined);
               },

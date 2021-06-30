@@ -8,16 +8,8 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 const Circle = forwardRef((props, ref) => {
-  const {
-    background,
-    max,
-    round,
-    size,
-    thickness,
-    type,
-    values,
-    ...rest
-  } = props;
+  const { background, max, round, size, thickness, type, values, ...rest } =
+    props;
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -28,14 +20,14 @@ const Circle = forwardRef((props, ref) => {
   const mid = width / 2;
   const radius = width / 2 - height / 2;
   const anglePer = 360 / max;
-  const someHighlight = (values || []).some(v => v.highlight);
+  const someHighlight = (values || []).some((v) => v.highlight);
 
   let startValue = 0;
   let startAngle = 0;
   const paths = [];
   let pathCaps = [];
   (values || [])
-    .filter(v => v.value > 0)
+    .filter((v) => v.value > 0)
     .forEach((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;

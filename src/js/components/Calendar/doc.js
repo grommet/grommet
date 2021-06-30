@@ -4,7 +4,7 @@ import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Calendar => {
+export const doc = (Calendar) => {
   const DocumentedCalendar = describe(Calendar)
     .availableAt(getAvailableAtBadge('Calendar', 'Visualizations'))
     .description(

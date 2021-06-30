@@ -22,7 +22,7 @@ export const columns = [
   {
     property: 'date',
     header: 'Date',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
@@ -38,7 +38,7 @@ export const columns = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
@@ -235,7 +235,7 @@ export const storageColumns = [
         </Text>
       </Text>
     ),
-    render: datum =>
+    render: (datum) =>
       // bytes to tebibytes
       (datum.size / 2 ** 40).toFixed([1]),
     align: 'end',

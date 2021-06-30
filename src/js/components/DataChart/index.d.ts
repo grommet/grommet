@@ -50,6 +50,7 @@ type GranularityType = 'coarse' | 'medium' | 'fine';
 
 export interface DataChartProps {
   a11yTitle?: A11yTitleType;
+  'aria-label': A11yTitleType;
   // axis - when true, {
   //   x: { property: 'date' <if any>, granularity: 'coarse' },
   //   y: { property: property[0].property, granularity: 'coarse' },

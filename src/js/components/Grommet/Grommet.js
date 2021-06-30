@@ -101,19 +101,21 @@ const Grommet = forwardRef((props, ref) => {
   const messages = useMemo(() => {
     // combine the passed in messages, if any, with the default
     // messages and format function.
-    const nextMessages =
-      deepMerge(defaultMessages, messagesProp?.messages || {});
+    const nextMessages = deepMerge(
+      defaultMessages,
+      messagesProp?.messages || {},
+    );
     return {
       messages: nextMessages,
-      format: opts => {
+      format: (opts) => {
         const message = messagesProp?.format && messagesProp.format(opts);
-        return typeof message !== 'undefined' ?
-          message :
-          format(opts, nextMessages);
+        return typeof message !== 'undefined'
+          ? message
+          : format(opts, nextMessages);
       },
     };
   }, [messagesProp]);
-  
+
   useEffect(() => {
     const onResize = () => {
       setResponsive(getBreakpoint(document.body.clientWidth, theme));

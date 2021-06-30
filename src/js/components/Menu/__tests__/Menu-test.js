@@ -101,11 +101,26 @@ describe('Menu', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('custom aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Menu
+          aria-label="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    const menuWithLabel = getByLabelText('My Menu');
+    expect(menuWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('justify content', () => {
     const { container } = render(
       <Grommet>
         {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
-          justifyContent => (
+          (justifyContent) => (
             <Menu
               key={justifyContent}
               label={`${justifyContent} Menu`}
@@ -171,7 +186,7 @@ describe('Menu', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const { getByText, container } = render(
       <Grommet>
         <Menu

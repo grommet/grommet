@@ -7,6 +7,7 @@ import 'jest-styled-components';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
+import { Grommet } from '../../Grommet';
 import { DropButton } from '..';
 
 describe('DropButton', () => {
@@ -23,6 +24,25 @@ describe('DropButton', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          aria-label={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+        <DropButton
+          label="Dropper"
+          a11yTitle={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -53,7 +73,7 @@ describe('DropButton', () => {
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
-    const onClose = jest.fn(event => event.persist());
+    const onClose = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton
@@ -76,9 +96,9 @@ describe('DropButton', () => {
     expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const onClose = jest.fn();
-    const onOpen = jest.fn(event => event.persist());
+    const onOpen = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton

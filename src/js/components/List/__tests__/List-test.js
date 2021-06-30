@@ -390,8 +390,9 @@ describe('List events', () => {
       </Grommet>,
     );
 
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
     expect(container.firstChild).toMatchSnapshot();
@@ -448,7 +449,10 @@ describe('List onOrder', () => {
           <List
             data={ordered}
             primaryKey="a"
-            onOrder={newData => { setOrdered(newData); onOrder(newData); }}
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
           />
         </Grommet>
       );

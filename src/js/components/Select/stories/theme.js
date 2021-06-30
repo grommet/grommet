@@ -54,8 +54,10 @@ export const theme = {
     },
     check: {
       extend: ({ theme: extendTheme, checked }) => `
-        ${checked &&
-          `background-color: ${normalizeColor('brand', extendTheme)};`}
+        ${
+          checked &&
+          `background-color: ${normalizeColor('brand', extendTheme)};`
+        }
       `,
     },
     hover: {
@@ -102,7 +104,7 @@ export const theme = {
     },
   },
   textInput: {
-    extend: props => `
+    extend: (props) => `
       color: ${normalizeColor('gray', props.theme)};
       font-weight: 400;
       font-size: 13px;

@@ -22,6 +22,16 @@ test('Table renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('Table a11yTitle renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Table a11yTitle="test" />
+      <Table aria-label="test" />
+    </Grommet>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('Table caption renders', () => {
   const { container } = render(
     <Grommet>

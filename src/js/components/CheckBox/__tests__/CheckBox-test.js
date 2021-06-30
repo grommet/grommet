@@ -42,6 +42,17 @@ describe('CheckBox', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('a11yTitle renders', async () => {
+    const LABEL = 'Label';
+    const { container } = render(
+      <Grommet>
+        <CheckBox a11yTitle={LABEL} />
+        <CheckBox aria-label={LABEL} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('label renders', () => {
     const { container } = render(
       <Grommet>

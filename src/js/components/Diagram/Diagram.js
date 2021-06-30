@@ -58,7 +58,7 @@ const COMMANDS = {
   },
 };
 
-const findTarget = target => {
+const findTarget = (target) => {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
@@ -103,7 +103,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   }, [onResize]);
 
   useEffect(() => {
-    const onResizeHandler = event => savedOnResize.current(event);
+    const onResizeHandler = (event) => savedOnResize.current(event);
     onResizeHandler();
 
     window.addEventListener('resize', onResizeHandler);
@@ -215,7 +215,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           let colorName =
             color || (theme.diagram.line && theme.diagram.line.color);
           if (!colorName) {
-            const colors = Object.keys(theme.global.colors).filter(n =>
+            const colors = Object.keys(theme.global.colors).filter((n) =>
               n.match(/^graph-[0-9]$/),
             );
             colorName = colors[index % colors.length];

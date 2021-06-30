@@ -39,6 +39,7 @@ test('Image renders with aria-label', () => {
   const { container } = render(
     <Grommet>
       <Image a11yTitle="aria-label-text" src={SRC} />
+      <Image aria-label="aria-label-text" src={SRC} />
     </Grommet>,
   );
 
@@ -56,7 +57,7 @@ test('Image fit renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-opacityTypes.forEach(opacity => {
+opacityTypes.forEach((opacity) => {
   test(`Image opacity of ${opacity} renders`, () => {
     const { container } = render(
       <Grommet>

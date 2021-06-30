@@ -64,23 +64,23 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
 const StyledDrop = styled.div`
   ${baseStyle}
 
-  ${props =>
+  ${(props) =>
     !props.plain &&
     ((props.round && roundStyle(props.round, true, props.theme)) ||
       `border-radius: ${props.theme.global.drop.border.radius};`)}
 
   position: fixed;
-  z-index: ${props => props.theme.global.drop.zIndex};
+  z-index: ${(props) => props.theme.global.drop.zIndex};
   outline: none;
 
-  ${props =>
+  ${(props) =>
     !props.plain &&
     backgroundStyle(
       props.background || props.theme.global.drop.background,
       props.theme,
     )}
 
-  ${props =>
+  ${(props) =>
     !props.plain &&
     (props.margin || props.theme.global.drop.margin) &&
     props.theme.global &&
@@ -93,7 +93,7 @@ const StyledDrop = styled.div`
     )}
 
   opacity: 0;
-  transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
+  transform-origin: ${(props) => getTransformOriginStyle(props.alignProp)};
   animation: ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
 
@@ -103,7 +103,7 @@ const StyledDrop = styled.div`
     align-items: stretch;
   }
 
-  ${props => props.theme.global.drop && props.theme.global.drop.extend}
+  ${(props) => props.theme.global.drop && props.theme.global.drop.extend}
 `;
 
 StyledDrop.defaultProps = {};

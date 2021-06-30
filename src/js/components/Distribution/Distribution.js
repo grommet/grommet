@@ -35,7 +35,7 @@ const Distribution = ({
   if (values.length > 1) {
     const reducer = (accumulator, { value }) => accumulator + (value || 0);
     const total = values
-      .filter(v => Object.prototype.hasOwnProperty.call(v, 'value'))
+      .filter((v) => Object.prototype.hasOwnProperty.call(v, 'value'))
       .reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
@@ -109,7 +109,7 @@ const Distribution = ({
 
 Distribution.defaultProps = {
   basis: undefined,
-  children: value => (
+  children: (value) => (
     <Box fill border>
       {/* eslint-disable-next-line react/destructuring-assignment */}
       <Text>{value.value}</Text>

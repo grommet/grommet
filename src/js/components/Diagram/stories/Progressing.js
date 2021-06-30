@@ -29,7 +29,7 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 const fullTopRow = [1, 2, 3];
 
 export const Progressing = () => {
-  const reducer = topRow => {
+  const reducer = (topRow) => {
     const sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
     return fullTopRow.slice(0, sliceEnd);
   };
@@ -70,12 +70,12 @@ export const Progressing = () => {
         <Stack>
           <Box>
             <Box direction="row">
-              {topRow.map(id => (
+              {topRow.map((id) => (
                 <Node key={id} id={id} />
               ))}
             </Box>
             <Box direction="row">
-              {[4, 5].map(id => (
+              {[4, 5].map((id) => (
                 <Node key={id} id={id} background="dark-2" />
               ))}
             </Box>

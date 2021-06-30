@@ -281,7 +281,7 @@ describe('Button', () => {
     const allButtons = screen.getAllByRole('button');
 
     expect(allButtons).toHaveLength(11);
-    allButtons.forEach(button => expect(button).toBeDisabled());
+    allButtons.forEach((button) => expect(button).toBeDisabled());
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -467,7 +467,7 @@ describe('Button', () => {
     const allButtons = screen.getAllByRole('button', { name: 'Title' });
 
     expect(allButtons).toHaveLength(2);
-    allButtons.forEach(button =>
+    allButtons.forEach((button) =>
       expect(button).toHaveAttribute('aria-label', 'Title'),
     );
     expect(container.firstChild).toMatchSnapshot();

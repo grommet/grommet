@@ -25,7 +25,7 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
-  ${props => props.theme.menu.extend};
+  ${(props) => props.theme.menu.extend};
 `;
 
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
@@ -52,6 +52,7 @@ To make a selection:
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
+    'aria-label': ariaLabel,
     children,
     disabled,
     dropAlign,
@@ -117,7 +118,7 @@ const Menu = forwardRef((props, ref) => {
     setOpen(true);
   }, []);
 
-  const onSelectMenuItem = event => {
+  const onSelectMenuItem = (event) => {
     if (isOpen) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
@@ -129,10 +130,10 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const isTab = event =>
+  const isTab = (event) =>
     event.keyCode === constants.tab || event.which === constants.tab;
 
-  const onNextMenuItem = event => {
+  const onNextMenuItem = (event) => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -165,7 +166,7 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const onPreviousMenuItem = event => {
+  const onPreviousMenuItem = (event) => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -234,13 +235,12 @@ const Menu = forwardRef((props, ref) => {
   const controlMirror = (
     <Box flex={false}>
       <Button
-        ref={r => {
+        ref={(r) => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
         a11yTitle={
-          a11yTitle ||
-          format({ id: 'menu.closeMenu', messages })
+          ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
         }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
@@ -275,8 +275,7 @@ const Menu = forwardRef((props, ref) => {
         {...rest}
         {...buttonProps}
         a11yTitle={
-          a11yTitle ||
-          format({ id: 'menu.openMenu', messages })
+          ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
         }
         onAlign={setAlignControlMirror}
         disabled={disabled}
@@ -288,7 +287,7 @@ const Menu = forwardRef((props, ref) => {
         onClose={onDropClose}
         dropContent={
           <Keyboard
-            onTab={event =>
+            onTab={(event) =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
             onEnter={onSelectMenuItem}
@@ -312,16 +311,14 @@ const Menu = forwardRef((props, ref) => {
                       {item.icon}
                       {!item.reverse && item.label}
                     </Box>
-                  ) : (
-                    undefined
-                  );
+                  ) : undefined;
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (
                     // eslint-disable-next-line react/no-array-index-key
                     <Box key={index} flex={false}>
                       <Button
-                        ref={r => {
+                        ref={(r) => {
                           buttonRefs[index] = r;
                         }}
                         onFocus={() => setActiveItemIndex(index)}

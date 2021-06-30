@@ -30,13 +30,23 @@ test('renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('a11yTitle', async () => {
+  const { container } = render(
+    <Grommet>
+      <Text a11yTitle="test"> Example</Text>
+      <Text aria-label="test"> Example</Text>
+    </Grommet>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('accepts ref', () => {
   const ref = React.createRef();
   const { container } = render(
     <Grommet>
       <Text ref={ref}>text</Text>
     </Grommet>,
-    { createNodeMock: el => el },
+    { createNodeMock: (el) => el },
   );
 
   expect(ref.current).not.toBeNull();

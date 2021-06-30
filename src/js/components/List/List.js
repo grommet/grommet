@@ -18,12 +18,12 @@ import {
 
 const StyledList = styled.ul`
   list-style: none;
-  ${props => !props.margin && 'margin: 0;'}
+  ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
 
   &:focus {
-    ${props =>
+    ${(props) =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
@@ -32,17 +32,15 @@ const StyledList = styled.ul`
   // completes and focus is placed back on the list container.
   // for visual consistency, we want to keep the focus indicator on the
   // list container the whole time.
-  ${props =>
+  ${(props) =>
     props.itemFocus &&
     focusStyle({ forceOutline: true, skipSvgChildren: true })}}
-  ${props => props.theme.list && props.theme.list.extend}}
+  ${(props) => props.theme.list && props.theme.list.extend}}
 `;
 
 const StyledItem = styled(Box)`
-  ${props => props.onClick && `cursor: pointer;`}
-  ${props =>
-    props.draggable &&
-    `cursor: move;`}
+  ${(props) => props.onClick && `cursor: pointer;`}
+  ${(props) => props.draggable && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -51,13 +49,13 @@ const StyledItem = styled(Box)`
   &:focus {
     ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
-  ${props =>
+  ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
 
 // when paginated, this wraps the data table and pagination component
 const StyledContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.theme.list &&
     props.theme.list.container &&
     props.theme.list.container.extend};
@@ -99,19 +97,17 @@ const getPrimaryContent = (item, index, primaryKey) => {
   return primaryContent;
 };
 
-
 const getKey = (item, index, primaryContent) => {
   if (typeof primaryContent === 'string') {
     return primaryContent;
-  } 
-  return (typeof item === 'string') ? item : index;
+  }
+  return typeof item === 'string' ? item : index;
 };
 
 const getItemId = (item, index, primaryKey) => {
   const primaryContent = getPrimaryContent(item, index, primaryKey);
   return getKey(item, index, primaryContent);
 };
-
 
 const List = React.forwardRef(
   (
@@ -166,12 +162,11 @@ const List = React.forwardRef(
     const [orderingData, setOrderingData] = useState();
 
     const draggingRef = useRef();
-    
+
     const ariaProps = {
       role: onClickItem || onOrder ? 'listbox' : 'list',
     };
-    
-    
+
     if (active >= 0) {
       let activeId;
       // We have an item that is 'focused' within the list. This could
@@ -179,10 +174,13 @@ const List = React.forwardRef(
       // We need to figure out an id of the thing that will be shown as active
       if (onOrder) {
         // figure out which arrow button will be the active one.
-        const buttonId = (active % 2) ? 'MoveDown' : 'MoveUp';
+        const buttonId = active % 2 ? 'MoveDown' : 'MoveUp';
         const itemIndex = Math.trunc(active / 2);
-        activeId = 
-          `${getItemId(data[itemIndex], itemIndex, primaryKey)}${buttonId}`;
+        activeId = `${getItemId(
+          data[itemIndex],
+          itemIndex,
+          primaryKey,
+        )}${buttonId}`;
       } else if (onClickItem) {
         // The whole list item is active. Figure out an id
         activeId = getItemId(data[active], active, primaryKey);
@@ -195,7 +193,7 @@ const List = React.forwardRef(
         <Keyboard
           onEnter={
             (onClickItem || onOrder) && active >= 0
-              ? event => {
+              ? (event) => {
                   if (onOrder) {
                     const index = Math.trunc(active / 2);
                     // Call onOrder with the re-ordered data.
@@ -209,8 +207,7 @@ const List = React.forwardRef(
                       onOrder(reorder(data, index, index - 1));
                       setActive(Math.max(active - 2, 1));
                     }
-                  }
-                  else {
+                  } else {
                     event.persist();
                     const adjustedEvent = event;
                     adjustedEvent.item = data[active];
@@ -232,10 +229,8 @@ const List = React.forwardRef(
             (onClickItem || onOrder) && data && data.length
               ? () => {
                   const min = onOrder ? 1 : 0;
-                  const max = onOrder ? (data.length * 2) - 2 : data.length - 1;
-                  setActive(
-                    active >= min ? Math.min(active + 1, max) : min,
-                  );
+                  const max = onOrder ? data.length * 2 - 2 : data.length - 1;
+                  setActive(active >= min ? Math.min(active + 1, max) : min);
                 }
               : undefined
           }
@@ -255,7 +250,7 @@ const List = React.forwardRef(
               scrollableAncestor="window"
               show={!paginate ? showProp : undefined}
               step={step}
-              renderMarker={marker => (
+              renderMarker={(marker) => (
                 <Box as="li" flex={false}>
                   {marker}
                 </Box>
@@ -346,7 +341,7 @@ const List = React.forwardRef(
                     role: 'option',
                     tabIndex: -1,
                     active: active === index,
-                    onClick: event => {
+                    onClick: (event) => {
                       // extract from React's synthetic event pool
                       event.persist();
                       const adjustedEvent = event;
@@ -375,7 +370,7 @@ const List = React.forwardRef(
                 if (onOrder) {
                   orderProps = {
                     draggable: true,
-                    onDragStart: event => {
+                    onDragStart: (event) => {
                       event.dataTransfer.setData('text/plain', '');
                       // allowed per
                       // https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_the_drag_effect
@@ -388,7 +383,7 @@ const List = React.forwardRef(
                       setDragging(undefined);
                       setOrderingData(undefined);
                     },
-                    onDragOver: event => {
+                    onDragOver: (event) => {
                       if (dragging !== undefined) {
                         event.preventDefault();
                         if (dragging !== index) {
@@ -415,21 +410,21 @@ const List = React.forwardRef(
                     <Box direction="row" align="center" justify="end">
                       <Button
                         id={`${key}MoveUp`}
-                        a11yTitle={`${index+1} ${key} move up`}
+                        a11yTitle={`${index + 1} ${key} move up`}
                         icon={<Up />}
                         hoverIndicator
                         focusIndicator={false}
                         disabled={!index}
                         active={active === index * 2}
-                        onClick={event => {
+                        onClick={(event) => {
                           event.stopPropagation();
                           onOrder(reorder(data, index, index - 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index*2)}
+                        onMouseOver={() => setActive(index * 2)}
                         onMouseOut={() => setActive(undefined)}
                         onFocus={() => {
-                          setActive(index*2);
+                          setActive(index * 2);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -439,21 +434,21 @@ const List = React.forwardRef(
                       />
                       <Button
                         id={`${key}MoveDown`}
-                        a11yTitle={`${index+1} ${key} move down`}
+                        a11yTitle={`${index + 1} ${key} move down`}
                         icon={<Down />}
                         hoverIndicator
                         focusIndicator={false}
                         disabled={index >= data.length - 1}
-                        active={active === (index * 2 + 1)}
-                        onClick={event => {
+                        active={active === index * 2 + 1}
+                        onClick={(event) => {
                           event.stopPropagation();
                           onOrder(reorder(data, index, index + 1));
                         }}
                         tabIndex={-1}
-                        onMouseOver={() => setActive(index*2+1)}
+                        onMouseOver={() => setActive(index * 2 + 1)}
                         onMouseOut={() => setActive(undefined)}
                         onFocus={() => {
-                          setActive(index*2+1);
+                          setActive(index * 2 + 1);
                           setItemFocus(true);
                         }}
                         onBlur={() => {
@@ -462,7 +457,7 @@ const List = React.forwardRef(
                         }}
                       />
                     </Box>
-                  );  
+                  );
 
                   boxProps = {
                     direction: 'row',

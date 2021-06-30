@@ -101,7 +101,7 @@ export const CustomSuggestions = () => {
   const [suggestions, setSuggestions] = useState([]);
   const boxRef = useRef();
 
-  const onChange = useCallback(event => {
+  const onChange = useCallback((event) => {
     const { value: newValue } = event.target;
     setValue(newValue);
 
@@ -116,7 +116,7 @@ export const CustomSuggestions = () => {
   }, []);
 
   const onSuggestionSelect = useCallback(
-    event => setValue(event.suggestion.value),
+    (event) => setValue(event.suggestion.value),
     [],
   );
 

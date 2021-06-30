@@ -6,7 +6,7 @@ import { backgroundDoc } from '../../utils/prop-types';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
-export const doc = Layer => {
+export const doc = (Layer) => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer', 'Layout'))
     .description(

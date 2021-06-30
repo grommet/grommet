@@ -31,7 +31,7 @@ export const data = [
 ];
 
 let TOTAL = 0;
-data.forEach(datum => {
+data.forEach((datum) => {
   TOTAL += datum.amount;
 });
 
@@ -57,6 +57,6 @@ export const columns = [
     label: 'Amount',
     align: 'end',
     footer: amountFormatter.format(TOTAL / 100),
-    format: datum => amountFormatter.format(datum.amount / 100),
+    format: (datum) => amountFormatter.format(datum.amount / 100),
   },
 ];

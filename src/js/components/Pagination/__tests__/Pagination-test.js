@@ -35,6 +35,18 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('should render an accessible label', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <Grommet>
+        <Pagination a11yTitle={LABEL} />
+        <Pagination aria-label={LABEL} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should render correct numberEdgePages', () => {
     const { container } = render(
       <Grommet>
@@ -139,8 +151,9 @@ describe('Pagination', () => {
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
     fireEvent.click(getByText(expectedPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(expectedPage);
     expect(container.firstChild).toMatchSnapshot();
@@ -229,8 +242,9 @@ describe('Pagination', () => {
 
     const desiredPage = '2';
     fireEvent.click(getByText(desiredPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(desiredPage);
     expect(container.firstChild).toMatchSnapshot();

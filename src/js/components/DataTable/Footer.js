@@ -47,7 +47,7 @@ const Footer = forwardRef(
               pin={pin}
             />
           )}
-          {columns.map(column => {
+          {columns.map((column) => {
             const cellPin = [...pin];
             if (column.pin) cellPin.push('left');
 

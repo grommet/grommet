@@ -39,7 +39,7 @@ const edgeSizes = [
 
 const BORDER_SHAPE = getBorderPropType({ includeBetween: false });
 
-export const doc = Grid => {
+export const doc = (Grid) => {
   const DocumentedGrid = describe(Grid)
     .availableAt(getAvailableAtBadge('Grid', 'Layout'))
     .description(

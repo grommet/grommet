@@ -163,13 +163,13 @@ describe('RadioButtonGroup', () => {
       },
     ];
 
-    const onChange = jest.fn(event => {
+    const onChange = jest.fn((event) => {
       expect(event).toBeDefined();
       expect(event).toHaveProperty(['target', 'value']);
 
       const { target } = event;
       const option = radioGroupOptions.find(
-        optn => target.value === optn.value,
+        (optn) => target.value === optn.value,
       );
 
       expect(option).not.toBeNull();

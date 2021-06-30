@@ -68,16 +68,31 @@ exports[`TextInput a11yTitle 1`] = `
   width: 100%;
 }
 
-<div
-  class="c0"
->
-  <input
-    aria-label="aria-test"
-    autocomplete="off"
-    class="c1"
-    name="item"
-    value=""
-  />
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      aria-label="aria-test"
+      autocomplete="off"
+      class="c1"
+      name="item"
+      value=""
+    />
+  </div>
+  ,
+  <div
+    class="c0"
+  >
+    <input
+      aria-label="aria-test"
+      autocomplete="off"
+      class="c1"
+      name="item"
+      value=""
+    />
+  </div>
+  ,
 </div>
 `;
 

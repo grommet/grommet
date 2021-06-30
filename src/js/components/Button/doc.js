@@ -9,7 +9,7 @@ import {
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Button => {
+export const doc = (Button) => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button', 'Controls'))
     .description('A button.')

@@ -33,6 +33,20 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders an accessible label', async () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <Grommet>
+        <Anchor a11yTitle={LABEL}>Link</Anchor>
+        <Anchor aria-label={LABEL}>Link</Anchor>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
+
   test('renders with children', () => {
     const { container } = render(
       <Grommet>

@@ -49,7 +49,7 @@ const overflowPropType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-export const doc = Box => {
+export const doc = (Box) => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box', 'Layout'))
     .description(

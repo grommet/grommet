@@ -94,6 +94,17 @@ describe('Chart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <Grommet>
+        <Chart a11yTitle={LABEL} values={VALUES} />
+        <Chart aria-label={LABEL} values={VALUES} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('type', () => {
     const { container } = render(
       <Grommet>

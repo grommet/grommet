@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Box, FileInput, Form, FormField, Grommet, Heading} from 'grommet';
+import { Box, FileInput, Form, FormField, Grommet, Heading } from 'grommet';
 
 const messageBundle = {
-  "form.required": "必填项目",
-  "fileInput.browse": "浏览",
+  'form.required': '必填项目',
+  'fileInput.browse': '浏览',
 };
 
 const customMessages = {
@@ -13,11 +13,10 @@ const customMessages = {
       required: 'necesario',
     },
     fileInput: {
-      browse: "navegar",
+      browse: 'navegar',
     },
   },
 };
-
 
 export const Messages = () => (
   <>
@@ -30,9 +29,10 @@ export const Messages = () => (
         </Form>
       </Box>
     </Grommet>
-    <Grommet messages={{
-      format: options => messageBundle[options.id],
-    }}
+    <Grommet
+      messages={{
+        format: (options) => messageBundle[options.id],
+      }}
     >
       <Heading level={2}>Message function</Heading>
       <Box width="medium">

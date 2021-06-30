@@ -50,7 +50,7 @@ const Container = ({ node, index }) => (
 );
 
 export const Animated = () => {
-  const reducer = draw => !draw;
+  const reducer = (draw) => !draw;
 
   const [draw, toogleDraw] = useReducer(reducer, true);
 
@@ -85,7 +85,7 @@ export const Animated = () => {
                 />
               </Box>
               <Box direction="row" gap="xlarge">
-                {[2, 3].map(id => (
+                {[2, 3].map((id) => (
                   <Container key={id} node={data[id - 1]} index={id} />
                 ))}
               </Box>

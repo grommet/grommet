@@ -32,7 +32,7 @@ export const PaginatedGrid = () => {
       <Box pad="large" gap="medium">
         <Box height={{ min: 'medium' }}>
           <Grid columns="small" rows="small" gap="medium" justify="center">
-            {currentData.map(datum => (
+            {currentData.map((datum) => (
               <CardResult item={datum} key={datum.entry} />
             ))}
           </Grid>

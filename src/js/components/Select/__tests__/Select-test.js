@@ -28,6 +28,16 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('a11yTitle', () => {
+    const { container } = render(
+      <Grommet>
+        <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+        <Select id="test-select" options={['one', 'two']} ariaLabel="Select" />,
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const { container } = render(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,

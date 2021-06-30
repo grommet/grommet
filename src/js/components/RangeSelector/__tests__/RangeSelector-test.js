@@ -87,7 +87,7 @@ describe('RangeSelector', () => {
   test('opacity', () => {
     const { container } = render(
       <Grommet>
-        {['weak', 'medium', 'strong'].map(opacity => (
+        {['weak', 'medium', 'strong'].map((opacity) => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
       </Grommet>,
@@ -99,7 +99,7 @@ describe('RangeSelector', () => {
   test('round', () => {
     const { container } = render(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
+        {['xsmall', 'small', 'medium', 'large', 'full'].map((round) => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
       </Grommet>,
@@ -119,7 +119,7 @@ describe('RangeSelector', () => {
           'large',
           'xlarge',
           'full',
-        ].map(size => (
+        ].map((size) => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
       </Grommet>,
@@ -130,10 +130,10 @@ describe('RangeSelector', () => {
 
   test('step renders correct values', () => {
     let values;
-    const setValues = newValues => {
+    const setValues = (newValues) => {
       values = newValues;
     };
-    const onChange = jest.fn(nextValues => setValues(nextValues));
+    const onChange = jest.fn((nextValues) => setValues(nextValues));
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[0, 100]} step={3} onChange={onChange} />
