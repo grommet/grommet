@@ -100,4 +100,13 @@ describe('FileInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <FileInput />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

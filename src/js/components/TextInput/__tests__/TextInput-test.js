@@ -640,4 +640,13 @@ describe('TextInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <TextInput />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

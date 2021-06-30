@@ -427,7 +427,7 @@ export const inputStyle = css`
   ${(props) =>
     `font-size: ${
       props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size].size ||
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
           props.theme.global.input.font.size
         : 'inherit'
     };`}
