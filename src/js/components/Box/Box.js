@@ -41,10 +41,10 @@ const Box = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
-      onClick,
-      tabIndex,
-    ]);
+    const focusable = useMemo(
+      () => onClick && !(tabIndex < 0),
+      [onClick, tabIndex],
+    );
 
     const [focus, setFocus] = useState();
 
@@ -52,11 +52,11 @@ const Box = forwardRef(
       if (focusable) {
         return {
           onClick,
-          onFocus: event => {
+          onFocus: (event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           },
-          onBlur: event => {
+          onBlur: (event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           },
@@ -109,26 +109,34 @@ const Box = forwardRef(
       });
     }
 
-    const themeProviderValue = { ...theme };
-
-    if (background || theme.darkChanged) {
-      const dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
-        themeProviderValue.background = background;
-      } else if (background) {
-        // This allows DataTable to intelligently set the background of a pinned
-        // header or footer.
-        themeProviderValue.background = background;
+    // construct a new theme object in case we have a background that wants
+    // to change the background color context
+    const nextTheme = useMemo(() => {
+      let result;
+      if (background || theme.darkChanged) {
+        const dark = backgroundIsDark(background, theme);
+        const darkChanged = dark !== undefined && dark !== theme.dark;
+        if (darkChanged || theme.darkChanged) {
+          result = { ...theme };
+          result.dark = dark === undefined ? theme.dark : dark;
+          result.background = background;
+        } else if (background) {
+          // This allows DataTable to intelligently set the background
+          // of a pinned header or footer.
+          result = { ...theme };
+          result.background = background;
+        }
       }
-    }
+      return result;
+    }, [background, theme]);
 
-    contents = (
-      <ThemeContext.Provider value={themeProviderValue}>
-        {contents}
-      </ThemeContext.Provider>
-    );
+    if (nextTheme) {
+      contents = (
+        <ThemeContext.Provider value={nextTheme}>
+          {contents}
+        </ThemeContext.Provider>
+      );
+    }
 
     let content = (
       <StyledBox

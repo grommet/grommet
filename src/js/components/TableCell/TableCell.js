@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext, useEffect, useRef } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -96,7 +102,7 @@ const TableCell = forwardRef(
     }
     // merge tabelContextTheme and rest
     const mergedProps = { ...tableContextTheme, ...rest };
-    Object.keys(mergedProps).forEach(key => {
+    Object.keys(mergedProps).forEach((key) => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
     });
     // split out background, border, and pad
@@ -125,49 +131,63 @@ const TableCell = forwardRef(
       );
     }
 
-    const themeProviderValue = { ...theme };
+    let contents = (
+      <StyledTableCell
+        ref={cellRef}
+        as={scope ? 'th' : undefined}
+        scope={scope}
+        size={size}
+        colSpan={colSpan}
+        tableContext={tableContext}
+        tableContextTheme={tableContextTheme}
+        {...(plain === true ? mergedProps : {})}
+        {...cellProps}
+        className={className}
+      >
+        {plain || !Object.keys(mergedProps).length ? (
+          content
+        ) : (
+          <Box
+            {...mergedProps}
+            align={align}
+            justify={verticalAlignToJustify[verticalAlign]}
+          >
+            {children}
+          </Box>
+        )}
+      </StyledTableCell>
+    );
 
-    if (cellProps.background || theme.darkChanged) {
-      const dark = backgroundIsDark(cellProps.background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
-        themeProviderValue.background = cellProps.background;
-      } else if (cellProps.background) {
-        // This allows DataTable to intelligently set the background of a pinned
-        // header or footer.
-        themeProviderValue.background = cellProps.background;
+    // construct a new theme object in case we have a background that wants
+    // to change the background color context
+    const nextTheme = useMemo(() => {
+      let result;
+      if (cellProps.background || theme.darkChanged) {
+        const dark = backgroundIsDark(cellProps.background, theme);
+        const darkChanged = dark !== undefined && dark !== theme.dark;
+        if (darkChanged || theme.darkChanged) {
+          result = { ...theme };
+          result.dark = dark === undefined ? theme.dark : dark;
+          result.background = cellProps.background;
+        } else if (cellProps.background) {
+          // This allows DataTable to intelligently set the background
+          // of a pinned header or footer.
+          result = { ...theme };
+          result.background = cellProps.background;
+        }
       }
+      return result;
+    }, [cellProps.background, theme]);
+
+    if (nextTheme) {
+      contents = (
+        <ThemeContext.Provider value={nextTheme}>
+          {contents}
+        </ThemeContext.Provider>
+      );
     }
 
-    return (
-      <ThemeContext.Provider value={themeProviderValue}>
-        <StyledTableCell
-          ref={cellRef}
-          as={scope ? 'th' : undefined}
-          scope={scope}
-          size={size}
-          colSpan={colSpan}
-          tableContext={tableContext}
-          tableContextTheme={tableContextTheme}
-          {...(plain === true ? mergedProps : {})}
-          {...cellProps}
-          className={className}
-        >
-          {plain || !Object.keys(mergedProps).length ? (
-            content
-          ) : (
-            <Box
-              {...mergedProps}
-              align={align}
-              justify={verticalAlignToJustify[verticalAlign]}
-            >
-              {children}
-            </Box>
-          )}
-        </StyledTableCell>
-      </ThemeContext.Provider>
-    );
+    return contents;
   },
 );
 
