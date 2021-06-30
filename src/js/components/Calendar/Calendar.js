@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -182,6 +183,7 @@ const Calendar = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -581,7 +583,15 @@ const Calendar = forwardRef(
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(previousMonth, bounds)}
-              onClick={() => changeReference(previousMonth)}
+              onClick={() => {
+                changeReference(previousMonth);
+                announce(
+                  `Moved to ${previousMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}`,
+                );
+              }}
             />
             <Button
               a11yTitle={nextMonth.toLocaleDateString(locale, {
@@ -590,7 +600,15 @@ const Calendar = forwardRef(
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(nextMonth, bounds)}
-              onClick={() => changeReference(nextMonth)}
+              onClick={() => {
+                changeReference(nextMonth);
+                announce(
+                  `Moved to ${nextMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}`,
+                );
+              }}
             />
           </Box>
         </Box>
@@ -788,6 +806,7 @@ const Calendar = forwardRef(
             onRight={() => active && setActive(addDays(active, 1))}
           >
             <StyledWeeksContainer
+              tabIndex={0}
               role="grid"
               aria-label={activeDate}
               ref={daysRef}

@@ -676,6 +676,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -1540,8 +1541,9 @@ exports[`DateInput dates initialized with empty array 2`] = `
       </div>
       <div
         aria-label="end"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fVYTMI"
         role="grid"
+        tabindex="0"
       >
         <div
           class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -1592,7 +1594,7 @@ exports[`DateInput dates initialized with empty array 2`] = `
             >
               <button
                 aria-label="Tue Jun 01 2021"
-                class="StyledButton-sc-323bzc-0 dsmCNz"
+                class="StyledButton-sc-323bzc-0 egeuHr"
                 tabindex="-1"
                 type="button"
               >
@@ -1949,7 +1951,7 @@ exports[`DateInput dates initialized with empty array 2`] = `
             >
               <button
                 aria-label="Sun Jun 20 2021"
-                class="StyledButton-sc-323bzc-0 egeuHr"
+                class="StyledButton-sc-323bzc-0 dsmCNz"
                 tabindex="-1"
                 type="button"
               >
@@ -3287,6 +3289,7 @@ exports[`DateInput focus 2`] = `
         aria-label="start"
         class="c10"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c11"
@@ -4986,6 +4989,7 @@ exports[`DateInput format inline 1`] = `
           onFocus={[Function]}
           onKeyDown={[Function]}
           role="grid"
+          tabIndex={0}
         >
           <div
             className="c13"
@@ -6433,6 +6437,7 @@ exports[`DateInput inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -8321,6 +8326,7 @@ exports[`DateInput range format inline 1`] = `
           onFocus={[Function]}
           onKeyDown={[Function]}
           role="grid"
+          tabIndex={0}
         >
           <div
             className="c13"
@@ -9786,6 +9792,7 @@ exports[`DateInput range inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -11462,6 +11469,7 @@ exports[`DateInput select format 3`] = `
         aria-label="start"
         class="c10"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c11"
@@ -12800,6 +12808,7 @@ exports[`DateInput select format inline 1`] = `
           aria-label="start"
           class="c12"
           role="grid"
+          tabindex="0"
         >
           <div
             class="c13"
@@ -13695,8 +13704,9 @@ exports[`DateInput select format inline 2`] = `
         </div>
         <div
           aria-label="start"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fVYTMI"
           role="grid"
+          tabindex="0"
         >
           <div
             class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -13783,7 +13793,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  class="StyledButton-sc-323bzc-0 egeuHr"
                   tabindex="-1"
                   type="button"
                 >
@@ -14122,7 +14132,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 egeuHr"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
                   tabindex="-1"
                   type="button"
                 >
@@ -15052,6 +15062,7 @@ exports[`DateInput select format inline range 1`] = `
           aria-label="start"
           class="c12"
           role="grid"
+          tabindex="0"
         >
           <div
             class="c13"
@@ -15947,8 +15958,9 @@ exports[`DateInput select format inline range 2`] = `
         </div>
         <div
           aria-label="end"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fVYTMI"
           role="grid"
+          tabindex="0"
         >
           <div
             class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -16017,7 +16029,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 dsmCNz"
+                  class="StyledButton-sc-323bzc-0 egeuHr"
                   tabindex="-1"
                   type="button"
                 >
@@ -16184,7 +16196,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 egeuHr"
+                  class="StyledButton-sc-323bzc-0 dsmCNz"
                   tabindex="-1"
                   type="button"
                 >
@@ -17170,6 +17182,7 @@ exports[`DateInput select inline 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -18506,6 +18519,7 @@ exports[`DateInput type format inline 1`] = `
           aria-label="start"
           class="c12"
           role="grid"
+          tabindex="0"
         >
           <div
             class="c13"
@@ -19403,6 +19417,7 @@ exports[`DateInput type format inline 2`] = `
           aria-label="start"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
           role="grid"
+          tabindex="0"
         >
           <div
             class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -20740,6 +20755,7 @@ exports[`DateInput type format inline short 1`] = `
           aria-label="start"
           class="c12"
           role="grid"
+          tabindex="0"
         >
           <div
             class="c13"
@@ -21637,6 +21653,7 @@ exports[`DateInput type format inline short 2`] = `
           aria-label="start"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
           role="grid"
+          tabindex="0"
         >
           <div
             class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"

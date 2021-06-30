@@ -402,6 +402,7 @@ exports[`Calendar change months 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -1267,6 +1268,7 @@ exports[`Calendar change months 2`] = `
         aria-label="start"
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
         role="grid"
+        tabindex="0"
       >
         <div
           class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -2873,6 +2875,7 @@ exports[`Calendar children 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -3772,6 +3775,7 @@ exports[`Calendar date 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -5235,6 +5239,7 @@ exports[`Calendar dates 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -6773,6 +6778,7 @@ exports[`Calendar daysOfWeek 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c13"
@@ -8278,6 +8284,7 @@ exports[`Calendar disabled 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -9745,6 +9752,7 @@ exports[`Calendar fill 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -11174,6 +11182,7 @@ exports[`Calendar first day sunday week monday 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -12409,6 +12418,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -13493,6 +13503,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -14869,6 +14880,7 @@ exports[`Calendar header 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c8"
@@ -16336,6 +16348,7 @@ exports[`Calendar reference 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -17765,6 +17778,7 @@ exports[`Calendar select date 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -18628,8 +18642,9 @@ exports[`Calendar select date 2`] = `
       </div>
       <div
         aria-label="start"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fVYTMI"
         role="grid"
+        tabindex="0"
       >
         <div
           class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -18960,7 +18975,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Wed Jan 15 2020"
-                class="StyledButton-sc-323bzc-0 dsmCNz"
+                class="StyledButton-sc-323bzc-0 egeuHr"
                 tabindex="-1"
                 type="button"
               >
@@ -18996,7 +19011,7 @@ exports[`Calendar select date 2`] = `
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 egeuHr"
+                class="StyledButton-sc-323bzc-0 dsmCNz"
                 tabindex="-1"
                 type="button"
               >
@@ -19867,6 +19882,7 @@ exports[`Calendar select dates 1`] = `
         aria-label="start"
         class="c9"
         role="grid"
+        tabindex="0"
       >
         <div
           class="c10"
@@ -20730,8 +20746,9 @@ exports[`Calendar select dates 2`] = `
       </div>
       <div
         aria-label="start"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 eFFChl"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 fVYTMI"
         role="grid"
+        tabindex="0"
       >
         <div
           class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iAQpVx"
@@ -20800,7 +20817,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Wed Jan 01 2020"
-                class="StyledButton-sc-323bzc-0 dsmCNz"
+                class="StyledButton-sc-323bzc-0 egeuHr"
                 tabindex="-1"
                 type="button"
               >
@@ -21098,7 +21115,7 @@ exports[`Calendar select dates 2`] = `
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 egeuHr"
+                class="StyledButton-sc-323bzc-0 dsmCNz"
                 tabindex="-1"
                 type="button"
               >
@@ -21967,6 +21984,7 @@ exports[`Calendar showAdjacentDays 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -23051,6 +23069,7 @@ exports[`Calendar showAdjacentDays 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -23970,6 +23989,7 @@ exports[`Calendar showAdjacentDays 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -25572,6 +25592,7 @@ exports[`Calendar size 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -26656,6 +26677,7 @@ exports[`Calendar size 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
@@ -27740,6 +27762,7 @@ exports[`Calendar size 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         role="grid"
+        tabIndex={0}
       >
         <div
           className="c10"
