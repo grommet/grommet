@@ -36,7 +36,7 @@ test('accepts ref', () => {
     <Grommet>
       <Text ref={ref}>text</Text>
     </Grommet>,
-    { createNodeMock: el => el },
+    { createNodeMock: (el) => el },
   );
 
   expect(ref.current).not.toBeNull();

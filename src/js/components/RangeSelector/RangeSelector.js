@@ -44,7 +44,7 @@ const RangeSelector = forwardRef(
     const containerRef = useRef();
 
     const valueForMouseCoord = useCallback(
-      event => {
+      (event) => {
         const rect = containerRef.current.getBoundingClientRect();
         let value;
         if (direction === 'vertical') {
@@ -71,7 +71,7 @@ const RangeSelector = forwardRef(
     );
 
     const onMouseMove = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         let nextValues;
         if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -127,7 +127,7 @@ const RangeSelector = forwardRef(
     }, [changing, onMouseMove]);
 
     const onClick = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         if (
           value <= values[0] ||
@@ -147,7 +147,7 @@ const RangeSelector = forwardRef(
     );
 
     const onTouchMove = useCallback(
-      event => {
+      (event) => {
         const touchEvent = event.changedTouches[0];
         onMouseMove(touchEvent);
       },
@@ -228,7 +228,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
           onMouseDown={
             onChange
-              ? event => {
+              ? (event) => {
                   const nextMoveValue = valueForMouseCoord(event);
                   setChanging('selection');
                   setMoveValue(nextMoveValue);

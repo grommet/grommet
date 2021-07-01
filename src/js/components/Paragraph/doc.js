@@ -4,7 +4,7 @@ import { colorPropType, genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Paragraph => {
+export const doc = (Paragraph) => {
   const DocumentedParagraph = describe(Paragraph)
     .availableAt(getAvailableAtBadge('Paragraph', 'Type'))
     .description('A paragraph of text.')

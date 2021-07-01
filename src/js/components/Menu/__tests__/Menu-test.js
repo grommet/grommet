@@ -105,7 +105,7 @@ describe('Menu', () => {
     const { container } = render(
       <Grommet>
         {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
-          justifyContent => (
+          (justifyContent) => (
             <Menu
               key={justifyContent}
               label={`${justifyContent} Menu`}
@@ -171,7 +171,7 @@ describe('Menu', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const { getByText, container } = render(
       <Grommet>
         <Menu

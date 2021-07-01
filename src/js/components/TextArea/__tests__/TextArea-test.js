@@ -79,7 +79,7 @@ describe('TextArea', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  [true, false, 'horizontal', 'vertical'].forEach(resize => {
+  [true, false, 'horizontal', 'vertical'].forEach((resize) => {
     test(`resize ${resize}`, () => {
       const { container } = render(
         <Grommet>
@@ -91,7 +91,7 @@ describe('TextArea', () => {
     });
   });
 
-  ['small', 'medium', 'large'].forEach(size => {
+  ['small', 'medium', 'large'].forEach((size) => {
     test(`size ${size}`, () => {
       const { container } = render(
         <Grommet>
@@ -112,7 +112,7 @@ describe('TextArea', () => {
 
     test(`onKeyDown`, () => {
       let capturedEvent = null;
-      const callback = event => {
+      const callback = (event) => {
         const { key, keyCode, which } = event;
         capturedEvent = { key, keyCode, which };
       };
@@ -137,7 +137,7 @@ describe('TextArea', () => {
 
     test(`onKeyUp`, () => {
       let capturedEvent = null;
-      const callback = event => {
+      const callback = (event) => {
         const { key, keyCode, which } = event;
         capturedEvent = { key, keyCode, which };
       };
