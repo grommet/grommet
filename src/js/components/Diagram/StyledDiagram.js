@@ -16,7 +16,7 @@ const animationItemStyle = (animationType, theme) => {
   return '';
 };
 
-const animationStyle = props => {
+const animationStyle = (props) => {
   const animationCopy = props.animation;
   if (typeof props.animation === 'object') {
     animationCopy.type = animationCopy.type || 'draw';
@@ -65,32 +65,32 @@ const StyledDiagram = styled.svg`
   height: 100%;
 
   /* connection's animation comes first to override Diagram's animations */
- ${props =>
-   props.connections &&
-   props.connections.map((connection, index) => {
-     if (connection !== undefined && connection.props.animation) {
-       const { animation } = connection.props;
-       // setting type to 'draw' if user doesn't specify a type
-       if (typeof animation === 'object') {
-         // copying 'connection' to avoid linter error
-         const connectionCopy = connection;
-         connectionCopy.props.animation.type = animation.type || 'draw';
-         return availableAnimations.includes(animation.type || animation)
-           ? connectionStyle(connectionCopy, index, props.theme)
-           : '';
-       }
-       return connectionStyle(connection, index, props.theme);
-     }
-     return '';
-   })}
+  ${(props) =>
+    props.connections &&
+    props.connections.map((connection, index) => {
+      if (connection !== undefined && connection.props.animation) {
+        const { animation } = connection.props;
+        // setting type to 'draw' if user doesn't specify a type
+        if (typeof animation === 'object') {
+          // copying 'connection' to avoid linter error
+          const connectionCopy = connection;
+          connectionCopy.props.animation.type = animation.type || 'draw';
+          return availableAnimations.includes(animation.type || animation)
+            ? connectionStyle(connectionCopy, index, props.theme)
+            : '';
+        }
+        return connectionStyle(connection, index, props.theme);
+      }
+      return '';
+    })}
 
-    ${props =>
-      props.animation &&
-      (availableAnimations.includes(props.animation.type || props.animation) ||
-        Object.keys(props.animation).length !== 0)
-        ? animationStyle(props)
-        : ''}
-  ${props => props.theme.diagram && props.theme.diagram.extend}
+  ${(props) =>
+    props.animation &&
+    (availableAnimations.includes(props.animation.type || props.animation) ||
+      Object.keys(props.animation).length !== 0)
+      ? animationStyle(props)
+      : ''}
+  ${(props) => props.theme.diagram && props.theme.diagram.extend}
 `;
 
 StyledDiagram.defaultProps = {};

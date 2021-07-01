@@ -33,7 +33,7 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
-    const activateTab = index => {
+    const activateTab = (index) => {
       if (propsActiveIndex === undefined) {
         setActiveIndex(index);
       }
@@ -82,8 +82,10 @@ const Tabs = forwardRef(
       };
     }
 
-    const tabContentTitle = `${activeTitle || ''} ${
-      format({ id: 'tabs.tabContents', messages})}`;
+    const tabContentTitle = `${activeTitle || ''} ${format({
+      id: 'tabs.tabContents',
+      messages,
+    })}`;
 
     return (
       <StyledTabs

@@ -20,7 +20,7 @@ const animationPropType = PropTypes.oneOfType([
   }),
 ]);
 
-export const doc = Diagram => {
+export const doc = (Diagram) => {
   const DocumentedDiagram = describe(Diagram)
     .availableAt(getAvailableAtBadge('Diagram', 'Visualizations'))
     .description(
