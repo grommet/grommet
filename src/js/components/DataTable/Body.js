@@ -42,7 +42,7 @@ const Row = memo(
         active={active}
         onClick={
           onClickRow
-            ? event => {
+            ? (event) => {
                 // extract from React's synthetic event pool
                 event.persist();
                 const adjustedEvent = event;
@@ -71,7 +71,7 @@ const Row = memo(
               disabled={!onSelect}
               onChange={() => {
                 if (isSelected) {
-                  onSelect(selected.filter(s => s !== primaryValue));
+                  onSelect(selected.filter((s) => s !== primaryValue));
                 } else onSelect([...selected, primaryValue]);
               }}
               pad={cellProps.pad}
@@ -85,7 +85,7 @@ const Row = memo(
             expanded={isRowExpanded}
             onToggle={() => {
               if (isRowExpanded) {
-                setRowExpand(rowExpand.filter(s => s !== index));
+                setRowExpand(rowExpand.filter((s) => s !== index));
               } else {
                 setRowExpand([...rowExpand, index]);
               }
@@ -93,7 +93,7 @@ const Row = memo(
             pad={cellProps.pad}
           />
         )}
-        {columns.map(column => (
+        {columns.map((column) => (
           <Cell
             key={column.property}
             background={
@@ -157,7 +157,7 @@ const Body = forwardRef(
       <Keyboard
         onEnter={
           onClickRow && active >= 0
-            ? event => {
+            ? (event) => {
                 event.persist();
                 const adjustedEvent = event;
                 adjustedEvent.datum = data[active];
@@ -192,7 +192,7 @@ const Body = forwardRef(
             items={data}
             onMore={onMore}
             replace={replace}
-            renderMarker={marker => (
+            renderMarker={(marker) => (
               <TableRow>
                 <TableCell>{marker}</TableCell>
               </TableRow>

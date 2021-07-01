@@ -29,20 +29,20 @@ export const GroupedBody = forwardRef(
     let rowIndex = 0;
     return (
       <StyledDataTableBody ref={ref} size={size} {...rest}>
-        {groups.map(group => {
+        {groups.map((group) => {
           const { expanded } = groupState[group.key];
           const memberCount = group.data.length;
 
           const primaryKeys = [];
           if (group.data.length) {
-            group.data.forEach(datum => {
+            group.data.forEach((datum) => {
               primaryKeys.push(datum[primaryProperty]);
             });
           }
 
           const groupSelected =
             primaryKeys && selected
-              ? primaryKeys.filter(val => selected.includes(val))
+              ? primaryKeys.filter((val) => selected.includes(val))
               : [];
           const isGroupSelected =
             groupSelected.length > 0 &&
@@ -86,7 +86,7 @@ export const GroupedBody = forwardRef(
                       onChange={() => {
                         if (isGroupSelected) {
                           onSelect(
-                            selected.filter(s => !groupSelected.includes(s)),
+                            selected.filter((s) => !groupSelected.includes(s)),
                           );
                         } else {
                           onSelect([...selected, ...primaryKeys]);
@@ -96,7 +96,7 @@ export const GroupedBody = forwardRef(
                     />
                   </TableCell>
                 )}
-                {columns.map(column => (
+                {columns.map((column) => (
                   <Cell
                     key={column.property}
                     background={cellProps.background}
@@ -161,7 +161,7 @@ export const GroupedBody = forwardRef(
                             onChange={() => {
                               if (isSelected) {
                                 onSelect(
-                                  selected.filter(s => s !== primaryValue),
+                                  selected.filter((s) => s !== primaryValue),
                                 );
                               } else onSelect([...selected, primaryValue]);
                             }}
@@ -169,7 +169,7 @@ export const GroupedBody = forwardRef(
                           />
                         </TableCell>
                       )}
-                      {columns.map(column => (
+                      {columns.map((column) => (
                         <Cell
                           key={column.property}
                           background={cellProps.background}
