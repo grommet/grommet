@@ -56,7 +56,7 @@ test('Image fit renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-opacityTypes.forEach(opacity => {
+opacityTypes.forEach((opacity) => {
   test(`Image opacity of ${opacity} renders`, () => {
     const { container } = render(
       <Grommet>

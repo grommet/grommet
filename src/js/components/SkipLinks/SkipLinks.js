@@ -54,8 +54,8 @@ const SkipLinks = ({ children, id, messages }) => {
       responsive={false}
     >
       <Box {...theme.skipLinks.container}>
-        <Text {...theme.skipLinks.label}>{
-          format({ id: 'skipLinks.skipTo', messages })}
+        <Text {...theme.skipLinks.label}>
+          {format({ id: 'skipLinks.skipTo', messages })}
         </Text>
         <Box align="center" gap="medium">
           {Children.map(children, (child, index) =>
@@ -70,8 +70,7 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {
-};
+SkipLinks.defaultProps = {};
 
 let SkipLinksDoc;
 if (process.env.NODE_ENV !== 'production') {

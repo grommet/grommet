@@ -104,7 +104,7 @@ const DateInput = forwardRef(
         onSelect={
           disabled
             ? undefined
-            : nextValue => {
+            : (nextValue) => {
                 let normalizedValue;
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
@@ -155,7 +155,7 @@ const DateInput = forwardRef(
             {...inputProps}
             {...rest}
             value={textValue}
-            onChange={event => {
+            onChange={(event) => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
               const nextValue = textToValue(
@@ -173,7 +173,7 @@ const DateInput = forwardRef(
                 onChange(adjustedEvent);
               }
             }}
-            onFocus={event => {
+            onFocus={(event) => {
               setOpen(true);
               if (onFocus) onFocus(event);
             }}
