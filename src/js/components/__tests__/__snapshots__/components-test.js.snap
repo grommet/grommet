@@ -3399,10 +3399,17 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -6313,10 +6320,17 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8744,10 +8758,17 @@ boolean",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8921,10 +8942,17 @@ full",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
