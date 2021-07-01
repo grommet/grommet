@@ -76,19 +76,19 @@ exports[`Grid align renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -153,25 +153,25 @@ exports[`Grid alignContent renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -196,10 +196,10 @@ exports[`Grid areas renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -224,10 +224,10 @@ exports[`Grid areas renders when given an array of string arrays 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -249,10 +249,10 @@ exports[`Grid as renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <article
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -472,61 +472,61 @@ exports[`Grid border 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
   <div
-    className="c13"
+    class="c13"
   />
   <div
-    className="c14"
+    class="c14"
   />
   <div
-    className="c15"
+    class="c15"
   />
   <div
-    className="c16"
+    class="c16"
   />
 </div>
 `;
@@ -615,43 +615,43 @@ exports[`Grid columns renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
   <div
-    className="c12"
+    class="c12"
   />
 </div>
 `;
@@ -692,19 +692,19 @@ exports[`Grid fill renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -786,40 +786,40 @@ exports[`Grid gap renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
 </div>
 `;
@@ -961,19 +961,19 @@ exports[`Grid justify renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -1044,25 +1044,25 @@ exports[`Grid justifyContent renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
 </div>
 `;
@@ -1215,40 +1215,40 @@ exports[`Grid pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
   <div
-    className="c6"
+    class="c6"
   />
   <div
-    className="c7"
+    class="c7"
   />
   <div
-    className="c8"
+    class="c8"
   />
   <div
-    className="c9"
+    class="c9"
   />
   <div
-    className="c10"
+    class="c10"
   />
   <div
-    className="c11"
+    class="c11"
   />
 </div>
 `;
@@ -1270,10 +1270,10 @@ exports[`Grid renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -1295,13 +1295,13 @@ exports[`Grid responsive 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -1336,16 +1336,16 @@ exports[`Grid rows renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
 </div>
 `;

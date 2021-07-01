@@ -3,7 +3,7 @@ import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { defaultProps } from '../../default-props';
-import { useForwardedRef } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -96,7 +96,7 @@ const TableCell = forwardRef(
     }
     // merge tabelContextTheme and rest
     const mergedProps = { ...tableContextTheme, ...rest };
-    Object.keys(mergedProps).forEach(key => {
+    Object.keys(mergedProps).forEach((key) => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
     });
     // split out background, border, and pad
@@ -125,31 +125,48 @@ const TableCell = forwardRef(
       );
     }
 
+    const themeProviderValue = { ...theme };
+
+    if (cellProps.background || theme.darkChanged) {
+      const dark = backgroundIsDark(cellProps.background, theme);
+      const darkChanged = dark !== undefined && dark !== theme.dark;
+      if (darkChanged || theme.darkChanged) {
+        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
+        themeProviderValue.background = cellProps.background;
+      } else if (cellProps.background) {
+        // This allows DataTable to intelligently set the background of a pinned
+        // header or footer.
+        themeProviderValue.background = cellProps.background;
+      }
+    }
+
     return (
-      <StyledTableCell
-        ref={cellRef}
-        as={scope ? 'th' : undefined}
-        scope={scope}
-        size={size}
-        colSpan={colSpan}
-        tableContext={tableContext}
-        tableContextTheme={tableContextTheme}
-        {...(plain === true ? mergedProps : {})}
-        {...cellProps}
-        className={className}
-      >
-        {plain || !Object.keys(mergedProps).length ? (
-          content
-        ) : (
-          <Box
-            {...mergedProps}
-            align={align}
-            justify={verticalAlignToJustify[verticalAlign]}
-          >
-            {children}
-          </Box>
-        )}
-      </StyledTableCell>
+      <ThemeContext.Provider value={themeProviderValue}>
+        <StyledTableCell
+          ref={cellRef}
+          as={scope ? 'th' : undefined}
+          scope={scope}
+          size={size}
+          colSpan={colSpan}
+          tableContext={tableContext}
+          tableContextTheme={tableContextTheme}
+          {...(plain === true ? mergedProps : {})}
+          {...cellProps}
+          className={className}
+        >
+          {plain || !Object.keys(mergedProps).length ? (
+            content
+          ) : (
+            <Box
+              {...mergedProps}
+              align={align}
+              justify={verticalAlignToJustify[verticalAlign]}
+            >
+              {children}
+            </Box>
+          )}
+        </StyledTableCell>
+      </ThemeContext.Provider>
     );
   },
 );

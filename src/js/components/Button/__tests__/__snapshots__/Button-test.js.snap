@@ -1226,10 +1226,11 @@ exports[`Button badge should render custom element 1`] = `
         <svg
           aria-label="Add"
           class="c6"
+          data-testid="badge"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1418,7 +1419,7 @@ exports[`Button badge should render relative to contents when button has no
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1531,11 +1532,6 @@ exports[`Button basic 1`] = `
 `;
 
 exports[`Button children function 1`] = `
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1622,11 +1618,9 @@ exports[`Button children function 1`] = `
     class="c1"
     type="button"
   >
-    <span
-      class="c2"
-    >
-      Test
-    </span>
+    <div
+      data-testid="children function"
+    />
   </button>
 </div>
 `;
@@ -1794,7 +1788,7 @@ exports[`Button children function with disabled prop 1`] = `
     <span
       class="c2"
     >
-      Disabled
+      Button#1 Disabled
     </span>
   </button>
   <button
@@ -1804,7 +1798,7 @@ exports[`Button children function with disabled prop 1`] = `
     <span
       class="c2"
     >
-      Test
+      Button#2 not Disabled
     </span>
   </button>
 </div>
@@ -2113,25 +2107,25 @@ exports[`Button color 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    accent-1
   </button>
   <button
     class="c2"
     type="button"
   >
-    Test
+    primary accent-1
   </button>
   <button
     class="c3"
     type="button"
   >
-    Test
+    custom color #1
   </button>
   <button
     class="c4"
     type="button"
   >
-    Test
+    custom color #2
   </button>
 </div>
 `;
@@ -2976,19 +2970,27 @@ exports[`Button fill 1`] = `
   <button
     class="c1"
     type="button"
-  />
+  >
+    fill
+  </button>
   <button
     class="c2"
     type="button"
-  />
+  >
+    fill false
+  </button>
   <button
     class="c3"
     type="button"
-  />
+  >
+    fill horizontal
+  </button>
   <button
     class="c4"
     type="button"
-  />
+  >
+    fill vertical
+  </button>
 </div>
 `;
 
@@ -3075,7 +3077,7 @@ exports[`Button focus 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    Test focus
   </button>
 </div>
 `;
@@ -3510,7 +3512,9 @@ exports[`Button href 1`] = `
   <a
     class="c1"
     href="test"
-  />
+  >
+    Button as link
+  </a>
 </div>
 `;
 
@@ -3636,7 +3640,9 @@ exports[`Button icon label 1`] = `
     <div
       class="c2"
     >
-      <svg />
+      <svg
+        data-testid="icon"
+      />
       <div
         class="c3"
       />
@@ -3736,7 +3742,7 @@ exports[`Button primary 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    Primary Button
   </button>
 </div>
 `;
@@ -3867,7 +3873,9 @@ exports[`Button reverse icon label 1`] = `
       <div
         class="c3"
       />
-      <svg />
+      <svg
+        data-testid="icon"
+      />
     </div>
   </button>
 </div>
@@ -4531,7 +4539,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4548,7 +4556,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4565,7 +4573,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4582,7 +4590,7 @@ exports[`Button size 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -4605,9 +4613,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4630,9 +4638,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4655,9 +4663,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />
@@ -4680,9 +4688,9 @@ exports[`Button size 1`] = `
         class="c11"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m7 2 10 10L7 22"
           fill="none"
-          points="7 2 17 12 7 22"
           stroke="#000"
           stroke-width="2"
         />

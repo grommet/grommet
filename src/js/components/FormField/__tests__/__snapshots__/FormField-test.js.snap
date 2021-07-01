@@ -54,15 +54,13 @@ exports[`FormField abut 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -122,15 +120,13 @@ exports[`FormField abut with margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -241,35 +237,27 @@ exports[`FormField contentProps 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -493,85 +481,77 @@ exports[`FormField custom error and info icon and container 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            aria-invalid={true}
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            aria-invalid="true"
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
       <div
-        className="c6 FormField__StyledMessageContainer-m9hood-2"
+        class="c6 FormField__StyledMessageContainer-m9hood-2"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
             aria-label="Alert"
-            className="c8"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="M12,17 L12,19 M12,10 L12,16 M12,3 L2,22 L22,22 L12,3 Z"
+              d="M12 17v2m0-9v6m0-13L2 22h20L12 3z"
               fill="none"
               stroke="#000"
-              strokeWidth="2"
+              stroke-width="2"
             />
           </svg>
         </div>
         <span
-          className="c9"
+          class="c9"
         >
           This is an error message.
         </span>
       </div>
       <div
-        className="c10 FormField__StyledMessageContainer-m9hood-2"
+        class="c10 FormField__StyledMessageContainer-m9hood-2"
       >
         <div
-          className="c7"
+          class="c7"
         >
           <svg
             aria-label="StatusInfo"
-            className="c8"
+            class="c8"
             viewBox="0 0 24 24"
           >
             <path
-              d="M2,3.99079514 C2,2.89130934 2.89821238,2 3.99079514,2 L20.0092049,2 C21.1086907,2 22,2.89821238 22,3.99079514 L22,20.0092049 C22,21.1086907 21.1017876,22 20.0092049,22 L3.99079514,22 C2.89130934,22 2,21.1017876 2,20.0092049 L2,3.99079514 Z M12,10 L12,18 M12,6 L12,8"
+              d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 10v8m0-12v2"
               fill="none"
               stroke="#000"
-              strokeWidth="2"
+              stroke-width="2"
             />
           </svg>
         </div>
         <span
-          className="c11"
+          class="c11"
         >
           Here is a little added info on FormField.
         </span>
@@ -639,15 +619,13 @@ exports[`FormField custom formfield 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 c2"
   >
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -774,35 +752,27 @@ exports[`FormField custom input margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -922,35 +892,27 @@ exports[`FormField custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -1062,35 +1024,28 @@ exports[`FormField default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <input
-          autoComplete="off"
-          className="c4"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
+          autocomplete="off"
+          class="c4"
+          value=""
         />
       </div>
     </div>
@@ -1205,41 +1160,31 @@ exports[`FormField disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -1363,36 +1308,28 @@ exports[`FormField disabled with custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 FormField__FormFieldContentBox-m9hood-1"
+        class="c3 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -1455,15 +1392,13 @@ exports[`FormField empty margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -1533,18 +1468,16 @@ exports[`FormField error 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test error
     </span>
@@ -1613,20 +1546,18 @@ exports[`FormField help 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <span
-      className="c2"
+      class="c2"
     >
       test help
     </span>
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -1686,15 +1617,13 @@ exports[`FormField htmlFor 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -1764,18 +1693,16 @@ exports[`FormField info 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test info
     </span>
@@ -1846,20 +1773,18 @@ exports[`FormField label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <label
-      className="c2"
+      class="c2"
     >
       test label
     </label>
     <div
-      className="c3 FormField__FormFieldContentBox-m9hood-1"
+      class="c3 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -1919,15 +1844,13 @@ exports[`FormField margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -1994,15 +1917,13 @@ exports[`FormField pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
 </div>
@@ -2120,35 +2041,27 @@ exports[`FormField pad with border undefined 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -2260,40 +2173,30 @@ exports[`FormField required 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 FormField__FormFieldContentBox-m9hood-1"
+      class="c2 FormField__FormFieldContentBox-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            value=""
           />
         </div>
       </div>
@@ -2520,7 +2423,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 </div>
 `;
 
-exports[`FormField should render custom indicator when requiredIndicator is 
+exports[`FormField should render custom indicator when requiredIndicator is
   element 1`] = `
 .c3 {
   display: inline-block;
@@ -2683,7 +2586,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,1 L12,23 M2,6 L22,18 M22.0000001,6 L2.00000008,18"
+            d="M12 1v22M2 6l20 12m0-12L2 18"
             fill="none"
             stroke="#000"
             stroke-width="2"
