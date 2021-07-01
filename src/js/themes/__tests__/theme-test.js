@@ -99,7 +99,7 @@ describe('Grommet', () => {
   test('default theme', () => {
     const { container } = render(
       <Grommet>
-        {colors.map(color => (
+        {colors.map((color) => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
@@ -144,7 +144,7 @@ describe('Grommet', () => {
   test('dark theme', () => {
     const { container } = render(
       <Grommet theme={dark}>
-        {colors.map(color => (
+        {colors.map((color) => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
@@ -158,7 +158,7 @@ describe('Grommet', () => {
   test('hpe theme', () => {
     const { container } = render(
       <Grommet theme={hpe}>
-        {hpeColors.map(color => (
+        {hpeColors.map((color) => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
