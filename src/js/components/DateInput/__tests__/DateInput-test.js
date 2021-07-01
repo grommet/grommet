@@ -134,7 +134,7 @@ describe('DateInput', () => {
   });
 
   test('dates initialized with empty array', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     // month is indexed from 0, so we add one
     let month = new Date().getMonth() + 1;
     if (month < 10) month = `0${month}`;
@@ -144,7 +144,7 @@ describe('DateInput', () => {
     let timezoneOffset = new Date().getTimezoneOffset() / 60;
     if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
 
-    const { container, getByText } = render(
+    const { getByText } = render(
       <Grommet>
         <DateInput
           id="item"
@@ -155,7 +155,7 @@ describe('DateInput', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot use snapshots because we are using current date
 
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
@@ -163,7 +163,6 @@ describe('DateInput', () => {
       `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
       `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
     ]);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus', () => {
@@ -194,7 +193,7 @@ describe('DateInput', () => {
   });
 
   test('select inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -214,7 +213,7 @@ describe('DateInput', () => {
   });
 
   test('select format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -236,7 +235,7 @@ describe('DateInput', () => {
   });
 
   test('select format', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText, getByText } = render(
       <Grommet>
         <DateInput
@@ -261,7 +260,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -285,7 +284,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline short', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -310,7 +309,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline partial', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -330,11 +329,11 @@ describe('DateInput', () => {
     });
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith(undefined);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
   });
 
   test('select format inline range', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
       <Grommet>
         <DateInput
@@ -360,7 +359,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline range', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -387,7 +386,7 @@ describe('DateInput', () => {
   });
 
   test('type format inline range partial', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -418,13 +417,13 @@ describe('DateInput', () => {
       target: { value: '07//2020-07/27/2021' },
     });
     expect(onChange).toHaveNthReturnedWith(3, []);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
 
     expect(onChange).toHaveBeenCalledTimes(3);
   });
 
   test('controlled format inline', () => {
-    const onChange = jest.fn(event => event.value);
+    const onChange = jest.fn((event) => event.value);
     const Test = () => {
       const [value, setValue] = React.useState(DATE);
       return (
