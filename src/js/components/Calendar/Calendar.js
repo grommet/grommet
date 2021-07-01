@@ -784,8 +784,24 @@ const Calendar = forwardRef(
             ? header({
                 date: reference,
                 locale,
-                onPreviousMonth: () => changeReference(previousMonth),
-                onNextMonth: () => changeReference(nextMonth),
+                onPreviousMonth: () => {
+                  changeReference(previousMonth);
+                  announce(
+                    `Moved to ${previousMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })}`,
+                  );
+                },
+                onNextMonth: () => {
+                  changeReference(nextMonth);
+                  announce(
+                    `Moved to ${previousMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })}`,
+                  );
+                },
                 previousInBound: betweenDates(previousMonth, bounds),
                 nextInBound: betweenDates(nextMonth, bounds),
               })
