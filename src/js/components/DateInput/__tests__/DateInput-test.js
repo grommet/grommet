@@ -329,7 +329,7 @@ describe('DateInput', () => {
     });
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith(undefined);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
   });
 
   test('select format inline range', () => {
@@ -417,7 +417,7 @@ describe('DateInput', () => {
       target: { value: '07//2020-07/27/2021' },
     });
     expect(onChange).toHaveNthReturnedWith(3, []);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
 
     expect(onChange).toHaveBeenCalledTimes(3);
   });
