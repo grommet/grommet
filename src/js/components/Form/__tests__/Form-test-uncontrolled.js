@@ -1501,4 +1501,73 @@ describe('Form uncontrolled', () => {
       }),
     );
   });
+
+  test(`dynamicly removed fields should be removed from form value`, () => {
+    jest.useFakeTimers('modern');
+    const onValidate = jest.fn();
+    const onSubmit = jest.fn();
+
+    const Test = () => {
+      const [toggle, setToggle] = React.useState(false);
+
+      return (
+        <Form validate="blur" onValidate={onValidate} onSubmit={onSubmit}>
+          <FormField name="name">
+            <TextInput name="name" placeholder="test name" />
+          </FormField>
+          <FormField name="toggle">
+            <CheckBox
+              name="toggle"
+              label="toggle"
+              onChange={({ target: { checked } }) => setToggle(checked)}
+            />
+          </FormField>
+          {toggle && (
+            <FormField name="mood" required>
+              <TextInput name="mood" placeholder="test mood" />
+            </FormField>
+          )}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByLabelText, getByText, container } =
+      render(
+        <Grommet>
+          <Test />
+        </Grommet>,
+      );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const nameField = getByPlaceholderText('test name');
+    const toggleField = getByLabelText('toggle');
+
+    // add name
+    fireEvent.change(nameField, { target: { value: 'name' } });
+
+    // add mood
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+    const moodField = getByPlaceholderText('test mood');
+
+    // set mood
+    fireEvent.change(moodField, { target: { value: 'happy' } });
+
+    // remove mood
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { name: 'name', toggle: false },
+      }),
+    );
+  });
 });
