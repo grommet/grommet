@@ -53,7 +53,7 @@ describe('DropButton', () => {
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
-    const onClose = jest.fn(event => event.persist());
+    const onClose = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton
@@ -76,9 +76,9 @@ describe('DropButton', () => {
     expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
   });
 
-  test('close by clicking outside', done => {
+  test('close by clicking outside', (done) => {
     const onClose = jest.fn();
-    const onOpen = jest.fn(event => event.persist());
+    const onOpen = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
       <DropButton
