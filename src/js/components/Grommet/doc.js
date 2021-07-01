@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { backgroundDoc } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Grommet => {
+export const doc = (Grommet) => {
   const DocumentedGrommet = describe(Grommet)
     .availableAt(getAvailableAtBadge('Grommet', 'Utilities'))
     .description('The top level Grommet container.')
@@ -127,52 +127,52 @@ for any grommet children components.`,
       .defaultValue({
         messages: {
           fileInput: {
-            browse: "browse",
-            dropPrompt: "Drop file here or",
-            dropPromptMultiple: "Drop files here or",
-            files: "files",
-            remove: "remove",
-            removeAll: "remove all",
+            browse: 'browse',
+            dropPrompt: 'Drop file here or',
+            dropPromptMultiple: 'Drop files here or',
+            files: 'files',
+            remove: 'remove',
+            removeAll: 'remove all',
           },
           form: {
-            invalid: "invalid",
-            required: "required",
+            invalid: 'invalid',
+            required: 'required',
           },
           menu: {
-            openMenu: "Open Menu",
-            closeMenu: "Close Menu",
+            openMenu: 'Open Menu',
+            closeMenu: 'Close Menu',
           },
           rangeSelector: {
-            lower: "Lower Bounds",
-            upper: "Upper Bounds",
+            lower: 'Lower Bounds',
+            upper: 'Upper Bounds',
           },
           select: {
-            multiple: "multiple",
+            multiple: 'multiple',
           },
           skipLinks: {
-            skipTo: "Skip To:",
+            skipTo: 'Skip To:',
           },
           tabs: {
-            tabContents: "Tab Contents",
+            tabContents: 'Tab Contents',
           },
           textInput: {
-            enterSelect: "(Press Enter to Select)",
-            suggestionsCount: "suggestions available",
+            enterSelect: '(Press Enter to Select)',
+            suggestionsCount: 'suggestions available',
             suggestionsExist: `This input has suggestions use arrow keys
             to navigate`,
             suggestionIsOpen: `Suggestions drop is open, continue to use
             arrow keys to navigate`,
           },
           video: {
-            closeMenu: "close menu",
-            fullScreen: "full screen",
-            progressMeter: "video progress",
-            scrubber: "scrubber",
-            openMenu: "open menu",
-            pauseButton: "pause",
-            playButton: "play",
-            volumeDown: "volume down",
-            volumeUp: "volume up",
+            closeMenu: 'close menu',
+            fullScreen: 'full screen',
+            progressMeter: 'video progress',
+            scrubber: 'scrubber',
+            openMenu: 'open menu',
+            pauseButton: 'pause',
+            playButton: 'play',
+            volumeDown: 'volume down',
+            volumeUp: 'volume up',
           },
         },
       }),
