@@ -8,7 +8,7 @@ import {
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Text => {
+export const doc = (Text) => {
   const DocumentedText = describe(Text)
     .availableAt(getAvailableAtBadge('Text', 'Type'))
     .description('Arbitrary text.')

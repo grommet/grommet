@@ -3421,10 +3421,35 @@ string",
     "name": "Diagram",
     "properties": Array [
       Object {
+        "description": "Animation to be used by entire Diagram",
+        "format": "boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "animation",
+      },
+      Object {
         "defaultValue": Array [],
         "description": "Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.",
         "format": "[{
@@ -3432,6 +3457,27 @@ string",
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -5108,6 +5154,125 @@ light",
       shadow root).",
         "format": "object",
         "name": "containerTarget",
+      },
+      Object {
+        "defaultValue": Object {
+          "messages": Object {
+            "fileInput": Object {
+              "browse": "browse",
+              "dropPrompt": "Drop file here or",
+              "dropPromptMultiple": "Drop files here or",
+              "files": "files",
+              "remove": "remove",
+              "removeAll": "remove all",
+            },
+            "form": Object {
+              "invalid": "invalid",
+              "required": "required",
+            },
+            "menu": Object {
+              "closeMenu": "Close Menu",
+              "openMenu": "Open Menu",
+            },
+            "rangeSelector": Object {
+              "lower": "Lower Bounds",
+              "upper": "Upper Bounds",
+            },
+            "select": Object {
+              "multiple": "multiple",
+            },
+            "skipLinks": Object {
+              "skipTo": "Skip To:",
+            },
+            "tabs": Object {
+              "tabContents": "Tab Contents",
+            },
+            "textInput": Object {
+              "enterSelect": "(Press Enter to Select)",
+              "suggestionIsOpen": "Suggestions drop is open, continue to use
+            arrow keys to navigate",
+              "suggestionsCount": "suggestions available",
+              "suggestionsExist": "This input has suggestions use arrow keys
+            to navigate",
+            },
+            "video": Object {
+              "closeMenu": "close menu",
+              "fullScreen": "full screen",
+              "openMenu": "open menu",
+              "pauseButton": "pause",
+              "playButton": "play",
+              "progressMeter": "video progress",
+              "scrubber": "scrubber",
+              "volumeDown": "volume down",
+              "volumeUp": "volume up",
+            },
+          },
+        },
+        "description": "Custom messages for grommet components. Use this property to
+define messages or a function to get localized messages
+for any grommet children components.",
+        "format": "{
+  format: function,
+  messages: 
+    {
+      fileInput: 
+        {
+          browse: string,
+          dropPrompt: string,
+          dropPromptMultiple: string,
+          files: string,
+          remove: string,
+          removeAll: string
+        },
+      form: 
+        {
+          invalid: string,
+          required: string
+        },
+      menu: 
+        {
+          openMenu: string,
+          closeMenu: string
+        },
+      rangeSelector: 
+        {
+          lower: string,
+          upper: string
+        },
+      select: 
+        {
+          multiple: string
+        },
+      skipLinks: 
+        {
+          skipTo: string
+        },
+      tabs: 
+        {
+          tabContents: string
+        },
+      textInput: 
+        {
+          enterSelect: string,
+          suggestionsCount: string,
+          suggestionsExist: string,
+          suggestionIsOpen: string
+        },
+      video: 
+        {
+          closeMenu: string,
+          fullScreen: string,
+          progressMeter: string,
+          scrubber: string,
+          openMenu: string,
+          pauseButton: string,
+          playButton: string,
+          volumeDown: string,
+          volumeUp: string
+        }
+    }
+}",
+        "name": "messages",
       },
     ],
     "usage": "import { Grommet } from 'grommet';
@@ -8972,17 +9137,6 @@ contain",
         "name": "mute",
       },
       Object {
-        "defaultValue": Object {
-          "closeMenu": "close menu",
-          "fullScreen": "full screen",
-          "openMenu": "open menu",
-          "pauseButton": "pause",
-          "playButton": "play",
-          "progressMeter": "video progress",
-          "scrubber": "scrubber",
-          "volumeDown": "volume down",
-          "volumeUp": "volume up",
-        },
         "description": "Custom messages. Used for accessibility by screen readers.",
         "format": "{
   closeMenu: string,

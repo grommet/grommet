@@ -44,7 +44,7 @@ describe('Box', () => {
   test('wrap', () => {
     const { container } = render(
       <Grommet>
-        {[true, false, 'reverse'].map(wrap => (
+        {[true, false, 'reverse'].map((wrap) => (
           <Box key={`${wrap}`} wrap={wrap} />
         ))}
       </Grommet>,
@@ -257,7 +257,7 @@ describe('Box', () => {
   test('gap', () => {
     const { container } = render(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map(gap => (
+        {['xsmall', 'small', 'medium', 'large', '80px', 'none'].map((gap) => (
           <Box key={gap} gap={gap} direction="row">
             <Box />
           </Box>
@@ -501,7 +501,7 @@ describe('Box', () => {
           'slideRight',
           'zoomIn',
           'zoomOut',
-        ].map(type => (
+        ].map((type) => (
           <Box key={type} animation={type} />
         ))}
         <Box animation={['fadeIn', 'slideUp']} />

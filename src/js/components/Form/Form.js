@@ -1,17 +1,15 @@
 import React, {
   forwardRef,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
+import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
 
-const defaultMessages = {
-  invalid: 'invalid',
-  required: 'required',
-};
 const defaultValue = {};
 const defaultTouched = {};
 const defaultValidationResults = {
@@ -50,7 +48,7 @@ const Form = forwardRef(
       children,
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
-      messages = defaultMessages,
+      messages,
       onChange,
       onReset,
       onSubmit,
@@ -61,11 +59,13 @@ const Form = forwardRef(
     },
     ref,
   ) => {
+    const { format } = useContext(MessageContext);
+
     const [valueState, setValueState] = useState(valueProp || defaultValue);
-    const value = useMemo(() => valueProp || valueState, [
-      valueProp,
-      valueState,
-    ]);
+    const value = useMemo(
+      () => valueProp || valueState,
+      [valueProp, valueState],
+    );
     const [touched, setTouched] = useState(defaultTouched);
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
@@ -89,13 +89,13 @@ const Form = forwardRef(
     const requiredFields = useRef([]);
 
     const buildValid = useCallback(
-      nextErrors => {
+      (nextErrors) => {
         let valid = false;
 
         valid = requiredFields.current
-          .filter(n => Object.keys(validations.current).includes(n))
+          .filter((n) => Object.keys(validations.current).includes(n))
           .every(
-            field =>
+            (field) =>
               value[field] && (value[field] !== '' || value[field] !== false),
           );
 
@@ -106,19 +106,19 @@ const Form = forwardRef(
     );
 
     // Remove any errors that we don't have any validations for anymore.
-    const filterErrorValidations = errors => {
+    const filterErrorValidations = (errors) => {
       const nextErrors = errors;
       return Object.keys(nextErrors)
-        .filter(n => !validations.current[n] || nextErrors[n] === undefined)
-        .forEach(n => delete nextErrors[n]);
+        .filter((n) => !validations.current[n] || nextErrors[n] === undefined)
+        .forEach((n) => delete nextErrors[n]);
     };
 
     // Remove any infos that we don't have any validations for anymore.
-    const filterInfoValidations = infos => {
+    const filterInfoValidations = (infos) => {
       const nextInfos = infos;
       return Object.keys(nextInfos)
-        .filter(n => !validations.current[n] || nextInfos[n] === undefined)
-        .forEach(n => delete nextInfos[n]);
+        .filter((n) => !validations.current[n] || nextInfos[n] === undefined)
+        .forEach((n) => delete nextInfos[n]);
     };
 
     // On initial mount, when validateOn is change or blur,
@@ -161,7 +161,7 @@ const Form = forwardRef(
           );
           setPendingValidation(undefined);
 
-          setValidationResults(prevValidationResults => {
+          setValidationResults((prevValidationResults) => {
             // keep any previous errors and infos for untouched keys,
             // these may have come from a submit
             const nextErrors = {
@@ -206,7 +206,7 @@ const Form = forwardRef(
     // clear any errors when value changes
     useEffect(() => {
       if (validateOn !== 'change') setPendingValidation(undefined);
-      setValidationResults(prevValidationResults => {
+      setValidationResults((prevValidationResults) => {
         const [nextErrors, nextInfos] = validate(
           Object.entries(validations.current).filter(
             ([n]) =>
@@ -256,6 +256,10 @@ const Form = forwardRef(
     const useFormInput = (name, componentValue, initialValue) => {
       const [inputValue, setInputValue] = useState(initialValue);
       const formValue = name ? value[name] : undefined;
+      // for dynamic forms, we need to track when an input has been added to
+      // the form value. if the input is unmounted, we will delete its key/value
+      // from the form value.
+      const keyCreated = useRef(false);
 
       // This effect is for pattern #2, where the controlled input
       // component is driving the value via componentValue.
@@ -265,7 +269,7 @@ const Form = forwardRef(
           componentValue !== undefined && // input driving
           componentValue !== formValue // don't already have it
         ) {
-          setValueState(prevValue => {
+          setValueState((prevValue) => {
             const nextValue = { ...prevValue };
             nextValue[name] = componentValue;
             return nextValue;
@@ -273,6 +277,23 @@ const Form = forwardRef(
           // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]);
+
+      // on unmount, if the form is uncontrolled, remove the key/value
+      // from the form value
+      useEffect(
+        () => () => {
+          if (keyCreated.current) {
+            keyCreated.current = false;
+            setValueState((prevValue) => {
+              const nextValue = { ...prevValue };
+              delete nextValue[name];
+              return nextValue;
+            });
+          }
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [], // only run onmount and unmount
+      );
 
       let useValue;
       if (componentValue !== undefined)
@@ -288,7 +309,7 @@ const Form = forwardRef(
 
       return [
         useValue,
-        nextComponentValue => {
+        (nextComponentValue) => {
           if (name) {
             // we have somewhere to put this
             const nextTouched = { ...touched };
@@ -300,7 +321,13 @@ const Form = forwardRef(
             }
 
             const nextValue = { ...value };
+            // if nextValue doesn't have a key for name, this must be
+            // uncontrolled form. we will flag this field was added so
+            // we know to remove its value from the form if it is dynamically
+            // removed
+            if (!(name in nextValue)) keyCreated.current = true;
             nextValue[name] = nextComponentValue;
+
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
@@ -326,7 +353,8 @@ const Form = forwardRef(
             result = aValidate(value2, data);
           } else if (aValidate.regexp) {
             if (!aValidate.regexp.test(value2)) {
-              result = aValidate.message || messages.invalid;
+              result =
+                aValidate.message || format({ id: 'form.invalid', messages });
               if (aValidate.status) {
                 result = { message: result, status: aValidate.status };
               }
@@ -345,10 +373,10 @@ const Form = forwardRef(
               value2 === false ||
               (Array.isArray(value2) && !value2.length))
           ) {
-            result = messages.required;
+            result = format({ id: 'form.required', messages });
           } else if (validateArg) {
             if (Array.isArray(validateArg)) {
-              validateArg.some(aValidate => {
+              validateArg.some((aValidate) => {
                 result = validateSingle(aValidate, value2, data);
                 return !!result;
               });
@@ -397,7 +425,7 @@ const Form = forwardRef(
       <form
         ref={ref}
         {...rest}
-        onReset={event => {
+        onReset={(event) => {
           setPendingValidation(undefined);
           if (!valueProp) {
             setValueState(defaultValue);
@@ -413,7 +441,7 @@ const Form = forwardRef(
             onReset(adjustedEvent);
           }
         }}
-        onSubmit={event => {
+        onSubmit={(event) => {
           // Don't submit the form via browser form action. We don't want it
           // if the validation fails. And, we assume a javascript action handler
           // otherwise.

@@ -49,7 +49,7 @@ describe('DataChart', () => {
   test('gap', () => {
     const { container } = render(
       <Grommet>
-        {['small', 'medium', 'large'].map(gap => (
+        {['small', 'medium', 'large'].map((gap) => (
           <DataChart key={gap} data={data} series="a" gap={gap} />
         ))}
       </Grommet>,
@@ -61,7 +61,7 @@ describe('DataChart', () => {
   test('pad', () => {
     const { container } = render(
       <Grommet>
-        {['small', 'medium', 'large'].map(pad => (
+        {['small', 'medium', 'large'].map((pad) => (
           <DataChart key={pad} data={data} series="a" pad={pad} />
         ))}
       </Grommet>,
@@ -120,7 +120,7 @@ describe('DataChart', () => {
     }
     const { container } = render(
       <Grommet>
-        {['second', 'minute', 'hour', 'day', 'month', 'year'].map(key => (
+        {['second', 'minute', 'hour', 'day', 'month', 'year'].map((key) => (
           <Fragment key={key}>
             <DataChart
               data={dateData}
@@ -183,7 +183,7 @@ describe('DataChart', () => {
   test('axis x granularity', () => {
     const { container } = render(
       <Grommet>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(count => (
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((count) => (
           <DataChart
             key={count}
             data={Array.from({ length: count }, (x, i) => ({ a: i }))}
@@ -200,7 +200,7 @@ describe('DataChart', () => {
   test('type', () => {
     const { container } = render(
       <Grommet>
-        {['bar', 'line', 'area'].map(type => (
+        {['bar', 'line', 'area'].map((type) => (
           <DataChart
             key={type}
             data={data}

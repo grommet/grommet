@@ -96,7 +96,7 @@ export const Sort = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <DataTable
-          columns={columns.map(c => ({
+          columns={columns.map((c) => ({
             ...c,
             search: c.property === 'name' || c.property === 'location',
           }))}

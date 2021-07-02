@@ -11,6 +11,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Container = styled(Box)`
   user-select: none;
@@ -23,7 +24,7 @@ const RangeSelector = forwardRef(
       direction = 'horizontal',
       invert,
       max = 100,
-      messages = { lower: 'Lower Bounds', upper: 'Upper Bounds' },
+      messages,
       min = 0,
       onChange,
       opacity = 'medium',
@@ -36,13 +37,14 @@ const RangeSelector = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();
     const containerRef = useRef();
 
     const valueForMouseCoord = useCallback(
-      event => {
+      (event) => {
         const rect = containerRef.current.getBoundingClientRect();
         let value;
         if (direction === 'vertical') {
@@ -69,7 +71,7 @@ const RangeSelector = forwardRef(
     );
 
     const onMouseMove = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         let nextValues;
         if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -125,7 +127,7 @@ const RangeSelector = forwardRef(
     }, [changing, onMouseMove]);
 
     const onClick = useCallback(
-      event => {
+      (event) => {
         const value = valueForMouseCoord(event);
         if (
           value <= values[0] ||
@@ -145,7 +147,7 @@ const RangeSelector = forwardRef(
     );
 
     const onTouchMove = useCallback(
-      event => {
+      (event) => {
         const touchEvent = event.changedTouches[0];
         onMouseMove(touchEvent);
       },
@@ -191,7 +193,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={messages.lower}
+          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
           tabIndex={0}
           ref={ref}
           color={color}
@@ -226,7 +228,7 @@ const RangeSelector = forwardRef(
           {...layoutProps}
           onMouseDown={
             onChange
-              ? event => {
+              ? (event) => {
                   const nextMoveValue = valueForMouseCoord(event);
                   setChanging('selection');
                   setMoveValue(nextMoveValue);
@@ -235,7 +237,7 @@ const RangeSelector = forwardRef(
           }
         />
         <EdgeControl
-          a11yTitle={messages.upper}
+          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
           tabIndex={0}
           color={color}
           direction={direction}

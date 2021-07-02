@@ -10,13 +10,14 @@ import { columns, DATA } from './data';
 export const ServedDataTable = () => {
   const [data2, setData2] = React.useState(DATA);
 
-  const onSearch = search => {
+  const onSearch = (search) => {
     let nextData;
     if (search) {
       // The function below escapes regular expression special characters:
       // [ \ ^ $ . | ? * + ( )
-      const escapedText = text => text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-      const expressions = Object.keys(search).map(property => ({
+      const escapedText = (text) =>
+        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+      const expressions = Object.keys(search).map((property) => ({
         property,
         // Create the regular expression with modified value which handles
         // escaping special characters. Without escaping special characters,
@@ -24,7 +25,7 @@ export const ServedDataTable = () => {
         exp: new RegExp(escapedText(search[property]), 'i'),
       }));
       nextData = DATA.filter(
-        d => !expressions.some(e => !e.exp.test(d[e.property])),
+        (d) => !expressions.some((e) => !e.exp.test(d[e.property])),
       );
     } else {
       nextData = DATA;
@@ -36,7 +37,7 @@ export const ServedDataTable = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <DataTable
-          columns={columns.map(column => ({
+          columns={columns.map((column) => ({
             ...column,
             search:
               column.property === 'name' || column.property === 'location',

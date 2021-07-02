@@ -365,14 +365,14 @@ describe('Form uncontrolled', () => {
             name="test"
             required
             validate={[
-              value => (value.length === 1 ? 'simple string' : undefined),
-              value =>
+              (value) => (value.length === 1 ? 'simple string' : undefined),
+              (value) =>
                 value.length === 2 ? <Text> ReactNode </Text> : undefined,
-              value =>
+              (value) =>
                 value.length === 3
                   ? { message: 'status error', status: 'error' }
                   : undefined,
-              value =>
+              (value) =>
                 value.length === 4
                   ? { message: 'status info', status: 'info' }
                   : undefined,
@@ -503,7 +503,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('validate on change', async () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onChange = jest.fn();
     window.scrollTo = jest.fn();
 
@@ -517,11 +517,11 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              name => {
+              (name) => {
                 if (name && name.length === 1) return 'must be >1 character';
                 return undefined;
               },
-              name => {
+              (name) => {
                 if (name === 'good')
                   return {
                     message: 'good',
@@ -545,7 +545,7 @@ describe('Form uncontrolled', () => {
             name="test-select"
             htmlFor="test-select"
             required
-            validate={val => {
+            validate={(val) => {
               if (val === 'small')
                 return {
                   message: 'good',
@@ -598,7 +598,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('validate on mount', async () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     window.scrollTo = jest.fn();
 
     const defaultValue = {
@@ -615,7 +615,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              firstName => {
+              (firstName) => {
                 if (firstName && firstName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -629,7 +629,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              lastName => {
+              (lastName) => {
                 if (lastName && lastName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -644,51 +644,47 @@ describe('Form uncontrolled', () => {
   });
 
   test('validate on blur', async () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onFocus = jest.fn();
-    const {
-      getByText,
-      getByPlaceholderText,
-      queryAllByText,
-      queryByText,
-    } = render(
-      <Grommet>
-        <Form validate="blur">
-          <FormField
-            onFocus={onFocus}
-            label="Name"
-            name="name"
-            placeholder="name"
-            required
-            validate={[
-              { regexp: /^[a-z]/i },
-              name => {
-                if (name && name.length === 1) return 'must be >1 character';
-                return undefined;
-              },
-              name => {
-                if (name === 'good')
-                  return {
-                    message: 'good',
-                    status: 'info',
-                  };
-                return undefined;
-              },
-            ]}
-          />
-
-          <FormField onFocus={onFocus} label="Email" name="email" required>
-            <TextInput
-              a11yTitle="test"
-              name="email"
-              type="email"
-              placeholder="email"
+    const { getByText, getByPlaceholderText, queryAllByText, queryByText } =
+      render(
+        <Grommet>
+          <Form validate="blur">
+            <FormField
+              onFocus={onFocus}
+              label="Name"
+              name="name"
+              placeholder="name"
+              required
+              validate={[
+                { regexp: /^[a-z]/i },
+                (name) => {
+                  if (name && name.length === 1) return 'must be >1 character';
+                  return undefined;
+                },
+                (name) => {
+                  if (name === 'good')
+                    return {
+                      message: 'good',
+                      status: 'info',
+                    };
+                  return undefined;
+                },
+              ]}
             />
-          </FormField>
-          <Button onFocus={onFocus} label="submit" type="submit" />
-        </Form>
-      </Grommet>,
-    );
+
+            <FormField onFocus={onFocus} label="Email" name="email" required>
+              <TextInput
+                a11yTitle="test"
+                name="email"
+                type="email"
+                placeholder="email"
+              />
+            </FormField>
+            <Button onFocus={onFocus} label="submit" type="submit" />
+          </Form>
+        </Grommet>,
+      );
 
     // both fields have required error message
     getByText('submit').focus();
@@ -725,13 +721,13 @@ describe('Form uncontrolled', () => {
   });
 
   test('form validity', async () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     let valid;
     const { getByPlaceholderText, getByText } = render(
       <Grommet>
         <Form
           validate="change"
-          onValidate={validationResults => {
+          onValidate={(validationResults) => {
             valid = validationResults.valid;
           }}
         >
@@ -742,7 +738,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              firstName => {
+              (firstName) => {
                 if (firstName && firstName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -756,7 +752,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              lastName => {
+              (lastName) => {
                 if (lastName && lastName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -769,7 +765,7 @@ describe('Form uncontrolled', () => {
             placeholder="Address"
             validate={[
               { regexp: /^[a-z]/i },
-              address => {
+              (address) => {
                 if (address && address.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -1056,7 +1052,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = combination =>
+    const functionValidation = (combination) =>
       combination === '12345'
         ? {
             message:
@@ -1113,7 +1109,7 @@ describe('Form uncontrolled', () => {
         message: 'At least five characters',
         status: 'error',
       },
-      combination =>
+      (combination) =>
         combination === '12345'
           ? {
               message:
@@ -1196,7 +1192,7 @@ describe('Form uncontrolled', () => {
       target: { value: '123456%' },
     });
     fireEvent.click(submitButton);
-    validationMessages.forEach(message =>
+    validationMessages.forEach((message) =>
       expect(queryByText(message)).toBeNull(),
     );
   });
@@ -1340,7 +1336,7 @@ describe('Form uncontrolled', () => {
 
   test(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 
@@ -1439,7 +1435,7 @@ describe('Form uncontrolled', () => {
   });
 
   test(`valid flag on component mount`, () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onValidate = jest.fn();
 
     const defaultValue = {
@@ -1454,14 +1450,14 @@ describe('Form uncontrolled', () => {
         <Form
           value={value}
           validate="blur"
-          onChange={nextValue => {
+          onChange={(nextValue) => {
             setValue(nextValue);
           }}
           onValidate={onValidate}
         >
           <FormField
             validate={[
-              name => {
+              (name) => {
                 if (name && name.length === 1) return 'must be >1 character';
                 return undefined;
               },
@@ -1502,6 +1498,75 @@ describe('Form uncontrolled', () => {
         errors: {},
         infos: {},
         valid: true,
+      }),
+    );
+  });
+
+  test(`dynamicly removed fields should be removed from form value`, () => {
+    jest.useFakeTimers('modern');
+    const onValidate = jest.fn();
+    const onSubmit = jest.fn();
+
+    const Test = () => {
+      const [toggle, setToggle] = React.useState(false);
+
+      return (
+        <Form validate="blur" onValidate={onValidate} onSubmit={onSubmit}>
+          <FormField name="name">
+            <TextInput name="name" placeholder="test name" />
+          </FormField>
+          <FormField name="toggle">
+            <CheckBox
+              name="toggle"
+              label="toggle"
+              onChange={({ target: { checked } }) => setToggle(checked)}
+            />
+          </FormField>
+          {toggle && (
+            <FormField name="mood" required>
+              <TextInput name="mood" placeholder="test mood" />
+            </FormField>
+          )}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByLabelText, getByText, container } =
+      render(
+        <Grommet>
+          <Test />
+        </Grommet>,
+      );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const nameField = getByPlaceholderText('test name');
+    const toggleField = getByLabelText('toggle');
+
+    // add name
+    fireEvent.change(nameField, { target: { value: 'name' } });
+
+    // add mood
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+    const moodField = getByPlaceholderText('test mood');
+
+    // set mood
+    fireEvent.change(moodField, { target: { value: 'happy' } });
+
+    // remove mood
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { name: 'name', toggle: false },
       }),
     );
   });

@@ -8,6 +8,7 @@ import { Grommet } from '..';
 import { Heading } from '../../Heading';
 import { AnnounceContext, ResponsiveContext } from '../../../contexts';
 import { grommet } from '../../../themes/grommet';
+import { MessageContext } from '../../../contexts/MessageContext';
 
 const TestAnnouncer = ({ announce }) => {
   React.useEffect(() => announce('hello', 'assertive'));
@@ -38,7 +39,7 @@ const customBreakpointsTheme = {
 const SSRTester = ({ ua }) => (
   <Grommet theme={customBreakpointsTheme} userAgent={ua}>
     <ResponsiveContext.Consumer>
-      {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
+      {(size) => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
     </ResponsiveContext.Consumer>
   </Grommet>
 );
@@ -90,11 +91,11 @@ describe('Grommet', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('announce', done => {
+  test('announce', (done) => {
     const { container } = render(
       <Grommet>
         <AnnounceContext.Consumer>
-          {announce => <TestAnnouncer announce={announce} />}
+          {(announce) => <TestAnnouncer announce={announce} />}
         </AnnounceContext.Consumer>
       </Grommet>,
     );
@@ -120,7 +121,7 @@ describe('Grommet', () => {
     'Mozilla/5.0 (iPad; CPU OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 [FBAN/FBIOS;FBAV/156.0.0.41.97;FBBV/89172188;FBDV/iPad5,3;FBMD/iPad;FBSN/iOS;FBSV/11.2.1;FBSS/2;FBCR/;FBID/tablet;FBLC/en_GB;FBOP/5;FBRV/0]',
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
     /* eslint-enable max-len */
-  ].forEach(ua => {
+  ].forEach((ua) => {
     test(`ssr rendering ${ua.substring(0, 25)}`, () => {
       act(() => {
         const { container } = render(<SSRTester ua={ua} />);
@@ -128,5 +129,42 @@ describe('Grommet', () => {
         expect(container.firstChild).toMatchSnapshot();
       });
     });
+  });
+
+  test('messages', () => {
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            test: {
+              label: 'My Label',
+            },
+          },
+        }}
+      >
+        <MessageContext.Consumer>
+          {({ format }) => format({ id: 'test.label' })}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('message format function', () => {
+    const messages = {
+      'test.label': 'My Label',
+    };
+    const { container } = render(
+      <Grommet full background="#0000ff">
+        Grommet App
+      </Grommet>,
+
+      <Grommet messages={{ format: (opts) => messages[opts.id] }}>
+        <MessageContext.Consumer>
+          {({ format }) => format({ id: 'test.label' })}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 
-const controlledColumns = columns.map(col => ({ ...col }));
+const controlledColumns = columns.map((col) => ({ ...col }));
 delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
@@ -20,12 +20,12 @@ export const ControlledDataTable = () => {
     if (event.target.checked) {
       setChecked([...checked, value]);
     } else {
-      setChecked(checked.filter(item => item !== value));
+      setChecked(checked.filter((item) => item !== value));
     }
   };
 
-  const onCheckAll = event =>
-    setChecked(event.target.checked ? DATA.map(datum => datum.name) : []);
+  const onCheckAll = (event) =>
+    setChecked(event.target.checked ? DATA.map((datum) => datum.name) : []);
 
   return (
     <Grommet theme={grommet}>
@@ -38,7 +38,7 @@ export const ControlledDataTable = () => {
                 <CheckBox
                   key={name}
                   checked={checked.indexOf(name) !== -1}
-                  onChange={e => onCheck(e, name)}
+                  onChange={(e) => onCheck(e, name)}
                 />
               ),
               header: (
@@ -53,10 +53,10 @@ export const ControlledDataTable = () => {
               sortable: false,
             },
             ...controlledColumns,
-          ].map(col => ({ ...col }))}
+          ].map((col) => ({ ...col }))}
           data={DATA}
           sortable
-          rowDetails={row => {
+          rowDetails={(row) => {
             if (row.name === 'Alan') {
               return <Box> {row.name} </Box>;
             }
