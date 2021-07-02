@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, List, Layer, Button } from 'grommet';
+import { Grommet, Box, List, Layer, Button, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const locations = [
@@ -32,22 +32,28 @@ export const OnClickItemList = () => {
       <Box align="center" pad="large" gap="large">
         <List
           data={data.slice(0, 10)}
-          onClickItem={event => {
+          onClickItem={(event) => {
             setShow(true);
-            console.log('=== Modal Opened ===');
             setClicked(event.item);
           }}
         />
 
         {show && (
           <Layer
+            position="center"
             onEsc={() => setShow(false)}
             onClickOutside={() => setShow(false)}
           >
-            <Button label="close" onClick={() => setShow(false)} />
+            <Box margin="medium">
+              <Text>{clicked && JSON.stringify(clicked, null, 2)}</Text>
+              <Button
+                margin={{ top: 'medium' }}
+                label="close"
+                onClick={() => setShow(false)}
+              />
+            </Box>
           </Layer>
         )}
-        {clicked && JSON.stringify(clicked, null, 2)}
       </Box>
     </Grommet>
   );
