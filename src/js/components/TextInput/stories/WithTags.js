@@ -33,16 +33,16 @@ const Tag = ({ children, onRemove, ...rest }) => {
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState('');
   const [box, setBox] = React.useState();
-  const boxRef = React.useCallback(setBox, []);
+  const boxRef = React.useCallback(setBox, [setBox]);
 
-  const updateCurrentTag = event => {
+  const updateCurrentTag = (event) => {
     setCurrentTag(event.target.value);
     if (onChange) {
       onChange(event);
     }
   };
 
-  const onAddTag = tag => {
+  const onAddTag = (tag) => {
     if (onAdd) {
       onAdd(tag);
     }
@@ -85,7 +85,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
             {...rest}
             onChange={updateCurrentTag}
             value={currentTag}
-            onSuggestionSelect={event => onAddTag(event.suggestion)}
+            onSuggestionSelect={(event) => onAddTag(event.suggestion)}
           />
         </Box>
       </Box>
@@ -97,7 +97,7 @@ export const WithTags = () => {
   const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
-  const onRemoveTag = tag => {
+  const onRemoveTag = (tag) => {
     const removeIndex = selectedTags.indexOf(tag);
     const newTags = [...selectedTags];
     if (removeIndex >= 0) {
@@ -106,12 +106,12 @@ export const WithTags = () => {
     setSelectedTags(newTags);
   };
 
-  const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
+  const onAddTag = (tag) => setSelectedTags([...selectedTags, tag]);
 
-  const onFilterSuggestion = value =>
+  const onFilterSuggestion = (value) =>
     setSuggestions(
       allSuggestions.filter(
-        suggestion =>
+        (suggestion) =>
           suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
       ),
     );

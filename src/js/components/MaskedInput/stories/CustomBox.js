@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 export const CustomBoxMaskedInput = () => {
   const [value, setValue] = React.useState('');
   const [box, setBox] = React.useState();
-  const boxRef = React.useCallback(setBox, []);
+  const boxRef = React.useCallback(setBox, [setBox]);
 
   return (
     <Grommet full theme={grommet}>
@@ -40,7 +40,7 @@ export const CustomBoxMaskedInput = () => {
               },
             ]}
             value={value}
-            onChange={event => setValue(event.target.value)}
+            onChange={(event) => setValue(event.target.value)}
           />
         </Box>
       </Box>
