@@ -256,6 +256,10 @@ const Form = forwardRef(
     const useFormInput = (name, componentValue, initialValue) => {
       const [inputValue, setInputValue] = useState(initialValue);
       const formValue = name ? value[name] : undefined;
+      // for dynamic forms, we need to track when an input has been added to
+      // the form value. if the input is unmounted, we will delete its key/value
+      // from the form value.
+      const keyCreated = useRef(false);
 
       // This effect is for pattern #2, where the controlled input
       // component is driving the value via componentValue.
@@ -273,6 +277,23 @@ const Form = forwardRef(
           // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]);
+
+      // on unmount, if the form is uncontrolled, remove the key/value
+      // from the form value
+      useEffect(
+        () => () => {
+          if (keyCreated.current) {
+            keyCreated.current = false;
+            setValueState((prevValue) => {
+              const nextValue = { ...prevValue };
+              delete nextValue[name];
+              return nextValue;
+            });
+          }
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [], // only run onmount and unmount
+      );
 
       let useValue;
       if (componentValue !== undefined)
@@ -300,7 +321,13 @@ const Form = forwardRef(
             }
 
             const nextValue = { ...value };
+            // if nextValue doesn't have a key for name, this must be
+            // uncontrolled form. we will flag this field was added so
+            // we know to remove its value from the form if it is dynamically
+            // removed
+            if (!(name in nextValue)) keyCreated.current = true;
             nextValue[name] = nextComponentValue;
+
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
