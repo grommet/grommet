@@ -1,5 +1,5 @@
 var _excluded = ["connections"],
-    _excluded2 = ["anchor", "color", "offset", "round", "thickness", "type"];
+    _excluded2 = ["anchor", "animation", "color", "offset", "round", "thickness", "type"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -177,6 +177,7 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (connectionPoints) {
     paths = connections.map(function (_ref3, index) {
       var anchor = _ref3.anchor,
+          animation = _ref3.animation,
           color = _ref3.color,
           offset = _ref3.offset,
           round = _ref3.round,
@@ -207,7 +208,8 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
         path = /*#__PURE__*/React.createElement("path", _extends({
           // eslint-disable-next-line react/no-array-index-key
-          key: index
+          key: index,
+          animation: animation
         }, cleanedRest, {
           stroke: normalizeColor(colorName, theme),
           strokeWidth: strokeWidth,
@@ -225,7 +227,8 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(StyledDiagram, _extends({
     ref: svgRef,
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
-    preserveAspectRatio: "xMinYMin meet"
+    preserveAspectRatio: "xMinYMin meet",
+    connections: paths
   }, rest), /*#__PURE__*/React.createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';

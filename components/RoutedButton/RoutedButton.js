@@ -84,7 +84,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props2, _excluded);
 
     if (process.env.NODE_ENV !== 'production') {
-      console.warn("This component will be deprecated in the upcoming releases.\n         Please refer to https://github.com/grommet/grommet/issues/2855 \n         for more information.");
+      console.warn("This component will be deprecated in the upcoming releases.\n         Please refer to https://github.com/grommet/grommet/issues/2855\n         for more information.");
     }
 
     return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({}, rest, {

@@ -11,21 +11,23 @@ import { Box } from '../Box';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignControls = _ref.alignControls,
       children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
       justify = _ref$justify === void 0 ? 'center' : _ref$justify,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    tabContents: 'Tab Contents'
-  } : _ref$messages,
+      messages = _ref.messages,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
+
   var propsActiveIndex = rest.activeIndex,
       onActive = rest.onActive;
 
@@ -94,7 +96,10 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
   }
 
-  var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
+  var tabContentTitle = (activeTitle || '') + " " + format({
+    id: 'tabs.tabContents',
+    messages: messages
+  });
   return /*#__PURE__*/React.createElement(StyledTabs, _extends({
     ref: ref,
     as: Box,

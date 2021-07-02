@@ -25,6 +25,8 @@ var _SelectContainer = require("./SelectContainer");
 
 var _utils2 = require("./utils");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _excluded = ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -63,9 +65,6 @@ var defaultDropAlign = {
   top: 'bottom',
   left: 'left'
 };
-var defaultMessages = {
-  multiple: 'multiple'
-};
 var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
@@ -89,8 +88,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       icon = _ref.icon,
       labelKey = _ref.labelKey,
       margin = _ref.margin,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? defaultMessages : _ref$messages,
+      messages = _ref.messages,
       multiple = _ref.multiple,
       name = _ref.name,
       onChange = _ref.onChange,
@@ -116,12 +114,16 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var inputRef = (0, _react.useRef)();
-  var formContext = (0, _react.useContext)(_FormContext.FormContext); // value is used for what we receive in valueProp and the basis for
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format; // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
   // selected option object.
   // Otherwise, the value(s) should match the selected options.
+
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
@@ -295,11 +297,14 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
       if (optionIndexesInValue.length === 1) return (0, _utils2.applyKey)(allOptions[optionIndexesInValue[0]], labelKey);
-      return messages.multiple;
+      return format({
+        id: 'select.multiple',
+        messages: messages
+      });
     }
 
     return undefined;
-  }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
+  }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,

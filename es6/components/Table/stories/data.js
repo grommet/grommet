@@ -35,10 +35,11 @@ export var columns = [{
   property: 'name',
   label: 'Name',
   dataScope: 'row',
-  format: function format(datum) {
+  format: function format(_ref) {
+    var name = _ref.name;
     return /*#__PURE__*/React.createElement(Text, {
       weight: "bold"
-    }, datum.name);
+    }, name);
   }
 }, {
   property: 'email',

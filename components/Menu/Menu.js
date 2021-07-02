@@ -21,6 +21,8 @@ var _Text = require("../Text");
 
 var _utils = require("../../utils");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _excluded = ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
     _excluded2 = ["align"];
 
@@ -79,6 +81,9 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
@@ -243,7 +248,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
     },
-    a11yTitle: a11yTitle || messages.closeMenu || 'Close Menu',
+    a11yTitle: a11yTitle || format({
+      id: 'menu.closeMenu',
+      messages: messages
+    }),
     active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
     hoverIndicator: "background",
@@ -272,7 +280,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
     ref: ref
   }, rest, buttonProps, {
-    a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
+    a11yTitle: a11yTitle || format({
+      id: 'menu.openMenu',
+      messages: messages
+    }),
     onAlign: setAlignControlMirror,
     disabled: disabled,
     dropAlign: align,
@@ -341,10 +352,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 });
 Menu.defaultProps = {
   items: [],
-  messages: {
-    openMenu: 'Open Menu',
-    closeMenu: 'Close Menu'
-  },
+  messages: undefined,
   justifyContent: 'start'
 };
 Menu.displayName = 'Menu';

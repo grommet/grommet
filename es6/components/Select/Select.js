@@ -15,6 +15,7 @@ import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
@@ -41,9 +42,6 @@ var defaultDropAlign = {
   top: 'bottom',
   left: 'left'
 };
-var defaultMessages = {
-  multiple: 'multiple'
-};
 var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
@@ -67,8 +65,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       icon = _ref.icon,
       labelKey = _ref.labelKey,
       margin = _ref.margin,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? defaultMessages : _ref$messages,
+      messages = _ref.messages,
       multiple = _ref.multiple,
       name = _ref.name,
       onChange = _ref.onChange,
@@ -93,12 +90,16 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
-  var formContext = useContext(FormContext); // value is used for what we receive in valueProp and the basis for
+  var formContext = useContext(FormContext);
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format; // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
   // When 'valueKey' sets 'reduce', the value(s) here should match
   // what the 'valueKey' would return for the corresponding
   // selected option object.
   // Otherwise, the value(s) should match the selected options.
+
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
@@ -272,11 +273,14 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
       if (optionIndexesInValue.length === 1) return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-      return messages.multiple;
+      return format({
+        id: 'select.multiple',
+        messages: messages
+      });
     }
 
     return undefined;
-  }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
+  }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onDown: onRequestOpen,

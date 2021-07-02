@@ -1,4 +1,4 @@
-var _excluded = ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
+var _excluded = ["cellProps", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -14,9 +14,10 @@ import { Keyboard } from '../Keyboard';
 import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeRowCellProps } from './buildState';
 var Row = /*#__PURE__*/memo(function (_ref) {
-  var primaryValue = _ref.primaryValue,
+  var cellProps = _ref.cellProps,
+      primaryValue = _ref.primaryValue,
       index = _ref.index,
       rowRef = _ref.rowRef,
       size = _ref.size,
@@ -26,21 +27,15 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       setActive = _ref.setActive,
       selected = _ref.selected,
       onSelect = _ref.onSelect,
-      background = _ref.background,
       isSelected = _ref.isSelected,
       rowDetails = _ref.rowDetails,
       isRowExpanded = _ref.isRowExpanded,
       setRowExpand = _ref.setRowExpand,
       rowExpand = _ref.rowExpand,
       columns = _ref.columns,
-      pinnedBackground = _ref.pinnedBackground,
       pinnedOffset = _ref.pinnedOffset,
-      border = _ref.border,
-      pad = _ref.pad,
       primaryProperty = _ref.primaryProperty,
-      rowProps = _ref.rowProps,
-      data = _ref.data,
-      theme = _ref.theme;
+      data = _ref.data;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledDataTableRow, {
     ref: rowRef,
     size: size,
@@ -66,7 +61,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: background,
+    background: cellProps.background,
     plain: "noPad",
     size: "auto"
   }, /*#__PURE__*/React.createElement(CheckBox, {
@@ -80,7 +75,7 @@ var Row = /*#__PURE__*/memo(function (_ref) {
         }));
       } else onSelect([].concat(selected, [primaryValue]));
     },
-    pad: rowProps && rowProps[primaryValue] && rowProps[primaryValue].pad || pad || theme.table.body.pad
+    pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
@@ -92,20 +87,19 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       } else {
         setRowExpand([].concat(rowExpand, [index]));
       }
-    }
+    },
+    pad: cellProps.pad
   }), columns.map(function (column) {
     return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
-      background: column.pin ? pinnedBackground : background,
-      border: border,
+      background: column.pin && cellProps.pinned.background || cellProps.background,
+      border: column.pin && cellProps.pinned.border || cellProps.border,
       context: "body",
       column: column,
       datum: datum,
-      index: index,
-      pad: pad,
+      pad: column.pin && cellProps.pinned.pad || cellProps.pad,
       pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty,
-      rowProp: rowProps && rowProps[primaryValue],
       scope: column.primary || column.property === primaryProperty ? 'row' : undefined
     });
   })), rowDetails && isRowExpanded && /*#__PURE__*/React.createElement(StyledDataTableRow, {
@@ -115,16 +109,13 @@ var Row = /*#__PURE__*/memo(function (_ref) {
   }, rowDetails(data[index]))));
 });
 var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
-  var background = _ref2.background,
-      border = _ref2.border,
+  var cellPropsProp = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
       onMore = _ref2.onMore,
       replace = _ref2.replace,
       onClickRow = _ref2.onClickRow,
       onSelect = _ref2.onSelect,
-      pad = _ref2.pad,
-      pinnedBackground = _ref2.pinnedBackground,
       pinnedOffset = _ref2.pinnedOffset,
       primaryProperty = _ref2.primaryProperty,
       rowProps = _ref2.rowProps,
@@ -174,9 +165,11 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;
     var isSelected = selected && selected.includes(primaryValue);
     var isRowExpanded = rowExpand && rowExpand.includes(index);
+    var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(Row, {
       key: index,
       rowRef: rowRef,
+      cellProps: cellProps,
       primaryValue: primaryValue,
       isSelected: isSelected,
       isRowExpanded: isRowExpanded,
@@ -188,14 +181,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setActive: setActive,
       selected: selected,
       onSelect: onSelect,
-      background: background,
       rowDetails: rowDetails,
       setRowExpand: setRowExpand,
       rowExpand: rowExpand,
       columns: columns,
-      pinnedBackground: pinnedBackground,
-      border: border,
-      pad: pad,
       primaryProperty: primaryProperty,
       rowProps: rowProps,
       data: data,

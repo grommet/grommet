@@ -13,6 +13,8 @@ var _EdgeControl = require("./EdgeControl");
 
 var _utils = require("../../utils");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _excluded = ["color", "direction", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -34,11 +36,7 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       invert = _ref.invert,
       _ref$max = _ref.max,
       max = _ref$max === void 0 ? 100 : _ref$max,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    lower: 'Lower Bounds',
-    upper: 'Upper Bounds'
-  } : _ref$messages,
+      messages = _ref.messages,
       _ref$min = _ref.min,
       min = _ref$min === void 0 ? 0 : _ref$min,
       onChange = _ref.onChange,
@@ -54,6 +52,9 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var _useState = (0, _react.useState)(),
       changing = _useState[0],
@@ -190,7 +191,10 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       dark: theme.dark
     } : undefined
   }, layoutProps)), /*#__PURE__*/_react["default"].createElement(_EdgeControl.EdgeControl, {
-    a11yTitle: messages.lower,
+    a11yTitle: format({
+      id: 'rangeSelector.lower',
+      messages: messages
+    }),
     tabIndex: 0,
     ref: ref,
     color: color,
@@ -228,7 +232,10 @@ var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setMoveValue(nextMoveValue);
     } : undefined
   })), /*#__PURE__*/_react["default"].createElement(_EdgeControl.EdgeControl, {
-    a11yTitle: messages.upper,
+    a11yTitle: format({
+      id: 'rangeSelector.upper',
+      messages: messages
+    }),
     tabIndex: 0,
     color: color,
     direction: direction,

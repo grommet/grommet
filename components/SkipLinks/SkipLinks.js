@@ -15,6 +15,8 @@ var _Layer = require("../Layer");
 
 var _defaultProps = require("../../default-props");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -29,6 +31,9 @@ var SkipLinks = function SkipLinks(_ref) {
   var _useState = (0, _react.useState)(false),
       showLayer = _useState[0],
       setShowLayer = _useState[1];
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var layerRef = (0, _react.useRef)(null);
 
@@ -65,7 +70,10 @@ var SkipLinks = function SkipLinks(_ref) {
     // by default, which isn't what we want, hence setting responsive false
     ,
     responsive: false
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.skipLinks.container, /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.skipLinks.label, format({
+    id: 'skipLinks.skipTo',
+    messages: messages
+  })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     align: "center",
     gap: "medium"
   }, _react.Children.map(children, function (child, index) {
@@ -76,11 +84,7 @@ var SkipLinks = function SkipLinks(_ref) {
   }))));
 };
 
-SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To:'
-  }
-};
+SkipLinks.defaultProps = {};
 var SkipLinksDoc;
 
 if (process.env.NODE_ENV !== 'production') {

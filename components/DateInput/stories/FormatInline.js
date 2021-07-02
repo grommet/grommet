@@ -26,12 +26,18 @@ var FormatInline = function FormatInline() {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
-    pad: "large"
+    pad: "large",
+    gap: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
     format: "mm/dd/yyyy",
     inline: true,
     value: value,
     onChange: onChange
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    label: "today",
+    onClick: function onClick() {
+      return setValue(new Date().toISOString());
+    }
   })));
 };
 

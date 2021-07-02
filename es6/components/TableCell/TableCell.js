@@ -4,11 +4,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useRef } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
-import { useForwardedRef } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
@@ -108,9 +108,34 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
       ref: containerRef,
       justify: "center"
     }, children);
-  }
+  } // construct a new theme object in case we have a background that wants
+  // to change the background color context
 
-  return /*#__PURE__*/React.createElement(StyledTableCell, _extends({
+
+  var nextTheme = useMemo(function () {
+    var result;
+
+    if (cellProps.background || theme.darkChanged) {
+      var dark = backgroundIsDark(cellProps.background, theme);
+      var darkChanged = dark !== undefined && dark !== theme.dark;
+
+      if (darkChanged || theme.darkChanged) {
+        result = _extends({}, theme);
+        result.dark = dark === undefined ? theme.dark : dark;
+        result.background = cellProps.background;
+      } else if (cellProps.background) {
+        // This allows DataTable to intelligently set the background
+        // of a pinned header or footer.
+        result = _extends({}, theme);
+        result.background = cellProps.background;
+      }
+    }
+
+    return result || theme;
+  }, [cellProps.background, theme]);
+  return /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+    value: nextTheme
+  }, /*#__PURE__*/React.createElement(StyledTableCell, _extends({
     ref: cellRef,
     as: scope ? 'th' : undefined,
     scope: scope,
@@ -123,7 +148,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }), plain || !Object.keys(mergedProps).length ? content : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
     align: align,
     justify: verticalAlignToJustify[verticalAlign]
-  }), children));
+  }), children)));
 });
 TableCell.displayName = 'TableCell';
 var TableCellDoc;

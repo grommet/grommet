@@ -18,8 +18,7 @@ export var ServedDataTable = function ServedDataTable() {
       // The function below escapes regular expression special characters:
       // [ \ ^ $ . | ? * + ( )
       var escapedText = function escapedText(text) {
-        text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-        return new RegExp(escapedText, 'i');
+        return text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
       };
 
       var expressions = Object.keys(search).map(function (property) {

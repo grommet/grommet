@@ -15,7 +15,8 @@ import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { containsFocus, useForwardedRef } from '../../utils';
-import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo'; // Split the volume control into 6 segments. Empirically determined.
+import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo';
+import { MessageContext } from '../../contexts/MessageContext'; // Split the volume control into 6 segments. Empirically determined.
 
 var VOLUME_STEP = 0.166667;
 
@@ -55,6 +56,9 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
 
   var _useState = useState([]),
       captions = _useState[0],
@@ -297,10 +301,16 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, /*#__PURE__*/React.createElement(Button, {
       icon: playing ? /*#__PURE__*/React.createElement(Icons.Pause, {
         color: iconColor,
-        a11yTitle: messages.pauseButton
+        a11yTitle: format({
+          id: 'video.pauseButton',
+          messages: messages
+        })
       }) : /*#__PURE__*/React.createElement(Icons.Play, {
         color: iconColor,
-        a11yTitle: messages.playButton
+        a11yTitle: format({
+          id: 'video.playButton',
+          messages: messages
+        })
       }),
       hoverIndicator: "background",
       onClick: playing ? pause : play
@@ -311,7 +321,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, /*#__PURE__*/React.createElement(Box, {
       flex: true
     }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Meter, {
-      "aria-label": messages.progressMeter,
+      "aria-label": format({
+        id: 'video.progressMeter',
+        messages: messages
+      }),
       background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
       thickness: "small",
@@ -319,7 +332,10 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
         value: percentagePlayed || 0
       }]
     }), /*#__PURE__*/React.createElement(StyledVideoScrubber, {
-      "aria-label": messages.scrubber,
+      "aria-label": format({
+        id: 'video.scrubber',
+        messages: messages
+      }),
       ref: scrubberRef,
       tabIndex: 0,
       role: "button",
@@ -345,27 +361,42 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       dropBackground: background,
       messages: {
-        openMenu: messages.openMenu,
-        closeMenu: messages.closeMenu
+        openMenu: format({
+          id: 'video.openMenu',
+          messages: messages
+        }),
+        closeMenu: format({
+          id: 'video.closeMenu',
+          messages: messages
+        })
       },
       items: [{
         icon: /*#__PURE__*/React.createElement(Icons.Volume, {
           color: iconColor,
-          a11yTitle: messages.volumeUp
+          a11yTitle: format({
+            id: 'video.volumeUp',
+            messages: messages
+          })
         }),
         onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
         close: false
       }, {
         icon: /*#__PURE__*/React.createElement(Icons.ReduceVolume, {
           color: iconColor,
-          a11yTitle: messages.volumeDown
+          a11yTitle: format({
+            id: 'video.volumeDown',
+            messages: messages
+          })
         }),
         onClick: volume >= VOLUME_STEP ? quieter : undefined,
         close: false
       }].concat(captionControls, [{
         icon: /*#__PURE__*/React.createElement(Icons.FullScreen, {
           color: iconColor,
-          a11yTitle: messages.fullScreen
+          a11yTitle: format({
+            id: 'video.fullScreen',
+            messages: messages
+          })
         }),
         onClick: fullscreen
       }])
@@ -446,19 +477,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     loop: loop || false
   }), children), controlsElement);
 });
-Video.defaultProps = {
-  messages: {
-    closeMenu: 'close menu',
-    fullScreen: 'full screen',
-    progressMeter: 'video progress',
-    scrubber: 'scrubber',
-    openMenu: 'open menu',
-    pauseButton: 'pause',
-    playButton: 'play',
-    volumeDown: 'volume down',
-    volumeUp: 'volume up'
-  }
-};
+Video.defaultProps = {};
 Video.displayName = 'Video';
 var VideoDoc;
 

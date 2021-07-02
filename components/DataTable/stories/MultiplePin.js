@@ -208,10 +208,11 @@ var data = [{
 var columns = [{
   property: 'arrays',
   header: 'Arrays',
-  render: function render(datum) {
+  render: function render(_ref) {
+    var arrays = _ref.arrays;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       truncate: true
-    }, datum.arrays);
+    }, arrays);
   },
   sortable: false
 }, {
@@ -263,14 +264,16 @@ var columns = [{
     weight: "normal",
     color: "text"
   }, "%"))),
-  render: function render(datum) {
+  render: function render(_ref2) {
+    var pinnable = _ref2.pinnable,
+        pinned = _ref2.pinned;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
-        value: datum.pinned / datum.pinnable,
+        value: pinned / pinnable,
         color: 'graph-2'
       }],
       max: 1,
@@ -290,10 +293,11 @@ var columns = [{
     color: "text"
   }, "(xGHz)")),
   align: 'end',
-  render: function render(datum) {
+  render: function render(_ref3) {
+    var savings = _ref3.savings;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       truncate: true
-    }, datum.savings[1] && "" + datum.savings[1].value);
+    }, savings[1] && "" + savings[1].value);
   }
 }];
 
@@ -323,15 +327,15 @@ var MultiplePins = function MultiplePins() {
       render: function render(datum) {
         return datum.id.slice(datum.id.length - 5);
       },
-      pin: true // footer: { aggregate: true },
-
+      pin: true
     }, {
       property: 'poolName',
       header: 'Pool Name',
-      render: function render(datum) {
+      render: function render(_ref4) {
+        var poolName = _ref4.poolName;
         return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
           truncate: true
-        }, datum.poolName);
+        }, poolName);
       },
       primary: true,
       pin: true
@@ -341,8 +345,8 @@ var MultiplePins = function MultiplePins() {
       pin: true
     }].concat(columns),
     fill: true,
-    onClickRow: function onClickRow(_ref) {
-      var datum = _ref.datum;
+    onClickRow: function onClickRow(_ref5) {
+      var datum = _ref5.datum;
       return handleClickRow(datum);
     },
     pin: true,

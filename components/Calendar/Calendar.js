@@ -651,7 +651,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
         fillContainer: fill
       })));
     } else if (
-    /* Do not show adjacent days in 6th row if all days 
+    /* Do not show adjacent days in 6th row if all days
     fall in the next month */
     showAdjacentDays === 'trim' && otherMonth && weeks.length === 5 &&
     /* If the length days array is less than the current getDate()
@@ -769,7 +769,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
   }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: function onEnter() {
-      return selectDate(active.toISOString());
+      return active !== undefined ? selectDate(active.toISOString()) : undefined;
     },
     onUp: function onUp(event) {
       event.preventDefault();

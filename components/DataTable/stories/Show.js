@@ -39,7 +39,9 @@ var columns = [{
 }, {
   property: 'percent',
   header: 'Percent Complete',
-  render: function render(datum) {
+  render: function render(_ref) {
+    var key = _ref.key,
+        percent = _ref.percent;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
@@ -47,8 +49,8 @@ var columns = [{
       alignSelf: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
-        value: datum.percent,
-        color: "accent-" + (datum.key % 4 + 1)
+        value: percent,
+        color: "accent-" + (key % 4 + 1)
       }],
       thickness: "small",
       size: "xxsmall",

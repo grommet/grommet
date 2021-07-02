@@ -67,8 +67,10 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
   var _useFormInput = useFormInput(name, valueArg, defaultValue),
       value = _useFormInput[0],
-      setValue = _useFormInput[1]; // parse format and build a formal schema we can use elsewhere
+      setValue = _useFormInput[1]; // do we expect multiple dates?
 
+
+  var range = Array.isArray(value) || format && format.includes('-'); // parse format and build a formal schema we can use elsewhere
 
   var schema = (0, _react.useMemo)(function () {
     return (0, _utils2.formatToSchema)(format);
@@ -82,27 +84,25 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       textValue = _useState[0],
       setTextValue = _useState[1]; // We need to distinguish between the caller changing a Form value
   // and the user typing a date that he isn't finished with yet.
-  // To track this, we keep track of the internalValue from interacting
-  // within this component. If the value has changed outside of this
-  // component, we reset the textValue.
+  // To handle this, we see if we have a value and the text value
+  // associated with it doesn't align to it, then we update the text value.
+  // We compare using textToValue to avoid "06/01/2021" not
+  // matching "06/1/2021".
 
-
-  var _useState2 = (0, _react.useState)(value),
-      internalValue = _useState2[0],
-      setInternalValue = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    if (schema && !!value !== !!internalValue) {
-      setTextValue((0, _utils2.valueToText)(value, schema));
-      setInternalValue(value);
+    if (schema && value && (Array.isArray(value) && value[0] || !Array.isArray(value))) {
+      var nextTextValue = (0, _utils2.valueToText)(value, schema);
+
+      if (!(0, _utils2.valuesAreEqual)((0, _utils2.textToValue)(textValue, schema, value, range), (0, _utils2.textToValue)(nextTextValue, schema, value, range))) {
+        setTextValue(nextTextValue);
+      }
     }
-  }, [internalValue, schema, value]); // when format and not inline, whether to show the Calendar in a Drop
+  }, [range, schema, textValue, value]); // when format and not inline, whether to show the Calendar in a Drop
 
-  var _useState3 = (0, _react.useState)(),
-      open = _useState3[0],
-      setOpen = _useState3[1];
-
-  var range = Array.isArray(value);
+  var _useState2 = (0, _react.useState)(),
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
   var calendar = /*#__PURE__*/_react["default"].createElement(_Calendar2.Calendar, _extends({
     ref: inline ? ref : undefined,
@@ -122,7 +122,6 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
       if (schema) setTextValue((0, _utils2.valueToText)(normalizedValue, schema));
       setValue(normalizedValue);
-      setInternalValue(normalizedValue);
       if (_onChange) _onChange({
         value: normalizedValue
       });
@@ -176,10 +175,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, value); // update value even when undefined
+      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, value, range); // update value even when undefined
 
       setValue(nextValue);
-      setInternalValue(nextValue || '');
 
       if (_onChange) {
         event.persist(); // extract from React synthetic event pool

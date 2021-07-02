@@ -14,7 +14,7 @@ var _utils = require("../../utils");
 var _StyledDiagram = require("./StyledDiagram");
 
 var _excluded = ["connections"],
-    _excluded2 = ["anchor", "color", "offset", "round", "thickness", "type"];
+    _excluded2 = ["anchor", "animation", "color", "offset", "round", "thickness", "type"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -190,6 +190,7 @@ var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   if (connectionPoints) {
     paths = connections.map(function (_ref3, index) {
       var anchor = _ref3.anchor,
+          animation = _ref3.animation,
           color = _ref3.color,
           offset = _ref3.offset,
           round = _ref3.round,
@@ -220,7 +221,8 @@ var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
         path = /*#__PURE__*/_react["default"].createElement("path", _extends({
           // eslint-disable-next-line react/no-array-index-key
-          key: index
+          key: index,
+          animation: animation
         }, cleanedRest, {
           stroke: (0, _utils.normalizeColor)(colorName, theme),
           strokeWidth: strokeWidth,
@@ -238,7 +240,8 @@ var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   return /*#__PURE__*/_react["default"].createElement(_StyledDiagram.StyledDiagram, _extends({
     ref: svgRef,
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
-    preserveAspectRatio: "xMinYMin meet"
+    preserveAspectRatio: "xMinYMin meet",
+    connections: paths
   }, rest), /*#__PURE__*/_react["default"].createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';

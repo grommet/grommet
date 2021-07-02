@@ -186,6 +186,7 @@ How to align the text inside the component. Defaults to `start`.
 start
 center
 end
+justify
 ```
 
 **tip**

@@ -65,7 +65,7 @@ var Progressing = function Progressing() {
   (0, _react.useEffect)(function () {
     var timer = setInterval(function () {
       dispatch();
-    }, 2000);
+    }, 3000);
     return function () {
       return clearInterval(timer);
     };
@@ -81,6 +81,11 @@ var Progressing = function Progressing() {
   if (topRow.length >= 3) {
     connections.push(connection('3', '5', {
       anchor: 'horizontal',
+      animation: {
+        type: 'pulse',
+        duration: 500,
+        size: 'small'
+      },
       color: 'brand'
     }));
   }
@@ -90,7 +95,7 @@ var Progressing = function Progressing() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "start",
     pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, topRow.map(function (id) {
     return /*#__PURE__*/_react["default"].createElement(Node, {
@@ -106,11 +111,20 @@ var Progressing = function Progressing() {
       background: "dark-2"
     });
   }))), /*#__PURE__*/_react["default"].createElement(_grommet.Diagram, {
+    animation: {
+      type: 'draw',
+      duration: 3000
+    },
     connections: connections
   }))));
 };
 
 exports.Progressing = Progressing;
+Progressing.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Visualizations/Diagram/Progressing'
 };

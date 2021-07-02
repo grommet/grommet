@@ -1,13 +1,15 @@
 "use strict";
 
 exports.__esModule = true;
-exports.storageColumns = exports.storageData = exports.DATA = exports.data = exports.columns = void 0;
+exports.storageColumns = exports.storageData = exports.DATA = exports.data = exports.groupColumns = exports.columns = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -32,14 +34,15 @@ var columns = [{
 }, {
   property: 'percent',
   header: 'Percent Complete',
-  render: function render(datum) {
+  render: function render(_ref) {
+    var percent = _ref.percent;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
-        value: datum.percent
+        value: percent
       }],
       thickness: "small",
       size: "small"
@@ -58,6 +61,13 @@ var columns = [{
   }
 }];
 exports.columns = columns;
+var groupColumns = [].concat(columns);
+exports.groupColumns = groupColumns;
+var first = groupColumns[0];
+groupColumns[0] = _extends({}, groupColumns[1]);
+groupColumns[1] = _extends({}, first);
+groupColumns[0].footer = groupColumns[1].footer;
+delete groupColumns[1].footer;
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
 exports.data = data;
@@ -225,10 +235,11 @@ exports.storageData = storageData;
 var storageColumns = [{
   property: 'poolName',
   header: 'Pool Name',
-  render: function render(datum) {
+  render: function render(_ref2) {
+    var poolName = _ref2.poolName;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       truncate: true
-    }, datum.poolName);
+    }, poolName);
   }
 }, {
   property: 'size',
@@ -262,7 +273,9 @@ var storageColumns = [{
     weight: "normal",
     color: "text"
   }, "%"))),
-  render: function render(datum) {
+  render: function render(_ref3) {
+    var pinnable = _ref3.pinnable,
+        pinned = _ref3.pinned;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
       plain: true,
       dropProps: {
@@ -280,14 +293,14 @@ var storageColumns = [{
         round: "full",
         flex: false,
         margin: "xsmall"
-      }, Math.trunc(datum.pinned / datum.pinnable * 100))
+      }, Math.trunc(pinned / pinnable * 100))
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
       values: [{
-        value: datum.pinned / datum.pinnable,
+        value: pinned / pinnable,
         color: 'graph-0'
       }],
       max: 1,
@@ -307,10 +320,11 @@ var storageColumns = [{
     color: "text"
   }, "(xGHz)")),
   align: 'end',
-  render: function render(datum) {
+  render: function render(_ref4) {
+    var savings = _ref4.savings;
     return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       truncate: true
-    }, datum.savings[1] && "" + datum.savings[1].value);
+    }, savings[1] && "" + savings[1].value);
   }
 }];
 exports.storageColumns = storageColumns;

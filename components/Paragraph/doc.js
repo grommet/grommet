@@ -20,7 +20,7 @@ var doc = function doc(Paragraph) {
     fill: _reactDesc.PropTypes.bool.description('Whether the width should fill the container.').defaultValue(undefined),
     responsive: _reactDesc.PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description('The size of the Paragraph text.').defaultValue('medium'),
-    textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the paragraph.').defaultValue('start')
+    textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'justify']).description('How to align the text inside the paragraph.').defaultValue('start')
   });
   return DocumentedParagraph;
 };

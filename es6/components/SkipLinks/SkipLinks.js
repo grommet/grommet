@@ -4,6 +4,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
+import { MessageContext } from '../../contexts/MessageContext';
 
 var SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
@@ -14,6 +15,9 @@ var SkipLinks = function SkipLinks(_ref) {
   var _useState = useState(false),
       showLayer = _useState[0],
       setShowLayer = _useState[1];
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
 
   var layerRef = useRef(null);
 
@@ -50,7 +54,10 @@ var SkipLinks = function SkipLinks(_ref) {
     // by default, which isn't what we want, hence setting responsive false
     ,
     responsive: false
-  }, /*#__PURE__*/React.createElement(Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/React.createElement(Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, theme.skipLinks.container, /*#__PURE__*/React.createElement(Text, theme.skipLinks.label, format({
+    id: 'skipLinks.skipTo',
+    messages: messages
+  })), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     gap: "medium"
   }, Children.map(children, function (child, index) {
@@ -61,11 +68,7 @@ var SkipLinks = function SkipLinks(_ref) {
   }))));
 };
 
-SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To:'
-  }
-};
+SkipLinks.defaultProps = {};
 var SkipLinksDoc;
 
 if (process.env.NODE_ENV !== 'production') {

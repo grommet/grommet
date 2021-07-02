@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _Blank = require("grommet-icons/icons/Blank");
+
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
@@ -17,7 +19,8 @@ var _TableCell = require("../TableCell");
 
 var _utils = require("../../utils");
 
-var _excluded = ["context", "expanded", "onToggle"];
+var _excluded = ["context", "expanded", "onToggle", "pad"],
+    _excluded2 = ["background", "border", "context"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -27,10 +30,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var ExpanderCell = function ExpanderCell(_ref) {
+// ExpanderControl is separated from ExpanderCell to give TableCell a chance
+// to set the ThemeContext dark context.
+var ExpanderControl = function ExpanderControl(_ref) {
   var context = _ref.context,
       expanded = _ref.expanded,
       onToggle = _ref.onToggle,
+      pad = _ref.pad,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -42,6 +48,8 @@ var ExpanderCell = function ExpanderCell(_ref) {
     content = /*#__PURE__*/_react["default"].createElement(ExpandIcon, {
       color: (0, _utils.normalizeColor)('border', theme)
     });
+  } else {
+    content = /*#__PURE__*/_react["default"].createElement(_Blank.Blank, null);
   }
 
   var normalizedThemeProps = _extends({}, theme.table[context], theme.dataTable[context]);
@@ -51,7 +59,8 @@ var ExpanderCell = function ExpanderCell(_ref) {
   delete normalizedThemeProps.pad;
   content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, normalizedThemeProps, rest, {
     align: "center",
-    pad: "xsmall"
+    fill: true,
+    pad: pad
   }), content);
 
   if (onToggle) {
@@ -59,18 +68,29 @@ var ExpanderCell = function ExpanderCell(_ref) {
       fill: true,
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
-      disabled: !onToggle,
       onClick: onToggle,
       plain: true
     }, content);
   }
 
+  return content;
+};
+
+var ExpanderCell = function ExpanderCell(_ref2) {
+  var background = _ref2.background,
+      border = _ref2.border,
+      context = _ref2.context,
+      rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+
   return /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    background: background,
+    border: border,
     size: "xxsmall",
-    plain: true,
-    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top',
-    pad: "none"
-  }, content);
+    plain: "noPad",
+    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
+  }, /*#__PURE__*/_react["default"].createElement(ExpanderControl, _extends({
+    context: context
+  }, rest)));
 };
 
 exports.ExpanderCell = ExpanderCell;

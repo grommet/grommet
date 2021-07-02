@@ -53,12 +53,13 @@ var ControlledDataTable = function ControlledDataTable() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
     columns: [{
       property: 'checkbox',
-      render: function render(datum) {
+      render: function render(_ref) {
+        var name = _ref.name;
         return /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
-          key: datum.name,
-          checked: checked.indexOf(datum.name) !== -1,
+          key: name,
+          checked: checked.indexOf(name) !== -1,
           onChange: function onChange(e) {
-            return onCheck(e, datum.name);
+            return onCheck(e, name);
           }
         });
       },

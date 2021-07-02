@@ -5,6 +5,8 @@ exports.Form = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _FormContext = require("./FormContext");
 
 var _excluded = ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
@@ -17,10 +19,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var defaultMessages = {
-  invalid: 'invalid',
-  required: 'required'
-};
 var defaultValue = {};
 var defaultTouched = {};
 var defaultValidationResults = {
@@ -62,8 +60,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       errorsProp = _ref2$errors === void 0 ? defaultValidationResults.errors : _ref2$errors,
       _ref2$infos = _ref2.infos,
       infosProp = _ref2$infos === void 0 ? defaultValidationResults.infos : _ref2$infos,
-      _ref2$messages = _ref2.messages,
-      messages = _ref2$messages === void 0 ? defaultMessages : _ref2$messages,
+      messages = _ref2.messages,
       onChange = _ref2.onChange,
       _onReset = _ref2.onReset,
       _onSubmit = _ref2.onSubmit,
@@ -72,6 +69,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       validateOn = _ref2$validate === void 0 ? 'submit' : _ref2$validate,
       valueProp = _ref2.value,
       rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var _useState = (0, _react.useState)(valueProp || defaultValue),
       valueState = _useState[0],
@@ -263,7 +263,11 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         inputValue = _useState5[0],
         setInputValue = _useState5[1];
 
-    var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
+    var formValue = name ? value[name] : undefined; // for dynamic forms, we need to track when an input has been added to
+    // the form value. if the input is unmounted, we will delete its key/value
+    // from the form value.
+
+    var keyCreated = (0, _react.useRef)(false); // This effect is for pattern #2, where the controlled input
     // component is driving the value via componentValue.
 
     (0, _react.useEffect)(function () {
@@ -278,7 +282,24 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
             return nextValue;
           }); // don't onChange on programmatic changes
         }
-    }, [componentValue, formValue, name]);
+    }, [componentValue, formValue, name]); // on unmount, if the form is uncontrolled, remove the key/value
+    // from the form value
+
+    (0, _react.useEffect)(function () {
+      return function () {
+        if (keyCreated.current) {
+          keyCreated.current = false;
+          setValueState(function (prevValue) {
+            var nextValue = _extends({}, prevValue);
+
+            delete nextValue[name];
+            return nextValue;
+          });
+        }
+      };
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [] // only run onmount and unmount
+    );
     var useValue;
     if (componentValue !== undefined) // input component drives, pattern #2
       useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives, pattern #1
@@ -296,8 +317,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           setTouched(nextTouched);
         }
 
-        var nextValue = _extends({}, value);
+        var nextValue = _extends({}, value); // if nextValue doesn't have a key for name, this must be
+        // uncontrolled form. we will flag this field was added so
+        // we know to remove its value from the form if it is dynamically
+        // removed
 
+
+        if (!(name in nextValue)) keyCreated.current = true;
         nextValue[name] = nextComponentValue;
         setValueState(nextValue);
         if (onChange) onChange(nextValue, {
@@ -325,7 +351,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           result = aValidate(value2, data);
         } else if (aValidate.regexp) {
           if (!aValidate.regexp.test(value2)) {
-            result = aValidate.message || messages.invalid;
+            result = aValidate.message || format({
+              id: 'form.invalid',
+              messages: messages
+            });
 
             if (aValidate.status) {
               result = {
@@ -343,8 +372,11 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         var result;
 
         if (required && ( // false is for CheckBox
-        value2 === undefined || value2 === '' || value2 === false)) {
-          result = messages.required;
+        value2 === undefined || value2 === '' || value2 === false || Array.isArray(value2) && !value2.length)) {
+          result = format({
+            id: 'form.required',
+            messages: messages
+          });
         } else if (validateArg) {
           if (Array.isArray(validateArg)) {
             validateArg.some(function (aValidate) {

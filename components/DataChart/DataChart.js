@@ -5,6 +5,8 @@ exports.DataChart = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 
 var _Box = require("../Box");
@@ -14,6 +16,8 @@ var _Chart = require("../Chart");
 var _Grid = require("../Grid");
 
 var _Stack = require("../Stack");
+
+var _utils = require("../../utils");
 
 var _Detail = require("./Detail");
 
@@ -27,7 +31,7 @@ var _XGuide = require("./XGuide");
 
 var _YGuide = require("./YGuide");
 
-var _utils = require("./utils");
+var _utils2 = require("./utils");
 
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "pad", "series", "size"],
     _excluded2 = ["property", "type", "x", "y"];
@@ -64,7 +68,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  // legend interaction, if any
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme; // legend interaction, if any
+
   var _useState = (0, _react.useState)(),
       activeProperty = _useState[0],
       setActiveProperty = _useState[1]; // refs used for ie11 not having Grid
@@ -232,7 +237,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         fine: data.length,
         medium: medium
       },
-      y: _extends({}, _utils.heightYGranularity[size && size.height || 'small'] || {
+      y: _extends({}, _utils2.heightYGranularity[size && size.height || 'small'] || {
         fine: 5,
         medium: 3
       }, {
@@ -399,7 +404,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
 
       if (seriesStyle.point === false) {
-        seriesStyle.point = _utils.points[pointIndex];
+        seriesStyle.point = _utils2.points[pointIndex];
         pointIndex += 1;
       }
     });
@@ -443,11 +448,26 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     charts.forEach(function (_ref7, index) {
       var type = _ref7.type;
       var thickness = chartProps[index].thickness;
-      result.horizontal = _utils.halfPad[thickness];
-      if (type && type !== 'bar') result.vertical = _utils.halfPad[thickness];
+      result.horizontal = _utils2.halfPad[thickness];
+      if (type && type !== 'bar') result.vertical = _utils2.halfPad[thickness];
     });
     return result;
-  }, [chartProps, charts, padProp]);
+  }, [chartProps, charts, padProp]); // The thickness of the Detail segments. We need to convert to numbers
+  // to be able to compare across charts where some might be using T-shirt
+  // labels and others might be pixel values.
+
+  var detailThickness = (0, _react.useMemo)(function () {
+    var result = 0;
+
+    if (detail) {
+      charts.forEach(function (_, index) {
+        var thickness = chartProps[index].thickness;
+        result = Math.max(result, (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness));
+      });
+    }
+
+    return result + "px";
+  }, [charts, chartProps, detail, theme]);
   var dateFormats = (0, _react.useMemo)(function () {
     var result = {};
     var full = axis && axis.x && axis.x.granularity === 'coarse';
@@ -456,7 +476,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           render = _ref8.render;
 
       if (!render && data.length > 1 && typeof data[0][property] === 'string') {
-        result[property] = (0, _utils.createDateFormat)(data[0][property], data[data.length - 1][property], full);
+        result[property] = (0, _utils2.createDateFormat)(data[0][property], data[data.length - 1][property], full);
       }
     });
     return result;
@@ -572,7 +592,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,
-    pad: pad
+    thickness: detailThickness
   }));
 
   var legendElement = legend ? /*#__PURE__*/_react["default"].createElement(_Legend.Legend, {

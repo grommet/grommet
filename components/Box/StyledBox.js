@@ -13,6 +13,8 @@ var _responsive = require("../../utils/responsive");
 
 var _styles = require("../../utils/styles");
 
+var _animation = require("../../utils/animation");
+
 var _FLEX_MAP;
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -107,134 +109,10 @@ var WRAP_MAP = {
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-var SLIDE_SIZES = {
-  xsmall: 1,
-  small: 5,
-  medium: 10,
-  large: 50,
-  xlarge: 200
-};
-var PULSE_SIZES = {
-  xsmall: 1.001,
-  small: 1.01,
-  medium: 1.1,
-  large: 1.5,
-  xlarge: 2
-};
-var JIGGLE_SIZES = {
-  xsmall: 0.1,
-  small: 1,
-  medium: 5,
-  large: 400,
-  xlarge: 1000
-};
-var ZOOM_SIZES = {
-  xsmall: 0.001,
-  small: 0.01,
-  medium: 0.05,
-  large: 0.1,
-  xlarge: 0.5
-};
-
-var animationBounds = function animationBounds(type, size) {
-  if (size === void 0) {
-    size = 'medium';
-  }
-
-  if (type === 'fadeIn') {
-    return ['opacity: 0;', 'opacity: 1;'];
-  }
-
-  if (type === 'fadeOut') {
-    return ['opacity: 1;', 'opacity: 0;'];
-  }
-
-  if (type === 'jiggle') {
-    var deg = JIGGLE_SIZES[size];
-    return ["transform: rotate(-" + deg + "deg);", "transform: rotate(" + deg + "deg);"];
-  }
-
-  if (type === 'pulse') {
-    return ['transform: scale(1);', "transform: scale(" + PULSE_SIZES[size] + ")"];
-  }
-
-  if (type === 'rotateRight') {
-    return ["transform: rotate(0deg);", "transform: rotate(359deg);"];
-  }
-
-  if (type === 'rotateLeft') {
-    return ["transform: rotate(0deg);", "transform: rotate(-359deg);"];
-  }
-
-  if (type === 'flipIn') {
-    return ['transform: rotateY(90deg);', 'transform: rotateY(0);'];
-  }
-
-  if (type === 'flipOut') {
-    return ['transform: rotateY(0);', 'transform: rotateY(90deg);'];
-  }
-
-  if (type === 'slideDown') {
-    return ["transform: translateY(-" + SLIDE_SIZES[size] + "%);", 'transform: none;'];
-  }
-
-  if (type === 'slideLeft') {
-    return ["transform: translateX(" + SLIDE_SIZES[size] + "%);", 'transform: none;'];
-  }
-
-  if (type === 'slideRight') {
-    return ["transform: translateX(-" + SLIDE_SIZES[size] + "%);", 'transform: none;'];
-  }
-
-  if (type === 'slideUp') {
-    return ["transform: translateY(" + SLIDE_SIZES[size] + "%);", 'transform: none;'];
-  }
-
-  if (type === 'zoomIn') {
-    return ["transform: scale(" + (1 - ZOOM_SIZES[size]) + ");", 'transform: none;'];
-  }
-
-  if (type === 'zoomOut') {
-    return ["transform: scale(" + (1 + ZOOM_SIZES[size]) + ");", 'transform: none;'];
-  }
-
-  return [];
-};
-
-var normalizeTiming = function normalizeTiming(time, defaultTiming) {
-  return time ? time / 1000.0 + "s" : defaultTiming;
-};
-
-var animationEnding = function animationEnding(type) {
-  if (type === 'jiggle') {
-    return 'alternate infinite';
-  }
-
-  if (type === 'pulse') {
-    return 'alternate infinite';
-  }
-
-  if (type === 'rotateRight' || type === 'rotateLeft') {
-    return 'infinite linear';
-  }
-
-  return 'forwards';
-};
-
-var animationObjectStyle = function animationObjectStyle(animation, theme) {
-  var bounds = animationBounds(animation.type, animation.size);
-
-  if (bounds) {
-    var animationTransition = (0, _styledComponents.css)(["from{", ";}to{", ";}"], bounds[0], bounds[1]);
-    return (0, _styledComponents.css)(["", " ", " ", " ", ""], (0, _styledComponents.keyframes)(["", ""], animationTransition), normalizeTiming(animation.duration, (theme.global.animation[animation.type] ? theme.global.animation[animation.type].duration : undefined) || theme.global.animation.duration), normalizeTiming(animation.delay, '0s'), animationEnding(animation.type));
-  }
-
-  return '';
-};
 
 var animationItemStyle = function animationItemStyle(item, theme) {
   if (typeof item === 'string') {
-    return animationObjectStyle({
+    return (0, _animation.animationObjectStyle)({
       type: item
     }, theme);
   }
@@ -246,7 +124,7 @@ var animationItemStyle = function animationItemStyle(item, theme) {
   }
 
   if (typeof item === 'object') {
-    return animationObjectStyle(item, theme);
+    return (0, _animation.animationObjectStyle)(item, theme);
   }
 
   return '';
@@ -261,7 +139,7 @@ var animationAncilaries = function animationAncilaries(animation) {
 };
 
 var animationObjectInitialStyle = function animationObjectInitialStyle(animation) {
-  var bounds = animationBounds(animation.type, animation.size);
+  var bounds = (0, _animation.animationBounds)(animation.type, animation.size);
 
   if (bounds) {
     return bounds[0] + " " + animationAncilaries(animation);

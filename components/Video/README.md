@@ -169,17 +169,7 @@ boolean
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
-  "closeMenu": "close menu",
-  "fullScreen": "full screen",
-  "progressMeter": "video progress",
-  "scrubber": "scrubber",
-  "openMenu": "open menu",
-  "pauseButton": "pause",
-  "playButton": "play",
-  "volumeDown": "volume down",
-  "volumeUp": "volume up"
-}`.
+Custom messages. Used for accessibility by screen readers.
 
 ```
 {

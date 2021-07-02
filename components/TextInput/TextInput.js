@@ -27,6 +27,8 @@ var _utils = require("../../utils");
 
 var _StyledTextInput = require("./StyledTextInput");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -67,12 +69,6 @@ var defaultDropAlign = {
   top: 'bottom',
   left: 'left'
 };
-var defaultMessages = {
-  enterSelect: '(Press Enter to Select)',
-  suggestionsCount: 'suggestions available',
-  suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-  suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate'
-};
 var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       defaultSuggestion = _ref.defaultSuggestion,
@@ -86,8 +82,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
       icon = _ref.icon,
       id = _ref.id,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? defaultMessages : _ref$messages,
+      messages = _ref.messages,
       name = _ref.name,
       _onBlur = _ref.onBlur,
       onChange = _ref.onChange,
@@ -107,6 +102,9 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
@@ -140,17 +138,22 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var openDrop = (0, _react.useCallback)(function () {
     setShowDrop(true);
-    announce(messages.suggestionIsOpen);
-    announce(suggestions.length + " " + messages.suggestionsCount);
+    announce(format({
+      id: 'textInput.suggestionIsOpen',
+      messages: messages
+    }));
+    announce(suggestions.length + " " + format({
+      id: 'textInput.suggestionsCount',
+      messages: messages
+    }));
     if (onSuggestionsOpen) onSuggestionsOpen();
-  }, [announce, messages.suggestionsCount, messages.suggestionIsOpen, onSuggestionsOpen, suggestions]);
+  }, [announce, messages, format, onSuggestionsOpen, suggestions]);
   var closeDrop = (0, _react.useCallback)(function () {
     setSuggestionsAtClose(suggestions); // must be before closing drop
 
     setShowDrop(false);
-    if (messages.onSuggestionsClose) onSuggestionsClose();
     if (onSuggestionsClose) onSuggestionsClose();
-  }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]); // Handle scenarios where we have focus, the drop isn't showing,
+  }, [onSuggestionsClose, suggestions]); // Handle scenarios where we have focus, the drop isn't showing,
   // and the suggestions change. We don't want to open the drop if
   // the drop has been closed by onEsc and the suggestions haven't
   // changed. So, we remember the suggestions we are showing when
@@ -204,9 +207,12 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     if (activeSuggestionIndex >= 0) {
       var label = stringLabel(suggestions[activeSuggestionIndex]);
-      announce(label + " " + messages.enterSelect);
+      announce(label + " " + format({
+        id: 'textInput.enterSelect',
+        messages: messages
+      }));
     }
-  }, [activeSuggestionIndex, announce, messages, suggestions]); // make sure activeSuggestion is visible in scroll
+  }, [activeSuggestionIndex, announce, messages, format, suggestions]); // make sure activeSuggestion is visible in scroll
 
   (0, _react.useEffect)(function () {
     var timer = setTimeout(function () {
@@ -375,7 +381,10 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         setFocus(true);
 
         if (suggestions && suggestions.length > 0) {
-          announce(messages.suggestionsExist);
+          announce(format({
+            id: 'textInput.suggestionsExist',
+            messages: messages
+          }));
           openDrop();
         }
 

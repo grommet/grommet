@@ -23,13 +23,8 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var normalizeProp = function normalizeProp(name, rowProp, prop) {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
-
 var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
-  var backgroundProp = _ref.background,
+  var background = _ref.background,
       border = _ref.border,
       _ref$column = _ref.column,
       align = _ref$column.align,
@@ -41,12 +36,10 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       verticalAlign = _ref$column.verticalAlign,
       size = _ref$column.size,
       datum = _ref.datum,
-      index = _ref.index,
       pad = _ref.pad,
       cellPin = _ref.pin,
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
-      rowProp = _ref.rowProp,
       scope = _ref.scope;
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
@@ -70,21 +63,6 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
   var pin = [];
   if (cellPin) pin.push.apply(pin, cellPin);
   if (columnPin) pin.push('left');
-  var background;
-
-  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-    background = theme.dataTable.pinned[context].background;
-
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = _extends({}, background, {
-        color: (0, _buildState.normalizeBackgroundColor)(theme)
-      });
-    }
-  } else background = undefined;
-
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
@@ -92,10 +70,10 @@ var Cell = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     context: context,
     verticalAlign: verticalAlign,
     size: size,
-    background: normalizeProp('background', rowProp, Array.isArray(backgroundProp) ? backgroundProp[index % backgroundProp.length] : backgroundProp) || background,
+    background: background,
     pinnedOffset: pinnedOffset,
-    border: normalizeProp('border', rowProp, border),
-    pad: normalizeProp('pad', rowProp, pad),
+    border: border,
+    pad: pad,
     pin: pin,
     plain: plain ? 'noPad' : undefined
   }), content);

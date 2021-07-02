@@ -16,10 +16,10 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
       axis = _ref.axis,
       data = _ref.data,
-      pad = _ref.pad,
       series = _ref.series,
       seriesStyles = _ref.seriesStyles,
-      renderValue = _ref.renderValue;
+      renderValue = _ref.renderValue,
+      thickness = _ref.thickness;
 
   var _useState = useState(),
       detailIndex = _useState[0],
@@ -64,9 +64,7 @@ var Detail = function Detail(_ref) {
       key: i,
       align: "center",
       responsive: false,
-      pad: {
-        horizontal: pad.horizontal
-      },
+      width: thickness,
       onMouseOver: function onMouseOver(event) {
         activeIndex.current = event.currentTarget;
         setDetailIndex(i);

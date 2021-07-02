@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import React from 'react';
 import { Box, Meter, Text, Tip } from 'grommet';
 var amountFormatter = new Intl.NumberFormat('en-US', {
@@ -23,14 +25,15 @@ export var columns = [{
 }, {
   property: 'percent',
   header: 'Percent Complete',
-  render: function render(datum) {
+  render: function render(_ref) {
+    var percent = _ref.percent;
     return /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
       }
     }, /*#__PURE__*/React.createElement(Meter, {
       values: [{
-        value: datum.percent
+        value: percent
       }],
       thickness: "small",
       size: "small"
@@ -48,6 +51,12 @@ export var columns = [{
     aggregate: true
   }
 }];
+export var groupColumns = [].concat(columns);
+var first = groupColumns[0];
+groupColumns[0] = _extends({}, groupColumns[1]);
+groupColumns[1] = _extends({}, first);
+groupColumns[0].footer = groupColumns[1].footer;
+delete groupColumns[1].footer;
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 export var data = [];
 
@@ -212,10 +221,11 @@ export var storageData = [{
 export var storageColumns = [{
   property: 'poolName',
   header: 'Pool Name',
-  render: function render(datum) {
+  render: function render(_ref2) {
+    var poolName = _ref2.poolName;
     return /*#__PURE__*/React.createElement(Text, {
       truncate: true
-    }, datum.poolName);
+    }, poolName);
   }
 }, {
   property: 'size',
@@ -249,7 +259,9 @@ export var storageColumns = [{
     weight: "normal",
     color: "text"
   }, "%"))),
-  render: function render(datum) {
+  render: function render(_ref3) {
+    var pinnable = _ref3.pinnable,
+        pinned = _ref3.pinned;
     return /*#__PURE__*/React.createElement(Tip, {
       plain: true,
       dropProps: {
@@ -267,14 +279,14 @@ export var storageColumns = [{
         round: "full",
         flex: false,
         margin: "xsmall"
-      }, Math.trunc(datum.pinned / datum.pinnable * 100))
+      }, Math.trunc(pinned / pinnable * 100))
     }, /*#__PURE__*/React.createElement(Box, {
       pad: {
         vertical: 'xsmall'
       }
     }, /*#__PURE__*/React.createElement(Meter, {
       values: [{
-        value: datum.pinned / datum.pinnable,
+        value: pinned / pinnable,
         color: 'graph-0'
       }],
       max: 1,
@@ -294,9 +306,10 @@ export var storageColumns = [{
     color: "text"
   }, "(xGHz)")),
   align: 'end',
-  render: function render(datum) {
+  render: function render(_ref4) {
+    var savings = _ref4.savings;
     return /*#__PURE__*/React.createElement(Text, {
       truncate: true
-    }, datum.savings[1] && "" + datum.savings[1].value);
+    }, savings[1] && "" + savings[1].value);
   }
 }];

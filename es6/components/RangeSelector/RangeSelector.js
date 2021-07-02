@@ -9,6 +9,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "siof5p-0"
@@ -20,11 +21,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       invert = _ref.invert,
       _ref$max = _ref.max,
       max = _ref$max === void 0 ? 100 : _ref$max,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    lower: 'Lower Bounds',
-    upper: 'Upper Bounds'
-  } : _ref$messages,
+      messages = _ref.messages,
       _ref$min = _ref.min,
       min = _ref$min === void 0 ? 0 : _ref$min,
       onChange = _ref.onChange,
@@ -40,6 +37,9 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
 
   var _useState = useState(),
       changing = _useState[0],
@@ -176,7 +176,10 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dark: theme.dark
     } : undefined
   }, layoutProps)), /*#__PURE__*/React.createElement(EdgeControl, {
-    a11yTitle: messages.lower,
+    a11yTitle: format({
+      id: 'rangeSelector.lower',
+      messages: messages
+    }),
     tabIndex: 0,
     ref: ref,
     color: color,
@@ -214,7 +217,10 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setMoveValue(nextMoveValue);
     } : undefined
   })), /*#__PURE__*/React.createElement(EdgeControl, {
-    a11yTitle: messages.upper,
+    a11yTitle: format({
+      id: 'rangeSelector.upper',
+      messages: messages
+    }),
     tabIndex: 0,
     color: color,
     direction: direction,

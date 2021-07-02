@@ -41,31 +41,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var contexts = ['header', 'body', 'footer'];
-
-var normalizeProp = function normalizeProp(prop, context) {
-  if (prop) {
-    if (prop[context]) {
-      return prop[context];
-    } // if prop[context] wasn't defined, but other values
-    // exist on the prop, return undefined so that background
-    // for context will defaultto theme values instead
-    // note: need to include `pinned` since it is not a
-    // defined context
-
-
-    if (contexts.some(function (c) {
-      return prop[c] || prop.pinned;
-    })) {
-      return undefined;
-    }
-
-    return prop;
-  }
-
-  return undefined;
-};
-
 function useGroupState(groups, groupBy) {
   var _useState = (0, _react.useState)(function () {
     return (0, _buildState.buildGroupState)(groups, groupBy);
@@ -162,7 +137,16 @@ var DataTable = function DataTable(_ref) {
 
   var footerValues = (0, _react.useMemo)(function () {
     return (0, _buildState.buildFooterValues)(columns, adjustedData);
-  }, [adjustedData, columns]); // if groupBy, an array with one item per unique groupBy key value
+  }, [adjustedData, columns]); // cell styling properties: background, border, pad
+
+  var cellProps = (0, _react.useMemo)(function () {
+    return (0, _buildState.normalizeCellProps)({
+      background: background,
+      border: border,
+      pad: pad,
+      pin: pin
+    }, theme);
+  }, [background, border, pad, pin, theme]); // if groupBy, an array with one item per unique groupBy key value
 
   var groups = (0, _react.useMemo)(function () {
     return (0, _buildState.buildGroups)(columns, adjustedData, groupBy);
@@ -375,8 +359,7 @@ var DataTable = function DataTable(_ref) {
     fillProp: !paginate ? fill : undefined
   }, paginatedDataTableProps, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
     ref: headerRef,
-    background: normalizeProp(background, 'header'),
-    border: normalizeProp(border, 'header'),
+    cellProps: cellProps.header,
     columns: columns,
     data: adjustedData,
     fill: fill,
@@ -384,7 +367,6 @@ var DataTable = function DataTable(_ref) {
     filters: filters,
     groups: groups,
     groupState: groupState,
-    pad: normalizeProp(pad, 'header'),
     pin: pin === true || pin === 'header',
     pinnedOffset: pinnedOffset,
     selected: selected,
@@ -406,13 +388,11 @@ var DataTable = function DataTable(_ref) {
     rowDetails: rowDetails
   }), groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     ref: bodyRef,
-    background: normalizeProp(background, 'body'),
-    border: normalizeProp(border, 'body'),
+    cellProps: cellProps.body,
     columns: columns,
     groupBy: groupBy.property ? groupBy.property : groupBy,
     groups: groups,
     groupState: groupState,
-    pad: normalizeProp(pad, 'body'),
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
     onSelect: onSelect ? function (nextSelected) {
@@ -420,12 +400,12 @@ var DataTable = function DataTable(_ref) {
       if (onSelect) onSelect(nextSelected);
     } : undefined,
     onToggle: onToggleGroup,
+    rowProps: rowProps,
     selected: selected,
     size: size
   }) : /*#__PURE__*/_react["default"].createElement(_Body.Body, {
     ref: bodyRef,
-    background: normalizeProp(background, 'body'),
-    border: normalizeProp(border, 'body'),
+    cellProps: cellProps.body,
     columns: columns,
     data: !paginate ? adjustedData : items,
     onMore: onMore,
@@ -435,8 +415,7 @@ var DataTable = function DataTable(_ref) {
       setSelected(nextSelected);
       if (onSelect) onSelect(nextSelected);
     } : undefined,
-    pad: normalizeProp(pad, 'body'),
-    pinnedBackground: normalizeProp(background, 'pinned'),
+    pinnedCellProps: cellProps.pinned,
     pinnedOffset: pinnedOffset,
     placeholder: placeholder,
     primaryProperty: primaryProperty,
@@ -450,14 +429,12 @@ var DataTable = function DataTable(_ref) {
     setRowExpand: setRowExpand
   }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
     ref: footerRef,
-    background: normalizeProp(background, 'footer'),
-    border: normalizeProp(border, 'footer'),
+    cellProps: cellProps.footer,
     columns: columns,
     fill: fill,
     footerValues: footerValues,
     groups: groups,
     onSelect: onSelect,
-    pad: normalizeProp(pad, 'footer'),
     pin: pin === true || pin === 'footer',
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,

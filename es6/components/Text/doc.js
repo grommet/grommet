@@ -21,7 +21,7 @@ export var doc = function doc(Text) {
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]).description("The font size and line space height of the text.").defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the component.').defaultValue('start'),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify']).description('How to align the text inside the component.').defaultValue('start'),
     tip: PropTypes.oneOfType([PropTypes.shape({
       content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
       dropProps: PropTypes.shape({}),

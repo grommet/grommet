@@ -5,8 +5,6 @@ exports.GroupedBody = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = require("styled-components");
-
 var _Cell = require("./Cell");
 
 var _ExpanderCell = require("./ExpanderCell");
@@ -19,7 +17,7 @@ var _TableCell = require("../TableCell");
 
 var _buildState = require("./buildState");
 
-var _excluded = ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "pinnedOffset", "primaryProperty", "onSelect", "onToggle", "selected", "size"];
+var _excluded = ["cellProps", "columns", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onSelect", "onToggle", "rowProps", "selected", "size"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -30,22 +28,21 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var background = _ref.background,
-      border = _ref.border,
+  var cellPropsProp = _ref.cellProps,
       columns = _ref.columns,
       groupBy = _ref.groupBy,
       groups = _ref.groups,
       groupState = _ref.groupState,
-      pad = _ref.pad,
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       onSelect = _ref.onSelect,
       onToggle = _ref.onToggle,
+      rowProps = _ref.rowProps,
       selected = _ref.selected,
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
+  var rowIndex = 0;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: ref,
     size: size
@@ -64,15 +61,20 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return selected.includes(val);
     }) : [];
     var isGroupSelected = groupSelected.length > 0 && group.data.length > 0 && groupSelected.length === group.data.length;
+    var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, undefined, rowIndex);
     var content = memberCount > 1 ? /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: group.key,
       size: size
     }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+      background: cellProps.background,
+      border: cellProps.border,
       context: expanded ? 'groupHeader' : 'body',
       expanded: expanded,
-      onToggle: onToggle(group.key)
+      index: rowIndex,
+      onToggle: onToggle(group.key),
+      pad: cellProps.pad
     }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-      background: background,
+      background: cellProps.background,
       plain: "noPad",
       size: "auto"
     }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
@@ -89,20 +91,22 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           onSelect([].concat(selected, primaryKeys));
         }
       },
-      pad: pad || theme.table.body.pad
+      pad: cellProps.pad
     })), columns.map(function (column) {
       return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
-        background: background,
-        border: border,
+        background: cellProps.background,
+        border: cellProps.border,
         context: expanded ? 'groupHeader' : 'body',
         column: column,
         datum: group.datum,
-        pad: pad,
+        index: rowIndex,
+        pad: cellProps.pad,
         pinnedOffset: pinnedOffset && pinnedOffset[column.property],
         scope: column.property === groupBy ? 'row' : undefined
       });
     })) : null;
+    if (memberCount > 1) rowIndex += 1;
 
     if (memberCount === 1 || expanded) {
       content = /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
@@ -111,13 +115,18 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
         var isSelected = selected && selected.includes(primaryValue);
         var context = memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body';
+        cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, rowIndex);
+        rowIndex += 1;
         return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
           key: datum[primaryProperty],
           size: size
         }, /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
-          context: context
+          background: cellProps.background,
+          border: cellProps.border,
+          context: context,
+          pad: cellProps.pad
         }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-          background: background,
+          background: cellProps.background,
           plain: "noPad",
           size: "auto"
         }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
@@ -131,16 +140,16 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
               }));
             } else onSelect([].concat(selected, [primaryValue]));
           },
-          pad: pad || theme.table.body.pad
+          pad: cellProps.pad
         })), columns.map(function (column) {
           return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
             key: column.property,
-            background: background,
-            border: border,
+            background: cellProps.background,
+            border: cellProps.border,
             context: context,
             column: column,
             datum: datum,
-            pad: pad,
+            pad: cellProps.pad,
             scope: column.primary ? 'row' : undefined
           });
         }));

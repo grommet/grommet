@@ -2,6 +2,14 @@
 
 exports.__esModule = true;
 
+var _animation = require("./animation");
+
+Object.keys(_animation).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _animation[key]) return;
+  exports[key] = _animation[key];
+});
+
 var _mixins = require("./mixins");
 
 Object.keys(_mixins).forEach(function (key) {

@@ -99,27 +99,31 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
       contents.push(child);
     });
-  }
+  } // construct a new theme object in case we have a background that wants
+  // to change the background color context
 
-  var themeProviderValue = _extends({}, theme);
 
-  if (background || theme.darkChanged) {
-    var dark = backgroundIsDark(background, theme);
-    var darkChanged = dark !== undefined && dark !== theme.dark;
+  var nextTheme = useMemo(function () {
+    var result;
 
-    if (darkChanged || theme.darkChanged) {
-      themeProviderValue.dark = dark === undefined ? theme.dark : dark;
-      themeProviderValue.background = background;
-    } else if (background) {
-      // This allows DataTable to intelligently set the background of a pinned
-      // header or footer.
-      themeProviderValue.background = background;
+    if (background || theme.darkChanged) {
+      var dark = backgroundIsDark(background, theme);
+      var darkChanged = dark !== undefined && dark !== theme.dark;
+
+      if (darkChanged || theme.darkChanged) {
+        result = _extends({}, theme);
+        result.dark = dark === undefined ? theme.dark : dark;
+        result.background = background;
+      } else if (background) {
+        // This allows DataTable to intelligently set the background
+        // of a pinned header or footer.
+        result = _extends({}, theme);
+        result.background = background;
+      }
     }
-  }
 
-  contents = /*#__PURE__*/React.createElement(ThemeContext.Provider, {
-    value: themeProviderValue
-  }, contents);
+    return result || theme;
+  }, [background, theme]);
   var content = /*#__PURE__*/React.createElement(StyledBox, _extends({
     as: !as && tag ? tag : as,
     "aria-label": a11yTitle,
@@ -136,7 +140,9 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     heightProp: height,
     responsive: responsive,
     tabIndex: adjustedTabIndex
-  }, clickProps, rest), contents);
+  }, clickProps, rest), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+    value: nextTheme
+  }, contents));
 
   if (onClick) {
     content = /*#__PURE__*/React.createElement(Keyboard, {

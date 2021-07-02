@@ -33,8 +33,8 @@ var _styles = require("../../utils/styles");
 
 var _colors = require("../../utils/colors");
 
-var _excluded = ["background", "border", "color", "font", "gap", "units"],
-    _excluded2 = ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pad", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
+var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
+    _excluded2 = ["cellProps", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -53,13 +53,9 @@ var separateThemeProps = function separateThemeProps(theme) {
       color = _theme$dataTable$head.color,
       font = _theme$dataTable$head.font,
       gap = _theme$dataTable$head.gap,
+      pad = _theme$dataTable$head.pad,
       units = _theme$dataTable$head.units,
       rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, _excluded);
-
-  var cellProps = {
-    background: background,
-    border: border
-  };
 
   var textProps = _extends({
     color: color
@@ -71,7 +67,7 @@ var separateThemeProps = function separateThemeProps(theme) {
 
   var layoutProps = _extends({}, rest);
 
-  return [cellProps, layoutProps, textProps, iconProps];
+  return [layoutProps, textProps, iconProps];
 }; // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 
@@ -81,8 +77,8 @@ var buttonStyle = function buttonStyle(_ref) {
   var styles = [];
 
   var _separateThemeProps = separateThemeProps(theme),
-      layoutProps = _separateThemeProps[1],
-      iconProps = _separateThemeProps[3];
+      layoutProps = _separateThemeProps[0],
+      iconProps = _separateThemeProps[2];
 
   if (layoutProps) {
     styles.push((0, _styles.kindPartStyles)(layoutProps, theme));
@@ -115,8 +111,7 @@ var StyledContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   return props.extend;
 });
 var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
-  var backgroundProp = _ref2.background,
-      border = _ref2.border,
+  var cellProps = _ref2.cellProps,
       columns = _ref2.columns,
       data = _ref2.data,
       fill = _ref2.fill,
@@ -131,8 +126,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       onSort = _ref2.onSort,
       onToggle = _ref2.onToggle,
       onWidths = _ref2.onWidths,
-      pad = _ref2.pad,
-      tablePin = _ref2.pin,
+      pinProp = _ref2.pin,
       pinnedOffset = _ref2.pinnedOffset,
       primaryProperty = _ref2.primaryProperty,
       selected = _ref2.selected,
@@ -144,9 +138,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _separateThemeProps2 = separateThemeProps(theme),
-      cellProps = _separateThemeProps2[0],
-      layoutProps = _separateThemeProps2[1],
-      textProps = _separateThemeProps2[2];
+      layoutProps = _separateThemeProps2[0],
+      textProps = _separateThemeProps2[1];
 
   var _useState = (0, _react.useState)([]),
       cellWidths = _useState[0],
@@ -162,18 +155,21 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       onWidths(cellWidths);
     }
   }, [cellWidths, onWidths]);
-  var pin = tablePin ? ['top'] : [];
+  var pin = pinProp ? ['top'] : [];
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
   }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+    background: cellProps.background,
+    border: cellProps.border,
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
     }).length === 0,
-    onToggle: onToggle
+    onToggle: onToggle,
+    pad: cellProps.pad
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
-    background: (0, _buildState.calcPinnedBackground)(backgroundProp, pin, theme, 'header') || cellProps.background,
+    background: cellProps.background,
     onWidth: updateWidths,
     plain: "noPad",
     size: "auto",
@@ -191,7 +187,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           return (0, _buildState.datumValue)(datum, primaryProperty);
         }));
     },
-    pad: pad || theme.table.header.pad
+    pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",
     plain: true,
@@ -289,16 +285,15 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
-    var background = (0, _buildState.calcPinnedBackground)(backgroundProp, cellPin, theme, 'header');
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
       key: property,
       align: align,
       context: "header",
       verticalAlign: verticalAlign,
-      background: background || cellProps.background,
-      border: border || cellProps.border,
+      background: cellProps.background,
+      border: cellProps.border,
       onWidth: updateWidths,
-      pad: pad,
+      pad: cellProps.pad,
       pin: cellPin,
       plain: true,
       pinnedOffset: pinnedOffset && pinnedOffset[property],

@@ -6,7 +6,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useReducer, useEffect } from 'react';
-import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
+import { Grommet, Box, Diagram, Stack, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Node = function Node(_ref) {
@@ -53,7 +53,7 @@ export var Progressing = function Progressing() {
   useEffect(function () {
     var timer = setInterval(function () {
       dispatch();
-    }, 2000);
+    }, 3000);
     return function () {
       return clearInterval(timer);
     };
@@ -69,6 +69,11 @@ export var Progressing = function Progressing() {
   if (topRow.length >= 3) {
     connections.push(connection('3', '5', {
       anchor: 'horizontal',
+      animation: {
+        type: 'pulse',
+        duration: 500,
+        size: 'small'
+      },
       color: 'brand'
     }));
   }
@@ -78,7 +83,7 @@ export var Progressing = function Progressing() {
   }, /*#__PURE__*/React.createElement(Box, {
     align: "start",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(Text, null, " Adding and removing nodes"), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Paragraph, null, "Adding and removing nodes with animated connections. The animation 'draw' is applied to the entire diagram, however, the last connection receives its own animation type of 'pulse'."), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
     direction: "row"
   }, topRow.map(function (id) {
     return /*#__PURE__*/React.createElement(Node, {
@@ -94,8 +99,17 @@ export var Progressing = function Progressing() {
       background: "dark-2"
     });
   }))), /*#__PURE__*/React.createElement(Diagram, {
+    animation: {
+      type: 'draw',
+      duration: 3000
+    },
     connections: connections
   }))));
+};
+Progressing.parameters = {
+  chromatic: {
+    disable: true
+  }
 };
 export default {
   title: 'Visualizations/Diagram/Progressing'

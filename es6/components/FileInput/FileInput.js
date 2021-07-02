@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { MessageContext } from '../../contexts/MessageContext';
 import { defaultProps } from '../../default-props';
 import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
 import { Anchor } from '../Anchor';
@@ -63,6 +64,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext);
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
+
   var formContext = useContext(FormContext);
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
@@ -139,11 +144,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var message;
 
   if (!files.length) {
-    if (multiple) message = messages.dropPromptMultiple || 'Drag and drop';
-
-    if (!multiple) {
-      message = messages.dropPrompt || 'Drag and drop';
-    }
+    message = format({
+      id: multiple ? 'fileInput.dropPromptMultiple' : 'fileInput.dropPrompt',
+      messages: messages
+    });
   } else message = files.length + " items";
 
   return /*#__PURE__*/React.createElement(ContentsBox, {
@@ -180,7 +184,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
     ref: controlRef,
     kind: theme.fileInput.button,
-    label: messages.browse || 'browse',
+    label: format({
+      id: 'fileInput.browse',
+      messages: messages
+    }),
     onClick: function onClick() {
       inputRef.current.click();
       inputRef.current.focus();
@@ -194,18 +201,27 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       inputRef.current.click();
       inputRef.current.focus();
     },
-    label: messages.browse || 'browse'
+    label: format({
+      id: 'fileInput.browse',
+      messages: messages
+    })
   })))), files.length > aggregateThreshold && /*#__PURE__*/React.createElement(Box, {
     justify: "between",
     direction: "row",
     align: "center"
-  }, /*#__PURE__*/React.createElement(Label, theme.fileInput.label, files.length, " ", messages.files || 'files'), /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Label, theme.fileInput.label, files.length, ' ', format({
+    id: 'fileInput.files',
+    messages: messages
+  })), /*#__PURE__*/React.createElement(Box, {
     flex: false,
     direction: "row",
     align: "center"
   }, /*#__PURE__*/React.createElement(Button, {
     ref: removeRef,
-    a11yTitle: messages.removeAll || 'remove all',
+    a11yTitle: format({
+      id: 'fileInput.removeAll',
+      messages: messages
+    }),
     icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
     hoverIndicator: true,
     onClick: function onClick(event) {
@@ -226,7 +242,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
     ref: controlRef,
     kind: theme.fileInput.button,
-    label: messages.browse || 'browse',
+    label: format({
+      id: 'fileInput.browse',
+      messages: messages
+    }),
     onClick: function onClick() {
       inputRef.current.click();
       inputRef.current.focus();
@@ -240,7 +259,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       inputRef.current.click();
       inputRef.current.focus();
     },
-    label: messages.browse || 'browse'
+    label: format({
+      id: 'fileInput.browse',
+      messages: messages
+    })
   })))), files.length > 0 && files.length <= aggregateThreshold && files.map(function (file, index) {
     return /*#__PURE__*/React.createElement(Box, {
       key: file.name,
@@ -256,7 +278,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       align: "center"
     }, /*#__PURE__*/React.createElement(Button, {
       ref: index ? undefined : removeRef,
-      a11yTitle: (messages.remove || 'remove') + " " + file.name,
+      a11yTitle: format({
+        id: 'fileInput.remove',
+        messages: messages
+      }) + " " + file.name,
       icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
       hoverIndicator: true,
       onClick: function onClick(event) {
@@ -280,7 +305,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
       ref: controlRef,
       kind: theme.fileInput.button,
-      label: messages.browse || 'browse',
+      label: format({
+        id: 'fileInput.browse',
+        messages: messages
+      }),
       onClick: function onClick() {
         inputRef.current.click();
         inputRef.current.focus();
@@ -293,7 +321,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         inputRef.current.click();
         inputRef.current.focus();
       },
-      label: messages.browse || 'browse'
+      label: format({
+        id: 'fileInput.browse',
+        messages: messages
+      })
     }))));
   }), /*#__PURE__*/React.createElement(StyledFileInput, _extends({
     ref: inputRef,
@@ -336,16 +367,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   })));
 });
-FileInput.defaultProps = {
-  messages: {
-    browse: 'browse',
-    dropPrompt: 'Drop file here or',
-    dropPromptMultiple: 'Drop files here or',
-    files: 'files',
-    remove: 'remove',
-    removeAll: 'remove all'
-  }
-};
+FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 FileInput.displayName = 'FileInput';
 var FileInputDoc;

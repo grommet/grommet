@@ -11,11 +11,6 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var dateFormat = new Intl.DateTimeFormat(undefined, {
-  month: 'short',
-  day: 'numeric'
-});
-
 var RangeFormat = function RangeFormat() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:24:26.256Z', '2020-08-07T15:24:26.256Z']),
       value = _React$useState[0],
@@ -37,9 +32,6 @@ var RangeFormat = function RangeFormat() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
     value: value,
     format: "mm/dd/yyyy-mm/dd/yyyy",
-    buttonProps: {
-      label: dateFormat.format(new Date(value[0])) + " - " + dateFormat.format(new Date(value[1]))
-    },
     onChange: onChange
   }))));
 };

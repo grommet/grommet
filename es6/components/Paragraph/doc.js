@@ -11,7 +11,7 @@ export var doc = function doc(Paragraph) {
     fill: PropTypes.bool.description('Whether the width should fill the container.').defaultValue(undefined),
     responsive: PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description('The size of the Paragraph text.').defaultValue('medium'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the paragraph.').defaultValue('start')
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify']).description('How to align the text inside the paragraph.').defaultValue('start')
   });
   return DocumentedParagraph;
 };

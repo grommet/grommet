@@ -1,9 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.calcPinnedBackground = exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+exports.normalizeRowCellProps = exports.normalizeCellProps = exports.normalizeRowProp = exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
 
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
@@ -277,31 +275,78 @@ var normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
   if (background.light && background.dark) return background;
   if (background.color) return background.color;
   return undefined;
-}; // calculate a header or footer cell background based
-// on the table background prop and whether it's pinned.
-// Pin is an array of side strings, empty if not pinned.
-// If pinned, the background comes from the
-// datable.pinned[themeContext].background in the theme
-// where themeContext is either 'header' or 'footer'.
-
+};
 
 exports.normalizeBackgroundColor = normalizeBackgroundColor;
 
-var calcPinnedBackground = function calcPinnedBackground(backgroundProp, pin, theme, themeContext) {
-  var background;
-  if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
-    background = theme.dataTable.pinned[themeContext].background;
-
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = _extends({}, background, {
-        color: normalizeBackgroundColor(theme)
-      });
-    }
-  } else background = undefined;
-  return background;
+var normalizeRowProp = function normalizeRowProp(name, rowProp, prop) {
+  if (rowProp && rowProp[name]) return rowProp[name];
+  return prop;
 };
 
-exports.calcPinnedBackground = calcPinnedBackground;
+exports.normalizeRowProp = normalizeRowProp;
+var tableContextNames = ['header', 'body', 'footer'];
+var cellPropertyNames = ['background', 'border', 'pad']; // Convert property specific cell props to context specific cell props.
+// For example, background={{ header: { background } }}
+// will become cellProps.header.background
+
+var normalizeCellProps = function normalizeCellProps(props, theme) {
+  var result = {};
+  tableContextNames.forEach(function (context) {
+    result[context] = {
+      pinned: {}
+    };
+    cellPropertyNames.forEach(function (propName) {
+      var _props$propName, _theme$dataTable, _theme$dataTable$cont, _theme$table, _theme$table$context, _props$propName3, _props$propName3$pinn, _props$propName5, _theme$dataTable2, _theme$dataTable2$pin, _theme$dataTable2$pin2;
+
+      var value = (props == null ? void 0 : (_props$propName = props[propName]) == null ? void 0 : _props$propName[context]) || // if the propName is used without context, it applies to all contexts
+      tableContextNames.every(function (n) {
+        var _props$propName2;
+
+        return !(props != null && (_props$propName2 = props[propName]) != null && _props$propName2[n]);
+      }) && (props == null ? void 0 : props[propName]) || (theme == null ? void 0 : (_theme$dataTable = theme.dataTable) == null ? void 0 : (_theme$dataTable$cont = _theme$dataTable[context]) == null ? void 0 : _theme$dataTable$cont[propName]) || (theme == null ? void 0 : (_theme$table = theme.table) == null ? void 0 : (_theme$table$context = _theme$table[context]) == null ? void 0 : _theme$table$context[propName]);
+      if (value !== undefined) result[context][propName] = value; // pinned case
+
+      value = (props == null ? void 0 : (_props$propName3 = props[propName]) == null ? void 0 : (_props$propName3$pinn = _props$propName3.pinned) == null ? void 0 : _props$propName3$pinn[context]) || context === 'body' && tableContextNames.every(function (n) {
+        var _props$propName4, _props$propName4$pinn;
+
+        return !(props != null && (_props$propName4 = props[propName]) != null && (_props$propName4$pinn = _props$propName4.pinned) != null && _props$propName4$pinn[n]);
+      }) && (props == null ? void 0 : (_props$propName5 = props[propName]) == null ? void 0 : _props$propName5.pinned) || (theme == null ? void 0 : (_theme$dataTable2 = theme.dataTable) == null ? void 0 : (_theme$dataTable2$pin = _theme$dataTable2.pinned) == null ? void 0 : (_theme$dataTable2$pin2 = _theme$dataTable2$pin[context]) == null ? void 0 : _theme$dataTable2$pin2[propName]);
+
+      if (value !== undefined) {
+        if (propName === 'background' && theme.background && value.opacity && !value.color) // theme context has an active background color but the
+          // theme doesn't set an explicit color, repeat the context
+          // background explicitly
+          value.color = normalizeBackgroundColor(theme);
+        if (context === 'body') // in case we have pinned columns, store the pinned stuff in
+          // cellProps.body.pinned
+          result[context].pinned[propName] = value;else if (props.pin === true || props.pin === context) // this context is pinned, use the pinned value directly
+          result[context][propName] = value;
+      }
+    });
+  });
+  return result;
+};
+
+exports.normalizeCellProps = normalizeCellProps;
+
+var normalizeRowCellProps = function normalizeRowCellProps(rowProps, cellProps, primaryKey, index) {
+  var result = {
+    pinned: {}
+  };
+  ['background', 'border', 'pad'].forEach(function (propName) {
+    var _rowProps$primaryKey;
+
+    var row = primaryKey && rowProps && (rowProps == null ? void 0 : (_rowProps$primaryKey = rowProps[primaryKey]) == null ? void 0 : _rowProps$primaryKey[propName]);
+    var cell = cellProps[propName];
+    var value = row && (Array.isArray(row) ? row[index % row.length] : row) || (Array.isArray(cell) ? cell[index % cell.length] : cell);
+    if (value !== undefined) result[propName] = value;
+    var rowPin = rowProps && rowProps.pinned && rowProps.pinned[propName];
+    var cellPin = cellProps.pinned[propName];
+    value = rowPin && (Array.isArray(rowPin) ? rowPin[index % rowPin.length] : rowPin) || (Array.isArray(cellPin) ? cellPin[index % cellPin.length] : cellPin);
+    if (value !== undefined) result.pinned[propName] = value;
+  });
+  return result;
+};
+
+exports.normalizeRowCellProps = normalizeRowCellProps;

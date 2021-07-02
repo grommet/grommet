@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput } from 'grommet';
+import { Grommet, Box, Button, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var FormatInline = function FormatInline() {
   var _React$useState = React.useState(''),
@@ -16,12 +16,18 @@ export var FormatInline = function FormatInline() {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
-    pad: "large"
+    pad: "large",
+    gap: "medium"
   }, /*#__PURE__*/React.createElement(DateInput, {
     format: "mm/dd/yyyy",
     inline: true,
     value: value,
     onChange: onChange
+  }), /*#__PURE__*/React.createElement(Button, {
+    label: "today",
+    onClick: function onClick() {
+      return setValue(new Date().toISOString());
+    }
   })));
 };
 FormatInline.storyName = 'Format inline';

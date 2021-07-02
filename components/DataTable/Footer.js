@@ -5,8 +5,6 @@ exports.Footer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = require("styled-components");
-
 var _defaultProps = require("../../default-props");
 
 var _TableRow = require("../TableRow");
@@ -17,9 +15,7 @@ var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
-var _buildState = require("./buildState");
-
-var _excluded = ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "pinnedOffset", "primaryProperty", "selected"];
+var _excluded = ["cellProps", "columns", "fill", "footerValues", "groups", "onSelect", "pin", "pinnedOffset", "primaryProperty", "selected"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -30,34 +26,32 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var background = _ref.background,
-      border = _ref.border,
+  var cellProps = _ref.cellProps,
       columns = _ref.columns,
       fill = _ref.fill,
       footerValues = _ref.footerValues,
       groups = _ref.groups,
       onSelect = _ref.onSelect,
-      pad = _ref.pad,
-      tablePin = _ref.pin,
+      pinProp = _ref.pin,
       pinnedOffset = _ref.pinnedOffset,
       primaryProperty = _ref.primaryProperty,
       selected = _ref.selected,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
-  var pin = tablePin ? ['bottom'] : [];
+  var pin = pinProp ? ['bottom'] : [];
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableFooter, _extends({
     ref: ref,
     fillProp: fill,
-    pin: tablePin
+    pin: pinProp
   }, rest), /*#__PURE__*/_react["default"].createElement(_TableRow.TableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
     plain: true,
     size: "xxsmall",
     pad: "none",
-    verticalAlign: "top"
+    verticalAlign: "top",
+    background: cellProps.background,
+    border: cellProps.border
   }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
-    background: (0, _buildState.calcPinnedBackground)(background, pin, theme, 'footer'),
+    background: cellProps.background,
     context: "footer",
     pin: pin
   }), columns.map(function (column) {
@@ -65,12 +59,12 @@ var Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (column.pin) cellPin.push('left');
     return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
       key: column.property,
-      background: background,
-      border: border,
+      background: column.pin && cellProps.pinned.background || cellProps.background,
+      border: column.pin && cellProps.pinned.border || cellProps.border,
       context: "footer",
       column: column,
       datum: footerValues,
-      pad: pad,
+      pad: column.pin && cellProps.pinned.pad || cellProps.pad,
       pin: pin.length ? pin : undefined,
       pinnedOffset: pinnedOffset && pinnedOffset[column.property],
       primaryProperty: primaryProperty

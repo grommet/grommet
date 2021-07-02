@@ -126,9 +126,34 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       ref: containerRef,
       justify: "center"
     }, children);
-  }
+  } // construct a new theme object in case we have a background that wants
+  // to change the background color context
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableCell, _extends({
+
+  var nextTheme = (0, _react.useMemo)(function () {
+    var result;
+
+    if (cellProps.background || theme.darkChanged) {
+      var dark = (0, _utils.backgroundIsDark)(cellProps.background, theme);
+      var darkChanged = dark !== undefined && dark !== theme.dark;
+
+      if (darkChanged || theme.darkChanged) {
+        result = _extends({}, theme);
+        result.dark = dark === undefined ? theme.dark : dark;
+        result.background = cellProps.background;
+      } else if (cellProps.background) {
+        // This allows DataTable to intelligently set the background
+        // of a pinned header or footer.
+        result = _extends({}, theme);
+        result.background = cellProps.background;
+      }
+    }
+
+    return result || theme;
+  }, [cellProps.background, theme]);
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+    value: nextTheme
+  }, /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableCell, _extends({
     ref: cellRef,
     as: scope ? 'th' : undefined,
     scope: scope,
@@ -141,7 +166,7 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }), plain || !Object.keys(mergedProps).length ? content : /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, mergedProps, {
     align: align,
     justify: verticalAlignToJustify[verticalAlign]
-  }), children));
+  }), children)));
 });
 TableCell.displayName = 'TableCell';
 var TableCellDoc;

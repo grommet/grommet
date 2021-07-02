@@ -1,4 +1,4 @@
-var _excluded = ["children", "full", "containerTarget", "theme", "options"];
+var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
 
 var _templateObject;
 
@@ -16,6 +16,8 @@ import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { format as _format, MessageContext } from '../../contexts/MessageContext';
+import defaultMessages from '../../languages/default.json';
 var FullGlobalStyle = createGlobalStyle(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
@@ -52,6 +54,7 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       themeProp = props.theme,
       _props$options = props.options,
       options = _props$options === void 0 ? defaultOptions : _props$options,
+      messagesProp = props.messages,
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var background = props.background,
@@ -88,6 +91,18 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
 
     return nextTheme;
   }, [background, dir, themeMode, themeProp]);
+  var messages = useMemo(function () {
+    // combine the passed in messages, if any, with the default
+    // messages and format function.
+    var nextMessages = deepMerge(defaultMessages, (messagesProp == null ? void 0 : messagesProp.messages) || {});
+    return {
+      messages: nextMessages,
+      format: function format(opts) {
+        var message = (messagesProp == null ? void 0 : messagesProp.format) && messagesProp.format(opts);
+        return typeof message !== 'undefined' ? message : _format(opts, nextMessages);
+      }
+    };
+  }, [messagesProp]);
   useEffect(function () {
     var onResize = function onResize() {
       setResponsive(getBreakpoint(document.body.clientWidth, theme));
@@ -111,11 +126,13 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     value: containerTarget
   }, /*#__PURE__*/React.createElement(OptionsContext.Provider, {
     value: options
+  }, /*#__PURE__*/React.createElement(MessageContext.Provider, {
+    value: messages
   }, /*#__PURE__*/React.createElement(StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null))))));
+  }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null)))))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

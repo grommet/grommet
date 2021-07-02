@@ -19,9 +19,15 @@ var _RootsContext = require("../../contexts/RootsContext");
 
 var _OptionsContext = require("../../contexts/OptionsContext");
 
-var _excluded = ["children", "full", "containerTarget", "theme", "options"];
+var _MessageContext = require("../../contexts/MessageContext");
+
+var _default = _interopRequireDefault(require("../../languages/default.json"));
+
+var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
 
 var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -69,6 +75,7 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       themeProp = props.theme,
       _props$options = props.options,
       options = _props$options === void 0 ? defaultOptions : _props$options,
+      messagesProp = props.messages,
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var background = props.background,
@@ -105,6 +112,18 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
     return nextTheme;
   }, [background, dir, themeMode, themeProp]);
+  var messages = (0, _react.useMemo)(function () {
+    // combine the passed in messages, if any, with the default
+    // messages and format function.
+    var nextMessages = (0, _utils.deepMerge)(_default["default"], (messagesProp == null ? void 0 : messagesProp.messages) || {});
+    return {
+      messages: nextMessages,
+      format: function format(opts) {
+        var message = (messagesProp == null ? void 0 : messagesProp.format) && messagesProp.format(opts);
+        return typeof message !== 'undefined' ? message : (0, _MessageContext.format)(opts, nextMessages);
+      }
+    };
+  }, [messagesProp]);
   (0, _react.useEffect)(function () {
     var onResize = function onResize() {
       setResponsive((0, _utils.getBreakpoint)(document.body.clientWidth, theme));
@@ -128,11 +147,13 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     value: containerTarget
   }, /*#__PURE__*/_react["default"].createElement(_OptionsContext.OptionsContext.Provider, {
     value: options
+  }, /*#__PURE__*/_react["default"].createElement(_MessageContext.MessageContext.Provider, {
+    value: messages
   }, /*#__PURE__*/_react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
     full: full
   }, rest, {
     ref: grommetRef
-  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null))))));
+  }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null)))))));
 });
 Grommet.displayName = 'Grommet';
 var GrommetDoc;

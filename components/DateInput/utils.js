@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.textToValue = exports.valueToText = exports.schemaToMask = exports.formatToSchema = void 0;
+exports.valuesAreEqual = exports.textToValue = exports.valueToText = exports.schemaToMask = exports.formatToSchema = void 0;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -75,16 +75,16 @@ var schemaToMask = function schemaToMask(schema) {
 exports.schemaToMask = schemaToMask;
 
 var valueToText = function valueToText(value, schema) {
-  // when user initializes dates as empty array, we want to still
+  var text = ''; // when user initializes dates as empty array, we want to still
   // show the placeholder text
-  if (!value || Array.isArray(value) && !value.length) return '';
-  var text = '';
+
+  if (!value || Array.isArray(value) && !value.length) return text;
   var dates = (Array.isArray(value) ? value : [value]).map(function (v) {
     return new Date(v);
   });
   var dateIndex = 0;
   var parts = {};
-  schema.forEach(function (part) {
+  schema.every(function (part) {
     var _char2 = part[0].toLowerCase(); // advance dateIndex if we already have this part
 
 
@@ -113,7 +113,13 @@ var valueToText = function valueToText(value, schema) {
     } else if (date && part === 'yyyy') {
       text += date.getFullYear();
       parts[part] = true;
-    } else text += part;
+    } else if (!date && (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')) {
+      return false;
+    } else {
+      text += part;
+    }
+
+    return true;
   });
   return text;
 };
@@ -132,24 +138,30 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-var textToValue = function textToValue(text, schema, valueProp) {
-  if (!text) return undefined;
+var textToValue = function textToValue(text, schema, valueProp, range) {
+  if (!text) return range ? [] : undefined;
   var result;
 
   var addDate = function addDate(parts) {
-    // do a little sanity checking on the values
+    // Do a little sanity checking on the parts first.
+    // If not valid, leave as is.
     if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31) return parts;
     var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
-    if (valueProp) {
-      var valueDate = new Date(valueProp).toISOString();
+    if (valueProp && (Array.isArray(valueProp) && valueProp[0] || !Array.isArray(valueProp))) {
+      var valueDate = new Date(Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp).toISOString();
       date = date.split('T')[0] + "T" + valueDate.split('T')[1];
-    } // single
+    }
+
+    if (!range) {
+      if (!result) result = date;
+    } else {
+      if (!result) result = [];
+      result.push(date);
+    } // we've consumed these parts, return an empty object in case we need
+    // to start building up another one for a range
 
 
-    if (!result) result = date; // second
-    else if (Array.isArray(result)) result.push(date); // third and beyond, unused?
-      else result = [result, date];
     return {};
   };
 
@@ -184,8 +196,17 @@ var textToValue = function textToValue(text, schema, valueProp) {
       }
     }
   });
-  addDate(parts);
+  parts = addDate(parts);
+  if (!result) return range ? [] : undefined;
   return result;
 };
 
 exports.textToValue = textToValue;
+
+var valuesAreEqual = function valuesAreEqual(value1, value2) {
+  return Array.isArray(value1) && Array.isArray(value2) && value1.every(function (d1, i) {
+    return d1 === value2[i];
+  }) || value1 === value2;
+};
+
+exports.valuesAreEqual = valuesAreEqual;

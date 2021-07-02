@@ -17,6 +17,8 @@ var _StyledTabs = require("./StyledTabs");
 
 var _utils = require("../../utils");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -33,15 +35,15 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       flex = _ref.flex,
       _ref$justify = _ref.justify,
       justify = _ref$justify === void 0 ? 'center' : _ref$justify,
-      _ref$messages = _ref.messages,
-      messages = _ref$messages === void 0 ? {
-    tabContents: 'Tab Contents'
-  } : _ref$messages,
+      messages = _ref.messages,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format;
 
   var propsActiveIndex = rest.activeIndex,
       onActive = rest.onActive;
@@ -112,7 +114,10 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     };
   }
 
-  var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
+  var tabContentTitle = (activeTitle || '') + " " + format({
+    id: 'tabs.tabContents',
+    messages: messages
+  });
   return /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabs, _extends({
     ref: ref,
     as: _Box.Box,

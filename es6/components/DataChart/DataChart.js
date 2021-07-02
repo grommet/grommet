@@ -5,12 +5,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useContext, useMemo, useRef, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { parseMetricToNum } from '../../utils';
 import { Detail } from './Detail';
 import { Legend } from './Legend';
 import { XAxis } from './XAxis';
@@ -42,7 +44,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size = _ref.size,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  // legend interaction, if any
+  var theme = useContext(ThemeContext) || defaultProps.theme; // legend interaction, if any
+
   var _useState = useState(),
       activeProperty = _useState[0],
       setActiveProperty = _useState[1]; // refs used for ie11 not having Grid
@@ -425,7 +428,22 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (type && type !== 'bar') result.vertical = halfPad[thickness];
     });
     return result;
-  }, [chartProps, charts, padProp]);
+  }, [chartProps, charts, padProp]); // The thickness of the Detail segments. We need to convert to numbers
+  // to be able to compare across charts where some might be using T-shirt
+  // labels and others might be pixel values.
+
+  var detailThickness = useMemo(function () {
+    var result = 0;
+
+    if (detail) {
+      charts.forEach(function (_, index) {
+        var thickness = chartProps[index].thickness;
+        result = Math.max(result, parseMetricToNum(theme.global.edgeSize[thickness] || thickness));
+      });
+    }
+
+    return result + "px";
+  }, [charts, chartProps, detail, theme]);
   var dateFormats = useMemo(function () {
     var result = {};
     var full = axis && axis.x && axis.x.granularity === 'coarse';
@@ -549,7 +567,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     series: series,
     seriesStyles: seriesStyles,
     renderValue: renderValue,
-    pad: pad
+    thickness: detailThickness
   }));
   var legendElement = legend ? /*#__PURE__*/React.createElement(Legend, {
     series: series,

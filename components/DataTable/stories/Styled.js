@@ -22,25 +22,39 @@ var StyledDataTable = function StyledDataTable() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-    columns: _data.columns,
+    columns: _data.groupColumns,
     data: _data.DATA,
     step: 10,
     pad: {
-      horizontal: 'large',
-      vertical: 'medium'
+      horizontal: 'small',
+      vertical: 'xsmall'
     },
     background: {
-      header: 'dark-3',
+      header: {
+        color: 'dark-3',
+        opacity: 'strong'
+      },
       body: ['light-1', 'light-3'],
-      footer: 'dark-3'
+      footer: {
+        color: 'dark-3',
+        opacity: 'strong'
+      }
     },
     border: {
       body: 'bottom'
     },
+    groupBy: {
+      property: 'location',
+      expand: ['Palo Alto']
+    },
     rowProps: {
       Eric: {
-        background: 'accent-2',
-        pad: 'large'
+        background: ['accent-2', 'accent-3'],
+        pad: 'small'
+      },
+      Jet: {
+        background: ['accent-2', 'accent-3'],
+        pad: 'small'
       }
     }
   })));

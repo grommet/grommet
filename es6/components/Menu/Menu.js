@@ -14,6 +14,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var ContainerBox = styled(Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
@@ -61,6 +62,10 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+
+  var _useContext = useContext(MessageContext),
+      format = _useContext.format;
+
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme); // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
 
@@ -224,7 +229,10 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
     },
-    a11yTitle: a11yTitle || messages.closeMenu || 'Close Menu',
+    a11yTitle: a11yTitle || format({
+      id: 'menu.closeMenu',
+      messages: messages
+    }),
     active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
     hoverIndicator: "background",
@@ -252,7 +260,10 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   }, /*#__PURE__*/React.createElement(DropButton, _extends({
     ref: ref
   }, rest, buttonProps, {
-    a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
+    a11yTitle: a11yTitle || format({
+      id: 'menu.openMenu',
+      messages: messages
+    }),
     onAlign: setAlignControlMirror,
     disabled: disabled,
     dropAlign: align,
@@ -321,10 +332,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
 });
 Menu.defaultProps = {
   items: [],
-  messages: {
-    openMenu: 'Open Menu',
-    closeMenu: 'Close Menu'
-  },
+  messages: undefined,
   justifyContent: 'start'
 };
 Menu.displayName = 'Menu';
