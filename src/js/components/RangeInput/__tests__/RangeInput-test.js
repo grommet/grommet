@@ -108,4 +108,13 @@ describe('RangeInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('showLabel', () => {
+    const { getByText, container } = render(
+      <RangeInput min={10} max={20} step={1} value={15} showLabel />,
+    );
+    const label = getByText('15%');
+    expect(container).toMatchSnapshot();
+    expect(label).toBeTruthy();
+  });
 });

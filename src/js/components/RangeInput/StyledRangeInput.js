@@ -37,12 +37,19 @@ const getBoundColor = (props, bound) => {
 };
 
 const trackColorStyle = props => {
+  const max = props.max || 100; // 'max' defaults to 100 in case not specified
+  const min = props.min || 0; // 'min' defaults to 0 in case not specified
+  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
+  const upperTrackColor = getBoundColor(props, 'upper');
+
   // backward compatibility in case no bounds are defined
   if (
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     !props.theme.rangeInput.track.lower &&
-    !props.theme.rangeInput.track.upper
+    !props.theme.rangeInput.track.upper &&
+    props.theme.rangeInput.track.color &&
+    typeof props.theme.rangeInput.track.color === 'string'
   ) {
     const color = getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
@@ -59,13 +66,40 @@ const trackColorStyle = props => {
       props.theme.rangeInput.track.opacity || 1,
     )}`;
   }
-
-  const max = props.max || 100; // 'max' defaults to 100 in case not specified
-  const min = props.min || 0; // 'min' defaults to 0 in case not specified
-  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
+  if (
+    props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    !props.theme.rangeInput.track.lower &&
+    props.theme.rangeInput.track.colors &&
+    Array.isArray(props.theme.rangeInput.track.colors)
+  ) {
+    const arrayOfTrackColors = props.theme.rangeInput.track.colors;
+    let valuePercentage = 0;
+    let result = `background: linear-gradient(to right,`;
+    for (let index = 0; index < arrayOfTrackColors.length; index += 1) {
+      const { value, color, opacity } = arrayOfTrackColors[index];
+      result += `${getRGBA(
+        normalizeColor(color, props.theme),
+        opacity || 1,
+      )} ${valuePercentage}%,`;
+      if (props.value >= value) {
+        valuePercentage = ((value - min) / (max - min)) * 100;
+        result += `${getRGBA(
+          normalizeColor(color, props.theme),
+          opacity || 1,
+        )} ${valuePercentage}%,`;
+      } else {
+        result += `${upperTrackColor} ${thumbPosition}, ${upperTrackColor})`;
+        break;
+      }
+      if (index === arrayOfTrackColors.length - 1) {
+        result += `${upperTrackColor} ${valuePercentage}%, ${upperTrackColor})`;
+      }
+    }
+    return result;
+  }
 
   const lowerTrackColor = getBoundColor(props, 'lower');
-  const upperTrackColor = getBoundColor(props, 'upper');
 
   return `background: linear-gradient(
       to right,
@@ -116,6 +150,25 @@ const firefoxMicrosoftThumbStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
+`;
+
+const StyledRangeLabel = styled.label`
+  position: absolute;
+  top: 90%;
+  ${props => {
+    // 'max' defaults to 100 in case not specified
+    const max = props.max || 100;
+    // 'min' defaults to 0 in case not specified
+    const min = props.min || 0;
+    const thumbPosition = ((props.value - min) * 100) / (max - min);
+    const labelPosition = `calc(${thumbPosition}% + (${8 -
+      thumbPosition * 0.3}px))`;
+    return `left: ${labelPosition};`;
+  }}
+  ${props =>
+    props.theme.rangeInput &&
+    props.theme.rangeInput.label &&
+    props.theme.rangeInput.label.extend}
 `;
 
 /* eslint-disable max-len */
@@ -215,4 +268,4 @@ const StyledRangeInput = styled.input`
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 
-export { StyledRangeInput };
+export { StyledRangeInput, StyledRangeLabel };

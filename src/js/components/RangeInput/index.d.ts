@@ -8,6 +8,7 @@ export interface RangeInputProps {
   max?: number | string;
   name?: string;
   step?: number;
+  trackColors?: [];
   value?: number | string;
 }
 
