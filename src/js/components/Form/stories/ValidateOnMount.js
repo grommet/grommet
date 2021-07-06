@@ -19,12 +19,12 @@ export const ValidateOnMount = () => {
           <Form
             value={value}
             validate="change"
-            onReset={event => console.log(event)}
+            onReset={(event) => console.log(event)}
             onChange={(nextValue, { touched }) => {
               console.log('Change', nextValue, touched);
               setValue(nextValue);
             }}
-            onValidate={validationResults => {
+            onValidate={(validationResults) => {
               console.log('validationResults = ', validationResults);
               setValid(validationResults.valid);
             }}
@@ -35,7 +35,7 @@ export const ValidateOnMount = () => {
               required
               validate={[
                 { regexp: /^[a-z]/i },
-                firstName => {
+                (firstName) => {
                   if (firstName && firstName.length === 1)
                     return 'must be >1 character';
                   return undefined;
@@ -49,7 +49,7 @@ export const ValidateOnMount = () => {
               required
               validate={[
                 { regexp: /^[a-z]/i },
-                lastName => {
+                (lastName) => {
                   if (lastName && lastName.length === 1)
                     return 'must be >1 character';
                   return undefined;
