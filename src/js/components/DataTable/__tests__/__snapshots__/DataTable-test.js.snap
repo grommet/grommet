@@ -11308,7 +11308,7 @@ exports[`DataTable onSort 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11326,7 +11326,7 @@ exports[`DataTable onSort 1`] = `
   flex-direction: row;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11340,12 +11340,12 @@ exports[`DataTable onSort 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -11423,7 +11423,7 @@ exports[`DataTable onSort 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11448,12 +11448,16 @@ exports[`DataTable onSort 1`] = `
   height: auto;
 }
 
-.c8:focus {
+.c9:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
+}
+
+.c6 {
+  padding: 6px 12px;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -11482,14 +11486,14 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
@@ -11505,14 +11509,14 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   B
                 </span>
@@ -11523,33 +11527,33 @@ exports[`DataTable onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c8"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               0
             </span>
@@ -11560,27 +11564,27 @@ exports[`DataTable onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -11591,27 +11595,27 @@ exports[`DataTable onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -11644,7 +11648,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
@@ -11744,7 +11748,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
@@ -11863,7 +11867,7 @@ exports[`DataTable onSort 2`] = `
 `;
 
 exports[`DataTable onSort external 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -11874,25 +11878,25 @@ exports[`DataTable onSort external 1`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11924,7 +11928,7 @@ exports[`DataTable onSort external 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11942,7 +11946,7 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11956,7 +11960,7 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -11966,12 +11970,12 @@ exports[`DataTable onSort external 1`] = `
   width: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -12049,7 +12053,7 @@ exports[`DataTable onSort external 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12074,16 +12078,20 @@ exports[`DataTable onSort external 1`] = `
   height: auto;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
+.c6 {
+  padding: 6px 12px;
+}
+
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     width: 3px;
   }
 }
@@ -12114,23 +12122,23 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
                 <div
-                  class="c8"
+                  class="c9"
                 />
                 <svg
                   aria-label="FormUp"
-                  class="c9"
+                  class="c10"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -12152,14 +12160,14 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   B
                 </span>
@@ -12170,33 +12178,33 @@ exports[`DataTable onSort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               0
             </span>
@@ -12207,27 +12215,27 @@ exports[`DataTable onSort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -12238,27 +12246,27 @@ exports[`DataTable onSort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -12291,7 +12299,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
@@ -12371,7 +12379,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
@@ -12549,10 +12557,7 @@ exports[`DataTable pad 1`] = `
   text-align: inherit;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 12px;
 }
 
 .c7 {
@@ -12580,6 +12585,7 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -12592,7 +12598,6 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -12600,6 +12605,19 @@ exports[`DataTable pad 1`] = `
 }
 
 .c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12786,7 +12804,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c3 "
+          class="c11 "
           scope="col"
         >
           <div
@@ -12800,7 +12818,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <th
-          class="c3 "
+          class="c11 "
           scope="col"
         >
           <div
@@ -12822,7 +12840,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
@@ -12836,7 +12854,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -12853,7 +12871,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
@@ -12867,7 +12885,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -12888,7 +12906,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
             class="c8"
@@ -12901,7 +12919,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
             class="c8"
@@ -12956,7 +12974,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
@@ -12970,7 +12988,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -12987,7 +13005,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
@@ -13001,7 +13019,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -13022,7 +13040,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
             class="c8"
@@ -13035,7 +13053,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
             class="c8"
@@ -33842,7 +33860,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 `;
 
 exports[`DataTable sort 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -33853,25 +33871,25 @@ exports[`DataTable sort 1`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -33903,7 +33921,7 @@ exports[`DataTable sort 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33921,7 +33939,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33935,7 +33953,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -33945,12 +33963,12 @@ exports[`DataTable sort 1`] = `
   width: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -34028,7 +34046,7 @@ exports[`DataTable sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -34053,16 +34071,20 @@ exports[`DataTable sort 1`] = `
   height: auto;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
+.c6 {
+  padding: 6px 12px;
+}
+
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     width: 3px;
   }
 }
@@ -34093,23 +34115,23 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
                 <div
-                  class="c8"
+                  class="c9"
                 />
                 <svg
                   aria-label="FormUp"
-                  class="c9"
+                  class="c10"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -34131,14 +34153,14 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   B
                 </span>
@@ -34149,33 +34171,33 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -34186,27 +34208,27 @@ exports[`DataTable sort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -34217,27 +34239,27 @@ exports[`DataTable sort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               0
             </span>
@@ -34250,7 +34272,7 @@ exports[`DataTable sort 1`] = `
 `;
 
 exports[`DataTable sort external 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -34261,25 +34283,25 @@ exports[`DataTable sort external 1`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -34311,7 +34333,7 @@ exports[`DataTable sort external 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34329,7 +34351,7 @@ exports[`DataTable sort external 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34343,7 +34365,7 @@ exports[`DataTable sort external 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -34353,12 +34375,12 @@ exports[`DataTable sort external 1`] = `
   width: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -34436,7 +34458,7 @@ exports[`DataTable sort external 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -34461,16 +34483,20 @@ exports[`DataTable sort external 1`] = `
   height: auto;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
+.c6 {
+  padding: 6px 12px;
+}
+
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     width: 3px;
   }
 }
@@ -34501,23 +34527,23 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
                 <div
-                  class="c8"
+                  class="c9"
                 />
                 <svg
                   aria-label="FormUp"
-                  class="c9"
+                  class="c10"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -34539,14 +34565,14 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   B
                 </span>
@@ -34557,33 +34583,33 @@ exports[`DataTable sort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               0
             </span>
@@ -34594,27 +34620,27 @@ exports[`DataTable sort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -34625,27 +34651,27 @@ exports[`DataTable sort external 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -34658,7 +34684,7 @@ exports[`DataTable sort external 1`] = `
 `;
 
 exports[`DataTable sort nested object 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -34669,25 +34695,25 @@ exports[`DataTable sort nested object 1`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -34719,7 +34745,7 @@ exports[`DataTable sort nested object 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34737,7 +34763,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34751,7 +34777,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -34761,12 +34787,12 @@ exports[`DataTable sort nested object 1`] = `
   width: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -34844,7 +34870,7 @@ exports[`DataTable sort nested object 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -34869,16 +34895,20 @@ exports[`DataTable sort nested object 1`] = `
   height: auto;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
+.c6 {
+  padding: 6px 12px;
+}
+
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     width: 3px;
   }
 }
@@ -34909,14 +34939,14 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
@@ -34932,23 +34962,23 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   Value
                 </span>
                 <div
-                  class="c8"
+                  class="c9"
                 />
                 <svg
                   aria-label="FormDown"
-                  class="c9"
+                  class="c10"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -34965,33 +34995,33 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               3
             </span>
@@ -35002,27 +35032,27 @@ exports[`DataTable sort nested object 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -35033,27 +35063,27 @@ exports[`DataTable sort nested object 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -35066,7 +35096,7 @@ exports[`DataTable sort nested object 1`] = `
 `;
 
 exports[`DataTable sort nested object with onSort 1`] = `
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -35077,25 +35107,25 @@ exports[`DataTable sort nested object with onSort 1`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -35127,7 +35157,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35145,7 +35175,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35159,7 +35189,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -35169,12 +35199,12 @@ exports[`DataTable sort nested object with onSort 1`] = `
   width: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -35252,7 +35282,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -35277,16 +35307,20 @@ exports[`DataTable sort nested object with onSort 1`] = `
   height: auto;
 }
 
-.c10:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
+.c6 {
+  padding: 6px 12px;
+}
+
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     width: 3px;
   }
 }
@@ -35317,14 +35351,14 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
@@ -35340,23 +35374,23 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   Value
                 </span>
                 <div
-                  class="c8"
+                  class="c9"
                 />
                 <svg
                   aria-label="FormDown"
-                  class="c9"
+                  class="c10"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -35373,33 +35407,33 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               3
             </span>
@@ -35410,27 +35444,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -35441,27 +35475,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c13"
+              class="c14"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c12 "
         >
           <div
-            class="c12"
+            class="c13"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -35501,7 +35535,7 @@ exports[`DataTable sortable 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35519,7 +35553,7 @@ exports[`DataTable sortable 1`] = `
   flex-direction: row;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35533,12 +35567,12 @@ exports[`DataTable sortable 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -35616,7 +35650,7 @@ exports[`DataTable sortable 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -35641,12 +35675,16 @@ exports[`DataTable sortable 1`] = `
   height: auto;
 }
 
-.c8:focus {
+.c9:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
+}
+
+.c6 {
+  padding: 6px 12px;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -35675,14 +35713,14 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   A
                 </span>
@@ -35698,14 +35736,14 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
-              class="c5 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="c5 c6"
               type="button"
             >
               <div
-                class="c6"
+                class="c7"
               >
                 <span
-                  class="c7"
+                  class="c8"
                 >
                   B
                 </span>
@@ -35716,33 +35754,33 @@ exports[`DataTable sortable 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c8"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               0
             </span>
@@ -35753,27 +35791,27 @@ exports[`DataTable sortable 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               1
             </span>
@@ -35784,27 +35822,27 @@ exports[`DataTable sortable 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c9 "
+          class="c10 "
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c9 "
+          class="c10 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c8"
             >
               2
             </span>
@@ -35837,7 +35875,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
@@ -35937,7 +35975,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 qEKCj"
           >
             <button
-              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0"
+              class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 clXoGG"
               type="button"
             >
               <div
