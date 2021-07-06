@@ -59,11 +59,7 @@ var TagInput = function TagInput(_ref2) {
       currentTag = _React$useState[0],
       setCurrentTag = _React$useState[1];
 
-  var _React$useState2 = React.useState(),
-      box = _React$useState2[0],
-      setBox = _React$useState2[1];
-
-  var boxRef = React.useCallback(setBox, []);
+  var boxRef = React.useRef();
 
   var updateCurrentTag = function updateCurrentTag(event) {
     setCurrentTag(event.target.value);
@@ -117,7 +113,7 @@ var TagInput = function TagInput(_ref2) {
   }, /*#__PURE__*/React.createElement(TextInput, _extends({
     type: "search",
     plain: true,
-    dropTarget: box
+    dropTarget: boxRef.current
   }, rest, {
     onChange: updateCurrentTag,
     value: currentTag,
@@ -128,13 +124,13 @@ var TagInput = function TagInput(_ref2) {
 };
 
 export var WithTags = function WithTags() {
-  var _React$useState3 = React.useState(['foo', 'sony']),
-      selectedTags = _React$useState3[0],
-      setSelectedTags = _React$useState3[1];
+  var _React$useState2 = React.useState(['foo', 'sony']),
+      selectedTags = _React$useState2[0],
+      setSelectedTags = _React$useState2[1];
 
-  var _React$useState4 = React.useState(allSuggestions),
-      suggestions = _React$useState4[0],
-      setSuggestions = _React$useState4[1];
+  var _React$useState3 = React.useState(allSuggestions),
+      suggestions = _React$useState3[0],
+      setSuggestions = _React$useState3[1];
 
   var onRemoveTag = function onRemoveTag(tag) {
     var removeIndex = selectedTags.indexOf(tag);

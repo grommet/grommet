@@ -38,7 +38,7 @@ var Set = function Set(_ref2) {
       target = _React$useState[0],
       setTarget = _React$useState[1];
 
-  var targetRef = _react["default"].useCallback(setTarget, []);
+  var targetRef = _react["default"].useCallback(setTarget, [setTarget]);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     border: true,

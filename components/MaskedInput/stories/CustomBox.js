@@ -16,11 +16,7 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
       value = _React$useState[0],
       setValue = _React$useState[1];
 
-  var _React$useState2 = _react["default"].useState(),
-      box = _React$useState2[0],
-      setBox = _React$useState2[1];
-
-  var boxRef = _react["default"].useCallback(setBox, []);
+  var boxRef = _react["default"].useRef();
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -44,7 +40,7 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     plain: true,
     dropProps: {
-      target: box
+      target: boxRef.current
     },
     mask: [{
       length: [1, 4],

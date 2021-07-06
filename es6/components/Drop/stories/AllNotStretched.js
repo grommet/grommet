@@ -28,7 +28,7 @@ var Set = function Set(_ref2) {
       target = _React$useState[0],
       setTarget = _React$useState[1];
 
-  var targetRef = React.useCallback(setTarget, []);
+  var targetRef = React.useCallback(setTarget, [setTarget]);
   return /*#__PURE__*/React.createElement(Box, {
     border: true,
     pad: "small"
