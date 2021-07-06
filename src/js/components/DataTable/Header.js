@@ -55,7 +55,7 @@ const buttonStyle = ({ theme }) => {
   const [layoutProps, , iconProps] = separateThemeProps(theme);
 
   if (layoutProps) {
-    // if cell is sortable, we want pad to be be applied
+    // if cell is sortable, we want pad to be applied
     // to the button instead of the cell
     layoutProps.pad = theme.dataTable.header.pad;
     styles.push(kindPartStyles(layoutProps, theme));
