@@ -32,8 +32,7 @@ const Tag = ({ children, onRemove, ...rest }) => {
 
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState('');
-  const [box, setBox] = React.useState();
-  const boxRef = React.useCallback(setBox, [setBox]);
+  const boxRef = React.useRef();
 
   const updateCurrentTag = (event) => {
     setCurrentTag(event.target.value);
@@ -81,7 +80,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
           <TextInput
             type="search"
             plain
-            dropTarget={box}
+            dropTarget={boxRef.current}
             {...rest}
             onChange={updateCurrentTag}
             value={currentTag}
