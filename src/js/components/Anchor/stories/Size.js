@@ -7,7 +7,7 @@ const SizeAnchor = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '10px'].map(
-        size => (
+        (size) => (
           <Box key={size} margin="small">
             <Anchor size={size} label={size} href="#" />
           </Box>
