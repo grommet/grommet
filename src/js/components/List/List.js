@@ -244,6 +244,10 @@ const List = React.forwardRef(
             itemFocus={itemFocus}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
             onFocus={() =>
+              // Fixes zero-th index showing undefined.
+              // Checks for active variable to stop bug where activeStyle
+              // gets applied to lastActive instead of the item the user
+              // is currently clicking on
               !active && active !== 0
                 ? setActive(lastActive)
                 : setActive(active)
