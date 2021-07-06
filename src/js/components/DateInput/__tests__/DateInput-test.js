@@ -144,7 +144,7 @@ describe('DateInput', () => {
     let timezoneOffset = new Date().getTimezoneOffset() / 60;
     if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
 
-    const { container, getByText } = render(
+    const { getByText } = render(
       <Grommet>
         <DateInput
           id="item"
@@ -155,7 +155,7 @@ describe('DateInput', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot use snapshots because we are using current date
 
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
@@ -163,7 +163,6 @@ describe('DateInput', () => {
       `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
       `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
     ]);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus', () => {
@@ -330,7 +329,7 @@ describe('DateInput', () => {
     });
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith(undefined);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
   });
 
   test('select format inline range', () => {
@@ -418,7 +417,7 @@ describe('DateInput', () => {
       target: { value: '07//2020-07/27/2021' },
     });
     expect(onChange).toHaveNthReturnedWith(3, []);
-    expect(container.firstChild).toMatchSnapshot();
+    // cannot check snapshot here as it will be relative to the current date
 
     expect(onChange).toHaveBeenCalledTimes(3);
   });

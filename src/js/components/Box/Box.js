@@ -109,26 +109,26 @@ const Box = forwardRef(
       });
     }
 
-    const themeProviderValue = { ...theme };
-
-    if (background || theme.darkChanged) {
-      const dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
-        themeProviderValue.background = background;
-      } else if (background) {
-        // This allows DataTable to intelligently set the background of a pinned
-        // header or footer.
-        themeProviderValue.background = background;
+    // construct a new theme object in case we have a background that wants
+    // to change the background color context
+    const nextTheme = useMemo(() => {
+      let result;
+      if (background || theme.darkChanged) {
+        const dark = backgroundIsDark(background, theme);
+        const darkChanged = dark !== undefined && dark !== theme.dark;
+        if (darkChanged || theme.darkChanged) {
+          result = { ...theme };
+          result.dark = dark === undefined ? theme.dark : dark;
+          result.background = background;
+        } else if (background) {
+          // This allows DataTable to intelligently set the background
+          // of a pinned header or footer.
+          result = { ...theme };
+          result.background = background;
+        }
       }
-    }
-
-    contents = (
-      <ThemeContext.Provider value={themeProviderValue}>
-        {contents}
-      </ThemeContext.Provider>
-    );
+      return result || theme;
+    }, [background, theme]);
 
     let content = (
       <StyledBox
@@ -150,7 +150,9 @@ const Box = forwardRef(
         {...clickProps}
         {...rest}
       >
-        {contents}
+        <ThemeContext.Provider value={nextTheme}>
+          {contents}
+        </ThemeContext.Provider>
       </StyledBox>
     );
 
