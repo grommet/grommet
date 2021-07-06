@@ -126,7 +126,6 @@ const CalendarDay = ({
   <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
-        aria-label={buttonProps.a11yTitle}
         disabledProp={buttonProps.disabled}
         inRange={isInRange}
         otherMonth={otherMonth}
