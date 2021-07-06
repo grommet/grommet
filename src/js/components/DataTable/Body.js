@@ -29,7 +29,6 @@ const Row = memo(
     isRowExpanded,
     tableBodyRef,
     setActive,
-    setLastActive,
     setRowExpand,
     rowExpand,
     columns,
@@ -58,7 +57,6 @@ const Row = memo(
         onMouseEnter={
           onClickRow
             ? () => {
-                setLastActive(undefined);
                 setActive(index);
               }
             : undefined
@@ -175,13 +173,7 @@ const Body = forwardRef(
               }
             : undefined
         }
-        onUp={
-          onClickRow && active
-            ? () => {
-                setActive(active - 1);
-              }
-            : undefined
-        }
+        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length
             ? () => {
@@ -196,9 +188,11 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
-          onFocus={() => (lastActive ? setActive(lastActive) : undefined)}
+          onFocus={() =>
+            !active && active !== 0 ? setActive(lastActive) : setActive(active)
+          }
           onBlur={() => {
-            if (active) setLastActive(active);
+            setLastActive(active);
             setActive(undefined);
           }}
           {...rest}
@@ -232,7 +226,6 @@ const Body = forwardRef(
                 <Row
                   key={index}
                   tableBodyRef={ref}
-                  setLastActive={setLastActive}
                   setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}
