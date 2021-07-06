@@ -52,9 +52,10 @@ const timeStamp = new RegExp(/T.*/);
 
 const normalizeForTimezone = (date, refDate) => {
   if (!date) return undefined;
-  return (!timeStamp.test(refDate || date)
-    ? localTimezoneToUTC(new Date(date))
-    : new Date(date)
+  return (
+    !timeStamp.test(refDate || date)
+      ? localTimezoneToUTC(new Date(date))
+      : new Date(date)
   ).toISOString();
 };
 
@@ -110,7 +111,7 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = props => <Button tabIndex={-1} plain {...props} />;
+const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
 
 const CalendarDay = ({
   children,
@@ -194,7 +195,7 @@ const Calendar = forwardRef(
     }, [activeDateProp]);
 
     // function that runs inside the useEffect for date and dates
-    const normalizeDate = dateValue => {
+    const normalizeDate = (dateValue) => {
       // convert values to UTC based on if date is string or array
       if (typeof dateValue === 'string') {
         return normalizeForTimezone(dateValue);
@@ -203,7 +204,7 @@ const Calendar = forwardRef(
         if (Array.isArray(dateValue[0])) {
           let from;
           let to;
-          [from, to] = dateValue[0].map(day =>
+          [from, to] = dateValue[0].map((day) =>
             day ? new Date(day) : undefined,
           );
           if (from) from = normalizeForTimezone(from, dateValue[0][0]);
@@ -212,11 +213,11 @@ const Calendar = forwardRef(
           return [[from, to]];
         }
         const dateArray = [];
-        dateValue.forEach(d => {
+        dateValue.forEach((d) => {
           if (Array.isArray(d)) {
             let from;
             let to;
-            [from, to] = d.map(day => new Date(day));
+            [from, to] = d.map((day) => new Date(day));
             from = normalizeForTimezone(from, d[0]);
             to = normalizeForTimezone(to, d[0]);
             dateArray.push([from, to]);
@@ -253,10 +254,10 @@ const Calendar = forwardRef(
 
     // normalize bounds
     const [bounds, setBounds] = useState(
-      boundsProp ? boundsProp.map(b => normalizeForTimezone(b)) : undefined,
+      boundsProp ? boundsProp.map((b) => normalizeForTimezone(b)) : undefined,
     );
     useEffect(() => {
-      if (boundsProp) setBounds(boundsProp.map(b => normalizeForTimezone(b)));
+      if (boundsProp) setBounds(boundsProp.map((b) => normalizeForTimezone(b)));
       else setBounds(undefined);
     }, [boundsProp]);
 
@@ -384,7 +385,7 @@ const Calendar = forwardRef(
     const [active, setActive] = useState();
 
     const changeReference = useCallback(
-      nextReference => {
+      (nextReference) => {
         if (betweenDates(nextReference, bounds)) {
           setReference(nextReference);
           if (onReference) onReference(nextReference.toISOString());
@@ -393,7 +394,7 @@ const Calendar = forwardRef(
       [onReference, bounds],
     );
     const selectDate = useCallback(
-      selectedDate => {
+      (selectedDate) => {
         let nextDates;
         let nextDate;
         // output date with no timestamp if that's how user provided it
@@ -401,7 +402,7 @@ const Calendar = forwardRef(
         if (!range) {
           nextDate = selectedDate;
           if (datesProp) {
-            datesProp.forEach(d => {
+            datesProp.forEach((d) => {
               if (!timeStamp.test(d)) {
                 adjustedDate = formatToLocalYYYYMMDD(nextDate);
                 if (d === adjustedDate) {
@@ -421,7 +422,7 @@ const Calendar = forwardRef(
               }
             }
           } else if (Array.isArray(dateProp)) {
-            dateProp.forEach(d => {
+            dateProp.forEach((d) => {
               if (!timeStamp.test(d)) {
                 adjustedDate = formatToLocalYYYYMMDD(nextDate);
                 if (d === adjustedDate) {
@@ -467,8 +468,8 @@ const Calendar = forwardRef(
           }
           if (activeDateProp) setActiveDate(activeDateProp);
         } else if (dates || date) {
-          const handleSelection = dateValue => {
-            const priorDates = dateValue[0].map(d => new Date(d));
+          const handleSelection = (dateValue) => {
+            const priorDates = dateValue[0].map((d) => new Date(d));
             const selDate = new Date(selectedDate);
             if (selDate.getTime() === priorDates[0].getTime()) {
               nextDates = [[undefined, dateValue[0][1]]];
@@ -522,7 +523,7 @@ const Calendar = forwardRef(
             range === true
           ) {
             // return string for backwards compatibility
-            [adjustedDates] = nextDates[0].filter(d => d);
+            [adjustedDates] = nextDates[0].filter((d) => d);
           } else {
             adjustedDates = nextDates;
           }
@@ -774,12 +775,12 @@ const Calendar = forwardRef(
                 ? selectDate(active.toISOString())
                 : undefined
             }
-            onUp={event => {
+            onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
             }}
-            onDown={event => {
+            onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));

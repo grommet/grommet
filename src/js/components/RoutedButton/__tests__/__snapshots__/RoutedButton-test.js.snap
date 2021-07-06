@@ -81,18 +81,12 @@ exports[`RoutedButton renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     <a
-      className="c1"
-      disabled={false}
+      class="c1"
       href="/"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
     >
       Test
     </a>

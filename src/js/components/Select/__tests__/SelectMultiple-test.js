@@ -321,7 +321,7 @@ describe('Select Controlled', () => {
   });
 
   test('should allow multiple selections when using search', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onChange = jest.fn();
     const onSearch = jest.fn();
     const defaultOptions = [
@@ -365,10 +365,10 @@ describe('Select Controlled', () => {
             setValue(nextValue);
           }}
           onClose={() => setOptions(defaultOptions)}
-          onSearch={text => {
+          onSearch={(text) => {
             onSearch(text);
             const nextOptions = defaultOptions.filter(
-              option =>
+              (option) =>
                 option.name.toLowerCase().indexOf(text.toLowerCase()) >= 0,
             );
             setOptions(nextOptions);
@@ -420,7 +420,7 @@ describe('Select Controlled', () => {
 
   test(`should allow multiple selections when options are
   loaded lazily`, () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onChange = jest.fn();
     const optionsFromServer = [
       {

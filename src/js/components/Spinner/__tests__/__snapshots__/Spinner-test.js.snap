@@ -226,22 +226,22 @@ exports[`Spinner border renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
 </div>
 `;
@@ -301,13 +301,13 @@ exports[`Spinner renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c1"
+    class="c1"
     id="test id"
     name="test name"
   />
@@ -515,19 +515,19 @@ exports[`Spinner round renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
 </div>
 `;
@@ -586,14 +586,12 @@ exports[`Spinner should have no accessibility violations 1`] = `
   }
 }
 
-<div>
+<div
+  class="c0"
+>
   <div
-    class="c0"
-  >
-    <div
-      class="c1"
-    />
-  </div>
+    class="c1"
+  />
 </div>
 `;
 
@@ -824,22 +822,22 @@ exports[`Spinner size renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
 </div>
 `;
@@ -1071,22 +1069,22 @@ exports[`Spinner size renders 2`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
   <div
-    className="c2"
+    class="c2"
   />
   <div
-    className="c3"
+    class="c3"
   />
   <div
-    className="c4"
+    class="c4"
   />
   <div
-    className="c5"
+    class="c5"
   />
 </div>
 `;
@@ -1139,10 +1137,10 @@ exports[`Spinner spinner changes according to theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -1230,14 +1228,14 @@ exports[`Spinner spinner icon changes according to theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <svg
       aria-label="Node"
-      className="c2"
+      class="c2"
       viewBox="0 0 24 24"
     >
       <path

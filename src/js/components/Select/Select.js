@@ -21,9 +21,10 @@ import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
+  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const HiddenInput = styled.input`
@@ -31,19 +32,18 @@ const HiddenInput = styled.input`
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.callerPlain && controlBorderStyle};
-  ${props =>
+  ${(props) => !props.callerPlain && controlBorderStyle};
+  ${(props) =>
     props.theme.select &&
     props.theme.select.control &&
     props.theme.select.control.extend};
-  ${props => props.open && props.theme.select.control.open};
+  ${(props) => props.open && props.theme.select.control.open};
 `;
 
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
-const defaultMessages = { multiple: 'multiple' };
 
 const Select = forwardRef(
   (
@@ -67,7 +67,7 @@ const Select = forwardRef(
       icon,
       labelKey,
       margin,
-      messages = defaultMessages,
+      messages,
       multiple,
       name,
       onChange,
@@ -95,6 +95,7 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
+    const { format } = useContext(MessageContext);
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
     // When 'valueKey' sets 'reduce', the value(s) here should match
@@ -118,7 +119,7 @@ const Select = forwardRef(
     // delivered via 'onChange'.
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
-        return value.map(v =>
+        return value.map((v) =>
           valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
@@ -145,7 +146,7 @@ const Select = forwardRef(
             result.push(index);
           }
         } else if (Array.isArray(valuedValue)) {
-          if (valuedValue.some(v => v === applyKey(option, valueKey))) {
+          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
             result.push(index);
           }
         } else if (valuedValue === applyKey(option, valueKey)) {
@@ -169,7 +170,7 @@ const Select = forwardRef(
       if (onClose) onClose();
     }, [onClose]);
 
-    const triggerChangeEvent = useCallback(nextValue => {
+    const triggerChangeEvent = useCallback((nextValue) => {
       // Calling set value function directly on input because React library
       // overrides setter `event.target.value =` and loses original event
       // target fidelity.
@@ -263,10 +264,17 @@ const Select = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        return messages.multiple;
+        return format({ id: 'select.multiple', messages });
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
+    }, [
+      labelKey,
+      messages,
+      format,
+      optionIndexesInValue,
+      allOptions,
+      selectValue,
+    ]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',

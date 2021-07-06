@@ -127,68 +127,54 @@ exports[`RadioButtonGroup adding additional props 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="ONE"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="ONE"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           data-testid="testid-1"
           id="ONE"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="1"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
     </label>
     <div
-      className="c6"
+      class="c6"
     />
     <label
-      className="c2"
-      htmlFor="TWO"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="TWO"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           data-testid="testid-2"
           id="TWO"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="2"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
     </label>
@@ -369,87 +355,74 @@ exports[`RadioButtonGroup boolean options 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="true"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="true"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={true}
-          className="c4"
+          checked=""
+          class="c4"
           id="true"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
-          value={true}
+          value="true"
         />
         <div
-          className="c5 "
+          class="c5 "
         >
           <svg
-            className="c6"
+            class="c6"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
             <circle
-              cx={12}
-              cy={12}
-              r={6}
+              cx="12"
+              cy="12"
+              r="6"
             />
           </svg>
         </div>
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         true
       </span>
     </label>
     <div
-      className="c7"
+      class="c7"
     />
     <label
-      className="c2"
-      htmlFor="false"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="false"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="false"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
-          value={false}
+          value="false"
         />
         <div
-          className="c8 "
+          class="c8 "
         />
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         false
       </span>
@@ -576,66 +549,53 @@ exports[`RadioButtonGroup children 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="one"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="one"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={true}
-          className="c4"
+          checked=""
+          class="c4"
           id="one"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="one"
         />
         <div
-          className="c5"
+          class="c5"
         />
       </div>
     </label>
     <div
-      className="c6"
+      class="c6"
     />
     <label
-      className="c2"
-      htmlFor="two"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="two"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="two"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="two"
         />
         <div
-          className="c5"
+          class="c5"
         />
       </div>
     </label>
@@ -1067,87 +1027,74 @@ exports[`RadioButtonGroup number options 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="1"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="1"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={true}
-          className="c4"
+          checked=""
+          class="c4"
           id="1"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
-          value={1}
+          value="1"
         />
         <div
-          className="c5 "
+          class="c5 "
         >
           <svg
-            className="c6"
+            class="c6"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
             <circle
-              cx={12}
-              cy={12}
-              r={6}
+              cx="12"
+              cy="12"
+              r="6"
             />
           </svg>
         </div>
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         1
       </span>
     </label>
     <div
-      className="c7"
+      class="c7"
     />
     <label
-      className="c2"
-      htmlFor="2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="2"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="2"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
-          value={2}
+          value="2"
         />
         <div
-          className="c8 "
+          class="c8 "
         />
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         2
       </span>
@@ -1290,75 +1237,61 @@ exports[`RadioButtonGroup object options 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="onE"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="onE"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="onE"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="one"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         One
       </span>
     </label>
     <div
-      className="c6"
+      class="c6"
     />
     <label
-      className="c2"
-      htmlFor="twO"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="twO"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="twO"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="two"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         Two
       </span>
@@ -1530,64 +1463,50 @@ exports[`RadioButtonGroup object options disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      disabled={true}
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      disabled=""
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
-          disabled={true}
+          class="c4"
+          disabled=""
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="one"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
     </label>
     <div
-      className="c6"
+      class="c6"
     />
     <label
-      className="c7"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c7"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c8"
+          class="c8"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="two"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
     </label>
@@ -1761,72 +1680,59 @@ exports[`RadioButtonGroup object options just value 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="one"
         />
         <div
-          className="c5 "
+          class="c5 "
         />
       </div>
     </label>
     <div
-      className="c6"
+      class="c6"
     />
     <label
-      className="c2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={true}
-          className="c4"
+          checked=""
+          class="c4"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="two"
         />
         <div
-          className="c7 "
+          class="c7 "
         >
           <svg
-            className="c8"
+            class="c8"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
             <circle
-              cx={12}
-              cy={12}
-              r={6}
+              cx="12"
+              cy="12"
+              r="6"
             />
           </svg>
         </div>
@@ -2164,87 +2070,74 @@ exports[`RadioButtonGroup string options 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
     role="radiogroup"
   >
     <label
-      className="c2"
-      htmlFor="one"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="one"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={true}
-          className="c4"
+          checked=""
+          class="c4"
           id="one"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="0"
+          tabindex="0"
           type="radio"
           value="one"
         />
         <div
-          className="c5 "
+          class="c5 "
         >
           <svg
-            className="c6"
+            class="c6"
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 24 24"
           >
             <circle
-              cx={12}
-              cy={12}
-              r={6}
+              cx="12"
+              cy="12"
+              r="6"
             />
           </svg>
         </div>
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         one
       </span>
     </label>
     <div
-      className="c7"
+      class="c7"
     />
     <label
-      className="c2"
-      htmlFor="two"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
+      class="c2"
+      for="two"
     >
       <div
-        className="c3 "
+        class="c3 "
       >
         <input
-          checked={false}
-          className="c4"
+          class="c4"
           id="two"
           name="test"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          tabIndex="-1"
+          tabindex="-1"
           type="radio"
           value="two"
         />
         <div
-          className="c8 "
+          class="c8 "
         />
       </div>
       <span
-        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+        class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         two
       </span>
