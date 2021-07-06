@@ -55,6 +55,9 @@ const buttonStyle = ({ theme }) => {
   const [layoutProps, , iconProps] = separateThemeProps(theme);
 
   if (layoutProps) {
+    // if cell is sortable, we want pad to be be applied
+    // to the button instead of the cell
+    layoutProps.pad = theme.dataTable.header.pad;
     styles.push(kindPartStyles(layoutProps, theme));
   }
 
@@ -331,7 +334,10 @@ const Header = forwardRef(
                   background={cellProps.background}
                   border={cellProps.border}
                   onWidth={updateWidths}
-                  pad={cellProps.pad}
+                  // if sortable, pad will be included in the button styling
+                  pad={
+                    !sortable && !sort && !onSort ? cellProps.pad : undefined
+                  }
                   pin={cellPin}
                   plain
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}

@@ -3200,6 +3200,10 @@ exports[`DataTable custom theme 1`] = `
   outline: none;
 }
 
+.c8 {
+  padding: 6px 12px;
+}
+
 .c8:hover {
   background-color: rgba(242,242,242,1);
   color: #444444;
@@ -3452,7 +3456,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledBox-sc-13pk1d4-0 qEKCj"
             >
               <button
-                class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 hvMAvJ"
+                class="StyledButton-sc-323bzc-0 iFUlup Header__StyledHeaderCellButton-sc-1baku5q-0 ddeyZg"
                 type="button"
               >
                 <div
@@ -12545,7 +12549,10 @@ exports[`DataTable pad 1`] = `
   text-align: inherit;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c7 {
@@ -12573,7 +12580,6 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -12586,18 +12592,6 @@ exports[`DataTable pad 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
   border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 24px;
   padding-right: 24px;
@@ -12605,7 +12599,7 @@ exports[`DataTable pad 1`] = `
   padding-bottom: 12px;
 }
 
-.c14 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12792,7 +12786,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c11 "
+          class="c3 "
           scope="col"
         >
           <div
@@ -12806,7 +12800,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <th
-          class="c11 "
+          class="c3 "
           scope="col"
         >
           <div
@@ -12828,7 +12822,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
@@ -12842,7 +12836,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
             class="c8"
@@ -12859,7 +12853,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
@@ -12873,7 +12867,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
             class="c8"
@@ -12894,7 +12888,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -12907,7 +12901,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
             class="c8"
@@ -12962,7 +12956,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
@@ -12976,7 +12970,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
             class="c8"
@@ -12993,7 +12987,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
@@ -13007,7 +13001,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
             class="c8"
@@ -13028,7 +13022,7 @@ exports[`DataTable pad 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          class="c14 "
+          class="c13 "
         >
           <div
             class="c8"
@@ -13041,7 +13035,7 @@ exports[`DataTable pad 1`] = `
           </div>
         </td>
         <td
-          class="c14 "
+          class="c13 "
         >
           <div
             class="c8"
