@@ -100,7 +100,7 @@ const TipContent = ({ size }) => (
 export const ResponsiveTip = () => (
   <Grommet theme={theme} full>
     <ResponsiveContext.Consumer>
-      {size => (
+      {(size) => (
         <Box
           pad="large"
           gap="medium"

@@ -12,9 +12,9 @@ export const ValidateOnChange = () => {
         <Box width="medium">
           <Form
             validate="change"
-            onReset={event => console.log(event)}
+            onReset={(event) => console.log(event)}
             onSubmit={({ value }) => console.log('Submit', value)}
-            onValidate={validationResults => {
+            onValidate={(validationResults) => {
               console.log('validationResults = ', validationResults);
               setValid(validationResults.valid);
             }}
@@ -25,7 +25,7 @@ export const ValidateOnChange = () => {
               required
               validate={[
                 { regexp: /^[a-z]/i },
-                firstName => {
+                (firstName) => {
                   if (firstName && firstName.length === 1)
                     return 'must be >1 character';
                   return undefined;
@@ -39,7 +39,7 @@ export const ValidateOnChange = () => {
               required
               validate={[
                 { regexp: /^[a-z]/i },
-                lastName => {
+                (lastName) => {
                   if (lastName && lastName.length === 1)
                     return 'must be >1 character';
                   return undefined;
@@ -51,7 +51,7 @@ export const ValidateOnChange = () => {
               name="select-size"
               htmlFor="select-size"
               required
-              validate={val => {
+              validate={(val) => {
                 if (val === 'small') {
                   return { message: 'Only 10 left in stock!', status: 'info' };
                 }

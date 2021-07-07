@@ -23,7 +23,7 @@ const thicknessType = PropTypes.oneOfType([
   PropTypes.number,
 ]);
 
-export const doc = Chart => {
+export const doc = (Chart) => {
   const DocumentedChart = describe(Chart)
     .availableAt(getAvailableAtBadge('Chart', 'Visualizations'))
     .description('A graphical chart.')
@@ -212,7 +212,7 @@ export const doc = Chart => {
   return DocumentedChart;
 };
 
-export const docCalcs = calcs => {
+export const docCalcs = (calcs) => {
   const DocumentedCalcs = describe(calcs)
     .description(
       `

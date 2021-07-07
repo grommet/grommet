@@ -24,8 +24,10 @@ export const Uncontrolled = () => (
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
-          onChange={value => console.log('Change', value)}
-          onSubmit={event => console.log('Submit', event.value, event.touched)}
+          onChange={(value) => console.log('Change', value)}
+          onSubmit={(event) =>
+            console.log('Submit', event.value, event.touched)
+          }
         >
           <FormField label="Name" name="name">
             <TextInput name="name" suggestions={suggestions} />
