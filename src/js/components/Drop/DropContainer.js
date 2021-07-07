@@ -22,7 +22,7 @@ import { StyledDrop } from './StyledDrop';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
-const preventLayerClose = event => {
+const preventLayerClose = (event) => {
   const key = event.keyCode ? event.keyCode : event.which;
 
   if (key === 27) {
@@ -58,10 +58,10 @@ const DropContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
-    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
-      portalContext,
-      portalId,
-    ]);
+    const nextPortalContext = useMemo(
+      () => [...portalContext, portalId],
+      [portalContext, portalId],
+    );
     const dropRef = useRef();
     useEffect(() => {
       const notifyAlign = () => {
@@ -74,7 +74,7 @@ const DropContainer = forwardRef(
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
       // is resized.
-      const place = preserveHeight => {
+      const place = (preserveHeight) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const target = dropTarget;
@@ -241,19 +241,19 @@ const DropContainer = forwardRef(
 
       const addScrollListeners = () => {
         scrollParents = findScrollParents(dropTarget);
-        scrollParents.forEach(scrollParent =>
+        scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
         );
       };
 
       const removeScrollListeners = () => {
-        scrollParents.forEach(scrollParent =>
+        scrollParents.forEach((scrollParent) =>
           scrollParent.removeEventListener('scroll', place),
         );
         scrollParents = [];
       };
 
-      const onClickDocument = event => {
+      const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node = event.target;
@@ -362,7 +362,7 @@ const DropContainer = forwardRef(
             capture
             onEsc={
               onEsc
-                ? event => {
+                ? (event) => {
                     event.stopPropagation();
                     onEsc(event);
                   }
