@@ -44,9 +44,21 @@ Only use this when the containing context provides sufficient affordance.`,
       .description('Whether user is allowed to resize the textarea.')
       .defaultValue(true),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+      ]),
       PropTypes.string,
-    ]).description('The size of the TextArea.'),
+    ]).description('The size of the text.'),
   };
 
   return DocumentedTextArea;

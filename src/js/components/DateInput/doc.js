@@ -59,6 +59,22 @@ export const doc = (DateInput) => {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]).description('The date or date range value(s) in ISO8601 format.'),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+      ]),
+      PropTypes.string,
+    ]).description('The size of the text.'),
   };
 
   return DocumentedDateInput;

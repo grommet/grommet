@@ -488,4 +488,26 @@ describe('DateInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders size', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput size="xsmall" />
+        <DateInput size="small" />
+        <DateInput size="medium" />
+        <DateInput size="large" />
+        <DateInput size="xlarge" />
+        <DateInput size="xxlarge" />
+        <DateInput size="2xl" />
+        <DateInput size="3xl" />
+        <DateInput size="4xl" />
+        <DateInput size="5xl" />
+        <DateInput size="6xl" />
+        <DateInput size="16px" />
+        <DateInput size="1rem" />
+        <DateInput size="100%" />
+      </Grommet>,
+    );
+    expect(container.children).toMatchSnapshot();
+  });
 });
