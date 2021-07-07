@@ -6,7 +6,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-export const doc = Menu => {
+export const doc = (Menu) => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu', 'Controls'))
     .description(`A control that opens a Drop containing plain Buttons.`)

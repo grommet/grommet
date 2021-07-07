@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = DateInput => {
+export const doc = (DateInput) => {
   const DocumentedDateInput = describe(DateInput)
     .availableAt(getAvailableAtBadge('DateInput', 'Input'))
     .description('A control to input a single date or a date range.')
