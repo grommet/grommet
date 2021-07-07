@@ -22,11 +22,13 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
+  // Customizes to make list have a focus border color of green
   &:focus {
     ${(props) =>
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -145,6 +147,7 @@ const List = React.forwardRef(
     // List items are likely selectable), active will be the
     // index of the item which is currently active.
     const [active, setActive] = useState();
+    const [lastActive, setLastActive] = useState();
     const [itemFocus, setItemFocus] = useState();
     const [dragging, setDragging] = useState();
 
@@ -240,7 +243,19 @@ const List = React.forwardRef(
             as={as || 'ul'}
             itemFocus={itemFocus}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
-            onBlur={onOrder ? () => setActive(undefined) : undefined}
+            onFocus={() =>
+              // Fixes zero-th index showing undefined.
+              // Checks for active variable to stop bug where activeStyle
+              // gets applied to lastActive instead of the item the user
+              // is currently clicking on
+              !active && active !== 0
+                ? setActive(lastActive)
+                : setActive(active)
+            }
+            onBlur={() => {
+              setLastActive(active);
+              setActive(undefined);
+            }}
             {...ariaProps}
             {...rest}
           >
