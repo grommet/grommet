@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = TextInput => {
+export const doc = (TextInput) => {
   const DocumentedTextInput = describe(TextInput)
     .availableAt(getAvailableAtBadge('TextInput', 'Input'))
     .description(

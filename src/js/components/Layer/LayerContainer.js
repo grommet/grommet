@@ -58,10 +58,10 @@ const LayerContainer = forwardRef(
     const layerRef = useRef();
     const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
-    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
-      portalContext,
-      portalId,
-    ]);
+    const nextPortalContext = useMemo(
+      () => [...portalContext, portalId],
+      [portalContext, portalId],
+    );
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -93,7 +93,7 @@ const LayerContainer = forwardRef(
     }, [position, ref]);
 
     useEffect(() => {
-      const onClickDocument = event => {
+      const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node = event.target;
@@ -228,7 +228,7 @@ const LayerContainer = forwardRef(
         <Keyboard
           onEsc={
             onEsc
-              ? event => {
+              ? (event) => {
                   // prevent further capturing or bubbling of event to other
                   // child or parent elements
                   event.stopPropagation();

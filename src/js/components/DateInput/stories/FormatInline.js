@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 
 export const FormatInline = () => {
   const [value, setValue] = React.useState('');
-  const onChange = event => {
+  const onChange = (event) => {
     const nextValue = event.value;
     console.log('onChange', nextValue);
     setValue(nextValue);
