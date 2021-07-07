@@ -75,7 +75,7 @@ const SidebarHeader = () => (
   </Box>
 );
 
-const iconsMap = color => [
+const iconsMap = (color) => [
   <Analytics color={color} />,
   <Stakeholder color={color} />,
   <Calculator color={color} />,
