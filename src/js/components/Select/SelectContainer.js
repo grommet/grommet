@@ -31,7 +31,7 @@ const OptionsBox = styled.div`
 `;
 
 const SelectOption = styled(Button)`
-  ${props => props.selected && props.textComponent && selectedStyle}
+  ${(props) => props.selected && props.textComponent && selectedStyle}
   display: block;
   width: 100%;
 `;
@@ -124,17 +124,17 @@ const SelectContainer = forwardRef(
     }, [keyboardNavigation]);
 
     const optionLabel = useCallback(
-      index => applyKey(options[index], labelKey),
+      (index) => applyKey(options[index], labelKey),
       [labelKey, options],
     );
 
     const optionValue = useCallback(
-      index => applyKey(options[index], valueKey),
+      (index) => applyKey(options[index], valueKey),
       [options, valueKey],
     );
 
     const isDisabled = useCallback(
-      index => {
+      (index) => {
         const option = options[index];
         let result;
         if (disabledKey) {
@@ -153,7 +153,7 @@ const SelectContainer = forwardRef(
     );
 
     const isSelected = useCallback(
-      index => {
+      (index) => {
         let result;
         if (selected) {
           // deprecated in favor of value
@@ -166,7 +166,7 @@ const SelectContainer = forwardRef(
             } else if (typeof value[0] !== 'object') {
               result = value.indexOf(optionVal) !== -1;
             } else if (valueKey) {
-              result = value.some(valueItem => {
+              result = value.some((valueItem) => {
                 const valueValue =
                   typeof valueKey === 'function'
                     ? valueKey(valueItem)
@@ -190,7 +190,7 @@ const SelectContainer = forwardRef(
     );
 
     const selectOption = useCallback(
-      index => event => {
+      (index) => (event) => {
         if (onChange) {
           let nextValue;
           let nextSelected;
@@ -203,7 +203,7 @@ const SelectContainer = forwardRef(
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
-            nextValue = nextOptionIndexesInValue.map(i =>
+            nextValue = nextOptionIndexesInValue.map((i) =>
               valueKey && valueKey.reduce
                 ? applyKey(allOptions[i], valueKey)
                 : allOptions[i],
@@ -227,14 +227,14 @@ const SelectContainer = forwardRef(
     );
 
     const onClear = useCallback(
-      event => {
+      (event) => {
         onChange(event, { option: undefined, value: '', selected: '' });
       },
       [onChange],
     );
 
     const onNextOption = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
         while (
@@ -252,7 +252,7 @@ const SelectContainer = forwardRef(
     );
 
     const onPreviousOption = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         let nextActiveIndex = activeIndex - 1;
         while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
@@ -267,7 +267,7 @@ const SelectContainer = forwardRef(
     );
 
     const onKeyDownOption = useCallback(
-      event => {
+      (event) => {
         if (!onSearch) {
           const nextActiveIndex = options.findIndex((e, index) => {
             let label;
@@ -297,14 +297,14 @@ const SelectContainer = forwardRef(
     );
 
     const onActiveOption = useCallback(
-      index => () => {
+      (index) => () => {
         if (!keyboardNavigation) setActiveIndex(index);
       },
       [keyboardNavigation],
     );
 
     const onSelectOption = useCallback(
-      event => {
+      (event) => {
         if (activeIndex >= 0 && !focus) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
@@ -344,7 +344,7 @@ const SelectContainer = forwardRef(
                 type="search"
                 value={search || ''}
                 placeholder={searchPlaceholder}
-                onChange={event => {
+                onChange={(event) => {
                   const nextSearch = event.target.value;
                   setSearch(nextSearch);
                   setActiveIndex(-1);
