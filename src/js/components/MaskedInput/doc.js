@@ -61,7 +61,19 @@ export const doc = (MaskedInput) => {
       end of the input.`,
     ),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+      ]),
       PropTypes.string,
     ]).description('The size of the text.'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end'])

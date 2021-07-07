@@ -447,4 +447,26 @@ describe('MaskedInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+  
+  test('renders size', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput size="xsmall" />
+        <MaskedInput size="small" />
+        <MaskedInput size="medium" />
+        <MaskedInput size="large" />
+        <MaskedInput size="xlarge" />
+        <MaskedInput size="xxlarge" />
+        <MaskedInput size="2xl" />
+        <MaskedInput size="3xl" />
+        <MaskedInput size="4xl" />
+        <MaskedInput size="5xl" />
+        <MaskedInput size="6xl" />
+        <MaskedInput size="16px" />
+        <MaskedInput size="1rem" />
+        <MaskedInput size="100%" />
+      </Grommet>,
+    );
+    expect(container.children).toMatchSnapshot();
+  });
 });
