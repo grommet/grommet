@@ -83,12 +83,6 @@ const StyledDataTableRow = styled(TableRow)`
     `
     cursor: pointer;
   `}  
-
-  // Could remove: changes nothing UI-wise
-  // Jon TODO: investigate removal of this in every story
-  &:hover {
-    ${(props) => props.onClickRow && !props.active && hoverStyle}
-  }
   ${(props) => props.active && hoverStyle}
 `;
 
