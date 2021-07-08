@@ -502,24 +502,30 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "How to align the contents along the cross axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-baseline
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the contents when there is extra space in
-        the cross axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -4544,23 +4550,30 @@ string",
         "name": "margin",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the individual items inside the grid when there is extra
-space in the column axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "description": "How to align the contents along the column axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {

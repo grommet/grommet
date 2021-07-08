@@ -139,10 +139,21 @@ describe('Grid', () => {
   test('align renders', () => {
     const { container } = render(
       <Grommet>
+        {/* Mapped values */}
         <Grid align="start" />
         <Grid align="center" />
         <Grid align="end" />
         <Grid align="stretch" />
+        <Grid align="baseline" />
+        {/* Any valid CSS align-items strings */}
+        <Grid align="normal" />
+        <Grid align="first baseline" />
+        <Grid align="last baseline" />
+        <Grid align="safe center" />
+        <Grid align="unsafe center" />
+        <Grid align="inherit" />
+        <Grid align="initial" />
+        <Grid align="unset" />
       </Grommet>,
     );
 
@@ -167,12 +178,27 @@ describe('Grid', () => {
   test('alignContent renders', () => {
     const { container } = render(
       <Grommet>
+        {/* Mapped values */}
         <Grid alignContent="start" />
         <Grid alignContent="center" />
         <Grid alignContent="between" />
         <Grid alignContent="around" />
         <Grid alignContent="end" />
         <Grid alignContent="stretch" />
+        <Grid alignContent="baseline" />
+        <Grid alignContent="evenly" />
+        {/* Any valid CSS align-content strings */}
+        <Grid alignContent="normal" />
+        <Grid alignContent="first baseline" />
+        <Grid alignContent="last baseline" />
+        <Grid alignContent="space-between" />
+        <Grid alignContent="space-around" />
+        <Grid alignContent="space-evenly" />
+        <Grid alignContent="safe center" />
+        <Grid alignContent="unsafe center" />
+        <Grid alignContent="inherit" />
+        <Grid alignContent="initial" />
+        <Grid alignContent="unset" />
       </Grommet>,
     );
 

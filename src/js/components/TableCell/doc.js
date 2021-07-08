@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-export const doc = TableCell => {
+export const doc = (TableCell) => {
   const DocumentedTableCell = describe(TableCell)
     .description('A cell of data in a table.')
     .usage(
