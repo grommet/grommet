@@ -110,8 +110,8 @@ const StyledDataTableBody = styled(TableBody)`
     ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
 
-  &:not(:focus-visible) {
-    ${unfocusStyle()}
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle({ skipSvgChildren: true, forceOutline: true })}
   }
 `;
 

@@ -89,24 +89,8 @@ exports[`DataTable !primaryKey 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -357,24 +341,8 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c7:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible) > circle,
-.c7:not(:focus-visible) > ellipse,
-.c7:not(:focus-visible) > line,
-.c7:not(:focus-visible) > path,
-.c7:not(:focus-visible) > polygon,
-.c7:not(:focus-visible) > polyline,
-.c7:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -603,24 +571,8 @@ exports[`DataTable aggregate 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -877,24 +829,8 @@ exports[`DataTable aggregate with nested object 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1259,24 +1195,8 @@ exports[`DataTable background 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -1788,24 +1708,8 @@ exports[`DataTable basic 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -2035,24 +1939,8 @@ exports[`DataTable border 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -2702,24 +2590,8 @@ exports[`DataTable click 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -2831,7 +2703,7 @@ exports[`DataTable click 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
       tabindex="0"
     >
       <tr
@@ -3324,24 +3196,8 @@ exports[`DataTable custom theme 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c18:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible) > circle,
-.c18:not(:focus-visible) > ellipse,
-.c18:not(:focus-visible) > line,
-.c18:not(:focus-visible) > path,
-.c18:not(:focus-visible) > polygon,
-.c18:not(:focus-visible) > polyline,
-.c18:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c8:hover {
@@ -3637,7 +3493,7 @@ exports[`DataTable custom theme 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -3783,24 +3639,8 @@ exports[`DataTable empty 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c3:not(:focus-visible) {
+.c3:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c3:not(:focus-visible) > circle,
-.c3:not(:focus-visible) > ellipse,
-.c3:not(:focus-visible) > line,
-.c3:not(:focus-visible) > path,
-.c3:not(:focus-visible) > polygon,
-.c3:not(:focus-visible) > polyline,
-.c3:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -3955,24 +3795,8 @@ exports[`DataTable fill 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4497,24 +4321,8 @@ exports[`DataTable footer 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -4922,24 +4730,8 @@ exports[`DataTable groupBy 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c11:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible) > circle,
-.c11:not(:focus-visible) > ellipse,
-.c11:not(:focus-visible) > line,
-.c11:not(:focus-visible) > path,
-.c11:not(:focus-visible) > polygon,
-.c11:not(:focus-visible) > polyline,
-.c11:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -5230,7 +5022,7 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -5654,24 +5446,8 @@ exports[`DataTable groupBy expand 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c11:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible) > circle,
-.c11:not(:focus-visible) > ellipse,
-.c11:not(:focus-visible) > line,
-.c11:not(:focus-visible) > path,
-.c11:not(:focus-visible) > polygon,
-.c11:not(:focus-visible) > polyline,
-.c11:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -6248,24 +6024,8 @@ exports[`DataTable groupBy property 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c11:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible) > circle,
-.c11:not(:focus-visible) > ellipse,
-.c11:not(:focus-visible) > line,
-.c11:not(:focus-visible) > path,
-.c11:not(:focus-visible) > polygon,
-.c11:not(:focus-visible) > polyline,
-.c11:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -6556,7 +6316,7 @@ exports[`DataTable groupBy property 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -6770,24 +6530,8 @@ exports[`DataTable groupBy toggle 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -7422,24 +7166,8 @@ exports[`DataTable groupBy toggle 2`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c0:not(:focus-visible) {
+.c0:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c0:not(:focus-visible) > circle,
-.c0:not(:focus-visible) > ellipse,
-.c0:not(:focus-visible) > line,
-.c0:not(:focus-visible) > path,
-.c0:not(:focus-visible) > polygon,
-.c0:not(:focus-visible) > polyline,
-.c0:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -7669,24 +7397,8 @@ exports[`DataTable groupBy toggle 3`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c0:not(:focus-visible) {
+.c0:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c0:not(:focus-visible) > circle,
-.c0:not(:focus-visible) > ellipse,
-.c0:not(:focus-visible) > line,
-.c0:not(:focus-visible) > path,
-.c0:not(:focus-visible) > polygon,
-.c0:not(:focus-visible) > polyline,
-.c0:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -8293,24 +8005,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   outline: 2px solid #6FFFB0;
 }
 
-.c18:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible) > circle,
-.c18:not(:focus-visible) > ellipse,
-.c18:not(:focus-visible) > line,
-.c18:not(:focus-visible) > path,
-.c18:not(:focus-visible) > polygon,
-.c18:not(:focus-visible) > polyline,
-.c18:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -9184,24 +8880,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   outline: 2px solid #6FFFB0;
 }
 
-.c18:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible) > circle,
-.c18:not(:focus-visible) > ellipse,
-.c18:not(:focus-visible) > line,
-.c18:not(:focus-visible) > path,
-.c18:not(:focus-visible) > polygon,
-.c18:not(:focus-visible) > polyline,
-.c18:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -9934,24 +9614,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   outline: 2px solid #6FFFB0;
 }
 
-.c18:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible) > circle,
-.c18:not(:focus-visible) > ellipse,
-.c18:not(:focus-visible) > line,
-.c18:not(:focus-visible) > path,
-.c18:not(:focus-visible) > polygon,
-.c18:not(:focus-visible) > polyline,
-.c18:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -10656,24 +10320,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   outline: 2px solid #6FFFB0;
 }
 
-.c17:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c17:not(:focus-visible) > circle,
-.c17:not(:focus-visible) > ellipse,
-.c17:not(:focus-visible) > line,
-.c17:not(:focus-visible) > path,
-.c17:not(:focus-visible) > polygon,
-.c17:not(:focus-visible) > polyline,
-.c17:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -11111,7 +10759,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -11459,7 +11107,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -11800,24 +11448,8 @@ exports[`DataTable onSort 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -12126,7 +11758,7 @@ exports[`DataTable onSort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -12442,24 +12074,8 @@ exports[`DataTable onSort external 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -12769,7 +12385,7 @@ exports[`DataTable onSort external 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -13019,24 +12635,8 @@ exports[`DataTable pad 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -13548,24 +13148,8 @@ exports[`DataTable paths 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -13837,24 +13421,8 @@ exports[`DataTable pin + background 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c14 {
@@ -14505,24 +14073,8 @@ exports[`DataTable pin + background context 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c9:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c9:not(:focus-visible) > circle,
-.c9:not(:focus-visible) > ellipse,
-.c9:not(:focus-visible) > line,
-.c9:not(:focus-visible) > path,
-.c9:not(:focus-visible) > polygon,
-.c9:not(:focus-visible) > polyline,
-.c9:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c14 {
@@ -15103,24 +14655,8 @@ exports[`DataTable pin 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c13 {
@@ -15714,24 +15250,8 @@ exports[`DataTable placeholder 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c11 {
@@ -16113,24 +15633,8 @@ exports[`DataTable primaryKey 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -16383,24 +15887,8 @@ exports[`DataTable relativeColumnSizes 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c7:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible) > circle,
-.c7:not(:focus-visible) > ellipse,
-.c7:not(:focus-visible) > line,
-.c7:not(:focus-visible) > path,
-.c7:not(:focus-visible) > polygon,
-.c7:not(:focus-visible) > polyline,
-.c7:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -16634,24 +16122,8 @@ exports[`DataTable replace 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -16995,24 +16467,8 @@ exports[`DataTable resizeable 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c15:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c15:not(:focus-visible) > circle,
-.c15:not(:focus-visible) > ellipse,
-.c15:not(:focus-visible) > line,
-.c15:not(:focus-visible) > path,
-.c15:not(:focus-visible) > polygon,
-.c15:not(:focus-visible) > polyline,
-.c15:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -17471,24 +16927,8 @@ exports[`DataTable rowDetails 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c7:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible) > circle,
-.c7:not(:focus-visible) > ellipse,
-.c7:not(:focus-visible) > line,
-.c7:not(:focus-visible) > path,
-.c7:not(:focus-visible) > polygon,
-.c7:not(:focus-visible) > polyline,
-.c7:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -18091,24 +17531,8 @@ exports[`DataTable rowDetails condtional 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c7:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible) > circle,
-.c7:not(:focus-visible) > ellipse,
-.c7:not(:focus-visible) > line,
-.c7:not(:focus-visible) > path,
-.c7:not(:focus-visible) > polygon,
-.c7:not(:focus-visible) > polyline,
-.c7:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -18569,24 +17993,8 @@ exports[`DataTable rowProps 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c6:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible) > circle,
-.c6:not(:focus-visible) > ellipse,
-.c6:not(:focus-visible) > line,
-.c6:not(:focus-visible) > path,
-.c6:not(:focus-visible) > polygon,
-.c6:not(:focus-visible) > polyline,
-.c6:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -18962,24 +18370,8 @@ exports[`DataTable search 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -19263,7 +18655,7 @@ exports[`DataTable search 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -19555,24 +18947,8 @@ exports[`DataTable select 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c14:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c14:not(:focus-visible) > circle,
-.c14:not(:focus-visible) > ellipse,
-.c14:not(:focus-visible) > line,
-.c14:not(:focus-visible) > path,
-.c14:not(:focus-visible) > polygon,
-.c14:not(:focus-visible) > polyline,
-.c14:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -19851,7 +19227,7 @@ exports[`DataTable select 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -20502,24 +19878,8 @@ exports[`DataTable should apply pagination styling 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c18 {
@@ -22393,24 +21753,8 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -22589,24 +21933,8 @@ exports[`DataTable should not show paginate controls when length of data < step 
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -23279,24 +22607,8 @@ exports[`DataTable should paginate 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c18 {
@@ -25582,24 +24894,8 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c18 {
@@ -26839,24 +26135,8 @@ exports[`DataTable should render new data when page changes 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c18 {
@@ -28679,7 +27959,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
         >
           <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -30690,24 +29970,8 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c18 {
@@ -32975,24 +32239,8 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c17 {
@@ -34815,24 +34063,8 @@ exports[`DataTable sort 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -35239,24 +34471,8 @@ exports[`DataTable sort external 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -35663,24 +34879,8 @@ exports[`DataTable sort nested object 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -36087,24 +35287,8 @@ exports[`DataTable sort nested object with onSort 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c10:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible) > circle,
-.c10:not(:focus-visible) > ellipse,
-.c10:not(:focus-visible) > line,
-.c10:not(:focus-visible) > path,
-.c10:not(:focus-visible) > polygon,
-.c10:not(:focus-visible) > polyline,
-.c10:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -36467,24 +35651,8 @@ exports[`DataTable sortable 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -36793,7 +35961,7 @@ exports[`DataTable sortable 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 iFsPha"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-xrlyjm-3 cfKBUx"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 cMSBGi"
@@ -37025,24 +36193,8 @@ exports[`DataTable themeColumnSizes 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c7:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible) > circle,
-.c7:not(:focus-visible) > ellipse,
-.c7:not(:focus-visible) > line,
-.c7:not(:focus-visible) > path,
-.c7:not(:focus-visible) > polygon,
-.c7:not(:focus-visible) > polyline,
-.c7:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -37296,24 +36448,8 @@ exports[`DataTable units 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
-.c8:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible) > circle,
-.c8:not(:focus-visible) > ellipse,
-.c8:not(:focus-visible) > line,
-.c8:not(:focus-visible) > path,
-.c8:not(:focus-visible) > polygon,
-.c8:not(:focus-visible) > polyline,
-.c8:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
