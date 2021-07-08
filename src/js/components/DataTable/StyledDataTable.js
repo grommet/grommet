@@ -4,6 +4,7 @@ import {
   backgroundStyle,
   fillStyle,
   focusStyle,
+  unfocusStyle,
   genericStyles,
   normalizeColor,
 } from '../../utils';
@@ -84,6 +85,7 @@ const StyledDataTableRow = styled(TableRow)`
   `}  
 
   // Could remove: changes nothing UI-wise
+  // Jon TODO: investigate removal of this in every story
   &:hover {
     ${(props) => props.onClickRow && !props.active && hoverStyle}
   }
@@ -104,11 +106,12 @@ const StyledDataTableBody = styled(TableBody)`
     overflow: auto;
   `}
 
-  // Needed to give outline styling
   &:focus {
-    ${props =>
-      props.tabIndex >= 0 &&
-      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
+
+  &:not(:focus-visible) {
+    ${unfocusStyle()}
   }
 `;
 

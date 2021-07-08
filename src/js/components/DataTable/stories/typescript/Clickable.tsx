@@ -147,7 +147,6 @@ export const ClickableDataTable = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        {/* eslint-disable no-alert */}
         <DataTable
           columns={columns}
           data={DATA}

@@ -27,7 +27,6 @@ const Row = memo(
     isSelected,
     rowDetails,
     isRowExpanded,
-    tableBodyRef,
     setActive,
     setRowExpand,
     rowExpand,
@@ -50,7 +49,6 @@ const Row = memo(
                 adjustedEvent.datum = datum;
                 adjustedEvent.index = index;
                 onClickRow(adjustedEvent);
-                tableBodyRef.current.focus();
               }
             : undefined
         }
@@ -225,7 +223,6 @@ const Body = forwardRef(
               return (
                 <Row
                   key={index}
-                  tableBodyRef={ref}
                   setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}
