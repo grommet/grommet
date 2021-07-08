@@ -75,6 +75,87 @@ exports[`Grid align renders 1`] = `
   align-items: stretch;
 }
 
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
+  align-items: normal;
+}
+
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: first baseline;
+  -webkit-box-align: first baseline;
+  -ms-flex-align: first baseline;
+  align-items: first baseline;
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: last baseline;
+  -webkit-box-align: last baseline;
+  -ms-flex-align: last baseline;
+  align-items: last baseline;
+}
+
+.c9 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: safe center;
+  -webkit-box-align: safe center;
+  -ms-flex-align: safe center;
+  align-items: safe center;
+}
+
+.c10 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: unsafe center;
+  -webkit-box-align: unsafe center;
+  -ms-flex-align: unsafe center;
+  align-items: unsafe center;
+}
+
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: inherit;
+  -webkit-box-align: inherit;
+  -ms-flex-align: inherit;
+  align-items: inherit;
+}
+
+.c12 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+}
+
+.c13 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
+}
+
 <div
   class="c0"
 >
@@ -89,6 +170,33 @@ exports[`Grid align renders 1`] = `
   />
   <div
     class="c4"
+  />
+  <div
+    class="c5"
+  />
+  <div
+    class="c6"
+  />
+  <div
+    class="c7"
+  />
+  <div
+    class="c8"
+  />
+  <div
+    class="c9"
+  />
+  <div
+    class="c10"
+  />
+  <div
+    class="c11"
+  />
+  <div
+    class="c12"
+  />
+  <div
+    class="c13"
   />
 </div>
 `;
@@ -152,6 +260,86 @@ exports[`Grid alignContent renders 1`] = `
   align-content: stretch;
 }
 
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: baseline;
+  -ms-flex-line-pack: baseline;
+  align-content: baseline;
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+  align-content: space-evenly;
+}
+
+.c9 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: normal;
+  -ms-flex-line-pack: normal;
+  align-content: normal;
+}
+
+.c10 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: first baseline;
+  -ms-flex-line-pack: first baseline;
+  align-content: first baseline;
+}
+
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: last baseline;
+  -ms-flex-line-pack: last baseline;
+  align-content: last baseline;
+}
+
+.c12 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: safe center;
+  -ms-flex-line-pack: safe center;
+  align-content: safe center;
+}
+
+.c13 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: unsafe center;
+  -ms-flex-line-pack: unsafe center;
+  align-content: unsafe center;
+}
+
+.c14 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: inherit;
+  -ms-flex-line-pack: inherit;
+  align-content: inherit;
+}
+
+.c15 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: initial;
+  -ms-flex-line-pack: initial;
+  align-content: initial;
+}
+
+.c16 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: unset;
+  -ms-flex-line-pack: unset;
+  align-content: unset;
+}
+
 <div
   class="c0"
 >
@@ -172,6 +360,45 @@ exports[`Grid alignContent renders 1`] = `
   />
   <div
     class="c6"
+  />
+  <div
+    class="c7"
+  />
+  <div
+    class="c8"
+  />
+  <div
+    class="c9"
+  />
+  <div
+    class="c10"
+  />
+  <div
+    class="c11"
+  />
+  <div
+    class="c3"
+  />
+  <div
+    class="c4"
+  />
+  <div
+    class="c8"
+  />
+  <div
+    class="c12"
+  />
+  <div
+    class="c13"
+  />
+  <div
+    class="c14"
+  />
+  <div
+    class="c15"
+  />
+  <div
+    class="c16"
   />
 </div>
 `;

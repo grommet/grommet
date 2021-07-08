@@ -197,6 +197,28 @@ describe('TextArea', () => {
       fireEvent.blur(getByPlaceholderText('item'));
       expect(onBlur).toHaveBeenCalledTimes(1);
     });
+
+    test('renders size', () => {
+      const { container } = render(
+        <Grommet>
+          <TextArea size="xsmall" />
+          <TextArea size="small" />
+          <TextArea size="medium" />
+          <TextArea size="large" />
+          <TextArea size="xlarge" />
+          <TextArea size="xxlarge" />
+          <TextArea size="2xl" />
+          <TextArea size="3xl" />
+          <TextArea size="4xl" />
+          <TextArea size="5xl" />
+          <TextArea size="6xl" />
+          <TextArea size="16px" />
+          <TextArea size="1rem" />
+          <TextArea size="100%" />
+        </Grommet>,
+      );
+      expect(container.children).toMatchSnapshot();
+    });
   });
 
   test('custom theme input font size', () => {

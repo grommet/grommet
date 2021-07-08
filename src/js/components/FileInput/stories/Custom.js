@@ -49,8 +49,8 @@ export const Custom = () => (
               <Text color="text-weak">{file.size} bytes</Text>
             </Box>
           )}
-          onChange={(event) => {
-            const fileList = event.target.files;
+          onChange={(event, { files }) => {
+            const fileList = files;
             for (let i = 0; i < fileList.length; i += 1) {
               const file = fileList[i];
               console.log(file.name);

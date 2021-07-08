@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -122,7 +123,7 @@ const CalendarDay = ({
   otherMonth,
   buttonProps = {},
 }) => (
-  <StyledDayContainer sizeProp={size} fillContainer={fill}>
+  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
         disabledProp={buttonProps.disabled}
@@ -141,14 +142,14 @@ const CalendarDay = ({
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
     return (
-      <StyledDayContainer sizeProp={size} fillContainer={fill}>
+      <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
         {children}
       </StyledDayContainer>
     );
   }
 
   return (
-    <StyledDayContainer sizeProp={size} fillContainer={fill}>
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
       <CalendarDayButton fill={fill} {...buttonProps}>
         {children}
       </CalendarDayButton>
@@ -182,6 +183,7 @@ const Calendar = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -581,7 +583,15 @@ const Calendar = forwardRef(
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(previousMonth, bounds)}
-              onClick={() => changeReference(previousMonth)}
+              onClick={() => {
+                changeReference(previousMonth);
+                announce(
+                  `Moved to ${previousMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}`,
+                );
+              }}
             />
             <Button
               a11yTitle={nextMonth.toLocaleDateString(locale, {
@@ -590,7 +600,15 @@ const Calendar = forwardRef(
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(nextMonth, bounds)}
-              onClick={() => changeReference(nextMonth)}
+              onClick={() => {
+                changeReference(nextMonth);
+                announce(
+                  `Moved to ${nextMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}`,
+                );
+              }}
             />
           </Box>
         </Box>
@@ -603,6 +621,7 @@ const Calendar = forwardRef(
       while (days.length < 7) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={days.length}
             sizeProp={size}
             fillContainer={fill}
@@ -614,7 +633,7 @@ const Calendar = forwardRef(
         );
         day = addDays(day, 1);
       }
-      return <StyledWeek>{days}</StyledWeek>;
+      return <StyledWeek role="row">{days}</StyledWeek>;
     };
 
     const weeks = [];
@@ -626,7 +645,7 @@ const Calendar = forwardRef(
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push(
-            <StyledWeek key={day.getTime()} fillContainer={fill}>
+            <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
               {days}
             </StyledWeek>,
           );
@@ -638,6 +657,7 @@ const Calendar = forwardRef(
       if (!showAdjacentDays && otherMonth) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -657,6 +677,7 @@ const Calendar = forwardRef(
       ) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -750,7 +771,7 @@ const Calendar = forwardRef(
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek key={day.getTime()} fillContainer={fill}>
+      <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
         {days}
       </StyledWeek>,
     );
@@ -762,8 +783,24 @@ const Calendar = forwardRef(
             ? header({
                 date: reference,
                 locale,
-                onPreviousMonth: () => changeReference(previousMonth),
-                onNextMonth: () => changeReference(nextMonth),
+                onPreviousMonth: () => {
+                  changeReference(previousMonth);
+                  announce(
+                    `Moved to ${previousMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })}`,
+                  );
+                },
+                onNextMonth: () => {
+                  changeReference(nextMonth);
+                  announce(
+                    `Moved to ${previousMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })}`,
+                  );
+                },
                 previousInBound: betweenDates(previousMonth, bounds),
                 nextInBound: betweenDates(nextMonth, bounds),
               })
@@ -789,10 +826,15 @@ const Calendar = forwardRef(
             onRight={() => active && setActive(addDays(active, 1))}
           >
             <StyledWeeksContainer
+              tabIndex={0}
+              role="grid"
+              aria-label={reference.toLocaleDateString(locale, {
+                month: 'long',
+                year: 'numeric',
+              })}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
-              tabIndex={0}
               focus={focus}
               onFocus={() => {
                 setFocus(true);
