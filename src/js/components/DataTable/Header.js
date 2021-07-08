@@ -339,7 +339,7 @@ const Header = forwardRef(
                   border={cellProps.border}
                   onWidth={updateWidths}
                   // if sortable, pad will be included in the button styling
-                  pad={!sortable && !onSort ? cellProps.pad : 'none'}
+                  pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}
                   plain
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}
