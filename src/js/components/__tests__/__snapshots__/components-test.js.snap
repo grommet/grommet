@@ -3403,6 +3403,22 @@ string",
 [string]",
         "name": "value",
       },
+      Object {
+        "description": "The size of the text.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { DateInput } from 'grommet';
 <DateInput id='item' name='item' />",
@@ -6317,10 +6333,17 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8747,11 +8770,18 @@ boolean",
         "name": "resize",
       },
       Object {
-        "description": "The size of the TextArea.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8924,11 +8954,18 @@ full",
         "name": "reverse",
       },
       Object {
-        "description": "The size of the TextInput.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
