@@ -50,7 +50,7 @@ const Carousel = ({
   }
 
   const onChildChange = useCallback(
-    index => {
+    (index) => {
       if (onChild) {
         onChild(index);
       }
@@ -109,7 +109,7 @@ const Carousel = ({
     onChildChange(activeIndex - 1);
   };
 
-  const onSelect = index => () => {
+  const onSelect = (index) => () => {
     if (activeIndex !== index) {
       clearInterval(timerRef.current);
       setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
@@ -140,6 +140,7 @@ const Carousel = ({
     );
 
     let animation;
+    let visibility = 'visible';
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         animation = {
@@ -155,10 +156,11 @@ const Carousel = ({
       };
     } else {
       animation = { type: 'fadeOut', duration: 0 };
+      visibility = 'hidden';
     }
 
     return (
-      <Box fill={fill} overflow="hidden">
+      <Box fill={fill} style={{ visibility }} overflow="hidden">
         <Box fill={fill} animation={animation}>
           {child}
         </Box>
@@ -178,11 +180,11 @@ const Carousel = ({
         <Box
           tabIndex="0"
           focus={focus}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}

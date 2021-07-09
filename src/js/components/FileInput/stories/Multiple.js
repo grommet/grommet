@@ -11,10 +11,10 @@ export const Multiple = () => (
           multiple={{
             max: 5,
           }}
-          onChange={event => {
-            const fileList = event.target.files;
-            for (let i = 0; i < fileList.length; i += 1) {
-              const file = fileList[i];
+          onChange={(event, { files }) => {
+            console.log(event);
+            for (let i = 0; i < files.length; i += 1) {
+              const file = files[i];
               console.log(file.name);
             }
           }}

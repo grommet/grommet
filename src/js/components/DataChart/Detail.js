@@ -21,16 +21,16 @@ const Detail = ({
   activeProperty,
   axis,
   data,
-  pad,
   series,
   seriesStyles,
   renderValue,
+  thickness,
 }) => {
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);
 
-  const onMouseLeave = useCallback(event => {
+  const onMouseLeave = useCallback((event) => {
     // Only remove detail if the mouse isn't over the active index.
     // This helps distinguish leaving the drop on the edge where it is
     // anchored.
@@ -75,8 +75,8 @@ const Detail = ({
               key={i}
               align="center"
               responsive={false}
-              pad={{ horizontal: pad.horizontal }}
-              onMouseOver={event => {
+              width={thickness}
+              onMouseOver={(event) => {
                 activeIndex.current = event.currentTarget;
                 setDetailIndex(i);
               }}
@@ -85,7 +85,7 @@ const Detail = ({
               onBlur={() => {}}
             >
               <Box
-                ref={c => {
+                ref={(c) => {
                   detailRefs[i] = c;
                 }}
                 fill="vertical"
@@ -120,7 +120,7 @@ const Detail = ({
                     activeProperty === property ||
                     (axis && axis.x && axis.x.property === property),
                 )
-                .map(serie => {
+                .map((serie) => {
                   const propertyStyle = seriesStyles[serie.property];
                   return (
                     <Fragment key={serie.property}>

@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
 
@@ -23,14 +24,14 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ContentsBox = styled(Box)`
   position: relative;
-  ${props => props.disabled && disabledStyle()}
-  ${props => props.theme.fileInput && props.theme.fileInput.extend};
-  ${props =>
+  ${(props) => props.disabled && disabledStyle()}
+  ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
+  ${(props) =>
     props.hover &&
     props.theme.fileInput &&
     props.theme.fileInput.hover &&
     props.theme.fileInput.hover.extend};
-  ${props =>
+  ${(props) =>
     props.dragOver &&
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
@@ -38,14 +39,14 @@ const ContentsBox = styled(Box)`
 `;
 
 const Label = styled(Text)`
-  ${props =>
+  ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
 const Message = styled(Text)`
-  ${props =>
+  ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&
     props.theme.fileInput.message.extend};
@@ -73,6 +74,7 @@ const FileInput = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
+    const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
@@ -126,8 +128,8 @@ const FileInput = forwardRef(
     // rightoffset will take the larger width
     let rightOffset;
     if (removeRef.current && controlRef.current) {
-      const rightOffsetBrowse = controlRef.current.getBoundingClientRect()
-        .width;
+      const rightOffsetBrowse =
+        controlRef.current.getBoundingClientRect().width;
       const rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
       if (rightPad && typeof rightPad === 'string')
         rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
@@ -150,10 +152,10 @@ const FileInput = forwardRef(
 
     let message;
     if (!files.length) {
-      if (multiple) message = messages.dropPromptMultiple || 'Drag and drop';
-      if (!multiple) {
-        message = messages.dropPrompt || 'Drag and drop';
-      }
+      message = format({
+        id: multiple ? 'fileInput.dropPromptMultiple' : 'fileInput.dropPrompt',
+        messages,
+      });
     } else message = `${files.length} items`;
 
     return (
@@ -184,11 +186,11 @@ const FileInput = forwardRef(
               <>
                 <Message {...theme.fileInput.message}>{message}</Message>
                 <Keyboard
-                  onSpace={event => {
+                  onSpace={(event) => {
                     if (controlRef.current === event.target)
                       inputRef.current.click();
                   }}
-                  onEnter={event => {
+                  onEnter={(event) => {
                     if (controlRef.current === event.target)
                       inputRef.current.click();
                   }}
@@ -197,7 +199,10 @@ const FileInput = forwardRef(
                     <Button
                       ref={controlRef}
                       kind={theme.fileInput.button}
-                      label={messages.browse || 'browse'}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
                       onClick={() => {
                         inputRef.current.click();
                         inputRef.current.focus();
@@ -213,7 +218,10 @@ const FileInput = forwardRef(
                         inputRef.current.click();
                         inputRef.current.focus();
                       }}
-                      label={messages.browse || 'browse'}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
                     />
                   )}
                 </Keyboard>
@@ -224,26 +232,34 @@ const FileInput = forwardRef(
         {files.length > aggregateThreshold && (
           <Box justify="between" direction="row" align="center">
             <Label {...theme.fileInput.label}>
-              {files.length} {messages.files || 'files'}
+              {files.length}{' '}
+              {format({
+                id: 'fileInput.files',
+                messages,
+              })}
             </Label>
             <Box flex={false} direction="row" align="center">
               <Button
                 ref={removeRef}
-                a11yTitle={messages.removeAll || 'remove all'}
+                a11yTitle={format({
+                  id: 'fileInput.removeAll',
+                  messages,
+                })}
                 icon={<RemoveIcon />}
                 hoverIndicator
-                onClick={event => {
+                onClick={(event) => {
                   event.stopPropagation();
+                  if (onChange) onChange(event, { files: [] });
                   setFiles([]);
                   inputRef.current.focus();
                 }}
               />
               <Keyboard
-                onSpace={event => {
+                onSpace={(event) => {
                   if (controlRef.current === event.target)
                     inputRef.current.click();
                 }}
-                onEnter={event => {
+                onEnter={(event) => {
                   if (controlRef.current === event.target)
                     inputRef.current.click();
                 }}
@@ -252,7 +268,10 @@ const FileInput = forwardRef(
                   <Button
                     ref={controlRef}
                     kind={theme.fileInput.button}
-                    label={messages.browse || 'browse'}
+                    label={format({
+                      id: 'fileInput.browse',
+                      messages,
+                    })}
                     onClick={() => {
                       inputRef.current.click();
                       inputRef.current.focus();
@@ -268,7 +287,10 @@ const FileInput = forwardRef(
                       inputRef.current.click();
                       inputRef.current.focus();
                     }}
-                    label={messages.browse || 'browse'}
+                    label={format({
+                      id: 'fileInput.browse',
+                      messages,
+                    })}
                   />
                 )}
               </Keyboard>
@@ -300,25 +322,29 @@ const FileInput = forwardRef(
               <Box flex={false} direction="row" align="center">
                 <Button
                   ref={index ? undefined : removeRef}
-                  a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
+                  a11yTitle={`${format({
+                    id: 'fileInput.remove',
+                    messages,
+                  })} ${file.name}`}
                   icon={<RemoveIcon />}
                   hoverIndicator
-                  onClick={event => {
+                  onClick={(event) => {
                     event.stopPropagation();
                     const nextFiles = [...files];
                     nextFiles.splice(index, 1);
                     setFiles(nextFiles);
+                    if (onChange) onChange(event, { files: nextFiles });
                     if (nextFiles.length === 0) inputRef.current.value = '';
                     inputRef.current.focus();
                   }}
                 />
                 {files.length === 1 && (
                   <Keyboard
-                    onSpace={event => {
+                    onSpace={(event) => {
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
-                    onEnter={event => {
+                    onEnter={(event) => {
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
@@ -327,7 +353,10 @@ const FileInput = forwardRef(
                       <Button
                         ref={controlRef}
                         kind={theme.fileInput.button}
-                        label={messages.browse || 'browse'}
+                        label={format({
+                          id: 'fileInput.browse',
+                          messages,
+                        })}
                         onClick={() => {
                           inputRef.current.click();
                           inputRef.current.focus();
@@ -342,7 +371,10 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        label={messages.browse || 'browse'}
+                        label={format({
+                          id: 'fileInput.browse',
+                          messages,
+                        })}
                       />
                     )}
                   </Keyboard>
@@ -362,7 +394,7 @@ const FileInput = forwardRef(
           {...rest}
           onDragOver={() => setDragOver(true)}
           onDragLeave={() => setDragOver(false)}
-          onChange={event => {
+          onChange={(event) => {
             event.persist();
             const fileList = event.target.files;
             let filesToAdd;
@@ -400,15 +432,15 @@ const FileInput = forwardRef(
               // avoid duplicates
               const existing =
                 nextFiles.filter(
-                  file =>
-                    file.name === filesToAdd[i].name &&
-                    file.size === filesToAdd[i].size,
+                  (file) =>
+                    file.name === fileList[i].name &&
+                    file.size === fileList[i].size,
                 ).length > 0;
               if (!existing) nextFiles.push(filesToAdd[i]);
             }
             setFiles(nextFiles);
             setDragOver(false);
-            if (onChange) onChange(event);
+            if (onChange) onChange(event, { files: nextFiles });
           }}
         />
       </ContentsBox>
@@ -416,16 +448,7 @@ const FileInput = forwardRef(
   },
 );
 
-FileInput.defaultProps = {
-  messages: {
-    browse: 'browse',
-    dropPrompt: 'Drop file here or',
-    dropPromptMultiple: 'Drop files here or',
-    files: 'files',
-    remove: 'remove',
-    removeAll: 'remove all',
-  },
-};
+FileInput.defaultProps = {};
 
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 

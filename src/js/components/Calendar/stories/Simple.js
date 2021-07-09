@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 export const Simple = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 

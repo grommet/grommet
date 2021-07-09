@@ -10,10 +10,11 @@ import { ExpanderCell } from './ExpanderCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeRowCellProps } from './buildState';
 
 const Row = memo(
   ({
+    cellProps,
     primaryValue,
     index,
     rowRef,
@@ -24,21 +25,15 @@ const Row = memo(
     setActive,
     selected,
     onSelect,
-    background,
     isSelected,
     rowDetails,
     isRowExpanded,
     setRowExpand,
     rowExpand,
     columns,
-    pinnedBackground,
     pinnedOffset,
-    border,
-    pad,
     primaryProperty,
-    rowProps,
     data,
-    theme,
   }) => (
     <>
       <StyledDataTableRow
@@ -47,7 +42,7 @@ const Row = memo(
         active={active}
         onClick={
           onClickRow
-            ? event => {
+            ? (event) => {
                 // extract from React's synthetic event pool
                 event.persist();
                 const adjustedEvent = event;
@@ -63,7 +58,11 @@ const Row = memo(
         onBlur={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
-          <TableCell background={background} plain="noPad" size="auto">
+          <TableCell
+            background={cellProps.background}
+            plain="noPad"
+            size="auto"
+          >
             <CheckBox
               a11yTitle={`${
                 isSelected ? 'unselect' : 'select'
@@ -72,16 +71,10 @@ const Row = memo(
               disabled={!onSelect}
               onChange={() => {
                 if (isSelected) {
-                  onSelect(selected.filter(s => s !== primaryValue));
+                  onSelect(selected.filter((s) => s !== primaryValue));
                 } else onSelect([...selected, primaryValue]);
               }}
-              pad={
-                (rowProps &&
-                  rowProps[primaryValue] &&
-                  rowProps[primaryValue].pad) ||
-                pad ||
-                theme.table.body.pad
-              }
+              pad={cellProps.pad}
             />
           </TableCell>
         )}
@@ -92,26 +85,28 @@ const Row = memo(
             expanded={isRowExpanded}
             onToggle={() => {
               if (isRowExpanded) {
-                setRowExpand(rowExpand.filter(s => s !== index));
+                setRowExpand(rowExpand.filter((s) => s !== index));
               } else {
                 setRowExpand([...rowExpand, index]);
               }
             }}
+            pad={cellProps.pad}
           />
         )}
-        {columns.map(column => (
+        {columns.map((column) => (
           <Cell
             key={column.property}
-            background={column.pin ? pinnedBackground : background}
-            border={border}
+            background={
+              (column.pin && cellProps.pinned.background) ||
+              cellProps.background
+            }
+            border={(column.pin && cellProps.pinned.border) || cellProps.border}
             context="body"
             column={column}
             datum={datum}
-            index={index}
-            pad={pad}
+            pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
             pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
             primaryProperty={primaryProperty}
-            rowProp={rowProps && rowProps[primaryValue]}
             scope={
               column.primary || column.property === primaryProperty
                 ? 'row'
@@ -135,16 +130,13 @@ const Row = memo(
 const Body = forwardRef(
   (
     {
-      background,
-      border,
+      cellProps: cellPropsProp,
       columns,
       data,
       onMore,
       replace,
       onClickRow,
       onSelect,
-      pad,
-      pinnedBackground,
       pinnedOffset,
       primaryProperty,
       rowProps,
@@ -165,7 +157,7 @@ const Body = forwardRef(
       <Keyboard
         onEnter={
           onClickRow && active >= 0
-            ? event => {
+            ? (event) => {
                 event.persist();
                 const adjustedEvent = event;
                 adjustedEvent.datum = data[active];
@@ -200,7 +192,7 @@ const Body = forwardRef(
             items={data}
             onMore={onMore}
             replace={replace}
-            renderMarker={marker => (
+            renderMarker={(marker) => (
               <TableRow>
                 <TableCell>{marker}</TableCell>
               </TableRow>
@@ -215,10 +207,17 @@ const Body = forwardRef(
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
               const isRowExpanded = rowExpand && rowExpand.includes(index);
+              const cellProps = normalizeRowCellProps(
+                rowProps,
+                cellPropsProp,
+                primaryValue,
+                index,
+              );
               return (
                 <Row
                   key={index}
                   rowRef={rowRef}
+                  cellProps={cellProps}
                   primaryValue={primaryValue}
                   isSelected={isSelected}
                   isRowExpanded={isRowExpanded}
@@ -230,14 +229,10 @@ const Body = forwardRef(
                   setActive={setActive}
                   selected={selected}
                   onSelect={onSelect}
-                  background={background}
                   rowDetails={rowDetails}
                   setRowExpand={setRowExpand}
                   rowExpand={rowExpand}
                   columns={columns}
-                  pinnedBackground={pinnedBackground}
-                  border={border}
-                  pad={pad}
                   primaryProperty={primaryProperty}
                   rowProps={rowProps}
                   data={data}

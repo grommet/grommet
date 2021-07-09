@@ -13,11 +13,39 @@ import { Diagram } from 'grommet';
 
 ## Properties
 
+**animation**
+
+Animation to be used by entire Diagram
+
+```
+boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}
+```
+
 **connections**
 
 Required. Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish. Defaults to `[]`.
 
@@ -27,6 +55,27 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -68,6 +117,23 @@ svg
 ```
 ## Theme
   
+**diagram.animation**
+
+Configuration for draw and pulse animations in Diagram. Expects `object`.
+
+Defaults to
+
+```
+{      
+      pulse: {
+        duration: 1000,
+      },     
+      draw: {
+        duration: 2000,
+      },
+    }
+```
+
 **diagram.extend**
 
 Any additional style for Diagram. Expects `string | (props) => {}`.
@@ -86,6 +152,18 @@ Defaults to
 
 ```
 accent-1
+```
+
+**global.animation**
+
+The animation configuration for Diagram. Expects `object`.
+
+Defaults to
+
+```
+{
+      duration: '1s'
+    }
 ```
 
 **global.colors**
