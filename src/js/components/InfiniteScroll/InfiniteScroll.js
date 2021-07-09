@@ -15,6 +15,7 @@ const InfiniteScroll = ({
   children,
   items = [],
   onMore,
+  moreButton = false,
   renderMarker,
   replace,
   show,
@@ -137,6 +138,7 @@ const InfiniteScroll = ({
   useEffect(() => {
     if (
       onMore &&
+      !moreButton &&
       renderPageBounds[1] === lastPage &&
       items.length >= pendingLength
     ) {
@@ -153,7 +155,7 @@ const InfiniteScroll = ({
       setPendingLength(0);
       setRenderPageBounds([0, calculateLastPageBound(show, step)]);
     }
-  }, [lastPage, pendingLength, show, step, items.length]);
+  }, [lastPage, pendingLength, show, step, items.length, moreButton]);
 
   // scroll to any 'show'
   useLayoutEffect(() => {

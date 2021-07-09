@@ -7174,6 +7174,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 \`\`\`
 
+**moreButton**
+
+When supplied, this will display a button to call the onMore function 
+      to fetch more data. Also displays a spinner while data it is loading.
+      And asks user to try again if data takes more than 10 seconds.
+      This is an alternative to the infiniteScroll default behaviour. 
+      It should only be set in addition to the onMore property.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
