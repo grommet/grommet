@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Select => {
+export const doc = (Select) => {
   const DocumentedSelect = describe(Select)
     .availableAt(getAvailableAtBadge('Select', 'Input'))
     .description('A control to select a value, with optional search.')

@@ -1,6 +1,5 @@
 import React from 'react';
 import 'jest-styled-components';
-import renderer from 'react-test-renderer';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -33,16 +32,16 @@ describe('Accordion', () => {
   });
 
   test('no AccordionPanel', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Accordion />
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('AccordionPanel', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
@@ -53,11 +52,11 @@ describe('Accordion', () => {
         </Accordion>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('complex title', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box background="dark-1">
           <Accordion>
@@ -72,11 +71,11 @@ describe('Accordion', () => {
         </Box>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('complex header', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Accordion activeIndex={1} animate={false}>
           <AccordionPanel header={<div>Panel 1 header</div>}>
@@ -89,11 +88,11 @@ describe('Accordion', () => {
         </Accordion>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('change to second Panel', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
@@ -166,18 +165,18 @@ describe('Accordion', () => {
   });
 
   test('custom accordion', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={customTheme}>
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
         </Accordion>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('accordion border', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           accordion: {
@@ -195,7 +194,7 @@ describe('Accordion', () => {
         </Accordion>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('change active index', () => {
@@ -348,7 +347,7 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false} onActive={onActive}>
-          {[1, 2].map(index => (
+          {[1, 2].map((index) => (
             <Panel key={index} index={index} />
           ))}
         </Accordion>

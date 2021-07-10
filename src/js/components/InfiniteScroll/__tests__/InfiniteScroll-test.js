@@ -5,15 +5,15 @@ import 'jest-styled-components';
 import { Grommet, Image, Box } from '../..';
 import { InfiniteScroll } from '..';
 
-const simpleItems = value =>
+const simpleItems = (value) =>
   Array(value)
     .fill()
     .map((_, i) => `item ${i + 1}`);
 
-const createPageItems = allChildren => {
+const createPageItems = (allChildren) => {
   const unfiltered = Array.from(allChildren);
   // Removing any children which are serving as refs
-  return unfiltered.filter(childItem => childItem.outerHTML.includes('item'));
+  return unfiltered.filter((childItem) => childItem.outerHTML.includes('item'));
 };
 
 describe('InfiniteScroll', () => {
@@ -67,7 +67,7 @@ describe('InfiniteScroll', () => {
         <InfiniteScroll
           items={items}
           step={2}
-          renderMarker={m => <div>{m}</div>}
+          renderMarker={(m) => <div>{m}</div>}
         >
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
@@ -162,7 +162,7 @@ describe('Number of Items Rendered', () => {
           // show={117}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -178,7 +178,7 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(200)} step={step}>
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -194,7 +194,7 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(numItems)} step={1050}>
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -210,7 +210,7 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(numItems)} step={step}>
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -229,14 +229,14 @@ describe('Number of Items Rendered', () => {
 
 describe('show scenarios', () => {
   test(`When show, show item should be visible in window`, () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(300)} show={105}>
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -261,7 +261,7 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -288,7 +288,7 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -316,7 +316,7 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -347,7 +347,7 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -385,7 +385,7 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {item => <Box key={item}>{item}</Box>}
+          {(item) => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );

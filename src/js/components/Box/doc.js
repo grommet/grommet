@@ -5,9 +5,11 @@ import {
   elevationPropType,
   genericProps,
   getBorderPropType,
+  heightPropType,
   hoverIndicatorPropType,
   padPropType,
   roundPropType,
+  widthPropType,
 } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
@@ -47,7 +49,7 @@ const overflowPropType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-export const doc = Box => {
+export const doc = (Box) => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box', 'Layout'))
     .description(
@@ -59,26 +61,29 @@ export const doc = Box => {
     .intrinsicElement('div');
   DocumentedBox.propTypes = {
     ...genericProps,
-    align: PropTypes.oneOf([
-      'start',
-      'center',
-      'end',
-      'baseline',
-      'stretch',
-    ]).description('How to align the contents along the cross axis.'),
-    alignContent: PropTypes.oneOf([
-      'start',
-      'center',
-      'end',
-      'between',
-      'around',
-      'stretch',
-    ])
-      .description(
-        `How to align the contents when there is extra space in
-        the cross axis.`,
-      )
-      .defaultValue('stretch'),
+    align: PropTypes.oneOfType([
+      PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),
+      PropTypes.string,
+    ]).description(`How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.`),
+    alignContent: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'around',
+        'baseline',
+        'between',
+        'center',
+        'evenly',
+        'end',
+        'start',
+        'stretch',
+      ]),
+      PropTypes.string,
+    ]).description(
+      `How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.`,
+    ),
     animation: PropTypes.oneOfType([
       ANIMATION_TYPE,
       ANIMATION_SHAPE,
@@ -179,44 +184,7 @@ export const doc = Box => {
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
         Box will not add a gap between the children of the Fragment.`),
-    height: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'xxsmall',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-        'xxlarge',
-      ]),
-      PropTypes.string,
-      PropTypes.shape({
-        min: PropTypes.oneOfType([
-          PropTypes.oneOf([
-            'xxsmall',
-            'xsmall',
-            'small',
-            'medium',
-            'large',
-            'xlarge',
-            'xxlarge',
-          ]),
-          PropTypes.string,
-        ]),
-        max: PropTypes.oneOfType([
-          PropTypes.oneOf([
-            'xxsmall',
-            'xsmall',
-            'small',
-            'medium',
-            'large',
-            'xlarge',
-            'xxlarge',
-          ]),
-          PropTypes.string,
-        ]),
-      }),
-    ]).description('A fixed height.'),
+    height: heightPropType.description('A fixed height.'),
     hoverIndicator: hoverIndicatorPropType
       .description(
         `When 'onClick' has been specified, the hover indicator to apply
@@ -254,56 +222,7 @@ of indicating the DOM tag via the 'as' property.`,
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
-    width: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'xxsmall',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-        'xxlarge',
-      ]),
-      PropTypes.string,
-      PropTypes.shape({
-        width: PropTypes.oneOfType([
-          PropTypes.oneOf([
-            'xxsmall',
-            'xsmall',
-            'small',
-            'medium',
-            'large',
-            'xlarge',
-            'xxlarge',
-          ]),
-          PropTypes.string,
-        ]),
-        min: PropTypes.oneOfType([
-          PropTypes.oneOf([
-            'xxsmall',
-            'xsmall',
-            'small',
-            'medium',
-            'large',
-            'xlarge',
-            'xxlarge',
-          ]),
-          PropTypes.string,
-        ]),
-        max: PropTypes.oneOfType([
-          PropTypes.oneOf([
-            'xxsmall',
-            'xsmall',
-            'small',
-            'medium',
-            'large',
-            'xlarge',
-            'xxlarge',
-          ]),
-          PropTypes.string,
-        ]),
-      }),
-    ]).description('A fixed width.'),
+    width: widthPropType.description('A fixed width.'),
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])])
       .description(`Whether children can wrap if they can't all fit.`)
       .defaultValue(false),
@@ -401,7 +320,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'box.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, 
+    description: `The actual breakpoint to trigger changes in the border,
     direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
@@ -410,7 +329,7 @@ export const themeDoc = {
     'The possible sizes for any of gap, margin, and pad.',
   ),
   ...themeDocUtils.breakpointStyle(
-    `The possible breakpoints that could affect border, direction, gap, margin, 
+    `The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round.`,
   ),
 };

@@ -242,10 +242,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButton-sc-323bzc-0 iEDGYZ"
+    class="StyledButton-sc-323bzc-0 kflPHx"
     type="button"
   >
     Test Events
@@ -507,14 +507,9 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
+  <span>
     Not React Element
   </span>
 </div>

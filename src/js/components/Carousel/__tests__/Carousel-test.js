@@ -1,7 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Carousel } from '..';
@@ -11,7 +10,7 @@ describe('Carousel', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Carousel>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
@@ -19,12 +18,12 @@ describe('Carousel', () => {
         </Carousel>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic with `initialChild: 1`', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Carousel initialChild={1}>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
@@ -32,8 +31,8 @@ describe('Carousel', () => {
         </Carousel>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('navigate', () => {
@@ -94,7 +93,7 @@ describe('Carousel', () => {
   });
 
   test('play', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
@@ -109,5 +108,30 @@ describe('Carousel', () => {
       jest.advanceTimersByTime(1300);
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should work as controlled carousel', () => {
+    const setActiveSlide = jest.fn();
+
+    render(
+      <Grommet>
+        <Carousel
+          id="test-carousel"
+          controls="selectors"
+          activeChild={1}
+          onChild={setActiveSlide}
+        >
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
+      </Grommet>,
+    );
+
+    const button = document
+      .getElementById('test-carousel')
+      .querySelector('button');
+
+    fireEvent.click(button);
+    expect(setActiveSlide).toBeCalledWith(0);
   });
 });

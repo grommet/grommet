@@ -8,8 +8,8 @@ export const Simple = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <FileInput
-          onChange={event => {
-            const fileList = event.target.files;
+          onChange={(event, { files }) => {
+            const fileList = files;
             for (let i = 0; i < fileList.length; i += 1) {
               const file = fileList[i];
               console.log(file.name);

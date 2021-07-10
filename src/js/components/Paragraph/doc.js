@@ -4,7 +4,7 @@ import { colorPropType, genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Paragraph => {
+export const doc = (Paragraph) => {
   const DocumentedParagraph = describe(Paragraph)
     .availableAt(getAvailableAtBadge('Paragraph', 'Type'))
     .description('A paragraph of text.')
@@ -31,7 +31,7 @@ export const doc = Paragraph => {
     ])
       .description('The size of the Paragraph text.')
       .defaultValue('medium'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the paragraph.')
       .defaultValue('start'),
   };

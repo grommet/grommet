@@ -24,8 +24,10 @@ export const Uncontrolled = () => (
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
-          onChange={value => console.log('Change', value)}
-          onSubmit={event => console.log('Submit', event.value, event.touched)}
+          onChange={(value) => console.log('Change', value)}
+          onSubmit={(event) =>
+            console.log('Submit', event.value, event.touched)
+          }
         >
           <FormField label="Name" name="name">
             <TextInput name="name" suggestions={suggestions} />
@@ -57,7 +59,7 @@ export const Uncontrolled = () => (
           <FormField label="Age" name="age" pad>
             <RangeInput name="age" min={15} max={75} />
           </FormField>
-          <FormField label="Image" name="image">
+          <FormField required label="Image" name="image">
             <FileInput name="image" />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>

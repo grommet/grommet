@@ -44,7 +44,7 @@ const colorArray = (array, prefix) =>
 
 colorArray(accentColors, 'accent');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -57,7 +57,7 @@ export const dark = deepFreeze({
     focus: {
       border: {
         color: css`
-          ${props => normalizeColor('focus', props.theme)};
+          ${(props) => normalizeColor('focus', props.theme)};
         `,
         width: '2px',
       },

@@ -502,24 +502,30 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "How to align the contents along the cross axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-baseline
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the contents when there is extra space in
-        the cross axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -818,6 +824,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1292,10 +1307,18 @@ function",
       },
       Object {
         "defaultValue": undefined,
-        "description": "An indicator to show on the top-right of the Button. For accessibility,
-         supplement the badge by adding an a11yTitle to the Button which 
-         provides a useful message to screen readers. For example, \\"2 unread 
-         notifications\\".",
+        "description": "An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".",
         "format": "boolean
 element
 number
@@ -3380,6 +3403,22 @@ string",
 [string]",
         "name": "value",
       },
+      Object {
+        "description": "The size of the text.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { DateInput } from 'grommet';
 <DateInput id='item' name='item' />",
@@ -3404,10 +3443,35 @@ string",
     "name": "Diagram",
     "properties": Array [
       Object {
+        "description": "Animation to be used by entire Diagram",
+        "format": "boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "animation",
+      },
+      Object {
         "defaultValue": Array [],
         "description": "Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.",
         "format": "[{
@@ -3415,6 +3479,27 @@ string",
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -3992,7 +4077,10 @@ string",
       },
       Object {
         "description": "Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.",
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.",
         "format": "function",
         "name": "onChange",
       },
@@ -4462,23 +4550,30 @@ string",
         "name": "margin",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the individual items inside the grid when there is extra
-space in the column axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "description": "How to align the contents along the column axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -4624,6 +4719,15 @@ small
 medium
 large
 xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto
 {
   count: 
     fit
@@ -4635,6 +4739,15 @@ xlarge
     medium
     large
     xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
     [
       xsmall
       small
@@ -4695,6 +4808,47 @@ none
 }
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "A fixed height.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "height",
       },
       Object {
         "defaultValue": "stretch",
@@ -4865,6 +5019,47 @@ function",
 function",
         "name": "as",
       },
+      Object {
+        "description": "A fixed width.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "width",
+      },
     ],
     "usage": "import { Grid } from 'grommet';
 <Grid />",
@@ -4929,9 +5124,26 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
       },
       Object {
         "defaultValue": false,
-        "description": "Whether to take the whole viewport.",
-        "format": "boolean",
+        "description": "Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.",
+        "format": "boolean
+min",
         "name": "full",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.",
+        "format": "{
+  layer: 
+    {
+      singleId: boolean
+    }
+}",
+        "name": "options",
       },
       Object {
         "defaultValue": false,
@@ -4971,6 +5183,125 @@ light",
       shadow root).",
         "format": "object",
         "name": "containerTarget",
+      },
+      Object {
+        "defaultValue": Object {
+          "messages": Object {
+            "fileInput": Object {
+              "browse": "browse",
+              "dropPrompt": "Drop file here or",
+              "dropPromptMultiple": "Drop files here or",
+              "files": "files",
+              "remove": "remove",
+              "removeAll": "remove all",
+            },
+            "form": Object {
+              "invalid": "invalid",
+              "required": "required",
+            },
+            "menu": Object {
+              "closeMenu": "Close Menu",
+              "openMenu": "Open Menu",
+            },
+            "rangeSelector": Object {
+              "lower": "Lower Bounds",
+              "upper": "Upper Bounds",
+            },
+            "select": Object {
+              "multiple": "multiple",
+            },
+            "skipLinks": Object {
+              "skipTo": "Skip To:",
+            },
+            "tabs": Object {
+              "tabContents": "Tab Contents",
+            },
+            "textInput": Object {
+              "enterSelect": "(Press Enter to Select)",
+              "suggestionIsOpen": "Suggestions drop is open, continue to use
+            arrow keys to navigate",
+              "suggestionsCount": "suggestions available",
+              "suggestionsExist": "This input has suggestions use arrow keys
+            to navigate",
+            },
+            "video": Object {
+              "closeMenu": "close menu",
+              "fullScreen": "full screen",
+              "openMenu": "open menu",
+              "pauseButton": "pause",
+              "playButton": "play",
+              "progressMeter": "video progress",
+              "scrubber": "scrubber",
+              "volumeDown": "volume down",
+              "volumeUp": "volume up",
+            },
+          },
+        },
+        "description": "Custom messages for grommet components. Use this property to
+define messages or a function to get localized messages
+for any grommet children components.",
+        "format": "{
+  format: function,
+  messages: 
+    {
+      fileInput: 
+        {
+          browse: string,
+          dropPrompt: string,
+          dropPromptMultiple: string,
+          files: string,
+          remove: string,
+          removeAll: string
+        },
+      form: 
+        {
+          invalid: string,
+          required: string
+        },
+      menu: 
+        {
+          openMenu: string,
+          closeMenu: string
+        },
+      rangeSelector: 
+        {
+          lower: string,
+          upper: string
+        },
+      select: 
+        {
+          multiple: string
+        },
+      skipLinks: 
+        {
+          skipTo: string
+        },
+      tabs: 
+        {
+          tabContents: string
+        },
+      textInput: 
+        {
+          enterSelect: string,
+          suggestionsCount: string,
+          suggestionsExist: string,
+          suggestionIsOpen: string
+        },
+      video: 
+        {
+          closeMenu: string,
+          fullScreen: string,
+          progressMeter: string,
+          scrubber: string,
+          openMenu: string,
+          pauseButton: string,
+          playButton: string,
+          volumeDown: string,
+          volumeUp: string
+        }
+    }
+}",
+        "name": "messages",
       },
     ],
     "usage": "import { Grommet } from 'grommet';
@@ -5159,7 +5490,8 @@ string",
         "description": "How to align the text inside the heading.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
       Object {
@@ -5767,6 +6099,15 @@ end
         "name": "onClickItem",
       },
       Object {
+        "description": "Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.",
+        "format": "function",
+        "name": "onOrder",
+      },
+      Object {
         "description": "Item padding.",
         "format": "none
 xxsmall
@@ -5992,12 +6333,27 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
       },
       Object {
         "description": "What text to put in the input. The caller should ensure that it
@@ -6832,7 +7188,8 @@ string",
         "description": "How to align the text inside the paragraph.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
     ],
@@ -8290,8 +8647,26 @@ element",
         "description": "How to align the text inside the component.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
+      },
+      Object {
+        "description": "tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
       },
       Object {
         "defaultValue": false,
@@ -8395,11 +8770,18 @@ boolean",
         "name": "resize",
       },
       Object {
-        "description": "The size of the TextArea.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8572,11 +8954,18 @@ full",
         "name": "reverse",
       },
       Object {
-        "description": "The size of the TextInput.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8798,17 +9187,6 @@ contain",
         "name": "mute",
       },
       Object {
-        "defaultValue": Object {
-          "closeMenu": "close menu",
-          "fullScreen": "full screen",
-          "openMenu": "open menu",
-          "pauseButton": "pause",
-          "playButton": "play",
-          "progressMeter": "video progress",
-          "scrubber": "scrubber",
-          "volumeDown": "volume down",
-          "volumeUp": "volume up",
-        },
         "description": "Custom messages. Used for accessibility by screen readers.",
         "format": "{
   closeMenu: string,

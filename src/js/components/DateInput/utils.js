@@ -2,7 +2,7 @@
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
 
-export const formatToSchema = format => {
+export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
 
@@ -22,18 +22,43 @@ export const formatToSchema = format => {
   return result;
 };
 
+const masks = {
+  m: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^1[0-2]$`) },
+  mm: { length: [1, 2], regexp: new RegExp(`^[0-1]$|^0[1-9]$|^1[0-2]$`) },
+  d: { length: [1, 2], regexp: new RegExp(`^[1-9]$|^[1-2][0-9]$|^3[0-1]$`) },
+  dd: {
+    length: [1, 2],
+    regexp: new RegExp(`^[0-3]$|^0[1-9]$|^[1-2][0-9]$|^3[0-1]$`),
+  },
+  yy: { length: [1, 2], regexp: new RegExp(`^[0-9]{1,2}$`) },
+  yyyy: { length: [1, 4], regexp: new RegExp(`^[0-9]{1,4}$`) },
+};
+
+export const schemaToMask = (schema) => {
+  if (!schema) return undefined;
+  return schema.map((part) => {
+    const lower = part.toLowerCase();
+    const char = lower[0];
+    if (char === 'm' || char === 'd' || char === 'y')
+      return { placeholder: part, ...masks[lower] };
+    return { fixed: part };
+  });
+};
+
 // convert value into text representation using the schema
 export const valueToText = (value, schema) => {
+  let text = '';
   // when user initializes dates as empty array, we want to still
   // show the placeholder text
-  if (!value || (Array.isArray(value) && !value.length)) return '';
-  let text = '';
+  if (!value || (Array.isArray(value) && !value.length)) return text;
 
-  const dates = (Array.isArray(value) ? value : [value]).map(v => new Date(v));
+  const dates = (Array.isArray(value) ? value : [value]).map(
+    (v) => new Date(v),
+  );
 
   let dateIndex = 0;
   let parts = {};
-  schema.forEach(part => {
+  schema.every((part) => {
     const char = part[0].toLowerCase();
     // advance dateIndex if we already have this part
     while (
@@ -59,15 +84,20 @@ export const valueToText = (value, schema) => {
       text += `0${date.getDate()}`.slice(-2);
       parts[part] = true;
     } else if (date && part === 'yy') {
-      text += date
-        .getFullYear()
-        .toString()
-        .slice(-2);
+      text += date.getFullYear().toString().slice(-2);
       parts[part] = true;
     } else if (date && part === 'yyyy') {
       text += date.getFullYear();
       parts[part] = true;
-    } else text += part;
+    } else if (
+      !date &&
+      (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')
+    ) {
+      return false;
+    } else {
+      text += part;
+    }
+    return true;
   });
 
   return text;
@@ -86,12 +116,14 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema) => {
-  if (!text) return undefined;
+export const textToValue = (text, schema, valueProp, range) => {
+  if (!text) return range ? [] : undefined;
 
   let result;
-  const addDate = parts => {
-    // do a little sanity checking on the values
+
+  const addDate = (parts) => {
+    // Do a little sanity checking on the parts first.
+    // If not valid, leave as is.
     if (
       !parts.m ||
       !parts.d ||
@@ -103,20 +135,35 @@ export const textToValue = (text, schema) => {
       parts.d > 31
     )
       return parts;
-    const date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    if (!result) result = date;
-    // single
-    else if (Array.isArray(result)) result.push(date);
-    // second
-    else result = [result, date]; // third and beyond, unused?
+
+    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
+    // match time and timezone of any supplied valueProp
+    if (
+      valueProp &&
+      ((Array.isArray(valueProp) && valueProp[0]) || !Array.isArray(valueProp))
+    ) {
+      const valueDate = new Date(
+        Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp,
+      ).toISOString();
+      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
+    }
+    if (!range) {
+      if (!result) result = date;
+    } else {
+      if (!result) result = [];
+      result.push(date);
+    }
+    // we've consumed these parts, return an empty object in case we need
+    // to start building up another one for a range
     return {};
   };
 
   let parts = {};
   let index = 0;
-  schema.forEach(part => {
+  schema.forEach((part) => {
     if (index < text.length) {
-      const char = part[0].toLowerCase();
+      const lower = part.toLowerCase();
+      const char = lower[0];
       if (parts[char] !== undefined) parts = addDate(parts);
 
       if (char === 'm') {
@@ -128,6 +175,10 @@ export const textToValue = (text, schema) => {
       } else if (char === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;
+        if (lower === 'yy' && parts.y.length === 2) {
+          // convert to full year, pivot at 69 based on POSIX strptime()
+          parts.y = `${parts.y < 69 ? 20 : 19}${parts.y}`;
+        }
       } else if (text.slice(index, index + part.length) === part) {
         index += part.length;
       } else {
@@ -137,7 +188,14 @@ export const textToValue = (text, schema) => {
       }
     }
   });
-  addDate(parts);
+  parts = addDate(parts);
 
+  if (!result) return range ? [] : undefined;
   return result;
 };
+
+export const valuesAreEqual = (value1, value2) =>
+  (Array.isArray(value1) &&
+    Array.isArray(value2) &&
+    value1.every((d1, i) => d1 === value2[i])) ||
+  value1 === value2;

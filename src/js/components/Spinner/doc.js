@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Spinner => {
+export const doc = (Spinner) => {
   const DocumentedSpinner = describe(Spinner)
     .availableAt(getAvailableAtBadge('Spinner', 'Visualizations'))
     .description('A Spinner.')
