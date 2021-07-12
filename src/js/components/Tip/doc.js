@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Tip => {
+export const doc = (Tip) => {
   const DocumentedTip = describe(Tip)
     .availableAt(getAvailableAtBadge('Tip', 'Controls'))
     .description(

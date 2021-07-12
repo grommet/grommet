@@ -11,7 +11,7 @@ export const Multiple = () => {
       <Box align="center" pad="large">
         <Calendar
           dates={dates}
-          onSelect={date => {
+          onSelect={(date) => {
             const nextDates = [...dates];
             const index = nextDates.indexOf(date);
             if (index === -1) {
