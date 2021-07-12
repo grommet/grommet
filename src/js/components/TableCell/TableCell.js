@@ -1,8 +1,15 @@
-import React, { forwardRef, useContext, useEffect, useRef } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { defaultProps } from '../../default-props';
-import { useForwardedRef } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -24,6 +31,7 @@ const TableCell = forwardRef(
       children,
       className, // so StyledDataTableCell is applied to td/th
       colSpan,
+      onWidth,
       pad,
       plain,
       scope,
@@ -37,6 +45,13 @@ const TableCell = forwardRef(
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
+
+    useLayoutEffect(() => {
+      if (onWidth) {
+        const { width } = cellRef.current.getBoundingClientRect();
+        onWidth(width);
+      }
+    }, [cellRef, onWidth]);
 
     // if window resizes, recalculate cell height so that content
     // will continue to fill the height if the dimensions of the cell
@@ -87,7 +102,7 @@ const TableCell = forwardRef(
     }
     // merge tabelContextTheme and rest
     const mergedProps = { ...tableContextTheme, ...rest };
-    Object.keys(mergedProps).forEach(key => {
+    Object.keys(mergedProps).forEach((key) => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
     });
     // split out background, border, and pad
@@ -116,31 +131,54 @@ const TableCell = forwardRef(
       );
     }
 
+    // construct a new theme object in case we have a background that wants
+    // to change the background color context
+    const nextTheme = useMemo(() => {
+      let result;
+      if (cellProps.background || theme.darkChanged) {
+        const dark = backgroundIsDark(cellProps.background, theme);
+        const darkChanged = dark !== undefined && dark !== theme.dark;
+        if (darkChanged || theme.darkChanged) {
+          result = { ...theme };
+          result.dark = dark === undefined ? theme.dark : dark;
+          result.background = cellProps.background;
+        } else if (cellProps.background) {
+          // This allows DataTable to intelligently set the background
+          // of a pinned header or footer.
+          result = { ...theme };
+          result.background = cellProps.background;
+        }
+      }
+      return result || theme;
+    }, [cellProps.background, theme]);
+
     return (
-      <StyledTableCell
-        ref={cellRef}
-        as={scope ? 'th' : undefined}
-        scope={scope}
-        size={size}
-        colSpan={colSpan}
-        tableContext={tableContext}
-        tableContextTheme={tableContextTheme}
-        {...(plain === true ? mergedProps : {})}
-        {...cellProps}
-        className={className}
-      >
-        {plain || !Object.keys(mergedProps).length ? (
-          content
-        ) : (
-          <Box
-            {...mergedProps}
-            align={align}
-            justify={verticalAlignToJustify[verticalAlign]}
-          >
-            {children}
-          </Box>
-        )}
-      </StyledTableCell>
+      <ThemeContext.Provider value={nextTheme}>
+        <StyledTableCell
+          ref={cellRef}
+          as={scope ? 'th' : undefined}
+          scope={scope}
+          size={size}
+          colSpan={colSpan}
+          tableContext={tableContext}
+          tableContextTheme={tableContextTheme}
+          {...(plain === true ? mergedProps : {})}
+          {...cellProps}
+          className={className}
+        >
+          {plain || !Object.keys(mergedProps).length ? (
+            content
+          ) : (
+            <Box
+              {...mergedProps}
+              align={align}
+              justify={verticalAlignToJustify[verticalAlign]}
+            >
+              {children}
+            </Box>
+          )}
+        </StyledTableCell>
+      </ThemeContext.Provider>
     );
   },
 );

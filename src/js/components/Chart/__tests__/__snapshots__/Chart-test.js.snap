@@ -40,22 +40,22 @@ exports[`Chart animate 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -80,19 +80,19 @@ exports[`Chart animate 1`] = `
     </g>
   </svg>
   <svg
-    className="c2"
-    height={192}
+    class="c2"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -105,19 +105,19 @@ exports[`Chart animate 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g>
         <path
@@ -127,18 +127,18 @@ exports[`Chart animate 1`] = `
     </g>
   </svg>
   <svg
-    className="c3"
-    height={192}
+    class="c3"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -431,22 +431,22 @@ exports[`Chart cap 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={24}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -471,19 +471,19 @@ exports[`Chart cap 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={24}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -496,19 +496,19 @@ exports[`Chart cap 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={24}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="24"
     >
       <g>
         <path
@@ -518,18 +518,18 @@ exports[`Chart cap 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
       <g
         stroke="none"
@@ -538,9 +538,9 @@ exports[`Chart cap 1`] = `
           sixty
         </title>
         <circle
-          cx={384}
-          cy={0}
-          r={12}
+          cx="384"
+          cy="0"
+          r="12"
         />
       </g>
       <g
@@ -550,9 +550,9 @@ exports[`Chart cap 1`] = `
           zero
         </title>
         <circle
-          cx={0}
-          cy={192}
-          r={12}
+          cx="0"
+          cy="192"
+          r="12"
         />
       </g>
     </g>
@@ -578,22 +578,22 @@ exports[`Chart color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#7D4CDB"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -618,20 +618,20 @@ exports[`Chart color 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
-      opacity={0.8}
+      opacity="0.8"
       stroke="#7D4CDB"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -656,38 +656,38 @@ exports[`Chart color 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
-      <linearGradient
+      <lineargradient
         id="brand-border-undefined-gradient"
-        x1={0}
-        x2={0}
-        y1={0}
-        y2={1}
+        x1="0"
+        x2="0"
+        y1="0"
+        y2="1"
       >
         <stop
-          offset={0}
-          stopColor="rgba(0,0,0,0.33)"
+          offset="0"
+          stop-color="rgba(0, 0, 0, 0.33)"
         />
         <stop
-          offset={1}
-          stopColor="#7D4CDB"
+          offset="1"
+          stop-color="#7D4CDB"
         />
-      </linearGradient>
+      </lineargradient>
       <mask
         id="brand-border-undefined-mask"
       >
         <g
           fill="none"
           stroke="#ffffff"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={24}
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="24"
         >
           <g
             fill="none"
@@ -714,11 +714,11 @@ exports[`Chart color 1`] = `
     </defs>
     <rect
       fill="url(#brand-border-undefined-gradient)"
-      height={216}
+      height="216"
       mask="url(#brand-border-undefined-mask)"
-      width={408}
-      x={-12}
-      y={-12}
+      width="408"
+      x="-12"
+      y="-12"
     />
   </svg>
 </div>
@@ -742,22 +742,22 @@ exports[`Chart dash 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -767,7 +767,7 @@ exports[`Chart dash 1`] = `
         </title>
         <path
           d="M 384,192 L 384,0"
-          strokeDasharray="48 12"
+          stroke-dasharray="48 12"
         />
       </g>
       <g
@@ -778,7 +778,7 @@ exports[`Chart dash 1`] = `
         </title>
         <path
           d="M 0,192 L 0,192"
-          strokeDasharray="48 12"
+          stroke-dasharray="48 12"
         />
       </g>
     </g>
@@ -804,22 +804,22 @@ exports[`Chart default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -879,25 +879,25 @@ exports[`Chart gap 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <svg
-      className="c2"
-      height={192}
+      class="c2"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 84 216"
-      width={60}
+      width="60"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -922,19 +922,19 @@ exports[`Chart gap 1`] = `
       </g>
     </svg>
     <svg
-      className="c2"
-      height={192}
+      class="c2"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 96 216"
-      width={72}
+      width="72"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -959,19 +959,19 @@ exports[`Chart gap 1`] = `
       </g>
     </svg>
     <svg
-      className="c2"
-      height={192}
+      class="c2"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 120 216"
-      width={96}
+      width="96"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -1328,22 +1328,22 @@ exports[`Chart pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -1368,19 +1368,19 @@ exports[`Chart pad 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -1425,36 +1425,36 @@ exports[`Chart pattern 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={48}
+        height="48"
         id="squares-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={48}
+        width="48"
       >
         <rect
           fill="#6FFFB0"
-          height={24}
-          width={24}
-          x={12}
-          y={12}
+          height="24"
+          width="24"
+          x="12"
+          y="12"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1465,32 +1465,32 @@ exports[`Chart pattern 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={48}
+        height="48"
         id="circles-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={48}
+        width="48"
       >
         <circle
-          cx={24}
-          cy={24}
+          cx="24"
+          cy="24"
           fill="#6FFFB0"
-          r={12}
+          r="12"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1501,31 +1501,31 @@ exports[`Chart pattern 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={48}
+        height="48"
         id="stripesHorizontal-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={48}
+        width="48"
       >
         <path
           d="M 0 24 L 48 24"
           stroke="#6FFFB0"
-          strokeWidth={24}
+          stroke-width="24"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1536,31 +1536,31 @@ exports[`Chart pattern 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={48}
+        height="48"
         id="stripesVertical-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={48}
+        width="48"
       >
         <path
           d="M 24 0 L 24 48"
           stroke="#6FFFB0"
-          strokeWidth={24}
+          stroke-width="24"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1571,32 +1571,32 @@ exports[`Chart pattern 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={67.88225099390857}
+        height="67.88225099390857"
         id="stripesDiagonalDown-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={67.88225099390857}
+        width="67.88225099390857"
       >
         <path
           d="M 16.970562748477143 -16.970562748477143 L 84.8528137423857 50.91168824543143
               M -16.970562748477143 16.970562748477143 L 50.91168824543143 84.8528137423857"
           stroke="#6FFFB0"
-          strokeWidth={24}
+          stroke-width="24"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1607,32 +1607,32 @@ exports[`Chart pattern 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     <defs>
       <pattern
-        height={67.88225099390857}
+        height="67.88225099390857"
         id="stripesDiagonalUp-undefined-pattern"
         patternUnits="userSpaceOnUse"
-        width={67.88225099390857}
+        width="67.88225099390857"
       >
         <path
           d="M -16.970562748477143 50.91168824543143 L 50.91168824543143 -16.970562748477143
               M 16.970562748477143 84.8528137423857 L 84.8528137423857 16.970562748477143"
           stroke="#6FFFB0"
-          strokeWidth={24}
+          stroke-width="24"
         />
       </pattern>
     </defs>
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g>
         <path
@@ -1663,21 +1663,21 @@ exports[`Chart point 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1686,9 +1686,9 @@ exports[`Chart point 1`] = `
           sixty
         </title>
         <circle
-          cx={384}
-          cy={0}
-          r={12}
+          cx="384"
+          cy="0"
+          r="12"
         />
       </g>
       <g
@@ -1698,26 +1698,26 @@ exports[`Chart point 1`] = `
           zero
         </title>
         <circle
-          cx={0}
-          cy={192}
-          r={12}
+          cx="0"
+          cy="192"
+          r="12"
         />
       </g>
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1742,18 +1742,18 @@ exports[`Chart point 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1778,18 +1778,18 @@ exports[`Chart point 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1814,18 +1814,18 @@ exports[`Chart point 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1850,18 +1850,18 @@ exports[`Chart point 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -1981,22 +1981,22 @@ exports[`Chart size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={96}
+    class="c1"
+    height="96"
     preserveAspectRatio="none"
     viewBox="-12 -12 120 120"
-    width={96}
+    width="96"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2021,19 +2021,19 @@ exports[`Chart size 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 216 216"
-    width={192}
+    width="192"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2058,19 +2058,19 @@ exports[`Chart size 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={384}
+    class="c1"
+    height="384"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 408"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2095,19 +2095,19 @@ exports[`Chart size 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={768}
+    class="c1"
+    height="768"
     preserveAspectRatio="none"
     viewBox="-12 -12 792 792"
-    width={768}
+    width="768"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2132,19 +2132,19 @@ exports[`Chart size 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={1152}
+    class="c1"
+    height="1152"
     preserveAspectRatio="none"
     viewBox="-12 -12 1176 1176"
-    width={1152}
+    width="1152"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2169,22 +2169,22 @@ exports[`Chart size 1`] = `
     </g>
   </svg>
   <div
-    className="c2"
+    class="c2"
   >
     <svg
-      className="c1"
-      height={192}
+      class="c1"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 24 216"
-      width={0}
+      width="0"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -2209,19 +2209,19 @@ exports[`Chart size 1`] = `
       </g>
     </svg>
     <svg
-      className="c1"
-      height={192}
+      class="c1"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 24 216"
-      width={0}
+      width="0"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -2246,19 +2246,19 @@ exports[`Chart size 1`] = `
       </g>
     </svg>
     <svg
-      className="c1"
-      height={192}
+      class="c1"
+      height="192"
       preserveAspectRatio="none"
       viewBox="-12 -12 96 216"
-      width={72}
+      width="72"
     >
       0
       <g
         fill="none"
         stroke="#6FFFB0"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        strokeWidth={24}
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-width="24"
       >
         <g
           fill="none"
@@ -2304,22 +2304,22 @@ exports[`Chart thickness 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-3 -3 390 198"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={6}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="6"
     >
       <g
         fill="none"
@@ -2344,19 +2344,19 @@ exports[`Chart thickness 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-6 -6 396 204"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={12}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="12"
     >
       <g
         fill="none"
@@ -2381,19 +2381,19 @@ exports[`Chart thickness 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2418,19 +2418,19 @@ exports[`Chart thickness 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-24 -24 432 240"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={48}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="48"
     >
       <g
         fill="none"
@@ -2455,19 +2455,19 @@ exports[`Chart thickness 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-48 -48 480 288"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={96}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="96"
     >
       <g
         fill="none"
@@ -2512,22 +2512,22 @@ exports[`Chart type 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2552,19 +2552,19 @@ exports[`Chart type 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2577,19 +2577,19 @@ exports[`Chart type 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g>
         <path
@@ -2599,18 +2599,18 @@ exports[`Chart type 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -2655,22 +2655,22 @@ exports[`Chart undefined values 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2695,19 +2695,19 @@ exports[`Chart undefined values 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -2720,19 +2720,19 @@ exports[`Chart undefined values 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g>
         <path
@@ -2742,18 +2742,18 @@ exports[`Chart undefined values 1`] = `
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         stroke="none"
@@ -2798,72 +2798,72 @@ exports[`Chart value style 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="#6FFFB0"
       stroke="none"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
     >
       <g
         fill="#00C781"
-        opacity={0.8}
+        opacity="0.8"
         stroke="none"
       >
         <title>
           sixty
         </title>
         <circle
-          cx={384}
-          cy={0}
-          r={6}
+          cx="384"
+          cy="0"
+          r="6"
         />
       </g>
       <g
         fill="#123456"
-        opacity={0.27}
+        opacity="0.27"
         stroke="none"
       >
         <title>
           zero
         </title>
         <circle
-          cx={0}
-          cy={192}
-          r={13.5}
+          cx="0"
+          cy="192"
+          r="13.5"
         />
       </g>
     </g>
   </svg>
   <svg
-    className="c1"
-    height={192}
+    class="c1"
+    height="192"
     preserveAspectRatio="none"
     viewBox="-12 -12 408 216"
-    width={384}
+    width="384"
   >
     0
     <g
       fill="none"
       stroke="#6FFFB0"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
-        opacity={0.8}
+        opacity="0.8"
         stroke="#00C781"
-        strokeWidth={12}
+        stroke-width="12"
       >
         <title>
           sixty
@@ -2874,9 +2874,9 @@ exports[`Chart value style 1`] = `
       </g>
       <g
         fill="none"
-        opacity={0.27}
+        opacity="0.27"
         stroke="#123456"
-        strokeWidth={27}
+        stroke-width="27"
       >
         <title>
           zero

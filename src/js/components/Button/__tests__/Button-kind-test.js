@@ -565,4 +565,60 @@ describe('Button kind', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`hoverIndicator with color and background`, () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button
+          hoverIndicator={{
+            background: {
+              color: 'pink',
+            },
+            color: 'white',
+          }}
+          label="Button"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByText('Button'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`hover secondary with color and background`, () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              color: 'white',
+              background: {
+                color: 'skyblue',
+              },
+            },
+            hover: {
+              secondary: {
+                color: 'green',
+                background: {
+                  color: 'orange',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button secondary label="Button" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByText('Button'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

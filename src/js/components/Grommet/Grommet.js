@@ -18,6 +18,9 @@ import {
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
+import { format, MessageContext } from '../../contexts/MessageContext';
+import defaultMessages from '../../languages/default.json';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -44,12 +47,16 @@ const deviceResponsive = (userAgent, theme) => {
   return undefined;
 };
 
+const defaultOptions = {};
+
 const Grommet = forwardRef((props, ref) => {
   const {
     children,
     full,
     containerTarget = typeof document === 'object' ? document.body : undefined,
     theme: themeProp,
+    options = defaultOptions,
+    messages: messagesProp,
     ...rest
   } = props;
 
@@ -91,6 +98,24 @@ const Grommet = forwardRef((props, ref) => {
     return nextTheme;
   }, [background, dir, themeMode, themeProp]);
 
+  const messages = useMemo(() => {
+    // combine the passed in messages, if any, with the default
+    // messages and format function.
+    const nextMessages = deepMerge(
+      defaultMessages,
+      messagesProp?.messages || {},
+    );
+    return {
+      messages: nextMessages,
+      format: (opts) => {
+        const message = messagesProp?.format && messagesProp.format(opts);
+        return typeof message !== 'undefined'
+          ? message
+          : format(opts, nextMessages);
+      },
+    };
+  }, [messagesProp]);
+
   useEffect(() => {
     const onResize = () => {
       setResponsive(getBreakpoint(document.body.clientWidth, theme));
@@ -114,10 +139,14 @@ const Grommet = forwardRef((props, ref) => {
       <ResponsiveContext.Provider value={responsive}>
         <RootsContext.Provider value={[grommetRef.current]}>
           <ContainerTargetContext.Provider value={containerTarget}>
-            <StyledGrommet full={full} {...rest} ref={grommetRef}>
-              {children}
-            </StyledGrommet>
-            {full && <FullGlobalStyle />}
+            <OptionsContext.Provider value={options}>
+              <MessageContext.Provider value={messages}>
+                <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                  {children}
+                </StyledGrommet>
+                {full && <FullGlobalStyle />}
+              </MessageContext.Provider>
+            </OptionsContext.Provider>
           </ContainerTargetContext.Provider>
         </RootsContext.Provider>
       </ResponsiveContext.Provider>

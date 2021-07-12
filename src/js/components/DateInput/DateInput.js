@@ -16,7 +16,13 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-import { formatToSchema, valueToText, textToValue } from './utils';
+import {
+  formatToSchema,
+  schemaToMask,
+  valuesAreEqual,
+  valueToText,
+  textToValue,
+} from './utils';
 
 const DateInput = forwardRef(
   (
@@ -45,46 +51,46 @@ const DateInput = forwardRef(
     const ref = useForwardedRef(refArg);
     const [value, setValue] = useFormInput(name, valueArg, defaultValue);
 
+    // do we expect multiple dates?
+    const range = Array.isArray(value) || (format && format.includes('-'));
+
     // parse format and build a formal schema we can use elsewhere
     const schema = useMemo(() => formatToSchema(format), [format]);
 
     // mask is only used when a format is provided
-    const mask = useMemo(() => {
-      if (!schema) return undefined;
-      return schema.map(part => {
-        const char = part[0].toLowerCase();
-        if (char === 'm' || char === 'd' || char === 'y') {
-          return {
-            placeholder: part,
-            length: [1, part.length],
-            regexp: new RegExp(`^[0-9]{1,${part.length}}$`),
-          };
-        }
-        return { fixed: part };
-      });
-    }, [schema]);
+    const mask = useMemo(() => schemaToMask(schema), [schema]);
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
     // We need to distinguish between the caller changing a Form value
     // and the user typing a date that he isn't finished with yet.
-    // To track this, we keep track of the internalValue from interacting
-    // within this component. If the value has changed outside of this
-    // component, we reset the textValue.
-    const [internalValue, setInternalValue] = useState(value);
+    // To handle this, we see if we have a value and the text value
+    // associated with it doesn't align to it, then we update the text value.
+    // We compare using textToValue to avoid "06/01/2021" not
+    // matching "06/1/2021".
     useEffect(() => {
-      if (schema && !!value !== !!internalValue) {
-        setTextValue(valueToText(value, schema));
-        setInternalValue(value);
+      if (
+        schema &&
+        value &&
+        ((Array.isArray(value) && value[0]) || !Array.isArray(value))
+      ) {
+        const nextTextValue = valueToText(value, schema);
+        if (
+          !valuesAreEqual(
+            textToValue(textValue, schema, value, range),
+            textToValue(nextTextValue, schema, value, range),
+          )
+        ) {
+          setTextValue(nextTextValue);
+        }
       }
-    }, [internalValue, schema, value]);
+    }, [range, schema, textValue, value]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
-
-    const range = Array.isArray(value);
 
     const calendar = (
       <Calendar
@@ -98,7 +104,7 @@ const DateInput = forwardRef(
         onSelect={
           disabled
             ? undefined
-            : nextValue => {
+            : (nextValue) => {
                 let normalizedValue;
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
@@ -107,7 +113,6 @@ const DateInput = forwardRef(
                 else normalizedValue = nextValue;
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
-                setInternalValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) setOpen(false);
               }
@@ -150,13 +155,17 @@ const DateInput = forwardRef(
             {...inputProps}
             {...rest}
             value={textValue}
-            onChange={event => {
+            onChange={(event) => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
-              const nextValue = textToValue(nextTextValue, schema);
+              const nextValue = textToValue(
+                nextTextValue,
+                schema,
+                value,
+                range,
+              );
               // update value even when undefined
               setValue(nextValue);
-              setInternalValue(nextValue || '');
               if (onChange) {
                 event.persist(); // extract from React synthetic event pool
                 const adjustedEvent = event;
@@ -164,7 +173,7 @@ const DateInput = forwardRef(
                 onChange(adjustedEvent);
               }
             }}
-            onFocus={event => {
+            onFocus={(event) => {
               setOpen(true);
               if (onFocus) onFocus(event);
             }}

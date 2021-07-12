@@ -29,19 +29,17 @@ const columns = [
   {
     property: 'date',
     header: 'Due',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: ({ key, percent }) => (
       <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
         <Meter
-          values={[
-            { value: datum.percent, color: `accent-${(datum.key % 4) + 1}` },
-          ]}
+          values={[{ value: percent, color: `accent-${(key % 4) + 1}` }]}
           thickness="small"
           size="xxsmall"
           type="circle"
@@ -52,7 +50,7 @@ const columns = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },

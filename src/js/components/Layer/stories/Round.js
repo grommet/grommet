@@ -78,13 +78,12 @@ export const RoundLayer = () => {
   );
 };
 
-RoundLayer.story = {
-  name: 'Border Radius',
-  parameters: {
-    chromatic: { disable: true },
-  },
+RoundLayer.storyName = 'Border Radius';
+
+RoundLayer.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {
-  title: 'Layout/Layer/Round',
+  title: 'Layout/Layer/Border Radius',
 };

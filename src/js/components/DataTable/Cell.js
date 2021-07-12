@@ -5,17 +5,12 @@ import { defaultProps } from '../../default-props';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
-import { datumValue, normalizeBackgroundColor } from './buildState';
+import { datumValue } from './buildState';
 import { TableContext } from '../Table/TableContext';
-
-const normalizeProp = (name, rowProp, prop) => {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
 
 const Cell = memo(
   ({
-    background: backgroundProp,
+    background,
     border,
     column: {
       align,
@@ -28,11 +23,10 @@ const Cell = memo(
       size,
     },
     datum,
-    index,
     pad,
     pin: cellPin,
+    pinnedOffset,
     primaryProperty,
-    rowProp,
     scope,
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -55,23 +49,9 @@ const Cell = memo(
       content = <Text {...textProps}>{content}</Text>;
     }
 
-    let pin;
-    if (cellPin) pin = cellPin;
-    else if (columnPin) pin = ['left'];
-
-    let background;
-    if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-      background = theme.dataTable.pinned[context].background;
-      if (!background.color && theme.background) {
-        // theme context has an active background color but the
-        // theme doesn't set an explicit color, repeat the context
-        // background explicitly
-        background = {
-          ...background,
-          color: normalizeBackgroundColor(theme),
-        };
-      }
-    } else background = undefined;
+    const pin = [];
+    if (cellPin) pin.push(...cellPin);
+    if (columnPin) pin.push('left');
 
     return (
       <StyledDataTableCell
@@ -81,17 +61,10 @@ const Cell = memo(
         context={context}
         verticalAlign={verticalAlign}
         size={size}
-        background={
-          normalizeProp(
-            'background',
-            rowProp,
-            Array.isArray(backgroundProp)
-              ? backgroundProp[index % backgroundProp.length]
-              : backgroundProp,
-          ) || background
-        }
-        border={normalizeProp('border', rowProp, border)}
-        pad={normalizeProp('pad', rowProp, pad)}
+        background={background}
+        pinnedOffset={pinnedOffset}
+        border={border}
+        pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
       >
