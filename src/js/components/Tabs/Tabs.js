@@ -7,6 +7,7 @@ import { Box } from '../Box';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const Tabs = forwardRef(
   (
@@ -15,13 +16,14 @@ const Tabs = forwardRef(
       children,
       flex,
       justify = 'center',
-      messages = { tabContents: 'Tab Contents' },
+      messages,
       responsive = true,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
     const [activeContent, setActiveContent] = useState();
@@ -31,7 +33,7 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
-    const activateTab = index => {
+    const activateTab = (index) => {
       if (propsActiveIndex === undefined) {
         setActiveIndex(index);
       }
@@ -80,7 +82,10 @@ const Tabs = forwardRef(
       };
     }
 
-    const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
+    const tabContentTitle = `${activeTitle || ''} ${format({
+      id: 'tabs.tabContents',
+      messages,
+    })}`;
 
     return (
       <StyledTabs

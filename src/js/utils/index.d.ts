@@ -111,13 +111,23 @@ type EdgeType =
   | string;
 
 export type A11yTitleType = string;
-export type AlignContentType =
-  | 'start'
+export type AlignType =
+  | 'baseline'
   | 'center'
   | 'end'
-  | 'between'
+  | 'start'
+  | 'stretch'
+  | string;
+export type AlignContentType =
   | 'around'
-  | 'stretch';
+  | 'baseline'
+  | 'between'
+  | 'center'
+  | 'evenly'
+  | 'end'
+  | 'start'
+  | 'stretch'
+  | string;
 export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch';
 export type AnimateType = boolean;
 export type BackgroundType =
@@ -227,7 +237,7 @@ export type RoundType =
         | 'bottom-right';
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
     };
-export type TextAlignType = 'start' | 'center' | 'end';
+export type TextAlignType = 'start' | 'center' | 'end' | 'justify';
 export type ThicknessType =
   | 'hair'
   | 'xsmall'

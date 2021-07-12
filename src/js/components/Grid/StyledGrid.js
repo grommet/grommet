@@ -1,15 +1,16 @@
 import styled, { css } from 'styled-components';
-
+import { defaultProps } from '../../default-props';
 import {
+  alignContentStyle,
+  alignStyle,
   borderStyle,
   edgeStyle,
   genericStyles,
   heightStyle,
   widthStyle,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
-const fillStyle = fill => {
+const fillStyle = (fill) => {
   if (!fill) {
     return fill;
   }
@@ -25,30 +26,6 @@ const fillStyle = fill => {
     `;
 };
 
-const ALIGN_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignStyle = css`
-  align-items: ${props => ALIGN_MAP[props.align]};
-`;
-
-const ALIGN_CONTENT_MAP = {
-  around: 'space-around',
-  between: 'space-between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignContentStyle = css`
-  align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
-
 const JUSTIFY_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -57,7 +34,7 @@ const JUSTIFY_MAP = {
 };
 
 const justifyStyle = css`
-  justify-items: ${props => JUSTIFY_MAP[props.justify]};
+  justify-items: ${(props) => JUSTIFY_MAP[props.justify]};
 `;
 
 const JUSTIFY_CONTENT_MAP = {
@@ -70,10 +47,10 @@ const JUSTIFY_CONTENT_MAP = {
 };
 
 const justifyContentStyle = css`
-  justify-content: ${props => JUSTIFY_CONTENT_MAP[props.justifyContent]};
+  justify-content: ${(props) => JUSTIFY_CONTENT_MAP[props.justifyContent]};
 `;
 
-const gapSizes = props => {
+const gapSizes = (props) => {
   const result = [];
   if (typeof props.gap === 'string') {
     const size = props.theme.global.edgeSize[props.gap] || props.gap;
@@ -89,7 +66,7 @@ const gapSizes = props => {
   return result;
 };
 
-const gapStyle = props => {
+const gapStyle = (props) => {
   const sizes = gapSizes(props);
   if (sizes[0] !== undefined && sizes[1] !== undefined) {
     return `grid-gap: ${sizes[0]} ${sizes[1]};`;
@@ -117,7 +94,7 @@ const SIZE_MAP = {
 const normalizeSize = (size, props) =>
   SIZE_MAP[size] || props.theme.global.size[size] || size;
 
-const getRepeatCount = count =>
+const getRepeatCount = (count) =>
   typeof count === 'number' ? count : `auto-${count || 'fit'}`;
 
 const getRepeatSize = (size, props) => {
@@ -156,11 +133,11 @@ const getRepeatSize = (size, props) => {
   return `minmax(${min}, ${max})`;
 };
 
-const columnsStyle = props => {
+const columnsStyle = (props) => {
   if (Array.isArray(props.columns)) {
     return css`
       grid-template-columns: ${props.columns
-        .map(s => {
+        .map((s) => {
           if (Array.isArray(s)) {
             return `minmax(${normalizeSize(s[0], props)}, ${normalizeSize(
               s[1],
@@ -188,11 +165,11 @@ const columnsStyle = props => {
   `;
 };
 
-const rowsStyle = props => {
+const rowsStyle = (props) => {
   if (Array.isArray(props.rowsProp)) {
     return css`
       grid-template-rows: ${props.rowsProp
-        .map(s => {
+        .map((s) => {
           if (Array.isArray(s)) {
             return `minmax(${normalizeSize(s[0], props)}, ${normalizeSize(
               s[1],
@@ -209,21 +186,21 @@ const rowsStyle = props => {
   `;
 };
 
-const areasStyle = props => {
+const areasStyle = (props) => {
   // translate areas objects into grid-template-areas syntax
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
   if (
     Array.isArray(props.areas) &&
-    props.areas.every(area => Array.isArray(area))
+    props.areas.every((area) => Array.isArray(area))
   ) {
     return `grid-template-areas: ${props.areas
-      .map(area => `"${area.join(' ')}"`)
+      .map((area) => `"${area.join(' ')}"`)
       .join(' ')};`;
   }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
-  props.areas.forEach(area => {
+  props.areas.forEach((area) => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {
       for (let column = area.start[0]; column <= area.end[0]; column += 1) {
         cells[row][column] = area.name;
@@ -231,33 +208,33 @@ const areasStyle = props => {
     }
   });
   return `grid-template-areas: ${cells
-    .map(r => `"${r.join(' ')}"`)
+    .map((r) => `"${r.join(' ')}"`)
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs(props => ({
+const StyledGrid = styled.div.attrs((props) => ({
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;
   box-sizing: border-box;
 
   ${genericStyles}
-  ${props =>
+  ${(props) =>
     props.border &&
     (Array.isArray(props.border)
-      ? props.border.map(border =>
+      ? props.border.map((border) =>
           borderStyle(border, props.responsive, props.theme),
         )
       : borderStyle(props.border, props.responsive, props.theme))}
-  ${props => fillStyle(props.fillContainer)}
-  ${props => props.align && alignStyle}
-  ${props => props.alignContent && alignContentStyle}
-  ${props => props.areas && areasStyle(props)}
-  ${props => props.columns && columnsStyle(props)}
-  ${props => props.gap && gapStyle(props)}
-  ${props => props.justify && justifyStyle}
-  ${props => props.justifyContent && justifyContentStyle}
-  ${props =>
+  ${(props) => fillStyle(props.fillContainer)}
+  ${(props) => props.align && alignStyle}
+  ${(props) => props.alignContent && alignContentStyle}
+  ${(props) => props.areas && areasStyle(props)}
+  ${(props) => props.columns && columnsStyle(props)}
+  ${(props) => props.gap && gapStyle(props)}
+  ${(props) => props.justify && justifyStyle}
+  ${(props) => props.justifyContent && justifyContentStyle}
+  ${(props) =>
     props.pad &&
     edgeStyle(
       'padding',
@@ -266,10 +243,10 @@ const StyledGrid = styled.div.attrs(props => ({
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
-  ${props => props.rowsProp && rowsStyle(props)}
-  ${props => props.heightProp && heightStyle(props.heightProp, props.theme)}
-  ${props => props.widthProp && widthStyle(props.widthProp, props.theme)}
-  ${props => props.theme.grid && props.theme.grid.extend}
+  ${(props) => props.rowsProp && rowsStyle(props)}
+  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+  ${(props) => props.theme.grid && props.theme.grid.extend}
 `;
 
 StyledGrid.defaultProps = {};

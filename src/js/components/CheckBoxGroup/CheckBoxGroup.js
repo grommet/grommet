@@ -25,7 +25,7 @@ export const CheckBoxGroup = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
-    const options = optionsProp.map(option =>
+    const options = optionsProp.map((option) =>
       typeof option === 'string'
         ? {
             disabled: disabledProp,
@@ -71,7 +71,7 @@ export const CheckBoxGroup = forwardRef(
         }
         {...rest}
       >
-        {options.map(option => {
+        {options.map((option) => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
           const valueOption = valueKey ? option[valueKey] : optionValue;
@@ -100,7 +100,7 @@ export const CheckBoxGroup = forwardRef(
               // we will apply the hover treament.
               focusIndicator={focusIndicator}
               label={label}
-              onChange={event =>
+              onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
             />

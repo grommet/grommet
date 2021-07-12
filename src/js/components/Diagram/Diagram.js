@@ -58,7 +58,7 @@ const COMMANDS = {
   },
 };
 
-const findTarget = target => {
+const findTarget = (target) => {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
@@ -103,7 +103,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   }, [onResize]);
 
   useEffect(() => {
-    const onResizeHandler = event => savedOnResize.current(event);
+    const onResizeHandler = (event) => savedOnResize.current(event);
     onResizeHandler();
 
     window.addEventListener('resize', onResizeHandler);
@@ -181,7 +181,16 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   if (connectionPoints) {
     paths = connections.map(
       (
-        { anchor, color, offset, round, thickness, type, ...connectionRest },
+        {
+          anchor,
+          animation,
+          color,
+          offset,
+          round,
+          thickness,
+          type,
+          ...connectionRest
+        },
         index,
       ) => {
         let path;
@@ -189,6 +198,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
         delete cleanedRest.fromTarget;
         delete cleanedRest.toTarget;
         const points = connectionPoints[index];
+
         if (points) {
           const offsetWidth = offset
             ? parseMetricToNum(theme.global.edgeSize[offset])
@@ -205,7 +215,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           let colorName =
             color || (theme.diagram.line && theme.diagram.line.color);
           if (!colorName) {
-            const colors = Object.keys(theme.global.colors).filter(n =>
+            const colors = Object.keys(theme.global.colors).filter((n) =>
               n.match(/^graph-[0-9]$/),
             );
             colorName = colors[index % colors.length];
@@ -215,6 +225,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             <path
               // eslint-disable-next-line react/no-array-index-key
               key={index}
+              animation={animation}
               {...cleanedRest}
               stroke={normalizeColor(colorName, theme)}
               strokeWidth={strokeWidth}
@@ -225,7 +236,6 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             />
           );
         }
-
         return path;
       },
     );
@@ -236,6 +246,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       ref={svgRef}
       viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
       preserveAspectRatio="xMinYMin meet"
+      connections={paths}
       {...rest}
     >
       <g>{paths}</g>
