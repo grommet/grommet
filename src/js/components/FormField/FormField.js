@@ -4,7 +4,6 @@ import React, {
   forwardRef,
   useContext,
   useState,
-  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -145,7 +144,6 @@ const FormField = forwardRef(
       contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
-      focusIndicator,
       help,
       htmlFor,
       info: infoProp,
@@ -183,11 +181,6 @@ const FormField = forwardRef(
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
-
-    useEffect(() => {
-      if (focusIndicator === undefined) return;
-      setFocus(focusIndicator);
-    }, [focusIndicator]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't

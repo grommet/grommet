@@ -41,7 +41,7 @@ export const Controlled = () => {
               setValue(nextValue);
             }}
             onReset={() => setValue(defaultValue)}
-            onSubmit={event =>
+            onSubmit={(event) =>
               console.log('Submit', event.value, event.touched)
             }
           >
@@ -72,7 +72,7 @@ export const Controlled = () => {
             <FormField label="Comments" name="comments">
               <TextArea name="comments" />
             </FormField>
-            <FormField label="Age" name="age" pad focusIndicator={false}>
+            <FormField label="Age" name="age" pad>
               <RangeInput name="age" min={15} max={75} />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
