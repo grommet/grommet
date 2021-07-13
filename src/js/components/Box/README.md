@@ -403,6 +403,11 @@ column
 row-responsive
 row-reverse
 column-reverse
+{
+  direction: string,
+  responsive: boolean,
+  reverse: boolean
+}
 ```
 
 **elevation**
