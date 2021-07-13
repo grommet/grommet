@@ -11,7 +11,7 @@ export interface FileInputProps {
     remove?: string;
     removeAll?: string;
   };
-  multiple?: boolean | { aggregateThreshold?: number };
+  multiple?: boolean | { aggregateThreshold?: number, max?: number; };
   name?: string;
   renderFile?: (...args: any[]) => void;
 }

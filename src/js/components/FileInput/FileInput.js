@@ -80,6 +80,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
+    const max = multiple && multiple.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -396,8 +397,38 @@ const FileInput = forwardRef(
           onChange={(event) => {
             event.persist();
             const fileList = event.target.files;
+            let filesToAdd;
+            if (!files.length) {
+              if (multiple && max && fileList.length >= max) {
+                const newFileList = [];
+                for (let i = 0; i < max; i += 1) {
+                  newFileList.push(fileList[i]);
+                }
+                filesToAdd = newFileList;
+              } else {
+                filesToAdd = fileList;
+              }
+            } else if (
+              multiple &&
+              max &&
+              fileList.length >= max - files.length
+            ) {
+              const newFileList = [];
+              for (let i = 0; i < max - files.length; i += 1) {
+                newFileList.push(fileList[i]);
+              }
+              // if the maximum value is exceeded then
+              // remove files from the event also.
+              if (!newFileList.length) {
+                /* eslint-disable-next-line no-param-reassign */
+                event.target.value = '';
+              }
+              filesToAdd = newFileList;
+            } else {
+              filesToAdd = fileList;
+            }
             const nextFiles = multiple ? [...files] : [];
-            for (let i = 0; i < fileList.length; i += 1) {
+            for (let i = 0; i < filesToAdd.length; i += 1) {
               // avoid duplicates
               const existing =
                 nextFiles.filter(
@@ -405,7 +436,7 @@ const FileInput = forwardRef(
                     file.name === fileList[i].name &&
                     file.size === fileList[i].size,
                 ).length > 0;
-              if (!existing) nextFiles.push(fileList[i]);
+              if (!existing) nextFiles.push(filesToAdd[i]);
             }
             setFiles(nextFiles);
             setDragOver(false);
