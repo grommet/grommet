@@ -50,9 +50,15 @@ const separateThemeProps = (theme) => {
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
-const buttonStyle = ({ theme }) => {
+const buttonStyle = ({ pad, theme }) => {
   const styles = [];
   const [layoutProps, , iconProps] = separateThemeProps(theme);
+
+  // if cell is sortable, we want pad to be applied
+  // to the button instead of the cell
+  if (pad) {
+    styles.push(kindPartStyles({ pad }, theme));
+  }
 
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
@@ -253,6 +259,7 @@ const Header = forwardRef(
                     fill="vertical"
                     onClick={onSort(property)}
                     sort={sort}
+                    pad={cellProps.pad}
                     sortable
                   >
                     <Box
@@ -331,7 +338,8 @@ const Header = forwardRef(
                   background={cellProps.background}
                   border={cellProps.border}
                   onWidth={updateWidths}
-                  pad={cellProps.pad}
+                  // if sortable, pad will be included in the button styling
+                  pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}
                   plain
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}
