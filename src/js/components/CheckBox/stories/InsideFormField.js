@@ -11,7 +11,7 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const InsideFormField = props => (
+export const InsideFormField = (props) => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form

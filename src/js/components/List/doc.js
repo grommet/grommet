@@ -24,7 +24,7 @@ const sides = [
 ];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOf(sizes);
 });
 
@@ -44,7 +44,7 @@ const borderTypes = [
   }),
 ];
 
-export const doc = List => {
+export const doc = (List) => {
   const DocumentedList = describe(List)
     .availableAt(getAvailableAtBadge('List', 'Visualizations'))
     .description('An ordered list of items.')

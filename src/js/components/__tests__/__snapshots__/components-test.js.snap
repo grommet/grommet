@@ -188,197 +188,24 @@ node",
     ],
   },
   "Anchor": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js",
-      },
-    ],
-    "description": "A text link.",
-    "details": "We have a separate component from the browser
-base so we can style it. You can either set the icon and/or label properties
-or just use children.",
-    "intrinsicElement": "a",
-    "name": "Anchor",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the anchor is disabled.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "Hyperlink reference to place in the anchor.",
-        "format": "string",
-        "name": "href",
-      },
-      Object {
-        "description": "Icon element to place in the anchor.",
-        "format": "element",
-        "name": "icon",
-      },
-      Object {
-        "description": "Label text to place in the anchor.",
-        "format": "node",
-        "name": "label",
-      },
-      Object {
-        "description": "Click handler. It can be used, for example,
-        to add analytics and track who clicked in the anchor.",
-        "format": "function",
-        "name": "onClick",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether an icon and label should be reversed so that the
-        icon is at the end of the anchor.",
-        "format": "boolean",
-        "name": "reverse",
-      },
-      Object {
-        "description": "The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property,
-typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "Sets font-weight property for anchor.",
-        "format": "normal
-bold
-number",
-        "name": "weight",
-      },
-    ],
-    "usage": "import { Anchor } from 'grommet';
-<Anchor href={location} label='Label' />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "color": [Function],
+      "disabled": [Function],
+      "gridArea": [Function],
+      "href": [Function],
+      "icon": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "onClick": [Function],
+      "reverse": [Function],
+      "size": [Function],
+      "weight": [Function],
+    },
+    "render": [Function],
   },
   "Avatar": [Function],
   "Box": Object {
@@ -502,24 +329,30 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "How to align the contents along the cross axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-baseline
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the contents when there is extra space in
-        the cross axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -3397,6 +3230,22 @@ string",
 [string]",
         "name": "value",
       },
+      Object {
+        "description": "The size of the text.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { DateInput } from 'grommet';
 <DateInput id='item' name='item' />",
@@ -4528,23 +4377,30 @@ string",
         "name": "margin",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the individual items inside the grid when there is extra
-space in the column axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "description": "How to align the contents along the column axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -6304,10 +6160,17 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8734,11 +8597,18 @@ boolean",
         "name": "resize",
       },
       Object {
-        "description": "The size of the TextArea.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8911,11 +8781,18 @@ full",
         "name": "reverse",
       },
       Object {
-        "description": "The size of the TextInput.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },

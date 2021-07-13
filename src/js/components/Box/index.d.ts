@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
   A11yTitleType,
+  AlignType,
   AlignContentType,
   AlignSelfType,
   BackgroundType,
@@ -24,7 +25,7 @@ export interface BoxProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  align?: 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+  align?: AlignType;
   alignContent?: AlignContentType;
   animation?:
     | 'fadeIn'

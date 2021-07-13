@@ -115,7 +115,7 @@ colorArray(accentColors, 'accent');
 colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -124,7 +124,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   const baseFontSize = baseSpacing * 0.75; // 18
   const fontScale = baseSpacing / scale; // 4
 
-  const fontSizing = factor => ({
+  const fontSizing = (factor) => ({
     size: `${baseFontSize + factor * fontScale}px`,
     height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
@@ -286,10 +286,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       input: {
         padding: {
-          horizontal: `${parseMetricToNum(`${baseSpacing / 2}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)}px`,
-          vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+          horizontal: `${
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
+          }px`,
+          vertical: `${
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
+          }px`,
         },
         font: {
           // size: undefined,
