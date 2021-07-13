@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.heightStyle = exports.widthStyle = exports.textAlignStyle = exports.roundStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.heightStyle = exports.widthStyle = exports.alignContentStyle = exports.alignStyle = exports.textAlignStyle = exports.roundStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -277,6 +277,11 @@ var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder
 
 var inputSizeStyle = function inputSizeStyle(props) {
   var data = props.theme.text[props.size];
+
+  if (!data) {
+    return (0, _styledComponents.css)(["font-size:", ";"], props.size);
+  }
+
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
@@ -464,6 +469,35 @@ var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (
   return TEXT_ALIGN_MAP[props.textAlign];
 });
 exports.textAlignStyle = textAlignStyle;
+var ALIGN_ITEMS_MAP = {
+  baseline: 'baseline',
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch'
+};
+var alignStyle = (0, _styledComponents.css)(["align-items:", ";"], function (props) {
+  var _ALIGN_ITEMS_MAP$prop;
+
+  return (_ALIGN_ITEMS_MAP$prop = ALIGN_ITEMS_MAP[props.align]) != null ? _ALIGN_ITEMS_MAP$prop : props.align;
+});
+exports.alignStyle = alignStyle;
+var ALIGN_CONTENT_MAP = {
+  around: 'space-around',
+  baseline: 'baseline',
+  between: 'space-between',
+  center: 'center',
+  evenly: 'space-evenly',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch'
+};
+var alignContentStyle = (0, _styledComponents.css)(["align-content:", ";"], function (props) {
+  var _ALIGN_CONTENT_MAP$pr;
+
+  return (_ALIGN_CONTENT_MAP$pr = ALIGN_CONTENT_MAP[props.alignContent]) != null ? _ALIGN_CONTENT_MAP$pr : props.alignContent;
+});
+exports.alignContentStyle = alignContentStyle;
 
 var getSize = function getSize(theme, size) {
   return theme.global.size[size] || size;

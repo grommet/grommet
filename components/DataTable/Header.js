@@ -73,12 +73,21 @@ var separateThemeProps = function separateThemeProps(theme) {
 
 
 var buttonStyle = function buttonStyle(_ref) {
-  var theme = _ref.theme;
+  var pad = _ref.pad,
+      theme = _ref.theme;
   var styles = [];
 
   var _separateThemeProps = separateThemeProps(theme),
       layoutProps = _separateThemeProps[0],
-      iconProps = _separateThemeProps[2];
+      iconProps = _separateThemeProps[2]; // if cell is sortable, we want pad to be applied
+  // to the button instead of the cell
+
+
+  if (pad) {
+    styles.push((0, _styles.kindPartStyles)({
+      pad: pad
+    }, theme));
+  }
 
   if (layoutProps) {
     styles.push((0, _styles.kindPartStyles)(layoutProps, theme));
@@ -233,6 +242,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         fill: "vertical",
         onClick: onSort(property),
         sort: sort,
+        pad: cellProps.pad,
         sortable: true
       }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
@@ -292,8 +302,9 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       verticalAlign: verticalAlign,
       background: cellProps.background,
       border: cellProps.border,
-      onWidth: updateWidths,
-      pad: cellProps.pad,
+      onWidth: updateWidths // if sortable, pad will be included in the button styling
+      ,
+      pad: sortable === false || !onSort ? cellProps.pad : 'none',
       pin: cellPin,
       plain: true,
       pinnedOffset: pinnedOffset && pinnedOffset[property],

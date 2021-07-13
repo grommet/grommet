@@ -5,9 +5,9 @@ exports.StyledGrid = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _utils = require("../../utils");
-
 var _defaultProps = require("../../default-props");
+
+var _utils = require("../../utils");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -29,26 +29,6 @@ var fillStyle = function fillStyle(fill) {
   return "\n      width: 100%;\n      height: 100%;\n    ";
 };
 
-var ALIGN_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignStyle = (0, _styledComponents.css)(["align-items:", ";"], function (props) {
-  return ALIGN_MAP[props.align];
-});
-var ALIGN_CONTENT_MAP = {
-  around: 'space-around',
-  between: 'space-between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignContentStyle = (0, _styledComponents.css)(["align-content:", ";"], function (props) {
-  return ALIGN_CONTENT_MAP[props.alignContent];
-});
 var JUSTIFY_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -240,9 +220,9 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
 }, function (props) {
   return fillStyle(props.fillContainer);
 }, function (props) {
-  return props.align && alignStyle;
+  return props.align && _utils.alignStyle;
 }, function (props) {
-  return props.alignContent && alignContentStyle;
+  return props.alignContent && _utils.alignContentStyle;
 }, function (props) {
   return props.areas && areasStyle(props);
 }, function (props) {

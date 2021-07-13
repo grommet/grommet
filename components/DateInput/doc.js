@@ -25,7 +25,8 @@ var doc = function doc(DateInput) {
     inputProps: _reactDesc.PropTypes.shape({}).description("Any properties to pass on to the underlying MaskedInput\n      when there is a format."),
     name: _reactDesc.PropTypes.string.description("The name of the input.\n      This property is required when used within FormField."),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user types or selects a date.\n      The updated value will be available via 'event.value'."),
-    value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]).description('The date or date range value(s) in ISO8601 format.')
+    value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]).description('The date or date range value(s) in ISO8601 format.'),
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), _reactDesc.PropTypes.string]).description('The size of the text.')
   };
   return DocumentedDateInput;
 };

@@ -23,8 +23,9 @@ var Simple = function Simple() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
-    onChange: function onChange(event) {
-      var fileList = event.target.files;
+    onChange: function onChange(event, _ref) {
+      var files = _ref.files;
+      var fileList = files;
 
       for (var i = 0; i < fileList.length; i += 1) {
         var file = fileList[i];

@@ -4,31 +4,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled, { css } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
-import { getBreakpointStyle } from '../../utils/responsive';
+import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
 import { roundStyle } from '../../utils/styles';
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
-var ALIGN_MAP = {
-  baseline: 'baseline',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignStyle = css(["align-items:", ";"], function (props) {
-  return ALIGN_MAP[props.align];
-});
-var ALIGN_CONTENT_MAP = {
-  around: 'around',
-  between: 'between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignContentStyle = css(["align-content:", ";"], function (props) {
-  return ALIGN_CONTENT_MAP[props.alignContent];
-});
 var BASIS_MAP = {
   auto: 'auto',
   full: '100%',

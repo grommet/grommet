@@ -9,6 +9,8 @@ var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
 
+var _AnnounceContext = require("../../contexts/AnnounceContext");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
@@ -115,6 +117,7 @@ var CalendarDay = function CalendarDay(_ref) {
       _ref$buttonProps = _ref.buttonProps,
       buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+    role: "gridcell",
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
@@ -137,12 +140,14 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
 
   if (!buttonProps) {
     return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      role: "gridcell",
       sizeProp: size,
       fillContainer: fill
     }, children);
   }
 
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+    role: "gridcell",
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
@@ -176,9 +181,10 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       size = _ref3$size === void 0 ? 'medium' : _ref3$size,
       rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme; // set activeDate when caller changes it, allows us to change
-  // it internally too
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext); // set activeDate when caller changes it, allows us to change
+  // it internally too
 
   var _useState = (0, _react.useState)(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
       activeDate = _useState[0],
@@ -583,7 +589,11 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       }),
       disabled: !(0, _utils.betweenDates)(previousMonth, bounds),
       onClick: function onClick() {
-        return changeReference(previousMonth);
+        changeReference(previousMonth);
+        announce("Moved to " + previousMonth.toLocaleDateString(locale, {
+          month: 'long',
+          year: 'numeric'
+        }));
       }
     }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       a11yTitle: nextMonth.toLocaleDateString(locale, {
@@ -595,7 +605,11 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       }),
       disabled: !(0, _utils.betweenDates)(nextMonth, bounds),
       onClick: function onClick() {
-        return changeReference(nextMonth);
+        changeReference(nextMonth);
+        announce("Moved to " + nextMonth.toLocaleDateString(locale, {
+          month: 'long',
+          year: 'numeric'
+        }));
       }
     })));
   };
@@ -606,6 +620,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
     while (days.length < 7) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+        role: "gridcell",
         key: days.length,
         sizeProp: size,
         fillContainer: fill
@@ -619,7 +634,9 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       day = (0, _utils.addDays)(day, 1);
     }
 
-    return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, null, days);
+    return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
+      role: "row"
+    }, days);
   };
 
   var weeks = [];
@@ -631,6 +648,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
         weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
+          role: "row",
           key: day.getTime(),
           fillContainer: fill
         }, days));
@@ -643,6 +661,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
     if (!showAdjacentDays && otherMonth) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+        role: "gridcell",
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -658,6 +677,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     we know that all days in the array are from the next month. */
     days.length < day.getDate()) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+        role: "gridcell",
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -747,6 +767,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }
 
   weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
+    role: "row",
     key: day.getTime(),
     fillContainer: fill
   }, days));
@@ -760,10 +781,18 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     date: reference,
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
-      return changeReference(previousMonth);
+      changeReference(previousMonth);
+      announce("Moved to " + previousMonth.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric'
+      }));
     },
     onNextMonth: function onNextMonth() {
-      return changeReference(nextMonth);
+      changeReference(nextMonth);
+      announce("Moved to " + previousMonth.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric'
+      }));
     },
     previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
     nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
@@ -790,10 +819,15 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       return active && setActive((0, _utils.addDays)(active, 1));
     }
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
+    tabIndex: 0,
+    role: "grid",
+    "aria-label": reference.toLocaleDateString(locale, {
+      month: 'long',
+      year: 'numeric'
+    }),
     ref: daysRef,
     sizeProp: size,
     fillContainer: fill,
-    tabIndex: 0,
     focus: focus,
     onFocus: function onFocus() {
       setFocus(true);

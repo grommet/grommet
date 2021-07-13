@@ -9,8 +9,6 @@ var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
 
-var _responsive = require("../../utils/responsive");
-
 var _styles = require("../../utils/styles");
 
 var _animation = require("../../utils/animation");
@@ -23,27 +21,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var ALIGN_MAP = {
-  baseline: 'baseline',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignStyle = (0, _styledComponents.css)(["align-items:", ";"], function (props) {
-  return ALIGN_MAP[props.align];
-});
-var ALIGN_CONTENT_MAP = {
-  around: 'around',
-  between: 'between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignContentStyle = (0, _styledComponents.css)(["align-content:", ";"], function (props) {
-  return ALIGN_CONTENT_MAP[props.alignContent];
-});
 var BASIS_MAP = {
   auto: 'auto',
   full: '100%',
@@ -65,7 +42,7 @@ var directionStyle = function directionStyle(direction, theme) {
   var styles = [(0, _styledComponents.css)(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
 
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+    var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
 
     if (breakpoint) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
@@ -183,9 +160,9 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, _utils.genericStyles, function (props) {
-  return props.align && alignStyle;
+  return props.align && _utils.alignStyle;
 }, function (props) {
-  return props.alignContent && alignContentStyle;
+  return props.alignContent && _utils.alignContentStyle;
 }, function (props) {
   return props.background && (0, _utils.backgroundStyle)(props.background, props.theme);
 }, function (props) {
@@ -230,7 +207,7 @@ exports.StyledBox = StyledBox;
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
-  var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
+  var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
 

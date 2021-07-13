@@ -29,6 +29,10 @@ var OnClickItemList = function OnClickItemList() {
       clicked = _React$useState[0],
       setClicked = _React$useState[1];
 
+  var _React$useState2 = _react["default"].useState(),
+      show = _React$useState2[0],
+      setShow = _React$useState2[1];
+
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -38,9 +42,28 @@ var OnClickItemList = function OnClickItemList() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: data.slice(0, 10),
     onClickItem: function onClickItem(event) {
-      return setClicked(event.item);
+      setShow(true);
+      setClicked(event.item);
     }
-  }), clicked && JSON.stringify(clicked, null, 2)));
+  }), show && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+    position: "center",
+    onEsc: function onEsc() {
+      return setShow(false);
+    },
+    onClickOutside: function onClickOutside() {
+      return setShow(false);
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    margin: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, clicked && JSON.stringify(clicked, null, 2)), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    margin: {
+      top: 'medium'
+    },
+    label: "close",
+    onClick: function onClick() {
+      return setShow(false);
+    }
+  })))));
 };
 
 exports.OnClickItemList = OnClickItemList;

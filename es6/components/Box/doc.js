@@ -23,8 +23,8 @@ var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), Pr
 export var doc = function doc(Box) {
   var DocumentedBox = describe(Box).availableAt(getAvailableAtBadge('Box', 'Layout')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
   DocumentedBox.propTypes = _extends({}, genericProps, {
-    align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description('How to align the contents along the cross axis.'),
-    alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description("How to align the contents when there is extra space in\n        the cross axis.").defaultValue('stretch'),
+    align: PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]).description("How to align the contents along the cross axis.\n      Any 'align-items' valid CSS value is accepted, including composed\n      ones such 'first baseline' and 'unsafe start'."),
+    alignContent: PropTypes.oneOfType([PropTypes.oneOf(['around', 'baseline', 'between', 'center', 'evenly', 'end', 'start', 'stretch']), PropTypes.string]).description("How to align the contents when there is extra space in the cross\n        axis. Any 'align-content' valid CSS value is accepted, including\n        composed ones such 'first baseline' and 'unsafe start'."),
     animation: PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, PropTypes.arrayOf(PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]).description("Animation effect(s) to use. 'duration' and 'delay' should\n        be in milliseconds. 'jiggle' and 'pulse' types are intended for\n        small elements, like icons."),
     background: backgroundDoc,
     basis: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), PropTypes.string]).description("A fixed or relative size along its container's main axis."),
@@ -105,8 +105,8 @@ export var themeDoc = _extends({
     defaultValue: undefined
   },
   'box.responsiveBreakpoint': {
-    description: "The actual breakpoint to trigger changes in the border, \n    direction, gap, margin, pad, and round.",
+    description: "The actual breakpoint to trigger changes in the border,\n    direction, gap, margin, pad, and round.",
     type: 'string',
     defaultValue: 'small'
   }
-}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
+}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin,\n    pad, and round."));

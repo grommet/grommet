@@ -141,12 +141,16 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       setActive = _useState[1];
 
   var _useState2 = useState(),
-      itemFocus = _useState2[0],
-      setItemFocus = _useState2[1];
+      lastActive = _useState2[0],
+      setLastActive = _useState2[1];
 
   var _useState3 = useState(),
-      dragging = _useState3[0],
-      setDragging = _useState3[1];
+      itemFocus = _useState3[0],
+      setItemFocus = _useState3[1];
+
+  var _useState4 = useState(),
+      dragging = _useState4[0],
+      setDragging = _useState4[1];
 
   var _usePagination = usePagination(_extends({
     data: data,
@@ -159,9 +163,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var Container = paginate ? StyledContainer : Fragment;
   var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
 
-  var _useState4 = useState(),
-      orderingData = _useState4[0],
-      setOrderingData = _useState4[1];
+  var _useState5 = useState(),
+      orderingData = _useState5[0],
+      setOrderingData = _useState5[1];
 
   var draggingRef = useRef();
   var ariaProps = {
@@ -223,9 +227,18 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     as: as || 'ul',
     itemFocus: itemFocus,
     tabIndex: onClickItem || onOrder ? 0 : undefined,
-    onBlur: onOrder ? function () {
-      return setActive(undefined);
-    } : undefined
+    onFocus: function onFocus() {
+      return (// Fixes zero-th index showing undefined.
+        // Checks for active variable to stop bug where activeStyle
+        // gets applied to lastActive instead of the item the user
+        // is currently clicking on
+        !active && active !== 0 ? setActive(lastActive) : setActive(active)
+      );
+    },
+    onBlur: function onBlur() {
+      setLastActive(active);
+      setActive(undefined);
+    }
   }, ariaProps, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: !paginate ? orderingData || data : items,
     onMore: onMore,

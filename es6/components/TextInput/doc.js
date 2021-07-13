@@ -43,7 +43,7 @@ export var doc = function doc(TextInput) {
     placeholder: PropTypes.node.description('Placeholder to use when no value is provided.'),
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]).description("Whether this is a plain input with no border or outline.\n      Use \"full\" to remove padding in addition to removing border and outline.\n      Only use this when the containing context provides sufficient\n      affordance."),
     reverse: PropTypes.bool.description("Whether an icon should be reversed so that the icon is at the\n      end of the input."),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextInput.'),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]).description('The size of the text.'),
     suggestions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({
       label: PropTypes.node,
       // eslint-disable-next-line

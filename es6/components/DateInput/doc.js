@@ -18,7 +18,8 @@ export var doc = function doc(DateInput) {
     inputProps: PropTypes.shape({}).description("Any properties to pass on to the underlying MaskedInput\n      when there is a format."),
     name: PropTypes.string.description("The name of the input.\n      This property is required when used within FormField."),
     onChange: PropTypes.func.description("Function that will be called when the user types or selects a date.\n      The updated value will be available via 'event.value'."),
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).description('The date or date range value(s) in ISO8601 format.')
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).description('The date or date range value(s) in ISO8601 format.'),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]).description('The size of the text.')
   };
   return DocumentedDateInput;
 };

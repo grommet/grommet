@@ -251,6 +251,11 @@ var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placehol
 
 var inputSizeStyle = function inputSizeStyle(props) {
   var data = props.theme.text[props.size];
+
+  if (!data) {
+    return css(["font-size:", ";"], props.size);
+  }
+
   return css(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
@@ -418,6 +423,33 @@ var TEXT_ALIGN_MAP = {
 };
 export var textAlignStyle = css(["text-align:", ";"], function (props) {
   return TEXT_ALIGN_MAP[props.textAlign];
+});
+var ALIGN_ITEMS_MAP = {
+  baseline: 'baseline',
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch'
+};
+export var alignStyle = css(["align-items:", ";"], function (props) {
+  var _ALIGN_ITEMS_MAP$prop;
+
+  return (_ALIGN_ITEMS_MAP$prop = ALIGN_ITEMS_MAP[props.align]) != null ? _ALIGN_ITEMS_MAP$prop : props.align;
+});
+var ALIGN_CONTENT_MAP = {
+  around: 'space-around',
+  baseline: 'baseline',
+  between: 'space-between',
+  center: 'center',
+  evenly: 'space-evenly',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch'
+};
+export var alignContentStyle = css(["align-content:", ";"], function (props) {
+  var _ALIGN_CONTENT_MAP$pr;
+
+  return (_ALIGN_CONTENT_MAP$pr = ALIGN_CONTENT_MAP[props.alignContent]) != null ? _ALIGN_CONTENT_MAP$pr : props.alignContent;
 });
 
 var getSize = function getSize(theme, size) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, List } from 'grommet';
+import { Grommet, Box, List, Layer, Button, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
@@ -19,6 +19,10 @@ export var OnClickItemList = function OnClickItemList() {
       clicked = _React$useState[0],
       setClicked = _React$useState[1];
 
+  var _React$useState2 = React.useState(),
+      show = _React$useState2[0],
+      setShow = _React$useState2[1];
+
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -28,9 +32,28 @@ export var OnClickItemList = function OnClickItemList() {
   }, /*#__PURE__*/React.createElement(List, {
     data: data.slice(0, 10),
     onClickItem: function onClickItem(event) {
-      return setClicked(event.item);
+      setShow(true);
+      setClicked(event.item);
     }
-  }), clicked && JSON.stringify(clicked, null, 2)));
+  }), show && /*#__PURE__*/React.createElement(Layer, {
+    position: "center",
+    onEsc: function onEsc() {
+      return setShow(false);
+    },
+    onClickOutside: function onClickOutside() {
+      return setShow(false);
+    }
+  }, /*#__PURE__*/React.createElement(Box, {
+    margin: "medium"
+  }, /*#__PURE__*/React.createElement(Text, null, clicked && JSON.stringify(clicked, null, 2)), /*#__PURE__*/React.createElement(Button, {
+    margin: {
+      top: 'medium'
+    },
+    label: "close",
+    onClick: function onClick() {
+      return setShow(false);
+    }
+  })))));
 };
 OnClickItemList.storyName = 'onClickItem';
 OnClickItemList.parameters = {

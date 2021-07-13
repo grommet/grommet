@@ -15,6 +15,8 @@ var _Box = require("../Box");
 
 var _StyledAnchor = require("./StyledAnchor");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -90,13 +92,6 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }, first, second) : first || second || children);
 });
+exports.Anchor = Anchor;
 Anchor.displayName = 'Anchor';
-var AnchorDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
-}
-
-var AnchorWrapper = AnchorDoc || Anchor;
-exports.Anchor = AnchorWrapper;
+Anchor.propTypes = _propTypes.AnchorType;

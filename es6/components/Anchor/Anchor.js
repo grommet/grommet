@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
+import { AnchorType } from './propTypes';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       children = _ref.children,
@@ -76,12 +77,5 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, first, second) : first || second || children);
 });
 Anchor.displayName = 'Anchor';
-var AnchorDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
-}
-
-var AnchorWrapper = AnchorDoc || Anchor;
-export { AnchorWrapper as Anchor };
+Anchor.propTypes = AnchorType;
+export { Anchor };

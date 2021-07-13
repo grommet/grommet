@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { alignContentStyle, alignStyle, borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle } from '../../utils';
 
 var fillStyle = function fillStyle(fill) {
   if (!fill) {
@@ -18,26 +18,6 @@ var fillStyle = function fillStyle(fill) {
   return "\n      width: 100%;\n      height: 100%;\n    ";
 };
 
-var ALIGN_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignStyle = css(["align-items:", ";"], function (props) {
-  return ALIGN_MAP[props.align];
-});
-var ALIGN_CONTENT_MAP = {
-  around: 'space-around',
-  between: 'space-between',
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch'
-};
-var alignContentStyle = css(["align-content:", ";"], function (props) {
-  return ALIGN_CONTENT_MAP[props.alignContent];
-});
 var JUSTIFY_MAP = {
   center: 'center',
   end: 'flex-end',

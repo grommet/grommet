@@ -13,8 +13,8 @@ var BORDER_SHAPE = getBorderPropType({
 export var doc = function doc(Grid) {
   var DocumentedGrid = describe(Grid).availableAt(getAvailableAtBadge('Grid', 'Layout')).description("A grid system for laying out content. To use, define the\nrows and columns, create area names for adjacent cells, and then\nplace Box components inside those areas using the gridArea property.\nSee https://css-tricks.com/snippets/css/complete-guide-grid/.\nThe availability of Grid can be tested via `Grid.available`. Use this\nto create fallback rendering for older browsers, like ie11.").usage("import { Grid } from 'grommet';\n<Grid />").intrinsicElement('div');
   DocumentedGrid.propTypes = _extends({}, genericProps, {
-    align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the column axis.").defaultValue('stretch'),
-    alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the column axis.'),
+    align: PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]).description("How to align the contents along the cross axis.\n      Any 'align-items' valid CSS value is accepted, including composed\n      ones such 'first baseline' and 'unsafe start'."),
+    alignContent: PropTypes.oneOfType([PropTypes.oneOf(['around', 'baseline', 'between', 'center', 'evenly', 'end', 'start', 'stretch']), PropTypes.string]).description("How to align the contents when there is extra space in the cross\n        axis. Any 'align-content' valid CSS value is accepted, including\n        composed ones such 'first baseline' and 'unsafe start'."),
     areas: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       start: PropTypes.arrayOf(PropTypes.number),
