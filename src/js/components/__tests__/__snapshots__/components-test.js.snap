@@ -5134,7 +5134,24 @@ for any grommet children components.",
     "usage": "import { Grommet } from 'grommet';
 <Grommet>...</Grommet>",
   },
-  "Header": [Function],
+  "Header": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/header&module=%2Fsrc%2FHeader.js",
+      },
+    ],
+    "description": "Is a Box container for introductory content",
+    "name": "Header",
+    "usage": "import { Header } from 'grommet';
+<Header />",
+  },
   "Heading": Object {
     "availableAt": Array [
       Object {
