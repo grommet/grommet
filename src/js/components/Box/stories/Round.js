@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Grid } from 'grommet';
+import { Grommet, Box, Grid, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 export const RoundBox = () => (
@@ -50,6 +50,22 @@ export const RoundBox = () => (
           round={{ corner: 'left', size: '15px' }}
         >
           left rounded corner px value
+        </Box>
+      </Grid>
+      <Grid columns="small" gap="small">
+        <Box
+          background={{ color: 'background', dark: true }}
+          pad="small"
+          round={{
+            corners: {
+              'top-left': 'small',
+              'top-right': 'large',
+              'bottom-left': 'medium',
+              'bottom-right': 'xsmall',
+            },
+          }}
+        >
+          <Text>Individually rounded corners</Text>
         </Box>
       </Grid>
     </Box>

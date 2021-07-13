@@ -236,6 +236,38 @@ export type RoundType =
         | 'bottom-left'
         | 'bottom-right';
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    }
+  | {
+      corners?: {
+        'top-left'?:
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | string;
+        'top-right'?:
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | string;
+        'bottom-left'?:
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | string;
+        'bottom-right'?:
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | string;
+      };
     };
 export type TextAlignType = 'start' | 'center' | 'end' | 'justify';
 export type ThicknessType =

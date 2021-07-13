@@ -425,6 +425,16 @@ describe('Box', () => {
         <Box round={{ size: 'medium' }} />
         <Box round={{ size: 'large' }} />
         <Box round={{ size: 'xlarge' }} />
+        <Box
+          round={{
+            corners: {
+              'top-left': 'small',
+              'top-right': 'large',
+              'bottom-left': 'medium',
+              'bottom-right': 'xsmall',
+            },
+          }}
+        />
       </Grommet>,
     );
 

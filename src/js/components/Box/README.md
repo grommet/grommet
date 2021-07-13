@@ -767,6 +767,12 @@ string
     xlarge
     string
 }
+{
+  corners: [[object Object]
+[object Object]
+[object Object]
+[object Object]]
+}
 ```
 
 **tag**

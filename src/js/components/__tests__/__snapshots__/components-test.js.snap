@@ -917,6 +917,12 @@ string
     large
     xlarge
     string
+}
+{
+  corners: [[object Object]
+[object Object]
+[object Object]
+[object Object]]
 }",
         "name": "round",
       },
@@ -3616,6 +3622,12 @@ string
     large
     xlarge
     string
+}
+{
+  corners: [[object Object]
+[object Object]
+[object Object]
+[object Object]]
 }",
         "name": "round",
       },

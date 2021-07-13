@@ -640,7 +640,31 @@ export const roundStyle = (data, responsive, theme) => {
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
-    if (data.corner === 'top') {
+    if (data.corners) {
+      Object.keys(data.corners).forEach(corner => {
+        const iSize = data.corners[corner];
+        const cSize =
+          ROUND_MAP[iSize] || theme.global.edgeSize[iSize || 'medium'] || iSize;
+        const cResponsiveSize =
+          responsive &&
+          breakpoint &&
+          breakpoint.edgeSize[iSize] &&
+          (breakpoint.edgeSize[iSize] || iSize);
+        styles.push(css`
+            border-${corner}-radius: ${cSize};
+          `);
+        if (cResponsiveSize) {
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+              border-${corner}-radius: ${cResponsiveSize};
+            `,
+            ),
+          );
+        }
+      });
+    } else if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
         border-top-right-radius: ${size};
