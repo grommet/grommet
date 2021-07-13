@@ -41,7 +41,7 @@ export const Controlled = () => {
               setValue(nextValue);
             }}
             onReset={() => setValue(defaultValue)}
-            onSubmit={event =>
+            onSubmit={(event) =>
               console.log('Submit', event.value, event.touched)
             }
           >

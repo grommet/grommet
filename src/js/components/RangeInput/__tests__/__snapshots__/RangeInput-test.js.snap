@@ -119,6 +119,14 @@ exports[`RangeInput onBlur 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 <div
   class="c0"
 >
@@ -252,6 +260,14 @@ exports[`RangeInput onChange 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 <div
   class="c0"
 >
@@ -287,8 +303,6 @@ exports[`RangeInput onFocus 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1::-moz-focus-inner {
@@ -343,6 +357,23 @@ exports[`RangeInput onFocus 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb > circle,
+.c1::-moz-range-thumb > ellipse,
+.c1::-moz-range-thumb > line,
+.c1::-moz-range-thumb > path,
+.c1::-moz-range-thumb > polygon,
+.c1::-moz-range-thumb > polyline,
+.c1::-moz-range-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-range-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1::-ms-thumb {
@@ -358,6 +389,23 @@ exports[`RangeInput onFocus 1`] = `
   margin-top: 0px;
   height: 24px;
   width: 24px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb > circle,
+.c1::-ms-thumb > ellipse,
+.c1::-ms-thumb > line,
+.c1::-ms-thumb > path,
+.c1::-ms-thumb > polygon,
+.c1::-ms-thumb > polyline,
+.c1::-ms-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-ms-thumb::-moz-focus-inner {
+  border: 0;
 }
 
 .c1:hover::-moz-range-thumb {
@@ -387,19 +435,32 @@ exports[`RangeInput onFocus 1`] = `
   border-color: transparent;
 }
 
-.c1 > circle,
-.c1 > ellipse,
-.c1 > line,
-.c1 > path,
-.c1 > polygon,
-.c1 > polyline,
-.c1 > rect {
+.c1:focus::-webkit-slider-thumb {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus::-webkit-slider-thumb > circle,
+.c1:focus::-webkit-slider-thumb > ellipse,
+.c1:focus::-webkit-slider-thumb > line,
+.c1:focus::-webkit-slider-thumb > path,
+.c1:focus::-webkit-slider-thumb > polygon,
+.c1:focus::-webkit-slider-thumb > polyline,
+.c1:focus::-webkit-slider-thumb > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
   border: 0;
+}
+
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -535,6 +596,14 @@ exports[`RangeInput renders 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 <div
   class="c0"
 >
@@ -663,6 +732,14 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div
@@ -796,6 +873,14 @@ exports[`RangeInput track themed 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 <div
   class="c0"
 >
@@ -926,6 +1011,14 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   border-color: transparent;
 }
 
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 <div
   class="c0"
 >
@@ -1054,6 +1147,14 @@ exports[`RangeInput with min and max offset 1`] = `
 .c1::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
+}
+
+.c1:focus-visible {
+  outline: 0;
+}
+
+.c1:focus {
+  outline: none;
 }
 
 <div

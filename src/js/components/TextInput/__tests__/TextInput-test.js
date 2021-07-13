@@ -649,7 +649,7 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  
+
   test('renders size', () => {
     const { container } = render(
       <Grommet>
