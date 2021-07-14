@@ -31,7 +31,9 @@ export const Ref = () => {
     </Grommet>
   );
 };
-
+Ref.parameters = {
+  chromatic: { disable: true },
+};
 export default {
   title: 'Layout/Header/Ref',
 };
