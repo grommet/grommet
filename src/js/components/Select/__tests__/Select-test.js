@@ -19,6 +19,7 @@ describe('Select', () => {
     const { container } = render(
       <Grommet>
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
+        <Select options={['one', 'two', 'three']} aria-label="test-select" />
       </Grommet>,
     );
 

@@ -370,4 +370,15 @@ describe('Pagination', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`should apply a11yTitle and aria-label`, () => {
+    const { container } = render(
+      <Grommet>
+        <Pagination a11yTitle="pagination-test" numberItems={NUM_ITEMS} />
+        <Pagination aria-label="pagination-test" numberItems={NUM_ITEMS} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

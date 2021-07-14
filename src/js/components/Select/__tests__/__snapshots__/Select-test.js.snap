@@ -15340,6 +15340,50 @@ exports[`Select should not have accessibility violations 1`] = `
       </div>
     </div>
   </button>
+  <button
+    aria-label="test-select"
+    class="c1 c2"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            aria-label="test-select"
+            autocomplete="off"
+            class="c6 c7"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
 </div>
 `;
 

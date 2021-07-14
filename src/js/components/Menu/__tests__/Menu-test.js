@@ -84,11 +84,16 @@ describe('Menu', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('custom a11yTitle', () => {
+  test('custom a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>
         <Menu
           a11yTitle="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+        <Menu
+          aria-label="My Menu 2"
           label="Test Menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
@@ -97,6 +102,7 @@ describe('Menu', () => {
 
     const menuWithLabel = getByLabelText('My Menu');
     expect(menuWithLabel).toBeTruthy();
+    expect(getByLabelText('My Menu 2')).toBeTruthy();
 
     expect(container).toMatchSnapshot();
   });

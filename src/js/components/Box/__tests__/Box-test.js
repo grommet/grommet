@@ -620,4 +620,14 @@ describe('Box', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container } = render(
+      <Grommet>
+        <Box a11yTitle="test" />
+        <Box aria-label="test" />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -34,9 +34,12 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('a11yTitle', () => {
+  test('a11yTitle or aria-label', () => {
     const { container } = render(
-      <TextInput a11yTitle="aria-test" name="item" />,
+      <Grommet>
+        <TextInput a11yTitle="aria-test" name="item" />
+        <TextInput aria-label="aria-test" name="item-2" />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -649,7 +652,7 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  
+
   test('renders size', () => {
     const { container } = render(
       <Grommet>

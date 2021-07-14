@@ -69,6 +69,7 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       defaultSuggestion,
       defaultValue,
       dropAlign = defaultDropAlign,
@@ -417,7 +418,7 @@ const TextInput = forwardRef(
         )}
         <Keyboard target={focus ? 'document' : undefined} {...keyboardProps}>
           <StyledTextInput
-            aria-label={a11yTitle}
+            aria-label={ariaLabel || a11yTitle}
             ref={inputRef}
             id={id}
             name={name}

@@ -161,6 +161,7 @@ const MaskedInput = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       dropHeight,
       dropProps,
       focus: focusProp,
@@ -363,7 +364,7 @@ const MaskedInput = forwardRef(
         >
           <StyledMaskedInput
             ref={inputRef}
-            aria-label={a11yTitle}
+            aria-label={ariaLabel || a11yTitle}
             id={id}
             name={name}
             autoComplete="off"

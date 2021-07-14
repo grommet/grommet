@@ -12,6 +12,7 @@ test('should have no accessibility violations', async () => {
   const { container } = render(
     <Grommet>
       <Text a11yTitle="test"> Example</Text>
+      <Text aria-label="test">Example</Text>
     </Grommet>,
   );
 

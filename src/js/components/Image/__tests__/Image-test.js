@@ -39,6 +39,7 @@ test('Image renders with aria-label', () => {
   const { container } = render(
     <Grommet>
       <Image a11yTitle="aria-label-text" src={SRC} />
+      <Image aria-label="aria-label-text" src={SRC} />
     </Grommet>,
   );
 

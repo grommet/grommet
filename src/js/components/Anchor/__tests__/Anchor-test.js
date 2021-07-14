@@ -189,4 +189,14 @@ describe('Anchor', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container } = render(
+      <Grommet>
+        <Anchor href="#" label="Test" as="span" a11yTitle="test" />
+        <Anchor href="#" label="Test" as="span" aria-label="test" />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

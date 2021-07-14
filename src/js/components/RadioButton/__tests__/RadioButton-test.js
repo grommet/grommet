@@ -14,6 +14,7 @@ describe('RadioButton', () => {
     const { container } = render(
       <Grommet>
         <RadioButton name="test" a11yTitle="test" />
+        <RadioButton name="test" aria-label="test" />
       </Grommet>,
     );
 

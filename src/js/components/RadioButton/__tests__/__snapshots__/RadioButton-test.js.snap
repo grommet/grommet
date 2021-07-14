@@ -1143,5 +1143,22 @@ exports[`RadioButton should have no accessibility violations 1`] = `
       />
     </div>
   </label>
+  <label
+    class="c1"
+  >
+    <div
+      class="c2 "
+    >
+      <input
+        aria-label="test"
+        class="c3"
+        name="test"
+        type="radio"
+      />
+      <div
+        class="c4 "
+      />
+    </div>
+  </label>
 </div>
 `;

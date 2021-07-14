@@ -326,4 +326,15 @@ describe('Chart', () => {
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', () => {
+    const LABEL = 'Test Label';
+    const { container } = render(
+      <Grommet>
+        <Chart a11yTitle={LABEL} values={VALUES} />
+        <Chart aria-label={LABEL} values={VALUES} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

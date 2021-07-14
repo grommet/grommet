@@ -520,5 +520,11 @@ exports[`should have no accessibility violations 1`] = `
   >
      Example
   </span>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+    Example
+  </span>
 </div>
 `;

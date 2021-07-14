@@ -447,7 +447,7 @@ describe('MaskedInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  
+
   test('renders size', () => {
     const { container } = render(
       <Grommet>
@@ -468,5 +468,15 @@ describe('MaskedInput', () => {
       </Grommet>,
     );
     expect(container.children).toMatchSnapshot();
+  });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput a11yTitle="masked-input-test" name="item" />
+        <MaskedInput aria-label="masked-input-test" name="item" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -18,6 +18,7 @@ const RadioButton = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       checked,
       children,
       disabled,
@@ -69,7 +70,7 @@ const RadioButton = forwardRef(
           }
         >
           <StyledRadioButtonInput
-            aria-label={a11yTitle}
+            aria-label={ariaLabel || a11yTitle}
             {...rest}
             ref={ref}
             type="radio"

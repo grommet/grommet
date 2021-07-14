@@ -19,6 +19,7 @@ const Chart = React.forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       bounds: propsBounds,
       color,
       dash,
@@ -647,7 +648,7 @@ const Chart = React.forwardRef(
       <StyledChart
         ref={containerRef}
         id={id}
-        aria-label={a11yTitle}
+        aria-label={ariaLabel || a11yTitle}
         viewBox={viewBox}
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : size[0]}

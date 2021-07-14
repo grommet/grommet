@@ -10,6 +10,7 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
+      'aria-label': ariaLabel,
       onAlign,
       disabled,
       dropAlign = defaultDropAlign,
@@ -33,7 +34,7 @@ const DropButton = forwardRef(
       }
     }, [open, show]);
     const onDropClose = useCallback(
-      event => {
+      (event) => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
         let node = event.target;
@@ -50,7 +51,7 @@ const DropButton = forwardRef(
     );
 
     const onClickInternal = useCallback(
-      event => {
+      (event) => {
         if (!show) {
           setShow(true);
           if (onOpen) onOpen(event);
@@ -68,7 +69,7 @@ const DropButton = forwardRef(
         <Button
           id={id}
           ref={buttonRef}
-          a11yTitle={a11yTitle}
+          a11yTitle={ariaLabel || a11yTitle}
           disabled={disabled}
           {...rest}
           onClick={onClickInternal}

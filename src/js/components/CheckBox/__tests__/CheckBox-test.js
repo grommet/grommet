@@ -190,4 +190,15 @@ describe('CheckBox', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', async () => {
+    const LABEL = 'Label';
+    const { container } = render(
+      <Grommet>
+        <CheckBox a11yTitle={LABEL} />
+        <CheckBox aria-label={LABEL} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
