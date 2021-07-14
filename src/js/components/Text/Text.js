@@ -12,7 +12,6 @@ const Text = forwardRef(
       tip,
       // can't alphabetize a11yTitle before tip is defined
       a11yTitle = typeof tip === 'string' ? tip : undefined,
-      'aria-label': ariaLabel,
       ...rest
     },
     ref,
@@ -21,7 +20,7 @@ const Text = forwardRef(
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
-        aria-label={ariaLabel || a11yTitle}
+        aria-label={a11yTitle}
         {...rest}
         ref={ref}
       />

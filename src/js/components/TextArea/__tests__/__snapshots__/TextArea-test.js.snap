@@ -1996,6 +1996,7 @@ exports[`TextArea should apply a11yTitle or aria-label 1`] = `
     name="item"
   />
   <textarea
+    aria-label="item-2"
     class="c1"
     id="item-2"
     name="item-2"

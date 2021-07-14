@@ -9,7 +9,6 @@ const TextArea = forwardRef(
   (
     {
       a11yTitle,
-      'aria-label': ariaLabel,
       fill,
       focusIndicator = true,
       name,
