@@ -4509,7 +4509,7 @@ exports[`Box renders a11yTitle and aria-label 1`] = `
       class="c1"
     />
     <div
-      aria-label="test"
+      aria-label="test-2"
       class="c1"
     />
   </div>

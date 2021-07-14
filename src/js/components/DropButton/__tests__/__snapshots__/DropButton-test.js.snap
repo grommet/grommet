@@ -711,7 +711,7 @@ exports[`DropButton rendersr a11yTitle and aria-label 1`] = `
     Dropper
   </button>
   <button
-    aria-label="Test Label"
+    aria-label="Test Label-2"
     class="c1"
     type="button"
   >

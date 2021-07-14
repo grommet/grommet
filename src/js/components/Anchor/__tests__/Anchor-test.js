@@ -191,12 +191,14 @@ describe('Anchor', () => {
   });
 
   test('renders a11yTitle and aria-label', () => {
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
-        <Anchor href="#" label="Test" as="span" a11yTitle="test" />
-        <Anchor href="#" label="Test" as="span" aria-label="test" />
+        <Anchor href="#" label="Test" a11yTitle="test" />
+        <Anchor href="#" label="Test" aria-label="test-2" />
       </Grommet>,
     );
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 });

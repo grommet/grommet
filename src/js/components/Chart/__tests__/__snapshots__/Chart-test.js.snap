@@ -1947,7 +1947,7 @@ exports[`Chart renders a11yTitle and aria-label 1`] = `
     </g>
   </svg>
   <svg
-    aria-label="Test Label"
+    aria-label="Test Label-2"
     class="c1"
     height="192"
     preserveAspectRatio="none"

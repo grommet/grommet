@@ -14,7 +14,6 @@ describe('RadioButton', () => {
     const { container } = render(
       <Grommet>
         <RadioButton name="test" a11yTitle="test" />
-        <RadioButton name="test" aria-label="test" />
       </Grommet>,
     );
 
@@ -119,6 +118,19 @@ describe('RadioButton', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RadioButton name="test" a11yTitle="test" />
+        <RadioButton name="test" aria-label="test-2" />
+      </Grommet>,
+    );
+
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

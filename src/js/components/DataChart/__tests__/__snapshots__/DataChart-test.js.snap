@@ -6971,7 +6971,7 @@ exports[`DataChart pad 1`] = `
 </div>
 `;
 
-exports[`DataChart renderrs a11yTitle and aria-label 1`] = `
+exports[`DataChart renders a11yTitle and aria-label 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;

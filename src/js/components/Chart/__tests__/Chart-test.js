@@ -329,12 +329,14 @@ describe('Chart', () => {
 
   test('renders a11yTitle and aria-label', () => {
     const LABEL = 'Test Label';
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <Chart a11yTitle={LABEL} values={VALUES} />
-        <Chart aria-label={LABEL} values={VALUES} />
+        <Chart aria-label={`${LABEL}-2`} values={VALUES} />
       </Grommet>,
     );
+    expect(getByLabelText(LABEL)).toBeTruthy();
+    expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

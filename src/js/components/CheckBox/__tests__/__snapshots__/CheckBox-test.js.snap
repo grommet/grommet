@@ -1663,7 +1663,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
     </div>
   </label>
   <label
-    aria-label="Label"
+    aria-label="Label-2"
     class="c1"
   >
     <div

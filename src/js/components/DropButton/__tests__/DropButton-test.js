@@ -159,7 +159,7 @@ describe('DropButton', () => {
 
   test('rendersr a11yTitle and aria-label', () => {
     const LABEL = 'Test Label';
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <DropButton
           label="Dropper"
@@ -168,11 +168,13 @@ describe('DropButton', () => {
         />
         <DropButton
           label="Dropper"
-          a11yTitle={LABEL}
+          a11yTitle={`${LABEL}-2`}
           dropContent={<div id="drop-contents">drop contents</div>}
         />
       </Grommet>,
     );
+    expect(getByLabelText(LABEL)).toBeTruthy();
+    expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

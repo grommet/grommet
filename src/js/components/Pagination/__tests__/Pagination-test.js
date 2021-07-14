@@ -372,13 +372,15 @@ describe('Pagination', () => {
   });
 
   test(`should apply a11yTitle and aria-label`, () => {
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <Pagination a11yTitle="pagination-test" numberItems={NUM_ITEMS} />
-        <Pagination aria-label="pagination-test" numberItems={NUM_ITEMS} />
+        <Pagination aria-label="pagination-test-2" numberItems={NUM_ITEMS} />
       </Grommet>,
     );
 
+    expect(getByLabelText('pagination-test')).toBeTruthy();
+    expect(getByLabelText('pagination-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

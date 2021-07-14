@@ -12,7 +12,6 @@ test('should have no accessibility violations', async () => {
   const { container } = render(
     <Grommet>
       <Text a11yTitle="test"> Example</Text>
-      <Text aria-label="test">Example</Text>
     </Grommet>,
   );
 
@@ -163,5 +162,18 @@ test('renders tip', () => {
   );
 
   fireEvent.mouseOver(getByText('Default Tip'));
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('should apply a11yTitle or aria-label', () => {
+  const { container, getByLabelText } = render(
+    <Grommet>
+      <Text a11yTitle="test"> Example</Text>
+      <Text aria-label="test-2">Example</Text>
+    </Grommet>,
+  );
+
+  expect(getByLabelText('test')).toBeTruthy();
+  expect(getByLabelText('test-2')).toBeTruthy();
   expect(container.firstChild).toMatchSnapshot();
 });

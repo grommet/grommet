@@ -2399,7 +2399,7 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
     class="c1"
   >
     <input
-      aria-label="masked-input-test"
+      aria-label="masked-input-test-2"
       autocomplete="off"
       class="c2"
       name="item"

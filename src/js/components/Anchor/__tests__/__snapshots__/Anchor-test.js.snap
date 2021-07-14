@@ -361,20 +361,20 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   <div
     class="c0"
   >
-    <span
+    <a
       aria-label="test"
       class="c1"
       href="#"
     >
       Test
-    </span>
-    <span
-      aria-label="test"
+    </a>
+    <a
+      aria-label="test-2"
       class="c1"
       href="#"
     >
       Test
-    </span>
+    </a>
   </div>
 </div>
 `;

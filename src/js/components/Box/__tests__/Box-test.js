@@ -622,12 +622,14 @@ describe('Box', () => {
   });
 
   test('renders a11yTitle and aria-label', () => {
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <Box a11yTitle="test" />
-        <Box aria-label="test" />
+        <Box aria-label="test-2" />
       </Grommet>,
     );
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 });

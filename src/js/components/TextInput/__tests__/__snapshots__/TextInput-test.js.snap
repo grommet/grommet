@@ -96,7 +96,7 @@ exports[`TextInput a11yTitle or aria-label 1`] = `
     class="c1"
   >
     <input
-      aria-label="aria-test"
+      aria-label="aria-test-2"
       autocomplete="off"
       class="c2"
       name="item-2"

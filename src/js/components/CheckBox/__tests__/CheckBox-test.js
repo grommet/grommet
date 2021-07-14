@@ -193,12 +193,14 @@ describe('CheckBox', () => {
 
   test('renders a11yTitle and aria-label', async () => {
     const LABEL = 'Label';
-    const { container } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <CheckBox a11yTitle={LABEL} />
-        <CheckBox aria-label={LABEL} />
+        <CheckBox aria-label={`${LABEL}-2`} />
       </Grommet>,
     );
+    expect(getByLabelText(LABEL)).toBeTruthy();
+    expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1091,7 +1091,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
     class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
-      aria-label="pagination-test"
+      aria-label="pagination-test-2"
       class="c2"
     >
       <ul

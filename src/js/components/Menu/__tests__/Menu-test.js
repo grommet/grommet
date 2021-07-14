@@ -100,8 +100,7 @@ describe('Menu', () => {
       </Grommet>,
     );
 
-    const menuWithLabel = getByLabelText('My Menu');
-    expect(menuWithLabel).toBeTruthy();
+    expect(getByLabelText('My Menu')).toBeTruthy();
     expect(getByLabelText('My Menu 2')).toBeTruthy();
 
     expect(container).toMatchSnapshot();

@@ -19,7 +19,6 @@ describe('Select', () => {
     const { container } = render(
       <Grommet>
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
-        <Select options={['one', 'two', 'three']} aria-label="test-select" />
       </Grommet>,
     );
 
@@ -1317,6 +1316,19 @@ describe('Select', () => {
       which: 13,
     });
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByRole } = render(
+      <Grommet>
+        <Select options={['one', 'two', 'three']} a11yTitle="test" />
+        <Select options={['one', 'two', 'three']} aria-label="test-select" />
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'test' })).toBeTruthy();
+    expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
