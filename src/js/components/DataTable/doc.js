@@ -187,6 +187,13 @@ export const doc = (DataTable) => {
       browser, such as columns.search, sortable, groupBy, or
       columns.aggregate.`,
     ),
+    moreButton: PropTypes.bool.description(
+      `When supplied, this will display a button to call the onMore function 
+      to fetch more data. Also displays a spinner while data it is loading.
+      And asks user to try again if data takes more than 10 seconds.
+      This is an alternative to the infiniteScroll default behaviour. 
+      It should only be set in addition to the onMore property.`,
+    ),
     onSearch: PropTypes.func.description(
       `When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property

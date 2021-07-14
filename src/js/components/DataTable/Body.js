@@ -134,6 +134,7 @@ const Body = forwardRef(
       columns,
       data,
       onMore,
+      moreButton,
       replace,
       onClickRow,
       onSelect,
@@ -192,6 +193,7 @@ const Body = forwardRef(
             items={data}
             onMore={onMore}
             replace={replace}
+            moreButton={moreButton}
             renderMarker={(marker) => (
               <TableRow>
                 <TableCell>{marker}</TableCell>

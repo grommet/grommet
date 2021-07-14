@@ -15,6 +15,8 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
+import { Button } from '../Button';
+import { Spinner } from '../Spinner';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
@@ -61,6 +63,7 @@ const DataTable = ({
   groupBy,
   onClickRow, // removing unknown DOM attributes
   onMore,
+  moreButton = false,
   onSearch, // removing unknown DOM attributes
   onSelect,
   onSort: onSortProp,
@@ -314,6 +317,80 @@ const DataTable = ({
       ? { style: { minWidth: '100%' } }
       : undefined;
 
+  // Choose what to display: button to load more , spinner, or
+  // unretrieved message in case the function takes long to get data
+  const [moreButtonState, setMoreButtonState] = useState('button');
+
+  const moreButtonRef = useRef(moreButtonState);
+  moreButtonRef.current = moreButtonState;
+
+  // If 10 seconds pass without getting data change moreButtonState
+  // to let user know and ask to load more again
+
+  const afterTenSecondsRef = useRef(null);
+  const dataTimeout = () => {
+    afterTenSecondsRef.current = setTimeout(() => {
+      if (moreButtonRef.current === 'spinner') {
+        setMoreButtonState('unretrieved');
+      }
+    }, 10000);
+  };
+
+  useEffect(() => {
+    if (moreButtonState === 'spinner') {
+      onMore();
+      dataTimeout();
+    }
+  }, [moreButtonState]);
+
+  // When data is retrieved set moreButton again
+  useEffect(() => {
+    setMoreButtonState('button');
+    if (afterTenSecondsRef.current) {
+      clearTimeout(afterTenSecondsRef.current);
+      afterTenSecondsRef.current = null;
+    }
+  }, [data.length]);
+
+  if (moreButton === true && !onMore) {
+    console.warn(
+      'You need to provide an function in the onMore field to use moreButton',
+    );
+  }
+
+  const memoizedmoreButtonState = useMemo(() => {
+    if (moreButton && moreButtonState === 'button') {
+      return (
+        <Button
+          label="load more"
+          onClick={() => setMoreButtonState('spinner')}
+        />
+      );
+    }
+    if (moreButton && moreButtonState === 'spinner') {
+      return (
+        <Box gap="small" direction="row">
+          <Spinner />
+          <Text>Loading...</Text>
+        </Box>
+      );
+    }
+    if (moreButton && moreButtonState === 'unretrieved') {
+      return (
+        <>
+          <Text> Retrieving data is taking too long. Try again.</Text>
+          <Button
+            label="load more"
+            margin="small"
+            display="block"
+            onClick={() => setMoreButtonState('spinner')}
+          />
+        </>
+      );
+    }
+    return null;
+  }, [moreButtonState, moreButton, setMoreButtonState]);
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
@@ -386,6 +463,7 @@ const DataTable = ({
               columns={columns}
               data={!paginate ? adjustedData : items}
               onMore={onMore}
+              moreButton={moreButton}
               replace={replace}
               onClickRow={onClickRow}
               onSelect={
@@ -447,6 +525,11 @@ const DataTable = ({
       </OverflowContainer>
       {paginate && data.length > step && items && items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
+      ) : null}
+      {onMore && moreButton ? (
+        <Box align="center" pad="small">
+          {memoizedmoreButtonState}
+        </Box>
       ) : null}
     </Container>
   );
