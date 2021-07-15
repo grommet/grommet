@@ -717,6 +717,10 @@ const Calendar = forwardRef(
                 disabled: dayDisabled && !!dayDisabled,
                 onClick: () => {
                   selectDate(dateString);
+                  announce(
+                    `Selected ${formatToLocalYYYYMMDD(dateString)}`,
+                    'assertive',
+                  );
                   // Chrome moves the focus indicator to this button. Set
                   // the focus to the grid of days instead.
                   daysRef.current.focus();
@@ -745,6 +749,11 @@ const Calendar = forwardRef(
                       disabled: dayDisabled && !!dayDisabled,
                       onClick: () => {
                         selectDate(dateString);
+                        announce(
+                          `Selected 
+                          ${formatToLocalYYYYMMDD(dateString)}`,
+                          'assertive',
+                        );
                         // Chrome moves the focus indicator to this button. Set
                         // the focus to the grid of days instead.
                         daysRef.current.focus();
@@ -807,11 +816,11 @@ const Calendar = forwardRef(
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
-            onEnter={() =>
-              active !== undefined
-                ? selectDate(active.toISOString())
-                : undefined
-            }
+            onEnter={() => {
+              if (active !== undefined) {
+                selectDate(active.toISOString());
+              }
+            }}
             onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
