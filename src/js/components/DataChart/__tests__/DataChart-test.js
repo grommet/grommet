@@ -263,15 +263,4 @@ describe('DataChart', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-
-  test('renders a11yTitle and aria-label', () => {
-    const LABEL = 'Test Label';
-    const { container } = render(
-      <Grommet>
-        <DataChart data={data} a11yTitle={LABEL} />
-        <DataChart data={data} aria-label={`${LABEL}-2`} />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });
