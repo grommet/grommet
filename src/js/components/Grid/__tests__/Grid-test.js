@@ -23,8 +23,8 @@ describe('Grid', () => {
         <Grid aria-label="My Other Grid" />
       </Grommet>,
     );
-    const gridWithLabel = getByLabelText('My Grid');
-    expect(gridWithLabel).toBeTruthy();
+    expect(getByLabelText('My Grid')).toBeTruthy();
+    expect(getByLabelText('My Other Grid')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
