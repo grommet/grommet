@@ -34,10 +34,16 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('a11yTitle', () => {
-    const { container } = render(
-      <TextInput a11yTitle="aria-test" name="item" />,
+  test('a11yTitle or aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <TextInput a11yTitle="aria-test" name="item" />
+        <TextInput aria-label="aria-test-2" name="item-2" />
+      </Grommet>,
     );
+
+    expect(getByLabelText('aria-test')).toBeTruthy();
+    expect(getByLabelText('aria-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 

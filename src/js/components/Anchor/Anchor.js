@@ -20,6 +20,7 @@ const Anchor = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       children,
       color,
       disabled,
@@ -59,7 +60,7 @@ const Anchor = forwardRef(
       <StyledAnchor
         {...rest}
         ref={ref}
-        aria-label={a11yTitle}
+        aria-label={ariaLabel || a11yTitle}
         colorProp={color}
         disabled={disabled}
         hasIcon={!!icon}
