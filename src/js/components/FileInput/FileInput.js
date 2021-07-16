@@ -67,7 +67,7 @@ const FileInput = forwardRef(
       multiple,
       name,
       onChange,
-      onClickRemove,
+      onRemove,
       pad,
       value: valueProp,
       ...rest
@@ -248,7 +248,9 @@ const FileInput = forwardRef(
                 icon={<RemoveIcon />}
                 hoverIndicator
                 onClick={(event) => {
-                  if (onClickRemove) onClickRemove();
+                  const adjustedEvent = event;
+                  adjustedEvent.files = files;
+                  if (onRemove) onRemove(adjustedEvent);
                   event.stopPropagation();
                   if (onChange) onChange(event, { files: [] });
                   setFiles([]);
@@ -330,7 +332,7 @@ const FileInput = forwardRef(
                   icon={<RemoveIcon />}
                   hoverIndicator
                   onClick={(event) => {
-                    if (onClickRemove) if (!onClickRemove()) return;
+                    if (onRemove) onRemove(file);
                     event.stopPropagation();
                     const nextFiles = [...files];
                     nextFiles.splice(index, 1);
