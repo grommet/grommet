@@ -1,11 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render, fireEvent } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { CheckBoxGroup } from '..';
 
@@ -24,27 +23,27 @@ describe('CheckBoxGroup', () => {
   });
 
   test('options renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <CheckBoxGroup options={['First', 'Second']} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('value renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <CheckBoxGroup value={['First']} options={['First', 'Second']} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('initial value renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <CheckBoxGroup
           value={['Wuhan', 'Jerusalem']}
@@ -56,20 +55,20 @@ describe('CheckBoxGroup', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <CheckBoxGroup disabled options={['First', 'Second']} />
         <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
         <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onChange', () => {

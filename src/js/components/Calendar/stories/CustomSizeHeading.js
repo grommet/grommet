@@ -14,7 +14,7 @@ const customHeading = deepMerge(grommet, {
 export const CustomSizeCalendar = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 

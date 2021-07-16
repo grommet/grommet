@@ -52,6 +52,7 @@ export interface ListProps<ListItemType> {
   onClickItem?:
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: ListItemType; index?: number }) => void);
+  onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);

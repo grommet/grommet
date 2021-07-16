@@ -225,7 +225,7 @@ describe('Drop', () => {
     { bottom: 'bottom', right: 'left' },
   ];
 
-  alignPositions.forEach(alignPosition => {
+  alignPositions.forEach((alignPosition) => {
     const customMarginTheme = {
       global: {
         drop: {

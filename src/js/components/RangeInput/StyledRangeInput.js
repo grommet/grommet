@@ -36,7 +36,7 @@ const getBoundColor = (props, bound) => {
   );
 };
 
-const trackColorStyle = props => {
+const trackColorStyle = (props) => {
   const max = props.max || 100; // 'max' defaults to 100 in case not specified
   const min = props.min || 0; // 'min' defaults to 0 in case not specified
   const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
@@ -114,9 +114,9 @@ const trackColorStyle = props => {
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
-  height: ${props => props.theme.rangeInput.track.height};
-  ${props => trackColorStyle(props)};
-  ${props =>
+  height: ${(props) => props.theme.rangeInput.track.height};
+  ${(props) => trackColorStyle(props)};
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
@@ -125,18 +125,18 @@ const rangeTrackStyle = css`
 const rangeThumbStyle = css`
   box-sizing: border-box;
   position: relative;
-  border-radius: ${props => props.theme.global.spacing};
-  height: ${props => props.theme.global.spacing};
-  width: ${props => props.theme.global.spacing};
+  border-radius: ${(props) => props.theme.global.spacing};
+  height: ${(props) => props.theme.global.spacing};
+  width: ${(props) => props.theme.global.spacing};
   overflow: visible;
-  background: ${props =>
+  background: ${(props) =>
     normalizeColor(
       props.theme.rangeInput.thumb.color || 'control',
       props.theme,
     )};
   -webkit-appearance: none;
   cursor: pointer;
-  ${props =>
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
@@ -144,9 +144,9 @@ const rangeThumbStyle = css`
 
 const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
-  height: ${props => props.theme.global.spacing};
-  width: ${props => props.theme.global.spacing};
-  ${props =>
+  height: ${(props) => props.theme.global.spacing};
+  width: ${(props) => props.theme.global.spacing};
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
@@ -158,7 +158,7 @@ const StyledRangeInput = styled.input`
   position: relative;
   -webkit-appearance: none;
   border-color: transparent;
-  height: ${props => props.theme.global.spacing};
+  height: ${(props) => props.theme.global.spacing};
   width: 100%;
   padding: 0px;
   cursor: pointer;
@@ -177,10 +177,10 @@ const StyledRangeInput = styled.input`
   }
 
   &::-webkit-slider-thumb {
-    margin-top: -${props => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
+    margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
 
-    ${props =>
+    ${(props) =>
       !props.disabled &&
       css`
         &:hover {
@@ -205,7 +205,7 @@ const StyledRangeInput = styled.input`
     ${firefoxMicrosoftThumbStyle}
   }
 
-  ${props =>
+  ${(props) =>
     !props.disabled &&
     css`
       &:hover::-moz-range-thumb {
@@ -232,17 +232,17 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    ${props => trackColorStyle(props, 'lower')};
+    ${(props) => trackColorStyle(props, 'lower')};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    ${props => trackColorStyle(props, 'upper')};
+    ${(props) => trackColorStyle(props, 'upper')};
     border-color: transparent;
   }
 
-  ${props => props.focus && focusStyle()}
-  ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
+  ${(props) => props.focus && focusStyle()}
+  ${(props) => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
 

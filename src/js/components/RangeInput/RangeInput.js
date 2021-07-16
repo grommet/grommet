@@ -5,16 +5,7 @@ import { StyledRangeInput } from './StyledRangeInput';
 
 const RangeInput = forwardRef(
   (
-    {
-      a11yTitle,
-      name,
-      onChange,
-      onFocus,
-      onBlur,
-      value: valueProp,
-      showLabel = false,
-      ...rest
-    },
+    { a11yTitle, name, onChange, onFocus, onBlur, value: valueProp, ...rest },
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -30,15 +21,15 @@ const RangeInput = forwardRef(
         focus={focus}
         value={value}
         {...rest}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value);
           if (onChange) onChange(event);
         }}

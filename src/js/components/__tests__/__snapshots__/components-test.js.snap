@@ -188,197 +188,24 @@ node",
     ],
   },
   "Anchor": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js",
-      },
-    ],
-    "description": "A text link.",
-    "details": "We have a separate component from the browser
-base so we can style it. You can either set the icon and/or label properties
-or just use children.",
-    "intrinsicElement": "a",
-    "name": "Anchor",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the anchor is disabled.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "Hyperlink reference to place in the anchor.",
-        "format": "string",
-        "name": "href",
-      },
-      Object {
-        "description": "Icon element to place in the anchor.",
-        "format": "element",
-        "name": "icon",
-      },
-      Object {
-        "description": "Label text to place in the anchor.",
-        "format": "node",
-        "name": "label",
-      },
-      Object {
-        "description": "Click handler. It can be used, for example,
-        to add analytics and track who clicked in the anchor.",
-        "format": "function",
-        "name": "onClick",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether an icon and label should be reversed so that the
-        icon is at the end of the anchor.",
-        "format": "boolean",
-        "name": "reverse",
-      },
-      Object {
-        "description": "The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property,
-typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "Sets font-weight property for anchor.",
-        "format": "normal
-bold
-number",
-        "name": "weight",
-      },
-    ],
-    "usage": "import { Anchor } from 'grommet';
-<Anchor href={location} label='Label' />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "color": [Function],
+      "disabled": [Function],
+      "gridArea": [Function],
+      "href": [Function],
+      "icon": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "onClick": [Function],
+      "reverse": [Function],
+      "size": [Function],
+      "weight": [Function],
+    },
+    "render": [Function],
   },
   "Avatar": [Function],
   "Box": Object {
@@ -502,24 +329,30 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "How to align the contents along the cross axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-baseline
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the contents when there is extra space in
-        the cross axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -818,6 +651,15 @@ xlarge
 xxlarge
 string
 {
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1292,10 +1134,18 @@ function",
       },
       Object {
         "defaultValue": undefined,
-        "description": "An indicator to show on the top-right of the Button. For accessibility,
-         supplement the badge by adding an a11yTitle to the Button which 
-         provides a useful message to screen readers. For example, \\"2 unread 
-         notifications\\".",
+        "description": "An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         \\"2 unread notifications\\".",
         "format": "boolean
 element
 number
@@ -3380,6 +3230,22 @@ string",
 [string]",
         "name": "value",
       },
+      Object {
+        "description": "The size of the text.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { DateInput } from 'grommet';
 <DateInput id='item' name='item' />",
@@ -3404,10 +3270,35 @@ string",
     "name": "Diagram",
     "properties": Array [
       Object {
+        "description": "Animation to be used by entire Diagram",
+        "format": "boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "animation",
+      },
+      Object {
         "defaultValue": Array [],
         "description": "Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish.",
         "format": "[{
@@ -3415,6 +3306,27 @@ string",
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -3992,7 +3904,10 @@ string",
       },
       Object {
         "description": "Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.",
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.",
         "format": "function",
         "name": "onChange",
       },
@@ -4462,23 +4377,30 @@ string",
         "name": "margin",
       },
       Object {
-        "defaultValue": "stretch",
-        "description": "How to align the individual items inside the grid when there is extra
-space in the column axis.",
-        "format": "start
+        "description": "How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.",
+        "format": "baseline
 center
 end
-stretch",
+start
+stretch
+string",
         "name": "align",
       },
       Object {
-        "description": "How to align the contents along the column axis.",
-        "format": "start
-center
-end
+        "description": "How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.",
+        "format": "around
+baseline
 between
-around
-stretch",
+center
+evenly
+end
+start
+stretch
+string",
         "name": "alignContent",
       },
       Object {
@@ -4624,6 +4546,15 @@ small
 medium
 large
 xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto
 {
   count: 
     fit
@@ -4635,6 +4566,15 @@ xlarge
     medium
     large
     xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
     [
       xsmall
       small
@@ -4695,6 +4635,47 @@ none
 }
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "A fixed height.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "height",
       },
       Object {
         "defaultValue": "stretch",
@@ -4865,6 +4846,47 @@ function",
 function",
         "name": "as",
       },
+      Object {
+        "description": "A fixed width.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
+{
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  min: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
+  max: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string
+}",
+        "name": "width",
+      },
     ],
     "usage": "import { Grid } from 'grommet';
 <Grid />",
@@ -4929,9 +4951,26 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
       },
       Object {
         "defaultValue": false,
-        "description": "Whether to take the whole viewport.",
-        "format": "boolean",
+        "description": "Whether to take the whole viewport. 'min' indicates it should
+        take at minimum the whole viewport, allowing the viewport to
+        control scrolling.",
+        "format": "boolean
+min",
         "name": "full",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.",
+        "format": "{
+  layer: 
+    {
+      singleId: boolean
+    }
+}",
+        "name": "options",
       },
       Object {
         "defaultValue": false,
@@ -4972,11 +5011,147 @@ light",
         "format": "object",
         "name": "containerTarget",
       },
+      Object {
+        "defaultValue": Object {
+          "messages": Object {
+            "fileInput": Object {
+              "browse": "browse",
+              "dropPrompt": "Drop file here or",
+              "dropPromptMultiple": "Drop files here or",
+              "files": "files",
+              "remove": "remove",
+              "removeAll": "remove all",
+            },
+            "form": Object {
+              "invalid": "invalid",
+              "required": "required",
+            },
+            "menu": Object {
+              "closeMenu": "Close Menu",
+              "openMenu": "Open Menu",
+            },
+            "rangeSelector": Object {
+              "lower": "Lower Bounds",
+              "upper": "Upper Bounds",
+            },
+            "select": Object {
+              "multiple": "multiple",
+            },
+            "skipLinks": Object {
+              "skipTo": "Skip To:",
+            },
+            "tabs": Object {
+              "tabContents": "Tab Contents",
+            },
+            "textInput": Object {
+              "enterSelect": "(Press Enter to Select)",
+              "suggestionIsOpen": "Suggestions drop is open, continue to use
+            arrow keys to navigate",
+              "suggestionsCount": "suggestions available",
+              "suggestionsExist": "This input has suggestions use arrow keys
+            to navigate",
+            },
+            "video": Object {
+              "closeMenu": "close menu",
+              "fullScreen": "full screen",
+              "openMenu": "open menu",
+              "pauseButton": "pause",
+              "playButton": "play",
+              "progressMeter": "video progress",
+              "scrubber": "scrubber",
+              "volumeDown": "volume down",
+              "volumeUp": "volume up",
+            },
+          },
+        },
+        "description": "Custom messages for grommet components. Use this property to
+define messages or a function to get localized messages
+for any grommet children components.",
+        "format": "{
+  format: function,
+  messages: 
+    {
+      fileInput: 
+        {
+          browse: string,
+          dropPrompt: string,
+          dropPromptMultiple: string,
+          files: string,
+          remove: string,
+          removeAll: string
+        },
+      form: 
+        {
+          invalid: string,
+          required: string
+        },
+      menu: 
+        {
+          openMenu: string,
+          closeMenu: string
+        },
+      rangeSelector: 
+        {
+          lower: string,
+          upper: string
+        },
+      select: 
+        {
+          multiple: string
+        },
+      skipLinks: 
+        {
+          skipTo: string
+        },
+      tabs: 
+        {
+          tabContents: string
+        },
+      textInput: 
+        {
+          enterSelect: string,
+          suggestionsCount: string,
+          suggestionsExist: string,
+          suggestionIsOpen: string
+        },
+      video: 
+        {
+          closeMenu: string,
+          fullScreen: string,
+          progressMeter: string,
+          scrubber: string,
+          openMenu: string,
+          pauseButton: string,
+          playButton: string,
+          volumeDown: string,
+          volumeUp: string
+        }
+    }
+}",
+        "name": "messages",
+      },
     ],
     "usage": "import { Grommet } from 'grommet';
 <Grommet>...</Grommet>",
   },
-  "Header": [Function],
+  "Header": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/header&module=%2Fsrc%2FHeader.js",
+      },
+    ],
+    "description": "Is a Box container for introductory content",
+    "name": "Header",
+    "usage": "import { Header } from 'grommet';
+<Header />",
+  },
   "Heading": Object {
     "availableAt": Array [
       Object {
@@ -5159,7 +5334,8 @@ string",
         "description": "How to align the text inside the heading.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
       Object {
@@ -5767,6 +5943,15 @@ end
         "name": "onClickItem",
       },
       Object {
+        "description": "Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.",
+        "format": "function",
+        "name": "onOrder",
+      },
+      Object {
         "description": "Item padding.",
         "format": "none
 xxsmall
@@ -5992,12 +6177,27 @@ string",
       },
       Object {
         "description": "The size of the text.",
-        "format": "small
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
       },
       Object {
         "description": "What text to put in the input. The caller should ensure that it
@@ -6832,7 +7032,8 @@ string",
         "description": "How to align the text inside the paragraph.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
       },
     ],
@@ -8296,8 +8497,26 @@ element",
         "description": "How to align the text inside the component.",
         "format": "start
 center
-end",
+end
+justify",
         "name": "textAlign",
+      },
+      Object {
+        "description": "tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
       },
       Object {
         "defaultValue": false,
@@ -8401,11 +8620,18 @@ boolean",
         "name": "resize",
       },
       Object {
-        "description": "The size of the TextArea.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8578,11 +8804,18 @@ full",
         "name": "reverse",
       },
       Object {
-        "description": "The size of the TextInput.",
-        "format": "small
+        "description": "The size of the text.",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -8804,17 +9037,6 @@ contain",
         "name": "mute",
       },
       Object {
-        "defaultValue": Object {
-          "closeMenu": "close menu",
-          "fullScreen": "full screen",
-          "openMenu": "open menu",
-          "pauseButton": "pause",
-          "playButton": "play",
-          "progressMeter": "video progress",
-          "scrubber": "scrubber",
-          "volumeDown": "volume down",
-          "volumeUp": "volume up",
-        },
         "description": "Custom messages. Used for accessibility by screen readers.",
         "format": "{
   closeMenu: string,

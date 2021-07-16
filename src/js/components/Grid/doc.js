@@ -3,7 +3,9 @@ import { describe, PropTypes } from 'react-desc';
 import {
   genericProps,
   getBorderPropType,
+  heightPropType,
   padPropType,
+  widthPropType,
 } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
@@ -37,7 +39,7 @@ const edgeSizes = [
 
 const BORDER_SHAPE = getBorderPropType({ includeBetween: false });
 
-export const doc = Grid => {
+export const doc = (Grid) => {
   const DocumentedGrid = describe(Grid)
     .availableAt(getAvailableAtBadge('Grid', 'Layout'))
     .description(
@@ -56,20 +58,29 @@ to create fallback rendering for older browsers, like ie11.`,
 
   DocumentedGrid.propTypes = {
     ...genericProps,
-    align: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
-      .description(
-        `How to align the individual items inside the grid when there is extra
-space in the column axis.`,
-      )
-      .defaultValue('stretch'),
-    alignContent: PropTypes.oneOf([
-      'start',
-      'center',
-      'end',
-      'between',
-      'around',
-      'stretch',
-    ]).description('How to align the contents along the column axis.'),
+    align: PropTypes.oneOfType([
+      PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),
+      PropTypes.string,
+    ]).description(`How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.`),
+    alignContent: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'around',
+        'baseline',
+        'between',
+        'center',
+        'evenly',
+        'end',
+        'start',
+        'stretch',
+      ]),
+      PropTypes.string,
+    ]).description(
+      `How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.`,
+    ),
     areas: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.shape({
@@ -110,14 +121,14 @@ space in the column axis.`,
           PropTypes.string,
         ]),
       ),
-      PropTypes.oneOf(fixedSizes),
+      PropTypes.oneOf(sizes),
       PropTypes.shape({
         count: PropTypes.oneOfType([
           PropTypes.oneOf(['fit', 'fill']),
           PropTypes.number,
         ]),
         size: PropTypes.oneOfType([
-          PropTypes.oneOf(fixedSizes),
+          PropTypes.oneOf(sizes),
           PropTypes.arrayOf(
             PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
           ),
@@ -154,6 +165,7 @@ space in the column axis.`,
       }),
       PropTypes.string,
     ]).description('Gap sizes between rows and/or columns.'),
+    height: heightPropType.description('A fixed height.'),
     justify: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
       .description(
         `How to align the individual items inside the grid when there is extra
@@ -200,6 +212,7 @@ space in the row axis.`,
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
+    width: widthPropType.description('A fixed width.'),
   };
 
   return DocumentedGrid;

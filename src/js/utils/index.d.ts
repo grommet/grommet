@@ -56,6 +56,15 @@ export type PropsOf<TComponent> = TComponent extends React.ComponentType<
   ? P
   : never;
 
+// the basic T-Shirt sizes xsmall through xlarge. Some places add on.
+type TShirtSizeType =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | string;
+
 // Extracting types for common properties among components
 type BoxSideType =
   | 'top'
@@ -102,13 +111,23 @@ type EdgeType =
   | string;
 
 export type A11yTitleType = string;
-export type AlignContentType =
-  | 'start'
+export type AlignType =
+  | 'baseline'
   | 'center'
   | 'end'
-  | 'between'
+  | 'start'
+  | 'stretch'
+  | string;
+export type AlignContentType =
   | 'around'
-  | 'stretch';
+  | 'baseline'
+  | 'between'
+  | 'center'
+  | 'evenly'
+  | 'end'
+  | 'start'
+  | 'stretch'
+  | string;
 export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch';
 export type AnimateType = boolean;
 export type BackgroundType =
@@ -218,7 +237,7 @@ export type RoundType =
         | 'bottom-right';
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
     };
-export type TextAlignType = 'start' | 'center' | 'end';
+export type TextAlignType = 'start' | 'center' | 'end' | 'justify';
 export type ThicknessType =
   | 'hair'
   | 'xsmall'
@@ -261,3 +280,25 @@ declare const breakpointSize: {
   full?: string;
 };
 export type BreakpointSize = typeof breakpointSize;
+
+export type HeightType =
+  | 'xxsmall'
+  | 'xxlarge'
+  | TShirtSizeType
+  | '100%'
+  | {
+      height?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+      max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+      min?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+    };
+
+export type WidthType =
+  | 'xxsmall'
+  | 'xxlarge'
+  | TShirtSizeType
+  | '100%'
+  | {
+      width?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+      max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+      min?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
+    };

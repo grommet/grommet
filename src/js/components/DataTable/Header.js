@@ -23,36 +23,42 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
-import { datumValue, calcPinnedBackground } from './buildState';
+import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
-const separateThemeProps = theme => {
+const separateThemeProps = (theme) => {
   const {
-    background,
-    border,
+    background, // covered by cellProps
+    border, // covered by cellProps
     color,
     font,
     gap, // gap is used for space between header cell elements only
+    pad, // covered by cellProps
     units,
     ...rest
   } = theme.dataTable.header;
 
-  const cellProps = { background, border };
   const textProps = { color, ...font };
   const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps, iconProps];
+  return [layoutProps, textProps, iconProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
-const buttonStyle = ({ theme }) => {
+const buttonStyle = ({ pad, theme }) => {
   const styles = [];
-  const [, layoutProps, , iconProps] = separateThemeProps(theme);
+  const [layoutProps, , iconProps] = separateThemeProps(theme);
+
+  // if cell is sortable, we want pad to be applied
+  // to the button instead of the cell
+  if (pad) {
+    styles.push(kindPartStyles({ pad }, theme));
+  }
 
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
@@ -86,19 +92,18 @@ const buttonStyle = ({ theme }) => {
 };
 
 const StyledHeaderCellButton = styled(Button)`
-  ${props => buttonStyle(props)}
+  ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
 const StyledContentBox = styled(Box)`
-  ${props => props.extend}
+  ${(props) => props.extend}
 `;
 
 const Header = forwardRef(
   (
     {
-      background: backgroundProp,
-      border,
+      cellProps,
       columns,
       data,
       fill,
@@ -113,8 +118,7 @@ const Header = forwardRef(
       onSort,
       onToggle,
       onWidths,
-      pad,
-      pin: tablePin,
+      pin: pinProp,
       pinnedOffset,
       primaryProperty,
       selected,
@@ -126,12 +130,12 @@ const Header = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+    const [layoutProps, textProps] = separateThemeProps(theme);
 
     const [cellWidths, setCellWidths] = useState([]);
 
     const updateWidths = useCallback(
-      width => setCellWidths(values => [...values, width]),
+      (width) => setCellWidths((values) => [...values, width]),
       [],
     );
 
@@ -141,28 +145,28 @@ const Header = forwardRef(
       }
     }, [cellWidths, onWidths]);
 
-    const pin = tablePin ? ['top'] : [];
+    const pin = pinProp ? ['top'] : [];
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>
           {groups && (
             <ExpanderCell
+              background={cellProps.background}
+              border={cellProps.border}
               context="header"
               expanded={
-                Object.keys(groupState).filter(k => !groupState[k].expanded)
+                Object.keys(groupState).filter((k) => !groupState[k].expanded)
                   .length === 0
               }
               onToggle={onToggle}
+              pad={cellProps.pad}
             />
           )}
 
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={
-                calcPinnedBackground(backgroundProp, pin, theme, 'header') ||
-                cellProps.background
-              }
+              background={cellProps.background}
               onWidth={updateWidths}
               plain="noPad"
               size="auto"
@@ -191,10 +195,10 @@ const Header = forwardRef(
                     // if none are selected, select all data
                     else
                       onSelect(
-                        data.map(datum => datumValue(datum, primaryProperty)),
+                        data.map((datum) => datumValue(datum, primaryProperty)),
                       );
                   }}
-                  pad={pad || theme.table.header.pad}
+                  pad={cellProps.pad}
                 />
               )}
             </StyledDataTableCell>
@@ -217,9 +221,7 @@ const Header = forwardRef(
                 <Text {...textProps} {...theme.dataTable.header.units}>
                   {units}
                 </Text>
-              ) : (
-                undefined
-              );
+              ) : undefined;
               if (typeof header === 'string') {
                 content = <Text {...textProps}>{header}</Text>;
                 if (
@@ -257,6 +259,7 @@ const Header = forwardRef(
                     fill="vertical"
                     onClick={onSort(property)}
                     sort={sort}
+                    pad={cellProps.pad}
                     sortable
                   >
                     <Box
@@ -326,23 +329,17 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
-              const background = calcPinnedBackground(
-                backgroundProp,
-                cellPin,
-                theme,
-                'header',
-              );
-
               return (
                 <StyledDataTableCell
                   key={property}
                   align={align}
                   context="header"
                   verticalAlign={verticalAlign}
-                  background={background || cellProps.background}
-                  border={border || cellProps.border}
+                  background={cellProps.background}
+                  border={cellProps.border}
                   onWidth={updateWidths}
-                  pad={pad}
+                  // if sortable, pad will be included in the button styling
+                  pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}
                   plain
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}

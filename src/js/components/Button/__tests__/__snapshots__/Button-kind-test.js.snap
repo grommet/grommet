@@ -872,7 +872,7 @@ exports[`Button kind badge should render custom element 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1070,7 +1070,7 @@ exports[`Button kind badge should render relative to contents when button has no
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -1315,7 +1315,7 @@ exports[`Button kind button icon colors 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -1452,7 +1452,7 @@ exports[`Button kind button with icon and align 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12,22 L12,2 M2,12 L22,12"
+        d="M12 22V2M2 12h20"
         fill="none"
         stroke="#000"
         stroke-width="2"
@@ -1657,10 +1657,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cWYUcs"
+    class="StyledButtonKind-sc-1vhfpnt-0 iNGjnM"
     disabled=""
     type="button"
   >
@@ -2288,6 +2288,228 @@ exports[`Button kind hover on default button 1`] = `
 </div>
 `;
 
+exports[`Button kind hover secondary with color and background 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: skyblue;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:hover {
+  background-color: orange;
+  color: green;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Button kind hover secondary with color and background 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
+>
+  <button
+    class="StyledButtonKind-sc-1vhfpnt-0 hkExDD"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Button kind hoverIndicator with color and background 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:hover {
+  background-color: pink;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Button kind hoverIndicator with color and background 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
+>
+  <button
+    class="StyledButtonKind-sc-1vhfpnt-0 mAVU"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
 exports[`Button kind mouseOver and mouseOut events 1`] = `
 .c3 {
   display: inline-block;
@@ -2452,7 +2674,7 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12,22 L12,2 M2,12 L22,12"
+          d="M12 22V2M2 12h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
@@ -2469,29 +2691,29 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hOaacV"
+    class="StyledButtonKind-sc-1vhfpnt-0 lkFpUp"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iQEJEP"
+      class="StyledBox-sc-13pk1d4-0 jncmfT"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-ofa7kd-0 dcacLZ"
+        class="StyledIcon-ofa7kd-0 htxtFB"
         viewBox="0 0 24 24"
       >
         <path
-          d="M12,22 L12,2 M2,12 L22,12"
+          d="M12 22V2M2 12h20"
           fill="none"
           stroke="#000"
           stroke-width="2"
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hjorfk"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kaiRIg"
       />
       label
     </div>

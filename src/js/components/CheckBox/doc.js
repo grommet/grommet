@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = CheckBox => {
+export const doc = (CheckBox) => {
   const DocumentedCheckBox = describe(CheckBox)
     .availableAt(getAvailableAtBadge('CheckBox', 'Input'))
     .description('A checkbox toggle control.')
@@ -120,6 +120,12 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
+  'checkBox.hover.background.color': {
+    description: `The background color of the Box surrounding the RadioButton 
+    when hovered over.`,
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
   'checkBox.icon.size': {
     description: 'The size of the checked icon.',
     type: 'string',
@@ -139,6 +145,11 @@ export const themeDoc = {
     description: 'The icon to use when indeterminate.',
     type: 'React.Element',
     defaultValue: undefined,
+  },
+  'checkBox.label.align': {
+    description: 'How to align the checkbox and label.',
+    type: 'string',
+    defaultValue: 'center',
   },
   'checkBox.pad': {
     description: 'The pad around the CheckBox and its label.',

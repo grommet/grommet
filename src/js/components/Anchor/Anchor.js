@@ -14,6 +14,7 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
+import { AnchorType } from './propTypes';
 
 const Anchor = forwardRef(
   (
@@ -67,11 +68,11 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
@@ -97,12 +98,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
+Anchor.propTypes = AnchorType;
 
-let AnchorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
-}
-const AnchorWrapper = AnchorDoc || Anchor;
-
-export { AnchorWrapper as Anchor };
+export { Anchor };
