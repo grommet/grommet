@@ -47,9 +47,7 @@ const trackColorStyle = (props) => {
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     !props.theme.rangeInput.track.lower &&
-    !props.theme.rangeInput.track.upper &&
-    props.theme.rangeInput.track.color &&
-    typeof props.theme.rangeInput.track.color === 'string'
+    !props.theme.rangeInput.track.upper
   ) {
     const color = getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
