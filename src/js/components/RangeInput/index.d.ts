@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { A11yTitleType } from '../../utils';
 
+interface ColorI {
+  color: string;
+  value: number;
+  opacity?: number;
+}
+
 export interface RangeInputProps {
   a11yTitle?: A11yTitleType;
   id?: string;
@@ -8,7 +14,7 @@ export interface RangeInputProps {
   max?: number | string;
   name?: string;
   step?: number;
-  trackColors?: [];
+  color?: ColorI[];
   value?: number | string;
 }
 

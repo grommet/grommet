@@ -66,14 +66,24 @@ const trackColorStyle = (props) => {
       props.theme.rangeInput.track.opacity || 1,
     )}`;
   }
-  if (
-    props.theme.rangeInput &&
-    props.theme.rangeInput.track &&
-    !props.theme.rangeInput.track.lower &&
-    props.theme.rangeInput.track.colors &&
-    Array.isArray(props.theme.rangeInput.track.colors)
-  ) {
-    const arrayOfTrackColors = props.theme.rangeInput.track.colors;
+
+  if (typeof props.color === 'string') {
+    const lowerTrackColor = getRGBA(
+      normalizeColor(props.color, props.theme),
+      1,
+    );
+
+    return `background: linear-gradient(
+        to right,
+        ${lowerTrackColor},
+        ${lowerTrackColor} ${thumbPosition},
+        ${upperTrackColor} ${thumbPosition},
+        ${upperTrackColor}
+      );
+    `;
+  }
+  if (Array.isArray(props.color)) {
+    const arrayOfTrackColors = props.color;
     let valuePercentage = 0;
     let result = `background: linear-gradient(to right,`;
     for (let index = 0; index < arrayOfTrackColors.length; index += 1) {
@@ -82,6 +92,7 @@ const trackColorStyle = (props) => {
         normalizeColor(color, props.theme),
         opacity || 1,
       )} ${valuePercentage}%,`;
+
       if (props.value >= value) {
         valuePercentage = ((value - min) / (max - min)) * 100;
         result += `${getRGBA(
@@ -89,6 +100,10 @@ const trackColorStyle = (props) => {
           opacity || 1,
         )} ${valuePercentage}%,`;
       } else {
+        result += `${getRGBA(
+          normalizeColor(color, props.theme),
+          opacity || 1,
+        )} ${thumbPosition},`;
         result += `${upperTrackColor} ${thumbPosition}, ${upperTrackColor})`;
         break;
       }

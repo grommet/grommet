@@ -12,11 +12,6 @@ const rangeInputTheme = {
         color: 'dark-4',
         opacity: 0.3,
       },
-      colors: [
-        { value: 3, color: '#FF0000', opacity: '0.8' },
-        { value: 7, color: '#FFFF00', opacity: '0.6' },
-        { value: 10, color: '#00FF00', opacity: '0.6' },
-      ],
     },
     label: {
       extend: {
@@ -36,7 +31,7 @@ export const MultiColorTrack = () => {
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
   return (
     <Grommet theme={rangeInputTheme}>
       <Box direction="row" align="center" pad="large" gap="small">
@@ -58,7 +53,11 @@ export const MultiColorTrack = () => {
             step={1}
             value={value}
             onChange={onChange}
-            showLabel
+            color={[
+              { value: 3, color: '#FF0000', opacity: 0.5 },
+              { value: 7, color: '#FFFF00' },
+              { value: 10, color: '#00FF00' },
+            ]}
           />
         </Box>
         <Button

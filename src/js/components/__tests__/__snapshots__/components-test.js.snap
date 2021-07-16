@@ -7216,6 +7216,25 @@ object",
         "name": "a11yTitle",
       },
       Object {
+        "description": "The array of track colors based on the thumb value.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  value: number,
+  opacity: number
+}]",
+        "name": "color",
+      },
+      Object {
         "description": "The id attribute of the range input.",
         "format": "string",
         "name": "id",
@@ -7248,12 +7267,6 @@ string",
         "description": "The step interval between values.",
         "format": "number",
         "name": "step",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether to show the Label with Range Thumb or not.",
-        "format": "boolean",
-        "name": "showLabel",
       },
       Object {
         "description": "The current value.",

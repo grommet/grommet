@@ -20,6 +20,28 @@ Custom label to be used by screen readers.
 string
 ```
 
+**color**
+
+The array of track colors based on the thumb value.
+
+```
+string
+{
+  dark: string,
+  light: string
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  value: number,
+  opacity: number
+}]
+```
+
 **id**
 
 The id attribute of the range input.
@@ -70,14 +92,6 @@ The step interval between values.
 
 ```
 number
-```
-
-**showLabel**
-
-Whether to show the Label with Range Thumb or not.
-
-```
-boolean
 ```
 
 **value**
@@ -206,16 +220,6 @@ Defaults to
 
 ```
 border
-```
-
-**rangeInput.track.colors**
-
-The array of track colors based on the thumb value. Expects `{ color: string, opacity: number, value: number }`.
-
-Defaults to
-
-```
-undefined
 ```
 
 **rangeInput.track.opacity**

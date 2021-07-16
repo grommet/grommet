@@ -2,8 +2,9 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
+import { colorPropType } from '../../utils/prop-types';
 
-export const doc = RangeInput => {
+export const doc = (RangeInput) => {
   const DocumentedRangeInput = describe(RangeInput)
     .availableAt(getAvailableAtBadge('RangeInput', 'Input'))
     .description('A slider control to input a value within a fixed range.')
@@ -18,6 +19,16 @@ export const doc = RangeInput => {
       `Custom label to be used by screen readers.
       When provided, an aria-label will be added to the element.`,
     ),
+    color: PropTypes.oneOfType([
+      colorPropType,
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          color: colorPropType,
+          value: PropTypes.number,
+          opacity: PropTypes.number,
+        }),
+      ),
+    ]).description(`The array of track colors based on the thumb value.`),
     id: PropTypes.string.description('The id attribute of the range input.'),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
       'The minimum value permitted.',
@@ -34,9 +45,6 @@ export const doc = RangeInput => {
       via 'event.target.value'.`,
     ),
     step: PropTypes.number.description('The step interval between values.'),
-    showLabel: PropTypes.bool
-      .description('Whether to show the Label with Range Thumb or not.')
-      .defaultValue(false),
     value: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.string,
@@ -80,11 +88,6 @@ export const themeDoc = {
     description: 'The color of the track.',
     type: 'string | { dark: string, light: string }',
     defaultValue: 'border',
-  },
-  'rangeInput.track.colors': {
-    description: 'The array of track colors based on the thumb value.',
-    type: '{ color: string, opacity: number, value: number }',
-    defaultValue: undefined,
   },
   'rangeInput.track.opacity': {
     description: 'The opacity of the track color.',
