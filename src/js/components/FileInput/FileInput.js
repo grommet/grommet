@@ -49,7 +49,8 @@ const Message = styled(Text)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&
-    props.theme.fileInput.message.extend};
+    props.theme.fileInput.message.extend &&
+    props.theme.fileInput.message.maxFileMessage};
 `;
 
 const FileInput = forwardRef(
@@ -159,186 +160,33 @@ const FileInput = forwardRef(
     } else message = `${files.length} items`;
 
     return (
-      <ContentsBox
-        theme={theme}
-        flex={false}
-        disabled={disabled}
-        background={mergeTheme('background', 'color')}
-        border={!plain ? mergeTheme('border', 'side') : undefined}
-        margin={mergeTheme('margin')}
-        pad={mergeTheme('pad')}
-        round={mergeTheme('round', 'size')}
-        align={files.length ? 'stretch' : 'center'}
-        justify="center"
-        hover={hover}
-        onMouseOver={disabled ? undefined : () => setHover(true)}
-        onMouseOut={disabled ? undefined : () => setHover(false)}
-        dragOver={dragOver}
-      >
-        {(!files.length || files.length > 1) && (
-          <Box
-            align="center"
-            fill="horizontal"
-            direction="row"
-            justify="between"
-          >
-            {files.length <= aggregateThreshold && (
-              <>
-                <Message {...theme.fileInput.message}>{message}</Message>
-                <Keyboard
-                  onSpace={(event) => {
-                    if (controlRef.current === event.target)
-                      inputRef.current.click();
-                  }}
-                  onEnter={(event) => {
-                    if (controlRef.current === event.target)
-                      inputRef.current.click();
-                  }}
-                >
-                  {theme.fileInput.button ? (
-                    <Button
-                      ref={controlRef}
-                      kind={theme.fileInput.button}
-                      label={format({
-                        id: 'fileInput.browse',
-                        messages,
-                      })}
-                      onClick={() => {
-                        inputRef.current.click();
-                        inputRef.current.focus();
-                      }}
-                    />
-                  ) : (
-                    <Anchor
-                      tabIndex={0}
-                      alignSelf="center"
-                      ref={controlRef}
-                      margin="small"
-                      onClick={() => {
-                        inputRef.current.click();
-                        inputRef.current.focus();
-                      }}
-                      label={format({
-                        id: 'fileInput.browse',
-                        messages,
-                      })}
-                    />
-                  )}
-                </Keyboard>
-              </>
-            )}
-          </Box>
-        )}
-        {files.length > aggregateThreshold && (
-          <Box justify="between" direction="row" align="center">
-            <Label {...theme.fileInput.label}>
-              {files.length}{' '}
-              {format({
-                id: 'fileInput.files',
-                messages,
-              })}
-            </Label>
-            <Box flex={false} direction="row" align="center">
-              <Button
-                ref={removeRef}
-                a11yTitle={format({
-                  id: 'fileInput.removeAll',
-                  messages,
-                })}
-                icon={<RemoveIcon />}
-                hoverIndicator
-                onClick={(event) => {
-                  event.stopPropagation();
-                  if (onChange) onChange(event, { files: [] });
-                  setFiles([]);
-                  inputRef.current.focus();
-                }}
-              />
-              <Keyboard
-                onSpace={(event) => {
-                  if (controlRef.current === event.target)
-                    inputRef.current.click();
-                }}
-                onEnter={(event) => {
-                  if (controlRef.current === event.target)
-                    inputRef.current.click();
-                }}
-              >
-                {theme.fileInput.button ? (
-                  <Button
-                    ref={controlRef}
-                    kind={theme.fileInput.button}
-                    label={format({
-                      id: 'fileInput.browse',
-                      messages,
-                    })}
-                    onClick={() => {
-                      inputRef.current.click();
-                      inputRef.current.focus();
-                    }}
-                  />
-                ) : (
-                  <Anchor
-                    tabIndex={0}
-                    alignSelf="center"
-                    ref={controlRef}
-                    margin="small"
-                    onClick={() => {
-                      inputRef.current.click();
-                      inputRef.current.focus();
-                    }}
-                    label={format({
-                      id: 'fileInput.browse',
-                      messages,
-                    })}
-                  />
-                )}
-              </Keyboard>
-            </Box>
-          </Box>
-        )}
-        {files.length > 0 &&
-          files.length <= aggregateThreshold &&
-          files.map((file, index) => (
+      <>
+        <ContentsBox
+          theme={theme}
+          flex={false}
+          disabled={disabled}
+          background={mergeTheme('background', 'color')}
+          border={!plain ? mergeTheme('border', 'side') : undefined}
+          margin={mergeTheme('margin')}
+          pad={mergeTheme('pad')}
+          round={mergeTheme('round', 'size')}
+          align={files.length ? 'stretch' : 'center'}
+          justify="center"
+          hover={hover}
+          onMouseOver={disabled ? undefined : () => setHover(true)}
+          onMouseOut={disabled ? undefined : () => setHover(false)}
+          dragOver={dragOver}
+        >
+          {(!files.length || files.length > 1) && (
             <Box
-              key={file.name}
-              justify="between"
-              direction="row"
               align="center"
+              fill="horizontal"
+              direction="row"
+              justify="between"
             >
-              {renderFile ? (
-                renderFile(file)
-              ) : (
-                <Label
-                  weight={
-                    theme.global.input.weight || theme.global.input.font.weight
-                  }
-                  truncate
-                  {...theme.fileInput.label}
-                >
-                  {file.name}
-                </Label>
-              )}
-              <Box flex={false} direction="row" align="center">
-                <Button
-                  ref={index ? undefined : removeRef}
-                  a11yTitle={`${format({
-                    id: 'fileInput.remove',
-                    messages,
-                  })} ${file.name}`}
-                  icon={<RemoveIcon />}
-                  hoverIndicator
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    const nextFiles = [...files];
-                    nextFiles.splice(index, 1);
-                    setFiles(nextFiles);
-                    if (onChange) onChange(event, { files: nextFiles });
-                    if (nextFiles.length === 0) inputRef.current.value = '';
-                    inputRef.current.focus();
-                  }}
-                />
-                {files.length === 1 && (
+              {files.length <= aggregateThreshold && (
+                <>
+                  <Message {...theme.fileInput.message}>{message}</Message>
                   <Keyboard
                     onSpace={(event) => {
                       if (controlRef.current === event.target)
@@ -361,10 +209,12 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
+                        disabled={max === files.length}
                       />
                     ) : (
                       <Anchor
                         tabIndex={0}
+                        alignSelf="center"
                         ref={controlRef}
                         margin="small"
                         onClick={() => {
@@ -375,75 +225,236 @@ const FileInput = forwardRef(
                           id: 'fileInput.browse',
                           messages,
                         })}
+                        disabled={max === files.length}
                       />
                     )}
                   </Keyboard>
-                )}
+                </>
+              )}
+            </Box>
+          )}
+          {files.length > aggregateThreshold && (
+            <Box justify="between" direction="row" align="center">
+              <Label {...theme.fileInput.label}>
+                {files.length}{' '}
+                {format({
+                  id: 'fileInput.files',
+                  messages,
+                })}
+              </Label>
+              <Box flex={false} direction="row" align="center">
+                <Button
+                  ref={removeRef}
+                  a11yTitle={format({
+                    id: 'fileInput.removeAll',
+                    messages,
+                  })}
+                  icon={<RemoveIcon />}
+                  hoverIndicator
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    if (onChange) onChange(event, { files: [] });
+                    setFiles([]);
+                    inputRef.current.focus();
+                  }}
+                />
+                <Keyboard
+                  onSpace={(event) => {
+                    if (controlRef.current === event.target)
+                      inputRef.current.click();
+                  }}
+                  onEnter={(event) => {
+                    if (controlRef.current === event.target)
+                      inputRef.current.click();
+                  }}
+                >
+                  {theme.fileInput.button ? (
+                    <Button
+                      ref={controlRef}
+                      kind={theme.fileInput.button}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
+                      onClick={() => {
+                        inputRef.current.click();
+                        inputRef.current.focus();
+                      }}
+                      disabled={max === files.length}
+                    />
+                  ) : (
+                    <Anchor
+                      tabIndex={0}
+                      alignSelf="center"
+                      ref={controlRef}
+                      margin="small"
+                      onClick={() => {
+                        inputRef.current.click();
+                        inputRef.current.focus();
+                      }}
+                      label={format({
+                        id: 'fileInput.browse',
+                        messages,
+                      })}
+                      disabled={max === files.length}
+                    />
+                  )}
+                </Keyboard>
               </Box>
             </Box>
-          ))}
-        <StyledFileInput
-          ref={inputRef}
-          type="file"
-          id={id}
-          name={name}
-          multiple={multiple}
-          disabled={disabled}
-          plain
-          rightOffset={rightOffset}
-          {...rest}
-          onDragOver={() => setDragOver(true)}
-          onDragLeave={() => setDragOver(false)}
-          onChange={(event) => {
-            event.persist();
-            const fileList = event.target.files;
-            let filesToAdd;
-            if (!files.length) {
-              if (multiple && max && fileList.length >= max) {
+          )}
+          {files.length > 0 &&
+            files.length <= aggregateThreshold &&
+            files.map((file, index) => (
+              <Box
+                key={file.name}
+                justify="between"
+                direction="row"
+                align="center"
+              >
+                {renderFile ? (
+                  renderFile(file)
+                ) : (
+                  <Label
+                    weight={
+                      theme.global.input.weight ||
+                      theme.global.input.font.weight
+                    }
+                    truncate
+                    {...theme.fileInput.label}
+                  >
+                    {file.name}
+                  </Label>
+                )}
+                <Box flex={false} direction="row" align="center">
+                  <Button
+                    ref={index ? undefined : removeRef}
+                    a11yTitle={`${format({
+                      id: 'fileInput.remove',
+                      messages,
+                    })} ${file.name}`}
+                    icon={<RemoveIcon />}
+                    hoverIndicator
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      const nextFiles = [...files];
+                      nextFiles.splice(index, 1);
+                      setFiles(nextFiles);
+                      if (onChange) onChange(event, { files: nextFiles });
+                      if (nextFiles.length === 0) inputRef.current.value = '';
+                      inputRef.current.focus();
+                    }}
+                  />
+                  {files.length === 1 && (
+                    <Keyboard
+                      onSpace={(event) => {
+                        if (controlRef.current === event.target)
+                          inputRef.current.click();
+                      }}
+                      onEnter={(event) => {
+                        if (controlRef.current === event.target)
+                          inputRef.current.click();
+                      }}
+                    >
+                      {theme.fileInput.button ? (
+                        <Button
+                          ref={controlRef}
+                          kind={theme.fileInput.button}
+                          label={format({
+                            id: 'fileInput.browse',
+                            messages,
+                          })}
+                          onClick={() => {
+                            inputRef.current.click();
+                            inputRef.current.focus();
+                          }}
+                          disabled={max === files.length}
+                        />
+                      ) : (
+                        <Anchor
+                          tabIndex={0}
+                          ref={controlRef}
+                          margin="small"
+                          onClick={() => {
+                            inputRef.current.click();
+                            inputRef.current.focus();
+                          }}
+                          label={format({
+                            id: 'fileInput.browse',
+                            messages,
+                          })}
+                          disabled={max === files.length}
+                        />
+                      )}
+                    </Keyboard>
+                  )}
+                </Box>
+              </Box>
+            ))}
+          <StyledFileInput
+            ref={inputRef}
+            type="file"
+            id={id}
+            name={name}
+            multiple={multiple}
+            disabled={disabled}
+            plain
+            rightOffset={rightOffset}
+            {...rest}
+            onDragOver={() => setDragOver(true)}
+            onDragLeave={() => setDragOver(false)}
+            onChange={(event) => {
+              event.persist();
+              const fileList = event.target.files;
+              let filesToAdd;
+              if (!files.length) {
+                if (multiple && max && fileList.length >= max) {
+                  const newFileList = [];
+                  for (let i = 0; i < max; i += 1) {
+                    newFileList.push(fileList[i]);
+                  }
+                  filesToAdd = newFileList;
+                } else {
+                  filesToAdd = fileList;
+                }
+              } else if (
+                multiple &&
+                max &&
+                fileList.length >= max - files.length
+              ) {
                 const newFileList = [];
-                for (let i = 0; i < max; i += 1) {
+                for (let i = 0; i < max - files.length; i += 1) {
                   newFileList.push(fileList[i]);
                 }
                 filesToAdd = newFileList;
               } else {
                 filesToAdd = fileList;
               }
-            } else if (
-              multiple &&
-              max &&
-              fileList.length >= max - files.length
-            ) {
-              const newFileList = [];
-              for (let i = 0; i < max - files.length; i += 1) {
-                newFileList.push(fileList[i]);
+              const nextFiles = multiple ? [...files] : [];
+              for (let i = 0; i < filesToAdd.length; i += 1) {
+                // avoid duplicates
+                const existing =
+                  nextFiles.filter(
+                    (file) =>
+                      file.name === fileList[i].name &&
+                      file.size === fileList[i].size,
+                  ).length > 0;
+                if (!existing) nextFiles.push(filesToAdd[i]);
               }
-              // if the maximum value is exceeded then
-              // remove files from the event also.
-              if (!newFileList.length) {
-                /* eslint-disable-next-line no-param-reassign */
-                event.target.value = '';
-              }
-              filesToAdd = newFileList;
-            } else {
-              filesToAdd = fileList;
-            }
-            const nextFiles = multiple ? [...files] : [];
-            for (let i = 0; i < filesToAdd.length; i += 1) {
-              // avoid duplicates
-              const existing =
-                nextFiles.filter(
-                  (file) =>
-                    file.name === fileList[i].name &&
-                    file.size === fileList[i].size,
-                ).length > 0;
-              if (!existing) nextFiles.push(filesToAdd[i]);
-            }
-            setFiles(nextFiles);
-            setDragOver(false);
-            if (onChange) onChange(event, { files: nextFiles });
-          }}
-        />
-      </ContentsBox>
+              setFiles(nextFiles);
+              setDragOver(false);
+              if (onChange) onChange(event, { files: nextFiles });
+            }}
+          />
+        </ContentsBox>
+        {max && (
+          <Message {...theme.fileInput.message.maxFileMessage}>
+            {messages.maxFilesMessage
+              ? messages.maxFilesMessage
+              : `Attach a maximum of ${max} files only.`}
+          </Message>
+        )}
+      </>
     );
   },
 );

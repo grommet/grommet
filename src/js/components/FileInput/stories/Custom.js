@@ -18,6 +18,12 @@ const customTheme = {
         horizontal: '8px',
       },
     },
+    message: {
+      maxFileMessage: {
+        color: 'green',
+        textAlign: 'center',
+      },
+    },
     background: '#f2f2f2',
     border: { size: 'medium' },
     pad: { horizontal: 'large', vertical: 'medium' },
@@ -49,6 +55,12 @@ export const Custom = () => (
               <Text color="text-weak">{file.size} bytes</Text>
             </Box>
           )}
+          multiple={{
+            max: 5,
+          }}
+          messages={{
+            maxFilesMessage: 'You can only select maximum of 5 files.',
+          }}
           onChange={(event, { files }) => {
             const fileList = files;
             for (let i = 0; i < fileList.length; i += 1) {
