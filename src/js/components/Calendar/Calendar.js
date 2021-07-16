@@ -837,10 +837,16 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
-              aria-label={reference.toLocaleDateString(locale, {
+              aria-label={`${reference.toLocaleDateString(locale, {
                 month: 'long',
                 year: 'numeric',
-              })}
+              })}${
+                active !== undefined
+                  ? `; Currently selected ${formatToLocalYYYYMMDD(
+                      active.toISOString(),
+                    )}`
+                  : ''
+              }`}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}

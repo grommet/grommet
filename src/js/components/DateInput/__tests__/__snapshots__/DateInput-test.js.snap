@@ -13001,7 +13001,7 @@ exports[`DateInput select format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="July 2020; Currently selected 2020-07-02"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
@@ -15169,7 +15169,7 @@ exports[`DateInput select format inline range 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="July 2020; Currently selected 2020-07-01"
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"

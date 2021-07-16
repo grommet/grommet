@@ -16035,7 +16035,7 @@ exports[`Calendar select date 2`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="January 2020; Currently selected 2020-01-15"
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
         tabindex="0"
@@ -18053,7 +18053,7 @@ exports[`Calendar select dates 2`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="January 2020; Currently selected 2020-01-01"
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
         tabindex="0"
