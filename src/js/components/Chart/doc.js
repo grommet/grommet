@@ -23,7 +23,7 @@ const thicknessType = PropTypes.oneOfType([
   PropTypes.number,
 ]);
 
-export const doc = Chart => {
+export const doc = (Chart) => {
   const DocumentedChart = describe(Chart)
     .availableAt(getAvailableAtBadge('Chart', 'Visualizations'))
     .description('A graphical chart.')
@@ -97,7 +97,7 @@ export const doc = Chart => {
       PropTypes.oneOf(['weak', 'medium', 'strong']),
       PropTypes.bool,
     ]).description(
-      `What opacity to apply to the visuals. Supercedes 'color.opacity'`,
+      `What opacity to apply to the visuals. Supersedes 'color.opacity'`,
     ),
     overflow: PropTypes.bool
       .description(
@@ -186,7 +186,11 @@ export const doc = Chart => {
           label: PropTypes.string, // for accessibility of bars and points
           onClick: PropTypes.func,
           onHover: PropTypes.func,
-          opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          opacity: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]),
           thickness: thicknessType,
           value: PropTypes.oneOfType([
             PropTypes.number.isRequired,
@@ -208,7 +212,7 @@ export const doc = Chart => {
   return DocumentedChart;
 };
 
-export const docCalcs = calcs => {
+export const docCalcs = (calcs) => {
   const DocumentedCalcs = describe(calcs)
     .description(
       `

@@ -46,6 +46,7 @@ export const Search = () => {
           searchValue={searchValue}
           options={options}
           onChange={({ value: nextValue }) => setValueMultiple(nextValue)}
+          closeOnChange={false}
           onClose={() => setOptions(defaultOptions)}
           onSearch={text => {
             setSearchValue(text);

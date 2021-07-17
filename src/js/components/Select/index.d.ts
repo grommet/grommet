@@ -58,6 +58,8 @@ export interface SelectProps {
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentClass<SelectProps>;
+declare const Select: React.FC<
+  SelectProps & React.RefAttributes<HTMLButtonElement>
+>;
 
 export { Select };

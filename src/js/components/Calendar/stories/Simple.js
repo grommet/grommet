@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 export const Simple = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
@@ -26,7 +26,7 @@ export const Simple = () => {
           daysOfWeek
           onSelect={onSelect}
           size="small"
-          bounds={['2018-09-08', '2020-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
         />
       </Box>
     </Grommet>

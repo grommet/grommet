@@ -1,7 +1,7 @@
 ## FileInput
 A control to input one or more files.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Input-FileInput&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
 ## Usage
 
 ```javascript
@@ -76,7 +76,10 @@ string
 **onChange**
 
 Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.
 
 ```
 function
@@ -89,7 +92,7 @@ Provides custom rendering of the file. If not provided, the file's
       an argument. For example: (file) => <Text>{file.name}</Text>
 
 ```
-node
+function
 ```
   
 ## Intrinsic element

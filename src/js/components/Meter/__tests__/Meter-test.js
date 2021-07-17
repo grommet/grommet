@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -9,37 +9,37 @@ const VALUES = [{ value: 20, label: 'twenty', onHover: () => {} }];
 
 describe('Meter', () => {
   test('default', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('single', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter value={25} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter values={VALUES} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('many values', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter
           values={[
@@ -55,23 +55,24 @@ describe('Meter', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('type', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter type="bar" values={VALUES} />
         <Meter type="circle" values={VALUES} />
+        <Meter type="pie" values={VALUES} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter size="xsmall" values={VALUES} />
         <Meter size="small" values={VALUES} />
@@ -85,14 +86,20 @@ describe('Meter', () => {
         <Meter type="circle" size="large" values={VALUES} />
         <Meter type="circle" size="xlarge" values={VALUES} />
         <Meter type="circle" size="55px" values={VALUES} />
+        <Meter type="pie" size="xsmall" values={VALUES} />
+        <Meter type="pie" size="small" values={VALUES} />
+        <Meter type="pie" size="medium" values={VALUES} />
+        <Meter type="pie" size="large" values={VALUES} />
+        <Meter type="pie" size="xlarge" values={VALUES} />
+        <Meter type="pie" size="55px" values={VALUES} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('thickness', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter thickness="xsmall" values={VALUES} />
         <Meter thickness="small" values={VALUES} />
@@ -108,23 +115,23 @@ describe('Meter', () => {
         <Meter type="circle" thickness="55px" values={VALUES} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter round values={VALUES} />
         <Meter type="circle" round values={VALUES} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('background', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Meter background="light-3" values={VALUES} />
         <Meter
@@ -143,7 +150,17 @@ describe('Meter', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('vertical', () => {
+    const { container } = render(
+      <Grommet>
+        <Meter direction="vertical" values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination should allow user to control page via state with page + 
+exports[`Pagination should allow user to control page via state with page +
   onChange 1`] = `
 .c7 {
   display: inline-block;
@@ -107,6 +107,11 @@ exports[`Pagination should allow user to control page via state with page +
   width: 3px;
 }
 
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -170,6 +175,26 @@ exports[`Pagination should allow user to control page via state with page +
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -230,9 +255,24 @@ exports[`Pagination should allow user to control page via state with page +
   border: 0;
 }
 
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -312,12 +352,11 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -435,9 +474,769 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should apply a11yTitle and aria-label 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10 > svg {
+  vertical-align: bottom;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c12 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="pagination-test"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 2 7 12l10 10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 2 10 10L7 22"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="pagination-test-2"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-disabled="true"
+            aria-label="Go to previous page"
+            class="c5 c6"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 2 7 12l10 10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 1"
+            class="c9 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 2"
+            class="c10 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c10 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c10 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c10 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c11 c12"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c10 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c10 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c13"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 2 10 10L7 22"
+                fill="none"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -556,6 +1355,11 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   width: 3px;
 }
 
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -616,6 +1420,26 @@ exports[`Pagination should apply button kind style when referenced by a string 1
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -685,6 +1509,26 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -745,9 +1589,24 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 > svg {
@@ -822,12 +1681,11 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -945,9 +1803,9 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -1100,6 +1958,11 @@ exports[`Pagination should apply custom theme 1`] = `
   width: 3px;
 }
 
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -1154,6 +2017,26 @@ exports[`Pagination should apply custom theme 1`] = `
 }
 
 .c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1220,6 +2103,26 @@ exports[`Pagination should apply custom theme 1`] = `
   border: 0;
 }
 
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -1280,9 +2183,24 @@ exports[`Pagination should apply custom theme 1`] = `
   border: 0;
 }
 
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c7 {
@@ -1368,12 +2286,11 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1491,9 +2408,9 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c14"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -1646,6 +2563,21 @@ exports[`Pagination should apply size 1`] = `
   width: 3px;
 }
 
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c19 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c26 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1700,6 +2632,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1766,6 +2718,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -1826,6 +2798,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c15 {
   display: inline-block;
   box-sizing: border-box;
@@ -1880,6 +2872,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c15:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1946,6 +2958,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   display: inline-block;
   box-sizing: border-box;
@@ -2006,6 +3038,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c22 {
   display: inline-block;
   box-sizing: border-box;
@@ -2060,6 +3112,26 @@ exports[`Pagination should apply size 1`] = `
 }
 
 .c22:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c22:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible) > circle,
+.c22:focus:not(:focus-visible) > ellipse,
+.c22:focus:not(:focus-visible) > line,
+.c22:focus:not(:focus-visible) > path,
+.c22:focus:not(:focus-visible) > polygon,
+.c22:focus:not(:focus-visible) > polyline,
+.c22:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c22:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2126,6 +3198,26 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
+.c24:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible) > circle,
+.c24:focus:not(:focus-visible) > ellipse,
+.c24:focus:not(:focus-visible) > line,
+.c24:focus:not(:focus-visible) > path,
+.c24:focus:not(:focus-visible) > polygon,
+.c24:focus:not(:focus-visible) > polyline,
+.c24:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c24:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c25 {
   display: inline-block;
   box-sizing: border-box;
@@ -2186,19 +3278,24 @@ exports[`Pagination should apply size 1`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
+.c25:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c19 {
-  font-size: 14px;
-  line-height: 20px;
+.c25:focus:not(:focus-visible) > circle,
+.c25:focus:not(:focus-visible) > ellipse,
+.c25:focus:not(:focus-visible) > line,
+.c25:focus:not(:focus-visible) > path,
+.c25:focus:not(:focus-visible) > polygon,
+.c25:focus:not(:focus-visible) > polyline,
+.c25:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
 }
 
-.c26 {
-  font-size: 22px;
-  line-height: 28px;
+.c25:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -2346,12 +3443,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2469,9 +3565,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2506,12 +3602,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2629,9 +3724,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2666,12 +3761,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2789,9 +3883,497 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination should change the page on prop change 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 Pagination__StyledPaginationContainer-rnlw6m-0"
+  >
+    <nav
+      aria-label="Pagination Navigation"
+      class="c2"
+    >
+      <ul
+        class="c3"
+      >
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to previous page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 2 7 12l10 10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 1"
+            class="c5 c6"
+            type="button"
+          >
+            1
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-current="page"
+            aria-label="Go to page 2"
+            class="c9 c6"
+            type="button"
+          >
+            2
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 3"
+            class="c5 c6"
+            type="button"
+          >
+            3
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 4"
+            class="c5 c6"
+            type="button"
+          >
+            4
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 5"
+            class="c5 c6"
+            type="button"
+          >
+            5
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <span
+            class="c10 c11"
+          >
+            …
+          </span>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to page 24"
+            class="c5 c6"
+            type="button"
+          >
+            24
+          </button>
+        </li>
+        <div
+          class="c8"
+        />
+        <li
+          class="c4"
+        >
+          <button
+            aria-label="Go to next page"
+            class="c5 c6"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m7 2 10 10L7 22"
+                fill="none"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2944,6 +4526,11 @@ exports[`Pagination should disable next button if on last page 1`] = `
   width: 3px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3001,6 +4588,26 @@ exports[`Pagination should disable next button if on last page 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3067,6 +4674,26 @@ exports[`Pagination should disable next button if on last page 1`] = `
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -3124,9 +4751,24 @@ exports[`Pagination should disable next button if on last page 1`] = `
   border: 0;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -3206,12 +4848,11 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3331,9 +4972,9 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3346,7 +4987,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   < step 1`] = `
 .c7 {
   display: inline-block;
@@ -3510,6 +5151,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -3570,6 +5231,26 @@ exports[`Pagination should disable previous and next controls when numberItems
 }
 
 .c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3646,12 +5327,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3689,9 +5369,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3704,7 +5384,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   === 0 1`] = `
 .c7 {
   display: inline-block;
@@ -3868,6 +5548,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -3941,12 +5641,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3968,9 +5667,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3983,7 +5682,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numberItems 
+exports[`Pagination should disable previous and next controls when numberItems
   === step 1`] = `
 .c7 {
   display: inline-block;
@@ -4147,6 +5846,26 @@ exports[`Pagination should disable previous and next controls when numberItems
   border: 0;
 }
 
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -4207,6 +5926,26 @@ exports[`Pagination should disable previous and next controls when numberItems
 }
 
 .c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4283,12 +6022,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4326,9 +6064,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4481,6 +6219,11 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   width: 3px;
 }
 
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4535,6 +6278,26 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4601,6 +6364,26 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -4661,9 +6444,24 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -4745,12 +6543,11 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4868,9 +6665,9 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4883,7 +6680,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 </div>
 `;
 
-exports[`Pagination should display next page of results when "next" is 
+exports[`Pagination should display next page of results when "next" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -4990,6 +6787,11 @@ exports[`Pagination should display next page of results when "next" is
   width: 3px;
 }
 
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -5053,6 +6855,26 @@ exports[`Pagination should display next page of results when "next" is
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5113,9 +6935,24 @@ exports[`Pagination should display next page of results when "next" is
   border: 0;
 }
 
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -5195,12 +7032,11 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5318,9 +7154,9 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5333,160 +7169,159 @@ exports[`Pagination should display next page of results when "next" is
 </div>
 `;
 
-exports[`Pagination should display next page of results when "next" is 
+exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kUTqHn Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+      class="StyledBox-sc-13pk1d4-0 fKqrK"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+        class="StyledBox-sc-13pk1d4-0 gjrtDD"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eJwTzl StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+            class="StyledText-sc-1sadyjn-0 fxbXHC StyledPageControl__StyledSeparator-sc-1vlfaez-2 jqelnS"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5499,7 +7334,7 @@ exports[`Pagination should display next page of results when "next" is
 </div>
 `;
 
-exports[`Pagination should display page 'n' of results when "page n" is 
+exports[`Pagination should display page 'n' of results when "page n" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -5606,6 +7441,11 @@ exports[`Pagination should display page 'n' of results when "page n" is
   width: 3px;
 }
 
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -5669,6 +7509,26 @@ exports[`Pagination should display page 'n' of results when "page n" is
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5729,9 +7589,24 @@ exports[`Pagination should display page 'n' of results when "page n" is
   border: 0;
 }
 
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -5811,12 +7686,11 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5934,9 +7808,9 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5949,7 +7823,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
 </div>
 `;
 
-exports[`Pagination should display previous page of results when "previous" is 
+exports[`Pagination should display previous page of results when "previous" is
   selected 1`] = `
 .c7 {
   display: inline-block;
@@ -6056,6 +7930,11 @@ exports[`Pagination should display previous page of results when "previous" is
   width: 3px;
 }
 
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6113,6 +7992,26 @@ exports[`Pagination should display previous page of results when "previous" is
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6179,9 +8078,24 @@ exports[`Pagination should display previous page of results when "previous" is
   border: 0;
 }
 
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -6261,12 +8175,11 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -6384,9 +8297,9 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6399,160 +8312,159 @@ exports[`Pagination should display previous page of results when "previous" is
 </div>
 `;
 
-exports[`Pagination should display previous page of results when "previous" is 
+exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kUTqHn Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+      class="StyledBox-sc-13pk1d4-0 fKqrK"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+        class="StyledBox-sc-13pk1d4-0 gjrtDD"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hbnxbA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eJwTzl StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+            class="StyledText-sc-1sadyjn-0 fxbXHC StyledPageControl__StyledSeparator-sc-1vlfaez-2 jqelnS"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 eFsKTS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6565,7 +8477,7 @@ exports[`Pagination should display previous page of results when "previous" is
 </div>
 `;
 
-exports[`Pagination should display the correct last page based on items length 
+exports[`Pagination should display the correct last page based on items length
   and step 1`] = `
 .c7 {
   display: inline-block;
@@ -6706,6 +8618,11 @@ exports[`Pagination should display the correct last page based on items length
   width: 3px;
 }
 
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6760,6 +8677,26 @@ exports[`Pagination should display the correct last page based on items length
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -6826,6 +8763,26 @@ exports[`Pagination should display the correct last page based on items length
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -6886,9 +8843,24 @@ exports[`Pagination should display the correct last page based on items length
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -6970,12 +8942,11 @@ exports[`Pagination should display the correct last page based on items length
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7093,9 +9064,9 @@ exports[`Pagination should display the correct last page based on items length
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7214,6 +9185,11 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   width: 3px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7271,6 +9247,26 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7337,9 +9333,24 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   border: 0;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -7419,12 +9430,11 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7596,9 +9606,9 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7717,6 +9727,11 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   width: 3px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -7774,6 +9789,26 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7840,9 +9875,24 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   border: 0;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -7922,12 +9972,11 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -8057,9 +10106,9 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8178,6 +10227,11 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   width: 3px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -8235,6 +10289,26 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8301,9 +10375,24 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   border: 0;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -8383,12 +10472,11 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -8532,9 +10620,9 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8687,6 +10775,11 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   width: 3px;
 }
 
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -8741,6 +10834,26 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8807,6 +10920,26 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   border: 0;
 }
 
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -8867,9 +11000,24 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   border: 0;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -8951,12 +11099,11 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9046,9 +11193,9 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -9061,7 +11208,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 </div>
 `;
 
-exports[`Pagination should set page to last page if page prop > total possible 
+exports[`Pagination should set page to last page if page prop > total possible
   pages 1`] = `
 .c7 {
   display: inline-block;
@@ -9202,6 +11349,11 @@ exports[`Pagination should set page to last page if page prop > total possible
   width: 3px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -9259,6 +11411,26 @@ exports[`Pagination should set page to last page if page prop > total possible
 }
 
 .c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9325,6 +11497,26 @@ exports[`Pagination should set page to last page if page prop > total possible
   border: 0;
 }
 
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -9382,9 +11574,24 @@ exports[`Pagination should set page to last page if page prop > total possible
   border: 0;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -9464,12 +11671,11 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9589,9 +11795,9 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />

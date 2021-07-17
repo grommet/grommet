@@ -1,9 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, waitFor, cleanup } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
-import 'jest-styled-components';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -13,6 +12,7 @@ import { Grommet } from '../../Grommet';
 import { Tip } from '../Tip';
 
 describe('Tip', () => {
+  afterEach(cleanup);
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -40,7 +40,7 @@ describe('Tip', () => {
     );
 
     fireEvent.mouseOver(getByText('Test Events'));
-    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(document.getElementById('tooltip-id')).not.toBeNull();
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
 
@@ -75,7 +75,29 @@ describe('Tip', () => {
 
     // Styles of plain are captured in snapshots only when applying mouseOver
     fireEvent.mouseOver(getByText('Example'));
-    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+  });
+
+  test('themed', async () => {
+    const { getByText } = render(
+      <Grommet
+        theme={{
+          tip: {
+            drop: {
+              background: 'brand',
+              elevation: 'large',
+              margin: '21px',
+            },
+          },
+        }}
+      >
+        <Tip content="tooltip">Example</Tip>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 
@@ -94,26 +116,24 @@ describe('Tip', () => {
     );
 
     fireEvent.mouseOver(getByText('Test dropProps'));
-    const tooltip = await waitForElement(() =>
-      screen.getByText('hello dropProps'),
-    );
+    const tooltip = await waitFor(() => screen.getByText('hello dropProps'));
     expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 
   test(`should work with a child that isn't a React Element`, () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Tip content="Hello">Not React Element</Tip>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test(`throw error with more than one child`, () => {
     console.error = jest.fn();
     expect(() => {
-      renderer.create(
+      render(
         <Grommet>
           <Tip>
             <Box>1</Box>
@@ -129,7 +149,7 @@ describe('Tip', () => {
   test(`throw error with more than one non React Element`, () => {
     console.error = jest.fn();
     expect(() => {
-      renderer.create(
+      render(
         <Grommet>
           <Tip>123 {false}</Tip>
         </Grommet>,

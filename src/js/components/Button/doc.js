@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
+  backgroundPropType,
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
@@ -8,7 +9,7 @@ import {
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Button => {
+export const doc = (Button) => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button', 'Controls'))
     .description('A button.')
@@ -44,8 +45,36 @@ export const doc = Button => {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag or react component to use for the element.`,
     ),
+    badge: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.element,
+      PropTypes.number,
+      PropTypes.shape({
+        background: backgroundPropType,
+        max: PropTypes.number,
+        value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+      }),
+    ])
+      .description(
+        `An indicator to show on the top-right of the Button. When badge is a 
+         boolean, the badge will be a circle with background color 'brand'. 
+         When badge is a number, that number will appear inside the badge. When 
+         badge is an object, background refers to the background color of the 
+         badge, value refers to either the numeric value that appears within 
+         the badge or a boolean if background has been defined on the object 
+         but no numeric content is desired, and max refers to the max value 
+         that can appear inside the badge. For example, if value is 10 and max 
+         is 9, the content in the badge will be displayed as 9+. For 
+         accessibility, supplement the badge by adding an a11yTitle to the 
+         Button which provides a useful message to screen readers. For example, 
+         "2 unread notifications".`,
+      )
+      .defaultValue(undefined),
     color: colorPropType.description(
-      'Fill color for primary, label color for plain, border color otherwise.',
+      `Fill color for primary, label color for plain, border color otherwise.
+       If button.default is defined in the theme, the color prop will
+       fill the background color for primary and secondary button types. 
+       Color prop will change the text color for default button.`,
     ),
     disabled: PropTypes.bool
       .description('Whether the button is disabled.')
@@ -89,7 +118,9 @@ with plain Buttons.`,
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.',
     ),
-    icon: PropTypes.element.description('Icon element to place in the button.'),
+    icon: PropTypes.element.description(`Icon element to place in the button. 
+    For accessibility with screen readers, if using just an icon (no label), 
+    add an a11yTitle to the Button that describes the icon.`),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
@@ -138,7 +169,9 @@ with plain Buttons.`,
         plain: PropTypes.bool,
       }),
       PropTypes.string,
-    ]).description(`tooltip or a hint when hovering over the button.`),
+    ]).description(`tooltip or a hint when hovering over the button. If the
+      value is a string and no a11yTitle value is provided, tip value will be
+      used for the a11yTitle default value.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
@@ -196,7 +229,6 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
-
   'text.medium.size': {
     description: 'The font size of the text label.',
     type: 'string',
@@ -207,7 +239,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '24px',
   },
-
   'button.active.background.color': {
     description: `Background color when the button is active.`,
     type: 'string | { dark: string, light: string }',
@@ -235,18 +266,55 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.active.primary': {
-    description:
-      'Adjustments to the primary Button style when the Button is active.',
+    description: `Adjustments to the primary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.active.secondary': {
-    description:
-      'Adjustments to the secondary Button style when the Button is active.',
+    description: `Adjustments to the secondary Button style when the Button is 
+    active. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
-
+  'button.badge.container.background': {
+    description: `The background of the badge.`,
+    type: `string | { dark: string, light: string } | {
+      color: { dark: string, light: string } | string,
+      dark: bool,
+      image: string,
+      position: string,
+      opacity: bool | string,
+      repeat: no-repeat | repeat,
+      size: cover | contain | string
+    }`,
+    defaultValue: 'brand',
+  },
+  'button.badge.container.extend': {
+    description: `Any additional styles for the badge.`,
+    type: `string | object`,
+    defaultValue: undefined,
+  },
+  'button.badge.container.pad': {
+    description: 'When badge has a value, the amount of pad to apply.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'button.badge.size.medium': {
+    description: `The minimum width and height of the badge when the badge 
+    contains a value. If badge is a boolean, the default width and height will
+    be one half of this value.`,
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'button.badge.text.size.medium': {
+    description: `The size of the text that is mapped according to 
+    'button.badge.size.medium'.`,
+    type: 'string',
+    defaultValue: '14px',
+  },
   'button.border.color': {
     description: `The color of the border.`,
     type: 'string | { dark: string, light: string }',
@@ -261,12 +329,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '2px',
   },
-
   'button.color': {
     description: `The color of the text label.`,
     type: 'string | { dark: string, light: string }',
   },
-
   'button.default.background.color': {
     description: `The color of the background for default buttons.`,
     type: 'string | { dark: string, light: string }',
@@ -332,18 +398,19 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.disabled.primary': {
-    description:
-      'Adjustments to the primary Button style when the Button is disabled.',
+    description: `Adjustments to the primary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.disabled.secondary': {
-    description:
-      'Adjustments to the secondary Button style when the Button is disabled.',
+    description: `Adjustments to the secondary Button style when the Button is 
+    disabled. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
-
   'button.hover.color': {
     description: `Label color when the button is hovered.`,
     type: 'string | { dark: string, light: string }',
@@ -367,18 +434,19 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'button.hover.primary': {
-    description:
-      'Adjustments to the primary Button style when the Button is hovered.',
+    description: `Adjustments to the primary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
   'button.hover.secondary': {
-    description:
-      'Adjustments to the secondary Button style when the Button is hovered.',
+    description: `Adjustments to the secondary Button style when the Button is 
+    hovered. Only relevant for themes that have defined a value for 
+    button.default.`,
     type: '{}',
     defaultValue: undefined,
   },
-
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
     type: 'string',
@@ -389,19 +457,21 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-
   'button.primary.background.color': {
-    description: `The color of the background for primary buttons.`,
+    description: `The color of the background for primary buttons. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
   'button.primary.background.opacity': {
-    description: 'The value used for primary button background opacity.',
+    description: `The value used for primary button background opacity.
+    Only relevant for themes that have defined a value for button.default.`,
     type: 'number | string',
     defaultValue: undefined,
   },
   'button.primary.border.color': {
-    description: `The color of the border for primary buttons.`,
+    description: `The color of the border for primary buttons. Only relevant 
+    for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.primary.color': {
@@ -427,45 +497,51 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: 'undefined',
   },
-
   'button.secondary.background.color': {
-    description: `The color of the background for secondary buttons.`,
+    description: `The color of the background for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
   'button.secondary.background.opacity': {
-    description: 'The value used for secondary button background opacity.',
+    description: `The value used for secondary button background opacity. 
+    Only relevant for themes that have defined a value for button.default.`,
     type: 'number | string',
     defaultValue: undefined,
   },
   'button.secondary.border.color': {
-    description: `The color of the border for secondary buttons.`,
+    description: `The color of the border for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.secondary.color': {
-    description: `The color of the label for secondary buttons.`,
+    description: `The color of the label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | { dark: string, light: string }',
   },
   'button.secondary.font.weight': {
-    description: `The weight of the text label for secondary buttons.`,
+    description: `The weight of the text label for secondary buttons. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | number',
   },
   'button.secondary.padding.horizontal': {
-    description: 'The horizontal padding for a secondary button.',
+    description: `The horizontal padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string',
     defaultValue: '22px',
   },
   'button.secondary.padding.vertical': {
-    description: 'The vertical padding for a secondary button.',
+    description: `The vertical padding for a secondary button. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string',
     defaultValue: '4px',
   },
   'button.secondary.extend': {
-    description: 'Any additional style for a secondary button.',
+    description: `Any additional style for a secondary button. Only 
+    relevant for themes that have defined a value for button.default.`,
     type: 'string | (props) => {}',
     defaultValue: 'undefined',
   },
-
   'button.size.small.border.radius': {
     description: 'The border corner radius.',
     type: 'string',
@@ -511,7 +587,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '8px',
   },
-
   'button.transition.duration': {
     description: `The length of time it will take for the element to transition
 between two states.`,
@@ -529,7 +604,6 @@ duration and allowing it to change speed during its course.`,
     type: 'string',
     defaultValue: 'ease-in-out',
   },
-
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',

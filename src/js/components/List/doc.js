@@ -24,7 +24,7 @@ const sides = [
 ];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOf(sizes);
 });
 
@@ -44,7 +44,7 @@ const borderTypes = [
   }),
 ];
 
-export const doc = List => {
+export const doc = (List) => {
   const DocumentedList = describe(List)
     .availableAt(getAvailableAtBadge('List', 'Visualizations'))
     .description('An ordered list of items.')
@@ -60,8 +60,7 @@ export const doc = List => {
       `Accepts a function that allows for a custom rendering
        of a component, it should be passed with an item and
         index of an array and return a react element
-      \`action = ({item, index}) => <Content />\`
-    />`,
+      'action = ({item, index}) => <Content />'`,
     ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')
@@ -83,8 +82,7 @@ export const doc = List => {
       and an object indicating the state of the item, if any. It
       should return a react element.
       For example:
-      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
-      `,
+      'children={(item, index, { active }) => <Box ...>{...}</Box>}'`,
     ),
     itemProps: PropTypes.shape({}).description(
       `Item specific background, border, and pad, keyed by data index.
@@ -107,6 +105,13 @@ export const doc = List => {
       of the clicked item. You should not include interactive elements, like
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
+    ),
+    onOrder: PropTypes.func.description(
+      `Use this to indicate that the user should be allowed to re-order the
+      data items. This cannot be used with 'paginate' or 'onClickItem'.
+      The function will be called with the array of items in their new order
+      when the user moves items via drag and drop or the move up/down
+      controls.`,
     ),
     pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
@@ -180,6 +185,18 @@ export const themeDoc = {
     description: 'Any additional style for the list.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
+  },
+  'list.icons.down': {
+    description: `The icon to use for the move down button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormDown',
+  },
+  'list.icons.up': {
+    description: `The icon to use for the move up button
+    in re-ordable lists.`,
+    type: 'React.Element',
+    defaultValue: 'FormUp',
   },
   'list.item.background': {
     description: 'Background color for list items.',

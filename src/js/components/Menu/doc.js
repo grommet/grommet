@@ -6,7 +6,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-export const doc = Menu => {
+export const doc = (Menu) => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu', 'Controls'))
     .description(`A control that opens a Drop containing plain Buttons.`)
@@ -77,7 +77,9 @@ one of top or bottom should be specified.`,
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`,
     ),
-    dropProps: PropTypes.object.description('Any valid Drop prop.'),
+    dropProps: PropTypes.object
+      .description('Any valid Drop prop.')
+      .defaultValue(undefined),
     justifyContent: PropTypes.oneOf([
       'start',
       'center',
@@ -138,6 +140,14 @@ export const themeDoc = {
       'The color for the background of the menu Drop when it is open.',
     type: 'string',
     defaultValue: undefined,
+  },
+  'menu.drop': {
+    description: 'Any valid Drop props for the Menu drop.',
+    type: 'object',
+    defaultValue: `align: {
+      top: 'top',
+      left: 'left',
+    },`,
   },
   'menu.extend': {
     description: 'Any additional style for the Menu.',

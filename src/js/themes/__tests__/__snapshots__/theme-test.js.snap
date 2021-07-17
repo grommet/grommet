@@ -31,12 +31,10 @@ exports[`Grommet ThemeContext theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1"
   >
     Hello
   </a>
@@ -269,6 +267,26 @@ exports[`Grommet custom theme 1`] = `
   border-radius: 4px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12::-webkit-input-placeholder {
   color: #cc6633;
 }
@@ -323,153 +341,125 @@ exports[`Grommet custom theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <a
-      className="c2"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c2"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c4"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <a
-      className="c9"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c9"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c10"
+          class="c10"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c11"
+      class="c11"
     >
       <input
-        autoComplete="off"
-        className="c12"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        autocomplete="off"
+        class="c12"
         placeholder="Placeholder"
         value="Value"
       />
@@ -802,229 +792,229 @@ exports[`Grommet dark theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
@@ -1353,229 +1343,229 @@ exports[`Grommet default theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
@@ -1634,6 +1624,26 @@ exports[`Grommet grommet theme 1`] = `
   border: 0;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: inline-block;
   box-sizing: border-box;
@@ -1672,6 +1682,26 @@ exports[`Grommet grommet theme 1`] = `
   border: 0;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
@@ -1686,24 +1716,16 @@ exports[`Grommet grommet theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     test
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     test
@@ -1938,148 +1960,148 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       background-contrast
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       background-front
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       control
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-0
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-1
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-2
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-3
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-4
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       text
     </span>

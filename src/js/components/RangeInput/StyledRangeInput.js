@@ -1,7 +1,11 @@
-import { rgba } from 'polished';
 import styled, { css } from 'styled-components';
 
-import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import {
+  focusStyle,
+  normalizeColor,
+  parseMetricToNum,
+  getRGBA,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
@@ -20,19 +24,19 @@ const getBoundColor = (props, bound) => {
     props.theme.rangeInput.track[bound] &&
     props.theme.rangeInput.track[bound].color
   ) {
-    return rgba(
+    return getRGBA(
       normalizeColor(props.theme.rangeInput.track[bound].color, props.theme),
       getBoundOpacity(props, bound),
     );
   }
   // If bound color is undefined pick the default track color with bound opacity
-  return rgba(
+  return getRGBA(
     normalizeColor(props.theme.rangeInput.track.color, props.theme),
     getBoundOpacity(props, bound),
   );
 };
 
-const trackColorStyle = props => {
+const trackColorStyle = (props) => {
   // backward compatibility in case no bounds are defined
   if (
     props.theme.rangeInput &&
@@ -40,17 +44,17 @@ const trackColorStyle = props => {
     !props.theme.rangeInput.track.lower &&
     !props.theme.rangeInput.track.upper
   ) {
-    const color = rgba(
+    const color = getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       0.2,
     );
     // Since the track color was changed from border-with-opacity to just border
     // this condition is used to make sure we are applying the opacity correctly
     // for 'border' color (for backward compatibility purposes).
-    if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
+    if (color === 'rgba(0, 0, 0, 0.2)') return `background: ${color}`;
 
     // no bounds are defined but color may have changed
-    return `background: ${rgba(
+    return `background: ${getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       props.theme.rangeInput.track.opacity || 1,
     )}`;
@@ -76,9 +80,9 @@ const trackColorStyle = props => {
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
-  height: ${props => props.theme.rangeInput.track.height};
-  ${props => trackColorStyle(props)};
-  ${props =>
+  height: ${(props) => props.theme.rangeInput.track.height};
+  ${(props) => trackColorStyle(props)};
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
@@ -87,18 +91,18 @@ const rangeTrackStyle = css`
 const rangeThumbStyle = css`
   box-sizing: border-box;
   position: relative;
-  border-radius: ${props => props.theme.global.spacing};
-  height: ${props => props.theme.global.spacing};
-  width: ${props => props.theme.global.spacing};
+  border-radius: ${(props) => props.theme.global.spacing};
+  height: ${(props) => props.theme.global.spacing};
+  width: ${(props) => props.theme.global.spacing};
   overflow: visible;
-  background: ${props =>
+  background: ${(props) =>
     normalizeColor(
       props.theme.rangeInput.thumb.color || 'control',
       props.theme,
     )};
   -webkit-appearance: none;
   cursor: pointer;
-  ${props =>
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
@@ -106,9 +110,9 @@ const rangeThumbStyle = css`
 
 const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
-  height: ${props => props.theme.global.spacing};
-  width: ${props => props.theme.global.spacing};
-  ${props =>
+  height: ${(props) => props.theme.global.spacing};
+  width: ${(props) => props.theme.global.spacing};
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
@@ -120,7 +124,7 @@ const StyledRangeInput = styled.input`
   position: relative;
   -webkit-appearance: none;
   border-color: transparent;
-  height: ${props => props.theme.global.spacing};
+  height: ${(props) => props.theme.global.spacing};
   width: 100%;
   padding: 0px;
   cursor: pointer;
@@ -139,10 +143,10 @@ const StyledRangeInput = styled.input`
   }
 
   &::-webkit-slider-thumb {
-    margin-top: -${props => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
+    margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
 
-    ${props =>
+    ${(props) =>
       !props.disabled &&
       css`
         &:hover {
@@ -167,7 +171,7 @@ const StyledRangeInput = styled.input`
     ${firefoxMicrosoftThumbStyle}
   }
 
-  ${props =>
+  ${(props) =>
     !props.disabled &&
     css`
       &:hover::-moz-range-thumb {
@@ -194,17 +198,17 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    ${props => trackColorStyle(props, 'lower')};
+    ${(props) => trackColorStyle(props, 'lower')};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    ${props => trackColorStyle(props, 'upper')};
+    ${(props) => trackColorStyle(props, 'upper')};
     border-color: transparent;
   }
 
-  ${props => props.focus && focusStyle()}
-  ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
+  ${(props) => props.focus && focusStyle()}
+  ${(props) => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
 

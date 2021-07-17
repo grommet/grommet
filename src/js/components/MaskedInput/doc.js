@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = MaskedInput => {
+export const doc = (MaskedInput) => {
   const DocumentedMaskedInput = describe(MaskedInput)
     .availableAt(getAvailableAtBadge('MaskedInput', 'Input'))
     .description('An input field with formalized syntax.')
@@ -32,6 +32,9 @@ export const doc = MaskedInput => {
     onChange: PropTypes.func.description(
       `Function that will be called when the user types or pastes text.`,
     ),
+    focusIndicator: PropTypes.bool.description(
+      'Whether the plain MaskedInput should receive a focus outline.',
+    ),
     onBlur: PropTypes.func.description(
       `Function that will be called when the user leaves the field.`,
     ),
@@ -58,9 +61,24 @@ export const doc = MaskedInput => {
       end of the input.`,
     ),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+      ]),
       PropTypes.string,
     ]).description('The size of the text.'),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+      .description('How to align the text inside the input.')
+      .defaultValue('start'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
@@ -90,7 +108,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'maskedInput.container.extend': {
-    description: `Any additional style for the container surrounding the input 
+    description: `Any additional style for the container surrounding the input
     and, if present, icon.`,
     type: 'string | (props) => {}',
     defaultValue: undefined,

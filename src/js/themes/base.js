@@ -1,5 +1,3 @@
-import { rgba } from 'polished';
-
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -50,7 +48,7 @@ const lightColors = [
 const focusColor = accentColors[0];
 
 const colors = {
-  active: rgba(221, 221, 221, 0.5),
+  active: 'rgba(221, 221, 221, 0.5)',
   'background-back': {
     dark: '#33333308',
     light: '#EDEDED',
@@ -67,8 +65,8 @@ const colors = {
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: rgba(255, 255, 255, 0.33),
-    light: rgba(0, 0, 0, 0.33),
+    dark: 'rgba(255, 255, 255, 0.33)',
+    light: 'rgba(0, 0, 0, 0.33)',
   },
   brand: brandColor,
   control: {
@@ -117,7 +115,7 @@ colorArray(accentColors, 'accent');
 colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -126,7 +124,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   const baseFontSize = baseSpacing * 0.75; // 18
   const fontScale = baseSpacing / scale; // 4
 
-  const fontSizing = factor => ({
+  const fontSizing = (factor) => ({
     size: `${baseFontSize + factor * fontScale}px`,
     height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
@@ -218,6 +216,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
+        // intelligentMargin: undefined,
         background: {
           dark: 'black',
           light: 'white',
@@ -225,7 +224,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           radius: '0px',
         },
-        shadowSize: 'small',
+        // margin: undefined
+        shadowSize: 'small', // shadowSize is deprecated, use 'elevation'
         zIndex: '20',
       },
       edgeSize: {
@@ -286,10 +286,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       input: {
         padding: {
-          horizontal: `${parseMetricToNum(`${baseSpacing / 2}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)}px`,
-          vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+          horizontal: `${
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
+          }px`,
+          vertical: `${
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
+          }px`,
         },
         font: {
           // size: undefined,
@@ -364,19 +368,27 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     avatar: {
       // extend: undefined,
       size: {
-        xsmall: `${baseSpacing * 0.75}px`,
-        small: `${baseSpacing}px`,
-        medium: `${baseSpacing * 2}px`, // default 48
-        large: `${baseSpacing * 3}px`,
-        xlarge: `${baseSpacing * 4}px`,
+        xsmall: `${baseSpacing * 0.75}px`, // 18px
+        small: `${baseSpacing}px`, // 24px
+        medium: `${baseSpacing * 2}px`, // default 48px
+        large: `${baseSpacing * 3}px`, // 72px
+        xlarge: `${baseSpacing * 4}px`, // 96px
+        '2xl': `${baseSpacing * 5}px`, // 120px
+        '3xl': `${baseSpacing * 6}px`, // 144px
+        '4xl': `${baseSpacing * 7}px`, // 168px
+        '5xl': `${baseSpacing * 8}px`, // 192px
       },
       text: {
         size: {
-          xsmall: 'small',
-          small: 'medium',
-          medium: 'large',
-          large: 'xlarge',
-          xlarge: 'xxlarge',
+          xsmall: 'small', // 14px
+          small: 'medium', // 18px
+          medium: 'large', // 22px
+          large: 'xlarge', // 26px
+          xlarge: 'xxlarge', // 34px
+          '2xl': '3xl', // 42px
+          '3xl': '4xl', // 54px
+          '4xl': '5xl', // 70px
+          '5xl': '6xl', // 90px
         },
         // fontWeight: undefined,
         // extend: undefined
@@ -387,6 +399,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     button: {
+      badge: {
+        container: {
+          background: 'brand',
+          // pad: undefined,
+          // extend: undefined,
+        },
+        size: {
+          medium: `${baseSpacing}px`, // 24px
+        },
+        text: {
+          size: {
+            medium: 'small', // 14px
+          },
+        },
+      },
       size: {
         small: {
           border: {
@@ -581,6 +608,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: '4px',
         thickness: '4px',
       },
+      label: {
+        align: 'center',
+      },
       // color: { dark: undefined, light: undefined },
       // extend: undefined,
       // gap: undefined
@@ -591,6 +621,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        // background: undefined,
       },
       icon: {
         // size: undefined,
@@ -600,6 +631,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      // pad: undefined,
       size: `${baseSpacing}px`,
       toggle: {
         // background: undefined
@@ -970,6 +1002,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
+      icons: {
+        down: FormDown,
+        up: FormUp,
+      },
       // extend: undefined,
     },
     maskedInput: {
@@ -982,6 +1018,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     menu: {
       // background: undefined,
       // extend: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left',
+        },
+        // any drop props
+      },
       icons: {
         down: FormDown,
         // up: undefined,
@@ -1075,6 +1118,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+    },
+    spinner: {
+      container: {
+        animation: 'rotateRight',
+        color: 'brand',
+        pad: 'small',
+        round: 'full',
+        size: 'small',
+      },
+      // icon: undefined
+      size: {
+        xsmall: `${baseSpacing * 0.75}px`,
+        small: `${baseSpacing}px`, // default 24
+        medium: `${baseSpacing * 2}px`,
+        large: `${baseSpacing * 3}px`,
+        xlarge: `${baseSpacing * 4}px`,
+      },
     },
     radioButton: {
       border: {
@@ -1338,6 +1398,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         // any props for the drop
         align: { top: 'bottom' }, // most common use case is Header with Buttons
+        background: 'none',
+        elevation: 'none',
+        margin: 'none',
       },
     },
     video: {

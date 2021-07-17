@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { marginProp } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = FormField => {
+export const doc = (FormField) => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField', 'Input'))
     .description(
@@ -103,7 +103,8 @@ export const themeDoc = {
     defaultValue: 'border',
   },
   'formField.border.error.color': {
-    description: 'The border color of the error.',
+    description: `The border color of the error. Deprecated, use 
+    error.border.color instead.`,
     type: "string | {'dark': string, 'light': string}",
     defaultValue: "{ dark: 'white', light: 'status-critical' },",
   },
@@ -159,6 +160,11 @@ export const themeDoc = {
     type: 'string | boolean | number',
     defaultValue: undefined,
   },
+  'formField.error.border.color': {
+    description: 'The border color of the error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'white', light: 'status-critical' },",
+  },
   'formField.error.color': {
     description: 'The color of the FormField error.',
     type: "string | {'dark': string, 'light': string}",
@@ -174,6 +180,37 @@ export const themeDoc = {
     description: 'An icon placed in a row with the error message.',
     type: 'React.Element',
     defaultValue: undefined,
+  },
+  'formField.error.size': {
+    description: `The size of the error message to be displayed.
+     The default size is medium.`,
+    type: 'string',
+    defaultValue: 'medium',
+  },
+  'formField.error.size.xsmall': {
+    description: `The size of a 'xsmall' error message.`,
+    type: 'string',
+    defaultValue: '12px',
+  },
+  'formField.error.size.small': {
+    description: `The size of a 'small' error message.`,
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'formField.error.size.medium': {
+    description: `The size of a 'medium' error message.`,
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'formField.error.size.large': {
+    description: `The size of a 'large' error message.`,
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'formField.error.size.xlarge': {
+    description: `The size of a 'xlarge' error message.`,
+    type: 'string',
+    defaultValue: '26px',
   },
   'formField.info.container': {
     description: `Any valid Box props for the container surrounding the info 

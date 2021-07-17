@@ -38,7 +38,7 @@ boolean
 
 **focusIndicator**
 
-Whether the plain textarea should receive a focus outline.
+Whether the plain TextArea should receive a focus outline.
 
 ```
 boolean
@@ -97,13 +97,20 @@ boolean
 
 **size**
 
-The size of the TextArea.
+The size of the text.
 
 ```
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 ```
   

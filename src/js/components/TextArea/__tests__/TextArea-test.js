@@ -1,8 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -10,8 +9,6 @@ import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
 
 describe('TextArea', () => {
-  afterEach(cleanup);
-
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -23,91 +20,90 @@ describe('TextArea', () => {
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea id="item" name="item" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('placeholder', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea id="item" name="item" placeholder="placeholder" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('plain', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea id="item" name="item" plain />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea disabled id="item" name="item" plain />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focusIndicator', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea id="item" name="item" focusIndicator />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fill', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <TextArea id="item" name="item" fill />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  [true, false, 'horizontal', 'vertical'].forEach(resize => {
+  [true, false, 'horizontal', 'vertical'].forEach((resize) => {
     test(`resize ${resize}`, () => {
-      const component = renderer.create(
+      const { container } = render(
         <Grommet>
           <TextArea id="item" name="item" resize={resize} />
         </Grommet>,
       );
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 
-  ['small', 'medium', 'large'].forEach(size => {
+  ['small', 'medium', 'large'].forEach((size) => {
     test(`size ${size}`, () => {
-      const component = renderer.create(
+      const { container } = render(
         <Grommet>
           <TextArea id="item" name="item" size={size} />
         </Grommet>,
       );
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 
   describe('Event tests', () => {
-    afterEach(cleanup);
     const keyEvent = {
       key: 'Backspace',
       keyCode: 8,
@@ -116,7 +112,7 @@ describe('TextArea', () => {
 
     test(`onKeyDown`, () => {
       let capturedEvent = null;
-      const callback = event => {
+      const callback = (event) => {
         const { key, keyCode, which } = event;
         capturedEvent = { key, keyCode, which };
       };
@@ -141,7 +137,7 @@ describe('TextArea', () => {
 
     test(`onKeyUp`, () => {
       let capturedEvent = null;
-      const callback = event => {
+      const callback = (event) => {
         const { key, keyCode, which } = event;
         capturedEvent = { key, keyCode, which };
       };
@@ -201,5 +197,49 @@ describe('TextArea', () => {
       fireEvent.blur(getByPlaceholderText('item'));
       expect(onBlur).toHaveBeenCalledTimes(1);
     });
+
+    test('renders size', () => {
+      const { container } = render(
+        <Grommet>
+          <TextArea size="xsmall" />
+          <TextArea size="small" />
+          <TextArea size="medium" />
+          <TextArea size="large" />
+          <TextArea size="xlarge" />
+          <TextArea size="xxlarge" />
+          <TextArea size="2xl" />
+          <TextArea size="3xl" />
+          <TextArea size="4xl" />
+          <TextArea size="5xl" />
+          <TextArea size="6xl" />
+          <TextArea size="16px" />
+          <TextArea size="1rem" />
+          <TextArea size="100%" />
+        </Grommet>,
+      );
+      expect(container.children).toMatchSnapshot();
+    });
+  });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <TextArea />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <TextArea a11yTitle="item" id="item" name="item" />
+        <TextArea aria-label="item-2" id="item-2" name="item-2" />
+      </Grommet>,
+    );
+
+    expect(getByLabelText('item')).toBeTruthy();
+    expect(getByLabelText('item-2')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -90,20 +90,20 @@ exports[`Stack anchor 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -111,17 +111,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c4"
+      class="c4"
     >
       <div>
         second
@@ -129,17 +129,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div>
         second
@@ -147,17 +147,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c6"
+      class="c6"
     >
       <div>
         second
@@ -165,17 +165,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c7"
+      class="c7"
     >
       <div>
         second
@@ -183,17 +183,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c8"
+      class="c8"
     >
       <div>
         second
@@ -201,17 +201,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c9"
+      class="c9"
     >
       <div>
         second
@@ -219,17 +219,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c10"
+      class="c10"
     >
       <div>
         second
@@ -237,17 +237,17 @@ exports[`Stack anchor 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c11"
+      class="c11"
     >
       <div>
         second
@@ -286,20 +286,20 @@ exports[`Stack default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -387,20 +387,20 @@ exports[`Stack fill 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -408,17 +408,17 @@ exports[`Stack fill 1`] = `
     </div>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <div
-      className="c5"
+      class="c5"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -426,17 +426,17 @@ exports[`Stack fill 1`] = `
     </div>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -444,17 +444,17 @@ exports[`Stack fill 1`] = `
     </div>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -493,20 +493,20 @@ exports[`Stack guidingChild 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -514,17 +514,17 @@ exports[`Stack guidingChild 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         second
@@ -532,17 +532,17 @@ exports[`Stack guidingChild 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -596,20 +596,20 @@ exports[`Stack interactiveChild 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second
@@ -617,17 +617,17 @@ exports[`Stack interactiveChild 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c4"
+      class="c4"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c5"
+      class="c5"
     >
       <div>
         second
@@ -635,17 +635,17 @@ exports[`Stack interactiveChild 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <div>
         first
       </div>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div>
         second

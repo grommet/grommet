@@ -17,7 +17,7 @@ const allSeasons = [
   'S10',
 ];
 
-export const ChildrenRender = () => {
+export const Children = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = season => {
@@ -44,18 +44,12 @@ export const ChildrenRender = () => {
         gap="xsmall"
         pad={{ vertical: 'xsmall', horizontal: 'small' }}
         margin="xsmall"
-        background="accent-1"
+        background="brand"
         round="large"
       >
-        <Text size="small" color="white">
-          {season}
-        </Text>
-        <Box background="white" round="full" margin={{ left: 'xsmall' }}>
-          <FormClose
-            color="accent-1"
-            size="small"
-            style={{ width: '12px', height: '12px' }}
-          />
+        <Text size="small">{season}</Text>
+        <Box round="full" margin={{ left: 'xsmall' }}>
+          <FormClose size="small" style={{ width: '12px', height: '12px' }} />
         </Box>
       </Box>
     </Button>
@@ -101,8 +95,6 @@ export const ChildrenRender = () => {
   );
 };
 
-ChildrenRender.storyName = 'Children render';
-
 export default {
-  title: 'Input/Select/Children render',
+  title: 'Input/Select/Children',
 };

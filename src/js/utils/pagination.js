@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export const normalizeShow = (showProp, step) => {
   let page;
@@ -18,28 +18,15 @@ export const usePagination = ({ data, page, step, ...rest }) => {
 
   const itemsBeginIndex = step * (activePage - 1);
   const itemsEndIndex = itemsBeginIndex + step;
-  const getCurrentItems = useCallback(
-    items => {
-      if (Array.isArray(items)) {
-        return items.length
-          ? items.slice(itemsBeginIndex, itemsEndIndex)
-          : undefined;
-      }
-      return items;
-    },
-    [itemsBeginIndex, itemsEndIndex],
-  );
-  const [currentItems, setCurrentItems] = useState(getCurrentItems(data));
 
-  useEffect(() => {
-    if (data) {
-      setCurrentItems(getCurrentItems(data));
-    }
-  }, [data, getCurrentItems, setCurrentItems]);
+  const currentItems = useMemo(() => {
+    if (Array.isArray(data)) return data.slice(itemsBeginIndex, itemsEndIndex);
+    return [];
+  }, [data, itemsBeginIndex, itemsEndIndex]);
 
   const paginationProps = {
     numberItems: data && data.length,
-    onChange: event => setActivePage(event.page),
+    onChange: (event) => setActivePage(event.page),
     page,
     step,
     ...rest, // let anything coming from paginate prop override component

@@ -8,7 +8,7 @@ import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 export const CustomHeaderCalendar = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
@@ -19,7 +19,7 @@ export const CustomHeaderCalendar = () => {
           date={date}
           onSelect={onSelect}
           size="small"
-          bounds={['2018-09-08', '2018-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
           header={({
             date: currentDate,
             locale,

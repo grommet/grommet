@@ -16,6 +16,7 @@ Whether default styling context should be removed.
 
 ```
 boolean
+noPad
 ```
 
 **scope**
@@ -58,6 +59,21 @@ How to align the contents vertically.
 top
 middle
 bottom
+```
+
+**align**
+
+How to align the body inside the Table.
+
+```
+left
+right
+center
+justify
+inherit
+start
+end
+string
 ```
   
 ## Intrinsic element

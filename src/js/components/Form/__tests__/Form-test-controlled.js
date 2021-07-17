@@ -2,12 +2,13 @@ import React from 'react';
 
 import 'jest-styled-components';
 
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { act, cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
+import { CheckBox } from '../../CheckBox';
 
 describe('Form controlled', () => {
   afterEach(cleanup);
@@ -16,7 +17,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -50,7 +54,10 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" required>
@@ -88,7 +95,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -126,7 +136,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -158,7 +171,10 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -193,7 +209,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState('');
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -236,7 +252,7 @@ describe('Form controlled', () => {
       const [value, setValue] = React.useState('');
       React.useEffect(() => setValue('test'), []);
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -305,7 +321,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField label="test" name="test" id="test" htmlFor="test" />
@@ -336,7 +355,10 @@ describe('Form controlled', () => {
     const onReset = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Grommet>
           <Form
@@ -393,6 +415,112 @@ describe('Form controlled', () => {
     expect(onChange).toBeCalledWith(
       { test: 'Input has changed' },
       { touched: { test: true } },
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`dynamicly removed fields using blur validation
+  don't keep validation errors`, () => {
+    jest.useFakeTimers('modern');
+    const onValidate = jest.fn();
+    const onSubmit = jest.fn();
+
+    const Test = () => {
+      const [value, setValue] = React.useState({ name: '', toggle: false });
+      return (
+        <Form
+          validate="blur"
+          value={value}
+          onChange={(nextValue) => {
+            const adjustedValue = { ...nextValue };
+            if (!adjustedValue.toggle) delete adjustedValue.mood;
+            else if (!adjustedValue.mood) adjustedValue.mood = '';
+            setValue(adjustedValue);
+          }}
+          onValidate={onValidate}
+          onSubmit={onSubmit}
+        >
+          <FormField name="name">
+            <TextInput name="name" placeholder="test name" />
+          </FormField>
+          <FormField name="toggle">
+            <CheckBox name="toggle" label="toggle" />
+          </FormField>
+          {value.toggle && (
+            <FormField name="mood" required>
+              <TextInput name="mood" placeholder="test mood" />
+            </FormField>
+          )}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByLabelText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const nameField = getByPlaceholderText('test name');
+    const toggleField = getByLabelText('toggle');
+
+    // add mood
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+    expect(container.firstChild).toMatchSnapshot();
+    const moodField = getByPlaceholderText('test mood');
+
+    // focus in and out of mood, should fail validation
+    moodField.focus();
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        errors: { mood: 'required' },
+        infos: {},
+      }),
+    );
+
+    // set mood, should pass validation
+    moodField.focus();
+    fireEvent.change(moodField, { target: { value: 'testy' } });
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({ errors: {}, infos: {} }),
+    );
+
+    // clear mood, should fail validation
+    moodField.focus();
+    fireEvent.change(moodField, { target: { value: '' } });
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({
+        errors: { mood: 'required' },
+        infos: {},
+      }),
+    );
+
+    // remove mood, should clear validation
+    act(() => {
+      fireEvent.click(toggleField);
+      return undefined;
+    });
+    nameField.focus();
+    toggleField.focus();
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(onValidate).toHaveBeenNthCalledWith(
+      4,
+      expect.objectContaining({ errors: {}, infos: {} }),
     );
 
     expect(container.firstChild).toMatchSnapshot();

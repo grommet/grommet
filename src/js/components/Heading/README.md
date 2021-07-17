@@ -197,6 +197,7 @@ How to align the text inside the heading. Defaults to `start`.
 start
 center
 end
+justify
 ```
 
 **truncate**

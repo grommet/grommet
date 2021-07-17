@@ -187,7 +187,8 @@ function
 
 **plain**
 
-Whether this is a plain Layer with no background color or border.
+Whether this is a plain Layer with no background color, border, or 
+        elevation.
 
 ```
 boolean
@@ -214,7 +215,9 @@ top-right
 
 **responsive**
 
-Whether the layer should take full width and height on mobile Defaults to `true`.
+Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target. Defaults to `true`.
 
 ```
 boolean
@@ -263,7 +266,7 @@ The rounding of the Layer corners. Expects `string`.
 Defaults to
 
 ```
-white
+4px
 ```
 
 **layer.border.intelligentRounding**

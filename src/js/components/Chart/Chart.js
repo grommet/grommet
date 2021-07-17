@@ -1,12 +1,7 @@
-import React, {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
@@ -52,10 +47,10 @@ const Chart = React.forwardRef(
 
     const values = useMemo(() => normalizeValues(propsValues), [propsValues]);
 
-    const bounds = useMemo(() => normalizeBounds(propsBounds, values), [
-      propsBounds,
-      values,
-    ]);
+    const bounds = useMemo(
+      () => normalizeBounds(propsBounds, values),
+      [propsBounds, values],
+    );
 
     const strokeWidth = useMemo(
       () => parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
@@ -218,6 +213,18 @@ const Chart = React.forwardRef(
     const useGradient = color && Array.isArray(color);
     let patternId;
 
+    function getOpacity(valueOpacity) {
+      return (
+        (valueOpacity && theme.global.opacity[valueOpacity]) ||
+        // eslint-disable-next-line no-nested-ternary
+        (valueOpacity === true
+          ? theme.global.opacity.medium
+          : valueOpacity === false
+          ? undefined
+          : valueOpacity)
+      );
+    }
+
     const renderBars = () =>
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
@@ -272,10 +279,7 @@ const Chart = React.forwardRef(
                     )
                   : undefined
               }
-              opacity={
-                (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
-              }
+              opacity={getOpacity(valueOpacity)}
             >
               <title>{label}</title>
               <path
@@ -430,24 +434,30 @@ const Chart = React.forwardRef(
               return <circle cx={cx} cy={cy} r={off} {...props} />;
             let d;
             if (point === 'diamond')
-              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${cy +
-                off} L ${cx - off} ${cy} Z`;
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${
+                cy + off
+              } L ${cx - off} ${cy} Z`;
             else if (point === 'star') {
               const off1 = off / 3;
               const off2 = off1 * 2;
-              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${cx +
-                off} ${cy - off1} L ${cx - off} ${cy - off1} L ${cx +
-                off2} ${cy + off} Z`;
+              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${
+                cx + off
+              } ${cy - off1} L ${cx - off} ${cy - off1} L ${cx + off2} ${
+                cy + off
+              } Z`;
             } else if (point === 'triangle')
-              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${cx -
-                off} ${cy + off} Z`;
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${
+                cx - off
+              } ${cy + off} Z`;
             else if (point === 'triangleDown')
-              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy -
-                off} L ${cx} ${cy + off} Z`;
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${
+                cy - off
+              } L ${cx} ${cy + off} Z`;
             // square
             else
-              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${cx +
-                off} ${cy + off} L ${cx - off} ${cy + off} Z`;
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${
+                cx + off
+              } ${cy + off} L ${cx - off} ${cy + off} Z`;
             return <path d={d} />;
           };
 
@@ -456,10 +466,7 @@ const Chart = React.forwardRef(
               key={key}
               stroke="none"
               fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
-              opacity={
-                (valueOpacity && theme.global.opacity[valueOpacity]) ||
-                valueOpacity
-              }
+              opacity={getOpacity(valueOpacity)}
             >
               <title>{label}</title>
               {renderPoint(value[0], value[1])}
@@ -486,12 +493,19 @@ const Chart = React.forwardRef(
       else if (color) colorName = color;
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
-    const opacity =
-      propsOpacity || (color && color.opacity)
-        ? theme.global.opacity[propsOpacity || color.opacity] ||
-          propsOpacity ||
-          color.opacity
-        : undefined;
+
+    let opacity;
+    if (propsOpacity === true) {
+      opacity = theme.global.opacity.medium;
+    } else if (propsOpacity) {
+      opacity = theme.global.opacity[propsOpacity]
+        ? theme.global.opacity[propsOpacity]
+        : propsOpacity;
+    } else if (color && color.opacity) {
+      opacity = theme.global.opacity[color.opacity]
+        ? theme.global.opacity[color.opacity]
+        : color.opacity;
+    } else opacity = undefined;
 
     let stroke;
     if (type !== 'point') {
@@ -525,7 +539,7 @@ const Chart = React.forwardRef(
     const defs = [];
     let gradientRect;
     if (useGradient && size[1]) {
-      const uniqueGradientId = color.map(element => element.color).join('-');
+      const uniqueGradientId = color.map((element) => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
       defs.push(

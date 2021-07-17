@@ -8,7 +8,7 @@ import {
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Text => {
+export const doc = (Text) => {
   const DocumentedText = describe(Text)
     .availableAt(getAvailableAtBadge('Text', 'Type'))
     .description('Arbitrary text.')
@@ -95,9 +95,19 @@ export const doc = Text => {
     ])
       .description(`The DOM tag or react component to use for the element.`)
       .defaultValue('span'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the component.')
       .defaultValue('start'),
+    tip: PropTypes.oneOfType([
+      PropTypes.shape({
+        content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+        dropProps: PropTypes.shape({}),
+        plain: PropTypes.bool,
+      }),
+      PropTypes.string,
+    ]).description(`tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.`),
     truncate: PropTypes.bool
       .description(
         `Restrict the text to a single line and truncate with ellipsis if it

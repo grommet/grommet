@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-export const doc = TableCell => {
+export const doc = (TableCell) => {
   const DocumentedTableCell = describe(TableCell)
     .description('A cell of data in a table.')
     .usage(
@@ -10,8 +10,8 @@ export const doc = TableCell => {
     .intrinsicElement('td');
 
   DocumentedTableCell.propTypes = {
-    plain: PropTypes.bool
-      .description('Whether default styling context should be removed.')
+    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['noPad'])])
+      .description(`Whether default styling context should be removed.`)
       .defaultValue(false),
     scope: PropTypes.oneOf(['col', 'row'])
       .description(`For header cells, what scope the header is for.
@@ -38,6 +38,18 @@ export const doc = TableCell => {
     verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom']).description(
       'How to align the contents vertically.',
     ),
+    align: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'left',
+        'right',
+        'center',
+        'justify',
+        'inherit',
+        'start',
+        'end',
+      ]),
+      PropTypes.string,
+    ]).description('How to align the body inside the Table.'),
   };
 
   return DocumentedTableCell;

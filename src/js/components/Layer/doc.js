@@ -6,7 +6,7 @@ import { backgroundDoc } from '../../utils/prop-types';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
-export const doc = Layer => {
+export const doc = (Layer) => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer', 'Layout'))
     .description(
@@ -104,7 +104,8 @@ particular side of the layer`,
     ),
     plain: PropTypes.bool
       .description(
-        'Whether this is a plain Layer with no background color or border.',
+        `Whether this is a plain Layer with no background color, border, or 
+        elevation.`,
       )
       .defaultValue(false),
     position: PropTypes.oneOf([
@@ -125,7 +126,9 @@ particular side of the layer`,
       .defaultValue('center'),
     responsive: PropTypes.bool
       .description(
-        'Whether the layer should take full width and height on mobile',
+        `Whether the layer should take full width and height on mobile. If a 
+        target is provided, the Layer will take the full width and height of 
+        the target.`,
       )
       .defaultValue(true),
     target: PropTypes.object.description(
@@ -151,7 +154,7 @@ export const themeDoc = {
   'layer.border.radius': {
     description: 'The rounding of the Layer corners.',
     type: 'string',
-    defaultValue: 'white',
+    defaultValue: '4px',
   },
   'layer.border.intelligentRounding': {
     description: `Whether the border-radius of the Layer should adapt based on 

@@ -18,7 +18,9 @@ export const DynamicFields = () => {
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            validate="blur"
             onReset={event => console.log(event)}
+            onValidate={event => console.log('Validate', event)}
             onSubmit={({ value }) => console.log('Submit', value)}
           >
             <FormField label="Name" name="name" required>

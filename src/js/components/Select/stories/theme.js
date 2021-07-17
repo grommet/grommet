@@ -1,6 +1,4 @@
-import { rgba } from 'polished';
-
-import { CaretDownFill, FormCheckmark } from 'grommet-icons';
+import { CaretDownFill, CaretUpFill, FormCheckmark } from 'grommet-icons';
 
 import { normalizeColor } from '../../../utils';
 
@@ -9,9 +7,15 @@ import { SearchInput } from './components/SearchInput';
 export const theme = {
   global: {
     colors: {
+      selected: 'neutral-3',
       border: '#e0e0e0',
       focus: '#2196F3',
-      gray: rgba(0, 0, 0, 0.54),
+      gray: 'rgba(0, 0, 0, 0.54)',
+    },
+    control: {
+      border: {
+        radius: '24px',
+      },
     },
     drop: {
       background: '#ffffff',
@@ -26,10 +30,17 @@ export const theme = {
     },
     font: {
       family: 'Arial',
+      size: '12px',
+    },
+    input: {
+      weight: 400,
     },
     size: {
       xxsmall: '24px',
     },
+  },
+  text: {
+    medium: '13px',
   },
   checkBox: {
     border: {
@@ -43,8 +54,10 @@ export const theme = {
     },
     check: {
       extend: ({ theme: extendTheme, checked }) => `
-        ${checked &&
-          `background-color: ${normalizeColor('brand', extendTheme)};`}
+        ${
+          checked &&
+          `background-color: ${normalizeColor('brand', extendTheme)};`
+        }
       `,
     },
     hover: {
@@ -69,8 +82,18 @@ export const theme = {
     maxHeight: '384px',
   },
   select: {
+    control: {
+      extend: 'padding: 3px 6px;',
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB',
+      },
+    },
     icons: {
       down: CaretDownFill,
+      up: CaretUpFill,
+      color: 'dark-1',
+      margin: 'small',
     },
     searchInput: SearchInput,
     container: {
@@ -81,7 +104,7 @@ export const theme = {
     },
   },
   textInput: {
-    extend: props => `
+    extend: (props) => `
       color: ${normalizeColor('gray', props.theme)};
       font-weight: 400;
       font-size: 13px;

@@ -10,6 +10,7 @@ const TextArea = forwardRef(
     {
       a11yTitle,
       fill,
+      focusIndicator = true,
       name,
       onBlur,
       onChange,
@@ -26,7 +27,7 @@ const TextArea = forwardRef(
 
     return (
       <Keyboard
-        onEsc={event => {
+        onEsc={(event) => {
           // we have to stop both synthetic events and native events
           // drop and layer should not close by pressing esc on this input
           event.stopPropagation();
@@ -41,16 +42,17 @@ const TextArea = forwardRef(
           fillArg={fill}
           focus={focus}
           value={value}
+          focusIndicator={focusIndicator}
           {...rest}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.target.value);
             if (onChange) onChange(event);
           }}
