@@ -470,7 +470,8 @@ number
 
 **searchValue**
 
-Text to use in the search input to filter Select options.
+Search Value text to use in the search box to
+      search some option on the Select component.
 
 ```
 string
