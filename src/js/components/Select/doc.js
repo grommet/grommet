@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-export const doc = Select => {
+export const doc = (Select) => {
   const DocumentedSelect = describe(Select)
     .availableAt(getAvailableAtBadge('Select', 'Input'))
     .description('A control to select a value, with optional search.')
@@ -130,8 +130,8 @@ export const doc = Select => {
       multiple: PropTypes.string,
     }).description('Custom messages.'),
     multiple: PropTypes.bool.description(
-      `Whether to allow multiple options to be selected. When multiple is true, 
-      'value' should be an array of selected options and 'options' should be 
+      `Whether to allow multiple options to be selected. When multiple is true,
+      'value' should be an array of selected options and 'options' should be
       an array of possible options`,
     ),
     name: PropTypes.string.description(
@@ -187,7 +187,7 @@ export const doc = Select => {
       )
       .defaultValue(true),
     searchPlaceholder: PropTypes.string.description(
-      `Placeholder text to use in the search box when the search input is 
+      `Placeholder text to use in the search box when the search input is
       empty.`,
     ),
     selected: PropTypes.oneOfType([
@@ -219,8 +219,7 @@ export const doc = Select => {
       the value is rendered. Passing an element is deprecated. Instead,
       use the 'valueLabel' property.`),
     searchValue: PropTypes.string.description(
-      `Search Value text to use in the search box to
-      search some option on the Select component.`,
+      `Text to use in the search input to filter Select options.`,
     ),
     valueLabel: PropTypes.node.description(
       `Provides custom rendering of the value. If not provided, Select
