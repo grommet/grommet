@@ -36,12 +36,15 @@ test('Image renders', () => {
 });
 
 test('Image renders with aria-label', () => {
-  const { container } = render(
+  const { container, getByLabelText } = render(
     <Grommet>
       <Image a11yTitle="aria-label-text" src={SRC} />
+      <Image aria-label="aria-label-text-2" src={SRC} />
     </Grommet>,
   );
 
+  expect(getByLabelText('aria-label-text')).toBeTruthy();
+  expect(getByLabelText('aria-label-text-2')).toBeTruthy();
   expect(container.firstChild).toMatchSnapshot();
 });
 

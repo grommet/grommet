@@ -52,6 +52,7 @@ To make a selection:
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
+    'aria-label': ariaLabel,
     children,
     disabled,
     dropAlign,
@@ -238,7 +239,9 @@ const Menu = forwardRef((props, ref) => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={a11yTitle || format({ id: 'menu.closeMenu', messages })}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
+        }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -271,7 +274,9 @@ const Menu = forwardRef((props, ref) => {
         ref={ref}
         {...rest}
         {...buttonProps}
-        a11yTitle={a11yTitle || format({ id: 'menu.openMenu', messages })}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
+        }
         onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}

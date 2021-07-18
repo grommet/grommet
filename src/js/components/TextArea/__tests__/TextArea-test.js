@@ -229,4 +229,17 @@ describe('TextArea', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <TextArea a11yTitle="item" id="item" name="item" />
+        <TextArea aria-label="item-2" id="item-2" name="item-2" />
+      </Grommet>,
+    );
+
+    expect(getByLabelText('item')).toBeTruthy();
+    expect(getByLabelText('item-2')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
