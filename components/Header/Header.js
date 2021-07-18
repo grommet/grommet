@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var Header = function Header(_ref) {
+var Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var rest = _extends({}, _ref);
 
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
@@ -21,9 +21,12 @@ var Header = function Header(_ref) {
     flex: false,
     justify: "between",
     gap: "medium"
-  }, rest));
-};
+  }, rest, {
+    ref: ref
+  }));
+});
 
+Header.displayName = 'Header';
 var HeaderDoc;
 
 if (process.env.NODE_ENV !== 'production') {

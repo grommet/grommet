@@ -24,12 +24,12 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       active = _ref.active,
       onClickRow = _ref.onClickRow,
       datum = _ref.datum,
-      setActive = _ref.setActive,
       selected = _ref.selected,
       onSelect = _ref.onSelect,
       isSelected = _ref.isSelected,
       rowDetails = _ref.rowDetails,
       isRowExpanded = _ref.isRowExpanded,
+      setActive = _ref.setActive,
       setRowExpand = _ref.setRowExpand,
       rowExpand = _ref.rowExpand,
       columns = _ref.columns,
@@ -49,15 +49,9 @@ var Row = /*#__PURE__*/memo(function (_ref) {
       onClickRow(adjustedEvent);
     } : undefined,
     onMouseEnter: onClickRow ? function () {
-      return setActive(index);
+      setActive(index);
     } : undefined,
     onMouseLeave: onClickRow ? function () {
-      return setActive(undefined);
-    } : undefined,
-    onFocus: onClickRow ? function () {
-      return setActive(index);
-    } : undefined,
-    onBlur: onClickRow ? function () {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
@@ -134,6 +128,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       active = _React$useState[0],
       setActive = _React$useState[1];
 
+  var _React$useState2 = React.useState(),
+      lastActive = _React$useState2[0],
+      setLastActive = _React$useState2[1];
+
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onClickRow && active >= 0 ? function (event) {
       event.persist();
@@ -142,7 +140,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       onClickRow(adjustedEvent);
     } : undefined,
     onUp: onClickRow && active ? function () {
-      setActive(active - 1);
+      return setActive(active - 1);
     } : undefined,
     onDown: onClickRow && data.length ? function () {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
@@ -150,7 +148,14 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     ref: ref,
     size: size,
-    tabIndex: onClickRow ? 0 : undefined
+    tabIndex: onClickRow ? 0 : undefined,
+    onFocus: function onFocus() {
+      return !active && active !== 0 ? setActive(lastActive) : setActive(active);
+    },
+    onBlur: function onBlur() {
+      setLastActive(active);
+      setActive(undefined);
+    }
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: data,
     onMore: onMore,
@@ -168,6 +173,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(Row, {
       key: index,
+      setActive: setActive,
       rowRef: rowRef,
       cellProps: cellProps,
       primaryValue: primaryValue,
@@ -178,7 +184,6 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       active: active >= 0 ? active === index : undefined,
       onClickRow: onClickRow,
       datum: datum,
-      setActive: setActive,
       selected: selected,
       onSelect: onSelect,
       rowDetails: rowDetails,

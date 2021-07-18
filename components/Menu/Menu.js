@@ -23,7 +23,7 @@ var _utils = require("../../utils");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
-var _excluded = ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
+var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
     _excluded2 = ["align"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -63,6 +63,7 @@ To make a selection:
 
 var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
+      ariaLabel = props['aria-label'],
       children = props.children,
       disabled = props.disabled,
       dropAlign = props.dropAlign,
@@ -248,7 +249,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
     },
-    a11yTitle: a11yTitle || format({
+    a11yTitle: ariaLabel || a11yTitle || format({
       id: 'menu.closeMenu',
       messages: messages
     }),
@@ -280,7 +281,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
     ref: ref
   }, rest, buttonProps, {
-    a11yTitle: a11yTitle || format({
+    a11yTitle: ariaLabel || a11yTitle || format({
       id: 'menu.openMenu',
       messages: messages
     }),

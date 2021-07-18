@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
+var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -44,6 +44,7 @@ var defaultDropAlign = {
 };
 var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       alignSelf = _ref.alignSelf,
       children = _ref.children,
       _ref$clear = _ref.clear,
@@ -287,7 +288,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onUp: onRequestOpen
   }, /*#__PURE__*/React.createElement(StyledSelectDropButton, {
     ref: ref,
-    a11yTitle: a11yTitle,
+    a11yTitle: ariaLabel || a11yTitle,
     id: id,
     disabled: disabled === true || undefined,
     dropAlign: dropAlign,
@@ -347,7 +348,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: inputRef,
     readOnly: true
   })) : /*#__PURE__*/React.createElement(SelectTextInput, _extends({
-    a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
+    a11yTitle: (ariaLabel || a11yTitle) && "" + (ariaLabel || a11yTitle) + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
     // but not have disabled styling come from TextInput
     // Disabled can be a bool or an array of options to disable.
     // We only want to disable the TextInput if the control

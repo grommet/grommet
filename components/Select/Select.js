@@ -27,7 +27,7 @@ var _utils2 = require("./utils");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
-var _excluded = ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
+var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -67,6 +67,7 @@ var defaultDropAlign = {
 };
 var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       alignSelf = _ref.alignSelf,
       children = _ref.children,
       _ref$clear = _ref.clear,
@@ -311,7 +312,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onUp: onRequestOpen
   }, /*#__PURE__*/_react["default"].createElement(StyledSelectDropButton, {
     ref: ref,
-    a11yTitle: a11yTitle,
+    a11yTitle: ariaLabel || a11yTitle,
     id: id,
     disabled: disabled === true || undefined,
     dropAlign: dropAlign,
@@ -371,7 +372,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: inputRef,
     readOnly: true
   })) : /*#__PURE__*/_react["default"].createElement(SelectTextInput, _extends({
-    a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
+    a11yTitle: (ariaLabel || a11yTitle) && "" + (ariaLabel || a11yTitle) + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
     // but not have disabled styling come from TextInput
     // Disabled can be a bool or an array of options to disable.
     // We only want to disable the TextInput if the control

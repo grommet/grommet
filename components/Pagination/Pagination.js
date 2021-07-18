@@ -15,7 +15,7 @@ var _Nav = require("../Nav");
 
 var _PageControl = require("./PageControl");
 
-var _excluded = ["a11yTitle", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
+var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -44,6 +44,7 @@ var getPageIndices = function getPageIndices(begin, end) {
 
 var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       numberItems = _ref.numberItems,
       _ref$numberEdgePages = _ref.numberEdgePages,
       numberEdgePages = _ref$numberEdgePages === void 0 ? 1 : _ref$numberEdgePages,
@@ -173,7 +174,7 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }, navProps[control]);
   });
   return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({}, theme.pagination.container, rest), /*#__PURE__*/_react["default"].createElement(_Nav.Nav, {
-    a11yTitle: a11yTitle || 'Pagination Navigation',
+    a11yTitle: ariaLabel || a11yTitle || 'Pagination Navigation',
     ref: ref
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     as: "ul"

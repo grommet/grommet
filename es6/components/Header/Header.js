@@ -2,8 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { Box } from '../Box';
-
-var Header = function Header(_ref) {
+var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var rest = _extends({}, _ref);
 
   return /*#__PURE__*/React.createElement(Box, _extends({
@@ -13,9 +12,11 @@ var Header = function Header(_ref) {
     flex: false,
     justify: "between",
     gap: "medium"
-  }, rest));
-};
-
+  }, rest, {
+    ref: ref
+  }));
+});
+Header.displayName = 'Header';
 var HeaderDoc;
 
 if (process.env.NODE_ENV !== 'production') {

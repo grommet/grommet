@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
+var _excluded = ["a11yTitle", "aria-label", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -25,6 +25,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref2;
 
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       checkedProp = _ref.checked,
       _ref$defaultChecked = _ref.defaultChecked,
       defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
@@ -169,7 +170,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/React.createElement(StyledCheckBoxContainer, _extends({
-    "aria-label": a11yTitle,
+    "aria-label": ariaLabel || a11yTitle,
     fillProp: fill,
     reverse: reverse
   }, removeUndefined({

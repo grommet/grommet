@@ -25,8 +25,6 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var RoutedAnchor = /*#__PURE__*/function (_Component) {
   _inheritsLoose(RoutedAnchor, _Component);
 
@@ -81,14 +79,12 @@ var RoutedAnchor = /*#__PURE__*/function (_Component) {
   return RoutedAnchor;
 }(_react.Component);
 
-_defineProperty(RoutedAnchor, "contextTypes", {
+RoutedAnchor.contextTypes = {
   router: _propTypes["default"].shape({}).isRequired
-});
-
-_defineProperty(RoutedAnchor, "defaultProps", {
+};
+RoutedAnchor.defaultProps = {
   method: 'push'
-});
-
+};
 var RoutedAnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -7,7 +7,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledGrid = require("./StyledGrid");
 
-var _excluded = ["a11yTitle", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
+var _excluded = ["a11yTitle", "aria-label", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -19,6 +19,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
+      ariaLabel = props['aria-label'],
       border = props.border,
       fill = props.fill,
       height = props.height,
@@ -32,7 +33,7 @@ var Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
   return /*#__PURE__*/_react["default"].createElement(_StyledGrid.StyledGrid, _extends({
     ref: ref,
-    a11yTitleProp: a11yTitle,
+    a11yTitleProp: ariaLabel || a11yTitle,
     as: !as && tag ? tag : as,
     border: border,
     fillContainer: fill,

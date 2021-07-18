@@ -19,7 +19,7 @@ var _StyledCheckBox = require("./StyledCheckBox");
 
 var _utils = require("../../utils");
 
-var _excluded = ["a11yTitle", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
+var _excluded = ["a11yTitle", "aria-label", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -41,6 +41,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref2;
 
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       checkedProp = _ref.checked,
       _ref$defaultChecked = _ref.defaultChecked,
       defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
@@ -188,7 +189,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
-    "aria-label": a11yTitle,
+    "aria-label": ariaLabel || a11yTitle,
     fillProp: fill,
     reverse: reverse
   }, (0, _object.removeUndefined)({

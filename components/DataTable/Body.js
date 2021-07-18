@@ -44,12 +44,12 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       active = _ref.active,
       onClickRow = _ref.onClickRow,
       datum = _ref.datum,
-      setActive = _ref.setActive,
       selected = _ref.selected,
       onSelect = _ref.onSelect,
       isSelected = _ref.isSelected,
       rowDetails = _ref.rowDetails,
       isRowExpanded = _ref.isRowExpanded,
+      setActive = _ref.setActive,
       setRowExpand = _ref.setRowExpand,
       rowExpand = _ref.rowExpand,
       columns = _ref.columns,
@@ -69,15 +69,9 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
       onClickRow(adjustedEvent);
     } : undefined,
     onMouseEnter: onClickRow ? function () {
-      return setActive(index);
+      setActive(index);
     } : undefined,
     onMouseLeave: onClickRow ? function () {
-      return setActive(undefined);
-    } : undefined,
-    onFocus: onClickRow ? function () {
-      return setActive(index);
-    } : undefined,
-    onBlur: onClickRow ? function () {
       return setActive(undefined);
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
@@ -154,6 +148,10 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       active = _React$useState[0],
       setActive = _React$useState[1];
 
+  var _React$useState2 = _react["default"].useState(),
+      lastActive = _React$useState2[0],
+      setLastActive = _React$useState2[1];
+
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onClickRow && active >= 0 ? function (event) {
       event.persist();
@@ -162,7 +160,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       onClickRow(adjustedEvent);
     } : undefined,
     onUp: onClickRow && active ? function () {
-      setActive(active - 1);
+      return setActive(active - 1);
     } : undefined,
     onDown: onClickRow && data.length ? function () {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
@@ -170,7 +168,14 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: ref,
     size: size,
-    tabIndex: onClickRow ? 0 : undefined
+    tabIndex: onClickRow ? 0 : undefined,
+    onFocus: function onFocus() {
+      return !active && active !== 0 ? setActive(lastActive) : setActive(active);
+    },
+    onBlur: function onBlur() {
+      setLastActive(active);
+      setActive(undefined);
+    }
   }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
@@ -188,6 +193,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/_react["default"].createElement(Row, {
       key: index,
+      setActive: setActive,
       rowRef: rowRef,
       cellProps: cellProps,
       primaryValue: primaryValue,
@@ -198,7 +204,6 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       active: active >= 0 ? active === index : undefined,
       onClickRow: onClickRow,
       datum: datum,
-      setActive: setActive,
       selected: selected,
       onSelect: onSelect,
       rowDetails: rowDetails,

@@ -372,14 +372,17 @@ var DataTable = function DataTable(_ref) {
     groupState: groupState,
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
+    onMore: onMore,
     onSelect: onSelect ? function (nextSelected) {
       setSelected(nextSelected);
       if (onSelect) onSelect(nextSelected);
     } : undefined,
     onToggle: onToggleGroup,
+    replace: replace,
     rowProps: rowProps,
     selected: selected,
-    size: size
+    size: size,
+    step: step
   }) : /*#__PURE__*/React.createElement(Body, {
     ref: bodyRef,
     cellProps: cellProps.body,

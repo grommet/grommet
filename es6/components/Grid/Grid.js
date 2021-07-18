@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
+var _excluded = ["a11yTitle", "aria-label", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -8,6 +8,7 @@ import React, { forwardRef } from 'react';
 import { StyledGrid } from './StyledGrid';
 var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
+      ariaLabel = props['aria-label'],
       border = props.border,
       fill = props.fill,
       height = props.height,
@@ -21,7 +22,7 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
 
   return /*#__PURE__*/React.createElement(StyledGrid, _extends({
     ref: ref,
-    a11yTitleProp: a11yTitle,
+    a11yTitleProp: ariaLabel || a11yTitle,
     as: !as && tag ? tag : as,
     border: border,
     fillContainer: fill,

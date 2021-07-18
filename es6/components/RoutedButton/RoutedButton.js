@@ -4,13 +4,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -28,7 +24,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(_args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "onClick", function (event) {
+    _this.onClick = function (event) {
       var _this$props = _this.props,
           method = _this$props.method,
           onClick = _this$props.onClick,
@@ -55,7 +51,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
 
         onClick.apply(void 0, [event].concat(args));
       }
-    });
+    };
 
     return _this;
   }
@@ -84,14 +80,12 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
   return RoutedButton;
 }(Component);
 
-_defineProperty(RoutedButton, "contextTypes", {
+RoutedButton.contextTypes = {
   router: PropTypes.shape({}).isRequired
-});
-
-_defineProperty(RoutedButton, "defaultProps", {
+};
+RoutedButton.defaultProps = {
   method: 'push'
-});
-
+};
 var RoutedButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {

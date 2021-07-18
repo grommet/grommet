@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -13,6 +13,7 @@ import { StyledAnchor } from './StyledAnchor';
 import { AnchorType } from './propTypes';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
@@ -48,7 +49,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var second = reverse ? coloredIcon : label;
   return /*#__PURE__*/React.createElement(StyledAnchor, _extends({}, rest, {
     ref: ref,
-    "aria-label": a11yTitle,
+    "aria-label": ariaLabel || a11yTitle,
     colorProp: color,
     disabled: disabled,
     hasIcon: !!icon,

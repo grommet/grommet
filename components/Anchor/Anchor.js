@@ -17,7 +17,7 @@ var _StyledAnchor = require("./StyledAnchor");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -29,6 +29,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
@@ -64,7 +65,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var second = reverse ? coloredIcon : label;
   return /*#__PURE__*/_react["default"].createElement(_StyledAnchor.StyledAnchor, _extends({}, rest, {
     ref: ref,
-    "aria-label": a11yTitle,
+    "aria-label": ariaLabel || a11yTitle,
     colorProp: color,
     disabled: disabled,
     hasIcon: !!icon,

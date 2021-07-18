@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
+var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -29,6 +29,7 @@ var getPageIndices = function getPageIndices(begin, end) {
 
 var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      ariaLabel = _ref['aria-label'],
       numberItems = _ref.numberItems,
       _ref$numberEdgePages = _ref.numberEdgePages,
       numberEdgePages = _ref$numberEdgePages === void 0 ? 1 : _ref$numberEdgePages,
@@ -157,7 +158,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, navProps[control]);
   });
   return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({}, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Nav, {
-    a11yTitle: a11yTitle || 'Pagination Navigation',
+    a11yTitle: ariaLabel || a11yTitle || 'Pagination Navigation',
     ref: ref
   }, /*#__PURE__*/React.createElement(Box, _extends({
     as: "ul"

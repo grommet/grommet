@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
+var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
     _excluded2 = ["align"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -44,6 +44,7 @@ To make a selection:
 
 var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
+      ariaLabel = props['aria-label'],
       children = props.children,
       disabled = props.disabled,
       dropAlign = props.dropAlign,
@@ -229,7 +230,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
     },
-    a11yTitle: a11yTitle || format({
+    a11yTitle: ariaLabel || a11yTitle || format({
       id: 'menu.closeMenu',
       messages: messages
     }),
@@ -260,7 +261,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   }, /*#__PURE__*/React.createElement(DropButton, _extends({
     ref: ref
   }, rest, buttonProps, {
-    a11yTitle: a11yTitle || format({
+    a11yTitle: ariaLabel || a11yTitle || format({
       id: 'menu.openMenu',
       messages: messages
     }),
