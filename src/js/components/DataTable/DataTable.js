@@ -366,18 +366,21 @@ const DataTable = ({
               groupState={groupState}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
+              onMore={onMore}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
-                      setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
-                    }
-                  : undefined
+                ? (nextSelected) => {
+                  setSelected(nextSelected);
+                  if (onSelect) onSelect(nextSelected);
+                }
+                : undefined
               }
               onToggle={onToggleGroup}
+              replace={replace}
               rowProps={rowProps}
               selected={selected}
               size={size}
+              step={step}
             />
           ) : (
             <Body

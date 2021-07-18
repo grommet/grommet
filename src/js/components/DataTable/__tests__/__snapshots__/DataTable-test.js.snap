@@ -8204,7 +8204,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 class="c10 c11"
               >
                 <input
-                  checked=""
                   class="c12"
                   type="checkbox"
                 />
