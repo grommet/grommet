@@ -189,4 +189,16 @@ describe('Anchor', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Anchor href="#" label="Test" a11yTitle="test" />
+        <Anchor href="#" label="Test" aria-label="test-2" />
+      </Grommet>,
+    );
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
 });

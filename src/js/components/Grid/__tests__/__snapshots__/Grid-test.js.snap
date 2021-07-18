@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grid a11yTitle renders 1`] = `
+exports[`Grid a11yTitle and aria-label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -22,6 +22,10 @@ exports[`Grid a11yTitle renders 1`] = `
   >
     <div
       aria-label="My Grid"
+      class="c1"
+    />
+    <div
+      aria-label="My Other Grid"
       class="c1"
     />
   </div>
