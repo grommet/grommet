@@ -1,19 +1,15 @@
 import React from 'react';
-
-import { cleanup, render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 import 'jest-axe/extend-expect';
-import { axe } from 'jest-axe';
 
 import { Node } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Spinner } from '..';
 
 describe('Spinner', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -23,22 +19,22 @@ describe('Spinner', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Spinner />
         <Spinner id="test id" name="test name" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Spinner size="xsmall" />
         <Spinner size="small" />
@@ -47,12 +43,12 @@ describe('Spinner', () => {
         <Spinner size="xlarge" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Spinner color="graph-0" />
         <Spinner color="graph-1" />
@@ -61,12 +57,12 @@ describe('Spinner', () => {
         <Spinner color="graph-4" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Spinner round={false} />
         <Spinner round="small" />
@@ -74,12 +70,12 @@ describe('Spinner', () => {
         <Spinner round="large" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border renders', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Spinner
           border={[
@@ -120,8 +116,8 @@ describe('Spinner', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('spinner changes according to theme', () => {
@@ -140,13 +136,13 @@ describe('Spinner', () => {
       },
     };
 
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={theme}>
         <Spinner />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('spinner icon changes according to theme', () => {
@@ -163,12 +159,12 @@ describe('Spinner', () => {
       },
     };
 
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={theme}>
         <Spinner />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

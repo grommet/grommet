@@ -4,7 +4,7 @@ import { colorPropType, genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
-export const doc = Heading => {
+export const doc = (Heading) => {
   const DocumentedHeading = describe(Heading)
     .availableAt(getAvailableAtBadge('Heading', 'Type'))
     .description('Heading text structured in levels.')
@@ -46,7 +46,7 @@ correctness and accessibility. This size property allows for stylistic
 adjustments.`,
       )
       .defaultValue('medium'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+    textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify'])
       .description('How to align the text inside the heading.')
       .defaultValue('start'),
     truncate: PropTypes.bool

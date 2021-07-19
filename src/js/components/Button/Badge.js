@@ -8,7 +8,7 @@ import { Stack } from '../Stack';
 import { Text } from '../Text';
 
 const StyledBadgeContainer = styled(Box)`
-  ${props => props.theme.button.badge.container.extend}
+  ${(props) => props.theme.button.badge.container.extend}
 `;
 
 export const Badge = ({ children, content }) => {
@@ -41,10 +41,8 @@ export const Badge = ({ children, content }) => {
           typeof content === 'number' ||
           (typeof content === 'object' && content.value)
         ) {
-          const {
-            height: contentHeight,
-            width: contentWidth,
-          } = contentRef.current.getBoundingClientRect();
+          const { height: contentHeight, width: contentWidth } =
+            contentRef.current.getBoundingClientRect();
 
           // only adjust the width if contentHeight > 0
           // jest returns 0 for all getBoundingClientRect values,

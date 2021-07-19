@@ -25,6 +25,7 @@ import {
   buildGroupState,
   filterAndSortData,
   initializeFilters,
+  normalizeCellProps,
   normalizePrimaryProperty,
 } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
@@ -33,27 +34,6 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
-
-const contexts = ['header', 'body', 'footer'];
-
-const normalizeProp = (prop, context) => {
-  if (prop) {
-    if (prop[context]) {
-      return prop[context];
-    }
-
-    // if prop[context] wasn't defined, but other values
-    // exist on the prop, return undefined so that background
-    // for context will defaultto theme values instead
-    // note: need to include `pinned` since it is not a
-    // defined context
-    if (contexts.some(c => prop[c] || prop.pinned)) {
-      return undefined;
-    }
-    return prop;
-  }
-  return undefined;
-};
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -110,9 +90,10 @@ const DataTable = ({
   );
 
   // whether or not we should show a footer
-  const showFooter = useMemo(() => columns.filter(c => c.footer).length > 0, [
-    columns,
-  ]);
+  const showFooter = useMemo(
+    () => columns.filter((c) => c.footer).length > 0,
+    [columns],
+  );
 
   // what column we are actively capturing filter input on
   const [filtering, setFiltering] = useState();
@@ -130,17 +111,22 @@ const DataTable = ({
   );
 
   // the values to put in the footer cells
-  const footerValues = useMemo(() => buildFooterValues(columns, adjustedData), [
-    adjustedData,
-    columns,
-  ]);
+  const footerValues = useMemo(
+    () => buildFooterValues(columns, adjustedData),
+    [adjustedData, columns],
+  );
+
+  // cell styling properties: background, border, pad
+  const cellProps = useMemo(
+    () => normalizeCellProps({ background, border, pad, pin }, theme),
+    [background, border, pad, pin, theme],
+  );
 
   // if groupBy, an array with one item per unique groupBy key value
-  const groups = useMemo(() => buildGroups(columns, adjustedData, groupBy), [
-    adjustedData,
-    columns,
-    groupBy,
-  ]);
+  const groups = useMemo(
+    () => buildGroups(columns, adjustedData, groupBy),
+    [adjustedData, columns, groupBy],
+  );
 
   // an object indicating which group values are expanded
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
@@ -148,10 +134,10 @@ const DataTable = ({
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
   );
-  useEffect(() => setSelected(select || (onSelect && []) || undefined), [
-    onSelect,
-    select,
-  ]);
+  useEffect(
+    () => setSelected(select || (onSelect && []) || undefined),
+    [onSelect, select],
+  );
 
   const [rowExpand, setRowExpand] = useState([]);
 
@@ -172,10 +158,10 @@ const DataTable = ({
   const [pinnedOffset, setPinnedOffset] = useState();
 
   const onHeaderWidths = useCallback(
-    columnWidths => {
+    (columnWidths) => {
       const pinnedProperties = columns
-        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
-        .filter(n => n);
+        .map((pinnedColumn) => pinnedColumn.pin && pinnedColumn.property)
+        .filter((n) => n);
 
       const nextPinnedOffset = {};
 
@@ -184,7 +170,7 @@ const DataTable = ({
           const hasSelectColumn = Boolean(select || onSelect);
 
           const columnIndex =
-            columns.findIndex(column => column.property === property) +
+            columns.findIndex((column) => column.property === property) +
             hasSelectColumn;
 
           if (columnWidths[columnIndex]) {
@@ -215,20 +201,20 @@ const DataTable = ({
   useLayoutEffect(() => {
     if (placeholder) {
       if (headerRef.current) {
-        const nextHeaderHeight = headerRef.current.getBoundingClientRect()
-          .height;
+        const nextHeaderHeight =
+          headerRef.current.getBoundingClientRect().height;
         setHeaderHeight(nextHeaderHeight);
       } else setHeaderHeight(0);
       if (footerRef.current) {
-        const nextFooterHeight = footerRef.current.getBoundingClientRect()
-          .height;
+        const nextFooterHeight =
+          footerRef.current.getBoundingClientRect().height;
         setFooterHeight(nextFooterHeight);
       } else setFooterHeight(0);
     }
   }, [footerRef, headerRef, placeholder]);
 
   // remember that we are filtering on this property
-  const onFiltering = property => setFiltering(property);
+  const onFiltering = (property) => setFiltering(property);
 
   // remember the search text we should filter this property by
   const onFilter = (property, value) => {
@@ -240,7 +226,7 @@ const DataTable = ({
   };
 
   // toggle the sort direction on this property
-  const onSort = property => () => {
+  const onSort = (property) => () => {
     const external = sort ? sort.external : false;
     let direction;
     if (!sort || property !== sort.property) direction = 'asc';
@@ -252,7 +238,7 @@ const DataTable = ({
   };
 
   // toggle whether the group is expanded
-  const onToggleGroup = groupValue => () => {
+  const onToggleGroup = (groupValue) => () => {
     const nextGroupState = { ...groupState };
     nextGroupState[groupValue] = {
       ...nextGroupState[groupValue],
@@ -261,7 +247,7 @@ const DataTable = ({
     setGroupState(nextGroupState);
     if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
-        k => nextGroupState[k].expanded,
+        (k) => nextGroupState[k].expanded,
       );
       groupBy.onExpand(expandedKeys);
     }
@@ -270,15 +256,16 @@ const DataTable = ({
   // toggle whether all groups are expanded
   const onToggleGroups = () => {
     const expanded =
-      Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
+      Object.keys(groupState).filter((k) => !groupState[k].expanded).length ===
+      0;
     const nextGroupState = {};
-    Object.keys(groupState).forEach(k => {
+    Object.keys(groupState).forEach((k) => {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     setGroupState(nextGroupState);
     if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
-        k => nextGroupState[k].expanded,
+        (k) => nextGroupState[k].expanded,
       );
       groupBy.onExpand(expandedKeys);
     }
@@ -337,8 +324,7 @@ const DataTable = ({
         >
           <Header
             ref={headerRef}
-            background={normalizeProp(background, 'header')}
-            border={normalizeProp(border, 'header')}
+            cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
             fill={fill}
@@ -346,7 +332,6 @@ const DataTable = ({
             filters={filters}
             groups={groups}
             groupState={groupState}
-            pad={normalizeProp(pad, 'header')}
             pin={pin === true || pin === 'header'}
             pinnedOffset={pinnedOffset}
             selected={selected}
@@ -358,7 +343,7 @@ const DataTable = ({
             onResize={resizeable ? onResize : undefined}
             onSelect={
               onSelect
-                ? nextSelected => {
+                ? (nextSelected) => {
                     setSelected(nextSelected);
                     if (onSelect) onSelect(nextSelected);
                   }
@@ -374,32 +359,33 @@ const DataTable = ({
           {groups ? (
             <GroupedBody
               ref={bodyRef}
-              background={normalizeProp(background, 'body')}
-              border={normalizeProp(border, 'body')}
+              cellProps={cellProps.body}
               columns={columns}
               groupBy={groupBy.property ? groupBy.property : groupBy}
               groups={groups}
               groupState={groupState}
-              pad={normalizeProp(pad, 'body')}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
+              onMore={onMore}
               onSelect={
                 onSelect
-                  ? nextSelected => {
+                  ? (nextSelected) => {
                       setSelected(nextSelected);
                       if (onSelect) onSelect(nextSelected);
                     }
                   : undefined
               }
               onToggle={onToggleGroup}
+              replace={replace}
+              rowProps={rowProps}
               selected={selected}
               size={size}
+              step={step}
             />
           ) : (
             <Body
               ref={bodyRef}
-              background={normalizeProp(background, 'body')}
-              border={normalizeProp(border, 'body')}
+              cellProps={cellProps.body}
               columns={columns}
               data={!paginate ? adjustedData : items}
               onMore={onMore}
@@ -407,14 +393,13 @@ const DataTable = ({
               onClickRow={onClickRow}
               onSelect={
                 onSelect
-                  ? nextSelected => {
+                  ? (nextSelected) => {
                       setSelected(nextSelected);
                       if (onSelect) onSelect(nextSelected);
                     }
                   : undefined
               }
-              pad={normalizeProp(pad, 'body')}
-              pinnedBackground={normalizeProp(background, 'pinned')}
+              pinnedCellProps={cellProps.pinned}
               pinnedOffset={pinnedOffset}
               placeholder={placeholder}
               primaryProperty={primaryProperty}
@@ -431,14 +416,12 @@ const DataTable = ({
           {showFooter && (
             <Footer
               ref={footerRef}
-              background={normalizeProp(background, 'footer')}
-              border={normalizeProp(border, 'footer')}
+              cellProps={cellProps.footer}
               columns={columns}
               fill={fill}
               footerValues={footerValues}
               groups={groups}
               onSelect={onSelect}
-              pad={normalizeProp(pad, 'footer')}
               pin={pin === true || pin === 'footer'}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}

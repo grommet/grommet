@@ -39,7 +39,7 @@ const edgeSizes = [
 
 const BORDER_SHAPE = getBorderPropType({ includeBetween: false });
 
-export const doc = Grid => {
+export const doc = (Grid) => {
   const DocumentedGrid = describe(Grid)
     .availableAt(getAvailableAtBadge('Grid', 'Layout'))
     .description(
@@ -58,20 +58,29 @@ to create fallback rendering for older browsers, like ie11.`,
 
   DocumentedGrid.propTypes = {
     ...genericProps,
-    align: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
-      .description(
-        `How to align the individual items inside the grid when there is extra
-space in the column axis.`,
-      )
-      .defaultValue('stretch'),
-    alignContent: PropTypes.oneOf([
-      'start',
-      'center',
-      'end',
-      'between',
-      'around',
-      'stretch',
-    ]).description('How to align the contents along the column axis.'),
+    align: PropTypes.oneOfType([
+      PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),
+      PropTypes.string,
+    ]).description(`How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.`),
+    alignContent: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'around',
+        'baseline',
+        'between',
+        'center',
+        'evenly',
+        'end',
+        'start',
+        'stretch',
+      ]),
+      PropTypes.string,
+    ]).description(
+      `How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.`,
+    ),
     areas: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.shape({

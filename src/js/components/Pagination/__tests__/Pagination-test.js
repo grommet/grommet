@@ -139,8 +139,9 @@ describe('Pagination', () => {
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
     fireEvent.click(getByText(expectedPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(expectedPage);
     expect(container.firstChild).toMatchSnapshot();
@@ -229,8 +230,9 @@ describe('Pagination', () => {
 
     const desiredPage = '2';
     fireEvent.click(getByText(desiredPage));
-    const activePage = container.querySelector(`[aria-current="page"]`)
-      .innerHTML;
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
 
     expect(activePage).toEqual(desiredPage);
     expect(container.firstChild).toMatchSnapshot();
@@ -366,6 +368,19 @@ describe('Pagination', () => {
     expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
       '2',
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should apply a11yTitle and aria-label`, () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Pagination a11yTitle="pagination-test" numberItems={NUM_ITEMS} />
+        <Pagination aria-label="pagination-test-2" numberItems={NUM_ITEMS} />
+      </Grommet>,
+    );
+
+    expect(getByLabelText('pagination-test')).toBeTruthy();
+    expect(getByLabelText('pagination-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });

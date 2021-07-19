@@ -344,405 +344,6 @@ Defaults to
 undefined
 \`\`\`
 ",
-  "Anchor": "## Anchor
-A text link.
-
-We have a separate component from the browser
-base so we can style it. You can either set the icon and/or label properties
-or just use children.
-
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js)
-## Usage
-
-\`\`\`javascript
-import { Anchor } from 'grommet';
-<Anchor href={location} label='Label' />
-\`\`\`
-
-## Properties
-
-**a11yTitle**
-
-Custom title to be used by screen readers.
-
-\`\`\`
-string
-\`\`\`
-
-**alignSelf**
-
-How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.
-
-\`\`\`
-start
-center
-end
-stretch
-\`\`\`
-
-**gridArea**
-
-The name of the area to place
-    this inside a parent Grid.
-
-\`\`\`
-string
-\`\`\`
-
-**margin**
-
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
-\`\`\`
-
-**as**
-
-The DOM tag or react component to use for the element.
-
-\`\`\`
-string
-function
-\`\`\`
-
-**color**
-
-Label color and icon color, if not specified on the icon.
-
-\`\`\`
-string
-{
-  dark: string,
-  light: string
-}
-\`\`\`
-
-**disabled**
-
-Whether the anchor is disabled.
-
-\`\`\`
-boolean
-\`\`\`
-
-**href**
-
-Hyperlink reference to place in the anchor.
-
-\`\`\`
-string
-\`\`\`
-
-**icon**
-
-Icon element to place in the anchor.
-
-\`\`\`
-element
-\`\`\`
-
-**label**
-
-Label text to place in the anchor.
-
-\`\`\`
-node
-\`\`\`
-
-**onClick**
-
-Click handler. It can be used, for example,
-        to add analytics and track who clicked in the anchor.
-
-\`\`\`
-function
-\`\`\`
-
-**reverse**
-
-Whether an icon and label should be reversed so that the
-        icon is at the end of the anchor.
-
-\`\`\`
-boolean
-\`\`\`
-
-**size**
-
-The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property,
-typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
-
-\`\`\`
-xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string
-\`\`\`
-
-**weight**
-
-Sets font-weight property for anchor.
-
-\`\`\`
-normal
-bold
-number
-\`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-a
-\`\`\`
-## Theme
-  
-**anchor.color**
-
-The color of the label text and icon strokes. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ light: '#1D67E3', dark: '#6194EB' }
-\`\`\`
-
-**anchor.fontWeight**
-
-The font weight of the label. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
-**anchor.textDecoration**
-
-The text decoration of the label.
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-none
-\`\`\`
-
-**anchor.hover.fontWeight**
-
-The font weight of the label when hovering. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**anchor.hover.textDecoration**
-
-The text decoration of the label when hovering.
-Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-for possible values. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-underline
-\`\`\`
-
-**anchor.hover.extend**
-
-Any additional style for the Anchor when hovering. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**anchor.extend**
-
-Any additional style for the Anchor. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**text.medium.size**
-
-The font size of the text label. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-18px
-\`\`\`
-
-**text.medium.height**
-
-The line height of the text label. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-24px
-\`\`\`
-
-**global.focus.border.color**
-
-The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
-**global.focus.outline.color**
-
-The outline color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**global.focus.outline.size**
-
-The size of the outline around the component when in focus. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**global.focus.shadow.color**
-
-The shadow color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
-**global.focus.shadow.size**
-
-The size of the shadow around the component when in focus. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-2px
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
-\`\`\`
-",
   "Avatar": "## Avatar
 An Avatar.
 
@@ -1129,27 +730,34 @@ string
 **align**
 
 How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.
 
 \`\`\`
-start
+baseline
 center
 end
-baseline
+start
 stretch
+string
 \`\`\`
 
 **alignContent**
 
-How to align the contents when there is extra space in
-        the cross axis. Defaults to \`stretch\`.
+How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.
 
 \`\`\`
-start
-center
-end
-between
 around
+baseline
+between
+center
+evenly
+end
+start
 stretch
+string
 \`\`\`
 
 **animation**
@@ -1980,7 +1588,7 @@ undefined
 
 **box.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
     direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
@@ -2013,7 +1621,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects \`object\`.
 
 Defaults to
@@ -7730,6 +7338,25 @@ The date or date range value(s) in ISO8601 format.
 string
 [string]
 \`\`\`
+
+**size**
+
+The size of the text.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
+string
+\`\`\`
   
 ## Intrinsic element
 
@@ -7763,11 +7390,39 @@ import { Diagram } from 'grommet';
 
 ## Properties
 
+**animation**
+
+Animation to be used by entire Diagram
+
+\`\`\`
+boolean
+pulse
+draw
+{
+  type: 
+    pulse
+    draw,
+  delay: 
+    number
+    string,
+  duration: 
+    number
+    string,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}
+\`\`\`
+
 **connections**
 
 Required. Array of objects describing the connections.
       The 'fromTarget' and 'toTarget' may be either DOM element ids or
       React references.
+      'animation' can be used to give specific connections their own animation.
       'offset' can be used to shift a bit to reduce the amount of overlap
       with other connection lines to make the lines easier to distinguish. Defaults to \`[]\`.
 
@@ -7777,6 +7432,27 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
+  animation: 
+    boolean
+    pulse
+    draw
+    {
+      type: 
+        pulse
+        draw,
+      delay: 
+        number
+        string,
+      duration: 
+        number
+        string,
+      size: 
+        xsmall
+        small
+        medium
+        large
+        xlarge
+    },
   color: 
     string
     {
@@ -7818,6 +7494,23 @@ svg
 \`\`\`
 ## Theme
   
+**diagram.animation**
+
+Configuration for draw and pulse animations in Diagram. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{      
+      pulse: {
+        duration: 1000,
+      },     
+      draw: {
+        duration: 2000,
+      },
+    }
+\`\`\`
+
 **diagram.extend**
 
 Any additional style for Diagram. Expects \`string | (props) => {}\`.
@@ -7836,6 +7529,18 @@ Defaults to
 
 \`\`\`
 accent-1
+\`\`\`
+
+**global.animation**
+
+The animation configuration for Diagram. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      duration: '1s'
+    }
 \`\`\`
 
 **global.colors**
@@ -8808,7 +8513,10 @@ string
 **onChange**
 
 Function that will be called when one or more files are added to 
-      the input. The file(s) can be found in event.target.files.
+      or removed from the input. It will be passed two arguments: the event 
+      and an object with key 'files'. The file(s) can be found in 
+      event.target.files or by deconstructing files from the second argument. 
+      For example: (event, { files }) => {}.
 
 \`\`\`
 function
@@ -9427,7 +9135,8 @@ border
 
 **formField.border.error.color**
 
-The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+The border color of the error. Deprecated, use 
+    error.border.color instead. Expects \`string | {'dark': string, 'light': string}\`.
 
 Defaults to
 
@@ -9533,6 +9242,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**formField.error.border.color**
+
+The border color of the error. Expects \`string | {'dark': string, 'light': string}\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'status-critical' },
 \`\`\`
 
 **formField.error.color**
@@ -9931,27 +9650,35 @@ string
 
 **align**
 
-How to align the individual items inside the grid when there is extra
-space in the column axis. Defaults to \`stretch\`.
+How to align the contents along the cross axis.
+      Any 'align-items' valid CSS value is accepted, including composed
+      ones such 'first baseline' and 'unsafe start'.
 
 \`\`\`
-start
+baseline
 center
 end
+start
 stretch
+string
 \`\`\`
 
 **alignContent**
 
-How to align the contents along the column axis.
+How to align the contents when there is extra space in the cross
+        axis. Any 'align-content' valid CSS value is accepted, including
+        composed ones such 'first baseline' and 'unsafe start'.
 
 \`\`\`
-start
-center
-end
-between
 around
+baseline
+between
+center
+evenly
+end
+start
 stretch
+string
 \`\`\`
 
 **areas**
@@ -10605,6 +10332,22 @@ boolean
 min
 \`\`\`
 
+**options**
+
+Provides a way to assign a unique id to a single DOM node. Currently, 
+        this is only supported for Layer. This prop was created to preserve 
+        backwards compatibility with existing behavior by allowing users to 
+        opt-in to newer behavior.
+
+\`\`\`
+{
+  layer: 
+    {
+      singleId: boolean
+    }
+}
+\`\`\`
+
 **plain**
 
 Whether or not Grommet should apply a global font-family, font-size,
@@ -10658,6 +10401,125 @@ The node where Drop and Layer containers are inserted. Defaults to
 
 \`\`\`
 object
+\`\`\`
+
+**messages**
+
+Custom messages for grommet components. Use this property to
+define messages or a function to get localized messages
+for any grommet children components. Defaults to \`{
+  \\"messages\\": {
+    \\"fileInput\\": {
+      \\"browse\\": \\"browse\\",
+      \\"dropPrompt\\": \\"Drop file here or\\",
+      \\"dropPromptMultiple\\": \\"Drop files here or\\",
+      \\"files\\": \\"files\\",
+      \\"remove\\": \\"remove\\",
+      \\"removeAll\\": \\"remove all\\"
+    },
+    \\"form\\": {
+      \\"invalid\\": \\"invalid\\",
+      \\"required\\": \\"required\\"
+    },
+    \\"menu\\": {
+      \\"openMenu\\": \\"Open Menu\\",
+      \\"closeMenu\\": \\"Close Menu\\"
+    },
+    \\"rangeSelector\\": {
+      \\"lower\\": \\"Lower Bounds\\",
+      \\"upper\\": \\"Upper Bounds\\"
+    },
+    \\"select\\": {
+      \\"multiple\\": \\"multiple\\"
+    },
+    \\"skipLinks\\": {
+      \\"skipTo\\": \\"Skip To:\\"
+    },
+    \\"tabs\\": {
+      \\"tabContents\\": \\"Tab Contents\\"
+    },
+    \\"textInput\\": {
+      \\"enterSelect\\": \\"(Press Enter to Select)\\",
+      \\"suggestionsCount\\": \\"suggestions available\\",
+      \\"suggestionsExist\\": \\"This input has suggestions use arrow keys\\\\n            to navigate\\",
+      \\"suggestionIsOpen\\": \\"Suggestions drop is open, continue to use\\\\n            arrow keys to navigate\\"
+    },
+    \\"video\\": {
+      \\"closeMenu\\": \\"close menu\\",
+      \\"fullScreen\\": \\"full screen\\",
+      \\"progressMeter\\": \\"video progress\\",
+      \\"scrubber\\": \\"scrubber\\",
+      \\"openMenu\\": \\"open menu\\",
+      \\"pauseButton\\": \\"pause\\",
+      \\"playButton\\": \\"play\\",
+      \\"volumeDown\\": \\"volume down\\",
+      \\"volumeUp\\": \\"volume up\\"
+    }
+  }
+}\`.
+
+\`\`\`
+{
+  format: function,
+  messages: 
+    {
+      fileInput: 
+        {
+          browse: string,
+          dropPrompt: string,
+          dropPromptMultiple: string,
+          files: string,
+          remove: string,
+          removeAll: string
+        },
+      form: 
+        {
+          invalid: string,
+          required: string
+        },
+      menu: 
+        {
+          openMenu: string,
+          closeMenu: string
+        },
+      rangeSelector: 
+        {
+          lower: string,
+          upper: string
+        },
+      select: 
+        {
+          multiple: string
+        },
+      skipLinks: 
+        {
+          skipTo: string
+        },
+      tabs: 
+        {
+          tabContents: string
+        },
+      textInput: 
+        {
+          enterSelect: string,
+          suggestionsCount: string,
+          suggestionsExist: string,
+          suggestionIsOpen: string
+        },
+      video: 
+        {
+          closeMenu: string,
+          fullScreen: string,
+          progressMeter: string,
+          scrubber: string,
+          openMenu: string,
+          pauseButton: string,
+          playButton: string,
+          volumeDown: string,
+          volumeUp: string
+        }
+    }
+}
 \`\`\`
   
 ## Intrinsic element
@@ -10900,6 +10762,7 @@ How to align the text inside the heading. Defaults to \`start\`.
 start
 center
 end
+justify
 \`\`\`
 
 **truncate**
@@ -12606,10 +12469,17 @@ boolean
 The size of the text.
 
 \`\`\`
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
 
@@ -14115,6 +13985,7 @@ How to align the text inside the paragraph. Defaults to \`start\`.
 start
 center
 end
+justify
 \`\`\`
   
 ## Intrinsic element
@@ -15905,9 +15776,7 @@ node
 **messages**
 
 Custom messages for SkipLinks. Used for accessibility by screen 
-readers. Defaults to \`{
-  \\"skipTo\\": \\"Skip To:\\"
-}\`.
+readers.
 
 \`\`\`
 {
@@ -17568,6 +17437,27 @@ How to align the text inside the component. Defaults to \`start\`.
 start
 center
 end
+justify
+\`\`\`
+
+**tip**
+
+tooltip or a hint when hovering over the text. If the
+        value is a string and no a11yTitle value is provided, tip value will be
+        used for the a11yTitle default value.
+
+\`\`\`
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string
 \`\`\`
 
 **truncate**
@@ -17796,13 +17686,20 @@ boolean
 
 **size**
 
-The size of the TextArea.
+The size of the text.
 
 \`\`\`
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
   
@@ -18223,13 +18120,20 @@ boolean
 
 **size**
 
-The size of the TextInput.
+The size of the text.
 
 \`\`\`
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
 
@@ -18784,17 +18688,7 @@ boolean
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to \`{
-  \\"closeMenu\\": \\"close menu\\",
-  \\"fullScreen\\": \\"full screen\\",
-  \\"progressMeter\\": \\"video progress\\",
-  \\"scrubber\\": \\"scrubber\\",
-  \\"openMenu\\": \\"open menu\\",
-  \\"pauseButton\\": \\"pause\\",
-  \\"playButton\\": \\"play\\",
-  \\"volumeDown\\": \\"volume down\\",
-  \\"volumeUp\\": \\"volume up\\"
-}\`.
+Custom messages. Used for accessibility by screen readers.
 
 \`\`\`
 {

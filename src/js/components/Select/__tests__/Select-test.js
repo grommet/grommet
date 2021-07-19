@@ -1,9 +1,8 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
@@ -15,7 +14,6 @@ import { Select } from '..';
 describe('Select', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -23,31 +21,35 @@ describe('Select', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
+
     const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dark', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box fill background="dark-1" align="center" justify="center">
           <Select placeholder="Select" options={['one', 'two']} />
         </Box>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('prop: onOpen', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -72,7 +74,7 @@ describe('Select', () => {
   });
 
   test('prop: onClose', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -96,7 +98,7 @@ describe('Select', () => {
   });
 
   test('0 value', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         placeholder="test select"
@@ -104,11 +106,12 @@ describe('Select', () => {
         value={0}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('search', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -137,7 +140,7 @@ describe('Select', () => {
   });
 
   test('search and select', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const onChange = jest.fn();
     const Test = () => {
@@ -148,7 +151,7 @@ describe('Select', () => {
           placeholder="test select"
           options={options}
           onChange={onChange}
-          onSearch={arg => {
+          onSearch={(arg) => {
             onSearch(arg);
             setOptions(['two']);
           }}
@@ -184,7 +187,7 @@ describe('Select', () => {
         options={[{ test: 'one' }, { test: 'two' }]}
         onChange={onChange}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -202,7 +205,7 @@ describe('Select', () => {
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         size="large"
@@ -212,10 +215,11 @@ describe('Select', () => {
         onChange={() => {}}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  ['small', 'medium', 'large'].forEach(dropHeight => {
+  ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
         <Select
@@ -326,7 +330,7 @@ describe('Select', () => {
   });
 
   test('disabled key', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const Test = () => {
       const [value] = React.useState();
       return (
@@ -370,7 +374,7 @@ describe('Select', () => {
         placeholder="test select"
         options={[{ test: 'one' }, { test: 'two' }]}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     // before opening
@@ -599,24 +603,27 @@ describe('Select', () => {
   });
 
   test('renders without icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={false} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders custom icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders default icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('modifies select control style on open', () => {
@@ -956,7 +963,7 @@ describe('Select', () => {
           value={value}
           valueLabel={<span>{value || 'none'}</span>}
           options={['one', 'two']}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.value);
             onChange(event);
           }}
@@ -1002,7 +1009,7 @@ describe('Select', () => {
   });
 
   test('keyboard navigation timeout', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     // scrollIntoView is not implemented in jsdom, so we need to mock.
     // Select keyboard / keyboard nav timeout uses InfiniteScroll which
     // has scrollIntoView as part of its implementation.
@@ -1032,7 +1039,7 @@ describe('Select', () => {
   });
 
   test('Search timeout', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onSearch = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
@@ -1062,7 +1069,7 @@ describe('Select', () => {
   });
 
   test('disabled option value', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { getByPlaceholderText } = render(
       <Grommet>
         <Select
@@ -1278,7 +1285,7 @@ describe('Select', () => {
   });
 
   test('select option by typing should not break if caller passes JSX', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const onChange = jest.fn();
 
     const { getByPlaceholderText, container } = render(
@@ -1309,6 +1316,19 @@ describe('Select', () => {
       which: 13,
     });
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByRole } = render(
+      <Grommet>
+        <Select options={['one', 'two', 'three']} a11yTitle="test" />
+        <Select options={['one', 'two', 'three']} aria-label="test-select" />
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'test' })).toBeTruthy();
+    expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 

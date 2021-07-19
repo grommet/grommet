@@ -1,18 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { axe } from 'jest-axe';
-import { cleanup, render } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { RadioButton } from '..';
 
 describe('RadioButton', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -22,68 +19,69 @@ describe('RadioButton', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RadioButton name="test" value="1" />
         <RadioButton id="test id" name="test" value="2" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RadioButton label="test label" name="test" value="1" />
         <RadioButton label={<div>test label</div>} name="test" value="2" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('checked', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <RadioButton checked name="test" value="1" />
+        <RadioButton checked name="test" value="1" onChange={jest.fn()} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RadioButton disabled name="test" value="1" />
         <RadioButton disabled checked name="test" value="2" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children', () => {
     const child = ({ checked }) => (
       <Box pad="small" background={checked ? 'accent-1' : 'control'} />
     );
-    const component = renderer.create(
+
+    const { container } = render(
       <Grommet>
         <RadioButton name="test" value="1">
           {child}
         </RadioButton>
-        <RadioButton checked name="test" value="2">
+        <RadioButton checked name="test" value="2" onChange={jest.fn()}>
           {child}
         </RadioButton>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('label themed', () => {
@@ -94,13 +92,13 @@ describe('RadioButton', () => {
         },
       },
     };
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={customTheme}>
         <RadioButton label="test" name="test" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('background-color themed', () => {
@@ -114,13 +112,25 @@ describe('RadioButton', () => {
       },
     };
 
-    const component = renderer.create(
+    const { container } = render(
       <Grommet theme={customTheme}>
         <RadioButton name="test" />
       </Grommet>,
     );
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RadioButton name="test" a11yTitle="test" />
+        <RadioButton name="test" aria-label="test-2" />
+      </Grommet>,
+    );
+
+    expect(getByLabelText('test')).toBeTruthy();
+    expect(getByLabelText('test-2')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

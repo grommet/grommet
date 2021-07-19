@@ -355,6 +355,7 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
       size?: string;
+      weight?: number | string;
     };
     graph?: {
       colors?: GraphColorsType;
@@ -775,6 +776,11 @@ export interface ThemeType {
     };
     error?: {
       background?: BackgroundType;
+      border?: BorderType & {
+        error?: {
+          color?: ColorType;
+        };
+      };
       color?: ColorType;
       margin?: MarginType;
       container?: BoxProps;

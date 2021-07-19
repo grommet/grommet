@@ -86,7 +86,7 @@ describe('MaskedInput', () => {
   });
 
   test('mask with long fixed', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -125,7 +125,7 @@ describe('MaskedInput', () => {
   });
 
   test('option via mouse', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -158,7 +158,7 @@ describe('MaskedInput', () => {
   });
 
   test('option via keyboard', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -244,7 +244,7 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via mouse', async () => {
-    const onChangeMock = jest.fn(event => {
+    const onChangeMock = jest.fn((event) => {
       const {
         target: { value, id, name },
       } = event;
@@ -291,7 +291,7 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via keyboard', async () => {
-    const onChangeMock = jest.fn(event => {
+    const onChangeMock = jest.fn((event) => {
       const {
         target: { value, id, name },
       } = event;
@@ -356,7 +356,7 @@ describe('MaskedInput', () => {
       },
     };
 
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <Grommet theme={customTheme}>
         <MaskedInput
@@ -388,7 +388,7 @@ describe('MaskedInput', () => {
   });
 
   test('with no mask', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -436,6 +436,49 @@ describe('MaskedInput', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <MaskedInput />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders size', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput size="xsmall" />
+        <MaskedInput size="small" />
+        <MaskedInput size="medium" />
+        <MaskedInput size="large" />
+        <MaskedInput size="xlarge" />
+        <MaskedInput size="xxlarge" />
+        <MaskedInput size="2xl" />
+        <MaskedInput size="3xl" />
+        <MaskedInput size="4xl" />
+        <MaskedInput size="5xl" />
+        <MaskedInput size="6xl" />
+        <MaskedInput size="16px" />
+        <MaskedInput size="1rem" />
+        <MaskedInput size="100%" />
+      </Grommet>,
+    );
+    expect(container.children).toMatchSnapshot();
+  });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <MaskedInput a11yTitle="masked-input-test" name="item" />
+        <MaskedInput aria-label="masked-input-test-2" name="item" />
+      </Grommet>,
+    );
+    expect(getByLabelText('masked-input-test')).toBeTruthy();
+    expect(getByLabelText('masked-input-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 });
