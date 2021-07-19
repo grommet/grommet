@@ -18,7 +18,7 @@ export const doc = (CheckBoxGroup) => {
       It will be passed an object indicating whether the button is checked. It
       should return a react element.
       For example:
-      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
       `,
     ),
     value: PropTypes.arrayOf(

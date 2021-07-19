@@ -105,7 +105,7 @@ export const CheckBoxGroup = forwardRef(
                 onCheckBoxChange(event, valueOption, optionProps)
               }
             >
-              {children ? (state) => children(option, state) : null}
+              {children ? (state) => children(option.value, state) : null}
             </CheckBox>
           );
         })}
