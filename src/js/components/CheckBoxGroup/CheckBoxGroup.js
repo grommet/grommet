@@ -8,6 +8,7 @@ import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 export const CheckBoxGroup = forwardRef(
   (
     {
+      children,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
@@ -103,7 +104,9 @@ export const CheckBoxGroup = forwardRef(
               onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
-            />
+            >
+              {children ? (state) => children(option, state) : null}
+            </CheckBox>
           );
         })}
       </StyledCheckBoxGroup>

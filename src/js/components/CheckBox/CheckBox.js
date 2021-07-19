@@ -32,6 +32,7 @@ const CheckBox = forwardRef(
       a11yTitle,
       'aria-label': ariaLabel,
       checked: checkedProp,
+      children,
       defaultChecked = false,
       disabled,
       fill,
@@ -191,8 +192,14 @@ const CheckBox = forwardRef(
             if (onChange) onChange(event);
           }}
         />
-        {visual}
-        {hidden}
+        {children ? (
+          children({ checked })
+        ) : (
+          <>
+            {visual}
+            {hidden}
+          </>
+        )}
       </StyledCheckBox>
     );
 

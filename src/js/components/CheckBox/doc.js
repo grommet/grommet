@@ -21,6 +21,14 @@ export const doc = (CheckBox) => {
     checked: PropTypes.bool
       .description('Same as React <input checked={} />')
       .defaultValue(false),
+    children: PropTypes.func.description(
+      `Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      `,
+    ),
     disabled: PropTypes.bool
       .description(
         `Same as React <input disabled={} />. Also adds a hidden input element
