@@ -495,6 +495,40 @@ exports[`renders weight 1`] = `
 </div>
 `;
 
+exports[`should apply a11yTitle or aria-label 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+     Example
+  </span>
+  <span
+    aria-label="test-2"
+    class="c1"
+  >
+    Example
+  </span>
+</div>
+`;
+
 exports[`should have no accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
