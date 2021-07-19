@@ -4037,6 +4037,15 @@ string",
         "name": "id",
       },
       Object {
+        "description": "Specifies a file size limit for the FileInput",
+        "format": "number
+{
+  unit: string,
+  size: number
+}",
+        "name": "maxSize",
+      },
+      Object {
         "defaultValue": Object {
           "browse": "browse",
           "dropPrompt": "Drop file here or",

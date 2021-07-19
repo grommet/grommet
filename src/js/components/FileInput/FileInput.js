@@ -62,6 +62,7 @@ const FileInput = forwardRef(
       id,
       plain,
       renderFile,
+      maxSize,
       messages,
       margin,
       multiple,
@@ -84,6 +85,13 @@ const FileInput = forwardRef(
     const controlRef = useRef();
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
+
+    const { error, info } = formContext.useFormField({
+      error: 'Max Size Error',
+      info: files,
+    });
+
+    console.log(error, info);
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
@@ -119,6 +127,20 @@ const FileInput = forwardRef(
         rightPad = theme.global.edgeSize[horizontal] || horizontal;
       }
     }
+
+    const parseBytes = (bytes) => {
+      if (typeof bytes === 'object') {
+        const { size, unit } = bytes;
+        if (size && unit) {
+          if (unit === 'B') return size;
+          if (unit === 'KB') return size * 1000;
+          if (unit === 'MB') return size * 1000 * 1000;
+          if (unit === 'GB') return size * 1000 * 1000 * 1000;
+          if (unit === 'TB') return size * 1000 * 1000 * 1000 * 1000;
+        }
+      }
+      return bytes;
+    };
 
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
@@ -386,6 +408,7 @@ const FileInput = forwardRef(
           type="file"
           id={id}
           name={name}
+          maxSize={maxSize}
           multiple={multiple}
           disabled={disabled}
           plain
@@ -405,7 +428,10 @@ const FileInput = forwardRef(
                     file.name === fileList[i].name &&
                     file.size === fileList[i].size,
                 ).length > 0;
-              if (!existing) nextFiles.push(fileList[i]);
+              if (!existing) {
+                console.log('Max Size (in bytes): ', parseBytes(maxSize));
+                nextFiles.push(fileList[i]);
+              }
             }
             setFiles(nextFiles);
             setDragOver(false);

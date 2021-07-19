@@ -9149,6 +9149,18 @@ The id attribute of the input.
 string
 \`\`\`
 
+**maxSize**
+
+Specifies a file size limit for the FileInput
+
+\`\`\`
+number
+{
+  unit: string,
+  size: number
+}
+\`\`\`
+
 **messages**
 
 Custom messages for FileInput. Used for accessibility by screen

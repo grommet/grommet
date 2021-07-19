@@ -1,26 +1,62 @@
 import React from 'react';
 
-import { Box, Grommet, FileInput } from 'grommet';
+import { Box, Button, Grommet, FileInput, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Multiple = () => (
-  <Grommet full theme={grommet}>
-    <Box fill align="center" justify="start" pad="large">
-      <Box width="medium">
-        <FileInput
-          multiple
-          onChange={(event, { files }) => {
-            console.log(event);
-            for (let i = 0; i < files.length; i += 1) {
-              const file = files[i];
-              console.log(file.name);
-            }
-          }}
-        />
+/*
+
+  ! Outstanding issues:
+    - Deleting a file and then adding it back does not work
+    - Get maxSize error into errors object
+
+
+  Notes:
+    - For Eric -> building in a default message on Form
+      + User able to override this message
+    - END GOAL:
+      + User only has to supply maxSize to FileInput
+      + The check under the hood should be the near to this:
+        onChange={({ fileInput }) => {                                     
+              fileInput.map(({ name, size }) => {
+                if (size > maxSize) {                  
+                  setError(`Files must not exceed ${parseBytes(maxSize)}`);
+                } else {
+                  setError(null);
+                }
+              });
+            }}
+*/
+
+export const Multiple = () => {
+  const error = null;
+  const maxSize = 5000000;
+
+  return (
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Box width="medium">
+          <Form>
+            <FormField
+              label="Multiple File Input"
+              name="fileInput"
+              htmlFor="fileInput"
+              required
+              error={error}
+            >
+              <FileInput
+                name="fileInput"
+                id="fileInput"
+                multiple
+                maxSize={maxSize}
+              />
+            </FormField>
+            <Button label="Create" primary type="submit" />
+          </Form>
+        </Box>
       </Box>
-    </Box>
-  </Grommet>
-);
+    </Grommet>
+  );
+};
 
 export default {
   title: 'Input/FileInput/Multiple',
