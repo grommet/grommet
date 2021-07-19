@@ -86,12 +86,22 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
 
-    const { error, info } = formContext.useFormField({
-      error: 'Max Size Error',
-      info: files,
-    });
-
-    console.log(error, info);
+    formContext.useFormField(
+      maxSize
+        ? {
+            name,
+            validate: (fileList) => {
+              for (let i = 0; i < fileList.length; i += 1) {
+                const file = fileList[i];
+                if (file.size > maxSize) {
+                  return `${file.name} is too large`;
+                }
+              }
+              return undefined;
+            },
+          }
+        : {},
+    );
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
