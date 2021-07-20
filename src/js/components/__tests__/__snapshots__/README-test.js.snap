@@ -17464,10 +17464,13 @@ string
 
 Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div).
+contained within a layout component (such as Box or a generic div). If 
+truncate = tip, the full text content will be placed in a Tip that will appear 
+on hover.
 
 \`\`\`
 boolean
+tip
 \`\`\`
 
 **weight**
