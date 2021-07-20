@@ -369,11 +369,11 @@ const DataTable = ({
               onMore={onMore}
               onSelect={
                 onSelect
-                ? (nextSelected) => {
-                  setSelected(nextSelected);
-                  if (onSelect) onSelect(nextSelected);
-                }
-                : undefined
+                  ? (nextSelected) => {
+                      setSelected(nextSelected);
+                      if (onSelect) onSelect(nextSelected);
+                    }
+                  : undefined
               }
               onToggle={onToggleGroup}
               replace={replace}

@@ -30,24 +30,24 @@ export const GroupedBody = forwardRef(
       ...rest
     },
     ref,
-  ) => {    
+  ) => {
     const items = useMemo(() => {
       const nextItems = [];
-      groups.forEach(group => {
+      groups.forEach((group) => {
         const { expanded } = groupState[group.key];
         const memberCount = group.data.length;
         if (memberCount > 1) {
           // need a header
           const primaryKeys = [];
           if (group.data.length) {
-            group.data.forEach(datum => {
+            group.data.forEach((datum) => {
               primaryKeys.push(datum[primaryProperty]);
             });
           }
 
           const groupSelected =
             primaryKeys && selected
-              ? primaryKeys.filter(val => selected.includes(val))
+              ? primaryKeys.filter((val) => selected.includes(val))
               : [];
           const isGroupSelected =
             groupSelected.length > 0 &&
@@ -59,20 +59,19 @@ export const GroupedBody = forwardRef(
             datum: group.datum,
             context: 'groupHeader',
             isSelected: isGroupSelected,
-            indeterminate: groupSelected.length > 0 &&
+            indeterminate:
+              groupSelected.length > 0 &&
               groupSelected.length < group.data.length,
             onChange: () => {
               if (isGroupSelected) {
-                onSelect(
-                  selected.filter((s) => !groupSelected.includes(s)),
-                );
+                onSelect(selected.filter((s) => !groupSelected.includes(s)));
               } else onSelect([...selected, ...primaryKeys]);
             },
           });
         }
         if (memberCount === 1 || expanded) {
           // add the group members
-          group.data.forEach( (datum, index) => {
+          group.data.forEach((datum, index) => {
             const primaryValue = primaryProperty
               ? datumValue(datum, primaryProperty)
               : undefined;
@@ -83,15 +82,14 @@ export const GroupedBody = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined,
               datum,
-              context: memberCount > 1 && index === memberCount - 1
-                ? 'groupEnd'
-                : 'body',
+              context:
+                memberCount > 1 && index === memberCount - 1
+                  ? 'groupEnd'
+                  : 'body',
               isSelected,
               onChange: () => {
                 if (isSelected) {
-                  onSelect(
-                    selected.filter((s) => s !== primaryValue),
-                  );
+                  onSelect(selected.filter((s) => s !== primaryValue));
                 } else onSelect([...selected, primaryValue]);
               },
             });
@@ -115,7 +113,7 @@ export const GroupedBody = forwardRef(
           scrollableAncestor="window"
           step={step}
         >
-          { (row, index, rowRef) => {
+          {(row, index, rowRef) => {
             const {
               context,
               datum,
@@ -134,18 +132,15 @@ export const GroupedBody = forwardRef(
             );
 
             return (
-              <StyledDataTableRow
-                ref={rowRef}
-                key={key}
-                size={size}
-              >
+              <StyledDataTableRow ref={rowRef} key={key} size={size}>
                 <ExpanderCell
                   background={cellProps.background}
                   border={cellProps.border}
                   context={context}
                   pad={cellProps.pad}
-                  onToggle={context === 'groupHeader' ?
-                    onToggle(key) : undefined}
+                  onToggle={
+                    context === 'groupHeader' ? onToggle(key) : undefined
+                  }
                   expanded={expanded}
                 />
                 {(selected || onSelect) && (
@@ -155,9 +150,9 @@ export const GroupedBody = forwardRef(
                     size="auto"
                   >
                     <CheckBox
-                      a11yTitle={`${
-                        isSelected ? 'unselect' : 'select'
-                      } ${context === 'groupHeader' ? key : primaryValue}`}
+                      a11yTitle={`${isSelected ? 'unselect' : 'select'} ${
+                        context === 'groupHeader' ? key : primaryValue
+                      }`}
                       checked={isSelected}
                       indeterminate={indeterminate}
                       disabled={!onSelect}
@@ -170,8 +165,7 @@ export const GroupedBody = forwardRef(
                   let scope;
                   if (context === 'groupHeader') {
                     scope = column.property === groupBy ? 'row' : undefined;
-                  }
-                  else {
+                  } else {
                     scope = column.primary ? 'row' : undefined;
                   }
                   return (
@@ -184,8 +178,11 @@ export const GroupedBody = forwardRef(
                       datum={datum}
                       pad={cellProps.pad}
                       scope={scope}
-                      pinnedOffset={context === 'groupHeader' && pinnedOffset &&
-                        pinnedOffset[column.property]}
+                      pinnedOffset={
+                        context === 'groupHeader' &&
+                        pinnedOffset &&
+                        pinnedOffset[column.property]
+                      }
                     />
                   );
                 })}
