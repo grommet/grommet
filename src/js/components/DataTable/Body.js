@@ -22,12 +22,12 @@ const Row = memo(
     active,
     onClickRow,
     datum,
-    setActive,
     selected,
     onSelect,
     isSelected,
     rowDetails,
     isRowExpanded,
+    setActive,
     setRowExpand,
     rowExpand,
     columns,
@@ -52,10 +52,14 @@ const Row = memo(
               }
             : undefined
         }
-        onMouseEnter={onClickRow ? () => setActive(index) : undefined}
+        onMouseEnter={
+          onClickRow
+            ? () => {
+                setActive(index);
+              }
+            : undefined
+        }
         onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
-        onFocus={onClickRow ? () => setActive(index) : undefined}
-        onBlur={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
           <TableCell
@@ -154,6 +158,8 @@ const Body = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [active, setActive] = React.useState();
+    const [lastActive, setLastActive] = React.useState();
+
     return (
       <Keyboard
         onEnter={
@@ -166,13 +172,7 @@ const Body = forwardRef(
               }
             : undefined
         }
-        onUp={
-          onClickRow && active
-            ? () => {
-                setActive(active - 1);
-              }
-            : undefined
-        }
+        onUp={onClickRow && active ? () => setActive(active - 1) : undefined}
         onDown={
           onClickRow && data.length
             ? () => {
@@ -187,6 +187,13 @@ const Body = forwardRef(
           ref={ref}
           size={size}
           tabIndex={onClickRow ? 0 : undefined}
+          onFocus={() =>
+            !active && active !== 0 ? setActive(lastActive) : setActive(active)
+          }
+          onBlur={() => {
+            setLastActive(active);
+            setActive(undefined);
+          }}
           {...rest}
         >
           <InfiniteScroll
@@ -218,6 +225,7 @@ const Body = forwardRef(
               return (
                 <Row
                   key={index}
+                  setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}
                   primaryValue={primaryValue}
@@ -228,7 +236,6 @@ const Body = forwardRef(
                   active={active >= 0 ? active === index : undefined}
                   onClickRow={onClickRow}
                   datum={datum}
-                  setActive={setActive}
                   selected={selected}
                   onSelect={onSelect}
                   rowDetails={rowDetails}

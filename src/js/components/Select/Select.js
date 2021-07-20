@@ -49,6 +49,7 @@ const Select = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       alignSelf,
       children,
       clear = false,
@@ -285,7 +286,7 @@ const Select = forwardRef(
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
           ref={ref}
-          a11yTitle={a11yTitle}
+          a11yTitle={ariaLabel || a11yTitle}
           id={id}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
@@ -354,8 +355,8 @@ const Select = forwardRef(
               ) : (
                 <SelectTextInput
                   a11yTitle={
-                    a11yTitle &&
-                    `${a11yTitle}${
+                    (ariaLabel || a11yTitle) &&
+                    `${ariaLabel || a11yTitle}${
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
