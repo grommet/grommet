@@ -11,11 +11,18 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <div>
   <div
+    aria-hidden="true"
     class="c0"
-  >
-    Notification
-  </div>
+  />
 </div>
 `;

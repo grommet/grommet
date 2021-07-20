@@ -1,14 +1,23 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef } from 'react';
 
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import { Layer } from '../Layer';
+import { Box } from '../Box';
 
-const Notification = forwardRef(() => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  return (
-    <ThemeContext.Provider value={theme}>Notification</ThemeContext.Provider>
-  );
-});
+const Notification = forwardRef(({ message, onClose, ...rest }, ref) => (
+  <>
+    <Layer
+      position="center"
+      animation="slide"
+      modal={false}
+      ref={ref}
+      onEsc={onClose}
+      onClickOutside={onClose}
+      {...rest}
+    >
+      <Box>{message}</Box>
+    </Layer>
+  </>
+));
 
 Notification.displayName = 'Notification';
 

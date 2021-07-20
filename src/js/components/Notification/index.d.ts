@@ -1,19 +1,12 @@
 import * as React from 'react';
-import {
-  A11yTitleType,
-  AlignSelfType,
-  GridAreaType,
-  JustifyContentType,
-  MarginType,
-} from '../../utils';
+
+export type StatusType = 'critical' | 'warning' | 'success' | 'unknown';
 
 export interface NotificationProps {
-  a11yTitle?: A11yTitleType;
-  alignSelf?: AlignSelfType;
-  gridArea?: GridAreaType;
-  justifyContent?: JustifyContentType;
-  margin?: MarginType;
-  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  message: string;
+  status?: StatusType;
+  toast?: object | boolean;
+  onClose?: void;
 }
 
 declare const Notification: React.FC<NotificationProps>;
