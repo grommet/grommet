@@ -11,7 +11,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-const Notification = ({ toast, message, body, size, status, onClose }) => {
+const Notification = ({ toast, message, body, status, onClose }) => {
   const getIcon = () => {
     switch (status) {
       case 'warning':
@@ -26,13 +26,7 @@ const Notification = ({ toast, message, body, size, status, onClose }) => {
   };
 
   let content = (
-    <Box
-      gap="small"
-      elevation="medium"
-      width={size || 'medium'}
-      round="small"
-      direction="row"
-    >
+    <>
       <Box
         round={{ size: 'small', corner: 'left' }}
         background={status ? `status-${status}` : 'status-unknown'}
@@ -45,10 +39,10 @@ const Notification = ({ toast, message, body, size, status, onClose }) => {
         align="start"
         direction="row"
         justify="between"
-        pad={{ right: 'medium', vertical: 'small' }}
+        pad={{ left: 'small', right: 'medium', vertical: 'small' }}
         fill
       >
-        <Box height={{ max: '80px' }} overflow="hidden">
+        <Box>
           <Text size="large" weight="bold">
             {message}
           </Text>
@@ -61,13 +55,15 @@ const Notification = ({ toast, message, body, size, status, onClose }) => {
           plain
         />
       </Box>
-    </Box>
+    </>
   );
 
   if (toast) {
     content = (
-      <Layer modal={false} onEsc={onClose}>
-        {content}
+      <Layer animation="fadeIn" modal={false} onEsc={onClose}>
+        <Box gap="small" elevation="medium" round="small" direction="row">
+          {content}
+        </Box>
       </Layer>
     );
   }

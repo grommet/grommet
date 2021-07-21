@@ -26,5 +26,5 @@ const SimpleNotification = () => {
 export const Simple = () => <SimpleNotification />;
 
 export default {
-  title: 'Layout/Notification/Simple',
+  title: 'Visualizations/Notification/Toast',
 };

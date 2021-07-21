@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Notification should have no accessibility violations 1`] = `
-.c3 {
+.c2 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -11,23 +11,6 @@ exports[`Notification should have no accessibility violations 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 384px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
-}
-
-.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +33,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   border-bottom-left-radius: 12px;
 }
 
-.c5 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,10 +57,11 @@ exports[`Notification should have no accessibility violations 1`] = `
   justify-content: space-between;
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 12px;
   padding-right: 24px;
 }
 
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,27 +73,15 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  max-height: 80px;
-  overflow: hidden;
 }
 
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c7 {
+.c5 {
   font-size: 22px;
   line-height: 28px;
   font-weight: bold;
 }
 
-.c8 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -129,43 +101,43 @@ exports[`Notification should have no accessibility violations 1`] = `
   line-height: 0;
 }
 
-.c8:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -181,39 +153,33 @@ exports[`Notification should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding-right: 12px;
+  .c3 {
+    padding-left: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
+  .c3 {
+    padding-right: 12px;
   }
 }
 
@@ -224,53 +190,46 @@ exports[`Notification should have no accessibility violations 1`] = `
     <div
       class="c1"
     >
-      <div
+      <svg
+        aria-label="StatusUnknown"
         class="c2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 15v-1c0-1 0-1.5 1-2s2-1 2-2.5c0-1-1-2.5-3-2.5s-3 1.264-3 3m3 6v2"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        />
+      </div>
+      <button
+        class="c6"
+        type="button"
       >
         <svg
-          aria-label="StatusUnknown"
-          class="c3"
+          aria-label="FormClose"
+          class="c2"
           viewBox="0 0 24 24"
         >
           <path
-            d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 15v-1c0-1 0-1.5 1-2s2-1 2-2.5c0-1-1-2.5-3-2.5s-3 1.264-3 3m3 6v2"
+            d="m7 7 10 10M7 17 17 7"
             fill="none"
             stroke="#000"
             stroke-width="2"
           />
         </svg>
-      </div>
-      <div
-        class="c4"
-      />
-      <div
-        class="c5"
-      >
-        <div
-          class="c6"
-        >
-          <span
-            class="c7"
-          />
-        </div>
-        <button
-          class="c8"
-          type="button"
-        >
-          <svg
-            aria-label="FormClose"
-            class="c3"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m7 7 10 10M7 17 17 7"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </div>
+      </button>
     </div>
   </div>
 </div>
