@@ -1,23 +1,26 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 
 import { Layer } from '../Layer';
 import { Box } from '../Box';
+import { Paragraph } from '../Paragraph';
 
-const Notification = forwardRef(({ message, onClose, ...rest }, ref) => (
-  <>
-    <Layer
-      position="center"
-      animation="slide"
-      modal={false}
-      ref={ref}
-      onEsc={onClose}
-      onClickOutside={onClose}
-      {...rest}
-    >
-      <Box>{message}</Box>
-    </Layer>
-  </>
-));
+const Notification = ({ toast, message, onClose }) => {
+  let content = (
+    <Box elevation="medium" round="small" pad="small">
+      <Paragraph margin="none">{message}</Paragraph>
+    </Box>
+  );
+
+  if (toast) {
+    content = (
+      <Layer modal={false} onEsc={onClose}>
+        {content}
+      </Layer>
+    );
+  }
+
+  return content;
+};
 
 Notification.displayName = 'Notification';
 

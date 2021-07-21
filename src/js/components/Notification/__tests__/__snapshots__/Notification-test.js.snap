@@ -1,6 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Notification should have no accessibility violations 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11,18 +28,36 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-
+.c2 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 @media only screen and (max-width:768px) {
+  .c1 {
+    padding: 6px;
+  }
+}
 
+@media only screen and (max-width:768px) {
+  .c1 {
+    border-radius: 6px;
+  }
 }
 
 <div>
   <div
-    aria-hidden="true"
     class="c0"
-  />
+  >
+    <div
+      class="c1"
+    >
+      <p
+        class="c2"
+      />
+    </div>
+  </div>
 </div>
 `;

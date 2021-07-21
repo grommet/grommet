@@ -6703,24 +6703,7 @@ vertical",
 <Meter />",
   },
   "Nav": [Function],
-  "Notification": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Notification&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/notification&module=%2Fsrc%2FNotification.js",
-      },
-    ],
-    "description": "Is a container for notifications",
-    "name": "Notification",
-    "usage": "import { Notification } from 'grommet';
-      <Notification />",
-  },
+  "Notification": [Function],
   "Pagination": Object {
     "availableAt": Array [
       Object {

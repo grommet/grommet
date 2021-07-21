@@ -14,9 +14,9 @@ const SimpleNotification = () => {
   return (
     <Grommet theme={grommet}>
       <Box alignContent="center" justify="center">
-        <Button label="Show Notification" onClick={onOpen} primary />
+        <Button label="Show Notification" onClick={onOpen} />
       </Box>
-      {visible && <Notification message="Hello" onClose={onClose} />}
+      {visible && <Notification toast message="Hello" onClose={onClose} />}
     </Grommet>
   );
 };
