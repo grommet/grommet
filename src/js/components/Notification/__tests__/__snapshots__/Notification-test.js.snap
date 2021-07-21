@@ -41,18 +41,26 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 12px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -64,16 +72,28 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 24px;
 }
 
-.c5 {
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c6 {
   font-size: 22px;
   line-height: 28px;
   font-weight: bold;
 }
 
-.c6 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -84,6 +104,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  margin-left: 24px;
   color: inherit;
   outline: none;
   border: none;
@@ -92,43 +113,43 @@ exports[`Notification should have no accessibility violations 1`] = `
   line-height: 0;
 }
 
-.c6:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -162,8 +183,21 @@ exports[`Notification should have no accessibility violations 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c4 {
-    padding: 6px;
+    width: 6px;
   }
 }
 
@@ -192,12 +226,15 @@ exports[`Notification should have no accessibility violations 1`] = `
       </div>
       <div
         class="c4"
+      />
+      <div
+        class="c5"
       >
         <span
-          class="c5"
+          class="c6"
         />
         <button
-          class="c6"
+          class="c7"
           type="button"
         >
           <svg

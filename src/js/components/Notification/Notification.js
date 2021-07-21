@@ -8,26 +8,45 @@ import { Text } from '../Text';
 
 const Notification = ({ toast, message, onClose }) => {
   let content = (
-    <Box elevation="medium" width="medium" round="small" direction="row">
+    <Box
+      gap="small"
+      elevation="medium"
+      width="medium"
+      round="small"
+      direction="row"
+      å
+    >
       <Box
         round={{ size: 'small', corner: 'left' }}
         background="status-ok"
         pad="small"
+        justify="center"
       >
         <StatusGood color="plain" />
       </Box>
-      <Box direction="row" justify="between" pad="small" fill>
+      <Box
+        align="start"
+        direction="row"
+        justify="between"
+        pad={{ right: 'medium', vertical: 'small' }}
+        fill
+      >
         <Text size="large" weight="bold">
           {message}
         </Text>
-        <Button icon={<FormClose color="plain" />} onClick={onClose} plain />
+        <Button
+          margin={{ left: 'medium' }}
+          icon={<FormClose color="plain" />}
+          onClick={onClose}
+          plain
+        />
       </Box>
     </Box>
   );
 
   if (toast) {
     content = (
-      <Layer plain modal={false} onEsc={onClose}>
+      <Layer position="center" modal={false} onEsc={onClose}>
         {content}
       </Layer>
     );
