@@ -54,7 +54,7 @@ export const doc = (Meter) => {
     ])
       .description('The size of the Meter.')
       .defaultValue('medium'),
-    type: PropTypes.oneOf(['bar', 'circle', 'pie'])
+    type: PropTypes.oneOf(['bar', 'circle', 'pie', 'semicircle'])
       .description('The visual type of meter.')
       .defaultValue('bar'),
     direction: PropTypes.oneOf(['horizontal', 'vertical'])

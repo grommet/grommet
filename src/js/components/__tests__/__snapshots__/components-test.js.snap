@@ -6660,7 +6660,8 @@ string",
         "description": "The visual type of meter.",
         "format": "bar
 circle
-pie",
+pie
+semicircle",
         "name": "type",
       },
       Object {

@@ -22,11 +22,7 @@ export const Circle = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Meter
-          type="circle"
-          background="light-2"
-          values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
-        />
+        <Meter type="semicircle" background="light-2" value={50} max={100} />
       </Box>
     </Grommet>
   );

@@ -19,8 +19,9 @@ const Circle = forwardRef((props, ref) => {
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
   const radius = width / 2 - height / 2;
-  const anglePer = 360 / max;
+  const anglePer = type === 'semicircle' ? 180 / max : 360 / max;
   const someHighlight = (values || []).some((v) => v.highlight);
+  const circumference = Math.PI * radius;
 
   let startValue = 0;
   let startAngle = 0;
@@ -36,10 +37,10 @@ const Circle = forwardRef((props, ref) => {
 
       let endAngle;
       if (startValue + value >= max) {
-        endAngle = 360;
+        endAngle = type === 'semicircle' ? 180 : 360;
       } else {
         endAngle = Math.min(
-          360,
+          type === 'semicircle' ? 180 : 360,
           translateEndAngle(startAngle, anglePer, value),
         );
       }
@@ -135,6 +136,9 @@ const Circle = forwardRef((props, ref) => {
       viewBox={`0 0 ${width} ${width}`}
       width={size === 'full' ? '100%' : width}
       height={size === 'full' ? '100%' : width}
+      style={
+        type === 'semicircle' ? { transform: `rotate(270deg)` } : undefined
+      }
       {...rest}
     >
       <circle
@@ -145,6 +149,8 @@ const Circle = forwardRef((props, ref) => {
         strokeWidth={height}
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
+        strokeDasharray={type === 'semicircle' ? circumference : 0}
+        strokeDashoffset={type === 'semicircle' ? circumference / 2 : 0}
       />
       {paths}
       {pathCaps}
