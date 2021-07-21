@@ -27,7 +27,7 @@ export var doc = function doc(Text) {
       dropProps: PropTypes.shape({}),
       plain: PropTypes.bool
     }), PropTypes.string]).description("tooltip or a hint when hovering over the text. If the\n        value is a string and no a11yTitle value is provided, tip value will be\n        used for the a11yTitle default value."),
-    truncate: PropTypes.bool.description("Restrict the text to a single line and truncate with ellipsis if it\nis too long to all fit. For truncate to be applied, Text needs to be \ncontained within a layout component (such as Box or a generic div).").defaultValue(false),
+    truncate: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['tip'])]).description("Restrict the text to a single line and truncate with ellipsis if it\nis too long to all fit. For truncate to be applied, Text needs to be \ncontained within a layout component (such as Box or a generic div). If \ntruncate = tip, the full text content will be placed in a Tip that will appear \non hover.").defaultValue(false),
     weight: PropTypes.oneOfType([PropTypes.oneOf(['normal', 'bold']), PropTypes.number]).description('Font weight'),
     wordBreak: PropTypes.oneOf(['normal', 'break-all', 'keep-all', 'break-word']).description('Whether words should break when reaching the end of a line.').defaultValue('normal')
   });

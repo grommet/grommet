@@ -21,8 +21,7 @@ var Tip = function Tip() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    tip: alphabet,
-    truncate: true
+    truncate: "tip"
   }, alphabet)), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     tip: {
       dropProps: {

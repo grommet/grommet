@@ -11,8 +11,7 @@ export var Tip = function Tip() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "small"
   }, /*#__PURE__*/React.createElement(Text, {
-    tip: alphabet,
-    truncate: true
+    truncate: "tip"
   }, alphabet)), /*#__PURE__*/React.createElement(Text, {
     tip: {
       dropProps: {

@@ -34,7 +34,7 @@ export interface TextProps {
     | string;
   tag?: PolymorphicType;
   textAlign?: TextAlignType;
-  truncate?: boolean;
+  truncate?: boolean | 'tip';
   weight?: 'normal' | 'bold' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
   tip?: TipProps;

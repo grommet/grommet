@@ -19,6 +19,8 @@ var _Keyboard = require("../Keyboard");
 
 var _Stack = require("../Stack");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -240,18 +242,11 @@ var Carousel = function Carousel(_ref) {
   }))));
 };
 
+exports.Carousel = Carousel;
 Carousel.defaultProps = {
   initialChild: 0,
   controls: true
 };
 Object.setPrototypeOf(Carousel.defaultProps, _defaultProps.defaultProps);
 Carousel.displayName = 'Carousel';
-var CarouselDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CarouselDoc = require('./doc').doc(Carousel);
-}
-
-var CarouselWrapper = CarouselDoc || Carousel;
-exports.Carousel = CarouselWrapper;
+Carousel.propTypes = _propTypes.CarouselType;

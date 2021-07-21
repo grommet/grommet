@@ -713,7 +713,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
               active: active && active.getTime() === day.getTime(),
               disabled: dayDisabled && !!dayDisabled,
               onClick: function onClick() {
-                selectDate(dateString); // Chrome moves the focus indicator to this button. Set
+                selectDate(dateString);
+                announce("Selected " + (0, _utils.formatToLocalYYYYMMDD)(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
@@ -739,7 +740,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
               active: active && active.getTime() === day.getTime(),
               disabled: dayDisabled && !!dayDisabled,
               onClick: function onClick() {
-                selectDate(dateString); // Chrome moves the focus indicator to this button. Set
+                selectDate(dateString);
+                announce("Selected \n                          " + (0, _utils.formatToLocalYYYYMMDD)(dateString), 'assertive'); // Chrome moves the focus indicator to this button. Set
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();

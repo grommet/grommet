@@ -12,6 +12,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
+import { CarouselType } from './propTypes';
 
 var Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
@@ -228,12 +229,5 @@ Carousel.defaultProps = {
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
-var CarouselDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CarouselDoc = require('./doc').doc(Carousel);
-}
-
-var CarouselWrapper = CarouselDoc || Carousel;
-export { CarouselWrapper as Carousel };
+Carousel.propTypes = CarouselType;
+export { Carousel };
