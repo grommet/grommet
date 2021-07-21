@@ -16,7 +16,9 @@ const SimpleNotification = () => {
       <Box alignContent="center" justify="center">
         <Button label="Show Notification" onClick={onOpen} />
       </Box>
-      {visible && <Notification toast message="Hello" onClose={onClose} />}
+      {visible && (
+        <Notification toast message="Status Message" onClose={onClose} />
+      )}
     </Grommet>
   );
 };

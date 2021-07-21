@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Notification should have no accessibility violations 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10,12 +19,117 @@ exports[`Notification should have no accessibility violations 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 384px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #00C781;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.c5 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -28,22 +142,28 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+@media only screen and (max-width:768px) {
+  .c1 {
+    border-radius: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
+  .c2 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    border-radius: 6px;
+  .c2 {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 6px;
   }
 }
 
@@ -54,9 +174,46 @@ exports[`Notification should have no accessibility violations 1`] = `
     <div
       class="c1"
     >
-      <p
+      <div
         class="c2"
-      />
+      >
+        <svg
+          aria-label="StatusGood"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM7 12l4 3 5-7"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        />
+        <button
+          class="c6"
+          type="button"
+        >
+          <svg
+            aria-label="FormClose"
+            class="c3"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 7 10 10M7 17 17 7"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
