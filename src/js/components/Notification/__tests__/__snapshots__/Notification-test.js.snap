@@ -34,7 +34,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00C781;
+  background-color: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -77,6 +77,22 @@ exports[`Notification should have no accessibility violations 1`] = `
   padding-right: 24px;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 80px;
+  overflow: hidden;
+}
+
 .c4 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -87,13 +103,13 @@ exports[`Notification should have no accessibility violations 1`] = `
   width: 12px;
 }
 
-.c6 {
+.c7 {
   font-size: 22px;
   line-height: 28px;
   font-weight: bold;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -113,43 +129,43 @@ exports[`Notification should have no accessibility violations 1`] = `
   line-height: 0;
 }
 
-.c7:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -212,12 +228,12 @@ exports[`Notification should have no accessibility violations 1`] = `
         class="c2"
       >
         <svg
-          aria-label="StatusGood"
+          aria-label="StatusUnknown"
           class="c3"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM7 12l4 3 5-7"
+            d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 15v-1c0-1 0-1.5 1-2s2-1 2-2.5c0-1-1-2.5-3-2.5s-3 1.264-3 3m3 6v2"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -230,11 +246,15 @@ exports[`Notification should have no accessibility violations 1`] = `
       <div
         class="c5"
       >
-        <span
+        <div
           class="c6"
-        />
+        >
+          <span
+            class="c7"
+          />
+        </div>
         <button
-          class="c7"
+          class="c8"
           type="button"
         >
           <svg
