@@ -25,7 +25,7 @@ const Circle = forwardRef((props, ref) => {
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
   const radius = width / 2 - height / 2;
-  const anglePer = type === 'semicircle' ? 180 / max : 360 / max;
+  const anglePer = (type === 'semicircle' ? 180 : 360) / max;
   const anglePer2 = 90 / max;
   const someHighlight = (values || []).some((v) => v.highlight);
   const circumference = Math.PI * radius;
