@@ -1079,7 +1079,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         statusUnknown: StatusUnknown,
         closeButton: FormClose,
         color: 'plain',
-      }
+      },
     },
     pagination: {
       button: {
