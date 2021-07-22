@@ -22,6 +22,14 @@ import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
 import { Pagination } from '../Pagination';
 import {
+  StyledDataTableBody,
+  StyledDataTableRow,
+  StyledContainer,
+  StyledDataTable,
+  StyledPlaceholder,
+} from './StyledDataTable';
+import { TableCell } from '../TableCell';
+import {
   buildFooterValues,
   buildGroups,
   buildGroupState,
@@ -31,11 +39,6 @@ import {
   normalizePrimaryProperty,
 } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
-import {
-  StyledContainer,
-  StyledDataTable,
-  StyledPlaceholder,
-} from './StyledDataTable';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -371,7 +374,7 @@ const DataTable = ({
       return (
         <Box gap="small" direction="row">
           <Spinner />
-          <Text>Loading...</Text>
+          <Text weight="bold">Loading...</Text>
         </Box>
       );
     }
@@ -491,6 +494,30 @@ const DataTable = ({
               setRowExpand={setRowExpand}
             />
           )}
+          {onMore && moreButton ? (
+            <StyledDataTableBody>
+              <StyledDataTableRow>
+                <TableCell
+                  background={
+                    cellProps.body.background
+                      ? cellProps.body.background[0]
+                      : 'FFFFFF'
+                  }
+                  colSpan={
+                    groupBy
+                      ? Object.keys(columns).length.toString() + 1
+                      : Object.keys(columns).length.toString()
+                  }
+                >
+                  <Box pad="xxsmall">
+                    <Box alignSelf="center" pad="xxsmall">
+                      {memoizedmoreButtonState}
+                    </Box>
+                  </Box>
+                </TableCell>
+              </StyledDataTableRow>
+            </StyledDataTableBody>
+          ) : null}
           {showFooter && (
             <Footer
               ref={footerRef}
@@ -528,11 +555,6 @@ const DataTable = ({
       </OverflowContainer>
       {paginate && data.length > step && items && items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
-      ) : null}
-      {onMore && moreButton ? (
-        <Box align="center" pad="small">
-          {memoizedmoreButtonState}
-        </Box>
       ) : null}
     </Container>
   );
