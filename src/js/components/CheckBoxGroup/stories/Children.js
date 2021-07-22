@@ -4,6 +4,18 @@ import { Box, Grommet, CheckBoxGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Ascend, Descend } from 'grommet-icons';
 
+const optionsObjects = [
+  {
+    label: 'asc',
+    disabled: true,
+    value: 'asc',
+  },
+  {
+    label: 'desc',
+    value: 'desc',
+  }
+];
+
 export const Children = () => {
   const [value, setValue] = useState();
 
@@ -14,12 +26,12 @@ export const Children = () => {
           name="checkbox"
           direction="row"
           gap="xsmall"
-          options={['asc', 'desc']}
+          options={optionsObjects}
           value={value}
           onChange={({ value: nextValue }) => setValue(nextValue)}
         >
           {(option, { checked }) => {
-            const Icon = option === 'asc' ? Ascend : Descend;
+            const Icon = option.value === 'asc' ? Ascend : Descend;
             let background;
             if (checked) background = 'brand';
             else background = 'light-2';
