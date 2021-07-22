@@ -1,56 +1,89 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 
-import {
-  FormClose,
-  StatusGood,
-  StatusUnknown,
-  StatusWarning,
-} from 'grommet-icons';
 import { Layer } from '../Layer';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
 const Notification = ({ toast, message, body, status, onClose }) => {
-  const getIcon = () => {
-    switch (status) {
-      case 'warning':
-        return <StatusWarning color="plain" />;
-      case 'ok':
-        return <StatusGood color="plain" />;
-      case 'unknown':
-        return <StatusUnknown color="plain" />;
-      default:
-        return <StatusUnknown color="plain" />;
-    }
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
+  const {
+    gap: containerGap,
+    elevation: containerElevation,
+    round: containerRound,
+  } = theme.notification.container;
+
+  const { pad: iconContainerPad, round: iconContainerRound } =
+    theme.notification.iconContainer;
+
+  const { pad: textContainerPad } = theme.notification.textContainer;
+
+  const { size: messageTextSize, weight: messageTextWeight } =
+    theme.notification.messageText;
+
+  const { size: bodyTextSize } = theme.notification.bodyText;
+
+  const { margin: buttonMargin } = theme.notification.button;
+
+  const Icons = {
+    StatusGood: theme.notification.icons.statusGood,
+    StatusWarning: theme.notification.icons.statusWarning,
+    StatusUnknown: theme.notification.icons.statusUnknown,
+    FormClose: theme.notification.icons.closeButton,
   };
+
+  const iconColor = theme.notification.icons.color;
+
+  let icon;
+  let color;
+  switch (status) {
+    case 'warning':
+      color = theme.notification.status.warning.color;
+      icon = <Icons.StatusWarning color={iconColor} />;
+      break;
+    case 'good':
+      color = theme.notification.status.good.color;
+      icon = <Icons.StatusGood color={iconColor} />;
+      break;
+    case 'unknown':
+      color = theme.notification.status.unknown.color;
+      icon = <Icons.StatusUnknown color={iconColor} />;
+      break;
+    default:
+      color = theme.notification.status.unknown.color;
+      icon = <Icons.StatusUnknown color={iconColor} />;
+      break;
+  }
 
   let content = (
     <>
       <Box
-        round={{ size: 'small', corner: 'left' }}
-        background={status ? `status-${status}` : 'status-unknown'}
-        pad="small"
+        round={iconContainerRound}
+        background={color}
+        pad={iconContainerPad}
         justify="center"
       >
-        {getIcon()}
+        {icon}
       </Box>
       <Box
         align="start"
         direction="row"
         justify="between"
-        pad={{ left: 'small', right: 'medium', vertical: 'small' }}
+        pad={textContainerPad}
         fill
       >
         <Box>
-          <Text size="large" weight="bold">
+          <Text size={messageTextSize} weight={messageTextWeight}>
             {message}
           </Text>
-          {body && <Text size="medium">{body}</Text>}
+          {body && <Text size={bodyTextSize}>{body}</Text>}
         </Box>
         <Button
-          margin={{ left: 'medium' }}
-          icon={<FormClose color="plain" />}
+          margin={buttonMargin}
+          icon={<Icons.FormClose color={iconColor} />}
           onClick={onClose}
           plain
         />
@@ -61,7 +94,12 @@ const Notification = ({ toast, message, body, status, onClose }) => {
   if (toast) {
     content = (
       <Layer animation="fadeIn" modal={false} onEsc={onClose}>
-        <Box gap="small" elevation="medium" round="small" direction="row">
+        <Box
+          gap={containerGap}
+          elevation={containerElevation}
+          round={containerRound}
+          direction="row"
+        >
           {content}
         </Box>
       </Layer>

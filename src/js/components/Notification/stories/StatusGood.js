@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 import { Button } from '../../Button';
 import { Box } from '../../Box';
 
-const StatusOKNotification = () => {
+const StatusGoodNotification = () => {
   const [visible, setVisible] = useState(false);
 
   const onOpen = () => setVisible(true);
@@ -19,7 +19,7 @@ const StatusOKNotification = () => {
       {visible && (
         <Notification
           toast
-          status="ok"
+          status="good"
           message="Status Message"
           onClose={onClose}
         />
@@ -28,8 +28,8 @@ const StatusOKNotification = () => {
   );
 };
 
-export const StatusOK = () => <StatusOKNotification />;
+export const StatusGood = () => <StatusGoodNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Status OK',
+  title: 'Visualizations/Notification/Toast/Status Good',
 };

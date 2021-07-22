@@ -10,6 +10,9 @@ import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { StatusGood } from 'grommet-icons/icons/StatusGood';
+import { StatusWarning } from 'grommet-icons/icons/StatusWarning';
+import { StatusUnknown } from 'grommet-icons/icons/StatusUnknown';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
@@ -1035,6 +1038,48 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+    },
+    notification: {
+      container: {
+        gap: 'small',
+        elevation: 'medium',
+        round: 'small',
+      },
+      iconContainer: {
+        pad: 'small',
+        round: { size: 'small', corner: 'left' },
+      },
+      textContainer: {
+        pad: { left: 'small', right: 'medium', vertical: 'small' },
+      },
+      messageText: {
+        size: 'large',
+        weight: 'bold',
+      },
+      bodyText: {
+        size: 'medium',
+      },
+      button: {
+        margin: { left: 'medium' },
+      },
+      status: {
+        good: {
+          color: 'status-ok',
+        },
+        warning: {
+          color: 'status-warning',
+        },
+        unknown: {
+          color: 'status-unknown',
+        },
+      },
+      icons: {
+        statusGood: StatusGood,
+        statusWarning: StatusWarning,
+        statusUnknown: StatusUnknown,
+        closeButton: FormClose,
+        color: 'plain',
+      }
     },
     pagination: {
       button: {
