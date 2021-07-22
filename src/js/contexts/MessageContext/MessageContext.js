@@ -32,11 +32,26 @@ export const format = (options, messages) => {
       messageObj = messageObj[idPart];
     }
   });
+
   const message =
     (options.messages ? options.messages[baseId] : undefined) ||
     messageObj ||
     options.defaultMessage;
-  return message;
+
+  const values = options.values ? options.values : undefined;
+
+  let newMessage;
+  if (values) {
+    newMessage = message.split(' ');
+    newMessage.map((word) => {
+      // eslint-disable-next-line
+      const parsed = word.replace(/[\{\}]/g, '');
+      newMessage = newMessage.toString().replace(`{${parsed}}`, values[parsed]);
+      newMessage = newMessage.replace(/,/g, ' ');
+      return word;
+    });
+  }
+  return values ? newMessage : message;
 };
 
 const defaultValue = {
