@@ -108,11 +108,13 @@ export const doc = (Text) => {
     ]).description(`tooltip or a hint when hovering over the text. If the
         value is a string and no a11yTitle value is provided, tip value will be
         used for the a11yTitle default value.`),
-    truncate: PropTypes.bool
+    truncate: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['tip'])])
       .description(
         `Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div).`,
+contained within a layout component (such as Box or a generic div). If 
+truncate = tip, the full text content will be placed in a Tip that will appear 
+on hover.`,
       )
       .defaultValue(false),
     weight: PropTypes.oneOfType([
