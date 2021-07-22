@@ -13,7 +13,7 @@ const optionsObjects = [
   {
     label: 'desc',
     value: 'desc',
-  }
+  },
 ];
 
 export const Children = () => {
