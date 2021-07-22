@@ -37,3 +37,11 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
 
 export const translateEndAngle = (startAngle, anglePer, value) =>
   Math.min(360, Math.max(0, startAngle + anglePer * value));
+
+export const translateEndAngleSemiCircleLeftSide = (anglePer, value) =>
+  Math.min(360, Math.max(0, 0 + anglePer * value + 270));
+
+export const translateEndAngleSemiCircleRightSide = (anglePer, value) =>
+  Math.min(90, Math.max(0, 0 + anglePer * value));
+
+// Math.miin(90,2.7 * )

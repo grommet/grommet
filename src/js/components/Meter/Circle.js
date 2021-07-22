@@ -2,7 +2,13 @@ import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
+import {
+  arcCommands,
+  parseMetricToNum,
+  translateEndAngle,
+  translateEndAngleSemiCircleLeftSide,
+  translateEndAngleSemiCircleRightSide,
+} from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
@@ -20,11 +26,12 @@ const Circle = forwardRef((props, ref) => {
   const mid = width / 2;
   const radius = width / 2 - height / 2;
   const anglePer = type === 'semicircle' ? 180 / max : 360 / max;
+  const anglePer2 = 90 / max;
   const someHighlight = (values || []).some((v) => v.highlight);
   const circumference = Math.PI * radius;
 
   let startValue = 0;
-  let startAngle = 0;
+  let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
   let pathCaps = [];
   (values || [])
@@ -37,10 +44,16 @@ const Circle = forwardRef((props, ref) => {
 
       let endAngle;
       if (startValue + value >= max) {
-        endAngle = type === 'semicircle' ? 180 : 360;
+        endAngle = type === 'semicircle' ? 90 : 360;
+      }
+      if (type === 'semicircle' && value < max / 2) {
+        endAngle = translateEndAngleSemiCircleLeftSide(anglePer, value);
+      }
+      if (type === 'semicircle' && value > max / 2) {
+        endAngle = translateEndAngleSemiCircleRightSide(anglePer2, value);
       } else {
         endAngle = Math.min(
-          type === 'semicircle' ? 180 : 360,
+          360,
           translateEndAngle(startAngle, anglePer, value),
         );
       }
@@ -136,9 +149,6 @@ const Circle = forwardRef((props, ref) => {
       viewBox={`0 0 ${width} ${width}`}
       width={size === 'full' ? '100%' : width}
       height={size === 'full' ? '100%' : width}
-      style={
-        type === 'semicircle' ? { transform: `rotate(270deg)` } : undefined
-      }
       {...rest}
     >
       <circle
@@ -150,7 +160,7 @@ const Circle = forwardRef((props, ref) => {
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
         strokeDasharray={type === 'semicircle' ? circumference : 0}
-        strokeDashoffset={type === 'semicircle' ? circumference / 2 : 0}
+        strokeDashoffset={type === 'semicircle' ? circumference : 0}
       />
       {paths}
       {pathCaps}
