@@ -13,7 +13,7 @@ export const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
 export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   // handle that we can't draw a complete circle
   let normalizedEndAngle = endAngle;
-  if (endAngle - startAngle >= 360) {
+  if (endAngle > startAngle && endAngle - startAngle >= 360) {
     normalizedEndAngle = startAngle + 359.99;
   }
   const start = polarToCartesian(centerX, centerY, radius, normalizedEndAngle);
@@ -36,12 +36,6 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
 };
 
 export const translateEndAngle = (startAngle, anglePer, value) =>
-  Math.min(360, Math.max(0, startAngle + anglePer * value));
-
-export const translateEndAngleSemiCircleLeftSide = (anglePer, value) =>
-  Math.min(360, Math.max(0, 0 + anglePer * value + 270));
-
-export const translateEndAngleSemiCircleRightSide = (anglePer, value) =>
-  Math.min(90, Math.max(0, 0 + anglePer * value));
-
-// Math.miin(90,2.7 * )
+  Math.max(0, startAngle + anglePer * value) % 360;
+// Math.min(360, Math.max(0, startAngle + anglePer * value));
+// //

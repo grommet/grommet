@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 export const SemiCircle = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Meter type="semicircle" background="light-2" value={80} />
+      <Meter size="large" type="semicircle" background="light-2" value={60} />
     </Box>
   </Grommet>
 );
