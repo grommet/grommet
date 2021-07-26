@@ -43,8 +43,7 @@ export const format = (options, messages) => {
   let newMessage = message;
   const tokens = message?.match(/\{(.+?)\}/g);
   tokens?.forEach((token) => {
-    const name = token;
-    const names = name.substr(1, name.length - 2);
+    const names = token.substr(1, token.length - 2);
     const value = values[names];
     newMessage = newMessage.replace(token, value);
   });
