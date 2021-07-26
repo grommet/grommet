@@ -616,7 +616,7 @@ const Calendar = forwardRef(
                     id: 'calendar.next',
                     messages,
                     values: {
-                      date: previousMonth.toLocaleDateString(locale, {
+                      date: nextMonth.toLocaleDateString(locale, {
                         month: 'long',
                         year: 'numeric',
                       }),
@@ -820,7 +820,7 @@ const Calendar = forwardRef(
                       id: 'calendar.next',
                       messages,
                       values: {
-                        date: previousMonth.toLocaleDateString(locale, {
+                        date: nextMonth.toLocaleDateString(locale, {
                           month: 'long',
                           year: 'numeric',
                         }),
