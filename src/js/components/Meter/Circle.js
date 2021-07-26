@@ -51,7 +51,6 @@ const Circle = forwardRef((props, ref) => {
         someHighlight && !highlight ? background : colorName,
         theme,
       );
-
       if (round) {
         const d1 = arcCommands(
           width / 2,
@@ -121,17 +120,20 @@ const Circle = forwardRef((props, ref) => {
       startAngle = endAngle;
     });
 
-  const d1 = arcCommands(width / 2, width, radius, 270, 90);
-  const SemiCirclePath = (
-    <path
-      key="semiCircle"
-      d={d1}
-      strokeWidth={height}
-      fill="none"
-      {...strokeProps(background, theme)}
-      strokeLinecap="round"
-    />
-  );
+  let SemiCirclePath;
+  if (type === 'semicircle') {
+    const d1 = arcCommands(width / 2, width, radius, 270, 90);
+    SemiCirclePath = (
+      <path
+        key="semiCircle"
+        d={d1}
+        strokeWidth={height}
+        fill="none"
+        {...strokeProps(background, theme)}
+        strokeLinecap="round"
+      />
+    );
+  }
 
   let viewBoxHeight;
   if (type === 'semicircle') {
