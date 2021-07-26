@@ -1,6 +1,6 @@
 {
   "calendar": {
-    "previous": "{Moved to {date}",
+    "previous": "Moved to {date}",
     "next": "Moved to {date}"
   },
   "fileInput": {
