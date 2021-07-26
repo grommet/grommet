@@ -4,10 +4,12 @@ import React, {
   useEffect,
   useMemo,
   useState,
+  useCallback,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -45,6 +47,7 @@ const DateInput = forwardRef(
     refArg,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
     const iconSize =
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
@@ -92,6 +95,16 @@ const DateInput = forwardRef(
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
+    const openCalendar = useCallback(() => {
+      setOpen(true);
+      announce('Enter calendar dialog');
+    }, [setOpen, announce]);
+
+    const exitCalendar = useCallback(() => {
+      setOpen(false);
+      announce('Exited calendar dialog');
+    }, [setOpen, announce]);
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -104,7 +117,7 @@ const DateInput = forwardRef(
         onSelect={
           disabled
             ? undefined
-            : (nextValue) => {
+            : nextValue => {
                 let normalizedValue;
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
@@ -114,7 +127,7 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
+                if (open && !range) exitCalendar();
               }
         }
         {...calendarProps}
@@ -143,7 +156,7 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
+        <Keyboard onEsc={open ? () => exitCalendar() : undefined}>
           <MaskedInput
             ref={ref}
             id={id}
@@ -155,7 +168,7 @@ const DateInput = forwardRef(
             {...inputProps}
             {...rest}
             value={textValue}
-            onChange={(event) => {
+            onChange={event => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
               const nextValue = textToValue(
@@ -173,8 +186,8 @@ const DateInput = forwardRef(
                 onChange(adjustedEvent);
               }
             }}
-            onFocus={(event) => {
-              setOpen(true);
+            onFocus={event => {
+              openCalendar();
               if (onFocus) onFocus(event);
             }}
           />
@@ -200,8 +213,8 @@ const DateInput = forwardRef(
           id={id ? `${id}__drop` : undefined}
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
-          onEsc={() => setOpen(false)}
-          onClickOutside={() => setOpen(false)}
+          onEsc={exitCalendar}
+          onClickOutside={exitCalendar}
           {...dropProps}
         >
           {calendar}
