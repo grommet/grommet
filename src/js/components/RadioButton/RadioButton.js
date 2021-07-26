@@ -82,7 +82,7 @@ const RadioButton = forwardRef(
             })}
           />
           {children ? (
-            children({ checked, hover })
+            children({ checked, focus: focus && focusIndicator, hover })
           ) : (
             <StyledRadioButtonBox
               focus={focus && focusIndicator}
