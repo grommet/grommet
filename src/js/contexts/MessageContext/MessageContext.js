@@ -38,19 +38,17 @@ export const format = (options, messages) => {
     messageObj ||
     options.defaultMessage;
 
-  const values = options.values ? options.values : undefined;
+  const { values } = options;
 
-  let newMessage;
-  if (values) {
-    newMessage = message.split(' ');
-    newMessage.map((word) => {
-      // eslint-disable-next-line
-      const parsed = word.replace(/[\{\}]/g, '');
-      newMessage = newMessage.toString().replace(`{${parsed}}`, values[parsed]);
-      newMessage = newMessage.replace(/,/g, ' ');
-      return word;
-    });
-  }
+  let newMessage = message;
+  const tokens = message?.match(/\{(.+?)\}/g);
+  tokens?.forEach((token) => {
+    const name = token;
+    const names = name.substr(1, name.length - 2);
+    const value = values[names];
+    newMessage = newMessage.replace(token, value);
+  });
+
   return values ? newMessage : message;
 };
 
