@@ -3,6 +3,12 @@ import React from 'react';
 import { Box, Button, Grommet, FileInput, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+/*
+
+  ! JON_TODO: Implement FormField's own validate and see what is overridden
+
+*/
+
 export const Multiple = () => {
   const maxSize = 5000000;
 

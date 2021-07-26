@@ -24,6 +24,7 @@ export const format = (options, messages) => {
   // this format function to get the grommet messages from
   // their bundles that way and don't need to pass the messages
   // themselves in this property, just the format function.
+
   const idParts = options.id?.split('.') || [];
   const baseId = idParts[idParts?.length - 1];
   let messageObj = messages;
@@ -36,7 +37,20 @@ export const format = (options, messages) => {
     (options.messages ? options.messages[baseId] : undefined) ||
     messageObj ||
     options.defaultMessage;
-  return message;
+  const values = options.values ? options.values : undefined;
+  let newMessage;
+  if (values) {
+    newMessage = message.split(' ');
+    newMessage.map((word) => {
+      // eslint-disable-next-line
+      let parsed = word.replace(/[\{\}]/g, '');
+      newMessage = newMessage.toString().replace(`{${parsed}}`, values[parsed]);
+      // eslint-disable-next-line
+      newMessage = newMessage.replace(/,/g, ' ');
+      return '';
+    });
+  }
+  return values ? newMessage : message;
 };
 
 const defaultValue = {

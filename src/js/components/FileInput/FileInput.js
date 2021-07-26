@@ -85,19 +85,37 @@ const FileInput = forwardRef(
     const controlRef = useRef();
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
-
+    // Should we display file name
+    // How to pass file name into Messages obj for FileInput
     formContext.useFormField(
       maxSize
         ? {
             name,
             validate: (fileList) => {
+              let numOfFiles = 0;
+              let message;
               for (let i = 0; i < fileList.length; i += 1) {
                 const file = fileList[i];
                 if (file.size > maxSize) {
-                  return `${file.name} is too large`;
-                }
-              }
-              return undefined;
+                  if (multiple) {
+                    numOfFiles += 1;
+                  } else {
+                    message = format({
+                      id: 'fileInput.maxSizeSingle',
+                      messages,
+                      values: { maxSize },
+                    });
+                    return message;
+                  } // Multiple check
+                } // File size check
+              } // Loop through files
+
+              message = format({
+                id: 'fileInput.maxSizeMultiple',
+                messages,
+                values: { maxSize, numOfFiles },
+              });
+              return message;
             },
           }
         : {},
