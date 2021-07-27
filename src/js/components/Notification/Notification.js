@@ -60,7 +60,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         align="start"
         direction="row"
         justify="between"
-        flex="grow"
+        fill
       >
         <Box>
           <Text {...theme.notification.messageText}>{message}</Text>
