@@ -640,6 +640,8 @@ const Calendar = forwardRef(
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
+    // if a week is filled with all blank days, we don't want to set role="row"
+    let blankWeek = false;
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
@@ -657,7 +659,6 @@ const Calendar = forwardRef(
       if (!showAdjacentDays && otherMonth) {
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -665,6 +666,15 @@ const Calendar = forwardRef(
             <StyledDay sizeProp={size} fillContainer={fill} />
           </StyledDayContainer>,
         );
+
+        if (
+          weeks.length === 5 &&
+          /* If the length days array is less than the current getDate()
+          we know that all days in the array are from the next month. */
+          days.length < day.getDate()
+        ) {
+          blankWeek = true;
+        }
       } else if (
         /* Do not show adjacent days in 6th row if all days
         fall in the next month */
@@ -675,9 +685,9 @@ const Calendar = forwardRef(
         we know that all days in the array are from the next month. */
         days.length < day.getDate()
       ) {
+        blankWeek = true;
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -776,11 +786,14 @@ const Calendar = forwardRef(
           );
         }
       }
-
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
+      <StyledWeek
+        role={!blankWeek ? 'row' : undefined}
+        key={day.getTime()}
+        fillContainer={fill}
+      >
         {days}
       </StyledWeek>,
     );
