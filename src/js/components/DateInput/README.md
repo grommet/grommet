@@ -141,6 +141,21 @@ xxlarge
 6xl
 string
 ```
+
+**messages**
+
+Custom messages for DateInput. Used for accessibility by screen
+        readers. Defaults to `{
+  "enterCalendar": "Enter calendar dialog",
+  "exitCalendar": "Exited calendar dialog"
+}`.
+
+```
+{
+  enterCalendar: string,
+  exitCalendar: string
+}
+```
   
 ## Intrinsic element
 
