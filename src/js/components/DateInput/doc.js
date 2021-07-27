@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = (DateInput) => {
+export const doc = DateInput => {
   const DocumentedDateInput = describe(DateInput)
     .availableAt(getAvailableAtBadge('DateInput', 'Input'))
     .description('A control to input a single date or a date range.')
@@ -33,7 +33,7 @@ export const doc = (DateInput) => {
       `The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
       a date by typing. For example: 'mm/dd/yyyy', or for a range:
-      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'. 
+      'mm/dd/yyyy-mm/dd/yyyy'. For a date without leading zeros: 'm/d/yyyy'.
       This property should be used when in a Form.`,
     ),
     id: PropTypes.string.description('The id of the input.'),
@@ -75,6 +75,18 @@ export const doc = (DateInput) => {
       ]),
       PropTypes.string,
     ]).description('The size of the text.'),
+    messages: PropTypes.shape({
+      enterCalendar: PropTypes.string,
+      exitCalendar: PropTypes.string,
+    })
+      .description(
+        `Custom messages for DateInput. Used for accessibility by screen
+        readers.`,
+      )
+      .defaultValue({
+        enterCalendar: 'Enter calendar dialog',
+        exitCalendar: 'Exited calendar dialog',
+      }),
   };
 
   return DocumentedDateInput;

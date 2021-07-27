@@ -17,6 +17,10 @@ export interface DateInputProps {
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
+  messages?: {
+    enterCalendar?: string;
+    exitCalendar?: string;
+  };
 }
 export interface DateInputExtendedProps
   extends DateInputProps,

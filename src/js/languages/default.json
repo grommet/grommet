@@ -44,5 +44,9 @@
     "playButton": "play",
     "volumeDown": "volume down",
     "volumeUp": "volume up"
+  },
+  "dateInput": {
+    "enterCalendar": "Enter calendar dialog",
+    "exitCalendar": "Exited calendar dialog"
   }
 }

@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -42,12 +43,14 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       value: valueArg,
+      messages,
       ...rest
     },
     refArg,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
+    const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
@@ -97,13 +100,13 @@ const DateInput = forwardRef(
 
     const openCalendar = useCallback(() => {
       setOpen(true);
-      announce('Enter calendar dialog');
-    }, [setOpen, announce]);
+      announce(formatMessage({ id: 'dateInput.enterCalendar', messages }));
+    }, [announce, formatMessage, messages]);
 
     const exitCalendar = useCallback(() => {
       setOpen(false);
-      announce('Exited calendar dialog');
-    }, [setOpen, announce]);
+      announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
+    }, [announce, formatMessage, messages]);
 
     const calendar = (
       <Calendar
