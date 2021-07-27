@@ -6,102 +6,82 @@ import { Layer } from '../Layer';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
+import { Paragraph } from '../Paragraph';
 
 const Notification = ({ toast, message, body, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  const {
-    gap: containerGap,
-    elevation: containerElevation,
-    round: containerRound,
-  } = theme.notification.container;
-
-  const { pad: iconContainerPad, round: iconContainerRound } =
-    theme.notification.iconContainer;
-
-  const { pad: textContainerPad } = theme.notification.textContainer;
-
-  const { size: messageTextSize, weight: messageTextWeight } =
-    theme.notification.messageText;
-
-  const { size: bodyTextSize } = theme.notification.bodyText;
-
-  const { margin: buttonMargin } = theme.notification.button;
+  const iconColor = theme.notification.icon.color;
 
   const Icons = {
-    StatusGood: theme.notification.icons.statusGood,
-    StatusWarning: theme.notification.icons.statusWarning,
-    StatusUnknown: theme.notification.icons.statusUnknown,
-    FormClose: theme.notification.icons.closeButton,
+    StatusGood: theme.notification.good.icon,
+    StatusWarning: theme.notification.warning.icon,
+    StatusCritical: theme.notification.critical.icon,
+    StatusUnknown: theme.notification.unknown.icon,
+    FormClose: theme.notification.button.icon,
   };
-
-  const iconColor = theme.notification.icons.color;
 
   let icon;
   let color;
   switch (status) {
+    case 'critical':
+      color = theme.notification.critical;
+      icon = <Icons.StatusCritical color={iconColor} />;
+      break;
     case 'warning':
-      color = theme.notification.status.warning.color;
+      color = theme.notification.warning;
       icon = <Icons.StatusWarning color={iconColor} />;
       break;
     case 'good':
-      color = theme.notification.status.good.color;
+      color = theme.notification.good;
       icon = <Icons.StatusGood color={iconColor} />;
       break;
     case 'unknown':
-      color = theme.notification.status.unknown.color;
+      color = theme.notification.unknown;
       icon = <Icons.StatusUnknown color={iconColor} />;
       break;
     default:
-      color = theme.notification.status.unknown.color;
+      color = theme.notification.unknown;
       icon = <Icons.StatusUnknown color={iconColor} />;
       break;
   }
 
   let content = (
-    <>
+    <Box {...theme.notification.container} direction="row">
       <Box
-        round={iconContainerRound}
+        {...theme.notification.iconContainer}
         background={color}
-        pad={iconContainerPad}
         justify="center"
       >
         {icon}
       </Box>
       <Box
+        {...theme.notification.textContainer}
         align="start"
         direction="row"
         justify="between"
-        pad={textContainerPad}
         fill
       >
         <Box>
-          <Text size={messageTextSize} weight={messageTextWeight}>
-            {message}
-          </Text>
-          {body && <Text size={bodyTextSize}>{body}</Text>}
+          <Text {...theme.notification.messageText}>{message}</Text>
+          {body && (
+            <Paragraph {...theme.notification.bodyText}>{body}</Paragraph>
+          )}
         </Box>
         <Button
-          margin={buttonMargin}
+          {...theme.notification.button}
           icon={<Icons.FormClose color={iconColor} />}
           onClick={onClose}
           plain
         />
       </Box>
-    </>
+    </Box>
   );
 
   if (toast) {
     content = (
       <Layer animation="fadeIn" modal={false} onEsc={onClose}>
-        <Box
-          gap={containerGap}
-          elevation={containerElevation}
-          round={containerRound}
-          direction="row"
-        >
-          {content}
-        </Box>
+        <Box>{content}</Box>
       </Layer>
     );
   }

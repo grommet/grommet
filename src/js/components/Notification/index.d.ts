@@ -6,8 +6,8 @@ export interface NotificationProps {
   message: string;
   body?: string;
   status?: StatusType;
-  toast?: object | boolean;
-  onClose?: void;
+  toast?: boolean;
+  onClose?: (...args: any[]) => any;
 }
 
 declare const Notification: React.FC<NotificationProps>;
