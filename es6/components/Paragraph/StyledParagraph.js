@@ -8,7 +8,7 @@ var colorStyle = css(["color:", ";"], function (props) {
 var sizeStyle = function sizeStyle(props) {
   var size = props.size || 'medium';
   var data = props.theme.paragraph[size];
-  return css(["font-size:", ";line-height:", ";max-width:", ";"], data.size, data.height, props.fillProp ? 'none' : data.maxWidth);
+  return css(["font-size:", ";line-height:", ";max-width:", ";"], data ? data.size : size, data ? data.height : 'normal', props.fillProp ? 'none' : data && data.maxWidth);
 };
 
 var fontFamily = css(["font-family:", ";"], function (props) {

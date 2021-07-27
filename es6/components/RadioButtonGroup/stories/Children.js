@@ -24,10 +24,11 @@ export var Children = function Children() {
     }
   }, function (option, _ref) {
     var checked = _ref.checked,
+        focus = _ref.focus,
         hover = _ref.hover;
     var Icon = option === 'asc' ? Ascend : Descend;
     var background;
-    if (checked) background = 'brand';else if (hover) background = 'light-4';else background = 'light-2';
+    if (checked) background = 'brand';else if (hover) background = 'light-4';else if (focus) background = 'light-4';else background = 'light-2';
     return /*#__PURE__*/React.createElement(Box, {
       background: background,
       pad: "xsmall"

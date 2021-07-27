@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
-var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
+var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', '10px'];
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 export var All = function All() {
   return /*#__PURE__*/React.createElement(Grommet, {

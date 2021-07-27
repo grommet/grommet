@@ -75,6 +75,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onChange: onChange
   }))), children ? children({
     checked: checked,
+    focus: focus && focusIndicator,
     hover: hover
   }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, {
     focus: focus && focusIndicator,
