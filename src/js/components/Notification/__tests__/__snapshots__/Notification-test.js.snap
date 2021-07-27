@@ -95,66 +95,6 @@ exports[`Notification should have no accessibility violations 1`] = `
   font-weight: bold;
 }
 
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  margin-left: 24px;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -230,23 +170,6 @@ exports[`Notification should have no accessibility violations 1`] = `
             class="c6"
           />
         </div>
-        <button
-          class="c7"
-          type="button"
-        >
-          <svg
-            aria-label="FormClose"
-            class="c3"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m7 7 10 10M7 17 17 7"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
       </div>
     </div>
   </div>

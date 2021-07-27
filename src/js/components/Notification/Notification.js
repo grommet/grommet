@@ -68,12 +68,14 @@ const Notification = ({ toast, message, body, status, onClose }) => {
             <Paragraph {...theme.notification.bodyText}>{body}</Paragraph>
           )}
         </Box>
-        <Button
-          {...theme.notification.button}
-          icon={<Icons.FormClose color={iconColor} />}
-          onClick={onClose}
-          plain
-        />
+        {onClose && (
+          <Button
+            {...theme.notification.button}
+            icon={<Icons.FormClose color={iconColor} />}
+            onClick={onClose}
+            plain
+          />
+        )}
       </Box>
     </Box>
   );
