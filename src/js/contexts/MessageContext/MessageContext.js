@@ -33,23 +33,22 @@ export const format = (options, messages) => {
       messageObj = messageObj[idPart];
     }
   });
+
   const message =
     (options.messages ? options.messages[baseId] : undefined) ||
     messageObj ||
     options.defaultMessage;
-  const values = options.values ? options.values : undefined;
-  let newMessage;
-  if (values) {
-    newMessage = message.split(' ');
-    newMessage.map((word) => {
-      // eslint-disable-next-line
-      let parsed = word.replace(/[\{\}]/g, '');
-      newMessage = newMessage.toString().replace(`{${parsed}}`, values[parsed]);
-      // eslint-disable-next-line
-      newMessage = newMessage.replace(/,/g, ' ');
-      return '';
-    });
-  }
+
+  const { values } = options;
+
+  let newMessage = message;
+  const tokens = message?.match(/\{(.+?)\}/g);
+  tokens?.forEach((token) => {
+    const names = token.substr(1, token.length - 2);
+    const value = values[names];
+    newMessage = newMessage.replace(token, value);
+  });
+
   return values ? newMessage : message;
 };
 

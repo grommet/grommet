@@ -188,197 +188,24 @@ node",
     ],
   },
   "Anchor": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js",
-      },
-    ],
-    "description": "A text link.",
-    "details": "We have a separate component from the browser
-base so we can style it. You can either set the icon and/or label properties
-or just use children.",
-    "intrinsicElement": "a",
-    "name": "Anchor",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the anchor is disabled.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "Hyperlink reference to place in the anchor.",
-        "format": "string",
-        "name": "href",
-      },
-      Object {
-        "description": "Icon element to place in the anchor.",
-        "format": "element",
-        "name": "icon",
-      },
-      Object {
-        "description": "Label text to place in the anchor.",
-        "format": "node",
-        "name": "label",
-      },
-      Object {
-        "description": "Click handler. It can be used, for example,
-        to add analytics and track who clicked in the anchor.",
-        "format": "function",
-        "name": "onClick",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether an icon and label should be reversed so that the
-        icon is at the end of the anchor.",
-        "format": "boolean",
-        "name": "reverse",
-      },
-      Object {
-        "description": "The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property,
-typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "Sets font-weight property for anchor.",
-        "format": "normal
-bold
-number",
-        "name": "weight",
-      },
-    ],
-    "usage": "import { Anchor } from 'grommet';
-<Anchor href={location} label='Label' />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "color": [Function],
+      "disabled": [Function],
+      "gridArea": [Function],
+      "href": [Function],
+      "icon": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "onClick": [Function],
+      "reverse": [Function],
+      "size": [Function],
+      "weight": [Function],
+    },
+    "render": [Function],
   },
   "Avatar": [Function],
   "Box": Object {
@@ -1813,6 +1640,19 @@ to disable the previous and next buttons.
         "description": "The locale to use.",
         "format": "string",
         "name": "locale",
+      },
+      Object {
+        "defaultValue": Object {
+          "next": "Moved to {date}",
+          "previous": "Moved to {date}",
+        },
+        "description": "Custom messages for Calendar. Used for accessibility by screen
+          readers.",
+        "format": "{
+  previous: string,
+  next: string
+}",
+        "name": "messages",
       },
       Object {
         "description": "Called with an ISO8601 date when the user navigates to a different
@@ -5316,7 +5156,24 @@ for any grommet children components.",
     "usage": "import { Grommet } from 'grommet';
 <Grommet>...</Grommet>",
   },
-  "Header": [Function],
+  "Header": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/header&module=%2Fsrc%2FHeader.js",
+      },
+    ],
+    "description": "Is a Box container for introductory content",
+    "name": "Header",
+    "usage": "import { Header } from 'grommet';
+<Header />",
+  },
   "Heading": Object {
     "availableAt": Array [
       Object {
@@ -8681,8 +8538,11 @@ string",
         "defaultValue": false,
         "description": "Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div).",
-        "format": "boolean",
+contained within a layout component (such as Box or a generic div). If 
+truncate = tip, the full text content will be placed in a Tip that will appear 
+on hover.",
+        "format": "boolean
+tip",
         "name": "truncate",
       },
       Object {
