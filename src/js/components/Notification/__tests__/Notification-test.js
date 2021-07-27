@@ -22,4 +22,16 @@ describe('Notification', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
+
+  test('should have no accessibility violations for toast', async () => {
+    const { container } = render(
+      <Grommet>
+        <Notification toast message="message" />
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 });

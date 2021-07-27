@@ -47,7 +47,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
   }
 
   let content = (
-    <Box {...theme.notification.container} direction="row">
+    <Box direction="row">
       <Box
         {...theme.notification.iconContainer}
         background={color}
@@ -60,7 +60,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         align="start"
         direction="row"
         justify="between"
-        fill
+        flex="grow"
       >
         <Box>
           <Text {...theme.notification.messageText}>{message}</Text>
@@ -81,7 +81,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
   if (toast) {
     content = (
       <Layer animation="fadeIn" modal={false} onEsc={onClose}>
-        <Box>{content}</Box>
+        <Box {...theme.notification.toast.container}>{content}</Box>
       </Layer>
     );
   }

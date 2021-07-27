@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type StatusType = 'warning' | 'good' | 'unknown';
+export type StatusType = 'critical' | 'warning' | 'good' | 'unknown';
 
 export interface NotificationProps {
   message: string;

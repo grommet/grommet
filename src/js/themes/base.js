@@ -1041,17 +1041,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     notification: {
-      container: {
-        gap: 'small',
-        elevation: 'medium',
-        round: 'small',
+      toast: {
+        container: {
+          gap: 'small',
+          elevation: 'medium',
+          round: 'small',
+        },
       },
       iconContainer: {
         pad: 'small',
         round: { size: 'small', corner: 'left' },
       },
       textContainer: {
-        pad: { right: 'medium', vertical: 'small' },
+        pad: { left: 'small', right: 'medium', vertical: 'small' },
       },
       messageText: {
         size: 'large',
