@@ -3,6 +3,7 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -15,7 +16,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef } from '../../utils';
+import { containsFocus, useForwardedRef } from '../../utils';
 import {
   formatToSchema,
   schemaToMask,
@@ -91,6 +92,25 @@ const DateInput = forwardRef(
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
+
+    // track when the Calendar Drop has focus
+    const dropRef = useRef();
+    const [dropFocused, setDropFocused] = useState(containsFocus(dropRef));
+
+    // when Calendar no longer has focus and focus is not on the MaskedInput,
+    // close the Calendar
+    useEffect(() => {
+      // timeout necessary to ensure focus event on Calendar item can
+      // complete after blur event of something in the Calendar
+      const timer = setTimeout(() => {
+        if (open && !containsFocus(ref.current) && !dropFocused) {
+          setOpen(false);
+        }
+        // lowest possible value after testing MacOS Chrome, Safari, and Firefox
+      }, 25);
+
+      return () => clearTimeout(timer);
+    }, [dropFocused, open, ref]);
 
     const calendar = (
       <Calendar
@@ -195,6 +215,7 @@ const DateInput = forwardRef(
       return [
         input,
         <Drop
+          ref={dropRef}
           overflow="visible"
           key="drop"
           id={id ? `${id}__drop` : undefined}
@@ -202,6 +223,9 @@ const DateInput = forwardRef(
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
           onClickOutside={() => setOpen(false)}
+          onBlur={() => setDropFocused(false)}
+          onFocus={() => setDropFocused(true)}
+          trapFocus={false}
           {...dropProps}
         >
           {calendar}
