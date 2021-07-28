@@ -1642,6 +1642,19 @@ to disable the previous and next buttons.
         "name": "locale",
       },
       Object {
+        "defaultValue": Object {
+          "next": "Moved to {date}",
+          "previous": "Moved to {date}",
+        },
+        "description": "Custom messages for Calendar. Used for accessibility by screen
+          readers.",
+        "format": "{
+  previous: string,
+  next: string
+}",
+        "name": "messages",
+      },
+      Object {
         "description": "Called with an ISO8601 date when the user navigates to a different
        month.",
         "format": "function",

@@ -1,4 +1,8 @@
 {
+  "calendar": {
+    "previous": "Moved to {date}",
+    "next": "Moved to {date}"
+  },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",
