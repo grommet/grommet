@@ -13,6 +13,11 @@ export const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
 export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   // handle that we can't draw a complete circle
   let normalizedEndAngle = endAngle;
+  /* 
+   added endAngle - startAngle >= 360 
+   for SemiCircle the endAngle will never be greater then startAngle 
+   since it starts with a startAngle of 270.
+ */
   if (endAngle > startAngle && endAngle - startAngle >= 360) {
     normalizedEndAngle = startAngle + 359.99;
   }
@@ -35,7 +40,10 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   return d;
 };
 
+/* TranslatedEngAngle will now take the value of the
+startAngle + anglePer * value and mod by 360. This was added
+to take account the startAngle not being 0. So no matter the
+value it will be % 360 to get the correct angle. 
+*/
 export const translateEndAngle = (startAngle, anglePer, value) =>
   Math.max(0, startAngle + anglePer * value) % 360;
-// Math.min(360, Math.max(0, startAngle + anglePer * value));
-// //
