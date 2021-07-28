@@ -1058,10 +1058,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       messageText: {
         size: 'large',
         weight: 'bold',
+        color: 'black',
       },
       bodyText: {
         size: 'medium',
         margin: 'none',
+        color: 'black',
       },
       button: {
         margin: { left: 'medium' },
