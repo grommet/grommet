@@ -457,11 +457,12 @@ exports[`Carousel basic 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="c13"
                 viewBox="0 0 24 24"
               >
@@ -474,11 +475,12 @@ exports[`Carousel basic 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="c9"
                 viewBox="0 0 24 24"
               >
@@ -971,11 +973,12 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="c9"
                 viewBox="0 0 24 24"
               >
@@ -988,11 +991,12 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="c13"
                 viewBox="0 0 24 24"
               >
@@ -1488,11 +1492,12 @@ exports[`Carousel navigate 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="c13"
                 viewBox="0 0 24 24"
               >
@@ -1505,11 +1510,12 @@ exports[`Carousel navigate 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="c9"
                 viewBox="0 0 24 24"
               >
@@ -1619,11 +1625,12 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
@@ -1636,11 +1643,12 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 jLSzwp"
                 viewBox="0 0 24 24"
               >
@@ -1752,11 +1760,12 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 jLSzwp"
                 viewBox="0 0 24 24"
               >
@@ -1769,11 +1778,12 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
@@ -2267,11 +2277,12 @@ exports[`Carousel play 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="c13"
                 viewBox="0 0 24 24"
               >
@@ -2284,11 +2295,12 @@ exports[`Carousel play 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="c9"
                 viewBox="0 0 24 24"
               >
@@ -2397,11 +2409,12 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
@@ -2414,11 +2427,12 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="StyledIcon-ofa7kd-0 jLSzwp"
                 viewBox="0 0 24 24"
               >
@@ -2830,11 +2844,12 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
             class="c9"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c10"
               type="button"
             >
               <svg
-                aria-label="Slide 1"
+                aria-label="Subtract"
                 class="c11"
                 viewBox="0 0 24 24"
               >
@@ -2847,11 +2862,12 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
               <svg
-                aria-label="Slide 2"
+                aria-label="Subtract"
                 class="c13"
                 viewBox="0 0 24 24"
               >
