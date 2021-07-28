@@ -31,7 +31,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204,204,204,1);
+  background-color: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;

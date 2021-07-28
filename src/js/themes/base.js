@@ -1083,6 +1083,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusUnknown,
         color: 'status-unknown',
       },
+      undefined: {
+        icon: StatusUnknown,
+        color: 'status-unknown',
+      },
       icon: {
         color: 'plain',
       },

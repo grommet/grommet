@@ -14,37 +14,10 @@ const Notification = ({ toast, message, body, status, onClose }) => {
   const iconColor = theme.notification.icon.color;
 
   const Icons = {
-    StatusGood: theme.notification.good.icon,
-    StatusWarning: theme.notification.warning.icon,
-    StatusCritical: theme.notification.critical.icon,
-    StatusUnknown: theme.notification.unknown.icon,
     FormClose: theme.notification.button.icon,
   };
 
-  let icon;
-  let color;
-  switch (status) {
-    case 'critical':
-      color = theme.notification.critical;
-      icon = <Icons.StatusCritical color={iconColor} />;
-      break;
-    case 'warning':
-      color = theme.notification.warning;
-      icon = <Icons.StatusWarning color={iconColor} />;
-      break;
-    case 'good':
-      color = theme.notification.good;
-      icon = <Icons.StatusGood color={iconColor} />;
-      break;
-    case 'unknown':
-      color = theme.notification.unknown;
-      icon = <Icons.StatusUnknown color={iconColor} />;
-      break;
-    default:
-      color = theme.notification.unknown;
-      icon = <Icons.StatusUnknown color={iconColor} />;
-      break;
-  }
+  const { icon: StatusIcon, color } = theme.notification[status];
 
   let content = (
     <Box direction="row">
@@ -53,7 +26,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         background={color}
         justify="center"
       >
-        {icon}
+        <StatusIcon color={iconColor} />
       </Box>
       <Box
         {...theme.notification.textContainer}

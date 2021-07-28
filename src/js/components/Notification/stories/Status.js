@@ -9,6 +9,13 @@ const StatusNotification = () => (
   <Grommet theme={grommet}>
     <Box pad="large" justify="center" gap="large">
       <Box gap="xsmall">
+        <Text size="medium">Default (No status prop)</Text>
+        <Notification
+          message="Status Message"
+          body="This is an example of body text"
+        />
+      </Box>
+      <Box gap="xsmall">
         <Text size="medium">Good</Text>
         <Notification
           status="good"
