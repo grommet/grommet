@@ -7,6 +7,7 @@ import 'jest-styled-components';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
+import { Grommet } from '../../Grommet';
 import { DropButton } from '..';
 
 describe('DropButton', () => {
@@ -154,5 +155,26 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(ref).toBeCalled();
     expectPortal('drop-contents').toMatchSnapshot();
+  });
+
+  test('rendersr a11yTitle and aria-label', () => {
+    const LABEL = 'Test Label';
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          aria-label={LABEL}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+        <DropButton
+          label="Dropper"
+          a11yTitle={`${LABEL}-2`}
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
+    );
+    expect(getByLabelText(LABEL)).toBeTruthy();
+    expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

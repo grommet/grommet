@@ -1642,6 +1642,19 @@ to disable the previous and next buttons.
         "name": "locale",
       },
       Object {
+        "defaultValue": Object {
+          "next": "Moved to {date}",
+          "previous": "Moved to {date}",
+        },
+        "description": "Custom messages for Calendar. Used for accessibility by screen
+          readers.",
+        "format": "{
+  previous: string,
+  next: string
+}",
+        "name": "messages",
+      },
+      Object {
         "description": "Called with an ISO8601 date when the user navigates to a different
        month.",
         "format": "function",
@@ -8520,8 +8533,11 @@ string",
         "defaultValue": false,
         "description": "Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div).",
-        "format": "boolean",
+contained within a layout component (such as Box or a generic div). If 
+truncate = tip, the full text content will be placed in a Tip that will appear 
+on hover.",
+        "format": "boolean
+tip",
         "name": "truncate",
       },
       Object {

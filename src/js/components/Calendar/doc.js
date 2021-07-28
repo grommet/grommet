@@ -100,6 +100,18 @@ to disable the previous and next buttons.
     locale: PropTypes.string
       .description('The locale to use.')
       .defaultValue('en-US'),
+    messages: PropTypes.shape({
+      previous: PropTypes.string,
+      next: PropTypes.string,
+    })
+      .description(
+        `Custom messages for Calendar. Used for accessibility by screen
+          readers.`,
+      )
+      .defaultValue({
+        previous: 'Moved to {date}',
+        next: 'Moved to {date}',
+      }),
     onReference: PropTypes.func.description(
       `Called with an ISO8601 date when the user navigates to a different
        month.`,
