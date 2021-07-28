@@ -135,7 +135,7 @@ const Carousel = ({
         icon={
           <CurrentIcon
             color={activeIndex === index ? iconColor : undefined}
-            a11yTitle={`Slide ${index + 1}`}
+            a11yTitle={`Show carousel slide ${index + 1}`}
           />
         }
         onClick={onSelect(index)}
