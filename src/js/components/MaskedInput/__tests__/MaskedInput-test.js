@@ -469,4 +469,16 @@ describe('MaskedInput', () => {
     );
     expect(container.children).toMatchSnapshot();
   });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <MaskedInput a11yTitle="masked-input-test" name="item" />
+        <MaskedInput aria-label="masked-input-test-2" name="item" />
+      </Grommet>,
+    );
+    expect(getByLabelText('masked-input-test')).toBeTruthy();
+    expect(getByLabelText('masked-input-test-2')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

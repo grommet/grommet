@@ -25,6 +25,7 @@ test('Paragraph size renders', () => {
       <Paragraph size="xxlarge" />
       <Paragraph fill />
       <Paragraph fill={false} />
+      <Paragraph size="10px" />
     </Grommet>,
   );
 

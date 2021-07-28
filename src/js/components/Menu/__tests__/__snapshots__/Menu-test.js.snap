@@ -876,7 +876,7 @@ exports[`Menu close on tab 1`] = `
 </div>
 `;
 
-exports[`Menu custom a11yTitle 1`] = `
+exports[`Menu custom a11yTitle or aria-label 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1035,6 +1035,36 @@ exports[`Menu custom a11yTitle 1`] = `
   >
     <button
       aria-label="My Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+    <button
+      aria-label="My Menu 2"
       class="c1"
       type="button"
     >
