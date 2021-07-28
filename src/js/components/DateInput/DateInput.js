@@ -103,7 +103,7 @@ const DateInput = forwardRef(
       announce(formatMessage({ id: 'dateInput.enterCalendar', messages }));
     }, [announce, formatMessage, messages]);
 
-    const exitCalendar = useCallback(() => {
+    const closeCalendar = useCallback(() => {
       setOpen(false);
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
     }, [announce, formatMessage, messages]);
@@ -130,7 +130,7 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) exitCalendar();
+                if (open && !range) closeCalendar();
               }
         }
         {...calendarProps}
@@ -159,7 +159,7 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <Keyboard onEsc={open ? () => exitCalendar() : undefined}>
+        <Keyboard onEsc={open ? () => closeCalendar() : undefined}>
           <MaskedInput
             ref={ref}
             id={id}
@@ -216,8 +216,8 @@ const DateInput = forwardRef(
           id={id ? `${id}__drop` : undefined}
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
-          onEsc={exitCalendar}
-          onClickOutside={exitCalendar}
+          onEsc={closeCalendar}
+          onClickOutside={closeCalendar}
           {...dropProps}
         >
           {calendar}
