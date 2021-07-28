@@ -19,7 +19,7 @@ const customTheme = {
       },
     },
     message: {
-      maxFileMessage: {
+      maxFile: {
         color: 'green',
         textAlign: 'center',
       },
@@ -59,7 +59,7 @@ export const Custom = () => (
             max: 5,
           }}
           messages={{
-            maxFilesMessage: 'You can only select maximum of 5 files.',
+            maxFile: 'You can only select maximum of 5 files.',
           }}
           onChange={(event, { files }) => {
             const fileList = files;

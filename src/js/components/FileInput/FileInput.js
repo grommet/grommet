@@ -448,9 +448,9 @@ const FileInput = forwardRef(
           />
         </ContentsBox>
         {max && (
-          <Message {...theme.fileInput.message.maxFileMessage}>
-            {messages.maxFilesMessage
-              ? messages.maxFilesMessage
+          <Message {...theme.fileInput.message.maxFile}>
+            {messages?.maxFile
+              ? messages.maxFile
               : `Attach a maximum of ${max} files only.`}
           </Message>
         )}
