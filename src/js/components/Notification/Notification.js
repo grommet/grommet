@@ -11,13 +11,9 @@ import { Paragraph } from '../Paragraph';
 const Notification = ({ toast, message, body, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  const iconColor = theme.notification.icon.color;
-
-  const Icons = {
-    FormClose: theme.notification.button.icon,
-  };
-
+  const { icon: CloseIcon } = theme.notification.button;
   const { icon: StatusIcon, color } = theme.notification[status];
+  const iconColor = theme.notification.icon.color;
 
   let content = (
     <Box direction="row">
@@ -44,7 +40,7 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         {onClose && (
           <Button
             {...theme.notification.button}
-            icon={<Icons.FormClose color={iconColor} />}
+            icon={<CloseIcon color={iconColor} />}
             onClick={onClose}
             plain
           />
