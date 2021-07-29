@@ -132,6 +132,7 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
+        a11yTitle={`Show carousel slide ${index + 1}`}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
