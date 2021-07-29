@@ -263,6 +263,21 @@ The locale to use. Defaults to `en-US`.
 string
 ```
 
+**messages**
+
+Custom messages for Calendar. Used for accessibility by screen
+          readers. Defaults to `{
+  "previous": "Moved to {date}",
+  "next": "Moved to {date}"
+}`.
+
+```
+{
+  previous: string,
+  next: string
+}
+```
+
 **onReference**
 
 Called with an ISO8601 date when the user navigates to a different

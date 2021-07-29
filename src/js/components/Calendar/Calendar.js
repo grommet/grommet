@@ -10,6 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -172,6 +173,7 @@ const Calendar = forwardRef(
       firstDayOfWeek = 0,
       header,
       locale = 'en-US',
+      messages,
       onReference,
       onSelect,
       range,
@@ -184,6 +186,7 @@ const Calendar = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -586,10 +589,16 @@ const Calendar = forwardRef(
               onClick={() => {
                 changeReference(previousMonth);
                 announce(
-                  `Moved to ${previousMonth.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}`,
+                  format({
+                    id: 'calendar.previous',
+                    messages,
+                    values: {
+                      date: previousMonth.toLocaleDateString(locale, {
+                        month: 'long',
+                        year: 'numeric',
+                      }),
+                    },
+                  }),
                 );
               }}
             />
@@ -603,10 +612,16 @@ const Calendar = forwardRef(
               onClick={() => {
                 changeReference(nextMonth);
                 announce(
-                  `Moved to ${nextMonth.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}`,
+                  format({
+                    id: 'calendar.next',
+                    messages,
+                    values: {
+                      date: nextMonth.toLocaleDateString(locale, {
+                        month: 'long',
+                        year: 'numeric',
+                      }),
+                    },
+                  }),
                 );
               }}
             />
@@ -808,19 +823,31 @@ const Calendar = forwardRef(
                 onPreviousMonth: () => {
                   changeReference(previousMonth);
                   announce(
-                    `Moved to ${previousMonth.toLocaleDateString(locale, {
-                      month: 'long',
-                      year: 'numeric',
-                    })}`,
+                    format({
+                      id: 'calendar.previous',
+                      messages,
+                      values: {
+                        date: previousMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
                   );
                 },
                 onNextMonth: () => {
                   changeReference(nextMonth);
                   announce(
-                    `Moved to ${previousMonth.toLocaleDateString(locale, {
-                      month: 'long',
-                      year: 'numeric',
-                    })}`,
+                    format({
+                      id: 'calendar.next',
+                      messages,
+                      values: {
+                        date: nextMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
                   );
                 },
                 previousInBound: betweenDates(previousMonth, bounds),
