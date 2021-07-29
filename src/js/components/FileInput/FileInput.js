@@ -50,7 +50,7 @@ const Message = styled(Text)`
     props.theme.fileInput &&
     props.theme.fileInput.message &&
     props.theme.fileInput.message.extend &&
-    props.theme.fileInput.message.maxFileMessage};
+    props.theme.fileInput.message.maxFile};
 `;
 
 const FileInput = forwardRef(
