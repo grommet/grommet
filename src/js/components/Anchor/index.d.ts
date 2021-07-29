@@ -29,7 +29,16 @@ export interface AnchorProps {
     | 'xlarge'
     | 'xxlarge'
     | string;
-  weight?: 'normal' | 'bold' | number;
+  weight?:
+    | 'normal'
+    | 'bold'
+    | 'lighter'
+    | 'bolder'
+    | 'inherit'
+    | 'initial'
+    | 'revert'
+    | 'unset'
+    | number;
 }
 
 type aProps = Omit<JSX.IntrinsicElements['a'], 'color'>;
