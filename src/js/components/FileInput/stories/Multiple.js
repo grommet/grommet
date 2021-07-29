@@ -1,42 +1,26 @@
 import React from 'react';
 
-import { Box, Button, Grommet, FileInput, Form, FormField } from 'grommet';
+import { Box, Grommet, FileInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-/*
-
-  ! JON_TODO: Implement FormField's own validate and see what is overridden
-
-*/
-
-export const Multiple = () => {
-  const maxSize = 5000000;
-
-  return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <Form validate="submit">
-            <FormField
-              label="Multiple File Input"
-              name="fileInput"
-              htmlFor="fileInput"
-              required
-            >
-              <FileInput
-                name="fileInput"
-                id="fileInput"
-                multiple
-                maxSize={maxSize}
-              />
-            </FormField>
-            <Button label="Create" primary type="submit" />
-          </Form>
-        </Box>
+export const Multiple = () => (
+  <Grommet full theme={grommet}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <FileInput
+          multiple
+          onChange={(event, { files }) => {
+            console.log(event);
+            for (let i = 0; i < files.length; i += 1) {
+              const file = files[i];
+              console.log(file.name);
+            }
+          }}
+        />
       </Box>
-    </Grommet>
-  );
-};
+    </Box>
+  </Grommet>
+);
 
 export default {
   title: 'Input/FileInput/Multiple',

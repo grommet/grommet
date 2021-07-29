@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { CircleAlert } from 'grommet-icons';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
@@ -85,8 +86,7 @@ const FileInput = forwardRef(
     const controlRef = useRef();
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
-    // Should we display file name
-    // How to pass file name into Messages obj for FileInput
+
     formContext.useFormField(
       maxSize
         ? {
@@ -110,6 +110,10 @@ const FileInput = forwardRef(
                 } // File size check
               } // Loop through files
 
+              if (numOfFiles === 0) {
+                message = '';
+                return message;
+              }
               message = format({
                 id: 'fileInput.maxSizeMultiple',
                 messages,
@@ -156,19 +160,19 @@ const FileInput = forwardRef(
       }
     }
 
-    const parseBytes = (bytes) => {
-      if (typeof bytes === 'object') {
-        const { size, unit } = bytes;
-        if (size && unit) {
-          if (unit === 'B') return size;
-          if (unit === 'KB') return size * 1000;
-          if (unit === 'MB') return size * 1000 * 1000;
-          if (unit === 'GB') return size * 1000 * 1000 * 1000;
-          if (unit === 'TB') return size * 1000 * 1000 * 1000 * 1000;
-        }
-      }
-      return bytes;
-    };
+    // const parseBytes = (bytes) => {
+    //   if (typeof bytes === 'object') {
+    //     const { size, unit } = bytes;
+    //     if (size && unit) {
+    //       if (unit === 'B') return size;
+    //       if (unit === 'KB') return size * 1000;
+    //       if (unit === 'MB') return size * 1000 * 1000;
+    //       if (unit === 'GB') return size * 1000 * 1000 * 1000;
+    //       if (unit === 'TB') return size * 1000 * 1000 * 1000 * 1000;
+    //     }
+    //   }
+    //   return bytes;
+    // };
 
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
@@ -362,10 +366,15 @@ const FileInput = forwardRef(
                   weight={
                     theme.global.input.weight || theme.global.input.font.weight
                   }
-                  truncate
                   {...theme.fileInput.label}
+                  alignSelf="center"
                 >
-                  {file.name}
+                  <Box direction="row">
+                    {maxSize && file.size > maxSize ? <CircleAlert /> : null}
+                    <Text truncate margin={{ left: 'xsmall' }}>
+                      {file.name}
+                    </Text>
+                  </Box>
                 </Label>
               )}
               <Box flex={false} direction="row" align="center">
@@ -457,7 +466,6 @@ const FileInput = forwardRef(
                     file.size === fileList[i].size,
                 ).length > 0;
               if (!existing) {
-                console.log('Max Size (in bytes): ', parseBytes(maxSize));
                 nextFiles.push(fileList[i]);
               }
             }
