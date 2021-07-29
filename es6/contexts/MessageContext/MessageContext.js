@@ -33,7 +33,15 @@ var _format = function format(options, messages) {
     }
   });
   var message = (options.messages ? options.messages[baseId] : undefined) || messageObj || options.defaultMessage;
-  return message;
+  var values = options.values;
+  var newMessage = message;
+  var tokens = message == null ? void 0 : message.match(/\{(.+?)\}/g);
+  tokens == null ? void 0 : tokens.forEach(function (token) {
+    var names = token.substr(1, token.length - 2);
+    var value = values[names];
+    newMessage = newMessage.replace(token, value);
+  });
+  return values ? newMessage : message;
 };
 
 export { _format as format };

@@ -11,6 +11,8 @@ var _defaultProps = require("../../default-props");
 
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 
+var _MessageContext = require("../../contexts/MessageContext");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
@@ -23,7 +25,7 @@ var _StyledCalendar = require("./StyledCalendar");
 
 var _utils = require("./utils");
 
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -171,6 +173,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       header = _ref3.header,
       _ref3$locale = _ref3.locale,
       locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
+      messages = _ref3.messages,
       onReference = _ref3.onReference,
       onSelect = _ref3.onSelect,
       range = _ref3.range,
@@ -183,8 +186,12 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext); // set activeDate when caller changes it, allows us to change
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+      format = _useContext.format; // set activeDate when caller changes it, allows us to change
   // it internally too
+
 
   var _useState = (0, _react.useState)(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
       activeDate = _useState[0],
@@ -590,9 +597,15 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       disabled: !(0, _utils.betweenDates)(previousMonth, bounds),
       onClick: function onClick() {
         changeReference(previousMonth);
-        announce("Moved to " + previousMonth.toLocaleDateString(locale, {
-          month: 'long',
-          year: 'numeric'
+        announce(format({
+          id: 'calendar.previous',
+          messages: messages,
+          values: {
+            date: previousMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric'
+            })
+          }
         }));
       }
     }), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
@@ -606,9 +619,15 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       disabled: !(0, _utils.betweenDates)(nextMonth, bounds),
       onClick: function onClick() {
         changeReference(nextMonth);
-        announce("Moved to " + nextMonth.toLocaleDateString(locale, {
-          month: 'long',
-          year: 'numeric'
+        announce(format({
+          id: 'calendar.next',
+          messages: messages,
+          values: {
+            date: nextMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric'
+            })
+          }
         }));
       }
     })));
@@ -784,16 +803,28 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
       changeReference(previousMonth);
-      announce("Moved to " + previousMonth.toLocaleDateString(locale, {
-        month: 'long',
-        year: 'numeric'
+      announce(format({
+        id: 'calendar.previous',
+        messages: messages,
+        values: {
+          date: previousMonth.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric'
+          })
+        }
       }));
     },
     onNextMonth: function onNextMonth() {
       changeReference(nextMonth);
-      announce("Moved to " + previousMonth.toLocaleDateString(locale, {
-        month: 'long',
-        year: 'numeric'
+      announce(format({
+        id: 'calendar.next',
+        messages: messages,
+        values: {
+          date: nextMonth.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric'
+          })
+        }
       }));
     },
     previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
