@@ -1054,6 +1054,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       textContainer: {
         pad: { left: 'small', right: 'medium', vertical: 'small' },
+        gap: 'medium',
       },
       messageText: {
         size: 'large',
@@ -1066,7 +1067,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'black',
       },
       button: {
-        margin: { left: 'medium' },
         icon: FormClose,
       },
       critical: {

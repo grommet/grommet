@@ -39,7 +39,6 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         </Box>
         {onClose && (
           <Button
-            {...theme.notification.button}
             icon={<CloseIcon color={iconColor} />}
             onClick={onClose}
             plain
