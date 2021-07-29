@@ -655,7 +655,6 @@ const Calendar = forwardRef(
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
-    // if a week is filled with all blank days, we don't want to set role="row"
     let blankWeek = false;
 
     while (day.getTime() < displayBounds[1].getTime()) {
@@ -805,6 +804,8 @@ const Calendar = forwardRef(
     }
     weeks.push(
       <StyledWeek
+        // if a week contains only blank days, for screen reader accessibility
+        // we don't want to set role="row"
         role={!blankWeek ? 'row' : undefined}
         key={day.getTime()}
         fillContainer={fill}
