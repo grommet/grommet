@@ -185,6 +185,12 @@ describe('Anchor', () => {
         <Anchor href="#" label="Normal" weight="normal" />
         <Anchor href="#" label="Bold" weight="bold" />
         <Anchor href="#" label="Bold" weight={500} />
+        <Anchor href="#" label="Lighter" weight="lighter" />
+        <Anchor href="#" label="Bolder" weight="bolder" />
+        <Anchor href="#" label="Inherit" weight="inherit" />
+        <Anchor href="#" label="Initial" weight="initial" />
+        <Anchor href="#" label="Revert" weight="revert" />
+        <Anchor href="#" label="Unset" weight="unset" />
       </Grommet>,
     );
     expect(container).toMatchSnapshot();
