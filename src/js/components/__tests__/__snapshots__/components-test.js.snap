@@ -170,22 +170,12 @@ It will always send an array with currently active panel indexes.",
 </Accordion>",
   },
   "AccordionPanel": Object {
-    "description": "An Accordion panel.",
-    "intrinsicElement": "div",
-    "name": "AccordionPanel",
-    "properties": Array [
-      Object {
-        "description": "The panel label.",
-        "format": "string
-node",
-        "name": "label",
-      },
-      Object {
-        "description": "If specified, the entire panel header will be managed by the caller.",
-        "format": "node",
-        "name": "header",
-      },
-    ],
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "header": [Function],
+      "label": [Function],
+    },
+    "render": [Function],
   },
   "Anchor": Object {
     "$$typeof": Symbol(react.forward_ref),
