@@ -84,7 +84,7 @@ export const doc = DateInput => {
         readers.`,
       )
       .defaultValue({
-        enterCalendar: 'Enter calendar dialog',
+        enterCalendar: 'Calendar is open, press tab to enter the calendar',
         exitCalendar: 'Exited calendar dialog',
       }),
   };
