@@ -177,6 +177,9 @@ const DateInput = forwardRef(
               setOpen(true);
               if (onFocus) onFocus(event);
             }}
+            onMouseDown={({ target }) => {
+              if (document.activeElement === target) setOpen(!open);
+            }}
           />
         </Keyboard>
       </FormContext.Provider>
