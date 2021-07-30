@@ -146,7 +146,7 @@ string
 
 Custom messages for DateInput. Used for accessibility by screen
         readers. Defaults to `{
-  "enterCalendar": "Calendar is open, press tab to enter the calendar.",
+  "enterCalendar": "Calendar is open, press tab to enter the calendar",
   "exitCalendar": "Exited calendar dialog"
 }`.
 
