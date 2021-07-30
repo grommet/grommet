@@ -204,7 +204,9 @@ const DateInput = forwardRef(
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
-          onClickOutside={() => setOpen(false)}
+          onClickOutside={({ target }) => {
+            if (target !== ref.current) setOpen(false);
+          }}
           {...dropProps}
         >
           {calendar}
