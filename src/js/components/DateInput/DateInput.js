@@ -97,20 +97,45 @@ const DateInput = forwardRef(
     const dropRef = useRef();
     const [dropFocused, setDropFocused] = useState(containsFocus(dropRef));
 
-    // when Calendar no longer has focus and focus is not on the MaskedInput,
-    // close the Calendar
+    // track when caller is moving backwards through calendar using Shift + Tab
+    const [shiftTab, setShiftTab] = useState(false);
+
+    // track if caller just made a selection or explicitly closed
+    // Calendar with "Esc", don't open the Calendar on tab if this is the case
+    const [closedByAction, setClosedByAction] = useState(false);
+
+    // when Calendar no longer has focus from tabbing through, return the
+    // focus to the input
     useEffect(() => {
       // timeout necessary to ensure focus event on Calendar item can
       // complete after blur event of something in the Calendar
       const timer = setTimeout(() => {
-        if (open && !containsFocus(ref.current) && !dropFocused) {
+        if (open && !containsFocus(ref.current) && !dropFocused && !shiftTab) {
           setOpen(false);
+          setClosedByAction(true);
+          ref.current.focus();
         }
         // lowest possible value after testing MacOS Chrome, Safari, and Firefox
       }, 25);
 
       return () => clearTimeout(timer);
-    }, [dropFocused, open, ref]);
+    }, [dropFocused, open, ref, shiftTab]);
+
+    // when Calendar no longer has focus as caller moves backwards
+    // through tab index, make sure input receives focus
+    useEffect(() => {
+      // timeout necessary to ensure focus event on Calendar item can
+      // complete after blur event of something in the Calendar
+      const timer = setTimeout(() => {
+        if (shiftTab && !dropFocused) {
+          ref.current.focus(); // put focus back on input
+          setShiftTab(false);
+        }
+        // lowest possible value after testing MacOS Chrome, Safari, and Firefox
+      }, 25);
+
+      return () => clearTimeout(timer);
+    }, [dropFocused, shiftTab, ref]);
 
     const calendar = (
       <Calendar
@@ -134,7 +159,11 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
+                if (open && !range) {
+                  setOpen(false);
+                  setClosedByAction(true);
+                  setTimeout(() => ref.current.focus(), 25);
+                }
               }
         }
         {...calendarProps}
@@ -163,7 +192,22 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
+        <Keyboard
+          onEsc={
+            open
+              ? () => {
+                  setOpen(false);
+                  setClosedByAction(true);
+                  ref.current.focus();
+                }
+              : undefined
+          }
+          onDown={() => setOpen(true)}
+          onTab={() => {
+            if (dropRef.current) dropRef.current.focus();
+            setClosedByAction(false);
+          }}
+        >
           <MaskedInput
             ref={ref}
             id={id}
@@ -194,7 +238,7 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
-              setOpen(true);
+              if (!closedByAction) setOpen(true);
               if (onFocus) onFocus(event);
             }}
           />
@@ -228,7 +272,9 @@ const DateInput = forwardRef(
           trapFocus={false}
           {...dropProps}
         >
-          {calendar}
+          <Keyboard onTab={(e) => (e.shiftKey ? setShiftTab(true) : undefined)}>
+            {calendar}
+          </Keyboard>
         </Drop>,
       ];
     }
