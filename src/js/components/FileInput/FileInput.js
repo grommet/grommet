@@ -106,16 +106,18 @@ const FileInput = forwardRef(
                       values: { maxSize },
                     });
                     return message;
-                  } // Multiple check
-                } // File size check
-              } // Loop through files
+                  }
+                }
+              }
 
               if (numOfFiles === 0) {
                 message = '';
                 return message;
               }
               message = format({
-                id: 'fileInput.maxSizeMultiple',
+                id: `fileInput.maxSizeMultiple.${
+                  numOfFiles === 1 ? 'singular' : 'plural'
+                }`,
                 messages,
                 values: { maxSize, numOfFiles },
               });

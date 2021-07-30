@@ -9,7 +9,10 @@
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
     "maxSizeSingle": "File exceeds size limit. Select a file with max size of {maxSize}.",
-    "maxSizeMultiple": "{numOfFiles} Files exceed size limit. Select files with a max size of {maxSize}.",
+    "maxSizeMultiple": {
+      "singular": "1 File exceeds size limit. Select files with a max size of {maxSize}.",
+      "plural": "{numOfFiles} Files exceed size limit. Select files with a max size of {maxSize}."
+    },
     "remove": "remove",
     "removeAll": "remove all"
   },
