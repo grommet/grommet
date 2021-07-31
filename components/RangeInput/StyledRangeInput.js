@@ -67,10 +67,12 @@ var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;positio
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
 });
-var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0px;height:", ";width:", ";", ""], rangeThumbStyle, function (props) {
+var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0px;height:", ";width:", ";", " ", ""], rangeThumbStyle, function (props) {
   return props.theme.global.spacing;
 }, function (props) {
   return props.theme.global.spacing;
+}, function (props) {
+  return props.focus && (0, _utils.focusStyle)();
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
 });
@@ -79,7 +81,7 @@ var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0p
 var StyledRangeInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
-})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:pointer;background:transparent;&::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}", " ", ""], function (props) {
+})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:pointer;background:transparent;&::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
   return props.theme.global.spacing;
 }, rangeTrackStyle, function (props) {
   return ((0, _utils.parseMetricToNum)(props.theme.global.spacing) - (0, _utils.parseMetricToNum)(props.theme.rangeInput.track.height || 0)) * 0.5;

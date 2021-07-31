@@ -129,8 +129,9 @@ var Carousel = function Carousel(_ref) {
   var iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
   var selectors = [];
   var wrappedChildren = Children.map(children, function (child, index) {
-    selectors.push( /*#__PURE__*/React.createElement(Button // eslint-disable-next-line react/no-array-index-key
-    , {
+    selectors.push( /*#__PURE__*/React.createElement(Button, {
+      a11yTitle: "Show carousel slide " + (index + 1) // eslint-disable-next-line react/no-array-index-key
+      ,
       key: index,
       icon: /*#__PURE__*/React.createElement(CurrentIcon, {
         color: activeIndex === index ? iconColor : undefined

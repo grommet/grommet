@@ -662,6 +662,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var day = new Date(displayBounds[0]);
   var days;
   var firstDayInMonth;
+  var blankWeek = false;
 
   while (day.getTime() < displayBounds[1].getTime()) {
     if (day.getDay() === firstDayOfWeek) {
@@ -680,7 +681,6 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
     if (!showAdjacentDays && otherMonth) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
-        role: "gridcell",
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -688,6 +688,13 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
         sizeProp: size,
         fillContainer: fill
       })));
+
+      if (weeks.length === 5 &&
+      /* If the length days array is less than the current getDate()
+      we know that all days in the array are from the next month. */
+      days.length < day.getDate()) {
+        blankWeek = true;
+      }
     } else if (
     /* Do not show adjacent days in 6th row if all days
     fall in the next month */
@@ -695,8 +702,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     /* If the length days array is less than the current getDate()
     we know that all days in the array are from the next month. */
     days.length < day.getDate()) {
+      blankWeek = true;
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
-        role: "gridcell",
         key: day.getTime(),
         sizeProp: size,
         fillContainer: fill
@@ -787,8 +794,10 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     day = (0, _utils.addDays)(day, 1);
   }
 
-  weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
-    role: "row",
+  weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek // if a week contains only blank days, for screen reader accessibility
+  // we don't want to set role="row"
+  , {
+    role: !blankWeek ? 'row' : undefined,
     key: day.getTime(),
     fillContainer: fill
   }, days));
