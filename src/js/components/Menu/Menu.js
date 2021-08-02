@@ -88,6 +88,7 @@ const Menu = forwardRef((props, ref) => {
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
   const [alignControlMirror, setAlignControlMirror] = useState();
+  const shrunk = alignControlMirror === align.top;
 
   const buttonRefs = {};
   const constants = useMemo(
@@ -352,7 +353,8 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {alignControlMirror === 'bottom' || align.bottom === 'bottom'
+              {(shrunk !== true && alignControlMirror === 'bottom') ||
+              align.bottom === 'bottom'
                 ? controlMirror
                 : undefined}
             </ContainerBox>
