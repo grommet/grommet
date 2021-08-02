@@ -55,10 +55,10 @@ var Swatch = function Swatch(_ref) {
       d = "M " + half + " 0 L " + (half - off2) + " " + dim + " L " + dim + " " + (half - off1) + " L 0 " + (half - off1) + " L " + (half + off2) + " " + dim + " Z";
     } else if (point === 'triangle') d = "M " + half + " 0 L " + dim + " " + dim + " L 0 " + dim + " Z";else if (point === 'triangleDown') d = "M 0 0 L " + dim + " 0 L " + half + " " + dim + " Z";else if (point === 'square') d = "M 0 0 L " + dim + " 0 L " + dim + " " + dim + " L 0 " + dim + " Z"; // TODO: dash
     else if (thickness) {
-        width = parseMetricToNum(theme.global.edgeSize[thickness]) || dim;
-        d = "M 0 0 L " + width + " 0 L " + width + " " + dim + " L 0 " + dim + " Z";
-      } // box
-      else d = "M 0 0 L " + dim + " 0 L " + dim + " " + dim + " L 0 " + dim + " Z";
+      width = parseMetricToNum(theme.global.edgeSize[thickness]) || dim;
+      d = "M 0 0 L " + width + " 0 L " + width + " " + dim + " L 0 " + dim + " Z";
+    } // box
+    else d = "M 0 0 L " + dim + " 0 L " + dim + " " + dim + " L 0 " + dim + " Z";
     content = /*#__PURE__*/React.createElement("path", {
       d: d
     });

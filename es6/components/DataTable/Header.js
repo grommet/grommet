@@ -169,8 +169,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       // if any are selected, clear selection
       if (selected.length === data.length) onSelect([]); // if none are selected, select all data
       else onSelect(data.map(function (datum) {
-          return datumValue(datum, primaryProperty);
-        }));
+        return datumValue(datum, primaryProperty);
+      }));
     },
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/React.createElement(TableCell, {

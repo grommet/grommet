@@ -263,13 +263,13 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       componentValue !== undefined && // input driving
       componentValue !== formValue // don't already have it
       ) {
-          setValueState(function (prevValue) {
-            var nextValue = _extends({}, prevValue);
+        setValueState(function (prevValue) {
+          var nextValue = _extends({}, prevValue);
 
-            nextValue[name] = componentValue;
-            return nextValue;
-          }); // don't onChange on programmatic changes
-        }
+          nextValue[name] = componentValue;
+          return nextValue;
+        }); // don't onChange on programmatic changes
+      }
     }, [componentValue, formValue, name]); // on unmount, if the form is uncontrolled, remove the key/value
     // from the form value
 
@@ -359,8 +359,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       var validateField = function validateField(value2, data) {
         var result;
 
-        if (required && ( // false is for CheckBox
-        value2 === undefined || value2 === '' || value2 === false || Array.isArray(value2) && !value2.length)) {
+        if (required && (value2 === undefined || value2 === '' || value2 === false || Array.isArray(value2) && !value2.length)) {
           result = format({
             id: 'form.required',
             messages: messages

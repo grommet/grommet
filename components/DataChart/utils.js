@@ -86,8 +86,8 @@ var createDateFormat = function createDateFormat(firstValue, lastValue, full) {
         month: full ? 'long' : 'short'
       }; // 1 year or more
     else options = {
-        year: 'numeric'
-      };
+      year: 'numeric'
+    };
     if (options) dateFormat = new Intl.DateTimeFormat(undefined, options).format;
   }
 

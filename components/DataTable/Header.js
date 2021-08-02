@@ -193,8 +193,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       // if any are selected, clear selection
       if (selected.length === data.length) onSelect([]); // if none are selected, select all data
       else onSelect(data.map(function (datum) {
-          return (0, _buildState.datumValue)(datum, primaryProperty);
-        }));
+        return (0, _buildState.datumValue)(datum, primaryProperty);
+      }));
     },
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {

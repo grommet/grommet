@@ -93,8 +93,7 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   // to be the first day of the week, then we need to include Sunday and six
   // days prior.
 
-  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = (0, _utils.subtractDays)(start, 6) : // beginning of week
-  start = (0, _utils.subtractDays)(start, start.getDay() - firstDayOfWeek);
+  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = (0, _utils.subtractDays)(start, 6) : start = (0, _utils.subtractDays)(start, start.getDay() - firstDayOfWeek);
   var end = (0, _utils.addDays)(start, 7 * 5 + 7); // 5 weeks to end of week
 
   return [start, end];
@@ -455,85 +454,85 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       }
     } // everything down is a range
     else if (!dates && !Array.isArray(date)) {
-        // if user supplies date, convert this into dates
-        if (date) {
-          var priorDate = new Date(date);
-          var selDate = new Date(selectedDate);
+      // if user supplies date, convert this into dates
+      if (date) {
+        var priorDate = new Date(date);
+        var selDate = new Date(selectedDate);
 
-          if (activeDate === activeDates.start) {
-            if (selDate.getTime() > priorDate.getTime()) {
-              nextDates = [[selectedDate, undefined]];
-            } else {
-              nextDates = [[selectedDate, date]];
-            }
-
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.end) {
-            if (selDate.getTime() < priorDate.getTime()) {
-              nextDates = [[selectedDate, undefined]];
-              setActiveDate(activeDates.end);
-            } else {
-              nextDates = [[date, selectedDate]];
-              setActiveDate(activeDates.start);
-            }
-
-            if (activeDateProp) setActiveDate(activeDateProp);
+        if (activeDate === activeDates.start) {
+          if (selDate.getTime() > priorDate.getTime()) {
+            nextDates = [[selectedDate, undefined]];
+          } else {
+            nextDates = [[selectedDate, date]];
           }
-        } else if (activeDate === activeDates.start) {
-          nextDates = [[selectedDate, undefined]];
+
           setActiveDate(activeDates.end);
+          if (activeDateProp) setActiveDate(activeDateProp);
         } else if (activeDate === activeDates.end) {
-          nextDates = [[undefined, selectedDate]];
-        }
-
-        if (activeDateProp) setActiveDate(activeDateProp);
-      } else if (dates || date) {
-        var handleSelection = function handleSelection(dateValue) {
-          var priorDates = dateValue[0].map(function (d) {
-            return new Date(d);
-          });
-          var selDate = new Date(selectedDate);
-
-          if (selDate.getTime() === priorDates[0].getTime()) {
-            nextDates = [[undefined, dateValue[0][1]]];
+          if (selDate.getTime() < priorDate.getTime()) {
+            nextDates = [[selectedDate, undefined]];
+            setActiveDate(activeDates.end);
+          } else {
+            nextDates = [[date, selectedDate]];
             setActiveDate(activeDates.start);
-          } else if (selDate.getTime() === priorDates[1].getTime()) {
-            nextDates = [[dateValue[0][0], undefined]];
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.start) {
-            if (selDate.getTime() > priorDates[1].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-            } else {
-              nextDates = [[selectedDate, dateValue[0][1]]];
-            }
+          }
 
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.end) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-              setActiveDate(activeDates.end);
-            } else {
-              nextDates = [[dateValue[0][0], selectedDate]];
-              setActiveDate(activeDates.start);
-            }
-
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } // cleanup
-
-
-          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
-        }; // have dates
-
-
-        if (dates) {
-          handleSelection(dates);
-        } else if (date && Array.isArray(date)) {
-          handleSelection(date);
+          if (activeDateProp) setActiveDate(activeDateProp);
         }
+      } else if (activeDate === activeDates.start) {
+        nextDates = [[selectedDate, undefined]];
+        setActiveDate(activeDates.end);
+      } else if (activeDate === activeDates.end) {
+        nextDates = [[undefined, selectedDate]];
       }
+
+      if (activeDateProp) setActiveDate(activeDateProp);
+    } else if (dates || date) {
+      var handleSelection = function handleSelection(dateValue) {
+        var priorDates = dateValue[0].map(function (d) {
+          return new Date(d);
+        });
+        var selDate = new Date(selectedDate);
+
+        if (selDate.getTime() === priorDates[0].getTime()) {
+          nextDates = [[undefined, dateValue[0][1]]];
+          setActiveDate(activeDates.start);
+        } else if (selDate.getTime() === priorDates[1].getTime()) {
+          nextDates = [[dateValue[0][0], undefined]];
+          setActiveDate(activeDates.end);
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } else if (activeDate === activeDates.start) {
+          if (selDate.getTime() > priorDates[1].getTime()) {
+            nextDates = [[selectedDate, undefined]];
+          } else {
+            nextDates = [[selectedDate, dateValue[0][1]]];
+          }
+
+          setActiveDate(activeDates.end);
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } else if (activeDate === activeDates.end) {
+          if (selDate.getTime() < priorDates[0].getTime()) {
+            nextDates = [[selectedDate, undefined]];
+            setActiveDate(activeDates.end);
+          } else {
+            nextDates = [[dateValue[0][0], selectedDate]];
+            setActiveDate(activeDates.start);
+          }
+
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } // cleanup
+
+
+        if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+      }; // have dates
+
+
+      if (dates) {
+        handleSelection(dates);
+      } else if (date && Array.isArray(date)) {
+        handleSelection(date);
+      }
+    }
 
     setDates(nextDates);
 

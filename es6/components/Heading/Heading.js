@@ -6,7 +6,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledHeading } from './StyledHeading';
-var Heading = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid styled-components putting it in the DOM
+) {
   var color = _ref.color,
       fill = _ref.fill,
       level = _ref.level,
@@ -14,7 +15,6 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   return (
     /*#__PURE__*/
-    // munged to avoid styled-components putting it in the DOM
     // enforce level to be a number
     React.createElement(StyledHeading, _extends({
       as: "h" + level,

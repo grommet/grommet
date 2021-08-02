@@ -177,8 +177,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var patternId;
 
   function getOpacity(valueOpacity) {
-    return valueOpacity && theme.global.opacity[valueOpacity] || ( // eslint-disable-next-line no-nested-ternary
-    valueOpacity === true ? theme.global.opacity.medium : valueOpacity === false ? undefined : valueOpacity);
+    return valueOpacity && theme.global.opacity[valueOpacity] || (valueOpacity === true ? theme.global.opacity.medium : valueOpacity === false ? undefined : valueOpacity);
   }
 
   var renderBars = function renderBars() {

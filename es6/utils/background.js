@@ -39,8 +39,7 @@ export var backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
 
       if (typeof dark === 'boolean') {
         result = dark;
-      } else if (color && ( // weak opacity means we keep the existing darkness
-      !opacity || opacity !== 'weak')) {
+      } else if (color && (!opacity || opacity !== 'weak')) {
         var backgroundColor = normalizeColor(background.color, theme);
 
         if (backgroundColor) {
