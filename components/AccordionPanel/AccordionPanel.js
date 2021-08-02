@@ -21,6 +21,8 @@ var _Heading = require("../Heading");
 
 var _AccordionContext = require("../Accordion/AccordionContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -144,13 +146,6 @@ var AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     open: active
   }, children) : active && children));
 });
+exports.AccordionPanel = AccordionPanel;
 AccordionPanel.displayName = 'AccordionPanel';
-var AccordionPanelDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
-}
-
-var AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
-exports.AccordionPanel = AccordionPanelWrapper;
+AccordionPanel.propTypes = _propTypes.AccordionPanelType;

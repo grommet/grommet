@@ -13,6 +13,7 @@ import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
+import { AccordionPanelType } from './propTypes';
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       header = _ref.header,
@@ -127,12 +128,5 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, children) : active && children));
 });
 AccordionPanel.displayName = 'AccordionPanel';
-var AccordionPanelDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
-}
-
-var AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
-export { AccordionPanelWrapper as AccordionPanel };
+AccordionPanel.propTypes = AccordionPanelType;
+export { AccordionPanel };
