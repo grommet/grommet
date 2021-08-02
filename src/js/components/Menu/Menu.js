@@ -353,8 +353,8 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {(shrunk !== true && alignControlMirror === 'bottom') ||
-              align.bottom === 'bottom'
+              {!shrunk &&
+              (alignControlMirror === 'bottom' || align.bottom === 'bottom')
                 ? controlMirror
                 : undefined}
             </ContainerBox>
