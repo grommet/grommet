@@ -1,6 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -190,6 +191,31 @@ describe('DateInput', () => {
       which: 27,
     });
     expect(document.getElementById('item__drop')).toBeNull();
+  });
+
+  test('click', () => {
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          value={DATE}
+          onFocus={() => {
+            console.log('Focus');
+          }}
+        />
+      </Grommet>,
+    );
+
+    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    expect(document.getElementById('item__drop')).not.toBeNull();
+
+    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    expect(document.getElementById('item__drop')).toBeNull();
+
+    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
   test('select inline', () => {
