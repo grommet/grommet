@@ -1,6 +1,6 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { CircleAlert } from 'grommet-icons';
+import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
