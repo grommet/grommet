@@ -106,6 +106,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       alignControlMirror = _useState[0],
       setAlignControlMirror = _useState[1];
 
+  var initialAlignTop = alignControlMirror === align.top;
   var buttonRefs = {};
   var constants = (0, _react.useMemo)(function () {
     return {
@@ -348,7 +349,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
           }
         }), child))
       );
-    })), alignControlMirror === 'bottom' || align.bottom === 'bottom' ? controlMirror : undefined))
+    })), !initialAlignTop && (alignControlMirror === 'bottom' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
 Menu.defaultProps = {
