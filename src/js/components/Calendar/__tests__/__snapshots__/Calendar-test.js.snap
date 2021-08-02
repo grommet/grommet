@@ -20079,7 +20079,6 @@ exports[`Calendar showAdjacentDays 1`] = `
           >
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20087,7 +20086,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20095,7 +20093,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20650,7 +20647,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20659,11 +20655,9 @@ exports[`Calendar showAdjacentDays 1`] = `
           </div>
           <div
             class="c11"
-            role="row"
           >
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20671,7 +20665,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20679,7 +20672,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20687,7 +20679,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20695,7 +20686,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20703,7 +20693,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -20711,7 +20700,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21413,11 +21401,9 @@ exports[`Calendar showAdjacentDays 1`] = `
           </div>
           <div
             class="c11"
-            role="row"
           >
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21425,7 +21411,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21433,7 +21418,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21441,7 +21425,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21449,7 +21432,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21457,7 +21439,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
@@ -21465,7 +21446,6 @@ exports[`Calendar showAdjacentDays 1`] = `
             </div>
             <div
               class="c12"
-              role="gridcell"
             >
               <div
                 class="c15"
