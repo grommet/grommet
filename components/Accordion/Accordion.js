@@ -5,6 +5,8 @@ exports.Accordion = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _propTypes = require("./propTypes");
+
 var _Box = require("../Box");
 
 var _AccordionContext = require("./AccordionContext");
@@ -87,13 +89,5 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }, child);
   }));
 });
-Accordion.displayName = 'Accordion';
-var AccordionDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionDoc = require('./doc').doc(Accordion);
-}
-
-var AccordionWrapper = AccordionDoc || Accordion;
-exports.Accordion = AccordionWrapper;
+exports.Accordion = Accordion;
+Accordion.propTypes = _propTypes.AccordionType;
