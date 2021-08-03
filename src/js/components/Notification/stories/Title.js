@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 import { Button } from '../../Button';
 import { Box } from '../../Box';
 
-const MessageNotification = () => {
+const TitleNotification = () => {
   const [visible, setVisible] = useState(false);
 
   const onOpen = () => setVisible(true);
@@ -16,15 +16,13 @@ const MessageNotification = () => {
       <Box pad="large" justify="center">
         <Button label="Show Notification" onClick={onOpen} />
       </Box>
-      {visible && (
-        <Notification toast message="Status Message" onClose={onClose} />
-      )}
+      {visible && <Notification toast title="Status Title" onClose={onClose} />}
     </Grommet>
   );
 };
 
-export const Message = () => <MessageNotification />;
+export const Title = () => <TitleNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Message',
+  title: 'Visualizations/Notification/Toast/Title',
 };

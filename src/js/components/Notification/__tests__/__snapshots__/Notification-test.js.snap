@@ -42,9 +42,12 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 12px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 .c4 {
@@ -69,8 +72,8 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 12px;
   padding-right: 24px;
 }
@@ -108,21 +111,29 @@ exports[`Notification should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -186,6 +197,10 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {

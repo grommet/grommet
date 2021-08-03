@@ -8,7 +8,7 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import { Paragraph } from '../Paragraph';
 
-const Notification = ({ toast, message, body, status, onClose }) => {
+const Notification = ({ toast, title, message, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const { icon: CloseIcon } = theme.notification.button;
@@ -32,9 +32,9 @@ const Notification = ({ toast, message, body, status, onClose }) => {
         fill
       >
         <Box>
-          <Text {...theme.notification.messageText}>{message}</Text>
-          {body && (
-            <Paragraph {...theme.notification.bodyText}>{body}</Paragraph>
+          <Text {...theme.notification.titleText}>{title}</Text>
+          {message && (
+            <Paragraph {...theme.notification.messageText}>{message}</Paragraph>
           )}
         </Box>
         {onClose && (

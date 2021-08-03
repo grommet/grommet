@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 import { Button } from '../../Button';
 import { Box } from '../../Box';
 
-const MessageAndBodyNotification = () => {
+const TitleAndMessageNotification = () => {
   const [visible, setVisible] = useState(false);
 
   const onOpen = () => setVisible(true);
@@ -19,11 +19,8 @@ const MessageAndBodyNotification = () => {
       {visible && (
         <Notification
           toast
-          message="Status Message"
-          body="Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod temporincid idunt 
-            ut labore et dolore magna aliqua. Ut enim ad minim 
-            veniam, quis nostrud"
+          title="Status Title"
+          message="Messages should be at max two lines of text."
           onClose={onClose}
         />
       )}
@@ -31,8 +28,8 @@ const MessageAndBodyNotification = () => {
   );
 };
 
-export const MessageAndBody = () => <MessageAndBodyNotification />;
+export const TitleAndMessage = () => <TitleAndMessageNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Message And Body',
+  title: 'Visualizations/Notification/Toast/Title and Message',
 };

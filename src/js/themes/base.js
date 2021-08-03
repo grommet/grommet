@@ -1043,28 +1043,34 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     notification: {
       toast: {
         container: {
-          gap: 'small',
           elevation: 'medium',
-          round: 'small',
+          round: 'xsmall',
+          width: 'medium',
         },
       },
       iconContainer: {
-        pad: 'small',
-        round: { size: 'small', corner: 'left' },
+        pad: { vertical: 'xsmall', horizontal: 'small' },
+        round: { size: 'xsmall', corner: 'left' },
       },
       textContainer: {
-        pad: { left: 'small', right: 'medium', vertical: 'small' },
+        pad: { left: 'small', right: 'medium', vertical: 'xsmall' },
         gap: 'medium',
       },
-      messageText: {
+      titleText: {
         size: 'large',
         weight: 'bold',
-        color: 'black',
+        color: {
+          light: 'black',
+          dark: 'white',
+        },
       },
-      bodyText: {
+      messageText: {
         size: 'medium',
         margin: 'none',
-        color: 'black',
+        color: {
+          light: 'black',
+          dark: 'white',
+        },
       },
       button: {
         icon: FormClose,
