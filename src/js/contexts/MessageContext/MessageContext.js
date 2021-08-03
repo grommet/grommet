@@ -32,11 +32,23 @@ export const format = (options, messages) => {
       messageObj = messageObj[idPart];
     }
   });
+
   const message =
     (options.messages ? options.messages[baseId] : undefined) ||
     messageObj ||
     options.defaultMessage;
-  return message;
+
+  const { values } = options;
+
+  let newMessage = message;
+  const tokens = message?.match(/\{(.+?)\}/g);
+  tokens?.forEach((token) => {
+    const names = token.substr(1, token.length - 2);
+    const value = values[names];
+    newMessage = newMessage.replace(token, value);
+  });
+
+  return values ? newMessage : message;
 };
 
 const defaultValue = {
