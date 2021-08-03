@@ -120,17 +120,28 @@ const Circle = forwardRef((props, ref) => {
       startAngle = endAngle;
     });
 
-  let SemiCirclePath;
+  let track;
   if (type === 'semicircle') {
     const d1 = arcCommands(width / 2, width, radius, 270, 90);
-    SemiCirclePath = (
+    track = (
       <path
-        key="semiCircle"
         d={d1}
         strokeWidth={height}
         fill="none"
         {...strokeProps(background, theme)}
         strokeLinecap="round"
+      />
+    );
+  } else {
+    track = (
+      <circle
+        cx={mid}
+        cy={mid}
+        r={radius}
+        {...strokeProps(background, theme)}
+        strokeWidth={height}
+        strokeLinecap={round ? 'round' : 'square'}
+        fill="none"
       />
     );
   }
@@ -150,19 +161,7 @@ const Circle = forwardRef((props, ref) => {
       height={viewBoxHeight}
       {...rest}
     >
-      {type === 'semicircle' ? (
-        SemiCirclePath
-      ) : (
-        <circle
-          cx={mid}
-          cy={mid}
-          r={radius}
-          {...strokeProps(background, theme)}
-          strokeWidth={height}
-          strokeLinecap={round ? 'round' : 'square'}
-          fill="none"
-        />
-      )}
+      {track}
       {paths}
       {pathCaps}
     </StyledMeter>
