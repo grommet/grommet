@@ -1333,6 +1333,28 @@ exports[`Meter type 1`] = `
       stroke-width="192"
     />
   </svg>
+  <svg
+    class="c1"
+    height="192"
+    viewBox="0 0 384 384"
+    width="384"
+  >
+    <path
+      d="M 372.0000000000 384.0000000000 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 384.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="round"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 46.3769410125 278.1986545874 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 384.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
 </div>
 `;
 

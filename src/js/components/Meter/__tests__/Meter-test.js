@@ -65,6 +65,7 @@ describe('Meter', () => {
         <Meter type="bar" values={VALUES} />
         <Meter type="circle" values={VALUES} />
         <Meter type="pie" values={VALUES} />
+        <Meter type="semicircle" values={VALUES} />
       </Grommet>,
     );
 
