@@ -6974,10 +6974,10 @@ grommet-theme-hp@^0.1.1:
   resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
   integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
 
-grommet-theme-hpe@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-2.1.0.tgz#f71eed1b1753ff67912cd5b6219c633c3a88a068"
-  integrity sha512-lPc7Rhp03RjSeeI7D3mD1hW2nHQXIqd+UJlHycr2kquG/z6nxDmnUwb6q+SWPvF/V5vQ2xKwoLcTlVE3U0x3Yw==
+grommet-theme-hpe@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-2.2.0.tgz#898776518e78ece5b64d295dc776400ce831143e"
+  integrity sha512-62RRpuWhYfFd7FnwvyC2d1WAETBBEvwqvN2x3Gzj/ejJ6JVrW639Ig/BREIpXPpfO123lup8uWrSRmr80AjbaQ==
 
 gud@^1.0.0:
   version "1.0.0"
