@@ -19,8 +19,13 @@ exports.polarToCartesian = polarToCartesian;
 var arcCommands = function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
   // handle that we can't draw a complete circle
   var normalizedEndAngle = endAngle;
+  /* 
+   added endAngle - startAngle >= 360 
+   for SemiCircle the endAngle will never be greater then startAngle 
+   since it starts with a startAngle of 270.
+  */
 
-  if (endAngle - startAngle >= 360) {
+  if (endAngle > startAngle && endAngle - startAngle >= 360) {
     normalizedEndAngle = startAngle + 359.99;
   }
 
@@ -30,11 +35,17 @@ var arcCommands = function arcCommands(centerX, centerY, radius, startAngle, end
   var d = ['M', start.x.toFixed(POST_DECIMAL_DIGITS), start.y.toFixed(POST_DECIMAL_DIGITS), 'A', radius.toFixed(POST_DECIMAL_DIGITS), radius.toFixed(POST_DECIMAL_DIGITS), 0, arcSweep, 0, end.x.toFixed(POST_DECIMAL_DIGITS), end.y.toFixed(POST_DECIMAL_DIGITS)].join(' ');
   return d;
 };
+/* TranslatedEngAngle will now take the value of the
+startAngle + anglePer * value and mod by 360. This was added
+to take account the startAngle not being 0. So no matter the
+value it will be % 360 to get the correct angle. 
+*/
+
 
 exports.arcCommands = arcCommands;
 
 var translateEndAngle = function translateEndAngle(startAngle, anglePer, value) {
-  return Math.min(360, Math.max(0, startAngle + anglePer * value));
+  return Math.max(0, startAngle + anglePer * value) % 360;
 };
 
 exports.translateEndAngle = translateEndAngle;

@@ -26,12 +26,12 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   var height = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var mid = width / 2;
   var radius = width / 2 - height / 2;
-  var anglePer = 360 / max;
+  var anglePer = (type === 'semicircle' ? 180 : 360) / max;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
   });
   var startValue = 0;
-  var startAngle = 0;
+  var startAngle = type === 'semicircle' ? 270 : 0;
   var paths = [];
   var pathCaps = [];
   (values || []).filter(function (v) {
@@ -49,9 +49,9 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     var endAngle;
 
     if (startValue + value >= max) {
-      endAngle = 360;
+      endAngle = type === 'semicircle' ? 90 : 360;
     } else {
-      endAngle = Math.min(360, translateEndAngle(startAngle, anglePer, value));
+      endAngle = translateEndAngle(startAngle, anglePer, value);
     }
 
     var hoverProps;
@@ -99,7 +99,8 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
 
       pathCaps.unshift(pathCap);
     } else {
-      var d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
+      var y = type === 'semicircle' ? width : width / 2;
+      var d = arcCommands(width / 2, y, radius, startAngle, endAngle);
       paths.push( /*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d,
@@ -113,20 +114,43 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     startValue += value;
     startAngle = endAngle;
   });
+  var track;
+
+  if (type === 'semicircle') {
+    var d1 = arcCommands(width / 2, width, radius, 270, 90);
+    track = /*#__PURE__*/React.createElement("path", _extends({
+      d: d1,
+      strokeWidth: height,
+      fill: "none"
+    }, strokeProps(background, theme), {
+      strokeLinecap: "round"
+    }));
+  } else {
+    track = /*#__PURE__*/React.createElement("circle", _extends({
+      cx: mid,
+      cy: mid,
+      r: radius
+    }, strokeProps(background, theme), {
+      strokeWidth: height,
+      strokeLinecap: round ? 'round' : 'square',
+      fill: "none"
+    }));
+  }
+
+  var viewBoxHeight;
+
+  if (type === 'semicircle') {
+    viewBoxHeight = width / 2;
+  } else if (size === 'full') {
+    viewBoxHeight = '100%';
+  } else viewBoxHeight = width;
+
   return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
-    height: size === 'full' ? '100%' : width
-  }, rest), /*#__PURE__*/React.createElement("circle", _extends({
-    cx: mid,
-    cy: mid,
-    r: radius
-  }, strokeProps(background, theme), {
-    strokeWidth: height,
-    strokeLinecap: round ? 'round' : 'square',
-    fill: "none"
-  })), paths, pathCaps);
+    height: viewBoxHeight
+  }, rest), track, paths, pathCaps);
 });
 Circle.displayName = 'Circle';
 Circle.defaultProps = {};

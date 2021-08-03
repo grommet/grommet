@@ -64,7 +64,7 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
       background: background,
       direction: direction
     }, rest));
-  } else if (type === 'circle' || type === 'pie') {
+  } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
     content = /*#__PURE__*/React.createElement(Circle, _extends({
       ref: ref,
       max: memoizedMax,
