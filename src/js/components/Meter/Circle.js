@@ -19,11 +19,11 @@ const Circle = forwardRef((props, ref) => {
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
   const radius = width / 2 - height / 2;
-  const anglePer = 360 / max;
+  const anglePer = (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
   let startValue = 0;
-  let startAngle = 0;
+  let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
   let pathCaps = [];
   (values || [])
@@ -36,12 +36,9 @@ const Circle = forwardRef((props, ref) => {
 
       let endAngle;
       if (startValue + value >= max) {
-        endAngle = 360;
+        endAngle = type === 'semicircle' ? 90 : 360;
       } else {
-        endAngle = Math.min(
-          360,
-          translateEndAngle(startAngle, anglePer, value),
-        );
+        endAngle = translateEndAngle(startAngle, anglePer, value);
       }
       let hoverProps;
       if (onHover) {
@@ -54,7 +51,6 @@ const Circle = forwardRef((props, ref) => {
         someHighlight && !highlight ? background : colorName,
         theme,
       );
-
       if (round) {
         const d1 = arcCommands(
           width / 2,
@@ -105,13 +101,8 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(
-          width / 2,
-          width / 2,
-          radius,
-          startAngle,
-          endAngle,
-        );
+        const y = type === 'semicircle' ? width : width / 2;
+        const d = arcCommands(width / 2, y, radius, startAngle, endAngle);
         paths.push(
           <path
             key={key}
@@ -129,14 +120,20 @@ const Circle = forwardRef((props, ref) => {
       startAngle = endAngle;
     });
 
-  return (
-    <StyledMeter
-      ref={ref}
-      viewBox={`0 0 ${width} ${width}`}
-      width={size === 'full' ? '100%' : width}
-      height={size === 'full' ? '100%' : width}
-      {...rest}
-    >
+  let track;
+  if (type === 'semicircle') {
+    const d1 = arcCommands(width / 2, width, radius, 270, 90);
+    track = (
+      <path
+        d={d1}
+        strokeWidth={height}
+        fill="none"
+        {...strokeProps(background, theme)}
+        strokeLinecap="round"
+      />
+    );
+  } else {
+    track = (
       <circle
         cx={mid}
         cy={mid}
@@ -146,6 +143,25 @@ const Circle = forwardRef((props, ref) => {
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
       />
+    );
+  }
+
+  let viewBoxHeight;
+  if (type === 'semicircle') {
+    viewBoxHeight = width / 2;
+  } else if (size === 'full') {
+    viewBoxHeight = '100%';
+  } else viewBoxHeight = width;
+
+  return (
+    <StyledMeter
+      ref={ref}
+      viewBox={`0 0 ${width} ${width}`}
+      width={size === 'full' ? '100%' : width}
+      height={viewBoxHeight}
+      {...rest}
+    >
+      {track}
       {paths}
       {pathCaps}
     </StyledMeter>
