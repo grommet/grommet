@@ -26,7 +26,7 @@ export const doc = (CheckBox) => {
       It will be passed an object indicating whether the button is checked. It
       should return a react element.
       For example:
-      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      \`children={({ checked, indeterminate }) => <Box ...>{...}</Box>}\`
       `,
     ),
     disabled: PropTypes.bool

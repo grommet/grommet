@@ -14,10 +14,11 @@ import { CheckBoxGroup } from 'grommet';
 **children**
 
 Function that will be called to render the visual representation.
-      It will be passed an object indicating whether the button is checked. It
-      should return a react element.
+      It will be called for each option and passed the option, and an object 
+      indicating whether the option is checked. It should return a react 
+      element.
       For example:
-      `children={(option, { checked }) => <Box ...>{...}</Box>}`
+      `children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}`
       
 
 ```

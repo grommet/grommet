@@ -192,14 +192,8 @@ const CheckBox = forwardRef(
             if (onChange) onChange(event);
           }}
         />
-        {children ? (
-          children({ checked })
-        ) : (
-          <>
-            {visual}
-            {hidden}
-          </>
-        )}
+        {children ? children({ checked, indeterminate }) : <>{visual}</>}
+        {hidden}
       </StyledCheckBox>
     );
 
