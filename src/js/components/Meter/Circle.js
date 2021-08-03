@@ -13,12 +13,17 @@ const Circle = forwardRef((props, ref) => {
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  const height =
-    type === 'pie'
-      ? width / 2
-      : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  let height;
+  if (type === 'pie') {
+    height = width / 2;
+  } else if (type === 'semicircle') {
+    height =
+      2 * parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  } else
+    height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
-  const radius = width / 2 - height / 2;
+  const radius =
+    type === 'semicircle' ? width - height / 2 : width / 2 - height / 2;
   const anglePer = (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
@@ -129,7 +134,7 @@ const Circle = forwardRef((props, ref) => {
         strokeWidth={height}
         fill="none"
         {...strokeProps(background, theme)}
-        strokeLinecap="round"
+        strokeLinecap={round ? 'round' : 'square'}
       />
     );
   } else {
