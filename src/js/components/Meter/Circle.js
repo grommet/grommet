@@ -13,17 +13,12 @@ const Circle = forwardRef((props, ref) => {
   const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  let height;
-  if (type === 'pie') {
-    height = width / 2;
-  } else if (type === 'semicircle') {
-    height =
-      2 * parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-  } else
-    height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  const strokeWidth =
+    type === 'pie'
+      ? width / 2
+      : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   const mid = width / 2;
-  const radius =
-    type === 'semicircle' ? width - height / 2 : width / 2 - height / 2;
+  const radius = width / 2 - strokeWidth / 2;
   const anglePer = (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
 
@@ -70,7 +65,7 @@ const Circle = forwardRef((props, ref) => {
             d={d1}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="round"
             {...hoverProps}
             {...pathRest}
@@ -93,7 +88,7 @@ const Circle = forwardRef((props, ref) => {
             d={d2}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="round"
             {...hoverProps}
             {...pathRest}
@@ -106,15 +101,20 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const y = type === 'semicircle' ? width : width / 2;
-        const d = arcCommands(width / 2, y, radius, startAngle, endAngle);
+        const d = arcCommands(
+          width / 2,
+          width / 2,
+          radius,
+          startAngle,
+          endAngle,
+        );
         paths.push(
           <path
             key={key}
             d={d}
             fill="none"
             {...stroke}
-            strokeWidth={height}
+            strokeWidth={strokeWidth}
             strokeLinecap="butt"
             {...hoverProps}
             {...pathRest}
@@ -127,11 +127,11 @@ const Circle = forwardRef((props, ref) => {
 
   let track;
   if (type === 'semicircle') {
-    const d1 = arcCommands(width / 2, width, radius, 270, 90);
+    const d1 = arcCommands(width / 2, width / 2, radius, 270, 90);
     track = (
       <path
         d={d1}
-        strokeWidth={height}
+        strokeWidth={strokeWidth}
         fill="none"
         {...strokeProps(background, theme)}
         strokeLinecap={round ? 'round' : 'square'}
@@ -144,7 +144,7 @@ const Circle = forwardRef((props, ref) => {
         cy={mid}
         r={radius}
         {...strokeProps(background, theme)}
-        strokeWidth={height}
+        strokeWidth={strokeWidth}
         strokeLinecap={round ? 'round' : 'square'}
         fill="none"
       />
@@ -161,7 +161,7 @@ const Circle = forwardRef((props, ref) => {
   return (
     <StyledMeter
       ref={ref}
-      viewBox={`0 0 ${width} ${width}`}
+      viewBox={`0 0 ${width} ${viewBoxHeight}`}
       width={size === 'full' ? '100%' : width}
       height={viewBoxHeight}
       {...rest}
