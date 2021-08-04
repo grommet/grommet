@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BoxTypes } from '../Box';
+import { BoxProps } from '../Box/index';
 
-declare const CardBody: React.FC<BoxTypes>;
+declare const CardBody: React.FC<BoxProps>;
 
 export { CardBody };

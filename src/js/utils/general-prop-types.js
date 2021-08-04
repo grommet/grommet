@@ -229,3 +229,5 @@ export const widthPropType = PropTypes.oneOfType([
     max: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
   }),
 ]);
+
+export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];

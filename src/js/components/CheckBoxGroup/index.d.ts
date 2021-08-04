@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
 import { CheckBoxProps } from '../CheckBox';
 import { Omit } from '../../utils';
 

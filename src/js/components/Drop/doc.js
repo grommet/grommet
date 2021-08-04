@@ -1,7 +1,4 @@
 import { describe, PropTypes } from 'react-desc';
-
-import { OVERFLOW_VALUES } from '../Box/doc';
-
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 import {
@@ -9,6 +6,7 @@ import {
   roundPropType,
   marginProp,
 } from '../../utils/prop-types';
+import { OVERFLOW_VALUES } from '../../utils/general-prop-types';
 
 // if you update values here, make sure to update in Box/doc too.
 const dropOverflowPropTypes = PropTypes.oneOfType([
