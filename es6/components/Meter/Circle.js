@@ -23,9 +23,10 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
 
   var theme = useContext(ThemeContext);
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
-  var height = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-  var mid = width / 2;
-  var radius = width / 2 - height / 2;
+  var strokeWidth = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  var centerX = width / 2;
+  var centerY = width / 2;
+  var radius = width / 2 - strokeWidth / 2;
   var anglePer = (type === 'semicircle' ? 180 : 360) / max;
   var someHighlight = (values || []).some(function (v) {
     return v.highlight;
@@ -70,25 +71,25 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     var stroke = strokeProps(someHighlight && !highlight ? background : colorName, theme);
 
     if (round) {
-      var d1 = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
+      var d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
       paths.unshift( /*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d1,
         fill: "none"
       }, stroke, {
-        strokeWidth: height,
+        strokeWidth: strokeWidth,
         strokeLinecap: "round"
       }, hoverProps, pathRest))); // To handle situations where the last values are small, redraw
       // a dot at the end. Give just a bit of angle to avoid anti-aliasing
       // leakage around the edge.
 
-      var d2 = arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
+      var d2 = arcCommands(centerX, centerY, radius, endAngle - 0.5, endAngle);
       var pathCap = /*#__PURE__*/React.createElement("path", _extends({
         key: key + "-",
         d: d2,
         fill: "none"
       }, stroke, {
-        strokeWidth: height,
+        strokeWidth: strokeWidth,
         strokeLinecap: "round"
       }, hoverProps, pathRest)); // If we are on a large enough path to not need re-drawing previous
       // ones, clear the pathCaps we've collected already.
@@ -99,14 +100,13 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
 
       pathCaps.unshift(pathCap);
     } else {
-      var y = type === 'semicircle' ? width : width / 2;
-      var d = arcCommands(width / 2, y, radius, startAngle, endAngle);
+      var d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
       paths.push( /*#__PURE__*/React.createElement("path", _extends({
         key: key,
         d: d,
         fill: "none"
       }, stroke, {
-        strokeWidth: height,
+        strokeWidth: strokeWidth,
         strokeLinecap: "butt"
       }, hoverProps, pathRest)));
     }
@@ -117,21 +117,21 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   var track;
 
   if (type === 'semicircle') {
-    var d1 = arcCommands(width / 2, width, radius, 270, 90);
+    var d1 = arcCommands(centerX, centerY, radius, 270, 90);
     track = /*#__PURE__*/React.createElement("path", _extends({
       d: d1,
-      strokeWidth: height,
+      strokeWidth: strokeWidth,
       fill: "none"
     }, strokeProps(background, theme), {
-      strokeLinecap: "round"
+      strokeLinecap: round ? 'round' : 'square'
     }));
   } else {
     track = /*#__PURE__*/React.createElement("circle", _extends({
-      cx: mid,
-      cy: mid,
+      cx: centerX,
+      cy: centerY,
       r: radius
     }, strokeProps(background, theme), {
-      strokeWidth: height,
+      strokeWidth: strokeWidth,
       strokeLinecap: round ? 'round' : 'square',
       fill: "none"
     }));
@@ -147,7 +147,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
 
   return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
-    viewBox: "0 0 " + width + " " + width,
+    viewBox: "0 0 " + width + " " + viewBoxHeight,
     width: size === 'full' ? '100%' : width,
     height: viewBoxHeight
   }, rest), track, paths, pathCaps);
