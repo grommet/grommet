@@ -1,4 +1,4 @@
-var _excluded = ["value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["children", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
     _excluded2 = ["value"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -11,7 +11,8 @@ import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var valueProp = _ref.value,
+  var children = _ref.children,
+      valueProp = _ref.value,
       disabledProp = _ref.disabled,
       _ref$focusIndicator = _ref.focusIndicator,
       focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
@@ -64,7 +65,7 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
 
-  }, rest), options.map(function (option) {
+  }, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
     var valueOption = valueKey ? option[valueKey] : optionValue;
@@ -97,7 +98,9 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onChange: function onChange(event) {
         return onCheckBoxChange(event, valueOption, optionProps);
       }
-    }));
+    }), children ? function (state) {
+      return children(options[index], state);
+    } : null);
   }));
 });
 CheckBoxGroup.displayName = 'CheckBoxGroup';

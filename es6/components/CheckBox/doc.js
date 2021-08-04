@@ -6,6 +6,7 @@ export var doc = function doc(CheckBox) {
   DocumentedCheckBox.propTypes = {
     a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),
+    children: PropTypes.func.description("Function that will be called to render the visual representation.\n      It will be passed an object indicating whether the button is checked. It\n      should return a react element.\n      For example:\n      `children={({ checked, indeterminate }) => <Box ...>{...}</Box>}`\n      "),
     disabled: PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\n      with the same name so form submissions work.").defaultValue(false),
     fill: PropTypes.bool.description("Whether the checkbox and label expand to fill all of the available\n         width and/or height of their container.").defaultValue(undefined),
     id: PropTypes.string.description('The DOM id attribute value to use for the underlying <input/> element.'),

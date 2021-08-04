@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
+var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -27,6 +27,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       ariaLabel = _ref['aria-label'],
       checkedProp = _ref.checked,
+      children = _ref.children,
       _ref$defaultChecked = _ref.defaultChecked,
       defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
       disabled = _ref.disabled,
@@ -165,7 +166,10 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setChecked(event.target.checked);
       if (_onChange) _onChange(event);
     }
-  })), visual, hidden);
+  })), children ? children({
+    checked: checked,
+    indeterminate: indeterminate
+  }) : visual, hidden);
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement("span", null, label) : label;
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;

@@ -19,7 +19,7 @@ var _StyledCheckBox = require("./StyledCheckBox");
 
 var _utils = require("../../utils");
 
-var _excluded = ["a11yTitle", "aria-label", "checked", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
+var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -43,6 +43,7 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       ariaLabel = _ref['aria-label'],
       checkedProp = _ref.checked,
+      children = _ref.children,
       _ref$defaultChecked = _ref.defaultChecked,
       defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
       disabled = _ref.disabled,
@@ -183,7 +184,10 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setChecked(event.target.checked);
       if (_onChange) _onChange(event);
     }
-  })), visual, hidden);
+  })), children ? children({
+    checked: checked,
+    indeterminate: indeterminate
+  }) : visual, hidden);
 
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement("span", null, label) : label;
   var first = reverse ? normalizedLabel : checkBoxNode;

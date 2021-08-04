@@ -13,7 +13,7 @@ var _FormContext = require("../Form/FormContext");
 
 var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 
-var _excluded = ["value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
+var _excluded = ["children", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
     _excluded2 = ["value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -25,7 +25,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var valueProp = _ref.value,
+  var children = _ref.children,
+      valueProp = _ref.value,
       disabledProp = _ref.disabled,
       _ref$focusIndicator = _ref.focusIndicator,
       focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
@@ -78,7 +79,7 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
 
-  }, rest), options.map(function (option) {
+  }, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
     var valueOption = valueKey ? option[valueKey] : optionValue;
@@ -111,7 +112,9 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onChange: function onChange(event) {
         return onCheckBoxChange(event, valueOption, optionProps);
       }
-    }));
+    }), children ? function (state) {
+      return children(options[index], state);
+    } : null);
   }));
 });
 exports.CheckBoxGroup = CheckBoxGroup;

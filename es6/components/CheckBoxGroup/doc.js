@@ -3,6 +3,7 @@ import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(CheckBoxGroup) {
   var DocumentedCheckBoxGroup = describe(CheckBoxGroup).availableAt(getAvailableAtBadge('CheckBoxGroup', 'Input')).description('A group of CheckBoxes.').usage("import { CheckBoxGroup } from 'grommet';\n        <CheckBoxGroup />").intrinsicElement('div');
   DocumentedCheckBoxGroup.propTypes = {
+    children: PropTypes.func.description("Function that will be called to render the visual representation.\n      It will be called for each option and passed the option, and an object \n      indicating whether the option is checked. It should return a react \n      element.\n      For example:\n      `children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}`\n      "),
     value: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).description("An array of the values for the checked options. \n      If options is provided as an object, the value array will be the values \n     that the valueKey maps to."),
     disabled: PropTypes.bool.description("Disables all options.").defaultValue(undefined),
     labelKey: PropTypes.string.description("When the options array contains objects, this property indicates how\n        to determine the label of each option. If a string is\n        provided, it is used as the key to retrieve each option's label."),
