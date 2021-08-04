@@ -53,13 +53,7 @@ const Circle = forwardRef((props, ref) => {
         theme,
       );
       if (round) {
-        const d1 = arcCommands(
-          width / 2,
-          width / 2,
-          radius,
-          startAngle,
-          endAngle,
-        );
+        const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.unshift(
           <path
             key={key}
@@ -77,7 +71,7 @@ const Circle = forwardRef((props, ref) => {
         // a dot at the end. Give just a bit of angle to avoid anti-aliasing
         // leakage around the edge.
         const d2 = arcCommands(
-          centerY,
+          centerX,
           centerY,
           radius,
           endAngle - 0.5,
@@ -102,7 +96,7 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(centerY, centerX, radius, startAngle, endAngle);
+        const d = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.push(
           <path
             key={key}
@@ -122,7 +116,7 @@ const Circle = forwardRef((props, ref) => {
 
   let track;
   if (type === 'semicircle') {
-    const d1 = arcCommands(centerY, centerX, radius, 270, 90);
+    const d1 = arcCommands(centerX, centerY, radius, 270, 90);
     track = (
       <path
         d={d1}
@@ -136,7 +130,7 @@ const Circle = forwardRef((props, ref) => {
     track = (
       <circle
         cx={centerX}
-        cy={centerX}
+        cy={centerY}
         r={radius}
         {...strokeProps(background, theme)}
         strokeWidth={strokeWidth}
