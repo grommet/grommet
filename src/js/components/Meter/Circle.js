@@ -17,7 +17,8 @@ const Circle = forwardRef((props, ref) => {
     type === 'pie'
       ? width / 2
       : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-  const mid = width / 2;
+  const centerX = width / 2;
+  const centerY = width / 2;
   const radius = width / 2 - strokeWidth / 2;
   const anglePer = (type === 'semicircle' ? 180 : 360) / max;
   const someHighlight = (values || []).some((v) => v.highlight);
@@ -76,8 +77,8 @@ const Circle = forwardRef((props, ref) => {
         // a dot at the end. Give just a bit of angle to avoid anti-aliasing
         // leakage around the edge.
         const d2 = arcCommands(
-          width / 2,
-          width / 2,
+          centerY,
+          centerY,
           radius,
           endAngle - 0.5,
           endAngle,
@@ -101,13 +102,7 @@ const Circle = forwardRef((props, ref) => {
         }
         pathCaps.unshift(pathCap);
       } else {
-        const d = arcCommands(
-          width / 2,
-          width / 2,
-          radius,
-          startAngle,
-          endAngle,
-        );
+        const d = arcCommands(centerY, centerX, radius, startAngle, endAngle);
         paths.push(
           <path
             key={key}
@@ -127,7 +122,7 @@ const Circle = forwardRef((props, ref) => {
 
   let track;
   if (type === 'semicircle') {
-    const d1 = arcCommands(width / 2, width / 2, radius, 270, 90);
+    const d1 = arcCommands(centerY, centerX, radius, 270, 90);
     track = (
       <path
         d={d1}
@@ -140,8 +135,8 @@ const Circle = forwardRef((props, ref) => {
   } else {
     track = (
       <circle
-        cx={mid}
-        cy={mid}
+        cx={centerX}
+        cy={centerX}
         r={radius}
         {...strokeProps(background, theme)}
         strokeWidth={strokeWidth}

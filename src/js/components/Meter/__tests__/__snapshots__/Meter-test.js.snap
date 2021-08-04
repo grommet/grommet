@@ -423,6 +423,35 @@ exports[`Meter round 1`] = `
       stroke-width="24"
     />
   </svg>
+  <svg
+    class="c2"
+    height="192"
+    viewBox="0 0 384 192"
+    width="384"
+  >
+    <path
+      d="M 372.0000000000 192.0000000000 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 192.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="round"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 46.3769410125 86.1986545874 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 192.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="round"
+      stroke-width="24"
+    />
+    <path
+      d="M 46.3769410125 86.1986545874 A 180.0000000000 180.0000000000 0 0 0 45.4592066959 87.4734679720"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="round"
+      stroke-width="24"
+    />
+  </svg>
 </div>
 `;
 
