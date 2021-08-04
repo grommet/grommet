@@ -352,12 +352,11 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -475,9 +474,9 @@ exports[`Pagination should allow user to control page via state with page +
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -954,12 +953,11 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1077,9 +1075,9 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -1114,12 +1112,11 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1237,9 +1234,9 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -1684,12 +1681,11 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -1807,9 +1803,9 @@ exports[`Pagination should apply button kind style when referenced by a string 1
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -2290,12 +2286,11 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c8"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -2413,9 +2408,9 @@ exports[`Pagination should apply custom theme 1`] = `
               class="c14"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3448,12 +3443,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3571,9 +3565,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3608,12 +3602,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3731,9 +3724,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -3768,12 +3761,11 @@ exports[`Pagination should apply size 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -3891,9 +3883,9 @@ exports[`Pagination should apply size 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4257,12 +4249,11 @@ exports[`Pagination should change the page on prop change 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4380,9 +4371,9 @@ exports[`Pagination should change the page on prop change 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -4857,12 +4848,11 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -4982,9 +4972,9 @@ exports[`Pagination should disable next button if on last page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5337,12 +5327,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5380,9 +5369,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -5652,12 +5641,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -5679,9 +5667,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6034,12 +6022,11 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -6077,9 +6064,9 @@ exports[`Pagination should disable previous and next controls when numberItems
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -6556,12 +6543,11 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -6679,9 +6665,9 @@ exports[`Pagination should disable previous button if on first page 1`] = `
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7046,12 +7032,11 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7169,9 +7154,9 @@ exports[`Pagination should display next page of results when "next" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7187,157 +7172,156 @@ exports[`Pagination should display next page of results when "next" is
 exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kUTqHn Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+      class="StyledBox-sc-13pk1d4-0 fKqrK"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+        class="StyledBox-sc-13pk1d4-0 gjrtDD"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 cCFJmp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eJwTzl StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+            class="StyledText-sc-1sadyjn-0 fxbXHC StyledPageControl__StyledSeparator-sc-1vlfaez-2 jqelnS"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -7702,12 +7686,11 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -7825,9 +7808,9 @@ exports[`Pagination should display page 'n' of results when "page n" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8192,12 +8175,11 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -8315,9 +8297,9 @@ exports[`Pagination should display previous page of results when "previous" is
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8333,157 +8315,156 @@ exports[`Pagination should display previous page of results when "previous" is
 exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dYebPD Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kUTqHn Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+      class="StyledBox-sc-13pk1d4-0 fKqrK"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jFUgSH"
+        class="StyledBox-sc-13pk1d4-0 gjrtDD"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 cCFJmp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eJwTzl StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 DkZvS StyledPageControl__StyledSeparator-sc-1vlfaez-2 chfAOa"
+            class="StyledText-sc-1sadyjn-0 fxbXHC StyledPageControl__StyledSeparator-sc-1vlfaez-2 jqelnS"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+            class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 jehgOx"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -8961,12 +8942,11 @@ exports[`Pagination should display the correct last page based on items length
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9084,9 +9064,9 @@ exports[`Pagination should display the correct last page based on items length
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -9450,12 +9430,11 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -9627,9 +9606,9 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -9993,12 +9972,11 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -10128,9 +10106,9 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -10494,12 +10472,11 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -10643,9 +10620,9 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -11122,12 +11099,11 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -11217,9 +11193,9 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -11695,12 +11671,11 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c7"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="M17 2 7 12l10 10"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
           </button>
@@ -11820,9 +11795,9 @@ exports[`Pagination should set page to last page if page prop > total possible
               class="c13"
               viewBox="0 0 24 24"
             >
-              <polyline
+              <path
+                d="m7 2 10 10L7 22"
                 fill="none"
-                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
               />
