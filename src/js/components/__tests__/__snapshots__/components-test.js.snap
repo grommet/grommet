@@ -2047,6 +2047,16 @@ point",
         "name": "checked",
       },
       Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked, indeterminate }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "defaultValue": false,
         "description": "Same as React <input disabled={} />. Also adds a hidden input element
       with the same name so form submissions work.",
@@ -2204,6 +2214,17 @@ NOTE: This can only be used with non-toggle components",
     "intrinsicElement": "div",
     "name": "CheckBoxGroup",
     "properties": Array [
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be called for each option and passed the option, and an object 
+      indicating whether the option is checked. It should return a react 
+      element.
+      For example:
+      \`children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
       Object {
         "description": "An array of the values for the checked options. 
       If options is provided as an object, the value array will be the values 
