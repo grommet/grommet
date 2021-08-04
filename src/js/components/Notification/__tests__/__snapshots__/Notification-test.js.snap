@@ -8,6 +8,31 @@ exports[`Notification should have no accessibility violations 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -31,23 +56,12 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #CCCCCC;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
   padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
 }
 
 .c4 {
@@ -72,10 +86,6 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 12px;
-  padding-right: 24px;
 }
 
 .c5 {
@@ -93,8 +103,8 @@ exports[`Notification should have no accessibility violations 1`] = `
 }
 
 .c6 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 24px;
   color: #000000;
   font-weight: bold;
 }
@@ -111,41 +121,7 @@ exports[`Notification should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-right: 12px;
   }
 }
 
@@ -160,15 +136,18 @@ exports[`Notification should have no accessibility violations 1`] = `
         class="c2"
       >
         <svg
-          aria-label="StatusUnknown"
+          aria-label="StatusUnknownSmall"
           class="c3"
-          viewBox="0 0 24 24"
+          viewBox="0 0 12 12"
         >
-          <path
-            d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 15v-1c0-1 0-1.5 1-2s2-1 2-2.5c0-1-1-2.5-3-2.5s-3 1.264-3 3m3 6v2"
-            fill="none"
+          <rect
+            fill-rule="evenodd"
+            height="10"
+            rx="1"
             stroke="#000"
-            stroke-width="2"
+            width="10"
+            x="1"
+            y="1"
           />
         </svg>
       </div>
@@ -197,18 +176,6 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {

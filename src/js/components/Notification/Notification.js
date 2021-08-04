@@ -6,23 +6,18 @@ import { Layer } from '../Layer';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { Paragraph } from '../Paragraph';
 
 const Notification = ({ toast, title, message, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const { icon: CloseIcon } = theme.notification.button;
   const { icon: StatusIcon, color } = theme.notification[status];
-  const iconColor = theme.notification.icon.color;
+  const { color: closeIconColor } = theme.notification.button;
 
   let content = (
     <Box direction="row">
-      <Box
-        {...theme.notification.iconContainer}
-        background={color}
-        justify="center"
-      >
-        <StatusIcon color={iconColor} />
+      <Box {...theme.notification.iconContainer}>
+        <StatusIcon color={color} />
       </Box>
       <Box
         {...theme.notification.textContainer}
@@ -34,12 +29,12 @@ const Notification = ({ toast, title, message, status, onClose }) => {
         <Box>
           <Text {...theme.notification.titleText}>{title}</Text>
           {message && (
-            <Paragraph {...theme.notification.messageText}>{message}</Paragraph>
+            <Text {...theme.notification.messageText}>{message}</Text>
           )}
         </Box>
         {onClose && (
           <Button
-            icon={<CloseIcon color={iconColor} />}
+            icon={<CloseIcon color={closeIconColor} />}
             onClick={onClose}
             plain
           />
@@ -50,7 +45,7 @@ const Notification = ({ toast, title, message, status, onClose }) => {
 
   if (toast) {
     content = (
-      <Layer animation="fadeIn" modal={false} onEsc={onClose}>
+      <Layer animation="fadeIn" modal={false} onEsc={onClose} plain>
         <Box {...theme.notification.toast.container}>{content}</Box>
       </Layer>
     );

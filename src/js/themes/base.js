@@ -10,10 +10,10 @@ import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { Previous } from 'grommet-icons/icons/Previous';
-import { StatusCritical } from 'grommet-icons/icons/StatusCritical';
-import { StatusGood } from 'grommet-icons/icons/StatusGood';
-import { StatusWarning } from 'grommet-icons/icons/StatusWarning';
-import { StatusUnknown } from 'grommet-icons/icons/StatusUnknown';
+import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
+import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
+import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
+import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
@@ -1046,18 +1046,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
+          pad: { horizontal: 'medium', vertical: 'xsmall' },
+          background: {
+            color: 'background-front',
+          },
         },
       },
       iconContainer: {
-        pad: { vertical: 'xsmall', horizontal: 'small' },
-        round: { size: 'xsmall', corner: 'left' },
+        pad: { right: 'small' },
       },
       textContainer: {
-        pad: { left: 'small', right: 'medium', vertical: 'xsmall' },
         gap: 'medium',
       },
       titleText: {
-        size: 'large',
         weight: 'bold',
         color: {
           light: 'black',
@@ -1065,8 +1066,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       messageText: {
-        size: 'medium',
-        margin: 'none',
         color: {
           light: 'black',
           dark: 'white',
@@ -1074,29 +1073,30 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       button: {
         icon: FormClose,
+        color: {
+          light: 'black',
+          dark: 'white',
+        },
       },
       critical: {
-        icon: StatusCritical,
+        icon: StatusCriticalSmall,
         color: 'status-critical',
       },
       warning: {
-        icon: StatusWarning,
+        icon: StatusWarningSmall,
         color: 'status-warning',
       },
       good: {
-        icon: StatusGood,
+        icon: StatusGoodSmall,
         color: 'status-ok',
       },
       unknown: {
-        icon: StatusUnknown,
+        icon: StatusUnknownSmall,
         color: 'status-unknown',
       },
       undefined: {
-        icon: StatusUnknown,
+        icon: StatusUnknownSmall,
         color: 'status-unknown',
-      },
-      icon: {
-        color: 'plain',
       },
     },
     pagination: {
