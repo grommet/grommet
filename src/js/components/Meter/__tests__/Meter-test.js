@@ -125,6 +125,7 @@ describe('Meter', () => {
       <Grommet>
         <Meter round values={VALUES} />
         <Meter type="circle" round values={VALUES} />
+        <Meter type="semicircle" round values={VALUES} />
       </Grommet>,
     );
 
