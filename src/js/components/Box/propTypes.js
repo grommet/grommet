@@ -80,7 +80,7 @@ const overflowPropType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-export const BoxType = {
+export const BoxPropType = {
   ...genericProps,
   align: PropTypes.oneOfType([
     PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),

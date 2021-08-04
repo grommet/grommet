@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { colorPropType, genericProps } from '../../utils/general-prop-types';
 
-export const AnchorType = {
+export const AnchorPropType = {
   ...genericProps,
   a11yTitle: PropTypes.string,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

@@ -16,7 +16,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
-import { CarouselType } from './propTypes';
+import { CarouselPropType } from './propTypes';
 
 const Carousel = ({
   activeChild,
@@ -253,6 +253,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-Carousel.propTypes = CarouselType;
+Carousel.propTypes = CarouselPropType;
 
 export { Carousel };

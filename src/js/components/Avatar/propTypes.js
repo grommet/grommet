@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const AvatarType = {
+export const AvatarPropType = {
   size: PropTypes.oneOfType([
     PropTypes.oneOf([
       'xsmall',

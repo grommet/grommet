@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
 
-export const AccordionType = {
+export const AccordionPropType = {
   ...genericProps,
   activeIndex: PropTypes.oneOfType([
     PropTypes.number,

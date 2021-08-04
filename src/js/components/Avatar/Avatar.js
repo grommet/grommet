@@ -3,7 +3,7 @@ import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
-import { AvatarType } from './propTypes';
+import { AvatarPropType } from './propTypes';
 
 const Avatar = ({
   align = 'center',
@@ -58,5 +58,5 @@ const Avatar = ({
   return <AvatarChildren />;
 };
 
-Avatar.propTypes = AvatarType;
+Avatar.propTypes = AvatarPropType;
 export { Avatar };

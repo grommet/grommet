@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
 
-export const CarouselType = {
+export const CarouselPropType = {
   ...genericProps,
   activeChild: PropTypes.number,
   fill: PropTypes.bool,

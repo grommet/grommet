@@ -1,5 +1,5 @@
 import React, { Children, forwardRef, useState } from 'react';
-import { AccordionType } from './propTypes';
+import { AccordionPropType } from './propTypes';
 import { Box } from '../Box';
 
 import { AccordionContext } from './AccordionContext';
@@ -67,6 +67,6 @@ const Accordion = forwardRef(
   },
 );
 
-Accordion.propTypes = AccordionType;
+Accordion.propTypes = AccordionPropType;
 
 export { Accordion };

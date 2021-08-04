@@ -12,7 +12,7 @@ import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
-import { BoxType } from './propTypes';
+import { BoxPropType } from './propTypes';
 
 const Box = forwardRef(
   (
@@ -166,5 +166,5 @@ const Box = forwardRef(
 );
 
 Box.displayName = 'Box';
-Box.propTypes = BoxType;
+Box.propTypes = BoxPropType;
 export { Box };
