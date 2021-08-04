@@ -201,9 +201,7 @@ describe('DateInput', () => {
           name="item"
           format="mm/dd/yyyy"
           value={DATE}
-          onFocus={() => {
-            console.log('Focus');
-          }}
+          onFocus={() => {}}
         />
       </Grommet>,
     );
