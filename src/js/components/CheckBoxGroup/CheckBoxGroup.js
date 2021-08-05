@@ -9,6 +9,7 @@ import { CheckBoxGroupPropType } from './propTypes';
 const CheckBoxGroup = forwardRef(
   (
     {
+      children,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
@@ -72,7 +73,7 @@ const CheckBoxGroup = forwardRef(
         }
         {...rest}
       >
-        {options.map((option) => {
+        {options.map((option, index) => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
           const valueOption = valueKey ? option[valueKey] : optionValue;
@@ -104,7 +105,9 @@ const CheckBoxGroup = forwardRef(
               onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
-            />
+            >
+              {children ? (state) => children(options[index], state) : null}
+            </CheckBox>
           );
         })}
       </StyledCheckBoxGroup>
