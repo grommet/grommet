@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
-import { CheckBoxProps } from '../CheckBox';
+import { CheckBoxProps } from '../CheckBox/index';
 import { Omit } from '../../utils';
 
 interface OnChangeEvent {

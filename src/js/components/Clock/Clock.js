@@ -2,9 +2,11 @@ import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
+import { ClockPropType } from './propTypes';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
-const DURATION_REGEXP = /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
+const DURATION_REGEXP =
+  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
 const parseTime = (time, hourLimit) => {
   const result = {};
@@ -173,11 +175,6 @@ const Clock = forwardRef(
 );
 
 Clock.displayName = 'Clock';
+Clock.propTypes = ClockPropType;
 
-let ClockDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
-}
-const ClockWrapper = ClockDoc || Clock;
-
-export { ClockWrapper as Clock };
+export { Clock };

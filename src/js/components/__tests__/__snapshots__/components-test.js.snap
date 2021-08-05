@@ -197,264 +197,34 @@ Object {
     "render": [Function],
   },
   "CheckBoxGroup": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Input-CheckBoxGroup&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js",
-      },
-    ],
-    "description": "A group of CheckBoxes.",
-    "intrinsicElement": "div",
-    "name": "CheckBoxGroup",
-    "properties": Array [
-      Object {
-        "description": "An array of the values for the checked options. 
-      If options is provided as an object, the value array will be the values 
-     that the valueKey maps to.",
-        "format": "[
-  number
-  string
-]",
-        "name": "value",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "Disables all options.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "When the options array contains objects, this property indicates how
-        to determine the label of each option. If a string is
-        provided, it is used as the key to retrieve each option's label.",
-        "format": "string",
-        "name": "labelKey",
-      },
-      Object {
-        "description": "Required when used in the Context of Form and FormField.",
-        "format": "string",
-        "name": "name",
-      },
-      Object {
-        "description": "Function that will be called when the user clicks on a CheckBox option. 
-      It will pass a React event object with the additional CheckBoxGroup 
-      properties of 'option' and 'value'.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "description": "Options can be either a string or an object of CheckBox props 
-      excluding the 'checked' property, use CheckBoxGroup 'value' prop instead 
-      of 'checked'.",
-        "format": "[string]
-[{
-
-}]",
-        "name": "options",
-        "required": true,
-      },
-      Object {
-        "description": "When the options array contains objects, this property indicates how
-        to determine the value of each option. If a string is provided, 
-        it is used as the key to retrieve each option's value.",
-        "format": "string",
-        "name": "valueKey",
-      },
-    ],
-    "usage": "import { CheckBoxGroup } from 'grommet';
-        <CheckBoxGroup />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "disabled": [Function],
+      "labelKey": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "options": [Function],
+      "value": [Function],
+      "valueKey": [Function],
+    },
+    "render": [Function],
   },
   "Clock": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Visualization-Clock&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js",
-      },
-    ],
-    "description": "A clock with timezone awareness.",
-    "intrinsicElement": Array [
-      "div",
-      "svg",
-    ],
-    "name": "Clock",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "defaultValue": 24,
-        "description": "Whether to roll over the hours after 12 or after 24.",
-        "format": "12
-24
-12
-24",
-        "name": "hourLimit",
-      },
-      Object {
-        "description": "If the clock is running, this function will be called with the
-      current time value each time it changes.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "defaultValue": "seconds",
-        "description": "How precise a time to represent.",
-        "format": "hours
-minutes
-seconds",
-        "name": "precision",
-      },
-      Object {
-        "defaultValue": "forward",
-        "description": "Whether the clock should actively adjust time or be fixed to the
-      time specified. 'backward' could be used as a countdown timer.",
-        "format": "boolean
-backward
-forward",
-        "name": "run",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "Size for both Analog and Digital Clocks. For Analog,
-      there's also 'huge', that's equal to 'xxlarge' and exists
-      for backwards compatibility",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "ISO8601 time or duration. For example: 'PT8H12M23S',
-      'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored. If not provided, the
-      current browser time will be used.",
-        "format": "string",
-        "name": "time",
-      },
-      Object {
-        "defaultValue": "analog",
-        "description": "What type of visualization to show.",
-        "format": "analog
-digital",
-        "name": "type",
-      },
-    ],
-    "usage": "import { Clock } from 'grommet';
-<Clock />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "gridArea": [Function],
+      "hourLimit": [Function],
+      "margin": [Function],
+      "onChange": [Function],
+      "precision": [Function],
+      "run": [Function],
+      "size": [Function],
+      "time": [Function],
+      "type": [Function],
+    },
+    "render": [Function],
   },
   "Collapsible": Object {
     "description": "Expand or collapse animation.",
