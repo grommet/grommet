@@ -9,6 +9,7 @@ import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
+import { AccordionPanelType } from './propTypes';
 
 const AccordionPanel = forwardRef(
   (
@@ -161,11 +162,5 @@ const AccordionPanel = forwardRef(
 
 AccordionPanel.displayName = 'AccordionPanel';
 
-let AccordionPanelDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AccordionPanelDoc = require('./doc').doc(AccordionPanel);
-}
-const AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
-
-export { AccordionPanelWrapper as AccordionPanel };
+AccordionPanel.propTypes = AccordionPanelType;
+export { AccordionPanel };
