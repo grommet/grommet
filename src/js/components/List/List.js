@@ -15,6 +15,7 @@ import {
   useForwardedRef,
   usePagination,
 } from '../../utils';
+import { ListPropType } from './propTypes';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -517,11 +518,6 @@ const List = React.forwardRef(
 );
 
 List.displayName = 'List';
+List.propTypes = ListPropType;
 
-let ListDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
-}
-const ListWrapper = ListDoc || List;
-
-export { ListWrapper as List };
+export { List };
