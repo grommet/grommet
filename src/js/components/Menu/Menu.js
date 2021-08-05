@@ -52,6 +52,7 @@ To make a selection:
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
+    'aria-label': ariaLabel,
     children,
     disabled,
     dropAlign,
@@ -87,6 +88,7 @@ const Menu = forwardRef((props, ref) => {
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
   const [alignControlMirror, setAlignControlMirror] = useState();
+  const initialAlignTop = alignControlMirror === align.top;
 
   const buttonRefs = {};
   const constants = useMemo(
@@ -238,7 +240,9 @@ const Menu = forwardRef((props, ref) => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={a11yTitle || format({ id: 'menu.closeMenu', messages })}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.closeMenu', messages })
+        }
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -271,7 +275,9 @@ const Menu = forwardRef((props, ref) => {
         ref={ref}
         {...rest}
         {...buttonProps}
-        a11yTitle={a11yTitle || format({ id: 'menu.openMenu', messages })}
+        a11yTitle={
+          ariaLabel || a11yTitle || format({ id: 'menu.openMenu', messages })
+        }
         onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
@@ -347,7 +353,12 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {alignControlMirror === 'bottom' || align.bottom === 'bottom'
+              {/* 
+                If align.top was defined,
+                don't show controlMirror when window height has shrunk 
+              */}
+              {!initialAlignTop &&
+              (alignControlMirror === 'bottom' || align.bottom === 'bottom')
                 ? controlMirror
                 : undefined}
             </ContainerBox>
