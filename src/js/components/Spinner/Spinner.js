@@ -9,6 +9,7 @@ import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
+import { SpinnerPropType } from './propTypes';
 
 const BasicSpinner = ({ ref, size, ...rest }) => (
   <Box height={size} width={size} ref={ref} {...rest} />
@@ -90,12 +91,6 @@ const Spinner = forwardRef(
 );
 
 Spinner.displayName = 'Spinner';
+Spinner.propTypes = SpinnerPropType;
 
-let SpinnerDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SpinnerDoc = require('./doc').doc(Spinner);
-}
-const SpinnerWrapper = SpinnerDoc || Spinner;
-
-export { SpinnerWrapper as Spinner };
+export { Spinner };

@@ -15,6 +15,7 @@ import { Box } from '../Box';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
+import { TableCellPropType } from './propTypes';
 
 const verticalAlignToJustify = {
   middle: 'center',
@@ -184,12 +185,6 @@ const TableCell = forwardRef(
 );
 
 TableCell.displayName = 'TableCell';
+TableCell.propTypes = TableCellPropType;
 
-let TableCellDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableCellDoc = require('./doc').doc(TableCell);
-}
-const TableCellWrapper = TableCellDoc || TableCell;
-
-export { TableCellWrapper as TableCell };
+export { TableCell };

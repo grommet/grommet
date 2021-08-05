@@ -3,6 +3,7 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
+import { TextPropType } from './propTypes';
 
 const Text = forwardRef(
   (
@@ -63,11 +64,6 @@ Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1,
 };
+Text.propTypes = TextPropType;
 
-let TextDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
-}
-const TextWrapper = TextDoc || Text;
-
-export { TextWrapper as Text };
+export { Text };

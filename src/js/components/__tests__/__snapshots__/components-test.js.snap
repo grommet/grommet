@@ -2039,1448 +2039,195 @@ Object {
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Spinner": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Spinner&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/spinner&module=%2Fsrc%2FSpinner.js",
-      },
-    ],
-    "description": "A Spinner.",
-    "name": "Spinner",
-    "properties": Array [
-      Object {
-        "defaultValue": "small",
-        "description": "A fixed size.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "The border color of the Spinner.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "When message is a string, the message will be announced for 
-        screen readers once the Spinner is loaded. 
-        When an object, the 'start' message will be announced 
-        as the Spinner appears, and the 'end' message as the spinner closes.",
-        "format": "string
-{
-  start: string,
-  end: string
-}",
-        "name": "message",
-      },
-    ],
-    "usage": "import { Spinner } from 'grommet';
-<Spinner/>",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "color": [Function],
+      "message": [Function],
+      "size": [Function],
+    },
+    "render": [Function],
   },
   "Stack": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Layout-Stack&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/stack&module=%2Fsrc%2FStack.js",
-      },
-    ],
-    "description": "A container that stacks contents on top of each other. One child is
-      designated as the \`guidingChild\` which determines the size. All
-      other children are placed within that size, either above or below
-      based on their order. Stack is typically used to decorate Meter, Chart,
-      or icons.",
-    "intrinsicElement": "div",
-    "name": "Stack",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Where to anchor children from. If not specified, children
-      fill the guiding child's area.",
-        "format": "center
-left
-right
-top
-bottom
-top-left
-bottom-left
-top-right
-bottom-right",
-        "name": "anchor",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether to expand to fill
-      all of the available width and height in the parent container.",
-        "format": "horizontal
-vertical
-boolean",
-        "name": "fill",
-      },
-      Object {
-        "defaultValue": "first",
-        "description": "Which child to guide layout from. All other children
-      will be positioned within that area. Defaults to 'first'.",
-        "format": "number
-first
-last",
-        "name": "guidingChild",
-      },
-      Object {
-        "description": "Which child to restrict user interaction to. All other children
-      will have user interaction disabled.",
-        "format": "number
-first
-last",
-        "name": "interactiveChild",
-      },
-    ],
-    "usage": "import { Stack } from 'grommet';
-<Stack />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "anchor": [Function],
+      "fill": [Function],
+      "gridArea": [Function],
+      "guidingChild": [Function],
+      "interactiveChild": [Function],
+      "margin": [Function],
+    },
+    "render": [Function],
   },
   "Tab": Object {
-    "description": "One tab within Tabs.",
-    "intrinsicElement": "button",
-    "name": "Tab",
-    "properties": Array [
-      Object {
-        "defaultValue": false,
-        "description": "Whether the tab is disabled.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "Icon element to place in the tab.",
-        "format": "element",
-        "name": "icon",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether this is a plain tab with no style.",
-        "format": "boolean",
-        "name": "plain",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether an icon and label should be reversed so that the icon is at the
-              end of the tab.",
-        "format": "boolean",
-        "name": "reverse",
-      },
-      Object {
-        "description": "The title of the tab.",
-        "format": "node",
-        "name": "title",
-      },
-    ],
-    "usage": "import { Tab } from 'grommet';
-<Tab />",
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {},
+    "propTypes": Object {
+      "disabled": [Function],
+      "icon": [Function],
+      "plain": [Function],
+      "reverse": [Function],
+      "title": [Function],
+    },
+    "render": [Function],
   },
   "Table": [Function],
   "TableBody": Object {
-    "description": "The body of a table.",
-    "intrinsicElement": "tbody",
-    "name": "TableBody",
-    "usage": "import { TableBody } from 'grommet';
-<TableBody />",
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "TableCell": Object {
-    "description": "A cell of data in a table.",
-    "intrinsicElement": "td",
-    "name": "TableCell",
-    "properties": Array [
-      Object {
-        "defaultValue": false,
-        "description": "Whether default styling context should be removed.",
-        "format": "boolean
-noPad",
-        "name": "plain",
-      },
-      Object {
-        "description": "For header cells, what scope the header is for.
-        Typically, the cells in a TableHeader have 'col' scope and
-        the primary cell in each row in the TableBody has 'row' scope.",
-        "format": "col
-row",
-        "name": "scope",
-      },
-      Object {
-        "description": "What size the cell should be. Typically, this is not needed
-      unless you are trying to align multiple tables.",
-        "format": "xxsmall
-xsmall
-small
-medium
-large
-xlarge
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "How to align the contents vertically.",
-        "format": "top
-middle
-bottom",
-        "name": "verticalAlign",
-      },
-      Object {
-        "description": "How to align the body inside the Table.",
-        "format": "left
-right
-center
-justify
-inherit
-start
-end
-string",
-        "name": "align",
-      },
-    ],
-    "usage": "import { TableCell } from 'grommet';
-<TableCell />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "align": [Function],
+      "plain": [Function],
+      "scope": [Function],
+      "size": [Function],
+      "verticalAlign": [Function],
+    },
+    "render": [Function],
   },
   "TableFooter": Object {
-    "description": "The footer of a table.",
-    "intrinsicElement": "tfoot",
-    "name": "TableFooter",
-    "usage": "import { TableFooter } from 'grommet';
-<TableFooter />",
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "TableHeader": Object {
-    "description": "The header of a table.",
-    "intrinsicElement": "thead",
-    "name": "TableHeader",
-    "usage": "import { TableHeader } from 'grommet';
-<TableHeader />",
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "TableRow": Object {
-    "description": "A row of cells in a table.",
-    "intrinsicElement": "tr",
-    "name": "TableRow",
-    "usage": "import { TableRow } from 'grommet';
-<TableRow />",
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
   },
   "Tabs": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Tabs&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tabs&module=%2Fsrc%2FTabs.js",
-      },
-    ],
-    "description": "A container with controls to show one Tab at a time.",
-    "intrinsicElement": "div",
-    "name": "Tabs",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Active tab index. If specified, Tabs will be a controlled component.
-This means that future tab changes will not work unless you subscribe to
-onActive function and update activeIndex accordingly.",
-        "format": "number",
-        "name": "activeIndex",
-      },
-      Object {
-        "description": "How to align the tab controls within the tabs header.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignControls",
-      },
-      Object {
-        "description": "Array of Tab.",
-        "format": "node",
-        "name": "children",
-        "required": true,
-      },
-      Object {
-        "description": "Whether flex-grow and/or flex-shrink is true.",
-        "format": "grow
-shrink
-boolean",
-        "name": "flex",
-      },
-      Object {
-        "defaultValue": "center",
-        "description": "How to align the tabs along the main axis.",
-        "format": "start
-center
-end",
-        "name": "justify",
-      },
-      Object {
-        "defaultValue": Object {
-          "tabContents": "Tab Contents",
-        },
-        "description": "Custom messages for Tabs. Used for accessibility by screen readers.",
-        "format": "{
-  tabContents: string
-}",
-        "name": "messages",
-      },
-      Object {
-        "description": "Function that will be called with the active tab index when the
-currently active tab changes.",
-        "format": "function",
-        "name": "onActive",
-      },
-    ],
-    "usage": "import { Tabs, Tab } from 'grommet';
-<Tabs>
-  <Tab title='Tab 1'>...</Tab>
-  <Tab title='Tab 2'>...</Tab>
-</Tabs>",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "activeIndex": [Function],
+      "alignControls": [Function],
+      "alignSelf": [Function],
+      "children": [Function],
+      "flex": [Function],
+      "gridArea": [Function],
+      "justify": [Function],
+      "margin": [Function],
+      "messages": [Function],
+      "onActive": [Function],
+    },
+    "render": [Function],
   },
   "Text": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js",
-      },
-    ],
-    "description": "Arbitrary text.",
-    "intrinsicElement": "span",
-    "name": "Text",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can be 
-    specified to distinguish horizontal margin, vertical margin, and margin on 
-    a particular side. For vertical margin to be applied, Text needs to be 
-    contained within a layout component (such as Box or a generic div) or 
-    behave as a div (by applying as=\\"div\\" or a display style of 
-    inline-block).",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "The font size and line space height of the text.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-2xl
-3xl
-4xl
-5xl
-6xl
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "The DOM tag to use for the element. NOTE: This is deprecated in favor
-         of indicating the DOM tag via the 'as' property.",
-        "format": "string
-function",
-        "name": "tag",
-      },
-      Object {
-        "defaultValue": "span",
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function
-element",
-        "name": "as",
-      },
-      Object {
-        "defaultValue": "start",
-        "description": "How to align the text inside the component.",
-        "format": "start
-center
-end
-justify",
-        "name": "textAlign",
-      },
-      Object {
-        "description": "tooltip or a hint when hovering over the text. If the
-        value is a string and no a11yTitle value is provided, tip value will be
-        used for the a11yTitle default value.",
-        "format": "{
-  content: 
-    node
-    string,
-  dropProps: 
-    {
-
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "level": 1,
     },
-  plain: boolean
-}
-string",
-        "name": "tip",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div). If 
-truncate = tip, the full text content will be placed in a Tip that will appear 
-on hover.",
-        "format": "boolean
-tip",
-        "name": "truncate",
-      },
-      Object {
-        "description": "Font weight",
-        "format": "normal
-bold
-number",
-        "name": "weight",
-      },
-      Object {
-        "defaultValue": "normal",
-        "description": "Whether words should break when reaching the end of a line.",
-        "format": "normal
-break-all
-keep-all
-break-word",
-        "name": "wordBreak",
-      },
-    ],
-    "usage": "import { Text } from 'grommet';
-<Text />",
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "color": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "size": [Function],
+      "tag": [Function],
+      "textAlign": [Function],
+      "tip": [Function],
+      "truncate": [Function],
+      "weight": [Function],
+      "wordBreak": [Function],
+    },
+    "render": [Function],
   },
   "TextArea": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Input-TextArea&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textarea&module=%2Fsrc%2FTextArea.js",
-      },
-    ],
-    "description": "A control to input multiple lines of text.",
-    "intrinsicElement": "textarea",
-    "name": "TextArea",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers.
-      When provided, an aria-label will be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "The id attribute of the textarea.",
-        "format": "string",
-        "name": "id",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the width and height should fill the container.",
-        "format": "boolean",
-        "name": "fill",
-      },
-      Object {
-        "description": "Whether the plain TextArea should receive a focus outline.",
-        "format": "boolean",
-        "name": "focusIndicator",
-      },
-      Object {
-        "description": "The name attribute of the textarea.",
-        "format": "string",
-        "name": "name",
-      },
-      Object {
-        "description": "Function that will be called when the user types in the textarea.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "description": "Placeholder text to use when no value is provided.",
-        "format": "string",
-        "name": "placeholder",
-      },
-      Object {
-        "description": "Whether this is a plain textarea with no border or padding.
-Only use this when the containing context provides sufficient affordance.",
-        "format": "boolean",
-        "name": "plain",
-      },
-      Object {
-        "description": "What text to put in the textarea.",
-        "format": "string",
-        "name": "value",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "Whether user is allowed to resize the textarea.",
-        "format": "vertical
-horizontal
-boolean",
-        "name": "resize",
-      },
-      Object {
-        "description": "The size of the text.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-2xl
-3xl
-4xl
-5xl
-6xl
-string",
-        "name": "size",
-      },
-    ],
-    "usage": "import { TextArea } from 'grommet';
-<TextArea id='item' name='item' />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "fill": [Function],
+      "focusIndicator": [Function],
+      "id": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "placeholder": [Function],
+      "plain": [Function],
+      "resize": [Function],
+      "size": [Function],
+      "value": [Function],
+    },
+    "render": [Function],
   },
   "TextInput": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Input-TextInput&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js",
-      },
-    ],
-    "description": "A control to input a single line of text, with optional suggestions.",
-    "intrinsicElement": "input",
-    "name": "TextInput",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "Default suggestion to highlight, as an index into the suggestions array.
-
-      If set, the suggestion at the specified index in the suggestions array
-      will be highlighted by default when the suggestions drop opens.
-      ",
-        "format": "number",
-        "name": "defaultSuggestion",
-      },
-      Object {
-        "defaultValue": Object {
-          "left": "left",
-          "top": "bottom",
-        },
-        "description": "How to align the drop.",
-        "format": "{
-  top: 
-    top
-    bottom,
-  bottom: 
-    top
-    bottom,
-  right: 
-    left
-    right,
-  left: 
-    left
-    right
-}",
-        "name": "dropAlign",
-      },
-      Object {
-        "description": "The height of the drop container.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "dropHeight",
-      },
-      Object {
-        "description": "Target where any suggestions drop will be aligned to. This should be
-      a React reference. Typically, this is not required as the drop will be
-      aligned to the TextInput itself by default.",
-        "format": "object",
-        "name": "dropTarget",
-      },
-      Object {
-        "description": "Any valid Drop prop.",
-        "format": "object",
-        "name": "dropProps",
-      },
-      Object {
-        "description": "An optional icon to show. This could be used to provide an
-      indication of what kind of input is expected, like an email icon,
-      or what the input will be used for, like a search icon.",
-        "format": "element",
-        "name": "icon",
-      },
-      Object {
-        "description": "The id attribute of the input.",
-        "format": "string",
-        "name": "id",
-      },
-      Object {
-        "description": "Whether the plain TextInput should receive a focus outline.",
-        "format": "boolean",
-        "name": "focusIndicator",
-      },
-      Object {
-        "defaultValue": Object {
-          "enterSelect": "(Press Enter to Select)",
-          "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate",
-          "suggestionsCount": "suggestions available",
-          "suggestionsExist": "This input has suggestions use arrow keys to navigate",
-        },
-        "description": "Custom messages for TextInput. Used for accessibility by screen
-        readers.",
-        "format": "{
-  enterSelect: string,
-  suggestionsCount: string,
-  suggestionsExist: string,
-  suggestionIsOpen: string
-}",
-        "name": "messages",
-      },
-      Object {
-        "description": "The name of the attribute when in a Form or FormField.",
-        "format": "string",
-        "name": "name",
-      },
-      Object {
-        "description": "Function that will be called when the user types in the input.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "description": "Note: This function is deprecated, use onSuggestionSelect instead.
-      Function that will be called when the user selects a suggestion.
-      The suggestion contains the object chosen from the supplied suggestions.
-      When used in conjunction with onSuggestionSelect
-      this will default to React's onSelect",
-        "format": "function",
-        "name": "onSelect",
-      },
-      Object {
-        "description": "Function that will be called when the user selects a suggestion.
-      The suggestion contains the object chosen from the supplied suggestions.",
-        "format": "function",
-        "name": "onSuggestionSelect",
-      },
-      Object {
-        "description": "Function that will be called when the suggestions drop is opened.",
-        "format": "function",
-        "name": "onSuggestionsOpen",
-      },
-      Object {
-        "description": "Function that will be called when the suggestions drop is closed.",
-        "format": "function",
-        "name": "onSuggestionsClose",
-      },
-      Object {
-        "description": "Placeholder to use when no value is provided.",
-        "format": "node",
-        "name": "placeholder",
-      },
-      Object {
-        "description": "Whether this is a plain input with no border or outline.
-      Use \\"full\\" to remove padding in addition to removing border and outline.
-      Only use this when the containing context provides sufficient
-      affordance.",
-        "format": "boolean
-full",
-        "name": "plain",
-      },
-      Object {
-        "description": "Whether an icon should be reversed so that the icon is at the
-      end of the input.",
-        "format": "boolean",
-        "name": "reverse",
-      },
-      Object {
-        "description": "The size of the text.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-xxlarge
-2xl
-3xl
-4xl
-5xl
-6xl
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "Suggestions to show. It is recommended to avoid showing too many
-suggestions and instead rely on the user to type more.",
-        "format": "[
-  {
-    label: node,
-    value: any
-  }
-  string
-]",
-        "name": "suggestions",
-      },
-      Object {
-        "defaultValue": "start",
-        "description": "How to align the text inside the input.",
-        "format": "start
-center
-end",
-        "name": "textAlign",
-      },
-      Object {
-        "description": "What text to put in the input.",
-        "format": "string
-number",
-        "name": "value",
-      },
-    ],
-    "usage": "import { TextInput } from 'grommet';
-<TextInput id='item' name='item' />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "defaultSuggestion": [Function],
+      "dropAlign": [Function],
+      "dropHeight": [Function],
+      "dropProps": [Function],
+      "dropTarget": [Function],
+      "focusIndicator": [Function],
+      "icon": [Function],
+      "id": [Function],
+      "messages": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "onSelect": [Function],
+      "onSuggestionSelect": [Function],
+      "onSuggestionsClose": [Function],
+      "onSuggestionsOpen": [Function],
+      "placeholder": [Function],
+      "plain": [Function],
+      "reverse": [Function],
+      "size": [Function],
+      "suggestions": [Function],
+      "textAlign": [Function],
+      "value": [Function],
+    },
+    "render": [Function],
   },
   "Tip": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Tip&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js",
-      },
-    ],
-    "description": "Tooltip or a hint when hovering over an element. The tooltip will render 
-      when hovering on top of the Tip's child node or string.",
-    "name": "Tip",
-    "properties": Array [
-      Object {
-        "description": "The tooltip content inside the drop.",
-        "format": "node",
-        "name": "content",
-      },
-      Object {
-        "defaultValue": Object {
-          "trapFocus": false,
-        },
-        "description": "Any valid Drop prop to style the Tip drop container.",
-        "format": "object",
-        "name": "dropProps",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "Whether content should have default styling from tip.content.",
-        "format": "boolean",
-        "name": "plain",
-      },
-    ],
-    "usage": "import { Tip } from 'grommet';
-<Tip />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "content": [Function],
+      "dropProps": [Function],
+      "plain": [Function],
+    },
+    "render": [Function],
   },
   "Video": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Media-Video&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/video&module=%2Fsrc%2FVideo.js",
-      },
-    ],
-    "description": "A video player.",
-    "intrinsicElement": "video",
-    "name": "Video",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Enables automatic playback of the video as soon as it is loaded.",
-        "format": "boolean",
-        "name": "autoPlay",
-      },
-      Object {
-        "defaultValue": "over",
-        "description": "Whether to show playback controls and where to place them.",
-        "format": "false
-over
-below",
-        "name": "controls",
-      },
-      Object {
-        "description": "How the image fills its container.",
-        "format": "cover
-contain",
-        "name": "fit",
-      },
-      Object {
-        "description": "Enables continuous video looping.",
-        "format": "boolean",
-        "name": "loop",
-      },
-      Object {
-        "description": "Enables video muting. This option is best used with the autoPlay flag.",
-        "format": "boolean",
-        "name": "mute",
-      },
-      Object {
-        "description": "Custom messages. Used for accessibility by screen readers.",
-        "format": "{
-  closeMenu: string,
-  fullScreen: string,
-  progressMeter: string,
-  openMenu: string,
-  pauseButton: string,
-  playButton: string,
-  scrubber: string,
-  volumeDown: string,
-  volumeUp: string
-}",
-        "name": "messages",
-      },
-    ],
-    "usage": "import { Video } from 'grommet';
-<Video />",
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {},
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "autoPlay": [Function],
+      "controls": [Function],
+      "fit": [Function],
+      "gridArea": [Function],
+      "loop": [Function],
+      "margin": [Function],
+      "messages": [Function],
+      "mute": [Function],
+    },
+    "render": [Function],
   },
   "WorldMap": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-WorldMap&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/worldmap&module=%2Fsrc%2FWorldMap.js",
-      },
-    ],
-    "description": "A map of the world, or a continent.",
-    "intrinsicElement": "svg",
-    "name": "WorldMap",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "description": "Continent details.",
-        "format": "[{
-  color: 
-    string
-    {
-      dark: string,
-      light: string
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {},
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "color": [Function],
+      "continents": [Function],
+      "fill": [Function],
+      "gridArea": [Function],
+      "hoverColor": [Function],
+      "margin": [Function],
+      "onSelectPlace": [Function],
+      "places": [Function],
     },
-  name: 
-    Africa
-    Asia
-    Australia
-    Europe
-    North America
-    South America,
-  onClick: function,
-  onHover: function
-}]",
-        "name": "continents",
-      },
-      Object {
-        "description": "Whether the width and/or height should fill the container.",
-        "format": "horizontal
-vertical
-boolean",
-        "name": "fill",
-      },
-      Object {
-        "description": "Called when the user clicks on a place.
-        It is passed the location.",
-        "format": "function",
-        "name": "onSelectPlace",
-      },
-      Object {
-        "description": "Place details. location is an array of two numeric values that indicates
-       the latitude and longitude of the specified location.",
-        "format": "[{
-  color: 
-    string
-    {
-      dark: string,
-      light: string
-    },
-  name: string,
-  location: [number],
-  onClick: function,
-  onHover: function
-}]",
-        "name": "places",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "hoverColor",
-      },
-    ],
-    "usage": "import { WorldMap } from 'grommet';
-<WorldMap />",
+    "render": [Function],
   },
   "__esModule": true,
   "calcBounds": [Function],

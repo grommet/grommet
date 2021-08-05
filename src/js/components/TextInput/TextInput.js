@@ -33,6 +33,7 @@ import {
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
+import { TextInputPropType } from './propTypes';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -495,12 +496,6 @@ const TextInput = forwardRef(
 );
 
 TextInput.displayName = 'TextInput';
+TextInput.propTypes = TextInputPropType;
 
-let TextInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextInputDoc = require('./doc').doc(TextInput);
-}
-const TextInputWrapper = TextInputDoc || TextInput;
-
-export { TextInputWrapper as TextInput };
+export { TextInput };

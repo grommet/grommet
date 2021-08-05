@@ -1,6 +1,7 @@
 import React, { Children, forwardRef } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
+import { StackPropType } from './propTypes';
 
 const buildStyledChildren =
   ({ anchor, fill, guidingIndex, interactiveChild, interactiveIndex }) =>
@@ -54,11 +55,6 @@ const Stack = forwardRef(
 );
 
 Stack.displayName = 'Stack';
+Stack.propTypes = StackPropType;
 
-let StackDoc;
-if (process.env.NODE_ENV !== 'production') {
-  StackDoc = require('./doc').doc(Stack); // eslint-disable-line global-require
-}
-const StackWrapper = StackDoc || Stack;
-
-export { StackWrapper as Stack };
+export { Stack };

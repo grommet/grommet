@@ -8,6 +8,7 @@ import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { TabsPropType } from './propTypes';
 
 const Tabs = forwardRef(
   (
@@ -123,11 +124,6 @@ const Tabs = forwardRef(
 );
 
 Tabs.displayName = 'Tabs';
+Tabs.propTypes = TabsPropType;
 
-let TabsDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
-}
-const TabsWrapper = TabsDoc || Tabs;
-
-export { TabsWrapper as Tabs };
+export { Tabs };

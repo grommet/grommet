@@ -10,6 +10,7 @@ import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
+import { TabPropType } from './propTypes';
 
 const Tab = forwardRef(
   (
@@ -55,21 +56,21 @@ const Tab = forwardRef(
       title,
     ]);
 
-    const onMouseOverTab = event => {
+    const onMouseOverTab = (event) => {
       setOver(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutTab = event => {
+    const onMouseOutTab = (event) => {
       setOver(undefined);
       if (onMouseOut) {
         onMouseOut(event);
       }
     };
 
-    const onClickTab = event => {
+    const onClickTab = (event) => {
       if (event) {
         event.preventDefault();
       }
@@ -125,7 +126,7 @@ const Tab = forwardRef(
     }
 
     // needed to apply hover/active styles to the icon
-    const renderIcon = iconProp => {
+    const renderIcon = (iconProp) => {
       if (active) {
         return React.cloneElement(iconProp, {
           ...theme.tab.active,
@@ -200,10 +201,6 @@ Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 
-let TabDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
-}
-const TabWrapper = TabDoc || Tab;
+Tab.propTypes = TabPropType;
 
-export { TabWrapper as Tab };
+export { Tab };
