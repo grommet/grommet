@@ -481,8 +481,9 @@ stretch
 
 **pad**
 
-Spacing around the outer edge of
-    the drawing coordinate area for the graphic elements to overflow into. Defaults to `none`.
+The amount of padding around the box contents. An
+    object can be specified to distinguish horizontal padding, vertical
+    padding, and padding on a particular side of the box Defaults to `none`.
 
 ```
 none

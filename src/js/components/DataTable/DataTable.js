@@ -34,6 +34,7 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
+import { DataTablePropType } from './propTypes';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -455,11 +456,6 @@ const DataTable = ({
   );
 };
 
-let DataTableDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataTableDoc = require('./doc').doc(DataTable);
-}
-const DataTableWrapper = DataTableDoc || DataTable;
+DataTable.propTypes = DataTablePropType;
 
-export { DataTableWrapper as DataTable };
+export { DataTable };

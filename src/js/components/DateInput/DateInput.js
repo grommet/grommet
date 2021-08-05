@@ -23,6 +23,7 @@ import {
   valueToText,
   textToValue,
 } from './utils';
+import { DateInputPropType } from './propTypes';
 
 const DateInput = forwardRef(
   (
@@ -214,12 +215,6 @@ const DateInput = forwardRef(
 );
 
 DateInput.displayName = 'DateInput';
+DateInput.propTypes = DateInputPropType;
 
-let DateInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DateInputDoc = require('./doc').doc(DateInput);
-}
-const DateInputWrapper = DateInputDoc || DateInput;
-
-export { DateInputWrapper as DateInput };
+export { DateInput };
