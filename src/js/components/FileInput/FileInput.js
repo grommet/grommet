@@ -14,6 +14,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
+import { FileInputPropType } from './propTypes';
 
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -422,12 +423,6 @@ FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 FileInput.displayName = 'FileInput';
+FileInput.propTypes = FileInputPropType;
 
-let FileInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FileInputDoc = require('./doc').doc(FileInput);
-}
-const FileInputWrapper = FileInputDoc || FileInput;
-
-export { FileInputWrapper as FileInput };
+export { FileInput };
