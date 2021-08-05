@@ -12,6 +12,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
+import { DiagramPropType } from './propTypes';
 
 const computeMidPoint = (fromPoint, toPoint) => [
   fromPoint[0] > toPoint[0]
@@ -255,14 +256,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
 });
 
 Diagram.displayName = 'Diagram';
-
 Diagram.defaultProps = { connections: [] };
+Diagram.propTypes = DiagramPropType;
 
-let DiagramDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DiagramDoc = require('./doc').doc(Diagram);
-}
-const DiagramWrapper = DiagramDoc || Diagram;
-
-export { DiagramWrapper as Diagram };
+export { Diagram };

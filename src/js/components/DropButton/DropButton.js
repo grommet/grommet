@@ -3,6 +3,7 @@ import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
+import { DropButtonPropType } from './propTypes';
 
 const defaultDropAlign = { top: 'top', left: 'left' };
 
@@ -93,12 +94,6 @@ const DropButton = forwardRef(
 );
 
 DropButton.displayName = 'DropButton';
+DropButton.propTypes = DropButtonPropType;
 
-let DropButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DropButtonDoc = require('./doc').doc(DropButton);
-}
-const DropButtonWrapper = DropButtonDoc || DropButton;
-
-export { DropButtonWrapper as DropButton };
+export { DropButton };

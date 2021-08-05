@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
+import { DistributionPropType } from './propTypes';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -120,11 +121,6 @@ Distribution.defaultProps = {
   values: [],
 };
 
-let DistributionDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DistributionDoc = require('./doc').doc(Distribution);
-}
-const DistributionWrapper = DistributionDoc || Distribution;
+Distribution.propTypes = DistributionPropType;
 
-export { DistributionWrapper as Distribution };
+export { Distribution };
