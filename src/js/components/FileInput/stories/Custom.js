@@ -19,10 +19,8 @@ const customTheme = {
       },
     },
     message: {
-      maxFile: {
-        color: 'green',
-        textAlign: 'center',
-      },
+      color: 'green',
+      textAlign: 'center',
     },
     background: '#f2f2f2',
     border: { size: 'medium' },

@@ -49,8 +49,7 @@ const Message = styled(Text)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&
-    props.theme.fileInput.message.extend &&
-    props.theme.fileInput.message.maxFile};
+    props.theme.fileInput.message.extend};
 `;
 
 const FileInput = forwardRef(
@@ -81,7 +80,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
-    const max = multiple && multiple.max;
+    const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -448,7 +447,7 @@ const FileInput = forwardRef(
           />
         </ContentsBox>
         {max && (
-          <Message {...theme.fileInput.message.maxFile}>
+          <Message {...theme.fileInput.message}>
             {messages?.maxFile
               ? messages.maxFile
               : `Attach a maximum of ${max} files only.`}
