@@ -12,6 +12,7 @@ import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
 import { MessageContext } from '../../contexts/MessageContext';
+import { SkipLinksPropType } from './propTypes';
 
 const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -71,12 +72,6 @@ const SkipLinks = ({ children, id, messages }) => {
 };
 
 SkipLinks.defaultProps = {};
+SkipLinks.propTypes = SkipLinksPropType;
 
-let SkipLinksDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SkipLinksDoc = require('./doc').doc(SkipLinks);
-}
-const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
-
-export { SkipLinksWrapper as SkipLinks };
+export { SkipLinks };

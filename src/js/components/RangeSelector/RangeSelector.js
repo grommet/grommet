@@ -12,6 +12,7 @@ import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { RangeSelectorPropType } from './propTypes';
 
 const Container = styled(Box)`
   user-select: none;
@@ -278,12 +279,6 @@ const RangeSelector = forwardRef(
 );
 
 RangeSelector.displayName = 'RangeSelector';
+RangeSelector.propTypes = RangeSelectorPropType;
 
-let RangeSelectorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeSelectorDoc = require('./doc').doc(RangeSelector);
-}
-const RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
-
-export { RangeSelectorWrapper as RangeSelector };
+export { RangeSelector };
