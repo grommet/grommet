@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
+import { ImagePropType } from './propTypes';
 
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
@@ -28,12 +29,6 @@ const Image = forwardRef(
 );
 
 Image.displayName = 'Image';
+Image.propTypes = ImagePropType;
 
-let ImageDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
-}
-
-const ImageWrapper = ImageDoc || Image;
-
-export { ImageWrapper as Image };
+export { Image };
