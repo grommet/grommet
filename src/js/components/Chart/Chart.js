@@ -8,6 +8,7 @@ import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
+import { ChartPropType } from './propTypes';
 
 const gradientMaskColor = '#ffffff';
 
@@ -663,11 +664,6 @@ const Chart = React.forwardRef(
 );
 
 Chart.displayName = 'Chart';
+Chart.propTypes = ChartPropType;
 
-let ChartDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
-}
-const ChartWrapper = ChartDoc || Chart;
-
-export { ChartWrapper as Chart };
+export { Chart };
