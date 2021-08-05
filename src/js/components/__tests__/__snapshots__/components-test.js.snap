@@ -550,987 +550,111 @@ Object {
     "render": [Function],
   },
   "Menu": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js",
-      },
-    ],
-    "description": "A control that opens a Drop containing plain Buttons.",
-    "details": "The labels and behavior of the contained Buttons are described
-      via the \`items\` property.
-      You can provide a single function child that will be called with
-      'disabled', 'hover', 'focus', and 'drop' keys. 
-      This allows you to customize the rendering of the Menu button 
-      in those cases.",
-    "intrinsicElement": "button",
-    "name": "Menu",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Menu can take in children as a function or node.
-
-- Function that will be called to render the visual representation.
-It will be passed a props object. The props passed are
-different depending on the menu \`open\` state. When the menu is closed,
-two props are passed:
-\`{ hover, focus }\`,
-but when the menu is open, all menu props are passed to this function.
-It should return a React element.
-For example:
-\`children={(props) => <Box ...>{...}</Box>}\`
-**Note:** This function will be invoked on every mouse move when hovering.
-- Node is anything that can be rendered, e.g.
-\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
-",
-        "format": "function
-node",
-        "name": "children",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the menu should be disabled.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "defaultValue": Object {
-          "left": "left",
-          "top": "top",
-        },
-        "description": "Where to place the drop down.
-The keys correspond to a side of the drop down.
-The values correspond to a side of the control. For instance,
-\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
-the drop down to the bottom of the control. At most one of left or right and
-one of top or bottom should be specified.",
-        "format": "{
-  top: 
-    top
-    bottom,
-  bottom: 
-    top
-    bottom,
-  left: 
-    right
-    left,
-  right: 
-    right
-    left
-}",
-        "name": "dropAlign",
-      },
-      Object {
-        "description": "Background color when drop is active",
-        "format": "string
-{
-  color: string,
-  opacity: 
-    boolean
-    number
-    weak
-    medium
-    strong
-}",
-        "name": "dropBackground",
-      },
-      Object {
-        "description": "Target where the drop will be aligned to. This should be
-      a React reference. Typically, this is not required as the drop will be
-      aligned to the Menu itself by default.",
-        "format": "object",
-        "name": "dropTarget",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "Any valid Drop prop.",
-        "format": "object",
-        "name": "dropProps",
-      },
-      Object {
-        "defaultValue": "start",
-        "description": "How to align the contents along the row axis.",
-        "format": "start
-center
-end
-between
-around
-stretch",
-        "name": "justifyContent",
-      },
-      Object {
-        "description": "Indicates the icon shown as a control to open it.",
-        "format": "boolean
-node",
-        "name": "icon",
-      },
-      Object {
-        "defaultValue": Array [],
-        "description": "Menu items to be placed inside the drop down.
-The object values can be any Button prop, 
-for example: \`label\`, \`onClick\`, and \`href\`.",
-        "format": "[object]",
-        "name": "items",
-        "required": true,
-      },
-      Object {
-        "description": "Indicates the label shown as a control to open it.",
-        "format": "string
-node",
-        "name": "label",
-      },
-      Object {
-        "defaultValue": Object {
-          "closeMenu": "Close Menu",
-          "openMenu": "Open Menu",
-        },
-        "description": "Custom messages. Used for accessibility by screen readers. 
-      These values will be overridden if an a11yTitle is provided.",
-        "format": "{
-  closeMenu: string,
-  openMenu: string
-}",
-        "name": "messages",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether the state of the component should be open",
-        "format": "boolean",
-        "name": "open",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "The size of the menu.",
-        "format": "small
-medium
-large
-xlarge
-string",
-        "name": "size",
-      },
-    ],
-    "usage": "import { Menu } from 'grommet';
-<Menu />",
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "items": Array [],
+      "justifyContent": "start",
+      "messages": undefined,
+    },
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "children": [Function],
+      "disabled": [Function],
+      "dropAlign": [Function],
+      "dropBackground": [Function],
+      "dropProps": [Function],
+      "dropTarget": [Function],
+      "gridArea": [Function],
+      "icon": [Function],
+      "items": [Function],
+      "justifyContent": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "messages": [Function],
+      "open": [Function],
+      "size": [Function],
+    },
+    "render": [Function],
   },
   "Meter": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Meter&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js",
-      },
-    ],
-    "description": "A graphical meter.",
-    "name": "Meter",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "defaultValue": Object {
-          "color": "light-2",
-          "opacity": "medium",
-        },
-        "description": "Background color",
-        "format": "string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    number
-    boolean
-}",
-        "name": "background",
-      },
-      Object {
-        "description": "The color of the value region.
-      This is only valid when used with 'value'",
-        "format": "string",
-        "name": "color",
-      },
-      Object {
-        "description": "The maximum value for the Meter.",
-        "format": "number
-string",
-        "name": "max",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Whether to round the line ends",
-        "format": "boolean",
-        "name": "round",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "The size of the Meter.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-full
-string",
-        "name": "size",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "The size of the Meter.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "thickness",
-      },
-      Object {
-        "defaultValue": "bar",
-        "description": "The visual type of meter.",
-        "format": "bar
-circle
-pie
-semicircle",
-        "name": "type",
-      },
-      Object {
-        "description": "The direction of the Meter you want to display.
-       The default direction is horizontal.Currently, direction works only
-       when 'type' of Meter is 'bar'.",
-        "format": "horizontal
-vertical",
-        "name": "direction",
-      },
-      Object {
-        "description": "
-      The numeric value to represent. Ignored when 'values' is specified.
-    ",
-        "format": "number",
-        "name": "value",
-      },
-      Object {
-        "description": "Array of value objects describing the data.
-      'value' is the actual numeric value.
-      'label' is a text string describing it.
-      'color' indicates the color name to use. If not specified a default one
-      will be chosen.
-      'onClick' will be called when the user clicks on it.
-      Set 'highlight' to call attention to it.
-      'onHover' will be called with a boolean argument indicating when the
-      user hovers onto or away from it.",
-        "format": "[{
-  color: string,
-  highlight: boolean,
-  label: string,
-  onClick: function,
-  onHover: function,
-  value: number
-}]",
-        "name": "values",
-      },
-    ],
-    "usage": "import { Meter } from 'grommet';
-<Meter />",
+    "$$typeof": Symbol(react.forward_ref),
+    "prototype": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "background": [Function],
+      "color": [Function],
+      "direction": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "max": [Function],
+      "round": [Function],
+      "size": [Function],
+      "thickness": [Function],
+      "type": [Function],
+      "value": [Function],
+      "values": [Function],
+    },
+    "render": [Function],
   },
   "Nav": [Function],
   "Pagination": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Controls-Pagination&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js",
-      },
-    ],
-    "description": "A control that enables selection of a single page from a 
-      range of pages.",
-    "intrinsicElement": "nav",
-    "name": "Pagination",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "defaultValue": 1,
-        "description": "The number of pagination buttons visible at the start and end of page 
-        range.",
-        "format": "number",
-        "name": "numberEdgePages",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "The total number of items to paginate.",
-        "format": "number",
-        "name": "numberItems",
-      },
-      Object {
-        "defaultValue": 3,
-        "description": "The number of pagination buttons visible in the middle of the 
-        controls.",
-        "format": "number",
-        "name": "numberMiddlePages",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "Function called when the user clicks a page or arrow button. The 
-        single argument is an event containing the target page via 
-        \`event.page\`, and the startIndex and endIndex for items contained 
-        in the target page via \`event.startIndex\` and \`event.endIndex\`, 
-        respectively.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "The default page. If used with onChange, it can be used to control the 
-        active page via state.",
-        "format": "number",
-        "name": "page",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "Specifies what size the pagination control buttons should be.",
-        "format": "small
-medium
-large",
-        "name": "size",
-      },
-      Object {
-        "defaultValue": 10,
-        "description": "The number of items per page.",
-        "format": "number",
-        "name": "step",
-      },
-    ],
-    "usage": "import { Pagination } from 'grommet';
-      <Pagination />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "numberEdgePages": [Function],
+      "numberItems": [Function],
+      "numberMiddlePages": [Function],
+      "onChange": [Function],
+      "page": [Function],
+      "size": [Function],
+      "step": [Function],
+    },
+    "render": [Function],
   },
   "Paragraph": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Type-Paragraph&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/paragraph&module=%2Fsrc%2FParagraph.js",
-      },
-    ],
-    "description": "A paragraph of text.",
-    "intrinsicElement": "p",
-    "name": "Paragraph",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Color when hovering over places while selecting.",
-        "format": "string
-{
-  dark: string,
-  light: string
-}",
-        "name": "color",
-      },
-      Object {
-        "defaultValue": undefined,
-        "description": "Whether the width should fill the container.",
-        "format": "boolean",
-        "name": "fill",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "Whether margin should be scaled for mobile environments.",
-        "format": "boolean",
-        "name": "responsive",
-      },
-      Object {
-        "defaultValue": "medium",
-        "description": "The size of the Paragraph text.",
-        "format": "small
-medium
-large
-xlarge
-xxlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "defaultValue": "start",
-        "description": "How to align the text inside the paragraph.",
-        "format": "start
-center
-end
-justify",
-        "name": "textAlign",
-      },
-    ],
-    "usage": "import { Paragraph } from 'grommet';
-<Paragraph />",
+    "$$typeof": Symbol(react.forward_ref),
+    "prototype": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "color": [Function],
+      "fill": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "responsive": [Function],
+      "size": [Function],
+      "textAlign": [Function],
+    },
+    "render": [Function],
   },
   "RadioButton": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Input-RadioButton&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobutton&module=%2Fsrc%2FRadioButton.js",
-      },
-    ],
-    "description": "A radio button control.",
-    "details": "RadioButton should typically not be used directly.
-      Instead, use RadioButtonGroup.",
-    "intrinsicElement": "input",
-    "name": "RadioButton",
-    "properties": Array [
-      Object {
-        "description": "Custom label to be used by screen readers.
-      When provided, an aria-label will be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "Same as React <input checked={} />",
-        "format": "boolean",
-        "name": "checked",
-      },
-      Object {
-        "description": "Function that will be called to render the visual representation.
-      It will be passed an object indicating whether the button is checked. It
-      should return a react element.
-      For example:
-      \`children={({ checked }) => <Box ...>{...}</Box>}\`
-      ",
-        "format": "function",
-        "name": "children",
-      },
-      Object {
-        "description": "Same as React <input disabled={} />. Also adds a hidden input element
-with the same name so form submissions work.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "The DOM id attribute value to use for the underlying <input/> element.",
-        "format": "string",
-        "name": "id",
-      },
-      Object {
-        "description": "Label text to place next to the control.",
-        "format": "node",
-        "name": "label",
-      },
-      Object {
-        "description": "The DOM name attribute value to use for the underlying <input/>
-       element.",
-        "format": "string",
-        "name": "name",
-        "required": true,
-      },
-      Object {
-        "description": "Function that will be called when the user clicks the radio button. It
-      will be passed a React event object. The current state can be accessed
-      via event.target.checked. Same as React <input onChange={} />.",
-        "format": "function",
-        "name": "onChange",
-      },
-    ],
-    "usage": "import { RadioButton } from 'grommet';
-<RadioButton />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "a11yTitle": [Function],
+      "checked": [Function],
+      "children": [Function],
+      "disabled": [Function],
+      "id": [Function],
+      "label": [Function],
+      "name": [Function],
+      "onChange": [Function],
+    },
+    "render": [Function],
   },
   "RadioButtonGroup": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Input-RadioButtonGroup&full=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js",
-      },
-    ],
-    "description": "A group of radio buttons.",
-    "intrinsicElement": "div",
-    "name": "RadioButtonGroup",
-    "properties": Array [
-      Object {
-        "description": "Function that will be called to render the visual representation.
-      It will be passed an object indicating whether the button is checked. It
-      should return a react element.
-      For example:
-      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
-      ",
-        "format": "function",
-        "name": "children",
-      },
-      Object {
-        "defaultValue": false,
-        "description": "Disables all options.",
-        "format": "boolean",
-        "name": "disabled",
-      },
-      Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> 
-      elements.",
-        "format": "string",
-        "name": "name",
-        "required": true,
-      },
-      Object {
-        "description": "Function that will be called when the user clicks on one of the radio
-      buttons. It will be passed a React event object.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "description": "Options can be either a string, boolean, number 
-      or an object. Each option is rendered as a single RadioButton.",
-        "format": "[string]
-[number]
-[boolean]
-[{
-  disabled: boolean,
-  id: string,
-  label: 
-    string
-    element,
-  value: 
-    string
-    number
-    boolean
-}]",
-        "name": "options",
-        "required": true,
-      },
-      Object {
-        "description": "Currently selected option value.",
-        "format": "string
-number
-boolean
-object",
-        "name": "value",
-      },
-    ],
-    "usage": "import { RadioButtonGroup } from 'grommet';
-<RadioButtonGroup />",
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "children": [Function],
+      "disabled": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "options": [Function],
+      "value": [Function],
+    },
+    "render": [Function],
   },
   "RangeInput": Object {
     "availableAt": Array [
