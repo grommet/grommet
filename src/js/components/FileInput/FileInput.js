@@ -80,7 +80,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
-    const max = multiple?.max;
+    const max = multiple?.max || Number.POSITIVE_INFINITY;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -208,7 +208,7 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        disabled={max === files.length}
+                        disabled={files.length >= max}
                       />
                     ) : (
                       <Anchor
@@ -224,7 +224,7 @@ const FileInput = forwardRef(
                           id: 'fileInput.browse',
                           messages,
                         })}
-                        disabled={max === files.length}
+                        disabled={files.length >= max}
                       />
                     )}
                   </Keyboard>
@@ -279,7 +279,7 @@ const FileInput = forwardRef(
                         inputRef.current.click();
                         inputRef.current.focus();
                       }}
-                      disabled={max === files.length}
+                      disabled={files.length >= max}
                     />
                   ) : (
                     <Anchor
@@ -295,7 +295,7 @@ const FileInput = forwardRef(
                         id: 'fileInput.browse',
                         messages,
                       })}
-                      disabled={max === files.length}
+                      disabled={files.length >= max}
                     />
                   )}
                 </Keyboard>
@@ -367,7 +367,7 @@ const FileInput = forwardRef(
                             inputRef.current.click();
                             inputRef.current.focus();
                           }}
-                          disabled={max === files.length}
+                          disabled={files.length >= max}
                         />
                       ) : (
                         <Anchor
@@ -382,7 +382,7 @@ const FileInput = forwardRef(
                             id: 'fileInput.browse',
                             messages,
                           })}
-                          disabled={max === files.length}
+                          disabled={files.length >= max}
                         />
                       )}
                     </Keyboard>
@@ -405,32 +405,8 @@ const FileInput = forwardRef(
             onChange={(event) => {
               event.persist();
               const fileList = event.target.files;
-              let filesToAdd;
-              if (!files.length) {
-                if (multiple && max && fileList.length >= max) {
-                  const newFileList = [];
-                  for (let i = 0; i < max; i += 1) {
-                    newFileList.push(fileList[i]);
-                  }
-                  filesToAdd = newFileList;
-                } else {
-                  filesToAdd = fileList;
-                }
-              } else if (
-                multiple &&
-                max &&
-                fileList.length >= max - files.length
-              ) {
-                const newFileList = [];
-                for (let i = 0; i < max - files.length; i += 1) {
-                  newFileList.push(fileList[i]);
-                }
-                filesToAdd = newFileList;
-              } else {
-                filesToAdd = fileList;
-              }
-              const nextFiles = multiple ? [...files] : [];
-              for (let i = 0; i < filesToAdd.length; i += 1) {
+              let nextFiles = multiple ? [...files] : [];
+              for (let i = 0; i < fileList.length; i += 1) {
                 // avoid duplicates
                 const existing =
                   nextFiles.filter(
@@ -438,7 +414,10 @@ const FileInput = forwardRef(
                       file.name === fileList[i].name &&
                       file.size === fileList[i].size,
                   ).length > 0;
-                if (!existing) nextFiles.push(filesToAdd[i]);
+                if (!existing) nextFiles.push(fileList[i]);
+              }
+              if (nextFiles.length > max) {
+                nextFiles = nextFiles.slice(0, max);
               }
               setFiles(nextFiles);
               setDragOver(false);
@@ -446,11 +425,13 @@ const FileInput = forwardRef(
             }}
           />
         </ContentsBox>
-        {max && (
+        {multiple?.max && (
           <Message {...theme.fileInput.message}>
-            {messages?.maxFile
-              ? messages.maxFile
-              : `Attach a maximum of ${max} files only.`}
+            {format({
+              id: 'fileInput.maxFile',
+              messages,
+              values: { max },
+            })}
           </Message>
         )}
       </>
