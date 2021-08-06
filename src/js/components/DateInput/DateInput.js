@@ -74,7 +74,7 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (
         schema &&
-        value &&
+        (value || value === '') &&
         ((Array.isArray(value) && value[0]) || !Array.isArray(value))
       ) {
         const nextTextValue = valueToText(value, schema);
@@ -105,17 +105,17 @@ const DateInput = forwardRef(
           disabled
             ? undefined
             : (nextValue) => {
-                let normalizedValue;
-                if (range && Array.isArray(nextValue))
-                  [normalizedValue] = nextValue;
-                // clicking an edge date removes it
-                else if (range) normalizedValue = [nextValue, nextValue];
-                else normalizedValue = nextValue;
-                if (schema) setTextValue(valueToText(normalizedValue, schema));
-                setValue(normalizedValue);
-                if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
-              }
+              let normalizedValue;
+              if (range && Array.isArray(nextValue))
+                [normalizedValue] = nextValue;
+              // clicking an edge date removes it
+              else if (range) normalizedValue = [nextValue, nextValue];
+              else normalizedValue = nextValue;
+              if (schema) setTextValue(valueToText(normalizedValue, schema));
+              setValue(normalizedValue);
+              if (onChange) onChange({ value: normalizedValue });
+              if (open && !range) setOpen(false);
+            }
         }
         {...calendarProps}
       />
@@ -141,7 +141,7 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{ useFormInput: (_, val) => [val, () => {}] }}
+        value={{ useFormInput: (_, val) => [val, () => { }] }}
       >
         <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
           <MaskedInput
