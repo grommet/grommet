@@ -560,14 +560,45 @@ export interface ThemeType {
     pad?: PadType;
     size?: string;
     toggle?: {
+      container?: {
+        background?: BackgroundType;
+        border?: BorderType;
+        gap?: GapType;
+        height?: string;
+        pad?: PadType;
+        round?: RoundType;
+        size?: string;
+        checked?: {
+          border?: BorderType;
+          background?: BackgroundType;
+        };
+        hover?: {
+          border?: {
+            color?: ColorType;
+          };
+          background?: {
+            color?: ColorType;
+          };
+        };
+        extend?: ExtendType;
+      };
+      knob?: {
+        border?: BorderType;
+        color?: ColorType;
+        elevation?: ElevationType;
+        round?: RoundType;
+        size?: string;
+        checked?: {
+          border?: BorderType;
+          color?: ColorType;
+        };
+        extend?: ExtendType;
+      };
       background?: BackgroundType;
       color?: ColorType;
       extend?: ExtendType;
       radius?: string;
       size?: string;
-      knob?: {
-        extend?: ExtendType;
-      };
     };
   };
   checkBoxGroup?: {

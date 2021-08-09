@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { A11yTitleType, PadType } from '../../utils';
+import { ExtendType } from 'src/js/themes/base';
+import {
+  A11yTitleType,
+  BackgroundType,
+  BorderType,
+  ColorType,
+  ElevationType,
+  PadType,
+  RoundType,
+} from '../../utils';
 
 export interface CheckBoxProps {
   a11yTitle?: A11yTitleType;

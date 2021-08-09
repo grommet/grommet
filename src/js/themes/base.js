@@ -639,8 +639,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           dark: '#d9d9d9',
           light: '#d9d9d9',
         },
+        container: {
+          // extend: undefined,
+          border: {},
+          checked: {
+            // extend: undefined,
+          },
+        },
         knob: {
           // extend: undefined,
+          border: {},
+          checked: {
+            // extend: undefined,
+          },
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,

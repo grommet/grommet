@@ -160,12 +160,20 @@ const CheckBox = forwardRef(
     );
 
     const side = reverse ? 'left' : 'right';
+    const checkBoxWrapperMargin = theme.checkBox.gap || 'small';
+    const toggleWrapperMargin =
+      theme.checkBox.toggle.container.gap || checkBoxWrapperMargin;
+
     const checkBoxNode = (
       <StyledCheckBox
         as={Box}
         align="center"
         justify="center"
-        margin={label && { [side]: theme.checkBox.gap || 'small' }}
+        margin={
+          label && {
+            [side]: toggle ? toggleWrapperMargin : checkBoxWrapperMargin,
+          }
+        }
         {...themeableProps}
       >
         <StyledCheckBoxInput
