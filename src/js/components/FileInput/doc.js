@@ -37,6 +37,7 @@ export const doc = (FileInput) => {
         files: 'files',
         remove: 'remove',
         removeAll: 'remove all',
+        maxFile: 'Attach a maximum of {max} files only.',
       }),
     multiple: PropTypes.oneOfType([
       PropTypes.bool,

@@ -36,7 +36,8 @@ Custom messages for FileInput. Used for accessibility by screen
   "dropPromptMultiple": "Drop files here or",
   "files": "files",
   "remove": "remove",
-  "removeAll": "remove all"
+  "removeAll": "remove all",
+  "maxFile": "Attach a maximum of {max} files only."
 }`.
 
 ```
