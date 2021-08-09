@@ -86,6 +86,25 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
 
+    formContext.useFormField(
+      multiple?.max
+        ? {
+            name,
+            validate: (fileList) => {
+              if (fileList?.length && fileList.length <= max) return '';
+              const message = format({
+                id: 'fileInput.maxFile',
+                messages,
+                values: { max },
+              });
+
+              return message;
+            },
+            help: (message) => message,
+          }
+        : {},
+    );
+
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
       const themeProp = theme.fileInput[propertyName];
@@ -425,7 +444,7 @@ const FileInput = forwardRef(
             }}
           />
         </ContentsBox>
-        {multiple?.max && (
+        {/* multiple?.max && (
           <Message {...theme.fileInput.message}>
             {format({
               id: 'fileInput.maxFile',
@@ -433,7 +452,7 @@ const FileInput = forwardRef(
               values: { max },
             })}
           </Message>
-        )}
+          ) */}
       </>
     );
   },
