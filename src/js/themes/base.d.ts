@@ -563,7 +563,6 @@ export interface ThemeType {
       container?: {
         background?: BackgroundType;
         border?: BorderType;
-        gap?: GapType;
         height?: string;
         pad?: PadType;
         round?: RoundType;

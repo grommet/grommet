@@ -2553,7 +2553,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
 }
 
 .c9:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -2818,7 +2818,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               name="toggle"
               type="checkbox"
             />
@@ -3051,13 +3051,13 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 jKEGDR FormField__FormFieldContentBox-m9hood-1 hbxpIr"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 erdVST"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 clcRHP"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               name="toggle"
               type="checkbox"
             />

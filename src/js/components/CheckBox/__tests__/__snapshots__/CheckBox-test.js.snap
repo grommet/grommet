@@ -104,7 +104,7 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -258,7 +258,7 @@ exports[`CheckBox controlled 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -328,7 +328,7 @@ exports[`CheckBox controlled 2`] = `
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
         type="checkbox"
       />
       <div
@@ -454,7 +454,7 @@ exports[`CheckBox custom theme 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -604,7 +604,7 @@ exports[`CheckBox defaultChecked 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -783,7 +783,7 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -993,7 +993,7 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1173,7 +1173,7 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1334,7 +1334,7 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1476,7 +1476,7 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1627,7 +1627,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1778,7 +1778,7 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1925,7 +1925,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1935,10 +1935,11 @@ exports[`CheckBox reverse toggle fill 1`] = `
   display: inline-block;
   width: 48px;
   height: 24px;
-  border: 2px solid;
+  border-width: 2px;
+  border-style: solid;
   border-color: rgba(0,0,0,0.15);
-  border-radius: 24px;
   background-color: transparent;
+  border-radius: 24px;
 }
 
 .c6 {
@@ -2119,7 +2120,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -2190,7 +2191,7 @@ exports[`CheckBox toggle renders 1`] = `
   justify-content: center;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2250,7 +2251,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c4:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -2260,13 +2261,41 @@ exports[`CheckBox toggle renders 1`] = `
   display: inline-block;
   width: 48px;
   height: 24px;
-  border: 2px solid;
+  border-width: 2px;
+  border-style: solid;
   border-color: rgba(0,0,0,0.15);
-  border-radius: 24px;
   background-color: transparent;
+  border-radius: 24px;
+}
+
+.c7 {
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.15);
+  background-color: transparent;
+  border-radius: 24px;
 }
 
 .c6 {
+  box-sizing: border-box;
+  position: relative;
+  display: inherit;
+  top: -2px;
+  left: -2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 24px;
+  height: 24px;
+  background: #d9d9d9;
+  border-radius: 24px;
+}
+
+.c8 {
   box-sizing: border-box;
   position: relative;
   display: inherit;
@@ -2287,7 +2316,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     margin-right: 6px;
   }
 }
@@ -2326,10 +2355,10 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
-        class="c5"
+        class="c7"
       >
         <span
-          class="c6"
+          class="c8"
         />
       </span>
     </div>
@@ -2338,7 +2367,7 @@ exports[`CheckBox toggle renders 1`] = `
     class="c1"
   >
     <div
-      class="c7 c3"
+      class="c9 c3"
     >
       <input
         class="c4"

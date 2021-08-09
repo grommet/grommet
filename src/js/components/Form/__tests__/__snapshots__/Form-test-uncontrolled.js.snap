@@ -293,7 +293,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
 }
 
 .c6:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1073,7 +1073,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 }
 
 .c9:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1337,7 +1337,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               name="toggle"
               type="checkbox"
             />
@@ -1505,7 +1505,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 }
 
 .c9:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -1770,7 +1770,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               name="toggle"
               type="checkbox"
             />
@@ -2003,13 +2003,13 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 jKEGDR FormField__FormFieldContentBox-m9hood-1 hbxpIr"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 erdVST"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 clcRHP"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               name="toggle"
               type="checkbox"
             />
@@ -2792,7 +2792,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 .c16:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -3420,7 +3420,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             class="StyledBox-sc-13pk1d4-0 iqDqTy StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
               id="test-checkbox"
               name="test-checkbox"
               type="checkbox"

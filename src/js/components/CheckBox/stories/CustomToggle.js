@@ -37,7 +37,6 @@ const customToggleTheme = {
         },
         size: '36px',
         height: '14px',
-        gap: 'xsmall',
       },
       knob: {
         color: {

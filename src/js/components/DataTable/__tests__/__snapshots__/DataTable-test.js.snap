@@ -3109,7 +3109,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c24:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -3517,7 +3517,7 @@ exports[`DataTable custom theme 2`] = `
               >
                 <input
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kZleuw"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 goRiNr"
                   disabled=""
                   type="checkbox"
                 />
@@ -3580,7 +3580,7 @@ exports[`DataTable custom theme 2`] = `
                 disabled=""
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kZleuw"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 goRiNr"
                   disabled=""
                   type="checkbox"
                 />
@@ -7896,7 +7896,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c12:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -8782,7 +8782,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 .c12:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -9516,7 +9516,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
 }
 
 .c12:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -10222,7 +10222,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
 }
 
 .c12:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -10679,7 +10679,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -10810,7 +10810,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -10930,7 +10930,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -11066,7 +11066,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -11158,7 +11158,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -11239,7 +11239,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -18876,7 +18876,7 @@ exports[`DataTable select 1`] = `
 }
 
 .c8:checked + span > span {
-  left: calc( 48px - 24px );
+  left: calc( 48px - 24px - 0px - 0px );
   background: #7D4CDB;
 }
 
@@ -19171,7 +19171,7 @@ exports[`DataTable select 2`] = `
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -19250,7 +19250,7 @@ exports[`DataTable select 2`] = `
               >
                 <input
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
@@ -19304,7 +19304,7 @@ exports[`DataTable select 2`] = `
                 class="StyledBox-sc-13pk1d4-0 gprQIL StyledCheckBox-sc-1dbk5ju-6 cKmmdu"
               >
                 <input
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 cFJyKg"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 eGuZdb"
                   type="checkbox"
                 />
                 <div
