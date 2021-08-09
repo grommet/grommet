@@ -16,6 +16,8 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
+import { CarouselType } from './propTypes';
+
 const Carousel = ({
   activeChild,
   initialChild,
@@ -130,6 +132,7 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
+        a11yTitle={`Show carousel slide ${index + 1}`}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
@@ -250,11 +253,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-let CarouselDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CarouselDoc = require('./doc').doc(Carousel);
-}
-const CarouselWrapper = CarouselDoc || Carousel;
+Carousel.propTypes = CarouselType;
 
-export { CarouselWrapper as Carousel };
+export { Carousel };

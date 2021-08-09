@@ -10,6 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -172,6 +173,7 @@ const Calendar = forwardRef(
       firstDayOfWeek = 0,
       header,
       locale = 'en-US',
+      messages,
       onReference,
       onSelect,
       range,
@@ -184,6 +186,7 @@ const Calendar = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -586,10 +589,16 @@ const Calendar = forwardRef(
               onClick={() => {
                 changeReference(previousMonth);
                 announce(
-                  `Moved to ${previousMonth.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}`,
+                  format({
+                    id: 'calendar.previous',
+                    messages,
+                    values: {
+                      date: previousMonth.toLocaleDateString(locale, {
+                        month: 'long',
+                        year: 'numeric',
+                      }),
+                    },
+                  }),
                 );
               }}
             />
@@ -603,10 +612,16 @@ const Calendar = forwardRef(
               onClick={() => {
                 changeReference(nextMonth);
                 announce(
-                  `Moved to ${nextMonth.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}`,
+                  format({
+                    id: 'calendar.next',
+                    messages,
+                    values: {
+                      date: nextMonth.toLocaleDateString(locale, {
+                        month: 'long',
+                        year: 'numeric',
+                      }),
+                    },
+                  }),
                 );
               }}
             />
@@ -640,6 +655,7 @@ const Calendar = forwardRef(
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
+    let blankWeek = false;
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
@@ -657,7 +673,6 @@ const Calendar = forwardRef(
       if (!showAdjacentDays && otherMonth) {
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -665,6 +680,15 @@ const Calendar = forwardRef(
             <StyledDay sizeProp={size} fillContainer={fill} />
           </StyledDayContainer>,
         );
+
+        if (
+          weeks.length === 5 &&
+          /* If the length days array is less than the current getDate()
+          we know that all days in the array are from the next month. */
+          days.length < day.getDate()
+        ) {
+          blankWeek = true;
+        }
       } else if (
         /* Do not show adjacent days in 6th row if all days
         fall in the next month */
@@ -675,9 +699,9 @@ const Calendar = forwardRef(
         we know that all days in the array are from the next month. */
         days.length < day.getDate()
       ) {
+        blankWeek = true;
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -717,6 +741,10 @@ const Calendar = forwardRef(
                 disabled: dayDisabled && !!dayDisabled,
                 onClick: () => {
                   selectDate(dateString);
+                  announce(
+                    `Selected ${formatToLocalYYYYMMDD(dateString)}`,
+                    'assertive',
+                  );
                   // Chrome moves the focus indicator to this button. Set
                   // the focus to the grid of days instead.
                   daysRef.current.focus();
@@ -745,6 +773,11 @@ const Calendar = forwardRef(
                       disabled: dayDisabled && !!dayDisabled,
                       onClick: () => {
                         selectDate(dateString);
+                        announce(
+                          `Selected 
+                          ${formatToLocalYYYYMMDD(dateString)}`,
+                          'assertive',
+                        );
                         // Chrome moves the focus indicator to this button. Set
                         // the focus to the grid of days instead.
                         daysRef.current.focus();
@@ -767,11 +800,16 @@ const Calendar = forwardRef(
           );
         }
       }
-
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
+      <StyledWeek
+        // if a week contains only blank days, for screen reader accessibility
+        // we don't want to set role="row"
+        role={!blankWeek ? 'row' : undefined}
+        key={day.getTime()}
+        fillContainer={fill}
+      >
         {days}
       </StyledWeek>,
     );
@@ -786,19 +824,31 @@ const Calendar = forwardRef(
                 onPreviousMonth: () => {
                   changeReference(previousMonth);
                   announce(
-                    `Moved to ${previousMonth.toLocaleDateString(locale, {
-                      month: 'long',
-                      year: 'numeric',
-                    })}`,
+                    format({
+                      id: 'calendar.previous',
+                      messages,
+                      values: {
+                        date: previousMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
                   );
                 },
                 onNextMonth: () => {
                   changeReference(nextMonth);
                   announce(
-                    `Moved to ${previousMonth.toLocaleDateString(locale, {
-                      month: 'long',
-                      year: 'numeric',
-                    })}`,
+                    format({
+                      id: 'calendar.next',
+                      messages,
+                      values: {
+                        date: nextMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
                   );
                 },
                 previousInBound: betweenDates(previousMonth, bounds),

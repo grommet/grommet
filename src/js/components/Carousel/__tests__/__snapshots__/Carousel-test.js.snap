@@ -457,6 +457,7 @@ exports[`Carousel basic 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
@@ -474,6 +475,7 @@ exports[`Carousel basic 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
@@ -971,6 +973,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
@@ -988,6 +991,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
@@ -1488,6 +1492,7 @@ exports[`Carousel navigate 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
@@ -1505,6 +1510,7 @@ exports[`Carousel navigate 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
@@ -1619,6 +1625,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -1636,6 +1643,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -1752,6 +1760,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -1769,6 +1778,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -2267,6 +2277,7 @@ exports[`Carousel play 1`] = `
             class="c11"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c12"
               type="button"
             >
@@ -2284,6 +2295,7 @@ exports[`Carousel play 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >
@@ -2397,6 +2409,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -2414,6 +2427,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
@@ -2830,6 +2844,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
             class="c9"
           >
             <button
+              aria-label="Show carousel slide 1"
               class="c10"
               type="button"
             >
@@ -2847,6 +2862,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
               </svg>
             </button>
             <button
+              aria-label="Show carousel slide 2"
               class="c12"
               type="button"
             >

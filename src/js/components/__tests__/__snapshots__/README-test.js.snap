@@ -2,348 +2,6 @@
 
 exports[`README is updated 1`] = `
 Object {
-  "Accordion": "## Accordion
-An accordion containing collapsible panels.
-
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js)
-## Usage
-
-\`\`\`javascript
-import { Accordion, AccordionPanel } from 'grommet';
-<Accordion>
-  <AccordionPanel label='Panel 1'>...</AccordionPanel>
-  <AccordionPanel label='Panel 2'>...</AccordionPanel>
-</Accordion>
-\`\`\`
-
-## Properties
-
-**a11yTitle**
-
-Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.
-
-\`\`\`
-string
-\`\`\`
-
-**alignSelf**
-
-How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.
-
-\`\`\`
-start
-center
-end
-stretch
-\`\`\`
-
-**gridArea**
-
-The name of the area to place
-    this inside a parent Grid.
-
-\`\`\`
-string
-\`\`\`
-
-**margin**
-
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
-\`\`\`
-
-**activeIndex**
-
-Active panel index. If specified, Accordion will be a controlled 
-component. This means that future panel changes will not work unless you
-subscribe to onActive function and update activeIndex accordingly.
-
-\`\`\`
-number
-[number]
-\`\`\`
-
-**animate**
-
-Transition content in & out with a slide down animation. Defaults to \`true\`.
-
-\`\`\`
-boolean
-\`\`\`
-
-**children**
-
-Array of AccordionPanels.
-
-\`\`\`
-node
-\`\`\`
-
-**onActive**
-
-Function that will be called when the active index changes.
-It will always send an array with currently active panel indexes.
-
-\`\`\`
-function
-\`\`\`
-
-**multiple**
-
-Allow multiple panels to be opened at once.
-
-\`\`\`
-boolean
-\`\`\`
-
-**messages**
-
-Custom messages for Tabs. Used for accessibility by screen readers. Defaults to \`{
-  \\"tabContents\\": \\"Tab Contents\\"
-}\`.
-
-\`\`\`
-{
-  tabContents: string
-}
-\`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-div
-\`\`\`",
-  "AccordionPanel": "## AccordionPanel
-An Accordion panel.
-
-
-## Properties
-
-**label**
-
-The panel label.
-
-\`\`\`
-string
-node
-\`\`\`
-
-**header**
-
-If specified, the entire panel header will be managed by the caller.
-
-\`\`\`
-node
-\`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-div
-\`\`\`
-## Theme
-  
-**accordion.hover.heading.color**
-
-The text color of the heading when hovered. 
-    backward compatible with accordion.hover.color Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: \\"light-4\\", light: \\"dark-3\\" }
-\`\`\`
-
-**accordion.heading.level**
-
-The heading level. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-4
-\`\`\`
-
-**accordion.heading.margin**
-
-The margin size around the heading. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**accordion.icons.collapse**
-
-The icon to use when the panel is expanded. Expects \`React.Element\`.
-
-Defaults to
-
-\`\`\`
-<FormUp />
-\`\`\`
-
-**accordion.icons.color**
-
-The icon color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-control
-\`\`\`
-
-**accordion.icons.expand**
-
-The icon to use when the panel is collapsed. Expects \`React.Element\`.
-
-Defaults to
-
-\`\`\`
-<FormDown />
-\`\`\`
-
-**accordion.border.color**
-
-The border color to use in the accordion panel content. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-border
-\`\`\`
-
-**accordion.border.side**
-
-The border side to use in the accordion panel content. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-bottom
-\`\`\`
-
-**accordion.panel.border.color**
-
-The border color to use on the accordion panel. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**accordion.panel.border.side**
-
-The border side to use on the accordion panel. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**accordion.panel.border.size**
-
-The border size of the accordion panel. Expects \`xsmall | small | medium | large | xlarge\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**accordion.panel.border.style**
-
-The border style of the accordion panel. Expects \`solid | dashed | dotted | double| groove | ridge 
-      | inset | outset | hidden\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-",
   "Avatar": "## Avatar
 An Avatar.
 
@@ -3355,6 +3013,21 @@ The locale to use. Defaults to \`en-US\`.
 string
 \`\`\`
 
+**messages**
+
+Custom messages for Calendar. Used for accessibility by screen
+          readers. Defaults to \`{
+  \\"previous\\": \\"Moved to {date}\\",
+  \\"next\\": \\"Moved to {date}\\"
+}\`.
+
+\`\`\`
+{
+  previous: string,
+  next: string
+}
+\`\`\`
+
 **onReference**
 
 Called with an ISO8601 date when the user navigates to a different
@@ -3778,292 +3451,6 @@ The Card Header.
 \`\`\`
 div
 \`\`\`",
-  "Carousel": "## Carousel
-A carousel that cycles through children. Child components
-      would typically be Images. It is the caller's responsibility to ensure
-      that all children are the same size.
-
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Media-Carousel&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/carousel&module=%2Fsrc%2FCarousel.js)
-## Usage
-
-\`\`\`javascript
-import { Carousel } from 'grommet';
-<Carousel />
-\`\`\`
-
-## Properties
-
-**a11yTitle**
-
-Custom label to be used by screen readers. When provided, an aria-label will
-   be added to the element.
-
-\`\`\`
-string
-\`\`\`
-
-**alignSelf**
-
-How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.
-
-\`\`\`
-start
-center
-end
-stretch
-\`\`\`
-
-**gridArea**
-
-The name of the area to place
-    this inside a parent Grid.
-
-\`\`\`
-string
-\`\`\`
-
-**margin**
-
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  end: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
-\`\`\`
-
-**activeChild**
-
-If specified, Carousel will be a controlled component. This means
-      that future slide changes will not work unless you subscribe to onChild
-      function and update activeChild accordingly.
-
-\`\`\`
-number
-\`\`\`
-
-**fill**
-
-Whether to expand to fill
-      all of the available width and height in the parent container.
-
-\`\`\`
-boolean
-\`\`\`
-
-**play**
-
-If specified, the number of
-      milliseconds between automatically transitioning to the next child. It
-      will loop through all children indefinitely.
-
-\`\`\`
-number
-\`\`\`
-
-**initialChild**
-
-If specified, the index of
-      the first element to be shown. Defaults to 0.
-
-\`\`\`
-number
-\`\`\`
-
-**onChild**
-
-If specified, this function will
-      be called with the active index when the currently active carousel
-      changes. Helpful when using Carousel as a controlled component.
-
-\`\`\`
-function
-\`\`\`
-
-**controls**
-
-Whether to show carousel controls and which type of controls. Defaults to \`true\`.
-
-\`\`\`
-boolean
-arrows
-selectors
-\`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-div
-\`\`\`
-## Theme
-  
-**carousel.icons.next**
-
-The icon to use for the next image navigation control. Expects \`element\`.
-
-Defaults to
-
-\`\`\`
-<Next />
-\`\`\`
-
-**carousel.animation.duration**
-
-The duration of the Carousel animation. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-1000
-\`\`\`
-
-**carousel.icons.previous**
-
-The icon to use for the previous image navigation control. Expects \`element\`.
-
-Defaults to
-
-\`\`\`
-<Previous />
-\`\`\`
-
-**carousel.icons.current**
-
-The icon to use on the middle navigation control.
-      One icon per carousel image. Expects \`element\`.
-
-Defaults to
-
-\`\`\`
-<Next />
-\`\`\`
-
-**carousel.icons.color**
-
-The color used for Carousel icons. Expects \`string | { 'dark': string, 'light': string }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**carousel.disabled.icons.color**
-
-The color used for disabled Carousel icons. Expects \`string | { 'dark': string, 'light': string }\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**global.colors.icon**
-
-The color of a given icon. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: #f8f8f8, light: #666666 }
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
-\`\`\`
-",
   "Chart": "## Chart
 A graphical chart.
 
@@ -4680,6 +4067,19 @@ Same as React <input checked={} />
 boolean
 \`\`\`
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked, indeterminate }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
+
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
@@ -5093,6 +4493,20 @@ import { CheckBoxGroup } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be called for each option and passed the option, and an object 
+      indicating whether the option is checked. It should return a react 
+      element.
+      For example:
+      \`children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
 
 **value**
 
@@ -13583,6 +12997,7 @@ The visual type of meter. Defaults to \`bar\`.
 bar
 circle
 pie
+semicircle
 \`\`\`
 
 **direction**
@@ -17772,10 +17187,13 @@ string
 
 Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit. For truncate to be applied, Text needs to be 
-contained within a layout component (such as Box or a generic div).
+contained within a layout component (such as Box or a generic div). If 
+truncate = tip, the full text content will be placed in a Tip that will appear 
+on hover.
 
 \`\`\`
 boolean
+tip
 \`\`\`
 
 **weight**

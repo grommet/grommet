@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, RadioButtonGroup } from 'grommet';
+import { Box, Grommet, CheckBoxGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Ascend, Descend } from 'grommet-icons';
+
+const optionsObjects = [
+  {
+    label: 'asc',
+    disabled: true,
+    value: 'asc',
+  },
+  {
+    label: 'desc',
+    value: 'desc',
+  },
+];
 
 export const Children = () => {
   const [value, setValue] = useState();
@@ -10,20 +22,18 @@ export const Children = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <RadioButtonGroup
-          name="radio"
+        <CheckBoxGroup
+          name="checkbox"
           direction="row"
           gap="xsmall"
-          options={['asc', 'desc']}
+          options={optionsObjects}
           value={value}
-          onChange={(event) => setValue(event.target.value)}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
         >
-          {(option, { checked, focus, hover }) => {
-            const Icon = option === 'asc' ? Ascend : Descend;
+          {(option, { checked }) => {
+            const Icon = option.value === 'asc' ? Ascend : Descend;
             let background;
             if (checked) background = 'brand';
-            else if (hover) background = 'light-4';
-            else if (focus) background = 'light-4';
             else background = 'light-2';
             return (
               <Box background={background} pad="xsmall">
@@ -31,12 +41,12 @@ export const Children = () => {
               </Box>
             );
           }}
-        </RadioButtonGroup>
+        </CheckBoxGroup>
       </Box>
     </Grommet>
   );
 };
 
 export default {
-  title: 'Input/RadioButtonGroup/Children',
+  title: 'Input/CheckBoxGroup/Children',
 };
