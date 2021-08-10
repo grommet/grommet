@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 
 const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   const [checked, setChecked] = useState(!!checkedProp);
-  const onChange = event => setChecked(event.target.checked);
+  const onChange = (event) => setChecked(event.target.checked);
 
   return (
     <Grommet theme={grommet}>
@@ -19,5 +19,5 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
 export const Toggle = () => <SimpleCheckBox label="Choice" toggle />;
 
 export default {
-  title: 'Input/CheckBox/Toggle',
+  title: 'Input/CheckBox/Toggle/Toggle',
 };

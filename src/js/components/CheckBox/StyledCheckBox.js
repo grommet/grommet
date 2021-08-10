@@ -34,10 +34,11 @@ const hoverStyle = css`
   :hover {
     background-color: ${(props) =>
       normalizeColor(
-        !props.disabled && props.toggle
-          ? props.theme.checkBox.toggle.container.hover?.background?.color ||
+        !props.disabled &&
+          (props.toggle
+            ? props.theme.checkBox.toggle.container.hover?.background?.color ||
               props.theme.checkBox.hover?.background?.color
-          : props.theme.checkBox.hover?.background?.color,
+            : props.theme.checkBox.hover?.background?.color),
         props.theme,
       )};
   }
@@ -95,10 +96,11 @@ const StyledCheckBoxContainer = styled.label`
     }
 
     background-color: ${normalizeColor(
-      !props.disabled && props.toggle
-        ? props.theme.checkBox.toggle.container.hover?.background?.color ||
+      !props.disabled &&
+        (props.toggle
+          ? props.theme.checkBox.toggle.container.hover?.background?.color ||
             props.theme.checkBox.hover?.background?.color
-        : props.theme.checkBox.hover?.background?.color,
+          : props.theme.checkBox.hover?.background?.color),
       props.theme,
     )};`}
   ${(props) => props.theme.checkBox.extend}
@@ -115,6 +117,8 @@ const StyledCheckBoxInput = styled.input`
   margin: 0;
 
   ${(props) => !props.disabled && 'cursor: pointer;'} :checked + span > span {
+    // Position checked toggle so that it aligns with the right side of the
+    // container, with any necessary padding
     left: calc(
       ${(props) =>
           props.theme.checkBox.toggle.container.size ||
@@ -137,7 +141,8 @@ const StyledCheckBoxInput = styled.input`
     background: ${(props) =>
       normalizeColor(
         (props.toggle
-          ? props.theme.checkBox.toggle.knob.checked?.color
+          ? props.theme.checkBox.toggle.knob.checked?.color ||
+            props.theme.checkBox.color
           : props.theme.checkBox.color) || 'control',
         props.theme,
       )};

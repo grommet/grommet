@@ -1,59 +1,60 @@
 import React, { useState } from 'react';
+import { css } from 'styled-components';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
+const checkboxCheckStyle = css`
+  background-color: #2196f3;
+  border-color: #2196f3;
+`;
+
 const customToggleTheme = {
   global: {
     colors: {
       'toggle-bg': '#757575',
-      'toggle-checked-border': '#2196f3',
       'toggle-knob': 'white',
       'toggle-accent': 'accent-2',
-      'toggle-checked-accent': '#2196f3',
     },
   },
   checkBox: {
+    border: {
+      color: {
+        light: 'toggle-bg',
+      },
+    },
+    color: {
+      light: 'toggle-knob',
+    },
+    check: {
+      radius: '2px',
+    },
     hover: {
-      border: undefined,
+      border: {
+        color: undefined,
+      },
     },
     toggle: {
-      container: {
-        background: { light: 'toggle-accent' },
-        checked: {
-          background: { light: 'toggle-checked-accent' },
-          border: {
-            color: 'toggle-checked-border',
-          },
-        },
-        border: {
-          color: {
-            light: 'toggle-bg',
-          },
-        },
-        hover: {
-          border: undefined,
-        },
-        size: '36px',
-        height: '14px',
+      background: { light: 'toggle-accent' },
+      color: {
+        light: 'toggle-knob',
       },
+      size: '36px',
       knob: {
-        color: {
-          light: 'toggle-knob',
-        },
-        size: '18px',
-        elevation: 'small',
         extend: `
           top: -4px;
+          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12),
+           0px 2px 2px 0px rgba(0,0,0,0.24);
         `,
-        checked: {
-          color: {
-            light: 'toggle-knob',
-          },
-        },
       },
+      extend: ({ checked }) => `
+        height: 14px;
+        ${checked && checkboxCheckStyle}
+      `,
     },
+    gap: 'xsmall',
+    size: '18px',
   },
 };
 
@@ -78,5 +79,5 @@ export const CustomToggle = (props) => {
 CustomToggle.storyName = 'Custom toggle';
 
 export default {
-  title: 'Input/CheckBox/Custom toggle',
+  title: 'Input/CheckBox/Toggle/Custom toggle',
 };
