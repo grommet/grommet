@@ -75,7 +75,7 @@ const DateInput = forwardRef(
       if (
         schema &&
         ![undefined, null].includes(value) &&
-            Array.isArray(value) || !Array.isArray(value)
+          (Array.isArray(value) || !Array.isArray(value))
       ) {
         const nextTextValue = valueToText(value, schema);
         if (
