@@ -19,6 +19,57 @@ describe('DateInput', () => {
 
   afterEach(cleanup);
 
+  test('should reset date if passed empty string', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState(DATE);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Reset Date" onClick={() => setValue("")} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).not.toEqual("");
+    fireEvent.click(getByText('Reset Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual("");
+  });
+
+  test('should reset date if passed an []', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState(DATES);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Reset Date" onClick={() => setValue([])} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).not.toEqual("");
+    fireEvent.click(getByText('Reset Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual("");
+  });
+
+
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -28,6 +79,7 @@ describe('DateInput', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
 
   test('basic', () => {
     const { container } = render(
@@ -449,7 +501,7 @@ describe('DateInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  test(`dropProps should pass props to Drop 
+  test(`dropProps should pass props to Drop
   when not inline`, () => {
     const { container } = render(
       <Grommet>
@@ -464,7 +516,7 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`buttonProps should pass props to Button 
+  test(`buttonProps should pass props to Button
   when not inline and no format`, () => {
     window.scrollTo = jest.fn();
     const { container } = render(
