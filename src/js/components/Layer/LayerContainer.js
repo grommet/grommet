@@ -52,7 +52,7 @@ const LayerContainer = forwardRef(
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
-    const { layer: layerOptions } = useContext(OptionsContext) || {};
+    const { layer: layerOptions } = useContext(OptionsContext);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
