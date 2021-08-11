@@ -68,7 +68,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
 
   useEffect(function () {
-    if (schema && value && (Array.isArray(value) && value[0] || !Array.isArray(value))) {
+    if (schema && value !== undefined) {
       var nextTextValue = valueToText(value, schema);
 
       if (!valuesAreEqual(textToValue(textValue, schema, value, range), textToValue(nextTextValue, schema, value, range))) {
