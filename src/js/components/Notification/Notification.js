@@ -45,7 +45,14 @@ const Notification = ({ toast, title, message, status, onClose }) => {
 
   if (toast) {
     content = (
-      <Layer animation="fadeIn" modal={false} onEsc={onClose} plain>
+      <Layer
+        role="log"
+        aria-live="assertive"
+        animation="fadeIn"
+        modal={false}
+        onEsc={onClose}
+        plain
+      >
         <Box {...theme.notification.toast.container}>{content}</Box>
       </Layer>
     );

@@ -1046,7 +1046,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
-          pad: { horizontal: 'medium', vertical: 'xsmall' },
+          pad: { horizontal: 'small', vertical: 'xsmall' },
           background: {
             color: 'background-front',
           },
