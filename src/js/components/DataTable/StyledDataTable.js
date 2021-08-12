@@ -168,15 +168,15 @@ const StyledDataTableCell = styled(TableCell)`
       )
       .join(' ')}
     z-index: ${Object.keys(props.pin).length};
+    ${
+      props.theme.dataTable &&
+      props.theme.dataTable.pinned &&
+      props.theme.dataTable.pinned[props.context] &&
+      props.theme.dataTable.pinned[props.context].extend
+        ? props.theme.dataTable.pinned[props.context].extend
+        : ''
+    }
   `}
-  ${(props) =>
-    props.pin &&
-    props.pin.length > 0 &&
-    props.theme.dataTable.pinned &&
-    props.theme.dataTable.pinned[props.context] &&
-    props.theme.dataTable.pinned[props.context].extend
-      ? props.theme.dataTable.pinned[props.context].extend
-      : ''}
 `;
 
 StyledDataTableCell.defaultProps = {};
