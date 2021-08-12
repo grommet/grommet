@@ -47,7 +47,7 @@ const Notification = ({ toast, title, message, status, onClose }) => {
     content = (
       <Layer
         role="log"
-        aria-live="assertive"
+        aria-live="polite"
         animation="fadeIn"
         modal={false}
         onEsc={onClose}
