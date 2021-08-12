@@ -246,7 +246,10 @@ export const doc = (Select) => {
       If reduce is true, this value will be used for the 'value'
       delivered via 'onChange'.`,
     ),
-    emptySearchMessage: PropTypes.string
+    emptySearchMessage: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ])
       .description(
         `Empty option message to display when no matching results were found`,
       )

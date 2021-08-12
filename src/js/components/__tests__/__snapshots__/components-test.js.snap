@@ -7659,7 +7659,8 @@ function
       Object {
         "defaultValue": "No matches found",
         "description": "Empty option message to display when no matching results were found",
-        "format": "string",
+        "format": "string
+object",
         "name": "emptySearchMessage",
       },
     ],

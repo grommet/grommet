@@ -510,6 +510,7 @@ Empty option message to display when no matching results were found Defaults to 
 
 ```
 string
+object
 ```
   
 ## Theme
