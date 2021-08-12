@@ -11,6 +11,20 @@ import { CheckBoxGroup } from 'grommet';
 
 ## Properties
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be called for each option and passed the option, and an object 
+      indicating whether the option is checked. It should return a react 
+      element.
+      For example:
+      `children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **value**
 
 An array of the values for the checked options. 
