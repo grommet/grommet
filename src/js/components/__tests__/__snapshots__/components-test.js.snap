@@ -7660,7 +7660,7 @@ function
         "defaultValue": "No matches found",
         "description": "Empty option message to display when no matching results were found",
         "format": "string
-object",
+node",
         "name": "emptySearchMessage",
       },
     ],
