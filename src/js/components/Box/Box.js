@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import ReactDOMServer from "react-dom/server";
 
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -88,7 +89,7 @@ const Box = forwardRef(
       contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
-        if (child) {
+        if (!isChildNull(child)) {
           if (firstIndex === undefined) {
             firstIndex = index;
           } else {
@@ -163,6 +164,10 @@ const Box = forwardRef(
     return content;
   },
 );
+
+const isChildNull = (children) => {
+  return !Boolean(ReactDOMServer.renderToStaticMarkup(children));
+};
 
 Box.displayName = 'Box';
 
