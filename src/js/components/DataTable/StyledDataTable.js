@@ -155,7 +155,8 @@ const StyledDataTableCell = styled(TableCell)`
   ${(props) =>
     props.pin &&
     props.pin.length > 0 &&
-    `position: sticky;
+    `
+    position: sticky;
     ${props.pin
       .map(
         (p) =>
