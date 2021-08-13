@@ -191,6 +191,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onFocus: function onFocus(event) {
       setOpen(true);
       if (_onFocus) _onFocus(event);
+    },
+    onClick: function onClick() {
+      return setOpen(true);
     }
   }))));
 
@@ -211,8 +214,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       onEsc: function onEsc() {
         return setOpen(false);
       },
-      onClickOutside: function onClickOutside() {
-        return setOpen(false);
+      onClickOutside: function onClickOutside(_ref2) {
+        var target = _ref2.target;
+        if (target !== ref.current) setOpen(false);
       }
     }, dropProps), calendar)];
   }
