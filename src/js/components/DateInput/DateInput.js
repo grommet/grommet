@@ -74,8 +74,7 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (
         schema &&
-        value &&
-        ((Array.isArray(value) && value[0]) || !Array.isArray(value))
+        value !== undefined
       ) {
         const nextTextValue = valueToText(value, schema);
         if (

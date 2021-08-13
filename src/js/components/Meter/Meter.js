@@ -51,7 +51,7 @@ const Meter = forwardRef(
           {...rest}
         />
       );
-    } else if (type === 'circle' || type === 'pie') {
+    } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
           ref={ref}

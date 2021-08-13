@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = CheckBoxGroup => {
+export const doc = (CheckBoxGroup) => {
   const DocumentedCheckBoxGroup = describe(CheckBoxGroup)
     .availableAt(getAvailableAtBadge('CheckBoxGroup', 'Input'))
     .description('A group of CheckBoxes.')
@@ -13,6 +13,15 @@ export const doc = CheckBoxGroup => {
     .intrinsicElement('div');
 
   DocumentedCheckBoxGroup.propTypes = {
+    children: PropTypes.func.description(
+      `Function that will be called to render the visual representation.
+      It will be called for each option and passed the option, and an object 
+      indicating whether the option is checked. It should return a react 
+      element.
+      For example:
+      \`children={(option, { checked, indeterminate })=> <Box ...>{...}</Box>}\`
+      `,
+    ),
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     ).description(
