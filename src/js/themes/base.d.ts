@@ -125,7 +125,7 @@ type Colors = typeof colors & {
   [x: string]: ColorType;
 };
 
-interface ButtonKindType {
+export interface ButtonKindType {
   background?: BackgroundType;
   border?:
     | {
