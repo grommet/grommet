@@ -254,9 +254,9 @@ exports[`Select 0 value 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -534,7 +534,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -817,7 +817,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1092,7 +1092,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1367,7 +1367,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1661,9 +1661,9 @@ exports[`Select Search timeout 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2035,9 +2035,9 @@ exports[`Select applies custom global.hover theme to options 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -2434,9 +2434,9 @@ exports[`Select basic 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2700,9 +2700,9 @@ exports[`Select complex options and children 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2715,22 +2715,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jAWuzL"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gtvRqp"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gVrQNs Select__SelectTextInput-sc-17idtfo-0 hZZumW"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2741,17 +2741,17 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 cVOXoU"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2985,7 +2985,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3286,9 +3286,9 @@ exports[`Select dark 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <path
-              d="m18 9-6 6-6-6"
+            <polyline
               fill="none"
+              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -3567,9 +3567,9 @@ exports[`Select default value 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4016,7 +4016,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4290,9 +4290,9 @@ exports[`Select default value object options 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -4560,9 +4560,9 @@ exports[`Select disabled 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4575,23 +4575,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bYpZEp Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 eyQMsp Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jAWuzL"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gtvRqp"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gVrQNs Select__SelectTextInput-sc-17idtfo-0 iSsvpu"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4602,17 +4602,17 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 cVOXoU"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -4889,9 +4889,9 @@ exports[`Select disabled key 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -5230,7 +5230,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5565,7 +5565,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5948,9 +5948,9 @@ exports[`Select keyboard navigation timeout 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -6760,9 +6760,9 @@ exports[`Select modifies select control style on open 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -7040,9 +7040,9 @@ exports[`Select onChange with valueKey string 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -7320,7 +7320,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7541,9 +7541,9 @@ exports[`Select onChange with valueLabel 1`] = `
           class="c7"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -7821,7 +7821,7 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8095,9 +8095,9 @@ exports[`Select onChange without valueKey 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -8375,7 +8375,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8648,9 +8648,9 @@ exports[`Select prop: onClose 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -8929,9 +8929,9 @@ exports[`Select prop: onClose 2`] = `
             class="c8"
             viewBox="0 0 24 24"
           >
-            <path
-              d="m18 9-6 6-6-6"
+            <polyline
               fill="none"
+              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -9197,9 +9197,9 @@ exports[`Select prop: onOpen 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -9212,22 +9212,22 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jAWuzL"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gtvRqp"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 gVrQNs Select__SelectTextInput-sc-17idtfo-0 hZZumW"
+          class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9238,17 +9238,17 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 cVOXoU"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -9525,7 +9525,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9534,44 +9534,44 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 ceKKZK"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jITnOq"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 fJcNJz SelectContainer__SelectOption-sc-1wi0ul8-1 dJhaif"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kmBEJr"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 jpIwTy"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 fJcNJz SelectContainer__SelectOption-sc-1wi0ul8-1 dJhaif"
+    class="StyledButton-sc-323bzc-0 ksFFvX SelectContainer__SelectOption-sc-1wi0ul8-1 etFdtz"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kmBEJr"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 jpIwTy"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 jTmCCU"
+    class="StyledBox-sc-13pk1d4-0 jCbIzQ"
   />
 </div>
 `;
@@ -9829,9 +9829,9 @@ exports[`Select renders custom icon 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="M22 8 12 20 2 8z"
+        <polygon
           fill="none"
+          points="22 8 12 20 2 8"
           stroke="#000"
           stroke-width="2"
         />
@@ -10106,9 +10106,9 @@ exports[`Select renders custom up and down icons 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -10121,25 +10121,25 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jAWuzL"
+      class="StyledBox-sc-13pk1d4-0 jmuHez"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gtvRqp"
+        class="StyledBox-sc-13pk1d4-0 iAryDB"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gVrQNs Select__SelectTextInput-sc-17idtfo-0 hZZumW"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -10149,7 +10149,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 cVOXoU"
+        class="StyledBox-sc-13pk1d4-0 eA-DBEo"
         style="min-width: auto;"
       >
         .c0 {
@@ -10207,11 +10207,12 @@ exports[`Select renders custom up and down icons 2`] = `
           class="c0"
           viewBox="0 0 24 24"
         >
-          <path
-            d="M22 16 12 4 2 16z"
+          <polygon
             fill="none"
+            points="22 4 12 16 2 4"
             stroke="#000"
             stroke-width="2"
+            transform="matrix(1 0 0 -1 0 20)"
           />
         </svg>
       </div>
@@ -10473,9 +10474,9 @@ exports[`Select renders default icon 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -10754,9 +10755,9 @@ exports[`Select renders styled select options backwards compatible with legacy
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11037,9 +11038,9 @@ exports[`Select renders styled select options combining select.options.box &&
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11318,9 +11319,9 @@ exports[`Select renders styled select options using select.options.container 1`]
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -11773,9 +11774,9 @@ exports[`Select search 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -12224,7 +12225,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12234,7 +12235,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 lcyAJZ"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value=""
 />
@@ -12243,7 +12244,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 lcyAJZ"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value="o"
 />
@@ -12503,9 +12504,9 @@ exports[`Select search and select 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -12889,7 +12890,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .cVOXoU {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12899,7 +12900,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 lcyAJZ"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value=""
 />
@@ -12908,7 +12909,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 lcyAJZ"
+  class="StyledTextInput-sc-1x30a0s-0 gZAijB"
   type="search"
   value="t"
 />
@@ -13168,9 +13169,9 @@ exports[`Select select an object with label key specific with keypress 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13434,9 +13435,9 @@ exports[`Select select an option 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13642,9 +13643,9 @@ exports[`Select select an option with complex options 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -13908,9 +13909,9 @@ exports[`Select select an option with enter 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14174,9 +14175,9 @@ exports[`Select select an option with keypress 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14440,9 +14441,9 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -14719,9 +14720,9 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -14734,26 +14735,26 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+    class="StyledButton-sc-323bzc-0 dsmCNz Select__StyledSelectDropButton-sc-17idtfo-2 ieyOmu"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jAWuzL"
+      class="StyledBox-sc-13pk1d4-0 jmuHez"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gtvRqp"
+        class="StyledBox-sc-13pk1d4-0 iAryDB"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 gXHnix"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 gVrQNs Select__SelectTextInput-sc-17idtfo-0 hZZumW"
+            class="StyledTextInput-sc-1x30a0s-0 duVzSE Select__SelectTextInput-sc-17idtfo-0 bIurki"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -14764,17 +14765,17 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 cVOXoU"
+        class="StyledBox-sc-13pk1d4-0 eA-DBEo"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-ofa7kd-0 jLSzwp"
+          class="StyledIcon-ofa7kd-0 fuviCN"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15052,9 +15053,9 @@ exports[`Select selected 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15330,9 +15331,9 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15374,9 +15375,9 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15652,9 +15653,9 @@ exports[`Select should not have accessibility violations 1`] = `
           class="c9"
           viewBox="0 0 24 24"
         >
-          <path
-            d="m18 9-6 6-6-6"
+          <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -15920,9 +15921,9 @@ exports[`Select size 1`] = `
         class="c8"
         viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
+        <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />

@@ -518,7 +518,7 @@ exports[`FormField custom error and info icon and container 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M12 17v2m0-9v6m0-13L2 22h20L12 3z"
+              d="M12,17 L12,19 M12,10 L12,16 M12,3 L2,22 L22,22 L12,3 Z"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -543,7 +543,7 @@ exports[`FormField custom error and info icon and container 1`] = `
             viewBox="0 0 24 24"
           >
             <path
-              d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 10v8m0-12v2"
+              d="M2,3.99079514 C2,2.89130934 2.89821238,2 3.99079514,2 L20.0092049,2 C21.1086907,2 22,2.89821238 22,3.99079514 L22,20.0092049 C22,21.1086907 21.1017876,22 20.0092049,22 L3.99079514,22 C2.89130934,22 2,21.1017876 2,20.0092049 L2,3.99079514 Z M12,10 L12,18 M12,6 L12,8"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -2586,7 +2586,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 1v22M2 6l20 12m0-12L2 18"
+            d="M12,1 L12,23 M2,6 L22,18 M22.0000001,6 L2.00000008,18"
             fill="none"
             stroke="#000"
             stroke-width="2"

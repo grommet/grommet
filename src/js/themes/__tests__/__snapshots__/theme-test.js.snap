@@ -359,7 +359,7 @@ exports[`Grommet custom theme 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 22V2M2 12h20"
+            d="M12,22 L12,2 M2,12 L22,12"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -384,7 +384,7 @@ exports[`Grommet custom theme 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 22V2M2 12h20"
+            d="M12,22 L12,2 M2,12 L22,12"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -413,7 +413,7 @@ exports[`Grommet custom theme 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 22V2M2 12h20"
+            d="M12,22 L12,2 M2,12 L22,12"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -438,7 +438,7 @@ exports[`Grommet custom theme 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M12 22V2M2 12h20"
+            d="M12,22 L12,2 M2,12 L22,12"
             fill="none"
             stroke="#000"
             stroke-width="2"
