@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 
-export const SkipLinksPropType = {
-  children: PropTypes.node.isRequired,
-  messages: PropTypes.shape({
-    skipTo: PropTypes.string,
-  }),
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    children: PropTypes.node.isRequired,
+    messages: PropTypes.shape({
+      skipTo: PropTypes.string,
+    }),
+  };
+}
+export const SkipLinksPropType = PropType;

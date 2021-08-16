@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
 
-export const AnnounceContextPropType = {
-  children: PropTypes.func,
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    children: PropTypes.func,
+  };
+}
+export const AnnounceContextPropType = PropType;

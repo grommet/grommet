@@ -42,30 +42,34 @@ const borderTypes = [
   }),
 ];
 
-export const ListPropType = {
-  ...genericProps,
-  action: PropTypes.func,
-  as: PropTypes.string,
-  background: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-  border: PropTypes.oneOfType(borderTypes),
-  data: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
-  ),
-  children: PropTypes.func,
-  itemProps: PropTypes.shape({}),
-  onMore: PropTypes.func,
-  onClickItem: PropTypes.func,
-  onOrder: PropTypes.func,
-  pad: PropTypes.oneOfType([padPropType]),
-  paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-  primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  show: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.shape({ page: PropTypes.number }),
-  ]),
-  step: PropTypes.number,
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    ...genericProps,
+    action: PropTypes.func,
+    as: PropTypes.string,
+    background: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
+    border: PropTypes.oneOfType(borderTypes),
+    data: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
+    ),
+    children: PropTypes.func,
+    itemProps: PropTypes.shape({}),
+    onMore: PropTypes.func,
+    onClickItem: PropTypes.func,
+    onOrder: PropTypes.func,
+    pad: PropTypes.oneOfType([padPropType]),
+    paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+    primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({ page: PropTypes.number }),
+    ]),
+    step: PropTypes.number,
+  };
+}
+export const ListPropType = PropType;

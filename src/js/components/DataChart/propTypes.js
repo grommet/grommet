@@ -88,93 +88,97 @@ const seriesType = PropTypes.oneOfType([
 
 const granularityType = PropTypes.oneOf(['coarse', 'medium', 'fine']);
 
-export const DataChartPropType = {
-  ...genericProps,
-  axis: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      x: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.string,
-        PropTypes.shape({
-          property: PropTypes.string,
-          granularity: granularityType,
-        }),
-      ]),
-      y: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.string,
-        PropTypes.shape({
-          property: PropTypes.string,
-          granularity: granularityType,
-        }),
-      ]),
-    }),
-  ]),
-  bounds: PropTypes.oneOf(['align']),
-  chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]),
-  data: PropTypes.arrayOf(PropTypes.shape({})),
-  detail: PropTypes.bool,
-  gap: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'none',
-      'xxsmall',
-      'xsmall',
-      'small',
-      'medium',
-      'large',
-      'xlarge',
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    ...genericProps,
+    axis: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        x: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            granularity: granularityType,
+          }),
+        ]),
+        y: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            granularity: granularityType,
+          }),
+        ]),
+      }),
     ]),
-    PropTypes.string,
-  ]),
-  guide: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      x: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.shape({
-          granularity: granularityType,
-        }),
+    bounds: PropTypes.oneOf(['align']),
+    chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]),
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    detail: PropTypes.bool,
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
       ]),
-      y: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.shape({
-          granularity: granularityType,
-        }),
-      ]),
-    }),
-  ]),
-  legend: PropTypes.bool,
-  pad: padPropType,
-  series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['fill']),
-    PropTypes.shape({
-      height: PropTypes.oneOfType([
-        PropTypes.oneOf([
-          'xxsmall',
-          'xsmall',
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          'fill',
+      PropTypes.string,
+    ]),
+    guide: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        x: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.shape({
+            granularity: granularityType,
+          }),
         ]),
-        PropTypes.string,
-      ]),
-      width: PropTypes.oneOfType([
-        PropTypes.oneOf([
-          'xxsmall',
-          'xsmall',
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          'fill',
-          'auto',
+        y: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.shape({
+            granularity: granularityType,
+          }),
         ]),
-        PropTypes.string,
-      ]),
-    }),
-  ]),
-};
+      }),
+    ]),
+    legend: PropTypes.bool,
+    pad: padPropType,
+    series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['fill']),
+      PropTypes.shape({
+        height: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'fill',
+          ]),
+          PropTypes.string,
+        ]),
+        width: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'fill',
+            'auto',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
+    ]),
+  };
+}
+export const DataChartPropType = PropType;

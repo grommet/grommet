@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
 
-export const TablePropType = {
-  ...genericProps,
-  caption: PropTypes.string,
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    ...genericProps,
+    caption: PropTypes.string,
+  };
+}
+export const TablePropType = PropType;

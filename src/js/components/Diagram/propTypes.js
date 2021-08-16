@@ -12,34 +12,38 @@ const animationPropType = PropTypes.oneOfType([
   }),
 ]);
 
-export const DiagramPropType = {
-  animation: animationPropType,
-  connections: PropTypes.arrayOf(
-    PropTypes.shape({
-      anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-      animation: animationPropType,
-      color: colorPropType,
-      fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-        .isRequired,
-      label: PropTypes.string, // for accessibility
-      offset: PropTypes.oneOfType([
-        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-        PropTypes.string,
-      ]),
-      thickness: PropTypes.oneOfType([
-        PropTypes.oneOf([
-          'hair',
-          'xxsmall',
-          'xsmall',
-          'small',
-          'medium',
-          'large',
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    animation: animationPropType,
+    connections: PropTypes.arrayOf(
+      PropTypes.shape({
+        anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
+        animation: animationPropType,
+        color: colorPropType,
+        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
+        label: PropTypes.string, // for accessibility
+        offset: PropTypes.oneOfType([
+          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+          PropTypes.string,
         ]),
-        PropTypes.string,
-      ]),
-      toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-        .isRequired,
-      type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
-    }),
-  ).isRequired,
-};
+        thickness: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'hair',
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+          ]),
+          PropTypes.string,
+        ]),
+        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
+        type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
+      }),
+    ).isRequired,
+  };
+}
+export const DiagramPropType = PropType;

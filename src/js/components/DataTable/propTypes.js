@@ -54,108 +54,112 @@ parts.forEach((part) => {
   borderShape[part] = PropTypes.oneOfType(borderTypes);
 });
 
-export const DataTablePropType = {
-  ...genericProps,
-  background: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.shape(backgroundShape),
-  ]),
-  border: PropTypes.oneOfType([...borderTypes, PropTypes.shape(borderShape)]),
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      align: PropTypes.oneOf(['center', 'start', 'end']),
-      aggregate: PropTypes.oneOf(['avg', 'max', 'min', 'sum']),
-      footer: PropTypes.oneOfType([
-        PropTypes.node,
-        PropTypes.shape({
-          aggregate: PropTypes.bool,
-        }),
-      ]),
-      header: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.node,
-        PropTypes.shape({
-          aggregate: PropTypes.bool,
-        }),
-      ]),
-      pin: PropTypes.bool,
-      plain: PropTypes.bool,
-      primary: PropTypes.bool,
-      property: PropTypes.string.isRequired,
-      render: PropTypes.func,
-      search: PropTypes.bool,
-      sortable: PropTypes.bool,
-      size: PropTypes.oneOfType([
-        PropTypes.oneOf([
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          '1/2',
-          '1/4',
-          '2/4',
-          '3/4',
-          '1/3',
-          '2/3',
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    ...genericProps,
+    background: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.shape(backgroundShape),
+    ]),
+    border: PropTypes.oneOfType([...borderTypes, PropTypes.shape(borderShape)]),
+    columns: PropTypes.arrayOf(
+      PropTypes.shape({
+        align: PropTypes.oneOf(['center', 'start', 'end']),
+        aggregate: PropTypes.oneOf(['avg', 'max', 'min', 'sum']),
+        footer: PropTypes.oneOfType([
+          PropTypes.node,
+          PropTypes.shape({
+            aggregate: PropTypes.bool,
+          }),
         ]),
-        PropTypes.string,
-      ]),
-      units: PropTypes.string,
-      verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
+        header: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.node,
+          PropTypes.shape({
+            aggregate: PropTypes.bool,
+          }),
+        ]),
+        pin: PropTypes.bool,
+        plain: PropTypes.bool,
+        primary: PropTypes.bool,
+        property: PropTypes.string.isRequired,
+        render: PropTypes.func,
+        search: PropTypes.bool,
+        sortable: PropTypes.bool,
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            '1/2',
+            '1/4',
+            '2/4',
+            '3/4',
+            '1/3',
+            '2/3',
+          ]),
+          PropTypes.string,
+        ]),
+        units: PropTypes.string,
+        verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
+      }),
+    ),
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]),
+    groupBy: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        property: PropTypes.string,
+        expand: PropTypes.arrayOf(PropTypes.string),
+        onExpand: PropTypes.func,
+      }),
+    ]),
+    onClickRow: PropTypes.func,
+    rowDetails: PropTypes.func,
+    onMore: PropTypes.func,
+    onSearch: PropTypes.func,
+    onSelect: PropTypes.func,
+    onSort: PropTypes.func,
+    pad: PropTypes.oneOfType([
+      PropTypes.oneOf(sizes),
+      PropTypes.string,
+      PropTypes.shape(padShapeSides),
+      PropTypes.shape(padShapeParts),
+    ]),
+    paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+    pin: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['header', 'footer']),
+    ]),
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    replace: PropTypes.bool,
+    resizeable: PropTypes.bool,
+    rowProps: PropTypes.shape({}),
+    select: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({ page: PropTypes.number }),
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]),
+    sort: PropTypes.shape({
+      direction: PropTypes.oneOf(['asc', 'desc']),
+      external: PropTypes.bool,
+      property: PropTypes.string.isRequired,
     }),
-  ),
-  data: PropTypes.arrayOf(PropTypes.shape({})),
-  fill: PropTypes.oneOfType([
-    PropTypes.oneOf(['horizontal', 'vertical']),
-    PropTypes.bool,
-  ]),
-  groupBy: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      property: PropTypes.string,
-      expand: PropTypes.arrayOf(PropTypes.string),
-      onExpand: PropTypes.func,
-    }),
-  ]),
-  onClickRow: PropTypes.func,
-  rowDetails: PropTypes.func,
-  onMore: PropTypes.func,
-  onSearch: PropTypes.func,
-  onSelect: PropTypes.func,
-  onSort: PropTypes.func,
-  pad: PropTypes.oneOfType([
-    PropTypes.oneOf(sizes),
-    PropTypes.string,
-    PropTypes.shape(padShapeSides),
-    PropTypes.shape(padShapeParts),
-  ]),
-  paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-  pin: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.oneOf(['header', 'footer']),
-  ]),
-  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  replace: PropTypes.bool,
-  resizeable: PropTypes.bool,
-  rowProps: PropTypes.shape({}),
-  select: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  ),
-  show: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.shape({ page: PropTypes.number }),
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-    PropTypes.string,
-  ]),
-  sort: PropTypes.shape({
-    direction: PropTypes.oneOf(['asc', 'desc']),
-    external: PropTypes.bool,
-    property: PropTypes.string.isRequired,
-  }),
-  sortable: PropTypes.bool,
-  step: PropTypes.number,
-};
+    sortable: PropTypes.bool,
+    step: PropTypes.number,
+  };
+}
+export const DataTablePropType = PropType;

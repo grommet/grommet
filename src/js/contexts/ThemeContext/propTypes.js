@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
 
-export const ThemeContextPropType = {
-  value: PropTypes.shape({}),
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    value: PropTypes.shape({}),
+  };
+}
+export const ThemeContextPropType = PropType;

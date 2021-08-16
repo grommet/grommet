@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 
-export const CollapsiblePropType = {
-  open: PropTypes.bool,
-  direction: PropTypes.oneOf(['horizontal', 'vertical']),
-};
+let PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    open: PropTypes.bool,
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
+  };
+}
+export const CollapsiblePropType = PropType;
