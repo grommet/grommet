@@ -125,7 +125,7 @@ type Colors = typeof colors & {
   [x: string]: ColorType;
 };
 
-export interface ButtonKindType {
+interface ButtonKindType {
   background?: BackgroundType;
   border?:
     | {
@@ -144,7 +144,7 @@ export interface ButtonKindType {
   extend?: ExtendType;
 }
 
-interface ButtonType {
+export interface ButtonType {
   badge?: {
     container?: {
       background?: BackgroundType;
