@@ -11,6 +11,8 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
+var _propTypes = require("./propTypes");
+
 var _Box = require("../Box");
 
 var _Tip = require("../Tip");
@@ -401,13 +403,6 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   return styledButtonResult;
 });
+exports.Button = Button;
 Button.displayName = 'Button';
-var ButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-
-var ButtonWrapper = ButtonDoc || Button;
-exports.Button = ButtonWrapper;
+Button.propTypes = _propTypes.ButtonPropTypes;

@@ -7,6 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useEffect, useState } from 'react';
 import { Analog } from './Analog';
 import { Digital } from './Digital';
+import { ClockPropTypes } from './propTypes';
 var TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 var DURATION_REGEXP = /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
@@ -182,11 +183,5 @@ var Clock = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return content;
 });
 Clock.displayName = 'Clock';
-var ClockDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
-}
-
-var ClockWrapper = ClockDoc || Clock;
-export { ClockWrapper as Clock };
+Clock.propTypes = ClockPropTypes;
+export { Clock };

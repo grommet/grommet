@@ -5,6 +5,7 @@ import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
 import { MessageContext } from '../../contexts/MessageContext';
+import { SkipLinksPropTypes } from './propTypes';
 
 var SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
@@ -69,12 +70,5 @@ var SkipLinks = function SkipLinks(_ref) {
 };
 
 SkipLinks.defaultProps = {};
-var SkipLinksDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SkipLinksDoc = require('./doc').doc(SkipLinks);
-}
-
-var SkipLinksWrapper = SkipLinksDoc || SkipLinks;
-export { SkipLinksWrapper as SkipLinks };
+SkipLinks.propTypes = SkipLinksPropTypes;
+export { SkipLinks };

@@ -11,6 +11,7 @@ import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
+import { SpinnerPropTypes } from './propTypes';
 
 var BasicSpinner = function BasicSpinner(_ref) {
   var ref = _ref.ref,
@@ -96,12 +97,5 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, themeProps, rest));
 });
 Spinner.displayName = 'Spinner';
-var SpinnerDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SpinnerDoc = require('./doc').doc(Spinner);
-}
-
-var SpinnerWrapper = SpinnerDoc || Spinner;
-export { SpinnerWrapper as Spinner };
+Spinner.propTypes = SpinnerPropTypes;
+export { Spinner };

@@ -11,12 +11,4 @@ var TableFooter = /*#__PURE__*/forwardRef(function (props, ref) {
   }, props)));
 });
 TableFooter.displayName = 'TableFooter';
-var TableFooterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableFooterDoc = require('./doc').doc(TableFooter);
-}
-
-var TableFooterWrapper = TableFooterDoc || TableFooter;
-export { TableFooterWrapper as TableFooter };
+export { TableFooter };

@@ -15,6 +15,8 @@ var _Box = require("../Box");
 
 var _FormContext = require("../Form/FormContext");
 
+var _propTypes = require("./propTypes");
+
 var _StyledCheckBox = require("./StyledCheckBox");
 
 var _utils = require("../../utils");
@@ -217,13 +219,6 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }, themeableProps), first, second);
 });
+exports.CheckBox = CheckBox;
 CheckBox.displayName = 'CheckBox';
-var CheckBoxDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-
-var CheckBoxWrapper = CheckBoxDoc || CheckBox;
-exports.CheckBox = CheckBoxWrapper;
+CheckBox.propTypes = _propTypes.CheckBoxPropTypes;

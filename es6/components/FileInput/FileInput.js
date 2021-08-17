@@ -15,7 +15,8 @@ import { Button } from '../Button';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { StyledFileInput } from './StyledFileInput'; // We want the interaction of <input type="file" /> but none of its styling.
+import { StyledFileInput } from './StyledFileInput';
+import { FileInputPropTypes } from './propTypes'; // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
 // If there are any files selected, we need to show the buttons to remove them.
@@ -370,12 +371,5 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 FileInput.displayName = 'FileInput';
-var FileInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FileInputDoc = require('./doc').doc(FileInput);
-}
-
-var FileInputWrapper = FileInputDoc || FileInput;
-export { FileInputWrapper as FileInput };
+FileInput.propTypes = FileInputPropTypes;
+export { FileInput };

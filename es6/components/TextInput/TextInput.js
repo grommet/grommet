@@ -17,6 +17,7 @@ import { AnnounceContext } from '../../contexts';
 import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef } from '../../utils';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
+import { TextInputPropTypes } from './propTypes';
 
 var renderLabel = function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -393,12 +394,5 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }))), drop);
 });
 TextInput.displayName = 'TextInput';
-var TextInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextInputDoc = require('./doc').doc(TextInput);
-}
-
-var TextInputWrapper = TextInputDoc || TextInput;
-export { TextInputWrapper as TextInput };
+TextInput.propTypes = TextInputPropTypes;
+export { TextInput };

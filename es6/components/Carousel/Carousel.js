@@ -12,7 +12,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { CarouselType } from './propTypes';
+import { CarouselPropTypes } from './propTypes';
 
 var Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
@@ -230,5 +230,5 @@ Carousel.defaultProps = {
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
-Carousel.propTypes = CarouselType;
+Carousel.propTypes = CarouselPropTypes;
 export { Carousel };

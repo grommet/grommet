@@ -12,6 +12,8 @@ exports.ThemeContext = _styledComponents.ThemeContext;
 
 var _utils = require("../../utils");
 
+var _propTypes2 = require("./propTypes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _styledComponents.ThemeContext.Extend = function (_ref) {
@@ -28,3 +30,4 @@ _styledComponents.ThemeContext.Extend.propTypes = {
   children: _propTypes["default"].node.isRequired,
   value: _propTypes["default"].shape({}).isRequired
 };
+_styledComponents.ThemeContext.propTypes = _propTypes2.ThemeContextPropTypes;

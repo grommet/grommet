@@ -8,6 +8,7 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
+import { TextPropTypes } from './propTypes';
 var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       color = _ref.color,
@@ -59,11 +60,5 @@ Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1
 };
-var TextDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
-}
-
-var TextWrapper = TextDoc || Text;
-export { TextWrapper as Text };
+Text.propTypes = TextPropTypes;
+export { Text };

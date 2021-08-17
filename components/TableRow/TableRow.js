@@ -18,13 +18,5 @@ var TableRow = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     ref: ref
   }, props));
 });
+exports.TableRow = TableRow;
 TableRow.displayName = 'TableRow';
-var TableRowDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableRowDoc = require('./doc').doc(TableRow);
-}
-
-var TableRowWrapper = TableRowDoc || TableRow;
-exports.TableRow = TableRowWrapper;

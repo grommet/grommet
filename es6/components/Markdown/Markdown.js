@@ -17,6 +17,7 @@ import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
+import { MarkdownPropTypes } from './propTypes';
 
 var GrommetMarkdown = function GrommetMarkdown(_ref) {
   var components = _ref.components,
@@ -74,12 +75,5 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
   }, rest));
 };
 
-var GrommetMarkdownDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
-}
-
-var GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
-export { GrommetMarkdownWrapper as Markdown };
+GrommetMarkdown.propTypes = MarkdownPropTypes;
+export { GrommetMarkdown as Markdown };

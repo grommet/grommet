@@ -15,6 +15,7 @@ import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, formatToLocalYYYYMMDD, localTimezoneToUTC, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
+import { CalendarPropTypes } from './propTypes';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -869,12 +870,5 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, weeks)))));
 });
 Calendar.displayName = 'Calendar';
-var CalendarDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CalendarDoc = require('./doc').doc(Calendar);
-}
-
-var CalendarWrapper = CalendarDoc || Calendar;
-export { CalendarWrapper as Calendar };
+Calendar.propTypes = CalendarPropTypes;
+export { Calendar };

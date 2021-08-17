@@ -10,6 +10,7 @@ import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { RangeSelectorPropTypes } from './propTypes';
 var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "siof5p-0"
@@ -254,12 +255,5 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })));
 });
 RangeSelector.displayName = 'RangeSelector';
-var RangeSelectorDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeSelectorDoc = require('./doc').doc(RangeSelector);
-}
-
-var RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
-export { RangeSelectorWrapper as RangeSelector };
+RangeSelector.propTypes = RangeSelectorPropTypes;
+export { RangeSelector };

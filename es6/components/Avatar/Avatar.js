@@ -8,6 +8,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
+import { AvatarPropTypes } from './propTypes';
 
 var Avatar = function Avatar(_ref) {
   var _ref$align = _ref.align,
@@ -60,4 +61,5 @@ var Avatar = function Avatar(_ref) {
   return /*#__PURE__*/React.createElement(AvatarChildren, null);
 };
 
+Avatar.propTypes = AvatarPropTypes;
 export { Avatar };

@@ -14,12 +14,4 @@ var Card = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, theme.card.container, rest));
 });
 Card.displayName = 'Card';
-var CardDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardDoc = require('./doc').doc(Card);
-}
-
-var CardWrapper = CardDoc || Card;
-export { CardWrapper as Card };
+export { Card };

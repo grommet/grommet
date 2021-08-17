@@ -31,6 +31,8 @@ var _utils = require("../../utils");
 
 var _StyledDataTable = require("./StyledDataTable");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -460,12 +462,5 @@ var DataTable = function DataTable(_ref) {
   }, paginationProps)) : null);
 };
 
-var DataTableDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataTableDoc = require('./doc').doc(DataTable);
-}
-
-var DataTableWrapper = DataTableDoc || DataTable;
-exports.DataTable = DataTableWrapper;
+exports.DataTable = DataTable;
+DataTable.propTypes = _propTypes.DataTablePropTypes;

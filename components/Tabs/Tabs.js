@@ -19,6 +19,8 @@ var _utils = require("../../utils");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -141,12 +143,6 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     role: "tabpanel"
   }, activeContent));
 });
+exports.Tabs = Tabs;
 Tabs.displayName = 'Tabs';
-var TabsDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
-}
-
-var TabsWrapper = TabsDoc || Tabs;
-exports.Tabs = TabsWrapper;
+Tabs.propTypes = _propTypes.TabsPropTypes;

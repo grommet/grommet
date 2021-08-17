@@ -29,6 +29,8 @@ var _StyledVideo = require("./StyledVideo");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -499,14 +501,7 @@ var Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     loop: loop || false
   }), children), controlsElement);
 });
+exports.Video = Video;
 Video.defaultProps = {};
 Video.displayName = 'Video';
-var VideoDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-
-var VideoWrapper = VideoDoc || Video;
-exports.Video = VideoWrapper;
+Video.propTypes = _propTypes.VideoPropTypes;

@@ -17,6 +17,8 @@ var _DropContainer = require("./DropContainer");
 
 var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["restrictFocus", "target", "trapFocus"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -77,12 +79,6 @@ var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     trapFocus: trapFocus
   }, rest)), dropContainer) : null;
 });
+exports.Drop = Drop;
 Drop.displayName = 'Drop';
-var DropDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-
-var DropWrapper = DropDoc || Drop;
-exports.Drop = DropWrapper;
+Drop.propTypes = _propTypes.DropPropTypes;

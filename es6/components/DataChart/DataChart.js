@@ -19,7 +19,8 @@ import { XAxis } from './XAxis';
 import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
-import { createDateFormat, halfPad, heightYGranularity, points } from './utils'; // DataChart takes a generic data array of objects plus as few properties
+import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
+import { DataChartPropTypes } from './propTypes'; // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
 // and interactive detail.
 // Much of the code here-in involves the "few properties" aspect where we
@@ -630,12 +631,5 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return content;
 });
 DataChart.displayName = 'DataChart';
-var DataChartDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataChartDoc = require('./doc').doc(DataChart);
-}
-
-var DataChartWrapper = DataChartDoc || DataChart;
-export { DataChartWrapper as DataChart };
+DataChart.propTypes = DataChartPropTypes;
+export { DataChart };

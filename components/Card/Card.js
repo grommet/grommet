@@ -27,13 +27,5 @@ var Card = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: ref
   }, theme.card.container, rest));
 });
+exports.Card = Card;
 Card.displayName = 'Card';
-var CardDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardDoc = require('./doc').doc(Card);
-}
-
-var CardWrapper = CardDoc || Card;
-exports.Card = CardWrapper;

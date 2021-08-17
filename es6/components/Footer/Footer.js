@@ -16,12 +16,4 @@ var Footer = function Footer(_ref) {
   }, rest));
 };
 
-var FooterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FooterDoc = require('./doc').doc(Footer);
-}
-
-var FooterWrapper = FooterDoc || Footer;
-export { FooterWrapper as Footer };
+export { Footer };

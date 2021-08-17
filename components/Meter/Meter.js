@@ -9,6 +9,8 @@ var _Bar = require("./Bar");
 
 var _Circle = require("./Circle");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["background", "color", "direction", "size", "thickness", "type", "value", "values"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -89,12 +91,6 @@ var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   return content;
 });
+exports.Meter = Meter;
 Meter.displayName = 'Meter';
-var MeterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-
-var MeterWrapper = MeterDoc || Meter;
-exports.Meter = MeterWrapper;
+Meter.prototype = _propTypes.MeterPropTypes;

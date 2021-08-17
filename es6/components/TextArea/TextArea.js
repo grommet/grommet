@@ -8,6 +8,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTextArea } from './StyledTextArea';
+import { TextAreaPropTypes } from './propTypes';
 var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fill = _ref.fill,
@@ -63,12 +64,5 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })));
 });
 TextArea.displayName = 'TextArea';
-var TextAreaDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextAreaDoc = require('./doc').doc(TextArea);
-}
-
-var TextAreaWrapper = TextAreaDoc || TextArea;
-export { TextAreaWrapper as TextArea };
+TextArea.propTypes = TextAreaPropTypes;
+export { TextArea };

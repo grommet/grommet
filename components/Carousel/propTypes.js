@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CarouselType = void 0;
+exports.CarouselPropTypes = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -11,13 +11,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var CarouselType = _extends({}, _generalPropTypes.genericProps, {
-  activeChild: _propTypes["default"].number,
-  fill: _propTypes["default"].bool,
-  play: _propTypes["default"].number,
-  initialChild: _propTypes["default"].number,
-  onChild: _propTypes["default"].func,
-  controls: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['arrows', 'selectors'])])
-});
+var PropType = {};
 
-exports.CarouselType = CarouselType;
+if (process.env.NODE_ENV !== 'production') {
+  PropType = _extends({}, _generalPropTypes.genericProps, {
+    activeChild: _propTypes["default"].number,
+    fill: _propTypes["default"].bool,
+    play: _propTypes["default"].number,
+    initialChild: _propTypes["default"].number,
+    onChild: _propTypes["default"].func,
+    controls: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['arrows', 'selectors'])])
+  });
+}
+
+var CarouselPropTypes = PropType;
+exports.CarouselPropTypes = CarouselPropTypes;

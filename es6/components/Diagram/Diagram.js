@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledDiagram } from './StyledDiagram';
+import { DiagramPropTypes } from './propTypes';
 
 var computeMidPoint = function computeMidPoint(fromPoint, toPoint) {
   return [fromPoint[0] > toPoint[0] ? toPoint[0] + (fromPoint[0] - toPoint[0]) / 2 : fromPoint[0] + (toPoint[0] - fromPoint[0]) / 2, fromPoint[1] > toPoint[1] ? toPoint[1] + (fromPoint[1] - toPoint[1]) / 2 : fromPoint[1] + (toPoint[1] - fromPoint[1]) / 2];
@@ -235,12 +236,5 @@ Diagram.displayName = 'Diagram';
 Diagram.defaultProps = {
   connections: []
 };
-var DiagramDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DiagramDoc = require('./doc').doc(Diagram);
-}
-
-var DiagramWrapper = DiagramDoc || Diagram;
-export { DiagramWrapper as Diagram };
+Diagram.propTypes = DiagramPropTypes;
+export { Diagram };

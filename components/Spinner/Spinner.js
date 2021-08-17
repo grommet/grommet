@@ -13,6 +13,8 @@ var _Box = require("../Box");
 
 var _defaultProps = require("../../default-props");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["ref", "size"],
     _excluded2 = ["children", "color", "size", "message"],
     _excluded3 = ["size", "color"];
@@ -109,13 +111,6 @@ var Spinner = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }]
   }, themeProps, rest));
 });
+exports.Spinner = Spinner;
 Spinner.displayName = 'Spinner';
-var SpinnerDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SpinnerDoc = require('./doc').doc(Spinner);
-}
-
-var SpinnerWrapper = SpinnerDoc || Spinner;
-exports.Spinner = SpinnerWrapper;
+Spinner.propTypes = _propTypes.SpinnerPropTypes;

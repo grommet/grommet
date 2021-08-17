@@ -11,7 +11,8 @@ import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { StyledWorldMap } from './StyledWorldMap'; // The graphic is drawn as a rectangular grid using coordinates spaced
+import { StyledWorldMap } from './StyledWorldMap';
+import { WorldMapPropTypes } from './propTypes'; // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels. The contents have both an area boundary for interaction
 // and dots described as rows where each row is described by three values:
 // a starting coordinate and a length. This approach is more efficient than
@@ -384,12 +385,5 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 WorldMap.displayName = 'WorldMap';
 WorldMap.defaultProps = {};
 Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
-var WorldMapDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  WorldMapDoc = require('./doc').doc(WorldMap);
-}
-
-var WorldMapWrapper = WorldMapDoc || WorldMap;
-export { WorldMapWrapper as WorldMap };
+WorldMap.propTypes = WorldMapPropTypes;
+export { WorldMap };

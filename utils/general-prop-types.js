@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
+exports.OVERFLOW_VALUES = exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.a11yTitlePropType = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -9,22 +9,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var a11yTitlePropType = _propTypes["default"].string;
 exports.a11yTitlePropType = a11yTitlePropType;
-
-var getBorderPropType = function getBorderPropType(_ref) {
-  var _ref$includeBetween = _ref.includeBetween,
-      includeBetween = _ref$includeBetween === void 0 ? true : _ref$includeBetween;
-  return _propTypes["default"].shape({
-    color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
-      dark: _propTypes["default"].string,
-      light: _propTypes["default"].string
-    })]),
-    side: _propTypes["default"].oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all'].concat(includeBetween ? ['between'] : [])),
-    size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
-    style: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-  });
-};
-
-exports.getBorderPropType = getBorderPropType;
 
 var colorPropType = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
   dark: _propTypes["default"].string,
@@ -127,3 +111,5 @@ var widthPropType = _propTypes["default"].oneOfType([dimSizeType, _propTypes["de
 })]);
 
 exports.widthPropType = widthPropType;
+var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+exports.OVERFLOW_VALUES = OVERFLOW_VALUES;

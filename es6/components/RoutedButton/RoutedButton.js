@@ -86,12 +86,4 @@ RoutedButton.contextTypes = {
 RoutedButton.defaultProps = {
   method: 'push'
 };
-var RoutedButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedButtonDoc = require('./doc').doc(RoutedButton);
-}
-
-var RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;
-export { RoutedButtonWrapper as RoutedButton };
+export { RoutedButton };

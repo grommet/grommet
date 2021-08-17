@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React from 'react';
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
+import { TablePropTypes } from './propTypes';
 
 var Table = function Table(_ref) {
   var caption = _ref.caption,
@@ -13,11 +14,5 @@ var Table = function Table(_ref) {
   return /*#__PURE__*/React.createElement(StyledTable, rest, caption ? /*#__PURE__*/React.createElement(StyledTableDataCaption, null, caption) : null, children);
 };
 
-var TableDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TableDoc = require('./doc').doc(Table); // eslint-disable-line global-require
-}
-
-var TableWrapper = TableDoc || Table;
-export { TableWrapper as Table };
+Table.propTypes = TablePropTypes;
+export { Table };

@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledHeading = require("./StyledHeading");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["color", "fill", "level"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -37,17 +39,10 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref // munged 
     }))
   );
 });
+exports.Heading = Heading;
 Heading.displayName = 'Heading';
 Heading.defaultProps = {
   level: 1,
   responsive: true
 };
-var HeadingDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  HeadingDoc = require('./doc').doc(Heading);
-}
-
-var HeadingWrapper = HeadingDoc || Heading;
-exports.Heading = HeadingWrapper;
+Heading.propTypes = _propTypes.HeadingPropTypes;

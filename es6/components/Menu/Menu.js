@@ -15,6 +15,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { MenuPropTypes } from './propTypes';
 var ContainerBox = styled(Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
@@ -338,11 +339,5 @@ Menu.defaultProps = {
   justifyContent: 'start'
 };
 Menu.displayName = 'Menu';
-var MenuDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
-}
-
-var MenuWrapper = MenuDoc || Menu;
-export { MenuWrapper as Menu };
+Menu.propTypes = MenuPropTypes;
+export { Menu };

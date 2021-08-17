@@ -9,6 +9,8 @@ var _Analog = require("./Analog");
 
 var _Digital = require("./Digital");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["hourLimit", "onChange", "precision", "run", "size", "time", "type"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -193,12 +195,6 @@ var Clock = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   return content;
 });
+exports.Clock = Clock;
 Clock.displayName = 'Clock';
-var ClockDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
-}
-
-var ClockWrapper = ClockDoc || Clock;
-exports.Clock = ClockWrapper;
+Clock.propTypes = _propTypes.ClockPropTypes;

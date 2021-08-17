@@ -250,4 +250,4 @@ Carousel.defaultProps = {
 };
 Object.setPrototypeOf(Carousel.defaultProps, _defaultProps.defaultProps);
 Carousel.displayName = 'Carousel';
-Carousel.propTypes = _propTypes.CarouselType;
+Carousel.propTypes = _propTypes.CarouselPropTypes;

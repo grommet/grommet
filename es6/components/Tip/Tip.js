@@ -5,6 +5,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
+import { TipPropTypes } from './propTypes';
 var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var children = _ref.children,
       content = _ref.content,
@@ -72,12 +73,5 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   }, theme.tip.drop, dropProps), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content))];
 });
 Tip.displayName = 'Tip';
-var TipDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TipDoc = require('./doc').doc(Tip);
-}
-
-var TipWrapper = TipDoc || Tip;
-export { TipWrapper as Tip };
+Tip.propTypes = TipPropTypes;
+export { Tip };

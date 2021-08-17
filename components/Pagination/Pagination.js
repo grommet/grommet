@@ -15,6 +15,8 @@ var _Nav = require("../Nav");
 
 var _PageControl = require("./PageControl");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -194,13 +196,6 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     );
   }))));
 });
+exports.Pagination = Pagination;
 Pagination.displayName = 'Pagination';
-var PaginationDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  PaginationDoc = require('./doc').doc(Pagination);
-}
-
-var PaginationWrapper = PaginationDoc || Pagination;
-exports.Pagination = PaginationWrapper;
+Pagination.propTypes = _propTypes.PaginationPropTypes;

@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledGrid } from './StyledGrid';
+import { GridPropTypes } from './propTypes';
 var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       ariaLabel = props['aria-label'],
@@ -33,12 +34,6 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   }, rest));
 });
 Grid.displayName = 'Grid';
-var GridDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
-}
-
-var GridWrapper = GridDoc || Grid;
-GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
-export { GridWrapper as Grid };
+Grid.propTypes = GridPropTypes;
+Grid.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
+export { Grid };

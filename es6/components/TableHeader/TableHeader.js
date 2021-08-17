@@ -11,12 +11,4 @@ var TableHeader = /*#__PURE__*/forwardRef(function (props, ref) {
   }, props)));
 });
 TableHeader.displayName = 'TableHeader';
-var TableHeaderDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableHeaderDoc = require('./doc').doc(TableHeader);
-}
-
-var TableHeaderWrapper = TableHeaderDoc || TableHeader;
-export { TableHeaderWrapper as TableHeader };
+export { TableHeader };

@@ -18,6 +18,7 @@ import { RootsContext } from '../../contexts/RootsContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { format as _format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
+import { GrommetPropTypes } from './propTypes';
 var FullGlobalStyle = createGlobalStyle(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
@@ -135,12 +136,5 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
   }), children), full && /*#__PURE__*/React.createElement(FullGlobalStyle, null)))))));
 });
 Grommet.displayName = 'Grommet';
-var GrommetDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetDoc = require('./doc').doc(Grommet);
-}
-
-var GrommetWrapper = GrommetDoc || Grommet;
-export { GrommetWrapper as Grommet };
+Grommet.propTypes = GrommetPropTypes;
+export { Grommet };

@@ -8,12 +8,4 @@ var TableRow = /*#__PURE__*/forwardRef(function (props, ref) {
   }, props));
 });
 TableRow.displayName = 'TableRow';
-var TableRowDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableRowDoc = require('./doc').doc(TableRow);
-}
-
-var TableRowWrapper = TableRowDoc || TableRow;
-export { TableRowWrapper as TableRow };
+export { TableRow };

@@ -5,6 +5,8 @@ exports.Keyboard = void 0;
 
 var _react = require("react");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["capture", "target", "children", "onKeyDown"];
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -62,12 +64,5 @@ var Keyboard = function Keyboard(_ref) {
   });
 };
 
-var KeyboardDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  KeyboardDoc = require('./doc').doc(Keyboard);
-}
-
-var KeyboardWrapper = KeyboardDoc || Keyboard;
-exports.Keyboard = KeyboardWrapper;
+exports.Keyboard = Keyboard;
+Keyboard.propTypes = _propTypes.KeyboardPropTypes;

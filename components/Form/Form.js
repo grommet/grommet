@@ -9,6 +9,8 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _FormContext = require("./FormContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -482,12 +484,6 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }
   }, children));
 });
+exports.Form = Form;
 Form.displayName = 'Form';
-var FormDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  FormDoc = require('./doc').doc(Form); // eslint-disable-line global-require
-}
-
-var FormWrapper = FormDoc || Form;
-exports.Form = FormWrapper;
+Form.propTypes = _propTypes.FormPropTypes;

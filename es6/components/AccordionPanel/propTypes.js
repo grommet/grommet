@@ -1,5 +1,11 @@
 import PropTypes from 'prop-types';
-export var AccordionPanelType = {
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  header: PropTypes.node
-};
+var PropType = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    header: PropTypes.node
+  };
+}
+
+export var AccordionPanelPropTypes = PropType;

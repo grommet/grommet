@@ -21,12 +21,4 @@ var Nav = function Nav(_ref) {
   }, rest));
 };
 
-var NavDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  NavDoc = require('./doc').doc(Nav);
-}
-
-var NavWrapper = NavDoc || Nav;
-exports.Nav = NavWrapper;
+exports.Nav = Nav;

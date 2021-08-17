@@ -23,6 +23,8 @@ var _utils = require("../../utils");
 
 var _StyledMaskedInput = require("./StyledMaskedInput");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicator", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "textAlign", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -439,13 +441,6 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }, child));
   }))));
 });
+exports.MaskedInput = MaskedInput;
 MaskedInput.displayName = 'MaskedInput';
-var MaskedInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-
-var MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-exports.MaskedInput = MaskedInputWrapper;
+MaskedInput.propTypes = _propTypes.MaskedInputPropTypes;

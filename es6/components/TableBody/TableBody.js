@@ -11,12 +11,4 @@ var TableBody = /*#__PURE__*/forwardRef(function (props, ref) {
   }, props)));
 });
 TableBody.displayName = 'TableBody';
-var TableBodyDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableBodyDoc = require('./doc').doc(TableBody);
-}
-
-var TableBodyWrapper = TableBodyDoc || TableBody;
-export { TableBodyWrapper as TableBody };
+export { TableBody };

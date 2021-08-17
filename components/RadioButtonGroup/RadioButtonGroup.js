@@ -17,6 +17,8 @@ var _Box = require("../Box");
 
 var _RadioButton = require("../RadioButton");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"],
     _excluded2 = ["disabled", "id", "label", "value"];
 
@@ -171,13 +173,6 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     } : null);
   })));
 });
+exports.RadioButtonGroup = RadioButtonGroup;
 RadioButtonGroup.displayName = 'RadioButtonGroup';
-var RadioButtonGroupDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
-}
-
-var RadioButtonGroupWrapper = RadioButtonGroupDoc || RadioButtonGroup;
-exports.RadioButtonGroup = RadioButtonGroupWrapper;
+RadioButtonGroup.propTypes = _propTypes.RadioButtonGroupPropTypes;

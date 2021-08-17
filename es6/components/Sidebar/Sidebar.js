@@ -5,8 +5,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '../Box';
+import { SidebarPropTypes } from './propTypes';
 export var Sidebar = function Sidebar(_ref) {
   var children = _ref.children,
       footer = _ref.footer,
@@ -23,11 +23,7 @@ export var Sidebar = function Sidebar(_ref) {
     flex: true
   }, children), footer);
 };
-Sidebar.propTypes = {
-  children: PropTypes.node,
-  footer: PropTypes.node,
-  header: PropTypes.node
-};
+Sidebar.propTypes = SidebarPropTypes;
 Sidebar.defaultProps = {
   children: undefined,
   footer: undefined,

@@ -14,12 +14,4 @@ var Main = function Main(_ref) {
   }, rest));
 };
 
-var MainDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MainDoc = require('./doc').doc(Main);
-}
-
-var MainWrapper = MainDoc || Main;
-export { MainWrapper as Main };
+export { Main };

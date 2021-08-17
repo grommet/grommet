@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
+import { ImagePropTypes } from './propTypes';
 var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fallback = _ref.fallback,
@@ -40,11 +41,5 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }));
 });
 Image.displayName = 'Image';
-var ImageDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
-}
-
-var ImageWrapper = ImageDoc || Image;
-export { ImageWrapper as Image };
+Image.propTypes = ImagePropTypes;
+export { Image };

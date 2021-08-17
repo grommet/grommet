@@ -26,12 +26,4 @@ var CardFooter = function CardFooter(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_Footer.Footer, _extends({}, theme.card.footer, rest));
 };
 
-var CardFooterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardFooterDoc = require('./doc').doc(CardFooter);
-}
-
-var CardFooterWrapper = CardFooterDoc || CardFooter;
-exports.CardFooter = CardFooterWrapper;
+exports.CardFooter = CardFooter;

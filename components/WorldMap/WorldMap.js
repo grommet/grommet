@@ -13,6 +13,8 @@ var _utils = require("../../utils");
 
 var _StyledWorldMap = require("./StyledWorldMap");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
     _excluded2 = ["location"],
     _excluded3 = ["color", "onClick", "onHover"],
@@ -398,15 +400,8 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     fillRule: "evenodd"
   }, continentElements), placeElements, active); // }
 });
+exports.WorldMap = WorldMap;
 WorldMap.displayName = 'WorldMap';
 WorldMap.defaultProps = {};
 Object.setPrototypeOf(WorldMap.defaultProps, _defaultProps.defaultProps);
-var WorldMapDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  WorldMapDoc = require('./doc').doc(WorldMap);
-}
-
-var WorldMapWrapper = WorldMapDoc || WorldMap;
-exports.WorldMap = WorldMapWrapper;
+WorldMap.propTypes = _propTypes.WorldMapPropTypes;

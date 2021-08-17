@@ -33,6 +33,8 @@ var _YGuide = require("./YGuide");
 
 var _utils2 = require("./utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "pad", "series", "size"],
     _excluded2 = ["property", "type", "x", "y"];
 
@@ -655,13 +657,6 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   return content;
 });
+exports.DataChart = DataChart;
 DataChart.displayName = 'DataChart';
-var DataChartDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataChartDoc = require('./doc').doc(DataChart);
-}
-
-var DataChartWrapper = DataChartDoc || DataChart;
-exports.DataChart = DataChartWrapper;
+DataChart.propTypes = _propTypes.DataChartPropTypes;

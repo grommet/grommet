@@ -13,6 +13,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
+import { ChartPropTypes } from './propTypes';
 var gradientMaskColor = '#ffffff'; // use constants so re-renders don't re-trigger effects
 
 var defaultSize = {
@@ -564,11 +565,5 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, rest), defs.length && /*#__PURE__*/React.createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
-var ChartDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
-}
-
-var ChartWrapper = ChartDoc || Chart;
-export { ChartWrapper as Chart };
+Chart.propTypes = ChartPropTypes;
+export { Chart };

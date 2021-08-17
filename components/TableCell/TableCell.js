@@ -19,6 +19,8 @@ var _TableContext = require("../Table/TableContext");
 
 var _StyledTable = require("../Table/StyledTable");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "scope", "size", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -168,13 +170,6 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     justify: verticalAlignToJustify[verticalAlign]
   }), children)));
 });
+exports.TableCell = TableCell;
 TableCell.displayName = 'TableCell';
-var TableCellDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableCellDoc = require('./doc').doc(TableCell);
-}
-
-var TableCellWrapper = TableCellDoc || TableCell;
-exports.TableCell = TableCellWrapper;
+TableCell.propTypes = _propTypes.TableCellPropTypes;

@@ -14,6 +14,7 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { sizeStyle, useForwardedRef } from '../../utils';
 import { StyledMaskedInput, StyledMaskedInputContainer, StyledIcon } from './StyledMaskedInput';
+import { MaskedInputPropTypes } from './propTypes';
 
 var parseValue = function parseValue(mask, value) {
   // break the value up into mask parts
@@ -421,12 +422,5 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }))));
 });
 MaskedInput.displayName = 'MaskedInput';
-var MaskedInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-
-var MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-export { MaskedInputWrapper as MaskedInput };
+MaskedInput.propTypes = MaskedInputPropTypes;
+export { MaskedInput };

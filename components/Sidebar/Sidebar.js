@@ -5,9 +5,9 @@ exports.Sidebar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _Box = require("../Box");
+
+var _propTypes = require("./propTypes");
 
 var _excluded = ["children", "footer", "header"];
 
@@ -35,11 +35,7 @@ var Sidebar = function Sidebar(_ref) {
 };
 
 exports.Sidebar = Sidebar;
-Sidebar.propTypes = {
-  children: _propTypes["default"].node,
-  footer: _propTypes["default"].node,
-  header: _propTypes["default"].node
-};
+Sidebar.propTypes = _propTypes.SidebarPropTypes;
 Sidebar.defaultProps = {
   children: undefined,
   footer: undefined,

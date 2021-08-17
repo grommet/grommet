@@ -22,13 +22,5 @@ var TableFooter = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     ref: ref
   }, props)));
 });
+exports.TableFooter = TableFooter;
 TableFooter.displayName = 'TableFooter';
-var TableFooterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableFooterDoc = require('./doc').doc(TableFooter);
-}
-
-var TableFooterWrapper = TableFooterDoc || TableFooter;
-exports.TableFooter = TableFooterWrapper;

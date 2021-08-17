@@ -12,6 +12,7 @@ import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
+import { TableCellPropTypes } from './propTypes';
 var verticalAlignToJustify = {
   middle: 'center',
   top: 'start',
@@ -151,12 +152,5 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }), children)));
 });
 TableCell.displayName = 'TableCell';
-var TableCellDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableCellDoc = require('./doc').doc(TableCell);
-}
-
-var TableCellWrapper = TableCellDoc || TableCell;
-export { TableCellWrapper as TableCell };
+TableCell.propTypes = TableCellPropTypes;
+export { TableCell };

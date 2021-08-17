@@ -11,6 +11,8 @@ var _Drop = require("../Drop");
 
 var _utils = require("../../utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "onAlign", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -96,13 +98,6 @@ var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onEsc: onDropClose
   }, dropProps), dropContent));
 });
+exports.DropButton = DropButton;
 DropButton.displayName = 'DropButton';
-var DropButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DropButtonDoc = require('./doc').doc(DropButton);
-}
-
-var DropButtonWrapper = DropButtonDoc || DropButton;
-exports.DropButton = DropButtonWrapper;
+DropButton.propTypes = _propTypes.DropButtonPropTypes;

@@ -11,6 +11,8 @@ var _defaultProps = require("../../default-props");
 
 var _StyledAvatar = require("./StyledAvatar");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["align", "children", "height", "justify", "round", "size", "src", "width"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -74,3 +76,4 @@ var Avatar = function Avatar(_ref) {
 };
 
 exports.Avatar = Avatar;
+Avatar.propTypes = _propTypes.AvatarPropTypes;

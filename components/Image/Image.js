@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledImage = require("./StyledImage");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "fallback", "onError", "opacity", "fill", "src"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -50,12 +52,6 @@ var Image = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     src: !imageMissing ? src : fallback
   }));
 });
+exports.Image = Image;
 Image.displayName = 'Image';
-var ImageDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
-}
-
-var ImageWrapper = ImageDoc || Image;
-exports.Image = ImageWrapper;
+Image.propTypes = _propTypes.ImagePropTypes;

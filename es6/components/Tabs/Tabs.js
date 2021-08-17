@@ -12,6 +12,7 @@ import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { TabsPropTypes } from './propTypes';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignControls = _ref.alignControls,
       children = _ref.children,
@@ -124,11 +125,5 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, activeContent));
 });
 Tabs.displayName = 'Tabs';
-var TabsDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
-}
-
-var TabsWrapper = TabsDoc || Tabs;
-export { TabsWrapper as Tabs };
+Tabs.propTypes = TabsPropTypes;
+export { Tabs };

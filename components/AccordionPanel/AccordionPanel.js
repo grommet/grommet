@@ -148,4 +148,4 @@ var AccordionPanel = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 });
 exports.AccordionPanel = AccordionPanel;
 AccordionPanel.displayName = 'AccordionPanel';
-AccordionPanel.propTypes = _propTypes.AccordionPanelType;
+AccordionPanel.propTypes = _propTypes.AccordionPanelPropTypes;

@@ -21,6 +21,8 @@ var _Text = require("../Text");
 
 var _utils = require("../../utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -503,12 +505,6 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, paginationProps)) : null);
 });
 
+exports.List = List;
 List.displayName = 'List';
-var ListDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
-}
-
-var ListWrapper = ListDoc || List;
-exports.List = ListWrapper;
+List.propTypes = _propTypes.ListPropTypes;

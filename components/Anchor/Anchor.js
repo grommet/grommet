@@ -95,4 +95,4 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 });
 exports.Anchor = Anchor;
 Anchor.displayName = 'Anchor';
-Anchor.propTypes = _propTypes.AnchorType;
+Anchor.propTypes = _propTypes.AnchorPropTypes;

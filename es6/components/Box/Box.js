@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
+import { BoxPropTypes } from './propTypes';
 var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
@@ -153,11 +154,5 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return content;
 });
 Box.displayName = 'Box';
-var BoxDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-
-var BoxWrapper = BoxDoc || Box;
-export { BoxWrapper as Box };
+Box.propTypes = BoxPropTypes;
+export { Box };

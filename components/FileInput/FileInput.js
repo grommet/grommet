@@ -27,6 +27,8 @@ var _Text = require("../Text");
 
 var _StyledFileInput = require("./StyledFileInput");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "background", "border", "disabled", "id", "plain", "renderFile", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -388,15 +390,8 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   })));
 });
+exports.FileInput = FileInput;
 FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, _defaultProps.defaultProps);
 FileInput.displayName = 'FileInput';
-var FileInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FileInputDoc = require('./doc').doc(FileInput);
-}
-
-var FileInputWrapper = FileInputDoc || FileInput;
-exports.FileInput = FileInputWrapper;
+FileInput.propTypes = _propTypes.FileInputPropTypes;

@@ -22,13 +22,5 @@ var TableBody = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     ref: ref
   }, props)));
 });
+exports.TableBody = TableBody;
 TableBody.displayName = 'TableBody';
-var TableBodyDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableBodyDoc = require('./doc').doc(TableBody);
-}
-
-var TableBodyWrapper = TableBodyDoc || TableBody;
-exports.TableBody = TableBodyWrapper;

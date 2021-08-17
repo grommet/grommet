@@ -6,6 +6,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { Children, forwardRef } from 'react';
 import { StyledStack, StyledStackLayer } from './StyledStack';
+import { StackPropTypes } from './propTypes';
 
 var buildStyledChildren = function buildStyledChildren(_ref) {
   var anchor = _ref.anchor,
@@ -62,11 +63,5 @@ var Stack = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, rest), styledChildren);
 });
 Stack.displayName = 'Stack';
-var StackDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  StackDoc = require('./doc').doc(Stack); // eslint-disable-line global-require
-}
-
-var StackWrapper = StackDoc || Stack;
-export { StackWrapper as Stack };
+Stack.propTypes = StackPropTypes;
+export { Stack };

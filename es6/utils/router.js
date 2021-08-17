@@ -1,5 +1,8 @@
-import { PropTypes } from 'react-desc';
+import PropTypes from 'prop-types';
 export var ROUTER_PROPS = {
-  path: PropTypes.string.description('Indicates the path to be used for react-router link.').isRequired,
-  method: PropTypes.oneOf(['push', 'replace']).description("Indicates whether the browser history should be appended to or \n      replaced.").defaultValue('push')
+  // Indicates the path to be used for react-router link.
+  path: PropTypes.string.isRequired,
+  // Indicates whether the browser history should be appended to or replaced.
+  // defaultValue: 'push
+  method: PropTypes.oneOf(['push', 'replace'])
 };

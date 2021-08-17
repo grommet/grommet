@@ -1,18 +1,5 @@
 import PropTypes from 'prop-types';
 export var a11yTitlePropType = PropTypes.string;
-export var getBorderPropType = function getBorderPropType(_ref) {
-  var _ref$includeBetween = _ref.includeBetween,
-      includeBetween = _ref$includeBetween === void 0 ? true : _ref$includeBetween;
-  return PropTypes.shape({
-    color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-      dark: PropTypes.string,
-      light: PropTypes.string
-    })]),
-    side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all'].concat(includeBetween ? ['between'] : [])),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
-    style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden'])
-  });
-};
 export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   dark: PropTypes.string,
   light: PropTypes.string
@@ -78,3 +65,4 @@ export var widthPropType = PropTypes.oneOfType([dimSizeType, PropTypes.string, P
   min: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
   max: PropTypes.oneOfType([dimSizeType, PropTypes.string])
 })]);
+export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];

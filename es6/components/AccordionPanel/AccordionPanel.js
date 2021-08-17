@@ -13,7 +13,7 @@ import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
-import { AccordionPanelType } from './propTypes';
+import { AccordionPanelPropTypes } from './propTypes';
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       header = _ref.header,
@@ -128,5 +128,5 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, children) : active && children));
 });
 AccordionPanel.displayName = 'AccordionPanel';
-AccordionPanel.propTypes = AccordionPanelType;
+AccordionPanel.propTypes = AccordionPanelPropTypes;
 export { AccordionPanel };

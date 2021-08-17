@@ -16,6 +16,7 @@ import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { SelectPropTypes } from './propTypes';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
@@ -382,12 +383,5 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 });
 Select.defaultProps = _extends({}, defaultProps);
 Select.displayName = 'Select';
-var SelectDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SelectDoc = require('./doc').doc(Select);
-}
-
-var SelectWrapper = SelectDoc || Select;
-export { SelectWrapper as Select };
+Select.propTypes = SelectPropTypes;
+export { Select };

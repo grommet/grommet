@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationPropTypes } from './propTypes';
 var StyledPaginationContainer = styled(Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
   componentId: "rnlw6m-0"
@@ -179,12 +180,5 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }))));
 });
 Pagination.displayName = 'Pagination';
-var PaginationDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  PaginationDoc = require('./doc').doc(Pagination);
-}
-
-var PaginationWrapper = PaginationDoc || Pagination;
-export { PaginationWrapper as Pagination };
+Pagination.propTypes = PaginationPropTypes;
+export { Pagination };

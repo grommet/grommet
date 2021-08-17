@@ -79,18 +79,10 @@ var RoutedAnchor = /*#__PURE__*/function (_Component) {
   return RoutedAnchor;
 }(_react.Component);
 
+exports.RoutedAnchor = RoutedAnchor;
 RoutedAnchor.contextTypes = {
   router: _propTypes["default"].shape({}).isRequired
 };
 RoutedAnchor.defaultProps = {
   method: 'push'
 };
-var RoutedAnchorDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor);
-}
-
-var RoutedAnchorWrapper = RoutedAnchorDoc || RoutedAnchor;
-exports.RoutedAnchor = RoutedAnchorWrapper;

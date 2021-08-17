@@ -23,6 +23,8 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _default = _interopRequireDefault(require("../../languages/default.json"));
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
 
 var _templateObject;
@@ -155,13 +157,6 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     ref: grommetRef
   }), children), full && /*#__PURE__*/_react["default"].createElement(FullGlobalStyle, null)))))));
 });
+exports.Grommet = Grommet;
 Grommet.displayName = 'Grommet';
-var GrommetDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetDoc = require('./doc').doc(Grommet);
-}
-
-var GrommetWrapper = GrommetDoc || Grommet;
-exports.Grommet = GrommetWrapper;
+Grommet.propTypes = _propTypes.GrommetPropTypes;

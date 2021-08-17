@@ -12,12 +12,4 @@ var CardFooter = function CardFooter(_ref) {
   return /*#__PURE__*/React.createElement(Footer, _extends({}, theme.card.footer, rest));
 };
 
-var CardFooterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardFooterDoc = require('./doc').doc(CardFooter);
-}
-
-var CardFooterWrapper = CardFooterDoc || CardFooter;
-export { CardFooterWrapper as CardFooter };
+export { CardFooter };

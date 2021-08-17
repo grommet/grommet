@@ -12,6 +12,7 @@ import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
+import { RadioButtonGroupPropTypes } from './propTypes';
 var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       defaultValue = _ref.defaultValue,
@@ -152,12 +153,5 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })));
 });
 RadioButtonGroup.displayName = 'RadioButtonGroup';
-var RadioButtonGroupDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
-}
-
-var RadioButtonGroupWrapper = RadioButtonGroupDoc || RadioButtonGroup;
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+RadioButtonGroup.propTypes = RadioButtonGroupPropTypes;
+export { RadioButtonGroup };

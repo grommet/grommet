@@ -5,6 +5,8 @@ exports.AnnounceContext = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = require("./propTypes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var createAnnouncer = function createAnnouncer() {
@@ -39,3 +41,4 @@ var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (mes
 });
 
 exports.AnnounceContext = AnnounceContext;
+AnnounceContext.propTypes = _propTypes.AnnounceContextPropTypes;

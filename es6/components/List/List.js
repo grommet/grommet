@@ -13,6 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
+import { ListPropTypes } from './propTypes';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
@@ -484,11 +485,5 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, paginationProps)) : null);
 });
 List.displayName = 'List';
-var ListDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
-}
-
-var ListWrapper = ListDoc || List;
-export { ListWrapper as List };
+List.propTypes = ListPropTypes;
+export { List };

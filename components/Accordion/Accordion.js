@@ -90,4 +90,4 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }));
 });
 exports.Accordion = Accordion;
-Accordion.propTypes = _propTypes.AccordionType;
+Accordion.propTypes = _propTypes.AccordionPropTypes;

@@ -25,6 +25,8 @@ var _StyledCalendar = require("./StyledCalendar");
 
 var _utils = require("./utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -889,13 +891,6 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     fillContainer: fill
   }, weeks)))));
 });
+exports.Calendar = Calendar;
 Calendar.displayName = 'Calendar';
-var CalendarDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CalendarDoc = require('./doc').doc(Calendar);
-}
-
-var CalendarWrapper = CalendarDoc || Calendar;
-exports.Calendar = CalendarWrapper;
+Calendar.propTypes = _propTypes.CalendarPropTypes;

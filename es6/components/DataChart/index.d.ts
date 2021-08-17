@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { A11yTitleType, GapType, GridAreaType, MarginType } from '../../utils';
-import { ChartProps } from '../Chart';
+import { ChartProps } from '../Chart/index';
 import { GridProps } from '../Grid';
 
 type ChartType =

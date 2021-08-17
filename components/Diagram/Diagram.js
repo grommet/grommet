@@ -13,6 +13,8 @@ var _utils = require("../../utils");
 
 var _StyledDiagram = require("./StyledDiagram");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["connections"],
     _excluded2 = ["anchor", "animation", "color", "offset", "round", "thickness", "type"];
 
@@ -244,16 +246,9 @@ var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     connections: paths
   }, rest), /*#__PURE__*/_react["default"].createElement("g", null, paths));
 });
+exports.Diagram = Diagram;
 Diagram.displayName = 'Diagram';
 Diagram.defaultProps = {
   connections: []
 };
-var DiagramDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DiagramDoc = require('./doc').doc(Diagram);
-}
-
-var DiagramWrapper = DiagramDoc || Diagram;
-exports.Diagram = DiagramWrapper;
+Diagram.propTypes = _propTypes.DiagramPropTypes;

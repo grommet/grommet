@@ -27,6 +27,8 @@ var _utils2 = require("./utils");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -404,14 +406,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     size: size
   })))));
 });
+exports.Select = Select;
 Select.defaultProps = _extends({}, _defaultProps.defaultProps);
 Select.displayName = 'Select';
-var SelectDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SelectDoc = require('./doc').doc(Select);
-}
-
-var SelectWrapper = SelectDoc || Select;
-exports.Select = SelectWrapper;
+Select.propTypes = _propTypes.SelectPropTypes;

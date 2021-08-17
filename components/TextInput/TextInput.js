@@ -29,6 +29,8 @@ var _StyledTextInput = require("./StyledTextInput");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -413,13 +415,6 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }))), drop);
 });
+exports.TextInput = TextInput;
 TextInput.displayName = 'TextInput';
-var TextInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextInputDoc = require('./doc').doc(TextInput);
-}
-
-var TextInputWrapper = TextInputDoc || TextInput;
-exports.TextInput = TextInputWrapper;
+TextInput.propTypes = _propTypes.TextInputPropTypes;

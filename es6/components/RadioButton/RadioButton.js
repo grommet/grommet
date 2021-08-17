@@ -10,6 +10,7 @@ import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
+import { RadioButtonPropTypes } from './propTypes';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       checked = _ref.checked,
@@ -101,12 +102,5 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }))))), normalizedLabel);
 });
 RadioButton.displayName = 'RadioButton';
-var RadioButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonDoc = require('./doc').doc(RadioButton);
-}
-
-var RadioButtonWrapper = RadioButtonDoc || RadioButton;
-export { RadioButtonWrapper as RadioButton };
+RadioButton.propTypes = RadioButtonPropTypes;
+export { RadioButton };

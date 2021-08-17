@@ -7,6 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
+import { RangeInputPropTypes } from './propTypes';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       name = _ref.name,
@@ -49,12 +50,5 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }));
 });
 RangeInput.displayName = 'RangeInput';
-var RangeInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeInputDoc = require('./doc').doc(RangeInput);
-}
-
-var RangeInputWrapper = RangeInputDoc || RangeInput;
-export { RangeInputWrapper as RangeInput };
+RangeInput.propTypes = RangeInputPropTypes;
+export { RangeInput };

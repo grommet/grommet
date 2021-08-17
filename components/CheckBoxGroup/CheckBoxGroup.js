@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RadioButtonGroup = exports.CheckBoxGroup = void 0;
+exports.CheckBoxGroup = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -12,6 +12,8 @@ var _CheckBox = require("../CheckBox");
 var _FormContext = require("../Form/FormContext");
 
 var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
+
+var _propTypes = require("./propTypes");
 
 var _excluded = ["children", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
     _excluded2 = ["value"];
@@ -119,12 +121,4 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 });
 exports.CheckBoxGroup = CheckBoxGroup;
 CheckBoxGroup.displayName = 'CheckBoxGroup';
-var CheckBoxGroupDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-
-var RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-exports.RadioButtonGroup = RadioButtonGroupWrapper;
+CheckBoxGroup.propTypes = _propTypes.CheckBoxGroupPropTypes;

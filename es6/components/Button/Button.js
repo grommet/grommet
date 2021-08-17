@@ -8,6 +8,7 @@ import React, { cloneElement, Children, forwardRef, useContext, useMemo, useStat
 import { ThemeContext } from 'styled-components';
 import { backgroundAndTextColors, colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ButtonPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 import { Badge } from './Badge';
@@ -384,12 +385,5 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return styledButtonResult;
 });
 Button.displayName = 'Button';
-var ButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-
-var ButtonWrapper = ButtonDoc || Button;
-export { ButtonWrapper as Button };
+Button.propTypes = ButtonPropTypes;
+export { Button };

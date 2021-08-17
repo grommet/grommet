@@ -26,13 +26,5 @@ var Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }));
 });
 
+exports.Header = Header;
 Header.displayName = 'Header';
-var HeaderDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  HeaderDoc = require('./doc').doc(Header);
-}
-
-var HeaderWrapper = HeaderDoc || Header;
-exports.Header = HeaderWrapper;

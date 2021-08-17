@@ -17,6 +17,7 @@ import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue } from './utils';
+import { DateInputPropTypes } from './propTypes';
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var buttonProps = _ref.buttonProps,
       calendarProps = _ref.calendarProps,
@@ -201,12 +202,5 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   return input;
 });
 DateInput.displayName = 'DateInput';
-var DateInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DateInputDoc = require('./doc').doc(DateInput);
-}
-
-var DateInputWrapper = DateInputDoc || DateInput;
-export { DateInputWrapper as DateInput };
+DateInput.propTypes = DateInputPropTypes;
+export { DateInput };

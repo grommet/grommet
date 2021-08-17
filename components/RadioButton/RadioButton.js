@@ -15,6 +15,8 @@ var _utils = require("../../utils");
 
 var _StyledRadioButton = require("./StyledRadioButton");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "checked", "children", "disabled", "focus", "focusIndicator", "id", "label", "name", "onChange"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -115,13 +117,6 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     r: 6
   }))))), normalizedLabel);
 });
+exports.RadioButton = RadioButton;
 RadioButton.displayName = 'RadioButton';
-var RadioButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonDoc = require('./doc').doc(RadioButton);
-}
-
-var RadioButtonWrapper = RadioButtonDoc || RadioButton;
-exports.RadioButton = RadioButtonWrapper;
+RadioButton.propTypes = _propTypes.RadioButtonPropTypes;

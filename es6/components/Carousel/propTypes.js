@@ -2,11 +2,17 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
-export var CarouselType = _extends({}, genericProps, {
-  activeChild: PropTypes.number,
-  fill: PropTypes.bool,
-  play: PropTypes.number,
-  initialChild: PropTypes.number,
-  onChild: PropTypes.func,
-  controls: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['arrows', 'selectors'])])
-});
+var PropType = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  PropType = _extends({}, genericProps, {
+    activeChild: PropTypes.number,
+    fill: PropTypes.bool,
+    play: PropTypes.number,
+    initialChild: PropTypes.number,
+    onChild: PropTypes.func,
+    controls: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['arrows', 'selectors'])])
+  });
+}
+
+export var CarouselPropTypes = PropType;

@@ -10,7 +10,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
-import { AnchorType } from './propTypes';
+import { AnchorPropTypes } from './propTypes';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       ariaLabel = _ref['aria-label'],
@@ -78,5 +78,5 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, first, second) : first || second || children);
 });
 Anchor.displayName = 'Anchor';
-Anchor.propTypes = AnchorType;
+Anchor.propTypes = AnchorPropTypes;
 export { Anchor };

@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledGrid = require("./StyledGrid");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "aria-label", "border", "fill", "height", "responsive", "rows", "tag", "as", "width"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -43,13 +45,7 @@ var Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     widthProp: width
   }, rest));
 });
+exports.Grid = Grid;
 Grid.displayName = 'Grid';
-var GridDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
-}
-
-var GridWrapper = GridDoc || Grid;
-exports.Grid = GridWrapper;
-GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
+Grid.propTypes = _propTypes.GridPropTypes;
+Grid.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');

@@ -10,7 +10,8 @@ import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
-export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
+import { CheckBoxGroupPropTypes } from './propTypes';
+var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       valueProp = _ref.value,
       disabledProp = _ref.disabled,
@@ -104,12 +105,5 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }));
 });
 CheckBoxGroup.displayName = 'CheckBoxGroup';
-var CheckBoxGroupDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-
-var RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
+export { CheckBoxGroup };

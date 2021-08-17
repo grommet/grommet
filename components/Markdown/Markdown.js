@@ -29,6 +29,8 @@ var _TableHeader = require("../TableHeader");
 
 var _TableRow = require("../TableRow");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["components", "options", "theme"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -93,12 +95,5 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
   }, rest));
 };
 
-var GrommetMarkdownDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
-}
-
-var GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
-exports.Markdown = GrommetMarkdownWrapper;
+exports.Markdown = GrommetMarkdown;
+GrommetMarkdown.propTypes = _propTypes.MarkdownPropTypes;

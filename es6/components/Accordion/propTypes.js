@@ -2,13 +2,19 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
-export var AccordionType = _extends({}, genericProps, {
-  activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
-  animate: PropTypes.bool,
-  children: PropTypes.node,
-  onActive: PropTypes.func,
-  multiple: PropTypes.bool,
-  messages: PropTypes.shape({
-    tabContents: PropTypes.string
-  })
-});
+var PropType = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  PropType = _extends({}, genericProps, {
+    activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
+    animate: PropTypes.bool,
+    children: PropTypes.node,
+    onActive: PropTypes.func,
+    multiple: PropTypes.bool,
+    messages: PropTypes.shape({
+      tabContents: PropTypes.string
+    })
+  });
+}
+
+export var AccordionPropTypes = PropType;

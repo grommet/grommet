@@ -17,6 +17,8 @@ var _StyledChart = require("./StyledChart");
 
 var _utils2 = require("./utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
     _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
     _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
@@ -584,12 +586,6 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, rest), defs.length && /*#__PURE__*/_react["default"].createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });
 
+exports.Chart = Chart;
 Chart.displayName = 'Chart';
-var ChartDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
-}
-
-var ChartWrapper = ChartDoc || Chart;
-exports.Chart = ChartWrapper;
+Chart.propTypes = _propTypes.ChartPropTypes;

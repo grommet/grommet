@@ -7,6 +7,7 @@ import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { LayerPropTypes } from './propTypes';
 var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
   var animate = props.animate,
       animation = props.animation,
@@ -79,11 +80,5 @@ var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
   }, props)), layerContainer) : null;
 });
 Layer.displayName = 'Layer';
-var LayerDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
-}
-
-var LayerWrapper = LayerDoc || Layer;
-export { LayerWrapper as Layer };
+Layer.propTypes = LayerPropTypes;
+export { Layer };

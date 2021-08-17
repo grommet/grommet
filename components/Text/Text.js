@@ -11,6 +11,8 @@ var _Tip = require("../Tip");
 
 var _utils = require("../../utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -69,15 +71,9 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   return styledTextResult;
 });
+exports.Text = Text;
 Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1
 };
-var TextDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
-}
-
-var TextWrapper = TextDoc || Text;
-exports.Text = TextWrapper;
+Text.propTypes = _propTypes.TextPropTypes;

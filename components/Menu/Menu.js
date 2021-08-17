@@ -23,6 +23,8 @@ var _utils = require("../../utils");
 
 var _MessageContext = require("../../contexts/MessageContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
     _excluded2 = ["align"];
 
@@ -352,17 +354,11 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     })), !initialAlignTop && (alignControlMirror === 'bottom' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
+exports.Menu = Menu;
 Menu.defaultProps = {
   items: [],
   messages: undefined,
   justifyContent: 'start'
 };
 Menu.displayName = 'Menu';
-var MenuDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
-}
-
-var MenuWrapper = MenuDoc || Menu;
-exports.Menu = MenuWrapper;
+Menu.propTypes = _propTypes.MenuPropTypes;

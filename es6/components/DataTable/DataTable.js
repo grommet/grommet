@@ -18,6 +18,7 @@ import { Pagination } from '../Pagination';
 import { buildFooterValues, buildGroups, buildGroupState, filterAndSortData, initializeFilters, normalizeCellProps, normalizePrimaryProperty } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
 import { StyledContainer, StyledDataTable, StyledPlaceholder } from './StyledDataTable';
+import { DataTablePropTypes } from './propTypes';
 
 function useGroupState(groups, groupBy) {
   var _useState = useState(function () {
@@ -437,12 +438,5 @@ var DataTable = function DataTable(_ref) {
   }, paginationProps)) : null);
 };
 
-var DataTableDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataTableDoc = require('./doc').doc(DataTable);
-}
-
-var DataTableWrapper = DataTableDoc || DataTable;
-export { DataTableWrapper as DataTable };
+DataTable.propTypes = DataTablePropTypes;
+export { DataTable };

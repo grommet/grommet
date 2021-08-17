@@ -12,12 +12,4 @@ var CardHeader = function CardHeader(_ref) {
   return /*#__PURE__*/React.createElement(Header, _extends({}, theme.card.header, rest));
 };
 
-var CardHeaderDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardHeaderDoc = require('./doc').doc(CardHeader);
-}
-
-var CardHeaderWrapper = CardHeaderDoc || CardHeader;
-export { CardHeaderWrapper as CardHeader };
+export { CardHeader };

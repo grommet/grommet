@@ -93,18 +93,10 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
   return RoutedButton;
 }(_react.Component);
 
+exports.RoutedButton = RoutedButton;
 RoutedButton.contextTypes = {
   router: _propTypes["default"].shape({}).isRequired
 };
 RoutedButton.defaultProps = {
   method: 'push'
 };
-var RoutedButtonDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedButtonDoc = require('./doc').doc(RoutedButton);
-}
-
-var RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;
-exports.RoutedButton = RoutedButtonWrapper;

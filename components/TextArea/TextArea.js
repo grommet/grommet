@@ -11,6 +11,8 @@ var _Keyboard = require("../Keyboard");
 
 var _StyledTextArea = require("./StyledTextArea");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "fill", "focusIndicator", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -75,13 +77,6 @@ var TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   })));
 });
+exports.TextArea = TextArea;
 TextArea.displayName = 'TextArea';
-var TextAreaDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextAreaDoc = require('./doc').doc(TextArea);
-}
-
-var TextAreaWrapper = TextAreaDoc || TextArea;
-exports.TextArea = TextAreaWrapper;
+TextArea.propTypes = _propTypes.TextAreaPropTypes;

@@ -11,6 +11,7 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { DropPropTypes } from './propTypes';
 var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
@@ -62,11 +63,5 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest)), dropContainer) : null;
 });
 Drop.displayName = 'Drop';
-var DropDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-
-var DropWrapper = DropDoc || Drop;
-export { DropWrapper as Drop };
+Drop.propTypes = DropPropTypes;
+export { Drop };

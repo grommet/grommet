@@ -9,6 +9,8 @@ var _FormContext = require("../Form/FormContext");
 
 var _StyledRangeInput = require("./StyledRangeInput");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["a11yTitle", "name", "onChange", "onFocus", "onBlur", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -60,13 +62,6 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     type: "range"
   }));
 });
+exports.RangeInput = RangeInput;
 RangeInput.displayName = 'RangeInput';
-var RangeInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeInputDoc = require('./doc').doc(RangeInput);
-}
-
-var RangeInputWrapper = RangeInputDoc || RangeInput;
-exports.RangeInput = RangeInputWrapper;
+RangeInput.propTypes = _propTypes.RangeInputPropTypes;

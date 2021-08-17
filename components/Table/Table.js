@@ -7,6 +7,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _StyledTable = require("./StyledTable");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["caption", "children"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -21,11 +23,5 @@ var Table = function Table(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTable, rest, caption ? /*#__PURE__*/_react["default"].createElement(_StyledTable.StyledTableDataCaption, null, caption) : null, children);
 };
 
-var TableDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TableDoc = require('./doc').doc(Table); // eslint-disable-line global-require
-}
-
-var TableWrapper = TableDoc || Table;
-exports.Table = TableWrapper;
+exports.Table = Table;
+Table.propTypes = _propTypes.TablePropTypes;

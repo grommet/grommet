@@ -7,6 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
+import { FormPropTypes } from './propTypes';
 var defaultValue = {};
 var defaultTouched = {};
 var defaultValidationResults = {
@@ -471,11 +472,5 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, children));
 });
 Form.displayName = 'Form';
-var FormDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  FormDoc = require('./doc').doc(Form); // eslint-disable-line global-require
-}
-
-var FormWrapper = FormDoc || Form;
-export { FormWrapper as Form };
+Form.propTypes = FormPropTypes;
+export { Form };

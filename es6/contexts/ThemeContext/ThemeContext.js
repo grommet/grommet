@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import { deepMerge } from '../../utils';
+import { ThemeContextPropTypes } from './propTypes';
 
 ThemeContext.Extend = function (_ref) {
   var children = _ref.children,
@@ -17,4 +18,5 @@ ThemeContext.Extend.propTypes = {
   children: PropTypes.node.isRequired,
   value: PropTypes.shape({}).isRequired
 };
+ThemeContext.propTypes = ThemeContextPropTypes;
 export { ThemeContext };

@@ -13,6 +13,7 @@ import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
+import { TabPropTypes } from './propTypes';
 var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var activeProp = _ref.active,
       disabled = _ref.disabled,
@@ -185,11 +186,5 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
 Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
-var TabDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
-}
-
-var TabWrapper = TabDoc || Tab;
-export { TabWrapper as Tab };
+Tab.propTypes = TabPropTypes;
+export { Tab };

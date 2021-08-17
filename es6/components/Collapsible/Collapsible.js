@@ -4,6 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
+import { CollapsiblePropTypes } from './propTypes';
 var AnimatedBox = styled(Box).withConfig({
   displayName: "Collapsible__AnimatedBox",
   componentId: "sc-15kniua-0"
@@ -114,12 +115,5 @@ var Collapsible = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, shouldOpen || open || animate ? children : null);
 });
 Collapsible.displayName = 'Collapsible';
-var CollapsibleDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CollapsibleDoc = require('./doc').doc(Collapsible);
-}
-
-var CollapsibleWrapper = CollapsibleDoc || Collapsible;
-export { CollapsibleWrapper as Collapsible };
+Collapsible.propTypes = CollapsiblePropTypes;
+export { Collapsible };

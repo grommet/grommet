@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledParagraph } from './StyledParagraph';
+import { ParagraphPropTypes } from './propTypes';
 var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
       fill = _ref.fill,
@@ -18,12 +19,5 @@ var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest));
 });
 Paragraph.displayName = 'Paragraph';
-var ParagraphDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ParagraphDoc = require('./doc').doc(Paragraph);
-}
-
-var ParagraphWrapper = ParagraphDoc || Paragraph;
-export { ParagraphWrapper as Paragraph };
+Paragraph.prototype = ParagraphPropTypes;
+export { Paragraph };

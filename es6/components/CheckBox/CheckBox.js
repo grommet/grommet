@@ -10,6 +10,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { CheckBoxPropTypes } from './propTypes';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
 import { normalizeColor } from '../../utils';
 
@@ -199,12 +200,5 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, themeableProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
-var CheckBoxDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-
-var CheckBoxWrapper = CheckBoxDoc || CheckBox;
-export { CheckBoxWrapper as CheckBox };
+CheckBox.propTypes = CheckBoxPropTypes;
+export { CheckBox };

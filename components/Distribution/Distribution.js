@@ -11,6 +11,8 @@ var _Box = require("../Box");
 
 var _Text = require("../Text");
 
+var _propTypes2 = require("./propTypes");
+
 var _excluded = ["basis", "children", "direction", "fill", "gap", "values"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -120,6 +122,7 @@ var Distribution = function Distribution(_ref2) {
   return null;
 };
 
+exports.Distribution = Distribution;
 Distribution.defaultProps = {
   basis: undefined,
   children: function children(value) {
@@ -132,12 +135,4 @@ Distribution.defaultProps = {
   gap: 'xsmall',
   values: []
 };
-var DistributionDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DistributionDoc = require('./doc').doc(Distribution);
-}
-
-var DistributionWrapper = DistributionDoc || Distribution;
-exports.Distribution = DistributionWrapper;
+Distribution.propTypes = _propTypes2.DistributionPropTypes;

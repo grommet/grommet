@@ -20,6 +20,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldPropTypes } from './propTypes';
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput'];
 
@@ -379,12 +380,5 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, formFieldTheme.info)));
 });
 FormField.displayName = 'FormField';
-var FormFieldDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-
-var FormFieldWrapper = FormFieldDoc || FormField;
-export { FormFieldWrapper as FormField };
+FormField.propTypes = FormFieldPropTypes;
+export { FormField };

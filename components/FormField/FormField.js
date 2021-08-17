@@ -31,6 +31,8 @@ var _TextInput = require("../TextInput");
 
 var _FormContext = require("../Form/FormContext");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["error", "info", "message", "type"],
     _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
     _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"];
@@ -402,13 +404,6 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     message: info
   }, formFieldTheme.info)));
 });
+exports.FormField = FormField;
 FormField.displayName = 'FormField';
-var FormFieldDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-
-var FormFieldWrapper = FormFieldDoc || FormField;
-exports.FormField = FormFieldWrapper;
+FormField.propTypes = _propTypes.FormFieldPropTypes;

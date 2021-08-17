@@ -1,12 +1,2 @@
 ## CardBody
-The body of the card. Mostly used for placing content.
-
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-div
-```
+Documentation for this component: https://v2.grommet.io/card

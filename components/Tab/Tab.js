@@ -21,6 +21,8 @@ var _utils = require("../../utils");
 
 var _StyledTab = require("./StyledTab");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -200,14 +202,8 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     plain: plain
   }, withIconStyles, tabStyles), first, second));
 });
+exports.Tab = Tab;
 Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, _defaultProps.defaultProps);
-var TabDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
-}
-
-var TabWrapper = TabDoc || Tab;
-exports.Tab = TabWrapper;
+Tab.propTypes = _propTypes.TabPropTypes;

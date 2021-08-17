@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
 import { Text } from '../Text';
+import { DistributionPropTypes } from './propTypes';
 
 var Value = function Value(_ref) {
   var basis = _ref.basis,
@@ -122,12 +123,5 @@ Distribution.defaultProps = {
   gap: 'xsmall',
   values: []
 };
-var DistributionDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DistributionDoc = require('./doc').doc(Distribution);
-}
-
-var DistributionWrapper = DistributionDoc || Distribution;
-export { DistributionWrapper as Distribution };
+Distribution.propTypes = DistributionPropTypes;
+export { Distribution };

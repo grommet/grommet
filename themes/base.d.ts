@@ -3,7 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
-import { ReactComponentElement, ReactElement } from 'react';
+import { ReactComponentElement } from 'react';
 
 import {
   BackgroundType,
@@ -25,7 +25,7 @@ import {
   AlignContentType,
 } from '../utils';
 
-import { BoxProps } from '../components/Box';
+import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';

@@ -29,6 +29,8 @@ var _utils = require("../../utils");
 
 var _utils2 = require("./utils");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -223,13 +225,6 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
   return input;
 });
+exports.DateInput = DateInput;
 DateInput.displayName = 'DateInput';
-var DateInputDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DateInputDoc = require('./doc').doc(DateInput);
-}
-
-var DateInputWrapper = DateInputDoc || DateInput;
-exports.DateInput = DateInputWrapper;
+DateInput.propTypes = _propTypes.DateInputPropTypes;

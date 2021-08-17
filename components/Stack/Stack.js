@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _StyledStack = require("./StyledStack");
 
+var _propTypes = require("./propTypes");
+
 var _excluded = ["anchor", "children", "fill", "guidingChild", "interactiveChild"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -71,12 +73,6 @@ var Stack = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     fillContainer: fill
   }, rest), styledChildren);
 });
+exports.Stack = Stack;
 Stack.displayName = 'Stack';
-var StackDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  StackDoc = require('./doc').doc(Stack); // eslint-disable-line global-require
-}
-
-var StackWrapper = StackDoc || Stack;
-exports.Stack = StackWrapper;
+Stack.propTypes = _propTypes.StackPropTypes;

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';
 import { Box } from '../Box';
+import { InfiniteScrollPropTypes } from './propTypes';
 
 var calculateLastPageBound = function calculateLastPageBound(show, step) {
   return show ? Math.floor((show + step) / step) - 1 : 0;
@@ -327,12 +328,5 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   return result;
 };
 
-var InfiniteScrollDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
-}
-
-var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
-export { InfiniteScrollWrapper as InfiniteScroll };
+InfiniteScroll.propTypes = InfiniteScrollPropTypes;
+export { InfiniteScroll };

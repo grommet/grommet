@@ -7,6 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useMemo } from 'react';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
+import { MeterPropTypes } from './propTypes';
 
 var deriveMax = function deriveMax(values) {
   var max = 100;
@@ -79,11 +80,5 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return content;
 });
 Meter.displayName = 'Meter';
-var MeterDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-
-var MeterWrapper = MeterDoc || Meter;
-export { MeterWrapper as Meter };
+Meter.prototype = MeterPropTypes;
+export { Meter };

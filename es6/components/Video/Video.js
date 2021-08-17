@@ -16,7 +16,8 @@ import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { containsFocus, useForwardedRef } from '../../utils';
 import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo';
-import { MessageContext } from '../../contexts/MessageContext'; // Split the volume control into 6 segments. Empirically determined.
+import { MessageContext } from '../../contexts/MessageContext';
+import { VideoPropTypes } from './propTypes'; // Split the volume control into 6 segments. Empirically determined.
 
 var VOLUME_STEP = 0.166667;
 
@@ -479,12 +480,5 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
 });
 Video.defaultProps = {};
 Video.displayName = 'Video';
-var VideoDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-
-var VideoWrapper = VideoDoc || Video;
-export { VideoWrapper as Video };
+Video.propTypes = VideoPropTypes;
+export { Video };
