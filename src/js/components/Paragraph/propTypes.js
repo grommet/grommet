@@ -15,4 +15,4 @@ if (process.env.NODE_ENV !== 'production') {
     textAlign: PropTypes.oneOf(['start', 'center', 'end', 'justify']),
   };
 }
-export const ParagraphPropType = PropType;
+export const ParagraphPropTypes = PropType;

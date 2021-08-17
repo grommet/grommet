@@ -13,7 +13,7 @@ import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
-import { MarkdownPropType } from './propTypes';
+import { MarkdownPropTypes } from './propTypes';
 
 const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
   const heading = [1, 2, 3, 4].reduce((obj, level) => {
@@ -46,6 +46,6 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
   return <Markdown options={{ ...options, overrides }} {...rest} />;
 };
 
-GrommetMarkdown.propTypes = MarkdownPropType;
+GrommetMarkdown.propTypes = MarkdownPropTypes;
 
 export { GrommetMarkdown as Markdown };

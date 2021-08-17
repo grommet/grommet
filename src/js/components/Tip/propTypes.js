@@ -8,4 +8,4 @@ if (process.env.NODE_ENV !== 'production') {
     plain: PropTypes.bool,
   };
 }
-export const TipPropType = PropType;
+export const TipPropTypes = PropType;

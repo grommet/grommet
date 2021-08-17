@@ -12,7 +12,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
-import { CollapsiblePropType } from './propTypes';
+import { CollapsiblePropTypes } from './propTypes';
 
 const AnimatedBox = styled(Box)`
   ${(props) =>
@@ -129,6 +129,6 @@ const Collapsible = forwardRef(
 );
 
 Collapsible.displayName = 'Collapsible';
-Collapsible.propTypes = CollapsiblePropType;
+Collapsible.propTypes = CollapsiblePropTypes;
 
 export { Collapsible };

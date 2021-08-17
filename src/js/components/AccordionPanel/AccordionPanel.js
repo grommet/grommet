@@ -9,7 +9,7 @@ import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
-import { AccordionPanelPropType } from './propTypes';
+import { AccordionPanelPropTypes } from './propTypes';
 
 const AccordionPanel = forwardRef(
   (
@@ -162,5 +162,5 @@ const AccordionPanel = forwardRef(
 
 AccordionPanel.displayName = 'AccordionPanel';
 
-AccordionPanel.propTypes = AccordionPanelPropType;
+AccordionPanel.propTypes = AccordionPanelPropTypes;
 export { AccordionPanel };

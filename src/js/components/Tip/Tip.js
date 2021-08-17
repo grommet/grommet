@@ -10,7 +10,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
-import { TipPropType } from './propTypes';
+import { TipPropTypes } from './propTypes';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
@@ -74,6 +74,6 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 });
 
 Tip.displayName = 'Tip';
-Tip.propTypes = TipPropType;
+Tip.propTypes = TipPropTypes;
 
 export { Tip };

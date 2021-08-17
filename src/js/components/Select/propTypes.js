@@ -113,4 +113,4 @@ if (process.env.NODE_ENV !== 'production') {
     emptySearchMessage: PropTypes.string,
   };
 }
-export const SelectPropType = PropType;
+export const SelectPropTypes = PropType;

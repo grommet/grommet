@@ -5,7 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
-import { CheckBoxPropType } from './propTypes';
+import { CheckBoxPropTypes } from './propTypes';
 
 import {
   StyledCheckBox,
@@ -227,6 +227,6 @@ const CheckBox = forwardRef(
 );
 
 CheckBox.displayName = 'CheckBox';
-CheckBox.propTypes = CheckBoxPropType;
+CheckBox.propTypes = CheckBoxPropTypes;
 
 export { CheckBox };

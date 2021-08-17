@@ -21,7 +21,7 @@ import { RootsContext } from '../../contexts/RootsContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
-import { GrommetPropType } from './propTypes';
+import { GrommetPropTypes } from './propTypes';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -156,6 +156,6 @@ const Grommet = forwardRef((props, ref) => {
 });
 
 Grommet.displayName = 'Grommet';
-Grommet.propTypes = GrommetPropType;
+Grommet.propTypes = GrommetPropTypes;
 
 export { Grommet };

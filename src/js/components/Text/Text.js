@@ -3,7 +3,7 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
-import { TextPropType } from './propTypes';
+import { TextPropTypes } from './propTypes';
 
 const Text = forwardRef(
   (
@@ -64,6 +64,6 @@ Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1,
 };
-Text.propTypes = TextPropType;
+Text.propTypes = TextPropTypes;
 
 export { Text };

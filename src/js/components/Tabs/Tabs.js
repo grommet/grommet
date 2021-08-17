@@ -8,7 +8,7 @@ import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { TabsPropType } from './propTypes';
+import { TabsPropTypes } from './propTypes';
 
 const Tabs = forwardRef(
   (
@@ -124,6 +124,6 @@ const Tabs = forwardRef(
 );
 
 Tabs.displayName = 'Tabs';
-Tabs.propTypes = TabsPropType;
+Tabs.propTypes = TabsPropTypes;
 
 export { Tabs };

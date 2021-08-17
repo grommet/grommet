@@ -8,4 +8,4 @@ if (process.env.NODE_ENV !== 'production') {
     caption: PropTypes.string,
   };
 }
-export const TablePropType = PropType;
+export const TablePropTypes = PropType;

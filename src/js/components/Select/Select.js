@@ -22,7 +22,7 @@ import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { SelectPropType } from './propTypes';
+import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
@@ -407,6 +407,6 @@ const Select = forwardRef(
 Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
-Select.propTypes = SelectPropType;
+Select.propTypes = SelectPropTypes;
 
 export { Select };

@@ -46,4 +46,4 @@ if (process.env.NODE_ENV !== 'production') {
     ).isRequired,
   };
 }
-export const DiagramPropType = PropType;
+export const DiagramPropTypes = PropType;

@@ -2,7 +2,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
-import { RangeInputPropType } from './propTypes';
+import { RangeInputPropTypes } from './propTypes';
 
 const RangeInput = forwardRef(
   (
@@ -41,6 +41,6 @@ const RangeInput = forwardRef(
 );
 
 RangeInput.displayName = 'RangeInput';
-RangeInput.propTypes = RangeInputPropType;
+RangeInput.propTypes = RangeInputPropTypes;
 
 export { RangeInput };

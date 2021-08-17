@@ -4,7 +4,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
-import { PaginationPropType } from './propTypes';
+import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
   ${(props) =>
@@ -206,6 +206,6 @@ const Pagination = forwardRef(
 );
 
 Pagination.displayName = 'Pagination';
-Pagination.propTypes = PaginationPropType;
+Pagination.propTypes = PaginationPropTypes;
 
 export { Pagination };

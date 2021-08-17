@@ -31,4 +31,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const AnchorPropType = PropType;
+export const AnchorPropTypes = PropType;

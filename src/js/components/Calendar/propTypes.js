@@ -53,4 +53,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const CalendarPropType = PropType;
+export const CalendarPropTypes = PropType;

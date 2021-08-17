@@ -14,4 +14,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number,
   };
 }
-export const PaginationPropType = PropType;
+export const PaginationPropTypes = PropType;

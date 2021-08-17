@@ -19,7 +19,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
-import { FormFieldPropType } from './propTypes';
+import { FormFieldPropTypes } from './propTypes';
 
 const grommetInputNames = [
   'CheckBox',
@@ -486,6 +486,6 @@ const FormField = forwardRef(
 );
 
 FormField.displayName = 'FormField';
-FormField.propTypes = FormFieldPropType;
+FormField.propTypes = FormFieldPropTypes;
 
 export { FormField };

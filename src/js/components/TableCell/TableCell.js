@@ -15,7 +15,7 @@ import { Box } from '../Box';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
-import { TableCellPropType } from './propTypes';
+import { TableCellPropTypes } from './propTypes';
 
 const verticalAlignToJustify = {
   middle: 'center',
@@ -185,6 +185,6 @@ const TableCell = forwardRef(
 );
 
 TableCell.displayName = 'TableCell';
-TableCell.propTypes = TableCellPropType;
+TableCell.propTypes = TableCellPropTypes;
 
 export { TableCell };

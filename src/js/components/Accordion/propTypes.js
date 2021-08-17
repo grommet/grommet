@@ -18,4 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     }),
   };
 }
-export const AccordionPropType = PropType;
+export const AccordionPropTypes = PropType;

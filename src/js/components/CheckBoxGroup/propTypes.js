@@ -17,4 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     valueKey: PropTypes.string,
   };
 }
-export const CheckBoxGroupPropType = PropType;
+export const CheckBoxGroupPropTypes = PropType;

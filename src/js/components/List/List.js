@@ -15,7 +15,7 @@ import {
   useForwardedRef,
   usePagination,
 } from '../../utils';
-import { ListPropType } from './propTypes';
+import { ListPropTypes } from './propTypes';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -518,6 +518,6 @@ const List = React.forwardRef(
 );
 
 List.displayName = 'List';
-List.propTypes = ListPropType;
+List.propTypes = ListPropTypes;
 
 export { List };

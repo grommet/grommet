@@ -13,7 +13,7 @@ import {
   StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
-import { RadioButtonPropType } from './propTypes';
+import { RadioButtonPropTypes } from './propTypes';
 
 const RadioButton = forwardRef(
   (
@@ -119,6 +119,6 @@ const RadioButton = forwardRef(
 );
 
 RadioButton.displayName = 'RadioButton';
-RadioButton.propTypes = RadioButtonPropType;
+RadioButton.propTypes = RadioButtonPropTypes;
 
 export { RadioButton };

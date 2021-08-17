@@ -4,7 +4,7 @@ import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
-import { CheckBoxGroupPropType } from './propTypes';
+import { CheckBoxGroupPropTypes } from './propTypes';
 
 const CheckBoxGroup = forwardRef(
   (
@@ -116,6 +116,6 @@ const CheckBoxGroup = forwardRef(
 );
 
 CheckBoxGroup.displayName = 'CheckBoxGroup';
-CheckBoxGroup.propTypes = CheckBoxGroupPropType;
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
 
 export { CheckBoxGroup };

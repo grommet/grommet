@@ -25,7 +25,7 @@ import {
   StyledVideoScrubber,
 } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
-import { VideoPropType } from './propTypes';
+import { VideoPropTypes } from './propTypes';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -464,6 +464,6 @@ const Video = forwardRef(
 Video.defaultProps = {};
 
 Video.displayName = 'Video';
-Video.propTypes = VideoPropType;
+Video.propTypes = VideoPropTypes;
 
 export { Video };

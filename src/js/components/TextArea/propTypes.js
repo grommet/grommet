@@ -34,4 +34,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const TextAreaPropType = PropType;
+export const TextAreaPropTypes = PropType;

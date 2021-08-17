@@ -199,4 +199,4 @@ if (process.env.NODE_ENV !== 'production') {
     wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['reverse'])]),
   };
 }
-export const BoxPropType = PropType;
+export const BoxPropTypes = PropType;

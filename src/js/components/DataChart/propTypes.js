@@ -181,4 +181,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const DataChartPropType = PropType;
+export const DataChartPropTypes = PropType;

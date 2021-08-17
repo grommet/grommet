@@ -38,4 +38,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const DateInputPropType = PropType;
+export const DateInputPropTypes = PropType;

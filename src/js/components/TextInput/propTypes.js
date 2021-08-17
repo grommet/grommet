@@ -65,4 +65,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 }
-export const TextInputPropType = PropType;
+export const TextInputPropTypes = PropType;

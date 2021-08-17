@@ -34,7 +34,7 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
-import { DataTablePropType } from './propTypes';
+import { DataTablePropTypes } from './propTypes';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -456,6 +456,6 @@ const DataTable = ({
   );
 };
 
-DataTable.propTypes = DataTablePropType;
+DataTable.propTypes = DataTablePropTypes;
 
 export { DataTable };

@@ -17,4 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.shape({}),
   };
 }
-export const FormPropType = PropType;
+export const FormPropTypes = PropType;

@@ -13,4 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: PropTypes.func,
   };
 }
-export const RadioButtonPropType = PropType;
+export const RadioButtonPropTypes = PropType;

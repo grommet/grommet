@@ -18,4 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     onUp: PropTypes.func,
   };
 }
-export const KeyboardPropType = PropType;
+export const KeyboardPropTypes = PropType;

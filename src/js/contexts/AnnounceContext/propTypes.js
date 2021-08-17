@@ -6,4 +6,4 @@ if (process.env.NODE_ENV !== 'production') {
     children: PropTypes.func,
   };
 }
-export const AnnounceContextPropType = PropType;
+export const AnnounceContextPropTypes = PropType;

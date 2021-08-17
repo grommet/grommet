@@ -1,7 +1,7 @@
 import React, { Children, forwardRef } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
-import { StackPropType } from './propTypes';
+import { StackPropTypes } from './propTypes';
 
 const buildStyledChildren =
   ({ anchor, fill, guidingIndex, interactiveChild, interactiveIndex }) =>
@@ -55,6 +55,6 @@ const Stack = forwardRef(
 );
 
 Stack.displayName = 'Stack';
-Stack.propTypes = StackPropType;
+Stack.propTypes = StackPropTypes;
 
 export { Stack };

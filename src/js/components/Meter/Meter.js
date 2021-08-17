@@ -2,7 +2,7 @@ import React, { forwardRef, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
-import { MeterPropType } from './propTypes';
+import { MeterPropTypes } from './propTypes';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -71,6 +71,6 @@ const Meter = forwardRef(
 );
 
 Meter.displayName = 'Meter';
-Meter.prototype = MeterPropType;
+Meter.prototype = MeterPropTypes;
 
 export { Meter };

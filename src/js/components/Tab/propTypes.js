@@ -10,4 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     title: PropTypes.node,
   };
 }
-export const TabPropType = PropType;
+export const TabPropTypes = PropType;

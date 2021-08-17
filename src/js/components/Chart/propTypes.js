@@ -137,4 +137,4 @@ if (process.env.NODE_ENV !== 'production') {
     ),
   };
 }
-export const ChartPropType = PropType;
+export const ChartPropTypes = PropType;

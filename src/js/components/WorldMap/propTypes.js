@@ -38,4 +38,4 @@ if (process.env.NODE_ENV !== 'production') {
     hoverColor: colorPropType,
   };
 }
-export const WorldMapPropType = PropType;
+export const WorldMapPropTypes = PropType;

@@ -19,7 +19,7 @@ import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
-import { DataChartPropType } from './propTypes';
+import { DataChartPropTypes } from './propTypes';
 
 // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
@@ -634,6 +634,6 @@ const DataChart = forwardRef(
 );
 
 DataChart.displayName = 'DataChart';
-DataChart.propTypes = DataChartPropType;
+DataChart.propTypes = DataChartPropTypes;
 
 export { DataChart };

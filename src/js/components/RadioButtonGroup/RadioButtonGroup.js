@@ -12,7 +12,7 @@ import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
-import { RadioButtonGroupPropType } from './propTypes';
+import { RadioButtonGroupPropTypes } from './propTypes';
 
 const RadioButtonGroup = forwardRef(
   (
@@ -184,6 +184,6 @@ const RadioButtonGroup = forwardRef(
 );
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';
-RadioButtonGroup.propTypes = RadioButtonGroupPropType;
+RadioButtonGroup.propTypes = RadioButtonGroupPropTypes;
 
 export { RadioButtonGroup };

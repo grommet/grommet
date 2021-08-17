@@ -16,7 +16,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { MenuPropType } from './propTypes';
+import { MenuPropTypes } from './propTypes';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -379,6 +379,6 @@ Menu.defaultProps = {
 };
 
 Menu.displayName = 'Menu';
-Menu.propTypes = MenuPropType;
+Menu.propTypes = MenuPropTypes;
 
 export { Menu };

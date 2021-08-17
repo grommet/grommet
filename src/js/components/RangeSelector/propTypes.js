@@ -39,4 +39,4 @@ if (process.env.NODE_ENV !== 'production') {
     values: PropTypes.arrayOf(PropTypes.number).isRequired,
   };
 }
-export const RangeSelectorPropType = PropType;
+export const RangeSelectorPropTypes = PropType;

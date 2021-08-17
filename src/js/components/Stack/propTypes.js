@@ -30,4 +30,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const StackPropType = PropType;
+export const StackPropTypes = PropType;

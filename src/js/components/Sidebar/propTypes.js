@@ -8,4 +8,4 @@ if (process.env.NODE_ENV !== 'production') {
     header: PropTypes.node,
   };
 }
-export const SidebarPropType = PropType;
+export const SidebarPropTypes = PropType;

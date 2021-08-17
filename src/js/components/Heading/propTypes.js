@@ -17,4 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     truncate: PropTypes.bool,
   };
 }
-export const HeadingPropType = PropType;
+export const HeadingPropTypes = PropType;

@@ -14,7 +14,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
-import { FileInputPropType } from './propTypes';
+import { FileInputPropTypes } from './propTypes';
 
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -423,6 +423,6 @@ FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 FileInput.displayName = 'FileInput';
-FileInput.propTypes = FileInputPropType;
+FileInput.propTypes = FileInputPropTypes;
 
 export { FileInput };

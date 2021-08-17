@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 
 import { StyledHeading } from './StyledHeading';
-import { HeadingPropType } from './propTypes';
+import { HeadingPropTypes } from './propTypes';
 
 const Heading = forwardRef(
   (
@@ -25,6 +25,6 @@ Heading.defaultProps = {
   level: 1,
   responsive: true,
 };
-Heading.propTypes = HeadingPropType;
+Heading.propTypes = HeadingPropTypes;
 
 export { Heading };

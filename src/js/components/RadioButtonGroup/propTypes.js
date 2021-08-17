@@ -32,4 +32,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const RadioButtonGroupPropType = PropType;
+export const RadioButtonGroupPropTypes = PropType;

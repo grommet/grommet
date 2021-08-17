@@ -16,4 +16,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number,
   };
 }
-export const InfiniteScrollPropType = PropType;
+export const InfiniteScrollPropTypes = PropType;

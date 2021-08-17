@@ -5,7 +5,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledWorldMap } from './StyledWorldMap';
-import { WorldMapPropType } from './propTypes';
+import { WorldMapPropTypes } from './propTypes';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels. The contents have both an area boundary for interaction
@@ -693,6 +693,6 @@ WorldMap.displayName = 'WorldMap';
 
 WorldMap.defaultProps = {};
 Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
-WorldMap.propTypes = WorldMapPropType;
+WorldMap.propTypes = WorldMapPropTypes;
 
 export { WorldMap };

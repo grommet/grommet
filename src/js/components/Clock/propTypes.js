@@ -27,4 +27,4 @@ if (process.env.NODE_ENV !== 'production') {
     type: PropTypes.oneOf(['analog', 'digital']),
   };
 }
-export const ClockPropType = PropType;
+export const ClockPropTypes = PropType;

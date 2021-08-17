@@ -71,4 +71,4 @@ if (process.env.NODE_ENV !== 'production') {
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
   };
 }
-export const ButtonPropType = PropType;
+export const ButtonPropTypes = PropType;

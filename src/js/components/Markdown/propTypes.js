@@ -7,4 +7,4 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.shape({}),
   };
 }
-export const MarkdownPropType = PropType;
+export const MarkdownPropTypes = PropType;

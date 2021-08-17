@@ -1,6 +1,6 @@
 import React from 'react';
-import { ResponsiveContextPropType } from './propTypes';
+import { ResponsiveContextPropTypes } from './propTypes';
 
 export const ResponsiveContext = React.createContext(undefined);
 
-ResponsiveContext.propTypes = ResponsiveContextPropType;
+ResponsiveContext.propTypes = ResponsiveContextPropTypes;

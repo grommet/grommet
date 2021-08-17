@@ -21,7 +21,7 @@ import {
   StyledMaskedInputContainer,
   StyledIcon,
 } from './StyledMaskedInput';
-import { MaskedInputPropType } from './propTypes';
+import { MaskedInputPropTypes } from './propTypes';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -444,6 +444,6 @@ const MaskedInput = forwardRef(
 );
 
 MaskedInput.displayName = 'MaskedInput';
-MaskedInput.propTypes = MaskedInputPropType;
+MaskedInput.propTypes = MaskedInputPropTypes;
 
 export { MaskedInput };

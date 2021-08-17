@@ -13,4 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 }
-export const RangeInputPropType = PropType;
+export const RangeInputPropTypes = PropType;

@@ -33,7 +33,7 @@ import {
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
-import { TextInputPropType } from './propTypes';
+import { TextInputPropTypes } from './propTypes';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -496,6 +496,6 @@ const TextInput = forwardRef(
 );
 
 TextInput.displayName = 'TextInput';
-TextInput.propTypes = TextInputPropType;
+TextInput.propTypes = TextInputPropTypes;
 
 export { TextInput };

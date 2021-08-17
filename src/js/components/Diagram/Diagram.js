@@ -12,7 +12,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
-import { DiagramPropType } from './propTypes';
+import { DiagramPropTypes } from './propTypes';
 
 const computeMidPoint = (fromPoint, toPoint) => [
   fromPoint[0] > toPoint[0]
@@ -257,6 +257,6 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
 
 Diagram.displayName = 'Diagram';
 Diagram.defaultProps = { connections: [] };
-Diagram.propTypes = DiagramPropType;
+Diagram.propTypes = DiagramPropTypes;
 
 export { Diagram };

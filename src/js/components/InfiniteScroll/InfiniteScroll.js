@@ -7,7 +7,7 @@ import {
   isNodeBeforeScroll,
 } from '../../utils';
 import { Box } from '../Box';
-import { InfiniteScrollPropType } from './propTypes';
+import { InfiniteScrollPropTypes } from './propTypes';
 
 const calculateLastPageBound = (show, step) =>
   show ? Math.floor((show + step) / step) - 1 : 0;
@@ -335,6 +335,6 @@ const InfiniteScroll = ({
   return result;
 };
 
-InfiniteScroll.propTypes = InfiniteScrollPropType;
+InfiniteScroll.propTypes = InfiniteScrollPropTypes;
 
 export { InfiniteScroll };

@@ -12,7 +12,7 @@ import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
 import { MessageContext } from '../../contexts/MessageContext';
-import { SkipLinksPropType } from './propTypes';
+import { SkipLinksPropTypes } from './propTypes';
 
 const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -72,6 +72,6 @@ const SkipLinks = ({ children, id, messages }) => {
 };
 
 SkipLinks.defaultProps = {};
-SkipLinks.propTypes = SkipLinksPropType;
+SkipLinks.propTypes = SkipLinksPropTypes;
 
 export { SkipLinks };

@@ -7,4 +7,4 @@ if (process.env.NODE_ENV !== 'production') {
     header: PropTypes.node,
   };
 }
-export const AccordionPanelPropType = PropType;
+export const AccordionPanelPropTypes = PropType;

@@ -191,4 +191,4 @@ if (process.env.NODE_ENV !== 'production') {
     width: widthPropType,
   };
 }
-export const GridPropType = PropType;
+export const GridPropTypes = PropType;

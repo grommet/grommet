@@ -6,7 +6,7 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
-import { DropPropType } from './propTypes';
+import { DropPropTypes } from './propTypes';
 
 const Drop = forwardRef(
   (
@@ -66,6 +66,6 @@ const Drop = forwardRef(
 );
 
 Drop.displayName = 'Drop';
-Drop.propTypes = DropPropType;
+Drop.propTypes = DropPropTypes;
 
 export { Drop };

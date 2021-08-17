@@ -23,4 +23,4 @@ if (process.env.NODE_ENV !== 'production') {
     }),
   };
 }
-export const VideoPropType = PropType;
+export const VideoPropTypes = PropType;

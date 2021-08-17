@@ -3,7 +3,7 @@ import React, { forwardRef, useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils';
-import { DropButtonPropType } from './propTypes';
+import { DropButtonPropTypes } from './propTypes';
 
 const defaultDropAlign = { top: 'top', left: 'left' };
 
@@ -94,6 +94,6 @@ const DropButton = forwardRef(
 );
 
 DropButton.displayName = 'DropButton';
-DropButton.propTypes = DropButtonPropType;
+DropButton.propTypes = DropButtonPropTypes;
 
 export { DropButton };

@@ -20,4 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     open: PropTypes.bool,
   };
 }
-export const DropButtonPropType = PropType;
+export const DropButtonPropTypes = PropType;

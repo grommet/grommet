@@ -24,4 +24,4 @@ if (process.env.NODE_ENV !== 'production') {
     renderFile: PropTypes.func,
   };
 }
-export const FileInputPropType = PropType;
+export const FileInputPropTypes = PropType;

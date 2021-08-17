@@ -69,4 +69,4 @@ if (process.env.NODE_ENV !== 'production') {
     }),
   };
 }
-export const GrommetPropType = PropType;
+export const GrommetPropTypes = PropType;

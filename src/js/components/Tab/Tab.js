@@ -10,7 +10,7 @@ import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
-import { TabPropType } from './propTypes';
+import { TabPropTypes } from './propTypes';
 
 const Tab = forwardRef(
   (
@@ -201,6 +201,6 @@ Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 
-Tab.propTypes = TabPropType;
+Tab.propTypes = TabPropTypes;
 
 export { Tab };

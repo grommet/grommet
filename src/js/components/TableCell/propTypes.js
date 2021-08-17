@@ -37,4 +37,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const TableCellPropType = PropType;
+export const TableCellPropTypes = PropType;

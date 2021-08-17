@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
-import { TablePropType } from './propTypes';
+import { TablePropTypes } from './propTypes';
 
 const Table = ({ caption, children, ...rest }) => (
   <StyledTable {...rest}>
@@ -12,6 +12,6 @@ const Table = ({ caption, children, ...rest }) => (
   </StyledTable>
 );
 
-Table.propTypes = TablePropType;
+Table.propTypes = TablePropTypes;
 
 export { Table };

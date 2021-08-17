@@ -7,7 +7,7 @@ import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
-import { LayerPropType } from './propTypes';
+import { LayerPropTypes } from './propTypes';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation, targetChildPosition } = props;
@@ -80,6 +80,6 @@ const Layer = forwardRef((props, ref) => {
 });
 
 Layer.displayName = 'Layer';
-Layer.propTypes = LayerPropType;
+Layer.propTypes = LayerPropTypes;
 
 export { Layer };

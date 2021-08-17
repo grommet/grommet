@@ -6,4 +6,4 @@ if (process.env.NODE_ENV !== 'production') {
     children: PropTypes.func,
   };
 }
-export const ResponsiveContextPropType = PropType;
+export const ResponsiveContextPropTypes = PropType;

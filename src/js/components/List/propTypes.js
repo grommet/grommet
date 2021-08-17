@@ -72,4 +72,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number,
   };
 }
-export const ListPropType = PropType;
+export const ListPropTypes = PropType;

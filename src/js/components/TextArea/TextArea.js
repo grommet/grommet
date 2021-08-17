@@ -4,7 +4,7 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 
 import { StyledTextArea } from './StyledTextArea';
-import { TextAreaPropType } from './propTypes';
+import { TextAreaPropTypes } from './propTypes';
 
 const TextArea = forwardRef(
   (
@@ -64,6 +64,6 @@ const TextArea = forwardRef(
 );
 
 TextArea.displayName = 'TextArea';
-TextArea.propTypes = TextAreaPropType;
+TextArea.propTypes = TextAreaPropTypes;
 
 export { TextArea };

@@ -15,7 +15,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { ButtonPropType } from './propTypes';
+import { ButtonPropTypes } from './propTypes';
 
 import { Box } from '../Box';
 import { Tip } from '../Tip';
@@ -416,6 +416,6 @@ const Button = forwardRef(
 );
 
 Button.displayName = 'Button';
-Button.propTypes = ButtonPropType;
+Button.propTypes = ButtonPropTypes;
 
 export { Button };

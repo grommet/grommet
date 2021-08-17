@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
-import { ClockPropType } from './propTypes';
+import { ClockPropTypes } from './propTypes';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 const DURATION_REGEXP =
@@ -175,6 +175,6 @@ const Clock = forwardRef(
 );
 
 Clock.displayName = 'Clock';
-Clock.propTypes = ClockPropType;
+Clock.propTypes = ClockPropTypes;
 
 export { Clock };

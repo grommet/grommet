@@ -42,4 +42,4 @@ if (process.env.NODE_ENV !== 'production') {
     ),
   };
 }
-export const MeterPropType = PropType;
+export const MeterPropTypes = PropType;

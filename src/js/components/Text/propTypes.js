@@ -92,4 +92,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const TextPropType = PropType;
+export const TextPropTypes = PropType;

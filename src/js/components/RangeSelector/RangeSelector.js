@@ -12,7 +12,7 @@ import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { RangeSelectorPropType } from './propTypes';
+import { RangeSelectorPropTypes } from './propTypes';
 
 const Container = styled(Box)`
   user-select: none;
@@ -279,6 +279,6 @@ const RangeSelector = forwardRef(
 );
 
 RangeSelector.displayName = 'RangeSelector';
-RangeSelector.propTypes = RangeSelectorPropType;
+RangeSelector.propTypes = RangeSelectorPropTypes;
 
 export { RangeSelector };

@@ -1,5 +1,5 @@
 import { Children, cloneElement, useCallback, useEffect } from 'react';
-import { KeyboardPropType } from './propTypes';
+import { KeyboardPropTypes } from './propTypes';
 
 const KEYS = {
   8: 'onBackspace',
@@ -51,6 +51,6 @@ const Keyboard = ({ capture, target, children, onKeyDown, ...restProps }) => {
       });
 };
 
-Keyboard.propTypes = KeyboardPropType;
+Keyboard.propTypes = KeyboardPropTypes;
 
 export { Keyboard };

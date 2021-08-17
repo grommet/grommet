@@ -23,7 +23,7 @@ import {
   valueToText,
   textToValue,
 } from './utils';
-import { DateInputPropType } from './propTypes';
+import { DateInputPropTypes } from './propTypes';
 
 const DateInput = forwardRef(
   (
@@ -215,6 +215,6 @@ const DateInput = forwardRef(
 );
 
 DateInput.displayName = 'DateInput';
-DateInput.propTypes = DateInputPropType;
+DateInput.propTypes = DateInputPropTypes;
 
 export { DateInput };

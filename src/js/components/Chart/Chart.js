@@ -8,7 +8,7 @@ import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
-import { ChartPropType } from './propTypes';
+import { ChartPropTypes } from './propTypes';
 
 const gradientMaskColor = '#ffffff';
 
@@ -664,6 +664,6 @@ const Chart = React.forwardRef(
 );
 
 Chart.displayName = 'Chart';
-Chart.propTypes = ChartPropType;
+Chart.propTypes = ChartPropTypes;
 
 export { Chart };

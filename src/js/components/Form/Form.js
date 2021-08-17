@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
-import { FormPropType } from './propTypes';
+import { FormPropTypes } from './propTypes';
 
 const defaultValue = {};
 const defaultTouched = {};
@@ -483,6 +483,6 @@ const Form = forwardRef(
 );
 
 Form.displayName = 'Form';
-Form.propTypes = FormPropType;
+Form.propTypes = FormPropTypes;
 
 export { Form };

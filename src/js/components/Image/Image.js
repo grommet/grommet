@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
-import { ImagePropType } from './propTypes';
+import { ImagePropTypes } from './propTypes';
 
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
@@ -29,6 +29,6 @@ const Image = forwardRef(
 );
 
 Image.displayName = 'Image';
-Image.propTypes = ImagePropType;
+Image.propTypes = ImagePropTypes;
 
 export { Image };

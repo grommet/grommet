@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { DistributionPropType } from './propTypes';
+import { DistributionPropTypes } from './propTypes';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -121,6 +121,6 @@ Distribution.defaultProps = {
   values: [],
 };
 
-Distribution.propTypes = DistributionPropType;
+Distribution.propTypes = DistributionPropTypes;
 
 export { Distribution };

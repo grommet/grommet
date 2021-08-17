@@ -76,4 +76,4 @@ if (process.env.NODE_ENV !== 'production') {
     target: PropTypes.object,
   };
 }
-export const LayerPropType = PropType;
+export const LayerPropTypes = PropType;

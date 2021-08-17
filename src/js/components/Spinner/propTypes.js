@@ -23,4 +23,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const SpinnerPropType = PropType;
+export const SpinnerPropTypes = PropType;

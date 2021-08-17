@@ -51,4 +51,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const MenuPropType = PropType;
+export const MenuPropTypes = PropType;

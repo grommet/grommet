@@ -18,4 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     indeterminate: PropTypes.bool,
   };
 }
-export const CheckBoxPropType = PropType;
+export const CheckBoxPropTypes = PropType;

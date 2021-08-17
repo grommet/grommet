@@ -6,4 +6,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: PropTypes.shape({}),
   };
 }
-export const ThemeContextPropType = PropType;
+export const ThemeContextPropTypes = PropType;

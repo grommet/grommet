@@ -37,4 +37,4 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
   };
 }
-export const FormFieldPropType = PropType;
+export const FormFieldPropTypes = PropType;

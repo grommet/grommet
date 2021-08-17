@@ -162,4 +162,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: PropTypes.number,
   };
 }
-export const DataTablePropType = PropType;
+export const DataTablePropTypes = PropType;

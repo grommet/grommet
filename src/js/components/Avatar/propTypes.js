@@ -20,4 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     src: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   };
 }
-export const AvatarPropType = PropType;
+export const AvatarPropTypes = PropType;

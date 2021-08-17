@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 
 import { StyledGrid } from './StyledGrid';
-import { GridPropType } from './propTypes';
+import { GridPropTypes } from './propTypes';
 
 const Grid = forwardRef((props, ref) => {
   const {
@@ -35,7 +35,7 @@ const Grid = forwardRef((props, ref) => {
 });
 
 Grid.displayName = 'Grid';
-Grid.propTypes = GridPropType;
+Grid.propTypes = GridPropTypes;
 
 Grid.available =
   typeof window !== 'undefined' &&

@@ -38,7 +38,7 @@ import {
   subtractMonths,
   withinDates,
 } from './utils';
-import { CalendarPropType } from './propTypes';
+import { CalendarPropTypes } from './propTypes';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -912,6 +912,6 @@ const Calendar = forwardRef(
 );
 
 Calendar.displayName = 'Calendar';
-Calendar.propTypes = CalendarPropType;
+Calendar.propTypes = CalendarPropTypes;
 
 export { Calendar };

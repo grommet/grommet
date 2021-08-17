@@ -9,7 +9,7 @@ import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
-import { SpinnerPropType } from './propTypes';
+import { SpinnerPropTypes } from './propTypes';
 
 const BasicSpinner = ({ ref, size, ...rest }) => (
   <Box height={size} width={size} ref={ref} {...rest} />
@@ -91,6 +91,6 @@ const Spinner = forwardRef(
 );
 
 Spinner.displayName = 'Spinner';
-Spinner.propTypes = SpinnerPropType;
+Spinner.propTypes = SpinnerPropTypes;
 
 export { Spinner };

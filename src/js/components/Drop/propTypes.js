@@ -43,4 +43,4 @@ if (process.env.NODE_ENV !== 'production') {
     trapFocus: PropTypes.bool,
   };
 }
-export const DropPropType = PropType;
+export const DropPropTypes = PropType;

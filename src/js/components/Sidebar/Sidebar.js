@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '../Box';
-import { SidebarPropType } from './propTypes';
+import { SidebarPropTypes } from './propTypes';
 
 export const Sidebar = ({ children, footer, header, ...rest }) => (
   <Box pad="small" gap="large" height={{ min: '100%' }} {...rest}>
@@ -10,7 +10,7 @@ export const Sidebar = ({ children, footer, header, ...rest }) => (
   </Box>
 );
 
-Sidebar.propTypes = SidebarPropType;
+Sidebar.propTypes = SidebarPropTypes;
 
 Sidebar.defaultProps = {
   children: undefined,

@@ -46,4 +46,4 @@ if (process.env.NODE_ENV !== 'production') {
     ).isRequired,
   };
 }
-export const DistributionPropType = PropType;
+export const DistributionPropTypes = PropType;
