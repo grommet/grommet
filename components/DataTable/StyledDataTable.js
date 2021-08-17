@@ -106,12 +106,14 @@ Object.setPrototypeOf(StyledDataTableFooter.defaultProps, _defaultProps.defaultP
 var StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
   componentId: "xrlyjm-6"
-})(["", ";", ""], function (props) {
+})(["", ";", " ", ""], function (props) {
   return props.context === 'header' && props.theme.dataTable && props.theme.dataTable.header && props.theme.dataTable.header.extend;
 }, function (props) {
-  return props.pin && props.pin.length > 0 && "\n    position: sticky;\n    " + props.pin.map(function (p) {
+  return props.pin && props.pin.length > 0 && "position: sticky;\n    " + props.pin.map(function (p) {
     return p + ": " + (props.pinnedOffset && props.pinnedOffset[p] && props.pinnedOffset[p] + "px" || 0) + ";";
-  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n    " + (props.theme.dataTable && props.theme.dataTable.pinned && props.theme.dataTable.pinned[props.context] && props.theme.dataTable.pinned[props.context].extend ? props.theme.dataTable.pinned[props.context].extend : '') + "\n  ";
+  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n  ";
+}, function (props) {
+  return props.pin && props.pin.length > 0 && props.theme.dataTable.pinned && props.theme.dataTable.pinned[props.context] && props.theme.dataTable.pinned[props.context].extend ? props.theme.dataTable.pinned[props.context].extend : '';
 });
 exports.StyledDataTableCell = StyledDataTableCell;
 StyledDataTableCell.defaultProps = {};
