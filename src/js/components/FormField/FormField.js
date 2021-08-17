@@ -142,7 +142,7 @@ const FormField = forwardRef(
       className,
       component,
       contentProps,
-      disabled: disableProp, // pass through in renderInput()
+      disabled: disabledProp, // pass through in renderInput()
       error: errorProp,
       help,
       htmlFor,
@@ -171,7 +171,7 @@ const FormField = forwardRef(
       onBlur: contextOnBlur,
       onChange: contextOnChange,
     } = formContext.useFormField({
-      disabled: disableProp,
+      disabled: disabledProp,
       error: errorProp,
       info: infoProp,
       name,
@@ -245,7 +245,7 @@ const FormField = forwardRef(
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
         themeContentProps.background = formFieldTheme.error.background;
-      } else if (disabled && formFieldTheme.disabled) {
+      } else if (disabledProp && formFieldTheme.disabled) {
         themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
@@ -276,7 +276,7 @@ const FormField = forwardRef(
     let borderColor;
 
     if (
-      disabled &&
+      disabledProp &&
       formFieldTheme.disabled.border &&
       formFieldTheme.disabled.border.color
     ) {
@@ -310,7 +310,7 @@ const FormField = forwardRef(
 
     const labelStyle = { ...formFieldTheme.label };
 
-    if (disabled) {
+    if (disabledProp) {
       labelStyle.color =
         formFieldTheme.disabled && formFieldTheme.disabled.label
           ? formFieldTheme.disabled.label.color
@@ -405,7 +405,7 @@ const FormField = forwardRef(
       ) {
         outerBackground = formFieldTheme.focus.background.color;
       } else if (
-        disabled &&
+        disabledProp &&
         formFieldTheme.disabled &&
         formFieldTheme.disabled.background
       ) {
