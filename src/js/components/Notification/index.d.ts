@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export type StatusType = 'critical' | 'warning' | 'good' | 'unknown';
+export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
 
 export interface NotificationProps {
-  message: string;
-  body?: string;
+  title: string;
+  message?: string;
   status?: StatusType;
   toast?: boolean;
   onClose?: (...args: any[]) => any;

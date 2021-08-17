@@ -16,9 +16,9 @@ const StatusNotification = () => (
         />
       </Box>
       <Box gap="xsmall">
-        <Text size="medium">Good</Text>
+        <Text size="medium">Normal</Text>
         <Notification
-          status="good"
+          status="normal"
           title="Status Title"
           message="This is an example of message text"
         />

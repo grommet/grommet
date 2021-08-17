@@ -1058,14 +1058,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       textContainer: {
         gap: 'medium',
       },
-      titleText: {
+      title: {
         weight: 'bold',
         color: {
           light: 'black',
           dark: 'white',
         },
       },
-      messageText: {
+      message: {
         color: {
           light: 'black',
           dark: 'white',
@@ -1086,7 +1086,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: StatusWarningSmall,
         color: 'status-warning',
       },
-      good: {
+      normal: {
         icon: StatusGoodSmall,
         color: 'status-ok',
       },

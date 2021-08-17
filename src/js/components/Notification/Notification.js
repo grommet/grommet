@@ -27,10 +27,8 @@ const Notification = ({ toast, title, message, status, onClose }) => {
         fill
       >
         <Box>
-          <Text {...theme.notification.titleText}>{title}</Text>
-          {message && (
-            <Text {...theme.notification.messageText}>{message}</Text>
-          )}
+          <Text {...theme.notification.title}>{title}</Text>
+          {message && <Text {...theme.notification.message}>{message}</Text>}
         </Box>
         {onClose && (
           <Button
