@@ -45,13 +45,13 @@ export var FocusedContainer = function FocusedContainer(_ref) {
   }, [bodyOverflowStyle, hidden, trapFocus, restrictScroll]);
   useEffect(function () {
     var timer = setTimeout(function () {
-      if (!hidden && trapFocus && roots && roots[0] !== null) {
+      if (!hidden && trapFocus && roots && roots[0]) {
         roots.forEach(makeNodeUnfocusable);
       }
     }, 0);
     return function () {
       // remove trap and restore ability to focus on the last root only
-      if (roots && roots[0] !== null) makeNodeFocusable(roots[roots.length - 1]);
+      if (roots && roots[0]) makeNodeFocusable(roots[roots.length - 1]);
       clearTimeout(timer);
     };
   }, [hidden, roots, trapFocus]);

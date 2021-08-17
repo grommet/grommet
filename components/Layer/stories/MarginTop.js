@@ -22,8 +22,14 @@ var MarginLayer = function MarginLayer(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    options: {
+      layer: {
+        singleId: true
+      }
+    },
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Layer, _extends({
+    id: "Margin top center",
     margin: margin || {
       left: '40px',
       top: '50px',

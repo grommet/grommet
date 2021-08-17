@@ -10,6 +10,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // When toggling aria-hidden values, we only want to affect elements
 // in the DOM that come from Grommet, so we track those elements in this
 // context value. See FocusedContainer.js
-var RootsContext = /*#__PURE__*/_react["default"].createContext(undefined);
+var RootsContext = /*#__PURE__*/_react["default"].createContext([]);
 
 exports.RootsContext = RootsContext;

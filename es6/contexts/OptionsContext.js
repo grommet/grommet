@@ -1,2 +1,2 @@
 import React from 'react';
-export var OptionsContext = /*#__PURE__*/React.createContext(undefined);
+export var OptionsContext = /*#__PURE__*/React.createContext({});
