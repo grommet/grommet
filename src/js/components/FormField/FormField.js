@@ -164,7 +164,6 @@ const FormField = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const {
-      disabled,
       error,
       info,
       inForm,
@@ -227,7 +226,7 @@ const FormField = forwardRef(
       contents = contents || (
         <Input
           component={component}
-          disabled={disabled}
+          disabled={disabledProp}
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
