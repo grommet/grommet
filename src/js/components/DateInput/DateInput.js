@@ -75,8 +75,7 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (
         schema &&
-        value &&
-        ((Array.isArray(value) && value[0]) || !Array.isArray(value))
+        value !== undefined
       ) {
         const nextTextValue = valueToText(value, schema);
         if (
@@ -178,6 +177,7 @@ const DateInput = forwardRef(
               setOpen(true);
               if (onFocus) onFocus(event);
             }}
+            onClick={() => setOpen(true)}
           />
         </Keyboard>
       </FormContext.Provider>
@@ -202,7 +202,9 @@ const DateInput = forwardRef(
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
-          onClickOutside={() => setOpen(false)}
+          onClickOutside={({ target }) => {
+            if (target !== ref.current) setOpen(false);
+          }}
           {...dropProps}
         >
           {calendar}

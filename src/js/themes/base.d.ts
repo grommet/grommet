@@ -969,6 +969,7 @@ export interface ThemeType {
     };
     container?: {
       elevation?: ElevationType;
+      extend?: ExtendType;
       zIndex?: string;
     };
     extend?: ExtendType;
