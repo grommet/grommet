@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { ButtonType } from '../Button';
-import { CalendarType } from '../Calendar';
+import { CalendarType } from '../Calendar/index';
 import { DropType } from '../Drop';
 import { MaskedInputType } from '../MaskedInput';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Omit, PlaceHolderType, MarginType } from '../../utils';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
 
 export interface FormFieldProps {
   contentProps?: BoxProps;

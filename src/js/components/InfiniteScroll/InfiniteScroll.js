@@ -7,6 +7,7 @@ import {
   isNodeBeforeScroll,
 } from '../../utils';
 import { Box } from '../Box';
+import { InfiniteScrollPropTypes } from './propTypes';
 
 const calculateLastPageBound = (show, step) =>
   show ? Math.floor((show + step) / step) - 1 : 0;
@@ -334,11 +335,6 @@ const InfiniteScroll = ({
   return result;
 };
 
-let InfiniteScrollDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll);
-}
-const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
+InfiniteScroll.propTypes = InfiniteScrollPropTypes;
 
-export { InfiniteScrollWrapper as InfiniteScroll };
+export { InfiniteScroll };

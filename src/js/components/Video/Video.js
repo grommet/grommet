@@ -25,6 +25,7 @@ import {
   StyledVideoScrubber,
 } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
+import { VideoPropTypes } from './propTypes';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -463,12 +464,6 @@ const Video = forwardRef(
 Video.defaultProps = {};
 
 Video.displayName = 'Video';
+Video.propTypes = VideoPropTypes;
 
-let VideoDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-const VideoWrapper = VideoDoc || Video;
-
-export { VideoWrapper as Video };
+export { Video };

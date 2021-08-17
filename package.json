@@ -28,13 +28,12 @@
     "node": ">= 12"
   },
   "scripts": {
-    "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
     "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\"",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "test": "npm run generate-readme && jest --runInBand",
-    "test-update": "npm run generate-readme && jest --updateSnapshot",
+    "test": "jest --runInBand",
+    "test-update": "jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
     "pack": "babel-node ./tools/pack",
@@ -52,8 +51,7 @@
     "grommet-icons": "^4.6.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.1.3",
-    "prop-types": "^15.7.2",
-    "react-desc": "^4.1.3"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",

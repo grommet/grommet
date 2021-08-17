@@ -15,6 +15,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ButtonPropTypes } from './propTypes';
 
 import { Box } from '../Box';
 import { Tip } from '../Tip';
@@ -415,12 +416,6 @@ const Button = forwardRef(
 );
 
 Button.displayName = 'Button';
+Button.propTypes = ButtonPropTypes;
 
-let ButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-const ButtonWrapper = ButtonDoc || Button;
-
-export { ButtonWrapper as Button };
+export { Button };
