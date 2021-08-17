@@ -10,9 +10,9 @@ import { Text } from '../Text';
 const Notification = ({ toast, title, message, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  const { icon: CloseIcon } = theme.notification.button;
+  const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];
-  const { color: closeIconColor } = theme.notification.button;
+  const { color: closeIconColor } = theme.notification.close;
 
   let content = (
     <Box direction="row">
@@ -24,7 +24,7 @@ const Notification = ({ toast, title, message, status, onClose }) => {
         align="start"
         direction="row"
         justify="between"
-        fill
+        flex
       >
         <Box>
           <Text {...theme.notification.title}>{title}</Text>

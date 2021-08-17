@@ -28,8 +28,8 @@ const TitleAndMessageNotification = () => {
   );
 };
 
-export const TitleAndMessage = () => <TitleAndMessageNotification />;
+export const Toast = () => <TitleAndMessageNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Title and Message',
+  title: 'Visualizations/Notification/Toast',
 };

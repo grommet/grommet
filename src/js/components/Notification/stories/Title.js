@@ -21,8 +21,8 @@ const TitleNotification = () => {
   );
 };
 
-export const Title = () => <TitleNotification />;
+export const ToastTitleOnly = () => <TitleNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Title',
+  title: 'Visualizations/Notification/Toast Title Only',
 };

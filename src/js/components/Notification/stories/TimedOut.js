@@ -35,8 +35,8 @@ const TimedOutNotification = () => {
   );
 };
 
-export const TimedOut = () => <TimedOutNotification />;
+export const ToastTimed = () => <TimedOutNotification />;
 
 export default {
-  title: 'Visualizations/Notification/Toast/Timed Out',
+  title: 'Visualizations/Notification/Toast Timed',
 };

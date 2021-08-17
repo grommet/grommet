@@ -1071,7 +1071,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           dark: 'white',
         },
       },
-      button: {
+      close: {
         icon: FormClose,
         color: {
           light: 'black',
