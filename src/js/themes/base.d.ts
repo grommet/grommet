@@ -144,7 +144,7 @@ interface ButtonKindType {
   extend?: ExtendType;
 }
 
-export interface ButtonType {
+interface ButtonType {
   badge?: {
     container?: {
       background?: BackgroundType;

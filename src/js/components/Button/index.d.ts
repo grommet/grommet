@@ -11,7 +11,6 @@ import {
   Omit,
   PolymorphicType,
 } from '../../utils';
-import { ButtonType as ButtonThemeType } from '../../themes/base';
 import { TipProps } from '../Tip';
 
 export interface ButtonProps {
@@ -38,7 +37,7 @@ export interface ButtonProps {
   href?: string;
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
-  kind?: string | ButtonThemeType;
+  kind?: string;
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
