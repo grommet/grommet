@@ -142,7 +142,7 @@ const FormField = forwardRef(
       className,
       component,
       contentProps,
-      disabled, // pass through in renderInput()
+      disabled: disableProp, // pass through in renderInput()
       error: errorProp,
       help,
       htmlFor,
@@ -164,12 +164,14 @@ const FormField = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const {
+      disabled,
       error,
       info,
       inForm,
       onBlur: contextOnBlur,
       onChange: contextOnChange,
     } = formContext.useFormField({
+      disabled: disableProp,
       error: errorProp,
       info: infoProp,
       name,

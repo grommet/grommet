@@ -341,9 +341,12 @@ const Form = forwardRef(
       info: infoArg,
       name,
       required,
+      disabled,
       validate: validateArg,
     }) => {
-      const error = errorArg || validationResults.errors[name];
+      const error = disabled
+        ? undefined
+        : errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
 
       useEffect(() => {
