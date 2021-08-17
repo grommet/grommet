@@ -1,10 +1,11 @@
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
+import { ImagePropTypes } from './propTypes';
 
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
     const [imageMissing, setImageMissing] = useState(false);
-    const handleError = (event) => {
+    const handleError = event => {
       if (onError) {
         onError(event);
       }
@@ -28,12 +29,6 @@ const Image = forwardRef(
 );
 
 Image.displayName = 'Image';
+Image.propTypes = ImagePropTypes;
 
-let ImageDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ImageDoc = require('./doc').doc(Image); // eslint-disable-line global-require
-}
-
-const ImageWrapper = ImageDoc || Image;
-
-export { ImageWrapper as Image };
+export { Image };

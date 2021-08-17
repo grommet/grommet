@@ -1,4 +1,5 @@
 import { Children, cloneElement, useCallback, useEffect } from 'react';
+import { KeyboardPropTypes } from './propTypes';
 
 const KEYS = {
   8: 'onBackspace',
@@ -50,11 +51,6 @@ const Keyboard = ({ capture, target, children, onKeyDown, ...restProps }) => {
       });
 };
 
-let KeyboardDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  KeyboardDoc = require('./doc').doc(Keyboard);
-}
-const KeyboardWrapper = KeyboardDoc || Keyboard;
+Keyboard.propTypes = KeyboardPropTypes;
 
-export { KeyboardWrapper as Keyboard };
+export { Keyboard };

@@ -14,6 +14,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
+import { FileInputPropTypes } from './propTypes';
 
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -24,14 +25,14 @@ import { StyledFileInput } from './StyledFileInput';
 
 const ContentsBox = styled(Box)`
   position: relative;
-  ${(props) => props.disabled && disabledStyle()}
-  ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
-  ${(props) =>
+  ${props => props.disabled && disabledStyle()}
+  ${props => props.theme.fileInput && props.theme.fileInput.extend};
+  ${props =>
     props.hover &&
     props.theme.fileInput &&
     props.theme.fileInput.hover &&
     props.theme.fileInput.hover.extend};
-  ${(props) =>
+  ${props =>
     props.dragOver &&
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
@@ -39,14 +40,14 @@ const ContentsBox = styled(Box)`
 `;
 
 const Label = styled(Text)`
-  ${(props) =>
+  ${props =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
 const Message = styled(Text)`
-  ${(props) =>
+  ${props =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&
     props.theme.fileInput.message.extend};
@@ -127,8 +128,8 @@ const FileInput = forwardRef(
     // rightoffset will take the larger width
     let rightOffset;
     if (removeRef.current && controlRef.current) {
-      const rightOffsetBrowse =
-        controlRef.current.getBoundingClientRect().width;
+      const rightOffsetBrowse = controlRef.current.getBoundingClientRect()
+        .width;
       const rightOffsetRemove = removeRef.current.getBoundingClientRect().width;
       if (rightPad && typeof rightPad === 'string')
         rightOffset = rightOffsetRemove + parseMetricToNum(rightPad);
@@ -185,11 +186,11 @@ const FileInput = forwardRef(
               <>
                 <Message {...theme.fileInput.message}>{message}</Message>
                 <Keyboard
-                  onSpace={(event) => {
+                  onSpace={event => {
                     if (controlRef.current === event.target)
                       inputRef.current.click();
                   }}
-                  onEnter={(event) => {
+                  onEnter={event => {
                     if (controlRef.current === event.target)
                       inputRef.current.click();
                   }}
@@ -246,7 +247,7 @@ const FileInput = forwardRef(
                 })}
                 icon={<RemoveIcon />}
                 hoverIndicator
-                onClick={(event) => {
+                onClick={event => {
                   event.stopPropagation();
                   if (onChange) onChange(event, { files: [] });
                   setFiles([]);
@@ -254,11 +255,11 @@ const FileInput = forwardRef(
                 }}
               />
               <Keyboard
-                onSpace={(event) => {
+                onSpace={event => {
                   if (controlRef.current === event.target)
                     inputRef.current.click();
                 }}
-                onEnter={(event) => {
+                onEnter={event => {
                   if (controlRef.current === event.target)
                     inputRef.current.click();
                 }}
@@ -327,7 +328,7 @@ const FileInput = forwardRef(
                   })} ${file.name}`}
                   icon={<RemoveIcon />}
                   hoverIndicator
-                  onClick={(event) => {
+                  onClick={event => {
                     event.stopPropagation();
                     const nextFiles = [...files];
                     nextFiles.splice(index, 1);
@@ -339,11 +340,11 @@ const FileInput = forwardRef(
                 />
                 {files.length === 1 && (
                   <Keyboard
-                    onSpace={(event) => {
+                    onSpace={event => {
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
-                    onEnter={(event) => {
+                    onEnter={event => {
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
@@ -393,7 +394,7 @@ const FileInput = forwardRef(
           {...rest}
           onDragOver={() => setDragOver(true)}
           onDragLeave={() => setDragOver(false)}
-          onChange={(event) => {
+          onChange={event => {
             event.persist();
             const fileList = event.target.files;
             const nextFiles = multiple ? [...files] : [];
@@ -401,7 +402,7 @@ const FileInput = forwardRef(
               // avoid duplicates
               const existing =
                 nextFiles.filter(
-                  (file) =>
+                  file =>
                     file.name === fileList[i].name &&
                     file.size === fileList[i].size,
                 ).length > 0;
@@ -422,12 +423,6 @@ FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 FileInput.displayName = 'FileInput';
+FileInput.propTypes = FileInputPropTypes;
 
-let FileInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FileInputDoc = require('./doc').doc(FileInput);
-}
-const FileInputWrapper = FileInputDoc || FileInput;
-
-export { FileInputWrapper as FileInput };
+export { FileInput };

@@ -25,11 +25,12 @@ import {
   StyledVideoScrubber,
 } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
+import { VideoPropTypes } from './propTypes';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
 
-const formatTime = (time) => {
+const formatTime = time => {
   let minutes = Math.round(time / 60);
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -167,7 +168,7 @@ const Video = forwardRef(
     const pause = useCallback(() => videoRef.current.pause(), [videoRef]);
 
     const scrub = useCallback(
-      (event) => {
+      event => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
@@ -179,7 +180,7 @@ const Video = forwardRef(
     );
 
     const seek = useCallback(
-      (event) => {
+      event => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
@@ -198,7 +199,7 @@ const Video = forwardRef(
       videoRef.current.volume -= VOLUME_STEP;
     }, [videoRef]);
 
-    const showCaptions = (index) => {
+    const showCaptions = index => {
       const { textTracks } = videoRef.current;
       for (let i = 0; i < textTracks.length; i += 1) {
         textTracks[i].mode = i === index ? 'showing' : 'hidden';
@@ -244,8 +245,10 @@ const Video = forwardRef(
         Volume: theme.video.icons.volume,
       };
 
-      const captionControls = captions.map((caption) => ({
-        icon: caption.label ? undefined : (
+      const captionControls = captions.map(caption => ({
+        icon: caption.label ? (
+          undefined
+        ) : (
           <Icons.ClosedCaption color={iconColor} />
         ),
         label: caption.label,
@@ -420,32 +423,32 @@ const Video = forwardRef(
         <StyledVideo
           {...rest}
           ref={videoRef}
-          onDurationChange={(event) => {
+          onDurationChange={event => {
             const video = videoRef.current;
             setDuration(video.duration);
             setPercentagePlayed((video.currentTime / video.duration) * 100);
             if (onDurationChange) onDurationChange(event);
           }}
-          onEnded={(event) => {
+          onEnded={event => {
             setPlaying(false);
             if (onEnded) onEnded(event);
           }}
-          onPause={(event) => {
+          onPause={event => {
             setPlaying(false);
             if (onPause) onPause(event);
           }}
-          onPlay={(event) => {
+          onPlay={event => {
             setPlaying(true);
             setHasPlayed(true);
             if (onPlay) onPlay(event);
           }}
-          onTimeUpdate={(event) => {
+          onTimeUpdate={event => {
             const video = videoRef.current;
             setCurrentTime(video.currentTime);
             setPercentagePlayed((video.currentTime / video.duration) * 100);
             if (onTimeUpdate) onTimeUpdate(event);
           }}
-          onVolumeChange={(event) => {
+          onVolumeChange={event => {
             setVolume(videoRef.current.volume);
             if (onVolumeChange) onVolumeChange(event);
           }}
@@ -463,12 +466,6 @@ const Video = forwardRef(
 Video.defaultProps = {};
 
 Video.displayName = 'Video';
+Video.propTypes = VideoPropTypes;
 
-let VideoDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-const VideoWrapper = VideoDoc || Video;
-
-export { VideoWrapper as Video };
+export { Video };

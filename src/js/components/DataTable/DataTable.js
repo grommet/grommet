@@ -34,6 +34,7 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
+import { DataTablePropTypes } from './propTypes';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -90,10 +91,9 @@ const DataTable = ({
   );
 
   // whether or not we should show a footer
-  const showFooter = useMemo(
-    () => columns.filter((c) => c.footer).length > 0,
-    [columns],
-  );
+  const showFooter = useMemo(() => columns.filter(c => c.footer).length > 0, [
+    columns,
+  ]);
 
   // what column we are actively capturing filter input on
   const [filtering, setFiltering] = useState();
@@ -111,10 +111,10 @@ const DataTable = ({
   );
 
   // the values to put in the footer cells
-  const footerValues = useMemo(
-    () => buildFooterValues(columns, adjustedData),
-    [adjustedData, columns],
-  );
+  const footerValues = useMemo(() => buildFooterValues(columns, adjustedData), [
+    adjustedData,
+    columns,
+  ]);
 
   // cell styling properties: background, border, pad
   const cellProps = useMemo(
@@ -123,10 +123,11 @@ const DataTable = ({
   );
 
   // if groupBy, an array with one item per unique groupBy key value
-  const groups = useMemo(
-    () => buildGroups(columns, adjustedData, groupBy),
-    [adjustedData, columns, groupBy],
-  );
+  const groups = useMemo(() => buildGroups(columns, adjustedData, groupBy), [
+    adjustedData,
+    columns,
+    groupBy,
+  ]);
 
   // an object indicating which group values are expanded
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
@@ -134,10 +135,10 @@ const DataTable = ({
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
   );
-  useEffect(
-    () => setSelected(select || (onSelect && []) || undefined),
-    [onSelect, select],
-  );
+  useEffect(() => setSelected(select || (onSelect && []) || undefined), [
+    onSelect,
+    select,
+  ]);
 
   const [rowExpand, setRowExpand] = useState([]);
 
@@ -158,10 +159,10 @@ const DataTable = ({
   const [pinnedOffset, setPinnedOffset] = useState();
 
   const onHeaderWidths = useCallback(
-    (columnWidths) => {
+    columnWidths => {
       const pinnedProperties = columns
-        .map((pinnedColumn) => pinnedColumn.pin && pinnedColumn.property)
-        .filter((n) => n);
+        .map(pinnedColumn => pinnedColumn.pin && pinnedColumn.property)
+        .filter(n => n);
 
       const nextPinnedOffset = {};
 
@@ -170,7 +171,7 @@ const DataTable = ({
           const hasSelectColumn = Boolean(select || onSelect);
 
           const columnIndex =
-            columns.findIndex((column) => column.property === property) +
+            columns.findIndex(column => column.property === property) +
             hasSelectColumn;
 
           if (columnWidths[columnIndex]) {
@@ -201,20 +202,20 @@ const DataTable = ({
   useLayoutEffect(() => {
     if (placeholder) {
       if (headerRef.current) {
-        const nextHeaderHeight =
-          headerRef.current.getBoundingClientRect().height;
+        const nextHeaderHeight = headerRef.current.getBoundingClientRect()
+          .height;
         setHeaderHeight(nextHeaderHeight);
       } else setHeaderHeight(0);
       if (footerRef.current) {
-        const nextFooterHeight =
-          footerRef.current.getBoundingClientRect().height;
+        const nextFooterHeight = footerRef.current.getBoundingClientRect()
+          .height;
         setFooterHeight(nextFooterHeight);
       } else setFooterHeight(0);
     }
   }, [footerRef, headerRef, placeholder]);
 
   // remember that we are filtering on this property
-  const onFiltering = (property) => setFiltering(property);
+  const onFiltering = property => setFiltering(property);
 
   // remember the search text we should filter this property by
   const onFilter = (property, value) => {
@@ -226,7 +227,7 @@ const DataTable = ({
   };
 
   // toggle the sort direction on this property
-  const onSort = (property) => () => {
+  const onSort = property => () => {
     const external = sort ? sort.external : false;
     let direction;
     if (!sort || property !== sort.property) direction = 'asc';
@@ -238,7 +239,7 @@ const DataTable = ({
   };
 
   // toggle whether the group is expanded
-  const onToggleGroup = (groupValue) => () => {
+  const onToggleGroup = groupValue => () => {
     const nextGroupState = { ...groupState };
     nextGroupState[groupValue] = {
       ...nextGroupState[groupValue],
@@ -247,7 +248,7 @@ const DataTable = ({
     setGroupState(nextGroupState);
     if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
+        k => nextGroupState[k].expanded,
       );
       groupBy.onExpand(expandedKeys);
     }
@@ -256,16 +257,15 @@ const DataTable = ({
   // toggle whether all groups are expanded
   const onToggleGroups = () => {
     const expanded =
-      Object.keys(groupState).filter((k) => !groupState[k].expanded).length ===
-      0;
+      Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
     const nextGroupState = {};
-    Object.keys(groupState).forEach((k) => {
+    Object.keys(groupState).forEach(k => {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     setGroupState(nextGroupState);
     if (groupBy.onExpand) {
       const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
+        k => nextGroupState[k].expanded,
       );
       groupBy.onExpand(expandedKeys);
     }
@@ -343,7 +343,7 @@ const DataTable = ({
             onResize={resizeable ? onResize : undefined}
             onSelect={
               onSelect
-                ? (nextSelected) => {
+                ? nextSelected => {
                     setSelected(nextSelected);
                     if (onSelect) onSelect(nextSelected);
                   }
@@ -369,7 +369,7 @@ const DataTable = ({
               onMore={onMore}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? nextSelected => {
                       setSelected(nextSelected);
                       if (onSelect) onSelect(nextSelected);
                     }
@@ -393,7 +393,7 @@ const DataTable = ({
               onClickRow={onClickRow}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? nextSelected => {
                       setSelected(nextSelected);
                       if (onSelect) onSelect(nextSelected);
                     }
@@ -455,11 +455,6 @@ const DataTable = ({
   );
 };
 
-let DataTableDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataTableDoc = require('./doc').doc(DataTable);
-}
-const DataTableWrapper = DataTableDoc || DataTable;
+DataTable.propTypes = DataTablePropTypes;
 
-export { DataTableWrapper as DataTable };
+export { DataTable };

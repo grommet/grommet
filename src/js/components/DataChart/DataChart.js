@@ -19,6 +19,7 @@ import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
+import { DataChartPropTypes } from './propTypes';
 
 // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
@@ -58,14 +59,14 @@ const DataChart = forwardRef(
     const series = useMemo(() => {
       if (Array.isArray(seriesProp))
         return seriesProp
-          .filter((s) => s.property || typeof s === 'string')
-          .map((s) => (typeof s === 'string' ? { property: s } : s));
+          .filter(s => s.property || typeof s === 'string')
+          .map(s => (typeof s === 'string' ? { property: s } : s));
       if (typeof seriesProp === 'string') return [{ property: seriesProp }];
       if (seriesProp) return [seriesProp];
       return [];
     }, [seriesProp]);
 
-    const getPropertySeries = (prop) =>
+    const getPropertySeries = prop =>
       series.find(({ property }) => prop === property);
 
     // Normalize chart to an array of objects.
@@ -77,15 +78,15 @@ const DataChart = forwardRef(
       if (!chart) {
         if (series.length === 1)
           return series
-            .filter((s) => s.property)
-            .map((s) => ({ property: s.property }));
+            .filter(s => s.property)
+            .map(s => ({ property: s.property }));
         // if we have more than one property, we'll use the first for
         // the x-axis and we'll plot the rest
-        return series.slice(1).map((s) => ({ property: s.property }));
+        return series.slice(1).map(s => ({ property: s.property }));
       }
       if (Array.isArray(chart))
         return chart
-          .map((c) => (typeof c === 'string' ? { property: c } : c))
+          .map(c => (typeof c === 'string' ? { property: c } : c))
           .filter(({ property }) => property);
       if (typeof chart === 'string') return [{ property: chart }];
       if (chart) return [chart];
@@ -96,7 +97,7 @@ const DataChart = forwardRef(
     const seriesValues = useMemo(() => {
       const result = {};
       series.forEach(({ property }) => {
-        result[property] = data.map((d) => d[property]);
+        result[property] = data.map(d => d[property]);
       });
       return result;
     }, [data, series]);
@@ -116,7 +117,7 @@ const DataChart = forwardRef(
                 // using a separate Chart component and the values are stacked
                 // such that they line up appropriately.
                 const totals = [];
-                return property.map((cp) => {
+                return property.map(cp => {
                   // handle object or string
                   const aProperty = cp.property || cp;
                   const values = seriesValues[aProperty];
@@ -130,7 +131,7 @@ const DataChart = forwardRef(
               }
               return data.map((_, index) => [
                 index,
-                ...property.map((p) =>
+                ...property.map(p =>
                   seriesValues[p] ? seriesValues[p][index] : data[index][p],
                 ),
               ]);
@@ -260,8 +261,8 @@ const DataChart = forwardRef(
           let mergedValues = chartValues[index][0].slice(0);
           chartValues[index]
             .slice(1)
-            .filter((values) => values) // property name isn't valid
-            .forEach((values) => {
+            .filter(values => values) // property name isn't valid
+            .forEach(values => {
               mergedValues = mergedValues.map((__, i) => [
                 i,
                 Math.min(mergedValues[i][1], values[i][1]),
@@ -279,7 +280,7 @@ const DataChart = forwardRef(
 
       if (boundsProp === 'align' && chartBounds.length) {
         const alignedBounds = [...chartBounds[0]];
-        chartBounds.forEach((bounds) => {
+        chartBounds.forEach(bounds => {
           alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
           alignedBounds[0][1] = Math.max(alignedBounds[0][1], bounds[0][1]);
           alignedBounds[1][0] = Math.min(alignedBounds[1][0], bounds[1][0]);
@@ -303,14 +304,14 @@ const DataChart = forwardRef(
 
         if (typeof property === 'object' && !Array.isArray(property)) {
           // data driven point chart
-          Object.keys(property).forEach((aspect) => {
+          Object.keys(property).forEach(aspect => {
             const prop = property[aspect];
             if (!result[prop.property || prop])
               result[prop.property || prop] = { aspect };
           });
         } else {
           const props = Array.isArray(property) ? property : [property];
-          props.forEach((prop) => {
+          props.forEach(prop => {
             const p = prop.property || prop;
             const pColor = prop.color || color;
             if (!result[p]) result[p] = {};
@@ -326,7 +327,7 @@ const DataChart = forwardRef(
       // set color for any non-aspect properties we don't have one for yet
       let colorIndex = 0;
       let pointIndex = 0;
-      Object.keys(result).forEach((key) => {
+      Object.keys(result).forEach(key => {
         const seriesStyle = result[key];
         if (!seriesStyle.aspect && !seriesStyle.color) {
           seriesStyle.color = `graph-${colorIndex}`;
@@ -633,12 +634,6 @@ const DataChart = forwardRef(
 );
 
 DataChart.displayName = 'DataChart';
+DataChart.propTypes = DataChartPropTypes;
 
-let DataChartDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataChartDoc = require('./doc').doc(DataChart);
-}
-const DataChartWrapper = DataChartDoc || DataChart;
-
-export { DataChartWrapper as DataChart };
+export { DataChart };

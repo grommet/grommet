@@ -21,6 +21,7 @@ import {
   StyledMaskedInputContainer,
   StyledIcon,
 } from './StyledMaskedInput';
+import { MaskedInputPropTypes } from './propTypes';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -77,7 +78,7 @@ const parseValue = (mask, value) => {
         .slice(0)
         .reverse()
         // eslint-disable-next-line no-loop-func
-        .some((option) => {
+        .some(option => {
           const { length } = option;
           const part = value.slice(valueIndex, valueIndex + length);
           if (part === option) {
@@ -144,7 +145,7 @@ const defaultMask = [
 ];
 
 const ContainerBox = styled(Box)`
-  ${(props) =>
+  ${props =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
@@ -231,7 +232,7 @@ const MaskedInput = forwardRef(
     }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
 
     const setInputValue = useCallback(
-      (nextValue) => {
+      nextValue => {
         // Calling set value function directly on input because React library
         // overrides setter `event.target.value =` and loses original event
         // target fidelity.
@@ -250,10 +251,10 @@ const MaskedInput = forwardRef(
 
     // This could be due to a paste or as the user is typing.
     const onChangeInput = useCallback(
-      (event) => {
+      event => {
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
-        const nextValue = nextValueParts.map((part) => part.part).join('');
+        const nextValue = nextValueParts.map(part => part.part).join('');
 
         if (nextValue !== event.target.value) {
           // The mask required inserting something, change the input.
@@ -268,7 +269,7 @@ const MaskedInput = forwardRef(
     );
 
     const onOption = useCallback(
-      (option) => () => {
+      option => () => {
         const nextValueParts = [...valueParts];
         nextValueParts[activeMaskIndex] = { part: option };
         // add any fixed parts that follow
@@ -281,7 +282,7 @@ const MaskedInput = forwardRef(
           nextValueParts[index] = { part: mask[index].fixed };
           index += 1;
         }
-        const nextValue = nextValueParts.map((part) => part.part).join('');
+        const nextValue = nextValueParts.map(part => part.part).join('');
         setInputValue(nextValue);
         // restore focus to input
         inputRef.current.focus();
@@ -290,7 +291,7 @@ const MaskedInput = forwardRef(
     );
 
     const onNextOption = useCallback(
-      (event) => {
+      event => {
         const item = mask[activeMaskIndex];
         if (item && item.options) {
           event.preventDefault();
@@ -305,7 +306,7 @@ const MaskedInput = forwardRef(
     );
 
     const onPreviousOption = useCallback(
-      (event) => {
+      event => {
         if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
           event.preventDefault();
           const index = Math.max(activeOptionIndex - 1, 0);
@@ -316,7 +317,7 @@ const MaskedInput = forwardRef(
     );
 
     const onSelectOption = useCallback(
-      (event) => {
+      event => {
         if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
           event.preventDefault();
           const option = mask[activeMaskIndex].options[activeOptionIndex];
@@ -327,7 +328,7 @@ const MaskedInput = forwardRef(
     );
 
     const onEsc = useCallback(
-      (event) => {
+      event => {
         if (showDrop) {
           // we have to stop both synthetic events and native events
           // drop and layer should not close by pressing esc on this input
@@ -342,7 +343,7 @@ const MaskedInput = forwardRef(
     const onHideDrop = useCallback(() => setShowDrop(false), []);
 
     const renderPlaceholder = () =>
-      mask.map((item) => item.placeholder || item.fixed).join('');
+      mask.map(item => item.placeholder || item.fixed).join('');
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -377,12 +378,12 @@ const MaskedInput = forwardRef(
             {...rest}
             value={value}
             theme={theme}
-            onFocus={(event) => {
+            onFocus={event => {
               setFocus(true);
               setShowDrop(true);
               if (onFocus) onFocus(event);
             }}
-            onBlur={(event) => {
+            onBlur={event => {
               setFocus(false);
               // This will be called when the user clicks on a suggestion,
               // check for that and don't remove the drop in that case.
@@ -412,7 +413,9 @@ const MaskedInput = forwardRef(
                   <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                     {option}
                   </Box>
-                ) : undefined;
+                ) : (
+                  undefined
+                );
                 // if we have a child, turn on plain, and hoverIndicator
 
                 return (
@@ -443,12 +446,6 @@ const MaskedInput = forwardRef(
 );
 
 MaskedInput.displayName = 'MaskedInput';
+MaskedInput.propTypes = MaskedInputPropTypes;
 
-let MaskedInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-const MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-
-export { MaskedInputWrapper as MaskedInput };
+export { MaskedInput };

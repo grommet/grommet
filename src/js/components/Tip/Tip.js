@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
+import { TipPropTypes } from './propTypes';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
@@ -38,7 +39,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
     onFocus: () => setOver(true),
     onBlur: () => setOver(false),
     key: 'tip-child',
-    ref: (node) => {
+    ref: node => {
       // https://github.com/facebook/react/issues/8873#issuecomment-287873307
       if (typeof componentRef === 'function') {
         componentRef(node);
@@ -73,12 +74,6 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 });
 
 Tip.displayName = 'Tip';
+Tip.propTypes = TipPropTypes;
 
-let TipDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TipDoc = require('./doc').doc(Tip);
-}
-const TipWrapper = TipDoc || Tip;
-
-export { TipWrapper as Tip };
+export { Tip };

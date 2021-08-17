@@ -15,6 +15,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ButtonPropTypes } from './propTypes';
 
 import { Box } from '../Box';
 import { Tip } from '../Tip';
@@ -230,14 +231,14 @@ const Button = forwardRef(
       return colorIsDark(backgroundColor, theme);
     };
 
-    const onMouseOverButton = (event) => {
+    const onMouseOverButton = event => {
       setHover(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutButton = (event) => {
+    const onMouseOutButton = event => {
       setHover(false);
       if (onMouseOut) {
         onMouseOut(event);
@@ -332,11 +333,11 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={(event) => {
+          onFocus={event => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={(event) => {
+          onBlur={event => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
@@ -371,11 +372,11 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={(event) => {
+          onFocus={event => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={(event) => {
+          onBlur={event => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
@@ -415,12 +416,6 @@ const Button = forwardRef(
 );
 
 Button.displayName = 'Button';
+Button.propTypes = ButtonPropTypes;
 
-let ButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-const ButtonWrapper = ButtonDoc || Button;
-
-export { ButtonWrapper as Button };
+export { Button };

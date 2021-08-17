@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
+import { DistributionPropTypes } from './propTypes';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -35,7 +36,7 @@ const Distribution = ({
   if (values.length > 1) {
     const reducer = (accumulator, { value }) => accumulator + (value || 0);
     const total = values
-      .filter((v) => Object.prototype.hasOwnProperty.call(v, 'value'))
+      .filter(v => Object.prototype.hasOwnProperty.call(v, 'value'))
       .reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
@@ -109,7 +110,7 @@ const Distribution = ({
 
 Distribution.defaultProps = {
   basis: undefined,
-  children: (value) => (
+  children: value => (
     <Box fill border>
       {/* eslint-disable-next-line react/destructuring-assignment */}
       <Text>{value.value}</Text>
@@ -120,11 +121,6 @@ Distribution.defaultProps = {
   values: [],
 };
 
-let DistributionDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DistributionDoc = require('./doc').doc(Distribution);
-}
-const DistributionWrapper = DistributionDoc || Distribution;
+Distribution.propTypes = DistributionPropTypes;
 
-export { DistributionWrapper as Distribution };
+export { Distribution };

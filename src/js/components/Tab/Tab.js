@@ -10,6 +10,7 @@ import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
+import { TabPropTypes } from './propTypes';
 
 const Tab = forwardRef(
   (
@@ -200,10 +201,6 @@ Tab.displayName = 'Tab';
 Tab.defaultProps = {};
 Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 
-let TabDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
-}
-const TabWrapper = TabDoc || Tab;
+Tab.propTypes = TabPropTypes;
 
-export { TabWrapper as Tab };
+export { Tab };

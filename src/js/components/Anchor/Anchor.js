@@ -14,7 +14,7 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
-import { AnchorType } from './propTypes';
+import { AnchorPropTypes } from './propTypes';
 
 const Anchor = forwardRef(
   (
@@ -69,11 +69,11 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={(event) => {
+        onFocus={event => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={(event) => {
+        onBlur={event => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
@@ -99,6 +99,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
-Anchor.propTypes = AnchorType;
+Anchor.propTypes = AnchorPropTypes;
 
 export { Anchor };

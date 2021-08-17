@@ -2,12 +2,13 @@ import React, { forwardRef, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
+import { MeterPropTypes } from './propTypes';
 
-const deriveMax = (values) => {
+const deriveMax = values => {
   let max = 100;
   if (values && values.length > 1) {
     max = 0;
-    values.forEach((v) => {
+    values.forEach(v => {
       max += v.value;
     });
   }
@@ -70,11 +71,6 @@ const Meter = forwardRef(
 );
 
 Meter.displayName = 'Meter';
+Meter.prototype = MeterPropTypes;
 
-let MeterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-const MeterWrapper = MeterDoc || Meter;
-
-export { MeterWrapper as Meter };
+export { Meter };

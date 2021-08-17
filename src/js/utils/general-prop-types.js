@@ -2,44 +2,6 @@ import PropTypes from 'prop-types';
 
 export const a11yTitlePropType = PropTypes.string;
 
-export const getBorderPropType = ({ includeBetween = true }) =>
-  PropTypes.shape({
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        dark: PropTypes.string,
-        light: PropTypes.string,
-      }),
-    ]),
-    side: PropTypes.oneOf([
-      'top',
-      'left',
-      'bottom',
-      'right',
-      'start',
-      'end',
-      'horizontal',
-      'vertical',
-      'all',
-      ...(includeBetween ? ['between'] : []),
-    ]),
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]),
-    style: PropTypes.oneOf([
-      'solid',
-      'dashed',
-      'dotted',
-      'double',
-      'groove',
-      'ridge',
-      'inset',
-      'outset',
-      'hidden',
-    ]),
-  });
-
 export const colorPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
@@ -229,3 +191,5 @@ export const widthPropType = PropTypes.oneOfType([
     max: PropTypes.oneOfType([dimSizeType, PropTypes.string]),
   }),
 ]);
+
+export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];

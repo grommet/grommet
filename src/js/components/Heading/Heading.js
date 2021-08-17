@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 
 import { StyledHeading } from './StyledHeading';
+import { HeadingPropTypes } from './propTypes';
 
 const Heading = forwardRef((
   { color, fill, level, ...rest },
@@ -22,12 +23,6 @@ Heading.defaultProps = {
   level: 1,
   responsive: true,
 };
+Heading.propTypes = HeadingPropTypes;
 
-let HeadingDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  HeadingDoc = require('./doc').doc(Heading);
-}
-const HeadingWrapper = HeadingDoc || Heading;
-
-export { HeadingWrapper as Heading };
+export { Heading };

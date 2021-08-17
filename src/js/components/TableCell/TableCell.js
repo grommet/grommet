@@ -15,6 +15,7 @@ import { Box } from '../Box';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
+import { TableCellPropTypes } from './propTypes';
 
 const verticalAlignToJustify = {
   middle: 'center',
@@ -102,7 +103,7 @@ const TableCell = forwardRef(
     }
     // merge tabelContextTheme and rest
     const mergedProps = { ...tableContextTheme, ...rest };
-    Object.keys(mergedProps).forEach((key) => {
+    Object.keys(mergedProps).forEach(key => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
     });
     // split out background, border, and pad
@@ -184,12 +185,6 @@ const TableCell = forwardRef(
 );
 
 TableCell.displayName = 'TableCell';
+TableCell.propTypes = TableCellPropTypes;
 
-let TableCellDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableCellDoc = require('./doc').doc(TableCell);
-}
-const TableCellWrapper = TableCellDoc || TableCell;
-
-export { TableCellWrapper as TableCell };
+export { TableCell };

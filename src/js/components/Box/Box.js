@@ -12,6 +12,7 @@ import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
+import { BoxPropTypes } from './propTypes';
 
 const Box = forwardRef(
   (
@@ -41,10 +42,10 @@ const Box = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const focusable = useMemo(
-      () => onClick && !(tabIndex < 0),
-      [onClick, tabIndex],
-    );
+    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
+      onClick,
+      tabIndex,
+    ]);
 
     const [focus, setFocus] = useState();
 
@@ -52,11 +53,11 @@ const Box = forwardRef(
       if (focusable) {
         return {
           onClick,
-          onFocus: (event) => {
+          onFocus: event => {
             setFocus(true);
             if (onFocus) onFocus(event);
           },
-          onBlur: (event) => {
+          onBlur: event => {
             setFocus(false);
             if (onBlur) onBlur(event);
           },
@@ -165,11 +166,5 @@ const Box = forwardRef(
 );
 
 Box.displayName = 'Box';
-
-let BoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-const BoxWrapper = BoxDoc || Box;
-
-export { BoxWrapper as Box };
+Box.propTypes = BoxPropTypes;
+export { Box };

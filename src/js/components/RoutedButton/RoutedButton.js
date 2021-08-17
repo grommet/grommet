@@ -52,11 +52,4 @@ class RoutedButton extends Component {
   }
 }
 
-let RoutedButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedButtonDoc = require('./doc').doc(RoutedButton);
-}
-const RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;
-
-export { RoutedButtonWrapper as RoutedButton };
+export { RoutedButton };

@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { DropPropTypes } from './propTypes';
 
 const Drop = forwardRef(
   (
@@ -64,11 +65,6 @@ const Drop = forwardRef(
 );
 
 Drop.displayName = 'Drop';
+Drop.propTypes = DropPropTypes;
 
-let DropDoc;
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-const DropWrapper = DropDoc || Drop;
-
-export { DropWrapper as Drop };
+export { Drop };

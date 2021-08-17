@@ -16,6 +16,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { MenuPropTypes } from './propTypes';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -25,7 +26,7 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
-  ${(props) => props.theme.menu.extend};
+  ${props => props.theme.menu.extend};
 `;
 
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
@@ -119,7 +120,7 @@ const Menu = forwardRef((props, ref) => {
     setOpen(true);
   }, []);
 
-  const onSelectMenuItem = (event) => {
+  const onSelectMenuItem = event => {
     if (isOpen) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
@@ -131,10 +132,10 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const isTab = (event) =>
+  const isTab = event =>
     event.keyCode === constants.tab || event.which === constants.tab;
 
-  const onNextMenuItem = (event) => {
+  const onNextMenuItem = event => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -167,7 +168,7 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const onPreviousMenuItem = (event) => {
+  const onPreviousMenuItem = event => {
     event.preventDefault();
     if (!isOpen) {
       onDropOpen();
@@ -236,7 +237,7 @@ const Menu = forwardRef((props, ref) => {
   const controlMirror = (
     <Box flex={false}>
       <Button
-        ref={(r) => {
+        ref={r => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
@@ -288,7 +289,7 @@ const Menu = forwardRef((props, ref) => {
         onClose={onDropClose}
         dropContent={
           <Keyboard
-            onTab={(event) =>
+            onTab={event =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
             onEnter={onSelectMenuItem}
@@ -312,14 +313,16 @@ const Menu = forwardRef((props, ref) => {
                       {item.icon}
                       {!item.reverse && item.label}
                     </Box>
-                  ) : undefined;
+                  ) : (
+                    undefined
+                  );
                   // if we have a child, turn on plain, and hoverIndicator
 
                   return (
                     // eslint-disable-next-line react/no-array-index-key
                     <Box key={index} flex={false}>
                       <Button
-                        ref={(r) => {
+                        ref={r => {
                           buttonRefs[index] = r;
                         }}
                         onFocus={() => setActiveItemIndex(index)}
@@ -378,11 +381,6 @@ Menu.defaultProps = {
 };
 
 Menu.displayName = 'Menu';
+Menu.propTypes = MenuPropTypes;
 
-let MenuDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
-}
-const MenuWrapper = MenuDoc || Menu;
-
-export { MenuWrapper as Menu };
+export { Menu };

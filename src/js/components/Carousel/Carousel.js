@@ -16,7 +16,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
-import { CarouselType } from './propTypes';
+import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
   activeChild,
@@ -52,7 +52,7 @@ const Carousel = ({
   }
 
   const onChildChange = useCallback(
-    (index) => {
+    index => {
       if (onChild) {
         onChild(index);
       }
@@ -111,7 +111,7 @@ const Carousel = ({
     onChildChange(activeIndex - 1);
   };
 
-  const onSelect = (index) => () => {
+  const onSelect = index => () => {
     if (activeIndex !== index) {
       clearInterval(timerRef.current);
       setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
@@ -183,11 +183,11 @@ const Carousel = ({
         <Box
           tabIndex="0"
           focus={focus}
-          onFocus={(event) => {
+          onFocus={event => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={(event) => {
+          onBlur={event => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
@@ -253,6 +253,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-Carousel.propTypes = CarouselType;
+Carousel.propTypes = CarouselPropTypes;
 
 export { Carousel };

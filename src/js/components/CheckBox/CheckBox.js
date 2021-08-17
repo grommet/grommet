@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { CheckBoxPropTypes } from './propTypes';
 
 import {
   StyledCheckBox,
@@ -18,7 +19,7 @@ import {
 
 import { normalizeColor } from '../../utils';
 
-const stopLabelClick = (event) => {
+const stopLabelClick = event => {
   // prevents clicking on the label trigging the event twice
   // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
   if (event.target.type !== 'checkbox') {
@@ -102,8 +103,10 @@ const CheckBox = forwardRef(
       hidden = <input name={name} type="hidden" value="true" />;
     }
 
-    const { checked: CheckedIcon, indeterminate: IndeterminateIcon } =
-      theme.checkBox.icons;
+    const {
+      checked: CheckedIcon,
+      indeterminate: IndeterminateIcon,
+    } = theme.checkBox.icons;
 
     let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
@@ -179,15 +182,15 @@ const CheckBox = forwardRef(
             disabled,
           })}
           {...themeableProps}
-          onFocus={(event) => {
+          onFocus={event => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={(event) => {
+          onBlur={event => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
-          onChange={(event) => {
+          onChange={event => {
             setChecked(event.target.checked);
             if (onChange) onChange(event);
           }}
@@ -212,10 +215,10 @@ const CheckBox = forwardRef(
         checked={checked}
         onClick={stopLabelClick}
         pad={pad}
-        onMouseEnter={(event) => onMouseEnter?.(event)}
-        onMouseOver={(event) => onMouseOver?.(event)}
-        onMouseLeave={(event) => onMouseLeave?.(event)}
-        onMouseOut={(event) => onMouseOut?.(event)}
+        onMouseEnter={event => onMouseEnter?.(event)}
+        onMouseOver={event => onMouseOver?.(event)}
+        onMouseLeave={event => onMouseLeave?.(event)}
+        onMouseOut={event => onMouseOut?.(event)}
         {...themeableProps}
       >
         {first}
@@ -226,12 +229,6 @@ const CheckBox = forwardRef(
 );
 
 CheckBox.displayName = 'CheckBox';
+CheckBox.propTypes = CheckBoxPropTypes;
 
-let CheckBoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-const CheckBoxWrapper = CheckBoxDoc || CheckBox;
-
-export { CheckBoxWrapper as CheckBox };
+export { CheckBox };

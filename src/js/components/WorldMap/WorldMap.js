@@ -5,6 +5,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledWorldMap } from './StyledWorldMap';
+import { WorldMapPropTypes } from './propTypes';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels. The contents have both an area boundary for interaction
@@ -688,12 +689,6 @@ WorldMap.displayName = 'WorldMap';
 
 WorldMap.defaultProps = {};
 Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
+WorldMap.propTypes = WorldMapPropTypes;
 
-let WorldMapDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  WorldMapDoc = require('./doc').doc(WorldMap);
-}
-const WorldMapWrapper = WorldMapDoc || WorldMap;
-
-export { WorldMapWrapper as WorldMap };
+export { WorldMap };
