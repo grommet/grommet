@@ -16,11 +16,4 @@ const Header = React.forwardRef(({ ...rest }, ref) => (
 ));
 Header.displayName = 'Header';
 
-let HeaderDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  HeaderDoc = require('./doc').doc(Header);
-}
-const HeaderWrapper = HeaderDoc || Header;
-
-export { HeaderWrapper as Header };
+export { Header };

@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
+import { FormPropTypes } from './propTypes';
 
 const defaultValue = {};
 const defaultTouched = {};
@@ -482,12 +483,6 @@ const Form = forwardRef(
 );
 
 Form.displayName = 'Form';
+Form.propTypes = FormPropTypes;
 
-let FormDoc;
-if (process.env.NODE_ENV !== 'production') {
-  FormDoc = require('./doc').doc(Form); // eslint-disable-line global-require
-}
-
-const FormWrapper = FormDoc || Form;
-
-export { FormWrapper as Form };
+export { Form };

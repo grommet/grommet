@@ -1,18 +1,2 @@
 ## TableBody
-The body of a table.
-
-## Usage
-
-```javascript
-import { TableBody } from 'grommet';
-<TableBody />
-```
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-tbody
-```
+Documentation for this component: https://v2.grommet.io/table

@@ -12,6 +12,7 @@ import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
+import { BoxPropTypes } from './propTypes';
 
 const Box = forwardRef(
   (
@@ -165,11 +166,5 @@ const Box = forwardRef(
 );
 
 Box.displayName = 'Box';
-
-let BoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-const BoxWrapper = BoxDoc || Box;
-
-export { BoxWrapper as Box };
+Box.propTypes = BoxPropTypes;
+export { Box };
