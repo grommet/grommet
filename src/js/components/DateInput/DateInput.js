@@ -23,6 +23,7 @@ import {
   valueToText,
   textToValue,
 } from './utils';
+import { DateInputPropTypes } from './propTypes';
 
 const DateInput = forwardRef(
   (
@@ -176,6 +177,7 @@ const DateInput = forwardRef(
               setOpen(true);
               if (onFocus) onFocus(event);
             }}
+            onClick={() => setOpen(true)}
           />
         </Keyboard>
       </FormContext.Provider>
@@ -200,7 +202,9 @@ const DateInput = forwardRef(
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
-          onClickOutside={() => setOpen(false)}
+          onClickOutside={({ target }) => {
+            if (target !== ref.current) setOpen(false);
+          }}
           {...dropProps}
         >
           {calendar}
@@ -213,12 +217,6 @@ const DateInput = forwardRef(
 );
 
 DateInput.displayName = 'DateInput';
+DateInput.propTypes = DateInputPropTypes;
 
-let DateInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DateInputDoc = require('./doc').doc(DateInput);
-}
-const DateInputWrapper = DateInputDoc || DateInput;
-
-export { DateInputWrapper as DateInput };
+export { DateInput };

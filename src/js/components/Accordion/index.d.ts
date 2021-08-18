@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AnimateType } from '../../utils';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
 
 export interface AccordionProps {
   activeIndex?: number | number[];
