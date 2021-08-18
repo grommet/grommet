@@ -159,7 +159,11 @@ exports[`RangeSelector basic 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -178,7 +182,11 @@ exports[`RangeSelector basic 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -354,7 +362,11 @@ exports[`RangeSelector color 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -373,7 +385,11 @@ exports[`RangeSelector color 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -654,7 +670,11 @@ exports[`RangeSelector direction 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -673,7 +693,11 @@ exports[`RangeSelector direction 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -701,7 +725,11 @@ exports[`RangeSelector direction 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c11"
+        role="slider"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -720,7 +748,11 @@ exports[`RangeSelector direction 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c11"
+        role="slider"
         style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -897,7 +929,11 @@ exports[`RangeSelector handle keyboard 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -916,7 +952,11 @@ exports[`RangeSelector handle keyboard 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1093,7 +1133,11 @@ exports[`RangeSelector handle mouse 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1112,7 +1156,11 @@ exports[`RangeSelector handle mouse 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1289,7 +1337,11 @@ exports[`RangeSelector handle touch gestures 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1308,7 +1360,11 @@ exports[`RangeSelector handle touch gestures 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1502,7 +1558,11 @@ exports[`RangeSelector invert 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1521,7 +1581,11 @@ exports[`RangeSelector invert 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1549,7 +1613,11 @@ exports[`RangeSelector invert 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1568,7 +1636,11 @@ exports[`RangeSelector invert 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1744,7 +1816,11 @@ exports[`RangeSelector max 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1763,7 +1839,11 @@ exports[`RangeSelector max 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1939,7 +2019,11 @@ exports[`RangeSelector min 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -1958,7 +2042,11 @@ exports[`RangeSelector min 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2169,7 +2257,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2188,7 +2280,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2216,7 +2312,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2235,7 +2335,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2263,7 +2367,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2282,7 +2390,11 @@ exports[`RangeSelector opacity 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2652,7 +2764,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2671,7 +2787,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2699,7 +2819,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2718,7 +2842,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2746,7 +2874,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2765,7 +2897,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2793,7 +2929,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2812,7 +2952,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2840,7 +2984,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -2859,7 +3007,11 @@ exports[`RangeSelector round 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3035,7 +3187,11 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3054,7 +3210,11 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3438,7 +3598,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3457,7 +3621,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3485,7 +3653,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3504,7 +3676,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3532,7 +3708,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3551,7 +3731,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3579,7 +3763,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3598,7 +3786,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3626,7 +3818,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3645,7 +3841,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3673,7 +3873,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3692,7 +3896,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3720,7 +3928,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3739,7 +3951,11 @@ exports[`RangeSelector size 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3916,7 +4132,11 @@ exports[`RangeSelector step renders correct values 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
@@ -3935,7 +4155,11 @@ exports[`RangeSelector step renders correct values 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="100"
         class="c5"
+        role="slider"
         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
