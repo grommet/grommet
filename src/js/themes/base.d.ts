@@ -1023,6 +1023,40 @@ export interface ThemeType {
     colors?: GraphColorsType;
     extend?: ExtendType;
   };
+  notification?: {
+    container?: BoxProps;
+    toast?: {
+      container?: BoxProps;
+    };
+    iconContainer?: BoxProps;
+    textContainer?: BoxProps;
+    title?: TextProps;
+    message?: TextProps;
+    close?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    critical?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    warning?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    normal?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    unknown?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    undefined?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+  };
   pagination?: {
     button?: ButtonType;
     container?: BoxProps;

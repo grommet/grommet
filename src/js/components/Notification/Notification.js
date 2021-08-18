@@ -7,6 +7,8 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
+import { NotificationType } from './propTypes';
+
 const Notification = ({ toast, title, message, status, onClose }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -63,6 +65,14 @@ const Notification = ({ toast, title, message, status, onClose }) => {
   return content;
 };
 
+Notification.defaultProps = {
+  status: 'unknown',
+  toast: false,
+};
+
+Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';
-const NotificationWrapper = Notification;
-export { NotificationWrapper as Notification };
+
+Notification.propTypes = NotificationType;
+
+export { Notification };
