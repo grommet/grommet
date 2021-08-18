@@ -181,6 +181,10 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id: 'rangeSelector.lower',
       messages: messages
     }),
+    role: "slider",
+    "aria-valuenow": lower,
+    "aria-valuemin": min,
+    "aria-valuemax": max,
     tabIndex: 0,
     ref: ref,
     color: color,
@@ -222,6 +226,10 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id: 'rangeSelector.upper',
       messages: messages
     }),
+    role: "slider",
+    "aria-valuenow": upper,
+    "aria-valuemin": min,
+    "aria-valuemax": max,
     tabIndex: 0,
     color: color,
     direction: direction,
