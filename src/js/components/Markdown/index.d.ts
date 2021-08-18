@@ -1,6 +1,7 @@
 import * as React from 'react';
 export interface MarkdownProps {
   components?: {};
+  options?: {};
 }
 
 type divProps = JSX.IntrinsicElements['div'];
