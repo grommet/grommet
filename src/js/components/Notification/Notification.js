@@ -15,7 +15,11 @@ const Notification = ({ toast, title, message, status, onClose }) => {
   const { color: closeIconColor } = theme.notification.close;
 
   let content = (
-    <Box direction="row">
+    <Box
+      {...theme.notification.container}
+      {...(toast ? { ...theme.notification.toast.container } : {})}
+      direction="row"
+    >
       <Box {...theme.notification.iconContainer}>
         <StatusIcon color={color} />
       </Box>
@@ -51,7 +55,7 @@ const Notification = ({ toast, title, message, status, onClose }) => {
         onEsc={onClose}
         plain
       >
-        <Box {...theme.notification.toast.container}>{content}</Box>
+        {content}
       </Layer>
     );
   }
@@ -60,11 +64,5 @@ const Notification = ({ toast, title, message, status, onClose }) => {
 };
 
 Notification.displayName = 'Notification';
-
-let NotificationDoc;
-if (process.env.NODE_ENV !== 'production') {
-  NotificationDoc = require('./doc').doc(Notification); // eslint-disable-line global-require
-}
-const NotificationWrapper = NotificationDoc || Notification;
-
+const NotificationWrapper = Notification;
 export { NotificationWrapper as Notification };

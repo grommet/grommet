@@ -1041,15 +1041,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     notification: {
+      container: {
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        background: {
+          color: 'background-front',
+        },
+      },
       toast: {
         container: {
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
-          pad: { horizontal: 'small', vertical: 'xsmall' },
-          background: {
-            color: 'background-front',
-          },
         },
       },
       iconContainer: {
