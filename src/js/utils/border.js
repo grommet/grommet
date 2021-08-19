@@ -41,12 +41,21 @@ export const responsiveBorderStyle = (data, theme) => {
 
 export const borderStyle = (data, responsive, theme) => {
   const styles = [];
+  if (Array.isArray(data)) {
+    data.forEach((d) => {
+      if (d) {
+        styles.push(borderStyle(d, responsive, theme));
+      }
+    });
+    return styles;
+  }
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
-  const value = `${style} ${theme.global.borderSize[borderSize] ||
-    borderSize} ${color}`;
+  const value = `${style} ${
+    theme.global.borderSize[borderSize] || borderSize
+  } ${color}`;
   const responsiveStyle = responsive && responsiveBorderStyle(data, theme);
   const breakpoint =
     responsiveStyle &&
