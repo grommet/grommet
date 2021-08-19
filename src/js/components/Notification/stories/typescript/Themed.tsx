@@ -4,7 +4,7 @@ import { Box, Grommet, Notification } from 'grommet';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet, ThemeType } from 'grommet/themes';
-import { DisabledOutline } from 'grommet-icons';
+import { DisabledOutline, CircleQuestion } from 'grommet-icons';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
@@ -18,7 +18,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
     container: {
       // any BoxProps
       pad: { horizontal: 'large', vertical: '36px' },
-      background: '#7a9300',
+      background: '#87a200',
       round: 'small',
     },
     iconContainer: {
@@ -43,9 +43,10 @@ const customTheme: ThemeType = deepMerge(grommet, {
     },
     close: {
       icon: DisabledOutline,
+      color: '#e0ffcc',
     },
     undefined: {
-      color: '#e0ffcc',
+      icon: CircleQuestion,
     },
   },
 });
@@ -54,7 +55,6 @@ export const Themed = () => (
   <Grommet theme={customTheme}>
     <Box pad="large" justify="center" gap="large">
       <Notification
-        status="normal"
         title="My Custom Notification"
         message="This notification has a custom theme applied."
         onClose={() => {}}
