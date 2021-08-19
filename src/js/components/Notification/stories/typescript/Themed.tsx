@@ -42,10 +42,9 @@ const customTheme: ThemeType = deepMerge(grommet, {
       },
     },
     close: {
-      icon: DisabledOutline,
       color: '#e0ffcc',
     },
-    undefined: {
+    unknown: {
       icon: CircleQuestion,
     },
   },
@@ -55,6 +54,7 @@ export const Themed = () => (
   <Grommet theme={customTheme}>
     <Box pad="large" justify="center" gap="large">
       <Notification
+        status="unknown"
         title="My Custom Notification"
         message="This notification has a custom theme applied."
         onClose={() => {}}
