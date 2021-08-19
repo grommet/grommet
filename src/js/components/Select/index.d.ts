@@ -54,7 +54,7 @@ export interface SelectProps {
     | string
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => any);
-  emptySearchMessage?: string;
+  emptySearchMessage?: string | React.ReactNode;
 }
 
 declare const Select: React.FC<
