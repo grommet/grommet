@@ -14,7 +14,7 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
-import { AnchorType } from './propTypes';
+import { AnchorPropTypes } from './propTypes';
 
 const Anchor = forwardRef(
   (
@@ -99,6 +99,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
-Anchor.propTypes = AnchorType;
+Anchor.propTypes = AnchorPropTypes;
 
 export { Anchor };

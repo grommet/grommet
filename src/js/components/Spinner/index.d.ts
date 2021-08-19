@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 import { ColorType } from 'grommet/utils';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
+
 export interface SpinnerProps {
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   color?: ColorType;

@@ -4,8 +4,16 @@ import { Box, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const MarginLayer = ({ margin, ...rest }) => (
-  <Grommet theme={grommet}>
+  <Grommet
+    options={{
+      layer: {
+        singleId: true,
+      },
+    }}
+    theme={grommet}
+  >
     <Layer
+      id="Margin top center"
       margin={
         margin || { left: '40px', top: '50px', right: '30px', bottom: '10px' }
       }

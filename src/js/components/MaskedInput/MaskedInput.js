@@ -21,6 +21,7 @@ import {
   StyledMaskedInputContainer,
   StyledIcon,
 } from './StyledMaskedInput';
+import { MaskedInputPropTypes } from './propTypes';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -443,12 +444,6 @@ const MaskedInput = forwardRef(
 );
 
 MaskedInput.displayName = 'MaskedInput';
+MaskedInput.propTypes = MaskedInputPropTypes;
 
-let MaskedInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-const MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-
-export { MaskedInputWrapper as MaskedInput };
+export { MaskedInput };

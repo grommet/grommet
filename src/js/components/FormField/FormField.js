@@ -19,6 +19,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldPropTypes } from './propTypes';
 
 const grommetInputNames = [
   'CheckBox',
@@ -486,12 +487,6 @@ const FormField = forwardRef(
 );
 
 FormField.displayName = 'FormField';
+FormField.propTypes = FormFieldPropTypes;
 
-let FormFieldDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-const FormFieldWrapper = FormFieldDoc || FormField;
-
-export { FormFieldWrapper as FormField };
+export { FormField };
