@@ -1601,6 +1601,72 @@ Object {
         "meter": Object {
           "color": "graph-0",
         },
+        "notification": Object {
+          "close": Object {
+            "color": Object {
+              "dark": "white",
+              "light": "black",
+            },
+            "icon": [Function],
+          },
+          "container": Object {
+            "background": Object {
+              "color": "background-front",
+            },
+            "pad": Object {
+              "horizontal": "small",
+              "vertical": "xsmall",
+            },
+          },
+          "critical": Object {
+            "color": "status-critical",
+            "icon": [Function],
+          },
+          "iconContainer": Object {
+            "pad": Object {
+              "right": "small",
+            },
+          },
+          "message": Object {
+            "color": Object {
+              "dark": "white",
+              "light": "black",
+            },
+          },
+          "normal": Object {
+            "color": "status-ok",
+            "icon": [Function],
+          },
+          "textContainer": Object {
+            "gap": "medium",
+          },
+          "title": Object {
+            "color": Object {
+              "dark": "white",
+              "light": "black",
+            },
+            "weight": "bold",
+          },
+          "toast": Object {
+            "container": Object {
+              "elevation": "medium",
+              "round": "xsmall",
+              "width": "medium",
+            },
+          },
+          "undefined": Object {
+            "color": "status-unknown",
+            "icon": [Function],
+          },
+          "unknown": Object {
+            "color": "status-unknown",
+            "icon": [Function],
+          },
+          "warning": Object {
+            "color": "status-warning",
+            "icon": [Function],
+          },
+        },
         "pagination": Object {
           "button": Object {
             "active": Object {

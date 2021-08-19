@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     title: PropTypes.string,
     message: PropTypes.string,
-    status: PropTypes.string,
+    status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
     toast: PropTypes.bool,
     onClose: PropTypes.func,
   };
