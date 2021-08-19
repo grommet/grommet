@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
+import {
+  edgeStyle,
+  focusStyle,
+  normalizeColor,
+  roundStyle,
+  borderStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -161,20 +167,18 @@ const StyledCheckBoxBox = styled.div`
 StyledCheckBoxBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
 
-/* eslint-disable max-len */
 const checkedToggleContainerStyle = css`
-  ${(props) =>
-    props.theme.checkBox.toggle.container?.checked?.border?.width &&
-    `border-width: ${props.theme.checkBox.toggle.container?.checked?.border?.width}`};
-  ${(props) =>
-    props.theme.checkBox.toggle.container?.checked?.border?.style &&
-    `border-style: ${props.theme.checkBox.toggle.container?.checked?.border?.style}`};
-  ${(props) =>
-    props.theme.checkBox.toggle.container?.checked?.border?.color &&
-    `border-color: ${normalizeColor(
-      props.theme.checkBox.toggle.container?.checked?.border?.color,
-      props.theme,
-    )}`};
+  ${(props) => {
+    const { border } = props.theme.checkBox.toggle.container?.checked ?? {};
+    return (
+      border &&
+      (Array.isArray(border)
+        ? props.border.map((borderSide) =>
+            borderStyle(borderSide, false, props.theme),
+          )
+        : borderStyle(border, false, props.theme))
+    );
+  }}
   ${(props) =>
     props.theme.checkBox.toggle.container?.checked?.background &&
     `background-color: ${normalizeColor(
@@ -182,7 +186,6 @@ const checkedToggleContainerStyle = css`
       props.theme,
     )}`};
 `;
-/* eslint-enable max-len */
 
 const StyledCheckBoxToggle = styled.span`
   box-sizing: border-box;
@@ -193,17 +196,28 @@ const StyledCheckBoxToggle = styled.span`
     props.theme.checkBox.toggle.size};
   height: ${(props) =>
     props.theme.checkBox.toggle.container?.height || props.theme.checkBox.size};
-  border-width: ${(props) =>
-    props.theme.checkBox.toggle.container?.border.width ||
-    props.theme.checkBox.border.width};
-  border-style: ${(props) =>
-    props.theme.checkBox.toggle.container?.border.style || 'solid'};
-  border-color: ${(props) =>
-    normalizeColor(
-      props.theme.checkBox.toggle.container?.border.color ||
+
+  ${(props) => {
+    const { border } = props.theme.checkBox.toggle.container ?? {};
+    if (border === undefined) {
+      return `
+      border-width: ${props.theme.checkBox.border.width};
+      border-style: solid;
+      border-color: ${normalizeColor(
         props.theme.checkBox.border.color,
-      props.theme,
-    )};
+        props.theme,
+      )};
+    `;
+    }
+    return (
+      border &&
+      (Array.isArray(border)
+        ? props.border.map((borderSide) =>
+            borderStyle(borderSide, false, props.theme),
+          )
+        : borderStyle(border, false, props.theme))
+    );
+  }}
   background-color: ${(props) => {
     const color =
       props.theme.checkBox.toggle.container?.background ||
@@ -245,18 +259,17 @@ const knobElevationStyle = css`
 
 /* eslint-disable max-len */
 const checkedToggleKnobStyle = css`
-  ${(props) =>
-    props.theme.checkBox.toggle.knob?.checked?.border?.width &&
-    `border-width: ${props.theme.checkBox.toggle.knob?.checked?.border?.width}`};
-  ${(props) =>
-    props.theme.checkBox.toggle.knob?.checked?.border?.style &&
-    `border-style: ${props.theme.checkBox.toggle.knob?.checked?.border?.style}`};
-  ${(props) =>
-    props.theme.checkBox.toggle.knob?.checked?.border?.color &&
-    `border-color: ${normalizeColor(
-      props.theme.checkBox.toggle.knob?.checked?.border?.color,
-      props.theme,
-    )}`};
+  ${(props) => {
+    const { border } = props.theme.checkBox.toggle.knob?.checked ?? {};
+    return (
+      border &&
+      (Array.isArray(border)
+        ? props.border.map((borderSide) =>
+            borderStyle(borderSide, false, props.theme),
+          )
+        : borderStyle(border, undefined, props.theme))
+    );
+  }}
   ${(props) =>
     props.theme.checkBox.toggle.knob?.checked?.color &&
     `background: ${normalizeColor(
@@ -271,8 +284,22 @@ const StyledCheckBoxKnob = styled.span`
   box-sizing: border-box;
   position: relative;
   display: inherit;
-  top: -${(props) => props.theme.checkBox.toggle.container?.border.width || props.theme.checkBox.border.width};
-  left: -${(props) => props.theme.checkBox.toggle.container?.border.width || props.theme.checkBox.border.width};
+
+  ${(props) => {
+    const { border: containerBorder } =
+      props.theme.checkBox.toggle.container ?? {};
+    if (containerBorder === undefined) {
+      return `
+        top: -${props.theme.checkBox.border.width};
+        left: -${props.theme.checkBox.border.width};
+      `;
+    }
+    return `
+      top: -${containerBorder.width || '0px'};
+      left: -${containerBorder.width || '0px'};
+    `;
+  }}
+
   transition: all 0.3s;
   width: ${(props) =>
     props.theme.checkBox.toggle.knob?.size || props.theme.checkBox.size};

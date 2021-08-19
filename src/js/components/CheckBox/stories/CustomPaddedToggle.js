@@ -22,9 +22,7 @@ const customToggleTheme = {
           background: 'toggleActiveBg',
         },
         pad: '4px',
-        border: {
-          width: '0px',
-        },
+        border: false,
       },
       knob: {
         size: '16px',
