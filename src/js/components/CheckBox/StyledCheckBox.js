@@ -257,7 +257,6 @@ const knobElevationStyle = css`
     ]};
 `;
 
-/* eslint-disable max-len */
 const checkedToggleKnobStyle = css`
   ${(props) => {
     const { border } = props.theme.checkBox.toggle.knob?.checked ?? {};
@@ -277,9 +276,7 @@ const checkedToggleKnobStyle = css`
       props.theme,
     )}`};
 `;
-/* eslint-enable max-len */
 
-/* eslint-disable max-len */
 const StyledCheckBoxKnob = styled.span`
   box-sizing: border-box;
   position: relative;
@@ -326,7 +323,6 @@ const StyledCheckBoxKnob = styled.span`
 
   ${(props) => props.theme.checkBox.toggle.knob?.extend};
 `;
-/* eslint-enable max-len */
 
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
