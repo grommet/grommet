@@ -380,8 +380,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     tabIndex: "-1",
     role: "menuitem",
     hoverIndicator: "background",
-    disabled: true,
-    option: emptySearchMessage
+    disabled: true
   }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage)))), clear && clear.position === 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
     clear: clear,
     name: name,

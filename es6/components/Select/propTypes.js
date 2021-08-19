@@ -52,7 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
       key: PropTypes.string,
       reduce: PropTypes.bool
     })]),
-    emptySearchMessage: PropTypes.string
+    emptySearchMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
   });
 }
 

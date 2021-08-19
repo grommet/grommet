@@ -61,7 +61,7 @@ if (process.env.NODE_ENV !== 'production') {
       key: _propTypes["default"].string,
       reduce: _propTypes["default"].bool
     })]),
-    emptySearchMessage: _propTypes["default"].string
+    emptySearchMessage: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node])
   });
 }
 
