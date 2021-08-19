@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, Notification, Text } from 'grommet';
+import { Box, Grommet, Notification } from 'grommet';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet, ThemeType } from 'grommet/themes';
@@ -18,7 +18,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
     container: {
       // any BoxProps
       pad: { horizontal: 'large', vertical: '36px' },
-      background: '#aaccff',
+      background: '#7a9300',
       round: 'small',
     },
     iconContainer: {
@@ -32,20 +32,20 @@ const customTheme: ThemeType = deepMerge(grommet, {
     },
     title: {
       // any TextProps
-      color: '#0223df',
+      color: '#001172',
     },
     message: {
       // any TextProps
       color: {
-        light: '#0223df',
-        dark: '#6101a0',
+        light: '#001172',
+        dark: '#340057',
       },
     },
     close: {
       icon: DisabledOutline,
     },
     undefined: {
-      color: '#b0ff7b',
+      color: '#e0ffcc',
     },
   },
 });
@@ -53,13 +53,12 @@ const customTheme: ThemeType = deepMerge(grommet, {
 export const Themed = () => (
   <Grommet theme={customTheme}>
     <Box pad="large" justify="center" gap="large">
-      <Box gap="xsmall">
-        <Text size="medium">Default (No status prop)</Text>
-        <Notification
-          title="My Custom Notification"
-          message="This notification has a custom theme applied."
-        />
-      </Box>
+      <Notification
+        status="normal"
+        title="My Custom Notification"
+        message="This notification has a custom theme applied."
+        onClose={() => {}}
+      />
     </Box>
   </Grommet>
 );

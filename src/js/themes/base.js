@@ -1041,39 +1041,39 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     notification: {
-      // any box props
       container: {
+        // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           color: 'background-front',
         },
       },
       toast: {
-        // any box props
         container: {
+          // any box props
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
         },
       },
-      // any box props
       iconContainer: {
+        // any box props
         pad: { right: 'small' },
       },
-      // any box props
       textContainer: {
+        // any box props
         gap: 'medium',
       },
-      // any text props
       title: {
+        // any text props
         weight: 'bold',
         color: {
           light: 'black',
           dark: 'white',
         },
       },
-      // any text props
       message: {
+        // any text props
         color: {
           light: 'black',
           dark: 'white',
