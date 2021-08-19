@@ -1041,6 +1041,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     notification: {
+      // any box props
       container: {
         pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
@@ -1048,18 +1049,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       toast: {
+        // any box props
         container: {
           elevation: 'medium',
           round: 'xsmall',
           width: 'medium',
         },
       },
+      // any box props
       iconContainer: {
         pad: { right: 'small' },
       },
+      // any box props
       textContainer: {
         gap: 'medium',
       },
+      // any text props
       title: {
         weight: 'bold',
         color: {
@@ -1067,6 +1072,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           dark: 'white',
         },
       },
+      // any text props
       message: {
         color: {
           light: 'black',
