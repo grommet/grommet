@@ -73,7 +73,10 @@ const DateInput = forwardRef(
     // We compare using textToValue to avoid "06/01/2021" not
     // matching "06/1/2021".
     useEffect(() => {
-      if (schema && value !== undefined) {
+      if (
+        schema &&
+        value !== undefined
+      ) {
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
