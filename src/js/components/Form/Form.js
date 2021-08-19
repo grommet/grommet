@@ -405,7 +405,7 @@ const Form = forwardRef(
         }
 
         return undefined;
-      }, [error, name, required, validateArg]);
+      }, [error, name, required, validateArg, disabled]);
 
       return {
         error,
