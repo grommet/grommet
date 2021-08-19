@@ -1,6 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -18,6 +19,56 @@ describe('DateInput', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should reset date if passed empty string', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState(DATE);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Reset Date" onClick={() => setValue('')} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).not.toEqual('');
+    fireEvent.click(getByText('Reset Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual('');
+  });
+
+  test('should reset date if passed an []', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState(DATES);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Reset Date" onClick={() => setValue([])} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).not.toEqual('');
+    fireEvent.click(getByText('Reset Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual('');
+  });
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
@@ -190,6 +241,23 @@ describe('DateInput', () => {
       which: 27,
     });
     expect(document.getElementById('item__drop')).toBeNull();
+  });
+
+  test('click', () => {
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          value={DATE}
+          onFocus={() => {}}
+        />
+      </Grommet>,
+    );
+
+    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
   test('select inline', () => {
@@ -449,7 +517,7 @@ describe('DateInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  test(`dropProps should pass props to Drop 
+  test(`dropProps should pass props to Drop
   when not inline`, () => {
     const { container } = render(
       <Grommet>
@@ -464,7 +532,7 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`buttonProps should pass props to Button 
+  test(`buttonProps should pass props to Button
   when not inline and no format`, () => {
     window.scrollTo = jest.fn();
     const { container } = render(

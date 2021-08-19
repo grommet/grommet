@@ -49,11 +49,4 @@ class RoutedAnchor extends Component {
   }
 }
 
-let RoutedAnchorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor);
-}
-const RoutedAnchorWrapper = RoutedAnchorDoc || RoutedAnchor;
-
-export { RoutedAnchorWrapper as RoutedAnchor };
+export { RoutedAnchor };
