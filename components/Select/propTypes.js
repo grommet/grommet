@@ -34,7 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
     dropTarget: _propTypes["default"].object,
     dropProps: _propTypes["default"].object,
     focusIndicator: _propTypes["default"].bool,
-    icon: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func, _propTypes["default"].node]),
+    icon: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func, _propTypes["default"].node, _propTypes["default"].elementType]),
     labelKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     messages: _propTypes["default"].shape({
       multiple: _propTypes["default"].string
