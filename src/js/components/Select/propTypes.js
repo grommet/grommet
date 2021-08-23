@@ -50,7 +50,12 @@ if (process.env.NODE_ENV !== 'production') {
     dropTarget: PropTypes.object,
     dropProps: PropTypes.object,
     focusIndicator: PropTypes.bool,
-    icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.func, PropTypes.node]),
+    icon: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.func,
+      PropTypes.node,
+      PropTypes.elementType,
+    ]),
     labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     messages: PropTypes.shape({
       multiple: PropTypes.string,

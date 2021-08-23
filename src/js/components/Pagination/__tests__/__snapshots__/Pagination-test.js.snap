@@ -7194,7 +7194,7 @@ exports[`Pagination should display next page of results when "next" is
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jehgOx"
+              class="StyledIcon-sc-ofa7kd-0 iZdQSA"
               viewBox="0 0 24 24"
             >
               <path
@@ -7316,7 +7316,7 @@ exports[`Pagination should display next page of results when "next" is
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jehgOx"
+              class="StyledIcon-sc-ofa7kd-0 iZdQSA"
               viewBox="0 0 24 24"
             >
               <path
@@ -8337,7 +8337,7 @@ exports[`Pagination should display previous page of results when "previous" is
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jehgOx"
+              class="StyledIcon-sc-ofa7kd-0 iZdQSA"
               viewBox="0 0 24 24"
             >
               <path
@@ -8459,7 +8459,7 @@ exports[`Pagination should display previous page of results when "previous" is
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jehgOx"
+              class="StyledIcon-sc-ofa7kd-0 iZdQSA"
               viewBox="0 0 24 24"
             >
               <path

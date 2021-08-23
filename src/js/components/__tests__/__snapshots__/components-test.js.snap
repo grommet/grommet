@@ -715,8 +715,14 @@ Object {
             },
           },
           "icons": Object {
-            "collapse": [Function],
-            "expand": [Function],
+            "collapse": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "expand": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "panel": Object {},
         },
@@ -834,11 +840,23 @@ Object {
             "level": "4",
           },
           "icons": Object {
-            "next": [Function],
-            "previous": [Function],
+            "next": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "previous": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "small": Object {
-              "next": [Function],
-              "previous": [Function],
+              "next": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "render": [Function],
+              },
+              "previous": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "render": [Function],
+              },
             },
           },
           "large": Object {
@@ -877,9 +895,18 @@ Object {
             "icons": Object {},
           },
           "icons": Object {
-            "current": [Function],
-            "next": [Function],
-            "previous": [Function],
+            "current": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "next": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "previous": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
         },
         "chart": Object {
@@ -1028,10 +1055,22 @@ Object {
             },
           },
           "icons": Object {
-            "ascending": [Function],
-            "contract": [Function],
-            "descending": [Function],
-            "expand": [Function],
+            "ascending": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "contract": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "descending": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "expand": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "pinned": Object {
             "footer": Object {
@@ -1078,7 +1117,10 @@ Object {
             },
           },
           "icons": Object {
-            "remove": [Function],
+            "remove": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "label": Object {
             "margin": "small",
@@ -1574,8 +1616,14 @@ Object {
             "gap": "xsmall",
           },
           "icons": Object {
-            "down": [Function],
-            "up": [Function],
+            "down": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "up": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "item": Object {
             "border": "horizontal",
@@ -1594,7 +1642,10 @@ Object {
             },
           },
           "icons": Object {
-            "down": [Function],
+            "down": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
         },
         "meter": Object {
@@ -1676,8 +1727,14 @@ Object {
             "pad": "none",
           },
           "icons": Object {
-            "next": [Function],
-            "previous": [Function],
+            "next": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "previous": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
         },
         "paragraph": Object {
@@ -1762,7 +1819,10 @@ Object {
           "container": Object {},
           "control": Object {},
           "icons": Object {
-            "down": [Function],
+            "down": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
             "margin": Object {
               "horizontal": "small",
             },
@@ -1962,13 +2022,34 @@ Object {
             "background": "rgba(0, 0, 0, 0.7)",
           },
           "icons": Object {
-            "closedCaption": [Function],
-            "configure": [Function],
-            "fullScreen": [Function],
-            "pause": [Function],
-            "play": [Function],
-            "reduceVolume": [Function],
-            "volume": [Function],
+            "closedCaption": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "configure": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "fullScreen": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "pause": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "play": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "reduceVolume": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "volume": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "scrubber": Object {
             "color": "light-4",
