@@ -342,9 +342,12 @@ const Form = forwardRef(
       info: infoArg,
       name,
       required,
+      disabled,
       validate: validateArg,
     }) => {
-      const error = errorArg || validationResults.errors[name];
+      const error = disabled
+        ? undefined
+        : errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
 
       useEffect(() => {
@@ -394,12 +397,15 @@ const Form = forwardRef(
         } else if (index !== -1) requiredFields.current.splice(index, 1);
 
         if (validateArg || required) {
+          if (disabled) {
+            return undefined;
+          }
           validations.current[name] = validateField;
           return () => delete validations.current[name];
         }
 
         return undefined;
-      }, [error, name, required, validateArg]);
+      }, [error, name, required, validateArg, disabled]);
 
       return {
         error,
