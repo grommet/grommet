@@ -190,6 +190,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
   var _formContext$useFormF = formContext.useFormField({
+    disabled: disabled,
     error: errorProp,
     info: infoProp,
     name: name,

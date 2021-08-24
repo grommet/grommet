@@ -16,10 +16,12 @@ var useFormInput = function useFormInput(_, valueProp, initialValue) {
 
 var useFormField = function useFormField(_ref) {
   var error = _ref.error,
-      info = _ref.info;
+      info = _ref.info,
+      disabled = _ref.disabled;
   return {
     error: error,
-    info: info
+    info: info,
+    disabled: disabled
   };
 };
 

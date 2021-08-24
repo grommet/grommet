@@ -342,8 +342,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         infoArg = _ref6.info,
         name = _ref6.name,
         required = _ref6.required,
+        disabled = _ref6.disabled,
         validateArg = _ref6.validate;
-    var error = errorArg || validationResults.errors[name];
+    var error = disabled ? undefined : errorArg || validationResults.errors[name];
     var info = infoArg || validationResults.infos[name];
     (0, _react.useEffect)(function () {
       var validateSingle = function validateSingle(aValidate, value2, data) {
@@ -399,6 +400,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       } else if (index !== -1) requiredFields.current.splice(index, 1);
 
       if (validateArg || required) {
+        if (disabled) {
+          return undefined;
+        }
+
         validations.current[name] = validateField;
         return function () {
           return delete validations.current[name];
@@ -406,7 +411,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       }
 
       return undefined;
-    }, [error, name, required, validateArg]);
+    }, [error, name, required, validateArg, disabled]);
     return {
       error: error,
       info: info,

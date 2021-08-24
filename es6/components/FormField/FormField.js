@@ -165,6 +165,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var formContext = useContext(FormContext);
 
   var _formContext$useFormF = formContext.useFormField({
+    disabled: disabled,
     error: errorProp,
     info: infoProp,
     name: name,
