@@ -4978,7 +4978,7 @@ exports[`DataTable groupBy 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -5045,7 +5045,7 @@ exports[`DataTable groupBy 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -5101,7 +5101,7 @@ exports[`DataTable groupBy 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6272,7 +6272,7 @@ exports[`DataTable groupBy property 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6339,7 +6339,7 @@ exports[`DataTable groupBy property 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -6395,7 +6395,7 @@ exports[`DataTable groupBy property 2`] = `
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -10649,7 +10649,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -10781,7 +10781,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -10901,7 +10901,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11036,7 +11036,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11129,7 +11129,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -11210,7 +11210,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               >
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-sc-ofa7kd-0 jgaqVE"
+                  class="StyledIcon-ofa7kd-0 duBpAF"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -29384,7 +29384,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 iZdQSA"
+                class="StyledIcon-ofa7kd-0 jehgOx"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -29440,7 +29440,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 tiAWk"
+                class="StyledIcon-ofa7kd-0 hVBrNB"
                 viewBox="0 0 24 24"
               >
                 <path

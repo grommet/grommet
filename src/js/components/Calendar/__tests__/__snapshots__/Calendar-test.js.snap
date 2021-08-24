@@ -1189,7 +1189,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
@@ -1207,7 +1207,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
@@ -16003,7 +16003,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
@@ -16021,7 +16021,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
@@ -18021,7 +18021,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
@@ -18039,7 +18039,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 tiAWk"
+              class="StyledIcon-ofa7kd-0 hVBrNB"
               viewBox="0 0 24 24"
             >
               <path
