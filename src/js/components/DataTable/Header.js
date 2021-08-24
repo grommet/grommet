@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, {
   forwardRef,
   useCallback,
@@ -146,7 +147,9 @@ const Header = forwardRef(
     }, [cellWidths, onWidths]);
 
     const pin = pinProp ? ['top'] : [];
-
+    const selectPin = pinnedOffset && pinnedOffset._select ?
+      [...pin, 'left'] : pin;
+      
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>
@@ -172,7 +175,8 @@ const Header = forwardRef(
               size="auto"
               context="header"
               scope="col"
-              pin={pin}
+              pin={selectPin}
+              pinnedOffset={pinnedOffset && pinnedOffset._select}
             >
               {onSelect && (
                 <CheckBox
