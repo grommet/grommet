@@ -2746,7 +2746,7 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-sc-ofa7kd-0 bsCHQs"
         viewBox="0 0 24 24"
       >
         <path
@@ -4607,7 +4607,7 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-sc-ofa7kd-0 bsCHQs"
         viewBox="0 0 24 24"
       >
         <path
@@ -9243,7 +9243,7 @@ exports[`Select prop: onOpen 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-sc-ofa7kd-0 bsCHQs"
         viewBox="0 0 24 24"
       >
         <path
@@ -14769,7 +14769,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-ofa7kd-0 jLSzwp"
+          class="StyledIcon-sc-ofa7kd-0 bsCHQs"
           viewBox="0 0 24 24"
         >
           <path

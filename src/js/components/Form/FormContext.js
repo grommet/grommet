@@ -11,12 +11,12 @@ const useFormInput = (_, valueProp, initialValue) => {
   );
   return [
     valueProp !== undefined ? valueProp : value,
-    nextValue => {
+    (nextValue) => {
       if (initialValue !== undefined) setValue(nextValue);
     },
   ];
 };
 
-const useFormField = ({ error, info }) => ({ error, info });
+const useFormField = ({ error, info, disabled }) => ({ error, info, disabled });
 
 export const FormContext = React.createContext({ useFormField, useFormInput });
