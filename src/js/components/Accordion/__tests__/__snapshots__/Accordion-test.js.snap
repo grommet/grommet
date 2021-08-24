@@ -1663,7 +1663,7 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -1707,7 +1707,7 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -2122,7 +2122,7 @@ exports[`Accordion change to second Panel 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -2626,7 +2626,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -4243,7 +4243,7 @@ exports[`Accordion multiple panels 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -4491,7 +4491,7 @@ exports[`Accordion multiple panels 3`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -4549,7 +4549,7 @@ exports[`Accordion multiple panels 4`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -4795,7 +4795,7 @@ exports[`Accordion multiple panels 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5245,7 +5245,7 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5294,7 +5294,7 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5355,7 +5355,7 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5404,7 +5404,7 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5465,7 +5465,7 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5514,7 +5514,7 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5575,7 +5575,7 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -5624,7 +5624,7 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path
@@ -6699,7 +6699,7 @@ exports[`Accordion wrapped panel 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 jLSzwp"
+              class="StyledIcon-sc-ofa7kd-0 bsCHQs"
               viewBox="0 0 24 24"
             >
               <path

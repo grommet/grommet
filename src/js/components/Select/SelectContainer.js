@@ -441,7 +441,6 @@ const SelectContainer = forwardRef(
                 role="menuitem"
                 hoverIndicator="background"
                 disabled
-                option={emptySearchMessage}
               >
                 <Box {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
