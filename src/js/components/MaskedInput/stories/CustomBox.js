@@ -4,7 +4,15 @@ import { grommet } from 'grommet/themes';
 
 export const CustomBoxMaskedInput = () => {
   const [value, setValue] = React.useState('');
+  const [dropProps, setDropProps] = React.useState({});
   const boxRef = React.useRef();
+
+  // Update the DropProps target once ref exists
+  React.useEffect(() => {
+    const nextDropProps = { ...dropProps };
+    nextDropProps.target = boxRef.current;
+    setDropProps(nextDropProps);
+  }, [boxRef]);
 
   return (
     <Grommet full theme={grommet}>
@@ -22,7 +30,7 @@ export const CustomBoxMaskedInput = () => {
         <Box flex width="medium" gap="medium">
           <MaskedInput
             plain
-            dropProps={{ target: boxRef.current }}
+            dropProps={dropProps}
             mask={[
               {
                 length: [1, 4],
