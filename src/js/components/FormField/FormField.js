@@ -143,7 +143,7 @@ const FormField = forwardRef(
       className,
       component,
       contentProps,
-      disabled: disabledProp, // pass through in renderInput()
+      disabled, // pass through in renderInput()
       error: errorProp,
       help,
       htmlFor,
@@ -171,7 +171,7 @@ const FormField = forwardRef(
       onBlur: contextOnBlur,
       onChange: contextOnChange,
     } = formContext.useFormField({
-      disabled: disabledProp,
+      disabled,
       error: errorProp,
       info: infoProp,
       name,
@@ -227,7 +227,7 @@ const FormField = forwardRef(
       contents = contents || (
         <Input
           component={component}
-          disabled={disabledProp}
+          disabled={disabled}
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
@@ -245,7 +245,7 @@ const FormField = forwardRef(
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
         themeContentProps.background = formFieldTheme.error.background;
-      } else if (disabledProp && formFieldTheme.disabled) {
+      } else if (disabled && formFieldTheme.disabled) {
         themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
@@ -276,7 +276,7 @@ const FormField = forwardRef(
     let borderColor;
 
     if (
-      disabledProp &&
+      disabled &&
       formFieldTheme.disabled.border &&
       formFieldTheme.disabled.border.color
     ) {
@@ -310,7 +310,7 @@ const FormField = forwardRef(
 
     const labelStyle = { ...formFieldTheme.label };
 
-    if (disabledProp) {
+    if (disabled) {
       labelStyle.color =
         formFieldTheme.disabled && formFieldTheme.disabled.label
           ? formFieldTheme.disabled.label.color
@@ -405,7 +405,7 @@ const FormField = forwardRef(
       ) {
         outerBackground = formFieldTheme.focus.background.color;
       } else if (
-        disabledProp &&
+        disabled &&
         formFieldTheme.disabled &&
         formFieldTheme.disabled.background
       ) {
