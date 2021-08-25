@@ -1747,23 +1747,23 @@ exports[`List events Enter key 1`] = `
 
 exports[`List events Enter key 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
     aria-activedescendant="1"
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jlbD List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fMGZPN List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 htZDul List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
@@ -1919,22 +1919,22 @@ exports[`List events focus and blur 1`] = `
 
 exports[`List events focus and blur 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jlbD List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 bRlrPN List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
@@ -2104,22 +2104,22 @@ exports[`List events mouse events 1`] = `
 
 exports[`List events mouse events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jlbD List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 bRlrPN List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
@@ -3005,12 +3005,11 @@ exports[`List events should apply pagination styling 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -3060,9 +3059,9 @@ exports[`List events should apply pagination styling 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -4095,12 +4094,11 @@ exports[`List events should paginate 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -4150,9 +4148,9 @@ exports[`List events should paginate 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -4854,12 +4852,11 @@ exports[`List events should render correct num items per page (step) 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -4979,9 +4976,9 @@ exports[`List events should render correct num items per page (step) 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -5863,12 +5860,11 @@ exports[`List events should render new data when page changes 1`] = `
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -5918,9 +5914,9 @@ exports[`List events should render new data when page changes 1`] = `
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -5936,13 +5932,13 @@ exports[`List events should render new data when page changes 1`] = `
 
 exports[`List events should render new data when page changes 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dYebPD List__StyledContainer-sc-130gdqg-2 krLDvJ"
+    class="StyledBox-sc-13pk1d4-0 kUTqHn List__StyledContainer-sc-130gdqg-2 gGetON"
   >
     <ul
-      class="List__StyledList-sc-130gdqg-0 hnhbzG"
+      class="List__StyledList-sc-130gdqg-0 cDEUfG"
       role="list"
     >
       .c0 {
@@ -9504,91 +9500,90 @@ exports[`List events should render new data when page changes 2`] = `
       </li>
     </ul>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ZUJgG"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dwyeTK"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 iCrgvf Pagination__StyledPaginationContainer-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 eYkoZT Pagination__StyledPaginationContainer-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 dIHSGy"
+        class="StyledBox-sc-13pk1d4-0 fKqrK"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 jFUgSH"
+          class="StyledBox-sc-13pk1d4-0 gjrtDD"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 eMJPUV"
+                class="StyledIcon-sc-ofa7kd-0 iZdQSA"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 lcXCrn StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 eIoFrD StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 cCFJmp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 eJwTzl StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 lbyUZW"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 hZzYXl"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 kNKMzf StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fgRkGN"
+              class="StyledButtonKind-sc-1vhfpnt-0 doVtyP StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kfLcrZ"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -10470,12 +10465,11 @@ exports[`List events should show correct item index when "show" is a number 1`] 
                 class="c14"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -10525,9 +10519,9 @@ exports[`List events should show correct item index when "show" is a number 1`] 
                 class="c18"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -11357,12 +11351,11 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
                 class="c13"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="M17 2 7 12l10 10"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
-                  transform="matrix(-1 0 0 1 24 0)"
                 />
               </svg>
             </button>
@@ -11414,9 +11407,9 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
                 class="c17"
                 viewBox="0 0 24 24"
               >
-                <polyline
+                <path
+                  d="m7 2 10 10L7 22"
                   fill="none"
-                  points="7 2 17 12 7 22"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -11953,22 +11946,22 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 jOxPjD List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 jlbD List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fJLeA-d List__StyledItem-sc-130gdqg-1 epHUVe"
+      class="StyledBox-sc-13pk1d4-0 bRlrPN List__StyledItem-sc-130gdqg-1 jSJwLm"
       role="option"
       tabindex="-1"
     >
@@ -12336,12 +12329,11 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12357,9 +12349,9 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12406,12 +12398,11 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -12428,9 +12419,9 @@ exports[`List onOrder Keyboard move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12444,44 +12435,44 @@ exports[`List onOrder Keyboard move down 1`] = `
 
 exports[`List onOrder Keyboard move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
     aria-activedescendant="alphaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hlnGNr List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 pEQST List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -12489,33 +12480,32 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="1 alpha move down"
-          class="StyledButton-sc-323bzc-0 icOYCE"
+          class="StyledButton-sc-323bzc-0 kuTfRI"
           id="alphaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12524,56 +12514,55 @@ exports[`List onOrder Keyboard move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eUxEHJ List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 gYcprt List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="2 beta move up"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="betaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -12581,12 +12570,12 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12600,44 +12589,44 @@ exports[`List onOrder Keyboard move down 2`] = `
 
 exports[`List onOrder Keyboard move down 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
     aria-activedescendant="alphaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hlnGNr List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 pEQST List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -12645,33 +12634,32 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -12680,56 +12668,55 @@ exports[`List onOrder Keyboard move down 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eUxEHJ List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 gYcprt List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 icOYCE"
+          class="StyledButton-sc-323bzc-0 kuTfRI"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -12737,12 +12724,12 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13112,12 +13099,11 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13133,9 +13119,9 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13182,12 +13168,11 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13204,9 +13189,9 @@ exports[`List onOrder Keyboard move up 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13220,44 +13205,44 @@ exports[`List onOrder Keyboard move up 1`] = `
 
 exports[`List onOrder Keyboard move up 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
     aria-activedescendant="betaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hlnGNr List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 pEQST List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -13265,33 +13250,32 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="1 alpha move down"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="alphaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13300,56 +13284,55 @@ exports[`List onOrder Keyboard move up 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eUxEHJ List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 gYcprt List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="2 beta move up"
-          class="StyledButton-sc-323bzc-0 icOYCE"
+          class="StyledButton-sc-323bzc-0 kuTfRI"
           id="betaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -13357,12 +13340,12 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13376,44 +13359,44 @@ exports[`List onOrder Keyboard move up 2`] = `
 
 exports[`List onOrder Keyboard move up 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
     aria-activedescendant="betaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hlnGNr List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 pEQST List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -13421,33 +13404,32 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 icOYCE"
+          class="StyledButton-sc-323bzc-0 kuTfRI"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13456,56 +13438,55 @@ exports[`List onOrder Keyboard move up 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eUxEHJ List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 gYcprt List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -13513,12 +13494,12 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13888,12 +13869,11 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13909,9 +13889,9 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13958,12 +13938,11 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
@@ -13980,9 +13959,9 @@ exports[`List onOrder Mouse move down 1`] = `
             class="c10"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -13996,43 +13975,43 @@ exports[`List onOrder Mouse move down 1`] = `
 
 exports[`List onOrder Mouse move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 cZBHzF"
+    class="List__StyledList-sc-130gdqg-0 hHMCYB"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hlnGNr List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 pEQST List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -14040,33 +14019,32 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -14075,56 +14053,55 @@ exports[`List onOrder Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eUxEHJ List__StyledItem-sc-130gdqg-1 iuYNMY"
+      class="StyledBox-sc-13pk1d4-0 gYcprt List__StyledItem-sc-130gdqg-1 euXAmk"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 DkZvS"
+        class="StyledText-sc-1sadyjn-0 fxbXHC"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 kluzTJ"
+        class="StyledBox-sc-13pk1d4-0 dgbSgF"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 JhXAc"
+          class="StyledText-sc-1sadyjn-0 onXHw"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffHQai"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hCllNm"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fxZkpd"
+        class="StyledBox-sc-13pk1d4-0 blGRld"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 iCkcAg"
+          class="StyledButton-sc-323bzc-0 crfgvk"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 15-6-6-6 6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
             />
           </svg>
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 kwvefy"
+          class="StyledButton-sc-323bzc-0 hIqIZG"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -14132,12 +14109,12 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />

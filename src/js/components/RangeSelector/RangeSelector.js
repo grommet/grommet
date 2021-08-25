@@ -195,6 +195,10 @@ const RangeSelector = forwardRef(
         />
         <EdgeControl
           a11yTitle={format({ id: 'rangeSelector.lower', messages })}
+          role="slider"
+          aria-valuenow={lower}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           ref={ref}
           color={color}
@@ -239,6 +243,10 @@ const RangeSelector = forwardRef(
         />
         <EdgeControl
           a11yTitle={format({ id: 'rangeSelector.upper', messages })}
+          role="slider"
+          aria-valuenow={upper}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           color={color}
           direction={direction}

@@ -442,12 +442,11 @@ exports[`Carousel basic 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -468,7 +467,7 @@ exports[`Carousel basic 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -486,7 +485,7 @@ exports[`Carousel basic 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -504,9 +503,9 @@ exports[`Carousel basic 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -959,12 +958,11 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -985,7 +983,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1003,7 +1001,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1022,9 +1020,9 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1479,12 +1477,11 @@ exports[`Carousel navigate 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -1505,7 +1502,7 @@ exports[`Carousel navigate 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1523,7 +1520,7 @@ exports[`Carousel navigate 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1541,9 +1538,9 @@ exports[`Carousel navigate 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1557,89 +1554,88 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledStack-ajspsk-0 fDjhAR"
+    class="StyledStack-ajspsk-0 gVdmEl"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csgqhr"
+          class="StyledBox-sc-13pk1d4-0 cGIdCD"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hgDudY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hggYQt"
+          class="StyledBox-sc-13pk1d4-0 fhZTuB"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dwjKg"
+        class="StyledBox-sc-13pk1d4-0 LkTug"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 dANGjo"
+          class="StyledButton-sc-323bzc-0 iLUFxg"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
+          class="StyledBox-sc-13pk1d4-0 ekZFIN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kalBJX"
+            class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 jLnPHV"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1648,16 +1644,16 @@ exports[`Carousel navigate 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 jLnPHV"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 fuviCN"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1667,18 +1663,18 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hJhjnC"
+          class="StyledButton-sc-323bzc-0 frWmiW"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -1692,90 +1688,89 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledStack-ajspsk-0 fDjhAR"
+    class="StyledStack-ajspsk-0 gVdmEl"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hgDudY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gWwFrB"
+          class="StyledBox-sc-13pk1d4-0 jUwnsh"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 ceQwbc"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csgqhr"
+          class="StyledBox-sc-13pk1d4-0 cGIdCD"
         >
           <img
-            class="StyledImage-ey4zx9-0 paVDt"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dwjKg"
+        class="StyledBox-sc-13pk1d4-0 LkTug"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hJhjnC"
+          class="StyledButton-sc-323bzc-0 frWmiW"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
+          class="StyledBox-sc-13pk1d4-0 ekZFIN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kalBJX"
+            class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 jLnPHV"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 fuviCN"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1784,16 +1779,16 @@ exports[`Carousel navigate 3`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 jLnPHV"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -1803,17 +1798,17 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 dANGjo"
+          class="StyledButton-sc-323bzc-0 iLUFxg"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 dEeaTZ"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -2267,12 +2262,11 @@ exports[`Carousel play 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="M17 2 7 12l10 10"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
             />
           </svg>
         </button>
@@ -2293,7 +2287,7 @@ exports[`Carousel play 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2311,7 +2305,7 @@ exports[`Carousel play 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2329,9 +2323,9 @@ exports[`Carousel play 1`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m7 2 10 10L7 22"
               fill="none"
-              points="7 2 17 12 7 22"
               stroke="#000"
               stroke-width="2"
             />
@@ -2397,7 +2391,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2421,7 +2415,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2439,7 +2433,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jLSzwp"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2459,7 +2453,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2860,7 +2854,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -2878,7 +2872,7 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M2,12 L22,12"
+                  d="M2 12h20"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
