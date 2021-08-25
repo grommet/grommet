@@ -6947,10 +6947,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-grommet-icons@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.6.1.tgz#5fc8116160c8626f0ff93d8339acf632be26ddf5"
-  integrity sha512-DimRmfF5mJHkWjBcx7mkJ9zbdmWKvMpDQR0oVZ4HCcGmyEPndonlnypjXAlec8awTwjaXKdiZfgUiWyMtdViIg==
+grommet-icons@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.6.2.tgz#56315cdb061895ddf18ad06cb76378b317cbbe56"
+  integrity sha512-3wTRQsmwrSFM7FvruULNWwi5dWp8MtYCimWeJW0zaJxkq35iPHMTZCzBrVfuRL6pOja3KegNC9b8rvdXVMct6Q==
   dependencies:
     grommet-styles "^0.2.0"
 
