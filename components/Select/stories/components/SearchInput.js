@@ -19,11 +19,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var SearchInput = function SearchInput(_ref) {
+/* Need ForwardRef since this functional component
+   is being passed into a custom theme for SearchInput
+*/
+var SearchInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, textInputRef) {
   var searching = _ref.searching,
       props = _objectWithoutPropertiesLoose(_ref, _excluded);
 
-  var textInputRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     var focusTimeout = setTimeout(function () {
       textInputRef.current.focus();
@@ -31,13 +33,12 @@ var SearchInput = function SearchInput(_ref) {
     return function () {
       clearTimeout(focusTimeout);
     };
-  }, []);
+  }, [textInputRef]);
   return /*#__PURE__*/_react["default"].createElement(_SearchBorderBox.SearchBorderBox, {
     searching: searching
   }, /*#__PURE__*/_react["default"].createElement(_.TextInput, _extends({}, props, {
     plain: true,
     ref: textInputRef
   })));
-};
-
+});
 exports.SearchInput = SearchInput;
