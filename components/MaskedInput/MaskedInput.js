@@ -201,23 +201,36 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     setValueParts(parseValue(mask, value));
   }, [mask, value]);
   var inputRef = (0, _utils.useForwardedRef)(ref);
-  var dropRef = (0, _react.useRef)();
+  var dropRef = (0, _react.useRef)(); // Caller's ref, if provided
 
-  var _useState2 = (0, _react.useState)(focusProp),
-      focus = _useState2[0],
-      setFocus = _useState2[1];
+  var _useState2 = (0, _react.useState)(),
+      dropPropsTarget = _useState2[0],
+      setDropPropsTarget = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(),
-      activeMaskIndex = _useState3[0],
-      setActiveMaskIndex = _useState3[1];
+  (0, _react.useEffect)(function () {
+    var nextDropPropsTarget; // If caller provided a ref, set to 'pending' until ref.current is defined
+
+    if (dropProps && 'target' in dropProps) {
+      nextDropPropsTarget = dropProps.target || 'pending';
+      setDropPropsTarget(nextDropPropsTarget);
+    }
+  }, [dropProps]);
+
+  var _useState3 = (0, _react.useState)(focusProp),
+      focus = _useState3[0],
+      setFocus = _useState3[1];
 
   var _useState4 = (0, _react.useState)(),
-      activeOptionIndex = _useState4[0],
-      setActiveOptionIndex = _useState4[1];
+      activeMaskIndex = _useState4[0],
+      setActiveMaskIndex = _useState4[1];
 
   var _useState5 = (0, _react.useState)(),
-      showDrop = _useState5[0],
-      setShowDrop = _useState5[1];
+      activeOptionIndex = _useState5[0],
+      setActiveOptionIndex = _useState5[1];
+
+  var _useState6 = (0, _react.useState)(),
+      showDrop = _useState6[0],
+      setShowDrop = _useState6[1];
 
   (0, _react.useEffect)(function () {
     if (focus) {
@@ -401,7 +414,8 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: onChangeInput
-  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
+  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && // If caller has specified dropProps.target, ensure target is defined
+  dropPropsTarget !== 'pending' && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     id: id ? "masked-input-drop__" + id : undefined,
     align: dropAlign,
     responsive: false,
