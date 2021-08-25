@@ -152,13 +152,11 @@ const Carousel = ({
           duration: theme.carousel.animation.duration,
         };
       }
-      visibility = 'visible';
     } else if (index === priorActiveIndex) {
       animation = {
         type: 'fadeOut',
         duration: theme.carousel.animation.duration,
       };
-      visibility = 'hidden';
     } else {
       animation = { type: 'fadeOut', duration: 0 };
       visibility = 'hidden';
