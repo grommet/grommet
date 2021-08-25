@@ -518,7 +518,7 @@ exports[`DateInput controlled format inline 1`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -543,47 +543,107 @@ exports[`DateInput controlled format inline 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c20:hover {
+.c21:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -604,6 +664,23 @@ exports[`DateInput controlled format inline 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -662,7 +739,7 @@ exports[`DateInput controlled format inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -969,12 +1046,12 @@ exports[`DateInput controlled format inline 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -1641,7 +1718,7 @@ exports[`DateInput controlled format inline 1`] = `
     </div>
   </div>
   <button
-    class="c20"
+    class="c21"
     type="button"
   >
     first
@@ -1745,7 +1822,7 @@ exports[`DateInput controlled format inline 2`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -1830,7 +1907,7 @@ exports[`DateInput controlled format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -2934,22 +3011,6 @@ exports[`DateInput focus 1`] = `
   right: 12px;
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   class="c0"
 >
@@ -3253,6 +3314,66 @@ exports[`DateInput focus 2`] = `
   border: 0;
 }
 
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   margin: 0px;
   font-size: 26px;
@@ -3270,6 +3391,23 @@ exports[`DateInput focus 2`] = `
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10 > circle,
+.c10 > ellipse,
+.c10 > line,
+.c10 > path,
+.c10 > polygon,
+.c10 > polyline,
+.c10 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10::-moz-focus-inner {
+  border: 0;
 }
 
 .c11 {
@@ -3328,7 +3466,7 @@ exports[`DateInput focus 2`] = `
   height: 54.857142857142854px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3535,12 +3673,12 @@ exports[`DateInput focus 2`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c14"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   2
                 </div>
@@ -4801,6 +4939,66 @@ exports[`DateInput format inline 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -4818,6 +5016,23 @@ exports[`DateInput format inline 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -4876,7 +5091,7 @@ exports[`DateInput format inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5183,12 +5398,12 @@ exports[`DateInput format inline 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -6096,6 +6311,66 @@ exports[`DateInput inline 1`] = `
   border: 0;
 }
 
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   margin: 0px;
   font-size: 26px;
@@ -6113,6 +6388,23 @@ exports[`DateInput inline 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9 > circle,
+.c9 > ellipse,
+.c9 > line,
+.c9 > path,
+.c9 > polygon,
+.c9 > polyline,
+.c9 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9::-moz-focus-inner {
+  border: 0;
 }
 
 .c10 {
@@ -6171,7 +6463,7 @@ exports[`DateInput inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6362,12 +6654,12 @@ exports[`DateInput inline 1`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c13"
+                class="c16"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   2
                 </div>
@@ -7569,6 +7861,66 @@ exports[`DateInput range format inline 1`] = `
   border: 0;
 }
 
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -7586,6 +7938,23 @@ exports[`DateInput range format inline 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -7627,7 +7996,7 @@ exports[`DateInput range format inline 1`] = `
   opacity: 0.5;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7644,7 +8013,7 @@ exports[`DateInput range format inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7664,7 +8033,7 @@ exports[`DateInput range format inline 1`] = `
   font-weight: bold;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7952,12 +8321,12 @@ exports[`DateInput range format inline 1`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="c16"
+                  class="c18"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     1
                   </div>
@@ -7974,7 +8343,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -7991,7 +8360,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     3
                   </div>
@@ -8008,7 +8377,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     4
                   </div>
@@ -8030,7 +8399,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     5
                   </div>
@@ -8047,7 +8416,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     6
                   </div>
@@ -8064,7 +8433,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     7
                   </div>
@@ -8081,7 +8450,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     8
                   </div>
@@ -8098,7 +8467,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     9
                   </div>
@@ -8115,7 +8484,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     10
                   </div>
@@ -8132,7 +8501,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     11
                   </div>
@@ -8154,7 +8523,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     12
                   </div>
@@ -8171,7 +8540,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     13
                   </div>
@@ -8188,7 +8557,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     14
                   </div>
@@ -8205,7 +8574,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     15
                   </div>
@@ -8222,7 +8591,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     16
                   </div>
@@ -8239,7 +8608,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     17
                   </div>
@@ -8256,7 +8625,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     18
                   </div>
@@ -8278,7 +8647,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     19
                   </div>
@@ -8295,7 +8664,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     20
                   </div>
@@ -8312,7 +8681,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     21
                   </div>
@@ -8329,7 +8698,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     22
                   </div>
@@ -8346,7 +8715,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     23
                   </div>
@@ -8363,7 +8732,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     24
                   </div>
@@ -8380,7 +8749,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     25
                   </div>
@@ -8402,7 +8771,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     26
                   </div>
@@ -8419,7 +8788,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     27
                   </div>
@@ -8436,7 +8805,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     28
                   </div>
@@ -8453,7 +8822,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     29
                   </div>
@@ -8470,7 +8839,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     30
                   </div>
@@ -8487,7 +8856,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     31
                   </div>
@@ -8882,6 +9251,66 @@ exports[`DateInput range inline 1`] = `
   border: 0;
 }
 
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   margin: 0px;
   font-size: 26px;
@@ -8899,6 +9328,23 @@ exports[`DateInput range inline 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9 > circle,
+.c9 > ellipse,
+.c9 > line,
+.c9 > path,
+.c9 > polygon,
+.c9 > polyline,
+.c9 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9::-moz-focus-inner {
+  border: 0;
 }
 
 .c10 {
@@ -8940,7 +9386,7 @@ exports[`DateInput range inline 1`] = `
   opacity: 0.5;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8957,7 +9403,7 @@ exports[`DateInput range inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8977,7 +9423,7 @@ exports[`DateInput range inline 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9149,12 +9595,12 @@ exports[`DateInput range inline 1`] = `
             >
               <button
                 aria-label="Wed Jul 01 2020"
-                class="c13"
+                class="c15"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   1
                 </div>
@@ -9171,7 +9617,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   2
                 </div>
@@ -9188,7 +9634,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   3
                 </div>
@@ -9205,7 +9651,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   4
                 </div>
@@ -9227,7 +9673,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   5
                 </div>
@@ -9244,7 +9690,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   6
                 </div>
@@ -9261,7 +9707,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   7
                 </div>
@@ -9278,7 +9724,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   8
                 </div>
@@ -9295,7 +9741,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   9
                 </div>
@@ -9312,7 +9758,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   10
                 </div>
@@ -9329,7 +9775,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   11
                 </div>
@@ -9351,7 +9797,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   12
                 </div>
@@ -9368,7 +9814,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   13
                 </div>
@@ -9385,7 +9831,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   14
                 </div>
@@ -9402,7 +9848,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   15
                 </div>
@@ -9419,7 +9865,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   16
                 </div>
@@ -9436,7 +9882,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   17
                 </div>
@@ -9453,7 +9899,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   18
                 </div>
@@ -9475,7 +9921,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   19
                 </div>
@@ -9492,7 +9938,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   20
                 </div>
@@ -9509,7 +9955,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   21
                 </div>
@@ -9526,7 +9972,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   22
                 </div>
@@ -9543,7 +9989,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   23
                 </div>
@@ -9560,7 +10006,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   24
                 </div>
@@ -9577,7 +10023,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   25
                 </div>
@@ -9599,7 +10045,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   26
                 </div>
@@ -9616,7 +10062,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   27
                 </div>
@@ -9633,7 +10079,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   28
                 </div>
@@ -9650,7 +10096,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   29
                 </div>
@@ -9667,7 +10113,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   30
                 </div>
@@ -9684,7 +10130,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   31
                 </div>
@@ -10673,6 +11119,66 @@ exports[`DateInput select format 3`] = `
   border: 0;
 }
 
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   margin: 0px;
   font-size: 26px;
@@ -10690,6 +11196,23 @@ exports[`DateInput select format 3`] = `
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10 > circle,
+.c10 > ellipse,
+.c10 > line,
+.c10 > path,
+.c10 > polygon,
+.c10 > polyline,
+.c10 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10::-moz-focus-inner {
+  border: 0;
 }
 
 .c11 {
@@ -10748,7 +11271,7 @@ exports[`DateInput select format 3`] = `
   height: 54.857142857142854px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10955,12 +11478,12 @@ exports[`DateInput select format 3`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c14"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   2
                 </div>
@@ -11888,6 +12411,66 @@ exports[`DateInput select format inline 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -11905,6 +12488,23 @@ exports[`DateInput select format inline 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -11963,7 +12563,7 @@ exports[`DateInput select format inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12270,12 +12870,12 @@ exports[`DateInput select format inline 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -13125,7 +13725,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 hKGjXb"
+                  class="StyledButton-sc-323bzc-0 iUDYlP"
                   tabindex="-1"
                   type="button"
                 >
@@ -13446,7 +14046,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -14038,6 +14638,66 @@ exports[`DateInput select format inline range 1`] = `
   border: 0;
 }
 
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -14055,6 +14715,23 @@ exports[`DateInput select format inline range 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -14096,7 +14773,7 @@ exports[`DateInput select format inline range 1`] = `
   opacity: 0.5;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14113,7 +14790,7 @@ exports[`DateInput select format inline range 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14133,7 +14810,7 @@ exports[`DateInput select format inline range 1`] = `
   font-weight: bold;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14421,12 +15098,12 @@ exports[`DateInput select format inline range 1`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="c16"
+                  class="c18"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     1
                   </div>
@@ -14443,7 +15120,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -14460,7 +15137,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     3
                   </div>
@@ -14477,7 +15154,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     4
                   </div>
@@ -14499,7 +15176,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     5
                   </div>
@@ -14516,7 +15193,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     6
                   </div>
@@ -14533,7 +15210,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     7
                   </div>
@@ -14550,7 +15227,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     8
                   </div>
@@ -14567,7 +15244,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     9
                   </div>
@@ -14584,7 +15261,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     10
                   </div>
@@ -14601,7 +15278,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     11
                   </div>
@@ -14623,7 +15300,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     12
                   </div>
@@ -14640,7 +15317,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     13
                   </div>
@@ -14657,7 +15334,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     14
                   </div>
@@ -14674,7 +15351,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     15
                   </div>
@@ -14691,7 +15368,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     16
                   </div>
@@ -14708,7 +15385,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     17
                   </div>
@@ -14725,7 +15402,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     18
                   </div>
@@ -14747,7 +15424,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     19
                   </div>
@@ -14764,7 +15441,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     20
                   </div>
@@ -14781,7 +15458,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     21
                   </div>
@@ -14798,7 +15475,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     22
                   </div>
@@ -14815,7 +15492,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     23
                   </div>
@@ -14832,7 +15509,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     24
                   </div>
@@ -14849,7 +15526,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     25
                   </div>
@@ -14871,7 +15548,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     26
                   </div>
@@ -14888,7 +15565,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     27
                   </div>
@@ -14905,7 +15582,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     28
                   </div>
@@ -14922,7 +15599,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     29
                   </div>
@@ -14939,7 +15616,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     30
                   </div>
@@ -14956,7 +15633,7 @@ exports[`DateInput select format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     31
                   </div>
@@ -15276,7 +15953,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 hKGjXb"
+                  class="StyledButton-sc-323bzc-0 iUDYlP"
                   tabindex="-1"
                   type="button"
                 >
@@ -15434,7 +16111,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -16206,6 +16883,66 @@ exports[`DateInput select inline 1`] = `
   border: 0;
 }
 
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   margin: 0px;
   font-size: 26px;
@@ -16223,6 +16960,23 @@ exports[`DateInput select inline 1`] = `
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9 > circle,
+.c9 > ellipse,
+.c9 > line,
+.c9 > path,
+.c9 > polygon,
+.c9 > polyline,
+.c9 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9::-moz-focus-inner {
+  border: 0;
 }
 
 .c10 {
@@ -16281,7 +17035,7 @@ exports[`DateInput select inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16472,12 +17226,12 @@ exports[`DateInput select inline 1`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c13"
+                class="c16"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   2
                 </div>
@@ -17384,6 +18138,66 @@ exports[`DateInput type format inline 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -17401,6 +18215,23 @@ exports[`DateInput type format inline 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -17459,7 +18290,7 @@ exports[`DateInput type format inline 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17766,12 +18597,12 @@ exports[`DateInput type format inline 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -18536,7 +19367,7 @@ exports[`DateInput type format inline 2`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -18621,7 +19452,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -19534,6 +20365,66 @@ exports[`DateInput type format inline partial 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -19551,6 +20442,23 @@ exports[`DateInput type format inline partial 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -19609,7 +20517,7 @@ exports[`DateInput type format inline partial 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19916,12 +20824,12 @@ exports[`DateInput type format inline partial 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -20829,6 +21737,66 @@ exports[`DateInput type format inline range 1`] = `
   border: 0;
 }
 
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -20846,6 +21814,23 @@ exports[`DateInput type format inline range 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -20887,7 +21872,7 @@ exports[`DateInput type format inline range 1`] = `
   opacity: 0.5;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20904,7 +21889,7 @@ exports[`DateInput type format inline range 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20924,7 +21909,7 @@ exports[`DateInput type format inline range 1`] = `
   font-weight: bold;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -21212,12 +22197,12 @@ exports[`DateInput type format inline range 1`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="c16"
+                  class="c18"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     1
                   </div>
@@ -21234,7 +22219,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -21251,7 +22236,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     3
                   </div>
@@ -21268,7 +22253,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     4
                   </div>
@@ -21290,7 +22275,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     5
                   </div>
@@ -21307,7 +22292,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     6
                   </div>
@@ -21324,7 +22309,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     7
                   </div>
@@ -21341,7 +22326,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     8
                   </div>
@@ -21358,7 +22343,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     9
                   </div>
@@ -21375,7 +22360,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     10
                   </div>
@@ -21392,7 +22377,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     11
                   </div>
@@ -21414,7 +22399,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     12
                   </div>
@@ -21431,7 +22416,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     13
                   </div>
@@ -21448,7 +22433,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     14
                   </div>
@@ -21465,7 +22450,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     15
                   </div>
@@ -21482,7 +22467,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     16
                   </div>
@@ -21499,7 +22484,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     17
                   </div>
@@ -21516,7 +22501,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     18
                   </div>
@@ -21538,7 +22523,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     19
                   </div>
@@ -21555,7 +22540,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     20
                   </div>
@@ -21572,7 +22557,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     21
                   </div>
@@ -21589,7 +22574,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     22
                   </div>
@@ -21606,7 +22591,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     23
                   </div>
@@ -21623,7 +22608,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     24
                   </div>
@@ -21640,7 +22625,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     25
                   </div>
@@ -21662,7 +22647,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     26
                   </div>
@@ -21679,7 +22664,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     27
                   </div>
@@ -21696,7 +22681,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     28
                   </div>
@@ -21713,7 +22698,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     29
                   </div>
@@ -21730,7 +22715,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     30
                   </div>
@@ -21747,7 +22732,7 @@ exports[`DateInput type format inline range 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     31
                   </div>
@@ -21999,7 +22984,7 @@ exports[`DateInput type format inline range 2`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -22067,7 +23052,7 @@ exports[`DateInput type format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -22997,6 +23982,66 @@ exports[`DateInput type format inline range partial 1`] = `
   border: 0;
 }
 
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -23014,6 +24059,23 @@ exports[`DateInput type format inline range partial 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -23055,7 +24117,7 @@ exports[`DateInput type format inline range partial 1`] = `
   opacity: 0.5;
 }
 
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23072,7 +24134,7 @@ exports[`DateInput type format inline range partial 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23092,7 +24154,7 @@ exports[`DateInput type format inline range partial 1`] = `
   font-weight: bold;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23380,12 +24442,12 @@ exports[`DateInput type format inline range partial 1`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="c16"
+                  class="c18"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     1
                   </div>
@@ -23402,7 +24464,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -23419,7 +24481,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     3
                   </div>
@@ -23436,7 +24498,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     4
                   </div>
@@ -23458,7 +24520,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     5
                   </div>
@@ -23475,7 +24537,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c20"
+                    class="c21"
                   >
                     6
                   </div>
@@ -23492,7 +24554,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     7
                   </div>
@@ -23509,7 +24571,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     8
                   </div>
@@ -23526,7 +24588,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     9
                   </div>
@@ -23543,7 +24605,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     10
                   </div>
@@ -23560,7 +24622,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     11
                   </div>
@@ -23582,7 +24644,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     12
                   </div>
@@ -23599,7 +24661,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     13
                   </div>
@@ -23616,7 +24678,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     14
                   </div>
@@ -23633,7 +24695,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     15
                   </div>
@@ -23650,7 +24712,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     16
                   </div>
@@ -23667,7 +24729,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     17
                   </div>
@@ -23684,7 +24746,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     18
                   </div>
@@ -23706,7 +24768,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     19
                   </div>
@@ -23723,7 +24785,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     20
                   </div>
@@ -23740,7 +24802,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     21
                   </div>
@@ -23757,7 +24819,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     22
                   </div>
@@ -23774,7 +24836,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     23
                   </div>
@@ -23791,7 +24853,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     24
                   </div>
@@ -23808,7 +24870,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     25
                   </div>
@@ -23830,7 +24892,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     26
                   </div>
@@ -23847,7 +24909,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     27
                   </div>
@@ -23864,7 +24926,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     28
                   </div>
@@ -23881,7 +24943,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     29
                   </div>
@@ -23898,7 +24960,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     30
                   </div>
@@ -23915,7 +24977,7 @@ exports[`DateInput type format inline range partial 1`] = `
                   type="button"
                 >
                   <div
-                    class="c18"
+                    class="c19"
                   >
                     31
                   </div>
@@ -24167,7 +25229,7 @@ exports[`DateInput type format inline range partial 2`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -24235,7 +25297,7 @@ exports[`DateInput type format inline range partial 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -25022,7 +26084,7 @@ exports[`DateInput type format inline range partial 3`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -25090,7 +26152,7 @@ exports[`DateInput type format inline range partial 3`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
@@ -26020,6 +27082,66 @@ exports[`DateInput type format inline short 1`] = `
   border: 0;
 }
 
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible) > circle,
+.c19:focus:not(:focus-visible) > ellipse,
+.c19:focus:not(:focus-visible) > line,
+.c19:focus:not(:focus-visible) > path,
+.c19:focus:not(:focus-visible) > polygon,
+.c19:focus:not(:focus-visible) > polyline,
+.c19:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c19:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   margin: 0px;
   font-size: 26px;
@@ -26037,6 +27159,23 @@ exports[`DateInput type format inline short 1`] = `
 .c12 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12 > circle,
+.c12 > ellipse,
+.c12 > line,
+.c12 > path,
+.c12 > polygon,
+.c12 > polyline,
+.c12 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12::-moz-focus-inner {
+  border: 0;
 }
 
 .c13 {
@@ -26095,7 +27234,7 @@ exports[`DateInput type format inline short 1`] = `
   height: 54.857142857142854px;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26402,12 +27541,12 @@ exports[`DateInput type format inline short 1`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="c16"
+                  class="c19"
                   tabindex="-1"
                   type="button"
                 >
                   <div
-                    class="c19"
+                    class="c20"
                   >
                     2
                   </div>
@@ -27172,7 +28311,7 @@ exports[`DateInput type format inline short 2`] = `
         </div>
         <div
           aria-label="July 2020"
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
         >
@@ -27257,7 +28396,7 @@ exports[`DateInput type format inline short 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 iUDYlP"
+                  class="StyledButton-sc-323bzc-0 hKGjXb"
                   tabindex="-1"
                   type="button"
                 >
