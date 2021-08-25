@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { forwardRef, useContext, useRef, useCallback } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -78,7 +78,6 @@ const FileInput = forwardRef(
     const theme = useContext(ThemeContext);
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
-    const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
@@ -87,45 +86,46 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
 
-    formContext.useFormField(
-      maxSize
-        ? {
-            name,
-            validate: (fileList) => {
-              let numOfFiles = 0;
-              let message;
-              for (let i = 0; i < fileList.length; i += 1) {
-                const file = fileList[i];
-                if (file.size > maxSize) {
-                  if (multiple) {
-                    numOfFiles += 1;
-                  } else {
-                    message = format({
-                      id: 'fileInput.maxSizeSingle',
-                      messages,
-                      values: { maxSize },
-                    });
-                    return message;
-                  }
-                }
-              }
+    const [files, setFiles] = formContext.useFormInput({
+      name,
+      value: valueProp,
+      initialValue: [],
+      validate: onValidate,
+    });
 
-              if (numOfFiles === 0) {
-                message = '';
-                return message;
-              }
-              message = format({
-                id: `fileInput.maxSizeMultiple.${
-                  numOfFiles === 1 ? 'singular' : 'plural'
-                }`,
-                messages,
-                values: { maxSize, numOfFiles },
-              });
-              return message;
-            },
+    const onValidate = useCallback(() => {
+      const fileList = [...files];
+      let numOfFiles = 0;
+      let message;
+      if (!maxSize) return '';
+      for (let i = 0; i < fileList.length; i += 1) {
+        const file = fileList[i];
+        if (file.size > maxSize) {
+          if (multiple) {
+            numOfFiles += 1;
+          } else {
+            message = format({
+              id: 'fileInput.maxSizeSingle',
+              messages,
+              values: { maxSize },
+            });
+            return message;
           }
-        : {},
-    );
+        }
+      }
+      if (numOfFiles === 0) {
+        message = '';
+        return message;
+      }
+      message = format({
+        id: `fileInput.maxSizeMultiple.${
+          numOfFiles === 1 ? 'singular' : 'plural'
+        }`,
+        messages,
+        values: { maxSize, numOfFiles },
+      });
+      return message;
+    });
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};

@@ -10,7 +10,9 @@ const RangeInput = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [num, setNum] = formContext.useFormInput({
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     return (
@@ -19,18 +21,18 @@ const RangeInput = forwardRef(
         ref={ref}
         name={name}
         focus={focus}
-        value={value}
+        value={num}
         {...rest}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
-        onChange={event => {
-          setValue(event.target.value);
+        onChange={(event) => {
+          setNum(event.target.value);
           if (onChange) onChange(event);
         }}
         type="range"

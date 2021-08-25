@@ -44,11 +44,11 @@ const RadioButtonGroup = forwardRef(
         : { disabled, ...o },
     );
 
-    const [value, setValue] = formContext.useFormInput(
+    const [value, setValue] = formContext.useFormInput({
       name,
-      valueProp,
-      defaultValue || '',
-    );
+      value: valueProp,
+      initialValue: defaultValue || '',
+    });
 
     // track if focus is on one of the radio buttons
     const [focus, setFocus] = useState();

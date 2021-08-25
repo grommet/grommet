@@ -49,7 +49,19 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
-    const [value, setValue] = useFormInput(name, valueArg, defaultValue);
+    const [value, setValue] = useFormInput({
+      value: valueArg,
+      initialValue: defaultValue,
+    });
+
+    React.useEffect(() => {
+      console.log(name, value, valueArg, defaultValue);
+    }, []);
+
+    React.useEffect(() => {
+      console.log('State: ', value);
+      console.log(name, value, valueArg, defaultValue);
+    }, [value]);
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
