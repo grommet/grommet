@@ -201,10 +201,7 @@ const MaskedInput = forwardRef(
     useEffect(() => {
       let nextDropPropsTarget;
       // If caller provided a ref, set to 'pending' until ref.current is defined
-      if (
-        dropProps &&
-        Object.prototype.hasOwnProperty.call(dropProps, 'target')
-      ) {
+      if (dropProps && 'target' in dropProps) {
         nextDropPropsTarget = dropProps.target || 'pending';
         setDropPropsTarget(nextDropPropsTarget);
       }
