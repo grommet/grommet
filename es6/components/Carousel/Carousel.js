@@ -149,11 +149,14 @@ var Carousel = function Carousel(_ref) {
           duration: theme.carousel.animation.duration
         };
       }
+
+      visibility = 'visible';
     } else if (index === priorActiveIndex) {
       animation = {
         type: 'fadeOut',
         duration: theme.carousel.animation.duration
       };
+      visibility = 'hidden';
     } else {
       animation = {
         type: 'fadeOut',
