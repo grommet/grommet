@@ -130,7 +130,7 @@ exports[`DateInput basic 1`] = `
 </div>
 `;
 
-exports[`DateInput buttonProps should pass props to Button 
+exports[`DateInput buttonProps should pass props to Button
   when not inline and no format 1`] = `
 .c2 {
   display: inline-block;
@@ -1664,7 +1664,7 @@ exports[`DateInput controlled format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -1712,7 +1712,7 @@ exports[`DateInput controlled format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1730,7 +1730,7 @@ exports[`DateInput controlled format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2639,7 +2639,7 @@ exports[`DateInput disabled 1`] = `
 </div>
 `;
 
-exports[`DateInput dropProps should pass props to Drop 
+exports[`DateInput dropProps should pass props to Drop
   when not inline 1`] = `
 .c3 {
   display: inline-block;
@@ -4208,7 +4208,26 @@ exports[`DateInput focus 2`] = `
 </div>
 `;
 
-exports[`DateInput focus 3`] = `""`;
+exports[`DateInput focus 3`] = `
+"@media only screen and (max-width: 768px) {
+  .jEqkkX {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .eiANcd {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .eiANcd {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}"
+`;
 
 exports[`DateInput format 1`] = `
 .c3 {
@@ -10362,7 +10381,7 @@ exports[`DateInput select format 2`] = `
     >
       <svg
         aria-label="Calendar"
-        class="StyledIcon-ofa7kd-0 hVBrNB"
+        class="StyledIcon-sc-ofa7kd-0 tiAWk"
         viewBox="0 0 24 24"
       >
         <path
@@ -11609,7 +11628,26 @@ exports[`DateInput select format 3`] = `
 </div>
 `;
 
-exports[`DateInput select format 4`] = `""`;
+exports[`DateInput select format 4`] = `
+"@media only screen and (max-width: 768px) {
+  .jEqkkX {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .eiANcd {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .eiANcd {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}"
+`;
 
 exports[`DateInput select format inline 1`] = `
 .c4 {
@@ -12921,7 +12959,7 @@ exports[`DateInput select format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -12969,7 +13007,7 @@ exports[`DateInput select format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -12987,7 +13025,7 @@ exports[`DateInput select format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -15089,7 +15127,7 @@ exports[`DateInput select format inline range 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -15137,7 +15175,7 @@ exports[`DateInput select format inline range 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -15155,7 +15193,7 @@ exports[`DateInput select format inline range 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -18417,7 +18455,7 @@ exports[`DateInput type format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -18465,7 +18503,7 @@ exports[`DateInput type format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -18483,7 +18521,7 @@ exports[`DateInput type format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -21880,7 +21918,7 @@ exports[`DateInput type format inline range 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -21928,7 +21966,7 @@ exports[`DateInput type format inline range 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -21946,7 +21984,7 @@ exports[`DateInput type format inline range 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24048,7 +24086,7 @@ exports[`DateInput type format inline range partial 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -24096,7 +24134,7 @@ exports[`DateInput type format inline range partial 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24114,7 +24152,7 @@ exports[`DateInput type format inline range partial 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24903,7 +24941,7 @@ exports[`DateInput type format inline range partial 3`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -24951,7 +24989,7 @@ exports[`DateInput type format inline range partial 3`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24969,7 +25007,7 @@ exports[`DateInput type format inline range partial 3`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -27053,7 +27091,7 @@ exports[`DateInput type format inline short 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-ofa7kd-0 hVBrNB"
+          class="StyledIcon-sc-ofa7kd-0 tiAWk"
           viewBox="0 0 24 24"
         >
           <path
@@ -27101,7 +27139,7 @@ exports[`DateInput type format inline short 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -27119,7 +27157,7 @@ exports[`DateInput type format inline short 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path

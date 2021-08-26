@@ -38,6 +38,7 @@ export interface ButtonProps {
   href?: string;
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
+  kind?: string;
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;

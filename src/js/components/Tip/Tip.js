@@ -10,6 +10,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
+import { TipPropTypes } from './propTypes';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
@@ -73,12 +74,6 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 });
 
 Tip.displayName = 'Tip';
+Tip.propTypes = TipPropTypes;
 
-let TipDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TipDoc = require('./doc').doc(Tip);
-}
-const TipWrapper = TipDoc || Tip;
-
-export { TipWrapper as Tip };
+export { Tip };

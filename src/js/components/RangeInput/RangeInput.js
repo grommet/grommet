@@ -2,6 +2,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
+import { RangeInputPropTypes } from './propTypes';
 
 const RangeInput = forwardRef(
   (
@@ -50,12 +51,6 @@ const RangeInput = forwardRef(
 );
 
 RangeInput.displayName = 'RangeInput';
+RangeInput.propTypes = RangeInputPropTypes;
 
-let RangeInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeInputDoc = require('./doc').doc(RangeInput);
-}
-const RangeInputWrapper = RangeInputDoc || RangeInput;
-
-export { RangeInputWrapper as RangeInput };
+export { RangeInput };

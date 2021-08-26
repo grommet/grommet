@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { FormContext } from './FormContext';
+import { FormPropTypes } from './propTypes';
 
 const defaultValue = {};
 const defaultTouched = {};
@@ -341,9 +342,12 @@ const Form = forwardRef(
       info: infoArg,
       name,
       required,
+      disabled,
       validate: validateArg,
     }) => {
-      const error = errorArg || validationResults.errors[name];
+      const error = disabled
+        ? undefined
+        : errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
 
       useEffect(() => {
@@ -393,12 +397,15 @@ const Form = forwardRef(
         } else if (index !== -1) requiredFields.current.splice(index, 1);
 
         if (validateArg || required) {
+          if (disabled) {
+            return undefined;
+          }
           validations.current[name] = validateField;
           return () => delete validations.current[name];
         }
 
         return undefined;
-      }, [error, name, required, validateArg]);
+      }, [error, name, required, validateArg, disabled]);
 
       return {
         error,
@@ -482,12 +489,6 @@ const Form = forwardRef(
 );
 
 Form.displayName = 'Form';
+Form.propTypes = FormPropTypes;
 
-let FormDoc;
-if (process.env.NODE_ENV !== 'production') {
-  FormDoc = require('./doc').doc(Form); // eslint-disable-line global-require
-}
-
-const FormWrapper = FormDoc || Form;
-
-export { FormWrapper as Form };
+export { Form };
