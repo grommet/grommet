@@ -42,10 +42,10 @@ const Box = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
-      onClick,
-      tabIndex,
-    ]);
+    const focusable = useMemo(
+      () => onClick && !(tabIndex < 0),
+      [onClick, tabIndex],
+    );
 
     const [focus, setFocus] = useState();
 
@@ -53,11 +53,11 @@ const Box = forwardRef(
       if (focusable) {
         return {
           onClick,
-          onFocus: event => {
+          onFocus: (event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           },
-          onBlur: event => {
+          onBlur: (event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           },
