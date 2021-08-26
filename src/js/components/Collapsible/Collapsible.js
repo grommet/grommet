@@ -15,7 +15,7 @@ import { Box } from '../Box';
 import { CollapsiblePropTypes } from './propTypes';
 
 const AnimatedBox = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.shouldOpen
       ? `visibility: hidden;
       position: absolute;
