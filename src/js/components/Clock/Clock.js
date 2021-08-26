@@ -5,7 +5,8 @@ import { Digital } from './Digital';
 import { ClockPropTypes } from './propTypes';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
-const DURATION_REGEXP = /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
+const DURATION_REGEXP =
+  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
 const parseTime = (time, hourLimit) => {
   const result = {};
