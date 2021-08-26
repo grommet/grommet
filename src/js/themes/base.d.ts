@@ -29,7 +29,7 @@ import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
-import { LayerPositionType } from '../components/Layer';
+import { LayerPositionType, LayerProps } from '../components/Layer';
 import { DropProps } from '../components/Drop';
 
 export declare const base: DeepReadonly<ThemeType>;
@@ -1027,6 +1027,7 @@ export interface ThemeType {
     container?: BoxProps;
     toast?: {
       container?: BoxProps;
+      layer?: LayerProps;
     };
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
