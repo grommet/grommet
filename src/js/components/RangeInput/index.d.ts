@@ -14,7 +14,7 @@ export interface RangeInputProps {
   max?: number | string;
   name?: string;
   step?: number;
-  color?: string | ColorI[];
+  color?: ColorType | ColorI[];
   value?: number | string;
 }
 
