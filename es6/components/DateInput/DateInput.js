@@ -89,7 +89,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value.length ? [value] : undefined,
+    dates: range && value.length ? [value] : undefined // places focus on days grid when Calendar opens
+    ,
+    initialFocus: open ? 'days' : undefined,
     onSelect: disabled ? undefined : function (nextValue) {
       var normalizedValue;
 
@@ -103,7 +105,13 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       if (_onChange) _onChange({
         value: normalizedValue
       });
-      if (open && !range) setOpen(false);
+
+      if (open && !range) {
+        setOpen(false);
+        setTimeout(function () {
+          return ref.current.focus();
+        }, 1);
+      }
     }
   }, calendarProps));
 
@@ -137,7 +145,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: open ? function () {
       return setOpen(false);
-    } : undefined
+    } : undefined,
+    onSpace: function onSpace() {
+      return setOpen(true);
+    }
   }, /*#__PURE__*/React.createElement(MaskedInput, _extends({
     ref: ref,
     id: id,
@@ -167,7 +178,6 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       }
     },
     onFocus: function onFocus(event) {
-      setOpen(true);
       if (_onFocus) _onFocus(event);
     },
     onClick: function onClick() {
@@ -180,9 +190,13 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }
 
   if (open) {
-    return [input, /*#__PURE__*/React.createElement(Drop, _extends({
-      overflow: "visible",
+    return [input, /*#__PURE__*/React.createElement(Keyboard, {
       key: "drop",
+      onEsc: function onEsc() {
+        return ref.current.focus();
+      }
+    }, /*#__PURE__*/React.createElement(Drop, _extends({
+      overflow: "visible",
       id: id ? id + "__drop" : undefined,
       target: ref.current,
       align: _extends({
@@ -196,7 +210,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         var target = _ref2.target;
         if (target !== ref.current) setOpen(false);
       }
-    }, dropProps), calendar)];
+    }, dropProps), calendar))];
   }
 
   return input;

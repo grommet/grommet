@@ -27,7 +27,7 @@ var _utils = require("./utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -168,6 +168,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       datesProp = _ref3.dates,
       daysOfWeek = _ref3.daysOfWeek,
       disabled = _ref3.disabled,
+      initialFocus = _ref3.initialFocus,
       fill = _ref3.fill,
       _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
       firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
@@ -402,6 +403,9 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       active = _useState11[0],
       setActive = _useState11[1];
 
+  (0, _react.useEffect)(function () {
+    if (initialFocus === 'days') daysRef.current.focus();
+  }, [initialFocus]);
   var changeReference = (0, _react.useCallback)(function (nextReference) {
     if ((0, _utils.betweenDates)(nextReference, bounds)) {
       setReference(nextReference);

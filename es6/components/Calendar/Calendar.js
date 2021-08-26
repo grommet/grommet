@@ -1,4 +1,4 @@
-var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
+var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"];
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -147,6 +147,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       datesProp = _ref3.dates,
       daysOfWeek = _ref3.daysOfWeek,
       disabled = _ref3.disabled,
+      initialFocus = _ref3.initialFocus,
       fill = _ref3.fill,
       _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
       firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
@@ -380,6 +381,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       active = _useState11[0],
       setActive = _useState11[1];
 
+  useEffect(function () {
+    if (initialFocus === 'days') daysRef.current.focus();
+  }, [initialFocus]);
   var changeReference = useCallback(function (nextReference) {
     if (betweenDates(nextReference, bounds)) {
       setReference(nextReference);
