@@ -32,17 +32,17 @@ describe('DateInput', () => {
             value={value}
             inline
           />
-          <Button label="Reset Date" onClick={() => setValue("")} />
+          <Button label="Reset Date" onClick={() => setValue('')} />
         </Grommet>
       );
     };
     const { container, getByText } = render(<Test />);
     let dateInputValue = container.querySelector('#item').value;
 
-    expect(dateInputValue).not.toEqual("");
+    expect(dateInputValue).not.toEqual('');
     fireEvent.click(getByText('Reset Date'));
     dateInputValue = container.querySelector('#item').value;
-    expect(dateInputValue).toEqual("");
+    expect(dateInputValue).toEqual('');
   });
 
   test('should reset date if passed an []', async () => {
@@ -64,12 +64,11 @@ describe('DateInput', () => {
     const { container, getByText } = render(<Test />);
     let dateInputValue = container.querySelector('#item').value;
 
-    expect(dateInputValue).not.toEqual("");
+    expect(dateInputValue).not.toEqual('');
     fireEvent.click(getByText('Reset Date'));
     dateInputValue = container.querySelector('#item').value;
-    expect(dateInputValue).toEqual("");
+    expect(dateInputValue).toEqual('');
   });
-
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
@@ -80,7 +79,6 @@ describe('DateInput', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
 
   test('basic', () => {
     const { container } = render(
@@ -234,15 +232,15 @@ describe('DateInput', () => {
 
     fireEvent.focus(getByPlaceholderText('mm/dd/yyyy'));
     expect(container.firstChild).toMatchSnapshot();
-    expectPortal('item__drop').toMatchSnapshot();
     expect(onFocus).toHaveBeenCalled();
 
     fireEvent.keyDown(getByPlaceholderText('mm/dd/yyyy'), {
-      key: 'Esc',
-      keyCode: 27,
-      which: 27,
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
     });
-    expect(document.getElementById('item__drop')).toBeNull();
+    expectPortal('item__drop').toMatchSnapshot();
+    expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
   test('click', () => {
@@ -259,7 +257,7 @@ describe('DateInput', () => {
     );
 
     userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
-    expect(document.getElementById('item__drop')).not.toBeNull();
+    expect(document.getElementById('item__drop')).toBeNull();
   });
 
   test('select inline', () => {
@@ -321,6 +319,11 @@ describe('DateInput', () => {
 
     fireEvent.focus(getByPlaceholderText('mm/dd/yyyy'));
     expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByPlaceholderText('mm/dd/yyyy'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
     expectPortal('item__drop').toMatchSnapshot();
 
     fireEvent.click(getByText('20'));
