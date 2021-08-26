@@ -27,6 +27,14 @@ var _Play = require("grommet-icons/icons/Play");
 
 var _Previous = require("grommet-icons/icons/Previous");
 
+var _StatusCriticalSmall = require("grommet-icons/icons/StatusCriticalSmall");
+
+var _StatusGoodSmall = require("grommet-icons/icons/StatusGoodSmall");
+
+var _StatusWarningSmall = require("grommet-icons/icons/StatusWarningSmall");
+
+var _StatusUnknownSmall = require("grommet-icons/icons/StatusUnknownSmall");
+
 var _Subtract = require("grommet-icons/icons/Subtract");
 
 var _Volume = require("grommet-icons/icons/Volume");
@@ -1154,6 +1162,72 @@ var generate = function generate(baseSpacing, scale) {
       color: 'graph-0' // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
 
+    },
+    notification: {
+      time: 8000,
+      container: {
+        // any box props
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall'
+        },
+        background: {
+          color: 'background-front'
+        }
+      },
+      toast: {
+        container: {
+          // any box props
+          elevation: 'medium',
+          round: 'xsmall',
+          width: 'medium'
+        },
+        layer: {
+          position: 'top',
+          margin: 'medium'
+        }
+      },
+      iconContainer: {
+        // any box props
+        pad: {
+          right: 'small'
+        }
+      },
+      textContainer: {
+        // any box props
+        gap: 'medium'
+      },
+      title: {
+        // any text props
+        weight: 'bold'
+      },
+      message: {
+        // any text props
+        margin: 'none'
+      },
+      close: {
+        icon: _FormClose.FormClose
+      },
+      critical: {
+        icon: _StatusCriticalSmall.StatusCriticalSmall,
+        color: 'status-critical'
+      },
+      warning: {
+        icon: _StatusWarningSmall.StatusWarningSmall,
+        color: 'status-warning'
+      },
+      normal: {
+        icon: _StatusGoodSmall.StatusGoodSmall,
+        color: 'status-ok'
+      },
+      unknown: {
+        icon: _StatusUnknownSmall.StatusUnknownSmall,
+        color: 'status-unknown'
+      },
+      undefined: {
+        icon: _StatusUnknownSmall.StatusUnknownSmall,
+        color: 'status-unknown'
+      }
     },
     pagination: {
       button: {

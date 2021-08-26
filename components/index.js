@@ -362,6 +362,14 @@ Object.keys(_Nav).forEach(function (key) {
   exports[key] = _Nav[key];
 });
 
+var _Notification = require("./Notification");
+
+Object.keys(_Notification).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Notification[key]) return;
+  exports[key] = _Notification[key];
+});
+
 var _RadioButton = require("./RadioButton");
 
 Object.keys(_RadioButton).forEach(function (key) {
