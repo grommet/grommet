@@ -90,41 +90,39 @@ const FileInput = forwardRef(
       name,
       value: valueProp,
       initialValue: [],
-      validate: onValidate,
-    });
-
-    const onValidate = useCallback(() => {
-      const fileList = [...files];
-      let numOfFiles = 0;
-      let message;
-      if (!maxSize) return '';
-      for (let i = 0; i < fileList.length; i += 1) {
-        const file = fileList[i];
-        if (file.size > maxSize) {
-          if (multiple) {
-            numOfFiles += 1;
-          } else {
-            message = format({
-              id: 'fileInput.maxSizeSingle',
-              messages,
-              values: { maxSize },
-            });
-            return message;
+      validate: useCallback(() => {
+        const fileList = [...files];
+        let numOfFiles = 0;
+        let message;
+        if (!maxSize) return '';
+        for (let i = 0; i < fileList.length; i += 1) {
+          const file = fileList[i];
+          if (file.size > maxSize) {
+            if (multiple) {
+              numOfFiles += 1;
+            } else {
+              message = format({
+                id: 'fileInput.maxSizeSingle',
+                messages,
+                values: { maxSize },
+              });
+              return message;
+            }
           }
         }
-      }
-      if (numOfFiles === 0) {
-        message = '';
+        if (numOfFiles === 0) {
+          message = '';
+          return message;
+        }
+        message = format({
+          id: `fileInput.maxSizeMultiple.${
+            numOfFiles === 1 ? 'singular' : 'plural'
+          }`,
+          messages,
+          values: { maxSize, numOfFiles },
+        });
         return message;
-      }
-      message = format({
-        id: `fileInput.maxSizeMultiple.${
-          numOfFiles === 1 ? 'singular' : 'plural'
-        }`,
-        messages,
-        values: { maxSize, numOfFiles },
-      });
-      return message;
+      }),
     });
 
     const mergeTheme = (propertyName, defaultKey) => {

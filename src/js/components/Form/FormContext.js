@@ -10,9 +10,7 @@ const useFormInput = ({ value: valueProp, initialValue }) => {
     valueProp !== undefined ? valueProp : initialValue,
   );
 
-  /*
-  Returns an array [value and function to set the value]
-  */
+  // Returns an array [value and function to set the value]
   return [
     valueProp !== undefined ? valueProp : value,
     (nextValue) => {

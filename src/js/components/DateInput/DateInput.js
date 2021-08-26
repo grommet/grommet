@@ -54,15 +54,6 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
-    React.useEffect(() => {
-      console.log(name, value, valueArg, defaultValue);
-    }, []);
-
-    React.useEffect(() => {
-      console.log('State: ', value);
-      console.log(name, value, valueArg, defaultValue);
-    }, [value]);
-
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -153,7 +144,9 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{ useFormInput: (_, val) => [val, () => {}] }}
+        value={{
+          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+        }}
       >
         <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
           <MaskedInput
