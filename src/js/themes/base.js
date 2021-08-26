@@ -10,6 +10,10 @@ import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
+import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
+import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
+import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
@@ -1035,6 +1039,67 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+    },
+    notification: {
+      time: 8000,
+      container: {
+        // any box props
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        background: {
+          color: 'background-front',
+        },
+      },
+      toast: {
+        container: {
+          // any box props
+          elevation: 'medium',
+          round: 'xsmall',
+          width: 'medium',
+        },
+        layer: {
+          position: 'top',
+          margin: 'medium',
+        },
+      },
+      iconContainer: {
+        // any box props
+        pad: { right: 'small' },
+      },
+      textContainer: {
+        // any box props
+        gap: 'medium',
+      },
+      title: {
+        // any text props
+        weight: 'bold',
+      },
+      message: {
+        // any text props
+        margin: 'none',
+      },
+      close: {
+        icon: FormClose,
+      },
+      critical: {
+        icon: StatusCriticalSmall,
+        color: 'status-critical',
+      },
+      warning: {
+        icon: StatusWarningSmall,
+        color: 'status-warning',
+      },
+      normal: {
+        icon: StatusGoodSmall,
+        color: 'status-ok',
+      },
+      unknown: {
+        icon: StatusUnknownSmall,
+        color: 'status-unknown',
+      },
+      undefined: {
+        icon: StatusUnknownSmall,
+        color: 'status-unknown',
+      },
     },
     pagination: {
       button: {
