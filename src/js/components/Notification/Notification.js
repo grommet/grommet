@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { Layer } from '../Layer';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Layer } from '../Layer';
 import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ toast, title, message, status, onClose }) => {
+const Notification = ({ message, onClose, status, title, toast }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const { icon: CloseIcon } = theme.notification.close;
@@ -50,11 +50,11 @@ const Notification = ({ toast, title, message, status, onClose }) => {
   if (toast) {
     content = (
       <Layer
+        {...theme.notification.toast.layer}
         role="log"
-        aria-live="polite"
-        animation="fadeIn"
         modal={false}
         onEsc={onClose}
+        responsive
         plain
       >
         {content}

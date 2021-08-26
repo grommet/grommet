@@ -1658,7 +1658,10 @@ Object {
               "dark": "white",
               "light": "black",
             },
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "container": Object {
             "background": Object {
@@ -1671,7 +1674,10 @@ Object {
           },
           "critical": Object {
             "color": "status-critical",
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "iconContainer": Object {
             "pad": Object {
@@ -1679,23 +1685,20 @@ Object {
             },
           },
           "message": Object {
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
+            "color": "text",
           },
           "normal": Object {
             "color": "status-ok",
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "textContainer": Object {
             "gap": "medium",
           },
           "title": Object {
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
+            "color": "text",
             "weight": "bold",
           },
           "toast": Object {
@@ -1704,18 +1707,31 @@ Object {
               "round": "xsmall",
               "width": "medium",
             },
+            "layer": Object {
+              "margin": "medium",
+              "position": "top",
+            },
           },
           "undefined": Object {
             "color": "status-unknown",
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "unknown": Object {
             "color": "status-unknown",
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
           "warning": Object {
             "color": "status-warning",
-            "icon": [Function],
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
           },
         },
         "pagination": Object {

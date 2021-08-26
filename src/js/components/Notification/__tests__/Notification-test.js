@@ -14,7 +14,7 @@ describe('Notification', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <Notification />
+        <Notification title="title" />
       </Grommet>,
     );
 
@@ -26,7 +26,7 @@ describe('Notification', () => {
   test('should have no accessibility violations for toast', async () => {
     const { container } = render(
       <Grommet>
-        <Notification toast message="message" />
+        <Notification toast title="title" message="message" />
       </Grommet>,
     );
 

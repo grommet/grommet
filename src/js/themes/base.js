@@ -1055,6 +1055,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           round: 'xsmall',
           width: 'medium',
         },
+        layer: {
+          position: 'top',
+          margin: 'medium',
+        },
       },
       iconContainer: {
         // any box props
@@ -1067,17 +1071,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       title: {
         // any text props
         weight: 'bold',
-        color: {
-          light: 'black',
-          dark: 'white',
-        },
+        color: 'text',
       },
       message: {
         // any text props
-        color: {
-          light: 'black',
-          dark: 'white',
-        },
+        color: 'text',
       },
       close: {
         icon: FormClose,

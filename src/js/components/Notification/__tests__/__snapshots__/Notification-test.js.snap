@@ -112,7 +112,7 @@ exports[`Notification should have no accessibility violations 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: #444444;
   font-weight: bold;
 }
 
@@ -180,7 +180,9 @@ exports[`Notification should have no accessibility violations 1`] = `
         >
           <span
             class="c6"
-          />
+          >
+            title
+          </span>
         </div>
       </div>
     </div>

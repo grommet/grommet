@@ -19,7 +19,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
       // any BoxProps
       pad: { horizontal: 'large', vertical: '36px' },
       background: '#87a200',
-      round: 'small',
+      border: { color: '#000000', size: 'large' },
     },
     iconContainer: {
       // any BoxProps
