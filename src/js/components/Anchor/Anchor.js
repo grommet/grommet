@@ -69,11 +69,11 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
