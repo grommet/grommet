@@ -67,6 +67,6 @@ type divProps = JSX.IntrinsicElements['div'];
 
 export interface GridExtendedProps extends GridProps, divProps {}
 
-declare const Grid: React.FC<GridExtendedProps>;
+declare const Grid: React.FC<GridExtendedProps> & { available: boolean };
 
 export { Grid };
