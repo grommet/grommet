@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
     as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
     color: _generalPropTypes.colorPropType,
     disabled: _propTypes["default"].bool,
+    gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     href: _propTypes["default"].string,
     icon: _propTypes["default"].element,
     label: _propTypes["default"].node,

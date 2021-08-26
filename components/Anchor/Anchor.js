@@ -17,7 +17,7 @@ var _StyledAnchor = require("./StyledAnchor");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -33,6 +33,8 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
+      _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       href = _ref.href,
       icon = _ref.icon,
       label = _ref.label,
@@ -86,7 +88,7 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     as: "span",
     direction: "row",
     align: "center",
-    gap: "small",
+    gap: gap,
     responsive: false,
     style: {
       display: 'inline-flex'

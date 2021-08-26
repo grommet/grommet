@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -17,6 +17,8 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
       children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
+      _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       href = _ref.href,
       icon = _ref.icon,
       label = _ref.label,
@@ -70,7 +72,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     as: "span",
     direction: "row",
     align: "center",
-    gap: "small",
+    gap: gap,
     responsive: false,
     style: {
       display: 'inline-flex'
