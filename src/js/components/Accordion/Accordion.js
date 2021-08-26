@@ -4,7 +4,7 @@ import { Box } from '../Box';
 
 import { AccordionContext } from './AccordionContext';
 
-const activeAsArray = active =>
+const activeAsArray = (active) =>
   typeof active === 'number' ? [active] : active;
 
 const Accordion = forwardRef(
@@ -27,7 +27,7 @@ const Accordion = forwardRef(
       setStateActiveIndex(activeIndex);
     }
 
-    const onPanelChange = index => {
+    const onPanelChange = (index) => {
       let nextActiveIndexes = [...(activeIndexes || [])];
 
       const nextActiveIndex = nextActiveIndexes.indexOf(index);
@@ -48,7 +48,7 @@ const Accordion = forwardRef(
     return (
       <Box ref={ref} role="tablist" {...rest}>
         {Children.toArray(children)
-          .filter(child => child)
+          .filter((child) => child)
           .map((child, index) => (
             <AccordionContext.Provider
               // eslint-disable-next-line react/no-array-index-key
