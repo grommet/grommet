@@ -24,6 +24,7 @@ const Anchor = forwardRef(
       children,
       color,
       disabled,
+      gap = 'small',
       href,
       icon,
       label,
@@ -83,7 +84,7 @@ const Anchor = forwardRef(
             as="span"
             direction="row"
             align="center"
-            gap="small"
+            gap={gap}
             responsive={false}
             style={{ display: 'inline-flex' }}
           >
