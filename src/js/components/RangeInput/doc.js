@@ -28,7 +28,7 @@ export const doc = (RangeInput) => {
           opacity: PropTypes.number,
         }),
       ),
-    ]).description(`The array of track colors based on the thumb value.`),
+    ]).description(`The color of the track left of the thumb. Color may be a single color or an array of colors based on the thumb value.`),
     id: PropTypes.string.description('The id attribute of the range input.'),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
       'The minimum value permitted.',
