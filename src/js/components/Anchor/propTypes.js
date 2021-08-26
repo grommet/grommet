@@ -9,6 +9,18 @@ if (process.env.NODE_ENV !== 'production') {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     color: colorPropType,
     disabled: PropTypes.bool,
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.string,
+    ]),
     href: PropTypes.string,
     icon: PropTypes.element,
     label: PropTypes.node,

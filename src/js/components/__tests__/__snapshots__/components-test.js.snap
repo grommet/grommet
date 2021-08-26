@@ -34,6 +34,7 @@ Object {
       "as": [Function],
       "color": [Function],
       "disabled": [Function],
+      "gap": [Function],
       "gridArea": [Function],
       "href": [Function],
       "icon": [Function],
