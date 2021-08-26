@@ -7,7 +7,7 @@ import { ThemeContextPropTypes } from './propTypes';
 
 ThemeContext.Extend = ({ children, value }) => (
   <ThemeContext.Consumer>
-    {theme => (
+    {(theme) => (
       <ThemeContext.Provider value={deepMerge(theme, value)}>
         {children}
       </ThemeContext.Provider>
