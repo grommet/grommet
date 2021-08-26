@@ -165,13 +165,13 @@ const DataTable = ({
         .map((pinnedColumn) => pinnedColumn.pin && pinnedColumn.property)
         .filter((n) => n);
       if (hasSelectColumn && pinnedProperties.length > 0) {
-        pinnedProperties = ['_select', ...pinnedProperties];
+        pinnedProperties = ['_grommetDataTableSelect', ...pinnedProperties];
       }
       const nextPinnedOffset = {};
 
       if (columnWidths !== []) {
         pinnedProperties.forEach((property, index) => {
-          const columnIndex = property === '_select' ? 0 :
+          const columnIndex = property === '_grommetDataTableSelect' ? 0 :
             columns.findIndex((column) => column.property === property) +
             hasSelectColumn;
           if (columnWidths[columnIndex]) {

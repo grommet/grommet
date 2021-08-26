@@ -147,8 +147,8 @@ const Header = forwardRef(
     }, [cellWidths, onWidths]);
 
     const pin = pinProp ? ['top'] : [];
-    const selectPin = pinnedOffset && pinnedOffset._select ?
-      [...pin, 'left'] : pin;
+    const selectPin = pinnedOffset?._grommetDataTableSelect ?
+        [...pin, 'left'] : pin;
       
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
@@ -176,7 +176,7 @@ const Header = forwardRef(
               context="header"
               scope="col"
               pin={selectPin}
-              pinnedOffset={pinnedOffset && pinnedOffset._select}
+              pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             >
               {onSelect && (
                 <CheckBox

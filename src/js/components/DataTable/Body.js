@@ -65,9 +65,9 @@ const Row = memo(
         {(selected || onSelect) && (
           <Cell
             background={cellProps.background}
-            pinnedOffset={pinnedOffset?._select}
+            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             column={ {
-              pin: Boolean(pinnedOffset?._select),
+              pin: Boolean(pinnedOffset?._grommetDataTableSelect),
               plain: 'noPad',
               size: 'auto',
               render: () => (
