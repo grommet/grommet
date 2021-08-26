@@ -94,20 +94,20 @@ const AccordionPanel = forwardRef(
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
-          onMouseOver={event => {
+          onMouseOver={(event) => {
             setHover(headingColor);
             if (onMouseOver) onMouseOver(event);
           }}
-          onMouseOut={event => {
+          onMouseOut={(event) => {
             setHover(undefined);
             if (onMouseOut) onMouseOut(event);
           }}
-          onFocus={event => {
+          onFocus={(event) => {
             setHover(headingColor);
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setHover(undefined);
             setFocus(false);
             if (onBlur) onBlur(event);
