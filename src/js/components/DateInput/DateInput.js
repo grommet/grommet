@@ -113,7 +113,10 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
+                if (open && !range) {
+                  setOpen(false);
+                  setTimeout(() => ref.current.focus(), 1);
+                }
               }
         }
         {...calendarProps}
