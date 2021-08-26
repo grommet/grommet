@@ -1041,6 +1041,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     notification: {
+      time: 8000,
       container: {
         // any box props
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1071,18 +1072,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       title: {
         // any text props
         weight: 'bold',
-        color: 'text',
       },
       message: {
         // any text props
-        color: 'text',
+        margin: 'none',
       },
       close: {
         icon: FormClose,
-        color: {
-          light: 'black',
-          dark: 'white',
-        },
       },
       critical: {
         icon: StatusCriticalSmall,

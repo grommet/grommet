@@ -112,7 +112,6 @@ exports[`Notification should have no accessibility violations 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   font-weight: bold;
 }
 

@@ -1655,10 +1655,6 @@ Object {
         },
         "notification": Object {
           "close": Object {
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
             "icon": Object {
               "$$typeof": Symbol(react.forward_ref),
               "render": [Function],
@@ -1686,7 +1682,7 @@ Object {
             },
           },
           "message": Object {
-            "color": "text",
+            "margin": "none",
           },
           "normal": Object {
             "color": "status-ok",
@@ -1698,8 +1694,8 @@ Object {
           "textContainer": Object {
             "gap": "medium",
           },
+          "time": 8000,
           "title": Object {
-            "color": "text",
             "weight": "bold",
           },
           "toast": Object {
