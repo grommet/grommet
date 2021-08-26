@@ -333,7 +333,7 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
