@@ -108,7 +108,7 @@ const Grommet = forwardRef((props, ref) => {
     );
     return {
       messages: nextMessages,
-      format: opts => {
+      format: (opts) => {
         const message = messagesProp?.format && messagesProp.format(opts);
         return typeof message !== 'undefined'
           ? message
