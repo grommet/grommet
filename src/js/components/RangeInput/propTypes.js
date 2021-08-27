@@ -9,8 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
       colorPropType,
       PropTypes.arrayOf(
         PropTypes.shape({
-          color: colorPropType,
-          value: PropTypes.number,
+          color: colorPropType.isRequired,
+          value: PropTypes.number.isRequired,
           opacity: PropTypes.number,
         }),
       ),

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { A11yTitleType } from '../../utils';
+import { A11yTitleType, ColorType } from '../../utils';
 
 interface ColorI {
   color: ColorType;
