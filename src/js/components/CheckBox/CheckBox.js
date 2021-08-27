@@ -105,6 +105,7 @@ const CheckBox = forwardRef(
 
     const { checked: CheckedIcon, indeterminate: IndeterminateIcon } =
       theme.checkBox.icons;
+    
     let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
       borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
