@@ -114,10 +114,12 @@ const DateInput = forwardRef(
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
         dates={range && value.length ? [value] : undefined}
+        // places focus on days grid when Calendar opens
+        initialFocus={open ? 'days' : undefined}
         onSelect={
           disabled
             ? undefined
-            : nextValue => {
+            : (nextValue) => {
                 let normalizedValue;
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
@@ -127,7 +129,10 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) closeCalendar();
+                if (open && !range) {
+                  closeCalendar();
+                  setTimeout(() => ref.current.focus(), 1);
+                }
               }
         }
         {...calendarProps}
@@ -156,7 +161,10 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <Keyboard onEsc={open ? () => closeCalendar() : undefined}>
+        <Keyboard
+          onEsc={open ? () => closeCalendar() : undefined}
+          onSpace={openCalendar}
+        >
           <MaskedInput
             ref={ref}
             id={id}
@@ -168,7 +176,7 @@ const DateInput = forwardRef(
             {...inputProps}
             {...rest}
             value={textValue}
-            onChange={event => {
+            onChange={(event) => {
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
               const nextValue = textToValue(
@@ -186,11 +194,11 @@ const DateInput = forwardRef(
                 onChange(adjustedEvent);
               }
             }}
-            onFocus={event => {
+            onFocus={(event) => {
               openCalendar();
               if (onFocus) onFocus(event);
             }}
-            onClick={() => setOpen(true)}
+            onClick={openCalendar}
           />
         </Keyboard>
       </FormContext.Provider>
@@ -208,20 +216,21 @@ const DateInput = forwardRef(
     if (open) {
       return [
         input,
-        <Drop
-          overflow="visible"
-          key="drop"
-          id={id ? `${id}__drop` : undefined}
-          target={ref.current}
-          align={{ top: 'bottom', left: 'left', ...dropProps }}
-          onEsc={closeCalendar}
-          onClickOutside={({ target }) => {
-            if (target !== ref.current) closeCalendar();
-          }}
-          {...dropProps}
-        >
-          {calendar}
-        </Drop>,
+        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
+          <Drop
+            overflow="visible"
+            id={id ? `${id}__drop` : undefined}
+            target={ref.current}
+            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            onEsc={closeCalendar}
+            onClickOutside={({ target }) => {
+              if (target !== ref.current) closeCalendar();
+            }}
+            {...dropProps}
+          >
+            {calendar}
+          </Drop>
+        </Keyboard>,
       ];
     }
 

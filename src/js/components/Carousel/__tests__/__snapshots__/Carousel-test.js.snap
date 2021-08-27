@@ -1565,7 +1565,7 @@ exports[`Carousel navigate 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"
@@ -1716,7 +1716,7 @@ exports[`Carousel navigate 3`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"
@@ -2349,7 +2349,7 @@ exports[`Carousel play 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"

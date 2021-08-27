@@ -2934,22 +2934,6 @@ exports[`DateInput focus 1`] = `
   right: 12px;
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   class="c0"
 >
@@ -3253,6 +3237,66 @@ exports[`DateInput focus 2`] = `
   border: 0;
 }
 
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   margin: 0px;
   font-size: 26px;
@@ -3270,6 +3314,23 @@ exports[`DateInput focus 2`] = `
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10 > circle,
+.c10 > ellipse,
+.c10 > line,
+.c10 > path,
+.c10 > polygon,
+.c10 > polyline,
+.c10 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10::-moz-focus-inner {
+  border: 0;
 }
 
 .c11 {
@@ -3328,7 +3389,7 @@ exports[`DateInput focus 2`] = `
   height: 54.857142857142854px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3535,12 +3596,12 @@ exports[`DateInput focus 2`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c14"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   2
                 </div>
@@ -10673,6 +10734,66 @@ exports[`DateInput select format 3`] = `
   border: 0;
 }
 
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   margin: 0px;
   font-size: 26px;
@@ -10690,6 +10811,23 @@ exports[`DateInput select format 3`] = `
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10 > circle,
+.c10 > ellipse,
+.c10 > line,
+.c10 > path,
+.c10 > polygon,
+.c10 > polyline,
+.c10 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10::-moz-focus-inner {
+  border: 0;
 }
 
 .c11 {
@@ -10748,7 +10886,7 @@ exports[`DateInput select format 3`] = `
   height: 54.857142857142854px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10955,12 +11093,12 @@ exports[`DateInput select format 3`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c14"
+                class="c17"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c17"
+                  class="c18"
                 >
                   2
                 </div>

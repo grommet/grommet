@@ -34,6 +34,7 @@ Object {
       "as": [Function],
       "color": [Function],
       "disabled": [Function],
+      "gap": [Function],
       "gridArea": [Function],
       "href": [Function],
       "icon": [Function],
@@ -598,6 +599,7 @@ Object {
     "render": [Function],
   },
   "Nav": [Function],
+  "Notification": [Function],
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
@@ -1650,6 +1652,84 @@ Object {
         },
         "meter": Object {
           "color": "graph-0",
+        },
+        "notification": Object {
+          "close": Object {
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "container": Object {
+            "background": Object {
+              "color": "background-front",
+            },
+            "pad": Object {
+              "horizontal": "small",
+              "vertical": "xsmall",
+            },
+          },
+          "critical": Object {
+            "color": "status-critical",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "iconContainer": Object {
+            "pad": Object {
+              "right": "small",
+            },
+          },
+          "message": Object {
+            "margin": "none",
+          },
+          "normal": Object {
+            "color": "status-ok",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "textContainer": Object {
+            "gap": "medium",
+          },
+          "time": 8000,
+          "title": Object {
+            "weight": "bold",
+          },
+          "toast": Object {
+            "container": Object {
+              "elevation": "medium",
+              "round": "xsmall",
+              "width": "medium",
+            },
+            "layer": Object {
+              "margin": "medium",
+              "position": "top",
+            },
+          },
+          "undefined": Object {
+            "color": "status-unknown",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "unknown": Object {
+            "color": "status-unknown",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "warning": Object {
+            "color": "status-warning",
+            "icon": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
         },
         "pagination": Object {
           "button": Object {
