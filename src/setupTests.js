@@ -5,7 +5,7 @@ global.console.error = (message) => {
   throw message;
 };
 
-jest.mock('resize observer', () => ({
+jest.mock('./js/utils/useScrollbarDetector', () => ({
   __esModule: true,
   default: jest.fn().mockImplementation(() => ({
     observe: jest.fn(),
