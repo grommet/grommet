@@ -73,10 +73,7 @@ const DateInput = forwardRef(
     // We compare using textToValue to avoid "06/01/2021" not
     // matching "06/1/2021".
     useEffect(() => {
-      if (
-        schema &&
-        value !== undefined
-      ) {
+      if (schema && value !== undefined) {
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
@@ -101,6 +98,8 @@ const DateInput = forwardRef(
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
         dates={range && value.length ? [value] : undefined}
+        // places focus on days grid when Calendar opens
+        initialFocus={open ? 'days' : undefined}
         onSelect={
           disabled
             ? undefined
@@ -114,7 +113,10 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
+                if (open && !range) {
+                  setOpen(false);
+                  setTimeout(() => ref.current.focus(), 1);
+                }
               }
         }
         {...calendarProps}
@@ -143,7 +145,10 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
+        <Keyboard
+          onEsc={open ? () => setOpen(false) : undefined}
+          onSpace={() => setOpen(true)}
+        >
           <MaskedInput
             ref={ref}
             id={id}
@@ -174,7 +179,6 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
-              setOpen(true);
               if (onFocus) onFocus(event);
             }}
             onClick={() => setOpen(true)}
@@ -195,20 +199,21 @@ const DateInput = forwardRef(
     if (open) {
       return [
         input,
-        <Drop
-          overflow="visible"
-          key="drop"
-          id={id ? `${id}__drop` : undefined}
-          target={ref.current}
-          align={{ top: 'bottom', left: 'left', ...dropProps }}
-          onEsc={() => setOpen(false)}
-          onClickOutside={({ target }) => {
-            if (target !== ref.current) setOpen(false);
-          }}
-          {...dropProps}
-        >
-          {calendar}
-        </Drop>,
+        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
+          <Drop
+            overflow="visible"
+            id={id ? `${id}__drop` : undefined}
+            target={ref.current}
+            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            onEsc={() => setOpen(false)}
+            onClickOutside={({ target }) => {
+              if (target !== ref.current) setOpen(false);
+            }}
+            {...dropProps}
+          >
+            {calendar}
+          </Drop>
+        </Keyboard>,
       ];
     }
 
