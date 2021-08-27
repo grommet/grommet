@@ -23,9 +23,10 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
-      containerTarget,
-    ]);
+    useEffect(
+      () => setDropContainer(getNewContainer(containerTarget)),
+      [containerTarget],
+    );
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
