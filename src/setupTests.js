@@ -6,9 +6,12 @@ global.console.error = (message) => {
 };
 
 class ResizeObserver {
+    // eslint-disable-next-line class-methods-use-this
     observe() {
         // do nothing
     }
+
+    // eslint-disable-next-line class-methods-use-this
     unobserve() {
         // do nothing
     }
