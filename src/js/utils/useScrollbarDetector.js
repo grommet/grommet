@@ -27,13 +27,11 @@ export const useScrollbarDetector = (onScrollbarChanged, targetRef) => {
         observer?.current?.unobserve(target);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref]);
+  }, [ref, targetRef]);
 
   useEffect(() => {
     if (isScrollbarVisible !== null) {
       onScrollbarChanged();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isScrollbarVisible]);
+  }, [isScrollbarVisible, onScrollbarChanged]);
 };
