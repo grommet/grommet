@@ -4,11 +4,11 @@ import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
 
-const deriveMax = values => {
+const deriveMax = (values) => {
   let max = 100;
   if (values && values.length > 1) {
     max = 0;
-    values.forEach(v => {
+    values.forEach((v) => {
       max += v.value;
     });
   }
