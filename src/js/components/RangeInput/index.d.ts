@@ -2,7 +2,7 @@ import * as React from 'react';
 import { A11yTitleType } from '../../utils';
 
 interface ColorI {
-  color: string;
+  color: ColorType;
   value: number;
   opacity?: number;
 }
