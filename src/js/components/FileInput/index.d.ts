@@ -3,12 +3,7 @@ import * as React from 'react';
 export interface FileInputProps {
   disabled?: boolean;
   id?: string;
-  maxSize?:
-    | number
-    | {
-        unit?: string;
-        size?: number;
-      };
+  maxSize?: number;
   messages?: {
     browse?: string;
     dropPrompt?: string;

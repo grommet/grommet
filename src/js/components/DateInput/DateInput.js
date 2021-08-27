@@ -50,6 +50,7 @@ const DateInput = forwardRef(
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const [value, setValue] = useFormInput({
+      name,
       value: valueArg,
       initialValue: defaultValue,
     });

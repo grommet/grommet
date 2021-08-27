@@ -109,7 +109,7 @@ const TextInput = forwardRef(
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput({
-      name: readOnly || name,
+      name: readOnly ? undefined : name,
       value: valueProp,
     });
 

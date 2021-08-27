@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useRef, useCallback } from 'react';
+import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -90,39 +90,30 @@ const FileInput = forwardRef(
       name,
       value: valueProp,
       initialValue: [],
-      validate: useCallback(() => {
+      validate: () => {
         const fileList = [...files];
-        let numOfFiles = 0;
-        let message;
-        if (!maxSize) return '';
-        for (let i = 0; i < fileList.length; i += 1) {
-          const file = fileList[i];
-          if (file.size > maxSize) {
+        let message = '';
+        if (maxSize) {
+          const numOfFiles = fileList.filter(
+            ({ size }) => size > maxSize,
+          ).length;
+          if (numOfFiles) {
+            let messageId = 'fileInput.maxSizeSingle';
             if (multiple) {
-              numOfFiles += 1;
-            } else {
-              message = format({
-                id: 'fileInput.maxSizeSingle',
-                messages,
-                values: { maxSize },
-              });
-              return message;
+              messageId = `fileInput.maxSizeMultiple.${
+                numOfFiles === 1 ? 'singular' : 'plural'
+              }`;
             }
+            message = format({
+              id: messageId,
+              messages,
+              values: { maxSize, numOfFiles },
+            });
           }
         }
-        if (numOfFiles === 0) {
-          message = '';
-          return message;
-        }
-        message = format({
-          id: `fileInput.maxSizeMultiple.${
-            numOfFiles === 1 ? 'singular' : 'plural'
-          }`,
-          messages,
-          values: { maxSize, numOfFiles },
-        });
+
         return message;
-      }),
+      },
     });
 
     const mergeTheme = (propertyName, defaultKey) => {

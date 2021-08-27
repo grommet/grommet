@@ -18,13 +18,9 @@ export const doc = (FileInput) => {
       .description('Whether the control is disabled.')
       .defaultValue(undefined),
     id: PropTypes.string.description('The id attribute of the input.'),
-    maxSize: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.shape({
-        unit: PropTypes.string,
-        size: PropTypes.number,
-      }),
-    ]).description('Specifies a file size limit for the FileInput'),
+    maxSize: PropTypes.number.description(
+      'Specifies a file size limit for the FileInput',
+    ),
     messages: PropTypes.shape({
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,

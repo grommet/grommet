@@ -33,10 +33,6 @@ Specifies a file size limit for the FileInput
 
 ```
 number
-{
-  unit: string,
-  size: number
-}
 ```
 
 **messages**

@@ -8,10 +8,10 @@
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
-    "maxSizeSingle": "File exceeds size limit. Select a file with max size of {maxSize}.",
+    "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize} bytes.",
     "maxSizeMultiple": {
-      "singular": "1 File exceeds size limit. Select files with a max size of {maxSize}.",
-      "plural": "{numOfFiles} Files exceed size limit. Select files with a max size of {maxSize}."
+      "singular": "One file is too large. Select files which are no larger than {maxSize} bytes.",
+      "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize} bytes."
     },
     "remove": "remove",
     "removeAll": "remove all"

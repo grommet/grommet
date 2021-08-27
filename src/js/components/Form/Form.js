@@ -82,10 +82,11 @@ const validateForm = (validations, formValue, format, messages, omitValid) => {
 
     let result;
     if (input) {
-      // This is the onValidate function we made for example
+      // input() are validations supplied through useFormInput()
       result = input(name, formValue, format, messages);
     }
     if (field && !result) {
+      // field() are validations supplied through useFormField()
       result = field(name, formValue, format, messages);
     }
     // typeof error === 'object' is implied for both cases of error with
@@ -264,6 +265,8 @@ const Form = forwardRef(
       return () => clearTimeout(timer);
     }, [
       buildValid,
+      format,
+      messages,
       pendingValidation,
       onValidate,
       touched,
@@ -289,7 +292,7 @@ const Form = forwardRef(
           infos: { ...prevValidationResults.infos, ...nextInfos },
         };
       });
-    }, [touched, validateOn, value]);
+    }, [format, messages, touched, validateOn, value]);
 
     // There are three basic patterns of handling form input value state:
     //
