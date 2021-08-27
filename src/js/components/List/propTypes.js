@@ -22,7 +22,7 @@ const sides = [
 ];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOf(sizes);
 });
 
