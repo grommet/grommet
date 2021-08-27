@@ -352,7 +352,7 @@ const MAP_LON_LEFT = -171.0; // empirically determined
 const MAP_LON_RIGHT = 184.0; // empirically determined
 const MAP_LON_DELTA = MAP_LON_RIGHT - MAP_LON_LEFT;
 
-const mapValues = extent => {
+const mapValues = (extent) => {
   const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
   const mapOffsetY = Math.round(
     (mapRadius / 2) *
@@ -390,7 +390,7 @@ const coordToLatLon = (coord, origin, extent) => {
 const buildContinent = ({ area, dots, name, origin }) => {
   let extent = [...origin];
   const stateDots = dots
-    .map(segment => {
+    .map((segment) => {
       const count = segment[2];
       const spots = [];
       for (let i = 0; i < count; i += 1) spots.push('h0');
@@ -432,7 +432,7 @@ const buildWorld = () => {
   const continents = CONTINENTS.map(buildContinent);
   const origin = [0, 0];
   let extent = [0, 0];
-  continents.forEach(continent => {
+  continents.forEach((continent) => {
     extent = maxCoordinate(extent, continent.extent);
   });
 
@@ -536,7 +536,7 @@ const WorldMap = forwardRef(
     const containerRef = React.useRef();
 
     const onMouseMove = React.useCallback(
-      event => {
+      (event) => {
         // determine the map coordinates for where the mouse is
         // containerRef uses the group so we can handle aspect ratio scaling
         const rect = containerRef.current.getBoundingClientRect();
@@ -552,15 +552,19 @@ const WorldMap = forwardRef(
     );
 
     const continentElements = world.continents.map(({ area, dots, name }) => {
-      const { color: continentColor, onClick, onHover, ...restContinents } =
-        continents[name] || {};
+      const {
+        color: continentColor,
+        onClick,
+        onHover,
+        ...restContinents
+      } = continents[name] || {};
       const active = activeContinent && activeContinent === name;
 
       let interactiveProps = {};
       if (onClick || onHover) {
         interactiveProps = buildInteractiveProps(
           continents[name],
-          activate => setActiveContinent(activate),
+          (activate) => setActiveContinent(activate),
           active,
         );
       }
@@ -583,7 +587,7 @@ const WorldMap = forwardRef(
       );
     });
 
-    const placeElements = places.map(place => {
+    const placeElements = places.map((place) => {
       const {
         color: placeColor,
         coords,
@@ -600,7 +604,7 @@ const WorldMap = forwardRef(
       if (onClick || onHover) {
         interactiveProps = buildInteractiveProps(
           place,
-          activate => setActivePlace(activate),
+          (activate) => setActivePlace(activate),
           active,
         );
       }
