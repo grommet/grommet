@@ -34,7 +34,7 @@ const RadioButtonGroup = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // normalize options to always use an object
-    const options = optionsProp.map(o =>
+    const options = optionsProp.map((o) =>
       typeof o !== 'object'
         ? {
             disabled,
@@ -144,7 +144,7 @@ const RadioButtonGroup = forwardRef(
                 (value === '' && index === 0);
               return (
                 <RadioButton
-                  ref={aRef => {
+                  ref={(aRef) => {
                     optionRefs.current[index] = aRef;
                   }}
                   key={optionValue}
@@ -163,7 +163,7 @@ const RadioButtonGroup = forwardRef(
                   value={optionValue}
                   onFocus={onFocus}
                   onBlur={onBlur}
-                  onChange={event => {
+                  onChange={(event) => {
                     setValue(optionValue);
                     if (onChange) onChange(event);
                   }}
@@ -171,7 +171,7 @@ const RadioButtonGroup = forwardRef(
                   {...optionRest}
                 >
                   {children
-                    ? state => children(optionsProp[index], state)
+                    ? (state) => children(optionsProp[index], state)
                     : null}
                 </RadioButton>
               );

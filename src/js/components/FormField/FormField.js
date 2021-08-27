@@ -39,22 +39,22 @@ const grommetInputPadNames = [
   'RangeInput',
 ];
 
-const isGrommetInput = comp =>
+const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const FormFieldBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
-  ${props => props.theme.formField && props.theme.formField.extend}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${props => props.focus && focusStyle({ justBorder: true })}
+  ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
 const StyledMessageContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&
     props.theme.formField[props.messageType].container.extend}
@@ -106,7 +106,7 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     ? { focusIndicator: false, onChange, plain: true }
     : {
         value,
-        onChange: event => {
+        onChange: (event) => {
           setValue(
             event.value !== undefined ? event.value : event.target.value,
           );
@@ -196,7 +196,7 @@ const FormField = forwardRef(
     let contents =
       (themeBorder &&
         children &&
-        Children.map(children, child => {
+        Children.map(children, (child) => {
           if (
             child &&
             child.type &&
@@ -255,7 +255,7 @@ const FormField = forwardRef(
     let isFileInputComponent;
     if (
       children &&
-      Children.forEach(children, child => {
+      Children.forEach(children, (child) => {
         if (
           child &&
           child.type &&
@@ -437,18 +437,18 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(containsFocus(formFieldRef.current));
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
         onChange={
           contextOnChange || onChange
-            ? event => {
+            ? (event) => {
                 event.persist();
                 if (onChange) onChange(event);
                 if (contextOnChange) {
@@ -477,9 +477,7 @@ const FormField = forwardRef(
             )}
             <Message message={help} {...formFieldTheme.help} />
           </>
-        ) : (
-          undefined
-        )}
+        ) : undefined}
         {contents}
         <Message type="error" message={error} {...formFieldTheme.error} />
         <Message type="info" message={info} {...formFieldTheme.info} />

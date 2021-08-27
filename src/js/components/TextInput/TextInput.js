@@ -35,14 +35,14 @@ import {
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 
-const renderLabel = suggestion => {
+const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
   }
   return suggestion;
 };
 
-const stringLabel = suggestion => {
+const stringLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
     if (suggestion.label && typeof suggestion.label === 'string') {
       return suggestion.label;
@@ -53,7 +53,7 @@ const stringLabel = suggestion => {
 };
 
 const ContainerBox = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
@@ -179,7 +179,7 @@ const TextInput = forwardRef(
       () =>
         suggestions
           ? suggestions
-              .map(suggestion =>
+              .map((suggestion) =>
                 typeof suggestion === 'object' ? suggestion.value : suggestion,
               )
               .indexOf(value)
@@ -201,18 +201,18 @@ const TextInput = forwardRef(
 
     // activeSuggestionIndex unifies mouse and keyboard interaction of
     // the suggestions
-    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      resetSuggestionIndex,
-    );
+    const [activeSuggestionIndex, setActiveSuggestionIndex] =
+      useState(resetSuggestionIndex);
 
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
     const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
 
     // set activeSuggestionIndex when value changes
-    useEffect(() => setActiveSuggestionIndex(valueSuggestionIndex), [
-      valueSuggestionIndex,
-    ]);
+    useEffect(
+      () => setActiveSuggestionIndex(valueSuggestionIndex),
+      [valueSuggestionIndex],
+    );
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
@@ -271,7 +271,7 @@ const TextInput = forwardRef(
     };
 
     const onNextSuggestion = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         const nextActiveIndex = Math.min(
           activeSuggestionIndex + 1,
@@ -284,7 +284,7 @@ const TextInput = forwardRef(
     );
 
     const onPreviousSuggestion = useCallback(
-      event => {
+      (event) => {
         event.preventDefault();
         const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
         setActiveSuggestionIndex(nextActiveIndex);
@@ -361,7 +361,7 @@ const TextInput = forwardRef(
                         align="start"
                         kind={!child ? 'option' : undefined}
                         label={!child ? renderedLabel : undefined}
-                        onClick={event =>
+                        onClick={(event) =>
                           setValueFromSuggestion(event, suggestion)
                         }
                         onMouseMove={
@@ -385,7 +385,7 @@ const TextInput = forwardRef(
 
     const keyboardProps = { onKeyDown };
     if (showDrop) {
-      keyboardProps.onEnter = event => {
+      keyboardProps.onEnter = (event) => {
         // prevent submitting forms via Enter when the drop is open
         event.preventDefault();
         if (activeSuggestionIndex >= 0)
@@ -437,7 +437,7 @@ const TextInput = forwardRef(
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
-            onFocus={event => {
+            onFocus={(event) => {
               // Don't do anything if we are acting like we already have
               // focus. This can happen when this input loses focus temporarily
               // to our drop, see onBlur() handler below.
@@ -455,7 +455,7 @@ const TextInput = forwardRef(
                 if (onFocus) onFocus(event);
               }
             }}
-            onBlur={event => {
+            onBlur={(event) => {
               // Only treat it as a blur if the element receiving focus
               // isn't in our drop. The relatedTarget will be our drop
               // when the user clicks on a suggestion or interacts with the
@@ -471,7 +471,7 @@ const TextInput = forwardRef(
             onChange={
               readOnly
                 ? undefined
-                : event => {
+                : (event) => {
                     // when TextInput is not contained in a Form, no re-render
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled

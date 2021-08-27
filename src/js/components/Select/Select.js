@@ -25,7 +25,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
+  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const HiddenInput = styled.input`
@@ -33,12 +33,12 @@ const HiddenInput = styled.input`
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.callerPlain && controlBorderStyle};
-  ${props =>
+  ${(props) => !props.callerPlain && controlBorderStyle};
+  ${(props) =>
     props.theme.select &&
     props.theme.select.control &&
     props.theme.select.control.extend};
-  ${props => props.open && props.theme.select.control.open};
+  ${(props) => props.open && props.theme.select.control.open};
 `;
 
 StyledSelectDropButton.defaultProps = {};
@@ -121,7 +121,7 @@ const Select = forwardRef(
     // delivered via 'onChange'.
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
-        return value.map(v =>
+        return value.map((v) =>
           valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
@@ -148,7 +148,7 @@ const Select = forwardRef(
             result.push(index);
           }
         } else if (Array.isArray(valuedValue)) {
-          if (valuedValue.some(v => v === applyKey(option, valueKey))) {
+          if (valuedValue.some((v) => v === applyKey(option, valueKey))) {
             result.push(index);
           }
         } else if (valuedValue === applyKey(option, valueKey)) {
@@ -172,7 +172,7 @@ const Select = forwardRef(
       if (onClose) onClose();
     }, [onClose]);
 
-    const triggerChangeEvent = useCallback(nextValue => {
+    const triggerChangeEvent = useCallback((nextValue) => {
       // Calling set value function directly on input because React library
       // overrides setter `event.target.value =` and loses original event
       // target fidelity.

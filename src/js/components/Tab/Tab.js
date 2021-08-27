@@ -56,21 +56,21 @@ const Tab = forwardRef(
       title,
     ]);
 
-    const onMouseOverTab = event => {
+    const onMouseOverTab = (event) => {
       setOver(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutTab = event => {
+    const onMouseOutTab = (event) => {
       setOver(undefined);
       if (onMouseOut) {
         onMouseOut(event);
       }
     };
 
-    const onClickTab = event => {
+    const onClickTab = (event) => {
       if (event) {
         event.preventDefault();
       }
@@ -126,7 +126,7 @@ const Tab = forwardRef(
     }
 
     // needed to apply hover/active styles to the icon
-    const renderIcon = iconProp => {
+    const renderIcon = (iconProp) => {
       if (active) {
         return React.cloneElement(iconProp, {
           ...theme.tab.active,
