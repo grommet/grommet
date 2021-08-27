@@ -118,10 +118,11 @@ const Grommet = forwardRef((props, ref) => {
     };
   }, [messagesProp]);
 
+  const onResize = () => {
+    setResponsive(getBreakpoint(document.body.clientWidth, theme));
+  };
+
   useEffect(() => {
-    const onResize = () => {
-      setResponsive(getBreakpoint(document.body.clientWidth, theme));
-    };
     window.addEventListener('resize', onResize);
     onResize();
     return () => {
@@ -137,7 +138,7 @@ const Grommet = forwardRef((props, ref) => {
   const grommetRef = useForwardedRef(ref);
 
   useScrollbarDetector(() => {
-    setResponsive(getBreakpoint(document.body.clientWidth, theme));
+    onResize();
   }, grommetRef);
 
   return (
