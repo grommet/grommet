@@ -5,7 +5,7 @@ import { ImagePropTypes } from './propTypes';
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
     const [imageMissing, setImageMissing] = useState(false);
-    const handleError = event => {
+    const handleError = (event) => {
       if (onError) {
         onError(event);
       }
