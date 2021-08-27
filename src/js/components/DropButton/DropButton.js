@@ -34,7 +34,7 @@ const DropButton = forwardRef(
       }
     }, [open, show]);
     const onDropClose = useCallback(
-      event => {
+      (event) => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
         let node = event.target;
@@ -51,7 +51,7 @@ const DropButton = forwardRef(
     );
 
     const onClickInternal = useCallback(
-      event => {
+      (event) => {
         if (!show) {
           setShow(true);
           if (onOpen) onOpen(event);
