@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useMemo, useState } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useMemo,
+  useState,
+  useCallback,
+} from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -118,9 +124,9 @@ const Grommet = forwardRef((props, ref) => {
     };
   }, [messagesProp]);
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     setResponsive(getBreakpoint(document.body.clientWidth, theme));
-  };
+  }, [theme]);
 
   useEffect(() => {
     window.addEventListener('resize', onResize);
@@ -128,7 +134,7 @@ const Grommet = forwardRef((props, ref) => {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [theme]);
+  }, [onResize, theme]);
 
   const responsive =
     stateResponsive ||
