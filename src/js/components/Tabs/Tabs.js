@@ -34,7 +34,7 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
-    const activateTab = index => {
+    const activateTab = (index) => {
       if (propsActiveIndex === undefined) {
         setActiveIndex(index);
       }
