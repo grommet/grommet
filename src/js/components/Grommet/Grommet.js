@@ -22,6 +22,7 @@ import { OptionsContext } from '../../contexts/OptionsContext';
 import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
+import { useScrollbarDetector } from '../../utils/useScrollbarDetector';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -134,6 +135,10 @@ const Grommet = forwardRef((props, ref) => {
     theme.global.deviceBreakpoints.tablet;
 
   const grommetRef = useForwardedRef(ref);
+
+  useScrollbarDetector(() => {
+    setResponsive(getBreakpoint(document.body.clientWidth, theme));
+  }, grommetRef);
 
   return (
     <ThemeContext.Provider value={theme}>
