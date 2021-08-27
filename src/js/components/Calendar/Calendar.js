@@ -170,7 +170,6 @@ const Calendar = forwardRef(
       dates: datesProp,
       daysOfWeek,
       disabled,
-      initialFocus, // internal only for DateInput
       fill,
       firstDayOfWeek = 0,
       header,
@@ -390,10 +389,6 @@ const Calendar = forwardRef(
     const daysRef = useRef();
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
-
-    useEffect(() => {
-      if (initialFocus === 'days') daysRef.current.focus();
-    }, [initialFocus]);
 
     const changeReference = useCallback(
       (nextReference) => {
