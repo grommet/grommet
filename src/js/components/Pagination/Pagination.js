@@ -7,7 +7,7 @@ import { PageControl } from './PageControl';
 import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;
 
@@ -101,7 +101,7 @@ const Pagination = forwardRef(
     else if (totalPages - numberEdgePages > numberEdgePages)
       endFlex = [totalPages - numberEdgePages];
 
-    const getItemIndices = nextPage => {
+    const getItemIndices = (nextPage) => {
       const startIndex = step * (nextPage - 1);
       const endIndex = startIndex + step;
       return { startIndex, endIndex };
@@ -134,7 +134,7 @@ const Pagination = forwardRef(
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
         disabled: activePage === totalPages || !numberItems,
         icon: <NextIcon color={iconColor} />,
-        onClick: event => {
+        onClick: (event) => {
           const nextPage = activePage + 1;
           handleClick(event, nextPage);
         },
@@ -144,7 +144,7 @@ const Pagination = forwardRef(
         'aria-disabled': activePage === 1 ? 'true' : undefined,
         disabled: activePage === 1 || !numberItems,
         icon: <PreviousIcon color={iconColor} />,
-        onClick: event => {
+        onClick: (event) => {
           const previousPage = activePage - 1;
           handleClick(event, previousPage);
         },
@@ -166,7 +166,7 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    controls = controls.map(control => ({
+    controls = controls.map((control) => ({
       active: control === activePage,
       a11yTitle:
         typeof control === 'number'
@@ -176,7 +176,7 @@ const Pagination = forwardRef(
       // https://www.w3.org/TR/wai-aria-1.1/#aria-current
       'aria-current': control === activePage ? 'page' : undefined,
       control,
-      onClick: event => {
+      onClick: (event) => {
         handleClick(event, control);
       },
       separator: control === 'more-prev' || control === 'more-next',
