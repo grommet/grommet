@@ -6,7 +6,7 @@ const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
-sides.forEach(side => {
+sides.forEach((side) => {
   padShapeSides[side] = PropTypes.oneOfType([
     PropTypes.oneOf(sizes),
     PropTypes.string,
@@ -14,15 +14,15 @@ sides.forEach(side => {
 });
 
 const padShapeParts = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   padShapeParts[part] = {};
-  sides.forEach(side => {
+  sides.forEach((side) => {
     padShapeParts[part][side] = PropTypes.oneOf(sizes);
   });
 });
 
 const backgroundShape = {};
-[...parts, 'pinned'].forEach(part => {
+[...parts, 'pinned'].forEach((part) => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
