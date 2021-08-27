@@ -50,7 +50,7 @@ const borderTypes = [
 ];
 
 const borderShape = {};
-parts.forEach(part => {
+parts.forEach((part) => {
   borderShape[part] = PropTypes.oneOfType(borderTypes);
 });
 
