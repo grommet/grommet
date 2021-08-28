@@ -26,7 +26,7 @@ const rangeInputTheme = {
   },
 };
 
-export const MultiColorTrack = () => {
+export const Multi = () => {
   const [value, setValue] = React.useState(3);
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
@@ -55,7 +55,7 @@ export const MultiColorTrack = () => {
             onChange={onChange}
             color={[
               { value: 3, color: '#FF0000', opacity: 0.5 },
-              { value: 7, color: '#FFFF00' },
+              { value: 7, color: { light: 'accent-3', dark: 'brand' } },
               { value: 10, color: '#00FF00' },
             ]}
           />
@@ -76,8 +76,8 @@ export const MultiColorTrack = () => {
   );
 };
 
-MultiColorTrack.storyName = 'MultiColorTrack';
+Multi.storyName = 'Multi';
 
 export default {
-  title: 'Input/RangeInput/MultiColorTrack',
+  title: 'Input/RangeInput/Track Color/Multi',
 };

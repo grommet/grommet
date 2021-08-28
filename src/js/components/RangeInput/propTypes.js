@@ -6,10 +6,22 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
     color: PropTypes.oneOfType([
-      colorPropType,
+      PropTypes.oneOfType([
+        colorPropType,
+        PropTypes.shape({
+          dark: colorPropType.isRequired,
+          light: colorPropType.isRequired,
+        }),
+      ]),
       PropTypes.arrayOf(
         PropTypes.shape({
-          color: colorPropType.isRequired,
+          color: PropTypes.oneOfType([
+            colorPropType.isRequired,
+            PropTypes.shape({
+              dark: colorPropType.isRequired,
+              light: colorPropType.isRequired,
+            }),
+          ]),
           value: PropTypes.number.isRequired,
           opacity: PropTypes.number,
         }),

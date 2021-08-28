@@ -64,8 +64,10 @@ const trackColorStyle = (props) => {
       props.theme.rangeInput.track.opacity || 1,
     )}`;
   }
-
-  if (typeof props.color === 'string') {
+  if (
+    typeof props.color === 'string' ||
+    (typeof props.color === 'object' && !Array.isArray(props.color))
+  ) {
     const lowerTrackColor = getRGBA(
       normalizeColor(props.color, props.theme),
       1,
