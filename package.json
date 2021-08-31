@@ -99,7 +99,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^10.0.0",
@@ -111,7 +111,7 @@
     "jest-axe": "^4.1.0",
     "jest-cli": "^27.0.6",
     "jest-styled-components": "^7.0.5",
-    "jsdom": "^16.7.0",
+    "jsdom": "^17.0.0",
     "postcss": "^8.3.6",
     "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
@@ -127,8 +127,8 @@
     "tarball-extract": "^0.0.6",
     "ts-loader": "^8.3.0",
     "typescript": "^4.3.5",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.2.3"
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.8.0"
   },
   "jest": {
     "collectCoverage": true,
