@@ -27,7 +27,7 @@ const rangeInputTheme = {
 };
 
 export const Multi = () => {
-  const [value, setValue] = React.useState(3);
+  const [value, setValue] = React.useState(8);
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
 
