@@ -305,7 +305,7 @@ const TextInput = forwardRef(
       setShowStyledPlaceholder(
         placeholder && typeof placeholder !== 'string' && !value,
       );
-    }, [value]);
+    }, [value, showStyledPlaceholder, placeholder]);
 
     let drop;
     const extraProps = {
