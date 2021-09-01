@@ -301,7 +301,7 @@ const TextInput = forwardRef(
     );
 
     useEffect(() => {
-      if (!value) return;
+      if (!value || !showStyledPlaceholder) return;
       setShowStyledPlaceholder(
         placeholder && typeof placeholder !== 'string' && !value,
       );
