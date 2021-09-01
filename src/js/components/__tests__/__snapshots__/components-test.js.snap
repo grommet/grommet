@@ -3877,7 +3877,7 @@ string",
         "name": "id",
       },
       Object {
-        "description": "Specifies a file size limit for the FileInput",
+        "description": "Specifies a file size limit in bytes for the FileInput",
         "format": "number",
         "name": "maxSize",
       },

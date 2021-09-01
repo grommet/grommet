@@ -29,7 +29,7 @@ string
 
 **maxSize**
 
-Specifies a file size limit for the FileInput
+Specifies a file size limit in bytes for the FileInput
 
 ```
 number

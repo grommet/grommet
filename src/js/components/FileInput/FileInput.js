@@ -86,6 +86,18 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
 
+    const formatBytes = (size) => {
+      const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+      const factor = 1000;
+      let index = 0;
+      let num = size;
+      while (num >= factor) {
+        num /= factor;
+        index += 1;
+      }
+      return `${num.toFixed(1)} ${units[index]}`;
+    };
+
     const [files, setFiles] = formContext.useFormInput({
       name,
       value: valueProp,
@@ -107,7 +119,7 @@ const FileInput = forwardRef(
             message = format({
               id: messageId,
               messages,
-              values: { maxSize, numOfFiles },
+              values: { maxSize: formatBytes(maxSize), numOfFiles },
             });
           }
         }
@@ -150,20 +162,6 @@ const FileInput = forwardRef(
         rightPad = theme.global.edgeSize[horizontal] || horizontal;
       }
     }
-
-    // const parseBytes = (bytes) => {
-    //   if (typeof bytes === 'object') {
-    //     const { size, unit } = bytes;
-    //     if (size && unit) {
-    //       if (unit === 'B') return size;
-    //       if (unit === 'KB') return size * 1000;
-    //       if (unit === 'MB') return size * 1000 * 1000;
-    //       if (unit === 'GB') return size * 1000 * 1000 * 1000;
-    //       if (unit === 'TB') return size * 1000 * 1000 * 1000 * 1000;
-    //     }
-    //   }
-    //   return bytes;
-    // };
 
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it

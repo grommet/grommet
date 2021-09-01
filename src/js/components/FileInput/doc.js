@@ -19,7 +19,7 @@ export const doc = (FileInput) => {
       .defaultValue(undefined),
     id: PropTypes.string.description('The id attribute of the input.'),
     maxSize: PropTypes.number.description(
-      'Specifies a file size limit for the FileInput',
+      'Specifies a file size limit in bytes for the FileInput',
     ),
     messages: PropTypes.shape({
       browse: PropTypes.string,
