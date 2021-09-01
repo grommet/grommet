@@ -300,6 +300,13 @@ const TextInput = forwardRef(
         !value,
     );
 
+    useEffect(() => {
+      if (!value) return;
+      setShowStyledPlaceholder(
+        placeholder && typeof placeholder !== 'string' && !value,
+      );
+    }, [value]);
+
     let drop;
     const extraProps = {
       onSelect: handleTextSelect,
