@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { A11yTitleType, ColorType } from '../../utils';
 
-interface ModesI {
-  light: ColorType;
-  dark: ColorType;
-}
-
 interface ColorI {
   color: ColorType;
   value: number;
@@ -19,7 +14,7 @@ export interface RangeInputProps {
   max?: number | string;
   name?: string;
   step?: number;
-  color?: ColorType | ModesI | ColorI[];
+  color?: ColorType | ColorI[];
   value?: number | string;
 }
 
