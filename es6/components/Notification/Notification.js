@@ -31,7 +31,7 @@ var Notification = function Notification(_ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [close]);
+  }, [close, theme.notification.time]);
   var CloseIcon = theme.notification.close.icon;
   var _theme$notification$s = theme.notification[status],
       StatusIcon = _theme$notification$s.icon,
