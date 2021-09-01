@@ -7,7 +7,7 @@ interface ModesI {
 }
 
 interface ColorI {
-  color: ColorType | ModesI;
+  color: ColorType;
   value: number;
   opacity?: number;
 }
