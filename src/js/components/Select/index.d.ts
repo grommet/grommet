@@ -57,8 +57,12 @@ export interface SelectProps {
   emptySearchMessage?: string | React.ReactNode;
 }
 
-declare const Select: React.FC<
-  SelectProps & React.RefAttributes<HTMLButtonElement>
->;
+// Try without Omit<> to see where we define our own attributes for overrides
+// value, name, id, onChange, placeholder
+export interface SelectExtendedProps
+  extends SelectProps,
+    Omit<JSX.IntrinsicElements['input'], keyof SelectProps> {}
+
+declare const Select: React.FC<SelectExtendedProps>;
 
 export { Select };
