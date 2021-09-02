@@ -301,10 +301,11 @@ const TextInput = forwardRef(
     );
 
     useEffect(() => {
-      if (!value || !showStyledPlaceholder) return;
-      setShowStyledPlaceholder(
-        placeholder && typeof placeholder !== 'string' && !value,
-      );
+      if (showStyledPlaceholder){
+        setShowStyledPlaceholder(
+          placeholder && typeof placeholder !== 'string' && !value,
+        );
+      }
     }, [value, showStyledPlaceholder, placeholder]);
 
     let drop;
