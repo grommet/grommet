@@ -1,4 +1,4 @@
-var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "scope", "size", "verticalAlign"];
+var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -28,6 +28,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onWidth = _ref.onWidth,
       pad = _ref.pad,
       plain = _ref.plain,
+      rowSpan = _ref.rowSpan,
       scope = _ref.scope,
       size = _ref.size,
       verticalAlign = _ref.verticalAlign,
@@ -142,6 +143,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     scope: scope,
     size: size,
     colSpan: colSpan,
+    rowSpan: rowSpan,
     tableContext: tableContext,
     tableContextTheme: tableContextTheme
   }, plain === true ? mergedProps : {}, cellProps, {

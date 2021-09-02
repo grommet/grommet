@@ -21,7 +21,7 @@ var _StyledTable = require("../Table/StyledTable");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "scope", "size", "verticalAlign"];
+var _excluded = ["align", "background", "border", "children", "className", "colSpan", "onWidth", "pad", "plain", "rowSpan", "scope", "size", "verticalAlign"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -46,6 +46,7 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onWidth = _ref.onWidth,
       pad = _ref.pad,
       plain = _ref.plain,
+      rowSpan = _ref.rowSpan,
       scope = _ref.scope,
       size = _ref.size,
       verticalAlign = _ref.verticalAlign,
@@ -161,6 +162,7 @@ var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     scope: scope,
     size: size,
     colSpan: colSpan,
+    rowSpan: rowSpan,
     tableContext: tableContext,
     tableContextTheme: tableContextTheme
   }, plain === true ? mergedProps : {}, cellProps, {
