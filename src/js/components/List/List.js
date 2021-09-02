@@ -517,7 +517,7 @@ const List = React.forwardRef(
                     {...clickProps}
                     {...orderProps}
                   >
-                    <Box direction="row" align={orderAlign} flex {...boxProps}>
+                    <Box {...boxProps} align={orderAlign} flex>
                       {onOrder && <Text>{index + 1}</Text>}
                       {content}
                     </Box>
