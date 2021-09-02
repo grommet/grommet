@@ -4,9 +4,14 @@ import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const locations = [
-  'Boise',
-  'Fort Collins',
-  'Los Gatos',
+  `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+  `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+  `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+   eiusmod tempor incididunt ut labore et dolore magna aliqua.
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
   'Palo Alto',
   'San Francisco',
 ];

@@ -132,6 +132,7 @@ const List = React.forwardRef(
       step = paginate ? 50 : undefined,
       onClickItem,
       onMore,
+      orderAlign,
       ...rest
     },
     ref,
@@ -488,7 +489,7 @@ const List = React.forwardRef(
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
 
-                return (
+                return !orderAlign ? (
                   <StyledItem
                     key={key}
                     tag="li"
@@ -502,6 +503,24 @@ const List = React.forwardRef(
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
+                    {orderControls}
+                  </StyledItem>
+                ) : (
+                  <StyledItem
+                    key={key}
+                    tag="li"
+                    flex={false}
+                    pad={pad || theme.list.item.pad}
+                    background={adjustedBackground}
+                    border={adjustedBorder}
+                    {...boxProps}
+                    {...clickProps}
+                    {...orderProps}
+                  >
+                    <Box direction="row" align={orderAlign} flex {...boxProps}>
+                      {onOrder && <Text>{index + 1}</Text>}
+                      {content}
+                    </Box>
                     {orderControls}
                   </StyledItem>
                 );

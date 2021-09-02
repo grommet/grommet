@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
+  AlignType,
   GridAreaType,
   MarginType,
   PadType,
@@ -53,6 +54,7 @@ export interface ListProps<ListItemType> {
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: ListItemType; index?: number }) => void);
   onOrder?: (orderedData: ListItemType[]) => void;
+  orderAlign?: AlignType;
   pad?: PadType;
   paginate?: boolean | PaginationType;
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
