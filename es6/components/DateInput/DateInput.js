@@ -1,13 +1,15 @@
-var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value"];
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value", "messages"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -33,13 +35,19 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       valueArg = _ref.value,
+      messages = _ref.messages,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var announce = useContext(AnnounceContext);
+
+  var _useContext = useContext(MessageContext),
+      formatMessage = _useContext.format;
+
   var iconSize = theme.dateInput.icon && theme.dateInput.icon.size || 'medium';
 
-  var _useContext = useContext(FormContext),
-      useFormInput = _useContext.useFormInput;
+  var _useContext2 = useContext(FormContext),
+      useFormInput = _useContext2.useFormInput;
 
   var ref = useForwardedRef(refArg);
 
@@ -82,6 +90,20 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       open = _useState2[0],
       setOpen = _useState2[1];
 
+  var openCalendar = useCallback(function () {
+    setOpen(true);
+    announce(formatMessage({
+      id: 'dateInput.enterCalendar',
+      messages: messages
+    }));
+  }, [announce, formatMessage, messages]);
+  var closeCalendar = useCallback(function () {
+    setOpen(false);
+    announce(formatMessage({
+      id: 'dateInput.exitCalendar',
+      messages: messages
+    }));
+  }, [announce, formatMessage, messages]);
   var calendar = /*#__PURE__*/React.createElement(Calendar, _extends({
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
@@ -107,7 +129,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       });
 
       if (open && !range) {
-        setOpen(false);
+        closeCalendar();
         setTimeout(function () {
           return ref.current.focus();
         }, 1);
@@ -144,11 +166,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }
   }, /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: open ? function () {
-      return setOpen(false);
+      return closeCalendar();
     } : undefined,
-    onSpace: function onSpace() {
-      return setOpen(true);
-    }
+    onSpace: openCalendar
   }, /*#__PURE__*/React.createElement(MaskedInput, _extends({
     ref: ref,
     id: id,
@@ -178,11 +198,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       }
     },
     onFocus: function onFocus(event) {
+      openCalendar();
       if (_onFocus) _onFocus(event);
     },
-    onClick: function onClick() {
-      return setOpen(true);
-    }
+    onClick: openCalendar
   }))));
 
   if (inline) {
@@ -203,12 +222,10 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         top: 'bottom',
         left: 'left'
       }, dropProps),
-      onEsc: function onEsc() {
-        return setOpen(false);
-      },
+      onEsc: closeCalendar,
       onClickOutside: function onClickOutside(_ref2) {
         var target = _ref2.target;
-        if (target !== ref.current) setOpen(false);
+        if (target !== ref.current) closeCalendar();
       }
     }, dropProps), calendar))];
   }

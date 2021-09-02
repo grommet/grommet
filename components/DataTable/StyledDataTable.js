@@ -57,7 +57,7 @@ var hoverStyle = (0, _styledComponents.css)(["", " color:", ";"], function (prop
 var StyledDataTableRow = (0, _styledComponents["default"])(_TableRow.TableRow).withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
   componentId: "xrlyjm-2"
-})(["", " ", "   ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return props.size && "\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  ";
 }, function (props) {
   return props.onClick && "\n    cursor: pointer;\n  ";
