@@ -1565,7 +1565,7 @@ exports[`Carousel navigate 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"
@@ -1607,7 +1607,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1631,7 +1631,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1649,7 +1649,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jLSzwp"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1669,7 +1669,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1716,7 +1716,7 @@ exports[`Carousel navigate 3`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"
@@ -1742,7 +1742,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1766,7 +1766,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jLSzwp"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1784,7 +1784,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1803,7 +1803,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2349,7 +2349,7 @@ exports[`Carousel play 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 dxogfY"
-        style="visibility: visible;"
+        style="visibility: hidden;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 cGIdCD"
@@ -2391,7 +2391,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2415,7 +2415,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2433,7 +2433,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jLSzwp"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2453,7 +2453,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path

@@ -28,7 +28,7 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   margin?: MarginType;

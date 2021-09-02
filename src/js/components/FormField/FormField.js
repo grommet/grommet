@@ -171,6 +171,7 @@ const FormField = forwardRef(
       onBlur: contextOnBlur,
       onChange: contextOnChange,
     } = formContext.useFormField({
+      disabled,
       error: errorProp,
       info: infoProp,
       name,
