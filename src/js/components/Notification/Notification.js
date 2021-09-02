@@ -23,7 +23,7 @@ const Notification = ({ message, onClose, status, title, toast }) => {
     const timer = setTimeout(close, theme.notification.time);
 
     return () => clearTimeout(timer);
-  }, [close]);
+  }, [close, theme.notification.time]);
 
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];
