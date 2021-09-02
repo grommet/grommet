@@ -230,8 +230,8 @@ describe('DateInput', () => {
       </Grommet>,
     );
 
-    fireEvent.focus(getByPlaceholderText('mm/dd/yyyy'));
     expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByPlaceholderText('mm/dd/yyyy'));
     expect(onFocus).toHaveBeenCalled();
 
     fireEvent.keyDown(getByPlaceholderText('mm/dd/yyyy'), {
@@ -239,7 +239,6 @@ describe('DateInput', () => {
       keyCode: 32,
       which: 32,
     });
-    expectPortal('item__drop').toMatchSnapshot();
     expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
@@ -257,7 +256,7 @@ describe('DateInput', () => {
     );
 
     userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
-    expect(document.getElementById('item__drop')).toBeNull();
+    expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
   test('select inline', () => {
