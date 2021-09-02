@@ -168,11 +168,11 @@ export var buildFooterValues = function buildFooterValues(columns, data) {
   var result = {};
   columns.forEach(function (column) {
     if (column.footer) {
-      if (typeof column.footer === 'string') {
-        result = set(result, column.property, column.footer);
-      } else if (column.footer.aggregate) {
+      if (column.footer.aggregate) {
         var value = datumValue(aggregateValues, column.property);
         result = set(result, column.property, value);
+      } else {
+        result = set(result, column.property, column.footer);
       }
     }
   });
