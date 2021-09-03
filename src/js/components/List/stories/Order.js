@@ -21,7 +21,11 @@ export const Order = () => {
   return (
     <Grommet theme={grommet} role="application">
       <Box align="center" pad="large">
-        <List orderAlign="start" data={ordered} onOrder={setOrder} />
+        <List
+          itemProps={{ align: 'start' }}
+          data={ordered}
+          onOrder={setOrder}
+        />
       </Box>
     </Grommet>
   );

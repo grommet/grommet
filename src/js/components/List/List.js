@@ -489,7 +489,7 @@ const List = React.forwardRef(
                   boxProps = { ...boxProps, ...itemProps[index] };
                 }
 
-                return !orderAlign ? (
+                return (
                   <StyledItem
                     key={key}
                     tag="li"
@@ -500,27 +500,10 @@ const List = React.forwardRef(
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
+                    {...itemProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
-                    {orderControls}
-                  </StyledItem>
-                ) : (
-                  <StyledItem
-                    key={key}
-                    tag="li"
-                    flex={false}
-                    pad={pad || theme.list.item.pad}
-                    background={adjustedBackground}
-                    border={adjustedBorder}
-                    {...boxProps}
-                    {...clickProps}
-                    {...orderProps}
-                  >
-                    <Box {...boxProps} align={orderAlign} flex>
-                      {onOrder && <Text>{index + 1}</Text>}
-                      {content}
-                    </Box>
                     {orderControls}
                   </StyledItem>
                 );

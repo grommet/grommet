@@ -2,11 +2,11 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
-  AlignType,
   GridAreaType,
   MarginType,
   PadType,
 } from '../../utils';
+import { BoxTypes } from '../Box';
 import { PaginationType } from '../Pagination';
 
 type SizeType =
@@ -46,7 +46,11 @@ export interface ListProps<ListItemType> {
   data?: ListItemType[];
   gridArea?: GridAreaType;
   itemProps?: {
-    [_: string]: { background?: string; border?: BorderType; pad?: PadType };
+    [_: string]: {
+      background?: string;
+      border?: BorderType;
+      pad?: PadType | BoxTypes;
+    };
   };
   margin?: MarginType;
   onMore?: () => void;
@@ -54,7 +58,6 @@ export interface ListProps<ListItemType> {
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: ListItemType; index?: number }) => void);
   onOrder?: (orderedData: ListItemType[]) => void;
-  orderAlign?: AlignType;
   pad?: PadType;
   paginate?: boolean | PaginationType;
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
