@@ -53,6 +53,20 @@ const activeDates = {
 
 const timeStamp = new RegExp(/T.*/);
 
+const getAccessibilityString = (date) => `Currently selected 
+  ${date?.map((item) => {
+    let dates;
+    if (!Array.isArray(item)) {
+      dates = `${formatToLocalYYYYMMDD(item)} `;
+    } else {
+      dates = `Range: ${item?.map((insideItem) =>
+        insideItem !== undefined ? `${formatToLocalYYYYMMDD(insideItem)} ` : '',
+      )}`;
+    }
+
+    return dates;
+  })}`;
+
 const normalizeForTimezone = (date, refDate) => {
   if (!date) return undefined;
   return (
@@ -884,10 +898,23 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
-              aria-label={reference.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}
+              aria-label={`
+                ${reference.toLocaleDateString(locale, {
+                  month: 'long',
+                  year: 'numeric',
+                })};
+                ${
+                  date && !Array.isArray(date)
+                    ? `Currently selected ${formatToLocalYYYYMMDD(date)};`
+                    : ''
+                }
+                ${
+                  date && Array.isArray(date)
+                    ? getAccessibilityString(date)
+                    : ''
+                }
+                ${dates ? getAccessibilityString(dates) : ''}
+              `}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}

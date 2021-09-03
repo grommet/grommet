@@ -398,7 +398,12 @@ exports[`Calendar change months 1`] = `
         </div>
       </div>
       <div
-        aria-label="December 2019"
+        aria-label="
+                December 2019;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -1221,7 +1226,12 @@ exports[`Calendar change months 2`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
         role="grid"
         tabindex="0"
@@ -2769,7 +2779,12 @@ exports[`Calendar children 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -3652,7 +3667,12 @@ exports[`Calendar date 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -4847,7 +4867,13 @@ exports[`Calendar dates 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                
+                
+                Currently selected 
+  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -6117,7 +6143,13 @@ exports[`Calendar daysOfWeek 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                
+                
+                Currently selected 
+  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+              "
         class="c12"
         role="grid"
         tabindex="0"
@@ -7354,7 +7386,12 @@ exports[`Calendar disabled 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -8553,7 +8590,12 @@ exports[`Calendar fill 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -9730,7 +9772,12 @@ exports[`Calendar first day sunday week monday 1`] = `
         </div>
       </div>
       <div
-        aria-label="March 2020"
+        aria-label="
+                March 2020;
+                Currently selected 2020-03-01;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -10907,7 +10954,12 @@ exports[`Calendar firstDayOfWeek 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -11723,7 +11775,12 @@ exports[`Calendar firstDayOfWeek 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -12836,7 +12893,12 @@ exports[`Calendar header 1`] = `
         </button>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c7"
         role="grid"
         tabindex="0"
@@ -14035,7 +14097,12 @@ exports[`Calendar reference 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -15212,7 +15279,12 @@ exports[`Calendar select date 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -16035,7 +16107,12 @@ exports[`Calendar select date 2`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-17;
+                
+                
+              "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
         tabindex="0"
@@ -17230,7 +17307,13 @@ exports[`Calendar select dates 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                
+                
+                Currently selected 
+  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -18053,7 +18136,12 @@ exports[`Calendar select dates 2`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                
+                
+                
+              "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
         tabindex="0"
@@ -19230,7 +19318,12 @@ exports[`Calendar showAdjacentDays 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -20046,7 +20139,12 @@ exports[`Calendar showAdjacentDays 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -20751,7 +20849,12 @@ exports[`Calendar showAdjacentDays 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -22119,7 +22222,12 @@ exports[`Calendar size 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -22935,7 +23043,12 @@ exports[`Calendar size 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c20"
         role="grid"
         tabindex="0"
@@ -23751,7 +23864,12 @@ exports[`Calendar size 1`] = `
         </div>
       </div>
       <div
-        aria-label="January 2020"
+        aria-label="
+                January 2020;
+                Currently selected 2020-01-15;
+                
+                
+              "
         class="c28"
         role="grid"
         tabindex="0"
