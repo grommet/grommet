@@ -2305,7 +2305,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: skyblue;
+  background-color: rgba(135,206,235,1);
   color: #FFFFFF;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -2321,7 +2321,7 @@ exports[`Button kind hover secondary with color and background 1`] = `
 }
 
 .c1:hover {
-  background-color: orange;
+  background-color: rgba(255,165,0,1);
   color: green;
 }
 
@@ -2392,7 +2392,7 @@ exports[`Button kind hover secondary with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hkExDD"
+    class="StyledButtonKind-sc-1vhfpnt-0 kcazIH"
     type="button"
   >
     Button
@@ -2431,7 +2431,7 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 }
 
 .c1:hover {
-  background-color: pink;
+  background-color: rgba(255,192,203,1);
   color: #FFFFFF;
 }
 
@@ -2502,7 +2502,7 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 mAVU"
+    class="StyledButtonKind-sc-1vhfpnt-0 deiQwD"
     type="button"
   >
     Button
@@ -3019,7 +3019,7 @@ exports[`Button kind padding on default button 1`] = `
   font-size: 18px;
   line-height: 24px;
   padding: 6px 12px;
-  background-color: green;
+  background-color: rgba(0,128,0,1);
   color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -3114,7 +3114,7 @@ exports[`Button kind primary button 1`] = `
   font-size: 18px;
   line-height: 24px;
   padding: 6px 12px;
-  background-color: green;
+  background-color: rgba(0,128,0,1);
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;

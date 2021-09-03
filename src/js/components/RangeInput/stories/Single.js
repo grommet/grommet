@@ -29,7 +29,7 @@ export const Single = () => {
           max={1}
           step={0.1}
           value={value}
-          color="#6495ED"
+          color="skyblue"
           onChange={onChange}
         />
       </Box>

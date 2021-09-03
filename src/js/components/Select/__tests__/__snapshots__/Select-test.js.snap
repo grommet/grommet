@@ -2095,7 +2095,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 .c0:hover {
-  background-color: lightgreen;
+  background-color: rgba(144,238,144,0.4);
   color: #7D4CDB;
 }
 
