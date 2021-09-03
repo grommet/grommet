@@ -3312,7 +3312,7 @@ exports[`DataTable custom theme 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c19 "
         >
           <div
             class="c20"
@@ -3376,7 +3376,7 @@ exports[`DataTable custom theme 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c19"
+          class="c19 "
         >
           <div
             class="c20"
@@ -3500,7 +3500,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 fUNSqh"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU StyledDataTable__StyledDataTableCell-xrlyjm-6 hEfZjq"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 gHpHFf"
@@ -3564,7 +3564,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 fUNSqh"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU StyledDataTable__StyledDataTableCell-xrlyjm-6 hEfZjq"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 gHpHFf"
@@ -19043,7 +19043,7 @@ exports[`DataTable select 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c15"
+          class="c15 "
         >
           <div
             class="c4"
@@ -19098,7 +19098,7 @@ exports[`DataTable select 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c15"
+          class="c15 "
         >
           <div
             class="c4"
@@ -19235,7 +19235,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 fUNSqh"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU StyledDataTable__StyledDataTableCell-xrlyjm-6 hEfZjq"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 gHpHFf"
@@ -19290,7 +19290,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-xrlyjm-2 fUNSqh"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hAskAU StyledDataTable__StyledDataTableCell-xrlyjm-6 hEfZjq"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 gHpHFf"
