@@ -886,8 +886,6 @@ exports[`DateInput controlled format inline 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -1752,8 +1750,6 @@ exports[`DateInput controlled format inline 2`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-01;
-                
-                
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
@@ -3849,8 +3845,6 @@ exports[`DateInput format inline 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -5033,8 +5027,6 @@ exports[`DateInput inline 1`] = `
         aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
         class="c9"
         role="grid"
@@ -6644,8 +6636,6 @@ exports[`DateInput range format inline 1`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-02 ,2020-07-07 
               "
@@ -7847,8 +7837,6 @@ exports[`DateInput range inline 1`] = `
       <div
         aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-02 ,2020-07-07 
               "
@@ -9720,8 +9708,6 @@ exports[`DateInput select format 3`] = `
         aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
         class="c10"
         role="grid"
@@ -11040,8 +11026,6 @@ exports[`DateInput select format inline 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -11900,8 +11884,6 @@ exports[`DateInput select format inline 2`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-20;
-                
-                
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
@@ -13217,8 +13199,6 @@ exports[`DateInput select format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-02 ,2020-07-07 
               "
@@ -14078,8 +14058,6 @@ exports[`DateInput select format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-10 ,2020-07-10 
               "
@@ -15264,8 +15242,6 @@ exports[`DateInput select inline 1`] = `
         aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
         class="c9"
         role="grid"
@@ -16563,8 +16539,6 @@ exports[`DateInput type format inline 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -17423,8 +17397,6 @@ exports[`DateInput type format inline 2`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-21;
-                
-                
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
@@ -18723,8 +18695,6 @@ exports[`DateInput type format inline partial 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -20040,8 +20010,6 @@ exports[`DateInput type format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-02 ,2020-07-07 
               "
@@ -20901,8 +20869,6 @@ exports[`DateInput type format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-21 ,2020-07-23 
               "
@@ -22220,8 +22186,6 @@ exports[`DateInput type format inline range partial 1`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-02 ,2020-07-07 
               "
@@ -23081,8 +23045,6 @@ exports[`DateInput type format inline range partial 2`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-21 ,
               "
@@ -23942,8 +23904,6 @@ exports[`DateInput type format inline range partial 3`] = `
         <div
           aria-label="
                 July 2020;
-                
-                
                 Currently selected 
   Range: 2020-07-21 ,
               "
@@ -25244,8 +25204,6 @@ exports[`DateInput type format inline short 1`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-02;
-                
-                
               "
           class="c12"
           role="grid"
@@ -26104,8 +26062,6 @@ exports[`DateInput type format inline short 2`] = `
           aria-label="
                 July 2020;
                 Currently selected 2020-07-21;
-                
-                
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"

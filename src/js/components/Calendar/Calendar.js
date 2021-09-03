@@ -53,7 +53,7 @@ const activeDates = {
 
 const timeStamp = new RegExp(/T.*/);
 
-const getAccessibilityString = (date) => `Currently selected 
+const formatSelectedDatesString = (date) => `Currently selected 
   ${date?.map((item) => {
     let dates;
     if (!Array.isArray(item)) {
@@ -66,6 +66,20 @@ const getAccessibilityString = (date) => `Currently selected
 
     return dates;
   })}`;
+
+const getAccessibilityString = (date, dates) => {
+  if (date && !Array.isArray(date)) {
+    return `Currently selected ${formatToLocalYYYYMMDD(date)};`;
+  }
+  if (date && Array.isArray(date)) {
+    return formatSelectedDatesString(date);
+  }
+  if (dates?.length) {
+    return formatSelectedDatesString(dates);
+  }
+
+  return 'No date selected';
+};
 
 const normalizeForTimezone = (date, refDate) => {
   if (!date) return undefined;
@@ -903,17 +917,7 @@ const Calendar = forwardRef(
                   month: 'long',
                   year: 'numeric',
                 })};
-                ${
-                  date && !Array.isArray(date)
-                    ? `Currently selected ${formatToLocalYYYYMMDD(date)};`
-                    : ''
-                }
-                ${
-                  date && Array.isArray(date)
-                    ? getAccessibilityString(date)
-                    : ''
-                }
-                ${dates?.length ? getAccessibilityString(dates) : ''}
+                ${getAccessibilityString(date, dates)}
               `}
               ref={daysRef}
               sizeProp={size}

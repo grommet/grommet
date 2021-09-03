@@ -401,8 +401,6 @@ exports[`Calendar change months 1`] = `
         aria-label="
                 December 2019;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -1229,8 +1227,6 @@ exports[`Calendar change months 2`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
         role="grid"
@@ -2782,8 +2778,6 @@ exports[`Calendar children 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -3670,8 +3664,6 @@ exports[`Calendar date 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -4869,8 +4861,6 @@ exports[`Calendar dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                
-                
                 Currently selected 
   2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
               "
@@ -6145,8 +6135,6 @@ exports[`Calendar daysOfWeek 1`] = `
       <div
         aria-label="
                 January 2020;
-                
-                
                 Currently selected 
   2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
               "
@@ -7389,8 +7377,6 @@ exports[`Calendar disabled 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -8593,8 +8579,6 @@ exports[`Calendar fill 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -9775,8 +9759,6 @@ exports[`Calendar first day sunday week monday 1`] = `
         aria-label="
                 March 2020;
                 Currently selected 2020-03-01;
-                
-                
               "
         class="c9"
         role="grid"
@@ -10957,8 +10939,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -11778,8 +11758,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -12896,8 +12874,6 @@ exports[`Calendar header 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c7"
         role="grid"
@@ -14099,9 +14075,7 @@ exports[`Calendar reference 1`] = `
       <div
         aria-label="
                 January 2020;
-                
-                
-                
+                No date selected
               "
         class="c9"
         role="grid"
@@ -15282,8 +15256,6 @@ exports[`Calendar select date 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -16110,8 +16082,6 @@ exports[`Calendar select date 2`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-17;
-                
-                
               "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
@@ -17309,8 +17279,6 @@ exports[`Calendar select dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                
-                
                 Currently selected 
   2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
               "
@@ -18138,9 +18106,7 @@ exports[`Calendar select dates 2`] = `
       <div
         aria-label="
                 January 2020;
-                
-                
-                
+                No date selected
               "
         class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
         role="grid"
@@ -19321,8 +19287,6 @@ exports[`Calendar showAdjacentDays 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -20142,8 +20106,6 @@ exports[`Calendar showAdjacentDays 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -20852,8 +20814,6 @@ exports[`Calendar showAdjacentDays 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -22225,8 +22185,6 @@ exports[`Calendar size 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c9"
         role="grid"
@@ -23046,8 +23004,6 @@ exports[`Calendar size 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c20"
         role="grid"
@@ -23867,8 +23823,6 @@ exports[`Calendar size 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 2020-01-15;
-                
-                
               "
         class="c28"
         role="grid"
