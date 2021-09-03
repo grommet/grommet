@@ -199,17 +199,22 @@ var DataTable = function DataTable(_ref) {
       setPinnedOffset = _useState12[1];
 
   var onHeaderWidths = (0, _react.useCallback)(function (columnWidths) {
+    var hasSelectColumn = Boolean(select || onSelect);
     var pinnedProperties = columns.map(function (pinnedColumn) {
       return pinnedColumn.pin && pinnedColumn.property;
     }).filter(function (n) {
       return n;
     });
+
+    if (hasSelectColumn && pinnedProperties.length > 0) {
+      pinnedProperties = ['_grommetDataTableSelect'].concat(pinnedProperties);
+    }
+
     var nextPinnedOffset = {};
 
     if (columnWidths !== []) {
       pinnedProperties.forEach(function (property, index) {
-        var hasSelectColumn = Boolean(select || onSelect);
-        var columnIndex = columns.findIndex(function (column) {
+        var columnIndex = property === '_grommetDataTableSelect' ? 0 : columns.findIndex(function (column) {
           return column.property === property;
         }) + hasSelectColumn;
 

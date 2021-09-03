@@ -74,23 +74,30 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     onMouseLeave: onClickRow ? function () {
       return setActive(undefined);
     } : undefined
-  }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
-    background: cellProps.background,
-    plain: "noPad",
-    size: "auto"
-  }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
-    a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
-    checked: isSelected,
-    disabled: !onSelect,
-    onChange: function onChange() {
-      if (isSelected) {
-        onSelect(selected.filter(function (s) {
-          return s !== primaryValue;
-        }));
-      } else onSelect([].concat(selected, [primaryValue]));
-    },
-    pad: cellProps.pad
-  })), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+  }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
+    background: (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
+    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
+    column: {
+      pin: Boolean(pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect),
+      plain: 'noPad',
+      size: 'auto',
+      render: function render() {
+        return /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+          a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
+          checked: isSelected,
+          disabled: !onSelect,
+          onChange: function onChange() {
+            if (isSelected) {
+              onSelect(selected.filter(function (s) {
+                return s !== primaryValue;
+              }));
+            } else onSelect([].concat(selected, [primaryValue]));
+          },
+          pad: cellProps.pad
+        });
+      }
+    }
+  }), rowDetails && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
     onToggle: function onToggle() {

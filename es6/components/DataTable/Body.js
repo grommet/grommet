@@ -4,6 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+/* eslint-disable no-underscore-dangle */
 import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
@@ -54,23 +55,30 @@ var Row = /*#__PURE__*/memo(function (_ref) {
     onMouseLeave: onClickRow ? function () {
       return setActive(undefined);
     } : undefined
-  }, (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
-    background: cellProps.background,
-    plain: "noPad",
-    size: "auto"
-  }, /*#__PURE__*/React.createElement(CheckBox, {
-    a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
-    checked: isSelected,
-    disabled: !onSelect,
-    onChange: function onChange() {
-      if (isSelected) {
-        onSelect(selected.filter(function (s) {
-          return s !== primaryValue;
-        }));
-      } else onSelect([].concat(selected, [primaryValue]));
-    },
-    pad: cellProps.pad
-  })), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
+  }, (selected || onSelect) && /*#__PURE__*/React.createElement(Cell, {
+    background: (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
+    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
+    column: {
+      pin: Boolean(pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect),
+      plain: 'noPad',
+      size: 'auto',
+      render: function render() {
+        return /*#__PURE__*/React.createElement(CheckBox, {
+          a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
+          checked: isSelected,
+          disabled: !onSelect,
+          onChange: function onChange() {
+            if (isSelected) {
+              onSelect(selected.filter(function (s) {
+                return s !== primaryValue;
+              }));
+            } else onSelect([].concat(selected, [primaryValue]));
+          },
+          pad: cellProps.pad
+        });
+      }
+    }
+  }), rowDetails && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: isRowExpanded ? 'groupHeader' : 'body',
     expanded: isRowExpanded,
     onToggle: function onToggle() {

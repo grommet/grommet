@@ -5,6 +5,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+/* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useEffect, useState } from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -141,6 +142,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
   }, [cellWidths, onWidths]);
   var pin = pinProp ? ['top'] : [];
+  var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
@@ -160,7 +162,8 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size: "auto",
     context: "header",
     scope: "col",
-    pin: pin
+    pin: selectPin,
+    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect
   }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,

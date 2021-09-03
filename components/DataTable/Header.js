@@ -165,6 +165,7 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }
   }, [cellWidths, onWidths]);
   var pin = pinProp ? ['top'] : [];
+  var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
@@ -184,7 +185,8 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     size: "auto",
     context: "header",
     scope: "col",
-    pin: pin
+    pin: selectPin,
+    pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect
   }, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
     checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
