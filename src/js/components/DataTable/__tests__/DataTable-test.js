@@ -116,6 +116,25 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('footer node', () => {
+    const { getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: <span>Total</span> },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(getByText('Total')).not.toBeNull();
+  });
+
   test('sortable', () => {
     const { container, getByText } = render(
       <Grommet>
