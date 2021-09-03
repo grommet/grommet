@@ -913,7 +913,7 @@ const Calendar = forwardRef(
                     ? getAccessibilityString(date)
                     : ''
                 }
-                ${dates ? getAccessibilityString(dates) : ''}
+                ${dates?.length ? getAccessibilityString(dates) : ''}
               `}
               ref={daysRef}
               sizeProp={size}
