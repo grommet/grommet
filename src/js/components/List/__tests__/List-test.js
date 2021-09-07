@@ -161,7 +161,6 @@ describe('List', () => {
         <List
           data={['one', 'two']}
           itemProps={{
-            align: 'start',
             1: {
               background: 'accent-1',
               border: { side: 'horizontal', size: 'small' },
