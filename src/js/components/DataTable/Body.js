@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -62,25 +63,34 @@ const Row = memo(
         onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
       >
         {(selected || onSelect) && (
-          <TableCell
-            background={cellProps.background}
-            plain="noPad"
-            size="auto"
-          >
-            <CheckBox
-              a11yTitle={`${
-                isSelected ? 'unselect' : 'select'
-              } ${primaryValue}`}
-              checked={isSelected}
-              disabled={!onSelect}
-              onChange={() => {
-                if (isSelected) {
-                  onSelect(selected.filter((s) => s !== primaryValue));
-                } else onSelect([...selected, primaryValue]);
-              }}
-              pad={cellProps.pad}
-            />
-          </TableCell>
+          <Cell
+            background={
+              (pinnedOffset?._grommetDataTableSelect &&
+                cellProps.pinned.background) ||
+              cellProps.background
+            }
+            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+            column={ {
+              pin: Boolean(pinnedOffset?._grommetDataTableSelect),
+              plain: 'noPad',
+              size: 'auto',
+              render: () => (
+                <CheckBox
+                  a11yTitle={`${
+                    isSelected ? 'unselect' : 'select'
+                  } ${primaryValue}`}
+                  checked={isSelected}
+                  disabled={!onSelect}
+                  onChange={() => {
+                    if (isSelected) {
+                      onSelect(selected.filter((s) => s !== primaryValue));
+                    } else onSelect([...selected, primaryValue]);
+                  }}
+                  pad={cellProps.pad}
+                />
+              ),
+            }}
+          />
         )}
 
         {rowDetails && (

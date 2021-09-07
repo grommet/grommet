@@ -82,7 +82,7 @@ const StyledDataTableRow = styled(TableRow)`
     props.onClick &&
     `
     cursor: pointer;
-  `}  
+  `}
   ${(props) => props.active && hoverStyle}
 `;
 

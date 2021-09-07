@@ -35,6 +35,7 @@ const TableCell = forwardRef(
       onWidth,
       pad,
       plain,
+      rowSpan,
       scope,
       size,
       verticalAlign,
@@ -161,6 +162,7 @@ const TableCell = forwardRef(
           scope={scope}
           size={size}
           colSpan={colSpan}
+          rowSpan={rowSpan}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
           {...(plain === true ? mergedProps : {})}

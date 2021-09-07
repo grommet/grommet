@@ -14,6 +14,10 @@ export interface DateInputProps {
   id?: string;
   inline?: boolean;
   inputProps?: MaskedInputType;
+  messages?: {
+    enterCalendar?: string;
+    exitCalendar?: string;
+  };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
