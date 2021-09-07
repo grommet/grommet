@@ -132,7 +132,6 @@ const List = React.forwardRef(
       step = paginate ? 50 : undefined,
       onClickItem,
       onMore,
-      orderAlign,
       ...rest
     },
     ref,
