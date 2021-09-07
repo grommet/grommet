@@ -31,7 +31,7 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
       img: { component: Image },
       p: { component: Paragraph },
       table: { component: Table },
-      td: { component: TableCell },
+      td: { component: TableCell, props: { plain: true } },
       tbody: { component: TableBody },
       tfoot: { component: TableFooter },
       th: { component: TableCell },
