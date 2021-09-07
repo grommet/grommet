@@ -519,7 +519,6 @@ Object {
       "onClickItem": [Function],
       "onMore": [Function],
       "onOrder": [Function],
-      "orderAlign": [Function],
       "pad": [Function],
       "paginate": [Function],
       "primaryKey": [Function],

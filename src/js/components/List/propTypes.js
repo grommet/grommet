@@ -61,7 +61,6 @@ if (process.env.NODE_ENV !== 'production') {
     onMore: PropTypes.func,
     onClickItem: PropTypes.func,
     onOrder: PropTypes.func,
-    orderAlign: PropTypes.string,
     pad: PropTypes.oneOfType([padPropType]),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
