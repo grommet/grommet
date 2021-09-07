@@ -1275,10 +1275,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'light-4',
         },
       },
-      edge: {
-        zIndex: '10',
-        // type: undefined,
-      },
+      // edge: {
+      //    type: undefined,
+      // },
     },
     select: {
       // background: undefined,
