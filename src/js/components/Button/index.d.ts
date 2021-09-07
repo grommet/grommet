@@ -14,6 +14,22 @@ import {
 
 import { TipProps } from '../Tip';
 
+export type RelType =
+  | 'alternate'
+  | 'author'
+  | 'bookmark'
+  | 'external'
+  | 'help'
+  | 'license'
+  | 'next'
+  | 'nofollow'
+  | 'noreferrer'
+  | 'noopener'
+  | 'prev'
+  | 'search'
+  | 'tag'
+  | string;
+
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -42,6 +58,7 @@ export interface ButtonProps {
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
+  rel?: RelType;
   reverse?: boolean;
   secondary?: boolean;
   size?: 'small' | 'medium' | 'large';
