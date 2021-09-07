@@ -3353,7 +3353,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       >
         <button
           aria-label="Open Drop"
-          class="StyledButton-sc-323bzc-0 csiCSO Select__StyledSelectDropButton-sc-17idtfo-2 beqtam"
+          class="StyledButton-sc-323bzc-0 csiCSO Select__StyledSelectDropButton-sc-17idtfo-3 iwZhIf"
           id="test-select"
           type="button"
         >

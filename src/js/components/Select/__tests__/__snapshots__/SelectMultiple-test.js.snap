@@ -3147,7 +3147,7 @@ exports[`Select Controlled multiple values 1`] = `
 exports[`Select Controlled multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
   id="test-select"
   type="button"
 >

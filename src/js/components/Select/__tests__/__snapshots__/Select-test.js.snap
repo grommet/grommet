@@ -2715,7 +2715,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
   id="test-select"
   type="button"
 >
@@ -4575,7 +4575,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bYpZEp Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 bYpZEp Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
   disabled=""
   id="test-select"
   type="button"
@@ -9212,7 +9212,7 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+  class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
   id="test-select"
   type="button"
 >
@@ -10125,7 +10125,7 @@ exports[`Select renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
     type="button"
   >
     <div
@@ -14738,7 +14738,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-2 eLUbDq"
+    class="StyledButton-sc-323bzc-0 iUDYlP Select__StyledSelectDropButton-sc-17idtfo-3 lpccon"
     id="test-select"
     type="button"
   >

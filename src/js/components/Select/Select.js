@@ -10,7 +10,12 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import {
+  controlBorderStyle,
+  normalizeColor,
+  inputStyle,
+  plainInputStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -18,6 +23,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
+import { Text } from '../Text';
 
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
@@ -26,6 +32,15 @@ import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
+`;
+
+const SelectText = styled(Text)`
+  ${inputStyle};
+  ${plainInputStyle};
+  white-space: nowrap;
+  overflow: scroll;
+  color: ${(props) =>
+    props.placeholder && props.theme.global.colors.placeholder};
 `;
 
 const HiddenInput = styled.input`
@@ -50,6 +65,7 @@ const Select = forwardRef(
   (
     {
       a11yTitle,
+      accessible,
       'aria-label': ariaLabel,
       alignSelf,
       children,
@@ -342,6 +358,7 @@ const Select = forwardRef(
             background={theme.select.background}
           >
             <Box direction="row" flex basis="auto">
+              {/* eslint-disable no-nested-ternary */}
               {selectValue ? (
                 <>
                   {selectValue}
@@ -353,6 +370,16 @@ const Select = forwardRef(
                     readOnly
                   />
                 </>
+              ) : accessible ? (
+                <SelectText
+                  name={name}
+                  placeholder={!inputValue}
+                  {...rest}
+                  size={size}
+                  theme={theme}
+                >
+                  {inputValue || placeholder}
+                </SelectText>
               ) : (
                 <SelectTextInput
                   a11yTitle={
@@ -383,6 +410,7 @@ const Select = forwardRef(
                   theme={theme}
                 />
               )}
+              {/* eslint-enable no-nested-ternary */}
             </Box>
             {SelectIcon && (
               <Box
