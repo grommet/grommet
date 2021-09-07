@@ -45,13 +45,15 @@ export interface ListProps<ListItemType> {
   border?: BorderType;
   data?: ListItemType[];
   gridArea?: GridAreaType;
-  itemProps?: {
-    [_: string]: {
-      background?: string;
-      border?: BorderType;
-      pad?: PadType | BoxTypes;
-    };
-  };
+  itemProps?:
+    | BoxTypes
+    | {
+        [_: string]: {
+          background?: string;
+          border?: BorderType;
+          pad?: PadType;
+        };
+      };
   margin?: MarginType;
   onMore?: () => void;
   onClickItem?:
