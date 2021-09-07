@@ -19,7 +19,7 @@ const DIRECTION_PROPS = {
 };
 
 const StyledBox = styled(Box)`
-  ${(props) => props.focus && focusStyle()}
+  ${props => props.focus && focusStyle()}
 `;
 
 const EdgeControl = forwardRef(

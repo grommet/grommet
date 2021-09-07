@@ -1276,7 +1276,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       // edge: {
-      //    type: undefined,
+      //   type: undefined,
       // },
     },
     select: {
