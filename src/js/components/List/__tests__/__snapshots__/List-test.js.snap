@@ -11441,10 +11441,6 @@ exports[`List itemProps 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   border-top: solid 1px rgba(0,0,0,0.33);
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -11468,10 +11464,6 @@ exports[`List itemProps 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   background-color: #6FFFB0;
   color: #444444;
   border-top: solid 2px rgba(0,0,0,0.33);
