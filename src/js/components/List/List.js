@@ -121,8 +121,8 @@ const List = React.forwardRef(
       border,
       children,
       data,
+      defaultItemProps,
       focus,
-      generalItemProps,
       itemProps,
       onOrder,
       pad,
@@ -500,7 +500,7 @@ const List = React.forwardRef(
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
-                    {...generalItemProps}
+                    {...defaultItemProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}
