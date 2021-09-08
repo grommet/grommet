@@ -497,10 +497,10 @@ const List = React.forwardRef(
                     pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
-                    {...defaultItemProps}
                   >
                     {onOrder && <Text>{index + 1}</Text>}
                     {content}

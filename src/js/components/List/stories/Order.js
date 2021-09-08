@@ -24,7 +24,7 @@ export const Order = () => {
       <Box align="center" pad="large">
         <List
           itemProps={{ 0: { background: 'pink' } }}
-          defaultItemProps={{ align: 'start' }}
+          defaultItemProps={{ align: 'start', background: 'yellow' }}
           data={ordered}
           onOrder={setOrder}
         />
