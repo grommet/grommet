@@ -351,20 +351,24 @@ const FileInput = forwardRef(
               {renderFile ? (
                 renderFile(file)
               ) : (
-                <Label
-                  weight={
-                    theme.global.input.weight || theme.global.input.font.weight
-                  }
+                <Box
                   {...theme.fileInput.label}
-                  alignSelf="center"
+                  gap="xsmall"
+                  align="center"
+                  direction="row"
                 >
-                  <Box direction="row">
-                    {maxSize && file.size > maxSize ? <CircleAlert /> : null}
-                    <Text truncate margin={{ left: 'xsmall' }}>
-                      {file.name}
-                    </Text>
-                  </Box>
-                </Label>
+                  {maxSize && file.size > maxSize ? <CircleAlert /> : null}
+                  <Label
+                    weight={
+                      theme.global.input.weight ||
+                      theme.global.input.font.weight
+                    }
+                    alignSelf="center"
+                    truncate
+                  >
+                    {file.name}
+                  </Label>
+                </Box>
               )}
               <Box flex={false} direction="row" align="center">
                 <Button
