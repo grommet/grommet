@@ -103,30 +103,29 @@ const FileInput = forwardRef(
       name,
       value: valueProp,
       initialValue: [],
-      validate: () => {
-        const fileList = [...files];
-        let message = '';
-        if (maxSize) {
-          const numOfFiles = fileList.filter(
-            ({ size }) => size > maxSize,
-          ).length;
-          if (numOfFiles) {
-            let messageId = 'fileInput.maxSizeSingle';
-            if (multiple) {
-              messageId = `fileInput.maxSizeMultiple.${
-                numOfFiles === 1 ? 'singular' : 'plural'
-              }`;
+      validate: maxSize
+        ? () => {
+            const fileList = [...files];
+            let message = '';
+            const numOfInvalidFiles = fileList.filter(
+              ({ size }) => size > maxSize,
+            ).length;
+            if (numOfInvalidFiles) {
+              let messageId = 'fileInput.maxSizeSingle';
+              if (multiple) {
+                messageId = `fileInput.maxSizeMultiple.${
+                  numOfInvalidFiles === 1 ? 'singular' : 'plural'
+                }`;
+              }
+              message = format({
+                id: messageId,
+                messages,
+                values: { maxSize: formatBytes(maxSize), numOfInvalidFiles },
+              });
             }
-            message = format({
-              id: messageId,
-              messages,
-              values: { maxSize: formatBytes(maxSize), numOfFiles },
-            });
+            return message;
           }
-        }
-
-        return message;
-      },
+        : undefined,
     });
 
     const mergeTheme = (propertyName, defaultKey) => {
@@ -358,13 +357,12 @@ const FileInput = forwardRef(
                   align="center"
                   direction="row"
                 >
-                  {maxSize && file.size > maxSize ? <CircleAlert /> : null}
+                  {maxSize && file.size > maxSize && <CircleAlert />}
                   <Label
                     weight={
                       theme.global.input.weight ||
                       theme.global.input.font.weight
                     }
-                    alignSelf="center"
                     truncate
                   >
                     {file.name}
