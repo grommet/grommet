@@ -3,6 +3,10 @@
     "previous": "Moved to {date}",
     "next": "Moved to {date}"
   },
+  "dateInput": {
+    "enterCalendar": "Calendar is open, press tab to enter the calendar",
+    "exitCalendar": "Exited calendar dialog"
+  },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",
