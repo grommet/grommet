@@ -57,6 +57,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
     ),
     children: PropTypes.func,
+    defaultItemProps: PropTypes.shape({}),
     itemProps: PropTypes.shape({}),
     onMore: PropTypes.func,
     onClickItem: PropTypes.func,

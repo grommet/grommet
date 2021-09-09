@@ -513,6 +513,7 @@ Object {
       "border": [Function],
       "children": [Function],
       "data": [Function],
+      "defaultItemProps": [Function],
       "gridArea": [Function],
       "itemProps": [Function],
       "margin": [Function],
