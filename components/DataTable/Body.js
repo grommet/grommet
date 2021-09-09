@@ -25,6 +25,8 @@ var _StyledDataTable = require("./StyledDataTable");
 
 var _buildState = require("./buildState");
 
+var _defaultProps = require("../../default-props");
+
 var _excluded = ["cellProps", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -149,7 +151,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       setRowExpand = _ref2.setRowExpand,
       rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
 
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
