@@ -70,7 +70,10 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
       component: _Table.Table
     },
     td: {
-      component: _TableCell.TableCell
+      component: _TableCell.TableCell,
+      props: {
+        plain: true
+      }
     },
     tbody: {
       component: _TableBody.TableBody
