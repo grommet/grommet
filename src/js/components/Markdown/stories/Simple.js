@@ -22,7 +22,7 @@ import { Grommet } from 'grommet';
 
   Markdown | Less | Pretty
   --- | --- | ---
-  *Still* | \`renders\` | **nicely**
+  Content *still* | \`renders\` | **nicely** in a table
   1 | 2 | 3
 `;
 
