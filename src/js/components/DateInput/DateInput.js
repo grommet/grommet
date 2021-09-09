@@ -4,10 +4,13 @@ import React, {
   useEffect,
   useMemo,
   useState,
+  useCallback,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -23,6 +26,7 @@ import {
   valueToText,
   textToValue,
 } from './utils';
+import { DateInputPropTypes } from './propTypes';
 
 const DateInput = forwardRef(
   (
@@ -40,11 +44,14 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       value: valueArg,
+      messages,
       ...rest
     },
     refArg,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
+    const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
@@ -76,11 +83,7 @@ const DateInput = forwardRef(
     // We compare using textToValue to avoid "06/01/2021" not
     // matching "06/1/2021".
     useEffect(() => {
-      if (
-        schema &&
-        value &&
-        ((Array.isArray(value) && value[0]) || !Array.isArray(value))
-      ) {
+      if (schema && value !== undefined) {
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
@@ -96,6 +99,16 @@ const DateInput = forwardRef(
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
+    const openCalendar = useCallback(() => {
+      setOpen(true);
+      announce(formatMessage({ id: 'dateInput.enterCalendar', messages }));
+    }, [announce, formatMessage, messages]);
+
+    const closeCalendar = useCallback(() => {
+      setOpen(false);
+      announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
+    }, [announce, formatMessage, messages]);
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -105,6 +118,8 @@ const DateInput = forwardRef(
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
         dates={range && value.length ? [value] : undefined}
+        // places focus on days grid when Calendar opens
+        initialFocus={open ? 'days' : undefined}
         onSelect={
           disabled
             ? undefined
@@ -118,7 +133,10 @@ const DateInput = forwardRef(
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
-                if (open && !range) setOpen(false);
+                if (open && !range) {
+                  closeCalendar();
+                  setTimeout(() => ref.current.focus(), 1);
+                }
               }
         }
         {...calendarProps}
@@ -149,7 +167,10 @@ const DateInput = forwardRef(
           useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
         }}
       >
-        <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
+        <Keyboard
+          onEsc={open ? () => closeCalendar() : undefined}
+          onSpace={openCalendar}
+        >
           <MaskedInput
             ref={ref}
             id={id}
@@ -180,9 +201,10 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
-              setOpen(true);
+              openCalendar();
               if (onFocus) onFocus(event);
             }}
+            onClick={openCalendar}
           />
         </Keyboard>
       </FormContext.Provider>
@@ -200,18 +222,21 @@ const DateInput = forwardRef(
     if (open) {
       return [
         input,
-        <Drop
-          overflow="visible"
-          key="drop"
-          id={id ? `${id}__drop` : undefined}
-          target={ref.current}
-          align={{ top: 'bottom', left: 'left', ...dropProps }}
-          onEsc={() => setOpen(false)}
-          onClickOutside={() => setOpen(false)}
-          {...dropProps}
-        >
-          {calendar}
-        </Drop>,
+        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
+          <Drop
+            overflow="visible"
+            id={id ? `${id}__drop` : undefined}
+            target={ref.current}
+            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            onEsc={closeCalendar}
+            onClickOutside={({ target }) => {
+              if (target !== ref.current) closeCalendar();
+            }}
+            {...dropProps}
+          >
+            {calendar}
+          </Drop>
+        </Keyboard>,
       ];
     }
 
@@ -220,12 +245,6 @@ const DateInput = forwardRef(
 );
 
 DateInput.displayName = 'DateInput';
+DateInput.propTypes = DateInputPropTypes;
 
-let DateInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DateInputDoc = require('./doc').doc(DateInput);
-}
-const DateInputWrapper = DateInputDoc || DateInput;
-
-export { DateInputWrapper as DateInput };
+export { DateInput };

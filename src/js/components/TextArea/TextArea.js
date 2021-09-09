@@ -4,6 +4,7 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 
 import { StyledTextArea } from './StyledTextArea';
+import { TextAreaPropTypes } from './propTypes';
 
 const TextArea = forwardRef(
   (
@@ -66,12 +67,6 @@ const TextArea = forwardRef(
 );
 
 TextArea.displayName = 'TextArea';
+TextArea.propTypes = TextAreaPropTypes;
 
-let TextAreaDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextAreaDoc = require('./doc').doc(TextArea);
-}
-const TextAreaWrapper = TextAreaDoc || TextArea;
-
-export { TextAreaWrapper as TextArea };
+export { TextArea };

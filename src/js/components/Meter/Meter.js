@@ -2,6 +2,7 @@ import React, { forwardRef, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
+import { MeterPropTypes } from './propTypes';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -51,7 +52,7 @@ const Meter = forwardRef(
           {...rest}
         />
       );
-    } else if (type === 'circle' || type === 'pie') {
+    } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
           ref={ref}
@@ -70,11 +71,6 @@ const Meter = forwardRef(
 );
 
 Meter.displayName = 'Meter';
+Meter.prototype = MeterPropTypes;
 
-let MeterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-const MeterWrapper = MeterDoc || Meter;
-
-export { MeterWrapper as Meter };
+export { Meter };

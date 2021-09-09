@@ -21,6 +21,7 @@ import {
   StyledMaskedInputContainer,
   StyledIcon,
 } from './StyledMaskedInput';
+import { MaskedInputPropTypes } from './propTypes';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -197,6 +198,17 @@ const MaskedInput = forwardRef(
 
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
+
+    // Caller's ref, if provided
+    const [dropPropsTarget, setDropPropsTarget] = useState();
+    useEffect(() => {
+      let nextDropPropsTarget;
+      // If caller provided a ref, set to 'pending' until ref.current is defined
+      if (dropProps && 'target' in dropProps) {
+        nextDropPropsTarget = dropProps.target || 'pending';
+        setDropPropsTarget(nextDropPropsTarget);
+      }
+    }, [dropProps]);
 
     const [focus, setFocus] = useState(focusProp);
     const [activeMaskIndex, setActiveMaskIndex] = useState();
@@ -397,61 +409,63 @@ const MaskedInput = forwardRef(
             onChange={onChangeInput}
           />
         </Keyboard>
-        {showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && (
-          <Drop
-            id={id ? `masked-input-drop__${id}` : undefined}
-            align={dropAlign}
-            responsive={false}
-            target={inputRef.current}
-            onClickOutside={onHideDrop}
-            onEsc={onHideDrop}
-            {...dropProps}
-          >
-            <ContainerBox ref={dropRef} overflow="auto" dropHeight={dropHeight}>
-              {mask[activeMaskIndex].options.map((option, index) => {
-                // Determine whether the label is done as a child or
-                // as an option Button kind property.
-                const child = !theme.button.option ? (
-                  <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                    {option}
-                  </Box>
-                ) : undefined;
-                // if we have a child, turn on plain, and hoverIndicator
+        {showDrop &&
+          mask[activeMaskIndex] &&
+          mask[activeMaskIndex].options &&
+          // If caller has specified dropProps.target, ensure target is defined
+          dropPropsTarget !== 'pending' && (
+            <Drop
+              id={id ? `masked-input-drop__${id}` : undefined}
+              align={dropAlign}
+              responsive={false}
+              target={inputRef.current}
+              onClickOutside={onHideDrop}
+              onEsc={onHideDrop}
+              {...dropProps}
+            >
+              <ContainerBox
+                ref={dropRef}
+                overflow="auto"
+                dropHeight={dropHeight}
+              >
+                {mask[activeMaskIndex].options.map((option, index) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const child = !theme.button.option ? (
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                      {option}
+                    </Box>
+                  ) : undefined;
+                  // if we have a child, turn on plain, and hoverIndicator
 
-                return (
-                  <Box key={option} flex={false}>
-                    <Button
-                      tabIndex="-1"
-                      onClick={onOption(option)}
-                      onMouseOver={() => setActiveOptionIndex(index)}
-                      onFocus={() => {}}
-                      active={index === activeOptionIndex}
-                      plain={!child ? undefined : true}
-                      align="start"
-                      kind={!child ? 'option' : undefined}
-                      hoverIndicator={!child ? undefined : 'background'}
-                      label={!child ? option : undefined}
-                    >
-                      {child}
-                    </Button>
-                  </Box>
-                );
-              })}
-            </ContainerBox>
-          </Drop>
-        )}
+                  return (
+                    <Box key={option} flex={false}>
+                      <Button
+                        tabIndex="-1"
+                        onClick={onOption(option)}
+                        onMouseOver={() => setActiveOptionIndex(index)}
+                        onFocus={() => {}}
+                        active={index === activeOptionIndex}
+                        plain={!child ? undefined : true}
+                        align="start"
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        label={!child ? option : undefined}
+                      >
+                        {child}
+                      </Button>
+                    </Box>
+                  );
+                })}
+              </ContainerBox>
+            </Drop>
+          )}
       </StyledMaskedInputContainer>
     );
   },
 );
 
 MaskedInput.displayName = 'MaskedInput';
+MaskedInput.propTypes = MaskedInputPropTypes;
 
-let MaskedInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-const MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-
-export { MaskedInputWrapper as MaskedInput };
+export { MaskedInput };

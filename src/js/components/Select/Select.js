@@ -22,6 +22,7 @@ import { TextInput } from '../TextInput';
 import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { SelectPropTypes } from './propTypes';
 
 const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
@@ -406,12 +407,6 @@ const Select = forwardRef(
 Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
+Select.propTypes = SelectPropTypes;
 
-let SelectDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SelectDoc = require('./doc').doc(Select);
-}
-const SelectWrapper = SelectDoc || Select;
-
-export { SelectWrapper as Select };
+export { Select };

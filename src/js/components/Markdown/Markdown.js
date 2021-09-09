@@ -13,6 +13,7 @@ import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
+import { MarkdownPropTypes } from './propTypes';
 
 const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
   const heading = [1, 2, 3, 4].reduce((obj, level) => {
@@ -30,7 +31,7 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
       img: { component: Image },
       p: { component: Paragraph },
       table: { component: Table },
-      td: { component: TableCell },
+      td: { component: TableCell, props: { plain: true } },
       tbody: { component: TableBody },
       tfoot: { component: TableFooter },
       th: { component: TableCell },
@@ -45,11 +46,6 @@ const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
   return <Markdown options={{ ...options, overrides }} {...rest} />;
 };
 
-let GrommetMarkdownDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
-}
-const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
+GrommetMarkdown.propTypes = MarkdownPropTypes;
 
-export { GrommetMarkdownWrapper as Markdown };
+export { GrommetMarkdown as Markdown };

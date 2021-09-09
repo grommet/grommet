@@ -11,11 +11,4 @@ const TableFooter = forwardRef((props, ref) => (
 
 TableFooter.displayName = 'TableFooter';
 
-let TableFooterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TableFooterDoc = require('./doc').doc(TableFooter);
-}
-const TableFooterWrapper = TableFooterDoc || TableFooter;
-
-export { TableFooterWrapper as TableFooter };
+export { TableFooter };

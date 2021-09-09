@@ -19,6 +19,7 @@ import { YAxis } from './YAxis';
 import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, points } from './utils';
+import { DataChartPropTypes } from './propTypes';
 
 // DataChart takes a generic data array of objects plus as few properties
 // as possible, and creates a Stack of Charts with x and y axes, a legend,
@@ -633,12 +634,6 @@ const DataChart = forwardRef(
 );
 
 DataChart.displayName = 'DataChart';
+DataChart.propTypes = DataChartPropTypes;
 
-let DataChartDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataChartDoc = require('./doc').doc(DataChart);
-}
-const DataChartWrapper = DataChartDoc || DataChart;
-
-export { DataChartWrapper as DataChart };
+export { DataChart };

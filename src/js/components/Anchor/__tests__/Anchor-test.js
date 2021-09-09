@@ -190,6 +190,18 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('gap renders', () => {
+    const { container } = render(
+      <Grommet>
+        <Anchor icon={<svg />} label="Small Gap" href="#" gap="small" />
+        <Anchor icon={<svg />} label="Medium Gap" href="#" gap="medium" />
+        <Anchor icon={<svg />} label="Large Gap" href="#" gap="large" />
+        <Anchor icon={<svg />} label="5px Gap" href="#" gap="5px" />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>

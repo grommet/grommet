@@ -19,6 +19,6 @@ const useFormInput = ({ value: valueProp, initialValue }) => {
   ];
 };
 
-const useFormField = ({ error, info }) => ({ error, info });
+const useFormField = ({ error, info, disabled }) => ({ error, info, disabled });
 
 export const FormContext = React.createContext({ useFormField, useFormInput });

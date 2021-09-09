@@ -4,10 +4,12 @@ import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
+import { CheckBoxGroupPropTypes } from './propTypes';
 
-export const CheckBoxGroup = forwardRef(
+const CheckBoxGroup = forwardRef(
   (
     {
+      children,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
@@ -75,7 +77,7 @@ export const CheckBoxGroup = forwardRef(
         }
         {...rest}
       >
-        {options.map((option) => {
+        {options.map((option, index) => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
           const valueOption = valueKey ? option[valueKey] : optionValue;
@@ -107,7 +109,9 @@ export const CheckBoxGroup = forwardRef(
               onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
-            />
+            >
+              {children ? (state) => children(options[index], state) : null}
+            </CheckBox>
           );
         })}
       </StyledCheckBoxGroup>
@@ -116,12 +120,6 @@ export const CheckBoxGroup = forwardRef(
 );
 
 CheckBoxGroup.displayName = 'CheckBoxGroup';
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
 
-let CheckBoxGroupDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-const RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+export { CheckBoxGroup };

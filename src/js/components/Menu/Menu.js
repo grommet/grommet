@@ -16,6 +16,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { MenuPropTypes } from './propTypes';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -88,6 +89,7 @@ const Menu = forwardRef((props, ref) => {
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
   const [alignControlMirror, setAlignControlMirror] = useState();
+  const initialAlignTop = alignControlMirror === align.top;
 
   const buttonRefs = {};
   const constants = useMemo(
@@ -352,7 +354,12 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {alignControlMirror === 'bottom' || align.bottom === 'bottom'
+              {/* 
+                If align.top was defined,
+                don't show controlMirror when window height has shrunk 
+              */}
+              {!initialAlignTop &&
+              (alignControlMirror === 'bottom' || align.bottom === 'bottom')
                 ? controlMirror
                 : undefined}
             </ContainerBox>
@@ -372,11 +379,6 @@ Menu.defaultProps = {
 };
 
 Menu.displayName = 'Menu';
+Menu.propTypes = MenuPropTypes;
 
-let MenuDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
-}
-const MenuWrapper = MenuDoc || Menu;
-
-export { MenuWrapper as Menu };
+export { Menu };

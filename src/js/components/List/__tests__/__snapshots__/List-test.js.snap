@@ -9522,7 +9522,7 @@ exports[`List events should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 jehgOx"
+                class="StyledIcon-sc-ofa7kd-0 iZdQSA"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -9578,7 +9578,7 @@ exports[`List events should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 hVBrNB"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -12480,7 +12480,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12500,7 +12500,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12549,7 +12549,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12570,7 +12570,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12634,7 +12634,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12654,7 +12654,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12703,7 +12703,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -12724,7 +12724,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13250,7 +13250,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13270,7 +13270,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13319,7 +13319,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13340,7 +13340,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13404,7 +13404,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13424,7 +13424,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13473,7 +13473,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -13494,7 +13494,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -14019,7 +14019,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -14039,7 +14039,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -14088,7 +14088,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -14109,7 +14109,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-ofa7kd-0 hVBrNB"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path

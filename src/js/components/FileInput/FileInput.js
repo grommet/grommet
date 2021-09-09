@@ -15,6 +15,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
+import { FileInputPropTypes } from './propTypes';
 
 const formatBytes = (size) => {
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
@@ -477,12 +478,6 @@ FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
 FileInput.displayName = 'FileInput';
+FileInput.propTypes = FileInputPropTypes;
 
-let FileInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FileInputDoc = require('./doc').doc(FileInput);
-}
-const FileInputWrapper = FileInputDoc || FileInput;
-
-export { FileInputWrapper as FileInput };
+export { FileInput };

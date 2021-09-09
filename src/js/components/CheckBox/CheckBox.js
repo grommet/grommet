@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { CheckBoxPropTypes } from './propTypes';
 
 import {
   StyledCheckBox,
@@ -32,6 +33,7 @@ const CheckBox = forwardRef(
       a11yTitle,
       'aria-label': ariaLabel,
       checked: checkedProp,
+      children,
       defaultChecked = false,
       disabled,
       fill,
@@ -191,7 +193,7 @@ const CheckBox = forwardRef(
             if (onChange) onChange(event);
           }}
         />
-        {visual}
+        {children ? children({ checked, indeterminate }) : visual}
         {hidden}
       </StyledCheckBox>
     );
@@ -225,12 +227,6 @@ const CheckBox = forwardRef(
 );
 
 CheckBox.displayName = 'CheckBox';
+CheckBox.propTypes = CheckBoxPropTypes;
 
-let CheckBoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-const CheckBoxWrapper = CheckBoxDoc || CheckBox;
-
-export { CheckBoxWrapper as CheckBox };
+export { CheckBox };

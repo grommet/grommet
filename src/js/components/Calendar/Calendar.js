@@ -38,6 +38,7 @@ import {
   subtractMonths,
   withinDates,
 } from './utils';
+import { CalendarPropTypes } from './propTypes';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -169,6 +170,7 @@ const Calendar = forwardRef(
       dates: datesProp,
       daysOfWeek,
       disabled,
+      initialFocus, // internal only for DateInput
       fill,
       firstDayOfWeek = 0,
       header,
@@ -388,6 +390,10 @@ const Calendar = forwardRef(
     const daysRef = useRef();
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
+
+    useEffect(() => {
+      if (initialFocus === 'days') daysRef.current.focus();
+    }, [initialFocus]);
 
     const changeReference = useCallback(
       (nextReference) => {
@@ -655,6 +661,7 @@ const Calendar = forwardRef(
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
+    let blankWeek = false;
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
@@ -672,7 +679,6 @@ const Calendar = forwardRef(
       if (!showAdjacentDays && otherMonth) {
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -680,6 +686,15 @@ const Calendar = forwardRef(
             <StyledDay sizeProp={size} fillContainer={fill} />
           </StyledDayContainer>,
         );
+
+        if (
+          weeks.length === 5 &&
+          /* If the length days array is less than the current getDate()
+          we know that all days in the array are from the next month. */
+          days.length < day.getDate()
+        ) {
+          blankWeek = true;
+        }
       } else if (
         /* Do not show adjacent days in 6th row if all days
         fall in the next month */
@@ -690,9 +705,9 @@ const Calendar = forwardRef(
         we know that all days in the array are from the next month. */
         days.length < day.getDate()
       ) {
+        blankWeek = true;
         days.push(
           <StyledDayContainer
-            role="gridcell"
             key={day.getTime()}
             sizeProp={size}
             fillContainer={fill}
@@ -791,11 +806,16 @@ const Calendar = forwardRef(
           );
         }
       }
-
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
+      <StyledWeek
+        // if a week contains only blank days, for screen reader accessibility
+        // we don't want to set role="row"
+        role={!blankWeek ? 'row' : undefined}
+        key={day.getTime()}
+        fillContainer={fill}
+      >
         {days}
       </StyledWeek>,
     );
@@ -897,12 +917,6 @@ const Calendar = forwardRef(
 );
 
 Calendar.displayName = 'Calendar';
+Calendar.propTypes = CalendarPropTypes;
 
-let CalendarDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CalendarDoc = require('./doc').doc(Calendar);
-}
-const CalendarWrapper = CalendarDoc || Calendar;
-
-export { CalendarWrapper as Calendar };
+export { Calendar };

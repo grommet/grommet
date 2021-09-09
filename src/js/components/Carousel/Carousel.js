@@ -16,7 +16,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
-import { CarouselType } from './propTypes';
+import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
   activeChild,
@@ -132,6 +132,7 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
+        a11yTitle={`Show carousel slide ${index + 1}`}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
@@ -151,11 +152,13 @@ const Carousel = ({
           duration: theme.carousel.animation.duration,
         };
       }
+      visibility = 'visible';
     } else if (index === priorActiveIndex) {
       animation = {
         type: 'fadeOut',
         duration: theme.carousel.animation.duration,
       };
+      visibility = 'hidden';
     } else {
       animation = { type: 'fadeOut', duration: 0 };
       visibility = 'hidden';
@@ -252,6 +255,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-Carousel.propTypes = CarouselType;
+Carousel.propTypes = CarouselPropTypes;
 
 export { Carousel };
