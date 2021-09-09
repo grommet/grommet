@@ -293,11 +293,13 @@ const TextInput = forwardRef(
       [activeSuggestionIndex],
     );
 
-    const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
-      placeholder &&
+    const showStyledPlaceholder = useMemo(
+      () =>
+        placeholder &&
         typeof placeholder !== 'string' &&
         !(inputRef.current && inputRef.current.value) &&
         !value,
+      [inputRef, placeholder, value],
     );
 
     let drop;
@@ -476,11 +478,6 @@ const TextInput = forwardRef(
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
-                    setShowStyledPlaceholder(
-                      placeholder &&
-                        typeof placeholder !== 'string' &&
-                        !event.target.value,
-                    );
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
