@@ -12,6 +12,7 @@ import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
+import { defaultProps } from '../../default-props';
 
 const Row = memo(
   ({
