@@ -243,11 +243,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setActiveSuggestionIndex(nextActiveIndex);
     setMouseMovedSinceLastKey(false);
   }, [activeSuggestionIndex]);
-
-  var _useState6 = useState(placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value) && !value),
-      showStyledPlaceholder = _useState6[0],
-      setShowStyledPlaceholder = _useState6[1];
-
+  var showStyledPlaceholder = useMemo(function () {
+    return placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value) && !value;
+  }, [inputRef, placeholder, value]);
   var drop;
   var extraProps = {
     onSelect: handleTextSelect
@@ -386,7 +384,6 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // will come from this onChange and remove the placeholder
       // so we need to update state to ensure the styled
       // placeholder only appears when there is no value
-      setShowStyledPlaceholder(placeholder && typeof placeholder !== 'string' && !event.target.value);
       setValue(event.target.value);
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
