@@ -60,11 +60,11 @@ const CheckBox = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [checked, setChecked] = formContext.useFormInput(
+    const [checked, setChecked] = formContext.useFormInput({
       name,
-      checkedProp,
-      defaultChecked,
-    );
+      value: checkedProp,
+      initialValue: defaultChecked,
+    });
 
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
