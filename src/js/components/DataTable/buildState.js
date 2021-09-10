@@ -159,11 +159,11 @@ export const buildFooterValues = (columns, data) => {
   let result = {};
   columns.forEach((column) => {
     if (column.footer) {
-      if (typeof column.footer === 'string') {
-        result = set(result, column.property, column.footer);
-      } else if (column.footer.aggregate) {
+      if (column.footer.aggregate) {
         const value = datumValue(aggregateValues, column.property);
         result = set(result, column.property, value);
+      } else {
+        result = set(result, column.property, column.footer);
       }
     }
   });

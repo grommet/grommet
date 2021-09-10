@@ -13,15 +13,14 @@ Grommet is divided into several projects, the following are notable:
 
 - [grommet] – the primary Grommet 2.X project is actively developed and
   contributions are more than welcome! Be sure to check the [good first issues].
+- [grommet-site] - the Grommet website. Any documentation changes should be made here.
 - [grommet-icons] – iconography for Grommet and React.js.
-- [react-desc] – add a schema to your React components based on React
-  [`PropTypes`][prop-types].
 - [design-kit] – the Grommet Design Kit provides a set of sticker sheets and
   templates to help bootstrap your design process.
 
 ## You can Become a Contributor
 
-Afterall, that’s why you’re here, right?
+After all, that’s why you’re here, right?
 Quick steps and ideas of how you can contribute to Grommet:
 
 1. Code, code, code… (and make a Pull Request).
@@ -75,52 +74,6 @@ passes testing and the pull request can merge cleanly.
 
 At least one review from a maintainer is required for all patches.
 
-### Developer’s Certificate of Origin
-
-All contributions must include acceptance of the DCO:
-
-> Developer Certificate of Origin Version 1.1
->
-> Copyright (C) 2004, 2006 The Linux Foundation and its contributors. 660
-> York Street, Suite 102, San Francisco, CA 94110 USA
->
-> Everyone is permitted to copy and distribute verbatim copies of this
-> license document, but changing it is not allowed.
->
-> Developer's Certificate of Origin 1.1
->
-> By making a contribution to this project, I certify that:
->
-> \(a) The contribution was created in whole or in part by me and I have
-> the right to submit it under the open source license indicated in the
-> file; or
->
-> \(b) The contribution is based upon previous work that, to the best of my
-> knowledge, is covered under an appropriate open source license and I
-> have the right under that license to submit that work with
-> modifications, whether created in whole or in part by me, under the same
-> open source license (unless I am permitted to submit under a different
-> license), as indicated in the file; or
->
-> \(c) The contribution was provided directly to me by some other person
-> who certified (a), (b) or (c) and I have not modified it.
->
-> \(d) I understand and agree that this project and the contribution are
-> public and that a record of the contribution (including all personal
-> information I submit with it, including my sign-off) is maintained
-> indefinitely and may be redistributed consistent with this project or
-> the open source license(s) involved.
-
-### Sign Your Work
-
-To accept the DCO, simply add this line to each commit message with your
-name and email address (`git commit -s` will do this for you):
-
-    Signed-off-by: Jane Example <jane@example.com>
-
-For legal reasons, no anonymous or pseudonymous contributions are
-accepted.
-
 ## Design Contributions
 
 The Grommet community values contributions on the design side of the
@@ -148,14 +101,11 @@ started you should:
 1. clone it `git clone https://github.com/<your-username>/grommet.git`
 1. install dependencies using: `yarn install`
 
-The components code lives in `src/js/components`. The structure of the
-project is a bit particular since it is using lots of internal tooling to try to
-produce up-to-date documentation and minimise bugs. A few gotchas you may run
+The components code lives in `src/js/components`. A few gotchas you may run
 into while contributing could include:
 
-- The read-me files in the components are auto-generated. You won’t need to
-  update them. A big chunk of the documentation and prop-type validation is
-  happening via the `doc.js` files.
+- Documentation updates need to be filled with a separate pull request on
+  [grommet-site].
 - Code coverage and unit-testing is an important process of development.
   A pre-commit hook exists which runs the test suite and aborts the commit if
   any fail. To manually run tests, you should run `yarn test`. If you need to
@@ -178,14 +128,14 @@ frequently). If you feel we missed yours don’t hesitate to ping us on
 
 ## Contributing to the Documentation
 
-Grommet uses an internal tool for most of its documentation. If you are looking
-to modify component documentation then you only need to have a look at the
-`doc.js` files.
+The documentation is stored in the [grommet-site] repository. Each component
+has a documentation file under `src/screens`.
 
-These files are used to generate the documentation on the Grommet website. That
-code lives in the [grommet-site] repository.
+If a documentation change is related to a pull request on grommet, mention the
+grommet pull request in the pull request description so that the two are
+associated with each other.
 
-Found an error in the documentation? [File an issue][grommet issues].
+Found an error in the documentation? [File an issue][grommet-site issues].
 
 ## Need More Help?
 
@@ -213,11 +163,11 @@ This contribution guide was inspired by the contribution guides for [Grunt],
 [grommet-design pulls]: https://github.com/grommet/grommet-design/pulls
 [grommet-icons]: https://github.com/grommet/grommet-icons
 [grommet-site]: https://github.com/grommet/grommet-site
+[grommet-site issues]: https://github.com/grommet/grommet-site/issues
 [grunt]: http://gruntjs.com/contributing
 [prettier]: https://prettier.io/docs/en/editors.html
 [prop-types]: https://www.npmjs.com/package/prop-types
 [pull requests]: https://help.github.com/en/articles/creating-a-pull-request-from-a-fork
-[react-desc]: https://github.com/grommet/react-desc
 [slack community]: https://slack-invite.grommet.io/
 [stack overflow]: https://stackoverflow.com/questions/tagged/grommet
 [video]: https://vimeo.com/129681048

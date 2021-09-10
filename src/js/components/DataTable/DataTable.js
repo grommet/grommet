@@ -160,20 +160,22 @@ const DataTable = ({
 
   const onHeaderWidths = useCallback(
     (columnWidths) => {
-      const pinnedProperties = columns
+      const hasSelectColumn = Boolean(select || onSelect);
+      let pinnedProperties = columns
         .map((pinnedColumn) => pinnedColumn.pin && pinnedColumn.property)
         .filter((n) => n);
-
+      if (hasSelectColumn && pinnedProperties.length > 0) {
+        pinnedProperties = ['_grommetDataTableSelect', ...pinnedProperties];
+      }
       const nextPinnedOffset = {};
 
       if (columnWidths !== []) {
         pinnedProperties.forEach((property, index) => {
-          const hasSelectColumn = Boolean(select || onSelect);
-
           const columnIndex =
-            columns.findIndex((column) => column.property === property) +
-            hasSelectColumn;
-
+            property === '_grommetDataTableSelect'
+              ? 0
+              : columns.findIndex((column) => column.property === property) +
+                hasSelectColumn;
           if (columnWidths[columnIndex]) {
             nextPinnedOffset[property] = {
               width: columnWidths[columnIndex],
@@ -185,7 +187,6 @@ const DataTable = ({
             };
           }
         });
-
         setPinnedOffset(nextPinnedOffset);
       }
     },
