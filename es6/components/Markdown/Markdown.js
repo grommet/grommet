@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { forwardRef, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { deepMerge } from '../../utils';
 import { Heading } from '../Heading';
@@ -18,8 +18,7 @@ import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 import { MarkdownPropTypes } from './propTypes';
-
-var GrommetMarkdown = function GrommetMarkdown(_ref) {
+var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var components = _ref.components,
       options = _ref.options,
       theme = _ref.theme,
@@ -70,13 +69,16 @@ var GrommetMarkdown = function GrommetMarkdown(_ref) {
     tr: {
       component: TableRow
     }
-  }, heading, components, options && options.overrides);
-  return /*#__PURE__*/React.createElement(Markdown, _extends({
+  }, heading, components, options && options.overrides); // we use Fragment as the wrapper so we can assign the ref with the div
+
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref
+  }, /*#__PURE__*/React.createElement(Markdown, _extends({
     options: _extends({}, options, {
+      wrapper: Fragment,
       overrides: overrides
     })
-  }, rest));
-};
-
+  }, rest)));
+});
 GrommetMarkdown.propTypes = MarkdownPropTypes;
 export { GrommetMarkdown as Markdown };
