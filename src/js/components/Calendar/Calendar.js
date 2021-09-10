@@ -872,14 +872,22 @@ const Calendar = forwardRef(
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
+              changeReference(addDays(active, -7));
             }}
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));
+              changeReference(addDays(active, 7));
             }}
-            onLeft={() => active && setActive(addDays(active, -1))}
-            onRight={() => active && setActive(addDays(active, 1))}
+            onLeft={() => {
+              setActive(addDays(active, -1));
+              changeReference(active);
+            }}
+            onRight={() => {
+              setActive(addDays(active, 1));
+              changeReference(active);
+            }}
           >
             <StyledWeeksContainer
               tabIndex={0}
