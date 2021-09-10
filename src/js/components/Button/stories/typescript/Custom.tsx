@@ -31,7 +31,7 @@ const customTheme: ThemeType = {
     primary: {
       color: '#2196f3',
     },
-    extend: props => {
+    extend: (props) => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -64,6 +64,14 @@ export const TSCustom = () => (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Button as="span" label="Custom as=span" />
+      </Box>
+      <Box align="center" pad="large">
+        <Button
+          rel="noopener"
+          target="_blank"
+          href="https://v2.grommet.io/button"
+          label="Link to Button docs"
+        />
       </Box>
     </Grommet>
   </>
