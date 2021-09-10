@@ -18,16 +18,78 @@ const defaultValidationResults = {
   infos: {},
 };
 
+// Validating nameValues with the validator and sending correct messaging
+const validate = (validator, nameValue, formValue, format, messages) => {
+  let result;
+  if (typeof validator === 'function') {
+    result = validator(nameValue, formValue);
+  } else if (validator.regexp) {
+    if (!validator.regexp.test(nameValue)) {
+      result = validator.message || format({ id: 'form.invalid', messages });
+      if (validator.status) {
+        result = { message: result, status: validator.status };
+      }
+    }
+  }
+  return result;
+};
+
+// Validates particular key in formValue
+const validateName =
+  (nameValidators, required) => (name, formValue, format, messages) => {
+    const nameValue = formValue[name];
+    let result;
+    // ValidateArg is something that gets passed in from a FormField component
+    // See 'validate' prop in FormField
+    if (
+      required &&
+      // false is for CheckBox
+      (nameValue === undefined ||
+        nameValue === '' ||
+        nameValue === false ||
+        (Array.isArray(nameValue) && !nameValue.length))
+    ) {
+      // There is no value at that name, and one is required
+      result = format({ id: 'form.required', messages });
+    } else if (nameValidators) {
+      if (Array.isArray(nameValidators)) {
+        nameValidators.some((validator) => {
+          result = validate(validator, nameValue, formValue, format, messages);
+          return !!result;
+        });
+      } else {
+        result = validate(
+          nameValidators,
+          nameValue,
+          formValue,
+          format,
+          messages,
+        );
+      }
+    }
+    return result;
+  };
+
 // validations is an array from Object.entries()
-const validate = (validations, value, omitValid) => {
+// Validates all keys in formValue
+const validateForm = (validations, formValue, format, messages, omitValid) => {
   const nextErrors = {};
   const nextInfos = {};
-  validations.forEach(([name, validation]) => {
+  validations.forEach(([name, { field, input }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
     }
-    const result = validation(value[name], value);
+
+    let result;
+    if (input) {
+      // input() are validations supplied through useFormInput()
+      result = input(name, formValue, format, messages);
+    }
+    if (field && !result) {
+      // field() are validations supplied through useFormField()
+      result = field(name, formValue, format, messages);
+    }
     // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
     if (typeof result === 'object') {
@@ -131,7 +193,12 @@ const Form = forwardRef(
       ).filter(([n]) => value[n]);
 
       if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
-        const [errors, infos] = validate(validationsForSetFields, value);
+        const [errors, infos] = validateForm(
+          validationsForSetFields,
+          value,
+          format,
+          messages,
+        );
 
         filterErrorValidations(errors);
         filterInfoValidations(infos);
@@ -154,11 +221,13 @@ const Form = forwardRef(
       const timer = setTimeout(() => {
         if (pendingValidation) {
           // run validations on the pending one and any other touched fields
-          const [validatedErrors, validatedInfos] = validate(
+          const [validatedErrors, validatedInfos] = validateForm(
             Object.entries(validations.current).filter(
               ([n]) => touched[n] || pendingValidation.includes(n),
             ),
             value,
+            format,
+            messages,
           );
           setPendingValidation(undefined);
 
@@ -197,6 +266,8 @@ const Form = forwardRef(
       return () => clearTimeout(timer);
     }, [
       buildValid,
+      format,
+      messages,
       pendingValidation,
       onValidate,
       touched,
@@ -208,19 +279,21 @@ const Form = forwardRef(
     useEffect(() => {
       if (validateOn !== 'change') setPendingValidation(undefined);
       setValidationResults((prevValidationResults) => {
-        const [nextErrors, nextInfos] = validate(
+        const [nextErrors, nextInfos] = validateForm(
           Object.entries(validations.current).filter(
             ([n]) =>
               prevValidationResults.errors[n] || prevValidationResults.infos[n],
           ),
           value,
+          format,
+          messages,
         );
         return {
           errors: { ...prevValidationResults.errors, ...nextErrors },
           infos: { ...prevValidationResults.infos, ...nextInfos },
         };
       });
-    }, [touched, validateOn, value]);
+    }, [format, messages, touched, validateOn, value]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -254,7 +327,12 @@ const Form = forwardRef(
     // an initialValue, which will trigger updating the contextValue so
     // they can have access to it.
     //
-    const useFormInput = (name, componentValue, initialValue) => {
+    const useFormInput = ({
+      name,
+      value: componentValue,
+      initialValue,
+      validate: validateArg,
+    }) => {
       const [inputValue, setInputValue] = useState(initialValue);
       const formValue = name ? value[name] : undefined;
       // for dynamic forms, we need to track when an input has been added to
@@ -295,6 +373,17 @@ const Form = forwardRef(
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [], // only run onmount and unmount
       );
+
+      useEffect(() => {
+        if (validateArg) {
+          if (!validations.current[name]) {
+            validations.current[name] = {};
+          }
+          validations.current[name].input = validateName(validateArg);
+          return () => delete validations.current[name].input;
+        }
+        return undefined;
+      }, [validateArg, name]);
 
       let useValue;
       if (componentValue !== undefined)
@@ -351,57 +440,17 @@ const Form = forwardRef(
       const info = infoArg || validationResults.infos[name];
 
       useEffect(() => {
-        const validateSingle = (aValidate, value2, data) => {
-          let result;
-          if (typeof aValidate === 'function') {
-            result = aValidate(value2, data);
-          } else if (aValidate.regexp) {
-            if (!aValidate.regexp.test(value2)) {
-              result =
-                aValidate.message || format({ id: 'form.invalid', messages });
-              if (aValidate.status) {
-                result = { message: result, status: aValidate.status };
-              }
-            }
-          }
-          return result;
-        };
-
-        const validateField = (value2, data) => {
-          let result;
-          if (
-            required &&
-            // false is for CheckBox
-            (value2 === undefined ||
-              value2 === '' ||
-              value2 === false ||
-              (Array.isArray(value2) && !value2.length))
-          ) {
-            result = format({ id: 'form.required', messages });
-          } else if (validateArg) {
-            if (Array.isArray(validateArg)) {
-              validateArg.some((aValidate) => {
-                result = validateSingle(aValidate, value2, data);
-                return !!result;
-              });
-            } else {
-              result = validateSingle(validateArg, value2, data);
-            }
-          }
-          return result;
-        };
-
         const index = requiredFields.current.indexOf(name);
         if (required) {
           if (index === -1) requiredFields.current.push(name);
         } else if (index !== -1) requiredFields.current.splice(index, 1);
 
         if (validateArg || required) {
-          if (disabled) {
-            return undefined;
+          if (!validations.current[name]) {
+            validations.current[name] = {};
           }
-          validations.current[name] = validateField;
-          return () => delete validations.current[name];
+          validations.current[name].field = validateName(validateArg, required);
+          return () => delete validations.current[name].field;
         }
 
         return undefined;
@@ -454,9 +503,11 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
           setPendingValidation(undefined);
-          const [nextErrors, nextInfos] = validate(
+          const [nextErrors, nextInfos] = validateForm(
             Object.entries(validations.current),
             value,
+            format,
+            messages,
             true,
           );
 
