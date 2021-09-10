@@ -6,7 +6,7 @@ import { SearchBorderBox } from './SearchBorderBox';
 
 /* Need ForwardRef since this functional component
    is being passed into a custom theme for SearchInput
-*/   
+*/
 export const SearchInput = forwardRef(
   ({ searching, ...props }, textInputRef) => {
     useEffect(() => {

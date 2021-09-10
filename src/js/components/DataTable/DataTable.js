@@ -171,9 +171,11 @@ const DataTable = ({
 
       if (columnWidths !== []) {
         pinnedProperties.forEach((property, index) => {
-          const columnIndex = property === '_grommetDataTableSelect' ? 0 :
-            columns.findIndex((column) => column.property === property) +
-            hasSelectColumn;
+          const columnIndex =
+            property === '_grommetDataTableSelect'
+              ? 0
+              : columns.findIndex((column) => column.property === property) +
+                hasSelectColumn;
           if (columnWidths[columnIndex]) {
             nextPinnedOffset[property] = {
               width: columnWidths[columnIndex],
