@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 
 import { deepMerge } from '../../utils';
@@ -44,11 +44,13 @@ const GrommetMarkdown = forwardRef(
       options && options.overrides,
     );
 
-    // We have to wrap in a div because markdown-to-jsx is a
-    // functional component that doesn't handle refs.
+    // we use Fragment as the wrapper so we can assign the ref with the div
     return (
       <div ref={ref}>
-        <Markdown options={{ ...options, overrides }} {...rest} />
+        <Markdown
+          options={{ ...options, wrapper: Fragment, overrides }}
+          {...rest}
+        />
       </div>
     );
   },
