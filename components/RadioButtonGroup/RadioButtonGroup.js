@@ -60,7 +60,11 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     }, o);
   });
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp,
+    initialValue: defaultValue || ''
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // track if focus is on one of the radio buttons
 

@@ -51,7 +51,11 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
   var ref = useForwardedRef(refArg);
 
-  var _useFormInput = useFormInput(name, valueArg, defaultValue),
+  var _useFormInput = useFormInput({
+    name: name,
+    value: valueArg,
+    initialValue: defaultValue
+  }),
       value = _useFormInput[0],
       setValue = _useFormInput[1]; // do we expect multiple dates?
 
@@ -160,8 +164,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     key: "input" // don't let MaskedInput drive the Form
     ,
     value: {
-      useFormInput: function useFormInput(_, val) {
-        return [val, function () {}];
+      useFormInput: function useFormInput(_ref2) {
+        var valueProp = _ref2.value;
+        return [valueProp, function () {}];
       }
     }
   }, /*#__PURE__*/React.createElement(Keyboard, {
@@ -223,8 +228,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         left: 'left'
       }, dropProps),
       onEsc: closeCalendar,
-      onClickOutside: function onClickOutside(_ref2) {
-        var target = _ref2.target;
+      onClickOutside: function onClickOutside(_ref3) {
+        var target = _ref3.target;
         if (target !== ref.current) closeCalendar();
       }
     }, dropProps), calendar))];

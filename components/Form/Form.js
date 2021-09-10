@@ -26,22 +26,89 @@ var defaultTouched = {};
 var defaultValidationResults = {
   errors: {},
   infos: {}
-}; // validations is an array from Object.entries()
+}; // Validating nameValues with the validator and sending correct messaging
 
-var validate = function validate(validations, value, omitValid) {
+var validate = function validate(validator, nameValue, formValue, format, messages) {
+  var result;
+
+  if (typeof validator === 'function') {
+    result = validator(nameValue, formValue);
+  } else if (validator.regexp) {
+    if (!validator.regexp.test(nameValue)) {
+      result = validator.message || format({
+        id: 'form.invalid',
+        messages: messages
+      });
+
+      if (validator.status) {
+        result = {
+          message: result,
+          status: validator.status
+        };
+      }
+    }
+  }
+
+  return result;
+}; // Validates particular key in formValue
+
+
+var validateName = function validateName(nameValidators, required) {
+  return function (name, formValue, format, messages) {
+    var nameValue = formValue[name];
+    var result; // ValidateArg is something that gets passed in from a FormField component
+    // See 'validate' prop in FormField
+
+    if (required && (nameValue === undefined || nameValue === '' || nameValue === false || Array.isArray(nameValue) && !nameValue.length)) {
+      // There is no value at that name, and one is required
+      result = format({
+        id: 'form.required',
+        messages: messages
+      });
+    } else if (nameValidators) {
+      if (Array.isArray(nameValidators)) {
+        nameValidators.some(function (validator) {
+          result = validate(validator, nameValue, formValue, format, messages);
+          return !!result;
+        });
+      } else {
+        result = validate(nameValidators, nameValue, formValue, format, messages);
+      }
+    }
+
+    return result;
+  };
+}; // validations is an array from Object.entries()
+// Validates all keys in formValue
+
+
+var validateForm = function validateForm(validations, formValue, format, messages, omitValid) {
   var nextErrors = {};
   var nextInfos = {};
   validations.forEach(function (_ref) {
     var name = _ref[0],
-        validation = _ref[1];
+        _ref$ = _ref[1],
+        field = _ref$.field,
+        input = _ref$.input;
 
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
     }
 
-    var result = validation(value[name], value); // typeof error === 'object' is implied for both cases of error with
+    var result;
+
+    if (input) {
+      // input() are validations supplied through useFormInput()
+      result = input(name, formValue, format, messages);
+    }
+
+    if (field && !result) {
+      // field() are validations supplied through useFormField()
+      result = field(name, formValue, format, messages);
+    } // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
+
 
     if (typeof result === 'object') {
       if (result.status === 'info') {
@@ -151,9 +218,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     });
 
     if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
-      var _validate = validate(validationsForSetFields, value),
-          errors = _validate[0],
-          infos = _validate[1];
+      var _validateForm = validateForm(validationsForSetFields, value, format, messages),
+          errors = _validateForm[0],
+          infos = _validateForm[1];
 
       filterErrorValidations(errors);
       filterInfoValidations(infos);
@@ -174,12 +241,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     var timer = setTimeout(function () {
       if (pendingValidation) {
         // run validations on the pending one and any other touched fields
-        var _validate2 = validate(Object.entries(validations.current).filter(function (_ref4) {
+        var _validateForm2 = validateForm(Object.entries(validations.current).filter(function (_ref4) {
           var n = _ref4[0];
           return touched[n] || pendingValidation.includes(n);
-        }), value),
-            validatedErrors = _validate2[0],
-            validatedInfos = _validate2[1];
+        }), value, format, messages),
+            validatedErrors = _validateForm2[0],
+            validatedInfos = _validateForm2[1];
 
         setPendingValidation(undefined);
         setValidationResults(function (prevValidationResults) {
@@ -210,24 +277,24 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     return function () {
       return clearTimeout(timer);
     };
-  }, [buildValid, pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
+  }, [buildValid, format, messages, pendingValidation, onValidate, touched, value, requiredFields]); // clear any errors when value changes
 
   (0, _react.useEffect)(function () {
     if (validateOn !== 'change') setPendingValidation(undefined);
     setValidationResults(function (prevValidationResults) {
-      var _validate3 = validate(Object.entries(validations.current).filter(function (_ref5) {
+      var _validateForm3 = validateForm(Object.entries(validations.current).filter(function (_ref5) {
         var n = _ref5[0];
         return prevValidationResults.errors[n] || prevValidationResults.infos[n];
-      }), value),
-          nextErrors = _validate3[0],
-          nextInfos = _validate3[1];
+      }), value, format, messages),
+          nextErrors = _validateForm3[0],
+          nextInfos = _validateForm3[1];
 
       return {
         errors: _extends({}, prevValidationResults.errors, nextErrors),
         infos: _extends({}, prevValidationResults.infos, nextInfos)
       };
     });
-  }, [touched, validateOn, value]); // There are three basic patterns of handling form input value state:
+  }, [format, messages, touched, validateOn, value]); // There are three basic patterns of handling form input value state:
   //
   // 1 - form controlled
   //
@@ -260,7 +327,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   // they can have access to it.
   //
 
-  var useFormInput = function useFormInput(name, componentValue, initialValue) {
+  var useFormInput = function useFormInput(_ref6) {
+    var name = _ref6.name,
+        componentValue = _ref6.value,
+        initialValue = _ref6.initialValue,
+        validateArg = _ref6.validate;
+
     var _useState5 = (0, _react.useState)(initialValue),
         inputValue = _useState5[0],
         setInputValue = _useState5[1];
@@ -302,6 +374,20 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     [] // only run onmount and unmount
     );
+    (0, _react.useEffect)(function () {
+      if (validateArg) {
+        if (!validations.current[name]) {
+          validations.current[name] = {};
+        }
+
+        validations.current[name].input = validateName(validateArg);
+        return function () {
+          return delete validations.current[name].input;
+        };
+      }
+
+      return undefined;
+    }, [validateArg, name]);
     var useValue;
     if (componentValue !== undefined) // input component drives, pattern #2
       useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives, pattern #1
@@ -337,62 +423,16 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }];
   };
 
-  var useFormField = function useFormField(_ref6) {
-    var errorArg = _ref6.error,
-        infoArg = _ref6.info,
-        name = _ref6.name,
-        required = _ref6.required,
-        disabled = _ref6.disabled,
-        validateArg = _ref6.validate;
+  var useFormField = function useFormField(_ref7) {
+    var errorArg = _ref7.error,
+        infoArg = _ref7.info,
+        name = _ref7.name,
+        required = _ref7.required,
+        disabled = _ref7.disabled,
+        validateArg = _ref7.validate;
     var error = disabled ? undefined : errorArg || validationResults.errors[name];
     var info = infoArg || validationResults.infos[name];
     (0, _react.useEffect)(function () {
-      var validateSingle = function validateSingle(aValidate, value2, data) {
-        var result;
-
-        if (typeof aValidate === 'function') {
-          result = aValidate(value2, data);
-        } else if (aValidate.regexp) {
-          if (!aValidate.regexp.test(value2)) {
-            result = aValidate.message || format({
-              id: 'form.invalid',
-              messages: messages
-            });
-
-            if (aValidate.status) {
-              result = {
-                message: result,
-                status: aValidate.status
-              };
-            }
-          }
-        }
-
-        return result;
-      };
-
-      var validateField = function validateField(value2, data) {
-        var result;
-
-        if (required && (value2 === undefined || value2 === '' || value2 === false || Array.isArray(value2) && !value2.length)) {
-          result = format({
-            id: 'form.required',
-            messages: messages
-          });
-        } else if (validateArg) {
-          if (Array.isArray(validateArg)) {
-            validateArg.some(function (aValidate) {
-              result = validateSingle(aValidate, value2, data);
-              return !!result;
-            });
-          } else {
-            result = validateSingle(validateArg, value2, data);
-          }
-        }
-
-        return result;
-      };
-
       var index = requiredFields.current.indexOf(name);
 
       if (required) {
@@ -400,13 +440,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       } else if (index !== -1) requiredFields.current.splice(index, 1);
 
       if (validateArg || required) {
-        if (disabled) {
-          return undefined;
+        if (!validations.current[name]) {
+          validations.current[name] = {};
         }
 
-        validations.current[name] = validateField;
+        validations.current[name].field = validateName(validateArg, required);
         return function () {
-          return delete validations.current[name];
+          return delete validations.current[name].field;
         };
       }
 
@@ -457,9 +497,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       event.preventDefault();
       setPendingValidation(undefined);
 
-      var _validate4 = validate(Object.entries(validations.current), value, true),
-          nextErrors = _validate4[0],
-          nextInfos = _validate4[1];
+      var _validateForm4 = validateForm(Object.entries(validations.current), value, format, messages, true),
+          nextErrors = _validateForm4[0],
+          nextInfos = _validateForm4[1];
 
       setValidationResults(function () {
         var nextValidationResults = {

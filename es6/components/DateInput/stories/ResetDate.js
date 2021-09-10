@@ -64,7 +64,7 @@ export var ResetDateWithArray = function ResetDateWithArray() {
   })));
 };
 ResetDateWithString.storyName = 'Reset date with string';
-ResetDateWithArray.storyName = "Reset date with array";
+ResetDateWithArray.storyName = 'Reset date with array';
 export default {
   title: 'Input/DateInput/Reset date'
 };

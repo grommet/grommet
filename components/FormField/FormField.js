@@ -118,7 +118,10 @@ var Input = function Input(_ref2) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, rest.value),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: rest.value
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 

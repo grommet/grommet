@@ -93,7 +93,10 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var suggestionsRef = useRef(); // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
 
-  var _formContext$useFormI = formContext.useFormInput(readOnly ? undefined : name, valueProp),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: readOnly ? undefined : name,
+    value: valueProp
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 

@@ -73,7 +73,11 @@ var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, checkedProp, defaultChecked),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: checkedProp,
+    initialValue: defaultChecked
+  }),
       checked = _formContext$useFormI[0],
       setChecked = _formContext$useFormI[1];
 

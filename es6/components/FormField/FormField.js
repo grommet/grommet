@@ -94,7 +94,10 @@ var Input = function Input(_ref2) {
 
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, rest.value),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: rest.value
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 

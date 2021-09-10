@@ -4,20 +4,24 @@ import React, { useState } from 'react'; // When not a descendant of a Form, For
 // where the grommet component needs to know the value in order to
 // render custom visuals.
 
-var useFormInput = function useFormInput(_, valueProp, initialValue) {
+var useFormInput = function useFormInput(_ref) {
+  var valueProp = _ref.value,
+      initialValue = _ref.initialValue;
+
   var _useState = useState(valueProp !== undefined ? valueProp : initialValue),
       value = _useState[0],
-      setValue = _useState[1];
+      setValue = _useState[1]; // Returns an array [value and function to set the value]
+
 
   return [valueProp !== undefined ? valueProp : value, function (nextValue) {
     if (initialValue !== undefined) setValue(nextValue);
   }];
 };
 
-var useFormField = function useFormField(_ref) {
-  var error = _ref.error,
-      info = _ref.info,
-      disabled = _ref.disabled;
+var useFormField = function useFormField(_ref2) {
+  var error = _ref2.error,
+      info = _ref2.info,
+      disabled = _ref2.disabled;
   return {
     error: error,
     info: info,

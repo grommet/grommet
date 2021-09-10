@@ -169,7 +169,10 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 

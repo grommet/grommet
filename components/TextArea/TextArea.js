@@ -38,7 +38,10 @@ var TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1];
 

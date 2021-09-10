@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "background", "border", "disabled", "id", "plain", "renderFile", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
+var _excluded = ["a11yTitle", "background", "border", "disabled", "id", "plain", "renderFile", "maxSize", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 import { defaultProps } from '../../default-props';
 import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
@@ -16,12 +17,27 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
-import { FileInputPropTypes } from './propTypes'; // We want the interaction of <input type="file" /> but none of its styling.
+import { FileInputPropTypes } from './propTypes';
+
+var formatBytes = function formatBytes(size) {
+  var units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  var factor = 1000;
+  var index = 0;
+  var num = size;
+
+  while (num >= factor && index < units.length - 1) {
+    num /= factor;
+    index += 1;
+  }
+
+  return num.toFixed(1) + " " + units[index];
+}; // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
 // If there are any files selected, we need to show the buttons to remove them.
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
+
 
 var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
@@ -55,6 +71,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id = _ref.id,
       plain = _ref.plain,
       renderFile = _ref.renderFile,
+      maxSize = _ref.maxSize,
       messages = _ref.messages,
       margin = _ref.margin,
       multiple = _ref.multiple,
@@ -71,10 +88,6 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
-      files = _formContext$useFormI[0],
-      setFiles = _formContext$useFormI[1];
-
   var _React$useState = React.useState(),
       hover = _React$useState[0],
       setHover = _React$useState[1];
@@ -88,6 +101,41 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var controlRef = useRef();
   var removeRef = useRef();
   var RemoveIcon = theme.fileInput.icons.remove;
+
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp,
+    initialValue: [],
+    validate: maxSize ? function () {
+      var fileList = [].concat(files);
+      var message = '';
+      var numOfInvalidFiles = fileList.filter(function (_ref2) {
+        var size = _ref2.size;
+        return size > maxSize;
+      }).length;
+
+      if (numOfInvalidFiles) {
+        var messageId = 'fileInput.maxSizeSingle';
+
+        if (multiple) {
+          messageId = "fileInput.maxSizeMultiple." + (numOfInvalidFiles === 1 ? 'singular' : 'plural');
+        }
+
+        message = format({
+          id: messageId,
+          messages: messages,
+          values: {
+            maxSize: formatBytes(maxSize),
+            numOfInvalidFiles: numOfInvalidFiles
+          }
+        });
+      }
+
+      return message;
+    } : undefined
+  }),
+      files = _formContext$useFormI[0],
+      setFiles = _formContext$useFormI[1];
 
   var mergeTheme = function mergeTheme(propertyName, defaultKey) {
     var result = {};
@@ -270,10 +318,14 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       justify: "between",
       direction: "row",
       align: "center"
-    }, renderFile ? renderFile(file) : /*#__PURE__*/React.createElement(Label, _extends({
+    }, renderFile ? renderFile(file) : /*#__PURE__*/React.createElement(Box, _extends({}, theme.fileInput.label, {
+      gap: "xsmall",
+      align: "center",
+      direction: "row"
+    }), maxSize && file.size > maxSize && /*#__PURE__*/React.createElement(CircleAlert, null), /*#__PURE__*/React.createElement(Label, {
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
-    }, theme.fileInput.label), file.name), /*#__PURE__*/React.createElement(Box, {
+    }, file.name)), /*#__PURE__*/React.createElement(Box, {
       flex: false,
       direction: "row",
       align: "center"
@@ -332,6 +384,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     type: "file",
     id: id,
     name: name,
+    maxSize: maxSize,
     multiple: multiple,
     disabled: disabled,
     plain: true,
@@ -353,7 +406,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var existing = nextFiles.filter(function (file) {
           return file.name === fileList[i].name && file.size === fileList[i].size;
         }).length > 0;
-        if (!existing) nextFiles.push(fileList[i]);
+
+        if (!existing) {
+          nextFiles.push(fileList[i]);
+        }
       };
 
       for (var i = 0; i < fileList.length; i += 1) {

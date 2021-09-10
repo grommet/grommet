@@ -80,7 +80,7 @@ var ResetDateWithArray = function ResetDateWithArray() {
 
 exports.ResetDateWithArray = ResetDateWithArray;
 ResetDateWithString.storyName = 'Reset date with string';
-ResetDateWithArray.storyName = "Reset date with array";
+ResetDateWithArray.storyName = 'Reset date with array';
 var _default = {
   title: 'Input/DateInput/Reset date'
 };

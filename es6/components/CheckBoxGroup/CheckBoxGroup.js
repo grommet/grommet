@@ -36,7 +36,11 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     } : option;
   }); // 'value' is an array of checked valueKeys
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp,
+    initialValue: []
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // Logic is necessary to maintain a proper data structure for Form logic
 

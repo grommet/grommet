@@ -128,7 +128,11 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // Otherwise, the value(s) should match the selected options.
 
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
+  var _formContext$useFormI = formContext.useFormInput({
+    name: name,
+    value: valueProp,
+    initialValue: defaultValue || ''
+  }),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // valuedValue is the value mapped with any valueKey applied
   // When the options array contains objects, this property indicates how
