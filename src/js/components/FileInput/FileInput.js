@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
@@ -15,6 +16,18 @@ import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
+
+const formatBytes = (size) => {
+  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  const factor = 1000;
+  let index = 0;
+  let num = size;
+  while (num >= factor && index < units.length - 1) {
+    num /= factor;
+    index += 1;
+  }
+  return `${num.toFixed(1)} ${units[index]}`;
+};
 
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -63,6 +76,7 @@ const FileInput = forwardRef(
       id,
       plain,
       renderFile,
+      maxSize,
       messages,
       margin,
       multiple,
@@ -77,7 +91,6 @@ const FileInput = forwardRef(
     const theme = useContext(ThemeContext);
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
-    const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
@@ -85,6 +98,35 @@ const FileInput = forwardRef(
     const controlRef = useRef();
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
+
+    const [files, setFiles] = formContext.useFormInput({
+      name,
+      value: valueProp,
+      initialValue: [],
+      validate: maxSize
+        ? () => {
+            const fileList = [...files];
+            let message = '';
+            const numOfInvalidFiles = fileList.filter(
+              ({ size }) => size > maxSize,
+            ).length;
+            if (numOfInvalidFiles) {
+              let messageId = 'fileInput.maxSizeSingle';
+              if (multiple) {
+                messageId = `fileInput.maxSizeMultiple.${
+                  numOfInvalidFiles === 1 ? 'singular' : 'plural'
+                }`;
+              }
+              message = format({
+                id: messageId,
+                messages,
+                values: { maxSize: formatBytes(maxSize), numOfInvalidFiles },
+              });
+            }
+            return message;
+          }
+        : undefined,
+    });
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
@@ -309,15 +351,23 @@ const FileInput = forwardRef(
               {renderFile ? (
                 renderFile(file)
               ) : (
-                <Label
-                  weight={
-                    theme.global.input.weight || theme.global.input.font.weight
-                  }
-                  truncate
+                <Box
                   {...theme.fileInput.label}
+                  gap="xsmall"
+                  align="center"
+                  direction="row"
                 >
-                  {file.name}
-                </Label>
+                  {maxSize && file.size > maxSize && <CircleAlert />}
+                  <Label
+                    weight={
+                      theme.global.input.weight ||
+                      theme.global.input.font.weight
+                    }
+                    truncate
+                  >
+                    {file.name}
+                  </Label>
+                </Box>
               )}
               <Box flex={false} direction="row" align="center">
                 <Button
@@ -387,6 +437,7 @@ const FileInput = forwardRef(
           type="file"
           id={id}
           name={name}
+          maxSize={maxSize}
           multiple={multiple}
           disabled={disabled}
           plain
@@ -406,7 +457,9 @@ const FileInput = forwardRef(
                     file.name === fileList[i].name &&
                     file.size === fileList[i].size,
                 ).length > 0;
-              if (!existing) nextFiles.push(fileList[i]);
+              if (!existing) {
+                nextFiles.push(fileList[i]);
+              }
             }
             setFiles(nextFiles);
             setDragOver(false);

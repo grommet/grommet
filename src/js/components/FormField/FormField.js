@@ -95,7 +95,10 @@ const Message = ({ error, info, message, type, ...rest }) => {
 
 const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   const formContext = useContext(FormContext);
-  const [value, setValue] = formContext.useFormInput(name, rest.value);
+  const [value, setValue] = formContext.useFormInput({
+    name,
+    value: rest.value,
+  });
   const InputComponent = component || TextInput;
   // Grommet input components already check for FormContext
   // and, using their `name`, end up calling the useFormInput.setValue()

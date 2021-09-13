@@ -530,7 +530,14 @@ Object {
     "render": [Function],
   },
   "Main": [Function],
-  "Markdown": [Function],
+  "Markdown": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": Object {
+      "components": [Function],
+      "options": [Function],
+    },
+    "render": [Function],
+  },
   "MaskedInput": Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
