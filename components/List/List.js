@@ -23,7 +23,7 @@ var _utils = require("../../utils");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -133,6 +133,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       border = _ref.border,
       children = _ref.children,
       data = _ref.data,
+      defaultItemProps = _ref.defaultItemProps,
       focus = _ref.focus,
       itemProps = _ref.itemProps,
       onOrder = _ref.onOrder,
@@ -480,7 +481,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       }));
       boxProps = {
         direction: 'row',
-        align: 'center',
+        align: defaultItemProps && defaultItemProps.align || 'center',
         gap: 'medium'
       };
       content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -499,7 +500,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       pad: pad || theme.list.item.pad,
       background: adjustedBackground,
       border: adjustedBorder
-    }, boxProps, clickProps, orderProps), onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, null, index + 1), content, orderControls);
+    }, defaultItemProps, boxProps, clickProps, orderProps), onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, null, index + 1), content, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);

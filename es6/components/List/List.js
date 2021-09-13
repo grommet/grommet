@@ -1,4 +1,4 @@
-var _excluded = ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
+var _excluded = ["action", "as", "background", "border", "children", "data", "defaultItemProps", "focus", "itemProps", "onOrder", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -113,6 +113,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       border = _ref.border,
       children = _ref.children,
       data = _ref.data,
+      defaultItemProps = _ref.defaultItemProps,
       focus = _ref.focus,
       itemProps = _ref.itemProps,
       onOrder = _ref.onOrder,
@@ -460,7 +461,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       }));
       boxProps = {
         direction: 'row',
-        align: 'center',
+        align: defaultItemProps && defaultItemProps.align || 'center',
         gap: 'medium'
       };
       content = /*#__PURE__*/React.createElement(Box, {
@@ -479,7 +480,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       pad: pad || theme.list.item.pad,
       background: adjustedBackground,
       border: adjustedBorder
-    }, boxProps, clickProps, orderProps), onOrder && /*#__PURE__*/React.createElement(Text, null, index + 1), content, orderControls);
+    }, defaultItemProps, boxProps, clickProps, orderProps), onOrder && /*#__PURE__*/React.createElement(Text, null, index + 1), content, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);

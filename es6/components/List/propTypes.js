@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import PropTypes from 'prop-types';
 import { genericProps, padPropType } from '../../utils/general-prop-types';
+import { BoxPropTypes } from '../Box/propTypes';
 var sizes = ['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right', 'start', 'end'];
 var padShapeSides = {};
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
     border: PropTypes.oneOfType(borderTypes),
     data: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})])),
     children: PropTypes.func,
+    defaultItemProps: PropTypes.shape(BoxPropTypes),
     itemProps: PropTypes.shape({}),
     onMore: PropTypes.func,
     onClickItem: PropTypes.func,

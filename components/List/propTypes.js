@@ -7,6 +7,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _generalPropTypes = require("../../utils/general-prop-types");
 
+var _propTypes2 = require("../Box/propTypes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -35,6 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
     border: _propTypes["default"].oneOfType(borderTypes),
     data: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({})])),
     children: _propTypes["default"].func,
+    defaultItemProps: _propTypes["default"].shape(_propTypes2.BoxPropTypes),
     itemProps: _propTypes["default"].shape({}),
     onMore: _propTypes["default"].func,
     onClickItem: _propTypes["default"].func,
