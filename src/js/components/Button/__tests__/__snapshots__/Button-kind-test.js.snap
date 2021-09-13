@@ -2561,10 +2561,6 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c4 {
@@ -2698,7 +2694,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jncmfT"
+      class="StyledBox-sc-13pk1d4-0 eywysP"
     >
       <svg
         aria-label="Add"

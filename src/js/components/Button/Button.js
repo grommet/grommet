@@ -136,6 +136,7 @@ const Button = forwardRef(
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
       href,
+      justify,
       kind: kindArg,
       label,
       onBlur,
@@ -274,7 +275,7 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify={align === 'center' ? 'center' : 'between'}
+          justify={justify}
           gap={gap}
           responsive={false}
         >
