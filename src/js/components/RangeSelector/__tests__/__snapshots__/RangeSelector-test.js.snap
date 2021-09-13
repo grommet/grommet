@@ -164,7 +164,7 @@ exports[`RangeSelector basic 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -187,7 +187,7 @@ exports[`RangeSelector basic 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -367,7 +367,7 @@ exports[`RangeSelector color 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -390,7 +390,7 @@ exports[`RangeSelector color 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -675,7 +675,7 @@ exports[`RangeSelector direction 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -698,7 +698,7 @@ exports[`RangeSelector direction 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -730,7 +730,7 @@ exports[`RangeSelector direction 1`] = `
         aria-valuenow="20"
         class="c11"
         role="slider"
-        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -753,7 +753,7 @@ exports[`RangeSelector direction 1`] = `
         aria-valuenow="30"
         class="c11"
         role="slider"
-        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -934,7 +934,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -957,7 +957,7 @@ exports[`RangeSelector handle keyboard 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1138,7 +1138,7 @@ exports[`RangeSelector handle mouse 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1161,7 +1161,7 @@ exports[`RangeSelector handle mouse 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1563,7 +1563,7 @@ exports[`RangeSelector invert 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1586,7 +1586,7 @@ exports[`RangeSelector invert 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1618,7 +1618,7 @@ exports[`RangeSelector invert 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1641,7 +1641,7 @@ exports[`RangeSelector invert 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1821,7 +1821,7 @@ exports[`RangeSelector max 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1844,7 +1844,7 @@ exports[`RangeSelector max 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2024,7 +2024,7 @@ exports[`RangeSelector min 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2047,7 +2047,7 @@ exports[`RangeSelector min 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2262,7 +2262,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2285,7 +2285,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2317,7 +2317,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2340,7 +2340,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2372,7 +2372,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2395,7 +2395,7 @@ exports[`RangeSelector opacity 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2769,7 +2769,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2792,7 +2792,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2824,7 +2824,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2847,7 +2847,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2879,7 +2879,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2902,7 +2902,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2934,7 +2934,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2957,7 +2957,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -2989,7 +2989,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3012,7 +3012,7 @@ exports[`RangeSelector round 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3192,7 +3192,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3215,7 +3215,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3603,7 +3603,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3626,7 +3626,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3658,7 +3658,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3681,7 +3681,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3713,7 +3713,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3736,7 +3736,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3768,7 +3768,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3791,7 +3791,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3823,7 +3823,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3846,7 +3846,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3878,7 +3878,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3901,7 +3901,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3933,7 +3933,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3956,7 +3956,7 @@ exports[`RangeSelector size 1`] = `
         aria-valuenow="30"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -4137,7 +4137,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         aria-valuenow="0"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -4160,7 +4160,7 @@ exports[`RangeSelector step renders correct values 1`] = `
         aria-valuenow="100"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div

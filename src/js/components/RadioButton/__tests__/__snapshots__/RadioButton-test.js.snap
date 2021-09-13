@@ -865,7 +865,7 @@ exports[`RadioButton label 1`] = `
       />
     </div>
     <span
-      class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
+      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
     >
       test label
     </span>
