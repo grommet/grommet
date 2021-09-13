@@ -1342,7 +1342,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         aria-valuenow="10"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1365,7 +1365,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
         aria-valuenow="20"
         class="c5"
         role="slider"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
