@@ -5,6 +5,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
+import useLayoutEffect from 'use-isomorphic-layout-effect';
+
 import { ThemeContext } from 'styled-components';
 
 import { FocusedContainer } from '../FocusedContainer';
@@ -63,7 +65,7 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useRef();
-    useEffect(() => {
+    useLayoutEffect(() => {
       const notifyAlign = () => {
         const styleCurrent = (ref || dropRef).current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
