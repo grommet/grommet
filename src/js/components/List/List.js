@@ -497,8 +497,8 @@ const List = React.forwardRef(
                     pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
-                    {...defaultItemProps}
                     {...boxProps}
+                    {...defaultItemProps}
                     {...clickProps}
                     {...orderProps}
                   >
