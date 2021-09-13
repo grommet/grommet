@@ -8,7 +8,7 @@ const updateRef = (ref, innerRef) => {
   } else {
     // eslint-disable-next-line no-param-reassign
     ref.current = innerRef.current;
-  } 
+  }
 };
 
 // https://medium.com/the-non-traditional-developer/how-to-use-the-forwarded-ref-in-react-1fb108f4e6af
