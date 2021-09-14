@@ -64,8 +64,8 @@ describe('Form accessibility', () => {
         only and cannot receive focus. Select is accessible 
         according to the WCAG specification, but jest-axe is flagging
         it so we are disabling this rule. */
-        'nested-interactive': { enabled: false }
-      }
+        'nested-interactive': { enabled: false },
+      },
     });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
