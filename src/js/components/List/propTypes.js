@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { genericProps, padPropType } from '../../utils/general-prop-types';
+import { BoxPropTypes } from '../Box/propTypes';
 
 const sizes = [
   'none',
@@ -57,6 +58,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
     ),
     children: PropTypes.func,
+    defaultItemProps: PropTypes.shape(BoxPropTypes),
     itemProps: PropTypes.shape({}),
     onMore: PropTypes.func,
     onClickItem: PropTypes.func,

@@ -6,6 +6,7 @@ import {
   MarginType,
   PadType,
 } from '../../utils';
+import { BoxTypes } from '../Box';
 import { PaginationType } from '../Pagination';
 
 type SizeType =
@@ -44,6 +45,7 @@ export interface ListProps<ListItemType> {
   border?: BorderType;
   data?: ListItemType[];
   gridArea?: GridAreaType;
+  defaultItemProps?: BoxTypes;
   itemProps?: {
     [_: string]: { background?: string; border?: BorderType; pad?: PadType };
   };
