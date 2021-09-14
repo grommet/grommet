@@ -5,9 +5,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import useLayoutEffect from 'use-isomorphic-layout-effect';
-
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { FocusedContainer } from '../FocusedContainer';
 import {
