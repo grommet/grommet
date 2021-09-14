@@ -4862,7 +4862,7 @@ exports[`Calendar dates 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 
-  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+  2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"
         role="grid"
@@ -6136,7 +6136,7 @@ exports[`Calendar daysOfWeek 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 
-  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+  2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c12"
         role="grid"
@@ -17280,7 +17280,7 @@ exports[`Calendar select dates 1`] = `
         aria-label="
                 January 2020;
                 Currently selected 
-  2020-01-12 ,Range: 2020-01-08 ,2020-01-10 
+  2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"
         role="grid"

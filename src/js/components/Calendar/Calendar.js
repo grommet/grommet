@@ -59,9 +59,11 @@ const formatSelectedDatesString = (date) => `Currently selected
     if (!Array.isArray(item)) {
       dates = `${formatToLocalYYYYMMDD(item)} `;
     } else {
-      dates = `Range: ${item?.map((insideItem) =>
-        insideItem !== undefined ? `${formatToLocalYYYYMMDD(insideItem)} ` : '',
-      )}`;
+      const start =
+        item[0] !== undefined ? formatToLocalYYYYMMDD(item[0]) : 'none';
+      const end =
+        item[1] !== undefined ? formatToLocalYYYYMMDD(item[1]) : 'none';
+      dates = `${start} through ${end}`;
     }
 
     return dates;
