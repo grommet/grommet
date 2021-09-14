@@ -48,6 +48,38 @@ var activeDates = {
 };
 var timeStamp = new RegExp(/T.*/);
 
+var formatSelectedDatesString = function formatSelectedDatesString(date) {
+  return "Currently selected \n  " + (date == null ? void 0 : date.map(function (item) {
+    var dates;
+
+    if (!Array.isArray(item)) {
+      dates = (0, _utils.formatToLocalYYYYMMDD)(item) + " ";
+    } else {
+      var start = item[0] !== undefined ? (0, _utils.formatToLocalYYYYMMDD)(item[0]) : 'none';
+      var end = item[1] !== undefined ? (0, _utils.formatToLocalYYYYMMDD)(item[1]) : 'none';
+      dates = start + " through " + end;
+    }
+
+    return dates;
+  }));
+};
+
+var getAccessibilityString = function getAccessibilityString(date, dates) {
+  if (date && !Array.isArray(date)) {
+    return "Currently selected " + (0, _utils.formatToLocalYYYYMMDD)(date) + ";";
+  }
+
+  if (date && Array.isArray(date)) {
+    return formatSelectedDatesString(date);
+  }
+
+  if (dates != null && dates.length) {
+    return formatSelectedDatesString(dates);
+  }
+
+  return 'No date selected';
+};
+
 var normalizeForTimezone = function normalizeForTimezone(date, refDate) {
   if (!date) return undefined;
   return (!timeStamp.test(refDate || date) ? (0, _utils.localTimezoneToUTC)(new Date(date)) : new Date(date)).toISOString();
@@ -868,10 +900,10 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
     tabIndex: 0,
     role: "grid",
-    "aria-label": reference.toLocaleDateString(locale, {
+    "aria-label": "\n                " + reference.toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric'
-    }),
+    }) + ";\n                " + getAccessibilityString(date, dates) + "\n              ",
     ref: daysRef,
     sizeProp: size,
     fillContainer: fill,
