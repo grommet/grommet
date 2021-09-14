@@ -109,10 +109,10 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormInput(
-      readOnly ? undefined : name,
-      valueProp,
-    );
+    const [value, setValue] = formContext.useFormInput({
+      name: readOnly ? undefined : name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);

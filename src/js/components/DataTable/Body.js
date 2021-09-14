@@ -71,7 +71,7 @@ const Row = memo(
               cellProps.background
             }
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
-            column={ {
+            column={{
               pin: Boolean(pinnedOffset?._grommetDataTableSelect),
               plain: 'noPad',
               size: 'auto',

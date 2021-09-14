@@ -11,7 +11,10 @@ const RangeInput = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     return (

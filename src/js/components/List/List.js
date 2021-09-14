@@ -121,6 +121,7 @@ const List = React.forwardRef(
       border,
       children,
       data,
+      defaultItemProps,
       focus,
       itemProps,
       onOrder,
@@ -477,7 +478,8 @@ const List = React.forwardRef(
 
                   boxProps = {
                     direction: 'row',
-                    align: 'center',
+                    align:
+                      (defaultItemProps && defaultItemProps.align) || 'center',
                     gap: 'medium',
                   };
 
@@ -496,6 +498,7 @@ const List = React.forwardRef(
                     pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}

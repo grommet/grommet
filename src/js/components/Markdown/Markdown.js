@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 
 import { deepMerge } from '../../utils';
@@ -15,36 +15,46 @@ import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 import { MarkdownPropTypes } from './propTypes';
 
-const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
-  const heading = [1, 2, 3, 4].reduce((obj, level) => {
-    const result = { ...obj };
-    result[`h${level}`] = {
-      component: Heading,
-      props: { level },
-    };
-    return result;
-  }, {});
+const GrommetMarkdown = forwardRef(
+  ({ components, options, theme, ...rest }, ref) => {
+    const heading = [1, 2, 3, 4].reduce((obj, level) => {
+      const result = { ...obj };
+      result[`h${level}`] = {
+        component: Heading,
+        props: { level },
+      };
+      return result;
+    }, {});
 
-  const overrides = deepMerge(
-    {
-      a: { component: Anchor },
-      img: { component: Image },
-      p: { component: Paragraph },
-      table: { component: Table },
-      td: { component: TableCell, props: { plain: true } },
-      tbody: { component: TableBody },
-      tfoot: { component: TableFooter },
-      th: { component: TableCell },
-      thead: { component: TableHeader },
-      tr: { component: TableRow },
-    },
-    heading,
-    components,
-    options && options.overrides,
-  );
+    const overrides = deepMerge(
+      {
+        a: { component: Anchor },
+        img: { component: Image },
+        p: { component: Paragraph },
+        table: { component: Table },
+        td: { component: TableCell, props: { plain: true } },
+        tbody: { component: TableBody },
+        tfoot: { component: TableFooter },
+        th: { component: TableCell },
+        thead: { component: TableHeader },
+        tr: { component: TableRow },
+      },
+      heading,
+      components,
+      options && options.overrides,
+    );
 
-  return <Markdown options={{ ...options, overrides }} {...rest} />;
-};
+    // we use Fragment as the wrapper so we can assign the ref with the div
+    return (
+      <div ref={ref}>
+        <Markdown
+          options={{ ...options, wrapper: Fragment, overrides }}
+          {...rest}
+        />
+      </div>
+    );
+  },
+);
 
 GrommetMarkdown.propTypes = MarkdownPropTypes;
 
