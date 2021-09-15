@@ -140,21 +140,14 @@ const Circle = forwardRef((props, ref) => {
     );
   }
 
-  let viewBoxHeight;
-  if (type === 'semicircle') {
-    viewBoxHeight = width / 2;
-  } else if (size === 'full') {
-    viewBoxHeight = '100%';
-  } else if (size === 'full' && type === 'semicircle') {
-    viewBoxHeight = '100%';
-  } else viewBoxHeight = width;
+  const viewBoxHeight = type === 'semicircle' ? width / 2 : width;
 
   return (
     <StyledMeter
       ref={ref}
       viewBox={`0 0 ${width} ${width}`}
       width={size === 'full' ? '100%' : width}
-      height={viewBoxHeight}
+      height={size === 'full' ? '100%' : viewBoxHeight}
       {...rest}
     >
       {track}
