@@ -426,7 +426,7 @@ exports[`Meter round 1`] = `
   <svg
     class="c2"
     height="192"
-    viewBox="0 0 384 384"
+    viewBox="0 0 384 192"
     width="384"
   >
     <path
@@ -1365,7 +1365,7 @@ exports[`Meter type 1`] = `
   <svg
     class="c1"
     height="192"
-    viewBox="0 0 384 384"
+    viewBox="0 0 384 192"
     width="384"
   >
     <path

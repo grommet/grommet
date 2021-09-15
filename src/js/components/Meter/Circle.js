@@ -145,7 +145,7 @@ const Circle = forwardRef((props, ref) => {
   return (
     <StyledMeter
       ref={ref}
-      viewBox={`0 0 ${width} ${width}`}
+      viewBox={`0 0 ${width} ${viewBoxHeight}`}
       width={size === 'full' ? '100%' : width}
       height={size === 'full' ? '100%' : viewBoxHeight}
       {...rest}
