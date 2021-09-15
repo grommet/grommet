@@ -100,51 +100,50 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
 
-    // formContext.useFormField(
-    //   multiple?.max
-    //     ? {
-    //         name,
-    //         validate: (fileList) => {
-    //           if (fileList?.length && fileList.length <= max) return '';
-    //           const message = format({
-    //             id: 'fileInput.maxFile',
-    //             messages,
-    //             values: { max },
-    //           });
-
-    //           return message;
-    //         },
-    //         help: (message) => message,
-    //       }
-    //     : {},
-    // );
     const [files, setFiles] = formContext.useFormInput({
       name,
       value: valueProp,
       initialValue: [],
-      validate: maxSize
-        ? () => {
-            const fileList = [...files];
-            let message = '';
-            const numOfInvalidFiles = fileList.filter(
-              ({ size }) => size > maxSize,
-            ).length;
-            if (numOfInvalidFiles) {
-              let messageId = 'fileInput.maxSizeSingle';
-              if (multiple) {
-                messageId = `fileInput.maxSizeMultiple.${
-                  numOfInvalidFiles === 1 ? 'singular' : 'plural'
-                }`;
+      validate:
+        maxSize || max
+          ? () => {
+              const fileList = [...files];
+              const message = [];
+              const numOfInvalidFiles = fileList.filter(
+                ({ size }) => size > maxSize,
+              ).length;
+              if (numOfInvalidFiles) {
+                let messageId = 'fileInput.maxSizeSingle';
+                if (multiple) {
+                  messageId = `fileInput.maxSizeMultiple.${
+                    numOfInvalidFiles === 1 ? 'singular' : 'plural'
+                  }`;
+                }
+                message.push(
+                  format({
+                    id: messageId,
+                    messages,
+                    values: {
+                      maxSize: formatBytes(maxSize),
+                      numOfFiles: numOfInvalidFiles,
+                    },
+                  }),
+                );
               }
-              message = format({
-                id: messageId,
-                messages,
-                values: { maxSize: formatBytes(maxSize), numOfInvalidFiles },
-              });
+
+              if (fileList.length >= max) {
+                message.push(
+                  ` ${format({
+                    id: 'fileInput.maxFile',
+                    messages,
+                    values: { max },
+                  })}`,
+                );
+              }
+
+              return message;
             }
-            return message;
-          }
-        : undefined,
+          : undefined,
     });
 
     const mergeTheme = (propertyName, defaultKey) => {
@@ -473,7 +472,7 @@ const FileInput = forwardRef(
           onChange={(event) => {
             event.persist();
             const fileList = event.target.files;
-            const nextFiles = multiple ? [...files] : [];
+            let nextFiles = multiple ? [...files] : [];
             for (let i = 0; i < fileList.length; i += 1) {
               // avoid duplicates
               const existing =
@@ -485,6 +484,9 @@ const FileInput = forwardRef(
               if (!existing) {
                 nextFiles.push(fileList[i]);
               }
+            }
+            if (nextFiles.length > max) {
+              nextFiles = nextFiles.slice(0, max);
             }
             setFiles(nextFiles);
             setDragOver(false);

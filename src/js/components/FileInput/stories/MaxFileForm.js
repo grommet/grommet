@@ -8,17 +8,12 @@ export const MaxFileForm = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <Form validate="submit">
-          <FormField
-            name="fileInput"
-            htmlFor="fileInput"
-            required
-            help="8 Files Max"
-          >
+          <FormField name="fileInput" htmlFor="fileInput" required>
             <FileInput
               name="fileInput"
               id="fileInput"
               multiple={{
-                max: 8,
+                max: 5,
               }}
             />
           </FormField>

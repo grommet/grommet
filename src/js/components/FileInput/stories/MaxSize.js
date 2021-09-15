@@ -20,7 +20,9 @@ export const MaxSize = () => {
               <FileInput
                 name="fileInput"
                 id="fileInput"
-                multiple
+                multiple={{
+                  max: 5,
+                }}
                 maxSize={maxSize}
               />
             </FormField>
