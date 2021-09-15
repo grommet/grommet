@@ -669,6 +669,29 @@ exports[`Meter size 1`] = `
   </svg>
   <svg
     class="c1"
+    height="24"
+    preserveAspectRatio="none"
+    viewBox="0 0 288 24"
+    width="100%"
+  >
+    <path
+      d="M 0,12 L 288,12"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 0,12 L 57.6,12"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
     height="96"
     viewBox="0 0 96 96"
     width="96"
@@ -805,6 +828,30 @@ exports[`Meter size 1`] = `
     />
     <path
       d="M 42.2413760026 22.7102365872 A 15.5000000000 15.5000000000 0 0 0 27.5000000000 12.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="100%"
+    viewBox="0 0 288 288"
+    width="100%"
+  >
+    <circle
+      cx="144"
+      cy="144"
+      fill="none"
+      r="132"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 269.5394601510 103.2097567425 A 132.0000000000 132.0000000000 0 0 0 144.0000000000 12.0000000000"
       fill="none"
       stroke="#6FFFB0"
       stroke-linecap="butt"
@@ -953,6 +1000,184 @@ exports[`Meter size 1`] = `
       stroke="#6FFFB0"
       stroke-linecap="butt"
       stroke-width="27.5"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="100%"
+    viewBox="0 0 288 288"
+    width="100%"
+  >
+    <circle
+      cx="144"
+      cy="144"
+      fill="none"
+      r="72"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="144"
+    />
+    <path
+      d="M 212.4760691733 121.7507764050 A 72.0000000000 72.0000000000 0 0 0 144.0000000000 72.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="144"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="48"
+    viewBox="0 0 96 48"
+    width="96"
+  >
+    <path
+      d="M 84.0000000000 48.0000000000 A 36.0000000000 36.0000000000 0 0 0 12.0000000000 48.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 18.8753882025 26.8397309175 A 36.0000000000 36.0000000000 0 0 0 12.0000000000 48.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="96"
+    viewBox="0 0 192 96"
+    width="192"
+  >
+    <path
+      d="M 180.0000000000 96.0000000000 A 84.0000000000 84.0000000000 0 0 0 12.0000000000 96.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 28.0425724725 46.6260388074 A 84.0000000000 84.0000000000 0 0 0 12.0000000000 96.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="192"
+    viewBox="0 0 384 192"
+    width="384"
+  >
+    <path
+      d="M 372.0000000000 192.0000000000 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 192.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 46.3769410125 86.1986545874 A 180.0000000000 180.0000000000 0 0 0 12.0000000000 192.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="384"
+    viewBox="0 0 768 384"
+    width="768"
+  >
+    <path
+      d="M 756.0000000000 384.0000000000 A 372.0000000000 372.0000000000 0 0 0 12.0000000000 384.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 83.0456780925 165.3438861472 A 372.0000000000 372.0000000000 0 0 0 12.0000000000 384.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="576"
+    viewBox="0 0 1152 576"
+    width="1152"
+  >
+    <path
+      d="M 1140.0000000000 576.0000000000 A 564.0000000000 564.0000000000 0 0 0 12.0000000000 576.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 119.7144151725 244.4891177070 A 564.0000000000 564.0000000000 0 0 0 12.0000000000 576.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="27.5"
+    viewBox="0 0 55 27.5"
+    width="55"
+  >
+    <path
+      d="M 43.0000000000 27.5000000000 A 15.5000000000 15.5000000000 0 0 0 12.0000000000 27.5000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 14.9602365872 18.3893285895 A 15.5000000000 15.5000000000 0 0 0 12.0000000000 27.5000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
+    />
+  </svg>
+  <svg
+    class="c1"
+    height="100%"
+    viewBox="0 0 288 144"
+    width="100%"
+  >
+    <path
+      d="M 276.0000000000 144.0000000000 A 132.0000000000 132.0000000000 0 0 0 12.0000000000 144.0000000000"
+      fill="none"
+      stroke="#F2F2F2"
+      stroke-linecap="square"
+      stroke-opacity="0.4"
+      stroke-width="24"
+    />
+    <path
+      d="M 37.2097567425 66.4123466974 A 132.0000000000 132.0000000000 0 0 0 12.0000000000 144.0000000000"
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-width="24"
     />
   </svg>
 </div>
