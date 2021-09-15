@@ -43,6 +43,7 @@ export * from './components/Meter';
 export * from './components/Pagination';
 export * from './components/Paragraph';
 export * from './components/Nav';
+export * from './components/Notification';
 export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/RangeInput';

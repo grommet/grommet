@@ -38,6 +38,7 @@ export interface ButtonProps {
   href?: string;
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
+  kind?: string;
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
@@ -49,6 +50,8 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
+type anchorType = JSX.IntrinsicElements['a'];
+
 export interface ButtonExtendedProps
   extends ButtonProps,
     Omit<JSX.IntrinsicElements['button'], 'color'> {}
@@ -57,6 +60,6 @@ export interface ButtonExtendedProps
 export type ButtonType = ButtonProps &
   Omit<JSX.IntrinsicElements['button'], 'color'>;
 
-declare const Button: React.FC<ButtonExtendedProps>;
+declare const Button: React.FC<ButtonExtendedProps & anchorType>;
 
 export { Button };

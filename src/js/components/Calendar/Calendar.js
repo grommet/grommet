@@ -38,6 +38,7 @@ import {
   subtractMonths,
   withinDates,
 } from './utils';
+import { CalendarPropTypes } from './propTypes';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -169,6 +170,7 @@ const Calendar = forwardRef(
       dates: datesProp,
       daysOfWeek,
       disabled,
+      initialFocus, // internal only for DateInput
       fill,
       firstDayOfWeek = 0,
       header,
@@ -388,6 +390,10 @@ const Calendar = forwardRef(
     const daysRef = useRef();
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
+
+    useEffect(() => {
+      if (initialFocus === 'days') daysRef.current.focus();
+    }, [initialFocus]);
 
     const changeReference = useCallback(
       (nextReference) => {
@@ -911,12 +917,6 @@ const Calendar = forwardRef(
 );
 
 Calendar.displayName = 'Calendar';
+Calendar.propTypes = CalendarPropTypes;
 
-let CalendarDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CalendarDoc = require('./doc').doc(Calendar);
-}
-const CalendarWrapper = CalendarDoc || Calendar;
-
-export { CalendarWrapper as Calendar };
+export { Calendar };

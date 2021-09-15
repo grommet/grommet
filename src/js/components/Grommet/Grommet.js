@@ -21,6 +21,7 @@ import { RootsContext } from '../../contexts/RootsContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
+import { GrommetPropTypes } from './propTypes';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -155,12 +156,6 @@ const Grommet = forwardRef((props, ref) => {
 });
 
 Grommet.displayName = 'Grommet';
+Grommet.propTypes = GrommetPropTypes;
 
-let GrommetDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetDoc = require('./doc').doc(Grommet);
-}
-const GrommetWrapper = GrommetDoc || Grommet;
-
-export { GrommetWrapper as Grommet };
+export { Grommet };

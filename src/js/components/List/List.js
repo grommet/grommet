@@ -15,6 +15,7 @@ import {
   useForwardedRef,
   usePagination,
 } from '../../utils';
+import { ListPropTypes } from './propTypes';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -120,6 +121,7 @@ const List = React.forwardRef(
       border,
       children,
       data,
+      defaultItemProps,
       focus,
       itemProps,
       onOrder,
@@ -476,7 +478,8 @@ const List = React.forwardRef(
 
                   boxProps = {
                     direction: 'row',
-                    align: 'center',
+                    align:
+                      (defaultItemProps && defaultItemProps.align) || 'center',
                     gap: 'medium',
                   };
 
@@ -495,6 +498,7 @@ const List = React.forwardRef(
                     pad={pad || theme.list.item.pad}
                     background={adjustedBackground}
                     border={adjustedBorder}
+                    {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}
                     {...orderProps}
@@ -517,11 +521,6 @@ const List = React.forwardRef(
 );
 
 List.displayName = 'List';
+List.propTypes = ListPropTypes;
 
-let ListDoc;
-if (process.env.NODE_ENV !== 'production') {
-  ListDoc = require('./doc').doc(List); // eslint-disable-line global-require
-}
-const ListWrapper = ListDoc || List;
-
-export { ListWrapper as List };
+export { List };

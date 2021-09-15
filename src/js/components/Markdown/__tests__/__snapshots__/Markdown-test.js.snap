@@ -251,35 +251,23 @@ exports[`Markdown renders 1`] = `
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              <em>
-                Still
-              </em>
-            </div>
+            <em>
+              Still
+            </em>
           </td>
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              <code>
-                renders
-              </code>
-            </div>
+            <code>
+              renders
+            </code>
           </td>
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              <strong>
-                nicely
-              </strong>
-            </div>
+            <strong>
+              nicely
+            </strong>
           </td>
         </tr>
         <tr
@@ -288,29 +276,17 @@ exports[`Markdown renders 1`] = `
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              1
-            </div>
+            1
           </td>
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              2
-            </div>
+            2
           </td>
           <td
             class="c10"
           >
-            <div
-              class="c9"
-            >
-              3
-            </div>
+            3
           </td>
         </tr>
       </tbody>

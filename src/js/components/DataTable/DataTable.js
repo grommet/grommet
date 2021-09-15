@@ -34,6 +34,7 @@ import {
   StyledDataTable,
   StyledPlaceholder,
 } from './StyledDataTable';
+import { DataTablePropTypes } from './propTypes';
 
 function useGroupState(groups, groupBy) {
   const [groupState, setGroupState] = useState(() =>
@@ -159,20 +160,22 @@ const DataTable = ({
 
   const onHeaderWidths = useCallback(
     (columnWidths) => {
-      const pinnedProperties = columns
+      const hasSelectColumn = Boolean(select || onSelect);
+      let pinnedProperties = columns
         .map((pinnedColumn) => pinnedColumn.pin && pinnedColumn.property)
         .filter((n) => n);
-
+      if (hasSelectColumn && pinnedProperties.length > 0) {
+        pinnedProperties = ['_grommetDataTableSelect', ...pinnedProperties];
+      }
       const nextPinnedOffset = {};
 
       if (columnWidths !== []) {
         pinnedProperties.forEach((property, index) => {
-          const hasSelectColumn = Boolean(select || onSelect);
-
           const columnIndex =
-            columns.findIndex((column) => column.property === property) +
-            hasSelectColumn;
-
+            property === '_grommetDataTableSelect'
+              ? 0
+              : columns.findIndex((column) => column.property === property) +
+                hasSelectColumn;
           if (columnWidths[columnIndex]) {
             nextPinnedOffset[property] = {
               width: columnWidths[columnIndex],
@@ -184,7 +187,6 @@ const DataTable = ({
             };
           }
         });
-
         setPinnedOffset(nextPinnedOffset);
       }
     },
@@ -455,11 +457,6 @@ const DataTable = ({
   );
 };
 
-let DataTableDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  DataTableDoc = require('./doc').doc(DataTable);
-}
-const DataTableWrapper = DataTableDoc || DataTable;
+DataTable.propTypes = DataTablePropTypes;
 
-export { DataTableWrapper as DataTable };
+export { DataTable };

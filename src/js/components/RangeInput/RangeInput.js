@@ -2,6 +2,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
+import { RangeInputPropTypes } from './propTypes';
 
 const RangeInput = forwardRef(
   (
@@ -10,7 +11,10 @@ const RangeInput = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     return (
@@ -21,15 +25,15 @@ const RangeInput = forwardRef(
         focus={focus}
         value={value}
         {...rest}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value);
           if (onChange) onChange(event);
         }}
@@ -40,12 +44,6 @@ const RangeInput = forwardRef(
 );
 
 RangeInput.displayName = 'RangeInput';
+RangeInput.propTypes = RangeInputPropTypes;
 
-let RangeInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeInputDoc = require('./doc').doc(RangeInput);
-}
-const RangeInputWrapper = RangeInputDoc || RangeInput;
-
-export { RangeInputWrapper as RangeInput };
+export { RangeInput };

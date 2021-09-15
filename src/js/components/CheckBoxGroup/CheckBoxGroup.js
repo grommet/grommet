@@ -4,8 +4,9 @@ import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
+import { CheckBoxGroupPropTypes } from './propTypes';
 
-export const CheckBoxGroup = forwardRef(
+const CheckBoxGroup = forwardRef(
   (
     {
       children,
@@ -37,7 +38,11 @@ export const CheckBoxGroup = forwardRef(
     );
 
     // 'value' is an array of checked valueKeys
-    const [value, setValue] = formContext.useFormInput(name, valueProp, []);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+      initialValue: [],
+    });
 
     // Logic is necessary to maintain a proper data structure for Form logic
     const onCheckBoxChange = (event, optionValue, option) => {
@@ -115,12 +120,6 @@ export const CheckBoxGroup = forwardRef(
 );
 
 CheckBoxGroup.displayName = 'CheckBoxGroup';
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
 
-let CheckBoxGroupDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-const RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+export { CheckBoxGroup };

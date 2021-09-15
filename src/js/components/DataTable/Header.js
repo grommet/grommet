@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, {
   forwardRef,
   useCallback,
@@ -146,6 +147,9 @@ const Header = forwardRef(
     }, [cellWidths, onWidths]);
 
     const pin = pinProp ? ['top'] : [];
+    const selectPin = pinnedOffset?._grommetDataTableSelect
+      ? [...pin, 'left']
+      : pin;
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
@@ -172,7 +176,8 @@ const Header = forwardRef(
               size="auto"
               context="header"
               scope="col"
-              pin={pin}
+              pin={selectPin}
+              pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             >
               {onSelect && (
                 <CheckBox
