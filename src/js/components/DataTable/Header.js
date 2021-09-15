@@ -147,9 +147,10 @@ const Header = forwardRef(
     }, [cellWidths, onWidths]);
 
     const pin = pinProp ? ['top'] : [];
-    const selectPin = pinnedOffset?._grommetDataTableSelect ?
-        [...pin, 'left'] : pin;
-      
+    const selectPin = pinnedOffset?._grommetDataTableSelect
+      ? [...pin, 'left']
+      : pin;
+
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>

@@ -26,13 +26,16 @@ import { Grommet } from 'grommet';
   1 | 2 | 3
 `;
 
-export const Simple = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Markdown>{CONTENT}</Markdown>
-    </Box>
-  </Grommet>
-);
+export const Simple = () => {
+  const ref = React.useRef();
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Markdown ref={ref}>{CONTENT}</Markdown>
+      </Box>
+    </Grommet>
+  );
+};
 
 export default {
   title: 'Type/Markdown/Simple',
