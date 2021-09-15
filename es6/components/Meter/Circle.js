@@ -137,19 +137,12 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     }));
   }
 
-  var viewBoxHeight;
-
-  if (type === 'semicircle') {
-    viewBoxHeight = width / 2;
-  } else if (size === 'full') {
-    viewBoxHeight = '100%';
-  } else viewBoxHeight = width;
-
+  var viewBoxHeight = type === 'semicircle' ? width / 2 : width;
   return /*#__PURE__*/React.createElement(StyledMeter, _extends({
     ref: ref,
     viewBox: "0 0 " + width + " " + viewBoxHeight,
     width: size === 'full' ? '100%' : width,
-    height: viewBoxHeight
+    height: size === 'full' ? '100%' : viewBoxHeight
   }, rest), track, paths, pathCaps);
 });
 Circle.displayName = 'Circle';
