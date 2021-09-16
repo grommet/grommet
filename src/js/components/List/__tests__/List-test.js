@@ -155,6 +155,21 @@ describe('List', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('defaultItemProps', () => {
+    const { container } = render(
+      <Grommet>
+        <List
+          data={['one', 'two']}
+          defaultItemProps={{
+            background: 'accent-1',
+            align: 'start',
+          }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('itemProps', () => {
     const { container } = render(
       <Grommet>
