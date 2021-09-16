@@ -376,9 +376,10 @@ const FileInput = forwardRef(
                   gap="xsmall"
                   align="center"
                   direction="row"
-                >
-                  {(maxSize || max) &&
-                    (file.size > maxSize || index >= max) && <CircleAlert />}
+                >{console.log(((maxSize && file.size > maxSize) ||
+                  (max && index >= max)), index)}
+                  {((maxSize && file.size > maxSize) ||
+                    (max && index >= max)) && <CircleAlert />}
                   <Label
                     weight={
                       theme.global.input.weight ||
