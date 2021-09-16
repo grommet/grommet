@@ -376,8 +376,7 @@ const FileInput = forwardRef(
                   gap="xsmall"
                   align="center"
                   direction="row"
-                >{console.log(((maxSize && file.size > maxSize) ||
-                  (max && index >= max)), index)}
+                >
                   {((maxSize && file.size > maxSize) ||
                     (max && index >= max)) && <CircleAlert />}
                   <Label
