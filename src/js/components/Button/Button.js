@@ -275,7 +275,7 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify={justify || align === 'center' ? 'center' : 'between'}
+          justify={justify || (align === 'center' ? 'center' : 'between')}
           gap={gap}
           responsive={false}
         >
