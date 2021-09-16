@@ -1,7 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';
@@ -115,10 +114,7 @@ describe('FileInput', () => {
     const maxSize = 5000000;
     const { container } = render(
       <Grommet>
-        <FileInput 
-          name="file"
-          maxSize={maxSize}
-        />
+        <FileInput name="file" maxSize={maxSize} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -127,7 +123,7 @@ describe('FileInput', () => {
   test('multiple max', () => {
     const { container } = render(
       <Grommet>
-        <FileInput 
+        <FileInput
           name="file"
           multiple={{
             max: 5,
@@ -136,26 +132,5 @@ describe('FileInput', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('multiple max files count', () => {
-    const files = [
-      new File(['hello'], 'hello.png', {type: 'image/png'}),
-      new File(['there'], 'there.png', {type: 'image/png'}),
-    ];
-    const { container } = render(
-      <Grommet>
-        <FileInput 
-          name="file"
-          id="file-uploader"
-          multiple={{
-            max: 5,
-          }}
-        />
-      </Grommet>,
-    );
-    const input = container.querySelector("#file-uploader");
-    userEvent.upload(input, files);
-    expect(input.files).toHaveLength(2);
   });
 });
