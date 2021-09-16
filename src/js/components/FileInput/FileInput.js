@@ -135,7 +135,7 @@ const FileInput = forwardRef(
           ? () => {
               const fileList = [...files];
               let message = '';
-              if (fileList.length >= max) {
+              if (fileList.length > max) {
                 message = format({
                   id: 'fileInput.maxFile',
                   messages,
