@@ -872,21 +872,29 @@ const Calendar = forwardRef(
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
-              changeReference(addDays(active, -7));
+              if (!betweenDates(addDays(active, -7), displayBounds)) {
+                changeReference(active);
+              }
             }}
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));
-              changeReference(addDays(active, 7));
+              if (!betweenDates(addDays(active, 7), displayBounds)) {
+                changeReference(active);
+              }
             }}
             onLeft={() => {
               setActive(addDays(active, -1));
-              changeReference(active);
+              if (!betweenDates(addDays(active, -1), displayBounds)) {
+                changeReference(active);
+              }
             }}
             onRight={() => {
               setActive(addDays(active, 1));
-              changeReference(active);
+              if (!betweenDates(addDays(active, 2), displayBounds)) {
+                changeReference(active);
+              }
             }}
           >
             <StyledWeeksContainer
