@@ -328,6 +328,7 @@ const Menu = forwardRef((props, ref) => {
                         active={activeItemIndex === index}
                         focusIndicator={false}
                         plain={!child ? undefined : true}
+                        align="start"
                         justify={item.justify}
                         kind={!child ? 'option' : undefined}
                         hoverIndicator={!child ? undefined : 'background'}
