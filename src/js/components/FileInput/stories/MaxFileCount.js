@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Button, Grommet, FileInput, Form, FormField } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const MaxFileForm = () => (
+export const MaxFileCount = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
@@ -25,5 +25,5 @@ export const MaxFileForm = () => (
 );
 
 export default {
-  title: 'Input/FileInput/Max File Form',
+  title: 'Input/FileInput/Max File Count',
 };

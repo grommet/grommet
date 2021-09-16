@@ -94,7 +94,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
-    const max = multiple?.max || Number.POSITIVE_INFINITY;
+    const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -104,11 +104,11 @@ const FileInput = forwardRef(
       name,
       value: valueProp,
       initialValue: [],
-      validate:
-        maxSize || max
+      validate: [
+        maxSize
           ? () => {
               const fileList = [...files];
-              const message = [];
+              let message = '';
               const numOfInvalidFiles = fileList.filter(
                 ({ size }) => size > maxSize,
               ).length;
@@ -119,31 +119,33 @@ const FileInput = forwardRef(
                     numOfInvalidFiles === 1 ? 'singular' : 'plural'
                   }`;
                 }
-                message.push(
-                  format({
-                    id: messageId,
-                    messages,
-                    values: {
-                      maxSize: formatBytes(maxSize),
-                      numOfFiles: numOfInvalidFiles,
-                    },
-                  }),
-                );
+                message = format({
+                  id: messageId,
+                  messages,
+                  values: {
+                    maxSize: formatBytes(maxSize),
+                    numOfFiles: numOfInvalidFiles,
+                  },
+                });
               }
-
-              if (fileList.length >= max) {
-                message.push(
-                  ` ${format({
-                    id: 'fileInput.maxFile',
-                    messages,
-                    values: { max },
-                  })}`,
-                );
-              }
-
               return message;
             }
-          : undefined,
+          : '',
+        max
+          ? () => {
+              const fileList = [...files];
+              let message = '';
+              if (fileList.length >= max) {
+                message = format({
+                  id: 'fileInput.maxFile',
+                  messages,
+                  values: { max },
+                });
+              }
+              return message;
+            }
+          : '',
+      ],
     });
 
     const mergeTheme = (propertyName, defaultKey) => {
@@ -267,7 +269,6 @@ const FileInput = forwardRef(
                         inputRef.current.click();
                         inputRef.current.focus();
                       }}
-                      disabled={files.length >= max}
                     />
                   ) : (
                     <Anchor
@@ -283,7 +284,6 @@ const FileInput = forwardRef(
                         id: 'fileInput.browse',
                         messages,
                       })}
-                      disabled={files.length >= max}
                     />
                   )}
                 </Keyboard>
@@ -338,7 +338,6 @@ const FileInput = forwardRef(
                       inputRef.current.click();
                       inputRef.current.focus();
                     }}
-                    disabled={files.length >= max}
                   />
                 ) : (
                   <Anchor
@@ -354,7 +353,6 @@ const FileInput = forwardRef(
                       id: 'fileInput.browse',
                       messages,
                     })}
-                    disabled={files.length >= max}
                   />
                 )}
               </Keyboard>
@@ -379,7 +377,8 @@ const FileInput = forwardRef(
                   align="center"
                   direction="row"
                 >
-                  {maxSize && file.size > maxSize && <CircleAlert />}
+                  {(maxSize || max) &&
+                    (file.size > maxSize || index >= max) && <CircleAlert />}
                   <Label
                     weight={
                       theme.global.input.weight ||
@@ -433,7 +432,6 @@ const FileInput = forwardRef(
                           inputRef.current.click();
                           inputRef.current.focus();
                         }}
-                        disabled={files.length >= max}
                       />
                     ) : (
                       <Anchor
@@ -448,7 +446,6 @@ const FileInput = forwardRef(
                           id: 'fileInput.browse',
                           messages,
                         })}
-                        disabled={files.length >= max}
                       />
                     )}
                   </Keyboard>
@@ -472,7 +469,7 @@ const FileInput = forwardRef(
           onChange={(event) => {
             event.persist();
             const fileList = event.target.files;
-            let nextFiles = multiple ? [...files] : [];
+            const nextFiles = multiple ? [...files] : [];
             for (let i = 0; i < fileList.length; i += 1) {
               // avoid duplicates
               const existing =
@@ -484,9 +481,6 @@ const FileInput = forwardRef(
               if (!existing) {
                 nextFiles.push(fileList[i]);
               }
-            }
-            if (nextFiles.length > max) {
-              nextFiles = nextFiles.slice(0, max);
             }
             setFiles(nextFiles);
             setDragOver(false);
