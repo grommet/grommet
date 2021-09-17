@@ -119,6 +119,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setDragOver = _React$useState2[1];
 
   var aggregateThreshold = multiple && multiple.aggregateThreshold || 10;
+  var max = multiple == null ? void 0 : multiple.max;
   var inputRef = (0, _utils.useForwardedRef)(ref);
   var controlRef = (0, _react.useRef)();
   var removeRef = (0, _react.useRef)();
@@ -128,7 +129,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     name: name,
     value: valueProp,
     initialValue: [],
-    validate: maxSize ? function () {
+    validate: [maxSize ? function () {
       var fileList = [].concat(files);
       var message = '';
       var numOfInvalidFiles = fileList.filter(function (_ref2) {
@@ -148,13 +149,28 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           messages: messages,
           values: {
             maxSize: formatBytes(maxSize),
-            numOfInvalidFiles: numOfInvalidFiles
+            numOfFiles: numOfInvalidFiles
           }
         });
       }
 
       return message;
-    } : undefined
+    } : '', max ? function () {
+      var fileList = [].concat(files);
+      var message = '';
+
+      if (fileList.length > max) {
+        message = format({
+          id: 'fileInput.maxFile',
+          messages: messages,
+          values: {
+            max: max
+          }
+        });
+      }
+
+      return message;
+    } : '']
   }),
       files = _formContext$useFormI[0],
       setFiles = _formContext$useFormI[1];
@@ -344,7 +360,7 @@ var FileInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       gap: "xsmall",
       align: "center",
       direction: "row"
-    }), maxSize && file.size > maxSize && /*#__PURE__*/_react["default"].createElement(_CircleAlert.CircleAlert, null), /*#__PURE__*/_react["default"].createElement(Label, {
+    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/_react["default"].createElement(_CircleAlert.CircleAlert, null), /*#__PURE__*/_react["default"].createElement(Label, {
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
     }, file.name)), /*#__PURE__*/_react["default"].createElement(_Box.Box, {

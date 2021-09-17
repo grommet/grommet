@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Multiple = void 0;
+exports["default"] = exports.MaxFileCount = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -11,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Multiple = function Multiple() {
+var MaxFileCount = function MaxFileCount() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
@@ -22,24 +22,27 @@ var Multiple = function Multiple() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
+    validate: "submit"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    name: "fileInput",
+    htmlFor: "fileInput",
+    required: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    name: "fileInput",
+    id: "fileInput",
     multiple: {
       max: 5
-    },
-    onChange: function onChange(event, _ref) {
-      var files = _ref.files;
-      console.log(event);
-
-      for (var i = 0; i < files.length; i += 1) {
-        var file = files[i];
-        console.log(file.name);
-      }
     }
-  }))));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    label: "Submit",
+    primary: true,
+    type: "submit"
+  })))));
 };
 
-exports.Multiple = Multiple;
+exports.MaxFileCount = MaxFileCount;
 var _default = {
-  title: 'Input/FileInput/Multiple'
+  title: 'Input/FileInput/Max File Count'
 };
 exports["default"] = _default;

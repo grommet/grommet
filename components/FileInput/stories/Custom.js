@@ -26,6 +26,10 @@ var customTheme = {
         horizontal: '8px'
       }
     },
+    message: {
+      color: 'green',
+      textAlign: 'center'
+    },
     background: '#f2f2f2',
     border: {
       size: 'medium'
@@ -76,6 +80,12 @@ var Custom = function Custom() {
       }, file.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-weak"
       }, file.size, " bytes"));
+    },
+    multiple: {
+      max: 5
+    },
+    messages: {
+      maxFile: 'You can only select a maximum of 5 files.'
     },
     onChange: function onChange(event, _ref) {
       var files = _ref.files;

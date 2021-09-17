@@ -13,7 +13,9 @@ export var Multiple = function Multiple() {
   }, /*#__PURE__*/React.createElement(Box, {
     width: "medium"
   }, /*#__PURE__*/React.createElement(FileInput, {
-    multiple: true,
+    multiple: {
+      max: 5
+    },
     onChange: function onChange(event, _ref) {
       var files = _ref.files;
       console.log(event);
