@@ -19,7 +19,9 @@ export const Justify = () => (
     </Box>
   </Grommet>
 );
-
+Justify.parameters = {
+  chromatic: { disable: true },
+};
 export default {
   title: 'Controls/Menu/Justify',
 };
