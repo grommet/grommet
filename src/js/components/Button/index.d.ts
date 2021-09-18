@@ -36,6 +36,14 @@ export interface ButtonProps {
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
   href?: string;
+  justify?:
+    | 'around'
+    | 'between'
+    | 'center'
+    | 'end'
+    | 'evenly'
+    | 'start'
+    | 'stretch';
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
   kind?: string;
