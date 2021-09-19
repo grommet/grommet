@@ -87,7 +87,9 @@ describe('Avatar', () => {
   test('icon renders', () => {
     const { container } = render(
       <Grommet>
-        <Avatar src={<Favorite color="accent-2" />} background="accent-4" />
+        <Avatar background="accent-4">
+          <Favorite color="accent-2" />
+        </Avatar>
       </Grommet>,
     );
 
