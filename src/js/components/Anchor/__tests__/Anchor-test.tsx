@@ -78,15 +78,6 @@ describe('Anchor', () => {
     warnSpy.mockRestore();
   });
 
-  test('primary renders', () => {
-    const { container } = render(
-      <Grommet>
-        <Anchor href="#" primary label="Test" />
-      </Grommet>,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   test('focus renders', () => {
     const onFocus = jest.fn();
     const { container, getByText } = render(
