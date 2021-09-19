@@ -94,7 +94,6 @@ exports[`Avatar renders 1`] = `
   <div
     class="c1 StyledAvatar-sc-1suyamb-1"
     id="test id"
-    name="test name"
   />
 </div>
 `;

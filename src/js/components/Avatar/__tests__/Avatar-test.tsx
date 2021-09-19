@@ -16,7 +16,7 @@ describe('Avatar', () => {
     const { container } = render(
       <Grommet>
         <Avatar />
-        <Avatar id="test id" name="test name" />
+        <Avatar id="test id" />
       </Grommet>,
     );
 
