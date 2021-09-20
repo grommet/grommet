@@ -144,7 +144,7 @@ var Carousel = function Carousel(_ref) {
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         animation = {
-          type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
+          type: play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
           size: 'xlarge',
           duration: theme.carousel.animation.duration
         };
