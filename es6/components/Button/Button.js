@@ -1,4 +1,4 @@
-var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
+var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -123,6 +123,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       fill = _ref.fill,
       href = _ref.href,
+      justify = _ref.justify,
       kindArg = _ref.kind,
       label = _ref.label,
       _onBlur = _ref.onBlur,
@@ -263,7 +264,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     contents = /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       align: "center",
-      justify: align === 'center' ? 'center' : 'between',
+      justify: justify || (align === 'center' ? 'center' : 'between'),
       gap: gap,
       responsive: false
     }, first, second);

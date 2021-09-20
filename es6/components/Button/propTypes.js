@@ -22,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     hoverIndicator: hoverIndicatorPropType,
     href: PropTypes.string,
     icon: PropTypes.element,
+    justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']),
     label: PropTypes.node,
     onClick: PropTypes.func,
     plain: PropTypes.bool,

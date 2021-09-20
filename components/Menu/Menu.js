@@ -312,7 +312,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
         align: "start",
         pad: "small",
         direction: "row",
-        gap: item.gap
+        gap: item.gap,
+        justify: item.justify
       }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined; // if we have a child, turn on plain, and hoverIndicator
 
       return (
@@ -332,6 +333,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
           focusIndicator: false,
           plain: !child ? undefined : true,
           align: "start",
+          justify: item.justify,
           kind: !child ? 'option' : undefined,
           hoverIndicator: !child ? undefined : 'background'
         }, !child ? item : _extends({}, item, {

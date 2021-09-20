@@ -23,7 +23,7 @@ var _StyledButton = require("./StyledButton");
 
 var _StyledButtonKind = require("./StyledButtonKind");
 
-var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
+var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -142,6 +142,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       fill = _ref.fill,
       href = _ref.href,
+      justify = _ref.justify,
       kindArg = _ref.kind,
       label = _ref.label,
       _onBlur = _ref.onBlur,
@@ -282,7 +283,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
-      justify: align === 'center' ? 'center' : 'between',
+      justify: justify || (align === 'center' ? 'center' : 'between'),
       gap: gap,
       responsive: false
     }, first, second);
