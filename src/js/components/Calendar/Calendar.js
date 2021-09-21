@@ -903,7 +903,7 @@ const Calendar = forwardRef(
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
               if (!betweenDates(addDays(active, -7), displayBounds)) {
-                changeReference(active);
+                changeReference(addDays(active, -7));
               }
             }}
             onDown={(event) => {
