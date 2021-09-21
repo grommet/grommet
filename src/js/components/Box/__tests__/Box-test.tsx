@@ -512,23 +512,24 @@ describe('Box', () => {
   });
 
   test('animation', () => {
+    const animationProps: BoxProps['animation'][] = [
+      'fadeIn',
+      'fadeOut',
+      'jiggle',
+      'pulse',
+      'rotateLeft',
+      'rotateRight',
+      'slideUp',
+      'slideDown',
+      'slideLeft',
+      'slideRight',
+      'zoomIn',
+      'zoomOut',
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          'fadeIn',
-          'fadeOut',
-          'jiggle',
-          'pulse',
-          'rotateLeft',
-          'rotateRight',
-          'slideUp',
-          'slideDown',
-          'slideLeft',
-          'slideRight',
-          'zoomIn',
-          'zoomOut',
-        ].map((type) => (
-          <Box key={type} animation={type} />
+        {animationProps.map((type) => (
+          <Box key={String(type)} animation={type} />
         ))}
         <Box animation={['fadeIn', 'slideUp']} />
         <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
