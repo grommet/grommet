@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Box } from '..';
+import { Box, BoxProps } from '..';
 
 describe('Box', () => {
   test('default', () => {
@@ -42,9 +42,10 @@ describe('Box', () => {
   });
 
   test('wrap', () => {
+    const wrapProps: BoxProps['wrap'][] = [true, false, 'reverse'];
     const { container } = render(
       <Grommet>
-        {[true, false, 'reverse'].map((wrap) => (
+        {wrapProps.map((wrap) => (
           <Box key={`${wrap}`} wrap={wrap} />
         ))}
       </Grommet>,
