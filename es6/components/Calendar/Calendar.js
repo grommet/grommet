@@ -862,18 +862,34 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       event.stopPropagation(); // so the page doesn't scroll
 
       setActive(addDays(active, -7));
+
+      if (!betweenDates(addDays(active, -7), displayBounds)) {
+        changeReference(addDays(active, -7));
+      }
     },
     onDown: function onDown(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
 
       setActive(addDays(active, 7));
+
+      if (!betweenDates(addDays(active, 7), displayBounds)) {
+        changeReference(active);
+      }
     },
     onLeft: function onLeft() {
-      return active && setActive(addDays(active, -1));
+      setActive(addDays(active, -1));
+
+      if (!betweenDates(addDays(active, -1), displayBounds)) {
+        changeReference(active);
+      }
     },
     onRight: function onRight() {
-      return active && setActive(addDays(active, 1));
+      setActive(addDays(active, 1));
+
+      if (!betweenDates(addDays(active, 2), displayBounds)) {
+        changeReference(active);
+      }
     }
   }, /*#__PURE__*/React.createElement(StyledWeeksContainer, {
     tabIndex: 0,

@@ -884,18 +884,34 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       event.stopPropagation(); // so the page doesn't scroll
 
       setActive((0, _utils.addDays)(active, -7));
+
+      if (!(0, _utils.betweenDates)((0, _utils.addDays)(active, -7), displayBounds)) {
+        changeReference((0, _utils.addDays)(active, -7));
+      }
     },
     onDown: function onDown(event) {
       event.preventDefault();
       event.stopPropagation(); // so the page doesn't scroll
 
       setActive((0, _utils.addDays)(active, 7));
+
+      if (!(0, _utils.betweenDates)((0, _utils.addDays)(active, 7), displayBounds)) {
+        changeReference(active);
+      }
     },
     onLeft: function onLeft() {
-      return active && setActive((0, _utils.addDays)(active, -1));
+      setActive((0, _utils.addDays)(active, -1));
+
+      if (!(0, _utils.betweenDates)((0, _utils.addDays)(active, -1), displayBounds)) {
+        changeReference(active);
+      }
     },
     onRight: function onRight() {
-      return active && setActive((0, _utils.addDays)(active, 1));
+      setActive((0, _utils.addDays)(active, 1));
+
+      if (!(0, _utils.betweenDates)((0, _utils.addDays)(active, 2), displayBounds)) {
+        changeReference(active);
+      }
     }
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
     tabIndex: 0,
