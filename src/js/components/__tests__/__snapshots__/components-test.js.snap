@@ -100,6 +100,7 @@ Object {
       "hoverIndicator": [Function],
       "href": [Function],
       "icon": [Function],
+      "justify": [Function],
       "label": [Function],
       "margin": [Function],
       "onClick": [Function],
