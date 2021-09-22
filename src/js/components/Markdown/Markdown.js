@@ -16,7 +16,7 @@ import { TableRow } from '../TableRow';
 import { MarkdownPropTypes } from './propTypes';
 
 const GrommetMarkdown = forwardRef(
-  ({ components, options, theme, ...rest }, ref) => {
+  ({ children, components, options, theme, ...rest }, ref) => {
     const heading = [1, 2, 3, 4].reduce((obj, level) => {
       const result = { ...obj };
       result[`h${level}`] = {
@@ -46,10 +46,10 @@ const GrommetMarkdown = forwardRef(
 
     // we use Fragment as the wrapper so we can assign the ref with the div
     return (
-      <div ref={ref}>
+      <div ref={ref} {...rest}>
         <Markdown
+          {...{ children }}
           options={{ ...options, wrapper: Fragment, overrides }}
-          {...rest}
         />
       </div>
     );
