@@ -130,8 +130,6 @@ const Select = forwardRef(
     }, [value, valueKey]);
     // search input value
     const [search, setSearch] = useState();
-    // focus state
-    const [focus, setFocus] = useState();
     // All select option indices and values
     const [allOptions, setAllOptions] = useState(optionsProp);
     // Track changes to options property, except when options are being
@@ -298,14 +296,11 @@ const Select = forwardRef(
           dropTarget={dropTarget}
           open={open}
           alignSelf={alignSelf}
-          focus={focus}
           focusIndicator={focusIndicator}
           onFocus={(event) => {
-            setFocus(true);
             if (onFocus) onFocus(event);
           }}
           onBlur={(event) => {
-            setFocus(false);
             if (onBlur) onBlur(event);
           }}
           gridArea={gridArea}
