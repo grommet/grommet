@@ -297,12 +297,8 @@ const Select = forwardRef(
           open={open}
           alignSelf={alignSelf}
           focusIndicator={focusIndicator}
-          onFocus={(event) => {
-            if (onFocus) onFocus(event);
-          }}
-          onBlur={(event) => {
-            if (onBlur) onBlur(event);
-          }}
+          onFocus={onFocus}
+          onBlur={onBlur}
           gridArea={gridArea}
           margin={margin}
           onOpen={onRequestOpen}
