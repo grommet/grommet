@@ -1,4 +1,4 @@
-var _excluded = ["components", "options", "theme"];
+var _excluded = ["children", "components", "options", "theme"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -19,7 +19,8 @@ import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 import { MarkdownPropTypes } from './propTypes';
 var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var components = _ref.components,
+  var children = _ref.children,
+      components = _ref.components,
       options = _ref.options,
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -71,14 +72,15 @@ var GrommetMarkdown = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, heading, components, options && options.overrides); // we use Fragment as the wrapper so we can assign the ref with the div
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref
-  }, /*#__PURE__*/React.createElement(Markdown, _extends({
+  }, rest), /*#__PURE__*/React.createElement(Markdown, {
+    children: children,
     options: _extends({}, options, {
       wrapper: Fragment,
       overrides: overrides
     })
-  }, rest)));
+  }));
 });
 GrommetMarkdown.propTypes = MarkdownPropTypes;
 export { GrommetMarkdown as Markdown };

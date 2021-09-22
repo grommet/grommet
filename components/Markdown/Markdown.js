@@ -31,7 +31,7 @@ var _TableRow = require("../TableRow");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["components", "options", "theme"];
+var _excluded = ["children", "components", "options", "theme"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,7 +44,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var GrommetMarkdown = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var components = _ref.components,
+  var children = _ref.children,
+      components = _ref.components,
       options = _ref.options,
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -96,14 +97,15 @@ var GrommetMarkdown = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }, heading, components, options && options.overrides); // we use Fragment as the wrapper so we can assign the ref with the div
 
-  return /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", _extends({
     ref: ref
-  }, /*#__PURE__*/_react["default"].createElement(_markdownToJsx["default"], _extends({
+  }, rest), /*#__PURE__*/_react["default"].createElement(_markdownToJsx["default"], {
+    children: children,
     options: _extends({}, options, {
       wrapper: _react.Fragment,
       overrides: overrides
     })
-  }, rest)));
+  }));
 });
 exports.Markdown = GrommetMarkdown;
 GrommetMarkdown.propTypes = _propTypes.MarkdownPropTypes;
