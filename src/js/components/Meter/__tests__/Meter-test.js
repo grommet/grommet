@@ -81,18 +81,28 @@ describe('Meter', () => {
         <Meter size="large" values={VALUES} />
         <Meter size="xlarge" values={VALUES} />
         <Meter size="24px" values={VALUES} />
+        <Meter size="full" values={VALUES} />
         <Meter type="circle" size="xsmall" values={VALUES} />
         <Meter type="circle" size="small" values={VALUES} />
         <Meter type="circle" size="medium" values={VALUES} />
         <Meter type="circle" size="large" values={VALUES} />
         <Meter type="circle" size="xlarge" values={VALUES} />
         <Meter type="circle" size="55px" values={VALUES} />
+        <Meter type="circle" size="full" values={VALUES} />
         <Meter type="pie" size="xsmall" values={VALUES} />
         <Meter type="pie" size="small" values={VALUES} />
         <Meter type="pie" size="medium" values={VALUES} />
         <Meter type="pie" size="large" values={VALUES} />
         <Meter type="pie" size="xlarge" values={VALUES} />
         <Meter type="pie" size="55px" values={VALUES} />
+        <Meter type="pie" size="full" values={VALUES} />
+        <Meter type="semicircle" size="xsmall" values={VALUES} />
+        <Meter type="semicircle" size="small" values={VALUES} />
+        <Meter type="semicircle" size="medium" values={VALUES} />
+        <Meter type="semicircle" size="large" values={VALUES} />
+        <Meter type="semicircle" size="xlarge" values={VALUES} />
+        <Meter type="semicircle" size="55px" values={VALUES} />
+        <Meter type="semicircle" size="full" values={VALUES} />
       </Grommet>,
     );
 

@@ -8,7 +8,9 @@ export const Multiple = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <FileInput
-          multiple
+          multiple={{
+            max: 5,
+          }}
           onChange={(event, { files }) => {
             console.log(event);
             for (let i = 0; i < files.length; i += 1) {

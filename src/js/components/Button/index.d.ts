@@ -36,6 +36,14 @@ export interface ButtonProps {
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
   href?: string;
+  justify?:
+    | 'around'
+    | 'between'
+    | 'center'
+    | 'end'
+    | 'evenly'
+    | 'start'
+    | 'stretch';
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
   kind?: string;
@@ -50,6 +58,8 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
+type anchorType = JSX.IntrinsicElements['a'];
+
 export interface ButtonExtendedProps
   extends ButtonProps,
     Omit<JSX.IntrinsicElements['button'], 'color'> {}
@@ -58,6 +68,6 @@ export interface ButtonExtendedProps
 export type ButtonType = ButtonProps &
   Omit<JSX.IntrinsicElements['button'], 'color'>;
 
-declare const Button: React.FC<ButtonExtendedProps>;
+declare const Button: React.FC<ButtonExtendedProps & anchorType>;
 
 export { Button };

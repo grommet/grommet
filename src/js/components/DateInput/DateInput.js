@@ -4,10 +4,13 @@ import React, {
   useEffect,
   useMemo,
   useState,
+  useCallback,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -41,16 +44,23 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       value: valueArg,
+      messages,
       ...rest
     },
     refArg,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
+    const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
-    const [value, setValue] = useFormInput(name, valueArg, defaultValue);
+    const [value, setValue] = useFormInput({
+      name,
+      value: valueArg,
+      initialValue: defaultValue,
+    });
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -89,6 +99,16 @@ const DateInput = forwardRef(
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
+    const openCalendar = useCallback(() => {
+      setOpen(true);
+      announce(formatMessage({ id: 'dateInput.enterCalendar', messages }));
+    }, [announce, formatMessage, messages]);
+
+    const closeCalendar = useCallback(() => {
+      setOpen(false);
+      announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
+    }, [announce, formatMessage, messages]);
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -114,7 +134,7 @@ const DateInput = forwardRef(
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
-                  setOpen(false);
+                  closeCalendar();
                   setTimeout(() => ref.current.focus(), 1);
                 }
               }
@@ -143,11 +163,13 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{ useFormInput: (_, val) => [val, () => {}] }}
+        value={{
+          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+        }}
       >
         <Keyboard
-          onEsc={open ? () => setOpen(false) : undefined}
-          onSpace={() => setOpen(true)}
+          onEsc={open ? () => closeCalendar() : undefined}
+          onSpace={openCalendar}
         >
           <MaskedInput
             ref={ref}
@@ -179,9 +201,10 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
+              openCalendar();
               if (onFocus) onFocus(event);
             }}
-            onClick={() => setOpen(true)}
+            onClick={openCalendar}
           />
         </Keyboard>
       </FormContext.Provider>
@@ -205,9 +228,9 @@ const DateInput = forwardRef(
             id={id ? `${id}__drop` : undefined}
             target={ref.current}
             align={{ top: 'bottom', left: 'left', ...dropProps }}
-            onEsc={() => setOpen(false)}
+            onEsc={closeCalendar}
             onClickOutside={({ target }) => {
-              if (target !== ref.current) setOpen(false);
+              if (target !== ref.current) closeCalendar();
             }}
             {...dropProps}
           >

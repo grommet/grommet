@@ -109,4 +109,28 @@ describe('FileInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('maxSize', () => {
+    const maxSize = 5000000;
+    const { container } = render(
+      <Grommet>
+        <FileInput name="file" maxSize={maxSize} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('multiple max', () => {
+    const { container } = render(
+      <Grommet>
+        <FileInput
+          name="file"
+          multiple={{
+            max: 5,
+          }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface FileInputProps {
   disabled?: boolean;
   id?: string;
+  maxSize?: number;
   messages?: {
     browse?: string;
     dropPrompt?: string;
@@ -10,8 +11,9 @@ export interface FileInputProps {
     files?: string;
     remove?: string;
     removeAll?: string;
+    maxFile?: string;
   };
-  multiple?: boolean | { aggregateThreshold?: number };
+  multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;
   renderFile?: (...args: any[]) => void;
 }

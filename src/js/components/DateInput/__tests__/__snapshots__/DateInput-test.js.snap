@@ -883,7 +883,10 @@ exports[`DateInput controlled format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -1744,7 +1747,10 @@ exports[`DateInput controlled format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-01;
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"
@@ -2968,1328 +2974,6 @@ exports[`DateInput focus 1`] = `
 </div>
 `;
 
-exports[`DateInput focus 2`] = `
-.c9 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: visible;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c14 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) > circle,
-.c14:focus:not(:focus-visible) > ellipse,
-.c14:focus:not(:focus-visible) > line,
-.c14:focus:not(:focus-visible) > path,
-.c14:focus:not(:focus-visible) > polygon,
-.c14:focus:not(:focus-visible) > polyline,
-.c14:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c17:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c6 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c10 {
-  overflow: hidden;
-  height: 329.1428571428571px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10 > circle,
-.c10 > ellipse,
-.c10 > line,
-.c10 > path,
-.c10 > polygon,
-.c10 > polyline,
-.c10 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c13 {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  opacity: 0.5;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-<div
-  class="c0 c1"
-  data-g-portal-id="0"
-  id="item__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-  tabindex="-1"
->
-  <div
-    class="c2"
-  >
-    <div
-      class="c3"
-    >
-      <div
-        class="c4"
-      >
-        <div
-          class="c5"
-        >
-          <h3
-            class="c6"
-          >
-            July 2020
-          </h3>
-        </div>
-        <div
-          class="c7"
-        >
-          <button
-            aria-label="June 2020"
-            class="c8"
-            type="button"
-          >
-            <svg
-              aria-label="Previous"
-              class="c9"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17 2 7 12l10 10"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-          <button
-            aria-label="August 2020"
-            class="c8"
-            type="button"
-          >
-            <svg
-              aria-label="Next"
-              class="c9"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m7 2 10 10L7 22"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        aria-label="July 2020"
-        class="c10"
-        role="grid"
-        tabindex="0"
-      >
-        <div
-          class="c11"
-        >
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Jun 28 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Jun 29 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Jun 30 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Jul 01 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Jul 02 2020"
-                class="c17"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c18"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Jul 03 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Jul 04 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Jul 05 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Jul 06 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Jul 07 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Jul 08 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Jul 09 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Jul 10 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  10
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Jul 11 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Jul 12 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Jul 13 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Jul 14 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Jul 15 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Jul 16 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Jul 17 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Jul 18 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Jul 19 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Jul 20 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Jul 21 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Jul 22 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Jul 23 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Jul 24 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Jul 25 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Jul 26 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Jul 27 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Jul 28 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Jul 29 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Jul 30 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Jul 31 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c16"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Aug 01 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c12"
-            role="row"
-          >
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Aug 02 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Aug 03 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Aug 04 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Aug 05 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Aug 06 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Aug 07 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              class="c13"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Aug 08 2020"
-                class="c14"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DateInput focus 3`] = `
-"@media only screen and (max-width: 768px) {
-  .jEqkkX {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .eiANcd {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .eiANcd {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}"
-`;
-
 exports[`DateInput format 1`] = `
 .c3 {
   display: inline-block;
@@ -5158,7 +3842,10 @@ exports[`DateInput format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -6337,7 +5024,10 @@ exports[`DateInput inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020"
+        aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -7944,7 +6634,11 @@ exports[`DateInput range format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-02 through 2020-07-07
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -9141,7 +7835,11 @@ exports[`DateInput range inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020"
+        aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-02 through 2020-07-07
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -11007,7 +9705,10 @@ exports[`DateInput select format 3`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020"
+        aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
         class="c10"
         role="grid"
         tabindex="0"
@@ -12322,7 +11023,10 @@ exports[`DateInput select format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -13177,7 +11881,10 @@ exports[`DateInput select format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-20;
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
@@ -14490,7 +13197,11 @@ exports[`DateInput select format inline range 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-02 through 2020-07-07
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -15345,7 +14056,11 @@ exports[`DateInput select format inline range 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-10 through 2020-07-10
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jTqdtE"
           role="grid"
           tabindex="0"
@@ -16524,7 +15239,10 @@ exports[`DateInput select inline 1`] = `
         </div>
       </div>
       <div
-        aria-label="July 2020"
+        aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
         class="c9"
         role="grid"
         tabindex="0"
@@ -17818,7 +16536,10 @@ exports[`DateInput type format inline 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -18673,7 +17394,10 @@ exports[`DateInput type format inline 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-21;
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"
@@ -19968,7 +18692,10 @@ exports[`DateInput type format inline partial 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -21281,7 +20008,11 @@ exports[`DateInput type format inline range 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-02 through 2020-07-07
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -22136,7 +20867,11 @@ exports[`DateInput type format inline range 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-21 through 2020-07-23
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"
@@ -23449,7 +22184,11 @@ exports[`DateInput type format inline range partial 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-02 through 2020-07-07
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -24304,7 +23043,11 @@ exports[`DateInput type format inline range partial 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-21 through none
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"
@@ -25159,7 +23902,11 @@ exports[`DateInput type format inline range partial 3`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 
+  2020-07-21 through none
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"
@@ -26454,7 +25201,10 @@ exports[`DateInput type format inline short 1`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-02;
+              "
           class="c12"
           role="grid"
           tabindex="0"
@@ -27309,7 +26059,10 @@ exports[`DateInput type format inline short 2`] = `
           </div>
         </div>
         <div
-          aria-label="July 2020"
+          aria-label="
+                July 2020;
+                Currently selected 2020-07-21;
+              "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iqSIRB"
           role="grid"
           tabindex="0"

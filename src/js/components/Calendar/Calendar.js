@@ -53,6 +53,36 @@ const activeDates = {
 
 const timeStamp = new RegExp(/T.*/);
 
+const formatSelectedDatesString = (date) => `Currently selected 
+  ${date?.map((item) => {
+    let dates;
+    if (!Array.isArray(item)) {
+      dates = `${formatToLocalYYYYMMDD(item)} `;
+    } else {
+      const start =
+        item[0] !== undefined ? formatToLocalYYYYMMDD(item[0]) : 'none';
+      const end =
+        item[1] !== undefined ? formatToLocalYYYYMMDD(item[1]) : 'none';
+      dates = `${start} through ${end}`;
+    }
+
+    return dates;
+  })}`;
+
+const getAccessibilityString = (date, dates) => {
+  if (date && !Array.isArray(date)) {
+    return `Currently selected ${formatToLocalYYYYMMDD(date)};`;
+  }
+  if (date && Array.isArray(date)) {
+    return formatSelectedDatesString(date);
+  }
+  if (dates?.length) {
+    return formatSelectedDatesString(dates);
+  }
+
+  return 'No date selected';
+};
+
 const normalizeForTimezone = (date, refDate) => {
   if (!date) return undefined;
   return (
@@ -872,22 +902,41 @@ const Calendar = forwardRef(
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
+              if (!betweenDates(addDays(active, -7), displayBounds)) {
+                changeReference(addDays(active, -7));
+              }
             }}
             onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));
+              if (!betweenDates(addDays(active, 7), displayBounds)) {
+                changeReference(active);
+              }
             }}
-            onLeft={() => active && setActive(addDays(active, -1))}
-            onRight={() => active && setActive(addDays(active, 1))}
+            onLeft={() => {
+              setActive(addDays(active, -1));
+              if (!betweenDates(addDays(active, -1), displayBounds)) {
+                changeReference(active);
+              }
+            }}
+            onRight={() => {
+              setActive(addDays(active, 1));
+              if (!betweenDates(addDays(active, 2), displayBounds)) {
+                changeReference(active);
+              }
+            }}
           >
             <StyledWeeksContainer
               tabIndex={0}
               role="grid"
-              aria-label={reference.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}
+              aria-label={`
+                ${reference.toLocaleDateString(locale, {
+                  month: 'long',
+                  year: 'numeric',
+                })};
+                ${getAccessibilityString(date, dates)}
+              `}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
