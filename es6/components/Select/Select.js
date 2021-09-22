@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
+var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -70,9 +70,11 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       messages = _ref.messages,
       multiple = _ref.multiple,
       name = _ref.name,
+      onBlur = _ref.onBlur,
       onChange = _ref.onChange,
       onClick = _ref.onClick,
       onClose = _ref.onClose,
+      onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       onMore = _ref.onMore,
       onOpen = _ref.onOpen,
@@ -301,6 +303,8 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     open: open,
     alignSelf: alignSelf,
     focusIndicator: focusIndicator,
+    onFocus: onFocus,
+    onBlur: onBlur,
     gridArea: gridArea,
     margin: margin,
     onOpen: onRequestOpen,

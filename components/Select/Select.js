@@ -29,7 +29,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
+var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -94,9 +94,11 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       messages = _ref.messages,
       multiple = _ref.multiple,
       name = _ref.name,
+      onBlur = _ref.onBlur,
       onChange = _ref.onChange,
       onClick = _ref.onClick,
       onClose = _ref.onClose,
+      onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       onMore = _ref.onMore,
       onOpen = _ref.onOpen,
@@ -326,6 +328,8 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     open: open,
     alignSelf: alignSelf,
     focusIndicator: focusIndicator,
+    onFocus: onFocus,
+    onBlur: onBlur,
     gridArea: gridArea,
     margin: margin,
     onOpen: onRequestOpen,
