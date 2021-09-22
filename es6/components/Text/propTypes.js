@@ -27,7 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
       plain: PropTypes.bool
     }), PropTypes.string]),
     truncate: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['tip'])]),
-    weight: PropTypes.oneOfType([PropTypes.oneOf(['normal', 'bold']), PropTypes.number]),
+    weight: PropTypes.oneOfType([PropTypes.oneOf(['normal', 'bold', 'bolder', 'lighter']), PropTypes.number]),
     wordBreak: PropTypes.oneOf(['normal', 'break-all', 'keep-all', 'break-word'])
   });
 }

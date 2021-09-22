@@ -36,7 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
       plain: _propTypes["default"].bool
     }), _propTypes["default"].string]),
     truncate: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['tip'])]),
-    weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold']), _propTypes["default"].number]),
+    weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold', 'bolder', 'lighter']), _propTypes["default"].number]),
     wordBreak: _propTypes["default"].oneOf(['normal', 'break-all', 'keep-all', 'break-word'])
   });
 }
