@@ -27,8 +27,6 @@ var _propTypes = require("./propTypes");
 
 var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
 
-var _templateObject;
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -39,9 +37,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
-
-var FullGlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
+var FullGlobalStyle = (0, _styledComponents.createGlobalStyle)(["body{margin:0;}"]);
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
   // log('--deviceResponsive', userAgent, theme);

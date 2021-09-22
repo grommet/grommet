@@ -21,7 +21,7 @@ var fillStyle = (0, _styledComponents.css)(["", " ", " flex-grow:1;display:flex;
 
 var StyledStack = _styledComponents["default"].div.withConfig({
   displayName: "StyledStack",
-  componentId: "ajspsk-0"
+  componentId: "sc-ajspsk-0"
 })(["position:relative;", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.fillContainer && fillStyle;
 }, function (props) {
@@ -46,7 +46,7 @@ var styleMap = {
 
 var StyledStackLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledStack__StyledStackLayer",
-  componentId: "ajspsk-1"
+  componentId: "sc-ajspsk-1"
 })(["position:", ";", " ", " ", " ", ""], function (props) {
   return props.guiding ? 'relative' : 'absolute';
 }, function (props) {

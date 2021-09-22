@@ -15,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var FavoriteFilled = (0, _styledComponents["default"])(_grommetIcons.Favorite).withConfig({
   displayName: "ChildrenSpinner__FavoriteFilled",
-  componentId: "o9wy2d-0"
+  componentId: "sc-o9wy2d-0"
 })(["path[fill='none']{fill:red;}"]);
 
 var Children = function Children() {

@@ -21,7 +21,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var SorterButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "Sorter__SorterButton",
-  componentId: "fzr2yb-0"
+  componentId: "sc-fzr2yb-0"
 })(["flex-shrink:1;height:100%;"]);
 
 var Sorter = function Sorter(_ref) {

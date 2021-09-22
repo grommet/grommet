@@ -16,7 +16,7 @@ var fontFamily = css(["font-family:", ";"], function (props) {
 });
 var StyledParagraph = styled.p.withConfig({
   displayName: "StyledParagraph",
-  componentId: "tbetod-0"
+  componentId: "sc-tbetod-0"
 })(["", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {

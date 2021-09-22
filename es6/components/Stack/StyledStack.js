@@ -8,7 +8,7 @@ var fillStyle = css(["", " ", " flex-grow:1;display:flex;"], function (props) {
 });
 var StyledStack = styled.div.withConfig({
   displayName: "StyledStack",
-  componentId: "ajspsk-0"
+  componentId: "sc-ajspsk-0"
 })(["position:relative;", " ", " ", ""], genericStyles, function (props) {
   return props.fillContainer && fillStyle;
 }, function (props) {
@@ -30,7 +30,7 @@ var styleMap = {
 };
 var StyledStackLayer = styled.div.withConfig({
   displayName: "StyledStack__StyledStackLayer",
-  componentId: "ajspsk-1"
+  componentId: "sc-ajspsk-1"
 })(["position:", ";", " ", " ", " ", ""], function (props) {
   return props.guiding ? 'relative' : 'absolute';
 }, function (props) {

@@ -10,7 +10,7 @@ var fitStyle = css(["flex:1 1;overflow:hidden;object-fit:", ";"], function (prop
 });
 var StyledImage = styled.img.withConfig({
   displayName: "StyledImage",
-  componentId: "ey4zx9-0"
+  componentId: "sc-ey4zx9-0"
 })(["", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.fit && fitStyle;
 }, function (props) {

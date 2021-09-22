@@ -5,7 +5,7 @@ import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 var StyledTabsHeader = styled.div.withConfig({
   displayName: "StyledTabs__StyledTabsHeader",
-  componentId: "a4fwxl-0"
+  componentId: "sc-a4fwxl-0"
 })(["", ";"], function (props) {
   return props.theme.tabs.header.extend;
 });
@@ -17,7 +17,7 @@ var flexStyle = css(["flex:", ";"], function (props) {
 });
 var StyledTabPanel = styled.div.withConfig({
   displayName: "StyledTabs__StyledTabPanel",
-  componentId: "a4fwxl-1"
+  componentId: "sc-a4fwxl-1"
 })(["min-height:0;", " ", ";"], function (props) {
   return props.flex && flexStyle;
 }, function (props) {
@@ -27,7 +27,7 @@ StyledTabPanel.defaultProps = {};
 Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
 var StyledTabs = styled.div.withConfig({
   displayName: "StyledTabs",
-  componentId: "a4fwxl-2"
+  componentId: "sc-a4fwxl-2"
 })(["", " ", ";"], genericStyles, function (props) {
   return props.theme.tabs.extend;
 });

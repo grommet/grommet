@@ -29,7 +29,7 @@ var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (pro
 
 var StyledParagraph = _styledComponents["default"].p.withConfig({
   displayName: "StyledParagraph",
-  componentId: "tbetod-0"
+  componentId: "sc-tbetod-0"
 })(["", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {

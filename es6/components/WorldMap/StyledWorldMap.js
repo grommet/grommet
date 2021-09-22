@@ -21,7 +21,7 @@ var fillStyle = function fillStyle(fillProp) {
 
 var StyledWorldMap = styled.svg.withConfig({
   displayName: "StyledWorldMap",
-  componentId: "had4c3-0"
+  componentId: "sc-had4c3-0"
 })(["", " ", " ", ";"], genericStyles, function (props) {
   return props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;';
 }, function (props) {

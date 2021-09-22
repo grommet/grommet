@@ -1,12 +1,8 @@
 var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages"];
 
-var _templateObject;
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
 import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
@@ -19,7 +15,7 @@ import { OptionsContext } from '../../contexts/OptionsContext';
 import { format as _format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
-var FullGlobalStyle = createGlobalStyle(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"])));
+var FullGlobalStyle = createGlobalStyle(["body{margin:0;}"]);
 
 var deviceResponsive = function deviceResponsive(userAgent, theme) {
   // log('--deviceResponsive', userAgent, theme);

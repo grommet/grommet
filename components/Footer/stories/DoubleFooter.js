@@ -19,7 +19,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var StyledAnchor = (0, _styledComponents["default"])(_grommet.Anchor).withConfig({
   displayName: "DoubleFooter__StyledAnchor",
-  componentId: "hzr4m1-0"
+  componentId: "sc-hzr4m1-0"
 })(["font-weight:200;"]);
 
 var FooterAnchor = function FooterAnchor(_ref) {

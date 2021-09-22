@@ -7,7 +7,7 @@ import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
 import { fiveColumns as data } from './data';
 var StyledAnchor = styled(Anchor).withConfig({
   displayName: "DoubleFooter__StyledAnchor",
-  componentId: "hzr4m1-0"
+  componentId: "sc-hzr4m1-0"
 })(["font-weight:200;"]);
 
 var FooterAnchor = function FooterAnchor(_ref) {

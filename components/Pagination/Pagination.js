@@ -29,7 +29,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var StyledPaginationContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
-  componentId: "rnlw6m-0"
+  componentId: "sc-rnlw6m-0"
 })(["", ""], function (props) {
   return props.theme.pagination.container && props.theme.pagination.container.extend;
 });

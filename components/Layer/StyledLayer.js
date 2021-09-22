@@ -19,7 +19,7 @@ var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%
 
 var StyledLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer",
-  componentId: "rmtehz-0"
+  componentId: "sc-rmtehz-0"
 })(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], _utils.baseStyle, function (props) {
   return props.theme.layer.zIndex;
 }, function (props) {
@@ -46,7 +46,7 @@ Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
 
 var StyledOverlay = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
-  componentId: "rmtehz-1"
+  componentId: "sc-rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;will-change:transform;"], function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -484,7 +484,7 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
   }
 }).withConfig({
   displayName: "StyledLayer__StyledContainer",
-  componentId: "rmtehz-2"
+  componentId: "sc-rmtehz-2"
 })(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
   return !props.modal ? _utils.baseStyle : '';
 }, function (props) {

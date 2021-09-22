@@ -23,7 +23,7 @@ var fitStyle = (0, _styledComponents.css)(["flex:1 1;min-height:0;object-fit:", 
 
 var StyledVideo = _styledComponents["default"].video.withConfig({
   displayName: "StyledVideo",
-  componentId: "w4v8h9-0"
+  componentId: "sc-w4v8h9-0"
 })(["max-width:100%;z-index:1;", "::cue{background:", ";}", ";"], function (props) {
   return props.fit && fitStyle;
 }, function (props) {
@@ -38,7 +38,7 @@ Object.setPrototypeOf(StyledVideo.defaultProps, _defaultProps.defaultProps);
 
 var StyledVideoContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
-  componentId: "w4v8h9-1"
+  componentId: "sc-w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";"], _utils.genericStyles);
 
 exports.StyledVideoContainer = StyledVideoContainer;
@@ -49,7 +49,7 @@ var positionStyle = (0, _styledComponents.css)(["position:absolute;left:0;right:
 
 var StyledVideoControls = _styledComponents["default"].div.withConfig({
   displayName: "StyledVideo__StyledVideoControls",
-  componentId: "w4v8h9-2"
+  componentId: "sc-w4v8h9-2"
 })(["flex:0 0;", " opacity:0;transition:opacity 0.3s;", ";"], function (props) {
   return props.over && positionStyle;
 }, function (props) {
@@ -69,7 +69,7 @@ var headStyle = (0, _styledComponents.css)(["::after{content:'';height:100%;widt
 
 var StyledVideoScrubber = _styledComponents["default"].div.withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
-  componentId: "w4v8h9-3"
+  componentId: "sc-w4v8h9-3"
 })(["cursor:pointer;width:100%;height:100%;", ";"], function (props) {
   return props.value && headStyle;
 });

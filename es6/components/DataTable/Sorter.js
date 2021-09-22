@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Box } from '../Box';
 var SorterButton = styled(Button).withConfig({
   displayName: "Sorter__SorterButton",
-  componentId: "fzr2yb-0"
+  componentId: "sc-fzr2yb-0"
 })(["flex-shrink:1;height:100%;"]);
 
 var Sorter = function Sorter(_ref) {

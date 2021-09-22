@@ -13,7 +13,7 @@ import { PageControl } from './PageControl';
 import { PaginationPropTypes } from './propTypes';
 var StyledPaginationContainer = styled(Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
-  componentId: "rnlw6m-0"
+  componentId: "sc-rnlw6m-0"
 })(["", ""], function (props) {
   return props.theme.pagination.container && props.theme.pagination.container.extend;
 });

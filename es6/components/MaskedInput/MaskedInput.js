@@ -135,7 +135,7 @@ var defaultMask = [{
 }];
 var ContainerBox = styled(Box).withConfig({
   displayName: "MaskedInput__ContainerBox",
-  componentId: "af8hzu-0"
+  componentId: "sc-af8hzu-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
   return props.dropHeight ? sizeStyle('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 });

@@ -30,7 +30,7 @@ var fillStyle = function fillStyle(fillProp) {
 
 var StyledWorldMap = _styledComponents["default"].svg.withConfig({
   displayName: "StyledWorldMap",
-  componentId: "had4c3-0"
+  componentId: "sc-had4c3-0"
 })(["", " ", " ", ";"], _utils.genericStyles, function (props) {
   return props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;';
 }, function (props) {

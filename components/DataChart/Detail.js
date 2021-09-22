@@ -29,7 +29,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 var DetailControl = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Detail__DetailControl",
-  componentId: "huiwg9-0"
+  componentId: "sc-huiwg9-0"
 })(["&:focus{", "}&:focus:not(:focus-visible){", "}"], (0, _utils.focusStyle)(), (0, _utils.unfocusStyle)());
 
 var Detail = function Detail(_ref) {

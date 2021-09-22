@@ -9,7 +9,7 @@ import { focusStyle, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
 var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
-  componentId: "huiwg9-0"
+  componentId: "sc-huiwg9-0"
 })(["&:focus{", "}&:focus:not(:focus-visible){", "}"], focusStyle(), unfocusStyle());
 
 var Detail = function Detail(_ref) {
