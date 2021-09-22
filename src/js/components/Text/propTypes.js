@@ -81,7 +81,7 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     truncate: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['tip'])]),
     weight: PropTypes.oneOfType([
-      PropTypes.oneOf(['normal', 'bold', 'bolder']),
+      PropTypes.oneOf(['normal', 'bold', 'bolder', 'lighter']),
       PropTypes.number,
     ]),
     wordBreak: PropTypes.oneOf([
