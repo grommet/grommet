@@ -90,7 +90,7 @@ const EdgeControl = forwardRef(
               outline: 'none',
               minWidth: size,
               minHeight: size,
-              zIndex: theme.rangeSelector.edge.zIndex,
+              zIndex: 1,
             }}
             tabIndex={0}
             onFocus={() => setFocus(true)}

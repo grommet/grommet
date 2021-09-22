@@ -1894,9 +1894,6 @@ Object {
               "color": "light-4",
             },
           },
-          "edge": Object {
-            "zIndex": "10",
-          },
         },
         "select": Object {
           "clear": Object {
