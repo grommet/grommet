@@ -99,7 +99,7 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
       outline: 'none',
       minWidth: size,
       minHeight: size,
-      zIndex: 10
+      zIndex: 1
     },
     tabIndex: 0,
     onFocus: function onFocus() {
