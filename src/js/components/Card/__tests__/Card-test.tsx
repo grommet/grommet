@@ -3,14 +3,15 @@ import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Box } from '../../Box';
-import { Card } from '../Card';
+import { Card } from '..';
 import { CardBody } from '../../CardBody';
 import { CardFooter } from '../../CardFooter';
 import { CardHeader } from '../../CardHeader';
 import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
+import { ThemeType } from '../../..';
 
-const customTheme = {
+const customTheme: ThemeType = {
   global: {
     font: {
       family: `-apple-system,

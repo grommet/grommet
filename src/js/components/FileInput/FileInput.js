@@ -94,6 +94,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
+    const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
@@ -103,29 +104,48 @@ const FileInput = forwardRef(
       name,
       value: valueProp,
       initialValue: [],
-      validate: maxSize
-        ? () => {
-            const fileList = [...files];
-            let message = '';
-            const numOfInvalidFiles = fileList.filter(
-              ({ size }) => size > maxSize,
-            ).length;
-            if (numOfInvalidFiles) {
-              let messageId = 'fileInput.maxSizeSingle';
-              if (multiple) {
-                messageId = `fileInput.maxSizeMultiple.${
-                  numOfInvalidFiles === 1 ? 'singular' : 'plural'
-                }`;
+      validate: [
+        maxSize
+          ? () => {
+              const fileList = [...files];
+              let message = '';
+              const numOfInvalidFiles = fileList.filter(
+                ({ size }) => size > maxSize,
+              ).length;
+              if (numOfInvalidFiles) {
+                let messageId = 'fileInput.maxSizeSingle';
+                if (multiple) {
+                  messageId = `fileInput.maxSizeMultiple.${
+                    numOfInvalidFiles === 1 ? 'singular' : 'plural'
+                  }`;
+                }
+                message = format({
+                  id: messageId,
+                  messages,
+                  values: {
+                    maxSize: formatBytes(maxSize),
+                    numOfFiles: numOfInvalidFiles,
+                  },
+                });
               }
-              message = format({
-                id: messageId,
-                messages,
-                values: { maxSize: formatBytes(maxSize), numOfInvalidFiles },
-              });
+              return message;
             }
-            return message;
-          }
-        : undefined,
+          : '',
+        max
+          ? () => {
+              const fileList = [...files];
+              let message = '';
+              if (fileList.length > max) {
+                message = format({
+                  id: 'fileInput.maxFile',
+                  messages,
+                  values: { max },
+                });
+              }
+              return message;
+            }
+          : '',
+      ],
     });
 
     const mergeTheme = (propertyName, defaultKey) => {
@@ -357,7 +377,8 @@ const FileInput = forwardRef(
                   align="center"
                   direction="row"
                 >
-                  {maxSize && file.size > maxSize && <CircleAlert />}
+                  {((maxSize && file.size > maxSize) ||
+                    (max && index >= max)) && <CircleAlert />}
                   <Label
                     weight={
                       theme.global.input.weight ||
