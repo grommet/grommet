@@ -72,9 +72,11 @@ const Select = forwardRef(
       messages,
       multiple,
       name,
+      onBlur,
       onChange,
       onClick,
       onClose,
+      onFocus,
       onKeyDown,
       onMore,
       onOpen,
@@ -295,6 +297,8 @@ const Select = forwardRef(
           open={open}
           alignSelf={alignSelf}
           focusIndicator={focusIndicator}
+          onFocus={onFocus}
+          onBlur={onBlur}
           gridArea={gridArea}
           margin={margin}
           onOpen={onRequestOpen}
