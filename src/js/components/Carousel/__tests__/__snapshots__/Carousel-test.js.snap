@@ -1554,60 +1554,60 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="StyledStack-ajspsk-0 gVdmEl"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: hidden;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 cGIdCD"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hgDudY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bsDPkI"
+          class="StyledBox-sc-13pk1d4-0 fhZTuB"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 LkTug"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 iLUFxg"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1619,19 +1619,19 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 ekZFIN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1644,12 +1644,12 @@ exports[`Carousel navigate 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1663,13 +1663,13 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="StyledButton-sc-323bzc-0 frWmiW"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1688,61 +1688,61 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="StyledStack-ajspsk-0 gVdmEl"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hgDudY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jlblZs"
+          class="StyledBox-sc-13pk1d4-0 jUwnsh"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: hidden;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 cGIdCD"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 LkTug"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="StyledButton-sc-323bzc-0 frWmiW"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -1754,19 +1754,19 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 ekZFIN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1779,12 +1779,12 @@ exports[`Carousel navigate 3`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1798,12 +1798,12 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 iLUFxg"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2339,59 +2339,59 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="StyledStack-ajspsk-0 gVdmEl"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: hidden;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 cGIdCD"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hgDudY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 dxogfY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bsDPkI"
+          class="StyledBox-sc-13pk1d4-0 fhZTuB"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class="StyledImage-ey4zx9-0 gA-dLRB"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="StyledStack__StyledStackLayer-ajspsk-1 KuYkj"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 LkTug"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 iLUFxg"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
@@ -2403,19 +2403,19 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 ekZFIN"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 lnOMCT"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="StyledIcon-sc-ofa7kd-0 tiAWk"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2428,12 +2428,12 @@ exports[`Carousel play 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 dAUuFN"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="StyledIcon-sc-ofa7kd-0 bsCHQs"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2447,13 +2447,13 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="StyledButton-sc-323bzc-0 frWmiW"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="StyledIcon-sc-ofa7kd-0 tiAWk"
             viewBox="0 0 24 24"
           >
             <path
