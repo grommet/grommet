@@ -43,8 +43,7 @@ describe('Anchor', () => {
   });
 
   test('warns about invalid label render', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <Anchor href="#" label="Test">
@@ -59,12 +58,10 @@ describe('Anchor', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 
   test('warns about invalid icon render', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container } = render(
       <Grommet>
         <Anchor href="#" icon={<svg />}>
@@ -79,16 +76,6 @@ describe('Anchor', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
-  });
-
-  test('primary renders', () => {
-    const { container } = render(
-      <Grommet>
-        <Anchor href="#" primary label="Test" />
-      </Grommet>,
-    );
-    expect(container).toMatchSnapshot();
   });
 
   test('focus renders', () => {
