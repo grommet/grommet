@@ -1040,6 +1040,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
+    nameValuePair: {
+      // undefined
+    },
     notification: {
       time: 8000,
       container: {
