@@ -1055,6 +1055,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         container: { direction: 'row', gap: 'small' },
         text: {
           color: 'text-strong',
+          margin: 'none', // remove default dd margin
         },
       },
     },
