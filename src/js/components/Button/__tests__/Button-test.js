@@ -569,4 +569,18 @@ describe('Button', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`line-height should be zero for icon only`, () => {
+    const { getByRole } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button icon={<Add />} />
+      </Grommet>,
+    );
+
+    expect(getByRole('button')).toHaveStyleRule('line-height', '0');
+  });
 });

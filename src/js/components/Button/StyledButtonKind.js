@@ -275,6 +275,12 @@ const StyledButtonKind = styled.button.withConfig({
     transition-timing-function: ${props.theme.button.transition.timing};
   `}
   ${(props) => props.fillContainer && fillStyle(props.fillContainer)}
+  ${(props) =>
+    props.hasIcon &&
+    !props.hasLabel &&
+    `
+    line-height: 0;
+  `}
   ${(props) => props.theme.button && props.theme.button.extend}
 `;
 

@@ -988,6 +988,7 @@ exports[`Button kind badge should render relative to contents when button has no
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  line-height: 0;
 }
 
 .c1 svg {
@@ -1246,6 +1247,7 @@ exports[`Button kind button icon colors 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  line-height: 0;
 }
 
 .c1 > svg {
@@ -1383,6 +1385,7 @@ exports[`Button kind button with icon and align 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  line-height: 0;
 }
 
 .c1 > svg {
@@ -1660,7 +1663,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hfimml"
+    class="StyledButtonKind-sc-1vhfpnt-0 bcWaNo"
     disabled=""
     type="button"
   >
@@ -2392,7 +2395,7 @@ exports[`Button kind hover secondary with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 ebPrUi"
+    class="StyledButtonKind-sc-1vhfpnt-0 bgysLT"
     type="button"
   >
     Button
@@ -2502,7 +2505,7 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 gHzxsJ"
+    class="StyledButtonKind-sc-1vhfpnt-0 dyibaQ"
     type="button"
   >
     Button
@@ -2694,7 +2697,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 edOFRQ"
+    class="StyledButtonKind-sc-1vhfpnt-0 eWyDdl"
     type="button"
   >
     <div
