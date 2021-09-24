@@ -20,6 +20,7 @@ export const NameValuePair = ({
 
   let name = (
     <Text
+      as="dt"
       textAlign={size !== 'small' ? align?.name : undefined}
       {...theme.nameValueList.name.text}
       {...nameProps?.text}
@@ -42,6 +43,7 @@ export const NameValuePair = ({
 
   let value = (
     <Text
+      as="dd"
       textAlign={size !== 'small' ? align?.value : undefined}
       {...theme.nameValueList.value.text}
       {...valueProps?.text}

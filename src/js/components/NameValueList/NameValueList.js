@@ -28,6 +28,7 @@ const NameValueList = forwardRef(
 
     return (
       <Grid
+        as="dl"
         ref={ref}
         columns={columnsProp || columns}
         gap={gap || theme.nameValueList.gap}
