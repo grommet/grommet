@@ -95,6 +95,49 @@ describe('TextInput', () => {
     }, 50);
   });
 
+  test('opens drop on focus after selection of suggestion', (done) => {
+    const onChange = jest.fn();
+    const onFocus = jest.fn();
+    const { getByTestId } = render(
+      <TextInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        suggestions={['test']}
+        onChange={onChange}
+        onFocus={onFocus}
+      />,
+    );
+
+    fireEvent.focus(getByTestId('test-input'));
+    fireEvent.change(getByTestId('test-input'), { target: { value: 'test' } });
+
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+      expect(onChange).toBeCalled();
+      expect(onFocus).toBeCalled();
+      expect(
+        document
+          .getElementById('text-input-drop__item')!
+          .querySelectorAll('button'),
+      ).toHaveLength(1);
+      fireEvent.click(getByText(document as unknown as HTMLElement, 'test'));
+      expect(document.getElementById('text-input-drop__item')).toBeNull();
+
+      fireEvent.change(getByTestId('test-input'), { target: { value: 'tes' } });
+
+      setTimeout(() => {
+        expect(document.getElementById('text-input-drop__item')).not.toBeNull();
+        expect(
+          document
+            .getElementById('text-input-drop__item')!
+            .querySelectorAll('button'),
+        ).toHaveLength(1);
+        done();
+      }, 50);
+    }, 50);
+  });
+
   test('complex suggestions', (done) => {
     const { getByTestId, container } = render(
       <Grommet>
@@ -154,7 +197,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('let escape events propagage if there are no suggestions', (done) => {
+  test('let escape events propagate if there are no suggestions', (done) => {
     const callback = jest.fn();
     const { getByTestId } = render(
       <Grommet>
