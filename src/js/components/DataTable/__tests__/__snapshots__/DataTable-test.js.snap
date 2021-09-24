@@ -13331,8 +13331,8 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: rgba(0,0,255,0.8);
-  color: #f8f8f8;
+  background-color: blue;
+  color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -13371,8 +13371,8 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: rgba(0,128,0,0.8);
-  color: #f8f8f8;
+  background-color: green;
+  color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;

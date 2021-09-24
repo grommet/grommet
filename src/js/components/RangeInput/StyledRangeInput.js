@@ -40,7 +40,7 @@ const trackColorStyle = (props) => {
   const max = props.max || 100; // 'max' defaults to 100 in case not specified
   const min = props.min || 0; // 'min' defaults to 0 in case not specified
   const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
-  const upperTrackColor = getBoundColor(props, 'upper');
+  let defaultTrackColor;
 
   // backward compatibility in case no bounds are defined
   if (
@@ -56,22 +56,34 @@ const trackColorStyle = (props) => {
     // Since the track color was changed from border-with-opacity to just border
     // this condition is used to make sure we are applying the opacity correctly
     // for 'border' color (for backward compatibility purposes).
-    if (color === 'rgba(0, 0, 0, 0.2)') return `background: ${color}`;
+    if (color === 'rgba(0, 0, 0, 0.2)') {
+      defaultTrackColor = color;
+    }
 
     // no bounds are defined but color may have changed
-    return `background: ${getRGBA(
+    defaultTrackColor = getRGBA(
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
-      props.theme.rangeInput.track.opacity || 1,
-    )}`;
+      props.theme.rangeInput.track.opacity || 0.2,
+    );
   }
+
+  const upperTrackColor = props.theme.rangeInput.track?.upper
+    ? getBoundColor(props, 'upper')
+    : defaultTrackColor;
+
+  let lowerTrackColor = props.theme.rangeInput.track?.lower
+    ? getBoundColor(props, 'lower')
+    : getRGBA(
+        normalizeColor(props.theme.global.colors.control, props.theme),
+        props.theme.rangeInput.track.opacity || 1,
+      );
+
   if (
     typeof props.color === 'string' ||
     (typeof props.color === 'object' && !Array.isArray(props.color))
   ) {
-    const lowerTrackColor = getRGBA(
-      normalizeColor(props.color, props.theme),
-      1,
-    );
+    // lowerTrackColor = getRGBA(normalizeColor(props.color, props.theme), 1);
+    lowerTrackColor = normalizeColor(props.color, props.theme);
 
     return `background: linear-gradient(
         to right,
@@ -113,8 +125,6 @@ const trackColorStyle = (props) => {
     }
     return result;
   }
-
-  const lowerTrackColor = getBoundColor(props, 'lower');
 
   return `background: linear-gradient(
       to right,

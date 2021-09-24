@@ -35,7 +35,7 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -59,7 +59,7 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -104,18 +104,18 @@ exports[`RangeInput onBlur 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -176,7 +176,7 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -200,7 +200,7 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -245,18 +245,18 @@ exports[`RangeInput onChange 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -317,7 +317,7 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -341,7 +341,7 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -420,18 +420,18 @@ exports[`RangeInput onFocus 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -512,7 +512,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -536,7 +536,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -581,18 +581,18 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -650,7 +650,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -674,7 +674,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -719,18 +719,18 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -789,7 +789,7 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 10%, rgba(125,76,219,0.2) 10%, rgba(125,76,219,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -813,7 +813,7 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 10%, rgba(125,76,219,0.2) 10%, rgba(125,76,219,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -858,18 +858,18 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 10%, rgba(125,76,219,0.2) 10%, rgba(125,76,219,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(125,76,219,1);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 10%, rgba(125,76,219,0.2) 10%, rgba(125,76,219,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(125,76,219,1);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 10%, rgba(125,76,219,0.2) 10%, rgba(125,76,219,0.2) );
   border-color: transparent;
 }
 
@@ -927,7 +927,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: linear-gradient( to right, rgba(125,76,219,0.3), rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -951,7 +951,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: linear-gradient( to right, rgba(125,76,219,0.3), rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) );
 }
 
 .c1::-moz-range-thumb {
@@ -996,18 +996,18 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: linear-gradient( to right, rgba(125,76,219,0.3), rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(125,76,219,0.3);
+  background: linear-gradient( to right, rgba(125,76,219,0.3), rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(125,76,219,0.3);
+  background: linear-gradient( to right, rgba(125,76,219,0.3), rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) 10%, rgba(125,76,219,0.3) );
   border-color: transparent;
 }
 
@@ -1065,7 +1065,7 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -1089,7 +1089,7 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -1134,18 +1134,18 @@ exports[`RangeInput with min and max offset 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, rgba(125,76,219,1), rgba(125,76,219,1) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
@@ -1206,7 +1206,7 @@ exports[`RangeInput with multi color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
 }
 
 .c1::-webkit-slider-thumb {
@@ -1230,7 +1230,7 @@ exports[`RangeInput with multi color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
 }
 
 .c1::-moz-range-thumb {
@@ -1275,18 +1275,18 @@ exports[`RangeInput with multi color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
 }
 
@@ -1348,7 +1348,7 @@ exports[`RangeInput with single color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
 }
 
 .c1::-webkit-slider-thumb {
@@ -1372,7 +1372,7 @@ exports[`RangeInput with single color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
 }
 
 .c1::-moz-range-thumb {
@@ -1417,18 +1417,18 @@ exports[`RangeInput with single color 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 

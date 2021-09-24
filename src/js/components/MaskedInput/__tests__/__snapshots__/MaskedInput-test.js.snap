@@ -141,7 +141,7 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 }
 
 .c0:hover {
-  background-color: rgba(144,238,144,0.4);
+  background-color: lightgreen;
   color: #7D4CDB;
 }
 
