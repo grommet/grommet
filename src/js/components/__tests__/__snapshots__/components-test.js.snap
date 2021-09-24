@@ -607,6 +607,10 @@ Object {
     },
     "render": [Function],
   },
+  "NameValueList": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Nav": [Function],
   "Notification": [Function],
   "Pagination": Object {
@@ -1661,6 +1665,31 @@ Object {
         },
         "meter": Object {
           "color": "graph-0",
+        },
+        "nameValueList": Object {
+          "gap": Object {
+            "column": "large",
+            "row": "medium",
+          },
+          "name": Object {
+            "container": Object {
+              "direction": "row",
+              "gap": "small",
+            },
+            "text": Object {
+              "color": "text-strong",
+              "weight": "bold",
+            },
+          },
+          "value": Object {
+            "container": Object {
+              "direction": "row",
+              "gap": "small",
+            },
+            "text": Object {
+              "color": "text-strong",
+            },
+          },
         },
         "notification": Object {
           "close": Object {
