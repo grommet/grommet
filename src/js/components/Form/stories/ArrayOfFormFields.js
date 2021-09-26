@@ -1,39 +1,34 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 
-import { grommet, Box, Form, Grommet, Button, FormField } from "grommet";
-import { Add, Trash } from "grommet-icons";
+import { grommet, Box, Form, Grommet, Button, FormField } from 'grommet';
+import { Add, Trash } from 'grommet-icons';
 
-export const TestFormControlled = () => {
+export const ArrayOfFormFields = () => {
   const [values, setValues] = useState({
-    name: "",
-    phones: [
-      { number: '', ext: '' }
-    ]
+    name: '',
+    phones: [{ number: '', ext: '' }],
   });
 
   const addPhone = () => {
-    console.log({values});
-    const newPhone = { number: "", ext: "" };
+    const newPhone = { number: '', ext: '' };
     const newPhones = [...values?.phones, newPhone];
     setValues({
-        ...values,
-        phones: newPhones
+      ...values,
+      phones: newPhones,
     });
   };
 
-  const removePhone = index => {
+  const removePhone = (index) => {
     if (values.phones && values.phones.length > 0) {
       setValues({
-          ...values,
-          phones: values.phones.filter(
-            (v, _idx) => _idx !== index
-          )
+        ...values,
+        phones: values.phones.filter((v, _idx) => _idx !== index),
       });
     }
   };
 
-  const handleFormChange = newFormState => {
-    console.log({ newFormState })
+  const handleFormChange = (newFormState) => {
+    console.log({ newFormState });
     if (newFormState) {
       setValues(newFormState);
     }
@@ -41,7 +36,12 @@ export const TestFormControlled = () => {
   let PhoneNumberGroup = null;
   if (values.phones !== undefined) {
     PhoneNumberGroup = values.phones.map((phone, index) => (
-      <Box key={index} direction="row" justify="between" align="center">
+      <Box
+        key={`${phone.number + index}`}
+        direction="row"
+        justify="between"
+        align="center"
+      >
         <FormField
           label="Phone Number"
           name={`phones[${index}].number`}
@@ -49,8 +49,7 @@ export const TestFormControlled = () => {
           validate={[
             { regexp: /^[0-9]*$/ },
             (number) => {
-              if (number && number.length > 10)
-                return 'Only 10 numbers';
+              if (number && number.length > 10) return 'Only 10 numbers';
               return undefined;
             },
           ]}
@@ -61,8 +60,7 @@ export const TestFormControlled = () => {
           validate={[
             { regexp: /^[0-9]*$/ },
             (ext) => {
-              if (ext && ext.length > 3)
-                return 'Only 3 numbers';
+              if (ext && ext.length > 3) return 'Only 3 numbers';
               return undefined;
             },
           ]}
@@ -85,14 +83,14 @@ export const TestFormControlled = () => {
       <Box pad="medium" width="large">
         <Form
           value={values}
-          validate="change"
+          validate="blur"
           onReset={(event) => console.log(event)}
           onChange={handleFormChange}
           onValidate={(validationResults) => {
             console.log('validationResults = ', validationResults);
           }}
           onSubmit={() => {
-            console.log('Form Submitted successfully')
+            console.log('Form Submitted successfully');
           }}
         >
           <FormField
@@ -104,13 +102,19 @@ export const TestFormControlled = () => {
               { regexp: /^[a-zA-Z ]*$/ },
               (name) => {
                 if (name && name.length > 5)
-                  return 'Must be less than 5 alphabets only';
+                  return 'Must be less than or equal to 5 alphabets only';
                 return undefined;
               },
             ]}
           />
           {PhoneNumberGroup}
-          <Button icon={<Add />} label="Add Number" plain hoverIndicator onClick={addPhone} />
+          <Button
+            icon={<Add />}
+            label="Add Number"
+            plain
+            hoverIndicator
+            onClick={addPhone}
+          />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
@@ -120,8 +124,8 @@ export const TestFormControlled = () => {
       </Box>
     </Grommet>
   );
-}
+};
 
 export default {
-  title: 'Input/Form/Test Form Controlled',
+  title: 'Input/Form/Array Of Form Fields',
 };

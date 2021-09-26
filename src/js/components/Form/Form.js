@@ -18,20 +18,20 @@ const defaultValidationResults = {
   infos: {},
 };
 
-
 const stringToArray = (string) => {
   const regex = /\[[0-9]\]\./;
   if (regex.test(string)) {
     const indexOfArray = regex.exec(string)[0][1];
     const arrayValues = string.split(regex);
-    const arrayName = arrayValues[0]
+    const arrayName = arrayValues[0];
     const arrayObjName = arrayValues[1];
     return {
       indexOfArray,
       arrayName,
-      arrayObjName
+      arrayObjName,
     };
   }
+  return undefined;
 };
 
 // Validating nameValues with the validator and sending correct messaging
@@ -90,7 +90,6 @@ const validateName =
         );
       }
     }
-    console.log('validateName',{ nameValue, name, formValue, nameValidators, result })
     return result;
   };
 
@@ -114,7 +113,6 @@ const validateForm = (validations, formValue, format, messages, omitValid) => {
       // field() are validations supplied through useFormField()
       result = field(name, formValue, format, messages);
     }
-    console.log('validateForm',{name, field, input, result})
     // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
     if (typeof result === 'object') {
@@ -150,22 +148,14 @@ const Form = forwardRef(
     const { format } = useContext(MessageContext);
 
     const [valueState, setValueState] = useState(valueProp || defaultValue);
-    const [arrayOfFormFields, setArrayOfFormFields] = useState({});
     const value = useMemo(
       () => valueProp || valueState,
       [valueProp, valueState],
     );
-    // console.log({ value, valueProp, valueState })
     const [touched, setTouched] = useState(defaultTouched);
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
-
-    useEffect(() => {
-      if(Object.keys(value).length) {
-        setArrayOfFormFields(value);
-      }
-    }, [value]);
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
     // otherwise, click events like reset, etc. may not be registered.
@@ -186,7 +176,6 @@ const Form = forwardRef(
     const buildValid = useCallback(
       (nextErrors) => {
         let valid = false;
-        console.log({ requiredFields, validations })
         valid = requiredFields.current
           .filter((n) => Object.keys(validations.current).includes(n))
           .every(
@@ -202,7 +191,6 @@ const Form = forwardRef(
 
     // Remove any errors that we don't have any validations for anymore.
     const filterErrorValidations = (errors) => {
-      console.log('filterErrorValidations called')
       const nextErrors = errors;
       return Object.keys(nextErrors)
         .filter((n) => !validations.current[n] || nextErrors[n] === undefined)
@@ -211,7 +199,6 @@ const Form = forwardRef(
 
     // Remove any infos that we don't have any validations for anymore.
     const filterInfoValidations = (infos) => {
-      console.log('filterInfoValidations called')
       const nextInfos = infos;
       return Object.keys(nextInfos)
         .filter((n) => !validations.current[n] || nextInfos[n] === undefined)
@@ -231,9 +218,9 @@ const Form = forwardRef(
           if (value[arrayName]) {
             return value[arrayName][indexOfArray][arrayObjName];
           }
-        } else return value[n];
+        }
+        return value[n];
       });
-      console.log({ validationsForSetFields,validations, value, format, messages })
       if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
         const [errors, infos] = validateForm(
           validationsForSetFields,
@@ -241,7 +228,6 @@ const Form = forwardRef(
           format,
           messages,
         );
-        console.log({ errors, infos })
         filterErrorValidations(errors);
         filterInfoValidations(infos);
 
@@ -376,15 +362,12 @@ const Form = forwardRef(
       validate: validateArg,
     }) => {
       const [inputValue, setInputValue] = useState(initialValue);
-      // let formValue = name ? value[name] : undefined;
       let formValue;
       if (name) {
         const isArrayField = stringToArray(name);
         if (isArrayField) {
           const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-          if (arrayName in value) {
-            formValue = value[arrayName][indexOfArray][arrayObjName];
-          }
+          formValue = value[arrayName][indexOfArray][arrayObjName];
         } else {
           formValue = value[name];
         }
@@ -397,38 +380,29 @@ const Form = forwardRef(
       // This effect is for pattern #2, where the controlled input
       // component is driving the value via componentValue.
       useEffect(() => {
-        // console.log('Before if I am called 1', 
-        //   {name, componentValue, formValue}, name && componentValue !== undefined && componentValue !== formValue
-        //   )
         if (
           name && // we have somewhere to put this
           componentValue !== undefined && // input driving
           componentValue !== formValue // don't already have it
         ) {
-          console.log('I am called 1', 
-          {name, componentValue, formValue}, name && componentValue !== undefined && componentValue !== formValue
-          )
           setValueState((prevValue) => {
             const nextValue = { ...prevValue };
             const isArrayField = stringToArray(name);
             if (isArrayField) {
               const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-              setArrayOfFormFields((prevValue) => {
-                if (!prevValue[arrayName]) {
-                  prevValue[arrayName] = [];
-                  prevValue[arrayName][indexOfArray] = {
-                    [arrayObjName]: componentValue
-                  };
-                } else if (!prevValue[arrayName][indexOfArray]) {
-                  prevValue[arrayName][indexOfArray] = {
-                    [arrayObjName]: componentValue
-                  }
-                } else {
-                  prevValue[arrayName][indexOfArray][arrayObjName] = componentValue;
-                }
-                nextValue[arrayName] = prevValue[arrayName];
-                return prevValue;
-              })
+              if (!nextValue[arrayName]) {
+                nextValue[arrayName] = [];
+                nextValue[arrayName][indexOfArray] = {
+                  [arrayObjName]: componentValue,
+                };
+              } else if (!nextValue[arrayName][indexOfArray]) {
+                nextValue[arrayName][indexOfArray] = {
+                  [arrayObjName]: componentValue,
+                };
+              } else {
+                nextValue[arrayName][indexOfArray][arrayObjName] =
+                  componentValue;
+              }
             } else {
               nextValue[name] = componentValue;
             }
@@ -444,13 +418,12 @@ const Form = forwardRef(
         () => () => {
           if (keyCreated.current) {
             keyCreated.current = false;
-            console.log('I am called 2')
             setValueState((prevValue) => {
               const nextValue = { ...prevValue };
               const isArrayField = stringToArray(name);
               if (isArrayField) {
                 const { arrayName } = isArrayField;
-                delete nextValue[arrayName]
+                delete nextValue[arrayName];
               } else {
                 delete nextValue[name];
               }
@@ -464,7 +437,6 @@ const Form = forwardRef(
 
       useEffect(() => {
         if (validateArg) {
-          console.log({ validateArg })
           if (!validations.current[name]) {
             validations.current[name] = {};
           }
@@ -507,30 +479,23 @@ const Form = forwardRef(
             if (!(name in nextValue)) keyCreated.current = true;
             const isArrayField = stringToArray(name);
             if (isArrayField) {
-              const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-              setArrayOfFormFields((prevValue) => {
-                // console.log('Before ', prevValue)
-                if (!prevValue[arrayName]) {
-                  prevValue[arrayName] = [];
-                  prevValue[arrayName][indexOfArray] = {
-                    [arrayObjName]: nextComponentValue
-                  };
-                } else if (!prevValue[arrayName][indexOfArray]) {
-                  prevValue[arrayName][indexOfArray] = {
-                    [arrayObjName]: nextComponentValue
-                  }
-                } else {
-                  prevValue[arrayName][indexOfArray][arrayObjName] = nextComponentValue;
-                }
-                // delete nextValue[name];
-                nextValue[arrayName] = prevValue[arrayName];
-                console.log('After ', { prevValue, nextComponentValue })
-                return prevValue;
-              })
+              const { arrayName, arrayObjName, indexOfArray } = isArrayField;
+              if (!nextValue[arrayName]) {
+                nextValue[arrayName] = [];
+                nextValue[arrayName][indexOfArray] = {
+                  [arrayObjName]: nextComponentValue,
+                };
+              } else if (!nextValue[arrayName][indexOfArray]) {
+                nextValue[arrayName][indexOfArray] = {
+                  [arrayObjName]: nextComponentValue,
+                };
+              } else {
+                nextValue[arrayName][indexOfArray][arrayObjName] =
+                  nextComponentValue;
+              }
             } else {
               nextValue[name] = nextComponentValue;
             }
-            // console.log({ name, nextComponentValue, initialValue, nextValue, inputValue, nextTouched })
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
@@ -554,7 +519,6 @@ const Form = forwardRef(
 
       useEffect(() => {
         const index = requiredFields.current.indexOf(name);
-        console.log({ index, name, requiredFields, required, validateArg, validateOn })
         if (required) {
           if (index === -1) requiredFields.current.push(name);
         } else if (index !== -1) requiredFields.current.splice(index, 1);
@@ -598,7 +562,6 @@ const Form = forwardRef(
         onReset={(event) => {
           setPendingValidation(undefined);
           if (!valueProp) {
-            console.log('I am called 3')
             setValueState(defaultValue);
             if (onChange) onChange(defaultValue, { touched: defaultTouched });
           }
