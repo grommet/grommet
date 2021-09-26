@@ -44,6 +44,7 @@ const Spinner = forwardRef(
     const {
       size: sizeThemeProp,
       color: colorThemeProp,
+      border: borderThemeProp,
       ...themeProps
     } = theme.spinner.container;
 
@@ -52,6 +53,21 @@ const Spinner = forwardRef(
 
     const color = colorProp || colorThemeProp;
     const Icon = theme.spinner.icon;
+
+    const defaultBorder = [
+      { side: 'all', color: 'background-contrast', size },
+      { side: 'top', color, size },
+    ];
+    const spinnerBorder = Array.isArray(borderThemeProp)
+      ? borderThemeProp.map((borderSide) => ({
+          ...borderSide,
+          color:
+            borderSide.side === 'all'
+              ? borderSide.color || 'background-contrast'
+              : color,
+          size: normalizedSize,
+        }))
+      : defaultBorder;
 
     // children will take precedence over theme attributes
     if (children) {
@@ -79,10 +95,7 @@ const Spinner = forwardRef(
       <BasicSpinner
         size={spinnerSize}
         ref={ref}
-        border={[
-          { side: 'all', color: 'background-contrast', size },
-          { side: 'top', color, size },
-        ]}
+        border={spinnerBorder}
         {...themeProps}
         {...rest}
       />
