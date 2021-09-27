@@ -572,11 +572,7 @@ describe('Button', () => {
 
   test(`line-height should be zero for icon only`, () => {
     const { getByRole } = render(
-      <Grommet
-        theme={{
-          button: { default: {} },
-        }}
-      >
+      <Grommet>
         <Button icon={<Add />} />
       </Grommet>,
     );
