@@ -59,12 +59,13 @@ const trackColorStyle = (props) => {
     if (color === 'rgba(0, 0, 0, 0.2)') {
       defaultTrackColor = color;
     }
-
     // no bounds are defined but color may have changed
-    defaultTrackColor = getRGBA(
-      normalizeColor(props.theme.rangeInput.track.color, props.theme),
-      props.theme.rangeInput.track.opacity || 0.2,
-    );
+    else {
+      defaultTrackColor = getRGBA(
+        normalizeColor(props.theme.rangeInput.track.color, props.theme),
+        props.theme.rangeInput.track.opacity || 1,
+      );
+    }
 
     if (!props.color) return `background: ${defaultTrackColor}`;
   }
