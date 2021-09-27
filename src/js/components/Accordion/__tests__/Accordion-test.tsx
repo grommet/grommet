@@ -339,7 +339,7 @@ describe('Accordion', () => {
 
   test('wrapped panel', () => {
     const onActive = jest.fn();
-    const Panel = ({ index }) => (
+    const Panel = ({ index }: { index: Number }) => (
       <AccordionPanel label={`Panel ${index}`}>
         Panel body {index}
       </AccordionPanel>
