@@ -27,7 +27,7 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
         light: 'neutral-1'
       },
       background: {
-        color: 'red'
+        color: 'brand'
       }
     },
     icon: {

@@ -16,7 +16,7 @@ var theme = deepMerge(grommet, {
         light: 'neutral-1'
       },
       background: {
-        color: 'red'
+        color: 'brand'
       }
     },
     icon: {
