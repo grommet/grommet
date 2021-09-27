@@ -72,9 +72,11 @@ const Select = forwardRef(
       messages,
       multiple,
       name,
+      onBlur,
       onChange,
       onClick,
       onClose,
+      onFocus,
       onKeyDown,
       onMore,
       onOpen,
@@ -105,11 +107,11 @@ const Select = forwardRef(
     // selected option object.
     // Otherwise, the value(s) should match the selected options.
 
-    const [value, setValue] = formContext.useFormInput(
+    const [value, setValue] = formContext.useFormInput({
       name,
-      valueProp,
-      defaultValue || '',
-    );
+      value: valueProp,
+      initialValue: defaultValue || '',
+    });
     // valuedValue is the value mapped with any valueKey applied
     // When the options array contains objects, this property indicates how
     // to retrieve the value of each option.
@@ -295,6 +297,8 @@ const Select = forwardRef(
           open={open}
           alignSelf={alignSelf}
           focusIndicator={focusIndicator}
+          onFocus={onFocus}
+          onBlur={onBlur}
           gridArea={gridArea}
           margin={margin}
           onOpen={onRequestOpen}

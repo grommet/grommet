@@ -109,10 +109,10 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormInput(
-      readOnly ? undefined : name,
-      valueProp,
-    );
+    const [value, setValue] = formContext.useFormInput({
+      name: readOnly ? undefined : name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
@@ -293,11 +293,13 @@ const TextInput = forwardRef(
       [activeSuggestionIndex],
     );
 
-    const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
-      placeholder &&
+    const showStyledPlaceholder = useMemo(
+      () =>
+        placeholder &&
         typeof placeholder !== 'string' &&
         !(inputRef.current && inputRef.current.value) &&
         !value,
+      [inputRef, placeholder, value],
     );
 
     let drop;
@@ -476,11 +478,6 @@ const TextInput = forwardRef(
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
-                    setShowStyledPlaceholder(
-                      placeholder &&
-                        typeof placeholder !== 'string' &&
-                        !event.target.value,
-                    );
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
