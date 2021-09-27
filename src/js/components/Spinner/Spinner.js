@@ -67,7 +67,7 @@ const Spinner = forwardRef(
               : color,
           size: normalizedSize,
         }))
-      : defaultBorder;
+      : borderThemeProp;
 
     // children will take precedence over theme attributes
     if (children) {
@@ -95,7 +95,9 @@ const Spinner = forwardRef(
       <BasicSpinner
         size={spinnerSize}
         ref={ref}
-        border={spinnerBorder}
+        border={
+          typeof borderThemeProp === 'undefined' ? defaultBorder : spinnerBorder
+        }
         {...themeProps}
         {...rest}
       />
