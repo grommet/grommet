@@ -65,6 +65,8 @@ const trackColorStyle = (props) => {
       normalizeColor(props.theme.rangeInput.track.color, props.theme),
       props.theme.rangeInput.track.opacity || 0.2,
     );
+
+    if (!props.color) return `background: ${defaultTrackColor}`;
   }
 
   const upperTrackColor = props.theme.rangeInput.track?.upper
