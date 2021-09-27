@@ -11,7 +11,7 @@ var _StyledRangeInput = require("./StyledRangeInput");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "name", "onChange", "onFocus", "onBlur", "value"];
+var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -23,6 +23,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      color = _ref.color,
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -50,6 +51,7 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     focus: focus,
     value: value
   }, rest, {
+    color: color,
     onFocus: function onFocus(event) {
       setFocus(true);
       if (_onFocus) _onFocus(event);

@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "name", "onChange", "onFocus", "onBlur", "value"];
+var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -10,6 +10,7 @@ import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      color = _ref.color,
       name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
@@ -37,6 +38,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focus: focus,
     value: value
   }, rest, {
+    color: color,
     onFocus: function onFocus(event) {
       setFocus(true);
       if (_onFocus) _onFocus(event);

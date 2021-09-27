@@ -28,24 +28,67 @@ var getBoundColor = function getBoundColor(props, bound) {
 };
 
 var trackColorStyle = function trackColorStyle(props) {
-  // backward compatibility in case no bounds are defined
-  if (props.theme.rangeInput && props.theme.rangeInput.track && !props.theme.rangeInput.track.lower && !props.theme.rangeInput.track.upper) {
-    var color = (0, _utils.getRGBA)((0, _utils.normalizeColor)(props.theme.rangeInput.track.color, props.theme), 0.2); // Since the track color was changed from border-with-opacity to just border
-    // this condition is used to make sure we are applying the opacity correctly
-    // for 'border' color (for backward compatibility purposes).
-
-    if (color === 'rgba(0, 0, 0, 0.2)') return "background: " + color; // no bounds are defined but color may have changed
-
-    return "background: " + (0, _utils.getRGBA)((0, _utils.normalizeColor)(props.theme.rangeInput.track.color, props.theme), props.theme.rangeInput.track.opacity || 1);
-  }
+  var _props$theme$rangeInp, _props$theme$rangeInp2;
 
   var max = props.max || 100; // 'max' defaults to 100 in case not specified
 
   var min = props.min || 0; // 'min' defaults to 0 in case not specified
 
   var thumbPosition = (props.value - min) / (max - min) * 100 + "%";
-  var lowerTrackColor = getBoundColor(props, 'lower');
-  var upperTrackColor = getBoundColor(props, 'upper');
+  var defaultTrackColor; // backward compatibility in case no bounds are defined
+
+  if (props.theme.rangeInput && props.theme.rangeInput.track && !props.theme.rangeInput.track.lower && !props.theme.rangeInput.track.upper) {
+    var color = (0, _utils.getRGBA)((0, _utils.normalizeColor)(props.theme.rangeInput.track.color, props.theme), 0.2); // Since the track color was changed from border-with-opacity to just border
+    // this condition is used to make sure we are applying the opacity correctly
+    // for 'border' color (for backward compatibility purposes).
+
+    if (color === 'rgba(0, 0, 0, 0.2)') {
+      defaultTrackColor = color;
+    } // no bounds are defined but color may have changed
+    else {
+      defaultTrackColor = (0, _utils.getRGBA)((0, _utils.normalizeColor)(props.theme.rangeInput.track.color, props.theme), props.theme.rangeInput.track.opacity || 1);
+    }
+
+    if (!props.color) return "background: " + defaultTrackColor;
+  }
+
+  var upperTrackColor = (_props$theme$rangeInp = props.theme.rangeInput.track) != null && _props$theme$rangeInp.upper ? getBoundColor(props, 'upper') : defaultTrackColor;
+  var lowerTrackColor = (_props$theme$rangeInp2 = props.theme.rangeInput.track) != null && _props$theme$rangeInp2.lower ? getBoundColor(props, 'lower') : (0, _utils.getRGBA)((0, _utils.normalizeColor)(props.theme.global.colors.control, props.theme), props.theme.rangeInput.track.opacity || 1);
+
+  if (typeof props.color === 'string' || typeof props.color === 'object' && !Array.isArray(props.color)) {
+    lowerTrackColor = (0, _utils.normalizeColor)(props.color, props.theme);
+    return "background: linear-gradient(\n        to right,\n        " + lowerTrackColor + ",\n        " + lowerTrackColor + " " + thumbPosition + ",\n        " + upperTrackColor + " " + thumbPosition + ",\n        " + upperTrackColor + "\n      );\n    ";
+  }
+
+  if (Array.isArray(props.color)) {
+    var arrayOfTrackColors = props.color;
+    var valuePercentage = 0;
+    var result = "background: linear-gradient(to right,";
+
+    for (var index = 0; index < arrayOfTrackColors.length; index += 1) {
+      var _arrayOfTrackColors$i = arrayOfTrackColors[index],
+          value = _arrayOfTrackColors$i.value,
+          _color = _arrayOfTrackColors$i.color,
+          opacity = _arrayOfTrackColors$i.opacity;
+      result += (0, _utils.getRGBA)((0, _utils.normalizeColor)(_color, props.theme), opacity || 1) + " " + valuePercentage + "%,";
+
+      if (props.value >= value) {
+        valuePercentage = (value - min) / (max - min) * 100;
+        result += (0, _utils.getRGBA)((0, _utils.normalizeColor)(_color, props.theme), opacity || 1) + " " + valuePercentage + "%,";
+      } else {
+        result += (0, _utils.getRGBA)((0, _utils.normalizeColor)(_color, props.theme), opacity || 1) + " " + thumbPosition + ",";
+        result += upperTrackColor + " " + thumbPosition + ", " + upperTrackColor + ")";
+        break;
+      }
+
+      if (index === arrayOfTrackColors.length - 1) {
+        result += upperTrackColor + " " + valuePercentage + "%, " + upperTrackColor + ")";
+      }
+    }
+
+    return result;
+  }
+
   return "background: linear-gradient(\n      to right,\n      " + lowerTrackColor + ",\n      " + lowerTrackColor + " " + thumbPosition + ",\n      " + upperTrackColor + " " + thumbPosition + ",\n      " + upperTrackColor + "\n    );\n  ";
 };
 
