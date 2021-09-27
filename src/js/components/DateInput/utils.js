@@ -196,6 +196,8 @@ export const textToValue = (text, schema, valueProp, range) => {
 
 export const valuesAreEqual = (value1, value2) =>
   (Array.isArray(value1) &&
+    value1.length &&
     Array.isArray(value2) &&
+    value2.length &&
     value1.every((d1, i) => d1 === value2[i])) ||
   value1 === value2;
