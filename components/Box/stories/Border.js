@@ -94,6 +94,7 @@ var BorderBox = function BorderBox() {
     align: "center"
   }, ['column', 'row', 'row-responsive'].map(function (direction) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      key: direction,
       direction: direction,
       gap: "large",
       border: {

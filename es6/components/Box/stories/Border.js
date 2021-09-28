@@ -84,6 +84,7 @@ export var BorderBox = function BorderBox() {
     align: "center"
   }, ['column', 'row', 'row-responsive'].map(function (direction) {
     return /*#__PURE__*/React.createElement(Box, {
+      key: direction,
       direction: direction,
       gap: "large",
       border: {

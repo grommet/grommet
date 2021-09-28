@@ -31,12 +31,14 @@ var RenderedList = function RenderedList() {
     data: data.slice(0, 10),
     primaryKey: function primaryKey(item) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: item.entry,
         size: "large",
         weight: "bold"
       }, item.entry);
     },
     secondaryKey: function secondaryKey(item) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: item.location,
         size: "small",
         color: "dark-4"
       }, item.location);
