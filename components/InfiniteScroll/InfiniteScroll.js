@@ -152,7 +152,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   }, [pageHeights, renderPageBounds, replace, show, step]); // check if we need to ask for more
 
   (0, _react.useEffect)(function () {
-    if (onMore && renderPageBounds[1] === lastPage && items.length >= pendingLength) {
+    if (onMore && renderPageBounds[1] === lastPage && items.length >= pendingLength && items.length > 0) {
       // remember we've asked for more, so we don't keep asking if it takes
       // a while
       setPendingLength(items.length + 1);
