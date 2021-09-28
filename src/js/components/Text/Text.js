@@ -51,7 +51,11 @@ const Text = forwardRef(
 
     if (tip) {
       if (typeof tip === 'string') {
-        return <Tip content={tip}>{styledTextResult}</Tip>;
+        return (
+          <Tip content={tip} dropProps={rest?.dropProps}>
+            {styledTextResult}
+          </Tip>
+        );
       }
       return <Tip {...tip}>{styledTextResult}</Tip>;
     }

@@ -8,7 +8,12 @@ export const Tip = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="medium" gap="xlarge">
       <Box width="small">
-        <Text truncate="tip">{alphabet}</Text>
+        <Text
+          truncate="tip"
+          dropProps={{ align: { left: 'right', top: 'bottom' } }}
+        >
+          {alphabet}
+        </Text>
       </Box>
       <Text
         tip={{ dropProps: { align: { left: 'right' } }, content: 'tooltip' }}
