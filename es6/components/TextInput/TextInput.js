@@ -50,6 +50,8 @@ var defaultDropAlign = {
   left: 'left'
 };
 var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _inputRef$current;
+
   var a11yTitle = _ref.a11yTitle,
       defaultSuggestion = _ref.defaultSuggestion,
       defaultValue = _ref.defaultValue,
@@ -245,10 +247,12 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
     setActiveSuggestionIndex(nextActiveIndex);
     setMouseMovedSinceLastKey(false);
-  }, [activeSuggestionIndex]);
+  }, [activeSuggestionIndex]); // account for input value in both controlled and uncontrolled scenarios
+
+  var hasValue = value || ((_inputRef$current = inputRef.current) == null ? void 0 : _inputRef$current.value);
   var showStyledPlaceholder = useMemo(function () {
-    return placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value) && !value;
-  }, [inputRef, placeholder, value]);
+    return placeholder && typeof placeholder !== 'string' && !hasValue;
+  }, [hasValue, placeholder]);
   var drop;
   var extraProps = {
     onSelect: handleTextSelect
