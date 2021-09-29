@@ -6,7 +6,16 @@ import { RangeInputPropTypes } from './propTypes';
 
 const RangeInput = forwardRef(
   (
-    { a11yTitle, name, onChange, onFocus, onBlur, value: valueProp, ...rest },
+    {
+      a11yTitle,
+      color,
+      name,
+      onChange,
+      onFocus,
+      onBlur,
+      value: valueProp,
+      ...rest
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -25,6 +34,7 @@ const RangeInput = forwardRef(
         focus={focus}
         value={value}
         {...rest}
+        color={color}
         onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
