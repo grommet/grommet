@@ -68,6 +68,21 @@ export interface ButtonExtendedProps
 export type ButtonType = ButtonProps &
   Omit<JSX.IntrinsicElements['button'], 'color'>;
 
-declare const Button: React.FC<ButtonExtendedProps & anchorType>;
+declare const Button: React.FC<
+  ButtonExtendedProps &
+    anchorType & {
+      children?:
+        | React.ReactNode
+        | (({
+            disabled,
+            hover,
+            focus,
+          }: {
+            disabled: boolean;
+            hover: boolean;
+            focus: boolean;
+          }) => React.ReactNode);
+    }
+>;
 
 export { Button };
