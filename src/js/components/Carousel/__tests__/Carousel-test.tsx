@@ -130,10 +130,12 @@ describe('Carousel', () => {
     );
 
     const button = document
-      .getElementById('test-carousel')
+      .getElementById('test-carousel')!
       .querySelector('button');
 
-    fireEvent.click(button);
+    expect(button).not.toBeNull();
+
+    fireEvent.click(button!);
     expect(setActiveSlide).toBeCalledWith(0);
   });
 });
