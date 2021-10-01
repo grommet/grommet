@@ -85,14 +85,12 @@ const DateInput = forwardRef(
     useEffect(() => {
       if (schema && value !== undefined) {
         const nextTextValue = valueToText(value, schema);
-        const isValuesAreEqual = valuesAreEqual(
-          textToValue(textValue, schema, value, range),
-          textToValue(nextTextValue, schema, value, range),
-        );
         if (
-          (!isValuesAreEqual && textValue === '') ||
-          (!isValuesAreEqual && textValue !== '') ||
-          (textValue !== '' && nextTextValue === '')
+          !valuesAreEqual(
+            textToValue(textValue, schema, value, range),
+            textToValue(nextTextValue, schema, value, range),
+          ) ||
+          (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
