@@ -79,16 +79,18 @@ describe('Carousel', () => {
     );
 
     const button = document
-      .getElementById('test-carousel')
+      .getElementById('test-carousel')!
       .querySelector('button');
 
-    fireEvent.focus(button);
+    expect(button).not.toBeNull();
+
+    fireEvent.focus(button!);
     expect(onFocus).toHaveBeenCalledTimes(1);
 
-    fireEvent.click(button);
+    fireEvent.click(button!);
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.blur(button);
+    fireEvent.blur(button!);
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
 
