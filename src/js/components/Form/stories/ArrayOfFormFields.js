@@ -37,7 +37,7 @@ export const ArrayOfFormFields = () => {
   if (values.phones !== undefined) {
     PhoneNumberGroup = values.phones.map((phone, index) => (
       <Box
-        key={`${phone.number + index}`}
+        key={`${index}`}
         direction="row"
         justify="between"
         align="center"
