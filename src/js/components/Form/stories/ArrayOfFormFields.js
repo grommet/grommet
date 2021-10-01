@@ -98,14 +98,9 @@ export const ArrayOfFormFields = () => {
             name="name"
             pad
             required
-            validate={[
-              { regexp: /^[a-zA-Z ]*$/ },
-              (name) => {
-                if (name && name.length > 5)
-                  return 'Must be less than or equal to 5 alphabets only';
-                return undefined;
-              },
-            ]}
+validate={[
+  { regexp: /^[a-zA-Z ]*$/ }
+]}
           />
           {PhoneNumberGroup}
           <Button
