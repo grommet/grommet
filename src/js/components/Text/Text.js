@@ -10,6 +10,7 @@ const Text = forwardRef(
     {
       children,
       color,
+      dropProps,
       tag,
       as,
       tip: tipProp,
@@ -52,7 +53,7 @@ const Text = forwardRef(
     if (tip) {
       if (typeof tip === 'string') {
         return (
-          <Tip content={tip} dropProps={rest?.dropProps}>
+          <Tip content={tip} dropProps={dropProps}>
             {styledTextResult}
           </Tip>
         );
