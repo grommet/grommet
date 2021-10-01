@@ -37,7 +37,8 @@ export const ArrayOfFormFields = () => {
   if (values.phones !== undefined) {
     PhoneNumberGroup = values.phones.map((phone, index) => (
       <Box
-        key={`${index}`}
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
         direction="row"
         justify="between"
         align="center"
@@ -98,9 +99,7 @@ export const ArrayOfFormFields = () => {
             name="name"
             pad
             required
-validate={[
-  { regexp: /^[a-zA-Z ]*$/ }
-]}
+            validate={[{ regexp: /^[a-zA-Z ]*$/ }]}
           />
           {PhoneNumberGroup}
           <Button
