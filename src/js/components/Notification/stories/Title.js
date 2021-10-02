@@ -23,6 +23,10 @@ const TitleNotification = () => {
 
 export const ToastTitleOnly = () => <TitleNotification />;
 
+ToastTitleOnly.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Notification/Toast Title Only',
 };
