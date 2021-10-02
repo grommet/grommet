@@ -143,6 +143,10 @@ export const Themed = () => (
   </Grommet>
 );
 
+Themed.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Utilities/SkipLinks/Themed',
 };
