@@ -4,16 +4,23 @@ import { ImagePropTypes } from './propTypes';
 
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
-    const [imageMissing, setImageMissing] = useState(false);
-    const handleError = (event) => {
-      if (onError) {
-        onError(event);
-      }
-      setImageMissing(true);
+    const [isFallbackInUse, setFallbackFlag] = useState(false);
+
+    const handleError = (event)=>{
+      if(!isFallbackInUse)
+        event.target.src=fallback;
+      setFallbackFlag(true);
     };
+
+    const handleOnLoad = () => {
+      setFallbackFlag(false);
+    };
+
     const extraProps = {
-      onError: (onError || fallback) && handleError,
+      onError: handleError,
+      onLoad : handleOnLoad,
     };
+    
     return (
       <StyledImage
         aria-label={a11yTitle}
@@ -22,7 +29,7 @@ const Image = forwardRef(
         ref={ref}
         opacityProp={opacity}
         fillProp={fill}
-        src={!imageMissing ? src : fallback}
+        src={src}
       />
     );
   },
