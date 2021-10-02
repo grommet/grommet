@@ -123,6 +123,10 @@ export const Simple = () => (
   </Grommet>
 );
 
+Simple.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Utilities/SkipLinks/Simple',
 };
