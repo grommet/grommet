@@ -69,6 +69,7 @@ describe('WorldMap', () => {
         <WorldMap
           places={[
             {
+              // @ts-ignore
               'data-testid': 'Sydney',
               name: 'Sydney',
               location: [-33.8830555556, 151.216666667],
@@ -104,6 +105,7 @@ describe('WorldMap', () => {
         <WorldMap
           continents={[
             {
+              // @ts-ignore
               'data-testid': 'Africa',
               name: 'Africa',
               onClick,
