@@ -65,7 +65,6 @@ const Spinner = forwardRef(
             borderSide.side === 'all'
               ? borderSide.color || 'background-contrast'
               : color,
-          size: normalizedSize,
         }))
       : borderThemeProp;
 
