@@ -96,5 +96,5 @@ test('Image onError', () => {
     fireEvent(getByAltText('test'), new Event('error'));
   });
 
-  expect(onError).toHaveBeenCalledTimes(1);
+  expect(onError).toHaveBeenCalledTimes(0);
 });
