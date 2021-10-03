@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Clock, ClockExtendedProps } from '..';
+import { ThemeType } from '../../../themes';
 
 const DURATION = 'PT18H23M34S';
 const TIME = 'T18:23:34';
@@ -110,7 +111,7 @@ describe('Clock', () => {
   );
 
   test('type digital custom size', () => {
-    const override = {
+    const override: ThemeType = {
       clock: {
         digital: {
           text: {
