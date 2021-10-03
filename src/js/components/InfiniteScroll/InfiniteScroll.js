@@ -139,7 +139,8 @@ const InfiniteScroll = ({
     if (
       onMore &&
       renderPageBounds[1] === lastPage &&
-      items.length >= pendingLength
+      items.length >= pendingLength &&
+      items.length > 0
     ) {
       // remember we've asked for more, so we don't keep asking if it takes
       // a while

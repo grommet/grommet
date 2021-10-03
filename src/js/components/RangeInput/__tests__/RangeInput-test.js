@@ -108,4 +108,34 @@ describe('RangeInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('with single color', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput color="accent-3" min={1} max={10} step={1} value={5} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('with multi color', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput
+          color={[
+            { value: 3, color: '#FF0000', opacity: 0.5 },
+            { value: 7, color: '#FFFF00' },
+            { value: 10, color: '#00FF00' },
+          ]}
+          min={1}
+          max={10}
+          step={1}
+          value={5}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
