@@ -19,6 +19,7 @@ const Tabs = forwardRef(
       justify = 'center',
       messages,
       responsive = true,
+      headerMargin,
       ...rest
     },
     ref,
@@ -107,6 +108,7 @@ const Tabs = forwardRef(
           wrap
           background={theme.tabs.header.background}
           gap={theme.tabs.gap}
+          margin={headerMargin}
           {...tabsHeaderStyles}
         >
           {tabs}
