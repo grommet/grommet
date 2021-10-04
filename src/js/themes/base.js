@@ -1250,6 +1250,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     rangeInput: {
       // extend: undefined
+      // disabled: {
+      //   track: {
+      //     color: undefined,
+      //   },
+      //   thumb: {
+      //     color: undefined,
+      //   },
+      // },
       track: {
         height: '4px',
         color: 'border',

@@ -11,7 +11,7 @@ exports[`RangeInput onBlur 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -23,22 +23,22 @@ exports[`RangeInput onBlur 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -51,18 +51,18 @@ exports[`RangeInput onBlur 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -77,7 +77,7 @@ exports[`RangeInput onBlur 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -92,38 +92,38 @@ exports[`RangeInput onBlur 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -131,7 +131,7 @@ exports[`RangeInput onBlur 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     max="10"
     min="0"
     step="1"
@@ -152,7 +152,7 @@ exports[`RangeInput onChange 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -164,22 +164,22 @@ exports[`RangeInput onChange 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -192,18 +192,18 @@ exports[`RangeInput onChange 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -218,7 +218,7 @@ exports[`RangeInput onChange 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -233,38 +233,38 @@ exports[`RangeInput onChange 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -272,7 +272,7 @@ exports[`RangeInput onChange 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     max="10"
     min="0"
     step="1"
@@ -293,7 +293,11 @@ exports[`RangeInput onFocus 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+background:.c1::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -305,22 +309,22 @@ exports[`RangeInput onFocus 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -333,18 +337,18 @@ exports[`RangeInput onFocus 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -361,22 +365,22 @@ exports[`RangeInput onFocus 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-range-thumb > circle,
-.c1::-moz-range-thumb > ellipse,
-.c1::-moz-range-thumb > line,
-.c1::-moz-range-thumb > path,
-.c1::-moz-range-thumb > polygon,
-.c1::-moz-range-thumb > polyline,
-.c1::-moz-range-thumb > rect {
+.c2::-moz-range-thumb > circle,
+.c2::-moz-range-thumb > ellipse,
+.c2::-moz-range-thumb > line,
+.c2::-moz-range-thumb > path,
+.c2::-moz-range-thumb > polygon,
+.c2::-moz-range-thumb > polyline,
+.c2::-moz-range-thumb > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-range-thumb::-moz-focus-inner {
+.c2::-moz-range-thumb::-moz-focus-inner {
   border: 0;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -393,73 +397,73 @@ exports[`RangeInput onFocus 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-ms-thumb > circle,
-.c1::-ms-thumb > ellipse,
-.c1::-ms-thumb > line,
-.c1::-ms-thumb > path,
-.c1::-ms-thumb > polygon,
-.c1::-ms-thumb > polyline,
-.c1::-ms-thumb > rect {
+.c2::-ms-thumb > circle,
+.c2::-ms-thumb > ellipse,
+.c2::-ms-thumb > line,
+.c2::-ms-thumb > path,
+.c2::-ms-thumb > polygon,
+.c2::-ms-thumb > polyline,
+.c2::-ms-thumb > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-ms-thumb::-moz-focus-inner {
+.c2::-ms-thumb::-moz-focus-inner {
   border: 0;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus::-webkit-slider-thumb {
+.c2:focus::-webkit-slider-thumb {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-webkit-slider-thumb > circle,
-.c1:focus::-webkit-slider-thumb > ellipse,
-.c1:focus::-webkit-slider-thumb > line,
-.c1:focus::-webkit-slider-thumb > path,
-.c1:focus::-webkit-slider-thumb > polygon,
-.c1:focus::-webkit-slider-thumb > polyline,
-.c1:focus::-webkit-slider-thumb > rect {
+.c2:focus::-webkit-slider-thumb > circle,
+.c2:focus::-webkit-slider-thumb > ellipse,
+.c2:focus::-webkit-slider-thumb > line,
+.c2:focus::-webkit-slider-thumb > path,
+.c2:focus::-webkit-slider-thumb > polygon,
+.c2:focus::-webkit-slider-thumb > polyline,
+.c2:focus::-webkit-slider-thumb > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-webkit-slider-thumb::-moz-focus-inner {
+.c2:focus::-webkit-slider-thumb::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -467,7 +471,7 @@ exports[`RangeInput onFocus 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     max="10"
     min="0"
     step="1"
@@ -488,7 +492,7 @@ exports[`RangeInput renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -500,22 +504,22 @@ exports[`RangeInput renders 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -528,18 +532,18 @@ exports[`RangeInput renders 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -554,7 +558,7 @@ exports[`RangeInput renders 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -569,38 +573,38 @@ exports[`RangeInput renders 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -608,7 +612,7 @@ exports[`RangeInput renders 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     type="range"
     value="50"
   />
@@ -626,7 +630,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -638,22 +642,22 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -666,18 +670,18 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -692,7 +696,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -707,38 +711,38 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -747,7 +751,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 >
   <input
     aria-label="test"
-    class="c1"
+    class="c1 c2"
     type="range"
     value="50"
   />
@@ -765,7 +769,7 @@ exports[`RangeInput track themed 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -777,22 +781,22 @@ exports[`RangeInput track themed 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,1);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -805,18 +809,18 @@ exports[`RangeInput track themed 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,1);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -831,7 +835,7 @@ exports[`RangeInput track themed 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -846,38 +850,38 @@ exports[`RangeInput track themed 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,1);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(125,76,219,1);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(125,76,219,1);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -885,7 +889,7 @@ exports[`RangeInput track themed 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     type="range"
     value="10"
   />
@@ -903,7 +907,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -915,22 +919,22 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,0.3);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -943,18 +947,18 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,0.3);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -969,7 +973,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -984,38 +988,38 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(125,76,219,0.3);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(125,76,219,0.3);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(125,76,219,0.3);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -1023,7 +1027,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     type="range"
     value="10"
   />
@@ -1041,7 +1045,7 @@ exports[`RangeInput with min and max offset 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1053,22 +1057,22 @@ exports[`RangeInput with min and max offset 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1081,18 +1085,18 @@ exports[`RangeInput with min and max offset 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1107,7 +1111,7 @@ exports[`RangeInput with min and max offset 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1122,38 +1126,38 @@ exports[`RangeInput with min and max offset 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(0,0,0,0.2);
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -1161,7 +1165,7 @@ exports[`RangeInput with min and max offset 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     max="20"
     min="10"
     step="1"
@@ -1182,7 +1186,7 @@ exports[`RangeInput with multi color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1194,22 +1198,22 @@ exports[`RangeInput with multi color 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1222,18 +1226,18 @@ exports[`RangeInput with multi color 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1248,7 +1252,7 @@ exports[`RangeInput with multi color 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1263,38 +1267,38 @@ exports[`RangeInput with multi color 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: linear-gradient(to right,rgba(255,0,0,0.5) 0%,rgba(255,0,0,0.5) 22.22222222222222%,rgba(255,255,0,1) 22.22222222222222%,rgba(255,255,0,1) 44.44444444444444%,rgba(0,0,0,0.2) 44.44444444444444%,rgba(0,0,0,0.2));
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -1302,7 +1306,7 @@ exports[`RangeInput with multi color 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     color="[object Object],[object Object],[object Object]"
     max="10"
     min="1"
@@ -1324,7 +1328,7 @@ exports[`RangeInput with single color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1336,22 +1340,22 @@ exports[`RangeInput with single color 1`] = `
   background: transparent;
 }
 
-.c1::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: none;
 }
 
-.c1::-moz-focus-outer {
+.c2::-moz-focus-outer {
   border: none;
 }
 
-.c1::-webkit-slider-runnable-track {
+.c2::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
 }
 
-.c1::-webkit-slider-thumb {
+.c2::-webkit-slider-thumb {
   margin-top: -10px;
   box-sizing: border-box;
   position: relative;
@@ -1364,18 +1368,18 @@ exports[`RangeInput with single color 1`] = `
   cursor: pointer;
 }
 
-.c1::-webkit-slider-thumb:hover {
+background:.c1::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-moz-range-track {
+.c2::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
 }
 
-.c1::-moz-range-thumb {
+.c2::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1390,7 +1394,7 @@ exports[`RangeInput with single color 1`] = `
   width: 24px;
 }
 
-.c1::-ms-thumb {
+.c2::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1405,38 +1409,38 @@ exports[`RangeInput with single color 1`] = `
   width: 24px;
 }
 
-.c1:hover::-moz-range-thumb {
+.c2:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1:hover::-ms-thumb {
+.c2:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c1::-ms-track {
+.c2::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
-  border-color: transparent;
+  background: border-color:transparent;
   color: transparent;
 }
 
-.c1::-ms-fill-lower {
+.c2::-ms-fill-lower {
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
-.c1::-ms-fill-upper {
+.c2::-ms-fill-upper {
   background: linear-gradient( to right, #81FCED, #81FCED 44.44444444444444%, rgba(0,0,0,0.2) 44.44444444444444%, rgba(0,0,0,0.2) );
   border-color: transparent;
 }
 
-.c1:focus-visible {
+.c2:focus-visible {
   outline: 0;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
 }
 
@@ -1444,7 +1448,7 @@ exports[`RangeInput with single color 1`] = `
   class="c0"
 >
   <input
-    class="c1"
+    class="c1 c2"
     color="accent-3"
     max="10"
     min="1"

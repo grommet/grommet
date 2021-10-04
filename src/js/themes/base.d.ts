@@ -1139,6 +1139,14 @@ export interface ThemeType {
     container?: BoxProps;
   };
   rangeInput?: {
+    disabled?: {
+      track?: {
+        color?: ColorType;
+      };
+      thumb?: {
+        color?: ColorType;
+      };
+    };
     track?: {
       height?: string;
       color?: any;
