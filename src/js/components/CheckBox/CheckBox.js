@@ -66,6 +66,11 @@ const CheckBox = forwardRef(
       initialValue: defaultChecked,
     });
 
+    if (disabled) {
+      /* eslint-disable no-param-reassign */
+      focusProp = false; 
+    }
+
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
 
