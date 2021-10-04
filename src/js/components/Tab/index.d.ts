@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Omit } from '../../utils';
 
 export interface TabProps {
+  a11yTitle?: string;
+  active?: string;
   disabled?: boolean;
   icon?: JSX.Element;
   plain?: boolean;

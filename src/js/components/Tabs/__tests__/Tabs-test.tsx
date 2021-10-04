@@ -193,7 +193,7 @@ describe('Tabs', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const disabledTab = getByText('Disabled Tab').parentElement;
+    const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
     expect(disabledTabStyle.color).toBe(disabledTextColor);
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
@@ -232,16 +232,17 @@ describe('Tabs', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const disabledTab = getByText('Disabled Tab').parentElement;
+    const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
     expect(disabledTabStyle.color).toBe(disabledTextColor);
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
   });
 
   const ButtonTab = styled(Tab)`
-    ${props => css`
-      background: ${props.active ? 'blue' : 'green'};
-    `}
+    ${(props) =>
+      css`
+        background: ${props.active ? 'blue' : 'green'};
+      `}
   `;
 
   test('styled component should change tab color when active', () => {
