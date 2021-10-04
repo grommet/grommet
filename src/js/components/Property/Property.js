@@ -41,7 +41,7 @@ const Property = ({
     );
   else
     name = (
-      <Box as="dd" margin="none">
+      <Box as="dt" margin="none">
         {nameProp}
       </Box>
     );
