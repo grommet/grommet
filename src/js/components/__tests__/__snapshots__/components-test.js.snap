@@ -607,10 +607,6 @@ Object {
     },
     "render": [Function],
   },
-  "NameValueList": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
   "Nav": [Function],
   "Notification": [Function],
   "Pagination": Object {
@@ -643,6 +639,11 @@ Object {
       "size": [Function],
       "textAlign": [Function],
     },
+    "render": [Function],
+  },
+  "Property": [Function],
+  "PropertyList": Object {
+    "$$typeof": Symbol(react.forward_ref),
     "render": [Function],
   },
   "RadioButton": Object {
@@ -1666,31 +1667,6 @@ Object {
         "meter": Object {
           "color": "graph-0",
         },
-        "nameValueList": Object {
-          "gap": Object {
-            "column": "large",
-            "row": "medium",
-          },
-          "name": Object {
-            "container": Object {
-              "direction": "row",
-              "gap": "small",
-            },
-            "text": Object {
-              "color": "text-strong",
-              "weight": "bold",
-            },
-          },
-          "value": Object {
-            "container": Object {
-              "direction": "row",
-              "gap": "small",
-            },
-            "text": Object {
-              "color": "text-strong",
-            },
-          },
-        },
         "notification": Object {
           "close": Object {
             "icon": Object {
@@ -1881,6 +1857,22 @@ Object {
             "height": "40px",
             "maxWidth": "816px",
             "size": "34px",
+          },
+        },
+        "property": Object {
+          "name": Object {
+            "color": "text-strong",
+            "weight": "bold",
+          },
+          "value": Object {
+            "color": "text-strong",
+            "margin": "none",
+          },
+        },
+        "propertyList": Object {
+          "gap": Object {
+            "column": "large",
+            "row": "medium",
           },
         },
         "radioButton": Object {

@@ -10,7 +10,7 @@ import {
 } from '../../utils';
 import { GridColumnsType } from '../Grid/index';
 
-export interface NameValueListProps {
+export interface PropertyListProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
@@ -20,19 +20,14 @@ export interface NameValueListProps {
     value?: AlignType;
   };
   columns?: GridColumnsType;
-  data?: {
-    name?: string;
-    nameIcon?: React.ReactElement;
-    value?: string;
-    valueIcon?: React.ReactElement;
-  }[];
-  direction?: { list?: 'column' | 'row'; pair?: 'column' | 'row' };
+  direction?: {
+    list?: 'column' | 'row';
+    property?: 'column' | 'column-reverse' | 'row';
+  };
   gap?: GapType | { row?: GapType; column?: GapType };
-  nameProps?: BoxTypes;
-  valueProps?: BoxTypes;
 }
 
-declare const NameValueList: React.FC<NameValueListProps>;
-export type NameValueListType = NameValueListProps;
+declare const PropertyList: React.FC<PropertyListProps>;
+export type PropertyListType = PropertyListProps;
 
-export { NameValueList };
+export { PropertyList };

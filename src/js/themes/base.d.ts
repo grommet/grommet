@@ -1135,6 +1135,13 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
+  property?: {
+    name?: TextProps;
+    value: TextProps;
+  };
+  propertyList?: {
+    gap?: GapType | { row?: GapType; column?: GapType };
+  };
   radioButtonGroup?: {
     container?: BoxProps;
   };

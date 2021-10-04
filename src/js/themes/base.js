@@ -1040,24 +1040,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
-    nameValueList: {
-      gap: { column: 'large', row: 'medium' },
+    property: {
       name: {
-        // any box props
-        container: { direction: 'row', gap: 'small' },
-        text: {
-          color: 'text-strong',
-          weight: 'bold',
-        },
+        color: 'text-strong',
+        weight: 'bold',
       },
       value: {
-        // any box props
-        container: { direction: 'row', gap: 'small' },
-        text: {
-          color: 'text-strong',
-          margin: 'none', // remove default dd margin
-        },
+        color: 'text-strong',
+        margin: 'none', // remove default dd margin
       },
+    },
+    propertyList: {
+      gap: { column: 'large', row: 'medium' },
     },
     notification: {
       time: 8000,
