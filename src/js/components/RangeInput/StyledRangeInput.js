@@ -147,16 +147,16 @@ const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
   height: ${(props) => props.theme.rangeInput.track.height};
-  ${(props) => trackColorStyle(props)};
-  ${(props) =>
-    props.disabled && !props.theme.rangeInput.disabled && disabledStyle}
   background: ${(props) =>
     props.disabled &&
     props.theme.rangeInput &&
     props.theme.rangeInput.disabled &&
     props.theme.rangeInput.disabled.track &&
-    props.theme.rangeInput.disabled.track.color}
-    ${(props) =>
+    props.theme.rangeInput.disabled.track.color};
+  ${(props) =>
+    props.disabled && !props.theme.rangeInput.disabled && disabledStyle}
+  ${(props) => trackColorStyle(props)};
+  ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
@@ -188,14 +188,13 @@ const firefoxMicrosoftThumbStyle = css`
   width: ${(props) => props.theme.global.spacing};
   ${(props) => props.focus && focusStyle()}
   ${(props) =>
-    props.disabled && !props.theme.rangeInput.disabled && disabledStyle}
+    props.disabled && !props.theme.rangeInput.disabled && disabledStyle};
   background: ${(props) =>
-    (props.disabled &&
-      props.theme.rangeInput &&
-      props.theme.rangeInput.disabled &&
-      props.theme.rangeInput.disabled.thumb &&
-      props.theme.rangeInput.disabled.thumb.color) ||
-    (props.disabled && disabledStyle)}
+    props.disabled &&
+    props.theme.rangeInput &&
+    props.theme.rangeInput.disabled &&
+    props.theme.rangeInput.disabled.thumb &&
+    props.theme.rangeInput.disabled.thumb.color};
   ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
@@ -229,16 +228,14 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
-
-    ${(props) =>
-      props.disabled && !props.theme.rangeInput.disabled && disabledStyle}
     background: ${(props) =>
-      (props.disabled &&
-        props.theme.rangeInput &&
-        props.theme.rangeInput.disabled &&
-        props.theme.rangeInput.disabled.thumb &&
-        props.theme.rangeInput.disabled.thumb.color) ||
-      (props.disabled && disabledStyle)}
+      props.disabled &&
+      props.theme.rangeInput &&
+      props.theme.rangeInput.disabled &&
+      props.theme.rangeInput.disabled.thumb &&
+      props.theme.rangeInput.disabled.thumb.color};
+    ${(props) =>
+      props.disabled && !props.theme.rangeInput.disabled && disabledStyle};
     ${(props) =>
       !props.disabled &&
       css`
