@@ -945,8 +945,6 @@ const Calendar = forwardRef(
                 setFocus(true);
                 if (date && betweenDates(new Date(date), displayBounds)) {
                   setActive(new Date(date));
-                } else {
-                  setActive(new Date(firstDayInMonth));
                 }
               }}
               onBlur={() => {
