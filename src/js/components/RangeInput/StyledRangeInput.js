@@ -139,22 +139,12 @@ const trackColorStyle = (props) => {
   `;
 };
 
-const disabledRangeInputThumbStyle = (props) => css`
+const disabledRangeInputStyle = (props, context) => css`
   ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
-  ${props.theme.rangeInput.disabled.thumb &&
-  props.theme.rangeInput.disabled.thumb.color &&
+  ${props.theme.rangeInput.disabled[context] &&
+  props.theme.rangeInput.disabled[context].color &&
   `background: ${normalizeColor(
-    props.theme.rangeInput.disabled.thumb.color,
-    props.theme,
-  )};`}
-`;
-
-const disabledRangeInputTrackStyle = (props) => css`
-  ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
-  ${props.theme.rangeInput.disabled.track &&
-  props.theme.rangeInput.disabled.track.color &&
-  `background: ${normalizeColor(
-    props.theme.rangeInput.disabled.track.color,
+    props.theme.rangeInput.disabled[context].color,
     props.theme,
   )};`}
 `;
@@ -170,9 +160,8 @@ const rangeTrackStyle = css`
     props.theme.rangeInput.track.extend}
   ${(props) =>
     props.disabled &&
-    props.theme.rangeInput &&
-    props.theme.rangeInput.disabled &&
-    disabledRangeInputTrackStyle(props)};
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'track')};
 `;
 
 const rangeThumbStyle = css`
@@ -195,9 +184,8 @@ const rangeThumbStyle = css`
     props.theme.rangeInput.thumb.extend}
   ${(props) =>
     props.disabled &&
-    props.theme.rangeInput &&
-    props.theme.rangeInput.disabled &&
-    disabledRangeInputThumbStyle(props)}
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'thumb')};
 `;
 
 const firefoxMicrosoftThumbStyle = css`
