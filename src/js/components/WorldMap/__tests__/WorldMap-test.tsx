@@ -64,49 +64,44 @@ describe('WorldMap', () => {
   test('onSelectPlace and events of places', () => {
     const onClick = jest.fn();
     const onHover = jest.fn();
-    const { container, getByTestId } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <WorldMap
           places={[
             {
-              // @ts-ignore
-              'data-testid': 'Sydney',
               name: 'Sydney',
               location: [-33.8830555556, 151.216666667],
               onClick,
               onHover,
             },
           ]}
-          data-testid="worldmap"
           onSelectPlace={() => {}}
         />
       </Grommet>,
     );
-    fireEvent.mouseOver(getByTestId('Sydney'));
+    fireEvent.mouseOver(getByLabelText('Sydney'));
     expect(container.firstChild).toMatchSnapshot();
     expect(onHover).toHaveBeenCalledTimes(1);
 
-    fireEvent.mouseOut(getByTestId('Sydney'));
+    fireEvent.mouseOut(getByLabelText('Sydney'));
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(getByTestId('Sydney'));
+    fireEvent.click(getByLabelText('Sydney'));
     expect(onClick).toHaveBeenCalledTimes(1);
 
-    fireEvent.focus(getByTestId('Sydney'));
-    fireEvent.blur(getByTestId('Sydney'));
+    fireEvent.focus(getByLabelText('Sydney'));
+    fireEvent.blur(getByLabelText('Sydney'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('events on continents', () => {
     const onClick = jest.fn();
     const onHover = jest.fn();
-    const { container, getByTestId } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <WorldMap
           continents={[
             {
-              // @ts-ignore
-              'data-testid': 'Africa',
               name: 'Africa',
               onClick,
               onHover,
@@ -115,18 +110,18 @@ describe('WorldMap', () => {
         />
       </Grommet>,
     );
-    fireEvent.mouseOver(getByTestId('Africa'));
+    fireEvent.mouseOver(getByLabelText('Africa'));
     expect(container.firstChild).toMatchSnapshot();
     expect(onHover).toHaveBeenCalledTimes(1);
 
-    fireEvent.mouseOut(getByTestId('Africa'));
+    fireEvent.mouseOut(getByLabelText('Africa'));
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(getByTestId('Africa'));
+    fireEvent.click(getByLabelText('Africa'));
     expect(onClick).toHaveBeenCalledTimes(1);
 
-    fireEvent.focus(getByTestId('Africa'));
-    fireEvent.blur(getByTestId('Africa'));
+    fireEvent.focus(getByLabelText('Africa'));
+    fireEvent.blur(getByLabelText('Africa'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
