@@ -208,7 +208,7 @@ const StyledRangeInput = styled.input`
   height: ${(props) => props.theme.global.spacing};
   width: 100%;
   padding: 0px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
 
   &::-moz-focus-inner {
