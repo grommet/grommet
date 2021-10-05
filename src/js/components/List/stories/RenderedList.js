@@ -24,13 +24,13 @@ export const RenderedList = () => (
     <Box align="center" pad="large">
       <List
         data={data.slice(0, 10)}
-        primaryKey={item => (
-          <Text size="large" weight="bold">
+        primaryKey={(item) => (
+          <Text key={item.entry} size="large" weight="bold">
             {item.entry}
           </Text>
         )}
-        secondaryKey={item => (
-          <Text size="small" color="dark-4">
+        secondaryKey={(item) => (
+          <Text key={item.location} size="small" color="dark-4">
             {item.location}
           </Text>
         )}

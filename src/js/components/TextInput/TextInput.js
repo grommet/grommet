@@ -293,13 +293,11 @@ const TextInput = forwardRef(
       [activeSuggestionIndex],
     );
 
+    // account for input value in both controlled and uncontrolled scenarios
+    const hasValue = value || inputRef.current?.value;
     const showStyledPlaceholder = useMemo(
-      () =>
-        placeholder &&
-        typeof placeholder !== 'string' &&
-        !(inputRef.current && inputRef.current.value) &&
-        !value,
-      [inputRef, placeholder, value],
+      () => placeholder && typeof placeholder !== 'string' && !hasValue,
+      [hasValue, placeholder],
     );
 
     let drop;
