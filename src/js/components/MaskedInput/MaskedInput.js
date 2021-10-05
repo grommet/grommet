@@ -23,7 +23,7 @@ import {
 } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 
-const parseValue = (mask, value) => {
+const parseValue = (mask, value, alwaysShowMask) => {
   // break the value up into mask parts
   const valueParts = []; // { part, beginIndex, endIndex }
   let valueIndex = 0;
@@ -49,9 +49,10 @@ const parseValue = (mask, value) => {
         matching += 1;
       }
 
+      console.log('fixed ', item.fixed, matching, valueIndex, value.length);
       if (matching > 0) {
         let part = value.slice(valueIndex, valueIndex + matching);
-        if (valueIndex + matching < value.length) {
+        if (valueIndex + matching - 1 < value.length) {
           // matched part of the fixed portion but there's more stuff
           // after it. Go ahead and fill in the entire fixed chunk
           part = item.fixed;
@@ -135,6 +136,21 @@ const parseValue = (mask, value) => {
       }
     }
   }
+  console.log('VALUE PARTS', value, valueParts);
+  if (alwaysShowMask) {
+    while (maskIndex < mask.length) {
+      console.log('NEED to ADD parts');
+      const item = mask[maskIndex];
+      const part = item.fixed || item.placeholder || '_';
+      valueParts.push({
+        part,
+        beginIndex: valueIndex,
+        endIndex: valueIndex + part.length - 1,
+      });
+      valueIndex += part.length;
+      maskIndex += 1;
+    }
+  }
   return valueParts;
 };
 
@@ -143,6 +159,13 @@ const defaultMask = [
     regexp: /[^]*/,
   },
 ];
+
+const defaultValue = (mask, alwaysShowMask) => {
+  if (alwaysShowMask) {
+    return mask.map(item => item.fixed || item.placeholder).join('');
+  }
+  return undefined;
+};
 
 const ContainerBox = styled(Box)`
   ${(props) =>
@@ -169,11 +192,13 @@ const MaskedInput = forwardRef(
       icon,
       id,
       mask = defaultMask,
+      alwaysShowMask,
       name,
       onBlur,
       onChange,
       onFocus,
       onKeyDown,
+      onClick,
       placeholder,
       plain,
       reverse,
@@ -188,13 +213,14 @@ const MaskedInput = forwardRef(
 
     const [value, setValue] = formContext.useFormInput({
       name,
-      value: valueProp,
+      value: valueProp || defaultValue(mask, alwaysShowMask),
     });
 
-    const [valueParts, setValueParts] = useState(parseValue(mask, value));
+    const [valueParts, setValueParts] =
+      useState(parseValue(mask, value, alwaysShowMask));
     useEffect(() => {
-      setValueParts(parseValue(mask, value));
-    }, [mask, value]);
+      setValueParts(parseValue(mask, value, alwaysShowMask));
+    }, [alwaysShowMask, mask, value]);
 
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
@@ -267,7 +293,10 @@ const MaskedInput = forwardRef(
     const onChangeInput = useCallback(
       (event) => {
         // Align with the mask.
-        const nextValueParts = parseValue(mask, event.target.value);
+        const pos = inputRef.current.selectionStart;
+        console.log('ONCHANGE pos', pos);
+        const nextValueParts = 
+          parseValue(mask, event.target.value, alwaysShowMask);
         const nextValue = nextValueParts.map((part) => part.part).join('');
 
         if (nextValue !== event.target.value) {
@@ -279,7 +308,8 @@ const MaskedInput = forwardRef(
           if (onChange) onChange(event);
         }
       },
-      [mask, onChange, setInputValue, setValue, value],
+      [alwaysShowMask, mask, onChange, setInputValue, setValue, value,
+        inputRef],
     );
 
     const onOption = useCallback(
@@ -359,6 +389,49 @@ const MaskedInput = forwardRef(
     const renderPlaceholder = () =>
       mask.map((item) => item.placeholder || item.fixed).join('');
 
+    const move = (evt, offset) => {
+      if (!inputRef.current.value) return;  
+      // try building valid index list and snap current to that.
+      const pos = inputRef.current.selectionStart;
+      const { length } = inputRef.current.value;
+
+      let nextPos = pos + offset;
+      console.log(
+        `${offset > 0 ? 'RIGHT' : 'LEFT'} ${pos} -> ${nextPos} of ${length}`,
+        evt);
+
+      const validPos = new Array(length+1).fill('X');
+      valueParts.forEach((part, index) => {
+        if (!mask[index].fixed) {
+          validPos.fill('.',
+            part.beginIndex,
+            part.endIndex + 2);
+        }
+      });
+      let valid = validPos[nextPos] === '.';
+      if (!valid) {
+        if (evt) {
+          evt.preventDefault();
+          evt.stopPropagation();
+        }
+        
+        while (! valid && nextPos > 0 && nextPos < length) {
+          nextPos += offset || 1;
+          valid = validPos[nextPos] === '.';
+        }
+        if (valid) {
+          inputRef.current.setSelectionRange(nextPos, nextPos);
+        }
+      }
+      validPos[nextPos] = 'o';
+      console.log(`${value.slice(0, nextPos)}|${value.slice(nextPos+1)}`);
+      console.log(validPos.join(''), valid);
+    };
+    const onRight = evt => move(evt, 1);
+    const onLeft = evt => move(evt, -1);
+
+    useEffect(() => move(null, 0));
+
     return (
       <StyledMaskedInputContainer plain={plain}>
         {icon && (
@@ -369,8 +442,8 @@ const MaskedInput = forwardRef(
         <Keyboard
           onEsc={onEsc}
           onTab={showDrop ? () => setShowDrop(false) : undefined}
-          onLeft={undefined}
-          onRight={undefined}
+          onLeft={alwaysShowMask && onLeft}
+          onRight={alwaysShowMask && onRight}
           onUp={onPreviousOption}
           onDown={showDrop ? onNextOption : () => setShowDrop(true)}
           onEnter={onSelectOption}
@@ -390,9 +463,32 @@ const MaskedInput = forwardRef(
             focus={focus}
             textAlign={textAlign}
             {...rest}
+            onClick={evt => {
+              if (alwaysShowMask) {
+                console.log('click - ', inputRef.current.selectionStart);
+                move(null, 0);
+              }
+              if (onClick) onClick(evt);
+            }}
             value={value}
             theme={theme}
             onFocus={(event) => {
+              console.log('ON FOCUS', mask, valueParts);
+              if (inputRef.current) {
+                if (alwaysShowMask) {
+                  for (let i = 0;
+                    i < valueParts.length && i < mask.length;
+                    i += 1)
+                  {
+                    if (!mask[i].fixed) {
+                      inputRef.current.setSelectionRange(
+                        valueParts[i].beginIndex,
+                        valueParts[i].endIndex + 1);
+                      break;
+                    }
+                  }
+                }
+              }
               setFocus(true);
               setShowDrop(true);
               if (onFocus) onFocus(event);
