@@ -676,6 +676,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "a11yTitle": [Function],
+      "color": [Function],
       "id": [Function],
       "max": [Function],
       "min": [Function],
