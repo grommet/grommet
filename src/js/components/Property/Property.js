@@ -65,11 +65,13 @@ const Property = ({
       </Box>
     );
 
+  const first = direction !== 'column-reverse' ? name : value;
+  const second = direction !== 'column-reverse' ? value : name;
+
   return (
     <Container {...containerProps}>
-      {direction === 'column-reverse' ? value : undefined}
-      {name}
-      {direction !== 'column-reverse' ? value : undefined}
+      {first}
+      {second}
     </Container>
   );
 };
