@@ -32,12 +32,7 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
 ];
-const grommetInputPadNames = [
-  'CheckBox',
-  'CheckBoxGroup',
-  'RadioButtonGroup',
-  'RangeInput',
-];
+const grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup'];
 
 const isGrommetInput = (comp) =>
   comp &&
