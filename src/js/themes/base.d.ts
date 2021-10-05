@@ -1140,6 +1140,7 @@ export interface ThemeType {
   };
   rangeInput?: {
     disabled?: {
+      opacity?: OpacityType;
       track?: {
         color?: ColorType;
       };

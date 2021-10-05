@@ -1,17 +1,13 @@
 import styled, { css } from 'styled-components';
 
 import {
+  disabledStyle,
   focusStyle,
   normalizeColor,
   parseMetricToNum,
   getRGBA,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
-
-const disabledStyle = `
-  opacity: 0.5;
-  cursor: default;
-`;
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -143,23 +139,40 @@ const trackColorStyle = (props) => {
   `;
 };
 
+const disabledRangeInputThumbStyle = (props) => css`
+  ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
+  ${props.theme.rangeInput.disabled.thumb &&
+  props.theme.rangeInput.disabled.thumb.color &&
+  `background: ${normalizeColor(
+    props.theme.rangeInput.disabled.thumb.color,
+    props.theme,
+  )};`}
+`;
+
+const disabledRangeInputTrackStyle = (props) => css`
+  ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
+  ${props.theme.rangeInput.disabled.track &&
+  props.theme.rangeInput.disabled.track.color &&
+  `background: ${normalizeColor(
+    props.theme.rangeInput.disabled.track.color,
+    props.theme,
+  )};`}
+`;
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
   height: ${(props) => props.theme.rangeInput.track.height};
-  background: ${(props) =>
-    props.disabled &&
-    props.theme.rangeInput &&
-    props.theme.rangeInput.disabled &&
-    props.theme.rangeInput.disabled.track &&
-    props.theme.rangeInput.disabled.track.color};
-  ${(props) =>
-    props.disabled && !props.theme.rangeInput.disabled && disabledStyle}
   ${(props) => trackColorStyle(props)};
   ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme.rangeInput &&
+    props.theme.rangeInput.disabled &&
+    disabledRangeInputTrackStyle(props)};
 `;
 
 const rangeThumbStyle = css`
@@ -180,6 +193,11 @@ const rangeThumbStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme.rangeInput &&
+    props.theme.rangeInput.disabled &&
+    disabledRangeInputThumbStyle(props)}
 `;
 
 const firefoxMicrosoftThumbStyle = css`
@@ -187,14 +205,6 @@ const firefoxMicrosoftThumbStyle = css`
   height: ${(props) => props.theme.global.spacing};
   width: ${(props) => props.theme.global.spacing};
   ${(props) => props.focus && focusStyle()}
-  ${(props) =>
-    props.disabled && !props.theme.rangeInput.disabled && disabledStyle};
-  background: ${(props) =>
-    props.disabled &&
-    props.theme.rangeInput &&
-    props.theme.rangeInput.disabled &&
-    props.theme.rangeInput.disabled.thumb &&
-    props.theme.rangeInput.disabled.thumb.color};
   ${(props) =>
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
@@ -228,14 +238,6 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
-    background: ${(props) =>
-      props.disabled &&
-      props.theme.rangeInput &&
-      props.theme.rangeInput.disabled &&
-      props.theme.rangeInput.disabled.thumb &&
-      props.theme.rangeInput.disabled.thumb.color};
-    ${(props) =>
-      props.disabled && !props.theme.rangeInput.disabled && disabledStyle};
     ${(props) =>
       !props.disabled &&
       css`

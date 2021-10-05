@@ -1249,15 +1249,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // container: {}, // any box props
     },
     rangeInput: {
+      disabled: {
+        opacity: 0.3,
+        //   thumb: {
+        //     color: undefined,
+        //   },
+        //   track: {
+        //     color: undefined,
+        //   },
+      },
       // extend: undefined
-      // disabled: {
-      //   track: {
-      //     color: undefined,
-      //   },
-      //   thumb: {
-      //     color: undefined,
-      //   },
-      // },
       track: {
         height: '4px',
         color: 'border',

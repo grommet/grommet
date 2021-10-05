@@ -7,10 +7,10 @@ const customThemeRangeInput = {
   rangeInput: {
     disabled: {
       track: {
-        color: '#DCDCDC',
+        color: '#2196f3',
       },
       thumb: {
-        color: '#afeeee',
+        color: 'red',
       },
     },
   },
