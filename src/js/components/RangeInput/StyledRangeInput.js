@@ -141,8 +141,7 @@ const trackColorStyle = (props) => {
 
 const disabledRangeInputStyle = (props, context) => css`
   ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
-  ${props.theme.rangeInput.disabled[context] &&
-  props.theme.rangeInput.disabled[context].color &&
+  ${props.theme.rangeInput.disabled[context]?.color &&
   `background: ${normalizeColor(
     props.theme.rangeInput.disabled[context].color,
     props.theme,
