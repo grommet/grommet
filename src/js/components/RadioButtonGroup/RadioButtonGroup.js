@@ -12,6 +12,7 @@ import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
+import { RadioButtonGroupPropTypes } from './propTypes';
 
 const RadioButtonGroup = forwardRef(
   (
@@ -44,11 +45,11 @@ const RadioButtonGroup = forwardRef(
         : { disabled, ...o },
     );
 
-    const [value, setValue] = formContext.useFormInput(
+    const [value, setValue] = formContext.useFormInput({
       name,
-      valueProp,
-      defaultValue || '',
-    );
+      value: valueProp,
+      initialValue: defaultValue || '',
+    });
 
     // track if focus is on one of the radio buttons
     const [focus, setFocus] = useState();
@@ -183,12 +184,6 @@ const RadioButtonGroup = forwardRef(
 );
 
 RadioButtonGroup.displayName = 'RadioButtonGroup';
+RadioButtonGroup.propTypes = RadioButtonGroupPropTypes;
 
-let RadioButtonGroupDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonGroupDoc = require('./doc').doc(RadioButtonGroup);
-}
-const RadioButtonGroupWrapper = RadioButtonGroupDoc || RadioButtonGroup;
-
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+export { RadioButtonGroup };

@@ -121,6 +121,26 @@ describe('RadioButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('background-color themed symbolic', () => {
+    const customTheme = {
+      radioButton: {
+        check: {
+          background: {
+            color: 'brand',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <RadioButton name="test" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should apply a11yTitle or aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>

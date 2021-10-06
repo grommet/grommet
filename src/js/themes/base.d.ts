@@ -3,7 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
-import { ReactComponentElement, ReactElement } from 'react';
+import { ReactComponentElement } from 'react';
 
 import {
   BackgroundType,
@@ -25,11 +25,11 @@ import {
   AlignContentType,
 } from '../utils';
 
-import { BoxProps } from '../components/Box';
+import { BoxProps } from '../components/Box/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
-import { LayerPositionType } from '../components/Layer';
+import { LayerPositionType, LayerProps } from '../components/Layer';
 import { DropProps } from '../components/Drop';
 
 export declare const base: DeepReadonly<ThemeType>;
@@ -628,6 +628,10 @@ export interface ThemeType {
           size?: string;
           height?: number;
         };
+        [key: string]: {
+          size?: string;
+          height?: number;
+        };
       };
     };
   };
@@ -969,6 +973,7 @@ export interface ThemeType {
     };
     container?: {
       elevation?: ElevationType;
+      extend?: ExtendType;
       zIndex?: string;
     };
     extend?: ExtendType;
@@ -1021,6 +1026,41 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+  };
+  notification?: {
+    container?: BoxProps;
+    toast?: {
+      container?: BoxProps;
+      layer?: LayerProps;
+    };
+    iconContainer?: BoxProps;
+    textContainer?: BoxProps;
+    title?: TextProps;
+    message?: TextProps;
+    close?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    critical?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    warning?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    normal?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    unknown?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    undefined?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
   };
   pagination?: {
     button?: ButtonType;

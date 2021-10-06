@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BoxProps } from '../Box';
-import { CheckBoxProps } from '../CheckBox';
+import { BoxProps } from '../Box/index';
+import { CheckBoxProps } from '../CheckBox/index';
 import { Omit } from '../../utils';
 
 interface OnChangeEvent {
@@ -8,10 +8,13 @@ interface OnChangeEvent {
   option: string | CheckBoxProps;
 }
 
-export type CheckBoxType = Omit<
-  CheckBoxProps & JSX.IntrinsicElements['input'],
-  'checked'
->;
+export interface CheckBoxType
+  extends Omit<CheckBoxProps & JSX.IntrinsicElements['input'], 'checked'> {
+  [key: CheckBoxGroupProps['labelKey'] | CheckBoxGroupProps['valueKey']]:
+    | CheckBoxProps['label']
+    | JSX.IntrinsicElements['input']['value'];
+}
+
 export interface CheckBoxGroupProps {
   value?: (number | string)[];
   disabled?: boolean;

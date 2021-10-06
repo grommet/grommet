@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { ButtonType } from '../Button';
-import { CalendarType } from '../Calendar';
+import { CalendarType } from '../Calendar/index';
 import { DropType } from '../Drop';
 import { MaskedInputType } from '../MaskedInput';
 
@@ -14,6 +14,10 @@ export interface DateInputProps {
   id?: string;
   inline?: boolean;
   inputProps?: MaskedInputType;
+  messages?: {
+    enterCalendar?: string;
+    exitCalendar?: string;
+  };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];

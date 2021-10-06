@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const OptionsContext = React.createContext(undefined);
+export const OptionsContext = React.createContext({});

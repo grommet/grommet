@@ -3,6 +3,7 @@ import {
   A11yTitleType,
   AlignSelfType,
   ColorType,
+  GapType,
   GridAreaType,
   MarginType,
   Omit,
@@ -15,6 +16,7 @@ export interface AnchorProps {
   as?: PolymorphicType;
   color?: ColorType;
   disabled?: boolean;
+  gap?: GapType;
   gridArea?: GridAreaType;
   href?: string;
   icon?: JSX.Element;

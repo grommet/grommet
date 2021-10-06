@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { CheckBoxPropTypes } from './propTypes';
 
 import {
   StyledCheckBox,
@@ -59,14 +60,18 @@ const CheckBox = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [checked, setChecked] = formContext.useFormInput(
+    const [checked, setChecked] = formContext.useFormInput({
       name,
-      checkedProp,
-      defaultChecked,
-    );
+      value: checkedProp,
+      initialValue: defaultChecked,
+    });
 
     const [focus, setFocus] = useState(focusProp);
-    useEffect(() => setFocus(focusProp), [focusProp]);
+    useEffect(() => {
+      // don't allow checkbox to have focus when disabled
+      if (disabled && focusProp) setFocus(false);
+      else setFocus(focusProp);
+    }, [disabled, focusProp]);
 
     useEffect(() => {
       if (checkedProp && indeterminate) {
@@ -226,12 +231,6 @@ const CheckBox = forwardRef(
 );
 
 CheckBox.displayName = 'CheckBox';
+CheckBox.propTypes = CheckBoxPropTypes;
 
-let CheckBoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxDoc = require('./doc').doc(CheckBox);
-}
-const CheckBoxWrapper = CheckBoxDoc || CheckBox;
-
-export { CheckBoxWrapper as CheckBox };
+export { CheckBox };

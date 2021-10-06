@@ -4,6 +4,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
   ${(props) =>
@@ -205,12 +206,6 @@ const Pagination = forwardRef(
 );
 
 Pagination.displayName = 'Pagination';
+Pagination.propTypes = PaginationPropTypes;
 
-let PaginationDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  PaginationDoc = require('./doc').doc(Pagination);
-}
-const PaginationWrapper = PaginationDoc || Pagination;
-
-export { PaginationWrapper as Pagination };
+export { Pagination };

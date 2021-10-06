@@ -680,7 +680,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eiCRQz {
+  .BiUy {
     padding: 6px;
   }
 }"
@@ -3012,28 +3012,28 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eClXBV"
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 iUDYlP"
+    class="StyledButton-sc-323bzc-0 kVhqUm"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eiCRQz"
+      class="StyledBox-sc-13pk1d4-0 BiUy"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 fxbXHC"
+        class="StyledText-sc-1sadyjn-0 fkNrQP"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jMNBey"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dvZAHf"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 jLSzwp"
+        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
         viewBox="0 0 24 24"
       >
         <path
@@ -3407,7 +3407,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .eiCRQz {
+  .BiUy {
     padding: 6px;
   }
 }"
@@ -4138,7 +4138,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eiCRQz {
+  .BiUy {
     padding: 6px;
   }
 }"
@@ -5823,7 +5823,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eiCRQz {
+  .BiUy {
     padding: 6px;
   }
 }"
@@ -6364,7 +6364,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eiCRQz {
+  .BiUy {
     padding: 6px;
   }
 }"

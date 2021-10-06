@@ -16,7 +16,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
-import { CarouselType } from './propTypes';
+import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
   activeChild,
@@ -147,16 +147,19 @@ const Carousel = ({
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         animation = {
-          type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
+          type:
+            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
           size: 'xlarge',
           duration: theme.carousel.animation.duration,
         };
       }
+      visibility = 'visible';
     } else if (index === priorActiveIndex) {
       animation = {
         type: 'fadeOut',
         duration: theme.carousel.animation.duration,
       };
+      visibility = 'hidden';
     } else {
       animation = { type: 'fadeOut', duration: 0 };
       visibility = 'hidden';
@@ -253,6 +256,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-Carousel.propTypes = CarouselType;
+Carousel.propTypes = CarouselPropTypes;
 
 export { Carousel };

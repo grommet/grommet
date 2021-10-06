@@ -13,6 +13,7 @@ import {
   StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
+import { RadioButtonPropTypes } from './propTypes';
 
 const RadioButton = forwardRef(
   (
@@ -118,12 +119,6 @@ const RadioButton = forwardRef(
 );
 
 RadioButton.displayName = 'RadioButton';
+RadioButton.propTypes = RadioButtonPropTypes;
 
-let RadioButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonDoc = require('./doc').doc(RadioButton);
-}
-const RadioButtonWrapper = RadioButtonDoc || RadioButton;
-
-export { RadioButtonWrapper as RadioButton };
+export { RadioButton };

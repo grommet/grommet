@@ -19,6 +19,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldPropTypes } from './propTypes';
 
 const grommetInputNames = [
   'CheckBox',
@@ -94,7 +95,10 @@ const Message = ({ error, info, message, type, ...rest }) => {
 
 const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   const formContext = useContext(FormContext);
-  const [value, setValue] = formContext.useFormInput(name, rest.value);
+  const [value, setValue] = formContext.useFormInput({
+    name,
+    value: rest.value,
+  });
   const InputComponent = component || TextInput;
   // Grommet input components already check for FormContext
   // and, using their `name`, end up calling the useFormInput.setValue()
@@ -170,6 +174,7 @@ const FormField = forwardRef(
       onBlur: contextOnBlur,
       onChange: contextOnChange,
     } = formContext.useFormField({
+      disabled,
       error: errorProp,
       info: infoProp,
       name,
@@ -485,12 +490,6 @@ const FormField = forwardRef(
 );
 
 FormField.displayName = 'FormField';
+FormField.propTypes = FormFieldPropTypes;
 
-let FormFieldDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FormFieldDoc = require('./doc').doc(FormField);
-}
-const FormFieldWrapper = FormFieldDoc || FormField;
-
-export { FormFieldWrapper as FormField };
+export { FormField };

@@ -14,7 +14,7 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
-import { AnchorType } from './propTypes';
+import { AnchorPropTypes } from './propTypes';
 
 const Anchor = forwardRef(
   (
@@ -24,6 +24,7 @@ const Anchor = forwardRef(
       children,
       color,
       disabled,
+      gap = 'small',
       href,
       icon,
       label,
@@ -83,7 +84,7 @@ const Anchor = forwardRef(
             as="span"
             direction="row"
             align="center"
-            gap="small"
+            gap={gap}
             responsive={false}
             style={{ display: 'inline-flex' }}
           >
@@ -99,6 +100,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
-Anchor.propTypes = AnchorType;
+Anchor.propTypes = AnchorPropTypes;
 
 export { Anchor };

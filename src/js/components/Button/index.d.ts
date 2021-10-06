@@ -36,8 +36,17 @@ export interface ButtonProps {
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
   href?: string;
+  justify?:
+    | 'around'
+    | 'between'
+    | 'center'
+    | 'end'
+    | 'evenly'
+    | 'start'
+    | 'stretch';
   target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
+  kind?: string;
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
@@ -49,13 +58,14 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-export interface ButtonExtendedProps
-  extends ButtonProps,
-    Omit<JSX.IntrinsicElements['button'], 'color'> {}
+type anchorType = Omit<JSX.IntrinsicElements['a'], 'color'>;
+type buttonType = Omit<JSX.IntrinsicElements['button'], 'color'>;
+type extendType = anchorType & buttonType;
+
+export interface ButtonExtendedProps extends ButtonProps, extendType {}
 
 // Keep type alias for backwards compatibility.
-export type ButtonType = ButtonProps &
-  Omit<JSX.IntrinsicElements['button'], 'color'>;
+export type ButtonType = ButtonProps & extendType;
 
 declare const Button: React.FC<ButtonExtendedProps>;
 

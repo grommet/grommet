@@ -28,7 +28,7 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  icon?: boolean | ((...args: any[]) => any) | React.ReactNode | React.FC;
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   margin?: MarginType;
@@ -54,11 +54,15 @@ export interface SelectProps {
     | string
     | { key: string; reduce?: boolean }
     | ((...args: any[]) => any);
-  emptySearchMessage?: string;
+  emptySearchMessage?: string | React.ReactNode;
 }
 
-declare const Select: React.FC<
-  SelectProps & React.RefAttributes<HTMLButtonElement>
->;
+// Try without Omit<> to see where we define our own attributes for overrides
+// value, name, id, onChange, placeholder
+export interface SelectExtendedProps
+  extends SelectProps,
+    Omit<JSX.IntrinsicElements['input'], keyof SelectProps> {}
+
+declare const Select: React.FC<SelectExtendedProps>;
 
 export { Select };

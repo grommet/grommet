@@ -12,6 +12,7 @@ import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { RangeSelectorPropTypes } from './propTypes';
 
 const Container = styled(Box)`
   user-select: none;
@@ -194,6 +195,10 @@ const RangeSelector = forwardRef(
         />
         <EdgeControl
           a11yTitle={format({ id: 'rangeSelector.lower', messages })}
+          role="slider"
+          aria-valuenow={lower}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           ref={ref}
           color={color}
@@ -238,6 +243,10 @@ const RangeSelector = forwardRef(
         />
         <EdgeControl
           a11yTitle={format({ id: 'rangeSelector.upper', messages })}
+          role="slider"
+          aria-valuenow={upper}
+          aria-valuemin={min}
+          aria-valuemax={max}
           tabIndex={0}
           color={color}
           direction={direction}
@@ -278,12 +287,6 @@ const RangeSelector = forwardRef(
 );
 
 RangeSelector.displayName = 'RangeSelector';
+RangeSelector.propTypes = RangeSelectorPropTypes;
 
-let RangeSelectorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RangeSelectorDoc = require('./doc').doc(RangeSelector);
-}
-const RangeSelectorWrapper = RangeSelectorDoc || RangeSelector;
-
-export { RangeSelectorWrapper as RangeSelector };
+export { RangeSelector };

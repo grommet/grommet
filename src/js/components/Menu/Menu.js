@@ -16,6 +16,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
+import { MenuPropTypes } from './propTypes';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -307,6 +308,7 @@ const Menu = forwardRef((props, ref) => {
                       pad="small"
                       direction="row"
                       gap={item.gap}
+                      justify={item.justify}
                     >
                       {item.reverse && item.label}
                       {item.icon}
@@ -327,6 +329,7 @@ const Menu = forwardRef((props, ref) => {
                         focusIndicator={false}
                         plain={!child ? undefined : true}
                         align="start"
+                        justify={item.justify}
                         kind={!child ? 'option' : undefined}
                         hoverIndicator={!child ? undefined : 'background'}
                         {...(!child
@@ -378,11 +381,6 @@ Menu.defaultProps = {
 };
 
 Menu.displayName = 'Menu';
+Menu.propTypes = MenuPropTypes;
 
-let MenuDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
-}
-const MenuWrapper = MenuDoc || Menu;
-
-export { MenuWrapper as Menu };
+export { Menu };

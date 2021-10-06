@@ -33,6 +33,7 @@ import {
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
+import { TextInputPropTypes } from './propTypes';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -108,10 +109,10 @@ const TextInput = forwardRef(
     const suggestionsRef = useRef();
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormInput(
-      readOnly ? undefined : name,
-      valueProp,
-    );
+    const [value, setValue] = formContext.useFormInput({
+      name: readOnly ? undefined : name,
+      value: valueProp,
+    });
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
@@ -292,11 +293,11 @@ const TextInput = forwardRef(
       [activeSuggestionIndex],
     );
 
-    const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
-      placeholder &&
-        typeof placeholder !== 'string' &&
-        !(inputRef.current && inputRef.current.value) &&
-        !value,
+    // account for input value in both controlled and uncontrolled scenarios
+    const hasValue = value || inputRef.current?.value;
+    const showStyledPlaceholder = useMemo(
+      () => placeholder && typeof placeholder !== 'string' && !hasValue,
+      [hasValue, placeholder],
     );
 
     let drop;
@@ -475,11 +476,6 @@ const TextInput = forwardRef(
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
-                    setShowStyledPlaceholder(
-                      placeholder &&
-                        typeof placeholder !== 'string' &&
-                        !event.target.value,
-                    );
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
@@ -495,12 +491,6 @@ const TextInput = forwardRef(
 );
 
 TextInput.displayName = 'TextInput';
+TextInput.propTypes = TextInputPropTypes;
 
-let TextInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  TextInputDoc = require('./doc').doc(TextInput);
-}
-const TextInputWrapper = TextInputDoc || TextInput;
-
-export { TextInputWrapper as TextInput };
+export { TextInput };

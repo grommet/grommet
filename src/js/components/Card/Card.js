@@ -13,11 +13,4 @@ const Card = forwardRef(({ ...rest }, ref) => {
 
 Card.displayName = 'Card';
 
-let CardDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardDoc = require('./doc').doc(Card);
-}
-const CardWrapper = CardDoc || Card;
-
-export { CardWrapper as Card };
+export { Card };

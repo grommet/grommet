@@ -15,6 +15,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ButtonPropTypes } from './propTypes';
 
 import { Box } from '../Box';
 import { Tip } from '../Tip';
@@ -135,6 +136,7 @@ const Button = forwardRef(
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
       href,
+      justify,
       kind: kindArg,
       label,
       onBlur,
@@ -273,7 +275,7 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify={align === 'center' ? 'center' : 'between'}
+          justify={justify || (align === 'center' ? 'center' : 'between')}
           gap={gap}
           responsive={false}
         >
@@ -324,7 +326,9 @@ const Button = forwardRef(
           badge={badgeProp}
           colorValue={color}
           disabled={disabled}
+          hasIcon={!!icon}
           gap={gap}
+          hasLabel={!!label}
           fillContainer={fill}
           focus={focus}
           focusIndicator={focusIndicator}
@@ -415,12 +419,6 @@ const Button = forwardRef(
 );
 
 Button.displayName = 'Button';
+Button.propTypes = ButtonPropTypes;
 
-let ButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-const ButtonWrapper = ButtonDoc || Button;
-
-export { ButtonWrapper as Button };
+export { Button };
