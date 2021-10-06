@@ -47,6 +47,10 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
 
 export const Step = () => <SimpleRangeSelector step={2} />;
 
+Step.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Input/RangeSelector/Step',
 };
