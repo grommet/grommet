@@ -71,7 +71,8 @@ const CheckBox = forwardRef(
       // don't allow checkbox to have focus when disabled
       if (disabled && focusProp) 
         setFocus(false);
-      else setFocus(focusProp);
+      else 
+        setFocus(focusProp);
     }, [disabled, focusProp]);
 
     useEffect(() => {
