@@ -11,6 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var rangeInputTheme = {
   rangeInput: {
+    pad: '12px',
     track: {
       height: '12px',
       extend: function extend() {

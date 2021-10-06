@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Grommet, RangeInput } from 'grommet';
 var rangeInputTheme = {
   rangeInput: {
+    pad: '12px',
     track: {
       height: '12px',
       extend: function extend() {
