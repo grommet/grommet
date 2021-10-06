@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  disabledStyle,
   edgeStyle,
   focusStyle,
   normalizeColor,
@@ -139,6 +140,15 @@ const trackColorStyle = (props) => {
   `;
 };
 
+const disabledRangeInputStyle = (props, context) => css`
+  ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
+  ${props.theme.rangeInput.disabled[context]?.color &&
+  `background: ${normalizeColor(
+    props.theme.rangeInput.disabled[context].color,
+    props.theme,
+  )};`}
+`;
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
@@ -148,6 +158,10 @@ const rangeTrackStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'track')};
 `;
 
 const rangeThumbStyle = css`
@@ -168,6 +182,10 @@ const rangeThumbStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'thumb')};
 `;
 
 const firefoxMicrosoftThumbStyle = css`
@@ -190,7 +208,7 @@ const StyledRangeInput = styled.input`
   height: ${(props) => props.theme.global.spacing};
   width: 100%;
   padding: 0px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
 
   ${(props) =>
@@ -218,7 +236,6 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
-
     ${(props) =>
       !props.disabled &&
       css`
