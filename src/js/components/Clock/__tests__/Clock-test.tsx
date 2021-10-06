@@ -3,12 +3,28 @@ import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Clock } from '..';
+import { Clock, ClockExtendedProps } from '..';
+import { ThemeType } from '../../../themes';
 
 const DURATION = 'PT18H23M34S';
 const TIME = 'T18:23:34';
 const TIME2 = 'T18:23';
 const DATE = '2018-02-22T18:23:34-10:00';
+
+const CLOCKTYPES: ClockExtendedProps['type'][] = ['analog', 'digital'];
+const PRECISIONS: ClockExtendedProps['precision'][] = [
+  'hours',
+  'minutes',
+  'seconds',
+];
+const SIZES: ClockExtendedProps['size'][] = [
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+  'xxlarge',
+];
 
 describe('Clock', () => {
   test('time', () => {
@@ -54,30 +70,29 @@ describe('Clock', () => {
     // give some time for the clock to move and use the callback
   });
 
-  ['analog', 'digital'].forEach((type) =>
-    ['hours', 'minutes', 'seconds'].forEach((precision) =>
-      ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].forEach(
-        (size) =>
-          test(`type ${type} precision ${precision} size ${size}`, () => {
-            const { container } = render(
-              <Grommet>
-                <Clock
-                  run={false}
-                  type={type}
-                  precision={precision}
-                  size={size}
-                  time={DURATION}
-                />
-              </Grommet>,
-            );
+  CLOCKTYPES.forEach((type) =>
+    PRECISIONS.forEach((precision) =>
+      SIZES.forEach((size) =>
+        test(`type ${type} precision ${precision} size ${size}`, () => {
+          const { container } = render(
+            <Grommet>
+              <Clock
+                run={false}
+                type={type}
+                precision={precision}
+                size={size}
+                time={DURATION}
+              />
+            </Grommet>,
+          );
 
-            expect(container.firstChild).toMatchSnapshot();
-          }),
+          expect(container.firstChild).toMatchSnapshot();
+        }),
       ),
     ),
   );
 
-  ['hours', 'minutes', 'seconds'].forEach((precision) =>
+  PRECISIONS.forEach((precision) =>
     test(`type analog precision ${precision} size huge`, () => {
       const { container } = render(
         <Grommet>
@@ -96,7 +111,7 @@ describe('Clock', () => {
   );
 
   test('type digital custom size', () => {
-    const override = {
+    const override: ThemeType = {
       clock: {
         digital: {
           text: {

@@ -8,10 +8,13 @@ interface OnChangeEvent {
   option: string | CheckBoxProps;
 }
 
-export type CheckBoxType = Omit<
-  CheckBoxProps & JSX.IntrinsicElements['input'],
-  'checked'
->;
+export interface CheckBoxType
+  extends Omit<CheckBoxProps & JSX.IntrinsicElements['input'], 'checked'> {
+  [key: CheckBoxGroupProps['labelKey'] | CheckBoxGroupProps['valueKey']]:
+    | CheckBoxProps['label']
+    | JSX.IntrinsicElements['input']['value'];
+}
+
 export interface CheckBoxGroupProps {
   value?: (number | string)[];
   disabled?: boolean;
