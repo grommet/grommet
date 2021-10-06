@@ -129,8 +129,7 @@ describe('CheckBox', () => {
   });
 
   test('indeterminate checked warns', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     render(
       <Grommet>
         <CheckBox indeterminate checked />
@@ -142,12 +141,10 @@ describe('CheckBox', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 
   test('indeterminate toggle warns', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     render(
       <Grommet>
         <CheckBox indeterminate toggle />
@@ -159,7 +156,6 @@ describe('CheckBox', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 
   test('controlled', () => {
