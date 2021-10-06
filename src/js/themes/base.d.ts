@@ -628,6 +628,10 @@ export interface ThemeType {
           size?: string;
           height?: number;
         };
+        [key: string]: {
+          size?: string;
+          height?: number;
+        };
       };
     };
   };
