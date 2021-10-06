@@ -92,14 +92,24 @@ var trackColorStyle = function trackColorStyle(props) {
   return "background: linear-gradient(\n      to right,\n      " + lowerTrackColor + ",\n      " + lowerTrackColor + " " + thumbPosition + ",\n      " + upperTrackColor + " " + thumbPosition + ",\n      " + upperTrackColor + "\n    );\n  ";
 };
 
-var rangeTrackStyle = (0, _styledComponents.css)(["box-sizing:border-box;width:100%;height:", ";", ";", ""], function (props) {
+var disabledRangeInputStyle = function disabledRangeInputStyle(props, context) {
+  var _props$theme$rangeInp3;
+
+  return (0, _styledComponents.css)(["", " ", ""], (0, _utils.disabledStyle)(props.theme.rangeInput.disabled.opacity), ((_props$theme$rangeInp3 = props.theme.rangeInput.disabled[context]) == null ? void 0 : _props$theme$rangeInp3.color) && "background: " + (0, _utils.normalizeColor)(props.theme.rangeInput.disabled[context].color, props.theme) + ";");
+};
+
+var rangeTrackStyle = (0, _styledComponents.css)(["box-sizing:border-box;width:100%;height:", ";", ";", " ", ";"], function (props) {
   return props.theme.rangeInput.track.height;
 }, function (props) {
   return trackColorStyle(props);
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.track && props.theme.rangeInput.track.extend;
+}, function (props) {
+  var _props$theme, _props$theme$rangeInp4;
+
+  return props.disabled && ((_props$theme = props.theme) == null ? void 0 : (_props$theme$rangeInp4 = _props$theme.rangeInput) == null ? void 0 : _props$theme$rangeInp4.disabled) && disabledRangeInputStyle(props, 'track');
 });
-var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;position:relative;border-radius:", ";height:", ";width:", ";overflow:visible;background:", ";-webkit-appearance:none;cursor:pointer;", ""], function (props) {
+var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;position:relative;border-radius:", ";height:", ";width:", ";overflow:visible;background:", ";-webkit-appearance:none;cursor:pointer;", " ", ";"], function (props) {
   return props.theme.global.spacing;
 }, function (props) {
   return props.theme.global.spacing;
@@ -109,6 +119,10 @@ var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;positio
   return (0, _utils.normalizeColor)(props.theme.rangeInput.thumb.color || 'control', props.theme);
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
+}, function (props) {
+  var _props$theme2, _props$theme2$rangeIn;
+
+  return props.disabled && ((_props$theme2 = props.theme) == null ? void 0 : (_props$theme2$rangeIn = _props$theme2.rangeInput) == null ? void 0 : _props$theme2$rangeIn.disabled) && disabledRangeInputStyle(props, 'thumb');
 });
 var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0px;height:", ";width:", ";", " ", ""], rangeThumbStyle, function (props) {
   return props.theme.global.spacing;
@@ -124,8 +138,10 @@ var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0p
 var StyledRangeInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
-})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:pointer;background:transparent;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
+})(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:", ";background:transparent;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
   return props.theme.global.spacing;
+}, function (props) {
+  return props.disabled ? 'default' : 'pointer';
 }, function (props) {
   return props.theme.rangeInput.pad && (0, _utils.edgeStyle)('padding', props.theme.rangeInput.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, rangeTrackStyle, function (props) {

@@ -1143,6 +1143,15 @@ export interface ThemeType {
     container?: BoxProps;
   };
   rangeInput?: {
+    disabled?: {
+      opacity?: OpacityType;
+      track?: {
+        color?: ColorType;
+      };
+      thumb?: {
+        color?: ColorType;
+      };
+    };
     track?: {
       height?: string;
       color?: any;

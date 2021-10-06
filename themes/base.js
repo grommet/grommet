@@ -1375,6 +1375,15 @@ var generate = function generate(baseSpacing, scale) {
     radioButtonGroup: {// container: {}, // any box props
     },
     rangeInput: {
+      disabled: {
+        opacity: 0.3 //   thumb: {
+        //     color: undefined,
+        //   },
+        //   track: {
+        //     color: undefined,
+        //   },
+
+      },
       // extend: undefined
       track: {
         height: '4px',
