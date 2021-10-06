@@ -1,4 +1,3 @@
-import { BoxTypes } from 'grommet';
 import * as React from 'react';
 import {
   A11yTitleType,

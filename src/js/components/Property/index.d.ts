@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TextType } from 'grommet';
+import { TextType } from '../Text';
 import {
   A11yTitleType,
   AlignSelfType,
