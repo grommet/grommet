@@ -422,7 +422,6 @@ exports[`WorldMap events on continents 1`] = `
       </g>
       <g
         aria-label="Africa"
-        data-testid="Africa"
         name="Africa"
         role="button"
         tabindex="0"
@@ -533,7 +532,6 @@ exports[`WorldMap events on continents 2`] = `
       </g>
       <g
         aria-label="Africa"
-        data-testid="Africa"
         name="Africa"
         role="button"
         tabindex="0"
@@ -644,7 +642,6 @@ exports[`WorldMap events on continents 3`] = `
       </g>
       <g
         aria-label="Africa"
-        data-testid="Africa"
         name="Africa"
         role="button"
         tabindex="0"
@@ -1153,7 +1150,6 @@ exports[`WorldMap onSelectPlace and events of places 1`] = `
 >
   <svg
     class="c1"
-    data-testid="worldmap"
     height="460"
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 940 460"
@@ -1252,7 +1248,6 @@ exports[`WorldMap onSelectPlace and events of places 1`] = `
     <path
       aria-label="Sydney"
       d="M840, 380 h0"
-      data-testid="Sydney"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
@@ -1269,7 +1264,6 @@ exports[`WorldMap onSelectPlace and events of places 2`] = `
 >
   <svg
     class="StyledWorldMap-sc-had4c3-0 dNxNVw"
-    data-testid="worldmap"
     height="460"
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 940 460"
@@ -1368,7 +1362,6 @@ exports[`WorldMap onSelectPlace and events of places 2`] = `
     <path
       aria-label="Sydney"
       d="M840, 380 h0"
-      data-testid="Sydney"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
@@ -1385,7 +1378,6 @@ exports[`WorldMap onSelectPlace and events of places 3`] = `
 >
   <svg
     class="StyledWorldMap-sc-had4c3-0 dNxNVw"
-    data-testid="worldmap"
     height="460"
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 940 460"
@@ -1484,7 +1476,6 @@ exports[`WorldMap onSelectPlace and events of places 3`] = `
     <path
       aria-label="Sydney"
       d="M840, 380 h0"
-      data-testid="Sydney"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
