@@ -17,7 +17,7 @@ var _propTypes = require("./propTypes");
 
 var _excluded = ["ref", "size"],
     _excluded2 = ["children", "color", "size", "message"],
-    _excluded3 = ["size", "color"];
+    _excluded3 = ["size", "color", "border"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -75,12 +75,27 @@ var Spinner = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var _theme$spinner$contai = theme.spinner.container,
       sizeThemeProp = _theme$spinner$contai.size,
       colorThemeProp = _theme$spinner$contai.color,
+      borderThemeProp = _theme$spinner$contai.border,
       themeProps = _objectWithoutPropertiesLoose(_theme$spinner$contai, _excluded3);
 
   var normalizedSize = size || sizeThemeProp;
   var spinnerSize = theme.spinner.size[normalizedSize] || normalizedSize;
   var color = colorProp || colorThemeProp;
-  var Icon = theme.spinner.icon; // children will take precedence over theme attributes
+  var Icon = theme.spinner.icon;
+  var defaultBorder = [{
+    side: 'all',
+    color: 'background-contrast',
+    size: size
+  }, {
+    side: 'top',
+    color: color,
+    size: size
+  }];
+  var spinnerBorder = Array.isArray(borderThemeProp) ? borderThemeProp.map(function (borderSide) {
+    return _extends({}, borderSide, {
+      color: borderSide.side === 'all' ? borderSide.color || 'background-contrast' : color
+    });
+  }) : borderThemeProp; // children will take precedence over theme attributes
 
   if (children) {
     return /*#__PURE__*/_react["default"].createElement(BasicSpinner, _extends({
@@ -100,15 +115,7 @@ var Spinner = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   return /*#__PURE__*/_react["default"].createElement(BasicSpinner, _extends({
     size: spinnerSize,
     ref: ref,
-    border: [{
-      side: 'all',
-      color: 'background-contrast',
-      size: size
-    }, {
-      side: 'top',
-      color: color,
-      size: size
-    }]
+    border: typeof borderThemeProp === 'undefined' ? defaultBorder : spinnerBorder
   }, themeProps, rest));
 });
 exports.Spinner = Spinner;
