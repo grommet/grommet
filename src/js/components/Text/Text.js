@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
@@ -15,28 +15,18 @@ const Text = forwardRef(
       as,
       tip: tipProp,
       // can't alphabetize a11yTitle before tip is defined
-      a11yTitle = typeof tipProp === 'string' ? tipProp : undefined,
+      // eslint-disable-next-line no-nested-ternary
+      a11yTitle = typeof tipProp === 'string'
+        ? tipProp
+        : tipProp?.content
+        ? tipProp.content
+        : undefined,
       truncate,
       ...rest
     },
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
-    const [tip, setTip] = useState(tipProp);
-
-    // place the text content in a tip if truncate === 'tip'
-    // and the text has been truncated
-    useEffect(() => {
-      if (truncate === 'tip') {
-        if (
-          textRef.current &&
-          textRef.current.scrollWidth > textRef.current.offsetWidth
-        ) {
-          setTip(children);
-        } else setTip(undefined);
-      }
-    }, [children, textRef, truncate]);
-
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
@@ -46,19 +36,16 @@ const Text = forwardRef(
         {...rest}
         ref={textRef}
       >
-        {children}
+        {children || tipProp?.content}
       </StyledText>
     );
 
-    if (tip) {
-      if (typeof tip === 'string') {
-        return (
-          <Tip content={tip} dropProps={dropProps}>
-            {styledTextResult}
-          </Tip>
-        );
-      }
-      return <Tip {...tip}>{styledTextResult}</Tip>;
+    if (tipProp) {
+      return (
+        <Tip content={children || tipProp?.content} {...tipProp}>
+          {styledTextResult}
+        </Tip>
+      );
     }
 
     return styledTextResult;

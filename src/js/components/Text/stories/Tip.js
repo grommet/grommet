@@ -9,11 +9,12 @@ export const Tip = () => (
     <Box align="center" pad="medium" gap="xlarge">
       <Box width="small">
         <Text
-          truncate="tip"
-          dropProps={{ align: { left: 'right', top: 'bottom' } }}
-        >
-          {alphabet}
-        </Text>
+          truncate
+          tip={{
+            content: alphabet,
+            dropProps: { align: { left: 'right', top: 'bottom' } },
+          }}
+        />
       </Box>
       <Text
         tip={{ dropProps: { align: { left: 'right' } }, content: 'tooltip' }}
