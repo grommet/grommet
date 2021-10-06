@@ -6,9 +6,8 @@ import {
   GapType,
   GridAreaType,
   MarginType,
+  WidthType,
 } from '../../utils';
-import { GridColumnsType } from '../Grid/index';
-
 export interface NameValueListProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -18,10 +17,17 @@ export interface NameValueListProps {
     name?: AlignType;
     value?: AlignType;
   };
-  columns?: GridColumnsType;
-  direction?: {
-    list?: 'column' | 'row';
-    property?: 'column' | 'column-reverse' | 'row';
+  layout?: 'column' | 'grid';
+  nameProps?: {
+    align?: AlignType;
+    width?: WidthType;
+  };
+  pairProps?: {
+    direction?: 'column' | 'column-reverse' | 'row';
+  };
+  valueProps?: {
+    align?: AlignType;
+    width?: WidthType;
   };
   gap?: GapType | { row?: GapType; column?: GapType };
 }

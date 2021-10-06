@@ -9,15 +9,12 @@ const NameValuePair = ({
   children,
   name: nameProp,
   value: valueProp,
-  nameProps,
-  valueProps,
   ...rest
 }) => {
-  const { align, direction: contextDirection } =
-    useContext(NameValueListContext);
+  const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
-  const direction = contextDirection?.property;
+  const direction = pairProps?.direction;
 
   const column =
     direction === 'column' ||
@@ -25,14 +22,16 @@ const NameValuePair = ({
     size === 'small';
 
   const Container = column ? Box : Fragment;
-  const containerProps = column ? { width: 'medium', ...rest } : undefined;
+  const containerProps = column
+    ? { width: valueProps?.width, ...rest }
+    : undefined;
 
   let name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number')
     name = (
       <Text
         as="dt"
-        textAlign={size !== 'small' ? align?.name : undefined}
+        textAlign={size !== 'small' ? nameProps?.align : undefined}
         {...theme.nameValuePair.name}
         {...nameProps}
       >
@@ -51,7 +50,7 @@ const NameValuePair = ({
     value = (
       <Text
         as="dd"
-        textAlign={size !== 'small' ? align?.value : undefined}
+        textAlign={size !== 'small' ? valueProps?.align : undefined}
         {...theme.nameValuePair.value}
         {...valueProps}
       >

@@ -12,7 +12,7 @@ const data = {
 };
 
 const customTheme = deepMerge(grommet, {
-  property: {
+  nameValuePair: {
     name: {
       color: 'text',
       size: 'xsmall',
@@ -20,6 +20,7 @@ const customTheme = deepMerge(grommet, {
     },
     value: {
       color: 'text',
+      weight: 'bold',
     },
   },
 });
@@ -27,7 +28,7 @@ const customTheme = deepMerge(grommet, {
 export const Custom = () => (
   <Grommet theme={customTheme}>
     <Box pad="small">
-      <NameValueList direction={{ property: 'column' }}>
+      <NameValueList pairProps={{ direction: 'column' }}>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name} value={value} />
         ))}

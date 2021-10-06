@@ -1,23 +1,25 @@
 import React from 'react';
-import { Box, Grommet, NameValueList, NameValuePair } from 'grommet';
+import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { metricData } from './data';
+import { data } from './data';
 
 export const ValueProps = () => (
   <Grommet theme={grommet}>
     <Box pad="small">
-      <NameValueList
-        columns="small"
-        direction={{ list: 'row', property: 'column-reverse' }}
-      >
-        {Object.entries(metricData).map(([name, value]) => (
-          <NameValuePair
-            key={name}
-            name={name}
-            justify="end"
-            valueProps={{ size: '3xl' }}
-            value={value}
-          />
+      <Text weight="bold" size="3xl">
+        align: end
+      </Text>
+      <NameValueList valueProps={{ align: 'end' }}>
+        {Object.entries(data).map(([name, value]) => (
+          <NameValuePair key={name} name={name} value={value} />
+        ))}
+      </NameValueList>
+      <Text weight="bold" size="3xl">
+        width: large
+      </Text>
+      <NameValueList valueProps={{ width: 'large' }}>
+        {Object.entries(data).map(([name, value]) => (
+          <NameValuePair key={name} name={name} value={value} />
         ))}
       </NameValueList>
     </Box>

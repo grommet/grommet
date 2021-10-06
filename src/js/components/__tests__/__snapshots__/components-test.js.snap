@@ -1673,6 +1673,12 @@ Object {
             "column": "large",
             "row": "medium",
           },
+          "name": Object {
+            "width": "small",
+          },
+          "value": Object {
+            "width": "medium",
+          },
         },
         "nameValuePair": Object {
           "name": Object {

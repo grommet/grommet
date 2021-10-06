@@ -9,10 +9,10 @@ const NameValueList = forwardRef(
     {
       a11yTitle,
       align,
-      columns: columnsProp,
-      direction = { list: 'column', property: 'row' },
+      layout = 'column',
       gap,
       nameProps,
+      pairProps = { direction: 'row' },
       valueProps,
       ...rest
     },
@@ -22,17 +22,23 @@ const NameValueList = forwardRef(
     const theme = useContext(ThemeContext);
 
     let columns;
-    if (size === 'small' || direction.list === 'row') columns = 'medium';
-    else if (direction.list === 'column') columns = ['small', 'medium'];
+    const valueWidth = valueProps?.width || theme.nameValueList.value.width;
+    const nameWidth = nameProps?.width || theme.nameValueList.name.width;
+    if (size === 'small' || layout === 'grid') columns = valueWidth;
+    else if (layout === 'column' && pairProps.direction === 'row')
+      columns = [nameWidth, valueWidth];
+    else columns = [valueWidth];
 
     return (
-      <NameValueListContext.Provider value={{ direction, align }}>
+      <NameValueListContext.Provider
+        value={{ nameProps, pairProps, valueProps }}
+      >
         <Grid
           as="dl"
           ref={ref}
-          columns={columnsProp || columns}
+          columns={columns}
           gap={gap || theme.nameValueList.gap}
-          fill={direction.list === 'row'}
+          fill={layout === 'grid'}
           {...rest}
         />
       </NameValueListContext.Provider>

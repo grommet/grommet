@@ -1052,6 +1052,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     nameValueList: {
       gap: { column: 'large', row: 'medium' },
+      name: {
+        width: 'small',
+      },
+      value: {
+        width: 'medium',
+      },
     },
     notification: {
       time: 8000,

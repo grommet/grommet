@@ -1,24 +1,18 @@
 import React from 'react';
-import { Box, Grommet, Text, NameValueList, NameValuePair } from 'grommet';
+import { Box, Grommet, NameValueList, NameValuePair } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { data } from './data';
+import { data, metricData } from './data';
 
 export const Direction = () => (
   <Grommet theme={grommet}>
-    <Box pad="small" gap="medium">
-      <Text weight="bold" size="3xl">
-        List: Row / Property: Column
-      </Text>
-      <NameValueList direction={{ list: 'row', property: 'column' }}>
+    <Box pad="small" gap="large">
+      <NameValueList layout="grid" pairProps={{ direction: 'column' }}>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name} value={value} />
         ))}
       </NameValueList>
-      <Text weight="bold" size="3xl">
-        List: Column / Property: Column
-      </Text>
-      <NameValueList direction={{ property: 'column' }}>
-        {Object.entries(data).map(([name, value]) => (
+      <NameValueList pairProps={{ direction: 'column' }}>
+        {Object.entries(metricData).map(([name, value]) => (
           <NameValuePair key={name} name={name} value={value} />
         ))}
       </NameValueList>
@@ -27,5 +21,5 @@ export const Direction = () => (
 );
 
 export default {
-  title: 'Visualizations/PropertyList/Direction',
+  title: 'Visualizations/NameValueList/Direction',
 };
