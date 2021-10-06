@@ -9,7 +9,7 @@ import {
 } from '../../utils';
 import { GridColumnsType } from '../Grid/index';
 
-export interface PropertyListProps {
+export interface NameValueListProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
@@ -26,7 +26,7 @@ export interface PropertyListProps {
   gap?: GapType | { row?: GapType; column?: GapType };
 }
 
-declare const PropertyList: React.FC<PropertyListProps>;
-export type PropertyListType = PropertyListProps;
+declare const NameValueList: React.FC<NameValueListProps>;
+export type NameValueListType = NameValueListProps;
 
-export { PropertyList };
+export { NameValueList };

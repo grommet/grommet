@@ -1040,7 +1040,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
-    property: {
+    nameValuePair: {
       name: {
         color: 'text-strong',
         weight: 'bold',
@@ -1050,7 +1050,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'none', // remove default dd margin
       },
     },
-    propertyList: {
+    nameValueList: {
       gap: { column: 'large', row: 'medium' },
     },
     notification: {

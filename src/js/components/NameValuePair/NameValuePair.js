@@ -3,9 +3,9 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
-import { PropertyListContext } from '../PropertyList/PropertyListContext';
+import { NameValueListContext } from '../NameValueList/NameValueListContext';
 
-const Property = ({
+const NameValuePair = ({
   children,
   name: nameProp,
   value: valueProp,
@@ -14,7 +14,7 @@ const Property = ({
   ...rest
 }) => {
   const { align, direction: contextDirection } =
-    useContext(PropertyListContext);
+    useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
   const direction = contextDirection?.property;
@@ -33,7 +33,7 @@ const Property = ({
       <Text
         as="dt"
         textAlign={size !== 'small' ? align?.name : undefined}
-        {...theme.property.name}
+        {...theme.nameValuePair.name}
         {...nameProps}
       >
         {nameProp}
@@ -52,7 +52,7 @@ const Property = ({
       <Text
         as="dd"
         textAlign={size !== 'small' ? align?.value : undefined}
-        {...theme.property.value}
+        {...theme.nameValuePair.value}
         {...valueProps}
       >
         {valueProp}
@@ -76,4 +76,4 @@ const Property = ({
   );
 };
 
-export { Property };
+export { NameValuePair };

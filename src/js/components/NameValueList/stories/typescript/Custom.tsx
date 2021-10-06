@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grommet, grommet, Property, PropertyList } from 'grommet';
+import { Box, Grommet, grommet, NameValueList, NameValuePair } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 
 const data = {
@@ -27,15 +27,15 @@ const customTheme = deepMerge(grommet, {
 export const Custom = () => (
   <Grommet theme={customTheme}>
     <Box pad="small">
-      <PropertyList direction={{ property: 'column' }}>
+      <NameValueList direction={{ property: 'column' }}>
         {Object.entries(data).map(([name, value]) => (
-          <Property key={name} name={name} value={value} />
+          <NameValuePair key={name} name={name} value={value} />
         ))}
-      </PropertyList>
+      </NameValueList>
     </Box>
   </Grommet>
 );
 
 export default {
-  title: 'Visualizations/PropertyList/Custom',
+  title: 'Visualizations/NameValueList/Custom',
 };

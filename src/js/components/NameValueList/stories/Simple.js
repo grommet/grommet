@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grommet, Property, PropertyList, Text } from 'grommet';
+import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { StatusCriticalSmall, StatusGoodSmall } from 'grommet-icons';
 import { data, statusData } from './data';
@@ -10,15 +10,15 @@ export const Simple = () => (
       <Text weight="bold" size="3xl">
         Default
       </Text>
-      <PropertyList>
+      <NameValueList>
         {Object.entries(data).map(([name, value]) => (
-          <Property key={name} name={name} value={value} />
+          <NameValuePair key={name} name={name} value={value} />
         ))}
-      </PropertyList>
+      </NameValueList>
       <Text weight="bold" size="3xl">
         Custom Child Value
       </Text>
-      <PropertyList>
+      <NameValueList>
         {Object.entries(statusData).map(([name, value]) => {
           let icon;
           if (value === 'Ok')
@@ -26,19 +26,19 @@ export const Simple = () => (
           else if (value === 'Critical')
             icon = <StatusCriticalSmall color="red" size="small" />;
           return (
-            <Property key={name} name={name}>
+            <NameValuePair key={name} name={name}>
               <Box align="center" direction="row" gap="xsmall">
                 {icon}
                 <Text color="text-strong">{value}</Text>
               </Box>
-            </Property>
+            </NameValuePair>
           );
         })}
-      </PropertyList>
+      </NameValueList>
     </Box>
   </Grommet>
 );
 
 export default {
-  title: 'Visualizations/PropertyList/Simple',
+  title: 'Visualizations/NameValueList/Simple',
 };

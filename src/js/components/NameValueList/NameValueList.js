@@ -2,9 +2,9 @@ import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
-import { PropertyListContext } from './PropertyListContext';
+import { NameValueListContext } from './NameValueListContext';
 
-const PropertyList = forwardRef(
+const NameValueList = forwardRef(
   (
     {
       a11yTitle,
@@ -26,20 +26,20 @@ const PropertyList = forwardRef(
     else if (direction.list === 'column') columns = ['small', 'medium'];
 
     return (
-      <PropertyListContext.Provider value={{ direction, align }}>
+      <NameValueListContext.Provider value={{ direction, align }}>
         <Grid
           as="dl"
           ref={ref}
           columns={columnsProp || columns}
-          gap={gap || theme.propertyList.gap}
+          gap={gap || theme.nameValueList.gap}
           fill={direction.list === 'row'}
           {...rest}
         />
-      </PropertyListContext.Provider>
+      </NameValueListContext.Provider>
     );
   },
 );
 
-PropertyList.displayName = 'PropertyList';
+NameValueList.displayName = 'NameValueList';
 
-export { PropertyList };
+export { NameValueList };

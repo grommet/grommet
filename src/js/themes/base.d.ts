@@ -1135,11 +1135,11 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
-  property?: {
+  nameValuePair?: {
     name?: TextProps;
     value: TextProps;
   };
-  propertyList?: {
+  nameValueList?: {
     gap?: GapType | { row?: GapType; column?: GapType };
   };
   radioButtonGroup?: {

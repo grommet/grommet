@@ -7,7 +7,7 @@ import {
   MarginType,
 } from '../../utils';
 
-export interface PropertyProps {
+export interface NameValuePairProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
@@ -19,7 +19,7 @@ export interface PropertyProps {
   valueProps?: TextType;
 }
 
-declare const Property: React.FC<PropertyProps>;
-export type PropertyType = PropertyProps;
+declare const NameValuePair: React.FC<NameValuePairProps>;
+export type NameValuePairType = NameValuePairProps;
 
-export { Property };
+export { NameValuePair };
