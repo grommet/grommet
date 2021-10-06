@@ -30,6 +30,10 @@ const TitleAndMessageNotification = () => {
 
 export const Toast = () => <TitleAndMessageNotification />;
 
+Toast.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Visualizations/Notification/Toast',
 };
