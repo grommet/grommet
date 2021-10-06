@@ -91,6 +91,11 @@ export var Simple = function Simple() {
     label: "Interactive Element"
   }), contentFiller))));
 };
+Simple.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Utilities/SkipLinks/Simple'
 };

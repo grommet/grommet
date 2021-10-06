@@ -25,6 +25,11 @@ export var Fill = function Fill() {
     fill: true
   })));
 };
+Fill.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Input/TextArea/Fill'
 };

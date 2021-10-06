@@ -109,6 +109,11 @@ var Children = function Children() {
 };
 
 exports.Children = Children;
+Children.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Input/Select/Children'
 };

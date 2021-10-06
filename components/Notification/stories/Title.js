@@ -50,6 +50,11 @@ var ToastTitleOnly = function ToastTitleOnly() {
 };
 
 exports.ToastTitleOnly = ToastTitleOnly;
+ToastTitleOnly.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Visualizations/Notification/Toast Title Only'
 };

@@ -57,6 +57,11 @@ export var Step = function Step() {
     step: 2
   });
 };
+Step.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Input/RangeSelector/Step'
 };

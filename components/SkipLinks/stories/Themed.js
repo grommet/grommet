@@ -117,6 +117,11 @@ var Themed = function Themed() {
 };
 
 exports.Themed = Themed;
+Themed.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Utilities/SkipLinks/Themed'
 };

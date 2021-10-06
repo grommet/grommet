@@ -102,6 +102,11 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
+Simple.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Utilities/SkipLinks/Simple'
 };

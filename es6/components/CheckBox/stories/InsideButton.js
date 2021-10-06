@@ -28,6 +28,11 @@ export var InsideButton = function InsideButton() {
   }))));
 };
 InsideButton.storyName = 'Inside a Button';
+InsideButton.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Input/CheckBox/Inside a Button'
 };

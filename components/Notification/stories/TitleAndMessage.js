@@ -51,6 +51,11 @@ var Toast = function Toast() {
 };
 
 exports.Toast = Toast;
+Toast.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Visualizations/Notification/Toast'
 };

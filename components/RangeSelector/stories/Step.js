@@ -70,6 +70,11 @@ var Step = function Step() {
 };
 
 exports.Step = Step;
+Step.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Input/RangeSelector/Step'
 };

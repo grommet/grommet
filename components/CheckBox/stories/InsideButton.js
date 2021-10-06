@@ -42,6 +42,11 @@ var InsideButton = function InsideButton() {
 
 exports.InsideButton = InsideButton;
 InsideButton.storyName = 'Inside a Button';
+InsideButton.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 var _default = {
   title: 'Input/CheckBox/Inside a Button'
 };

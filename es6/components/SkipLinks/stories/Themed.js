@@ -105,6 +105,11 @@ export var Themed = function Themed() {
     label: "Interactive Element"
   }), contentFiller))));
 };
+Themed.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Utilities/SkipLinks/Themed'
 };

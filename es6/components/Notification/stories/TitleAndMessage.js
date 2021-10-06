@@ -36,6 +36,11 @@ var TitleAndMessageNotification = function TitleAndMessageNotification() {
 export var Toast = function Toast() {
   return /*#__PURE__*/React.createElement(TitleAndMessageNotification, null);
 };
+Toast.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Visualizations/Notification/Toast'
 };

@@ -93,6 +93,11 @@ export var Children = function Children() {
     }
   }, renderOption)));
 };
+Children.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Input/Select/Children'
 };

@@ -35,6 +35,11 @@ var TitleNotification = function TitleNotification() {
 export var ToastTitleOnly = function ToastTitleOnly() {
   return /*#__PURE__*/React.createElement(TitleNotification, null);
 };
+ToastTitleOnly.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
 export default {
   title: 'Visualizations/Notification/Toast Title Only'
 };
