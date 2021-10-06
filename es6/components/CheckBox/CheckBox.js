@@ -68,8 +68,9 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setFocus = _useState[1];
 
   useEffect(function () {
-    return setFocus(focusProp);
-  }, [focusProp]);
+    // don't allow checkbox to have focus when disabled
+    if (disabled && focusProp) setFocus(false);else setFocus(focusProp);
+  }, [disabled, focusProp]);
   useEffect(function () {
     if (checkedProp && indeterminate) {
       console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
