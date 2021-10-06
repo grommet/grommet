@@ -230,10 +230,12 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       }
     },
     onFocus: function onFocus(event) {
-      openCalendar();
+      announce(formatMessage({
+        id: 'dateInput.openCalendar',
+        messages: messages
+      }));
       if (_onFocus) _onFocus(event);
-    },
-    onClick: openCalendar
+    }
   }))));
 
   if (inline) {
