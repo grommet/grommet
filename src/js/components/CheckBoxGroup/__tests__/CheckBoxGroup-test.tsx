@@ -167,8 +167,7 @@ describe('CheckBoxGroup', () => {
   });
 
   test('no duplicated key error', () => {
-    console.error = jest.fn();
-    const errorSpy = jest.spyOn(console, 'error');
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
 
     render(
       <Grommet>
@@ -190,12 +189,10 @@ describe('CheckBoxGroup', () => {
 
     errorSpy.mockReset();
     errorSpy.mockRestore();
-    console.error.mockReset();
   });
 
   test('checked warning', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
 
     render(
       <Grommet>
@@ -211,6 +208,5 @@ describe('CheckBoxGroup', () => {
     expect(warnSpy).toBeCalled();
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 });

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
+  edgeStyle,
   focusStyle,
   normalizeColor,
   parseMetricToNum,
@@ -209,6 +210,16 @@ const StyledRangeInput = styled.input`
   padding: 0px;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
+
+  ${(props) =>
+    props.theme.rangeInput.pad &&
+    edgeStyle(
+      'padding',
+      props.theme.rangeInput.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
 
   &::-moz-focus-inner {
     border: none;
