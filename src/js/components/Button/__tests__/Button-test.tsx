@@ -90,8 +90,7 @@ describe('Button', () => {
   });
 
   test('warns about invalid label', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     const { container } = render(
       <Grommet>
         <Button label="Test" onClick={() => {}}>
@@ -105,12 +104,10 @@ describe('Button', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 
   test('warns about invalid icon', () => {
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     const { container } = render(
       <Grommet>
         <Button icon={<svg />} onClick={() => {}}>
@@ -124,7 +121,6 @@ describe('Button', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
   });
 
   test('primary', () => {
@@ -485,8 +481,7 @@ describe('Button', () => {
 
     expect(button).toHaveStyle({ cursor: 'default' });
 
-    // eslint-disable-next-line no-underscore-dangle
-    const cursorStyle = window.getComputedStyle(button)._values.cursor;
+    const cursorStyle = window.getComputedStyle(button).cursor;
     expect(cursorStyle).not.toBe('pointer');
     expect(cursorStyle).toBe('default');
   });
@@ -568,5 +563,15 @@ describe('Button', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`line-height should be zero for icon only`, () => {
+    const { getByRole } = render(
+      <Grommet>
+        <Button icon={<Add />} />
+      </Grommet>,
+    );
+
+    expect(getByRole('button')).toHaveStyleRule('line-height', '0');
   });
 });

@@ -256,7 +256,7 @@ describe('DateInput', () => {
     );
 
     userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
-    expect(document.getElementById('item__drop')).not.toBeNull();
+    expect(document.getElementById('item__drop')).toBeNull();
   });
 
   test('select inline', () => {
