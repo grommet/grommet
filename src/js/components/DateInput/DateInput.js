@@ -89,7 +89,8 @@ const DateInput = forwardRef(
           !valuesAreEqual(
             textToValue(textValue, schema, value, range),
             textToValue(nextTextValue, schema, value, range),
-          )
+          ) ||
+          (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
