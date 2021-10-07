@@ -11,10 +11,11 @@ export const Tip = () => (
         <Text
           truncate
           tip={{
-            content: alphabet,
             dropProps: { align: { left: 'right', top: 'bottom' } },
           }}
-        />
+        >
+          {alphabet}
+        </Text>
       </Box>
       <Text
         tip={{ dropProps: { align: { left: 'right' } }, content: 'tooltip' }}

@@ -11547,7 +11547,9 @@ exports[`DataTable onSort 1`] = `
           >
             <span
               class="c8"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -11846,7 +11848,9 @@ exports[`DataTable onSort 2`] = `
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -12191,7 +12195,9 @@ exports[`DataTable onSort external 1`] = `
           >
             <span
               class="c8"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -12408,7 +12414,9 @@ exports[`DataTable onSort external 2`] = `
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -20015,7 +20023,9 @@ exports[`DataTable should apply pagination styling 1`] = `
               >
                 <span
                   class="c7"
-                />
+                >
+                  0
+                </span>
               </div>
             </td>
           </tr>
@@ -22736,7 +22746,9 @@ exports[`DataTable should paginate 1`] = `
               >
                 <span
                   class="c7"
-                />
+                >
+                  0
+                </span>
               </div>
             </td>
           </tr>
@@ -25021,7 +25033,9 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               >
                 <span
                   class="c7"
-                />
+                >
+                  0
+                </span>
               </div>
             </td>
           </tr>
@@ -26260,7 +26274,9 @@ exports[`DataTable should render new data when page changes 1`] = `
               >
                 <span
                   class="c7"
-                />
+                >
+                  0
+                </span>
               </div>
             </td>
           </tr>
@@ -30093,7 +30109,9 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               >
                 <span
                   class="c7"
-                />
+                >
+                  0
+                </span>
               </div>
             </td>
           </tr>
@@ -34229,7 +34247,9 @@ exports[`DataTable sort 1`] = `
           >
             <span
               class="c8"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -34574,7 +34594,9 @@ exports[`DataTable sort external 1`] = `
           >
             <span
               class="c8"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -35734,7 +35756,9 @@ exports[`DataTable sortable 1`] = `
           >
             <span
               class="c8"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>
@@ -36033,7 +36057,9 @@ exports[`DataTable sortable 2`] = `
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
-            />
+            >
+              0
+            </span>
           </div>
         </td>
       </tr>

@@ -10,17 +10,13 @@ const Text = forwardRef(
     {
       children,
       color,
-      dropProps,
       tag,
       as,
       tip: tipProp,
       // can't alphabetize a11yTitle before tip is defined
-      // eslint-disable-next-line no-nested-ternary
-      a11yTitle = typeof tipProp === 'string'
-        ? tipProp
-        : tipProp?.content
-        ? tipProp.content
-        : undefined,
+      a11yTitle = (typeof tipProp === 'string' && tipProp) ||
+        tipProp?.content ||
+        undefined,
       truncate,
       ...rest
     },
@@ -36,13 +32,13 @@ const Text = forwardRef(
         {...rest}
         ref={textRef}
       >
-        {children || tipProp?.content}
+        {children}
       </StyledText>
     );
 
     if (tipProp) {
       return (
-        <Tip content={children || tipProp?.content} {...tipProp}>
+        <Tip content={children} {...tipProp}>
           {styledTextResult}
         </Tip>
       );
