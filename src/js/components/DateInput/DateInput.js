@@ -201,10 +201,11 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
-              openCalendar();
+              announce(
+                formatMessage({ id: 'dateInput.openCalendar', messages }),
+              );
               if (onFocus) onFocus(event);
             }}
-            onClick={openCalendar}
           />
         </Keyboard>
       </FormContext.Provider>
