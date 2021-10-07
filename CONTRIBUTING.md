@@ -35,7 +35,7 @@ Quick steps and ideas of how you can contribute to Grommet:
    GitHub][grommet issues], or come talk to us and fellow contributors in our
    [Slack community] about your issue or idea. Please make sure to check
    open and closed pull requests and issues before filing a new one!
-2. Share with us exciting projects using Grommet in our [Slack community].
+1. Share with us exciting projects using Grommet in our [Slack community].
 
 ## How to Contribute
 
