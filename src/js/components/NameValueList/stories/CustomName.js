@@ -5,7 +5,7 @@ import { data } from './data';
 
 export const CustomNameRender = () => (
   <Grommet theme={grommet}>
-    <Box pad="small">
+    <Box gap="large" pad="small">
       <Text weight="bold" size="3xl">
         Custom Name
       </Text>
