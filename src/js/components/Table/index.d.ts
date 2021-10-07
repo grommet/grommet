@@ -1,5 +1,10 @@
-import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import * as React from 'react';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 
 export interface TableProps {
   a11yTitle?: A11yTitleType;
@@ -9,6 +14,10 @@ export interface TableProps {
   margin?: MarginType;
 }
 
-declare const Table: React.FC<TableProps & JSX.IntrinsicElements['table']>;
+type htmlTableProps = JSX.IntrinsicElements['table'];
+
+export interface TableExtendedProps extends TableProps, htmlTableProps {}
+
+declare const Table: React.FC<TableExtendedProps>;
 
 export { Table };

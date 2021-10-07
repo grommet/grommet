@@ -6,12 +6,14 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { DropPropTypes } from './propTypes';
 
 const Drop = forwardRef(
   (
     {
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
+      trapFocus = true,
       ...rest
     },
     ref,
@@ -21,9 +23,10 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
-      containerTarget,
-    ]);
+    useEffect(
+      () => setDropContainer(getNewContainer(containerTarget)),
+      [containerTarget],
+    );
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
@@ -53,6 +56,7 @@ const Drop = forwardRef(
             dir={theme && theme.dir}
             dropTarget={dropTarget}
             restrictFocus={restrictFocus}
+            trapFocus={trapFocus}
             {...rest}
           />,
           dropContainer,
@@ -62,11 +66,6 @@ const Drop = forwardRef(
 );
 
 Drop.displayName = 'Drop';
+Drop.propTypes = DropPropTypes;
 
-let DropDoc;
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-const DropWrapper = DropDoc || Drop;
-
-export { DropWrapper as Drop };
+export { Drop };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Grommet, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -11,7 +10,7 @@ const items = [
   { label: 'Item D', href: '#' },
 ];
 
-const Simple = () => (
+const SimpleNav = () => (
   <Grommet theme={grommet}>
     <Nav pad="large">
       {items.map(item => (
@@ -21,4 +20,8 @@ const Simple = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('Simple', () => <Simple />);
+export const Simple = () => <SimpleNav />;
+
+export default {
+  title: 'Controls/Nav/Simple',
+};

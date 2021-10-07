@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
+
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { List } from '..';
+
+const data = [];
+for (let i = 0; i < 95; i += 1) {
+  data.push(`entry-${i}`);
+}
 
 describe('List', () => {
   afterEach(cleanup);
@@ -16,6 +22,7 @@ describe('List', () => {
     const { container, getByText } = render(
       <Grommet>
         <List
+          aria-label="List"
           data={[{ a: 'alpha' }, { a: 'beta' }]}
           onClickItem={onClickItem}
         />
@@ -98,10 +105,19 @@ describe('List', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('border boolean', () => {
+  test('border boolean true', () => {
     const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('border boolean false', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} border={false} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -134,6 +150,21 @@ describe('List', () => {
         <List data={['one', 'two']}>
           {(item, index) => `${item} - ${index}`}
         </List>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('defaultItemProps', () => {
+    const { container } = render(
+      <Grommet>
+        <List
+          data={['one', 'two']}
+          defaultItemProps={{
+            background: 'accent-1',
+            align: 'start',
+          }}
+        />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -231,16 +262,14 @@ describe('List events', () => {
 
   beforeEach(() => {
     onClickItem = jest.fn();
-    App = () => {
-      return (
-        <Grommet>
-          <List
-            data={[{ a: 'alpha' }, { a: 'beta' }]}
-            onClickItem={onClickItem}
-          />
-        </Grommet>
-      );
-    };
+    App = () => (
+      <Grommet>
+        <List
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          onClickItem={onClickItem}
+        />
+      </Grommet>
+    );
   });
 
   afterEach(cleanup);
@@ -331,5 +360,177 @@ describe('List events', () => {
     // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
+  });
+
+  test('should paginate', () => {
+    const { container, getAllByText } = render(
+      <Grommet>
+        <List data={data} paginate />
+      </Grommet>,
+    );
+
+    const results = getAllByText('entry', { exact: false });
+    // default step 50
+    expect(results.length).toEqual(50);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply pagination styling', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={data} paginate={{ background: 'red', margin: 'large' }} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show correct item index when "show" is a number', () => {
+    const show = 15;
+    const { container, getByText } = render(
+      <Grommet>
+        <List data={data} show={show} paginate />
+      </Grommet>,
+    );
+
+    const result = getByText(`entry-${show}`);
+    expect(result).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show correct page when "show" is { page: # }', () => {
+    const desiredPage = 2;
+    const { container } = render(
+      <Grommet>
+        <List data={data} show={{ page: desiredPage }} paginate />
+      </Grommet>,
+    );
+
+    const activePage = container.querySelector(
+      `[aria-current="page"]`,
+    ).innerHTML;
+
+    expect(activePage).toEqual(`${desiredPage}`);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render correct num items per page (step)', () => {
+    const step = 14;
+    const { container, getAllByText } = render(
+      <Grommet>
+        <List data={data} step={step} paginate />
+      </Grommet>,
+    );
+
+    const results = getAllByText('entry', { exact: false });
+
+    expect(results.length).toEqual(step);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render new data when page changes', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <List data={data} paginate />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('Go to next page'));
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not show paginate controls when length of data < step', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['entry-1', 'entry-2', 'entry-3']} paginate />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder', () => {
+  let onOrder;
+  let App;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  afterEach(cleanup);
+
+  test('Mouse move down', () => {
+    const { container } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(container.querySelector('#alphaMoveDown'));
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move down', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // alpha's down arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move up', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // beta's up arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

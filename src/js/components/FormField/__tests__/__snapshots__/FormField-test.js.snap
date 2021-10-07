@@ -39,7 +39,6 @@ exports[`FormField abut 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -55,15 +54,13 @@ exports[`FormField abut 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -108,7 +105,6 @@ exports[`FormField abut with margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -124,17 +120,444 @@ exports[`FormField abut with margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
+</div>
+`;
+
+exports[`FormField contentProps 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField custom error and info icon and container 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: green;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF4040;
+}
+
+.c11 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            aria-invalid="true"
+            autocomplete="off"
+            class="c5"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c6 FormField__StyledMessageContainer-sc-m9hood-2"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            aria-label="Alert"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 17v2m0-9v6m0-13L2 22h20L12 3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <span
+          class="c9"
+        >
+          This is an error message.
+        </span>
+      </div>
+      <div
+        class="c10 FormField__StyledMessageContainer-sc-m9hood-2"
+      >
+        <div
+          class="c7"
+        >
+          <svg
+            aria-label="StatusInfo"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99A1.995 1.995 0 0 1 2 20.01V3.99zM12 10v8m0-12v2"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <span
+          class="c11"
+        >
+          Here is a little added info on FormField.
+        </span>
+      </div>
+    </div>
+  </form>
 </div>
 `;
 
@@ -177,7 +600,6 @@ exports[`FormField custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -197,17 +619,165 @@ exports[`FormField custom formfield 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 c2"
   >
     <div
-      className="c3 "
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
+</div>
+`;
+
+exports[`FormField custom input margin 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
 `;
 
@@ -250,7 +820,6 @@ exports[`FormField custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -269,18 +838,14 @@ exports[`FormField custom label 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -295,9 +860,18 @@ exports[`FormField custom label 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -318,36 +892,27 @@ exports[`FormField custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
-        size="small"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 "
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -395,7 +960,6 @@ exports[`FormField default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -406,18 +970,14 @@ exports[`FormField default 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -432,9 +992,18 @@ exports[`FormField default 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -455,35 +1024,28 @@ exports[`FormField default 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     >
       <div
-        className="c3"
+        class="c3"
       >
         <input
-          autoComplete="off"
-          className="c4"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
+          autocomplete="off"
+          class="c4"
+          value=""
         />
       </div>
     </div>
@@ -532,7 +1094,6 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -543,20 +1104,16 @@ exports[`FormField disabled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
   opacity: 0.3;
   cursor: default;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -571,9 +1128,18 @@ exports[`FormField disabled 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -594,41 +1160,31 @@ exports[`FormField disabled 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 "
+        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -678,7 +1234,6 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -697,20 +1252,16 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
   opacity: 0.3;
   cursor: default;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -725,9 +1276,18 @@ exports[`FormField disabled with custom label 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -748,37 +1308,28 @@ exports[`FormField disabled with custom label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
-        size="small"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3 "
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            disabled={true}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            disabled=""
+            value=""
           />
         </div>
       </div>
@@ -826,7 +1377,6 @@ exports[`FormField empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -842,15 +1392,13 @@ exports[`FormField empty margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -895,7 +1443,6 @@ exports[`FormField error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c3 {
@@ -921,18 +1468,16 @@ exports[`FormField error 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test error
     </span>
@@ -979,7 +1524,6 @@ exports[`FormField help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -1002,20 +1546,18 @@ exports[`FormField help 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <span
-      className="c2"
+      class="c2"
     >
       test help
     </span>
     <div
-      className="c3 "
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1060,7 +1602,6 @@ exports[`FormField htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1076,15 +1617,13 @@ exports[`FormField htmlFor 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1129,7 +1668,6 @@ exports[`FormField info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c3 {
@@ -1155,18 +1693,16 @@ exports[`FormField info 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
     <span
-      className="c3"
+      class="c3"
     >
       test info
     </span>
@@ -1213,7 +1749,6 @@ exports[`FormField label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -1238,20 +1773,18 @@ exports[`FormField label 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <label
-      className="c2"
+      class="c2"
     >
       test label
     </label>
     <div
-      className="c3 "
+      class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1296,7 +1829,6 @@ exports[`FormField margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1312,15 +1844,13 @@ exports[`FormField margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1366,7 +1896,6 @@ exports[`FormField pad 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1388,15 +1917,13 @@ exports[`FormField pad 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
 </div>
@@ -1460,18 +1987,14 @@ exports[`FormField pad with border undefined 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1486,9 +2009,18 @@ exports[`FormField pad with border undefined 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -1509,35 +2041,27 @@ exports[`FormField pad with border undefined 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
       </label>
       <div
-        className="c3"
+        class="c3"
       >
         <div
-          className="c4"
+          class="c4"
         >
           <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c5"
+            value=""
           />
         </div>
       </div>
@@ -1585,7 +2109,6 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -1596,18 +2119,14 @@ exports[`FormField required 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1622,9 +2141,18 @@ exports[`FormField required 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1645,40 +2173,30 @@ exports[`FormField required 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1 "
   >
     <div
-      className="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
    
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 "
+        class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c4"
+            value=""
           />
         </div>
       </div>
@@ -1726,7 +2244,6 @@ exports[`FormField should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1748,8 +2265,348 @@ exports[`FormField should have no accessibility violations 1`] = `
     class="c1 "
   >
     <div
-      class="c2 "
+      class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
     />
   </div>
+</div>
+`;
+
+exports[`FormField should render asterisk when requiredIndicator === true 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+        <span
+          aria-label="required"
+          class="c3"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField should render custom indicator when requiredIndicator is
+  element 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        label
+        <svg
+          aria-label="New"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 1v22M2 6l20 12m0-12L2 18"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </label>
+      <div
+        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
 `;

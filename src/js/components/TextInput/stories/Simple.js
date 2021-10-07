@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleTextInput = () => {
+export const Simple = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = event => setValue(event.target.value);
@@ -20,4 +19,10 @@ const SimpleTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Simple', () => <SimpleTextInput />);
+Simple.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/TextInput/Simple',
+};

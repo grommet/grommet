@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -24,9 +23,8 @@ const MarginLayer = ({ margin, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Layer', module)
-  .add('Margin', () => <MarginLayer full />)
-  .add('Margin (Center)', () => <MarginLayer margin="large" />)
-  .add('Margin Top (Center)', () => (
-    <MarginLayer margin={{ top: 'large' }} position="top" />
-  ));
+export const Margin = () => <MarginLayer full />;
+
+export default {
+  title: 'Layout/Layer/Margin',
+};

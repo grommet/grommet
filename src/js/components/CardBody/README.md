@@ -1,12 +1,2 @@
 ## CardBody
-The Card Body.
-
-
-## Properties
-
-  
-## Intrinsic element
-
-```
-div
-```
+Documentation for this component: https://v2.grommet.io/card

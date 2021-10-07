@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -35,4 +34,11 @@ const PlainDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Plain', () => <PlainDrop />);
+export const Plain = () => <PlainDrop />;
+Plain.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Drop/Plain',
+};

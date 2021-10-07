@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const DATA = [
+const DATA = [
   {
     name: 'Alan Josiah Werner Shirleen Foy',
     location: 'Winston Salem',
@@ -93,7 +92,7 @@ const columnsDefault = [
   { property: 'paid', header: 'Paid', align: 'end' },
 ];
 
-const Example = () => (
+export const ColumnSize = () => (
   <Grommet theme={grommet}>
     <Box fill="horizontal" pad="medium">
       <Heading level="3"> Default DataTable</Heading>
@@ -153,4 +152,8 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Column Sizes', () => <Example />);
+ColumnSize.storyName = 'Column sizes';
+
+export default {
+  title: 'Visualizations/DataTable/Column sizes',
+};

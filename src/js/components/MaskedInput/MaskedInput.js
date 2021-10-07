@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -14,13 +14,14 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef } from '../../utils';
 
 import {
   StyledMaskedInput,
   StyledMaskedInputContainer,
   StyledIcon,
 } from './StyledMaskedInput';
+import { MaskedInputPropTypes } from './propTypes';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -36,15 +37,39 @@ const parseValue = (mask, value) => {
     let found;
     if (item.fixed) {
       const { length } = item.fixed;
-      valueParts.push({
-        part: item.fixed,
-        beginIndex: valueIndex,
-        endIndex: valueIndex + length - 1,
-      });
-      const part = value.slice(valueIndex, valueIndex + length);
-      if (part === item.fixed) {
-        valueIndex += length;
+
+      // grab however much of value (starting at valueIndex) matches
+      // item.fixed. If none matches it and there is more in value
+      // add in the fixed item.
+      let matching = 0;
+      while (
+        matching < length &&
+        value[valueIndex + matching] === item.fixed[matching]
+      ) {
+        matching += 1;
       }
+
+      if (matching > 0) {
+        let part = value.slice(valueIndex, valueIndex + matching);
+        if (valueIndex + matching < value.length) {
+          // matched part of the fixed portion but there's more stuff
+          // after it. Go ahead and fill in the entire fixed chunk
+          part = item.fixed;
+        }
+        valueParts.push({
+          part,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + matching - 1,
+        });
+        valueIndex += matching;
+      } else {
+        valueParts.push({
+          part: item.fixed,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + length - 1,
+        });
+      }
+
       maskIndex += 1;
       found = true;
     } else if (item.options) {
@@ -53,7 +78,7 @@ const parseValue = (mask, value) => {
         .slice(0)
         .reverse()
         // eslint-disable-next-line no-loop-func
-        .some(option => {
+        .some((option) => {
           const { length } = option;
           const part = value.slice(valueIndex, valueIndex + length);
           if (part === option) {
@@ -119,13 +144,28 @@ const defaultMask = [
   },
 ];
 
+const ContainerBox = styled(Box)`
+  ${(props) =>
+    props.dropHeight
+      ? sizeStyle('max-height', props.dropHeight, props.theme)
+      : 'max-height: inherit;'};
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+`;
+
 const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
     {
       a11yTitle,
+      dropHeight,
+      dropProps,
       focus: focusProp,
+      focusIndicator = true,
       icon,
       id,
       mask = defaultMask,
@@ -137,6 +177,7 @@ const MaskedInput = forwardRef(
       placeholder,
       plain,
       reverse,
+      textAlign,
       value: valueProp,
       ...rest
     },
@@ -145,7 +186,10 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+    });
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
@@ -154,6 +198,17 @@ const MaskedInput = forwardRef(
 
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
+
+    // Caller's ref, if provided
+    const [dropPropsTarget, setDropPropsTarget] = useState();
+    useEffect(() => {
+      let nextDropPropsTarget;
+      // If caller provided a ref, set to 'pending' until ref.current is defined
+      if (dropProps && 'target' in dropProps) {
+        nextDropPropsTarget = dropProps.target || 'pending';
+        setDropPropsTarget(nextDropPropsTarget);
+      }
+    }, [dropProps]);
 
     const [focus, setFocus] = useState(focusProp);
     const [activeMaskIndex, setActiveMaskIndex] = useState();
@@ -191,7 +246,7 @@ const MaskedInput = forwardRef(
     }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
 
     const setInputValue = useCallback(
-      nextValue => {
+      (nextValue) => {
         // Calling set value function directly on input because React library
         // overrides setter `event.target.value =` and loses original event
         // target fidelity.
@@ -210,10 +265,10 @@ const MaskedInput = forwardRef(
 
     // This could be due to a paste or as the user is typing.
     const onChangeInput = useCallback(
-      event => {
+      (event) => {
         // Align with the mask.
         const nextValueParts = parseValue(mask, event.target.value);
-        const nextValue = nextValueParts.map(part => part.part).join('');
+        const nextValue = nextValueParts.map((part) => part.part).join('');
 
         if (nextValue !== event.target.value) {
           // The mask required inserting something, change the input.
@@ -228,7 +283,7 @@ const MaskedInput = forwardRef(
     );
 
     const onOption = useCallback(
-      option => () => {
+      (option) => () => {
         const nextValueParts = [...valueParts];
         nextValueParts[activeMaskIndex] = { part: option };
         // add any fixed parts that follow
@@ -241,7 +296,7 @@ const MaskedInput = forwardRef(
           nextValueParts[index] = { part: mask[index].fixed };
           index += 1;
         }
-        const nextValue = nextValueParts.map(part => part.part).join('');
+        const nextValue = nextValueParts.map((part) => part.part).join('');
         setInputValue(nextValue);
         // restore focus to input
         inputRef.current.focus();
@@ -250,7 +305,7 @@ const MaskedInput = forwardRef(
     );
 
     const onNextOption = useCallback(
-      event => {
+      (event) => {
         const item = mask[activeMaskIndex];
         if (item && item.options) {
           event.preventDefault();
@@ -265,7 +320,7 @@ const MaskedInput = forwardRef(
     );
 
     const onPreviousOption = useCallback(
-      event => {
+      (event) => {
         if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
           event.preventDefault();
           const index = Math.max(activeOptionIndex - 1, 0);
@@ -276,7 +331,7 @@ const MaskedInput = forwardRef(
     );
 
     const onSelectOption = useCallback(
-      event => {
+      (event) => {
         if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
           event.preventDefault();
           const option = mask[activeMaskIndex].options[activeOptionIndex];
@@ -287,7 +342,7 @@ const MaskedInput = forwardRef(
     );
 
     const onEsc = useCallback(
-      event => {
+      (event) => {
         if (showDrop) {
           // we have to stop both synthetic events and native events
           // drop and layer should not close by pressing esc on this input
@@ -301,9 +356,8 @@ const MaskedInput = forwardRef(
 
     const onHideDrop = useCallback(() => setShowDrop(false), []);
 
-    const renderPlaceholder = () => {
-      return mask.map(item => item.placeholder || item.fixed).join('');
-    };
+    const renderPlaceholder = () =>
+      mask.map((item) => item.placeholder || item.fixed).join('');
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -328,20 +382,22 @@ const MaskedInput = forwardRef(
             id={id}
             name={name}
             autoComplete="off"
+            focusIndicator={focusIndicator}
             plain={plain}
             placeholder={placeholder || renderPlaceholder()}
             icon={icon}
             reverse={reverse}
             focus={focus}
+            textAlign={textAlign}
             {...rest}
             value={value}
             theme={theme}
-            onFocus={event => {
+            onFocus={(event) => {
               setFocus(true);
               setShowDrop(true);
               if (onFocus) onFocus(event);
             }}
-            onBlur={event => {
+            onBlur={(event) => {
               setFocus(false);
               // This will be called when the user clicks on a suggestion,
               // check for that and don't remove the drop in that case.
@@ -353,62 +409,63 @@ const MaskedInput = forwardRef(
             onChange={onChangeInput}
           />
         </Keyboard>
-        {showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && (
-          <Drop
-            id={id ? `masked-input-drop__${id}` : undefined}
-            align={dropAlign}
-            responsive={false}
-            target={inputRef.current}
-            onClickOutside={onHideDrop}
-            onEsc={onHideDrop}
-          >
-            <Box ref={dropRef}>
-              {mask[activeMaskIndex].options.map((option, index) => {
-                // Determine whether the label is done as a child or
-                // as an option Button kind property.
-                const child = !theme.button.option ? (
-                  <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                    {option}
-                  </Box>
-                ) : (
-                  undefined
-                );
-                // if we have a child, turn on plain, and hoverIndicator
+        {showDrop &&
+          mask[activeMaskIndex] &&
+          mask[activeMaskIndex].options &&
+          // If caller has specified dropProps.target, ensure target is defined
+          dropPropsTarget !== 'pending' && (
+            <Drop
+              id={id ? `masked-input-drop__${id}` : undefined}
+              align={dropAlign}
+              responsive={false}
+              target={inputRef.current}
+              onClickOutside={onHideDrop}
+              onEsc={onHideDrop}
+              {...dropProps}
+            >
+              <ContainerBox
+                ref={dropRef}
+                overflow="auto"
+                dropHeight={dropHeight}
+              >
+                {mask[activeMaskIndex].options.map((option, index) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const child = !theme.button.option ? (
+                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                      {option}
+                    </Box>
+                  ) : undefined;
+                  // if we have a child, turn on plain, and hoverIndicator
 
-                return (
-                  <Box key={option} flex={false}>
-                    <Button
-                      tabIndex="-1"
-                      onClick={onOption(option)}
-                      onMouseOver={() => setActiveOptionIndex(index)}
-                      onFocus={() => {}}
-                      active={index === activeOptionIndex}
-                      plain={!child ? undefined : true}
-                      align="start"
-                      kind={!child ? 'option' : undefined}
-                      hoverIndicator={!child ? undefined : 'background'}
-                      label={!child ? option : undefined}
-                    >
-                      {child}
-                    </Button>
-                  </Box>
-                );
-              })}
-            </Box>
-          </Drop>
-        )}
+                  return (
+                    <Box key={option} flex={false}>
+                      <Button
+                        tabIndex="-1"
+                        onClick={onOption(option)}
+                        onMouseOver={() => setActiveOptionIndex(index)}
+                        onFocus={() => {}}
+                        active={index === activeOptionIndex}
+                        plain={!child ? undefined : true}
+                        align="start"
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        label={!child ? option : undefined}
+                      >
+                        {child}
+                      </Button>
+                    </Box>
+                  );
+                })}
+              </ContainerBox>
+            </Drop>
+          )}
       </StyledMaskedInputContainer>
     );
   },
 );
 
 MaskedInput.displayName = 'MaskedInput';
+MaskedInput.propTypes = MaskedInputPropTypes;
 
-let MaskedInputDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  MaskedInputDoc = require('./doc').doc(MaskedInput);
-}
-const MaskedInputWrapper = MaskedInputDoc || MaskedInput;
-
-export { MaskedInputWrapper as MaskedInput };
+export { MaskedInput };

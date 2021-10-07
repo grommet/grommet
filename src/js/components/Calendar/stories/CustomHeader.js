@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
-const CustomHeaderCalendar = () => {
+export const CustomHeaderCalendar = () => {
   const [date, setDate] = useState();
 
-  const onSelect = nextDate => {
+  const onSelect = (nextDate) => {
     setDate(nextDate !== date ? nextDate : undefined);
   };
 
@@ -20,7 +19,7 @@ const CustomHeaderCalendar = () => {
           date={date}
           onSelect={onSelect}
           size="small"
-          bounds={['2018-09-08', '2018-12-13']}
+          bounds={['2020-09-08', '2025-12-13']}
           header={({
             date: currentDate,
             locale,
@@ -56,6 +55,8 @@ const CustomHeaderCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Custom Header', () => (
-  <CustomHeaderCalendar />
-));
+CustomHeaderCalendar.storyName = 'Header';
+
+export default {
+  title: 'Visualizations/Calendar/Header',
+};

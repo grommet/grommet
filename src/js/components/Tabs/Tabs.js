@@ -7,6 +7,8 @@ import { Box } from '../Box';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
+import { TabsPropTypes } from './propTypes';
 
 const Tabs = forwardRef(
   (
@@ -15,13 +17,14 @@ const Tabs = forwardRef(
       children,
       flex,
       justify = 'center',
-      messages = { tabContents: 'Tab Contents' },
+      messages,
       responsive = true,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
     const [activeContent, setActiveContent] = useState();
@@ -31,7 +34,7 @@ const Tabs = forwardRef(
       setActiveIndex(propsActiveIndex);
     }
 
-    const activateTab = index => {
+    const activateTab = (index) => {
       if (propsActiveIndex === undefined) {
         setActiveIndex(index);
       }
@@ -55,7 +58,14 @@ const Tabs = forwardRef(
           setActiveTitle,
         }}
       >
-        {child}
+        {/* possible to have undefined child. in that case, you can't
+        do cloneElement */}
+        {child
+          ? // cloneElement is needed for backward compatibility with custom
+            // styled components that rely on props.active. We should reassess
+            // if it is still necessary in our next major release.
+            React.cloneElement(child, { active: activeIndex === index })
+          : child}
       </TabsContext.Provider>
     ));
 
@@ -73,7 +83,10 @@ const Tabs = forwardRef(
       };
     }
 
-    const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
+    const tabContentTitle = `${activeTitle || ''} ${format({
+      id: 'tabs.tabContents',
+      messages,
+    })}`;
 
     return (
       <StyledTabs
@@ -111,11 +124,6 @@ const Tabs = forwardRef(
 );
 
 Tabs.displayName = 'Tabs';
+Tabs.propTypes = TabsPropTypes;
 
-let TabsDoc;
-if (process.env.NODE_ENV !== 'production') {
-  TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
-}
-const TabsWrapper = TabsDoc || Tabs;
-
-export { TabsWrapper as Tabs };
+export { Tabs };

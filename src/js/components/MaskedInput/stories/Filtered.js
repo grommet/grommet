@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -15,7 +14,7 @@ const data = {
   Whitman: ['To You', 'O Captain! My Captain!', 'O Me! O Life!'],
 };
 
-const FilteredMaskedInput = () => {
+export const Filtered = () => {
   const [value, setValue] = React.useState('');
   const [first, second] = value.split(':');
   const poets = first
@@ -60,4 +59,10 @@ const FilteredMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Filtered', () => <FilteredMaskedInput />);
+Filtered.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/MaskedInput/Filtered',
+};

@@ -1,31 +1,38 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-import { columns, DATA } from './data';
+import { groupColumns, DATA } from './data';
 
-const StyledDataTable = () => (
+export const StyledDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <DataTable
-        columns={columns}
+        columns={groupColumns}
         data={DATA}
         step={10}
-        pad={{ horizontal: 'large', vertical: 'medium' }}
+        pad={{ horizontal: 'small', vertical: 'xsmall' }}
         background={{
-          header: 'dark-3',
+          header: { color: 'dark-3', opacity: 'strong' },
           body: ['light-1', 'light-3'],
-          footer: 'dark-3',
+          footer: { color: 'dark-3', opacity: 'strong' },
         }}
         border={{ body: 'bottom' }}
-        rowProps={{ Eric: { background: 'accent-2', pad: 'large' } }}
+        groupBy={{ property: 'location', expand: ['Palo Alto'] }}
+        rowProps={{
+          Eric: { background: ['accent-2', 'accent-3'], pad: 'small' },
+          Jet: { background: ['accent-2', 'accent-3'], pad: 'small' },
+        }}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Styled', () => <StyledDataTable />);
+StyledDataTable.storyName = 'Styled';
+
+export default {
+  title: 'Visualizations/DataTable/Styled',
+};

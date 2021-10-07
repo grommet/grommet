@@ -1,5 +1,6 @@
 import React, {
   Children,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -15,8 +16,12 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
+import { CarouselPropTypes } from './propTypes';
+
 const Carousel = ({
+  activeChild,
   initialChild,
+  onChild,
   play,
   children,
   controls,
@@ -31,11 +36,29 @@ const Carousel = ({
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
-    activeIndex: initialChild,
+    activeIndex: activeChild !== undefined ? activeChild : initialChild,
   });
 
   const { activeIndex, priorActiveIndex } = indexes;
   const lastIndex = Children.count(children) - 1;
+
+  if (activeIndex !== activeChild && activeChild !== undefined) {
+    if (activeChild >= 0 && activeChild <= lastIndex) {
+      setIndexes({
+        activeIndex: activeChild,
+        priorActiveIndex: activeIndex,
+      });
+    }
+  }
+
+  const onChildChange = useCallback(
+    (index) => {
+      if (onChild) {
+        onChild(index);
+      }
+    },
+    [onChild],
+  );
 
   useEffect(() => {
     if (play) {
@@ -45,11 +68,13 @@ const Carousel = ({
             activeIndex: activeIndex + 1,
             priorActiveIndex: activeIndex,
           });
+          onChildChange(activeIndex + 1);
         } else {
           setIndexes({
             activeIndex: 0,
             priorActiveIndex: activeIndex,
           });
+          onChildChange(0);
         }
       }, play);
 
@@ -60,7 +85,7 @@ const Carousel = ({
       };
     }
     return () => {};
-  }, [activeIndex, play, children, lastIndex]);
+  }, [activeIndex, play, children, lastIndex, onChildChange]);
 
   const onRight = () => {
     if (activeIndex >= lastIndex) {
@@ -71,6 +96,7 @@ const Carousel = ({
       activeIndex: activeIndex + 1,
       priorActiveIndex: activeIndex,
     });
+    onChildChange(activeIndex + 1);
   };
 
   const onLeft = () => {
@@ -82,11 +108,15 @@ const Carousel = ({
       activeIndex: activeIndex - 1,
       priorActiveIndex: activeIndex,
     });
+    onChildChange(activeIndex - 1);
   };
 
-  const onSelect = index => () => {
-    clearInterval(timerRef.current);
-    setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
+  const onSelect = (index) => () => {
+    if (activeIndex !== index) {
+      clearInterval(timerRef.current);
+      setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
+      onChildChange(index);
+    }
   };
 
   const showArrows = controls && controls !== 'selectors';
@@ -102,6 +132,7 @@ const Carousel = ({
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
+        a11yTitle={`Show carousel slide ${index + 1}`}
         // eslint-disable-next-line react/no-array-index-key
         key={index}
         icon={
@@ -112,25 +143,30 @@ const Carousel = ({
     );
 
     let animation;
+    let visibility = 'visible';
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         animation = {
-          type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
+          type:
+            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
           size: 'xlarge',
           duration: theme.carousel.animation.duration,
         };
       }
+      visibility = 'visible';
     } else if (index === priorActiveIndex) {
       animation = {
         type: 'fadeOut',
         duration: theme.carousel.animation.duration,
       };
+      visibility = 'hidden';
     } else {
       animation = { type: 'fadeOut', duration: 0 };
+      visibility = 'hidden';
     }
 
     return (
-      <Box fill={fill} overflow="hidden">
+      <Box fill={fill} style={{ visibility }} overflow="hidden">
         <Box fill={fill} animation={animation}>
           {child}
         </Box>
@@ -150,11 +186,11 @@ const Carousel = ({
         <Box
           tabIndex="0"
           focus={focus}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
@@ -220,11 +256,6 @@ Carousel.defaultProps = {
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
-let CarouselDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CarouselDoc = require('./doc').doc(Carousel);
-}
-const CarouselWrapper = CarouselDoc || Carousel;
+Carousel.propTypes = CarouselPropTypes;
 
-export { CarouselWrapper as Carousel };
+export { Carousel };

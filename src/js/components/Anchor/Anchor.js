@@ -14,14 +14,17 @@ import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
+import { AnchorPropTypes } from './propTypes';
 
 const Anchor = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       children,
       color,
       disabled,
+      gap = 'small',
       href,
       icon,
       label,
@@ -58,7 +61,7 @@ const Anchor = forwardRef(
       <StyledAnchor
         {...rest}
         ref={ref}
-        aria-label={a11yTitle}
+        aria-label={ariaLabel || a11yTitle}
         colorProp={color}
         disabled={disabled}
         hasIcon={!!icon}
@@ -67,11 +70,11 @@ const Anchor = forwardRef(
         reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
-        onFocus={event => {
+        onFocus={(event) => {
           setFocus(true);
           if (onFocus) onFocus(event);
         }}
-        onBlur={event => {
+        onBlur={(event) => {
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
@@ -81,7 +84,8 @@ const Anchor = forwardRef(
             as="span"
             direction="row"
             align="center"
-            gap="small"
+            gap={gap}
+            responsive={false}
             style={{ display: 'inline-flex' }}
           >
             {first}
@@ -96,12 +100,6 @@ const Anchor = forwardRef(
 );
 
 Anchor.displayName = 'Anchor';
+Anchor.propTypes = AnchorPropTypes;
 
-let AnchorDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  AnchorDoc = require('./doc').doc(Anchor);
-}
-const AnchorWrapper = AnchorDoc || Anchor;
-
-export { AnchorWrapper as Anchor };
+export { Anchor };

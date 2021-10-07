@@ -3,51 +3,37 @@ import styled, { css } from 'styled-components';
 import {
   disabledStyle,
   getInputPadBySide,
-  focusStyle,
   inputStyle,
   parseMetricToNum,
-  placeholderStyle,
+  plainInputStyle,
+  textAlignStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
+const getPlainStyle = (plain) => {
+  if (plain === 'full') {
+    return css`
+      ${plainInputStyle} padding: 0;
+    `;
+  }
+  return plain && plainInputStyle;
 };
 
-const plainStyle = css`
-  outline: none;
-  border: none;
-`;
-
 const StyledTextInput = styled.input`
-  ${inputStyle} width: 100%;
-
-  ${props => props.size && sizeStyle(props)}
-  ${props => props.plain && plainStyle}
-
-  ${placeholderStyle}
-  ${props =>
+  ${inputStyle}
+  ${(props) => getPlainStyle(props.plain)}
+  ${(props) =>
     props.icon &&
     (props.reverse
       ? `padding-right: ${props.theme.global.edgeSize.large};`
       : `padding-left: ${props.theme.global.edgeSize.large};`)}
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  ${props => props.focus && !props.plain && focusStyle()};
-  ${props =>
+  ${(props) =>
     props.disabled &&
     disabledStyle(
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
-  ${props => props.theme.textInput && props.theme.textInput.extend};
+  ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
 StyledTextInput.defaultProps = {};
@@ -57,7 +43,7 @@ const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
 
-  ${props =>
+  ${(props) =>
     props.theme.textInput &&
     props.theme.textInput.container &&
     props.theme.textInput.container.extend};
@@ -68,7 +54,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 
 const StyledPlaceholder = styled.div`
   position: absolute;
-  left: ${props =>
+  left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
@@ -77,7 +63,7 @@ const StyledPlaceholder = styled.div`
   justify-content: center;
   pointer-events: none;
 
-  ${props =>
+  ${(props) =>
     props.theme.textInput &&
     props.theme.textInput.placeholder &&
     props.theme.textInput.placeholder.extend};
@@ -93,7 +79,7 @@ const StyledIcon = styled.div`
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  ${props =>
+  ${(props) =>
     props.reverse
       ? `right: ${getInputPadBySide(props, 'right')};`
       : `left: ${getInputPadBySide(props, 'left')};`}
@@ -106,7 +92,7 @@ const StyledSuggestions = styled.ol`
   padding: 0;
   list-style-type: none;
 
-  ${props =>
+  ${(props) =>
     props.theme.textInput &&
     props.theme.textInput.suggestions &&
     props.theme.textInput.suggestions.extend};

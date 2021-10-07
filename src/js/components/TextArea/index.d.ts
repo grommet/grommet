@@ -1,5 +1,5 @@
-import * as React from "react";
-import { A11yTitleType } from "../../utils";
+import * as React from 'react';
+import { A11yTitleType } from '../../utils';
 
 export interface TextAreaProps {
   a11yTitle?: A11yTitleType;
@@ -9,11 +9,15 @@ export interface TextAreaProps {
   name?: string;
   placeholder?: string;
   plain?: boolean;
-  resize?: "vertical" | "horizontal" | boolean;
-  size?: "small" | "medium" | "large" | "xlarge" | string;
+  resize?: 'vertical' | 'horizontal' | boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   value?: string;
 }
 
-declare const TextArea: React.FC<TextAreaProps & JSX.IntrinsicElements['textarea']>;
+type textareaProps = Omit<JSX.IntrinsicElements['textarea'], 'value'>;
+
+export interface TextAreaExtendedProps extends TextAreaProps, textareaProps {}
+
+declare const TextArea: React.FC<TextAreaExtendedProps>;
 
 export { TextArea };

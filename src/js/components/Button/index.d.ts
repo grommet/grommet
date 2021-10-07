@@ -1,20 +1,31 @@
-import * as React from "react";
-import { 
+import * as React from 'react';
+import {
   A11yTitleType,
-  AlignSelfType, 
+  AlignSelfType,
   BackgroundType,
   ColorType,
   FillType,
-  GapType, 
-  GridAreaType, 
-  MarginType, 
-  Omit, 
-  PolymorphicType
-} from "../../utils";
+  GapType,
+  GridAreaType,
+  MarginType,
+  Omit,
+  PolymorphicType,
+} from '../../utils';
+
+import { TipProps } from '../Tip';
 
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  badge?:
+    | boolean
+    | number
+    | {
+        background?: BackgroundType;
+        max?: number;
+        value?: boolean | number;
+      }
+    | JSX.Element;
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;
@@ -25,19 +36,51 @@ export interface ButtonProps {
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
   href?: string;
-  target?: "_self" | "_blank" | "_parent" | "_top" | string;
+  justify?:
+    | 'around'
+    | 'between'
+    | 'center'
+    | 'end'
+    | 'evenly'
+    | 'start'
+    | 'stretch';
+  target?: '_self' | '_blank' | '_parent' | '_top' | string;
   icon?: JSX.Element;
+  kind?: string;
   label?: React.ReactNode;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
   secondary?: boolean;
-  size?: "small" | "medium" | "large";
-  type?: "button" | "reset" | "submit";
+  size?: 'small' | 'medium' | 'large';
+  tip?: TipProps | string;
+  type?: 'button' | 'reset' | 'submit';
   as?: PolymorphicType;
 }
 
-declare const Button: React.FC<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
-export type ButtonType = ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>
+type anchorType = Omit<JSX.IntrinsicElements['a'], 'color'>;
+type buttonType = Omit<JSX.IntrinsicElements['button'], 'color'>;
+type extendType = anchorType & buttonType;
+
+export interface ButtonExtendedProps extends ButtonProps, extendType {}
+
+// Keep type alias for backwards compatibility.
+export type ButtonType = ButtonProps & extendType;
+
+declare const Button: React.FC<
+  ButtonExtendedProps & {
+    children?:
+      | React.ReactNode
+      | (({
+          disabled,
+          hover,
+          focus,
+        }: {
+          disabled: boolean;
+          hover: boolean;
+          focus: boolean;
+        }) => React.ReactNode);
+  }
+>;
 
 export { Button };

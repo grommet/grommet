@@ -1,17 +1,28 @@
-import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import * as React from 'react';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 
 export interface CarouselProps {
   a11yTitle?: A11yTitleType;
+  activeChild?: number;
   alignSelf?: AlignSelfType;
-  controls?: boolean | "arrows" | "selectors";
+  controls?: boolean | 'arrows' | 'selectors';
   gridArea?: GridAreaType;
   margin?: MarginType;
   fill?: boolean;
   play?: number;
   initialChild?: number;
+  onChild?: (...args: any[]) => void;
 }
 
-declare const Carousel: React.ComponentClass<CarouselProps & JSX.IntrinsicElements['div']>;
+type divType = JSX.IntrinsicElements['div'];
+
+export interface CarouselExtendedProps extends CarouselProps, divType {}
+
+declare const Carousel: React.FC<CarouselExtendedProps>;
 
 export { Carousel };

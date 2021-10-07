@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
+import {
+  breakpointStyle,
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
@@ -10,12 +15,13 @@ const sizeStyle = props => {
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles =  
-    [
+    const styles = [
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
-        max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
+        max-width: ${(props.fillProp && 'none') ||
+          (data && data.maxWidth) ||
+          levelStyle.medium.maxWidth};
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
       `,
     ];
@@ -23,16 +29,17 @@ const sizeStyle = props => {
       const breakpoint =
         props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
-        const responsiveData =
-          headingTheme.level[Math.min(props.level + 1, 4)][size];
-        if(responsiveData) {
+        const responsiveData = headingTheme.level[props.level + 1]
+          ? headingTheme.level[props.level + 1][size]
+          : headingTheme.level[props.level][size];
+        if (responsiveData) {
           styles.push(
             breakpointStyle(
               breakpoint,
               `
             font-size: ${responsiveData.size};
             line-height: ${responsiveData.height};
-            max-width: ${responsiveData.maxWidth};
+            max-width: ${(props.fillProp && 'none') || responsiveData.maxWidth};
           `,
             ),
           );
@@ -47,7 +54,7 @@ const sizeStyle = props => {
 };
 
 const fontFamily = props => {
-  const { font } = props.theme.heading.level[props.level];
+  const { font } = props.theme.heading.level[props.level] || {};
   if (font && font.family) {
     return css`
       font-family: ${font.family};
@@ -60,16 +67,6 @@ const fontFamily = props => {
     : '';
 };
 
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
-`;
-
 const truncateStyle = `
   white-space: nowrap;
   overflow: hidden;
@@ -77,7 +74,8 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorProp, props.theme)};
+  color: ${props =>
+    normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
 const StyledHeading = styled.h1`
@@ -86,7 +84,7 @@ const StyledHeading = styled.h1`
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
-  ${props => props.colorProp && colorStyle}
+  ${props => (props.colorProp || props.theme.heading.color) && colorStyle}
   ${props => props.theme.heading && props.theme.heading.extend}
 `;
 

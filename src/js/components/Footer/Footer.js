@@ -14,12 +14,4 @@ const Footer = ({ ...rest }) => (
   />
 );
 
-let FooterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  FooterDoc = require('./doc').doc(Footer);
-}
-
-const FooterWrapper = FooterDoc || Footer;
-
-export { FooterWrapper as Footer };
+export { Footer };

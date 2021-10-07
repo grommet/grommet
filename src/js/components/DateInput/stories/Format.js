@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Format = () => {
   const [value, setValue] = React.useState('');
-  const onChange = event => {
+  const onChange = (event) => {
     const nextValue = event.value;
     console.log('onChange', nextValue);
     setValue(nextValue);
@@ -15,11 +14,13 @@ const Example = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Box width="medium">
-          <DateInput format="mm/dd/yyyy" value={value} onChange={onChange} />
+          <DateInput format="m/d/yy" value={value} onChange={onChange} />
         </Box>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('DateInput', module).add('Format', () => <Example />);
+export default {
+  title: 'Input/DateInput/Format',
+};

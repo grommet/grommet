@@ -1,15 +1,19 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
+import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
+import { CheckBoxGroupPropTypes } from './propTypes';
 
-export const CheckBoxGroup = forwardRef(
+const CheckBoxGroup = forwardRef(
   (
     {
+      children,
       value: valueProp,
       disabled: disabledProp,
-      gap = 'small', // consistent with RadioButtonGroup default
+      focusIndicator = true,
+      gap,
       labelKey,
       valueKey,
       onChange,
@@ -20,24 +24,25 @@ export const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
-    const options = useMemo(
-      () =>
-        optionsProp.map(option => {
-          return typeof option === 'string'
-            ? {
-                disabled: disabledProp,
-                value: option,
-                label: option,
-              }
-            : option;
-        }),
-      [optionsProp, disabledProp],
+    const options = optionsProp.map((option) =>
+      typeof option === 'string'
+        ? {
+            disabled: disabledProp,
+            value: option,
+            label: option,
+          }
+        : option,
     );
 
     // 'value' is an array of checked valueKeys
-    const [value, setValue] = formContext.useFormInput(name, valueProp, []);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+      initialValue: [],
+    });
 
     // Logic is necessary to maintain a proper data structure for Form logic
     const onCheckBoxChange = (event, optionValue, option) => {
@@ -60,12 +65,25 @@ export const CheckBoxGroup = forwardRef(
     };
 
     return (
-      <Box ref={ref} gap={gap} {...rest}>
-        {options.map(option => {
+      <StyledCheckBoxGroup
+        ref={ref}
+        role="group"
+        {...theme.checkBoxGroup.container}
+        gap={
+          gap ||
+          (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap
+            ? theme.checkBoxGroup.container.gap
+            : 'small') // consistent with RadioButtonGroup default
+        }
+        {...rest}
+      >
+        {options.map((option, index) => {
+          const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
-          const valueOption = valueKey ? option[valueKey] : option.value;
+          const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
+          const key = `${label}-${valueOption}`;
 
           if (option.checked)
             console.warn(
@@ -77,29 +95,31 @@ export const CheckBoxGroup = forwardRef(
           const optionProps = { ...optionRest, label, disabled };
           return (
             <CheckBox
-              key={label}
+              key={key}
               {...optionProps}
               disabled={disabled}
               checked={checked}
+              // when contained in a FormField, focusIndicator = false,
+              // so that the FormField has focus style. However, we still
+              // need to visually indicate when a CheckBox is active.
+              // In CheckBox, if focus = true but focusIndicator = false,
+              // we will apply the hover treament.
+              focusIndicator={focusIndicator}
               label={label}
-              onChange={event =>
+              onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
-            />
+            >
+              {children ? (state) => children(options[index], state) : null}
+            </CheckBox>
           );
         })}
-      </Box>
+      </StyledCheckBoxGroup>
     );
   },
 );
 
 CheckBoxGroup.displayName = 'CheckBoxGroup';
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
 
-let CheckBoxGroupDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-const RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+export { CheckBoxGroup };

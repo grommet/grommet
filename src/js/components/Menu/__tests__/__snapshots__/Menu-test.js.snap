@@ -34,6 +34,11 @@ exports[`Menu basic 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -52,9 +57,44 @@ exports[`Menu basic 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -73,31 +113,31 @@ exports[`Menu basic 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <button
     aria-label="Open Menu"
-    className="c1"
+    class="c1"
     id="test-menu"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <span
-        className="c3"
+        class="c3"
       >
         Test Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg />
     </div>
@@ -173,6 +213,11 @@ exports[`Menu close by clicking outside 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -191,9 +236,44 @@ exports[`Menu close by clicking outside 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -209,6 +289,12 @@ exports[`Menu close by clicking outside 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -237,9 +323,9 @@ exports[`Menu close by clicking outside 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -337,6 +423,21 @@ exports[`Menu close by clicking outside 2`] = `
   flex-direction: column;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -352,21 +453,6 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
 }
 
 .c11 {
@@ -398,6 +484,35 @@ exports[`Menu close by clicking outside 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -421,33 +536,24 @@ exports[`Menu close by clicking outside 2`] = `
   color: #000000;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -463,6 +569,12 @@ exports[`Menu close by clicking outside 2`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
   }
 }
 
@@ -520,9 +632,9 @@ exports[`Menu close by clicking outside 2`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -568,154 +680,10 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .BiUy {
     padding: 6px;
   }
 }"
-`;
-
-exports[`Menu close on esc 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-label="Open Menu"
-    class="c1"
-    id="test-menu"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
 `;
 
 exports[`Menu close on tab 1`] = `
@@ -786,6 +754,11 @@ exports[`Menu close on tab 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -804,9 +777,44 @@ exports[`Menu close on tab 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -822,6 +830,12 @@ exports[`Menu close on tab 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -850,9 +864,9 @@ exports[`Menu close on tab 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -862,7 +876,7 @@ exports[`Menu close on tab 1`] = `
 </div>
 `;
 
-exports[`Menu custom a11yTitle 1`] = `
+exports[`Menu custom a11yTitle or aria-label 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -930,6 +944,11 @@ exports[`Menu custom a11yTitle 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -948,9 +967,44 @@ exports[`Menu custom a11yTitle 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -966,6 +1020,12 @@ exports[`Menu custom a11yTitle 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -994,9 +1054,39 @@ exports[`Menu custom a11yTitle 1`] = `
           class="c5"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+    <button
+      aria-label="My Menu 2"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
             stroke="#000"
             stroke-width="2"
           />
@@ -1075,6 +1165,11 @@ exports[`Menu custom message 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1093,9 +1188,44 @@ exports[`Menu custom message 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1114,41 +1244,41 @@ exports[`Menu custom message 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <span
-        className="c3"
+        class="c3"
       >
         Test Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -1224,6 +1354,11 @@ exports[`Menu custom theme icon color 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1242,9 +1377,44 @@ exports[`Menu custom theme icon color 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1263,41 +1433,221 @@ exports[`Menu custom theme icon color 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <button
     aria-label="Open Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <span
-        className="c3"
+        class="c3"
       >
         Test Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme with default button 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      Test Menu
+      <div
+        class="c3"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c4"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
         />
       </svg>
     </div>
@@ -1373,6 +1723,11 @@ exports[`Menu disabled 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1393,9 +1748,44 @@ exports[`Menu disabled 1`] = `
   cursor: default;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1411,6 +1801,12 @@ exports[`Menu disabled 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -1440,9 +1836,9 @@ exports[`Menu disabled 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -1520,6 +1916,11 @@ exports[`Menu gap between icon and label 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1538,9 +1939,44 @@ exports[`Menu gap between icon and label 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1556,6 +1992,16 @@ exports[`Menu gap between icon and label 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -1596,9 +2042,9 @@ exports[`Menu gap between icon and label 1`] = `
           class="c5"
           viewBox="0 0 24 24"
         >
-          <polyline
+          <path
+            d="m18 9-6 6-6-6"
             fill="none"
-            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
           />
@@ -1788,6 +2234,11 @@ exports[`Menu justify content 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1806,9 +2257,44 @@ exports[`Menu justify content 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1857,224 +2343,289 @@ exports[`Menu justify content 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c2"
+      class="c2"
     >
       <span
-        className="c3"
+        class="c3"
       >
         start Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c6"
+      class="c6"
     >
       <span
-        className="c3"
+        class="c3"
       >
         center Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c7"
+      class="c7"
     >
       <span
-        className="c3"
+        class="c3"
       >
         end Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c8"
+      class="c8"
     >
       <span
-        className="c3"
+        class="c3"
       >
         between Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c9"
+      class="c9"
     >
       <span
-        className="c3"
+        class="c3"
       >
         around Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
   </button>
   <button
     aria-label="Abrir Menu"
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     <div
-      className="c10"
+      class="c10"
     >
       <span
-        className="c3"
+        class="c3"
       >
         stretch Menu
       </span>
       <div
-        className="c4"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
-          strokeWidth="2"
+          stroke-width="2"
         />
       </svg>
     </div>
+  </button>
+</div>
+`;
+
+exports[`Menu menu with children when custom theme has default button 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    type="button"
+  >
+    Test Menu
   </button>
 </div>
 `;
@@ -2147,6 +2698,11 @@ exports[`Menu navigate through suggestions and select 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2165,9 +2721,44 @@ exports[`Menu navigate through suggestions and select 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -2183,6 +2774,12 @@ exports[`Menu navigate through suggestions and select 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -2211,9 +2808,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2291,6 +2888,11 @@ exports[`Menu open and close on click 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2309,9 +2911,44 @@ exports[`Menu open and close on click 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -2327,6 +2964,12 @@ exports[`Menu open and close on click 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -2355,9 +2998,9 @@ exports[`Menu open and close on click 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2369,33 +3012,33 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 bwJeiP"
+    class="StyledButton-sc-323bzc-0 kVhqUm"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hkbjbd"
+      class="StyledBox-sc-13pk1d4-0 BiUy"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
+        class="StyledText-sc-1sadyjn-0 fkNrQP"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dvZAHf"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -2493,6 +3136,21 @@ exports[`Menu open and close on click 3`] = `
   flex-direction: column;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2508,21 +3166,6 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
 }
 
 .c11 {
@@ -2554,6 +3197,35 @@ exports[`Menu open and close on click 3`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2577,33 +3249,24 @@ exports[`Menu open and close on click 3`] = `
   color: #000000;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2619,6 +3282,12 @@ exports[`Menu open and close on click 3`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
   }
 }
 
@@ -2676,9 +3345,9 @@ exports[`Menu open and close on click 3`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -2738,13 +3407,13 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .BiUy {
     padding: 6px;
   }
 }"
 `;
 
-exports[`Menu reverse icon and label 1`] = `
+exports[`Menu open on down close on esc 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2812,6 +3481,11 @@ exports[`Menu reverse icon and label 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2830,9 +3504,44 @@ exports[`Menu reverse icon and label 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -2852,159 +3561,8 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<div>
-  <div
-    class="c0"
-  >
-    <button
-      aria-label="Open Menu"
-      class="c1"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <span
-          class="c3"
-        >
-          Test Menu
-        </span>
-        <div
-          class="c4"
-        />
-        <svg
-          aria-label="FormDown"
-          class="c5"
-          viewBox="0 0 24 24"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Menu select an item 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -3033,9 +3591,9 @@ exports[`Menu select an item 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3045,137 +3603,7 @@ exports[`Menu select an item 1`] = `
 </div>
 `;
 
-exports[`Menu should have no accessibility violations 1`] = `
-.c4 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-<div>
-  <div
-    class="c0"
-  >
-    <button
-      aria-label="Open Menu"
-      class="c1"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <span
-          class="c3"
-        />
-        <svg
-          aria-label="FormDown"
-          class="c4"
-          viewBox="0 0 24 24"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Menu tab through menu until it closes 1`] = `
+exports[`Menu open on up close on esc 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3243,6 +3671,11 @@ exports[`Menu tab through menu until it closes 1`] = `
   width: 12px;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3261,9 +3694,44 @@ exports[`Menu tab through menu until it closes 1`] = `
   text-align: inherit;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -3279,6 +3747,12 @@ exports[`Menu tab through menu until it closes 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -3307,9 +3781,9 @@ exports[`Menu tab through menu until it closes 1`] = `
         class="c5"
         viewBox="0 0 24 24"
       >
-        <polyline
+        <path
+          d="m18 9-6 6-6-6"
           fill="none"
-          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
         />
@@ -3319,151 +3793,7 @@ exports[`Menu tab through menu until it closes 1`] = `
 </div>
 `;
 
-exports[`Menu with dropAlign renders 1`] = `
-.c5 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <button
-    aria-label="Open Menu"
-    class="c1"
-    id="test-menu"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        Test
-      </span>
-      <div
-        class="c4"
-      />
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Menu with dropAlign renders 2`] = `
+exports[`Menu open on up close on esc 2`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3551,6 +3881,21 @@ exports[`Menu with dropAlign renders 2`] = `
   flex-direction: column;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3566,21 +3911,6 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
 }
 
 .c11 {
@@ -3612,6 +3942,35 @@ exports[`Menu with dropAlign renders 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3635,33 +3994,24 @@ exports[`Menu with dropAlign renders 2`] = `
   color: #000000;
 }
 
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3677,6 +4027,12 @@ exports[`Menu with dropAlign renders 2`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
   }
 }
 
@@ -3734,9 +4090,9 @@ exports[`Menu with dropAlign renders 2`] = `
             class="c9"
             viewBox="0 0 24 24"
           >
-            <polyline
+            <path
+              d="m18 9-6 6-6-6"
               fill="none"
-              points="18 9 12 15 6 9"
               stroke="#000"
               stroke-width="2"
             />
@@ -3780,9 +4136,2235 @@ exports[`Menu with dropAlign renders 2`] = `
 </div>
 `;
 
-exports[`Menu with dropAlign renders 3`] = `
+exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .BiUy {
+    padding: 6px;
+  }
+}"
+`;
+
+exports[`Menu reverse icon and label 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Menu select an item 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu shift + tab through menu until it closes 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu should apply themed drop props 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #F08080;
+  stroke: #F08080;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test Menu
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu should have no accessibility violations 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Menu tab through menu until it closes 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu with dropAlign bottom renders 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu with dropAlign bottom renders 2`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-menu__drop"
+  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+  >
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        <button
+          class="c6"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 1
+          </div>
+        </button>
+      </div>
+      <div
+        class="c5"
+      >
+        <button
+          class="c6"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <button
+        aria-label="Close Menu"
+        class="c6"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c8"
+        >
+          <span
+            class="c9"
+          >
+            Test
+          </span>
+          <div
+            class="c10"
+          />
+          <svg
+            aria-label="FormDown"
+            class="c11"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu with dropAlign bottom renders 3`] = `
+"@media only screen and (max-width: 768px) {
+  .BiUy {
+    padding: 6px;
+  }
+}"
+`;
+
+exports[`Menu with dropAlign top renders 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu with dropAlign top renders 2`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-menu__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+  >
+    <div
+      class="c4"
+    >
+      <button
+        aria-label="Close Menu"
+        class="c5"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c6"
+        >
+          <span
+            class="c7"
+          >
+            Test
+          </span>
+          <div
+            class="c8"
+          />
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="c10"
+    >
+      <div
+        class="c4"
+      >
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c11"
+          >
+            Item 1
+          </div>
+        </button>
+      </div>
+      <div
+        class="c4"
+      >
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c11"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu with dropAlign top renders 3`] = `
+"@media only screen and (max-width: 768px) {
+  .BiUy {
     padding: 6px;
   }
 }"

@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`accepts ref 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1"
+  >
+    text
+  </span>
+</div>
+`;
+
 exports[`renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -17,10 +44,10 @@ exports[`renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   >
     text
   </span>
@@ -45,10 +72,10 @@ exports[`renders color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -127,37 +154,37 @@ exports[`renders margin 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   />
   <span
-    className="c2"
+    class="c2"
   />
   <span
-    className="c3"
+    class="c3"
   />
   <span
-    className="c4"
+    class="c4"
   />
   <span
-    className="c5"
+    class="c5"
   />
   <span
-    className="c6"
+    class="c6"
   />
   <span
-    className="c7"
+    class="c7"
   />
   <span
-    className="c8"
+    class="c8"
   />
   <span
-    className="c9"
+    class="c9"
   />
   <span
-    className="c10"
+    class="c10"
   />
 </div>
 `;
@@ -203,32 +230,61 @@ exports[`renders size 1`] = `
   line-height: 40px;
 }
 
+.c7 {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+.c8 {
+  font-size: 54px;
+  line-height: 60px;
+}
+
+.c9 {
+  font-size: 70px;
+  line-height: 76px;
+}
+
+.c10 {
+  font-size: 90px;
+  line-height: 96px;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
-    size="xsmall"
+    class="c1"
   />
   <span
-    className="c2"
-    size="small"
+    class="c2"
   />
   <span
-    className="c3"
-    size="medium"
+    class="c3"
   />
   <span
-    className="c4"
-    size="large"
+    class="c4"
   />
   <span
-    className="c5"
-    size="xlarge"
+    class="c5"
   />
   <span
-    className="c6"
-    size="xxlarge"
+    class="c6"
+  />
+  <span
+    class="c6"
+  />
+  <span
+    class="c7"
+  />
+  <span
+    class="c8"
+  />
+  <span
+    class="c9"
+  />
+  <span
+    class="c10"
   />
 </div>
 `;
@@ -250,10 +306,10 @@ exports[`renders tag 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   />
 </div>
 `;
@@ -287,18 +343,79 @@ exports[`renders textAlign 1`] = `
   text-align: right;
 }
 
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   />
   <span
-    className="c2"
+    class="c2"
   />
   <span
-    className="c3"
+    class="c3"
   />
+  <span
+    class="c4"
+  />
+</div>
+`;
+
+exports[`renders tip 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="tooltip"
+    class="c1"
+  >
+    Default Tip
+  </span>
 </div>
 `;
 
@@ -322,20 +439,21 @@ exports[`renders truncate 1`] = `
   font-size: 18px;
   line-height: 24px;
   white-space: nowrap;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </span>
   <span
-    className="c2"
+    class="c2"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </span>
@@ -366,13 +484,75 @@ exports[`renders weight 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <span
-    className="c1"
+    class="c1"
   />
   <span
-    className="c2"
+    class="c2"
   />
+</div>
+`;
+
+exports[`should apply a11yTitle or aria-label 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+     Example
+  </span>
+  <span
+    aria-label="test-2"
+    class="c1"
+  >
+    Example
+  </span>
+</div>
+`;
+
+exports[`should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+     Example
+  </span>
 </div>
 `;

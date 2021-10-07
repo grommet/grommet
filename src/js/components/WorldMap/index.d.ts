@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
@@ -6,21 +6,42 @@ import {
   FillType,
   GridAreaType,
   MarginType,
-} from "../../utils";
+} from '../../utils';
 
 export interface WorldMapProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   color?: ColorType;
-  continents?: {color?: string | {dark?: string,light?: string},name: "Africa" | "Asia" | "Australia" | "Europe" | "North America" | "South America",onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any)}[];
+  continents?: {
+    color?: string | { dark?: string; light?: string };
+    name:
+      | 'Africa'
+      | 'Asia'
+      | 'Australia'
+      | 'Europe'
+      | 'North America'
+      | 'South America';
+    onClick?: (name: string) => void;
+    onHover?: (hovered: boolean) => void;
+  }[];
   fill?: FillType;
   gridArea?: GridAreaType;
-  hoverColor?: string | {dark?: string,light?: string};
+  hoverColor?: string | { dark?: string; light?: string };
   margin?: MarginType;
-  onSelectPlace?: ((place: number[]) => void);
-  places?: {color?: string | {dark?: string,light?: string},name?: string,location: number[],onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any)}[];
+  onSelectPlace?: (place: [number, number]) => void;
+  places?: {
+    color?: string | { dark?: string; light?: string };
+    name?: string;
+    location: number[];
+    onClick?: (name: string) => void;
+    onHover?: (hovered: boolean) => void;
+  }[];
 }
 
-declare const WorldMap: React.ComponentClass<WorldMapProps & JSX.IntrinsicElements['svg']>;
+export interface WorldMapExtendedProps
+  extends WorldMapProps,
+    Omit<JSX.IntrinsicElements['svg'], 'color' | 'fill'> {}
+
+declare const WorldMap: React.FC<WorldMapExtendedProps>;
 
 export { WorldMap };

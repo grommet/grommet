@@ -1,10 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
+import { ThemeType } from 'grommet/themes';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
-const customTheme = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customTheme: ThemeType = {
   global: {
     font: {
       family: 'Arial',
@@ -15,6 +16,14 @@ const customTheme = {
       radius: undefined,
       color: '#2196f3',
     },
+    disabled: {
+      color: '#fe2693',
+      opacity: '.1',
+      border: {
+        color: '#000000',
+        width: '10px',
+      },
+    },
     padding: {
       vertical: '12px',
       horizontal: '24px',
@@ -22,7 +31,7 @@ const customTheme = {
     primary: {
       color: '#2196f3',
     },
-    extend: props => {
+    extend: (props) => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -40,21 +49,35 @@ const customTheme = {
   },
 };
 
-const CustomTheme = () => (
+export const TSCustom = () => (
   <>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <Button label="custom theme" onClick={() => {}} primary />
       </Box>
     </Grommet>
+    <Grommet theme={customTheme}>
+      <Box align="center" pad="large">
+        <Button label="custom theme disabled" disabled primary />
+      </Box>
+    </Grommet>
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Button as="span" label="Custom as=span" />
       </Box>
+      <Box align="center" pad="large">
+        <Button
+          rel="noopener"
+          target="_blank"
+          href="https://v2.grommet.io/button"
+          label="Link to Button docs"
+        />
+      </Box>
     </Grommet>
   </>
 );
+TSCustom.storyName = 'TS-Custom';
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Custom', () => <CustomTheme />);
-}
+export default {
+  title: 'Controls/Button/TS-Custom',
+};

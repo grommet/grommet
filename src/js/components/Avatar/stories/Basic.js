@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Favorite } from 'grommet-icons';
 
 import { Avatar, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Basic = () => {
+export const Basic = () => {
   const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
   return (
@@ -29,4 +28,6 @@ const Basic = () => {
   );
 };
 
-storiesOf('Avatar', module).add('Basic', () => <Basic />);
+export default {
+  title: 'Visualizations/Avatar/Basic',
+};

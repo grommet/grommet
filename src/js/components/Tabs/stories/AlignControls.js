@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, grommet, Tab, Tabs } from 'grommet';
 import { deepMerge } from 'grommet/utils';
@@ -28,7 +28,7 @@ const myTheme = deepMerge(grommet, {
   },
 });
 
-const AlignControls = () => (
+const AlignControlsTabs = () => (
   <Grommet theme={myTheme} full>
     <Tabs justify="start" alignControls="start">
       <Tab title="Tab 1">
@@ -50,4 +50,9 @@ const AlignControls = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('Align Controls', () => <AlignControls />);
+export const AlignControls = () => <AlignControlsTabs />;
+AlignControls.storyName = 'Align controls';
+
+export default {
+  title: 'Controls/Tabs/Align controls',
+};

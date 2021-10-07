@@ -8,7 +8,7 @@ describe('SkipLink', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    jest.useFakeTimers();
+    jest.useFakeTimers('modern');
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -28,17 +28,42 @@ describe('SkipLink', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    document
-      .getElementById('skip-links')
-      .querySelector('a')
-      .focus();
+    document.getElementById('skip-links').querySelector('a').focus();
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(document.activeElement);
-    document
-      .getElementById('skip-links')
-      .querySelector('a')
-      .blur();
+    document.getElementById('skip-links').querySelector('a').blur();
+
+    act(() => {
+      jest.runAllTimers();
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should allow for single skip link', () => {
+    jest.useFakeTimers('modern');
+    const { container } = render(
+      <Grommet>
+        <SkipLinks id="skip-links">
+          <SkipLink id="main" label="Main Content" />
+        </SkipLinks>
+        <div>
+          <SkipLinkTarget id="main" />
+          Main Content
+          <input type="text" value="main content" onChange={() => {}} />
+        </div>
+        <footer>
+          <input type="text" value="footer" onChange={() => {}} />
+        </footer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    document.getElementById('skip-links').querySelector('a').focus();
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(document.activeElement);
+    document.getElementById('skip-links').querySelector('a').blur();
 
     act(() => {
       jest.runAllTimers();

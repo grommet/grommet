@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
+import { AvatarPropTypes } from './propTypes';
 
 const Avatar = ({
   align = 'center',
@@ -17,6 +18,7 @@ const Avatar = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const avatarSize = theme.avatar.size[size] || size;
+  const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
   const avatarProps = {
     align,
@@ -47,7 +49,7 @@ const Avatar = ({
   if (typeof children === 'string') {
     return (
       <StyledAvatar {...avatarProps} {...rest}>
-        <StyledAvatarText alignSelf="center" size="large">
+        <StyledAvatarText alignSelf="center" size={avatarTextSize}>
           {children}
         </StyledAvatarText>
       </StyledAvatar>
@@ -56,4 +58,5 @@ const Avatar = ({
   return <AvatarChildren />;
 };
 
+Avatar.propTypes = AvatarPropTypes;
 export { Avatar };

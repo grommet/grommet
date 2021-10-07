@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Grommet as GrommetIcon,
@@ -30,7 +29,7 @@ const Media = () => (
   </Box>
 );
 
-const Social = () => (
+export const Social = () => (
   <Grommet theme={grommet}>
     <Main background="light-2" elevation="large" pad="medium" gap="large">
       <Text margin="small" size="xsmall">
@@ -53,4 +52,6 @@ const Social = () => (
   </Grommet>
 );
 
-storiesOf('Footer', module).add('Social', () => <Social />);
+export default {
+  title: 'Layout/Footer/Social',
+};

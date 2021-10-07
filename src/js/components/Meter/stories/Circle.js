@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CircleMeter = () => {
-  const [ value, setValue ] = useState(20);
+export const Circle = () => {
+  const [value, setValue] = useState(20);
 
   const timer = useRef();
   clearTimeout(timer.current);
@@ -13,11 +12,12 @@ const CircleMeter = () => {
     setValue(value < 100 ? value + 8 : 20);
   }, 2000);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       clearTimeout(timer.current);
-    }
-  }, []);
+    },
+    [],
+  );
 
   return (
     <Grommet theme={grommet}>
@@ -32,4 +32,6 @@ const CircleMeter = () => {
   );
 };
 
-storiesOf('Meter', module).add('Circle', () => <CircleMeter />);
+export default {
+  title: 'Visualizations/Meter/Circle',
+};

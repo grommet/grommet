@@ -13,6 +13,7 @@ import {
   StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
+import { RadioButtonPropTypes } from './propTypes';
 
 const RadioButton = forwardRef(
   (
@@ -22,6 +23,7 @@ const RadioButton = forwardRef(
       children,
       disabled,
       focus,
+      focusIndicator,
       id,
       label,
       name,
@@ -48,13 +50,15 @@ const RadioButton = forwardRef(
     return (
       <StyledRadioButtonContainer
         {...removeUndefined({ htmlFor: id, disabled })}
-        onClick={event => {
+        onClick={(event) => {
           // prevents clicking on the label trigging the event twice
           // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
           if (event.target.type !== 'radio') {
             event.stopPropagation();
           }
         }}
+        focus={focus}
+        focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
@@ -79,10 +83,10 @@ const RadioButton = forwardRef(
             })}
           />
           {children ? (
-            children({ checked, hover })
+            children({ checked, focus: focus && focusIndicator, hover })
           ) : (
             <StyledRadioButtonBox
-              focus={focus}
+              focus={focus && focusIndicator}
               as={Box}
               align="center"
               justify="center"
@@ -115,12 +119,6 @@ const RadioButton = forwardRef(
 );
 
 RadioButton.displayName = 'RadioButton';
+RadioButton.propTypes = RadioButtonPropTypes;
 
-let RadioButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  RadioButtonDoc = require('./doc').doc(RadioButton);
-}
-const RadioButtonWrapper = RadioButtonDoc || RadioButton;
-
-export { RadioButtonWrapper as RadioButton };
+export { RadioButton };

@@ -1,22 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Paragraph } from '..';
 
 test('Paragraph renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Paragraph />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Paragraph size renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Paragraph size="small" />
       <Paragraph size="medium" />
@@ -25,14 +25,15 @@ test('Paragraph size renders', () => {
       <Paragraph size="xxlarge" />
       <Paragraph fill />
       <Paragraph fill={false} />
+      <Paragraph size="10px" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Paragraph margin renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Paragraph margin="small" />
       <Paragraph margin="medium" />
@@ -42,18 +43,19 @@ test('Paragraph margin renders', () => {
       <Paragraph margin={{ top: 'small' }} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Paragraph textAlign renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Paragraph textAlign="start" />
       <Paragraph textAlign="center" />
       <Paragraph textAlign="end" />
+      <Paragraph textAlign="justify" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });

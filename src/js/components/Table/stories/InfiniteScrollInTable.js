@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -15,7 +14,7 @@ import {
   Text,
 } from 'grommet';
 
-const InfiniteScrollInTable = () => {
+export const InfiniteScrollInTable = () => {
   const step = 25;
   const [results, setResults] = useState(
     Array.from({ length: 50 }, () => Math.floor(Math.random() * 1000000)),
@@ -84,10 +83,12 @@ const InfiniteScrollInTable = () => {
   );
 };
 
-storiesOf('Table', module).add(
-  'InfiniteScroll',
-  () => <InfiniteScrollInTable />,
-  {
-    chromatic: { disable: true },
-  },
-);
+InfiniteScrollInTable.storyName = 'InfiniteScroll';
+
+InfiniteScrollInTable.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Table/InfiniteScroll',
+};

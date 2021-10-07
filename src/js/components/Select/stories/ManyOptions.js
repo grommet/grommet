@@ -1,20 +1,14 @@
-import React, { PureComponent } from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react';
 
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class Option extends PureComponent {
-  render() {
-    const { value, selected } = this.props;
-    return (
-      <Box direction="row" gap="small" align="center" pad="xsmall">
-        <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
-        {value}
-      </Box>
-    );
-  }
-}
+const Option = React.memo(({ value, selected }) => (
+  <Box direction="row" gap="small" align="center" pad="xsmall">
+    <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
+    {value}
+  </Box>
+));
 
 const dummyOptions = Array(2000)
   .fill()
@@ -23,7 +17,7 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
-const ManyOptions = () => {
+export const ManyOptions = () => {
   const [selected, setSelected] = React.useState([]);
   const [options, setOptions] = React.useState(dummyOptions);
 
@@ -69,4 +63,12 @@ const ManyOptions = () => {
   );
 };
 
-storiesOf('Select', module).add('Lots of options', () => <ManyOptions />);
+ManyOptions.storyName = 'Many options';
+
+ManyOptions.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Select/Many options',
+};

@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier", "react-hooks"],
   "env": {
@@ -49,9 +49,28 @@
     "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
     "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
-    "react/sort-comp": 0
+    "react/sort-comp": 0,
+    "semi": [2, "always"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react",
+            "importNames": ["useLayoutEffect"],
+            "message": "Please import from use-isomorphic-layout-effect instead."
+          }
+        ]
+      }
+    ]
   },
   "overrides": [
+    {
+      "files": ["doc.js", "prop-types.js", "router.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    },
     {
       "files": ["*.stories.js", "**/stories/**"],
       "rules": {

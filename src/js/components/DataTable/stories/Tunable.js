@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -8,7 +7,7 @@ import { grommet } from 'grommet/themes';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 
-const TunableDataTable = () => (
+export const TunableDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <DataTable
@@ -24,4 +23,8 @@ const TunableDataTable = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Tunable', () => <TunableDataTable />);
+TunableDataTable.storyName = 'Tunable';
+
+export default {
+  title: 'Visualizations/DataTable/Tunable',
+};

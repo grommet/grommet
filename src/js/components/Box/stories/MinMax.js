@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const MinMaxSizesBox = () => (
+export const MinMaxSizesBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small">
       <Box pad="small" gap="small" direction="row" align="start">
@@ -206,4 +205,8 @@ const MinMaxSizesBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Min/Max sizes', () => <MinMaxSizesBox />);
+MinMaxSizesBox.storyName = 'Min and max sizes';
+
+export default {
+  title: 'Layout/Box/Min and max sizes',
+};

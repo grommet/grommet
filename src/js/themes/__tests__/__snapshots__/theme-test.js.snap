@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Grommet ThemeContext theme 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #ffffff;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <a
+    class="c1"
+  >
+    Hello
+  </a>
+</div>
+`;
+
 exports[`Grommet custom theme 1`] = `
 .c4 {
   display: inline-block;
@@ -217,17 +258,33 @@ exports[`Grommet custom theme 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   line-height: 50px;
   padding: 11px;
   font-weight: bold;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
 }
 
-.c12::-webkit-search-decoration {
-  -webkit-appearance: none;
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c12::-webkit-input-placeholder {
@@ -242,9 +299,30 @@ exports[`Grommet custom theme 1`] = `
   color: #cc6633;
 }
 
+.c12::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c12::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c12:-moz-placeholder,
+.c12::-moz-placeholder {
+  opacity: 1;
+}
+
+.c12::-webkit-input-placeholder {
+  font-weight: normal;
+}
+
+.c12::-moz-placeholder {
+  font-weight: normal;
+}
+
+.c12:-ms-input-placeholder {
+  font-weight: normal;
 }
 
 .c11 {
@@ -263,153 +341,125 @@ exports[`Grommet custom theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <a
-      className="c2"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c2"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c4"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
-        <div
-          className="c5"
+        <span
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
-        <div
-          className="c5"
+        <span
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <a
-      className="c9"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c9"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c10"
+          class="c10"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
-        <div
-          className="c5"
+        <span
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
-        <div
-          className="c5"
+        <span
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c11"
+      class="c11"
     >
       <input
-        autoComplete="off"
-        className="c12"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        autocomplete="off"
+        class="c12"
         placeholder="Placeholder"
         value="Value"
       />
@@ -742,229 +792,229 @@ exports[`Grommet dark theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
@@ -1293,233 +1343,393 @@ exports[`Grommet default theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
   </div>
+</div>
+`;
+
+exports[`Grommet grommet theme 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #ffffff;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    test
+  </button>
+  <button
+    class="c2"
+    type="button"
+  >
+    test
+  </button>
 </div>
 `;
 
@@ -1531,8 +1741,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #6FFFB0;
-  color: #333333;
+  background-color: #01A982;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1547,8 +1757,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FD6FFF;
-  color: #333333;
+  background: #0000000A;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1563,8 +1772,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #81FCED;
-  color: #333333;
+  background-color: #FFFFFF;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1579,8 +1788,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #01A982;
-  color: #FFFFFF;
+  background-color: #17EBA0;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1595,8 +1804,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #333333;
-  color: #FFFFFF;
+  background-color: #FF8300;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1611,8 +1820,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #555555;
-  color: #FFFFFF;
+  background-color: #00739D;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1627,8 +1836,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #777777;
-  color: #FFFFFF;
+  background-color: #7630EA;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1643,8 +1852,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #999999;
-  color: #333333;
+  background-color: #FEC901;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1660,7 +1869,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #00E8CF;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1675,8 +1884,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #F8F8F8;
-  color: #333333;
+  background-color: #FC5A5A;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1691,8 +1900,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #F2F2F2;
-  color: #333333;
+  background-color: #CCCCCC;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1707,8 +1916,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #EDEDED;
-  color: #333333;
+  background-color: #FFBC44;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1723,120 +1932,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #DADADA;
-  color: #333333;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #00873D;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #3D138D;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #00739D;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #FF4040;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #CCCCCC;
-  color: #333333;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #00C781;
-  color: #333333;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #FFAA15;
-  color: #333333;
+  background-color: #444444;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1854,7 +1951,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1863,231 +1960,150 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
-    >
-      accent-1
-    </span>
-  </div>
-  <div
-    className="c3"
-  >
-    <span
-      className="c2"
-    >
-      accent-2
-    </span>
-  </div>
-  <div
-    className="c4"
-  >
-    <span
-      className="c2"
-    >
-      accent-3
-    </span>
-  </div>
-  <div
-    className="c5"
-  >
-    <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c6"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-1
+      background-contrast
     </span>
   </div>
   <div
-    className="c7"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-2
+      background-front
     </span>
   </div>
   <div
-    className="c8"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-3
+      control
     </span>
   </div>
   <div
-    className="c9"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-4
+      graph-0
     </span>
   </div>
   <div
-    className="c9"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-5
+      graph-1
     </span>
   </div>
   <div
-    className="c9"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
-      dark-6
+      graph-2
     </span>
   </div>
   <div
-    className="c10"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
+    >
+      graph-3
+    </span>
+  </div>
+  <div
+    class="c10"
+  >
+    <span
+      class="c2"
+    >
+      graph-4
+    </span>
+  </div>
+  <div
+    class="c10"
+  >
+    <span
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
-    >
-      light-1
-    </span>
-  </div>
-  <div
-    className="c12"
-  >
-    <span
-      className="c2"
-    >
-      light-2
-    </span>
-  </div>
-  <div
-    className="c13"
-  >
-    <span
-      className="c2"
-    >
-      light-3
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
-    <span
-      className="c2"
-    >
-      light-4
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
-    <span
-      className="c2"
-    >
-      light-5
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
-    <span
-      className="c2"
-    >
-      light-6
-    </span>
-  </div>
-  <div
-    className="c15"
-  >
-    <span
-      className="c2"
-    >
-      neutral-1
-    </span>
-  </div>
-  <div
-    className="c16"
-  >
-    <span
-      className="c2"
-    >
-      neutral-2
-    </span>
-  </div>
-  <div
-    className="c17"
-  >
-    <span
-      className="c2"
-    >
-      neutral-3
-    </span>
-  </div>
-  <div
-    className="c18"
-  >
-    <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c19"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c20"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c19"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c21"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
+    </span>
+  </div>
+  <div
+    class="c14"
+  >
+    <span
+      class="c2"
+    >
+      text
     </span>
   </div>
 </div>

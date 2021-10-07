@@ -1,12 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { allItems } from './Basics';
+const allItems = Array(2000)
+  .fill()
+  .map((_, i) => `item ${i + 1}`);
 
-const GridInfiniteScroll = () => (
+export const GridInfiniteScroll = () => (
   <Grommet theme={grommet}>
     <Grid columns="xsmall" rows="small">
       <InfiniteScroll items={allItems} step={12}>
@@ -21,4 +22,8 @@ const GridInfiniteScroll = () => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module).add('Grid', () => <GridInfiniteScroll />);
+GridInfiniteScroll.storyName = 'Grid';
+
+export default {
+  title: 'Utilities/InfiniteScroll/Grid',
+};

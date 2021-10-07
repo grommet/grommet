@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -15,7 +14,7 @@ import {
 import { grommet } from 'grommet/themes';
 import { data, columns } from './data';
 
-const DefaultTable = () => (
+export const Default = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Table caption="Default Table">
@@ -53,4 +52,6 @@ const DefaultTable = () => (
   </Grommet>
 );
 
-storiesOf('Table', module).add('Default', () => <DefaultTable />);
+export default {
+  title: 'Visualizations/Table/Default',
+};

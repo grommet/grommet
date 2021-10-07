@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet } from 'grommet/themes';
 import { Box, Text, ThemeContext, Grommet } from 'grommet';
 
-const ExternalComponentWithTheme = () => (
+export const ExternalComponentWithTheme = () => (
   <Grommet theme={grommet}>
     <Box background="neutral-3">
       <Text color="light-1">This is a grommet component</Text>
@@ -22,6 +21,8 @@ const ExternalComponentWithTheme = () => (
   </Grommet>
 );
 
-storiesOf('Theme', module).add('External Components', () => (
-  <ExternalComponentWithTheme />
-));
+ExternalComponentWithTheme.storyName = 'External components';
+
+export default {
+  title: 'Utilities/ThemeContext/External components',
+};

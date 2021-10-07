@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const BorderBox = () => (
+export const BorderBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small" align="start">
       <Box pad="small" border>
@@ -12,7 +11,7 @@ const BorderBox = () => (
       </Box>
       <Box direction="row-responsive" gap="small">
         {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(
-          border => (
+          (border) => (
             <Box key={border} pad="small" border={border}>
               {border}
             </Box>
@@ -38,14 +37,14 @@ const BorderBox = () => (
         color
       </Box>
       <Box direction="row-responsive" gap="small" align="start">
-        {['small', 'medium', 'large'].map(size => (
+        {['small', 'medium', 'large'].map((size) => (
           <Box key={size} pad="small" border={{ size }}>
             {size}
           </Box>
         ))}
       </Box>
       <Box direction="row-responsive" gap="small" align="start">
-        {['small', 'medium', 'large'].map(size => (
+        {['small', 'medium', 'large'].map((size) => (
           <Box key={size} pad="small" responsive={false} border={{ size }}>
             {size}
           </Box>
@@ -61,15 +60,20 @@ const BorderBox = () => (
           'ridge',
           'inset',
           'outset',
-        ].map(type => (
+        ].map((type) => (
           <Box key={type} pad="small" border={{ size: 'medium', style: type }}>
             {type}
           </Box>
         ))}
       </Box>
       <Box direction="row-responsive" gap="large" align="center">
-        {['column', 'row'].map(direction => (
-          <Box direction={direction} gap="medium" border="between">
+        {['column', 'row', 'row-responsive'].map((direction) => (
+          <Box
+            key={direction}
+            direction={direction}
+            gap="large"
+            border={{ side: 'between', size: 'large' }}
+          >
             <Text>between</Text>
             <Text>{direction}</Text>
           </Box>
@@ -79,4 +83,8 @@ const BorderBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Border', () => <BorderBox />);
+BorderBox.storyName = 'Border';
+
+export default {
+  title: 'Layout/Box/Border',
+};

@@ -1,35 +1,48 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'grommet';
+import {
+  Box,
+  Button,
+  Form,
+  FormField,
+  Grommet,
+  Text,
+  TextInput,
+} from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
-const FormFieldLabel = props => {
-  const { required, label, ...rest } = props;
-  return (
-    <FormField
-      label={
-        required ? (
-          <Box direction="row">
-            <Text>{label}</Text>
-            <Text color="status-critical">*</Text>
-          </Box>
-        ) : (
-          label
-        )
-      }
-      required={required}
-      {...rest}
-    />
-  );
-};
+const customTheme = deepMerge(grommet, {
+  formField: {
+    label: {
+      requiredIndicator: true,
+    },
+  },
+});
 
-const LabelFormField = () => (
-  <Grommet theme={grommet}>
+export const RequiredLabel = () => (
+  <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Form>
-        <FormFieldLabel name="firstName" label="FirstName" required />
-        <FormFieldLabel name="LastName" label="LastName" required />
-        <FormFieldLabel name="email" label="Email" />
+        <FormField
+          name="firstName"
+          htmlFor="firstName"
+          label="First Name"
+          required
+        >
+          <TextInput id="firstName" name="firstName" />
+        </FormField>
+        <FormField
+          name="lastName"
+          htmlFor="lastName"
+          label="Last Name"
+          required
+        >
+          <TextInput id="lastName" name="lastName" />
+        </FormField>
+        <FormField name="email" htmlFor="email" label="Email" required>
+          <TextInput id="email" name="email" type="email" />
+        </FormField>
         <Button type="submit" label="Submit" primary />
         <Text margin={{ left: 'small' }} size="small" color="status-critical">
           * Required Field
@@ -39,4 +52,8 @@ const LabelFormField = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Required Label', () => <LabelFormField />);
+RequiredLabel.storyName = 'Required label';
+
+export default {
+  title: 'Input/Form/Required label',
+};

@@ -1,4 +1,11 @@
 import {
+  FlattenInterpolation,
+  FlattenSimpleInterpolation,
+  ThemedStyledProps,
+} from 'styled-components';
+import { ReactComponentElement } from 'react';
+
+import {
   BackgroundType,
   BorderType,
   BreakpointBorderSize,
@@ -6,17 +13,24 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  DirectionType,
+  ElevationType,
   GapType,
   GraphColorsType,
   MarginType,
   OpacityType,
   RoundType,
   PadType,
+  PropsOf,
+  AlignContentType,
 } from '../utils';
 
-import { BoxProps } from '../components/Box';
-import { TextProps } from '../components/Text';
-import { ReactComponentElement } from 'react';
+import { BoxProps } from '../components/Box/index';
+import { Anchor } from '../components/Anchor';
+import { Box } from '../components/Box';
+import { Text, TextProps } from '../components/Text';
+import { LayerPositionType, LayerProps } from '../components/Layer';
+import { DropProps } from '../components/Drop';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -24,7 +38,39 @@ export declare const generate: (
   scale?: number,
 ) => DeepReadonly<ThemeType>;
 
-type ExtendType = string | ((...args: any) => void);
+/**
+ * ExtendProps represents the props that will be provided to an ExtendType.
+ */
+type ExtendProps<TProps> = ThemedStyledProps<TProps, ThemeType>;
+
+/**
+ * ExtendValue represents a valid `extend` value, which can be a CSS string or a
+ * styled-components interpolation. In the theme an ExtendValue can be provided
+ * directly to `extend` or it can be computed as the result of an ExtendFn.
+ */
+type ExtendValue<TProps> =
+  | string
+  | FlattenSimpleInterpolation
+  | FlattenInterpolation<ExtendProps<TProps>>;
+
+/**
+ * ExtendFn represents a function passed to `extend`. These functions receive
+ * props and produce an ExtendValue.
+ */
+type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
+
+/**
+ * ExtendType represents the type for `extend` values in the theme.
+ *
+ * Acceptable values for `extend` are one of:
+ *
+ * * A string containing css
+ * * An array of styled-components interpolations (usually returned by the styled-components `css` helper function)
+ * * A function taking props and returning one of the above values
+ */
+type ExtendType<TProps = Record<string, any>> =
+  | ExtendValue<TProps>
+  | ExtendFn<TProps>;
 
 declare const colors: {
   active?: ColorType;
@@ -81,11 +127,16 @@ type Colors = typeof colors & {
 
 interface ButtonKindType {
   background?: BackgroundType;
-  border?: {
-    color?: ColorType;
-    width?: string;
-  } | boolean;
+  border?:
+    | {
+        color?: ColorType;
+        width?: string;
+      }
+    | boolean;
   color?: ColorType;
+  font?: {
+    weight?: number | string;
+  };
   padding?: {
     vertical?: string;
     horizontal?: string;
@@ -93,13 +144,98 @@ interface ButtonKindType {
   extend?: ExtendType;
 }
 
+interface ButtonType {
+  badge?: {
+    container?: {
+      background?: BackgroundType;
+      pad?: PadType;
+      extend?: ExtendType;
+    };
+    size?: {
+      medium?: string;
+    };
+    text?: {
+      size?: {
+        medium?: string;
+      };
+    };
+  };
+  border?: {
+    color?: ColorType;
+    width?: string;
+    radius?: string;
+  };
+  color?: ColorType;
+  extend?: ExtendType;
+  minWidth?: string;
+  maxWidth?: string;
+  padding?: {
+    vertical?: string;
+    horizontal?: string;
+  };
+  default?: ButtonKindType;
+  primary?: ButtonKindType;
+  secondary?: ButtonKindType;
+  option?: ButtonKindType;
+  active?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  disabled?: ButtonKindType & { opacity?: OpacityType };
+  hover?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  size?: {
+    small?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    medium?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    large?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+  };
+  transition?: {
+    timing?: string;
+    duration?: number;
+    properties?: string[];
+  };
+}
+interface FormFieldLabelType extends TextProps {
+  requiredIndicator?: boolean | JSX.Element | string;
+}
+
 export interface ThemeType {
   global?: {
     active?: {
-      background?: {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -134,12 +270,14 @@ export interface ThemeType {
         edgeSize?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
-      [x: string]: {
-        value?: number;
-        borderSize?: BreakpointBorderSize;
-        edgeSize?: BreakpointEdgeSize;
-        size?: BreakpointSize;
-      } | undefined;
+      [x: string]:
+        | {
+            value?: number;
+            borderSize?: BreakpointBorderSize;
+            edgeSize?: BreakpointEdgeSize;
+            size?: BreakpointSize;
+          }
+        | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
@@ -164,6 +302,8 @@ export interface ThemeType {
         width?: string;
         radius?: string;
       };
+      intelligentMargin?: boolean;
+      margin?: MarginType;
       shadowSize?: string;
       zIndex?: string;
     };
@@ -215,6 +355,7 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
       size?: string;
+      weight?: number | string;
     };
     graph?: {
       colors?: GraphColorsType;
@@ -224,7 +365,17 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
+      extend?: ExtendType;
+      padding?:
+        | string
+        | {
+            top?: string;
+            bottom?: string;
+            left?: string;
+            right?: string;
+            horizontal?: string;
+            vertical?: string;
+          };
       font?: {
         height?: string;
         size?: string;
@@ -277,10 +428,10 @@ export interface ThemeType {
   };
   anchor?: {
     color?: ColorType;
-    extend?: ExtendType;
+    extend?: ExtendType<PropsOf<typeof Anchor>>;
     fontWeight?: number;
     hover?: {
-      extend?: ExtendType;
+      extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;
     };
     textDecoration?: string;
@@ -293,82 +444,31 @@ export interface ThemeType {
       large?: string;
       xlarge?: string;
       [x: string]: string | undefined;
-    },
+    };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
-    }
+    };
     extend?: ExtendType;
-  },
+  };
   box?: {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
-  button?: {
-    border?: {
-      color?: ColorType;
-      width?: string;
-      radius?: string;
-    };
-    color?: ColorType;
-    extend?: ExtendType;
-    minWidth?: string;
-    maxWidth?: string;
-    padding?: {
-      vertical?: string;
-      horizontal?: string;
-    };
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-    option?: ButtonKindType;
-    active?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    disabled?: ButtonKindType;
-    hover?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    size?: {
-      small?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      medium?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      large?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-    };
-    transition?: {
-      timing?: string;
-      duration?: number;
-      properties?: string[];
-    };
-  };
+  button?: ButtonType;
   calendar?: {
+    day?: {
+      extend?: ExtendType;
+    };
+    extend?: ExtendType;
     small?: {
       fontSize?: string;
       lineHeight?: number;
@@ -400,11 +500,11 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?:BoxProps;
-    header?:BoxProps;
-    body?:BoxProps;
-    footer?:BoxProps;
-  },
+    container?: BoxProps;
+    header?: BoxProps;
+    body?: BoxProps;
+    footer?: BoxProps;
+  };
   carousel?: {
     animation?: {
       duration?: number;
@@ -430,6 +530,9 @@ export interface ThemeType {
       color?: ColorType;
       width?: string;
     };
+    label?: {
+      align?: AlignContentType;
+    };
     check?: {
       extend?: ExtendType;
       radius?: string;
@@ -442,6 +545,9 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      background?: {
+        color?: ColorType;
+      };
     };
     icon?: {
       size?: string;
@@ -451,6 +557,7 @@ export interface ThemeType {
       checked?: any;
       indeterminate?: any;
     };
+    pad?: PadType;
     size?: string;
     toggle?: {
       background?: BackgroundType;
@@ -462,6 +569,9 @@ export interface ThemeType {
         extend?: ExtendType;
       };
     };
+  };
+  checkBoxGroup?: {
+    container?: BoxProps;
   };
   clock?: {
     analog?: {
@@ -518,6 +628,10 @@ export interface ThemeType {
           size?: string;
           height?: number;
         };
+        [key: string]: {
+          size?: string;
+          height?: number;
+        };
       };
     };
   };
@@ -525,11 +639,32 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  dateInput?: {
+    icon?: {
+      size?: string;
+    };
+  };
   dataTable?: {
-    body?:{
+    body?: {
       extend?: ExtendType;
-    }
-    header?: {};
+    };
+    container?: BoxProps;
+    header?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      color?: ColorType;
+      extend?: ExtendType;
+      font?: {
+        weight?: string;
+        size?: string;
+      };
+      gap?: GapType;
+      hover?: {
+        background?: BackgroundType;
+      };
+      pad?: PadType;
+      units?: TextProps;
+    };
     groupHeader?: {
       border?: {
         side?: string;
@@ -550,11 +685,33 @@ export interface ThemeType {
       contract?: any;
       descending?: any;
       expand?: any;
+      sortable?: any;
+    };
+    pinned?: {
+      body?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      header?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      footer?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
     };
     resize?: {
       border?: {
         side?: string;
         color?: ColorType;
+      };
+      hover?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
       };
     };
     primary?: {
@@ -571,30 +728,67 @@ export interface ThemeType {
     extend?: ExtendType;
     maxHeight?: string;
   };
-  formField?: {
+  fileInput?: {
+    background?: BackgroundType;
     border?: BorderType;
+    dragOver?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    extend?: ExtendType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    icons?: {
+      remove?: any;
+    };
+    label?: TextProps & { extend?: ExtendType };
+    margin?: MarginType;
+    message?: TextProps & { extend?: ExtendType };
+    pad?: PadType;
+    round?: RoundType;
+  };
+  formField?: {
+    border?: BorderType & {
+      error?: {
+        color?: ColorType;
+      };
+    };
     content?: {
+      margin?: MarginType;
       pad?: PadType;
     };
     disabled?: {
       background?: BackgroundType;
       border?: {
         color?: ColorType;
-      },
+      };
       label?: {
         color?: ColorType;
-      },
+      };
     };
     focus?: {
       background?: BackgroundType;
       border?: {
-        color?: ColorType
-      },
+        color?: ColorType;
+      };
     };
     error?: {
       background?: BackgroundType;
+      border?: BorderType & {
+        error?: {
+          color?: ColorType;
+        };
+      };
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
     help?: {
       color?: ColorType;
@@ -603,15 +797,19 @@ export interface ThemeType {
     info?: {
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
-    label?: TextProps;
+    label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
+    extend?: ExtendType;
   };
   grommet?: {
     extend?: ExtendType;
   };
   heading?: {
+    color?: ColorType;
     extend?: ExtendType;
     font?: {};
     level?: {
@@ -771,8 +969,11 @@ export interface ThemeType {
     background?: BackgroundType;
     border?: {
       radius?: string;
+      intelligentRounding?: boolean;
     };
     container?: {
+      elevation?: ElevationType;
+      extend?: ExtendType;
       zIndex?: string;
     };
     extend?: ExtendType;
@@ -783,6 +984,7 @@ export interface ThemeType {
     zIndex?: string;
   };
   list?: {
+    container?: BoxProps;
     item?: {
       background?: BackgroundType;
       border?:
@@ -795,9 +997,16 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    icons?: {
+      down?: React.ReactNode;
+      up?: React.ReactNode;
+    };
     extend?: ExtendType;
   };
   maskedInput?: {
+    container?: {
+      extend?: ExtendType;
+    };
     extend?: ExtendType;
     disabled?: {
       opacity?: OpacityType;
@@ -805,6 +1014,7 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
+    drop?: DropProps;
     extend?: ExtendType;
     icons?: {
       down?: any;
@@ -816,6 +1026,57 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+  };
+  notification?: {
+    container?: BoxProps;
+    toast?: {
+      container?: BoxProps;
+      layer?: LayerProps;
+    };
+    iconContainer?: BoxProps;
+    textContainer?: BoxProps;
+    title?: TextProps;
+    message?: TextProps;
+    close?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    critical?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    warning?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    normal?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    unknown?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+    undefined?: {
+      icon?: React.ReactNode;
+      color?: ColorType;
+    };
+  };
+  pagination?: {
+    button?: ButtonType;
+    container?: BoxProps;
+    controls?: {
+      align?: AlignContentType;
+      direction?: DirectionType;
+      gap?: GapType;
+      pad?: PadType;
+      margin?: MarginType;
+    };
+    icons?: {
+      color?: ColorType;
+      next?: React.ReactNode;
+      previous?: React.ReactNode;
+    };
   };
   paragraph?: {
     extend?: ExtendType;
@@ -852,10 +1113,16 @@ export interface ThemeType {
     };
     check?: {
       radius?: string;
+      background?: {
+        color?: ColorType;
+      };
     };
     color?: ColorType;
     hover?: {
       border?: {
+        color?: ColorType;
+      };
+      background?: {
         color?: ColorType;
       };
     };
@@ -870,9 +1137,21 @@ export interface ThemeType {
     size?: string;
     font?: {
       weight?: number | string;
-    }
+    };
+  };
+  radioButtonGroup?: {
+    container?: BoxProps;
   };
   rangeInput?: {
+    disabled?: {
+      opacity?: OpacityType;
+      track?: {
+        color?: ColorType;
+      };
+      thumb?: {
+        color?: ColorType;
+      };
+    };
     track?: {
       height?: string;
       color?: any;
@@ -881,11 +1160,11 @@ export interface ThemeType {
       lower?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
       upper?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
     };
     thumb?: {
       color?: ColorType;
@@ -904,6 +1183,10 @@ export interface ThemeType {
   };
   select?: {
     background?: BackgroundType;
+    clear?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     container?: {
       extend?: ExtendType;
     };
@@ -919,14 +1202,25 @@ export interface ThemeType {
       margin?: MarginType;
     };
     options?: {
-      container?: BoxProps;
-      text?: {
-        margin?: MarginType;
-      };
+      container?: PropsOf<typeof Box>;
+      text?: PropsOf<typeof Text>;
     };
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  skipLinks?: {
+    position?: LayerPositionType;
+    container?: BoxProps;
+    label?: TextProps;
+  };
+  spinner?: {
+    container?:
+      | BoxProps
+      | { color?: ColorType }
+      | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
+    icon?: React.ReactNode;
+    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   };
   tab?: {
     active?: {
@@ -1045,6 +1339,31 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    '2xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '3xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '4xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '5xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '6xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
   };
   textArea?: {
     extend?: ExtendType;
@@ -1053,6 +1372,19 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    container?: {
+      extend?: ExtendType;
+    };
+    placeholder?: {
+      extend?: ExtendType;
+    };
+    suggestions?: {
+      extend?: ExtendType;
+    };
+  };
+  tip?: {
+    content?: BoxProps;
+    drop?: DropProps;
   };
   video?: {
     captions?: {

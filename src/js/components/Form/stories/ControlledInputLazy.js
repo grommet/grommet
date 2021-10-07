@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -17,15 +16,16 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [subscribe, setSubscribe] = React.useState(false);
-  const [ampm, setAmpm] = React.useState('');
-  const [size, setSize] = React.useState('');
-  const [comments, setComments] = React.useState('');
-  const [age, setAge] = React.useState('');
-  React.useEffect(() => {
+export const ControlledInputLazy = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subscribe, setSubscribe] = useState(false);
+  const [ampm, setAmpm] = useState('');
+  const [size, setSize] = useState('');
+  const [comments, setComments] = useState('');
+  const [age, setAge] = useState('');
+
+  useEffect(() => {
     setName('initial');
     setEmail('initial@my.com');
     setSubscribe(true);
@@ -34,6 +34,7 @@ const Example = () => {
     setComments('initial');
     setAge(60);
   }, []);
+
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -126,4 +127,8 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled Input lazy', () => <Example />);
+ControlledInputLazy.storyName = 'Controlled input lazy';
+
+export default {
+  title: 'Input/Form/Controlled input lazy',
+};

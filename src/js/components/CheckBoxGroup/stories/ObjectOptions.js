@@ -1,5 +1,4 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
 import { Box, CheckBoxGroup, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -7,23 +6,50 @@ import { grommet } from 'grommet/themes';
 const objectOptions = [];
 for (let i = 1; i <= 5; i += 1) {
   objectOptions.push({
-    label: `option ${i}`,
+    lab: `option ${i}`,
     val: i,
   });
 }
 
-const Example = () => {
+export const ObjectOptions = () => {
+  const [value, setValue] = useState([]);
+  const [value2, setValue2] = useState([]);
+
   return (
     <Grommet theme={grommet}>
-      <Box pad="medium">
+      <Box pad="medium" gap="large">
         <CheckBoxGroup
-          labelKey="label"
+          labelKey="lab"
           valueKey="val"
+          value={value}
+          onChange={event => {
+            setValue(event.value);
+            console.log('Group1: ', event.value);
+          }}
           options={objectOptions}
+        />
+        <CheckBoxGroup
+          gap="xsmall"
+          labelKey="label"
+          valueKey="key"
+          value={value2}
+          onChange={event => {
+            setValue2(event.value);
+            console.log('Group2: ', event.value);
+          }}
+          options={[
+            { label: 'Maui', key: 'M' },
+            { label: 'Jerusalem', key: 'J' },
+            { label: 'Wuhan', key: 'W' },
+          ]}
         />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('CheckBoxGroup', module).add('Object options', () => <Example />);
+ObjectOptions.storyName = 'Object options';
+
+export default {
+  title: 'Input/CheckBoxGroup/Object options',
+};

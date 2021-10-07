@@ -1,31 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-import { FormDown, FormUp } from 'grommet-icons';
-
 import { Box, Grommet, Select } from 'grommet';
-import { ThemeType } from 'grommet/themes';
+import { grommet } from 'grommet/themes';
 
 // the prefix name of the Create option entry
 const prefix = 'Create';
-
-const theme: ThemeType = {
-  select: {
-    control: {
-      open: {
-        background: '#ece0fa',
-        border: '1px solid #7D4CDB',
-      },
-      extend: 'padding: 3px 6px;',
-    },
-    icons: {
-      down: FormDown,
-      up: FormUp,
-      color: 'dark-1',
-      margin: 'small',
-    },
-  },
-};
 
 const defaultOptions = [];
 for (let i = 1; i <= 5; i += 1) {
@@ -53,13 +31,13 @@ const getRegExp = text => {
   return new RegExp(escapedText, 'i');
 };
 
-const CreateOption = () => {
+export const CreateOption = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <Grommet full theme={theme}>
+    <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
         <Select
           open
@@ -89,8 +67,8 @@ const CreateOption = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Select', module).add('Create Option', () => (
-    <CreateOption />
-  ));
-}
+CreateOption.storyName = 'Create option';
+
+export default {
+  title: 'Input/Select/Create option',
+};

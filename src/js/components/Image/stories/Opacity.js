@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Image } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Opacity = () => (
+export const Opacity = () => (
   <Grommet theme={grommet}>
     <Box gap="small" direction="row">
       <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
@@ -24,4 +23,6 @@ const Opacity = () => (
   </Grommet>
 );
 
-storiesOf('Image', module).add('Opacity', () => <Opacity />);
+export default {
+  title: 'Media/Image/Opacity',
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import { Grommet as GrommetIcon } from 'grommet-icons';
@@ -14,8 +13,8 @@ const FooterAnchor = ({ ...rest }) => (
   <StyledAnchor href="/" size="small" color="white" {...rest} />
 );
 
-const FooterContent = () => {
-  return data.map(item => (
+const FooterContent = () =>
+  data.map(item => (
     <Box gap="medium" key={item[0]}>
       <Text weight="bold" size="small">
         {item[0]}
@@ -27,34 +26,35 @@ const FooterContent = () => {
       </Box>
     </Box>
   ));
-};
 
-const DoubleFooter = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Main background="light-4" elevation="large" pad="large" border>
-        <Text margin="small" size="xsmall">
-          Main Content
-        </Text>
-        <Box flex />
-      </Main>
-      <Footer background="dark-1" pad="large">
-        <FooterContent />
-      </Footer>
-      <Footer
-        background="dark-2"
-        pad={{ horizontal: 'large', vertical: 'small' }}
-      >
-        <Box direction="row" gap="small">
-          <GrommetIcon color="brand" />
-          <Text alignSelf="center">grommet.io</Text>
-        </Box>
-        <Text textAlign="center" size="small">
-          © 2019 Copyright
-        </Text>
-      </Footer>
-    </Grommet>
-  );
-};
+export const DoubleFooter = () => (
+  <Grommet theme={grommet}>
+    <Main background="light-4" elevation="large" pad="large" border>
+      <Text margin="small" size="xsmall">
+        Main Content
+      </Text>
+      <Box flex />
+    </Main>
+    <Footer background="dark-1" pad="large">
+      <FooterContent />
+    </Footer>
+    <Footer
+      background="dark-2"
+      pad={{ horizontal: 'large', vertical: 'small' }}
+    >
+      <Box direction="row" gap="small">
+        <GrommetIcon color="brand" />
+        <Text alignSelf="center">grommet.io</Text>
+      </Box>
+      <Text textAlign="center" size="small">
+        © 2019 Copyright
+      </Text>
+    </Footer>
+  </Grommet>
+);
 
-storiesOf('Footer', module).add('DoubleFooter', () => <DoubleFooter />);
+DoubleFooter.storyName = 'Double footer';
+
+export default {
+  title: 'Layout/Footer/Double footer',
+};

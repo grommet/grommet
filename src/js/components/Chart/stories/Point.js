@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const values = [{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }];
 
-const Example = () => (
+export const Point = () => (
   <Grommet theme={grommet}>
     <Box direction="row-responsive" wrap pad="large">
       {['circle', 'square', 'diamond', 'star', 'triangle', 'triangleDown'].map(
@@ -23,4 +22,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Point', () => <Example />);
+export default {
+  title: 'Visualizations/Chart/Point',
+};

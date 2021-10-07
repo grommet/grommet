@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Image } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Fit = () => (
+export const Fit = () => (
   <Grommet theme={grommet}>
     <Box align="start" gap="medium">
       <Box height="small" width="small" border>
@@ -17,4 +16,6 @@ const Fit = () => (
   </Grommet>
 );
 
-storiesOf('Image', module).add('Fit', () => <Fit />);
+export default {
+  title: 'Media/Image/Fit',
+};

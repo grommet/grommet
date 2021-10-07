@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const DynamicFields = () => {
   const [haveAlias, setHaveAlias] = useState();
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            validate="blur"
             onReset={event => console.log(event)}
+            onValidate={event => console.log('Validate', event)}
             onSubmit={({ value }) => console.log('Submit', value)}
           >
             <FormField label="Name" name="name" required>
@@ -49,4 +50,8 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Dynamic fields', () => <Example />);
+DynamicFields.storyName = 'Dynamic fields';
+
+export default {
+  title: 'Input/Form/Dynamic fields',
+};

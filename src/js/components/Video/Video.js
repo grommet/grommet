@@ -3,11 +3,11 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -24,11 +24,13 @@ import {
   StyledVideoControls,
   StyledVideoScrubber,
 } from './StyledVideo';
+import { MessageContext } from '../../contexts/MessageContext';
+import { VideoPropTypes } from './propTypes';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
 
-const formatTime = time => {
+const formatTime = (time) => {
   let minutes = Math.round(time / 60);
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -63,6 +65,7 @@ const Video = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { format } = useContext(MessageContext);
     const [captions, setCaptions] = useState([]);
     const [currentTime, setCurrentTime] = useState();
     const [duration, setDuration] = useState();
@@ -165,7 +168,7 @@ const Video = forwardRef(
     const pause = useCallback(() => videoRef.current.pause(), [videoRef]);
 
     const scrub = useCallback(
-      event => {
+      (event) => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
@@ -177,12 +180,12 @@ const Video = forwardRef(
     );
 
     const seek = useCallback(
-      event => {
+      (event) => {
         if (scrubberRef.current) {
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
             (event.clientX - scrubberRect.left) / scrubberRect.width;
-          videoRef.current.currentTime = duration * percent;
+          if (duration) videoRef.current.currentTime = duration * percent;
         }
       },
       [duration, videoRef],
@@ -196,7 +199,7 @@ const Video = forwardRef(
       videoRef.current.volume -= VOLUME_STEP;
     }, [videoRef]);
 
-    const showCaptions = index => {
+    const showCaptions = (index) => {
       const { textTracks } = videoRef.current;
       for (let i = 0; i < textTracks.length; i += 1) {
         textTracks[i].mode = i === index ? 'showing' : 'hidden';
@@ -242,10 +245,8 @@ const Video = forwardRef(
         Volume: theme.video.icons.volume,
       };
 
-      const captionControls = captions.map(caption => ({
-        icon: caption.label ? (
-          undefined
-        ) : (
+      const captionControls = captions.map((caption) => ({
+        icon: caption.label ? undefined : (
           <Icons.ClosedCaption color={iconColor} />
         ),
         label: caption.label,
@@ -272,12 +273,18 @@ const Video = forwardRef(
                 playing ? (
                   <Icons.Pause
                     color={iconColor}
-                    a11yTitle={messages.pauseButton}
+                    a11yTitle={format({
+                      id: 'video.pauseButton',
+                      messages,
+                    })}
                   />
                 ) : (
                   <Icons.Play
                     color={iconColor}
-                    a11yTitle={messages.playButton}
+                    a11yTitle={format({
+                      id: 'video.playButton',
+                      messages,
+                    })}
                   />
                 )
               }
@@ -288,7 +295,10 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label={messages.progressMeter}
+                    aria-label={format({
+                      id: 'video.progressMeter',
+                      messages,
+                    })}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -302,7 +312,10 @@ const Video = forwardRef(
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
-                    aria-label={messages.scrubber}
+                    aria-label={format({
+                      id: 'video.scrubber',
+                      messages,
+                    })}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
@@ -326,15 +339,18 @@ const Video = forwardRef(
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
               messages={{
-                openMenu: messages.openMenu,
-                closeMenu: messages.closeMenu,
+                openMenu: format({ id: 'video.openMenu', messages }),
+                closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
               items={[
                 {
                   icon: (
                     <Icons.Volume
                       color={iconColor}
-                      a11yTitle={messages.volumeUp}
+                      a11yTitle={format({
+                        id: 'video.volumeUp',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
@@ -344,7 +360,10 @@ const Video = forwardRef(
                   icon: (
                     <Icons.ReduceVolume
                       color={iconColor}
-                      a11yTitle={messages.volumeDown}
+                      a11yTitle={format({
+                        id: 'video.volumeDown',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: volume >= VOLUME_STEP ? quieter : undefined,
@@ -355,7 +374,10 @@ const Video = forwardRef(
                   icon: (
                     <Icons.FullScreen
                       color={iconColor}
-                      a11yTitle={messages.fullScreen}
+                      a11yTitle={format({
+                        id: 'video.fullScreen',
+                        messages,
+                      })}
                     />
                   ),
                   onClick: fullscreen,
@@ -399,32 +421,32 @@ const Video = forwardRef(
         <StyledVideo
           {...rest}
           ref={videoRef}
-          onDurationChange={event => {
+          onDurationChange={(event) => {
             const video = videoRef.current;
             setDuration(video.duration);
             setPercentagePlayed((video.currentTime / video.duration) * 100);
             if (onDurationChange) onDurationChange(event);
           }}
-          onEnded={event => {
+          onEnded={(event) => {
             setPlaying(false);
             if (onEnded) onEnded(event);
           }}
-          onPause={event => {
+          onPause={(event) => {
             setPlaying(false);
             if (onPause) onPause(event);
           }}
-          onPlay={event => {
+          onPlay={(event) => {
             setPlaying(true);
             setHasPlayed(true);
             if (onPlay) onPlay(event);
           }}
-          onTimeUpdate={event => {
+          onTimeUpdate={(event) => {
             const video = videoRef.current;
             setCurrentTime(video.currentTime);
             setPercentagePlayed((video.currentTime / video.duration) * 100);
             if (onTimeUpdate) onTimeUpdate(event);
           }}
-          onVolumeChange={event => {
+          onVolumeChange={(event) => {
             setVolume(videoRef.current.volume);
             if (onVolumeChange) onVolumeChange(event);
           }}
@@ -439,27 +461,9 @@ const Video = forwardRef(
   },
 );
 
-Video.defaultProps = {
-  messages: {
-    closeMenu: 'close menu',
-    fullScreen: 'full screen',
-    progressMeter: 'video progress',
-    scrubber: 'scrubber',
-    openMenu: 'open menu',
-    pauseButton: 'pause',
-    playButton: 'play',
-    volumeDown: 'volume down',
-    volumeUp: 'volume up',
-  },
-};
+Video.defaultProps = {};
 
 Video.displayName = 'Video';
+Video.propTypes = VideoPropTypes;
 
-let VideoDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  VideoDoc = require('./doc').doc(Video);
-}
-const VideoWrapper = VideoDoc || Video;
-
-export { VideoWrapper as Video };
+export { Video };

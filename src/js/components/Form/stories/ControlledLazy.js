@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -27,9 +26,10 @@ const defaultValue = {
   age: '',
 };
 
-const Example = () => {
-  const [value, setValue] = React.useState(defaultValue);
-  React.useEffect(
+export const ControlledLazy = () => {
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(
     () =>
       setValue({
         name: 'initial',
@@ -99,4 +99,13 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled lazy', () => <Example />);
+ControlledLazy.storyName = 'Controlled lazy';
+
+ControlledLazy.parameters = {
+  // chromatic disabled because snapshot is the same as Controlled
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Form/Controlled lazy',
+};

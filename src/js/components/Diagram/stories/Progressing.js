@@ -1,7 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
+import { Grommet, Box, Diagram, Stack, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Node = ({ id, ...rest }) => (
@@ -29,8 +28,8 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 
 const fullTopRow = [1, 2, 3];
 
-const SimpleDiagram = () => {
-  const reducer = topRow => {
+export const Progressing = () => {
+  const reducer = (topRow) => {
     const sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
     return fullTopRow.slice(0, sliceEnd);
   };
@@ -40,7 +39,7 @@ const SimpleDiagram = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       dispatch();
-    }, 2000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [dispatch]);
 
@@ -52,32 +51,49 @@ const SimpleDiagram = () => {
 
   if (topRow.length >= 3) {
     connections.push(
-      connection('3', '5', { anchor: 'horizontal', color: 'brand' }),
+      connection('3', '5', {
+        anchor: 'horizontal',
+        animation: { type: 'pulse', duration: 500, size: 'small' },
+        color: 'brand',
+      }),
     );
   }
 
   return (
     <Grommet theme={grommet}>
       <Box align="start" pad="large">
-        <Text> Adding and removing nodes</Text>
+        <Paragraph>
+          Adding and removing nodes with animated connections. The animation
+          &apos;draw&apos; is applied to the entire diagram, however, the last
+          connection receives its own animation type of &apos;pulse&apos;.
+        </Paragraph>
         <Stack>
           <Box>
             <Box direction="row">
-              {topRow.map(id => (
+              {topRow.map((id) => (
                 <Node key={id} id={id} />
               ))}
             </Box>
             <Box direction="row">
-              {[4, 5].map(id => (
+              {[4, 5].map((id) => (
                 <Node key={id} id={id} background="dark-2" />
               ))}
             </Box>
           </Box>
-          <Diagram connections={connections} />
+          <Diagram
+            animation={{ type: 'draw', duration: 3000 }}
+            connections={connections}
+          />
         </Stack>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Diagram', module).add('Progressing', () => <SimpleDiagram />);
+Progressing.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Diagram/Progressing',
+};

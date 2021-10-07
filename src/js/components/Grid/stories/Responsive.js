@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid, Heading, ResponsiveContext } from 'grommet';
 
@@ -146,7 +145,7 @@ const Responsive = ({
   </ResponsiveContext.Consumer>
 );
 
-const ResponsiveGrid = () => (
+export const ResponsiveGrid = () => (
   <Grommet theme={customBreakpoints}>
     <Box>
       <Heading level={2}>Resize me.</Heading>
@@ -189,4 +188,8 @@ const ResponsiveGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('Responsive Grid', () => <ResponsiveGrid />);
+ResponsiveGrid.storyName = 'Responsive grid';
+
+export default {
+  title: 'Layout/Grid/Responsive grid',
+};

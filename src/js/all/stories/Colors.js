@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Box, Grommet, Paragraph, Text } from 'grommet';
 
@@ -38,7 +37,7 @@ const customTheme = {
   },
 };
 
-const Example = () => (
+export const Colors = () => (
   <Grommet theme={customTheme}>
     <Box background="yellow" gap="medium" pad="small">
       <Text>Custom color purple</Text>
@@ -56,4 +55,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Theme', module).add('Colors', () => <Example />);
+export default {
+  title: 'Utilities/Theme/Colors',
+};

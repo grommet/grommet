@@ -1,22 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-const now = new Date();
-const lastWeek = new Date(now);
-lastWeek.setDate(lastWeek.getDate() - 7);
 
 const dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric',
 });
 
-const Example = () => {
+export const Range = () => {
   const [value, setValue] = React.useState([
-    lastWeek.toISOString(),
-    now.toISOString(),
+    '2020-07-31T15:27:42.920Z',
+    '2020-08-07T15:27:42.920Z',
   ]);
   const onChange = event => {
     const nextValue = event.value;
@@ -40,4 +35,10 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Range', () => <Example />);
+Range.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/DateInput/Range',
+};

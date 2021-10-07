@@ -1,22 +1,35 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Heading } from '..';
 
 test('Heading renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Heading accepts ref', () => {
+  const ref = React.createRef();
+  const { container } = render(
+    <Grommet>
+      <Heading ref={ref} />
+    </Grommet>,
+    { createNodeMock: (el) => el },
+  );
+
+  expect(ref.current).not.toBeNull();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Heading level renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading level={1} />
       <Heading level={2} />
@@ -28,12 +41,12 @@ test('Heading level renders', () => {
       <Heading level="4" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Heading size renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading level={1} size="small" />
       <Heading level={1} size="medium" />
@@ -54,24 +67,25 @@ test('Heading size renders', () => {
       <Heading level={1} size="77px" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Heading textAlign renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading textAlign="start" />
       <Heading textAlign="center" />
       <Heading textAlign="end" />
+      <Heading textAlign="justify" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Heading margin renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading margin="small" />
       <Heading margin="medium" />
@@ -83,42 +97,42 @@ test('Heading margin renders', () => {
       <Heading margin={{ top: 'none' }} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Heading color renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading color="brand" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
 test('Heading truncate renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading truncate={false}>{LONG}</Heading>
       <Heading truncate>{LONG}</Heading>
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('responsive renders', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Grommet>
       <Heading responsive />
       <Heading responsive={false} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Theme based font family renders', () => {
@@ -146,7 +160,7 @@ test('Theme based font family renders', () => {
       },
     },
   };
-  const component = renderer.create(
+  const { container } = render(
     <Grommet theme={customTheme}>
       <Heading level={1} />
       <Heading level={2} />
@@ -154,8 +168,8 @@ test('Theme based font family renders', () => {
       <Heading level={4} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Theme based font weight renders', () => {
@@ -181,7 +195,7 @@ test('Theme based font weight renders', () => {
       },
     },
   };
-  const component = renderer.create(
+  const { container } = render(
     <Grommet theme={customTheme}>
       <Heading level={1} />
       <Heading level={2} />
@@ -189,6 +203,57 @@ test('Theme based font weight renders', () => {
       <Heading level={4} />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Theme color renders', () => {
+  const customTheme = {
+    heading: {
+      color: 'text-strong',
+    },
+  };
+  const { container } = render(
+    <Grommet theme={customTheme}>
+      <Heading level={1} />
+      <Heading level={2} />
+      <Heading level={3} />
+      <Heading level={4} />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Throws a warning when heading.level is undefined in the theme.', () => {
+  global.console = {
+    warn: jest.fn(),
+  };
+
+  const customTheme = {
+    heading: {
+      level: {
+        6: undefined,
+      },
+    },
+  };
+
+  render(
+    <Grommet theme={customTheme}>
+      <Heading level={6} />
+    </Grommet>,
+  );
+
+  const consoleMsg = 'Heading level 6 is not defined in your theme.';
+  expect(global.console.warn).toHaveBeenCalledWith(consoleMsg);
+});
+
+test('Heading fill renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Heading fill />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
 });

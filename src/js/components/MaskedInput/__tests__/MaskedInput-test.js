@@ -2,12 +2,7 @@ import React from 'react';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForElement,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -74,7 +69,7 @@ describe('MaskedInput', () => {
             regexp: /^[ab]$/,
           },
         ]}
-        value="bb!ax"
+        value="a"
         onChange={onChange}
         onFocus={onFocus}
       />,
@@ -83,15 +78,54 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.findByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
     expect(onChange).not.toBeCalled();
     expect(onFocus).toBeCalled();
   });
 
+  test('mask with long fixed', async () => {
+    const onChange = jest.fn((event) => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          { fixed: 'https://' },
+          {
+            regexp: /^[ab]+$/,
+          },
+        ]}
+        value=""
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+
+    // Entering part of the fixed portion and then something that
+    // matches the next portion should auto-expand the fixed portion
+    fireEvent.change(input, {
+      target: { value: 'hta' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('https://a');
+
+    // Removing all but a piece of the fixed portion should
+    // leave just that part of the fixed portion (like when
+    // you backspace over it)
+    fireEvent.change(input, {
+      target: { value: 'http' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('http');
+  });
+
   test('option via mouse', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -113,7 +147,7 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
 
-    const option = await waitForElement(() => getByText(document, 'aa'));
+    const option = await waitFor(() => getByText(document, 'aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
@@ -124,7 +158,7 @@ describe('MaskedInput', () => {
   });
 
   test('option via keyboard', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -146,7 +180,7 @@ describe('MaskedInput', () => {
     const input = getByTestId('test-input');
     fireEvent.focus(input);
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     // pressing enter here nothing will happen
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
@@ -210,7 +244,7 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via mouse', async () => {
-    const onChangeMock = jest.fn(event => {
+    const onChangeMock = jest.fn((event) => {
       const {
         target: { value, id, name },
       } = event;
@@ -238,7 +272,7 @@ describe('MaskedInput', () => {
 
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     expectPortal('masked-input-drop__item').toMatchSnapshot();
 
@@ -257,7 +291,7 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via keyboard', async () => {
-    const onChangeMock = jest.fn(event => {
+    const onChangeMock = jest.fn((event) => {
       const {
         target: { value, id, name },
       } = event;
@@ -285,7 +319,7 @@ describe('MaskedInput', () => {
     const input = getByTestId('test-input');
     fireEvent.focus(input);
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     // pressing enter here nothing will happen
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
@@ -322,7 +356,7 @@ describe('MaskedInput', () => {
       },
     };
 
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <Grommet theme={customTheme}>
         <MaskedInput
@@ -346,7 +380,7 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
 
-    await waitForElement(() => screen.getByText('aa'));
+    await waitFor(() => screen.getByText('aa'));
 
     const optionButton = getByText(document, 'bb').closest('button');
     fireEvent.mouseOver(optionButton);
@@ -354,7 +388,7 @@ describe('MaskedInput', () => {
   });
 
   test('with no mask', async () => {
-    const onChange = jest.fn(event => event.target.value);
+    const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -370,5 +404,81 @@ describe('MaskedInput', () => {
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toReturnWith('aa');
+  });
+
+  test('custom theme', async () => {
+    const customTheme = {
+      maskedInput: {
+        container: {
+          extend: 'svg { fill: red; stroke: red; }',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <MaskedInput
+          data-testid="test-input"
+          size="large"
+          id="item"
+          icon={<Search />}
+          name="item"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('textAlign end', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput value="1234" textAlign="end" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme input font size', () => {
+    const { container } = render(
+      <Grommet theme={{ global: { input: { font: { size: '16px' } } } }}>
+        <MaskedInput />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders size', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput size="xsmall" />
+        <MaskedInput size="small" />
+        <MaskedInput size="medium" />
+        <MaskedInput size="large" />
+        <MaskedInput size="xlarge" />
+        <MaskedInput size="xxlarge" />
+        <MaskedInput size="2xl" />
+        <MaskedInput size="3xl" />
+        <MaskedInput size="4xl" />
+        <MaskedInput size="5xl" />
+        <MaskedInput size="6xl" />
+        <MaskedInput size="16px" />
+        <MaskedInput size="1rem" />
+        <MaskedInput size="100%" />
+      </Grommet>,
+    );
+    expect(container.children).toMatchSnapshot();
+  });
+
+  test('renders a11yTitle and aria-label', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <MaskedInput a11yTitle="masked-input-test" name="item" />
+        <MaskedInput aria-label="masked-input-test-2" name="item" />
+      </Grommet>,
+    );
+    expect(getByLabelText('masked-input-test')).toBeTruthy();
+    expect(getByLabelText('masked-input-test-2')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

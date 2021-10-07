@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Percentages = () => (
+export const Percentages = () => (
   <Grommet theme={grommet} full>
     <Grid
       fill
@@ -22,4 +21,6 @@ const Percentages = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('Percentages', () => <Percentages />);
+export default {
+  title: 'Layout/Grid/Percentages',
+};

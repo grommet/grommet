@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add, Close } from 'grommet-icons';
 
@@ -16,7 +15,9 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const FormLayer = () => {
+const suggestions = ['alpha', 'beta'];
+
+export const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
   const [select, setSelect] = React.useState('');
 
@@ -52,7 +53,7 @@ const FormLayer = () => {
               </Box>
               <Box flex="grow" overflow="auto" pad={{ vertical: 'medium' }}>
                 <FormField label="First">
-                  <TextInput />
+                  <TextInput suggestions={suggestions} />
                 </FormField>
                 <FormField label="Second">
                   <Select
@@ -91,4 +92,12 @@ const FormLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Form', () => <FormLayer />);
+FormLayer.storyName = 'Form';
+
+FormLayer.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Layout/Layer/Form',
+};

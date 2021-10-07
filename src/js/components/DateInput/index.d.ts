@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { ButtonType } from "../Button";
-import { CalendarType } from "../Calendar";
-import { DropType } from "../Drop";
-import { MaskedInputType } from "../MaskedInput";
+import { ButtonType } from '../Button';
+import { CalendarType } from '../Calendar/index';
+import { DropType } from '../Drop';
+import { MaskedInputType } from '../MaskedInput';
 
 export interface DateInputProps {
   buttonProps?: ButtonType;
@@ -14,11 +14,21 @@ export interface DateInputProps {
   id?: string;
   inline?: boolean;
   inputProps?: MaskedInputType;
+  messages?: {
+    enterCalendar?: string;
+    exitCalendar?: string;
+  };
   name?: string;
-  onChange?: ((event: { target: { value: string | string[] } }) => void);
+  onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
 }
+export interface DateInputExtendedProps
+  extends DateInputProps,
+    Omit<
+      JSX.IntrinsicElements['input'],
+      'defaultValue' | 'onChange' | 'value'
+    > {}
 
-declare const DateInput: React.FC<DateInputProps>;
+declare const DateInput: React.FC<DateInputExtendedProps>;
 
 export { DateInput };

@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const NColumnGrid = () => (
+export const NColumnGrid = () => (
   <Grommet theme={grommet} full>
     <Grid
       columns={{
@@ -23,4 +22,8 @@ const NColumnGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('N-column layout', () => <NColumnGrid />);
+NColumnGrid.storyName = 'N-column layout';
+
+export default {
+  title: 'Layout/Grid/N-column layout',
+};

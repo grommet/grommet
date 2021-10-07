@@ -15,9 +15,12 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ButtonPropTypes } from './propTypes';
 
 import { Box } from '../Box';
+import { Tip } from '../Tip';
 
+import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 
@@ -44,13 +47,15 @@ import { StyledButtonKind } from './StyledButtonKind';
 // and backgroundStyle() will do for the label.
 // The paths are ordered from basic to specific. Go through them
 // specific to base until we find one that has a color and use that.
-const getIconColor = (paths = [], theme, colorProp) => {
+const getIconColor = (paths = [], theme, colorProp, kind) => {
   let result = [];
   let index = paths.length - 1;
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  if (typeof kind === 'object') index = 0;
   // stop when we have a color or no more paths
   while (index >= 0 && !result[1]) {
-    let obj = theme.button;
-
+    let obj = (typeof kind === 'object' && kind) || theme.button;
     // find the sub-object under the button them that corresponds with this path
     // for example: 'active.primary'
     if (paths[index]) {
@@ -89,12 +94,40 @@ const getIconColor = (paths = [], theme, colorProp) => {
   return result[1] || undefined;
 };
 
+const getPropertyColor = (property, paths = [], theme, kind, primary) => {
+  let result;
+  if (kind) {
+    let obj = (typeof kind === 'object' && kind) || theme.button;
+    // index 0 is default state
+    if (paths[0]) {
+      const parts = paths[0].split('.');
+      while (obj && parts.length) obj = obj[parts.shift()];
+    }
+    if (obj) {
+      result = obj[property] || (obj[property] && obj[property].color);
+    }
+  } else if (primary && theme && theme.button && theme.button.primary) {
+    result =
+      theme.button.primary[property] ||
+      (theme.button.primary[property] && theme.button.primary[property].color);
+  } else {
+    result =
+      (theme && theme.button && theme.button[property]) ||
+      (theme &&
+        theme.button &&
+        theme.button[property] &&
+        theme.button[property].color);
+  }
+  return result;
+};
+
 const Button = forwardRef(
   (
     {
-      a11yTitle,
       active,
       align = 'center',
+      'aria-label': ariaLabel,
+      badge: badgeProp,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -103,6 +136,7 @@ const Button = forwardRef(
       gap = 'small',
       fill, // munged to avoid styled-components putting it in the DOM
       href,
+      justify,
       kind: kindArg,
       label,
       onBlur,
@@ -116,7 +150,10 @@ const Button = forwardRef(
       secondary,
       selected,
       size,
+      tip,
       type = 'button',
+      // can't alphabetize a11yTitle before tip is defined
+      a11yTitle = typeof tip === 'string' ? tip : undefined,
       as,
       ...rest
     },
@@ -132,16 +169,20 @@ const Button = forwardRef(
       );
     }
 
+    // kindArg is object if we are referencing a theme object
+    // outside of theme.button
+    const kindObj = useMemo(() => typeof kindArg === 'object', [kindArg]);
+
     // if the theme has button.default, what kind of Button is this
     const kind = useMemo(() => {
-      if (theme.button.default) {
+      if (theme.button.default || kindObj) {
         if (kindArg) return kindArg;
         if (primary) return 'primary';
         if (secondary) return 'secondary';
         return 'default';
       }
       return undefined; // pre-default, no kind
-    }, [kindArg, primary, secondary, theme.button.default]);
+    }, [kindArg, kindObj, primary, secondary, theme]);
 
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
@@ -150,30 +191,30 @@ const Button = forwardRef(
     const themePaths = useMemo(() => {
       if (!kind || plain) return undefined;
       const result = { base: [], hover: [] };
-      result.base.push(kind);
+      if (!kindObj) result.base.push(kind);
       if (selected) {
         result.base.push('selected');
-        if (kind) result.base.push(`selected.${kind}`);
+        if (!kindObj) result.base.push(`selected.${kind}`);
       }
       if (disabled) {
         result.base.push('disabled');
-        if (kind) result.base.push(`disabled.${kind}`);
+        if (!kindObj) result.base.push(`disabled.${kind}`);
       } else {
         if (active) {
           result.base.push('active');
-          if (kind) result.base.push(`active.${kind}`);
+          if (!kindObj) result.base.push(`active.${kind}`);
         }
         result.hover.push('hover');
-        if (kind) result.hover.push(`hover.${kind}`);
+        if (!kindObj) result.hover.push(`hover.${kind}`);
         if (active) {
           result.hover.push(`hover.active`);
-          if (kind) {
+          if (!kindObj) {
             result.hover.push(`hover.active.${kind}`);
           }
         }
       }
       return result;
-    }, [active, disabled, kind, plain, selected]);
+    }, [active, disabled, kind, kindObj, plain, selected]);
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
@@ -191,14 +232,14 @@ const Button = forwardRef(
       return colorIsDark(backgroundColor, theme);
     };
 
-    const onMouseOverButton = event => {
+    const onMouseOverButton = (event) => {
       setHover(true);
       if (onMouseOver) {
         onMouseOver(event);
       }
     };
 
-    const onMouseOutButton = event => {
+    const onMouseOutButton = (event) => {
       setHover(false);
       if (onMouseOut) {
         onMouseOut(event);
@@ -213,7 +254,7 @@ const Button = forwardRef(
           // match what the label will use
           const iconColor =
             (hover && getIconColor(themePaths.hover, theme)) ||
-            getIconColor(themePaths.base, theme, color);
+            getIconColor(themePaths.base, theme, color, kind);
           if (iconColor) buttonIcon = cloneElement(icon, { color: iconColor });
         }
       } else if (primary) {
@@ -234,30 +275,60 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify={align === 'center' ? 'center' : 'between'}
+          justify={justify || (align === 'center' ? 'center' : 'between')}
           gap={gap}
+          responsive={false}
         >
           {first}
           {second}
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ hover, focus });
+      contents = children({ disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
 
+    const background = getPropertyColor(
+      'background',
+      themePaths && themePaths.base,
+      theme,
+      kind,
+      primary,
+    );
+    const border = getPropertyColor(
+      'border',
+      themePaths && themePaths.base,
+      theme,
+      kind,
+      primary,
+    );
+    // set the badge relative to the button content
+    // when the button doesn't have background or border
+    // (!kind && icon && !label) is necessary because for old button logic,
+    // if button has icon but not label, it will be considered "plain",
+    // so no border or background will be applied
+    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    if (badgeProp && innerBadge) {
+      contents = <Badge content={badgeProp}>{contents}</Badge>;
+    }
+
+    let styledButtonResult;
     if (kind) {
-      return (
+      styledButtonResult = (
         <StyledButtonKind
           {...rest}
           as={domTag}
           ref={ref}
+          active={active}
           align={align}
-          aria-label={a11yTitle}
+          aria-label={ariaLabel || a11yTitle}
+          badge={badgeProp}
           colorValue={color}
           disabled={disabled}
+          hasIcon={!!icon}
           gap={gap}
+          hasLabel={!!label}
           fillContainer={fill}
           focus={focus}
           focusIndicator={focusIndicator}
@@ -265,17 +336,17 @@ const Button = forwardRef(
           kind={kind}
           themePaths={themePaths}
           onClick={onClick}
-          onFocus={event => {
+          onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          plain={plain}
+          plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
           type={!href ? type : undefined}
@@ -283,61 +354,71 @@ const Button = forwardRef(
           {contents}
         </StyledButtonKind>
       );
+    } else {
+      styledButtonResult = (
+        <StyledButton
+          {...rest}
+          as={domTag}
+          ref={ref}
+          aria-label={ariaLabel || a11yTitle}
+          colorValue={color}
+          active={active}
+          selected={selected}
+          disabled={disabled}
+          hasIcon={!!icon}
+          gap={gap}
+          hasLabel={!!label}
+          fillContainer={fill}
+          focus={focus}
+          focusIndicator={focusIndicator}
+          href={href}
+          kind={kind}
+          themePaths={themePaths}
+          onClick={onClick}
+          onFocus={(event) => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={(event) => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onMouseOver={onMouseOverButton}
+          onMouseOut={onMouseOutButton}
+          pad={!plain}
+          plain={
+            typeof plain !== 'undefined'
+              ? plain
+              : Children.count(children) > 0 || (icon && !label)
+          }
+          primary={primary}
+          sizeProp={size}
+          type={!href ? type : undefined}
+        >
+          {contents}
+        </StyledButton>
+      );
+    }
+    if (tip) {
+      if (typeof tip === 'string') {
+        styledButtonResult = <Tip content={tip}>{styledButtonResult}</Tip>;
+      } else {
+        styledButtonResult = <Tip {...tip}>{styledButtonResult}</Tip>;
+      }
     }
 
-    return (
-      <StyledButton
-        {...rest}
-        as={domTag}
-        ref={ref}
-        aria-label={a11yTitle}
-        colorValue={color}
-        active={active}
-        selected={selected}
-        disabled={disabled}
-        hasIcon={!!icon}
-        gap={gap}
-        hasLabel={!!label}
-        fillContainer={fill}
-        focus={focus}
-        focusIndicator={focusIndicator}
-        href={href}
-        kind={kind}
-        themePaths={themePaths}
-        onClick={onClick}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
-        onMouseOver={onMouseOverButton}
-        onMouseOut={onMouseOutButton}
-        pad={!plain}
-        plain={
-          typeof plain !== 'undefined'
-            ? plain
-            : Children.count(children) > 0 || (icon && !label)
-        }
-        primary={primary}
-        sizeProp={size}
-        type={!href ? type : undefined}
-      >
-        {contents}
-      </StyledButton>
-    );
+    // if button has background or border, place badge relative
+    // to outer edge of button
+    if (badgeProp && !innerBadge) {
+      styledButtonResult = (
+        <Badge content={badgeProp}>{styledButtonResult}</Badge>
+      );
+    }
+    return styledButtonResult;
   },
 );
 
 Button.displayName = 'Button';
+Button.propTypes = ButtonPropTypes;
 
-let ButtonDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  ButtonDoc = require('./doc').doc(Button);
-}
-const ButtonWrapper = ButtonDoc || Button;
-
-export { ButtonWrapper as Button };
+export { Button };

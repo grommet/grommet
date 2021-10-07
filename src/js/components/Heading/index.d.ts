@@ -1,5 +1,5 @@
-import * as React from "react";
-import { 
+import * as React from 'react';
+import {
   A11yTitleType,
   AlignSelfType,
   ColorType,
@@ -7,8 +7,8 @@ import {
   MarginType,
   Omit,
   PolymorphicType,
-  TextAlignType
-} from "../../utils";
+  TextAlignType,
+} from '../../utils';
 
 export interface HeadingProps {
   a11yTitle?: A11yTitleType;
@@ -16,20 +16,25 @@ export interface HeadingProps {
   as?: PolymorphicType;
   color?: ColorType;
   gridArea?: GridAreaType;
-  level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;
+  fill?: boolean;
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   margin?: MarginType;
   responsive?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge" | string;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   textAlign?: TextAlignType;
   truncate?: boolean;
 }
 
-declare const Heading: React.FC<HeadingProps & (
-  Omit<JSX.IntrinsicElements['h1'], 'color'>
+type hProps =
+  | Omit<JSX.IntrinsicElements['h1'], 'color'>
   | Omit<JSX.IntrinsicElements['h2'], 'color'>
   | Omit<JSX.IntrinsicElements['h3'], 'color'>
   | Omit<JSX.IntrinsicElements['h4'], 'color'>
   | Omit<JSX.IntrinsicElements['h5'], 'color'>
-  | Omit<JSX.IntrinsicElements['h6'], 'color'>)>;
+  | Omit<JSX.IntrinsicElements['h6'], 'color'>;
+
+export interface HeadingExtendedProps extends HeadingProps, hProps {}
+
+declare const Heading: React.FC<HeadingExtendedProps>;
 
 export { Heading };

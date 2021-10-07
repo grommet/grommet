@@ -8,11 +8,13 @@ import {
   PadType,
   BorderType,
 } from '../../utils';
+import { PaginationType } from '../Pagination';
 
-type Sections<TBody, THeader = TBody, TFooter = TBody> = {
+type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
   header?: THeader;
   body?: TBody;
   footer?: TFooter;
+  pinned?: TPinned;
 };
 
 export type ColumnSizeType =
@@ -39,12 +41,16 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
+  pin?: boolean;
+  plain?: boolean;
   primary?: boolean;
   property: string;
   render?: (datum: TRowType) => React.ReactNode;
   search?: boolean;
+  show?: number | { page?: number };
   sortable?: boolean;
   size?: ColumnSizeType | string;
+  units?: string;
   verticalAlign?: 'middle' | 'top' | 'bottom';
 }
 
@@ -58,9 +64,13 @@ export interface DataTableProps<TRowType = any> {
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
   columns?: ColumnConfig<TRowType>[];
+  fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
+  paginate?: boolean | PaginationType;
+  pin?: boolean | 'header' | 'footer';
+  placeholder?: string | React.ReactNode;
   resizeable?: boolean;
   replace?: boolean;
   rowProps?: {
@@ -70,6 +80,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
+  rowDetails?: React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
@@ -82,7 +93,8 @@ export interface DataTableProps<TRowType = any> {
         onExpand: (expandedKeys: string[]) => void;
       };
   primaryKey?: string | boolean;
-  sort?: { property: string; direction: 'asc' | 'desc' };
+  select?: (string | number)[];
+  sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
   sortable?: boolean;
   step?: number;
 
@@ -90,11 +102,16 @@ export interface DataTableProps<TRowType = any> {
   onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
   onMore?: () => void;
   onSearch?: (search: string) => void;
+  onSelect?: (select: (string | number)[]) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
 }
 
+export interface DataTableExtendedProps<TRowType = any>
+  extends DataTableProps<TRowType>,
+    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+
 declare class DataTable<TRowType = any> extends React.Component<
-  DataTableProps<TRowType> & JSX.IntrinsicElements['table']
+  DataTableExtendedProps<TRowType>
 > {}
 
 export { DataTable };

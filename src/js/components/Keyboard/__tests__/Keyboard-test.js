@@ -1,7 +1,6 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
+import { render, fireEvent, screen } from '@testing-library/react';
 import 'jest-styled-components';
-import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Keyboard } from '..';
@@ -9,44 +8,42 @@ import { Keyboard } from '..';
 describe('Keyboard', () => {
   test('onDown', () => {
     const onDown = jest.fn();
-    const component = create(
+    const { container } = render(
       <Grommet>
         <Keyboard onDown={onDown}>
           <span>hi</span>
         </Keyboard>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    tree.children[0].props.onKeyDown({
-      keyCode: 40,
-    });
-    tree.children[0].props.onKeyDown({
-      which: 40,
-    });
-    tree.children[0].props.onKeyDown({
-      which: 0,
-    });
-    expect(onDown).toBeCalled();
+
+    const element = screen.getByText('hi');
+
+    fireEvent.keyDown(element, { keyCode: 40 });
+    fireEvent.keyDown(element, { which: 40 });
+    fireEvent.keyDown(element, { which: 0 });
+
+    expect(onDown).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onKeyDown', () => {
     const onDown = jest.fn();
     const onKeyDown = jest.fn();
-    const component = create(
+    const { container } = render(
       <Grommet>
         <Keyboard onDown={onDown} onKeyDown={onKeyDown}>
           <span>hi</span>
         </Keyboard>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    tree.children[0].props.onKeyDown({
-      keyCode: 40,
-    });
+
+    const element = screen.getByText('hi');
+
+    fireEvent.keyDown(element, { keyCode: 40 });
+
     expect(onDown).toBeCalled();
     expect(onKeyDown).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('change onKeyDown', () => {

@@ -1,24 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const now = new Date();
-const lastWeek = new Date(now);
-lastWeek.setDate(lastWeek.getDate() - 7);
-
-const dateFormat = new Intl.DateTimeFormat(undefined, {
-  month: 'short',
-  day: 'numeric',
-});
-
-const Example = () => {
+export const RangeFormat = () => {
   const [value, setValue] = React.useState([
-    lastWeek.toISOString(),
-    now.toISOString(),
+    '2020-07-31T15:24:26.256Z',
+    '2020-08-07T15:24:26.256Z',
   ]);
-  const onChange = event => {
+  const onChange = (event) => {
     const nextValue = event.value;
     console.log('onChange', nextValue);
     setValue(nextValue);
@@ -30,11 +20,6 @@ const Example = () => {
           <DateInput
             value={value}
             format="mm/dd/yyyy-mm/dd/yyyy"
-            buttonProps={{
-              label: `${dateFormat.format(
-                new Date(value[0]),
-              )} - ${dateFormat.format(new Date(value[1]))}`,
-            }}
             onChange={onChange}
           />
         </Box>
@@ -43,4 +28,8 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Range format', () => <Example />);
+RangeFormat.storyName = 'Range format';
+
+export default {
+  title: 'Input/DateInput/Range format',
+};

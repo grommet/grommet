@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from 'grommet-icons';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const OnClickBox = () => (
+export const OnClickBox = () => (
   <Grommet theme={grommet}>
     <Box justify="center" align="center" pad="large">
       {/* eslint-disable no-alert */}
@@ -15,7 +14,12 @@ const OnClickBox = () => (
         align="center"
         round
         gap="small"
-        hoverIndicator
+        hoverIndicator={{
+          background: {
+            color: 'background-contrast',
+          },
+          elevation: 'medium',
+        }}
         onClick={() => {
           alert('clicked');
         }}
@@ -27,4 +31,8 @@ const OnClickBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('onClick', () => <OnClickBox />);
+OnClickBox.storyName = 'onClick';
+
+export default {
+  title: 'Layout/Box/onClick',
+};

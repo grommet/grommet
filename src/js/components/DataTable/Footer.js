@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { defaultProps } from '../../default-props';
 
@@ -6,37 +6,75 @@ import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
-import { StyledDataTableFooter } from './StyledDataTable';
+import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
 
-const Footer = ({
-  background,
-  border,
-  columns,
-  footerValues,
-  groups,
-  pad,
-  primaryProperty,
-  ...rest
-}) => (
-  <StyledDataTableFooter {...rest}>
-    <TableRow>
-      {groups && (
-        <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
-      )}
-      {columns.map(column => (
-        <Cell
-          key={column.property}
-          background={background}
-          border={border}
-          context="footer"
-          column={column}
-          datum={footerValues}
-          pad={pad}
-          primaryProperty={primaryProperty}
-        />
-      ))}
-    </TableRow>
-  </StyledDataTableFooter>
+const Footer = forwardRef(
+  (
+    {
+      cellProps,
+      columns,
+      fill,
+      footerValues,
+      groups,
+      onSelect,
+      pin: pinProp,
+      pinnedOffset,
+      primaryProperty,
+      selected,
+      ...rest
+    },
+    ref,
+  ) => {
+    const pin = pinProp ? ['bottom'] : [];
+
+    return (
+      <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
+        <TableRow>
+          {groups && (
+            <TableCell
+              plain
+              size="xxsmall"
+              pad="none"
+              verticalAlign="top"
+              background={cellProps.background}
+              border={cellProps.border}
+            />
+          )}
+          {(selected || onSelect) && (
+            <StyledDataTableCell
+              background={cellProps.background}
+              context="footer"
+              pin={pin}
+            />
+          )}
+          {columns.map((column) => {
+            const cellPin = [...pin];
+            if (column.pin) cellPin.push('left');
+
+            return (
+              <Cell
+                key={column.property}
+                background={
+                  (column.pin && cellProps.pinned.background) ||
+                  cellProps.background
+                }
+                border={
+                  (column.pin && cellProps.pinned.border) || cellProps.border
+                }
+                context="footer"
+                column={column}
+                datum={footerValues}
+                pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
+                pin={pin.length ? pin : undefined}
+                pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
+                primaryProperty={primaryProperty}
+              />
+            );
+          })}
+        </TableRow>
+      </StyledDataTableFooter>
+    );
+  },
 );
 
 Footer.displayName = 'Footer';

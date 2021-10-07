@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const MultipleValues = () => {
+export const MultipleValues = () => {
   const total = 100;
   const [active, setActive] = useState(0);
   const [label, setLabel] = useState('');
+  const [highlight, setHighlight] = useState(false);
 
   return (
     <Grommet theme={grommet}>
@@ -20,14 +19,18 @@ const MultipleValues = () => {
             values={[
               {
                 value: 70,
-                onHover: over => {
+                onHover: (over) => {
                   setActive(over ? 70 : 0);
                   setLabel(over ? 'in use' : undefined);
                 },
+                onClick: () => {
+                  setHighlight(() => !highlight);
+                },
+                highlight,
               },
               {
                 value: 30,
-                onHover: over => {
+                onHover: (over) => {
                   setActive(over ? 30 : 0);
                   setLabel(over ? 'available' : undefined);
                 },
@@ -52,8 +55,8 @@ const MultipleValues = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Meter', module).add('Multiple Values', () => (
-    <MultipleValues />
-  ));
-}
+MultipleValues.storyName = 'Multiple values';
+
+export default {
+  title: 'Visualizations/Meter/Multiple values',
+};

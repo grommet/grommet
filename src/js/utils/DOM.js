@@ -25,6 +25,8 @@ export const findScrollParent = (element, horizontal) => {
   return result;
 };
 
+const documentTags = ['html', 'body'];
+
 export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
@@ -41,14 +43,14 @@ export const findScrollParents = (element, horizontal) => {
       }
       parent = parent.parentNode;
     }
-    // last scrollable element will be the document
-    // if nothing else is scrollable in the page
-    if (result.length === 0) {
-      result.push(document);
-    } else if (result[0].tagName.toLowerCase() === 'body') {
+    if (
+      result.length &&
+      documentTags.includes(result[0].tagName.toLowerCase())
+    ) {
       result.length = 0;
-      result.push(document);
     }
+    // last scrollable element will be the document
+    result.push(document);
   }
   return result;
 };
@@ -74,21 +76,18 @@ export const getFirstFocusableDescendant = element => {
   return undefined;
 };
 
-export const getBodyChildElements = () => {
-  const excludeMatch = /^(script|link)$/i;
-  const children = [];
-  [].forEach.call(document.body.children, node => {
-    if (!excludeMatch.test(node.tagName)) {
-      children.push(node);
-    }
-  });
-  return children;
-};
-
-export const getNewContainer = (rootNode = document.body) => {
+export const getNewContainer = (
+  target = document.body,
+  targetChildPosition,
+) => {
   // setup DOM
   const container = document.createElement('div');
-  rootNode.appendChild(container);
+  if (targetChildPosition === 'first') {
+    // for SkipLinks
+    target.prepend(container);
+  } else {
+    target.appendChild(container);
+  }
   return container;
 };
 
@@ -105,7 +104,7 @@ const TABINDEX_STATE = 'data-g-tabindex';
 export const makeNodeFocusable = node => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
-    node.setAttribute('aria-hidden', false);
+    node.removeAttribute('aria-hidden');
     // allow children to receive focus again
     const elements = node.getElementsByTagName('*');
     // only reset elements we've changed in makeNodeUnfocusable()
@@ -131,7 +130,7 @@ export const makeNodeUnfocusable = node => {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
     const elements = node.getElementsByTagName('*');
-    // first, save off the tabindex of any element with one
+    // first, save off the tabIndex of any element with one
     Array.prototype.filter
       .call(elements || [], element => element.getAttribute(TABINDEX) !== null)
       .forEach(element => {
@@ -139,7 +138,7 @@ export const makeNodeUnfocusable = node => {
         element.setAttribute(TABINDEX, -1);
       });
     // then, if any element is inherently focusable and not handled above,
-    // give it a tabindex of -1 so it can't receive focus
+    // give it a tabIndex of -1 so it can't receive focus
     Array.prototype.filter
       .call(elements || [], element => {
         const currentTag = element.tagName.toLowerCase();
@@ -158,6 +157,7 @@ export const makeNodeUnfocusable = node => {
 
 export const findVisibleParent = element => {
   if (element) {
+    // Get the closest ancestor element that is positioned.
     return element.offsetParent
       ? element
       : findVisibleParent(element.parentElement) || element;
@@ -170,7 +170,7 @@ export const isNodeAfterScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { height, top } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { height: 0, top: 0 };
   return bottom >= top + height;
 };
 
@@ -179,6 +179,6 @@ export const isNodeBeforeScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { top: targetTop } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { top: 0 };
   return top <= targetTop;
 };

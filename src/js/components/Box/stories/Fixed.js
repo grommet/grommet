@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const FixedSizesBox = () => (
+export const FixedSizesBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small">
       <Box
@@ -47,4 +46,8 @@ const FixedSizesBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Fixed sizes', () => <FixedSizesBox />);
+FixedSizesBox.storyName = 'Fixed sizes';
+
+export default {
+  title: `Layout/Box/Fixed sizes`,
+};

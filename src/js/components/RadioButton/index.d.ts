@@ -1,5 +1,5 @@
-import * as React from "react";
-import { A11yTitleType } from "../../utils";
+import * as React from 'react';
+import { A11yTitleType } from '../../utils';
 
 export interface RadioButtonProps {
   a11yTitle?: A11yTitleType;
@@ -10,6 +10,10 @@ export interface RadioButtonProps {
   name: string;
 }
 
-declare const RadioButton: React.ComponentClass<RadioButtonProps & JSX.IntrinsicElements['input']>;
+export interface RadioButtonExtendedProps
+  extends RadioButtonProps,
+    Omit<JSX.IntrinsicElements['input'], 'name'> {}
+
+declare const RadioButton: React.FC<RadioButtonExtendedProps>;
 
 export { RadioButton };

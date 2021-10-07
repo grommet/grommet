@@ -1,27 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
+import { Box, Diagram, Grommet, Stack, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { Diamond } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
 
 import { data } from './data';
-
-const customTheme = deepMerge(grommet, {
-  diagram: {
-    extend: `@keyframes 
-  example {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  path {
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    animation: example 3s linear forwards;
-  }`,
-  },
-});
 
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
@@ -66,8 +49,8 @@ const Container = ({ node, index }) => (
   />
 );
 
-const Animated = () => {
-  const reducer = draw => !draw;
+export const Animated = () => {
+  const reducer = (draw) => !draw;
 
   const [draw, toogleDraw] = useReducer(reducer, true);
 
@@ -87,7 +70,7 @@ const Animated = () => {
   }
 
   return (
-    <Grommet theme={customTheme}>
+    <Grommet theme={grommet}>
       <Box align="center">
         <Box pad="large">
           <Stack>
@@ -102,12 +85,15 @@ const Animated = () => {
                 />
               </Box>
               <Box direction="row" gap="xlarge">
-                {[2, 3].map(id => (
+                {[2, 3].map((id) => (
                   <Container key={id} node={data[id - 1]} index={id} />
                 ))}
               </Box>
             </Box>
-            <Diagram connections={connections} />
+            <Diagram
+              animation={{ type: 'draw', duration: 3000 }}
+              connections={connections}
+            />
           </Stack>
         </Box>
       </Box>
@@ -115,4 +101,6 @@ const Animated = () => {
   );
 };
 
-storiesOf('Diagram', module).add('Animated', () => <Animated />);
+export default {
+  title: 'Visualizations/Diagram/Animated',
+};

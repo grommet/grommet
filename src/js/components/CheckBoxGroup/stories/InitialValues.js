@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBoxGroup, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const InitialValues = () => {
   const [value, setValue] = useState(['First', 'Second']);
   const [value2, setValue2] = useState(['M']);
 
@@ -42,4 +41,8 @@ const Example = () => {
   );
 };
 
-storiesOf('CheckBoxGroup', module).add('Initial value', () => <Example />);
+InitialValues.storyName = 'Initial values';
+
+export default {
+  title: 'Input/CheckBoxGroup/Initial values',
+};

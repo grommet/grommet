@@ -1,10 +1,14 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface CollapsibleProps {
   open?: boolean;
-  direction?: "horizontal" | "vertical";
+  direction?: 'horizontal' | 'vertical';
 }
 
-declare const Collapsible: React.ComponentClass<CollapsibleProps & JSX.IntrinsicElements['div']>;
+type divProps = JSX.IntrinsicElements['div'];
+
+export interface CollapsibleExtendedProps extends CollapsibleProps, divProps {}
+
+declare const Collapsible: React.FC<CollapsibleExtendedProps>;
 
 export { Collapsible };

@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Image } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Fallback = () => (
+export const Fallback = () => (
   <Grommet theme={grommet}>
     <Image
       fallback="//v2.grommet.io/assets/IMG_4245.jpg"
@@ -13,4 +12,6 @@ const Fallback = () => (
   </Grommet>
 );
 
-storiesOf('Image', module).add('Fallback', () => <Fallback />);
+export default {
+  title: 'Media/Image/Fallback',
+};

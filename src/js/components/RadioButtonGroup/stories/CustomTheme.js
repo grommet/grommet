@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+import { css } from 'styled-components';
 
 const customTheme = deepMerge(grommet, {
+  radioButtonGroup: {
+    container: {
+      gap: 'xlarge',
+    },
+  },
   radioButton: {
     border: {
       color: 'red',
       width: '10px',
     },
+    container: {
+      extend: css`
+        color: red;
+      `,
+    },
     hover: {
       border: {
         color: 'blue',
+      },
+      background: {
+        color: 'accent-4',
       },
     },
     size: '100px', // affects the size of the outer circle
@@ -26,7 +39,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
+export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
@@ -51,6 +64,8 @@ const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
   );
 };
 
-storiesOf('RadioButtonGroup', module).add('Custom Theme', () => (
-  <CustomRadioButtomGroup />
-));
+CustomRadioButtonGroup.storyName = 'Custom theme';
+
+export default {
+  title: 'Input/RadioButtonGroup/Custom theme',
+};

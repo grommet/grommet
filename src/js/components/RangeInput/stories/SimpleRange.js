@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleRangeInput = () => {
+export const Simple = () => {
   const [value, setValue] = React.useState(5);
 
   const onChange = event => setValue(event.target.value);
@@ -18,4 +17,6 @@ const SimpleRangeInput = () => {
   );
 };
 
-storiesOf('RangeInput', module).add('Simple', () => <SimpleRangeInput />);
+export default {
+  title: 'Input/RangeInput/Simple',
+};

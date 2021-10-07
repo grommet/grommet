@@ -1,8 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -10,107 +9,107 @@ import { Grommet } from '../../Grommet';
 import { RangeSelector } from '..';
 
 describe('RangeSelector', () => {
-  afterEach(cleanup);
-
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
+
     const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('color', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector color="accent-1" values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('direction', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector direction="horizontal" values={[20, 30]} />
         <RangeSelector direction="vertical" values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('invert', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('max', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector max={50} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('min', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <RangeSelector min={10} values={[20, 30]} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('opacity', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        {['weak', 'medium', 'strong'].map(opacity => (
+        {['weak', 'medium', 'strong'].map((opacity) => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('round', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
+        {['xsmall', 'small', 'medium', 'large', 'full'].map((round) => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           'xxsmall',
@@ -120,21 +119,21 @@ describe('RangeSelector', () => {
           'large',
           'xlarge',
           'full',
-        ].map(size => (
+        ].map((size) => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('step renders correct values', () => {
     let values;
-    const setValues = newValues => {
+    const setValues = (newValues) => {
       values = newValues;
     };
-    const onChange = jest.fn(nextValues => setValues(nextValues));
+    const onChange = jest.fn((nextValues) => setValues(nextValues));
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[0, 100]} step={3} onChange={onChange} />
@@ -208,5 +207,40 @@ describe('RangeSelector', () => {
     fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
     fireEvent.mouseUp(document);
     expect(onChange).toBeCalled();
+  });
+
+  test('handle touch gestures', () => {
+    const onChange = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RangeSelector values={[10, 20]} onChange={onChange} />
+      </Grommet>,
+    );
+    const rangeContainer = container.firstChild.firstChild;
+
+    const lowerControl = getByLabelText('Lower Bounds');
+    fireEvent.touchStart(lowerControl);
+    fireEvent.touchMove(rangeContainer, {
+      changedTouches: [
+        {
+          clientX: 0,
+          clientY: 0,
+        },
+      ],
+    });
+    expect(onChange).toBeCalled();
+
+    const upperControl = getByLabelText('Upper Bounds');
+    fireEvent.touchStart(upperControl);
+    fireEvent.touchMove(rangeContainer, {
+      changedTouches: [
+        {
+          clientX: 0,
+          clientY: 0,
+        },
+      ],
+    });
+    expect(onChange).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

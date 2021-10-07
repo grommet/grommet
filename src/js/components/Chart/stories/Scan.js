@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Keyboard, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -88,7 +87,7 @@ const ScanChart = props => {
                           background="dark-3"
                         >
                           <Text size="large">{data[active].value}</Text>
-                          {/* className="chromatic-ignore" is used for this 
+                          {/* className="chromatic-ignore" is used for this
                             component testing. grommet doesn't reccomend the
                             usage of className */}
                           <Text className="chromatic-ignore" size="small">
@@ -122,6 +121,12 @@ const ScanChart = props => {
   );
 };
 
-storiesOf('Chart', module).add('Scan', () => (
-  <ScanChart data={generateData(30, 100)} max={100} />
-));
+export const Scan = () => <ScanChart data={generateData(30, 100)} max={100} />;
+
+Scan.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Chart/Scan',
+};

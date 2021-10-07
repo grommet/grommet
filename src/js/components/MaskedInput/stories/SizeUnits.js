@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SizeUnitsMaskedInput = () => {
+export const SizeUnitsMaskedInput = () => {
   const [value, setValue] = React.useState('');
 
   return (
@@ -35,6 +34,12 @@ const SizeUnitsMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Size + Units', () => (
-  <SizeUnitsMaskedInput />
-));
+SizeUnitsMaskedInput.storyName = 'Size + units';
+
+SizeUnitsMaskedInput.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/MaskedInput/Size + units',
+};

@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Calendar, Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { Blank, Previous, Next } from 'grommet-icons';
 
-const now = new Date();
-const next = new Date(now);
-next.setMonth(now.getMonth() + 1, 1);
-
-const DualCalendar = () => {
+export const Dual = () => {
   const [date, setDate] = useState();
   const [dates, setDates] = useState();
-  const [reference1, setReference1] = useState(now);
-  const [reference2, setReference2] = useState(next);
-
-  const onSelect = arg => {
+  const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
+  const [reference2, setReference2] = useState('2020-09-01T15:15:34.916Z');
+  const onSelect = (arg) => {
     if (Array.isArray(arg)) {
       setDate(undefined);
       setDates(arg);
@@ -36,13 +30,15 @@ const DualCalendar = () => {
           date={date}
           dates={dates}
           onSelect={onSelect}
-          reference={reference1.toISOString()}
-          onReference={reference => {
+          reference={reference1}
+          onReference={(reference) => {
             const refDate = new Date(reference);
             const nextDate = new Date(refDate);
+            console.log(refDate);
+            console.log(nextDate);
             nextDate.setMonth(refDate.getMonth() + 1, 1);
-            setReference1(refDate);
-            setReference2(nextDate);
+            setReference1(refDate.toString());
+            setReference2(nextDate.toString());
           }}
           header={({
             date: currentDate,
@@ -73,13 +69,13 @@ const DualCalendar = () => {
           dates={dates}
           range
           onSelect={onSelect}
-          reference={reference2.toISOString()}
-          onReference={reference => {
+          reference={reference2}
+          onReference={(reference) => {
             const refDate = new Date(reference);
             const priorDate = new Date(refDate);
             priorDate.setMonth(refDate.getMonth() - 1, 1);
-            setReference1(priorDate);
-            setReference2(refDate);
+            setReference1(priorDate.toString());
+            setReference2(refDate.toString());
           }}
           header={({ date: currentDate, locale, onNextMonth, nextInBound }) => (
             <Box direction="row" align="center" justify="between">
@@ -103,4 +99,6 @@ const DualCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Dual', () => <DualCalendar />);
+export default {
+  title: 'Visualizations/Calendar/Dual',
+};
