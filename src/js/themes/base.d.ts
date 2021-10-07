@@ -1107,11 +1107,13 @@ export interface ThemeType {
     };
   };
   radioButton?: {
+    extend?: ExtendType;
     border?: {
       color?: ColorType;
       width?: string;
     };
     check?: {
+      extend?: ExtendType;
       radius?: string;
       background?: {
         color?: ColorType;
@@ -1168,6 +1170,7 @@ export interface ThemeType {
     };
     thumb?: {
       color?: ColorType;
+      extend?: ExtendType;
     };
     extend?: ExtendType;
   };
