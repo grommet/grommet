@@ -1,5 +1,6 @@
 module.exports = {
   addons: [
+    'storybook-addon-themes',
     {
       name: '@storybook/addon-storysource',
       options: {
