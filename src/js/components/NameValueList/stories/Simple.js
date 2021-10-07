@@ -12,7 +12,9 @@ export const Simple = () => (
       </Text>
       <NameValueList>
         {Object.entries(data).map(([name, value]) => (
-          <NameValuePair key={name} name={name} value={value} />
+          <NameValuePair key={name} name={name}>
+            <Text>{value}</Text>
+          </NameValuePair>
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">

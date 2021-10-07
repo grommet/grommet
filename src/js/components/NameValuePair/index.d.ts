@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TextType } from '../Text';
 import {
   A11yTitleType,
   AlignSelfType,
@@ -12,11 +11,7 @@ export interface NameValuePairProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  children?: (...args: any[]) => any;
   name?: string | JSX.Element;
-  nameProps?: TextType;
-  value?: string | JSX.Element;
-  valueProps?: TextType;
 }
 
 declare const NameValuePair: React.FC<NameValuePairProps>;

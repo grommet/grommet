@@ -5,13 +5,8 @@ import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 
-const NameValuePair = ({
-  children,
-  name: nameProp,
-  value: valueProp,
-  ...rest
-}) => {
-  const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
+const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
+  const { nameProps, pairProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
   const direction = pairProps?.direction;
@@ -32,8 +27,7 @@ const NameValuePair = ({
       <Text
         as="dt"
         textAlign={size !== 'small' ? nameProps?.align : undefined}
-        {...theme.nameValuePair.name}
-        {...nameProps}
+        {...theme.nameValueList.name}
       >
         {nameProp}
       </Text>
@@ -45,24 +39,11 @@ const NameValuePair = ({
       </Box>
     );
 
-  let value;
-  if (typeof valueProp === 'string' || typeof valueProp === 'number')
-    value = (
-      <Text
-        as="dd"
-        textAlign={size !== 'small' ? valueProps?.align : undefined}
-        {...theme.nameValuePair.value}
-        {...valueProps}
-      >
-        {valueProp}
-      </Text>
-    );
-  else if (children || valueProp)
-    value = (
-      <Box as="dd" margin="none">
-        {children}
-      </Box>
-    );
+  const value = (
+    <Box as="dd" margin="none">
+      {children}
+    </Box>
+  );
 
   const first = direction !== 'column-reverse' ? name : value;
   const second = direction !== 'column-reverse' ? value : name;

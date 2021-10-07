@@ -13,10 +13,6 @@ export interface NameValueListProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  align?: {
-    name?: AlignType;
-    value?: AlignType;
-  };
   layout?: 'column' | 'grid';
   nameProps?: {
     align?: AlignType;

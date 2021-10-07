@@ -1040,20 +1040,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
-    nameValuePair: {
-      name: {
-        color: 'text-strong',
-        weight: 'bold',
-      },
-      value: {
-        color: 'text-strong',
-        margin: 'none', // remove default dd margin
-      },
-    },
     nameValueList: {
       gap: { column: 'large', row: 'medium' },
       name: {
         width: 'small',
+        color: 'text-strong',
+        weight: 'bold',
       },
       value: {
         width: 'medium',

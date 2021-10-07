@@ -3,23 +3,34 @@ import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data } from './data';
 
-export const NameProps = () => (
+export const CustomNameRender = () => (
   <Grommet theme={grommet}>
     <Box pad="small">
       <Text weight="bold" size="3xl">
-        align: end
+        Custom Name
       </Text>
       <NameValueList nameProps={{ align: 'end' }}>
         {Object.entries(data).map(([name, value]) => (
-          <NameValuePair key={name} name={name} value={value} />
+          <NameValuePair name={<Text weight="bold">{name}</Text>} key={name}>
+            <Text>{value}</Text>
+          </NameValuePair>
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
         width: xsmall
       </Text>
-      <NameValueList nameProps={{ width: 'xsmall' }}>
+      <NameValueList>
         {Object.entries(data).map(([name, value]) => (
-          <NameValuePair key={name} name={name} value={value} />
+          <NameValuePair
+            name={
+              <Box width="xsmall">
+                <Text weight="bolder">{name}</Text>
+              </Box>
+            }
+            key={name}
+          >
+            <Text>{value}</Text>
+          </NameValuePair>
         ))}
       </NameValueList>
     </Box>
@@ -27,5 +38,5 @@ export const NameProps = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Name Props',
+  title: 'Visualizations/NameValueList/Custom Name Render',
 };

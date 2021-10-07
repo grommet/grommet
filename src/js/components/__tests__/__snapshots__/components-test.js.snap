@@ -1674,20 +1674,12 @@ Object {
             "row": "medium",
           },
           "name": Object {
+            "color": "text-strong",
+            "weight": "bold",
             "width": "small",
           },
           "value": Object {
             "width": "medium",
-          },
-        },
-        "nameValuePair": Object {
-          "name": Object {
-            "color": "text-strong",
-            "weight": "bold",
-          },
-          "value": Object {
-            "color": "text-strong",
-            "margin": "none",
           },
         },
         "notification": Object {
