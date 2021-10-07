@@ -4,6 +4,7 @@ import { Box, Grommet, RangeInput } from 'grommet';
 
 const rangeInputTheme = {
   rangeInput: {
+    pad: '12px',
     track: {
       height: '12px',
       extend: () => `border-radius: 10px`,

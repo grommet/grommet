@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 export const Fill = () => {
   const [value, setValue] = useState('');
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = (event) => setValue(event.target.value);
 
   return (
     <Grommet theme={grommet}>
@@ -19,6 +19,10 @@ export const Fill = () => {
       </Box>
     </Grommet>
   );
+};
+
+Fill.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {

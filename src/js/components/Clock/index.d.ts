@@ -11,7 +11,7 @@ export interface ClockProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  hourLimit?: '12' | '24' | '12' | '24';
+  hourLimit?: 12 | 24 | '12' | '24';
   onChange?: (time: string) => void;
   precision?: 'hours' | 'minutes' | 'seconds';
   run?: boolean | 'backward' | 'forward';
