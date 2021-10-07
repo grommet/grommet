@@ -84,7 +84,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     if (schema && value !== undefined) {
       var nextTextValue = valueToText(value, schema);
 
-      if (!valuesAreEqual(textToValue(textValue, schema, value, range), textToValue(nextTextValue, schema, value, range))) {
+      if (!valuesAreEqual(textToValue(textValue, schema, value, range), textToValue(nextTextValue, schema, value, range)) || textValue === '' && nextTextValue !== '') {
         setTextValue(nextTextValue);
       }
     }

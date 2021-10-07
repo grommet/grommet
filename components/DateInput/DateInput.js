@@ -110,7 +110,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     if (schema && value !== undefined) {
       var nextTextValue = (0, _utils2.valueToText)(value, schema);
 
-      if (!(0, _utils2.valuesAreEqual)((0, _utils2.textToValue)(textValue, schema, value, range), (0, _utils2.textToValue)(nextTextValue, schema, value, range))) {
+      if (!(0, _utils2.valuesAreEqual)((0, _utils2.textToValue)(textValue, schema, value, range), (0, _utils2.textToValue)(nextTextValue, schema, value, range)) || textValue === '' && nextTextValue !== '') {
         setTextValue(nextTextValue);
       }
     }
