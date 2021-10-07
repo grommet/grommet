@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Heading } from 'grommet';
+import { Box, Button, Grommet, Heading } from 'grommet';
 
 const kindButtonTheme = {
   global: {
@@ -95,7 +95,7 @@ const customTheme = {
       },
       extend: `background: skyblue; border: 5px dotted green;`,
     },
-    extend: props => {
+    extend: (props) => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -187,11 +187,9 @@ export const Custom = () => (
         <Button as="span" label="theme on dark background" primary />
       </Box>
     </Grommet>
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Button as="span" label="Custom as=span" />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <Button as="span" label="Custom as=span" />
+    </Box>
   </>
 );
 

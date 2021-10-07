@@ -40,43 +40,41 @@ const customTheme: ThemeType = deepMerge(grommet, {
 
 export const Badge = () => (
   <>
-    <Grommet theme={grommet}>
-      <Box direction="row" align="center" pad="medium" gap="medium">
-        <Button
-          a11yTitle="2 Available Updates"
-          label="Updates"
-          onClick={() => {}}
-          badge={2}
-        />
-        <Button
-          a11yTitle="Settings, 1 Alert"
-          label="Settings"
-          onClick={() => {}}
-          badge={
-            <Box background="status-critical" pad="xsmall" round="xsmall">
-              <Alert size="small" />
-            </Box>
-          }
-        />
-        <Button
-          a11yTitle="20 Unread Notifications"
-          icon={<Notification />}
-          onClick={() => {}}
-          badge={{
-            value: 20,
-            max: 15,
-          }}
-          hoverIndicator
-        />
-        <Button
-          a11yTitle="20 Unread Emails"
-          icon={<MailOption />}
-          onClick={() => {}}
-          badge
-          hoverIndicator
-        />
-      </Box>
-    </Grommet>
+    <Box direction="row" align="center" pad="medium" gap="medium">
+      <Button
+        a11yTitle="2 Available Updates"
+        label="Updates"
+        onClick={() => {}}
+        badge={2}
+      />
+      <Button
+        a11yTitle="Settings, 1 Alert"
+        label="Settings"
+        onClick={() => {}}
+        badge={
+          <Box background="status-critical" pad="xsmall" round="xsmall">
+            <Alert size="small" />
+          </Box>
+        }
+      />
+      <Button
+        a11yTitle="20 Unread Notifications"
+        icon={<Notification />}
+        onClick={() => {}}
+        badge={{
+          value: 20,
+          max: 15,
+        }}
+        hoverIndicator
+      />
+      <Button
+        a11yTitle="20 Unread Emails"
+        icon={<MailOption />}
+        onClick={() => {}}
+        badge
+        hoverIndicator
+      />
+    </Box>
     <Grommet theme={customTheme}>
       <Box direction="row" align="center" pad="medium" gap="medium">
         <Button
