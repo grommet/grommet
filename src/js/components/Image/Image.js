@@ -6,11 +6,14 @@ const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
     const [isFallbackInUse, setFallbackFlag] = useState(false);
     
-    /* eslint-disable no-param-reassign */
     const handleError = (event)=>{
-      if(!isFallbackInUse)
+      if (onError)
+        onError(event);
+      if(!isFallbackInUse && fallback && fallback !== ""){
+        // eslint-disable-next-line no-param-reassign
         event.target.src=fallback;
-      setFallbackFlag(true);
+        setFallbackFlag(true);
+      }
     };
 
     const handleOnLoad = () => {
@@ -18,10 +21,10 @@ const Image = forwardRef(
     };
 
     const extraProps = {
-      onError: handleError,
+      onError: (onError || fallback) && handleError,
       onLoad : handleOnLoad,
     };
-    
+
     return (
       <StyledImage
         aria-label={a11yTitle}
@@ -30,7 +33,7 @@ const Image = forwardRef(
         ref={ref}
         opacityProp={opacity}
         fillProp={fill}
-        src={src}
+        src={src===undefined?"":src}
       />
     );
   },
