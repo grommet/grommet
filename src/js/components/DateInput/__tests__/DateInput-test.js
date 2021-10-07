@@ -521,6 +521,31 @@ describe('DateInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  test('should be displayed when value is controlled', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState([]);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Set Date" onClick={() => setValue(DATES)} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).toEqual('');
+    fireEvent.click(getByText('Set Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual('07/02/2020-07/07/2020');
+  });
+
   test(`dropProps should pass props to Drop
   when not inline`, () => {
     const { container } = render(
