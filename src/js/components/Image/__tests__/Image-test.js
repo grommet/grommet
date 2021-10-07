@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { act, cleanup, fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
+import { Button } from '../../Button';
 
 const opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 const SRC =
@@ -96,5 +97,51 @@ test('Image onError', () => {
     fireEvent(getByAltText('test'), new Event('error'));
   });
 
-  expect(onError).toHaveBeenCalledTimes(0);
+  expect(onError).toHaveBeenCalledTimes(1);
+});
+
+test('Image fallback', async () => {
+  const onError = jest.fn();
+  const fallbackImage = "https://v2.grommet.io/assets/IMG_4245.jpg";
+  const regularImage = "https://v2.grommet.io/img/stak-hurrah.svg";
+
+  const Test = () => {
+    const [imgSrc, setImgSrc] = useState("");
+    return (
+      <Grommet>
+        <Image
+          fill="horizontal"
+          fallback={fallbackImage}
+          src={imgSrc}
+          alt="test"
+          onError={onError}
+        />
+        <Button label="Update Image" onClick={() => {
+          setImgSrc(regularImage);
+        }} />
+      </Grommet>
+    );
+  };
+
+  const { container, getByAltText } = render(<Test />);
+
+  act(() => {
+    fireEvent(getByAltText("test"), new Event('error'));
+  });
+
+  let imgSrc = container.getElementsByTagName("img")[0].src;
+  expect(imgSrc).toEqual(fallbackImage);
+
+  fireEvent(
+    container.getElementsByTagName("button")[0],
+    new MouseEvent('click', {
+      bubbles: true,
+    }),
+  );
+
+  await new Promise((r) => setTimeout(r, 1000));
+
+  imgSrc = container.getElementsByTagName("img")[0].src;
+  expect(imgSrc).toEqual(regularImage);
+
 });
