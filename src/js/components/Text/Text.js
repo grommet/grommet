@@ -36,7 +36,7 @@ const Text = forwardRef(
       </StyledText>
     );
 
-    if (tipProp) {
+    if (tipProp || truncate === 'tip') {
       return (
         <Tip content={children} {...tipProp}>
           {styledTextResult}
