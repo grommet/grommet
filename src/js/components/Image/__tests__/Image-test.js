@@ -9,7 +9,6 @@ import 'regenerator-runtime/runtime';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
 import { Button } from '../../Button';
-import { workerData } from 'worker_threads';
 
 const opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 const SRC =
