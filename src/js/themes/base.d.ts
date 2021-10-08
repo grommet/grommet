@@ -1108,6 +1108,9 @@ export interface ThemeType {
   };
   radioButton?: {
     extend?: ExtendType;
+    container?: {
+      extend?: ExtendType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
