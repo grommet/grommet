@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'; // eslint-disable-line max-len
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -8,6 +9,7 @@ import 'regenerator-runtime/runtime';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
 import { Button } from '../../Button';
+import { workerData } from 'worker_threads';
 
 const opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 const SRC =
@@ -123,25 +125,14 @@ test('Image fallback', async () => {
     );
   };
 
-  const { container, getByAltText } = render(<Test />);
-
-  act(() => {
-    fireEvent(getByAltText("test"), new Event('error'));
-  });
-
-  let imgSrc = container.getElementsByTagName("img")[0].src;
+  const { getByAltText } = render(<Test />);
+  
+  fireEvent(getByAltText("test"), new Event('error'));
+  let imgSrc = screen.getByRole("img").src;
   expect(imgSrc).toEqual(fallbackImage);
 
-  fireEvent(
-    container.getElementsByTagName("button")[0],
-    new MouseEvent('click', {
-      bubbles: true,
-    }),
-  );
-
-  await new Promise((r) => setTimeout(r, 1000));
-
-  imgSrc = container.getElementsByTagName("img")[0].src;
+  userEvent.click(screen.getByRole("button", {name: /Update Image/i}));
+  imgSrc= screen.getByRole("img").src;
   expect(imgSrc).toEqual(regularImage);
 
 });
