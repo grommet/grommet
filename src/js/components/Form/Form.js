@@ -491,25 +491,7 @@ const Form = forwardRef(
             // we know to remove its value from the form if it is dynamically
             // removed
             if (!(name in nextValue)) keyCreated.current = true;
-            const isArrayField = stringToArray(name);
-            if (isArrayField) {
-              const { arrayName, arrayObjName, indexOfArray } = isArrayField;
-              if (!nextValue[arrayName]) {
-                nextValue[arrayName] = [];
-                nextValue[arrayName][indexOfArray] = {
-                  [arrayObjName]: nextComponentValue,
-                };
-              } else if (!nextValue[arrayName][indexOfArray]) {
-                nextValue[arrayName][indexOfArray] = {
-                  [arrayObjName]: nextComponentValue,
-                };
-              } else {
-                nextValue[arrayName][indexOfArray][arrayObjName] =
-                  nextComponentValue;
-              }
-            } else {
-              nextValue[name] = nextComponentValue;
-            }
+            const nextValue = setValueForName(name, nextComponentValue, value);
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
