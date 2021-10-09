@@ -20,23 +20,23 @@ const allSeasons = [
 export const Children = () => {
   const [selected, setSelected] = useState([]);
 
-  const onRemoveSeason = season => {
+  const onRemoveSeason = (season) => {
     const seasonIndex = allSeasons.indexOf(season);
     setSelected(
-      selected.filter(selectedSeason => selectedSeason !== seasonIndex),
+      selected.filter((selectedSeason) => selectedSeason !== seasonIndex),
     );
   };
 
-  const renderSeason = season => (
+  const renderSeason = (season) => (
     <Button
       key={`season_tag_${season}`}
       href="#"
-      onClick={event => {
+      onClick={(event) => {
         event.preventDefault();
         event.stopPropagation();
         onRemoveSeason(season);
       }}
-      onFocus={event => event.stopPropagation()}
+      onFocus={(event) => event.stopPropagation()}
     >
       <Box
         align="center"
@@ -70,7 +70,7 @@ export const Children = () => {
           value={
             <Box wrap direction="row" width="small">
               {selected && selected.length ? (
-                selected.map(index => renderSeason(allSeasons[index]))
+                selected.map((index) => renderSeason(allSeasons[index]))
               ) : (
                 <Box
                   pad={{ vertical: 'xsmall', horizontal: 'small' }}
@@ -93,6 +93,10 @@ export const Children = () => {
       </Box>
     </Grommet>
   );
+};
+
+Children.parameters = {
+  chromatic: { disable: true },
 };
 
 export default {

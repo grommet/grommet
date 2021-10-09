@@ -256,7 +256,7 @@ describe('DateInput', () => {
     );
 
     userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
-    expect(document.getElementById('item__drop')).not.toBeNull();
+    expect(document.getElementById('item__drop')).toBeNull();
   });
 
   test('select inline', () => {
@@ -519,6 +519,31 @@ describe('DateInput', () => {
     expect(getByDisplayValue('07/01/2020')).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
     expect(onChange).not.toHaveBeenCalled();
+  });
+
+  test('should be displayed when value is controlled', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState([]);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Set Date" onClick={() => setValue(DATES)} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = container.querySelector('#item').value;
+
+    expect(dateInputValue).toEqual('');
+    fireEvent.click(getByText('Set Date'));
+    dateInputValue = container.querySelector('#item').value;
+    expect(dateInputValue).toEqual('07/02/2020-07/07/2020');
   });
 
   test(`dropProps should pass props to Drop
