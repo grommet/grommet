@@ -83,14 +83,7 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 // Validates particular key in formValue
 const validateName =
   (nameValidators, required) => (name, formValue, format, messages) => {
-    let nameValue;
-    const isArrayField = stringToArray(name);
-    if (isArrayField) {
-      const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-      nameValue = formValue[arrayName][indexOfArray][arrayObjName];
-    } else {
-      nameValue = formValue[name];
-    }
+    const nameValue = getValueForName(name, formValue);
     let result;
     // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
