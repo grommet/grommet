@@ -19,19 +19,49 @@ const defaultValidationResults = {
 };
 
 const stringToArray = (string) => {
-  const regex = /\[[0-9]\]\./;
-  if (regex.test(string)) {
-    const indexOfArray = regex.exec(string)[0][1];
-    const arrayValues = string.split(regex);
-    const arrayName = arrayValues[0];
-    const arrayObjName = arrayValues[1];
-    return {
+  const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
+  if (match) {
+    const [ , arrayName, indexOfArray, arrayObjName ] = match;
+    return { 
       indexOfArray,
       arrayName,
       arrayObjName,
     };
   }
   return undefined;
+};
+
+const getValueForName = (name, value) => {
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    const obj = value[arrayName]?.[indexOfArray];
+    return arrayObjName ? obj?.[arrayObjName] : obj;
+  } 
+  return value[name];
+};
+
+const setValueForName = (name, componentValue, prevValue) => {
+  const nextValue = { ...prevValue };
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    if (!nextValue[arrayName]) {
+      nextValue[arrayName] = [];
+      nextValue[arrayName][indexOfArray] = {
+        [arrayObjName]: componentValue,
+      };
+    } else if (!nextValue[arrayName][indexOfArray]) {
+      nextValue[arrayName][indexOfArray] = {
+        [arrayObjName]: componentValue,
+      };
+    } else {
+      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
+    }
+  } else {
+    nextValue[name] = componentValue;
+  } 
+  return nextValue;
 };
 
 // Validating nameValues with the validator and sending correct messaging
