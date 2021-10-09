@@ -33,7 +33,7 @@ const Image = forwardRef(
         ref={ref}
         opacityProp={opacity}
         fillProp={fill}
-        src={src===undefined?"":src}
+        src={src === undefined ? "" : src}
       />
     );
   },
