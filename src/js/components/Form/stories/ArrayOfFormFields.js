@@ -90,8 +90,8 @@ export const ArrayOfFormFields = () => {
           onValidate={(validationResults) => {
             console.log('validationResults = ', validationResults);
           }}
-          onSubmit={() => {
-            console.log('Form Submitted successfully');
+          onSubmit={event => {
+            console.log('Submit', event.value, event.touched);
           }}
         >
           <FormField
