@@ -385,16 +385,7 @@ const Form = forwardRef(
       validate: validateArg,
     }) => {
       const [inputValue, setInputValue] = useState(initialValue);
-      let formValue;
-      if (name) {
-        const isArrayField = stringToArray(name);
-        if (isArrayField) {
-          const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-          formValue = value[arrayName][indexOfArray][arrayObjName];
-        } else {
-          formValue = value[name];
-        }
-      }
+      const formValue = name ? getValueForName(name, value) : undefined;
       // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its key/value
       // from the form value.
