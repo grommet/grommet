@@ -21,8 +21,8 @@ const defaultValidationResults = {
 const stringToArray = (string) => {
   const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
   if (match) {
-    const [ , arrayName, indexOfArray, arrayObjName ] = match;
-    return { 
+    const [, arrayName, indexOfArray, arrayObjName] = match;
+    return {
       indexOfArray,
       arrayName,
       arrayObjName,
@@ -37,7 +37,7 @@ const getValueForName = (name, value) => {
     const { indexOfArray, arrayName, arrayObjName } = isArrayField;
     const obj = value[arrayName]?.[indexOfArray];
     return arrayObjName ? obj?.[arrayObjName] : obj;
-  } 
+  }
   return value[name];
 };
 
@@ -60,7 +60,7 @@ const setValueForName = (name, componentValue, prevValue) => {
     }
   } else {
     nextValue[name] = componentValue;
-  } 
+  }
   return nextValue;
 };
 
@@ -399,29 +399,9 @@ const Form = forwardRef(
           componentValue !== undefined && // input driving
           componentValue !== formValue // don't already have it
         ) {
-          setValueState((prevValue) => {
-            const nextValue = { ...prevValue };
-            const isArrayField = stringToArray(name);
-            if (isArrayField) {
-              const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-              if (!nextValue[arrayName]) {
-                nextValue[arrayName] = [];
-                nextValue[arrayName][indexOfArray] = {
-                  [arrayObjName]: componentValue,
-                };
-              } else if (!nextValue[arrayName][indexOfArray]) {
-                nextValue[arrayName][indexOfArray] = {
-                  [arrayObjName]: componentValue,
-                };
-              } else {
-                nextValue[arrayName][indexOfArray][arrayObjName] =
-                  componentValue;
-              }
-            } else {
-              nextValue[name] = componentValue;
-            }
-            return nextValue;
-          });
+          setValueState((prevValue) =>
+            setValueForName(name, componentValue, prevValue),
+          );
           // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]);
@@ -485,12 +465,11 @@ const Form = forwardRef(
               setTouched(nextTouched);
             }
 
-            const nextValue = { ...value };
             // if nextValue doesn't have a key for name, this must be
             // uncontrolled form. we will flag this field was added so
             // we know to remove its value from the form if it is dynamically
             // removed
-            if (!(name in nextValue)) keyCreated.current = true;
+            if (!(name in value)) keyCreated.current = true;
             const nextValue = setValueForName(name, nextComponentValue, value);
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
