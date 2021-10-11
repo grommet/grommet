@@ -9,7 +9,7 @@ const Image = forwardRef(
     const handleError = (event)=>{
       if (onError)
         onError(event);
-      if(!isFallbackInUse && fallback && fallback !== ""){
+      if (!isFallbackInUse && fallback && fallback !== "") {
         // eslint-disable-next-line no-param-reassign
         event.target.src=fallback;
         setFallbackInUse(true);
