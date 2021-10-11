@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'; // eslint-disable-line max-len
+import { 
+  act, 
+  cleanup, 
+  fireEvent, 
+  render, 
+  screen 
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
