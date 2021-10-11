@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
 
+import { Drop } from '../Drop';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
@@ -535,6 +536,19 @@ const WorldMap = forwardRef(
     const [activePlace, setActivePlace] = React.useState();
     const containerRef = React.useRef();
 
+    // targets are used for the Drops associated with places content
+    const [targets, setTargets] = React.useState([]);
+    const placeRef = React.useCallback((node, index) => {
+      setTargets((prevTargets) => {
+        if (!prevTargets[index]) {
+          const nextTargets = [...prevTargets];
+          nextTargets[index] = node;
+          return nextTargets;
+        }
+        return prevTargets;
+      });
+    }, []);
+
     const onMouseMove = React.useCallback(
       (event) => {
         // determine the map coordinates for where the mouse is
@@ -587,10 +601,14 @@ const WorldMap = forwardRef(
       );
     });
 
-    const placeElements = places.map((place) => {
+    const placesContent = [];
+
+    const placeElements = places.map((place, index) => {
       const {
         color: placeColor,
         coords,
+        content,
+        dropProps,
         key,
         name,
         onClick,
@@ -609,9 +627,18 @@ const WorldMap = forwardRef(
         );
       }
 
+      if (content && targets[index]) {
+        placesContent.push(
+          <Drop key={key || name} {...dropProps} target={targets[index]}>
+            {content}
+          </Drop>,
+        );
+      }
+
       return (
         <path
           key={key}
+          ref={(node) => placeRef(node, index)}
           strokeLinecap="round"
           strokeWidth={parseMetricToNum(
             theme.worldMap.place[active ? 'active' : 'base'],
@@ -668,24 +695,26 @@ const WorldMap = forwardRef(
     }
 
     return (
-      <StyledWorldMap
-        ref={ref}
-        viewBox={`${world.x} ${world.y} ${world.width} ${world.height}`}
-        preserveAspectRatio="xMinYMin meet"
-        fillProp={fill}
-        width={world.width}
-        height={world.height}
-        {...interactiveProps}
-        {...rest}
-      >
-        <g ref={containerRef} stroke="none" fill="none" fillRule="evenodd">
-          {continentElements}
-        </g>
-        {placeElements}
-        {active}
-      </StyledWorldMap>
+      <>
+        <StyledWorldMap
+          ref={ref}
+          viewBox={`${world.x} ${world.y} ${world.width} ${world.height}`}
+          preserveAspectRatio="xMinYMin meet"
+          fillProp={fill}
+          width={world.width}
+          height={world.height}
+          {...interactiveProps}
+          {...rest}
+        >
+          <g ref={containerRef} stroke="none" fill="none" fillRule="evenodd">
+            {continentElements}
+          </g>
+          {placeElements}
+          {active}
+        </StyledWorldMap>
+        {placesContent}
+      </>
     );
-    // }
   },
 );
 
