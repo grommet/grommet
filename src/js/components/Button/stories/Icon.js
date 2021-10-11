@@ -6,7 +6,7 @@ import { Box, Button, Text } from 'grommet';
 export const Icon = () => (
   <Box>
     <Box align="center" pad="large">
-      <Text margin="small">plain=true</Text>
+      <Text margin="small"> plain=true </Text>
       <Box direction="row">
         <Button plain icon={<Close />} onClick={() => {}} primary />
         <Button plain icon={<Send />} onClick={() => {}} />
@@ -14,7 +14,7 @@ export const Icon = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small">plain=false</Text>
+      <Text margin="small"> plain=false </Text>
       <Box direction="row">
         <Button plain={false} icon={<Close />} onClick={() => {}} primary />
         <Button plain={false} icon={<Send />} onClick={() => {}} />
@@ -22,7 +22,7 @@ export const Icon = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small">plain=undefined</Text>
+      <Text margin="small"> plain=undefined </Text>
       <Box direction="row">
         <Button icon={<Close />} onClick={() => {}} primary />
         <Button icon={<Send />} onClick={() => {}} />

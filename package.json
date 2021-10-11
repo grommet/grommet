@@ -105,7 +105,6 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^10.0.0",
-    "grommet": "^2.18.0",
     "grommet-theme-aruba": "^0.1.2",
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
