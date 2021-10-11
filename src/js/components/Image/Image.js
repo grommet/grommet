@@ -4,7 +4,7 @@ import { ImagePropTypes } from './propTypes';
 
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
-    const [isFallbackInUse, setFallbackFlag] = useState(false);
+    const [isFallbackInUse, setFallbackInUse] = useState(false);
     
     const handleError = (event)=>{
       if (onError)
@@ -12,12 +12,12 @@ const Image = forwardRef(
       if(!isFallbackInUse && fallback && fallback !== ""){
         // eslint-disable-next-line no-param-reassign
         event.target.src=fallback;
-        setFallbackFlag(true);
+        setFallbackInUse(true);
       }
     };
 
     const handleOnLoad = () => {
-      setFallbackFlag(false);
+      setFallbackInUse(false);
     };
 
     const extraProps = {
