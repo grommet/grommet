@@ -21,10 +21,14 @@ const NameValueList = forwardRef(
     const size = useContext(ResponsiveContext);
     const theme = useContext(ThemeContext);
 
+    // If layout is grid, there is a set max of the valueWidth and
+    // the min is set to auto for grid layout.
+
     let columns;
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
-    if (size === 'small' || layout === 'grid') columns = valueWidth;
+    if (size === 'small' || layout === 'grid')
+      columns = { count: 'fit', size: ['auto', valueWidth] };
     else if (layout === 'column' && pairProps.direction === 'row')
       columns = [nameWidth, valueWidth];
     else columns = [valueWidth];

@@ -7,19 +7,26 @@ export const CustomNameRender = () => (
   <Grommet theme={grommet}>
     <Box gap="large" pad="small">
       <Text weight="bold" size="3xl">
-        Custom Name
+        Custom Name color
       </Text>
       <NameValueList nameProps={{ align: 'end' }}>
         {Object.entries(data).map(([name, value]) => (
-          <NameValuePair name={<Text weight="bold">{name}</Text>} key={name}>
+          <NameValuePair
+            name={
+              <Text color="brand" weight="bold">
+                {name}
+              </Text>
+            }
+            key={name}
+          >
             <Text>{value}</Text>
           </NameValuePair>
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
-        width: xsmall
+        Name width xsmall
       </Text>
-      <NameValueList>
+      <NameValueList gap="xsmall">
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair
             name={

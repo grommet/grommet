@@ -9,6 +9,7 @@ import {
 export interface NameValuePairProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  children?: React.ReactElement;
   gridArea?: GridAreaType;
   margin?: MarginType;
   name?: string | JSX.Element;
