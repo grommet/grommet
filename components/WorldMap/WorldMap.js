@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
+var _Drop = require("../Drop");
+
 var _defaultProps = require("../../default-props");
 
 var _utils = require("../../utils");
@@ -18,7 +20,7 @@ var _propTypes = require("./propTypes");
 var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
     _excluded2 = ["location"],
     _excluded3 = ["color", "onClick", "onHover"],
-    _excluded4 = ["color", "coords", "key", "name", "onClick", "onHover"];
+    _excluded4 = ["color", "coords", "content", "dropProps", "key", "name", "onClick", "onHover"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -277,7 +279,24 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       activePlace = _React$useState6[0],
       setActivePlace = _React$useState6[1];
 
-  var containerRef = _react["default"].useRef();
+  var containerRef = _react["default"].useRef(); // targets are used for the Drops associated with places content
+
+
+  var _React$useState7 = _react["default"].useState([]),
+      targets = _React$useState7[0],
+      setTargets = _React$useState7[1];
+
+  var placeRef = _react["default"].useCallback(function (node, index) {
+    setTargets(function (prevTargets) {
+      if (!prevTargets[index]) {
+        var nextTargets = [].concat(prevTargets);
+        nextTargets[index] = node;
+        return nextTargets;
+      }
+
+      return prevTargets;
+    });
+  }, []);
 
   var onMouseMove = _react["default"].useCallback(function (event) {
     // determine the map coordinates for where the mouse is
@@ -323,9 +342,12 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       stroke: (0, _utils.normalizeColor)(continentColor || color || theme.worldMap.color, theme)
     }));
   });
-  var placeElements = places.map(function (place) {
+  var placesContent = [];
+  var placeElements = places.map(function (place, index) {
     var placeColor = place.color,
         coords = place.coords,
+        content = place.content,
+        dropProps = place.dropProps,
         key = place.key,
         name = place.name,
         onClick = place.onClick,
@@ -342,8 +364,19 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       }, active);
     }
 
+    if (content && targets[index]) {
+      placesContent.push( /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
+        key: key || name
+      }, dropProps, {
+        target: targets[index]
+      }), content));
+    }
+
     return /*#__PURE__*/_react["default"].createElement("path", _extends({
       key: key,
+      ref: function ref(node) {
+        return placeRef(node, index);
+      },
       strokeLinecap: "round",
       strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.place[active ? 'active' : 'base']),
       stroke: (0, _utils.normalizeColor)(placeColor || color || theme.worldMap.color, theme)
@@ -386,7 +419,7 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }));
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
     ref: ref,
     viewBox: world.x + " " + world.y + " " + world.width + " " + world.height,
     preserveAspectRatio: "xMinYMin meet",
@@ -398,7 +431,7 @@ var WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     stroke: "none",
     fill: "none",
     fillRule: "evenodd"
-  }, continentElements), placeElements, active); // }
+  }, continentElements), placeElements, active), placesContent);
 });
 exports.WorldMap = WorldMap;
 WorldMap.displayName = 'WorldMap';

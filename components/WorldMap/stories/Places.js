@@ -11,28 +11,59 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var placeProps = function placeProps(name, color, showDrop) {
+  return _extends({
+    name: name,
+    color: color
+  }, showDrop ? {
+    content: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: {
+        horizontal: 'small',
+        vertical: 'xsmall'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, name)),
+    dropProps: {
+      align: {
+        left: 'right'
+      },
+      background: {
+        color: color,
+        opacity: 'strong'
+      },
+      elevation: 'medium',
+      margin: {
+        left: 'small'
+      },
+      round: 'xsmall'
+    }
+  } : {});
+};
+
 var Places = function Places() {
-  var _React$useState = _react["default"].useState(),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
+  var _React$useState = _react["default"].useState(true),
+      showDrops = _React$useState[0],
+      setShowDrops = _React$useState[1];
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.WorldMap, {
-    places: [{
-      name: 'Sydney',
-      location: [-33.8830555556, 151.216666667],
-      color: 'graph-1',
-      onClick: function onClick() {
-        return setActive(!active);
-      }
-    }]
-  }), active && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "large"
-  }, "Sydney")));
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
+    label: "show",
+    checked: showDrops,
+    onChange: function onChange() {
+      return setShowDrops(!showDrops);
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.WorldMap, {
+    places: [_extends({
+      location: [-33.8830555556, 151.216666667]
+    }, placeProps('Sydney', 'graph-1', showDrops)), _extends({
+      location: [9.933333, -84.083333]
+    }, placeProps('San José', 'graph-2', showDrops))]
+  })));
 };
 
 exports.Places = Places;

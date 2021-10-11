@@ -1,7 +1,7 @@
 var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
     _excluded2 = ["location"],
     _excluded3 = ["color", "onClick", "onHover"],
-    _excluded4 = ["color", "coords", "key", "name", "onClick", "onHover"];
+    _excluded4 = ["color", "coords", "content", "dropProps", "key", "name", "onClick", "onHover"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -9,6 +9,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
+import { Drop } from '../Drop';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledWorldMap } from './StyledWorldMap';
@@ -261,7 +262,23 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       activePlace = _React$useState6[0],
       setActivePlace = _React$useState6[1];
 
-  var containerRef = React.useRef();
+  var containerRef = React.useRef(); // targets are used for the Drops associated with places content
+
+  var _React$useState7 = React.useState([]),
+      targets = _React$useState7[0],
+      setTargets = _React$useState7[1];
+
+  var placeRef = React.useCallback(function (node, index) {
+    setTargets(function (prevTargets) {
+      if (!prevTargets[index]) {
+        var nextTargets = [].concat(prevTargets);
+        nextTargets[index] = node;
+        return nextTargets;
+      }
+
+      return prevTargets;
+    });
+  }, []);
   var onMouseMove = React.useCallback(function (event) {
     // determine the map coordinates for where the mouse is
     // containerRef uses the group so we can handle aspect ratio scaling
@@ -305,9 +322,12 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       stroke: normalizeColor(continentColor || color || theme.worldMap.color, theme)
     }));
   });
-  var placeElements = places.map(function (place) {
+  var placesContent = [];
+  var placeElements = places.map(function (place, index) {
     var placeColor = place.color,
         coords = place.coords,
+        content = place.content,
+        dropProps = place.dropProps,
         key = place.key,
         name = place.name,
         onClick = place.onClick,
@@ -324,8 +344,19 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       }, active);
     }
 
+    if (content && targets[index]) {
+      placesContent.push( /*#__PURE__*/React.createElement(Drop, _extends({
+        key: key || name
+      }, dropProps, {
+        target: targets[index]
+      }), content));
+    }
+
     return /*#__PURE__*/React.createElement("path", _extends({
       key: key,
+      ref: function ref(node) {
+        return placeRef(node, index);
+      },
       strokeLinecap: "round",
       strokeWidth: parseMetricToNum(theme.worldMap.place[active ? 'active' : 'base']),
       stroke: normalizeColor(placeColor || color || theme.worldMap.color, theme)
@@ -368,7 +399,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }));
   }
 
-  return /*#__PURE__*/React.createElement(StyledWorldMap, _extends({
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(StyledWorldMap, _extends({
     ref: ref,
     viewBox: world.x + " " + world.y + " " + world.width + " " + world.height,
     preserveAspectRatio: "xMinYMin meet",
@@ -380,7 +411,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     stroke: "none",
     fill: "none",
     fillRule: "evenodd"
-  }, continentElements), placeElements, active); // }
+  }, continentElements), placeElements, active), placesContent);
 });
 WorldMap.displayName = 'WorldMap';
 WorldMap.defaultProps = {};

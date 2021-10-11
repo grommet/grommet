@@ -26,6 +26,8 @@ if (process.env.NODE_ENV !== 'production') {
     onSelectPlace: _propTypes["default"].func,
     places: _propTypes["default"].arrayOf(_propTypes["default"].shape({
       color: _generalPropTypes.colorPropType,
+      content: _propTypes["default"].node,
+      dropProps: _propTypes["default"].shape({}),
       name: _propTypes["default"].string,
       // for a11y aria-label
       location: _propTypes["default"].arrayOf(_propTypes["default"].number).isRequired,
