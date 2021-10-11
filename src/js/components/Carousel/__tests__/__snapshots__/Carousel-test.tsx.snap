@@ -94,20 +94,6 @@ exports[`Carousel basic 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,8 +107,8 @@ exports[`Carousel basic 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 0s 0s forwards;
-  animation: hftlBD 0s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -179,6 +165,25 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
 }
 
 .c1 {
@@ -624,22 +629,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 0s 0s forwards;
-  animation: hftlBD 0s 0s forwards;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -696,6 +687,25 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
 }
 
 .c1 {
@@ -1128,20 +1138,6 @@ exports[`Carousel navigate 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1155,8 +1151,8 @@ exports[`Carousel navigate 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 0s 0s forwards;
-  animation: hftlBD 0s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -1213,6 +1209,25 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
 }
 
 .c1 {
@@ -1565,7 +1580,7 @@ exports[`Carousel navigate 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gdyxnJ"
-        style="visibility: hidden;"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jexIge"
@@ -1716,7 +1731,7 @@ exports[`Carousel navigate 3`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gdyxnJ"
-        style="visibility: hidden;"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jexIge"
@@ -1914,20 +1929,6 @@ exports[`Carousel play 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1941,8 +1942,8 @@ exports[`Carousel play 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 0s 0s forwards;
-  animation: hftlBD 0s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -1999,6 +2000,25 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  -webkit-animation: cCLHuk 1s 0s forwards;
+  animation: cCLHuk 1s 0s forwards;
 }
 
 .c1 {
@@ -2349,7 +2369,7 @@ exports[`Carousel play 2`] = `
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gdyxnJ"
-        style="visibility: hidden;"
+        style="visibility: visible;"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 jexIge"
@@ -2564,20 +2584,6 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2591,8 +2597,8 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 1;
-  -webkit-animation: hftlBD 0s 0s forwards;
-  animation: hftlBD 0s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -2650,6 +2656,25 @@ exports[`Carousel should trigger events of focus, blur and click 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
 }
 
 .c1 {

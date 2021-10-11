@@ -18,6 +18,55 @@ import { Stack } from '../Stack';
 
 import { CarouselPropTypes } from './propTypes';
 
+const CarouselChild = ({
+  fill,
+  play,
+  index,
+  activeIndex,
+  priorActiveIndex,
+  children,
+}) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [visibility, setVisibility] = useState('hidden');
+  const [animation, setAnimation] = useState({
+    type: 'fadeOut',
+    duration: theme.carousel.animation.duration,
+  });
+  useEffect(() => {
+    if (index === activeIndex) {
+      setAnimation({
+        type:
+          play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
+        size: 'xlarge',
+        duration: theme.carousel.animation.duration,
+      });
+      setVisibility('visible');
+    } else if (index === priorActiveIndex) {
+      setAnimation({
+        type: 'fadeOut',
+        duration: theme.carousel.animation.duration,
+      });
+      setTimeout(
+        () => setVisibility('hidden'),
+        theme.carousel.animation.duration,
+      );
+    }
+  }, [
+    activeIndex,
+    priorActiveIndex,
+    index,
+    play,
+    theme.carousel.animation.duration,
+  ]);
+  return (
+    <Box fill={fill} overflow="hidden" style={{ visibility }}>
+      <Box fill={fill} animation={animation}>
+        {children}
+      </Box>
+    </Box>
+  );
+};
+
 const Carousel = ({
   activeChild,
   initialChild,
@@ -32,7 +81,6 @@ const Carousel = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [focus, setFocus] = useState();
-
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
@@ -142,35 +190,16 @@ const Carousel = ({
       />,
     );
 
-    let animation;
-    let visibility = 'visible';
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        animation = {
-          type:
-            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration,
-        };
-      }
-      visibility = 'visible';
-    } else if (index === priorActiveIndex) {
-      animation = {
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      };
-      visibility = 'hidden';
-    } else {
-      animation = { type: 'fadeOut', duration: 0 };
-      visibility = 'hidden';
-    }
-
     return (
-      <Box fill={fill} style={{ visibility }} overflow="hidden">
-        <Box fill={fill} animation={animation}>
-          {child}
-        </Box>
-      </Box>
+      <CarouselChild
+        fill={fill}
+        play={play}
+        index={index}
+        activeIndex={activeIndex}
+        priorActiveIndex={priorActiveIndex}
+      >
+        {child}
+      </CarouselChild>
     );
   });
 
