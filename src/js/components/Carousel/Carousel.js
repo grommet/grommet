@@ -16,56 +16,8 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
+import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
-
-const CarouselChild = ({
-  fill,
-  play,
-  index,
-  activeIndex,
-  priorActiveIndex,
-  children,
-}) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [visibility, setVisibility] = useState('hidden');
-  const [animation, setAnimation] = useState({
-    type: 'fadeOut',
-    duration: theme.carousel.animation.duration,
-  });
-  useEffect(() => {
-    if (index === activeIndex) {
-      setAnimation({
-        type:
-          play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-        size: 'xlarge',
-        duration: theme.carousel.animation.duration,
-      });
-      setVisibility('visible');
-    } else if (index === priorActiveIndex) {
-      setAnimation({
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      });
-      setTimeout(
-        () => setVisibility('hidden'),
-        theme.carousel.animation.duration,
-      );
-    }
-  }, [
-    activeIndex,
-    priorActiveIndex,
-    index,
-    play,
-    theme.carousel.animation.duration,
-  ]);
-  return (
-    <Box fill={fill} overflow="hidden" style={{ visibility }}>
-      <Box fill={fill} animation={animation}>
-        {children}
-      </Box>
-    </Box>
-  );
-};
 
 const Carousel = ({
   activeChild,
