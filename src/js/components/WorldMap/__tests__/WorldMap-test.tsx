@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { Text } from '../../Text';
 import { WorldMap } from '..';
 
 describe('WorldMap', () => {
@@ -214,5 +215,28 @@ describe('WorldMap', () => {
     fireEvent.mouseLeave(getByLabelText('Africa'));
     expect(onContinentHover).toHaveBeenCalledTimes(2);
     expect(onContinentHover).toHaveBeenCalledWith(false);
+  });
+
+  test('places content', () => {
+    const { container } = render(
+      <Grommet>
+        <WorldMap
+          places={[
+            {
+              name: 'Sydney',
+              location: [-33.8830555556, 151.216666667],
+              color: 'accent-1',
+              content: <Text>Sydney</Text>,
+              dropProps: {
+                align: { left: 'right' },
+                elevation: 'medium',
+                margin: { left: 'small' },
+              },
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
