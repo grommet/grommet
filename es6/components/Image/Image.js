@@ -17,19 +17,26 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var _useState = useState(false),
-      imageMissing = _useState[0],
-      setImageMissing = _useState[1];
+      isFallbackInUse = _useState[0],
+      setFallbackInUse = _useState[1];
 
   var handleError = function handleError(event) {
-    if (onError) {
-      onError(event);
-    }
+    if (onError) onError(event);
 
-    setImageMissing(true);
+    if (!isFallbackInUse && fallback && fallback !== "") {
+      // eslint-disable-next-line no-param-reassign
+      event.target.src = fallback;
+      setFallbackInUse(true);
+    }
+  };
+
+  var handleOnLoad = function handleOnLoad() {
+    setFallbackInUse(false);
   };
 
   var extraProps = {
-    onError: (onError || fallback) && handleError
+    onError: (onError || fallback) && handleError,
+    onLoad: handleOnLoad
   };
   return /*#__PURE__*/React.createElement(StyledImage, _extends({
     "aria-label": a11yTitle
@@ -37,7 +44,7 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     opacityProp: opacity,
     fillProp: fill,
-    src: !imageMissing ? src : fallback
+    src: src === undefined ? "" : src
   }));
 });
 Image.displayName = 'Image';
