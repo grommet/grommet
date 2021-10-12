@@ -234,16 +234,7 @@ const Form = forwardRef(
     useEffect(() => {
       const validationsForSetFields = Object.entries(
         validations.current,
-      ).filter(([n]) => {
-        const isArrayField = stringToArray(n);
-        if (isArrayField) {
-          const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-          if (value[arrayName]) {
-            return value[arrayName][indexOfArray][arrayObjName];
-          }
-        }
-        return value[n];
-      });
+      ).filter(([n]) => getValueForName(n, value));
       if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
         const [errors, infos] = validateForm(
           validationsForSetFields,
