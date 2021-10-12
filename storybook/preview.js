@@ -1,24 +1,22 @@
 import React from 'react';
-import { Grommet, grommet } from 'grommet';
 import { hpe } from 'grommet-theme-hpe';
+import { Grommet, grommet } from '../src/js';
 
 const THEMES = {
-  hpe: hpe,
-  grommet: grommet,
-};
-
-const getTheme = () => {
-  const params = new URLSearchParams(window.location.search);
-  const key = params.get('theme');
-  return THEMES[key] || grommet;
+  hpe,
+  grommet,
+  base: {},
 };
 
 export const decorators = [
-  (Story) => {
-    const theme = getTheme();
+  (Story, context) => {
+    const [state, setState] = React.useState('base');
+    React.useEffect(() => {
+      setState(context.globals.theme || 'base');
+    }, [context.globals.theme]);
     return (
-      <Grommet theme={theme}>
-        <Story />
+      <Grommet theme={THEMES[state]}>
+        <Story state={THEMES[state]} />
       </Grommet>
     );
   },
@@ -26,21 +24,6 @@ export const decorators = [
 
 export const parameters = {
   layout: 'fullscreen',
-  themes: {
-    clearable: false,
-    list: [
-      { name: 'grommet', class: 'grommet', color: '#7d4cdb' },
-      { name: 'hpe', class: 'hpe', color: '#17eba0' },
-    ],
-    onChange: (theme) => {
-      const params = new URLSearchParams(window.location.search);
-      const currentTheme = params.get('theme');
-      if (currentTheme !== theme.class) {
-        params.set('theme', theme.class);
-        window.location.search = params.toString();
-      }
-    },
-  },
   options: {
     storySort: {
       method: 'alphabetical',
@@ -52,7 +35,10 @@ export const parameters = {
 export const globalTypes = {
   theme: {
     name: 'Theme',
-    description: 'Global theme for components',
-    defaultValue: 'light',
+    defaultValue: 'base',
+    toolbar: {
+      items: ['base', 'grommet', 'hpe'],
+      showName: true,
+    },
   },
 };
