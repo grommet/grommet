@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { CarouselChildPropTypes } from './propTypes';
 
 import { Box } from '../Box';
 import { ThemeContext } from '../../contexts';
@@ -17,6 +17,7 @@ const CarouselChild = ({
   const [animation, setAnimation] = useState(undefined);
   const [visibility, setVisibility] = useState('hidden');
   useEffect(() => {
+    let timer;
     if (index === activeIndex) {
       if (priorActiveIndex !== undefined) {
         /**
@@ -36,11 +37,12 @@ const CarouselChild = ({
         type: 'fadeOut',
         duration: theme.carousel.animation.duration,
       });
-      setTimeout(
+      timer = setTimeout(
         () => setVisibility('hidden'),
         theme.carousel.animation.duration,
       );
     }
+    return () => clearTimeout(timer);
   }, [
     activeIndex,
     priorActiveIndex,
@@ -57,13 +59,7 @@ const CarouselChild = ({
   );
 };
 
-CarouselChild.propTypes = {
-  fill: PropTypes.bool,
-  play: PropTypes.number,
-  index: PropTypes.number.isRequired,
-  activeIndex: PropTypes.number.isRequired,
-  priorActiveIndex: PropTypes.number,
-};
+CarouselChild.propTypes = CarouselChildPropTypes;
 
 CarouselChild.defaultProps = {
   fill: false,
