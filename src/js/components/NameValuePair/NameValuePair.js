@@ -32,18 +32,26 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
         {nameProp}
       </Text>
     );
+  else name = <Box as="dt">{nameProp}</Box>;
+
+  let value;
+  if (typeof children === 'string' || typeof children === 'number')
+    value = (
+      <Text
+        as="dd"
+        margin="none"
+        textAlign={size !== 'small' ? nameProps?.align : undefined}
+        {...theme.nameValueList.value}
+      >
+        {children}
+      </Text>
+    );
   else
-    name = (
-      <Box as="dt" margin="none">
-        {nameProp}
+    value = (
+      <Box as="dd" margin="none">
+        {children}
       </Box>
     );
-
-  const value = (
-    <Box as="dd" margin="none">
-      {children}
-    </Box>
-  );
 
   const first = direction !== 'column-reverse' ? name : value;
   const second = direction !== 'column-reverse' ? value : name;

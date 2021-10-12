@@ -13,7 +13,7 @@ export const Simple = () => (
       <NameValueList>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name}>
-            <Text>{value}</Text>
+            {value}
           </NameValuePair>
         ))}
       </NameValueList>
