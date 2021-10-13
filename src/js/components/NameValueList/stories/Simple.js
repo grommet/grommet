@@ -37,6 +37,23 @@ export const Simple = () => (
           );
         })}
       </NameValueList>
+      <Text weight="bold" size="3xl">
+        Custom Name
+      </Text>
+      <NameValueList nameProps={{ align: 'end' }}>
+        {Object.entries(data).map(([name, value]) => (
+          <NameValuePair
+            name={
+              <Text size="small" weight="bold">
+                {name}
+              </Text>
+            }
+            key={name}
+          >
+            <Text>{value}</Text>
+          </NameValuePair>
+        ))}
+      </NameValueList>
     </Box>
   </Grommet>
 );

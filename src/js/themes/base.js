@@ -1044,11 +1044,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: { column: 'large', row: 'medium' },
       name: {
         width: 'small',
+      },
+      value: {
+        width: 'medium',
+      },
+    },
+    nameValuePair: {
+      name: {
+        width: 'small',
         color: 'text-strong',
         weight: 'bold',
       },
       value: {
-        width: 'medium',
+        // any text props
       },
     },
     notification: {

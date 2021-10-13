@@ -62,7 +62,6 @@ exports[`NameValueList should render 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -78,7 +77,6 @@ exports[`NameValueList should render 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -94,7 +92,6 @@ exports[`NameValueList should render 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -165,7 +162,6 @@ exports[`NameValueList should render correct alignment of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -181,7 +177,6 @@ exports[`NameValueList should render correct alignment of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -197,7 +192,6 @@ exports[`NameValueList should render correct alignment of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -268,7 +262,6 @@ exports[`NameValueList should render correct alignment of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -284,7 +277,6 @@ exports[`NameValueList should render correct alignment of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -300,7 +292,6 @@ exports[`NameValueList should render correct alignment of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -371,7 +362,6 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -387,7 +377,6 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -403,7 +392,6 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -474,7 +462,6 @@ exports[`NameValueList should render correct width of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -490,7 +477,6 @@ exports[`NameValueList should render correct width of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -506,7 +492,6 @@ exports[`NameValueList should render correct width of name 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -577,7 +562,6 @@ exports[`NameValueList should render correct width of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -593,7 +577,6 @@ exports[`NameValueList should render correct width of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -609,7 +592,6 @@ exports[`NameValueList should render correct width of value 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -681,7 +663,6 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -697,7 +678,6 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -713,7 +693,6 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -786,7 +765,6 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -802,7 +780,6 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -818,7 +795,6 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -884,7 +860,6 @@ exports[`NameValueList should render value above name when pairProps = { directi
     >
       <dd
         class="c3"
-        width="medium"
       >
         entry
       </dd>
@@ -900,7 +875,6 @@ exports[`NameValueList should render value above name when pairProps = { directi
     >
       <dd
         class="c3"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -916,7 +890,6 @@ exports[`NameValueList should render value above name when pairProps = { directi
     >
       <dd
         class="c3"
-        width="medium"
       >
         80
       </dd>
@@ -966,15 +939,14 @@ exports[`NameValueList should support custom theme 1`] = `
 .c3 {
   font-size: 18px;
   line-height: 24px;
-  color: #7D4CDB;
-  font-weight: normal;
+  color: #000000;
+  font-weight: bold;
 }
 
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  font-weight: bold;
 }
 
 <div
@@ -988,13 +960,12 @@ exports[`NameValueList should support custom theme 1`] = `
     >
       <dt
         class="c3"
-        width="xsmall"
+        width="small"
       >
         name
       </dt>
       <dd
         class="c4"
-        width="small"
       >
         entry
       </dd>
@@ -1004,13 +975,12 @@ exports[`NameValueList should support custom theme 1`] = `
     >
       <dt
         class="c3"
-        width="xsmall"
+        width="small"
       >
         location
       </dt>
       <dd
         class="c4"
-        width="small"
       >
         San Francisco
       </dd>
@@ -1020,13 +990,12 @@ exports[`NameValueList should support custom theme 1`] = `
     >
       <dt
         class="c3"
-        width="xsmall"
+        width="small"
       >
         health
       </dt>
       <dd
         class="c4"
-        width="small"
       >
         80
       </dd>

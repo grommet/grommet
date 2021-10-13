@@ -81,7 +81,6 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -100,7 +99,6 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -119,7 +117,6 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -190,7 +187,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -206,7 +202,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -222,7 +217,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -294,7 +288,6 @@ exports[`NameValuePair should render value when provided as child of type
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -310,7 +303,6 @@ exports[`NameValuePair should render value when provided as child of type
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>
@@ -326,7 +318,6 @@ exports[`NameValuePair should render value when provided as child of type
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         80
       </dd>
@@ -428,7 +419,6 @@ exports[`NameValuePair should render value when provided as child of type JSX El
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         entry
       </dd>
@@ -444,7 +434,6 @@ exports[`NameValuePair should render value when provided as child of type JSX El
       </dt>
       <dd
         class="c4"
-        width="medium"
       >
         San Francisco
       </dd>

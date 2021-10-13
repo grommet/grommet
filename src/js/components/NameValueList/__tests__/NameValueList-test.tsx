@@ -166,16 +166,23 @@ describe('NameValueList', () => {
 
   test(`should support custom theme`, () => {
     const customTheme = {
+      // nameValuePair: {
+      //   name: {
+      //     color: 'brand',
+      //     // weight: 'normal',
+      //   },
+      //   //
+      //   // value: {
+      //   //   weight: 'bold',
+      //   // },
+      // },
       nameValueList: {
         gap: { column: 'medium', row: 'large' },
         name: {
           width: 'xsmall',
-          color: 'brand',
-          weight: 'normal',
         },
         value: {
           width: 'small',
-          weight: 'bold',
         },
       },
     };

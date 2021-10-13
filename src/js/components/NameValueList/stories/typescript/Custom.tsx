@@ -19,11 +19,15 @@ const data = {
 };
 
 const customTheme = deepMerge(grommet, {
-  nameValueList: {
+  nameValuePair: {
     name: {
       color: 'text',
       size: 'xsmall',
       weight: 500,
+    },
+    value: {
+      color: 'text',
+      weight: 700,
     },
   },
 });

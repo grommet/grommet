@@ -1,20 +1,13 @@
 import React from 'react';
-import {
-  Box,
-  Grommet,
-  Paragraph,
-  NameValueList,
-  NameValuePair,
-  Text,
-} from 'grommet';
+import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data } from './data';
 
-export const CustumValue = () => (
+export const Align = () => (
   <Grommet theme={grommet}>
     <Box pad="small">
       <Text weight="bold" size="3xl">
-        Aligning text to end
+        Aligning value to end
       </Text>
       <NameValueList>
         {Object.entries(data).map(([name, value]) => (
@@ -24,12 +17,15 @@ export const CustumValue = () => (
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
-        Using Paragraph for Value
+        Aligning name to end & value to start
       </Text>
-      <NameValueList>
+      <NameValueList
+        valueProps={{ align: 'start' }}
+        nameProps={{ align: 'end' }}
+      >
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name}>
-            <Paragraph margin="none">{value}</Paragraph>
+            <Text>{value}</Text>
           </NameValuePair>
         ))}
       </NameValueList>
@@ -38,5 +34,5 @@ export const CustumValue = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Value',
+  title: 'Visualizations/NameValueList/Align',
 };

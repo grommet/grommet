@@ -27,7 +27,7 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
       <Text
         as="dt"
         textAlign={size !== 'small' ? nameProps?.align : undefined}
-        {...theme.nameValueList.name}
+        {...theme.nameValuePair.name}
       >
         {nameProp}
       </Text>
@@ -41,7 +41,7 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
         as="dd"
         margin="none"
         textAlign={size !== 'small' ? nameProps?.align : undefined}
-        {...theme.nameValueList.value}
+        {...theme.nameValuePair.value}
       >
         {children}
       </Text>
