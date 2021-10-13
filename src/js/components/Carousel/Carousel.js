@@ -16,6 +16,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
+import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
@@ -32,7 +33,6 @@ const Carousel = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [focus, setFocus] = useState();
-
   const timerRef = useRef();
 
   const [indexes, setIndexes] = useState({
@@ -142,35 +142,16 @@ const Carousel = ({
       />,
     );
 
-    let animation;
-    let visibility = 'visible';
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        animation = {
-          type:
-            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration,
-        };
-      }
-      visibility = 'visible';
-    } else if (index === priorActiveIndex) {
-      animation = {
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      };
-      visibility = 'hidden';
-    } else {
-      animation = { type: 'fadeOut', duration: 0 };
-      visibility = 'hidden';
-    }
-
     return (
-      <Box fill={fill} style={{ visibility }} overflow="hidden">
-        <Box fill={fill} animation={animation}>
-          {child}
-        </Box>
-      </Box>
+      <CarouselChild
+        fill={fill}
+        play={play}
+        index={index}
+        activeIndex={activeIndex}
+        priorActiveIndex={priorActiveIndex}
+      >
+        {child}
+      </CarouselChild>
     );
   });
 
