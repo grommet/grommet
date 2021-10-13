@@ -38,5 +38,5 @@ export const CustumValue = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Value Options',
+  title: 'Visualizations/NameValueList/Value',
 };

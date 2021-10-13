@@ -45,5 +45,5 @@ export const CustomNameRender = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Custom Name Render',
+  title: 'Visualizations/NameValueList/Name Prop',
 };
