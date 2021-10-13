@@ -1146,7 +1146,7 @@ export interface ThemeType {
   };
   nameValuePair?: {
     name?: TextProps;
-    value: TextProps;
+    value?: TextProps;
   };
   radioButtonGroup?: {
     container?: BoxProps;
