@@ -25,6 +25,7 @@ export var usePagination = function usePagination(_ref) {
       activePage = _useState[0],
       setActivePage = _useState[1];
 
+  if (activePage > totalPages) setActivePage(totalPages);
   var itemsBeginIndex = step * (activePage - 1);
   var itemsEndIndex = itemsBeginIndex + step;
   var currentItems = useMemo(function () {
@@ -37,7 +38,7 @@ export var usePagination = function usePagination(_ref) {
     onChange: function onChange(event) {
       return setActivePage(event.page);
     },
-    page: page,
+    page: activePage,
     step: step
   }, rest);
 

@@ -438,7 +438,7 @@ var DataTable = function DataTable(_ref) {
     align: "center",
     justify: "center",
     fill: "vertical"
-  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
+  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder))), paginate && adjustedData.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);
 };
