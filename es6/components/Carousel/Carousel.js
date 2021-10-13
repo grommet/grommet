@@ -12,6 +12,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
+import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
 
 var Carousel = function Carousel(_ref) {
@@ -138,43 +139,13 @@ var Carousel = function Carousel(_ref) {
       }),
       onClick: onSelect(index)
     }));
-    var animation;
-    var visibility = 'visible';
-
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        animation = {
-          type: play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration
-        };
-      }
-
-      visibility = 'visible';
-    } else if (index === priorActiveIndex) {
-      animation = {
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration
-      };
-      visibility = 'hidden';
-    } else {
-      animation = {
-        type: 'fadeOut',
-        duration: 0
-      };
-      visibility = 'hidden';
-    }
-
-    return /*#__PURE__*/React.createElement(Box, {
+    return /*#__PURE__*/React.createElement(CarouselChild, {
       fill: fill,
-      style: {
-        visibility: visibility
-      },
-      overflow: "hidden"
-    }, /*#__PURE__*/React.createElement(Box, {
-      fill: fill,
-      animation: animation
-    }, child));
+      play: play,
+      index: index,
+      activeIndex: activeIndex,
+      priorActiveIndex: priorActiveIndex
+    }, child);
   });
   var NextIcon = theme.carousel.icons.next;
   var PreviousIcon = theme.carousel.icons.previous;

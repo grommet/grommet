@@ -19,6 +19,8 @@ var _Keyboard = require("../Keyboard");
 
 var _Stack = require("../Stack");
 
+var _CarouselChild = require("./CarouselChild");
+
 var _propTypes = require("./propTypes");
 
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"];
@@ -156,43 +158,13 @@ var Carousel = function Carousel(_ref) {
       }),
       onClick: onSelect(index)
     }));
-    var animation;
-    var visibility = 'visible';
-
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        animation = {
-          type: play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration
-        };
-      }
-
-      visibility = 'visible';
-    } else if (index === priorActiveIndex) {
-      animation = {
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration
-      };
-      visibility = 'hidden';
-    } else {
-      animation = {
-        type: 'fadeOut',
-        duration: 0
-      };
-      visibility = 'hidden';
-    }
-
-    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_CarouselChild.CarouselChild, {
       fill: fill,
-      style: {
-        visibility: visibility
-      },
-      overflow: "hidden"
-    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      fill: fill,
-      animation: animation
-    }, child));
+      play: play,
+      index: index,
+      activeIndex: activeIndex,
+      priorActiveIndex: priorActiveIndex
+    }, child);
   });
 
   var NextIcon = theme.carousel.icons.next;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CarouselPropTypes = void 0;
+exports.CarouselChildPropTypes = exports.CarouselPropTypes = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -26,3 +26,17 @@ if (process.env.NODE_ENV !== 'production') {
 
 var CarouselPropTypes = PropType;
 exports.CarouselPropTypes = CarouselPropTypes;
+var CarouselChildPropType;
+
+if (process.env.NODE_ENV !== 'production') {
+  CarouselChildPropType = {
+    fill: _propTypes["default"].bool,
+    play: _propTypes["default"].number,
+    index: _propTypes["default"].number.isRequired,
+    activeIndex: _propTypes["default"].number.isRequired,
+    priorActiveIndex: _propTypes["default"].number
+  };
+}
+
+var CarouselChildPropTypes = CarouselChildPropType;
+exports.CarouselChildPropTypes = CarouselChildPropTypes;
