@@ -16,6 +16,8 @@ export const usePagination = ({ data, page, step, ...rest }) => {
   const totalPages = data ? Math.ceil(data.length / step) : 0;
   const [activePage, setActivePage] = useState(Math.min(page, totalPages) || 1);
 
+  if (activePage > totalPages) setActivePage(totalPages);
+
   const itemsBeginIndex = step * (activePage - 1);
   const itemsEndIndex = itemsBeginIndex + step;
 
@@ -27,7 +29,7 @@ export const usePagination = ({ data, page, step, ...rest }) => {
   const paginationProps = {
     numberItems: data && data.length,
     onChange: (event) => setActivePage(event.page),
-    page,
+    page: activePage,
     step,
     ...rest, // let anything coming from paginate prop override component
   };
