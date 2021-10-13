@@ -123,7 +123,7 @@ const coloredButton = {
   },
 };
 
-export const Custom = () => (
+export const ThemeExtensions = () => (
   <>
     <Grommet theme={kindButtonTheme}>
       <Box gap="small" pad="large">
@@ -193,6 +193,8 @@ export const Custom = () => (
   </>
 );
 
+ThemeExtensions.storyName = 'Theme extensions';
+
 export default {
-  title: 'Controls/Button/Custom',
+  title: 'Controls/Button/Custom/Theme extensions',
 };
