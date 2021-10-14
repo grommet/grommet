@@ -10,7 +10,6 @@ const NameValueList = forwardRef(
       a11yTitle,
       align,
       layout = 'column',
-      gap,
       nameProps,
       pairProps = { direction: 'row' },
       valueProps,
@@ -41,7 +40,7 @@ const NameValueList = forwardRef(
           as="dl"
           ref={ref}
           columns={columns}
-          gap={gap || theme.nameValueList.gap}
+          gap={theme.nameValueList.gap}
           fill={layout === 'grid'}
           {...rest}
         />

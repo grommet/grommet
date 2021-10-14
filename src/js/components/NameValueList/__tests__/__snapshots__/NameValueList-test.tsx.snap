@@ -920,10 +920,10 @@ exports[`NameValueList should support custom theme 1`] = `
 }
 
 .c3 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   color: #7D4CDB;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .c4 {
@@ -931,7 +931,7 @@ exports[`NameValueList should support custom theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  font-weight: 800;
+  font-weight: lighter;
 }
 
 <div

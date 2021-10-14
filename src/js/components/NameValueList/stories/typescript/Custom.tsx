@@ -8,14 +8,17 @@ import {
   Text,
 } from 'grommet';
 import { deepMerge } from 'grommet/utils';
+import { ThemeType } from 'grommet/themes';
 import { data } from '../data';
 
-const customTheme = deepMerge(grommet, {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customTheme: ThemeType = deepMerge(grommet, {
   nameValuePair: {
     name: {
       color: 'text',
       size: 'xsmall',
-      weight: 500,
+      weight: 'bold',
     },
     value: {
       color: 'text',

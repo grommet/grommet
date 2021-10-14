@@ -5,6 +5,7 @@ import 'regenerator-runtime/runtime';
 
 import { cleanup, render } from '@testing-library/react';
 
+import { ThemeType } from '../../../themes';
 import { Grommet } from '../../Grommet';
 import { NameValueList } from '..';
 import { NameValuePair } from '../../NameValuePair';
@@ -165,17 +166,7 @@ describe('NameValueList', () => {
   });
 
   test(`should support custom theme`, () => {
-    const customTheme = {
-      nameValuePair: {
-        name: {
-          color: 'brand',
-          weight: 500,
-          size: 'small',
-        },
-        value: {
-          weight: 800,
-        },
-      },
+    const customTheme: ThemeType = {
       nameValueList: {
         gap: { column: 'medium', row: 'large' },
         name: {
@@ -183,6 +174,15 @@ describe('NameValueList', () => {
         },
         value: {
           width: 'small',
+        },
+      },
+      nameValuePair: {
+        name: {
+          color: 'brand',
+          weight: 'bold',
+        },
+        value: {
+          weight: 'lighter',
         },
       },
     };

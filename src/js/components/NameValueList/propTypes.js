@@ -5,19 +5,6 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
-    gap: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'none',
-        'xxsmall',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-      ]),
-      PropTypes.string,
-      PropTypes.object,
-    ]),
     layout: PropTypes.oneOfType(['column', 'grid']),
     nameProps: PropTypes.shape({
       align: PropTypes.oneOf(
