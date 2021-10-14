@@ -29,6 +29,8 @@ if (process.env.NODE_ENV !== 'production') {
     places: PropTypes.arrayOf(
       PropTypes.shape({
         color: colorPropType,
+        content: PropTypes.node,
+        dropProps: PropTypes.shape({}),
         name: PropTypes.string, // for a11y aria-label
         location: PropTypes.arrayOf(PropTypes.number).isRequired,
         onClick: PropTypes.func,

@@ -1909,6 +1909,9 @@ Object {
         },
         "radioButtonGroup": Object {},
         "rangeInput": Object {
+          "disabled": Object {
+            "opacity": 0.3,
+          },
           "thumb": Object {},
           "track": Object {
             "color": "border",
