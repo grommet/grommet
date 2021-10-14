@@ -7,25 +7,22 @@ export const Align = () => (
   <Grommet theme={grommet}>
     <Box pad="small">
       <Text weight="bold" size="3xl">
-        Aligning value to end
+        Align value end
       </Text>
-      <NameValueList>
+      <NameValueList valueProps={{ align: 'end' }}>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name}>
-            <Text textAlign="end">{value}</Text>
+            {value}
           </NameValuePair>
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
-        Aligning name to end & value to start
+        Align name end
       </Text>
-      <NameValueList
-        valueProps={{ align: 'start' }}
-        nameProps={{ align: 'end' }}
-      >
+      <NameValueList nameProps={{ align: 'end' }}>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair key={name} name={name}>
-            <Text>{value}</Text>
+            {value}
           </NameValuePair>
         ))}
       </NameValueList>

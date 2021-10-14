@@ -6,8 +6,8 @@ import { data, metricData } from './data';
 export const Layout = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="large">
-      <Text weight="bold" size="3xl">
-        Layout Grid PairProps direction coloumn
+      <Text weight="bold" size="2xl">
+        layout = grid / pairProps direction = column
       </Text>
       <NameValueList layout="grid" pairProps={{ direction: 'column' }}>
         {Object.entries(data).map(([name, value]) => (
@@ -16,8 +16,18 @@ export const Layout = () => (
           </NameValuePair>
         ))}
       </NameValueList>
-      <Text weight="bold" size="3xl">
-        Layout Grid PairProps direction column-reverse
+      <Text weight="bold" size="2xl">
+        layout = column (default) / pairProps direction = column
+      </Text>
+      <NameValueList pairProps={{ direction: 'column' }}>
+        {Object.entries(data).map(([name, value]) => (
+          <NameValuePair key={name} name={name}>
+            <Text>{value}</Text>
+          </NameValuePair>
+        ))}
+      </NameValueList>
+      <Text weight="bold" size="2xl">
+        layout = grid / pairProps direction = column-reverse
       </Text>
       <NameValueList
         valueProps={{ width: 'small' }}

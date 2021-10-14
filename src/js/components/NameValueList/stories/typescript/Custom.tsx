@@ -8,15 +8,7 @@ import {
   Text,
 } from 'grommet';
 import { deepMerge } from 'grommet/utils';
-
-const data = {
-  'Model type': 'MXQ83700F3',
-  'Last synced on some date': '34343738-3036-584DFD3422SA',
-  'Created on': '172.16.255.321.8',
-  Policies: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget 
-  est at turpis imperdiet blandit porttitor eu enim. Phasellus faucibus 
-  pharetra risus nec bibendum.`,
-};
+import { data } from '../data';
 
 const customTheme = deepMerge(grommet, {
   nameValuePair: {

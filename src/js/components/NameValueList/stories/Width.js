@@ -17,7 +17,7 @@ export const Width = () => (
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
-        value width large
+        Value width large
       </Text>
       <NameValueList valueProps={{ width: 'large' }}>
         {Object.entries(data).map(([name, value]) => (

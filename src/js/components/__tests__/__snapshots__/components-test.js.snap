@@ -1682,11 +1682,12 @@ Object {
         },
         "nameValuePair": Object {
           "name": Object {
-            "color": "text-strong",
+            "color": "text",
             "weight": "bold",
-            "width": "small",
           },
-          "value": Object {},
+          "value": Object {
+            "color": "text",
+          },
         },
         "notification": Object {
           "close": Object {

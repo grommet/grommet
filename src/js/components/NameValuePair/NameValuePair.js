@@ -5,8 +5,8 @@ import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 
-const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
-  const { nameProps, pairProps } = useContext(NameValueListContext);
+const NameValuePair = ({ children, name: nameProp, ...rest }) => {
+  const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
   const direction = pairProps?.direction;
@@ -32,7 +32,12 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
         {nameProp}
       </Text>
     );
-  else name = <Box as="dt">{nameProp}</Box>;
+  else
+    name = (
+      <Box as="dt" align={size !== 'small' ? nameProps?.align : undefined}>
+        {nameProp}
+      </Box>
+    );
 
   let value;
   if (typeof children === 'string' || typeof children === 'number')
@@ -40,7 +45,7 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
       <Text
         as="dd"
         margin="none"
-        textAlign={size !== 'small' ? nameProps?.align : undefined}
+        textAlign={size !== 'small' ? valueProps?.align : undefined}
         {...theme.nameValuePair.value}
       >
         {children}
@@ -48,7 +53,11 @@ const NameValuePair = ({ children, name: nameProp, valueProps, ...rest }) => {
     );
   else
     value = (
-      <Box as="dd" margin="none">
+      <Box
+        as="dd"
+        margin="none"
+        align={size !== 'small' ? valueProps?.align : undefined}
+      >
         {children}
       </Box>
     );

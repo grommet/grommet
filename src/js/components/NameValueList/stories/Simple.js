@@ -40,7 +40,7 @@ export const Simple = () => (
       <Text weight="bold" size="3xl">
         Custom Name
       </Text>
-      <NameValueList nameProps={{ align: 'end' }}>
+      <NameValueList>
         {Object.entries(data).map(([name, value]) => (
           <NameValuePair
             name={
@@ -50,7 +50,7 @@ export const Simple = () => (
             }
             key={name}
           >
-            <Text>{value}</Text>
+            {value}
           </NameValuePair>
         ))}
       </NameValueList>

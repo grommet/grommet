@@ -53,6 +53,7 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+  color: #444444;
 }
 
 @media only screen and (max-width:768px) {
@@ -160,7 +161,7 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 .c3 {
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: #444444;
   font-weight: bold;
 }
 
@@ -168,6 +169,7 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+  color: #444444;
 }
 
 <div
@@ -181,7 +183,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
     >
       <dt
         class="c3"
-        width="small"
       >
         name
       </dt>
@@ -196,7 +197,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
     >
       <dt
         class="c3"
-        width="small"
       >
         location
       </dt>
@@ -211,7 +211,6 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
     >
       <dt
         class="c3"
-        width="small"
       >
         health
       </dt>
@@ -239,6 +238,7 @@ exports[`NameValuePair should render value when provided as child of type
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 96px;
 }
 
 .c0 {
@@ -261,7 +261,7 @@ exports[`NameValuePair should render value when provided as child of type
 .c3 {
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
+  color: #444444;
   font-weight: bold;
 }
 
@@ -269,6 +269,7 @@ exports[`NameValuePair should render value when provided as child of type
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+  color: #444444;
 }
 
 <div
@@ -282,7 +283,6 @@ exports[`NameValuePair should render value when provided as child of type
     >
       <dt
         class="c3"
-        width="small"
       >
         name
       </dt>
@@ -297,7 +297,6 @@ exports[`NameValuePair should render value when provided as child of type
     >
       <dt
         class="c3"
-        width="small"
       >
         location
       </dt>
@@ -312,7 +311,6 @@ exports[`NameValuePair should render value when provided as child of type
     >
       <dt
         class="c3"
-        width="small"
       >
         health
       </dt>
@@ -383,17 +381,18 @@ exports[`NameValuePair should render value when provided as child of type JSX El
   grid-gap: 24px 48px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  font-weight: bold;
-}
-
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+  color: #444444;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -413,7 +412,6 @@ exports[`NameValuePair should render value when provided as child of type JSX El
     >
       <dt
         class="c3"
-        width="small"
       >
         name
       </dt>
@@ -428,7 +426,6 @@ exports[`NameValuePair should render value when provided as child of type JSX El
     >
       <dt
         class="c3"
-        width="small"
       >
         location
       </dt>
@@ -443,7 +440,6 @@ exports[`NameValuePair should render value when provided as child of type JSX El
     >
       <dt
         class="c3"
-        width="small"
       >
         health
       </dt>

@@ -1051,12 +1051,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     nameValuePair: {
       name: {
-        width: 'small',
-        color: 'text-strong',
+        // any text props
+        color: 'text',
         weight: 'bold',
       },
       value: {
         // any text props
+        color: 'text',
       },
     },
     notification: {
