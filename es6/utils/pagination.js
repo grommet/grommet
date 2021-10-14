@@ -23,9 +23,11 @@ export var usePagination = function usePagination(_ref) {
 
   var _useState = useState(Math.min(page, totalPages) || 1),
       activePage = _useState[0],
-      setActivePage = _useState[1];
+      setActivePage = _useState[1]; // ensure activePage is never lower than 1 to ensure that itemsBeginIndex
+  // and itemsEndIndex aren't negative
 
-  if (activePage > totalPages) setActivePage(totalPages);
+
+  if (activePage > totalPages && (data == null ? void 0 : data.length) > 0) setActivePage(Math.max(totalPages, 1));
   var itemsBeginIndex = step * (activePage - 1);
   var itemsEndIndex = itemsBeginIndex + step;
   var currentItems = useMemo(function () {
