@@ -54,6 +54,7 @@ const Video = forwardRef(
       margin,
       messages,
       mute,
+      newButtons,
       onDurationChange,
       onEnded,
       onPause,
@@ -254,6 +255,14 @@ const Video = forwardRef(
         onClick: () => showCaptions(caption.active ? -1 : 0),
       }));
 
+      const newControls =
+        newButtons && newButtons.length
+          ? newButtons.map((button) => ({
+              icon: button.icon,
+              onClick: button.onClick,
+            }))
+          : [];
+
       controlsElement = (
         <StyledVideoControls
           over={over}
@@ -382,6 +391,7 @@ const Video = forwardRef(
                   ),
                   onClick: fullscreen,
                 },
+                ...newControls,
               ]}
             />
           </Box>

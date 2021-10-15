@@ -27,8 +27,11 @@ export interface VideoProps {
     volumeUp?: string;
     volueDown?: string;
   };
-
   mute?: boolean;
+  newButtons?: Array<{
+    icon: React.ReactNode;
+    onClick: () => void;
+  }>;
 }
 
 export interface VideoExtendedProps
