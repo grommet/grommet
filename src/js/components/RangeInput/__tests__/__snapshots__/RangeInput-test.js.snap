@@ -609,6 +609,9 @@ exports[`RangeInput renders 1`] = `
 >
   <input
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="50"
   />
@@ -748,6 +751,9 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   <input
     aria-label="test"
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="50"
   />
@@ -886,6 +892,9 @@ exports[`RangeInput track themed 1`] = `
 >
   <input
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="10"
   />
@@ -1024,6 +1033,9 @@ exports[`RangeInput track themed with color and opacity 1`] = `
 >
   <input
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="10"
   />

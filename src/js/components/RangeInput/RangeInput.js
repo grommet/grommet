@@ -1,8 +1,9 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState, useCallback } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
+import { useForwardedRef } from '../../utils';
 
 const RangeInput = forwardRef(
   (
@@ -14,6 +15,9 @@ const RangeInput = forwardRef(
       onFocus,
       onBlur,
       value: valueProp,
+      step = 1,
+      min = 0,
+      max = 100,
       ...rest
     },
     ref,
@@ -26,10 +30,39 @@ const RangeInput = forwardRef(
     });
 
     const [focus, setFocus] = useState();
+    const rangeInputRef = useForwardedRef(ref);
+
+    const setRangeInputValue = useCallback(
+      (nextValue) => {
+        if (nextValue > max || nextValue < min) return;
+        // Calling set value function directly on input because React library
+        // overrides setter `event.target.value =` and loses original event
+        // target fidelity.
+        // https://stackoverflow.com/a/46012210
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          'value',
+        ).set;
+        nativeInputValueSetter.call(rangeInputRef.current, nextValue);
+        const event = new Event('input', { bubbles: true });
+        rangeInputRef.current.dispatchEvent(event);
+      },
+      [rangeInputRef, min, max],
+    );
+
+    const handleOnWheel = (event) => {
+      const newValue = parseFloat(value);
+      if (event.deltaY < 0) {
+        setRangeInputValue(newValue + step);
+      } else {
+        setRangeInputValue(newValue - step);
+      }
+    };
+
     return (
       <StyledRangeInput
         aria-label={a11yTitle}
-        ref={ref}
+        ref={rangeInputRef}
         name={name}
         focus={focus}
         value={value}
@@ -47,7 +80,11 @@ const RangeInput = forwardRef(
           setValue(event.target.value);
           if (onChange) onChange(event);
         }}
+        onWheel={handleOnWheel}
+        step={step}
         type="range"
+        min={min}
+        max={max}
       />
     );
   },
