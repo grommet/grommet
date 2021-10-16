@@ -4,6 +4,7 @@ import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
+import { Box } from '../Box';
 
 const Text = forwardRef(
   (
@@ -37,16 +38,19 @@ const Text = forwardRef(
     }, [children, textRef, truncate]);
 
     const styledTextResult = (
-      <StyledText
-        as={!as && tag ? tag : as}
-        colorProp={color}
-        aria-label={a11yTitle}
-        truncate={truncate}
-        {...rest}
-        ref={textRef}
-      >
-        {children}
-      </StyledText>
+      <Box>
+        <StyledText
+          as={!as && tag ? tag : as}
+          colorProp={color}
+          aria-label={a11yTitle}
+          truncate={truncate}
+          {...rest}
+          ref={textRef}
+        >
+          {children}
+        </StyledText>
+      </Box>
+
     );
 
     if (tip) {
