@@ -58,6 +58,16 @@ const RangeInput = forwardRef(
         setRangeInputValue(newValue - step);
       }
     };
+    // This is to make sure scrollbar doesn't move
+    // when user changes RangeInput value.
+    const handleMouseOver = () => {
+      const x = window.scrollX;
+      const y = window.scrollY;
+      window.onscroll = () => window.scrollTo(x, y);
+    };
+    const handleMouseOut = () => {
+      window.onscroll = null;
+    };
 
     return (
       <StyledRangeInput
@@ -81,6 +91,8 @@ const RangeInput = forwardRef(
           if (onChange) onChange(event);
         }}
         onWheel={handleOnWheel}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
         step={step}
         type="range"
         min={min}
