@@ -7,7 +7,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
-import { Box, Button, Calendar, Grommet, Text } from '../..';
+import { Box, Button, Calendar, Grommet, Text, CalendarProps } from '../..';
 
 const DATE = '2020-01-15T00:00:00-08:00';
 const DATES = [
@@ -505,8 +505,8 @@ describe('Calendar', () => {
 });
 
 describe('Calendar Keyboard events', () => {
-  let onSelect;
-  let App;
+  let onSelect: CalendarProps['onSelect'];
+  let App: React.FC;
 
   beforeEach(() => {
     onSelect = jest.fn();
