@@ -450,7 +450,7 @@ const DataTable = ({
           )}
         </StyledDataTable>
       </OverflowContainer>
-      {paginate && data.length > step && items && items.length ? (
+      {paginate && adjustedData.length > step && items && items.length ? (
         <Pagination alignSelf="end" {...paginationProps} />
       ) : null}
     </Container>

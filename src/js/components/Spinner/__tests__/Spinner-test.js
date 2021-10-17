@@ -167,4 +167,26 @@ describe('Spinner', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('spinner color renders over theme settings', () => {
+    const theme = {
+      spinner: {
+        container: {
+          border: [
+            { side: 'all', color: 'background-contrast', size: 'medium' },
+            { side: 'right', color: 'green', size: 'medium' },
+            { side: 'top', color: 'green', size: 'medium' },
+            { side: 'left', color: 'green', size: 'medium' },
+          ],
+        },
+      },
+    };
+    const { container } = render(
+      <Grommet theme={theme}>
+        <Spinner color="#1479FB" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
