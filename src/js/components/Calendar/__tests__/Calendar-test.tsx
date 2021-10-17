@@ -144,7 +144,7 @@ describe('Calendar', () => {
             nextInBound,
           }) => (
             <Box direction="row" align="center" justify="between">
-              <Button onClick={previousInBound && onPreviousMonth}>
+              <Button onClick={previousInBound ? onPreviousMonth : undefined}>
                 <Box>
                   <FormPreviousLink />
                 </Box>
@@ -157,7 +157,7 @@ describe('Calendar', () => {
                   })}
                 </strong>
               </Text>
-              <Button onClick={nextInBound && onNextMonth}>
+              <Button onClick={nextInBound ? onNextMonth : undefined}>
                 <Box>
                   <FormNextLink />
                 </Box>
