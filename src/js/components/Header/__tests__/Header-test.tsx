@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Grommet } from '../../Grommet';
-import { Header } from '../index';
+import { Grommet, Header } from '../..';
 
 describe('Header', () => {
   it('should forward a ref to the underlying header', () => {
