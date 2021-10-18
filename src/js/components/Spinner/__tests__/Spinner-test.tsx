@@ -8,7 +8,7 @@ import 'jest-axe/extend-expect';
 import { Node } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Spinner } from '..';
-import { ThemeType } from '../../../themes';
+import { ThemeType } from '../../..';
 
 describe('Spinner', () => {
   test('should have no accessibility violations', async () => {
@@ -124,7 +124,6 @@ describe('Spinner', () => {
   test('spinner changes according to theme', () => {
     const theme: ThemeType = {
       spinner: {
-        // size:  '30px',
         container: {
           animation: { type: 'rotateLeft', duration: 900 },
           border: false,
