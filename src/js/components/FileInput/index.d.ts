@@ -1,6 +1,10 @@
 import * as React from 'react';
 
+import { BorderType, PadType, MarginType, BackgroundType } from '../../utils';
+
 export interface FileInputProps {
+  border?: BorderType;
+  background?: BackgroundType;
   disabled?: boolean;
   id?: string;
   maxSize?: number;
@@ -14,7 +18,9 @@ export interface FileInputProps {
     maxFile?: string;
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
+  margin?: MarginType;
   name?: string;
+  pad?: PadType;
   renderFile?: (...args: any[]) => void;
 }
 
