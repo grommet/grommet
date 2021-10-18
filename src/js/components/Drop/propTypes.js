@@ -41,6 +41,7 @@ if (process.env.NODE_ENV !== 'production') {
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])]),
     target: PropTypes.object.isRequired,
     trapFocus: PropTypes.bool,
+    container: PropTypes.object,
   };
 }
 export const DropPropTypes = PropType;
