@@ -23,17 +23,6 @@ describe('Spinner', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders', () => {
-    const { container } = render(
-      <Grommet>
-        <Spinner />
-        <Spinner id="test id" name="test name" />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('size renders', () => {
     const { container } = render(
       <Grommet>
@@ -124,6 +113,7 @@ describe('Spinner', () => {
   test('spinner changes according to theme', () => {
     const theme: ThemeType = {
       spinner: {
+        size: { small: '30px' },
         container: {
           animation: { type: 'rotateLeft', duration: 900 },
           border: false,
