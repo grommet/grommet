@@ -9,6 +9,7 @@ import {
   WidthType,
 } from '../../utils';
 export interface NameValueListProps {
+  align?: AlignType;
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
@@ -25,7 +26,7 @@ export interface NameValueListProps {
     align?: AlignType;
     width?: WidthType;
   };
-  gap?: GapType | { row?: GapType; column?: GapType };
+  gap?: { row?: GapType; column?: GapType };
 }
 
 declare const NameValueList: React.FC<NameValueListProps>;

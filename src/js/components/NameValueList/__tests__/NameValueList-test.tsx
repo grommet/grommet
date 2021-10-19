@@ -2,6 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import { axe } from 'jest-axe';
 
 import { cleanup, render } from '@testing-library/react';
 
@@ -18,6 +19,23 @@ const data = {
 
 describe('NameValueList', () => {
   afterEach(cleanup);
+
+  test('Calendar should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <NameValueList>
+          {Object.entries(data).map(([name, value]) => (
+            <NameValuePair key={name} name={name}>
+              {value}
+            </NameValuePair>
+          ))}
+        </NameValueList>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test(`should render`, () => {
     const { container } = render(
