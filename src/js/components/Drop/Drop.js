@@ -14,6 +14,7 @@ const Drop = forwardRef(
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
       trapFocus = true,
+      container,
       ...rest
     },
     ref,
@@ -21,11 +22,11 @@ const Drop = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [originalFocusedElement, setOriginalFocusedElement] = useState();
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
-    const [dropContainer, setDropContainer] = useState();
+    const [dropContainer, setDropContainer] = useState(container);
     const containerTarget = useContext(ContainerTargetContext);
     useEffect(
-      () => setDropContainer(getNewContainer(containerTarget)),
-      [containerTarget],
+      () => setDropContainer(container || getNewContainer(containerTarget)),
+      [container, containerTarget],
     );
 
     // just a few things to clean up when the Drop is unmounted
@@ -42,11 +43,17 @@ const Drop = forwardRef(
             setFocusWithoutScroll(originalFocusedElement.parentNode);
           }
         }
-        if (dropContainer) {
+        if (dropContainer && !container) {
           containerTarget.removeChild(dropContainer);
         }
       },
-      [containerTarget, dropContainer, originalFocusedElement, restrictFocus],
+      [
+        container,
+        containerTarget,
+        dropContainer,
+        originalFocusedElement,
+        restrictFocus,
+      ],
     );
 
     return dropContainer

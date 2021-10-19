@@ -36,6 +36,7 @@ export interface DropProps {
   plain?: boolean;
   margin?: MarginType;
   round?: RoundType;
+  container?: object;
 }
 
 type divProps = JSX.IntrinsicElements['div'];
