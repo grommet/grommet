@@ -628,6 +628,10 @@ export interface ThemeType {
           size?: string;
           height?: number;
         };
+        [key: string]: {
+          size?: string;
+          height?: number;
+        };
       };
     };
   };
@@ -1103,11 +1107,16 @@ export interface ThemeType {
     };
   };
   radioButton?: {
+    extend?: ExtendType;
+    container?: {
+      extend?: ExtendType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
     };
     check?: {
+      extend?: ExtendType;
       radius?: string;
       background?: {
         color?: ColorType;
@@ -1152,6 +1161,15 @@ export interface ThemeType {
     container?: BoxProps;
   };
   rangeInput?: {
+    disabled?: {
+      opacity?: OpacityType;
+      track?: {
+        color?: ColorType;
+      };
+      thumb?: {
+        color?: ColorType;
+      };
+    };
     track?: {
       height?: string;
       color?: any;
@@ -1168,6 +1186,7 @@ export interface ThemeType {
     };
     thumb?: {
       color?: ColorType;
+      extend?: ExtendType;
     };
     extend?: ExtendType;
   };
