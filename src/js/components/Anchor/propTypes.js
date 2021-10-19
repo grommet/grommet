@@ -38,16 +38,8 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.string,
     ]),
     weight: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'normal',
-        'bold',
-        'lighter',
-        'bolder',
-        'inherit',
-        'initial',
-        'revert',
-        'unset',
-      ]),
+      PropTypes.oneOf(['normal', 'bold']),
+      PropTypes.string,
       PropTypes.number,
     ]),
   };
