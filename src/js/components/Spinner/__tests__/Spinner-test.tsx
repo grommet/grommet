@@ -8,6 +8,7 @@ import 'jest-axe/extend-expect';
 import { Node } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Spinner } from '..';
+import { ThemeType } from '../../..';
 
 describe('Spinner', () => {
   test('should have no accessibility violations', async () => {
@@ -19,17 +20,6 @@ describe('Spinner', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('renders', () => {
-    const { container } = render(
-      <Grommet>
-        <Spinner />
-        <Spinner id="test id" name="test name" />
-      </Grommet>,
-    );
-
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -121,11 +111,9 @@ describe('Spinner', () => {
   });
 
   test('spinner changes according to theme', () => {
-    const theme = {
+    const theme: ThemeType = {
       spinner: {
-        size: {
-          small: '30px',
-        },
+        size: { small: '30px' },
         container: {
           animation: { type: 'rotateLeft', duration: 900 },
           border: false,
@@ -162,6 +150,28 @@ describe('Spinner', () => {
     const { container } = render(
       <Grommet theme={theme}>
         <Spinner />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('spinner color renders over theme settings', () => {
+    const theme: ThemeType = {
+      spinner: {
+        container: {
+          border: [
+            { side: 'all', color: 'background-contrast', size: 'medium' },
+            { side: 'right', color: 'green', size: 'medium' },
+            { side: 'top', color: 'green', size: 'medium' },
+            { side: 'left', color: 'green', size: 'medium' },
+          ],
+        },
+      },
+    };
+    const { container } = render(
+      <Grommet theme={theme}>
+        <Spinner color="#1479FB" />
       </Grommet>,
     );
 
