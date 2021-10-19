@@ -52,8 +52,16 @@ export var Places = function Places() {
     places: [_extends({
       location: [-33.8830555556, 151.216666667]
     }, placeProps('Sydney', 'graph-1', showDrops)), _extends({
-      location: [9.933333, -84.083333]
-    }, placeProps('San José', 'graph-2', showDrops))]
+      location: [78.22, 15.65]
+    }, placeProps('Svalbard', 'graph-3', showDrops)), _extends({
+      location: [64.503889, -165.399444]
+    }, placeProps('Nome', 'graph-1', showDrops)), _extends({
+      location: [51.507222, -0.1275]
+    }, placeProps('London', 'graph-2', showDrops)), _extends({
+      location: [-54.801944, -68.303056]
+    }, placeProps('Ushuaia', 'graph-3', showDrops)), _extends({
+      location: [-0.002222, -78.455833]
+    }, placeProps('Quito', 'graph-1', showDrops))]
   })));
 };
 export default {

@@ -7,6 +7,7 @@ export var SelectPlace = function SelectPlace() {
       setPlaces = _React$useState[1];
 
   var onSelectPlace = function onSelectPlace(place) {
+    console.log('Selected', place);
     setPlaces([{
       color: 'graph-1',
       location: place
