@@ -3,8 +3,6 @@ import * as React from 'react';
 import { BorderType, PadType, MarginType, BackgroundType } from '../../utils';
 
 export interface FileInputProps {
-  border?: BorderType;
-  background?: BackgroundType;
   disabled?: boolean;
   id?: string;
   maxSize?: number;
