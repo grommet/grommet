@@ -125,5 +125,5 @@ export const Badge = () => (
 );
 
 export default {
-  title: 'Controls/Button/Badge',
+  title: 'Controls/Button/Custom/Badge',
 };

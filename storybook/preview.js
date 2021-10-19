@@ -13,7 +13,7 @@ export const decorators = [
     const [state, setState] = useState('base');
     useEffect(() => {
       if (context.kind.split('/')[2] === 'Custom') setState('base');
-      else setState(context.globals.theme || 'base');
+      else setState(context.globals.theme || 'grommet');
     }, [context.globals.theme, context.kind]);
     return (
       <Grommet theme={THEMES[state]}>
@@ -36,7 +36,7 @@ export const parameters = {
 export const globalTypes = {
   theme: {
     name: 'Theme',
-    defaultValue: 'base',
+    defaultValue: 'grommet',
     toolbar: {
       items: ['base', 'grommet', 'hpe'],
       showName: true,
