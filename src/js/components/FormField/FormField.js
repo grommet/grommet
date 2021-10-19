@@ -430,7 +430,11 @@ const FormField = forwardRef(
       // a11yTitle necessary so screenreader announces as "required"
       // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-      requiredIndicator = <Text a11yTitle="required">*</Text>;
+      requiredIndicator = (
+        <Text a11yTitle="required" {...labelStyle}>
+          *
+        </Text>
+      );
 
     return (
       <FormFieldBox
