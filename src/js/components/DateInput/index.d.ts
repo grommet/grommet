@@ -8,7 +8,7 @@ import { A11yTitleType } from '../../utils';
 
 export interface DateInputProps {
   a11yTitle?: A11yTitleType;
-  buttonProps?: ButtonType | { open?: boolean };
+  buttonProps?: ButtonType;
   calendarProps?: CalendarType;
   defaultValue?: string | string[];
   dropProps?: DropType;
