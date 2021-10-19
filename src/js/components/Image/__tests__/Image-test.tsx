@@ -133,11 +133,11 @@ test('Image fallback', async () => {
   const { getByAltText } = render(<Test />);
   
   fireEvent(getByAltText("test"), new Event('error'));
-  let imgSrc = screen.getByRole("img").src;
+  let imgSrc = screen.getByRole<HTMLImageElement>("img").src;
   expect(imgSrc).toEqual(fallbackImage);
 
   userEvent.click(screen.getByRole("button", {name: /Update Image/i}));
-  imgSrc= screen.getByRole("img").src;
+  imgSrc= screen.getByRole<HTMLImageElement>("img").src;
   expect(imgSrc).toEqual(regularImage);
 
 });

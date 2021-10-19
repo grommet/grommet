@@ -7,7 +7,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
-import { Box, Button, Calendar, Grommet, Text } from '../..';
+import { Box, Button, Calendar, Grommet, Text, CalendarProps } from '../..';
 
 const DATE = '2020-01-15T00:00:00-08:00';
 const DATES = [
@@ -144,7 +144,7 @@ describe('Calendar', () => {
             nextInBound,
           }) => (
             <Box direction="row" align="center" justify="between">
-              <Button onClick={previousInBound && onPreviousMonth}>
+              <Button onClick={previousInBound ? onPreviousMonth : undefined}>
                 <Box>
                   <FormPreviousLink />
                 </Box>
@@ -157,7 +157,7 @@ describe('Calendar', () => {
                   })}
                 </strong>
               </Text>
-              <Button onClick={nextInBound && onNextMonth}>
+              <Button onClick={nextInBound ? onNextMonth : undefined}>
                 <Box>
                   <FormNextLink />
                 </Box>
@@ -505,8 +505,8 @@ describe('Calendar', () => {
 });
 
 describe('Calendar Keyboard events', () => {
-  let onSelect;
-  let App;
+  let onSelect: CalendarProps['onSelect'];
+  let App: React.FC;
 
   beforeEach(() => {
     onSelect = jest.fn();
