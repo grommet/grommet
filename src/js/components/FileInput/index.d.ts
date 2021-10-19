@@ -16,9 +16,7 @@ export interface FileInputProps {
     maxFile?: string;
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
-  margin?: MarginType;
   name?: string;
-  pad?: PadType;
   renderFile?: (...args: any[]) => void;
 }
 
