@@ -336,6 +336,7 @@ const FileInput = forwardRef(
                   hoverIndicator
                   onClick={(event) => {
                     if (confirmRemove) {
+                      event.persist(); // necessary for when React < v17
                       setPendingRemoval({ event, index: 'all' });
                       setShowConfirmation(true);
                     } else removeFile(event, 'all');
@@ -426,6 +427,7 @@ const FileInput = forwardRef(
                     hoverIndicator
                     onClick={(event) => {
                       if (confirmRemove) {
+                        event.persist(); // necessary for when React < v17
                         setPendingRemoval({ event, index });
                         setShowConfirmation(true);
                       } else removeFile(event, index);
