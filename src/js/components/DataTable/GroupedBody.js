@@ -14,6 +14,7 @@ export const GroupedBody = forwardRef(
     {
       cellProps: cellPropsProp,
       columns,
+      data,
       groupBy,
       groups,
       groupState,
@@ -22,6 +23,7 @@ export const GroupedBody = forwardRef(
       onMore,
       onSelect,
       onToggle,
+      onUpdate,
       replace,
       rowProps,
       selected,
@@ -34,16 +36,14 @@ export const GroupedBody = forwardRef(
     const items = useMemo(() => {
       const nextItems = [];
       groups.forEach((group) => {
-        const { expanded } = groupState[group.key];
+        const { expanded } = groupState[group.key] || { expanded: true };
         const memberCount = group.data.length;
-        if (memberCount > 1) {
+        if (memberCount > onUpdate ? 0 : 1 && group.key) {
           // need a header
           const primaryKeys = [];
-          if (group.data.length) {
-            group.data.forEach((datum) => {
-              primaryKeys.push(datum[primaryProperty]);
-            });
-          }
+          group.data.forEach((datum) => {
+            primaryKeys.push(datum[primaryProperty]);
+          });
 
           const groupSelected =
             primaryKeys && selected
@@ -69,7 +69,7 @@ export const GroupedBody = forwardRef(
             },
           });
         }
-        if (memberCount === 1 || expanded) {
+        if ((!onUpdate && memberCount === 1) || expanded) {
           // add the group members
           group.data.forEach((datum, index) => {
             const primaryValue = primaryProperty
@@ -97,7 +97,14 @@ export const GroupedBody = forwardRef(
         }
       });
       return nextItems;
-    }, [groups, groupState, primaryProperty, selected, onSelect]);
+    }, [
+      groups,
+      groupState,
+      primaryProperty,
+      selected,
+      onSelect,
+      onUpdate,
+    ]);
 
     return (
       <StyledDataTableBody ref={ref} size={size} {...rest}>

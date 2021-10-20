@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, {
   useCallback,
   useContext,
@@ -18,6 +19,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
+import { LazyBody } from './LazyBody';
 import { Pagination } from '../Pagination';
 import {
   buildFooterValues,
@@ -65,6 +67,7 @@ const DataTable = ({
   onSearch, // removing unknown DOM attributes
   onSelect,
   onSort: onSortProp,
+  onUpdate,
   replace,
   pad,
   paginate,
@@ -106,9 +109,11 @@ const DataTable = ({
   const [sort, setSort] = useState(sortProp || {});
 
   // the data filtered and sorted, if needed
+  // Note: onUpdate mode expects the data to be passed
+  //   in completely filtered and sorted already.
   const adjustedData = useMemo(
-    () => filterAndSortData(data, filters, onSearch, sort),
-    [data, filters, onSearch, sort],
+    () => onUpdate ? data : filterAndSortData(data, filters, onSearch, sort),
+    [data, filters, onSearch, onUpdate, sort],
   );
 
   // the values to put in the footer cells
@@ -125,12 +130,14 @@ const DataTable = ({
 
   // if groupBy, an array with one item per unique groupBy key value
   const groups = useMemo(
-    () => buildGroups(columns, adjustedData, groupBy),
-    [adjustedData, columns, groupBy],
+    () => buildGroups(columns, adjustedData, groupBy, primaryProperty),
+    [adjustedData, columns, groupBy, primaryProperty],
   );
 
   // an object indicating which group values are expanded
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
+
+  const [limit, setLimit] = useState(step);
 
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
@@ -236,6 +243,16 @@ const DataTable = ({
     else direction = 'asc';
     const nextSort = { property, direction, external };
     setSort(nextSort);
+    if (onUpdate) {
+      onUpdate({
+        expanded: Object.keys(groupState).filter(
+          (k) => groupState[k].expanded,
+        ),
+        sort: nextSort,
+        count: limit,
+        showProp,
+      });
+    }
     if (onSortProp) onSortProp(nextSort);
   };
 
@@ -247,10 +264,18 @@ const DataTable = ({
       expanded: !nextGroupState[groupValue].expanded,
     };
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      onUpdate({
+        expanded: expandedKeys,
+        sort,
+        count: limit,
+        showProp,
+      });
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -265,10 +290,18 @@ const DataTable = ({
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      onUpdate({
+        expanded: expandedKeys,
+        sort,
+        count: limit,
+        showProp,
+      });
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -368,7 +401,19 @@ const DataTable = ({
               groupState={groupState}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
-              onMore={onMore}
+              onMore={onUpdate ? () => {
+                if (adjustedData.length === limit) {
+                  onUpdate({
+                    expanded: Object.keys(groupState).filter(
+                      (k) => groupState[k].expanded,
+                    ),
+                    sort,
+                    count: limit + step,
+                    showProp,
+                  });
+                  setLimit( prev => prev + step);
+                }
+              } : onMore}
               onSelect={
                 onSelect
                   ? (nextSelected) => {
@@ -378,6 +423,7 @@ const DataTable = ({
                   : undefined
               }
               onToggle={onToggleGroup}
+              onUpdate={onUpdate}
               replace={replace}
               rowProps={rowProps}
               selected={selected}
