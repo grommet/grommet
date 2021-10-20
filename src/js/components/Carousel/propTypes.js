@@ -17,3 +17,15 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 export const CarouselPropTypes = PropType;
+
+let CarouselChildPropType;
+if (process.env.NODE_ENV !== 'production') {
+  CarouselChildPropType = {
+    fill: PropTypes.bool,
+    play: PropTypes.number,
+    index: PropTypes.number.isRequired,
+    activeIndex: PropTypes.number.isRequired,
+    priorActiveIndex: PropTypes.number,
+  };
+}
+export const CarouselChildPropTypes = CarouselChildPropType;

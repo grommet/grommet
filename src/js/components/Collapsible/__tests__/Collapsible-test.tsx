@@ -10,34 +10,47 @@ import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 
 describe('Collapsible', () => {
-  let App;
-
-  beforeEach(() => {
-    App = ({ ...props }) => (
-      <Grommet>
-        <Collapsible {...props}>
-          <Text>Example</Text>
-        </Collapsible>
-      </Grommet>
-    );
-  });
   afterEach(cleanup);
 
   test('no accessibility violations', async () => {
-    const { container } = render(<App />);
+    const { container } = render(
+      <Grommet>
+        <Collapsible>
+          <Text>Example</Text>
+        </Collapsible>
+      </Grommet>,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   test('open', () => {
-    const { container } = render(<App open />);
+    const { container } = render(
+      <Grommet>
+        <Collapsible open>
+          <Text>Example</Text>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClick open default', () => {
-    const { container, rerender } = render(<App open />);
+    const { container, rerender } = render(
+      <Grommet>
+        <Collapsible open>
+          <Text>Example</Text>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
-    rerender(<App open={false} />);
+    rerender(
+      <Grommet>
+        <Collapsible open={false}>
+          <Text>Example</Text>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });
