@@ -72,6 +72,9 @@ const RangeInput = forwardRef(
     return (
       <StyledRangeInput
         aria-label={a11yTitle}
+        aria-valuemax={max}
+        aria-valuemin={min}
+        aria-valuenow={value}
         ref={rangeInputRef}
         name={name}
         focus={focus}
@@ -90,16 +93,13 @@ const RangeInput = forwardRef(
           setValue(event.target.value);
           if (onChange) onChange(event);
         }}
-        onWheel={handleOnWheel}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        onWheel={handleOnWheel}
         step={step}
         type="range"
         min={min}
         max={max}
-        aria-valuemax={max}
-        aria-valuemin={min}
-        aria-valuenow={value}
       />
     );
   },
