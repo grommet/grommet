@@ -99,11 +99,14 @@ const FileInput = forwardRef(
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
     const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();
+    const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
 
     const [files, setFiles] = formContext.useFormInput({
@@ -225,10 +228,6 @@ const FileInput = forwardRef(
         messages,
       });
     } else message = `${files.length} items`;
-
-    const [showConfirmation, setShowConfirmation] = useState(false);
-    const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
-    const ConfirmRemove = confirmRemove;
 
     const removeFile = (event, index) => {
       event.stopPropagation();
