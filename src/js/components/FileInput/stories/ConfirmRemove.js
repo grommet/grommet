@@ -28,7 +28,7 @@ export const ConfirmRemove = () => (
                 }
               }}
               confirmRemove={({ onConfirm, onCancel }) => (
-                <Layer>
+                <Layer onClickOutside={onCancel} onEsc={onCancel}>
                   <Box pad="medium" gap="medium">
                     Are you sure you want to delete this file?
                     <Box
