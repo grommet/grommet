@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { BorderType, PadType, MarginType, BackgroundType } from '../../utils';
-
 export interface FileInputProps {
   disabled?: boolean;
   id?: string;
