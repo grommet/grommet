@@ -63,7 +63,6 @@ if (process.env.NODE_ENV !== 'production') {
         '6xl',
       ]),
       PropTypes.string,
-      PropTypes.object,
     ]),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     as: PropTypes.oneOfType([

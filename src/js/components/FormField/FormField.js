@@ -60,6 +60,12 @@ const StyledMessageContainer = styled(Box)`
     props.theme.formField[props.messageType].container.extend}
 `;
 
+const RequiredText = styled(Text)`
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+`;
+
 const Message = ({ error, info, message, type, ...rest }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -430,15 +436,8 @@ const FormField = forwardRef(
       // a11yTitle necessary so screenreader announces as "required"
       // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-      requiredIndicator = (
-        <Text
-          a11yTitle="required"
-          color={{ ...(labelStyle.color || undefined) }}
-          size={{ ...(labelStyle.size || undefined) }}
-        >
-          *
-        </Text>
-      );
+
+      requiredIndicator = <RequiredText a11yTitle="required">*</RequiredText>;
     return (
       <FormFieldBox
         ref={formFieldRef}
