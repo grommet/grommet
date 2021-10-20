@@ -20,7 +20,7 @@ const data = {
 describe('NameValueList', () => {
   afterEach(cleanup);
 
-  test('Calendar should have no accessibility violations', async () => {
+  test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <NameValueList>
