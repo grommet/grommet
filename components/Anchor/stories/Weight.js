@@ -41,6 +41,30 @@ var WeightAnchor = function WeightAnchor() {
     href: "#",
     label: "Anchor weight 600",
     weight: 600
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Lighter",
+    weight: "lighter"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Bolder",
+    weight: "bolder"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Inherit",
+    weight: "inherit"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Initial",
+    weight: "initial"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Revert",
+    weight: "revert"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    href: "#",
+    label: "Anchor weight Unset",
+    weight: "unset"
   })));
 };
 

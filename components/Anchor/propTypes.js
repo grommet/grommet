@@ -26,7 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
     onClick: _propTypes["default"].func,
     reverse: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _propTypes["default"].string]),
-    weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold']), _propTypes["default"].number])
+    weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold']), _propTypes["default"].string, _propTypes["default"].number])
   });
 }
 

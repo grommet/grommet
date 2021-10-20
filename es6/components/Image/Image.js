@@ -23,7 +23,7 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var handleError = function handleError(event) {
     if (onError) onError(event);
 
-    if (!isFallbackInUse && fallback && fallback !== "") {
+    if (!isFallbackInUse && fallback && fallback !== '') {
       // eslint-disable-next-line no-param-reassign
       event.target.src = fallback;
       setFallbackInUse(true);
@@ -44,7 +44,7 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     opacityProp: opacity,
     fillProp: fill,
-    src: src === undefined ? "" : src
+    src: src === undefined ? '' : src
   }));
 });
 Image.displayName = 'Image';
