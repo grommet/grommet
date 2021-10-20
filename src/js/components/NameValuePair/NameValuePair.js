@@ -21,20 +21,19 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
     ? { width: valueProps?.width, ...rest }
     : undefined;
 
+  const nameAlign = size !== 'small' ? nameProps?.align : undefined;
+  const valueAlign = size !== 'small' ? valueProps?.align : undefined;
+
   let name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number')
     name = (
-      <Text
-        as="dt"
-        textAlign={size !== 'small' ? nameProps?.align : undefined}
-        {...theme.nameValuePair.name}
-      >
+      <Text as="dt" textAlign={nameAlign} {...theme.nameValuePair.name}>
         {nameProp}
       </Text>
     );
   else
     name = (
-      <Box as="dt" align={size !== 'small' ? nameProps?.align : undefined}>
+      <Box as="dt" align={nameAlign}>
         {nameProp}
       </Box>
     );
@@ -45,7 +44,7 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
       <Text
         as="dd"
         margin="none"
-        textAlign={size !== 'small' ? valueProps?.align : undefined}
+        textAlign={valueAlign}
         {...theme.nameValuePair.value}
       >
         {children}
@@ -53,11 +52,7 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
     );
   else
     value = (
-      <Box
-        as="dd"
-        margin="none"
-        align={size !== 'small' ? valueProps?.align : undefined}
-      >
+      <Box as="dd" margin="none" align={valueAlign}>
         {children}
       </Box>
     );

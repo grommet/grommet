@@ -20,8 +20,8 @@ const NameValueList = forwardRef(
     const size = useContext(ResponsiveContext);
     const theme = useContext(ThemeContext);
 
-    // If layout is grid, there is a set max of the valueWidth and
-    // the min is set to auto for grid layout.
+    // If layout is grid, valueWidth sets the max width of the column.
+    // We will 'fit' as many columns of valueWidth per row as we can
 
     let columns;
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
