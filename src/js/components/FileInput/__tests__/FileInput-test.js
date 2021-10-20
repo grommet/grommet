@@ -1,7 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
-import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';

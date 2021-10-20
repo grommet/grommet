@@ -66,53 +66,10 @@ const Message = styled(Text)`
     props.theme.fileInput.message.extend};
 `;
 
-const defaultCallbacks = { resolve: undefined, reject: undefined };
-
-const handleRemove =
-  ({
-    confirmRemove,
-    inputRef,
-    onChange,
-    setCallbacks,
-    setShowConfirmation,
-    setFiles,
-  }) =>
-  async (event, index, files) => {
-    const removeFile = () => {
-      const fileInputRef = inputRef;
-      event.stopPropagation();
-      let nextFiles;
-      if (index === 'all') {
-        nextFiles = [];
-      } else {
-        nextFiles = [...files];
-        nextFiles.splice(index, 1);
-      }
-      setFiles(nextFiles);
-      if (onChange) onChange(event, { files: nextFiles });
-      if (nextFiles.length === 0) fileInputRef.current.value = '';
-      inputRef.current.focus();
-    };
-
-    if (confirmRemove) {
-      const confirmation = () =>
-        new Promise((resolve, reject) => {
-          setShowConfirmation(true);
-          setCallbacks({ resolve, reject });
-        });
-      try {
-        await confirmation();
-        setShowConfirmation(false);
-        setCallbacks(defaultCallbacks);
-        removeFile();
-      } catch (e) {
-        setShowConfirmation(false);
-        setCallbacks(defaultCallbacks);
-      }
-    } else {
-      removeFile();
-    }
-  };
+const defaultPendingRemoval = {
+  event: undefined,
+  index: undefined,
+};
 
 const FileInput = forwardRef(
   (
@@ -269,17 +226,24 @@ const FileInput = forwardRef(
       });
     } else message = `${files.length} items`;
 
-    const [callbacks, setCallbacks] = useState(defaultCallbacks);
     const [showConfirmation, setShowConfirmation] = useState(false);
+    const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const ConfirmRemove = confirmRemove;
-    const onHandleRemove = handleRemove({
-      confirmRemove,
-      inputRef,
-      onChange,
-      setCallbacks,
-      setFiles,
-      setShowConfirmation,
-    });
+
+    const removeFile = (event, index) => {
+      event.stopPropagation();
+      let nextFiles;
+      if (index === 'all') {
+        nextFiles = [];
+      } else {
+        nextFiles = [...files];
+        nextFiles.splice(index, 1);
+      }
+      setFiles(nextFiles);
+      if (onChange) onChange(event, { files: nextFiles });
+      if (nextFiles.length === 0) inputRef.current.value = '';
+      inputRef.current.focus();
+    };
 
     return (
       <>
@@ -372,7 +336,10 @@ const FileInput = forwardRef(
                   icon={<RemoveIcon />}
                   hoverIndicator
                   onClick={(event) => {
-                    onHandleRemove(event, 'all', files);
+                    if (confirmRemove) {
+                      setPendingRemoval({ event, index: 'all' });
+                      setShowConfirmation(true);
+                    } else removeFile(event, 'all');
                   }}
                 />
                 <Keyboard
@@ -459,7 +426,10 @@ const FileInput = forwardRef(
                     icon={<RemoveIcon />}
                     hoverIndicator
                     onClick={(event) => {
-                      onHandleRemove(event, index, files);
+                      if (confirmRemove) {
+                        setPendingRemoval({ event, index });
+                        setShowConfirmation(true);
+                      } else removeFile(event, index);
                     }}
                   />
                   {files.length === 1 && (
@@ -543,8 +513,12 @@ const FileInput = forwardRef(
         </ContentsBox>
         {showConfirmation && (
           <ConfirmRemove
-            onConfirm={callbacks.resolve}
-            onCancel={callbacks.reject}
+            onConfirm={() => {
+              removeFile(pendingRemoval.event, pendingRemoval.index);
+              setPendingRemoval(defaultPendingRemoval);
+              setShowConfirmation(false);
+            }}
+            onCancel={() => setShowConfirmation(false)}
           />
         )}
       </>
