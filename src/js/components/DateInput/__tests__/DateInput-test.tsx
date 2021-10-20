@@ -6,8 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-// @ts-ignore
-import { createPortal, expectPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils';
 import { Grommet } from '../../Grommet';
 import { Button } from '../../Button';
 import { DateInput } from '..';
@@ -78,7 +77,7 @@ describe('DateInput', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <DateInput format="mm/dd/yyyy" a11yTitle="axe test" />
+        <DateInput format="mm/dd/yyyy" />
       </Grommet>,
     );
     const results = await axe(container);
@@ -575,7 +574,6 @@ describe('DateInput', () => {
       <Grommet>
         <DateInput
           buttonProps={{
-            open: true,
             disabled: true,
           }}
         />

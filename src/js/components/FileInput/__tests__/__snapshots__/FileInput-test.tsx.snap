@@ -202,6 +202,8 @@ exports[`FileInput background 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -560,7 +562,7 @@ exports[`FileInput border 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 12px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -683,7 +685,7 @@ exports[`FileInput border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 6px #7D4CDB;
   }
 }
 
@@ -1095,6 +1097,7 @@ exports[`FileInput margin 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 12px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1218,6 +1221,12 @@ exports[`FileInput margin 1`] = `
 
 .c2 {
   position: relative;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2189,6 +2198,7 @@ exports[`FileInput pad 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 12px;
 }
 
 .c3 {
@@ -2300,6 +2310,12 @@ exports[`FileInput pad 1`] = `
 @media only screen and (max-width:768px) {
   .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 6px;
   }
 }
 

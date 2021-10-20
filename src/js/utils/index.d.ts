@@ -302,3 +302,9 @@ export type WidthType =
       max?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
       min?: 'xxsmall' | 'xxlarge' | TShirtSizeType | '100%';
     };
+
+// portal.js
+export function createPortal(): () => void;
+export function expectPortal(portalId: string): {
+  toMatchSnapshot(): void
+};

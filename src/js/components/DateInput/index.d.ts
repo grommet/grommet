@@ -4,10 +4,8 @@ import { ButtonType } from '../Button';
 import { CalendarType } from '../Calendar/index';
 import { DropType } from '../Drop';
 import { MaskedInputType } from '../MaskedInput';
-import { A11yTitleType } from '../../utils';
 
 export interface DateInputProps {
-  a11yTitle?: A11yTitleType;
   buttonProps?: ButtonType;
   calendarProps?: CalendarType;
   defaultValue?: string | string[];
