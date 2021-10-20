@@ -41,24 +41,32 @@ export const Places = () => {
               ...placeProps('Sydney', 'graph-1', showDrops),
             },
             {
-              location: [78.22, 15.65],
-              ...placeProps('Svalbard', 'graph-3', showDrops),
-            },
-            {
-              location: [64.503889, -165.399444],
-              ...placeProps('Nome', 'graph-1', showDrops),
+              location: [42.358056, -71.063611],
+              ...placeProps('Boston', 'graph-2', showDrops),
             },
             {
               location: [51.507222, -0.1275],
-              ...placeProps('London', 'graph-2', showDrops),
-            },
-            {
-              location: [-54.801944, -68.303056],
-              ...placeProps('Ushuaia', 'graph-3', showDrops),
+              ...placeProps('London', 'graph-3', showDrops),
             },
             {
               location: [-0.002222, -78.455833],
               ...placeProps('Quito', 'graph-1', showDrops),
+            },
+            {
+              location: [34.05, -118.25],
+              ...placeProps('Los Angeles', 'graph-2', showDrops),
+            },
+            {
+              location: [35.689722, 139.692222],
+              ...placeProps('Tokyo', 'graph-3', showDrops),
+            },
+            {
+              location: [78.22, 15.65],
+              ...placeProps('Svalbard', 'graph-1', showDrops),
+            },
+            {
+              location: [-54.801944, -68.303056],
+              ...placeProps('Ushuaia', 'graph-2', showDrops),
             },
           ]}
         />
