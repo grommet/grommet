@@ -97,6 +97,9 @@ const RangeInput = forwardRef(
         type="range"
         min={min}
         max={max}
+        aria-valuemax={max}
+        aria-valuemin={min}
+        aria-valuenow={value}
       />
     );
   },
