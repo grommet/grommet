@@ -431,11 +431,14 @@ const FormField = forwardRef(
       // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
       requiredIndicator = (
-        <Text a11yTitle="required" {...labelStyle}>
+        <Text
+          a11yTitle="required"
+          color={{ ...(labelStyle.color || undefined) }}
+          size={{ ...(labelStyle.size || undefined) }}
+        >
           *
         </Text>
       );
-
     return (
       <FormFieldBox
         ref={formFieldRef}

@@ -2297,7 +2297,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   flex-direction: column;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2321,7 +2321,11 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   line-height: 24px;
 }
 
-.c5 {
+.c3 {
+  line-height: normal;
+}
+
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2339,33 +2343,33 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
@@ -2377,7 +2381,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -2395,20 +2399,20 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
         label
         <span
           aria-label="required"
-          class="c2"
+          class="c3"
         >
           *
         </span>
       </label>
       <div
-        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="c4"
+          class="c5"
         >
           <input
             autocomplete="off"
-            class="c5"
+            class="c6"
             value=""
           />
         </div>
