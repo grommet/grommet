@@ -1,17 +1,9 @@
 import * as React from 'react';
-import {
-  A11yTitleType,
-  AlignSelfType,
-  GridAreaType,
-  MarginType,
-} from '../../utils';
+import { a11yTitlePropType } from '../../utils/general-prop-types';
 
 export interface NameValuePairProps {
-  a11yTitle?: A11yTitleType;
-  alignSelf?: AlignSelfType;
+  a11yTitle?: a11yTitlePropType;
   children?: string | number | JSX.Element;
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   name?: string | JSX.Element;
 }
 
