@@ -1231,7 +1231,13 @@ export interface ThemeType {
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
     icon?: React.ReactNode;
-    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    size?: {
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+    };
   };
   tab?: {
     active?: {

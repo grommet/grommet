@@ -330,6 +330,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {},
     "propTypes": Object {
+      "confirmRemove": [Function],
       "disabled": [Function],
       "id": [Function],
       "messages": [Function],
