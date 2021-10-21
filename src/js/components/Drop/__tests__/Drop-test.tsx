@@ -149,10 +149,16 @@ describe('Drop', () => {
 
   test('resize', () => {
     render(<TestInput />);
-    // @ts-ignore
-    global.window.innerWidth = 1000;
-    // @ts-ignore
-    global.window.innerHeight = 1000;
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1000,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 1000,
+    });
     fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
     expectPortal('drop-node').toMatchSnapshot();
   });
