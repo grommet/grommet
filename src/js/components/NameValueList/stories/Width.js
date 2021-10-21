@@ -6,6 +6,7 @@ import { data } from './data';
 export const Width = () => (
   <Grommet theme={grommet}>
     <Box gap="large" pad="small">
+  <>
       <Text weight="bold" size="3xl">
         Name width xsmall
       </Text>
@@ -16,6 +17,7 @@ export const Width = () => (
           </NameValuePair>
         ))}
       </NameValueList>
+   </>
       <Text weight="bold" size="3xl">
         Value width large
       </Text>
