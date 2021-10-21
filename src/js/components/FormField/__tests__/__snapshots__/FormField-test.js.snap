@@ -2297,7 +2297,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2326,7 +2326,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2344,35 +2344,41 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   position: relative;
   width: 100%;
+}
+
+.c4 {
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
@@ -2382,7 +2388,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -2400,20 +2406,20 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
         label
         <span
           aria-label="required"
-          class="c3"
+          class="c3 c4"
         >
           *
         </span>
       </label>
       <div
-        class="c4 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <input
             autocomplete="off"
-            class="c6"
+            class="c7"
             value=""
           />
         </div>
