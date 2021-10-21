@@ -43,6 +43,7 @@ export const ConfirmRemove = () => (
                   </Box>
                 </Layer>
               )}
+              multiple
             />
           </FormField>
           <Button label="Submit" type="submit" />
