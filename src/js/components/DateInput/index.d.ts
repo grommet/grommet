@@ -20,13 +20,26 @@ export interface DateInputProps {
   };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
+  size?:
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'xxlarge'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | '6xl'
+    | string;
   value?: string | string[];
 }
 export interface DateInputExtendedProps
   extends DateInputProps,
     Omit<
       JSX.IntrinsicElements['input'],
-      'defaultValue' | 'onChange' | 'value'
+      'defaultValue' | 'onChange' | 'value' | 'size'
     > {}
 
 declare const DateInput: React.FC<DateInputExtendedProps>;
