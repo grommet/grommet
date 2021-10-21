@@ -1,9 +1,13 @@
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
+
+const StyledValueBox = styled(Box)`
+  margin: 0px;
+`;
 
 const NameValuePair = ({ children, name: nameProp, ...rest }) => {
   const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
@@ -52,9 +56,9 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
     );
   else
     value = (
-      <Box as="dd" margin="none" align={valueAlign}>
+      <StyledValueBox as="dd" align={valueAlign}>
         {children}
-      </Box>
+      </StyledValueBox>
     );
 
   const first = direction !== 'column-reverse' ? name : value;
