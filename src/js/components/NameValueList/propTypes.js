@@ -19,10 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
       direction: PropTypes.oneOf(['row', 'column', 'column-reverse']),
     }),
     valueProps: PropTypes.shape({
-      align: PropTypes.oneOf(
-        ['baseline', 'center', 'end', 'start', 'stretch'],
-        PropTypes.string,
-      ),
+      align: alignPropType,
       width: widthPropType,
     }),
   };
