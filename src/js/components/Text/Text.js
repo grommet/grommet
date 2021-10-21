@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
@@ -23,6 +23,21 @@ const Text = forwardRef(
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
+    const [textTruncated, setTextTruncated] = useState(false);
+
+    // place the text content in a tip if truncate === 'tip'
+    // and the text has been truncated
+    useEffect(() => {
+      if (truncate === 'tip') {
+        if (
+          textRef.current &&
+          textRef.current.scrollWidth > textRef.current.offsetWidth
+        ) {
+          setTextTruncated(true);
+        }
+      }
+    }, [children, textRef, truncate]);
+
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
@@ -36,12 +51,15 @@ const Text = forwardRef(
       </StyledText>
     );
 
-    if (tipProp || truncate === 'tip') {
-      return (
-        <Tip content={children} {...tipProp}>
-          {styledTextResult}
-        </Tip>
-      );
+    if (tipProp || textTruncated) {
+      if (textTruncated) {
+        return (
+          <Tip content={children} {...tipProp}>
+            {styledTextResult}
+          </Tip>
+        );
+      }
+      return <Tip {...tipProp}>{styledTextResult}</Tip>;
     }
 
     return styledTextResult;
