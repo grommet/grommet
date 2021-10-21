@@ -196,5 +196,5 @@ export const ThemedButtons = () => (
 ThemedButtons.storyName = 'Themed Buttons';
 
 export default {
-  title: 'Controls/Button/Custom/Themed Buttons',
+  title: 'Controls/Button/Custom Themed/Themed Buttons',
 };

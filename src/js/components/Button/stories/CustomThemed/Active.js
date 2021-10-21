@@ -28,5 +28,5 @@ export const Active = () => (
 Active.storyName = 'Active';
 
 export default {
-  title: 'Controls/Button/Custom/Active',
+  title: 'Controls/Button/Custom Themed/Active',
 };
