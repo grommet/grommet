@@ -143,9 +143,10 @@ var textToValue = function textToValue(text, schema, valueProp, range) {
   var result;
 
   var addDate = function addDate(parts) {
-    // Do a little sanity checking on the parts first.
+    var leapYear = parts.y % 4 === 0 && parts.y % 100 !== 0 || parts.y % 400 === 0; // Do a little sanity checking on the parts first.
     // If not valid, leave as is.
-    if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31) return parts;
+
+    if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts;
     var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
     if (valueProp && (Array.isArray(valueProp) && valueProp[0] || !Array.isArray(valueProp))) {
