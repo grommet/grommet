@@ -432,6 +432,10 @@ const FormField = forwardRef(
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
       requiredIndicator = <Text a11yTitle="required">*</Text>;
 
+    let showRequiredIndicator = required && requiredIndicator;
+    if (typeof required === 'object' && required.indicator === false)
+      showRequiredIndicator = false;
+
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -475,7 +479,7 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
-                {required && requiredIndicator ? requiredIndicator : undefined}
+                {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />
