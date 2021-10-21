@@ -99,7 +99,7 @@ const FileInput = forwardRef(
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
-    const [showConfirmation, setShowConfirmation] = useState(false);
+    const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
     const max = multiple?.max;
@@ -338,7 +338,7 @@ const FileInput = forwardRef(
                     if (confirmRemove) {
                       event.persist(); // necessary for when React < v17
                       setPendingRemoval({ event, index: 'all' });
-                      setShowConfirmation(true);
+                      setShowRemoveConfirmation(true);
                     } else removeFile(event, 'all');
                   }}
                 />
@@ -429,7 +429,7 @@ const FileInput = forwardRef(
                       if (confirmRemove) {
                         event.persist(); // necessary for when React < v17
                         setPendingRemoval({ event, index });
-                        setShowConfirmation(true);
+                        setShowRemoveConfirmation(true);
                       } else removeFile(event, index);
                     }}
                   />
@@ -512,14 +512,14 @@ const FileInput = forwardRef(
             }}
           />
         </ContentsBox>
-        {showConfirmation && (
+        {showRemoveConfirmation && (
           <ConfirmRemove
             onConfirm={() => {
               removeFile(pendingRemoval.event, pendingRemoval.index);
               setPendingRemoval(defaultPendingRemoval);
-              setShowConfirmation(false);
+              setShowRemoveConfirmation(false);
             }}
-            onCancel={() => setShowConfirmation(false)}
+            onCancel={() => setShowRemoveConfirmation(false)}
           />
         )}
       </>
