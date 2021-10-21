@@ -18,7 +18,7 @@ export const Simple = () => (
         ))}
       </NameValueList>
       <Text weight="bold" size="3xl">
-        Custom Child Value
+        Custom Value
       </Text>
       <NameValueList>
         {Object.entries(statusData).map(([name, value]) => {
