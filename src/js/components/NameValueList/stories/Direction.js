@@ -3,17 +3,17 @@ import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data } from './data';
 
-export const Simple = () => (
+export const Direction = () => (
   <Grommet theme={grommet}>
-    <Box pad="large">
+    <Box pad="small" gap="large">
       <>
-        <Text weight="bold" size="3xl">
-          Default NameValueList
+        <Text weight="bold" size="2xl">
+          layout = column (default) / pairProps direction = column
         </Text>
-        <NameValueList>
+        <NameValueList pairProps={{ direction: 'column' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
-              {value}
+              <Text>{value}</Text>
             </NameValuePair>
           ))}
         </NameValueList>
@@ -23,5 +23,5 @@ export const Simple = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Simple',
+  title: 'Visualizations/NameValueList/Direction',
 };

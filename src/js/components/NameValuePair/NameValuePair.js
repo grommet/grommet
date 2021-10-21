@@ -1,15 +1,11 @@
 import React, { Fragment, useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 
-const StyledValueBox = styled(Box)`
-  margin: 0px;
-`;
-
-const NameValuePair = ({ children, name: nameProp, ...rest }) => {
+const NameValuePair = ({ children, name: nameProp }) => {
   const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
@@ -21,9 +17,7 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
     size === 'small';
 
   const Container = column ? Box : Fragment;
-  const containerProps = column
-    ? { width: valueProps?.width, ...rest }
-    : undefined;
+  const containerProps = column ? { width: valueProps?.width } : undefined;
 
   const nameAlign = size !== 'small' ? nameProps?.align : undefined;
   const valueAlign = size !== 'small' ? valueProps?.align : undefined;
@@ -45,9 +39,10 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
   let value;
   if (typeof children === 'string' || typeof children === 'number')
     value = (
-      // override browser default for dd</span>
+      // override browser default margin for dd
       <Text
         as="dd"
+        color="pink"
         margin="none"
         textAlign={valueAlign}
         {...theme.nameValuePair.value}
@@ -57,9 +52,10 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
     );
   else
     value = (
-      <StyledValueBox as="dd" align={valueAlign}>
+      // override browser default margin for dd
+      <Box margin="none" as="dd" align={valueAlign}>
         {children}
-      </StyledValueBox>
+      </Box>
     );
 
   const first = direction !== 'column-reverse' ? name : value;
