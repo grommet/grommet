@@ -45,6 +45,7 @@ const NameValuePair = ({ children, name: nameProp, ...rest }) => {
   let value;
   if (typeof children === 'string' || typeof children === 'number')
     value = (
+      // override browser default for dd</span>
       <Text
         as="dd"
         margin="none"
