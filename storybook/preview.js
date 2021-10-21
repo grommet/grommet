@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { hpe } from 'grommet-theme-hpe';
 import { Grommet, grommet, Box, Text } from '../src/js';
 
-const CUSTOM_THEMED = 'CUSTOM_THEMED';
+const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
   hpe,
   grommet,
@@ -13,7 +13,7 @@ export const decorators = [
   (Story, context) => {
     const [state, setState] = useState('base');
     useEffect(() => {
-      setState(context.globals.theme || 'grommet');
+      setState(context.globals.theme);
     }, [context.globals.theme]);
 
     /**
@@ -22,15 +22,13 @@ export const decorators = [
      */
     if (context.kind.split('/')[2] === CUSTOM_THEMED && state !== 'base') {
       return (
-        <Grommet>
-          <Box align="center" pad="large">
-            <Text>
-              {`Custom themed stories are only displayed in the
+        <Box align="center" pad="large">
+          <Text size="large">
+            {`Custom themed stories are only displayed in the
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
-            </Text>
-          </Box>
-        </Grommet>
+          </Text>
+        </Box>
       );
     }
 
@@ -45,13 +43,9 @@ export const decorators = [
 export const parameters = {
   layout: 'fullscreen',
   options: {
-    // storySort: (a,b) => {
-    //   console.log('a', a);
-    //   console.log('b', b);
-    // },
     storySort: {
       method: 'alphabetical',
-      order: ['Custom Themed'],
+      order: ['All'],
     },
   },
 };
@@ -59,7 +53,7 @@ export const parameters = {
 export const globalTypes = {
   theme: {
     name: 'Theme',
-    defaultValue: 'grommet',
+    defaultValue: 'base',
     toolbar: {
       items: ['base', 'grommet', 'hpe'],
       showName: true,
