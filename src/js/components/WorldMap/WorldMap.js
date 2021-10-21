@@ -17,23 +17,19 @@ const FACTOR = 10;
 // we have a few adjustments that we've empirically determined. The following
 // cities were used to make the empirical determinations:
 // London (0 lon), Quito (0 lat), Nome (far west), Sydney (far east),
-// Svalbard (far north), Ushuaia (far south)
+// Svalbard (far north), Ushuaia (far south).
 
-// This maps to reality, is isn't adjusted.
+// These map to reality, they aren't adjusted.
 const EQUATOR_Y = 32;
+const WIDTH = 93;
 
-// Use slightly different widths for latitude and longitude calculations,
-// just to get the cities to be placed closer to where they are.
-const LON_WIDTH = 94;
-const LAT_WIDTH = 92;
+// Scale the latitude and longitude to align better with actual locations.
+const LAT_SCALE = 0.98;
+// adjust more extreme latitudes to fit with the map dots better
+const LAT_EXTREME_SCALE = 0.91;
+const LON_SCALE = 0.99;
 
-// Scale the latitude so we are a bit more compressed vertically.
-// Without this, adjusting the width couldn't be used alone to get the vertical
-// alignment close.
-const LAT_SCALE = 0.91;
-
-// We shift the map coordinates just a bit to align better with actual
-// locations.
+// We shift the map coordinates to align better with actual locations.
 const X_OFFSET = -2;
 const Y_OFFSET = -2;
 
@@ -380,18 +376,26 @@ const midPoint = (bounds) => [
 
 // from https://stackoverflow.com/a/14457180/8513067
 const latLonToCoord = ([lat, lon]) => {
-  const x = Math.round((lon + 180) * (LON_WIDTH / 360));
-  const latRad = ((lat * Math.PI) / 180) * LAT_SCALE;
+  const scaledLon = lon * LON_SCALE;
+  const x = Math.round((scaledLon + 180) * (WIDTH / 360));
+  // adjust more extreme latitudes to fit with the map dots better
+  const scaledLat =
+    lat * (lat > 60 || lat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+  const latRad = (scaledLat * Math.PI) / 180;
   const mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
-  const y = Math.round(EQUATOR_Y - (LAT_WIDTH * mercN) / (2 * Math.PI));
+  const y = Math.round(EQUATOR_Y - (WIDTH * mercN) / (2 * Math.PI));
   return [x + X_OFFSET, y + Y_OFFSET];
 };
 
 const coordToLatLon = ([x, y]) => {
-  const mercN = ((EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI)) / LAT_WIDTH;
+  const mercN = ((EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI)) / WIDTH;
   const latRad = (Math.atan(Math.exp(mercN)) - Math.PI / 4) * 2;
-  const lat = (latRad / LAT_SCALE) * (180 / Math.PI);
-  const lon = ((x - X_OFFSET) * 360) / LON_WIDTH - 180;
+  const scaledLat = (latRad * 180) / Math.PI / LAT_SCALE;
+  // adjust more extreme latitudes to fit with the map dots better
+  const lat =
+    scaledLat /
+    (scaledLat > 60 || scaledLat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+  const lon = ((x - X_OFFSET) * 360) / WIDTH - 180;
   return [lat, lon];
 };
 
