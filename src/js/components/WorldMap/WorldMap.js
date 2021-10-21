@@ -26,7 +26,7 @@ const WIDTH = 93;
 // Scale the latitude and longitude to align better with actual locations.
 const LAT_SCALE = 0.98;
 // adjust more extreme latitudes to fit with the map dots better
-const LAT_EXTREME_SCALE = 0.92;
+const LAT_EXTREME_SCALE = 0.91;
 const LON_SCALE = 0.99;
 
 // We shift the map coordinates to align better with actual locations.
@@ -380,7 +380,7 @@ const latLonToCoord = ([lat, lon]) => {
   const x = Math.round((scaledLon + 180) * (WIDTH / 360));
   // adjust more extreme latitudes to fit with the map dots better
   const scaledLat =
-    lat * (lat > 65 || lat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+    lat * (lat > 60 || lat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
   const latRad = (scaledLat * Math.PI) / 180;
   const mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
   const y = Math.round(EQUATOR_Y - (WIDTH * mercN) / (2 * Math.PI));
@@ -394,7 +394,7 @@ const coordToLatLon = ([x, y]) => {
   // adjust more extreme latitudes to fit with the map dots better
   const lat =
     scaledLat /
-    (scaledLat > 65 || scaledLat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+    (scaledLat > 60 || scaledLat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
   const lon = ((x - X_OFFSET) * 360) / WIDTH - 180;
   return [lat, lon];
 };
