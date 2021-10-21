@@ -436,7 +436,17 @@ const DataTable = ({
               cellProps={cellProps.body}
               columns={columns}
               data={!paginate ? adjustedData : items}
-              onMore={onMore}
+              onMore={onUpdate ? () => {
+                if (adjustedData.length === limit) {
+                  onUpdate({
+                    expanded: [],
+                    sort,
+                    count: limit + step,
+                    showProp,
+                  });
+                  setLimit( prev => prev + step);
+                }
+              } : onMore}
               replace={replace}
               onClickRow={onClickRow}
               onSelect={
