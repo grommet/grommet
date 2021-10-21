@@ -15,7 +15,6 @@ export interface NameValueListProps {
     align?: AlignType;
     width?: WidthType;
   };
-  gap?: { row?: GapType; column?: GapType };
 }
 
 declare const NameValueList: React.FC<NameValueListProps>;

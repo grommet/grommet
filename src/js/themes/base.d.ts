@@ -1145,7 +1145,7 @@ export interface ThemeType {
     };
   };
   nameValueList?: {
-    gap?: GapType | { row?: GapType; column?: GapType };
+    gap?: { row?: GapType; column?: GapType };
     name?: {
       width: string;
     };

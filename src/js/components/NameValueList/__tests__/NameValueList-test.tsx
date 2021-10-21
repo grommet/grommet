@@ -168,9 +168,15 @@ describe('NameValueList', () => {
   });
 
   test(`should render correct gap between rows and columns`, () => {
+    const customGapTheme: ThemeType = {
+      nameValueList: {
+        gap: { column: 'small', row: 'large' },
+      },
+    };
+
     const { container } = render(
-      <Grommet>
-        <NameValueList gap={{ row: 'large', column: 'small' }}>
+      <Grommet theme={customGapTheme}>
+        <NameValueList>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
               {value}
@@ -186,7 +192,7 @@ describe('NameValueList', () => {
   test(`should support custom theme`, () => {
     const customTheme: ThemeType = {
       nameValueList: {
-        gap: { column: 'medium', row: 'large' },
+        gap: { column: 'small', row: 'large' },
         name: {
           width: 'xsmall',
         },
@@ -207,7 +213,7 @@ describe('NameValueList', () => {
 
     const { container } = render(
       <Grommet theme={customTheme}>
-        <NameValueList gap={{ row: 'large', column: 'small' }}>
+        <NameValueList>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
               {value}
