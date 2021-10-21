@@ -30,23 +30,23 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       as = _ref.as,
       tipProp = _ref.tip,
       _ref$a11yTitle = _ref.a11yTitle,
-      a11yTitle = _ref$a11yTitle === void 0 ? typeof tipProp === 'string' ? tipProp : undefined : _ref$a11yTitle,
+      a11yTitle = _ref$a11yTitle === void 0 ? typeof tipProp === 'string' && tipProp || (tipProp == null ? void 0 : tipProp.content) || undefined : _ref$a11yTitle,
       truncate = _ref.truncate,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var textRef = (0, _utils.useForwardedRef)(ref);
 
-  var _useState = (0, _react.useState)(tipProp),
-      tip = _useState[0],
-      setTip = _useState[1]; // place the text content in a tip if truncate === 'tip'
+  var _useState = (0, _react.useState)(false),
+      textTruncated = _useState[0],
+      setTextTruncated = _useState[1]; // place the text content in a tip if truncate === 'tip'
   // and the text has been truncated
 
 
   (0, _react.useEffect)(function () {
     if (truncate === 'tip') {
       if (textRef.current && textRef.current.scrollWidth > textRef.current.offsetWidth) {
-        setTip(children);
-      } else setTip(undefined);
+        setTextTruncated(true);
+      }
     }
   }, [children, textRef, truncate]);
 
@@ -59,14 +59,14 @@ var Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: textRef
   }), children);
 
-  if (tip) {
-    if (typeof tip === 'string') {
-      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
-        content: tip
-      }, styledTextResult);
+  if (tipProp || textTruncated) {
+    if (textTruncated) {
+      return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, _extends({
+        content: children
+      }, tipProp), styledTextResult);
     }
 
-    return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tip, styledTextResult);
+    return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, tipProp, styledTextResult);
   }
 
   return styledTextResult;
