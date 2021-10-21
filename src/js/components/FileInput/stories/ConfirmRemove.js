@@ -53,6 +53,10 @@ export const ConfirmRemove = () => (
   </Grommet>
 );
 
+ConfirmRemove.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Input/FileInput/Confirm Remove',
 };
