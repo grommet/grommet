@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
-  act, 
-  cleanup, 
-  fireEvent, 
-  render, 
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
   screen,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -109,11 +109,11 @@ test('Image onError', () => {
 
 test('Image fallback', async () => {
   const onError = jest.fn();
-  const fallbackImage = "https://v2.grommet.io/assets/IMG_4245.jpg";
-  const regularImage = "https://v2.grommet.io/img/stak-hurrah.svg";
+  const fallbackImage = 'https://v2.grommet.io/assets/IMG_4245.jpg';
+  const regularImage = 'https://v2.grommet.io/img/stak-hurrah.svg';
 
   const Test = () => {
-    const [imgSrc, setImgSrc] = useState("");
+    const [imgSrc, setImgSrc] = useState('');
     return (
       <Grommet>
         <Image
@@ -123,21 +123,23 @@ test('Image fallback', async () => {
           alt="test"
           onError={onError}
         />
-        <Button label="Update Image" onClick={() => {
-          setImgSrc(regularImage);
-        }} />
+        <Button
+          label="Update Image"
+          onClick={() => {
+            setImgSrc(regularImage);
+          }}
+        />
       </Grommet>
     );
   };
 
   const { getByAltText } = render(<Test />);
-  
-  fireEvent(getByAltText("test"), new Event('error'));
-  let imgSrc = screen.getByRole<HTMLImageElement>("img").src;
+
+  fireEvent(getByAltText('test'), new Event('error'));
+  let imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(fallbackImage);
 
-  userEvent.click(screen.getByRole("button", {name: /Update Image/i}));
-  imgSrc= screen.getByRole<HTMLImageElement>("img").src;
+  userEvent.click(screen.getByRole('button', { name: /Update Image/i }));
+  imgSrc = screen.getByRole<HTMLImageElement>('img').src;
   expect(imgSrc).toEqual(regularImage);
-
 });
