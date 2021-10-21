@@ -19,7 +19,7 @@ const defaultValidationResults = {
 };
 
 const stringToArray = (string) => {
-  const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
+  const match = string?.match(/^(.+)\[([0-9]+)\]\.(.+)$/);
   if (match) {
     const [, arrayName, indexOfArray, arrayObjName] = match;
     return {
@@ -46,18 +46,12 @@ const setValueForName = (name, componentValue, prevValue) => {
   const isArrayField = stringToArray(name);
   if (isArrayField) {
     const { indexOfArray, arrayName, arrayObjName } = isArrayField;
-    if (!nextValue[arrayName]) {
-      nextValue[arrayName] = [];
+    if (!nextValue[arrayName]) nextValue[arrayName] = [];
+    if (!nextValue[arrayName][indexOfArray])
       nextValue[arrayName][indexOfArray] = {
         [arrayObjName]: componentValue,
       };
-    } else if (!nextValue[arrayName][indexOfArray]) {
-      nextValue[arrayName][indexOfArray] = {
-        [arrayObjName]: componentValue,
-      };
-    } else {
-      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
-    }
+    nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
   } else {
     nextValue[name] = componentValue;
   }

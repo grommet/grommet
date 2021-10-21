@@ -85,12 +85,17 @@ export const ArrayOfFormFields = () => {
         <Form
           value={values}
           validate="blur"
-          onReset={(event) => console.log(event)}
+          onReset={() => {
+            setValues({
+              name: '',
+              phones: [{ number: '', ext: '' }],
+            });
+          }}
           onChange={handleFormChange}
           onValidate={(validationResults) => {
             console.log('validationResults = ', validationResults);
           }}
-          onSubmit={event => {
+          onSubmit={(event) => {
             console.log('Submit', event.value, event.touched);
           }}
         >
