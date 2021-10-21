@@ -30,10 +30,8 @@ var getBoundColor = function getBoundColor(props, bound) {
 var trackColorStyle = function trackColorStyle(props) {
   var _props$theme$rangeInp, _props$theme$rangeInp2;
 
-  var max = props.max || 100; // 'max' defaults to 100 in case not specified
-
-  var min = props.min || 0; // 'min' defaults to 0 in case not specified
-
+  var max = props.max,
+      min = props.min;
   var thumbPosition = (props.value - min) / (max - min) * 100 + "%";
   var defaultTrackColor; // backward compatibility in case no bounds are defined
 

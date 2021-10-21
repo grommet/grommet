@@ -11,7 +11,9 @@ var _StyledRangeInput = require("./StyledRangeInput");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value"];
+var _utils = require("../../utils");
+
+var _excluded = ["a11yTitle", "color", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -29,6 +31,12 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
       valueProp = _ref.value,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? 1 : _ref$step,
+      _ref$min = _ref.min,
+      min = _ref$min === void 0 ? 0 : _ref$min,
+      _ref$max = _ref.max,
+      max = _ref$max === void 0 ? 100 : _ref$max,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded);
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
@@ -44,9 +52,77 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
+  var _useState2 = (0, _react.useState)({
+    x: null,
+    y: null
+  }),
+      scroll = _useState2[0],
+      setScroll = _useState2[1];
+
+  var rangeInputRef = (0, _utils.useForwardedRef)(ref);
+  (0, _react.useEffect)(function () {
+    var x = scroll.x,
+        y = scroll.y;
+
+    if (x !== null && y !== null) {
+      var handleScrollTo = function handleScrollTo() {
+        return window.scrollTo(x, y);
+      };
+
+      window.addEventListener('scroll', handleScrollTo);
+      return function () {
+        return window.removeEventListener('scroll', handleScrollTo);
+      };
+    }
+
+    return undefined;
+  }, [scroll]);
+  var setRangeInputValue = (0, _react.useCallback)(function (nextValue) {
+    if (nextValue > max || nextValue < min) return; // Calling set value function directly on input because React library
+    // overrides setter `event.target.value =` and loses original event
+    // target fidelity.
+    // https://stackoverflow.com/a/46012210
+
+    var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    nativeInputValueSetter.call(rangeInputRef.current, nextValue);
+    var event = new Event('input', {
+      bubbles: true
+    });
+    rangeInputRef.current.dispatchEvent(event);
+  }, [rangeInputRef, min, max]);
+
+  var handleOnWheel = function handleOnWheel(event) {
+    var newValue = parseFloat(value);
+
+    if (event.deltaY < 0) {
+      setRangeInputValue(newValue + step);
+    } else {
+      setRangeInputValue(newValue - step);
+    }
+  }; // This is to make sure scrollbar doesn't move
+  // when user changes RangeInput value.
+
+
+  var handleMouseOver = function handleMouseOver() {
+    return setScroll({
+      x: window.scrollX,
+      y: window.scrollY
+    });
+  };
+
+  var handleMouseOut = function handleMouseOut() {
+    return setScroll({
+      x: null,
+      y: null
+    });
+  };
+
   return /*#__PURE__*/_react["default"].createElement(_StyledRangeInput.StyledRangeInput, _extends({
     "aria-label": a11yTitle,
-    ref: ref,
+    "aria-valuemax": max,
+    "aria-valuemin": min,
+    "aria-valuenow": value,
+    ref: rangeInputRef,
     name: name,
     focus: focus,
     value: value
@@ -64,7 +140,13 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setValue(event.target.value);
       if (_onChange) _onChange(event);
     },
-    type: "range"
+    onMouseOver: handleMouseOver,
+    onMouseOut: handleMouseOut,
+    onWheel: handleOnWheel,
+    step: step,
+    type: "range",
+    min: min,
+    max: max
   }));
 });
 exports.RangeInput = RangeInput;
