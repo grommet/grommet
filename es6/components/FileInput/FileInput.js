@@ -1,10 +1,10 @@
-var _excluded = ["a11yTitle", "background", "border", "disabled", "id", "plain", "renderFile", "maxSize", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
+var _excluded = ["a11yTitle", "background", "border", "confirmRemove", "disabled", "id", "plain", "renderFile", "maxSize", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -63,10 +63,15 @@ var Message = styled(Text).withConfig({
 })(["", ";"], function (props) {
   return props.theme.fileInput && props.theme.fileInput.message && props.theme.fileInput.message.extend;
 });
+var defaultPendingRemoval = {
+  event: undefined,
+  index: undefined
+};
 var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
       border = _ref.border,
+      confirmRemove = _ref.confirmRemove,
       disabled = _ref.disabled,
       id = _ref.id,
       plain = _ref.plain,
@@ -96,11 +101,20 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dragOver = _React$useState2[0],
       setDragOver = _React$useState2[1];
 
+  var _useState = useState(false),
+      showRemoveConfirmation = _useState[0],
+      setShowRemoveConfirmation = _useState[1];
+
+  var _useState2 = useState(defaultPendingRemoval),
+      pendingRemoval = _useState2[0],
+      setPendingRemoval = _useState2[1];
+
   var aggregateThreshold = multiple && multiple.aggregateThreshold || 10;
   var max = multiple == null ? void 0 : multiple.max;
   var inputRef = useForwardedRef(ref);
   var controlRef = useRef();
   var removeRef = useRef();
+  var ConfirmRemove = confirmRemove;
   var RemoveIcon = theme.fileInput.icons.remove;
 
   var _formContext$useFormI = formContext.useFormInput({
@@ -215,7 +229,26 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   } else message = files.length + " items";
 
-  return /*#__PURE__*/React.createElement(ContentsBox, {
+  var removeFile = function removeFile(event, index) {
+    event.stopPropagation();
+    var nextFiles;
+
+    if (index === 'all') {
+      nextFiles = [];
+    } else {
+      nextFiles = [].concat(files);
+      nextFiles.splice(index, 1);
+    }
+
+    setFiles(nextFiles);
+    if (_onChange) _onChange(event, {
+      files: nextFiles
+    });
+    if (nextFiles.length === 0) inputRef.current.value = '';
+    inputRef.current.focus();
+  };
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContentsBox, {
     theme: theme,
     flex: false,
     disabled: disabled,
@@ -290,12 +323,15 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
     hoverIndicator: true,
     onClick: function onClick(event) {
-      event.stopPropagation();
-      if (_onChange) _onChange(event, {
-        files: []
-      });
-      setFiles([]);
-      inputRef.current.focus();
+      if (confirmRemove) {
+        event.persist(); // necessary for when React < v17
+
+        setPendingRemoval({
+          event: event,
+          index: 'all'
+        });
+        setShowRemoveConfirmation(true);
+      } else removeFile(event, 'all');
     }
   }), /*#__PURE__*/React.createElement(Keyboard, {
     onSpace: function onSpace(event) {
@@ -354,15 +390,15 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       icon: /*#__PURE__*/React.createElement(RemoveIcon, null),
       hoverIndicator: true,
       onClick: function onClick(event) {
-        event.stopPropagation();
-        var nextFiles = [].concat(files);
-        nextFiles.splice(index, 1);
-        setFiles(nextFiles);
-        if (_onChange) _onChange(event, {
-          files: nextFiles
-        });
-        if (nextFiles.length === 0) inputRef.current.value = '';
-        inputRef.current.focus();
+        if (confirmRemove) {
+          event.persist(); // necessary for when React < v17
+
+          setPendingRemoval({
+            event: event,
+            index: index
+          });
+          setShowRemoveConfirmation(true);
+        } else removeFile(event, index);
       }
     }), files.length === 1 && /*#__PURE__*/React.createElement(Keyboard, {
       onSpace: function onSpace(event) {
@@ -438,7 +474,16 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         files: nextFiles
       });
     }
-  })));
+  }))), showRemoveConfirmation && /*#__PURE__*/React.createElement(ConfirmRemove, {
+    onConfirm: function onConfirm() {
+      removeFile(pendingRemoval.event, pendingRemoval.index);
+      setPendingRemoval(defaultPendingRemoval);
+      setShowRemoveConfirmation(false);
+    },
+    onCancel: function onCancel() {
+      return setShowRemoveConfirmation(false);
+    }
+  }));
 });
 FileInput.defaultProps = {};
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);

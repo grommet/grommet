@@ -3,6 +3,7 @@ var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    confirmRemove: PropTypes.func,
     disabled: PropTypes.bool,
     id: PropTypes.string,
     messages: PropTypes.shape({

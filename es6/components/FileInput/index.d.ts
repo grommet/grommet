@@ -1,6 +1,13 @@
 import * as React from 'react';
 
 export interface FileInputProps {
+  confirmRemove?: ({
+    onConfirm,
+    onCancel,
+  }: {
+    onConfirm: any;
+    onCancel: any;
+  }) => React.ReactElement;
   disabled?: boolean;
   id?: string;
   maxSize?: number;

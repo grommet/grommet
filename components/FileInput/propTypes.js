@@ -11,6 +11,7 @@ var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    confirmRemove: _propTypes["default"].func,
     disabled: _propTypes["default"].bool,
     id: _propTypes["default"].string,
     messages: _propTypes["default"].shape({
