@@ -24,7 +24,12 @@ export const RequiredLabel = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Form>
-        <FormField name="firstName" htmlFor="firstName" label="First Name">
+        <FormField
+          name="firstName"
+          htmlFor="firstName"
+          label="First Name"
+          required
+        >
           <TextInput id="firstName" name="firstName" />
         </FormField>
         <FormField
