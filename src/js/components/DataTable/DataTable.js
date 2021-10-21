@@ -19,7 +19,6 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
-import { LazyBody } from './LazyBody';
 import { Pagination } from '../Pagination';
 import {
   buildFooterValues,
