@@ -122,6 +122,20 @@ export const textToValue = (text, schema, valueProp, range) => {
   let result;
 
   const addDate = (parts) => {
+    let leapYear;
+    if (parts.y % 4 === 0) {
+      if (parts.y % 100 === 0) {
+        if (parts.y % 400 === 0) {
+          leapYear = true;
+        } else {
+          leapYear = false;
+        }
+      }
+      leapYear = true;
+    } else {
+      leapYear = false;
+    }
+
     // Do a little sanity checking on the parts first.
     // If not valid, leave as is.
     if (
@@ -132,7 +146,9 @@ export const textToValue = (text, schema, valueProp, range) => {
       parts.m.length > 2 ||
       parts.d.length > 2 ||
       parts.m > 12 ||
-      parts.d > 31
+      parts.d > 31 ||
+      (leapYear && (parts.m === `02` || parts.m === `2`) && parts.d > 29) ||
+      (!leapYear && (parts.m === `02` || parts.m === `2`) && parts.d > 28)
     )
       return parts;
 
