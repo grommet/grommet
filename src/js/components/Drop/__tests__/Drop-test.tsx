@@ -27,7 +27,7 @@ const customTheme = {
 interface TestInputProps extends DropExtendedProps {
   inputProps?: any;
   theme?: ThemeType;
-  containerTarget?: any;
+  containerTarget?: HTMLElement;
   message?: string;
 }
 const TestInput = ({
@@ -36,10 +36,10 @@ const TestInput = ({
   containerTarget,
   message = 'this is a test',
   ...rest
-}: TestInputProps = {}) => {
-  const [showDrop, setShowDrop] = useState(false);
+}: TestInputProps) => {
+  const [showDrop, setShowDrop] = useState<boolean>(false);
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     setShowDrop(true);
@@ -210,7 +210,7 @@ describe('Drop', () => {
     expect(actualRoot).toBe(document.body);
   });
 
-  const alignPositions = [
+  const alignPositions: TestInputProps['align'][] = [
     { top: 'bottom' },
     { top: 'top', left: 'right' },
     { top: 'top', right: 'left' },
@@ -243,7 +243,6 @@ describe('Drop', () => {
         <TestInput
           id="margin-drop-test"
           theme={customMarginTheme}
-          // @ts-ignore
           align={alignPosition}
         />,
       );
