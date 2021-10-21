@@ -343,6 +343,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     requiredIndicator = /*#__PURE__*/React.createElement(RequiredText, {
       a11yTitle: "required"
     }, "*");
+  var showRequiredIndicator = required && requiredIndicator;
+  if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
@@ -377,7 +379,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, containerRest), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, labelStyle), label, required && requiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
+  }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
   }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({
     type: "error",

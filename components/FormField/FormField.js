@@ -368,6 +368,8 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     requiredIndicator = /*#__PURE__*/_react["default"].createElement(RequiredText, {
       a11yTitle: "required"
     }, "*");
+  var showRequiredIndicator = required && requiredIndicator;
+  if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
   return /*#__PURE__*/_react["default"].createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
@@ -402,7 +404,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, containerRest), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, labelStyle), label, required && requiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
+  }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help
   }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({
     type: "error",

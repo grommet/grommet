@@ -25,7 +25,9 @@ if (process.env.NODE_ENV !== 'production') {
     name: _propTypes["default"].string,
     margin: _generalPropTypes.marginProp,
     pad: _propTypes["default"].bool,
-    required: _propTypes["default"].bool,
+    required: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
+      indicator: _propTypes["default"].bool
+    })]),
     validate: _propTypes["default"].oneOfType([_propTypes["default"].shape({
       regexp: _propTypes["default"].instanceOf(RegExp),
       // regular expression
