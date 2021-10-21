@@ -1,4 +1,10 @@
-import React, { forwardRef, useContext, useState, useCallback } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+} from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
@@ -30,7 +36,21 @@ const RangeInput = forwardRef(
     });
 
     const [focus, setFocus] = useState();
+    const [scroll, setScroll] = useState({
+      x: null,
+      y: null,
+    });
     const rangeInputRef = useForwardedRef(ref);
+
+    useEffect(() => {
+      const { x, y } = scroll;
+      if (x !== null && y !== null) {
+        const handleScrollTo = () => window.scrollTo(x, y);
+        window.addEventListener('scroll', handleScrollTo);
+        return () => window.removeEventListener('scroll', handleScrollTo);
+      }
+      return undefined;
+    }, [scroll]);
 
     const setRangeInputValue = useCallback(
       (nextValue) => {
@@ -60,14 +80,9 @@ const RangeInput = forwardRef(
     };
     // This is to make sure scrollbar doesn't move
     // when user changes RangeInput value.
-    const handleMouseOver = () => {
-      const x = window.scrollX;
-      const y = window.scrollY;
-      window.onscroll = () => window.scrollTo(x, y);
-    };
-    const handleMouseOut = () => {
-      window.onscroll = null;
-    };
+    const handleMouseOver = () =>
+      setScroll({ x: window.scrollX, y: window.scrollY });
+    const handleMouseOut = () => setScroll({ x: null, y: null });
 
     return (
       <StyledRangeInput
