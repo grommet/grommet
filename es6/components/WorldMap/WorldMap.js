@@ -21,19 +21,16 @@ var FACTOR = 10; // Mapping constants between coordinates and latitude+longitude
 // we have a few adjustments that we've empirically determined. The following
 // cities were used to make the empirical determinations:
 // London (0 lon), Quito (0 lat), Nome (far west), Sydney (far east),
-// Svalbard (far north), Ushuaia (far south)
-// This maps to reality, is isn't adjusted.
+// Svalbard (far north), Ushuaia (far south).
+// These map to reality, they aren't adjusted.
 
-var EQUATOR_Y = 32; // Use slightly different widths for latitude and longitude calculations,
-// just to get the cities to be placed closer to where they are.
+var EQUATOR_Y = 32;
+var WIDTH = 93; // Scale the latitude and longitude to align better with actual locations.
 
-var LON_WIDTH = 94;
-var LAT_WIDTH = 92; // Scale the latitude so we are a bit more compressed vertically.
-// Without this, adjusting the width couldn't be used alone to get the vertical
-// alignment close.
+var LAT_SCALE = 0.98; // adjust more extreme latitudes to fit with the map dots better
 
-var LAT_SCALE = 0.91; // We shift the map coordinates just a bit to align better with actual
-// locations.
+var LAT_EXTREME_SCALE = 0.91;
+var LON_SCALE = 0.99; // We shift the map coordinates to align better with actual locations.
 
 var X_OFFSET = -2;
 var Y_OFFSET = -2; // The continents have both an area boundary for interaction
@@ -85,20 +82,25 @@ var midPoint = function midPoint(bounds) {
 var latLonToCoord = function latLonToCoord(_ref) {
   var lat = _ref[0],
       lon = _ref[1];
-  var x = Math.round((lon + 180) * (LON_WIDTH / 360));
-  var latRad = lat * Math.PI / 180 * LAT_SCALE;
+  var scaledLon = lon * LON_SCALE;
+  var x = Math.round((scaledLon + 180) * (WIDTH / 360)); // adjust more extreme latitudes to fit with the map dots better
+
+  var scaledLat = lat * (lat > 60 || lat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+  var latRad = scaledLat * Math.PI / 180;
   var mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
-  var y = Math.round(EQUATOR_Y - LAT_WIDTH * mercN / (2 * Math.PI));
+  var y = Math.round(EQUATOR_Y - WIDTH * mercN / (2 * Math.PI));
   return [x + X_OFFSET, y + Y_OFFSET];
 };
 
 var coordToLatLon = function coordToLatLon(_ref2) {
   var x = _ref2[0],
       y = _ref2[1];
-  var mercN = (EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI) / LAT_WIDTH;
+  var mercN = (EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI) / WIDTH;
   var latRad = (Math.atan(Math.exp(mercN)) - Math.PI / 4) * 2;
-  var lat = latRad / LAT_SCALE * (180 / Math.PI);
-  var lon = (x - X_OFFSET) * 360 / LON_WIDTH - 180;
+  var scaledLat = latRad * 180 / Math.PI / LAT_SCALE; // adjust more extreme latitudes to fit with the map dots better
+
+  var lat = scaledLat / (scaledLat > 60 || scaledLat < -50 ? LAT_EXTREME_SCALE : LAT_SCALE);
+  var lon = (x - X_OFFSET) * 360 / WIDTH - 180;
   return [lat, lon];
 };
 
