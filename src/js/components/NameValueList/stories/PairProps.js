@@ -3,7 +3,7 @@ import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data } from './data';
 
-export const Direction = () => (
+export const PairProps = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="large">
       <>
@@ -23,5 +23,5 @@ export const Direction = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Direction',
+  title: 'Visualizations/NameValueList/Pair Props',
 };
