@@ -9,7 +9,8 @@ import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
-import { Drop } from '..';
+import { Drop, DropExtendedProps } from '..';
+import { ThemeType } from '../../../themes';
 
 const customTheme = {
   global: {
@@ -23,18 +24,22 @@ const customTheme = {
   },
 };
 
+interface TestInputProps extends DropExtendedProps {
+  inputProps?: any;
+  theme?: ThemeType;
+  containerTarget?: any;
+  message?: string;
+}
 const TestInput = ({
   inputProps,
   theme,
-  elevation,
   containerTarget,
   message = 'this is a test',
-  align,
   ...rest
-}) => {
+}: TestInputProps = {}) => {
   const [showDrop, setShowDrop] = useState(false);
 
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setShowDrop(true);
@@ -44,13 +49,7 @@ const TestInput = ({
 
   if (showDrop) {
     drop = (
-      <Drop
-        id="drop-node"
-        elevation={elevation}
-        target={inputRef.current}
-        align={align}
-        {...rest}
-      >
+      <Drop id="drop-node" target={inputRef.current || undefined} {...rest}>
         {message}
       </Drop>
     );
@@ -113,6 +112,7 @@ describe('Drop', () => {
   });
 
   test('invalid align', () => {
+    // @ts-ignore
     render(<TestInput align={{ whatever: 'right' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
@@ -151,7 +151,9 @@ describe('Drop', () => {
 
   test('resize', () => {
     render(<TestInput />);
+    // @ts-ignore
     global.window.innerWidth = 1000;
+    // @ts-ignore
     global.window.innerHeight = 1000;
     fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
     expectPortal('drop-node').toMatchSnapshot();
@@ -204,7 +206,7 @@ describe('Drop', () => {
 
   test('default containerTarget', () => {
     const { getByTestId } = render(<TestInput data-testid="drop" />);
-    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    const actualRoot = getByTestId('drop')?.parentNode?.parentNode?.parentNode;
     expect(actualRoot).toBe(document.body);
   });
 
@@ -241,6 +243,7 @@ describe('Drop', () => {
         <TestInput
           id="margin-drop-test"
           theme={customMarginTheme}
+          // @ts-ignore
           align={alignPosition}
         />,
       );
@@ -256,7 +259,7 @@ test('custom containerTarget', () => {
     const { getByTestId } = render(
       <TestInput data-testid="drop" containerTarget={target} />,
     );
-    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    const actualRoot = getByTestId('drop')?.parentNode?.parentNode?.parentNode;
     expect(actualRoot).toBe(target);
   } finally {
     document.body.removeChild(target);
