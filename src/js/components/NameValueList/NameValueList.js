@@ -21,8 +21,8 @@ const NameValueList = forwardRef(
     const theme = useContext(ThemeContext);
 
     // If layout is grid, valueWidth sets the max width of the column.
-    // We will 'fit' as many columns of valueWidth per row as we can
-
+    // Grid will 'fit' as many columns of valueWidth per row as container's 
+    // width allows.
     let columns;
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
