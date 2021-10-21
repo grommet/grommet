@@ -5,13 +5,12 @@ import { ImagePropTypes } from './propTypes';
 const Image = forwardRef(
   ({ a11yTitle, fallback, onError, opacity, fill, src, ...rest }, ref) => {
     const [isFallbackInUse, setFallbackInUse] = useState(false);
-    
-    const handleError = (event)=>{
-      if (onError)
-        onError(event);
-      if (!isFallbackInUse && fallback && fallback !== "") {
+
+    const handleError = (event) => {
+      if (onError) onError(event);
+      if (!isFallbackInUse && fallback && fallback !== '') {
         // eslint-disable-next-line no-param-reassign
-        event.target.src=fallback;
+        event.target.src = fallback;
         setFallbackInUse(true);
       }
     };
@@ -22,7 +21,7 @@ const Image = forwardRef(
 
     const extraProps = {
       onError: (onError || fallback) && handleError,
-      onLoad : handleOnLoad,
+      onLoad: handleOnLoad,
     };
 
     return (
@@ -33,7 +32,7 @@ const Image = forwardRef(
         ref={ref}
         opacityProp={opacity}
         fillProp={fill}
-        src={src === undefined ? "" : src}
+        src={src === undefined ? '' : src}
       />
     );
   },

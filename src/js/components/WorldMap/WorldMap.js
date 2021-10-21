@@ -9,7 +9,35 @@ import { StyledWorldMap } from './StyledWorldMap';
 import { WorldMapPropTypes } from './propTypes';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
-// by FACTOR pixels. The contents have both an area boundary for interaction
+// by FACTOR pixels.
+const FACTOR = 10;
+
+// Mapping constants between coordinates and latitude+longitude.
+// The map coordinate space isn't precisely a mercator projection. So,
+// we have a few adjustments that we've empirically determined. The following
+// cities were used to make the empirical determinations:
+// London (0 lon), Quito (0 lat), Nome (far west), Sydney (far east),
+// Svalbard (far north), Ushuaia (far south)
+
+// This maps to reality, is isn't adjusted.
+const EQUATOR_Y = 32;
+
+// Use slightly different widths for latitude and longitude calculations,
+// just to get the cities to be placed closer to where they are.
+const LON_WIDTH = 94;
+const LAT_WIDTH = 92;
+
+// Scale the latitude so we are a bit more compressed vertically.
+// Without this, adjusting the width couldn't be used alone to get the vertical
+// alignment close.
+const LAT_SCALE = 0.91;
+
+// We shift the map coordinates just a bit to align better with actual
+// locations.
+const X_OFFSET = -2;
+const Y_OFFSET = -2;
+
+// The continents have both an area boundary for interaction
 // and dots described as rows where each row is described by three values:
 // a starting coordinate and a length. This approach is more efficient than
 // describing it via SVG elements, keeping the code/library size smaller.
@@ -127,7 +155,6 @@ const CONTINENTS = [
     ],
   },
   {
-    // 21X, 40Y
     name: 'Africa',
     origin: [40, 19],
     area: [
@@ -339,58 +366,38 @@ const CONTINENTS = [
   },
 ];
 
-// FACTOR is the distance in pixels between coordinates
-const FACTOR = 10;
+const mergeBounds = (bounds1, bounds2) => [
+  bounds1 ? Math.min(bounds1[0], bounds2[0]) : bounds2[0],
+  bounds1 ? Math.min(bounds1[1], bounds2[1]) : bounds2[1],
+  bounds1 ? Math.max(bounds1[2], bounds2[2]) : bounds2[2],
+  bounds1 ? Math.max(bounds1[3], bounds2[3]) : bounds2[3],
+];
 
-const maxCoordinate = (a, b) => [Math.max(a[0], b[0]), Math.max(a[1], b[1])];
-// const minCoordinate = (a, b) =>
-//   [Math.min(a[0], b[0]), Math.min(a[1], b[1])];
+const midPoint = (bounds) => [
+  bounds[0] + (bounds[2] - bounds[0]) / 2,
+  bounds[1] + (bounds[3] - bounds[1]) / 2,
+];
 
-// Based on https://stackoverflow.com/a/43861247
-const MAP_LAT_BOTTOM = -50.0; // empirically determined
-const MAP_LAT_BOTTOM_RAD = (MAP_LAT_BOTTOM * Math.PI) / 180;
-const MAP_LON_LEFT = -171.0; // empirically determined
-const MAP_LON_RIGHT = 184.0; // empirically determined
-const MAP_LON_DELTA = MAP_LON_RIGHT - MAP_LON_LEFT;
-
-const mapValues = (extent) => {
-  const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
-  const mapOffsetY = Math.round(
-    (mapRadius / 2) *
-      Math.log(
-        (1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD)),
-      ),
-  );
-  return { mapRadius, mapOffsetY };
+// from https://stackoverflow.com/a/14457180/8513067
+const latLonToCoord = ([lat, lon]) => {
+  const x = Math.round((lon + 180) * (LON_WIDTH / 360));
+  const latRad = ((lat * Math.PI) / 180) * LAT_SCALE;
+  const mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2));
+  const y = Math.round(EQUATOR_Y - (LAT_WIDTH * mercN) / (2 * Math.PI));
+  return [x + X_OFFSET, y + Y_OFFSET];
 };
 
-const latLonToCoord = (latLon, origin, extent) => {
-  const { mapRadius, mapOffsetY } = mapValues(extent);
-  const x = Math.round(
-    ((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA,
-  );
-  const latitudeRad = (latLon[0] * Math.PI) / 180;
-  const y =
-    extent[1] +
-    mapOffsetY -
-    Math.round(
-      (mapRadius / 2) *
-        Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))),
-    );
-  return [x, y]; // the coordinate value of this point on the map image
-};
-
-const coordToLatLon = (coord, origin, extent) => {
-  const { mapRadius, mapOffsetY } = mapValues(extent);
-  const a = (extent[1] + mapOffsetY - coord[1]) / mapRadius;
-  const lat = (180 / Math.PI) * (2 * Math.atan(Math.exp(a)) - Math.PI / 2);
-  const lon = (coord[0] * MAP_LON_DELTA) / extent[0] + MAP_LON_LEFT;
+const coordToLatLon = ([x, y]) => {
+  const mercN = ((EQUATOR_Y - (y - Y_OFFSET)) * (2 * Math.PI)) / LAT_WIDTH;
+  const latRad = (Math.atan(Math.exp(mercN)) - Math.PI / 4) * 2;
+  const lat = (latRad / LAT_SCALE) * (180 / Math.PI);
+  const lon = ((x - X_OFFSET) * 360) / LON_WIDTH - 180;
   return [lat, lon];
 };
 
-const buildContinent = ({ area, dots, name, origin }) => {
-  let extent = [...origin];
-  const stateDots = dots
+const buildContinent = ({ area: areaProp, dots: dotsProp, name, origin }) => {
+  let bounds = [origin[0], origin[1], origin[0], origin[1]];
+  const dots = dotsProp
     .map((segment) => {
       const count = segment[2];
       const spots = [];
@@ -398,7 +405,9 @@ const buildContinent = ({ area, dots, name, origin }) => {
       const dotCommands = spots.join(' m10,0 ');
       const x = FACTOR * (origin[0] + segment[0] + 1);
       const y = FACTOR * (origin[1] + segment[1] + 1);
-      extent = maxCoordinate(extent, [
+      bounds = mergeBounds(bounds, [
+        origin[0],
+        origin[1],
         origin[0] + segment[0] + segment[2],
         origin[1] + segment[1],
       ]);
@@ -406,7 +415,7 @@ const buildContinent = ({ area, dots, name, origin }) => {
     })
     .join(' ');
 
-  const stateArea = `${area
+  const area = `${areaProp
     .map((point, index) => {
       const x = FACTOR * (point[0] + origin[0] + 1);
       const y = FACTOR * (point[1] + origin[1] + 1);
@@ -414,37 +423,25 @@ const buildContinent = ({ area, dots, name, origin }) => {
     })
     .join(' ')} Z`;
 
-  const mid = [
-    origin[0] + (extent[0] - origin[0]) / 2,
-    origin[1] + (extent[1] - origin[1]) / 2,
-  ];
-  return {
-    area: stateArea,
-    dots: stateDots,
-    name,
-    origin,
-    extent,
-    mid,
-  };
+  const mid = midPoint(bounds);
+  return { area, dots, name, origin, bounds, mid };
 };
 
 const buildWorld = () => {
   // Build the SVG paths describing the individual dots
   const continents = CONTINENTS.map(buildContinent);
-  const origin = [0, 0];
-  let extent = [0, 0];
+  let bounds;
   continents.forEach((continent) => {
-    extent = maxCoordinate(extent, continent.extent);
+    bounds = mergeBounds(bounds, continent.bounds);
   });
 
   return {
     continents,
-    extent,
-    origin,
-    x: origin[0] * FACTOR,
-    y: origin[1] * FACTOR,
-    width: (extent[0] - origin[0] + 1) * FACTOR,
-    height: (extent[1] - origin[1] + 2) * FACTOR,
+    bounds,
+    x: bounds[0] * FACTOR,
+    y: bounds[1] * FACTOR,
+    width: (bounds[2] - bounds[0] + 1) * FACTOR,
+    height: (bounds[3] - bounds[1] + 2) * FACTOR,
   };
 };
 
@@ -523,7 +520,7 @@ const WorldMap = forwardRef(
       if (placesProp) {
         setPlaces(
           placesProp.map(({ location, ...place }) => {
-            const coords = latLonToCoord(location, world.origin, world.extent);
+            const coords = latLonToCoord(location);
             return { coords, key: location.join(','), ...place };
           }),
         );
@@ -676,9 +673,7 @@ const WorldMap = forwardRef(
           fill="none"
           fillRule="evenodd"
           onClick={() =>
-            onSelectPlace(
-              coordToLatLon(activeCoords, world.origin, world.extent),
-            )
+            onSelectPlace(coordToLatLon(activeCoords, world.bounds))
           }
         >
           <path
