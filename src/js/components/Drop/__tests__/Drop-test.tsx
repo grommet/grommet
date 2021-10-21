@@ -25,13 +25,11 @@ const customTheme = {
 };
 
 interface TestInputProps extends DropExtendedProps {
-  inputProps?: any;
   theme?: ThemeType;
   containerTarget?: HTMLElement;
   message?: string;
 }
 const TestInput = ({
-  inputProps,
   theme,
   containerTarget,
   message = 'this is a test',
@@ -56,7 +54,7 @@ const TestInput = ({
   }
   return (
     <Grommet theme={theme} containerTarget={containerTarget}>
-      <input ref={inputRef} {...inputProps} aria-label="test" />
+      <input ref={inputRef} aria-label="test" />
       {drop}
     </Grommet>
   );
