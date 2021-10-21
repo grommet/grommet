@@ -19,7 +19,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
   },
 });
 
-export const Custom = () => (
+export const Themed = () => (
   <Grommet theme={customTheme}>
     <Box pad="small">
       <NameValueList pairProps={{ direction: 'column' }}>
@@ -36,5 +36,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Custom',
+  title: 'Visualizations/NameValueList/Themed',
 };
