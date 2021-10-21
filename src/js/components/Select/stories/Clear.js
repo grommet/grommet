@@ -4,29 +4,71 @@ import { Box, Grommet, Select, grommet } from 'grommet';
 
 const options = ['one', 'two', 'three'];
 
-const ClearTop = () => {
+export const Top = () => {
   const [value, setValue] = useState();
   return (
-    <Box fill align="center" justify="start" pad="large">
-      <Select
-        placeholder="Clear Options"
-        multiple
-        value={value}
-        options={options}
-        onChange={({ value: nextValue }) => setValue(nextValue)}
-        clear
-      />
-    </Box>
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          placeholder="Clear Options"
+          multiple
+          value={value}
+          options={options}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
+          clear
+        />
+      </Box>
+    </Grommet>
   );
 };
+Top.parameters = {
+  chromatic: { disable: true },
+};
 
-export const Clear = () => (
-  <Grommet theme={grommet}>
-    <ClearTop />
-  </Grommet>
-);
+export const Bottom = () => {
+  const [value, setValue] = useState();
+  return (
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          placeholder="Clear Options"
+          multiple
+          value={value}
+          options={options}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
+          clear={{ position: 'bottom' }}
+        />
+      </Box>
+    </Grommet>
+  );
+};
+Bottom.parameters = {
+  chromatic: { disable: true },
+};
 
-Clear.parameters = {
+export const HoverIndicator = () => {
+  const [value, setValue] = useState();
+  return (
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          placeholder="Clear Options"
+          multiple
+          value={value}
+          options={options}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
+          clear={{
+            hoverIndicator: {
+              background: '#f00',
+              color: { light: '#fff' },
+            },
+          }}
+        />
+      </Box>
+    </Grommet>
+  );
+};
+HoverIndicator.parameters = {
   chromatic: { disable: true },
 };
 

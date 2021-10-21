@@ -604,15 +604,14 @@ describe('Box', () => {
       <Grommet>
         <Box>
           <Box onClick={() => {}} hoverIndicator />
-          <Box onClick={() => {}} hoverIndicator="background-contrast" />\
           <Box
             onClick={() => {}}
-            hoverIndicator={{ color: 'background-contrast' }}
+            hoverIndicator={{ background: 'background-contrast' }}
           />
+          <Box onClick={() => {}} hoverIndicator={{ color: 'text-strong' }} />
           <Box
             onClick={() => {}}
             hoverIndicator={{
-              background: { color: 'background-contrast' },
               elevation: 'medium',
             }}
           />

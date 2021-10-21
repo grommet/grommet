@@ -346,10 +346,10 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('hoverIndicator background', () => {
+  test('hoverIndicator background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator="background">
+        <Button onClick={() => {}} hoverIndicator={{ background: 'light-1' }}>
           hoverIndicator
         </Button>
       </Grommet>,
@@ -357,33 +357,16 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(221,221,221,0.4)', {
+    ).toHaveStyleRule('background-color', '#F8F8F8', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('hoverIndicator as object with color', () => {
+  test('hoverIndicator invalid background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ color: 'brand' }}>
-          hoverIndicator
-        </Button>
-      </Grommet>,
-    );
-
-    expect(
-      screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(125,76,219,1)', {
-      modifier: ':hover',
-    });
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('hoverIndicator as object with invalid color', () => {
-    const { container } = render(
-      <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ color: 'invalid' }}>
+        <Button onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
           hoverIndicator
         </Button>
       </Grommet>,
@@ -392,10 +375,22 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('hoverIndicator color', () => {
+  test('hoverIndicator text color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator="dark-3">
+        <Button onClick={() => {}} hoverIndicator={{ color: 'text-strong' }}>
+          hoverIndicator
+        </Button>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('hoverIndicator elevation', () => {
+    const { container } = render(
+      <Grommet>
+        <Button onClick={() => {}} hoverIndicator={{ elevation: 'medium' }}>
           hoverIndicator
         </Button>
       </Grommet>,

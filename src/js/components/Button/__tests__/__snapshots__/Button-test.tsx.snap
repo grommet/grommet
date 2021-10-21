@@ -3082,7 +3082,7 @@ exports[`Button focus 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with color 1`] = `
+exports[`Button hoverIndicator background color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3102,8 +3102,8 @@ exports[`Button hoverIndicator as object with color 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(125,76,219,1);
-  color: #FFFFFF;
+  background-color: #F8F8F8;
+  color: #444444;
 }
 
 .c1:focus {
@@ -3168,7 +3168,7 @@ exports[`Button hoverIndicator as object with color 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with invalid color 1`] = `
+exports[`Button hoverIndicator elevation 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3188,8 +3188,7 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
 }
 
 .c1:hover {
-  background-color: invalid;
-  color: #000000;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c1:focus {
@@ -3254,7 +3253,7 @@ exports[`Button hoverIndicator as object with invalid color 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator background 1`] = `
+exports[`Button hoverIndicator invalid background color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3274,8 +3273,7 @@ exports[`Button hoverIndicator background 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  background: invalid;
 }
 
 .c1:focus {
@@ -3340,7 +3338,7 @@ exports[`Button hoverIndicator background 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator color 1`] = `
+exports[`Button hoverIndicator text color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -3357,11 +3355,6 @@ exports[`Button hoverIndicator color 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c1:hover {
-  background-color: #777777;
-  color: #FFFFFF;
 }
 
 .c1:focus {

@@ -4,6 +4,7 @@ import {
   AlignSelfType,
   BackgroundType,
   ColorType,
+  ElevationType,
   FillType,
   GapType,
   GridAreaType,
@@ -34,7 +35,13 @@ export interface ButtonProps {
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?:
+    | {
+        background?: BackgroundType;
+        color?: ColorType;
+        elevation?: ElevationType;
+      }
+    | boolean;
   href?: string;
   justify?:
     | 'around'

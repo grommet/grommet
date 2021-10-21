@@ -1191,6 +1191,11 @@ export interface ThemeType {
     background?: BackgroundType;
     clear?: {
       container?: BoxProps;
+      hoverIndicator?: {
+        background?: BackgroundType;
+        color?: ColorType;
+        extend?: ExtendType;
+      };
       text?: TextProps;
     };
     container?: {
