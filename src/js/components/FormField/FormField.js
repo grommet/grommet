@@ -436,8 +436,12 @@ const FormField = forwardRef(
       // a11yTitle necessary so screenreader announces as "required"
       // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-
       requiredIndicator = <RequiredText a11yTitle="required">*</RequiredText>;
+
+    let showRequiredIndicator = required && requiredIndicator;
+    if (typeof required === 'object' && required.indicator === false)
+      showRequiredIndicator = false;
+
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -481,7 +485,7 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
-                {required && requiredIndicator ? requiredIndicator : undefined}
+                {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />

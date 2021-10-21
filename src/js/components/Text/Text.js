@@ -14,14 +14,16 @@ const Text = forwardRef(
       as,
       tip: tipProp,
       // can't alphabetize a11yTitle before tip is defined
-      a11yTitle = typeof tipProp === 'string' ? tipProp : undefined,
+      a11yTitle = (typeof tipProp === 'string' && tipProp) ||
+        tipProp?.content ||
+        undefined,
       truncate,
       ...rest
     },
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
-    const [tip, setTip] = useState(tipProp);
+    const [textTruncated, setTextTruncated] = useState(false);
 
     // place the text content in a tip if truncate === 'tip'
     // and the text has been truncated
@@ -31,8 +33,8 @@ const Text = forwardRef(
           textRef.current &&
           textRef.current.scrollWidth > textRef.current.offsetWidth
         ) {
-          setTip(children);
-        } else setTip(undefined);
+          setTextTruncated(true);
+        }
       }
     }, [children, textRef, truncate]);
 
@@ -49,11 +51,15 @@ const Text = forwardRef(
       </StyledText>
     );
 
-    if (tip) {
-      if (typeof tip === 'string') {
-        return <Tip content={tip}>{styledTextResult}</Tip>;
+    if (tipProp || textTruncated) {
+      if (textTruncated) {
+        return (
+          <Tip content={children} {...tipProp}>
+            {styledTextResult}
+          </Tip>
+        );
       }
-      return <Tip {...tip}>{styledTextResult}</Tip>;
+      return <Tip {...tipProp}>{styledTextResult}</Tip>;
     }
 
     return styledTextResult;
