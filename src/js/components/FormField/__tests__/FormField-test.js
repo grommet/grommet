@@ -400,4 +400,24 @@ describe('FormField', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should not render asterisk when required.indicator === false', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              requiredIndicator: true,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" required={{ indicator: false }} />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
