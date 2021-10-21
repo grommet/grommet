@@ -52,6 +52,10 @@ var StyledMessageContainer = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.messageType && props.theme.formField[props.messageType].container && props.theme.formField[props.messageType].container.extend;
 });
+var RequiredText = styled(Text).withConfig({
+  displayName: "FormField__RequiredText",
+  componentId: "sc-m9hood-3"
+})(["color:inherit;font-weight:inherit;line-height:inherit;"]);
 
 var Message = function Message(_ref) {
   var error = _ref.error,
@@ -336,7 +340,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   if (requiredIndicator === true) // a11yTitle necessary so screenreader announces as "required"
     // as opposed to "star"
     // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-    requiredIndicator = /*#__PURE__*/React.createElement(Text, {
+    requiredIndicator = /*#__PURE__*/React.createElement(RequiredText, {
       a11yTitle: "required"
     }, "*");
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
