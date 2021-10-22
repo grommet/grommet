@@ -10,7 +10,14 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({ message, onClose, status, title, toast }) => {
+const Notification = ({
+  autoClose = true,
+  message,
+  onClose,
+  status,
+  title,
+  toast,
+}) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
@@ -20,10 +27,12 @@ const Notification = ({ message, onClose, status, title, toast }) => {
   }, [onClose]);
 
   useEffect(() => {
-    const timer = setTimeout(close, theme.notification.time);
-
-    return () => clearTimeout(timer);
-  }, [close, theme.notification.time]);
+    if (autoClose) {
+      const timer = setTimeout(close, theme.notification.time);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [autoClose, close, theme.notification.time]);
 
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];

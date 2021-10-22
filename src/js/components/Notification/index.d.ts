@@ -3,6 +3,7 @@ import * as React from 'react';
 export type StatusType = 'critical' | 'warning' | 'normal' | 'unknown';
 
 export interface NotificationProps {
+  autoClose?: boolean;
   title: string;
   message?: string;
   status?: StatusType;
