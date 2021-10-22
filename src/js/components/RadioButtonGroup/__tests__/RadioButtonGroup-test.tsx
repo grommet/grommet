@@ -134,12 +134,10 @@ describe('RadioButtonGroup', () => {
             {
               id: 'ONE',
               value: '1',
-              'data-testid': 'testid-1',
             },
             {
               id: 'TWO',
               value: '2',
-              'data-testid': 'testid-2',
             },
           ]}
         />
@@ -202,7 +200,7 @@ describe('RadioButtonGroup', () => {
   test('Works with keyboard', async () => {
     const onChange = jest.fn();
 
-    const { getByTestId } = render(
+    const { container } = render(
       <Grommet>
         <RadioButtonGroup
           name="test"
@@ -211,17 +209,14 @@ describe('RadioButtonGroup', () => {
             {
               id: 'ONE',
               value: '1',
-              'data-testid': 'testid-1',
             },
             {
               id: 'TWO',
               value: '2',
-              'data-testid': 'testid-2',
             },
             {
               id: 'THREE',
               value: '3',
-              'data-testid': 'testid-3',
             },
           ]}
           onChange={onChange}
@@ -231,13 +226,15 @@ describe('RadioButtonGroup', () => {
 
     // Focus radio '2' button and simulate ArrowDown key
     // should result in selecting radio '3'
-    const middleRadioBtn = getByTestId('testid-2');
+    const middleRadioBtn = container.querySelector(
+      'input[type="radio"]#ONE',
+    ) as HTMLInputElement;
     middleRadioBtn.focus();
 
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
 
-    await waitFor(() => getByTestId('testid-2'));
+    await waitFor(() => container.querySelector('input[type="radio"]#TWO'));
     setTimeout(() => {
       fireEvent.keyDown(middleRadioBtn, {
         key: 'ArrowDown',
@@ -255,7 +252,7 @@ describe('RadioButtonGroup', () => {
     // Focus radio '2' button and simulate ArrowUp key
     // should result in selecting radio '1'
     middleRadioBtn.focus();
-    await waitFor(() => getByTestId('testid-2'));
+    await waitFor(() => container.querySelector('input[type="radio"]#TWO'));
     setTimeout(() => {
       fireEvent.keyDown(middleRadioBtn, {
         key: 'ArrowUp',

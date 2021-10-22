@@ -14,7 +14,6 @@ export interface RadioButtonGroupProps {
         id?: string;
         label?: string | React.ReactNode;
         value: string | number | boolean;
-        [key: string]: any; // optionRest
       }
   )[];
   value?: string | number | boolean | object;
