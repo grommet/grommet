@@ -1145,6 +1145,19 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
+  nameValueList?: {
+    gap?: { row?: GapType; column?: GapType };
+    name?: {
+      width: string;
+    };
+    value?: {
+      width: string;
+    };
+  };
+  nameValuePair?: {
+    name?: TextProps;
+    value?: TextProps;
+  };
   radioButtonGroup?: {
     container?: BoxProps;
   };
