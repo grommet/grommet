@@ -31,12 +31,11 @@ test('renders', () => {
 });
 
 test('accepts ref', () => {
-  const ref = React.createRef();
+  const ref = React.createRef<HTMLParagraphElement>();
   const { container } = render(
     <Grommet>
       <Text ref={ref}>text</Text>
     </Grommet>,
-    { createNodeMock: (el) => el },
   );
 
   expect(ref.current).not.toBeNull();
