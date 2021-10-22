@@ -42,6 +42,8 @@ export * from './components/Menu';
 export * from './components/Meter';
 export * from './components/Pagination';
 export * from './components/Paragraph';
+export * from './components/NameValueList';
+export * from './components/NameValuePair';
 export * from './components/Nav';
 export * from './components/Notification';
 export * from './components/RadioButton';

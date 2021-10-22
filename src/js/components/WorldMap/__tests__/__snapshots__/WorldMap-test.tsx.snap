@@ -1247,7 +1247,7 @@ exports[`WorldMap onSelectPlace and events of places 1`] = `
     </g>
     <path
       aria-label="Sydney"
-      d="M840, 380 h0"
+      d="M830, 390 h0"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
@@ -1361,7 +1361,7 @@ exports[`WorldMap onSelectPlace and events of places 2`] = `
     </g>
     <path
       aria-label="Sydney"
-      d="M840, 380 h0"
+      d="M830, 390 h0"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
@@ -1475,7 +1475,7 @@ exports[`WorldMap onSelectPlace and events of places 3`] = `
     </g>
     <path
       aria-label="Sydney"
-      d="M840, 380 h0"
+      d="M830, 390 h0"
       role="button"
       stroke="#EDEDED"
       stroke-linecap="round"
@@ -1603,7 +1603,7 @@ exports[`WorldMap places 1`] = `
     </g>
     <path
       aria-label="Sydney"
-      d="M840, 380 h0"
+      d="M830, 390 h0"
       role="button"
       stroke="#6FFFB0"
       stroke-linecap="round"
@@ -1738,7 +1738,7 @@ exports[`WorldMap places content 1`] = `
       </g>
     </g>
     <path
-      d="M840, 380 h0"
+      d="M830, 390 h0"
       stroke="#6FFFB0"
       stroke-linecap="round"
       stroke-width="8"

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import {
+  alignPropType,
   genericProps,
   heightPropType,
   padPropType,
@@ -74,10 +75,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
-    align: PropTypes.oneOfType([
-      PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']),
-      PropTypes.string,
-    ]),
+    align: alignPropType,
     alignContent: PropTypes.oneOfType([
       PropTypes.oneOf([
         'around',
