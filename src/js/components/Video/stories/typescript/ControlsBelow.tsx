@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleVideo = props => (
+const SimpleVideo = (props) => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Video {...props}>
@@ -25,7 +25,14 @@ const SimpleVideo = props => (
   </Grommet>
 );
 
-export const ControlsBelow = () => <SimpleVideo controls="below" />;
+export const ControlsBelow = () => (
+  <SimpleVideo
+    controls={{
+      position: 'below',
+      items: ['volume', 'reduceVolume', 'fullScreen'],
+    }}
+  />
+);
 
 ControlsBelow.storyName = 'Controls below';
 

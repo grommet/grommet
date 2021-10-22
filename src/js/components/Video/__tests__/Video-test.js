@@ -69,12 +69,12 @@ describe('Video', () => {
   });
 
   test('controls below renders', () => {
-    const { container } = render(<App controls="below" />);
+    const { container } = render(<App controls={{ position: 'below' }} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controls over renders', () => {
-    const { container } = render(<App controls="over" />);
+    const { container } = render(<App controls={{ position: 'over' }} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -181,6 +181,7 @@ describe('Video', () => {
     fireEvent.click(getByLabelText('open menu'));
     fireEvent.click(getByLabelText('volume down'));
     expect(volMock).toHaveBeenCalled();
+    fireEvent.click(getByLabelText('open menu'));
     fireEvent.click(getByLabelText('volume up'));
     expect(volMock).toHaveBeenCalledTimes(2);
 

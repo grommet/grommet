@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Video } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Video, grommet } from 'grommet';
 import { Test } from 'grommet-icons';
 import { deepMerge } from 'grommet/utils';
 
@@ -21,14 +20,19 @@ const TheaterMode = (props) => {
       <Box align="center" pad="large">
         <Video
           mode={mode}
-          newButtons={[
-            {
-              icon: <Test />,
-              onClick: () => {
-                mode === 'theater' ? setMode('normal') : setMode('theater');
+          controls={{
+            position: 'below',
+            items: [
+              'volume',
+              'reduceVolume',
+              {
+                icon: <Test />,
+                onClick: () =>
+                  setMode(mode === 'normal' ? 'theater' : 'normal'),
               },
-            },
-          ]}
+              'fullScreen',
+            ],
+          }}
           {...props}
         >
           <source src="small.mp4" type="video/mp4" />
