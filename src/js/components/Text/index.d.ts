@@ -37,7 +37,7 @@ export interface TextProps {
   truncate?: boolean | 'tip';
   weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
-  tip?: TipProps;
+  tip?: TipProps | string;
 }
 export interface TextExtendedProps
   extends TextProps,
