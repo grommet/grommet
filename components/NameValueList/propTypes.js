@@ -13,7 +13,6 @@ var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    a11yTitle: _generalPropTypes.a11yTitlePropType,
     align: _generalPropTypes.alignPropType,
     layout: _propTypes["default"].oneOfType(['column', 'grid']),
     nameProps: _propTypes["default"].shape({
