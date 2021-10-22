@@ -43,9 +43,12 @@ export const decorators = [
 export const parameters = {
   layout: 'fullscreen',
   options: {
-    storySort: {
-      method: 'alphabetical',
-      order: ['All'],
+    storySort: (a, b) => {
+      const isCustom = a[1].kind.split('/')[2] === 'Custom Themed';
+      if (isCustom) return 1;
+      return a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     },
   },
 };
