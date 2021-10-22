@@ -349,7 +349,7 @@ describe('Button', () => {
   test('hoverIndicator background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator="light-1">
+        <Button onClick={() => {}} hoverIndicator={{ background: 'light-1' }}>
           hoverIndicator
         </Button>
       </Grommet>,
@@ -366,7 +366,7 @@ describe('Button', () => {
   test('hoverIndicator invalid background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator="invalid">
+        <Button onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
           hoverIndicator
         </Button>
       </Grommet>,
