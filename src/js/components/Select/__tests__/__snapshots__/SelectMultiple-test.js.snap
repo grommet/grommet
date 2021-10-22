@@ -2830,7 +2830,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
+        class="StyledButton-sc-323bzc-0 eCoQDB SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
         role="menuitem"
         tabindex="-1"
         type="button"
@@ -2846,7 +2846,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
-        class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
+        class="StyledButton-sc-323bzc-0 eCoQDB SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
         role="menuitem"
         tabindex="-1"
         type="button"
@@ -3147,7 +3147,7 @@ exports[`Select Controlled multiple values 1`] = `
 exports[`Select Controlled multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  class="StyledButton-sc-323bzc-0 dvMjpJ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
   id="test-select"
   type="button"
 >

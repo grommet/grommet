@@ -2715,7 +2715,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  class="StyledButton-sc-323bzc-0 dvMjpJ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
   id="test-select"
   type="button"
 >
@@ -9212,7 +9212,7 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+  class="StyledButton-sc-323bzc-0 dvMjpJ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
   id="test-select"
   type="button"
 >
@@ -9539,7 +9539,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
+    class="StyledButton-sc-323bzc-0 eCoQDB SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -9555,7 +9555,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 cloiJO SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
+    class="StyledButton-sc-323bzc-0 eCoQDB SelectContainer__SelectOption-sc-1wi0ul8-1 bIHGwS"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -10125,7 +10125,7 @@ exports[`Select renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+    class="StyledButton-sc-323bzc-0 dvMjpJ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
     type="button"
   >
     <div
@@ -14738,7 +14738,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 kVhqUm Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
+    class="StyledButton-sc-323bzc-0 dvMjpJ Select__StyledSelectDropButton-sc-17idtfo-2 hyXJjH"
     id="test-select"
     type="button"
   >

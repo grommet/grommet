@@ -216,7 +216,17 @@ export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
   if (hoverIndicator === true || hoverIndicator === 'background') {
     ({ background, color } = theme.global.hover);
   } else if (typeof hoverIndicator === 'object') {
-    ({ background, color, elevation } = hoverIndicator);
+    if (
+      hoverIndicator.background ||
+      hoverIndicator.elevation ||
+      hoverIndicator.text
+    ) {
+      ({ background, elevation } = hoverIndicator);
+      color =
+        hoverIndicator.text && hoverIndicator.text.color
+          ? hoverIndicator.text.color
+          : undefined;
+    } else background = hoverIndicator;
   } else {
     background = hoverIndicator;
   }

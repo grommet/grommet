@@ -1551,7 +1551,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 jcyfEW"
           type="button"
         >
           <svg
@@ -1575,7 +1575,7 @@ exports[`Carousel navigate 2`] = `
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg
@@ -1593,7 +1593,7 @@ exports[`Carousel navigate 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg
@@ -1710,7 +1710,7 @@ exports[`Carousel navigate 3`] = `
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg
@@ -1728,7 +1728,7 @@ exports[`Carousel navigate 3`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg
@@ -1747,7 +1747,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 jcyfEW"
           type="button"
         >
           <svg
@@ -2318,7 +2318,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="StyledButton-sc-323bzc-0 jcyfEW"
           type="button"
         >
           <svg
@@ -2342,7 +2342,7 @@ exports[`Carousel play 2`] = `
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg
@@ -2360,7 +2360,7 @@ exports[`Carousel play 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="StyledButton-sc-323bzc-0 hmraAb"
               type="button"
             >
               <svg

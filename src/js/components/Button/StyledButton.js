@@ -102,15 +102,25 @@ function getHoverColor(props) {
   );
 }
 
-const hoverStyle = css`
+const hoverStyle = (props) => css`
   &:hover {
-    ${(props) =>
-      props.hoverIndicator &&
-      getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${(props) =>
-      !props.plain &&
-      css`
-        box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
-      `};
+    // Background and text styles
+    ${props.hoverIndicator &&
+    getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+
+    // Default box-shadow. Overrides box-shadow styling returned from
+    // getHoverIndicatorStyle
+    ${!props.plain && `box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`}
+
+    // If elevation is supplied through props, use that instead
+    ${!props.plain &&
+    props.hoverIndicator &&
+    props.hoverIndicator.elevation &&
+    `box-shadow: ${
+      props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+        props.hoverIndicator.elevation
+      ]
+    };`}
   }
 `;
 
@@ -199,7 +209,8 @@ const StyledButton = styled.button`
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
 
-  ${(props) => !props.disabled && !props.selected && !props.focus && hoverStyle}
+  ${(props) =>
+    !props.disabled && !props.selected && !props.focus && hoverStyle(props)}
 
   ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
   ${(props) =>

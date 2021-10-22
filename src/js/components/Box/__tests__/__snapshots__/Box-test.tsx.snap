@@ -3278,6 +3278,11 @@ exports[`Box hoverIndicator 1`] = `
   cursor: pointer;
 }
 
+.c4:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3313,7 +3318,6 @@ exports[`Box hoverIndicator 1`] = `
       class="c3"
       tabindex="0"
     />
-    \\
     <div
       class="c4"
       tabindex="0"

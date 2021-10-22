@@ -1352,7 +1352,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -1962,7 +1962,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -2024,7 +2024,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -3353,7 +3353,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       >
         <button
           aria-label="Open Drop"
-          class="StyledButton-sc-323bzc-0 hLMdAH Select__StyledSelectDropButton-sc-17idtfo-2 jVIEqD"
+          class="StyledButton-sc-323bzc-0 laCjsQ Select__StyledSelectDropButton-sc-17idtfo-2 jVIEqD"
           id="test-select"
           type="button"
         >
@@ -3537,7 +3537,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="reset"
     >
       Reset
@@ -3778,7 +3778,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -3812,7 +3812,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -4080,7 +4080,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -4348,7 +4348,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
@@ -4612,7 +4612,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 hGSyzi"
+      class="StyledButton-sc-323bzc-0 ebha-Dd"
       type="submit"
     >
       Submit
