@@ -38,9 +38,10 @@ export interface ButtonProps {
   hoverIndicator?:
     | {
         background?: BackgroundType;
-        color?: ColorType;
         elevation?: ElevationType;
+        text?: { color: ColorType };
       }
+    | BackgroundType
     | boolean;
   href?: string;
   justify?:

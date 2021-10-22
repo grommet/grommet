@@ -1193,8 +1193,8 @@ export interface ThemeType {
       container?: BoxProps;
       hoverIndicator?: {
         background?: BackgroundType;
-        color?: ColorType;
         extend?: ExtendType;
+        text?: { color: ColorType };
       };
       text?: TextProps;
     };

@@ -3,6 +3,9 @@ import { DropProps } from '../Drop';
 import {
   A11yTitleType,
   AlignSelfType,
+  BackgroundType,
+  ColorType,
+  ElevationType,
   GridAreaType,
   MarginType,
   PlaceHolderType,
@@ -13,7 +16,19 @@ export interface SelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
-  clear?: boolean | { position?: 'top' | 'bottom'; label?: string };
+  clear?:
+    | boolean
+    | {
+        hoverIndicator?:
+          | {
+              background?: BackgroundType;
+              elevation?: ElevationType;
+              text?: { color: ColorType };
+            }
+          | BackgroundType;
+        label?: string;
+        position?: 'top' | 'bottom';
+      };
   closeOnChange?: boolean;
   defaultValue?: string | number | object | (string | number | object)[];
   disabled?: boolean | (number | string | object)[];

@@ -5,7 +5,7 @@ import { Box, Grommet, Select, grommet } from 'grommet';
 const options = ['one', 'two', 'three'];
 
 export const Top = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(options[0]);
   return (
     <Grommet theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -26,7 +26,7 @@ Top.parameters = {
 };
 
 export const Bottom = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(options[1]);
   return (
     <Grommet theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -47,7 +47,7 @@ Bottom.parameters = {
 };
 
 export const HoverIndicator = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(options[2]);
   return (
     <Grommet theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -60,7 +60,7 @@ export const HoverIndicator = () => {
           clear={{
             hoverIndicator: {
               background: '#f00',
-              color: { light: '#fff' },
+              text: { color: { light: '#fff' } },
             },
           }}
         />

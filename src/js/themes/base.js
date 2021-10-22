@@ -1295,11 +1295,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: 'small',
           background: 'background-contrast',
         }, // any box props
-        // hoverIndicator: {
-        //   background: undefined,
-        //   color: undefined,
-        //   extend: undefined
-        // },
+        hoverIndicator: {
+          // background: undefined,
+          // elevation: undefined,
+          text: { color: 'text-weak' },
+        },
         text: {
           color: 'text-weak',
         }, // any text props

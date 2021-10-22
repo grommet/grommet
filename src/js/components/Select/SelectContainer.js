@@ -61,7 +61,7 @@ const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
           {...theme.select.clear.text}
           color={
             hovering
-              ? buttonHoverIndicator.color
+              ? buttonHoverIndicator.text.color
               : theme.select.clear.text.color
           }
         >

@@ -349,7 +349,7 @@ describe('Button', () => {
   test('hoverIndicator background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'light-1' }}>
+        <Button onClick={() => {}} hoverIndicator="light-1">
           hoverIndicator
         </Button>
       </Grommet>,
@@ -366,7 +366,7 @@ describe('Button', () => {
   test('hoverIndicator invalid background color', () => {
     const { container } = render(
       <Grommet>
-        <Button onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
+        <Button onClick={() => {}} hoverIndicator="invalid">
           hoverIndicator
         </Button>
       </Grommet>,
@@ -396,6 +396,11 @@ describe('Button', () => {
       </Grommet>,
     );
 
+    expect(
+      screen.getByRole('button', { name: 'hoverIndicator' }),
+    ).toHaveStyleRule('box-shadow', '0px 4px 8px rgba(0,0,0,0.20)', {
+      modifier: ':hover',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
