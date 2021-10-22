@@ -238,22 +238,6 @@ exports[`DateInput buttonProps should pass props to Button
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   class="c0"
 >

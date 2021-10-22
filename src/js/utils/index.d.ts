@@ -7,14 +7,6 @@ declare const normalizeColor: (
 
 export { normalizeColor };
 
-// portal.js
-declare const createPortal: () => void;
-declare const expectPortal: (portalId: string) => {
-  toMatchSnapshot: () => void;
-};
-
-export { createPortal, expectPortal };
-
 // object.js
 export type DeepReadonly<T extends object> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];

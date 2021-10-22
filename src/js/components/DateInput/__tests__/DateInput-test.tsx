@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { createPortal, expectPortal } from '../../../utils';
+import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Button } from '../../Button';
 import { DateInput } from '..';
