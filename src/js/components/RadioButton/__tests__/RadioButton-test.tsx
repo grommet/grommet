@@ -66,7 +66,7 @@ describe('RadioButton', () => {
   });
 
   test('children', () => {
-    const child = ({ checked }) => (
+    const child = ({ checked }: { checked: boolean }) => (
       <Box pad="small" background={checked ? 'accent-1' : 'control'} />
     );
 

@@ -9,7 +9,8 @@ import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import { expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
-import { Drop } from '..';
+import { Drop, DropExtendedProps } from '..';
+import { ThemeType } from '../../../themes';
 
 const customTheme = {
   global: {
@@ -23,18 +24,20 @@ const customTheme = {
   },
 };
 
+interface TestInputProps extends DropExtendedProps {
+  theme?: ThemeType;
+  containerTarget?: HTMLElement;
+  message?: string;
+}
 const TestInput = ({
-  inputProps,
   theme,
-  elevation,
   containerTarget,
   message = 'this is a test',
-  align,
   ...rest
-}) => {
-  const [showDrop, setShowDrop] = useState(false);
+}: TestInputProps) => {
+  const [showDrop, setShowDrop] = useState<boolean>(false);
 
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     setShowDrop(true);
@@ -44,20 +47,14 @@ const TestInput = ({
 
   if (showDrop) {
     drop = (
-      <Drop
-        id="drop-node"
-        elevation={elevation}
-        target={inputRef.current}
-        align={align}
-        {...rest}
-      >
+      <Drop id="drop-node" target={inputRef.current || undefined} {...rest}>
         {message}
       </Drop>
     );
   }
   return (
     <Grommet theme={theme} containerTarget={containerTarget}>
-      <input ref={inputRef} {...inputProps} aria-label="test" />
+      <input ref={inputRef} aria-label="test" />
       {drop}
     </Grommet>
   );
@@ -113,6 +110,7 @@ describe('Drop', () => {
   });
 
   test('invalid align', () => {
+    // @ts-ignore
     render(<TestInput align={{ whatever: 'right' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
@@ -151,8 +149,16 @@ describe('Drop', () => {
 
   test('resize', () => {
     render(<TestInput />);
-    global.window.innerWidth = 1000;
-    global.window.innerHeight = 1000;
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1000,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      writable: true,
+      configurable: true,
+      value: 1000,
+    });
     fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
     expectPortal('drop-node').toMatchSnapshot();
   });
@@ -204,11 +210,11 @@ describe('Drop', () => {
 
   test('default containerTarget', () => {
     const { getByTestId } = render(<TestInput data-testid="drop" />);
-    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    const actualRoot = getByTestId('drop')?.parentNode?.parentNode?.parentNode;
     expect(actualRoot).toBe(document.body);
   });
 
-  const alignPositions = [
+  const alignPositions: TestInputProps['align'][] = [
     { top: 'bottom' },
     { top: 'top', left: 'right' },
     { top: 'top', right: 'left' },
@@ -256,7 +262,7 @@ test('custom containerTarget', () => {
     const { getByTestId } = render(
       <TestInput data-testid="drop" containerTarget={target} />,
     );
-    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    const actualRoot = getByTestId('drop')?.parentNode?.parentNode?.parentNode;
     expect(actualRoot).toBe(target);
   } finally {
     document.body.removeChild(target);
