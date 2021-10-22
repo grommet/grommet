@@ -17,7 +17,7 @@
       "grommet/utils": ["src/js/utils"]
     },
     "lib": ["dom", "es2017"],
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },
   "exclude": ["node_modules", "**/__tests__"],
