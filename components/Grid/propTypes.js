@@ -29,7 +29,7 @@ var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
-    align: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]),
+    align: _generalPropTypes.alignPropType,
     alignContent: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['around', 'baseline', 'between', 'center', 'evenly', 'end', 'start', 'stretch']), _propTypes["default"].string]),
     areas: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].shape({
       name: _propTypes["default"].string,

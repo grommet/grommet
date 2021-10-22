@@ -42,6 +42,8 @@ export * from './Menu';
 export * from './Meter';
 export * from './Pagination';
 export * from './Paragraph';
+export * from './NameValuePair';
+export * from './NameValueList';
 export * from './Nav';
 export * from './Notification';
 export * from './RadioButton';

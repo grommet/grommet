@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 export var a11yTitlePropType = PropTypes.string;
+export var alignPropType = PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]);
 export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
   dark: PropTypes.string,
   light: PropTypes.string

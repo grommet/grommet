@@ -1163,6 +1163,29 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
 
     },
+    nameValueList: {
+      gap: {
+        column: 'large',
+        row: 'medium'
+      },
+      name: {
+        width: 'small'
+      },
+      value: {
+        width: 'medium'
+      }
+    },
+    nameValuePair: {
+      name: {
+        // any text props
+        color: 'text',
+        weight: 'bold'
+      },
+      value: {
+        // any text props
+        color: 'text'
+      }
+    },
     notification: {
       time: 8000,
       container: {

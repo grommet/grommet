@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import PropTypes from 'prop-types';
-import { genericProps, heightPropType, padPropType, widthPropType } from '../../utils/general-prop-types';
+import { alignPropType, genericProps, heightPropType, padPropType, widthPropType } from '../../utils/general-prop-types';
 var fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'flex', 'auto'];
 var edgeSizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none'];
@@ -18,7 +18,7 @@ var PropType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
-    align: PropTypes.oneOfType([PropTypes.oneOf(['baseline', 'center', 'end', 'start', 'stretch']), PropTypes.string]),
+    align: alignPropType,
     alignContent: PropTypes.oneOfType([PropTypes.oneOf(['around', 'baseline', 'between', 'center', 'evenly', 'end', 'start', 'stretch']), PropTypes.string]),
     areas: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,

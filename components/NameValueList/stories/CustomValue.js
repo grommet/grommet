@@ -1,0 +1,55 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.CustomValue = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+var _grommetIcons = require("grommet-icons");
+
+var _data = require("./data");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var CustomValue = function CustomValue() {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: "small",
+    gap: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    weight: "bold",
+    size: "3xl"
+  }, "Custom Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.statusData).map(function (_ref) {
+    var name = _ref[0],
+        value = _ref[1];
+    var icon;
+    if (value === 'Ok') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGoodSmall, {
+      color: "green",
+      size: "small"
+    });else if (value === 'Critical') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusCriticalSmall, {
+      color: "red",
+      size: "small"
+    });
+    return /*#__PURE__*/_react["default"].createElement(_grommet.NameValuePair, {
+      key: name,
+      name: name
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "center",
+      direction: "row",
+      gap: "xsmall"
+    }, icon, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      color: "text-strong"
+    }, value)));
+  })))));
+};
+
+exports.CustomValue = CustomValue;
+var _default = {
+  title: 'Visualizations/NameValueList/Custom Value'
+};
+exports["default"] = _default;

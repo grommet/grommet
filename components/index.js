@@ -354,6 +354,22 @@ Object.keys(_Paragraph).forEach(function (key) {
   exports[key] = _Paragraph[key];
 });
 
+var _NameValuePair = require("./NameValuePair");
+
+Object.keys(_NameValuePair).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _NameValuePair[key]) return;
+  exports[key] = _NameValuePair[key];
+});
+
+var _NameValueList = require("./NameValueList");
+
+Object.keys(_NameValueList).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _NameValueList[key]) return;
+  exports[key] = _NameValueList[key];
+});
+
 var _Nav = require("./Nav");
 
 Object.keys(_Nav).forEach(function (key) {

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OVERFLOW_VALUES = exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.a11yTitlePropType = void 0;
+exports.OVERFLOW_VALUES = exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.alignPropType = exports.a11yTitlePropType = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -9,6 +9,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var a11yTitlePropType = _propTypes["default"].string;
 exports.a11yTitlePropType = a11yTitlePropType;
+
+var alignPropType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]);
+
+exports.alignPropType = alignPropType;
 
 var colorPropType = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
   dark: _propTypes["default"].string,
