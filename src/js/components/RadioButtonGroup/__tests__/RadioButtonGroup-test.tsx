@@ -111,7 +111,7 @@ describe('RadioButtonGroup', () => {
   });
 
   test('children', () => {
-    const child = ({ checked }) => (
+    const child = ({ checked }: { checked: boolean }) => (
       <Box pad="small" background={checked ? 'accent-1' : 'control'} />
     );
     const { container } = render(
@@ -173,7 +173,7 @@ describe('RadioButtonGroup', () => {
       );
 
       expect(option).not.toBeNull();
-      expect(target.value).toEqual(option.value);
+      expect(target.value).toEqual(option?.value);
     });
 
     const { getByTestId } = render(
