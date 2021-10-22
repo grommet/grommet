@@ -66,36 +66,61 @@ describe('FileInput', () => {
   });
 
   test('background', () => {
+    const customTheme = {
+      fileInput: {
+        background: {
+          color: 'background-contrast',
+        },
+      },
+    };
     const { container } = render(
-      <Grommet>
-        <FileInput name="file" background={{ color: 'background-contrast' }} />
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border', () => {
+    const customTheme = {
+      fileInput: {
+        border: {
+          color: 'brand',
+          size: 'large'
+        },
+      },
+    };
     const { container } = render(
-      <Grommet>
-        <FileInput name="file" border={{ color: 'brand', size: 'large' }} />
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad', () => {
+    const customTheme = {
+      fileInput: {
+        pad: 'small',
+      },
+    };
     const { container } = render(
-      <Grommet>
-        <FileInput name="file" pad="small" />
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('margin', () => {
+    const customTheme = {
+      fileInput: {
+        margin: 'small',
+      },
+    };
     const { container } = render(
-      <Grommet>
-        <FileInput name="file" margin="small" />
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
