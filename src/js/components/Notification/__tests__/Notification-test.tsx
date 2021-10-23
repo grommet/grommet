@@ -46,4 +46,12 @@ describe('Notification', () => {
     fireEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
+  test('autoClose', async () => {
+    const { container } = render(
+      <Grommet>
+        <Notification autoClose={false} toast title="title" message="message" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

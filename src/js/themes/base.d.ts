@@ -1032,6 +1032,7 @@ export interface ThemeType {
     toast?: {
       container?: BoxProps;
       layer?: LayerProps;
+      time?: number;
     };
     iconContainer?: BoxProps;
     textContainer?: BoxProps;
