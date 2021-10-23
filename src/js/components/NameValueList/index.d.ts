@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { A11yTitleType, AlignType, GapType, WidthType } from '../../utils';
+import { AlignType, WidthType } from '../../utils';
 export interface NameValueListProps {
   align?: AlignType;
   layout?: 'column' | 'grid';
