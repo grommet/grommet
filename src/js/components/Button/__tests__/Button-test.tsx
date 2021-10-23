@@ -392,6 +392,55 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('hoverIndicator as object with background', () => {
+    const { container } = render(
+      <Grommet>
+        <Button onClick={() => {}} hoverIndicator={{ background: 'dark-3' }}>
+          hoverIndicator
+        </Button>
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'hoverIndicator' }),
+    ).toHaveStyleRule('background-color', '#777777', {
+      modifier: ':hover',
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('hoverIndicator as object with elevation', () => {
+    const { container } = render(
+      <Grommet>
+        <Button onClick={() => {}} hoverIndicator={{ elevation: 'medium' }}>
+          hoverIndicator
+        </Button>
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'hoverIndicator' }),
+    ).toHaveStyleRule('box-shadow', '0px 4px 8px rgba(0,0,0,0.20)', {
+      modifier: ':hover',
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('hoverIndicator as object with text color', () => {
+    const { container } = render(
+      <Grommet>
+        <Button
+          onClick={() => {}}
+          hoverIndicator={{ text: { color: 'text-strong' } }}
+        >
+          hoverIndicator
+        </Button>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onClick', () => {
     const onClick = jest.fn();
     render(

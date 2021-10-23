@@ -1097,7 +1097,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
-  test('Clear option renders- top', () => {
+  test('Clear option renders - top', () => {
     const Test = () => {
       const [value] = React.useState();
       return (
@@ -1130,6 +1130,34 @@ describe('Select', () => {
           value={value}
           options={['one', 'two']}
           clear={{ position: 'bottom' }}
+        />
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option renders custom hover indicator', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two']}
+          clear={{
+            hoverIndicator: {
+              background: 'dark-4',
+              text: { color: 'light-1' },
+            },
+          }}
         />
       );
     };
