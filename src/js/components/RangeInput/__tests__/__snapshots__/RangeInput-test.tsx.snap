@@ -131,6 +131,9 @@ exports[`RangeInput onBlur 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="10"
+    aria-valuemin="0"
+    aria-valuenow="5"
     class="c1"
     max="10"
     min="0"
@@ -272,6 +275,9 @@ exports[`RangeInput onChange 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="10"
+    aria-valuemin="0"
+    aria-valuenow="5"
     class="c1"
     max="10"
     min="0"
@@ -467,6 +473,9 @@ exports[`RangeInput onFocus 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="10"
+    aria-valuemin="0"
+    aria-valuenow="5"
     class="c1"
     max="10"
     min="0"
@@ -608,7 +617,13 @@ exports[`RangeInput renders 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="50"
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="50"
   />
@@ -747,7 +762,13 @@ exports[`RangeInput should have no accessibility violations 1`] = `
 >
   <input
     aria-label="test"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="50"
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="50"
   />
@@ -885,7 +906,13 @@ exports[`RangeInput track themed 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="10"
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="10"
   />
@@ -1023,7 +1050,13 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="10"
     class="c1"
+    max="100"
+    min="0"
+    step="1"
     type="range"
     value="10"
   />
@@ -1161,6 +1194,9 @@ exports[`RangeInput with min and max offset 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="20"
+    aria-valuemin="10"
+    aria-valuenow="15"
     class="c1"
     max="20"
     min="10"
@@ -1302,6 +1338,9 @@ exports[`RangeInput with multi color 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="10"
+    aria-valuemin="1"
+    aria-valuenow="5"
     class="c1"
     color="[object Object],[object Object],[object Object]"
     max="10"
@@ -1444,6 +1483,9 @@ exports[`RangeInput with single color 1`] = `
   class="c0"
 >
   <input
+    aria-valuemax="10"
+    aria-valuemin="1"
+    aria-valuenow="5"
     class="c1"
     color="accent-3"
     max="10"

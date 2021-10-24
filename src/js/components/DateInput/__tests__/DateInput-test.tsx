@@ -37,11 +37,13 @@ describe('DateInput', () => {
       );
     };
     const { container, getByText } = render(<Test />);
-    let dateInputValue = container.querySelector('#item').value;
+    let dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
 
     expect(dateInputValue).not.toEqual('');
     fireEvent.click(getByText('Reset Date'));
-    dateInputValue = container.querySelector('#item').value;
+    dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
     expect(dateInputValue).toEqual('');
   });
 
@@ -62,18 +64,20 @@ describe('DateInput', () => {
       );
     };
     const { container, getByText } = render(<Test />);
-    let dateInputValue = container.querySelector('#item').value;
+    let dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
 
     expect(dateInputValue).not.toEqual('');
     fireEvent.click(getByText('Reset Date'));
-    dateInputValue = container.querySelector('#item').value;
+    dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
     expect(dateInputValue).toEqual('');
   });
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <DateInput format="mm/dd/yyyy" a11yTitle="axe test" />
+        <DateInput format="mm/dd/yyyy" />
       </Grommet>,
     );
     const results = await axe(container);
@@ -187,12 +191,12 @@ describe('DateInput', () => {
   test('dates initialized with empty array', () => {
     const onChange = jest.fn((event) => event.value);
     // month is indexed from 0, so we add one
-    let month = new Date().getMonth() + 1;
+    let month: string | number = new Date().getMonth() + 1;
     if (month < 10) month = `0${month}`;
 
     const year = new Date().getFullYear();
 
-    let timezoneOffset = new Date().getTimezoneOffset() / 60;
+    let timezoneOffset: string | number = new Date().getTimezoneOffset() / 60;
     if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
 
     const { getByText } = render(
@@ -523,7 +527,7 @@ describe('DateInput', () => {
 
   test('should be displayed when value is controlled', async () => {
     const Test = () => {
-      const [value, setValue] = React.useState([]);
+      const [value, setValue] = React.useState<string[] | []>([]);
       return (
         <Grommet>
           <DateInput
@@ -538,11 +542,13 @@ describe('DateInput', () => {
       );
     };
     const { container, getByText } = render(<Test />);
-    let dateInputValue = container.querySelector('#item').value;
+    let dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
 
     expect(dateInputValue).toEqual('');
     fireEvent.click(getByText('Set Date'));
-    dateInputValue = container.querySelector('#item').value;
+    dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
     expect(dateInputValue).toEqual('07/02/2020-07/07/2020');
   });
 
@@ -568,7 +574,6 @@ describe('DateInput', () => {
       <Grommet>
         <DateInput
           buttonProps={{
-            open: true,
             disabled: true,
           }}
         />
