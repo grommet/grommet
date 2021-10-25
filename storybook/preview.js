@@ -11,7 +11,7 @@ const THEMES = {
 
 export const decorators = [
   (Story, context) => {
-    const [state, setState] = useState('base');
+    const [state, setState] = useState('grommet');
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
@@ -44,7 +44,7 @@ export const parameters = {
   layout: 'fullscreen',
   options: {
     storySort: (a, b) => {
-      const isCustom = a[1].kind.split('/')[2] === 'Custom Themed';
+      const isCustom = a[1].kind.split('/')[2] === CUSTOM_THEMED;
       if (isCustom) return 1;
       return a[1].kind === b[1].kind
         ? 0
@@ -56,7 +56,7 @@ export const parameters = {
 export const globalTypes = {
   theme: {
     name: 'Theme',
-    defaultValue: 'base',
+    defaultValue: 'grommet',
     toolbar: {
       items: ['base', 'grommet', 'hpe'],
       showName: true,
