@@ -1,5 +1,5 @@
 import React from 'react';
-import { grommet, Box, Button, Grommet, Heading } from 'grommet';
+import { Box, Button, Grommet, Heading } from 'grommet';
 var kindButtonTheme = {
   global: {
     colors: {
@@ -134,7 +134,7 @@ var coloredButton = {
     }
   }
 };
-export var Custom = function Custom() {
+export var ThemedButtons = function ThemedButtons() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: kindButtonTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -234,16 +234,15 @@ export var Custom = function Custom() {
     as: "span",
     label: "theme on dark background",
     primary: true
-  }))), /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  }))), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Button, {
     as: "span",
     label: "Custom as=span"
-  }))));
+  })));
 };
+ThemedButtons.storyName = 'Themed Buttons';
 export default {
-  title: 'Controls/Button/Custom'
+  title: 'Controls/Button/Custom Themed/Themed Buttons'
 };

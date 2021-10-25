@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { User } from "grommet-icons/es6/icons/User";
-import { Box, Button, grommet, Grommet, Heading, Text } from 'grommet';
+import { Box, Button, Heading, Text } from 'grommet';
 var darks = [false, true];
 var kinds = [{
   name: 'default',
@@ -50,8 +50,6 @@ export var Kind = function Kind() {
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "large"
-  }, /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     gap: "medium"
   }, kinds.map(function (kind) {
@@ -89,7 +87,7 @@ export var Kind = function Kind() {
         }))
       );
     }));
-  }))));
+  })));
 };
 export default {
   title: 'Controls/Button/Kind'

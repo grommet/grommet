@@ -1,9 +1,7 @@
 import React from 'react';
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { Box, Button } from 'grommet';
 export var TipOnButton = function TipOnButton() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium",
     gap: "large"
@@ -43,7 +41,7 @@ export var TipOnButton = function TipOnButton() {
         align: "center"
       }, "tooltip")
     }
-  })));
+  }));
 };
 TipOnButton.storyName = 'Tip on button';
 TipOnButton.parameters = {

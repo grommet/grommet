@@ -10,9 +10,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TipOnButton = function TipOnButton() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "medium",
     gap: "large"
@@ -52,7 +50,7 @@ var TipOnButton = function TipOnButton() {
         align: "center"
       }, "tooltip")
     }
-  })));
+  }));
 };
 
 exports.TipOnButton = TipOnButton;

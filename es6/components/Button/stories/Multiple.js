@@ -1,11 +1,8 @@
 import React from 'react';
-import { Grommet, Box, Button } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 export var Multiple = function Multiple() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -65,7 +62,7 @@ export var Multiple = function Multiple() {
     icon: /*#__PURE__*/React.createElement(Add, null),
     label: "Add",
     onClick: function onClick() {}
-  }))));
+  })));
 };
 export default {
   title: 'Controls/Button/Multiple'

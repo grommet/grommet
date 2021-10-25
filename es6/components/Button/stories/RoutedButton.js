@@ -1,10 +1,7 @@
 import React from 'react';
-import { Box, Grommet, RoutedButton as GrommetRoutedButton, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, RoutedButton as GrommetRoutedButton, Text } from 'grommet';
 export var RoutedButton = function RoutedButton() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Text, {
@@ -13,7 +10,7 @@ export var RoutedButton = function RoutedButton() {
   }, "Note: RoutedButton will soon be deprecated"), /*#__PURE__*/React.createElement(GrommetRoutedButton, {
     label: "Go",
     path: "/"
-  })));
+  }));
 };
 RoutedButton.storyName = 'Routed button';
 export default {

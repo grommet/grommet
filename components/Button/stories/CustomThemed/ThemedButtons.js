@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Custom = void 0;
+exports["default"] = exports.ThemedButtons = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -144,7 +144,7 @@ var coloredButton = {
   }
 };
 
-var Custom = function Custom() {
+var ThemedButtons = function ThemedButtons() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: kindButtonTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -244,19 +244,18 @@ var Custom = function Custom() {
     as: "span",
     label: "theme on dark background",
     primary: true
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     as: "span",
     label: "Custom as=span"
-  }))));
+  })));
 };
 
-exports.Custom = Custom;
+exports.ThemedButtons = ThemedButtons;
+ThemedButtons.storyName = 'Themed Buttons';
 var _default = {
-  title: 'Controls/Button/Custom'
+  title: 'Controls/Button/Custom Themed/Themed Buttons'
 };
 exports["default"] = _default;

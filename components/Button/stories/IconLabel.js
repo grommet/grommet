@@ -9,14 +9,10 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var IconLabel = function IconLabel() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -50,7 +46,7 @@ var IconLabel = function IconLabel() {
     label: "500px gap",
     gap: "500px",
     onClick: function onClick() {}
-  }))));
+  })));
 };
 
 exports.IconLabel = IconLabel;

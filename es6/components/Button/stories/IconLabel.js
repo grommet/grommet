@@ -1,11 +1,8 @@
 import React from 'react';
 import { Add } from "grommet-icons/es6/icons/Add";
-import { Box, Button, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button } from 'grommet';
 export var IconLabel = function IconLabel() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -39,7 +36,7 @@ export var IconLabel = function IconLabel() {
     label: "500px gap",
     gap: "500px",
     onClick: function onClick() {}
-  }))));
+  })));
 };
 IconLabel.storyName = 'Icon label';
 export default {

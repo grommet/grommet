@@ -61,8 +61,6 @@ var Kind = function Kind() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "medium"
   }, kinds.map(function (kind) {
@@ -100,7 +98,7 @@ var Kind = function Kind() {
         }))
       );
     }));
-  }))));
+  })));
 };
 
 exports.Kind = Kind;

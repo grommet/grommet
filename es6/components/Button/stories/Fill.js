@@ -1,11 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { Box, Button } from 'grommet';
 export var Fill = function Fill(props) {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     justify: "center",
     direction: "row"
@@ -75,7 +73,7 @@ export var Fill = function Fill(props) {
     label: "Vertical",
     fill: "vertical",
     onClick: function onClick() {}
-  }, props)))));
+  }, props))));
 };
 export default {
   title: 'Controls/Button/Fill'
