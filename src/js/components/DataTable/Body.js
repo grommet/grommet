@@ -215,7 +215,6 @@ const Body = forwardRef(
                 <TableCell>{marker}</TableCell>
               </TableRow>
             )}
-            scrollableAncestor="window"
             show={show}
             step={step}
           >
