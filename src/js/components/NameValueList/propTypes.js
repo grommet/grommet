@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types';
-import {
-  a11yTitlePropType,
-  alignPropType,
-  widthPropType,
-} from '../../utils/general-prop-types';
+import { alignPropType, widthPropType } from '../../utils/general-prop-types';
 
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    a11yTitle: a11yTitlePropType,
     align: alignPropType,
     layout: PropTypes.oneOfType(['column', 'grid']),
     nameProps: PropTypes.shape({
