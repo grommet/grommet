@@ -118,8 +118,8 @@ export const OnUpdateDataTable = () => {
   );
 };
 
-OnUpdateDataTable.storyName = 'onUpdate';
+OnUpdateDataTable.storyName = 'OnUpdate';
 
 export default {
-  title: 'Visualizations/DataTable/onUpdate',
+  title: 'Visualizations/DataTable/OnUpdate',
 };

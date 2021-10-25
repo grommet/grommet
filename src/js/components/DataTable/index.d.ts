@@ -90,6 +90,7 @@ export interface DataTableProps<TRowType = any> {
     | {
         property: string;
         expand: Array<string>;
+        expandable: Array<string>;
         onExpand: (expandedKeys: string[]) => void;
       };
   primaryKey?: string | boolean;
@@ -104,6 +105,12 @@ export interface DataTableProps<TRowType = any> {
   onSearch?: (search: string) => void;
   onSelect?: (select: (string | number)[]) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
+  onUpdate?: (datatableState: {
+    sort: { property: string; direction: 'asc' | 'desc' };
+    expanded: Array<string>;
+    show: number;
+    count: number;
+   }) => void;
 }
 
 export interface DataTableExtendedProps<TRowType = any>

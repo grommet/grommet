@@ -118,7 +118,6 @@ if (process.env.NODE_ENV !== 'production') {
         property: PropTypes.string,
         expand: PropTypes.arrayOf(PropTypes.string),
         expandable: PropTypes.arrayOf(PropTypes.string),
-        expanded: PropTypes.arrayOf(PropTypes.string),
         onExpand: PropTypes.func,
       }),
     ]),

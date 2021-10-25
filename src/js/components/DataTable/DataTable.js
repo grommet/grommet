@@ -320,7 +320,10 @@ const DataTable = ({
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
-
+  if (onUpdate && onMore) {
+    console.warn('DataTable cannot combine "onUpdate" and "onMore".');
+  }
+  
   const [items, paginationProps] = usePagination({
     data: adjustedData,
     page: normalizeShow(showProp, step),
