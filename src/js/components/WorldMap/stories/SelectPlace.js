@@ -6,7 +6,8 @@ import { grommet } from 'grommet/themes';
 export const SelectPlace = () => {
   const [places, setPlaces] = React.useState();
 
-  const onSelectPlace = place => {
+  const onSelectPlace = (place) => {
+    console.log('Selected', place);
     setPlaces([{ color: 'graph-1', location: place }]);
   };
 

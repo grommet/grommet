@@ -16,7 +16,10 @@ export const usePagination = ({ data, page, step, ...rest }) => {
   const totalPages = data ? Math.ceil(data.length / step) : 0;
   const [activePage, setActivePage] = useState(Math.min(page, totalPages) || 1);
 
-  if (activePage > totalPages) setActivePage(totalPages);
+  // ensure activePage is never lower than 1 to ensure that itemsBeginIndex
+  // and itemsEndIndex aren't negative
+  if (activePage > totalPages && data?.length > 0)
+    setActivePage(Math.max(totalPages, 1));
 
   const itemsBeginIndex = step * (activePage - 1);
   const itemsEndIndex = itemsBeginIndex + step;

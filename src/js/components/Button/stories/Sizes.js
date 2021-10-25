@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Box, Button, Grommet } from 'grommet';
+import { Box, Button } from 'grommet';
 import { Next, Add } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
 
 export const Sizes = () => (
-  <Grommet theme={grommet}>
+  <Box>
     <Box direction="row">
       <Box align="start" pad="large" gap="large">
         <Button size="small" label="Small" />
@@ -32,7 +31,7 @@ export const Sizes = () => (
         <Button size="large" icon={<Add />} primary />
       </Box>
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export default {
