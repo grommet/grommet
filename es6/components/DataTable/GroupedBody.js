@@ -102,7 +102,6 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, null, marker));
     },
-    scrollableAncestor: "window",
     step: step
   }, function (row, index, rowRef) {
     var context = row.context,

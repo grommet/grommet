@@ -120,7 +120,6 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/_react["default"].createElement(_TableRow.TableRow, null, /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, marker));
     },
-    scrollableAncestor: "window",
     step: step
   }, function (row, index, rowRef) {
     var context = row.context,

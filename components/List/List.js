@@ -264,7 +264,6 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, ariaProps, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: !paginate ? orderingData || data : items,
     onMore: onMore,
-    scrollableAncestor: "window",
     show: !paginate ? showProp : undefined,
     step: step,
     renderMarker: function renderMarker(marker) {

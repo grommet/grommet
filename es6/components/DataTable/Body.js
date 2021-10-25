@@ -172,7 +172,6 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, null, marker));
     },
-    scrollableAncestor: "window",
     show: show,
     step: step
   }, function (datum, index, rowRef) {

@@ -16,7 +16,6 @@ if (process.env.NODE_ENV !== 'production') {
     onMore: _propTypes["default"].func,
     renderMarker: _propTypes["default"].func,
     replace: _propTypes["default"].bool,
-    scrollableAncestor: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].oneOf(['window'])]),
     show: _propTypes["default"].number,
     step: _propTypes["default"].number
   };

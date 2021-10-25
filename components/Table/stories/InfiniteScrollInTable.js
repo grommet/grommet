@@ -56,7 +56,6 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.TableRow, null, /*#__PURE__*/_react["default"].createElement(_grommet.TableCell, null, marker));
     },
-    scrollableAncestor: "window",
     items: results,
     onMore: function onMore() {
       return load();
