@@ -663,6 +663,12 @@ var generate = function generate(baseSpacing, scale) {
         round: 'small',
         elevation: 'small'
       },
+      // hover: {
+      //   container: {
+      //     elevation: undefined,
+      //     extend: undefined,
+      //   },
+      // },
       header: {},
       body: {},
       footer: {}

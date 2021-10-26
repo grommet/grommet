@@ -38,9 +38,11 @@ var directionStyle = function directionStyle(direction, theme) {
   return styles;
 };
 
-var elevationStyle = css(["box-shadow:", ";"], function (props) {
-  return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.elevationProp];
-});
+export var elevationStyle = function elevationStyle(elevation) {
+  return css(["box-shadow:", ";"], function (props) {
+    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
+  });
+};
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
@@ -178,7 +180,7 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.overflowProp && overflowStyle(props.overflowProp);
 }, function (props) {
-  return props.elevationProp && elevationStyle;
+  return props.elevationProp && elevationStyle(props.elevationProp);
 }, function (props) {
   return props.animation && animationStyle;
 }, function (props) {

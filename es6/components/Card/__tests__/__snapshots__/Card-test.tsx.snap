@@ -144,7 +144,7 @@ exports[`Card Themed 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <header
       class="c2"
@@ -245,7 +245,7 @@ exports[`Card all 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <header
       class="c2"
@@ -323,7 +323,7 @@ exports[`Card children 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -401,7 +401,7 @@ exports[`Card footer 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <footer
       class="c2"
@@ -475,7 +475,7 @@ exports[`Card header 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <header
       class="c2"
@@ -524,7 +524,7 @@ exports[`Card renders 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   />
 </div>
 `;

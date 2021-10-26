@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledBoxGap = exports.StyledBox = void 0;
+exports.StyledBoxGap = exports.StyledBox = exports.elevationStyle = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -52,9 +52,13 @@ var directionStyle = function directionStyle(direction, theme) {
   return styles;
 };
 
-var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
-  return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.elevationProp];
-});
+var elevationStyle = function elevationStyle(elevation) {
+  return (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
+    return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
+  });
+};
+
+exports.elevationStyle = elevationStyle;
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
@@ -192,7 +196,7 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.overflowProp && (0, _utils.overflowStyle)(props.overflowProp);
 }, function (props) {
-  return props.elevationProp && elevationStyle;
+  return props.elevationProp && elevationStyle(props.elevationProp);
 }, function (props) {
   return props.animation && animationStyle;
 }, function (props) {

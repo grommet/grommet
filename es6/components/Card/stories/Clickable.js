@@ -17,16 +17,21 @@ var theme = {
     }
   },
   card: {
+    hover: {
+      container: {
+        elevation: 'large',
+        extend: "transition: all 0.2s ease-in-out;"
+      }
+    },
     container: {
-      background: '#FFFFFF12',
-      elevation: 'none'
+      elevation: 'medium'
     },
     footer: {
       pad: {
         horizontal: 'medium',
         vertical: 'small'
       },
-      background: '#FFFFFF06'
+      background: '#00000008'
     }
   }
 };
@@ -131,7 +136,6 @@ export var Clickable = function Clickable() {
     full: true
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
-    background: "dark-1",
     height: "100%"
   }, /*#__PURE__*/React.createElement(Grid, {
     gap: "medium",
@@ -163,6 +167,11 @@ export var Clickable = function Clickable() {
       size: "xsmall"
     }, value.message)));
   }))));
+};
+Clickable.parameters = {
+  chromatic: {
+    disable: true
+  }
 };
 export default {
   title: 'Layout/Card/Clickable'
