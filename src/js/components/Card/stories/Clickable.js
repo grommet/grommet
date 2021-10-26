@@ -22,13 +22,18 @@ const theme = {
     },
   },
   card: {
+    hover: {
+      container: {
+        elevation: 'large',
+        extend: `transition: all 0.2s ease-in-out;`,
+      },
+    },
     container: {
-      background: '#FFFFFF12',
-      elevation: 'none',
+      elevation: 'medium',
     },
     footer: {
       pad: { horizontal: 'medium', vertical: 'small' },
-      background: '#FFFFFF06',
+      background: '#00000008',
     },
   },
 };
@@ -105,9 +110,9 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 
 export const Clickable = () => (
   <Grommet theme={theme} full>
-    <Box pad="large" background="dark-1" height="100%">
+    <Box pad="large" height="100%">
       <Grid gap="medium" columns={{ count: 'fit', size: 'small' }}>
-        {data.map(value => (
+        {data.map((value) => (
           <Card
             key={value.title}
             onClick={() => {
