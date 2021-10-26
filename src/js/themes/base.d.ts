@@ -501,6 +501,12 @@ export interface ThemeType {
   };
   card?: {
     container?: BoxProps;
+    hover?: {
+      container?: {
+        elevation?: ElevationType;
+        extend?: ExtendType;
+      };
+    };
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;

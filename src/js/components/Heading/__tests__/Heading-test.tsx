@@ -16,12 +16,11 @@ test('Heading renders', () => {
 });
 
 test('Heading accepts ref', () => {
-  const ref = React.createRef();
+  const ref = React.createRef<HTMLHeadingElement>();
   const { container } = render(
     <Grommet>
       <Heading ref={ref} />
     </Grommet>,
-    { createNodeMock: (el) => el },
   );
 
   expect(ref.current).not.toBeNull();
@@ -226,9 +225,7 @@ test('Theme color renders', () => {
 });
 
 test('Throws a warning when heading.level is undefined in the theme.', () => {
-  global.console = {
-    warn: jest.fn(),
-  };
+  global.console.warn = jest.fn();
 
   const customTheme = {
     heading: {
