@@ -575,6 +575,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         round: 'small',
         elevation: 'small',
       },
+      // hover: {
+      //   container: {
+      //     elevation: undefined,
+      //     extend: undefined,
+      //   },
+      // },
       header: {},
       body: {},
       footer: {},

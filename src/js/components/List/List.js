@@ -264,7 +264,6 @@ const List = React.forwardRef(
             <InfiniteScroll
               items={!paginate ? orderingData || data : items}
               onMore={onMore}
-              scrollableAncestor="window"
               show={!paginate ? showProp : undefined}
               step={step}
               renderMarker={(marker) => (

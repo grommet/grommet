@@ -76,10 +76,10 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-const elevationStyle = css`
+export const elevationStyle = (elevation) => css`
   box-shadow: ${(props) =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      props.elevationProp
+      elevation
     ]};
 `;
 
@@ -236,7 +236,7 @@ const StyledBox = styled.div`
     props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${(props) => props.wrapProp && wrapStyle}
   ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
-  ${(props) => props.elevationProp && elevationStyle}
+  ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) => props.animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>
