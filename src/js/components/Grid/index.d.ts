@@ -34,6 +34,13 @@ export type GridSizeType =
   | string
   | string[];
 
+export type GridColumnsType =
+  | GridSizeType
+  | GridSizeType[]
+  | {
+      count?: 'fit' | 'fill' | number;
+      size?: GridSizeType;
+    };
 export interface GridProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -42,13 +49,7 @@ export interface GridProps {
   areas?: { name?: string; start?: number[]; end?: number[] }[] | string[][];
   as?: PolymorphicType;
   border?: BorderType;
-  columns?:
-    | GridSizeType
-    | GridSizeType[]
-    | {
-        count?: 'fit' | 'fill' | number;
-        size?: GridSizeType;
-      };
+  columns?: GridColumnsType;
   fill?: FillType;
   gap?: GapType | { row?: GapType; column?: GapType };
   gridArea?: GridAreaType;

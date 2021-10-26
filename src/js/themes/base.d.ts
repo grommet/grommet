@@ -1144,6 +1144,19 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
+  nameValueList?: {
+    gap?: { row?: GapType; column?: GapType };
+    name?: {
+      width: string;
+    };
+    value?: {
+      width: string;
+    };
+  };
+  nameValuePair?: {
+    name?: TextProps;
+    value?: TextProps;
+  };
   radioButtonGroup?: {
     container?: BoxProps;
   };
@@ -1226,7 +1239,13 @@ export interface ThemeType {
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
     icon?: React.ReactNode;
-    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    size?: {
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+    };
   };
   tab?: {
     active?: {

@@ -57,17 +57,16 @@ export const InfiniteScrollInTable = () => {
           </TableHeader>
           <TableBody>
             <InfiniteScroll
-              renderMarker={marker => (
+              renderMarker={(marker) => (
                 <TableRow>
                   <TableCell>{marker}</TableCell>
                 </TableRow>
               )}
-              scrollableAncestor="window"
               items={results}
               onMore={() => load()}
               step={step}
             >
-              {result => (
+              {(result) => (
                 <TableRow key={result}>
                   <TableCell>{result}</TableCell>
                   <TableCell>cartoon</TableCell>

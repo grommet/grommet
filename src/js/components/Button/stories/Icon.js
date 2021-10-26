@@ -1,13 +1,12 @@
 import React from 'react';
 import { Close, Send, User } from 'grommet-icons';
 
-import { Box, Button, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Text } from 'grommet';
 
 export const Icon = () => (
-  <Grommet theme={grommet}>
+  <Box>
     <Box align="center" pad="large">
-      <Text margin="small"> plain=true (no padding, no border) </Text>
+      <Text margin="small"> plain=true </Text>
       <Box direction="row">
         <Button plain icon={<Close />} onClick={() => {}} primary />
         <Button plain icon={<Send />} onClick={() => {}} />
@@ -15,7 +14,7 @@ export const Icon = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small"> plain=false (includes padding and border)</Text>
+      <Text margin="small"> plain=false </Text>
       <Box direction="row">
         <Button plain={false} icon={<Close />} onClick={() => {}} primary />
         <Button plain={false} icon={<Send />} onClick={() => {}} />
@@ -23,14 +22,14 @@ export const Icon = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small"> plain=undefined (with padding, no border) </Text>
+      <Text margin="small"> plain=undefined </Text>
       <Box direction="row">
         <Button icon={<Close />} onClick={() => {}} primary />
         <Button icon={<Send />} onClick={() => {}} />
         <Button icon={<User />} onClick={() => {}} />
       </Box>
     </Box>
-  </Grommet>
+  </Box>
 );
 
 Icon.storyName = 'Icon plain';
