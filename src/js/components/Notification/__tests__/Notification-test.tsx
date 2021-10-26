@@ -49,7 +49,11 @@ describe('Notification', () => {
   test('autoClose', async () => {
     const { container } = render(
       <Grommet>
-        <Notification autoClose={false} toast title="title" message="message" />
+        <Notification
+          toast={{ autoClose: false }}
+          title="title"
+          message="message"
+        />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

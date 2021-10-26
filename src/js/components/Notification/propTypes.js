@@ -7,7 +7,10 @@ if (process.env.NODE_ENV !== 'production') {
     title: PropTypes.string.isRequired,
     message: PropTypes.string,
     status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
-    toast: PropTypes.bool,
+    toast: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({ autoClose: PropTypes.bool }),
+    ]),
     onClose: PropTypes.func,
   };
 }

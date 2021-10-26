@@ -10,14 +10,8 @@ import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
 
-const Notification = ({
-  autoClose = true,
-  message,
-  onClose,
-  status,
-  title,
-  toast,
-}) => {
+const Notification = ({ message, onClose, status, title, toast }) => {
+  const autoClose = toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
