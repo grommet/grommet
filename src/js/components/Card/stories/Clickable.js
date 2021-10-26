@@ -140,6 +140,10 @@ export const Clickable = () => (
   </Grommet>
 );
 
+Clickable.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Layout/Card/Clickable',
 };

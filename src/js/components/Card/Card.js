@@ -15,14 +15,12 @@ const StyledCard = styled(Box)`
   }
 `;
 
-const Card = forwardRef(({ onClick, href, ...rest }, ref) => {
+const Card = forwardRef(({ ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledCard
       overflow="hidden"
       ref={ref}
-      onClick={onClick}
-      href={href}
       {...theme.card.container}
       {...rest}
     />
