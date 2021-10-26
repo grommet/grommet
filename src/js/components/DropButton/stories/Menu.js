@@ -1,8 +1,7 @@
 import React from 'react';
 import { Gremlin } from 'grommet-icons';
 
-import { Grommet, Box, DropButton, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DropButton, Text } from 'grommet';
 
 const renderItems = () => (
   <Box>
@@ -31,15 +30,13 @@ const GremlinDropButton = () => (
 );
 
 const MenuDropButton = () => (
-  <Grommet theme={grommet} full>
-    <Box fill>
-      <Box fill="vertical" width="xxsmall" background="dark-2">
-        <GremlinDropButton />
-        <Box flex />
-        <GremlinDropButton />
-      </Box>
+  <Box fill>
+    <Box fill="vertical" width="xxsmall" background="dark-2">
+      <GremlinDropButton />
+      <Box flex />
+      <GremlinDropButton />
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export const Menu = () => <MenuDropButton />;
