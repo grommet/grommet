@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Grommet, Box, DataTable, Text, Tip } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -14,6 +14,7 @@ const columns = [
     property: 'rocket',
     header: 'Rocket',
     size: 'small',
+    render: datum => <Text>{datum.rocket.name}</Text>
   },
   {
     property: 'success',
@@ -46,81 +47,13 @@ const columns = [
   },
 ];
 
-
-const processData = ({
-  /* expanded, */
-  show = 0,
-  count = 20,
-}, groups = [], data = []) => {
-  const items = [];
-  groups.forEach(group => {
-    items.push(group);
-    const groupItems = data
-      .filter((item) => item.rocket?.id === group.id)
-      .map(({ id, name, rocket, success, failures }) => ({
-        id,
-        name,
-        rocket: rocket.name,
-        rocketId: rocket.id,
-        success,
-        failures,
-      }));
-    items.push(...groupItems);
-  });
-
-  // TODO support paginate 
-  let start = show || 0;
-  if (start + count > items.length) {
-    start = Math.max(items.length - count, 0);
-  }
-  const result = count ? items.slice(start, start + count) : items;
-  return result;
-};
-
-export const SpaceX = () => {
-  const [groups, setGroups] = useState([]);
-  const [expanded, setExpanded] = useState([]);
+export const SpaceXUngrouped = () => {
   const [sort, setSort] = useState({ property: 'name', direction: 'asc'});
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(20);
 
-  const expandable = useMemo(() => groups.map(({id}) => id), [groups]);
-
-
   useEffect(() => {
     const fetchData = async () => {
-      const query = {
-        options: {
-          select: [ "name" ],
-        },
-      };
-      fetch("https://api.spacexdata.com/v4/rockets/query", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(query),
-      })
-      .then(response => response.json())
-      .then(d => {
-        console.log('GROUPS', d);
-        setGroups(d.docs);
-      })
-      .catch(error => console.error('Unable to get groups:', error));
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (groups.length === 0 || expanded.length === 0) {
-        setData(processData({
-          expanded,
-          show: 0,
-          count: limit,
-        }, groups, []));
-      }
       const query = {
         options: {
           populate: [
@@ -130,16 +63,10 @@ export const SpaceX = () => {
             },
           ],
           sort: {
-            rocket: "asc",
             [sort.property || "name"]: sort.direction || "asc",
           },
           select: [ "name", "success", "failures" ],
           limit,
-        },
-        query: {
-          rocket: {
-            "$in": expanded,
-          },
         },
       };
       fetch("https://api.spacexdata.com/v4/launches/query", {
@@ -150,18 +77,14 @@ export const SpaceX = () => {
         body: JSON.stringify(query),
       })
       .then(response => response.json())
-      .then(d => {
-        setData(processData({
-          expanded,
-          show: 0,
-          count: limit,
-        }, groups, d.docs));
+      .then(({docs}) => {
+        setData(docs || []);
       })
       .catch(error => console.error('Unable to get data:', error));
     };
 
     fetchData();
-  }, [expanded, groups, limit, sort]);
+  }, [limit, sort]);
 
   return (
     <Grommet theme={grommet}>
@@ -172,14 +95,8 @@ export const SpaceX = () => {
           data={data}
           sortable
           replace
-          groupBy={{
-            expandable,
-            expand: expanded,
-            property: 'rocketId',
-          }}
           onUpdate={opts => {
             console.log('onUpdate', opts);
-            setExpanded(opts.expanded);
             setLimit(opts.count);
             if (opts.sort) setSort(opts.sort);
           }}
@@ -190,8 +107,8 @@ export const SpaceX = () => {
   );
 };
 
-SpaceX.storyName = 'Grouped SpaceX';
+SpaceXUngrouped.storyName = 'Ungrouped SpaceX';
 
 export default {
-  title: 'Visualizations/DataTable/Grouped SpaceX',
+  title: 'Visualizations/DataTable/Ungrouped SpaceX',
 };
