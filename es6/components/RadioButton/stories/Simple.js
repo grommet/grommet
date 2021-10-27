@@ -1,14 +1,11 @@
 import React from 'react';
-import { Grommet, Box, Button, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, RadioButton } from 'grommet';
 export var Simple = function Simple() {
   var _React$useState = React.useState(),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -25,7 +22,7 @@ export var Simple = function Simple() {
     onClick: function onClick() {
       return setSelected(undefined);
     }
-  })));
+  }));
 };
 export default {
   title: 'Input/RadioButton/Simple'

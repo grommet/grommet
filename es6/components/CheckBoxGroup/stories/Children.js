@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grommet, CheckBoxGroup } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBoxGroup } from 'grommet';
 import { Ascend } from "grommet-icons/es6/icons/Ascend";
 import { Descend } from "grommet-icons/es6/icons/Descend";
 var optionsObjects = [{
@@ -16,9 +15,7 @@ export var Children = function Children() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
@@ -40,7 +37,7 @@ export var Children = function Children() {
       background: background,
       pad: "xsmall"
     }, /*#__PURE__*/React.createElement(Icon, null));
-  })));
+  }));
 };
 export default {
   title: 'Input/CheckBoxGroup/Children'

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, Text } from 'grommet';
 export var InsideButton = function InsideButton() {
   var _useState = useState(false),
       checked = _useState[0],
@@ -12,9 +11,7 @@ export var InsideButton = function InsideButton() {
 
   var onCheckboxChange = function onCheckboxChange() {};
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Button, {
@@ -25,7 +22,7 @@ export var InsideButton = function InsideButton() {
     checked: checked,
     label: /*#__PURE__*/React.createElement(Text, null, "Hi"),
     onChange: onCheckboxChange
-  }))));
+  })));
 };
 InsideButton.storyName = 'Inside a Button';
 InsideButton.parameters = {

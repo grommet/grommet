@@ -1,6 +1,16 @@
-import React from 'react';
-import { Box, Grommet, FileInput, Text } from 'grommet';
-import { Trash } from "grommet-icons/es6/icons/Trash";
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.Custom = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _grommet = require("grommet");
+
+var _grommetIcons = require("grommet-icons");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var customTheme = {
   fileInput: {
     button: {
@@ -33,7 +43,7 @@ var customTheme = {
       size: 'large'
     },
     icons: {
-      remove: Trash
+      remove: _grommetIcons.Trash
     },
     dragOver: {
       border: {
@@ -48,25 +58,26 @@ var customTheme = {
     }
   }
 };
-export var Custom = function Custom() {
-  return /*#__PURE__*/React.createElement(Grommet, {
+
+var Custom = function Custom() {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: customTheme
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
     justify: "start",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium"
-  }, /*#__PURE__*/React.createElement(FileInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
     renderFile: function renderFile(file) {
-      return /*#__PURE__*/React.createElement(Box, {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
         direction: "row",
         gap: "small"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         weight: "bold"
-      }, file.name), /*#__PURE__*/React.createElement(Text, {
+      }, file.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
         color: "text-weak"
       }, file.size, " bytes"));
     },
@@ -87,6 +98,9 @@ export var Custom = function Custom() {
     }
   }))));
 };
-export default {
-  title: 'Input/FileInput/Custom'
+
+exports.Custom = Custom;
+var _default = {
+  title: 'Input/FileInput/Custom Themed/Custom'
 };
+exports["default"] = _default;

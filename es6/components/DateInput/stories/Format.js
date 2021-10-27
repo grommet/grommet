@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 export var Format = function Format() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
@@ -12,9 +11,7 @@ export var Format = function Format() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -23,7 +20,7 @@ export var Format = function Format() {
     format: "m/d/yy",
     value: value,
     onChange: onChange
-  }))));
+  })));
 };
 export default {
   title: 'Input/DateInput/Format'

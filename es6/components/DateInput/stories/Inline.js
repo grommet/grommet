@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 export var Inline = function Inline() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
@@ -12,16 +11,14 @@ export var Inline = function Inline() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(DateInput, {
     inline: true,
     value: value,
     onChange: onChange
-  })));
+  }));
 };
 export default {
   title: 'Input/DateInput/Inline'

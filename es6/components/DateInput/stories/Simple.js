@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput, Text } from 'grommet';
 export var Simple = function Simple() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
@@ -12,9 +11,7 @@ export var Simple = function Simple() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     align: "center",
     justify: "center",
@@ -24,7 +21,7 @@ export var Simple = function Simple() {
   }, value && new Date(value).toLocaleDateString()), /*#__PURE__*/React.createElement(DateInput, {
     value: value,
     onChange: onChange
-  })));
+  }));
 };
 Simple.parameters = {
   chromatic: {

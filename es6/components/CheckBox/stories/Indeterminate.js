@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Grommet, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox } from 'grommet';
 export var Indeterminate = function Indeterminate() {
   var _useState = useState([]),
       checked = _useState[0],
@@ -26,9 +25,7 @@ export var Indeterminate = function Indeterminate() {
     }
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -48,7 +45,7 @@ export var Indeterminate = function Indeterminate() {
         return onCheck(e, item);
       }
     });
-  }))));
+  })));
 };
 export default {
   title: 'Input/CheckBox/Indeterminate'

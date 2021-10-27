@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var dateFormat = new Intl.DateTimeFormat(undefined, {
@@ -27,9 +25,7 @@ var Range = function Range() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
@@ -38,7 +34,7 @@ var Range = function Range() {
       label: dateFormat.format(new Date(value[0])) + " - " + dateFormat.format(new Date(value[1]))
     },
     onChange: onChange
-  })));
+  }));
 };
 
 exports.Range = Range;

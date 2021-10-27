@@ -1,11 +1,7 @@
 import React from 'react';
-import { Box, Button, Grommet, FileInput, Form, FormField, Layer } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, FileInput, Form, FormField, Layer } from 'grommet';
 export var ConfirmRemove = function ConfirmRemove() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
@@ -60,7 +56,7 @@ export var ConfirmRemove = function ConfirmRemove() {
   })), /*#__PURE__*/React.createElement(Button, {
     label: "Submit",
     type: "submit"
-  })))));
+  }))));
 };
 ConfirmRemove.parameters = {
   chromatic: {

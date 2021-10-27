@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Button, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBoxGroup, Form, FormField } from 'grommet';
 export var FormControlled = function FormControlled() {
   var _useState = useState(),
       value = _useState[0],
       setValue = _useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     width: "medium"
   }, /*#__PURE__*/React.createElement(Form, {
@@ -36,7 +33,7 @@ export var FormControlled = function FormControlled() {
   })), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit"
-  }))));
+  })));
 };
 FormControlled.storyName = 'Form controlled';
 export default {

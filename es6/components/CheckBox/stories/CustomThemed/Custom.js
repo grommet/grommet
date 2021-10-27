@@ -61,5 +61,5 @@ export var Custom = function Custom(props) {
   }))));
 };
 export default {
-  title: 'Input/CheckBox/Custom'
+  title: 'Input/CheckBox/Custom Themed/Custom'
 };

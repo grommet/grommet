@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var FormatInline = function FormatInline() {
@@ -22,9 +20,7 @@ var FormatInline = function FormatInline() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "medium"
@@ -38,7 +34,7 @@ var FormatInline = function FormatInline() {
     onClick: function onClick() {
       return setValue(new Date().toISOString());
     }
-  })));
+  }));
 };
 
 exports.FormatInline = FormatInline;

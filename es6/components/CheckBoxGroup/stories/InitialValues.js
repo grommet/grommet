@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, CheckBoxGroup, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBoxGroup } from 'grommet';
 export var InitialValues = function InitialValues() {
   var _useState = useState(['First', 'Second']),
       value = _useState[0],
@@ -10,9 +9,7 @@ export var InitialValues = function InitialValues() {
       value2 = _useState2[0],
       setValue2 = _useState2[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "large"
   }, "Initial value via options object:", /*#__PURE__*/React.createElement(CheckBoxGroup, {
@@ -44,7 +41,7 @@ export var InitialValues = function InitialValues() {
       label: 'Wuhan',
       id: 'W'
     }]
-  })));
+  }));
 };
 InitialValues.storyName = 'Initial values';
 export default {

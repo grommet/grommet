@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _grommetIcons = require("grommet-icons");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -29,9 +27,7 @@ var Children = function Children() {
       value = _useState[0],
       setValue = _useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
@@ -53,7 +49,7 @@ var Children = function Children() {
       background: background,
       pad: "xsmall"
     }, /*#__PURE__*/_react["default"].createElement(Icon, null));
-  })));
+  }));
 };
 
 exports.Children = Children;

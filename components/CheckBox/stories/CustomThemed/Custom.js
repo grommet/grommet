@@ -78,6 +78,6 @@ var Custom = function Custom(props) {
 
 exports.Custom = Custom;
 var _default = {
-  title: 'Input/CheckBox/Custom'
+  title: 'Input/CheckBox/Custom Themed/Custom'
 };
 exports["default"] = _default;

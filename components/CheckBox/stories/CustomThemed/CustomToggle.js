@@ -89,6 +89,6 @@ var CustomToggle = function CustomToggle(props) {
 exports.CustomToggle = CustomToggle;
 CustomToggle.storyName = 'Custom toggle';
 var _default = {
-  title: 'Input/CheckBox/Custom toggle'
+  title: 'Input/CheckBox/Custom Themed/Custom toggle'
 };
 exports["default"] = _default;

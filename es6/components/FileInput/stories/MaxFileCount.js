@@ -1,11 +1,7 @@
 import React from 'react';
-import { Box, Button, Grommet, FileInput, Form, FormField } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, FileInput, Form, FormField } from 'grommet';
 export var MaxFileCount = function MaxFileCount() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    full: true,
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
     justify: "start",
@@ -28,7 +24,7 @@ export var MaxFileCount = function MaxFileCount() {
     label: "Submit",
     primary: true,
     type: "submit"
-  })))));
+  }))));
 };
 export default {
   title: 'Input/FileInput/Max File Count'

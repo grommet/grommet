@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, CheckBoxGroup, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBoxGroup } from 'grommet';
 var objectOptions = [];
 
 for (var i = 1; i <= 5; i += 1) {
@@ -19,9 +18,7 @@ export var ObjectOptions = function ObjectOptions() {
       value2 = _useState2[0],
       setValue2 = _useState2[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "large"
   }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
@@ -52,7 +49,7 @@ export var ObjectOptions = function ObjectOptions() {
       label: 'Wuhan',
       key: 'W'
     }]
-  })));
+  }));
 };
 ObjectOptions.storyName = 'Object options';
 export default {

@@ -1,10 +1,7 @@
 import React from 'react';
-import { Box, CheckBoxGroup, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBoxGroup, Text } from 'grommet';
 export var Disabled = function Disabled() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "large"
   }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, {
@@ -28,7 +25,7 @@ export var Disabled = function Disabled() {
       label: 'Wuhan',
       disabled: true
     }]
-  }))));
+  })));
 };
 export default {
   title: 'Input/CheckBoxGroup/Disabled'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput, grommet } from 'grommet';
+import { Box, DateInput } from 'grommet';
 import { Button } from '../../Button';
 var DATE = '2020-07-02T00:00:00-08:00';
 var DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
@@ -12,9 +12,7 @@ export var ResetDateWithString = function ResetDateWithString() {
     return setValue(event.value);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     direction: "column",
     align: "center",
     justify: "center",
@@ -31,7 +29,7 @@ export var ResetDateWithString = function ResetDateWithString() {
       return setValue('');
     },
     type: "button"
-  })));
+  }));
 };
 export var ResetDateWithArray = function ResetDateWithArray() {
   var _React$useState2 = React.useState(DATES),
@@ -42,9 +40,7 @@ export var ResetDateWithArray = function ResetDateWithArray() {
     return setValue(event.value);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     direction: "column",
     align: "center",
     justify: "center",
@@ -61,7 +57,7 @@ export var ResetDateWithArray = function ResetDateWithArray() {
       return setValue([]);
     },
     type: "button"
-  })));
+  }));
 };
 ResetDateWithString.storyName = 'Reset date with string';
 ResetDateWithArray.storyName = 'Reset date with array';

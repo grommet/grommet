@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, CheckBox, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox } from 'grommet';
 var boxStyle = {
   position: 'relative',
   display: 'block'
@@ -39,9 +38,7 @@ export var WithStickyDiv = function WithStickyDiv() {
     };
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     align: "center"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -59,7 +56,7 @@ export var WithStickyDiv = function WithStickyDiv() {
       label: item,
       onChange: onCheck(item)
     });
-  }))));
+  })));
 };
 WithStickyDiv.storyName = 'With sticky div';
 export default {

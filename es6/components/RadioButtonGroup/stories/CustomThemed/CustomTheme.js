@@ -77,5 +77,5 @@ export var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
 };
 CustomRadioButtonGroup.storyName = 'Custom theme';
 export default {
-  title: 'Input/RadioButtonGroup/Custom theme'
+  title: 'Input/RadioButtonGroup/Custom themed/Custom theme'
 };

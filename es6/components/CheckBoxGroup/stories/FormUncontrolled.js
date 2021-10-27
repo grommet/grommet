@@ -1,10 +1,7 @@
 import React from 'react';
-import { Box, Button, CheckBoxGroup, Form, FormField, Grommet, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBoxGroup, Form, FormField, Heading } from 'grommet';
 export var FormUncontrolled = function FormUncontrolled() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
   }, /*#__PURE__*/React.createElement(Heading, {
     level: "3"

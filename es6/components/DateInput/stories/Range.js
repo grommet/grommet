@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 var dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric'
@@ -16,9 +15,7 @@ export var Range = function Range() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(DateInput, {
@@ -27,7 +24,7 @@ export var Range = function Range() {
       label: dateFormat.format(new Date(value[0])) + " - " + dateFormat.format(new Date(value[1]))
     },
     onChange: onChange
-  })));
+  }));
 };
 Range.parameters = {
   chromatic: {

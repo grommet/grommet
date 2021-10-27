@@ -1,12 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { Box, Button, CheckBox, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, CheckBoxGroup, Form, FormField } from 'grommet';
 export var InsideFormField = function InsideFormField(props) {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Form, {
@@ -76,7 +73,7 @@ export var InsideFormField = function InsideFormField(props) {
   }))), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "Submit"
-  }))));
+  })));
 };
 InsideFormField.storyName = 'Inside a FormField';
 export default {

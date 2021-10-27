@@ -55,5 +55,5 @@ export var ThemeRadioButton = function ThemeRadioButton() {
 };
 ThemeRadioButton.storyName = 'Theme';
 export default {
-  title: 'Input/RadioButton/Theme'
+  title: 'Input/RadioButton/Custom Themed/Theme'
 };

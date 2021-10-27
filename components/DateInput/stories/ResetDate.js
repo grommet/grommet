@@ -23,9 +23,7 @@ var ResetDateWithString = function ResetDateWithString() {
     return setValue(event.value);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "column",
     align: "center",
     justify: "center",
@@ -42,7 +40,7 @@ var ResetDateWithString = function ResetDateWithString() {
       return setValue('');
     },
     type: "button"
-  })));
+  }));
 };
 
 exports.ResetDateWithString = ResetDateWithString;
@@ -56,9 +54,7 @@ var ResetDateWithArray = function ResetDateWithArray() {
     return setValue(event.value);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "column",
     align: "center",
     justify: "center",
@@ -75,7 +71,7 @@ var ResetDateWithArray = function ResetDateWithArray() {
       return setValue([]);
     },
     type: "button"
-  })));
+  }));
 };
 
 exports.ResetDateWithArray = ResetDateWithArray;

@@ -9,8 +9,6 @@ var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Children = function Children() {
@@ -18,9 +16,7 @@ var Children = function Children() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -41,7 +37,7 @@ var Children = function Children() {
     onClick: function onClick() {
       return setSelected(undefined);
     }
-  })));
+  }));
 };
 
 exports.Children = Children;

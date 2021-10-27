@@ -1,10 +1,7 @@
 import React from 'react';
-import { Grommet, Box, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, RadioButton } from 'grommet';
 export var Disabled = function Disabled() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -14,7 +11,7 @@ export var Disabled = function Disabled() {
     value: "option 1",
     checked: true,
     disabled: true
-  })));
+  }));
 };
 export default {
   title: 'Input/RadioButton/Disabled'

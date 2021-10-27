@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Button, DateInput, Form, FormField, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, DateInput, Form, FormField } from 'grommet';
 export var DateForm = function DateForm() {
   var _React$useState = React.useState({
     value: ''
@@ -13,9 +12,7 @@ export var DateForm = function DateForm() {
     setValue(nextValue);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Form, {
@@ -38,7 +35,7 @@ export var DateForm = function DateForm() {
   })), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "submit"
-  }))));
+  })));
 };
 DateForm.storyName = 'Form';
 export default {
