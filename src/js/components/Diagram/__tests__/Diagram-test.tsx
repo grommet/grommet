@@ -1,15 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import 'jest-styled-components';
 import { cleanup, render } from '@testing-library/react';
 
 import { Grommet, Box, Diagram, Stack } from '../..';
 
-interface ContextProps {
-  children: React.ReactNode;
-}
-
-const Context: FC<ContextProps> = ({ children }) => (
+const Context = ({ children }: { children: React.ReactNode }) => (
   <Grommet>
     <Stack>
       <Box direction="row">
