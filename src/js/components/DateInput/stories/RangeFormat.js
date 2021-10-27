@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 
 export const RangeFormat = () => {
   const [value, setValue] = React.useState([
@@ -14,17 +13,15 @@ export const RangeFormat = () => {
     setValue(nextValue);
   };
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Box width="medium">
-          <DateInput
-            value={value}
-            format="mm/dd/yyyy-mm/dd/yyyy"
-            onChange={onChange}
-          />
-        </Box>
+    <Box align="center" pad="large">
+      <Box width="medium">
+        <DateInput
+          value={value}
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          onChange={onChange}
+        />
       </Box>
-    </Grommet>
+    </Box>
   );
 };
 
