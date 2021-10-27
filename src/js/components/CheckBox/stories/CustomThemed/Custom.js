@@ -44,7 +44,7 @@ const customCheckBoxTheme = {
   },
 };
 
-export const Custom = props => {
+export const Custom = (props) => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -54,7 +54,7 @@ export const Custom = props => {
           {...props}
           label="Choice"
           checked={checked}
-          onChange={event => setChecked(event.target.checked)}
+          onChange={(event) => setChecked(event.target.checked)}
         />
       </Box>
     </Grommet>
@@ -62,5 +62,5 @@ export const Custom = props => {
 };
 
 export default {
-  title: 'Input/CheckBox/Custom',
+  title: 'Input/CheckBox/Custom Themed/Custom',
 };
