@@ -5,6 +5,7 @@ import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -232,7 +233,11 @@ describe('RadioButtonGroup', () => {
     // Focus radio '2' button and simulate ArrowDown key
     // should result in selecting radio '3'
     const middleRadioBtn = getByRole('radio', { name: 'radio button 2' });
-    await waitFor(() => middleRadioBtn.focus(), { timeout: 1000 });
+    middleRadioBtn.focus();
+
+    await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
+      timeout: 2000,
+    });
 
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
@@ -256,7 +261,10 @@ describe('RadioButtonGroup', () => {
 
     // Focus radio '2' button and simulate ArrowUp key
     // should result in selecting radio '1'
-    await waitFor(() => middleRadioBtn.focus());
+    middleRadioBtn.focus();
+    await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
+      timeout: 2000,
+    });
 
     fireEvent.keyDown(middleRadioBtn, {
       key: 'ArrowUp',
