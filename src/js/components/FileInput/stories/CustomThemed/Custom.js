@@ -73,5 +73,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Input/FileInput/Custom',
+  title: 'Input/FileInput/Custom Themed/Custom',
 };
