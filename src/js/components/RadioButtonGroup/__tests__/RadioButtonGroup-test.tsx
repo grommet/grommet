@@ -198,27 +198,32 @@ describe('RadioButtonGroup', () => {
   });
 
   test('Works with keyboard', async () => {
+    const radioGroupOptions = [
+      {
+        id: 'ONE',
+        value: '1',
+        label: 'radio button 1',
+      },
+      {
+        id: 'TWO',
+        value: '2',
+        label: 'radio button 2',
+      },
+      {
+        id: 'THREE',
+        value: '3',
+        label: 'radio button 3',
+      },
+    ];
+
     const onChange = jest.fn();
 
-    const { container } = render(
+    const { getByRole } = render(
       <Grommet>
         <RadioButtonGroup
           name="test"
           value="2"
-          options={[
-            {
-              id: 'ONE',
-              value: '1',
-            },
-            {
-              id: 'TWO',
-              value: '2',
-            },
-            {
-              id: 'THREE',
-              value: '3',
-            },
-          ]}
+          options={radioGroupOptions}
           onChange={onChange}
         />
       </Grommet>,
@@ -226,45 +231,48 @@ describe('RadioButtonGroup', () => {
 
     // Focus radio '2' button and simulate ArrowDown key
     // should result in selecting radio '3'
-    const middleRadioBtn = container.querySelector(
-      'input[type="radio"]#ONE',
-    ) as HTMLInputElement;
-    middleRadioBtn.focus();
+    const middleRadioBtn = getByRole('radio', { name: 'radio button 2' });
+    await waitFor(() => middleRadioBtn.focus());
 
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
 
-    await waitFor(() => container.querySelector('input[type="radio"]#TWO'));
-    setTimeout(() => {
-      fireEvent.keyDown(middleRadioBtn, {
-        key: 'ArrowDown',
-        keyCode: 40,
-        which: 40,
-        bubbles: true,
-        cancelable: true,
-      });
-      expect(onChange).toBeCalledTimes(1);
+    fireEvent.keyDown(middleRadioBtn, {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    await waitFor(() => expect(onChange).toBeCalledTimes(1));
+    await waitFor(() =>
       expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({ target: { value: '3' } }),
-      );
-    }, 50);
+        expect.objectContaining({
+          target: getByRole('radio', { name: 'radio button 3' }),
+        }),
+      ),
+    );
 
     // Focus radio '2' button and simulate ArrowUp key
     // should result in selecting radio '1'
-    middleRadioBtn.focus();
-    await waitFor(() => container.querySelector('input[type="radio"]#TWO'));
-    setTimeout(() => {
-      fireEvent.keyDown(middleRadioBtn, {
-        key: 'ArrowUp',
-        keyCode: 38,
-        which: 38,
-        bubbles: true,
-        cancelable: true,
-      });
-      expect(onChange).toBeCalledTimes(2);
+    await waitFor(() => middleRadioBtn.focus());
+
+    fireEvent.keyDown(middleRadioBtn, {
+      key: 'ArrowUp',
+      keyCode: 38,
+      which: 38,
+      bubbles: true,
+      cancelable: true,
+    });
+
+    await waitFor(() => expect(onChange).toBeCalledTimes(2));
+    await waitFor(() =>
       expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({ target: { value: '1' } }),
-      );
-    }, 50);
+        expect.objectContaining({
+          target: getByRole('radio', { name: 'radio button 1' }),
+        }),
+      ),
+    );
   });
 });
