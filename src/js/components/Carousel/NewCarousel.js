@@ -19,6 +19,11 @@ const StyledControl = styled(Button)`
   }
 `;
 
+const StyledCarouselContainer = styled(Box)`
+  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+`;
+
 const handleOnNext =
   ({
     setDirection,
@@ -68,11 +73,6 @@ const handleDotNavigation =
     onChild(index);
   };
 
-const StyledContainer = styled(Box)`
-  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
-  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
-`;
-
 const NewCarousel = ({
   alignSelf,
   a11yTitle,
@@ -107,12 +107,12 @@ const NewCarousel = ({
   // Handles when there is only one child
   if (numSlides === undefined)
     return (
-      <StyledContainer
+      <StyledCarouselContainer
         widthProp={fill ? '100%' : width}
         heightProp={fill ? '100%' : height}
       >
         {children}
-      </StyledContainer>
+      </StyledCarouselContainer>
     );
 
   const arrowNavigation = !controls || controls === 'arrow';
@@ -143,7 +143,7 @@ const NewCarousel = ({
   });
 
   return (
-    <StyledContainer
+    <StyledCarouselContainer
       theme={theme}
       justify="end"
       overflow="hidden"
@@ -230,7 +230,7 @@ const NewCarousel = ({
           ))}
         </Box>
       )}
-    </StyledContainer>
+    </StyledCarouselContainer>
   );
 };
 
