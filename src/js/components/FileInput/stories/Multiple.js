@@ -1,27 +1,24 @@
 import React from 'react';
 
-import { Box, Grommet, FileInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, FileInput } from 'grommet';
 
 export const Multiple = () => (
-  <Grommet full theme={grommet}>
-    <Box fill align="center" justify="start" pad="large">
-      <Box width="medium">
-        <FileInput
-          multiple={{
-            max: 5,
-          }}
-          onChange={(event, { files }) => {
-            console.log(event);
-            for (let i = 0; i < files.length; i += 1) {
-              const file = files[i];
-              console.log(file.name);
-            }
-          }}
-        />
-      </Box>
+  <Box fill align="center" justify="start" pad="large">
+    <Box width="medium">
+      <FileInput
+        multiple={{
+          max: 5,
+        }}
+        onChange={(event, { files }) => {
+          console.log(event);
+          for (let i = 0; i < files.length; i += 1) {
+            const file = files[i];
+            console.log(file.name);
+          }
+        }}
+      />
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export default {
