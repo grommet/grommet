@@ -34,6 +34,6 @@ Themed.parameters = {
   }
 };
 var _default = {
-  title: 'Type/Paragraph/Themed'
+  title: 'Type/Paragraph/Custom Themed/Themed'
 };
 exports["default"] = _default;

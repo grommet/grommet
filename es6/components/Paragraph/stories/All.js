@@ -1,12 +1,9 @@
 import React from 'react';
-import { Grommet, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Paragraph } from 'grommet';
 var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', '10px'];
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 export var All = function All() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, sizes.map(function (size) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, sizes.map(function (size) {
     return /*#__PURE__*/React.createElement(Paragraph, {
       key: size,
       size: size

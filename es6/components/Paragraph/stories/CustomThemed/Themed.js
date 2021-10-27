@@ -20,5 +20,5 @@ Themed.parameters = {
   }
 };
 export default {
-  title: 'Type/Paragraph/Themed'
+  title: 'Type/Paragraph/Custom Themed/Themed'
 };
