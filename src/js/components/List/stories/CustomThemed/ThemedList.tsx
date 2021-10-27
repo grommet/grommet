@@ -24,7 +24,7 @@ const theme: ThemeType = deepMerge(grommet, {
   },
 });
 
-export const Themed = () => (
+export const ThemedList = () => (
   <Grommet theme={theme}>
     <Box align="center" pad="large">
       <List data={locations} />
@@ -32,6 +32,8 @@ export const Themed = () => (
   </Grommet>
 );
 
+ThemedList.storyName = 'Themed List';
+
 export default {
-  title: 'Visualizations/List/Themed',
+  title: 'Visualizations/List/Custom Themed/Themed List',
 };
