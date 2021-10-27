@@ -232,7 +232,7 @@ describe('RadioButtonGroup', () => {
     // Focus radio '2' button and simulate ArrowDown key
     // should result in selecting radio '3'
     const middleRadioBtn = getByRole('radio', { name: 'radio button 2' });
-    await waitFor(() => middleRadioBtn.focus());
+    await waitFor(() => middleRadioBtn.focus(), { timeout: 1000 });
 
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
