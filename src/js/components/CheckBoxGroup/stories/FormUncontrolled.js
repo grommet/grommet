@@ -1,18 +1,9 @@
 import React from 'react';
 
-import {
-  Box,
-  Button,
-  CheckBoxGroup,
-  Form,
-  FormField,
-  Grommet,
-  Heading,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBoxGroup, Form, FormField, Heading } from 'grommet';
 
 export const FormUncontrolled = () => (
-  <Grommet theme={grommet}>
+  <Box>
     <Box pad="medium">
       <Heading level="3">Form with string options</Heading>
       <Form
@@ -48,7 +39,7 @@ export const FormUncontrolled = () => (
         <Button type="submit" label="Submit" />
       </Form>
     </Box>
-  </Grommet>
+  </Box>
 );
 
 FormUncontrolled.storyName = 'Form uncontrolled';
