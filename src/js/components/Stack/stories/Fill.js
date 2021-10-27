@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Grommet, Box, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Stack } from 'grommet';
 
 export const Fill = () => (
-  <Grommet theme={grommet} full>
+  <Grommet full>
     <Stack fill>
       <Box background="brand" fill>
         Test
