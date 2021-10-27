@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var data = [];
@@ -26,9 +24,7 @@ var Selection = function Selection() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -40,7 +36,7 @@ var Selection = function Selection() {
     onClickItem: function onClickItem(event) {
       return setSelected(selected === event.index ? undefined : event.index);
     }
-  })));
+  }));
 };
 
 exports.Selection = Selection;

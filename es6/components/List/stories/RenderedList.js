@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, List, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Text } from 'grommet';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
 
@@ -12,9 +11,7 @@ for (var i = 0; i < 40; i += 1) {
 }
 
 export var RenderedList = function RenderedList() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(List, {
@@ -33,7 +30,7 @@ export var RenderedList = function RenderedList() {
         color: "dark-4"
       }, item.location);
     }
-  })));
+  }));
 };
 RenderedList.storyName = 'Key render';
 export default {

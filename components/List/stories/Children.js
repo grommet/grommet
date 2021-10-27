@@ -26,9 +26,7 @@ var data = [{
 }];
 
 var Children = function Children() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     height: "100%",
     align: "center"
@@ -53,7 +51,7 @@ var Children = function Children() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold"
     }, datum.city)));
-  })));
+  }));
 };
 
 exports.Children = Children;

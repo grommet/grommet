@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grommet, Box, List, Menu } from 'grommet';
+import { Box, List, Menu } from 'grommet';
 import { More } from "grommet-icons/es6/icons/More";
-import { grommet } from 'grommet/themes';
 var data = [];
 
 for (var i = 0; i < 40; i += 1) {
@@ -11,9 +10,7 @@ for (var i = 0; i < 40; i += 1) {
 }
 
 export var Action = function Action() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "large"
   }, /*#__PURE__*/React.createElement(List, {
     data: data.slice(0, 10),
@@ -31,7 +28,7 @@ export var Action = function Action() {
         }]
       });
     }
-  })));
+  }));
 };
 export default {
   title: 'Visualizations/List/Action'

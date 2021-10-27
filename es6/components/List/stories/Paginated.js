@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Grommet, List, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Menu } from 'grommet';
 import { More } from "grommet-icons/es6/icons/More";
 var data = [];
 
@@ -11,10 +10,7 @@ for (var i = 0; i < 95; i += 1) {
 }
 
 export var Paginated = function Paginated() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium"
   }, /*#__PURE__*/React.createElement(List, {
     data: data,
@@ -33,7 +29,7 @@ export var Paginated = function Paginated() {
       page: 7
     },
     paginate: true
-  })));
+  }));
 };
 export default {
   title: 'Visualizations/List/Paginated'

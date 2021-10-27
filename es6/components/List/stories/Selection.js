@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List } from 'grommet';
 var data = [];
 
 for (var i = 0; i < 40; i += 1) {
@@ -16,9 +15,7 @@ export var Selection = function Selection() {
       selected = _React$useState[0],
       setSelected = _React$useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -30,7 +27,7 @@ export var Selection = function Selection() {
     onClickItem: function onClickItem(event) {
       return setSelected(selected === event.index ? undefined : event.index);
     }
-  })));
+  }));
 };
 export default {
   title: 'Visualizations/List/Selection'

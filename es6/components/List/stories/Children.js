@@ -1,6 +1,6 @@
 import React from 'react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
-import { Box, Grommet, grommet, List, Text, Tip } from 'grommet';
+import { Box, List, Text, Tip } from 'grommet';
 var data = [{
   city: 'Boise',
   state: 'Idaho'
@@ -15,9 +15,7 @@ var data = [{
   state: 'California'
 }];
 export var Children = function Children() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     height: "100%",
     align: "center"
@@ -42,7 +40,7 @@ export var Children = function Children() {
     }), /*#__PURE__*/React.createElement(Text, {
       weight: "bold"
     }, datum.city)));
-  })));
+  }));
 };
 export default {
   title: 'Visualizations/List/Children'

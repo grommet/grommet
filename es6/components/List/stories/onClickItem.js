@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, List, Layer, Button, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, List, Layer, Button, Text } from 'grommet';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
 
@@ -23,9 +22,7 @@ export var OnClickItemList = function OnClickItemList() {
       show = _React$useState2[0],
       setShow = _React$useState2[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "large"
@@ -53,7 +50,7 @@ export var OnClickItemList = function OnClickItemList() {
     onClick: function onClick() {
       return setShow(false);
     }
-  })))));
+  }))));
 };
 OnClickItemList.storyName = 'onClickItem';
 OnClickItemList.parameters = {
