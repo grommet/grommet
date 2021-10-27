@@ -5,6 +5,7 @@ import { NewCarouselChild } from './NewCarouselChild';
 import { NewCarouselPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
 import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 import { widthStyle, heightStyle } from '../../utils';
@@ -132,91 +133,97 @@ const NewCarousel = ({
   });
 
   return (
-    <StyledCarouselContainer
-      theme={theme}
-      justify="end"
-      background="white"
-      overflow="hidden"
-      widthProp={fill ? '100%' : width}
-      heightProp={fill ? '100%' : height}
-      margin={margin}
-      a11yTitle={a11yTitle}
-      gridArea={gridArea && gridArea}
-      alignSelf={alignSelf && alignSelf}
-      style={{ position: 'relative' }}
+    <Keyboard
+      onLeft={() => onPrevious(current, inTransition)}
+      onRight={() => onNext(current, inTransition)}
     >
-      {/* Left: Previous Arrow */}
-      <Box
-        pad={{ horizontal: 'small' }}
-        style={{ position: 'absolute' }}
-        width="48px"
-        justify="center"
-        align="center"
-        fill="vertical"
-      >
-        <StyledControl
-          icon={<Previous color="black" size="small" />}
-          onClick={() => onPrevious(current, inTransition)}
-        />
-      </Box>
-
-      {/* Carousel Slides */}
-      <Box
-        style={{ position: 'relative' }}
+      <StyledCarouselContainer
+        theme={theme}
+        tabIndex={0}
+        justify="end"
+        background="white"
         overflow="hidden"
-        direction="row"
-        fill
+        widthProp={fill ? '100%' : width}
+        heightProp={fill ? '100%' : height}
+        margin={margin}
+        a11yTitle={a11yTitle}
+        gridArea={gridArea && gridArea}
+        alignSelf={alignSelf && alignSelf}
+        style={{ position: 'relative' }}
       >
-        {React.Children.map(children, (child, index) => (
-          <NewCarouselChild
-            index={index}
-            current={current}
-            previous={previous}
-            direction={direction}
-          >
-            {child}
-          </NewCarouselChild>
-        ))}
-      </Box>
-
-      {/* Right: Next Arrow */}
-      <Box
-        width="48px"
-        pad={{ horizontal: 'small' }}
-        style={{ position: 'absolute', left: `calc(100% - 48px)` }}
-        justify="center"
-        align="center"
-        fill="vertical"
-      >
-        <StyledControl
-          onClick={() => onNext(current, inTransition)}
-          icon={<Next color="black" size="small" />}
-        />
-      </Box>
-
-      {/* Bottom: Progress Indicator */}
-      <Box
-        direction="row"
-        gap="xsmall"
-        pad={{ vertical: 'xsmall' }}
-        alignSelf="center"
-        justify="center"
-        background={dark ? '#404B5C' : 'white'}
-        fill="horizontal"
-        align="center"
-      >
-        {children.map((_, index) => (
-          <Box
-            round
-            width="8px"
-            height="8px"
-            flex={false}
-            border={getBorderColor(dark, index, current)}
-            background={getBackgroundColor(dark, index, current)}
+        {/* Left: Previous Arrow */}
+        <Box
+          pad={{ horizontal: 'small' }}
+          style={{ position: 'absolute' }}
+          width="48px"
+          justify="center"
+          align="center"
+          fill="vertical"
+        >
+          <StyledControl
+            icon={<Previous color="black" size="small" />}
+            onClick={() => onPrevious(current, inTransition)}
           />
-        ))}
-      </Box>
-    </StyledCarouselContainer>
+        </Box>
+
+        {/* Carousel Slides */}
+        <Box
+          style={{ position: 'relative' }}
+          overflow="hidden"
+          direction="row"
+          fill
+        >
+          {React.Children.map(children, (child, index) => (
+            <NewCarouselChild
+              index={index}
+              current={current}
+              previous={previous}
+              direction={direction}
+            >
+              {child}
+            </NewCarouselChild>
+          ))}
+        </Box>
+
+        {/* Right: Next Arrow */}
+        <Box
+          width="48px"
+          pad={{ horizontal: 'small' }}
+          style={{ position: 'absolute', left: `calc(100% - 48px)` }}
+          justify="center"
+          align="center"
+          fill="vertical"
+        >
+          <StyledControl
+            onClick={() => onNext(current, inTransition)}
+            icon={<Next color="black" size="small" />}
+          />
+        </Box>
+
+        {/* Bottom: Progress Indicator */}
+        <Box
+          direction="row"
+          gap="xsmall"
+          pad={{ vertical: 'xsmall' }}
+          alignSelf="center"
+          justify="center"
+          background={dark ? '#404B5C' : 'white'}
+          fill="horizontal"
+          align="center"
+        >
+          {children.map((_, index) => (
+            <Box
+              round
+              width="8px"
+              height="8px"
+              flex={false}
+              border={getBorderColor(dark, index, current)}
+              background={getBackgroundColor(dark, index, current)}
+            />
+          ))}
+        </Box>
+      </StyledCarouselContainer>
+    </Keyboard>
   );
 };
 
