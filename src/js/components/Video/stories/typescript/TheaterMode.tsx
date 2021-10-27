@@ -2,24 +2,14 @@ import React, { useState } from 'react';
 
 import { Box, Grommet, Video, grommet } from 'grommet';
 import { Test } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
-
-const customTheme = deepMerge(grommet, {
-  video: {
-    extend: ({ mode }) => `
-    ${mode === 'theater' && `width: 75vw;`}
-    `,
-  },
-});
 
 const TheaterMode = (props) => {
-  const [mode, setMode] = useState('normal');
+  const [source, setSource] = useState('small_video.mp4');
 
   return (
-    <Grommet theme={customTheme}>
+    <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Video
-          mode={mode}
           controls={{
             position: 'below',
             items: [
@@ -28,26 +18,18 @@ const TheaterMode = (props) => {
               {
                 icon: <Test />,
                 onClick: () =>
-                  setMode(mode === 'normal' ? 'theater' : 'normal'),
+                  setSource(
+                    source === 'small_video.mp4'
+                      ? 'large_video.mp4'
+                      : 'small_video.mp4',
+                  ),
               },
               'fullScreen',
             ],
           }}
           {...props}
         >
-          <source src="small.mp4" type="video/mp4" />
-          <source
-            src="http://techslides.com/demos/sample-videos/small.webm"
-            type="video/webm"
-          />
-          <source
-            src="http://techslides.com/demos/sample-videos/small.ogv"
-            type="video/ogg"
-          />
-          <source
-            src="http://techslides.com/demos/sample-videos/small.3gp"
-            type="video/3gp"
-          />
+          <source src="testing.mp4" type="video/mp4" />
         </Video>
       </Box>
     </Grommet>
