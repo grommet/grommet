@@ -58,7 +58,7 @@ const customToggleTheme = {
   },
 };
 
-export const CustomToggle = props => {
+export const CustomToggle = (props) => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -68,7 +68,7 @@ export const CustomToggle = props => {
           {...props}
           label="Choice"
           checked={checked}
-          onChange={event => setChecked(event.target.checked)}
+          onChange={(event) => setChecked(event.target.checked)}
           toggle
         />
       </Box>
@@ -79,5 +79,5 @@ export const CustomToggle = props => {
 CustomToggle.storyName = 'Custom toggle';
 
 export default {
-  title: 'Input/CheckBox/Custom toggle',
+  title: 'Input/CheckBox/Custom Themed/Custom toggle',
 };
