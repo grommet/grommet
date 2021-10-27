@@ -29,3 +29,31 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 export const CarouselChildPropTypes = CarouselChildPropType;
+
+let NewCarouselPropType;
+if (process.env.NODE_ENV !== 'production') {
+  NewCarouselPropType = {
+    initialChild: PropTypes.number,
+    fill: PropTypes.bool,
+    a11yTitle: PropTypes.string,
+    alignSelf: PropTypes.string,
+    gridArea: PropTypes.string,
+    controls: PropTypes.string,
+    onChild: PropTypes.func,
+    height: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    width: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    margin: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  };
+}
+export const NewCarouselPropTypes = NewCarouselPropType;
+
+let NewCarouselChildPropType;
+if (process.env.NODE_ENV !== 'production') {
+  NewCarouselChildPropType = {
+    index: PropTypes.number.isRequired,
+    current: PropTypes.number.isRequired,
+    previous: PropTypes.number,
+    direction: PropTypes.string,
+  };
+}
+export const NewCarouselChildPropTypes = NewCarouselChildPropType;
