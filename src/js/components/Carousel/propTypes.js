@@ -10,10 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     play: PropTypes.number,
     initialChild: PropTypes.number,
     onChild: PropTypes.func,
-    controls: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['arrows', 'selectors']),
-    ]),
+    dark: PropTypes.bool,
   };
 }
 export const CarouselPropTypes = PropType;

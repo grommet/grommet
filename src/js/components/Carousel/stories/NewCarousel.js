@@ -6,12 +6,12 @@ import { NewCarousel } from '../NewCarousel';
 
 export const Simple = () => (
   <Grommet>
-    <Box align="center" pad="large">
+    <Box align="center" pad="large" background="white">
       <NewCarousel height="600px" width="600px">
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
-        <Box fill align="center" justify="center" background="accent-2">
+        <Box fill align="center" justify="center" background="black">
           <TreeOption size="xlarge" />
         </Box>
         <Box fill align="center" justify="center" background="accent-3">

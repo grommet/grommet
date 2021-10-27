@@ -8,8 +8,8 @@ export const Fill = () => (
   <Grommet>
     <Box align="center" border gap="xsmall" width="900px" height="900px">
       <Text>Outer Container 900 x 900</Text>
-      <NewCarousel fill initialChild={3}>
-        <Box fill align="center" justify="center" background="accent-1">
+      <NewCarousel controls="arrow" fill initialChild={3}>
+        <Box fill align="center" justify="center" background="black">
           <Attraction size="xlarge" />
         </Box>
         <Box fill align="center" justify="center" background="accent-2">

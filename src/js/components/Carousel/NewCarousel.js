@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { Previous, Radial, RadialSelected, Next } from 'grommet-icons';
+import { Previous, Next } from 'grommet-icons';
 import { NewCarouselChild } from './NewCarouselChild';
 import { NewCarouselPropTypes } from './propTypes';
 import { Box } from '../Box';
@@ -13,6 +13,7 @@ const StyledControl = styled(Button)`
   z-index: 1;
   transition-timing-function: ease-in-out;
   background-color: #ffffff99;
+  border-radius: 50%;
   &:hover {
     transition: 0.3s;
     background-color: #ffffffe6;
@@ -62,23 +63,22 @@ const handleOnPrevious =
     onChild(next);
   };
 
-const handleDotNavigation =
-  ({ setDirection, setCurrent, setPrevious, setInTransition, onChild }) =>
-  (current, index, inTransition) => {
-    if (inTransition) return;
-    setInTransition(true);
-    setDirection(index < current ? 'previous' : 'next');
-    setPrevious(current);
-    setCurrent(index);
-    onChild(index);
-  };
+const getBorderColor = (dark, index, current) => {
+  if (dark) return index === current ? 'white' : '#C0CADC';
+  return '#F8F8F8';
+};
+
+const getBackgroundColor = (dark, index, current) => {
+  if (dark) return index === current ? 'white' : 'transparent';
+  return index === current ? 'brand' : 'white';
+};
 
 const NewCarousel = ({
   alignSelf,
   a11yTitle,
   children,
-  controls,
   fill,
+  dark,
   gridArea,
   height,
   initialChild,
@@ -91,7 +91,6 @@ const NewCarousel = ({
   const [inTransition, setInTransition] = useState(false);
   const [direction, setDirection] = useState(undefined);
   const [previous, setPrevious] = useState(undefined);
-
   const numSlides = children.length;
 
   useEffect(() => {
@@ -115,16 +114,6 @@ const NewCarousel = ({
       </StyledCarouselContainer>
     );
 
-  const arrowNavigation = !controls || controls === 'arrow';
-  const dotNavigation = !controls || controls === 'dot';
-
-  const onDotNavigation = handleDotNavigation({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    onChild,
-  });
   const onNext = handleOnNext({
     setDirection,
     setCurrent,
@@ -146,6 +135,7 @@ const NewCarousel = ({
     <StyledCarouselContainer
       theme={theme}
       justify="end"
+      background="white"
       overflow="hidden"
       widthProp={fill ? '100%' : width}
       heightProp={fill ? '100%' : height}
@@ -156,20 +146,19 @@ const NewCarousel = ({
       style={{ position: 'relative' }}
     >
       {/* Left: Previous Arrow */}
-      {arrowNavigation && (
-        <Box
-          width="45px"
-          style={{ position: 'absolute' }}
-          justify="center"
-          align="center"
-          fill="vertical"
-        >
-          <StyledControl
-            icon={<Previous />}
-            onClick={() => onPrevious(current, inTransition)}
-          />
-        </Box>
-      )}
+      <Box
+        pad={{ horizontal: 'small' }}
+        style={{ position: 'absolute' }}
+        width="48px"
+        justify="center"
+        align="center"
+        fill="vertical"
+      >
+        <StyledControl
+          icon={<Previous color="black" size="small" />}
+          onClick={() => onPrevious(current, inTransition)}
+        />
+      </Box>
 
       {/* Carousel Slides */}
       <Box
@@ -191,45 +180,42 @@ const NewCarousel = ({
       </Box>
 
       {/* Right: Next Arrow */}
-      {arrowNavigation && (
-        <Box
-          width="45px"
-          style={{ position: 'absolute', left: `calc(100% - 45px)` }}
-          justify="center"
-          align="center"
-          fill="vertical"
-        >
-          <StyledControl
-            onClick={() => onNext(current, inTransition)}
-            icon={<Next />}
-          />
-        </Box>
-      )}
+      <Box
+        width="48px"
+        pad={{ horizontal: 'small' }}
+        style={{ position: 'absolute', left: `calc(100% - 48px)` }}
+        justify="center"
+        align="center"
+        fill="vertical"
+      >
+        <StyledControl
+          onClick={() => onNext(current, inTransition)}
+          icon={<Next color="black" size="small" />}
+        />
+      </Box>
 
-      {/* Bottom: Dot Navigation */}
-      {dotNavigation && (
-        <Box
-          style={{ position: 'absolute' }}
-          direction="row"
-          alignSelf="center"
-          justify="center"
-          align="center"
-        >
-          {children.map((_, index) => (
-            <StyledControl
-              key={`slide-${index + 1}`}
-              onClick={() => onDotNavigation(current, index, inTransition)}
-              icon={
-                current === index ? (
-                  <RadialSelected color="black" size="small" />
-                ) : (
-                  <Radial color="black" size="small" />
-                )
-              }
-            />
-          ))}
-        </Box>
-      )}
+      {/* Bottom: Progress Indicator */}
+      <Box
+        direction="row"
+        gap="xsmall"
+        pad={{ vertical: 'xsmall' }}
+        alignSelf="center"
+        justify="center"
+        background={dark ? '#404B5C' : 'white'}
+        fill="horizontal"
+        align="center"
+      >
+        {children.map((_, index) => (
+          <Box
+            round
+            width="8px"
+            height="8px"
+            flex={false}
+            border={getBorderColor(dark, index, current)}
+            background={getBackgroundColor(dark, index, current)}
+          />
+        ))}
+      </Box>
     </StyledCarouselContainer>
   );
 };
@@ -238,7 +224,7 @@ NewCarousel.propTypes = NewCarouselPropTypes;
 
 NewCarousel.defaultProps = {
   fill: false,
-  controls: undefined,
+  dark: false,
   gridArea: undefined,
   alignSelf: undefined,
   a11yTitle: '',
