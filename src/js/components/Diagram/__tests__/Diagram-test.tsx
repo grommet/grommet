@@ -5,7 +5,7 @@ import { cleanup, render } from '@testing-library/react';
 
 import { Grommet, Box, Diagram, Stack } from '../..';
 
-const Context = ({ children }) => (
+const Context = ({ children }: { children: React.ReactNode }) => (
   <Grommet>
     <Stack>
       <Box direction="row">
