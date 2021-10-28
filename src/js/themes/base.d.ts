@@ -504,7 +504,6 @@ export interface ThemeType {
     hover?: {
       container?: {
         elevation?: ElevationType;
-        extend?: ExtendType;
       };
     };
     header?: BoxProps;

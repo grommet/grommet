@@ -76,7 +76,7 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-export const elevationStyle = (elevation) => css`
+const elevationStyle = (elevation) => css`
   box-shadow: ${(props) =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
       elevation
@@ -194,6 +194,11 @@ const interactiveStyle = css`
     ${(props) =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+    ${(props) =>
+      props.context === 'card' &&
+      props.onClick &&
+      props.theme.card.hover?.container?.elevation &&
+      elevationStyle(props.theme.card.hover.container.elevation)}
   }
 `;
 
@@ -245,6 +250,7 @@ const StyledBox = styled.div`
     props.focusIndicator !== false &&
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
+  ${(props) => props.context === 'card' && props.theme.card.container.extend}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
