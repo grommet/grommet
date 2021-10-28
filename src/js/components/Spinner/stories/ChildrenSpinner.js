@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Favorite, Nodes } from 'grommet-icons';
 
-import { grommet, Box, Grommet, Spinner, Text } from 'grommet';
+import { Box, Spinner, Text } from 'grommet';
 
 const FavoriteFilled = styled(Favorite)`
   path[fill='none'] {
@@ -11,25 +11,23 @@ const FavoriteFilled = styled(Favorite)`
 `;
 
 export const Children = () => (
-  <Grommet theme={grommet} full>
-    <Box margin="large" align="center">
-      <Box align="center" direction="row" gap="small" pad="small">
-        <Spinner align="center" justify="center" size="large">
-          <Nodes size="large" color="graph-0" />
-        </Spinner>
-        <Text> Spinner with an icon child</Text>
-      </Box>
-      <Box direction="row" gap="large" pad="small">
-        <Spinner
-          animation={{ type: 'pulse', duration: 650, size: 'medium' }}
-          justify="center"
-        >
-          <FavoriteFilled color="red" size="large" />
-        </Spinner>
-        <Text margin={{ horizontal: 'small' }}> Loading with LOVE...</Text>
-      </Box>
+  <Box margin="large" align="center">
+    <Box align="center" direction="row" gap="small" pad="small">
+      <Spinner align="center" justify="center" size="large">
+        <Nodes size="large" color="graph-0" />
+      </Spinner>
+      <Text> Spinner with an icon child</Text>
     </Box>
-  </Grommet>
+    <Box direction="row" gap="large" pad="small">
+      <Spinner
+        animation={{ type: 'pulse', duration: 650, size: 'medium' }}
+        justify="center"
+      >
+        <FavoriteFilled color="red" size="large" />
+      </Spinner>
+      <Text margin={{ horizontal: 'small' }}> Loading with LOVE...</Text>
+    </Box>
+  </Box>
 );
 
 export default {
