@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { grommet } from 'grommet/themes';
-import { Box, Button, Grommet, Paragraph, Spinner } from 'grommet';
+import { Box, Button, Paragraph, Spinner } from 'grommet';
 
 var PageContent = function PageContent() {
   // 'show=true' will trigger the announcement
@@ -27,13 +26,10 @@ var PageContent = function PageContent() {
 };
 
 export var Announced = function Announced() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(PageContent, null)));
+  }, /*#__PURE__*/React.createElement(PageContent, null));
 };
 Announced.parameters = {
   chromatic: {

@@ -36,10 +36,7 @@ var Animation = function Animation() {
       clearTimeout(timer);
     };
   }, [meterValue]);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "xlarge",
     pad: {
       vertical: 'xlarge',
@@ -63,7 +60,7 @@ var Animation = function Animation() {
       size: 'large'
     }],
     border: false
-  })));
+  }));
 };
 
 exports.Animation = Animation;

@@ -2,16 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Favorite } from "grommet-icons/es6/icons/Favorite";
 import { Nodes } from "grommet-icons/es6/icons/Nodes";
-import { grommet, Box, Grommet, Spinner, Text } from 'grommet';
+import { Box, Spinner, Text } from 'grommet';
 var FavoriteFilled = styled(Favorite).withConfig({
   displayName: "ChildrenSpinner__FavoriteFilled",
   componentId: "sc-o9wy2d-0"
 })(["path[fill='none']{fill:red;}"]);
 export var Children = function Children() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     margin: "large",
     align: "center"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -44,7 +41,7 @@ export var Children = function Children() {
     margin: {
       horizontal: 'small'
     }
-  }, " Loading with LOVE..."))));
+  }, " Loading with LOVE...")));
 };
 export default {
   title: 'Visualizations/Spinner/Children'

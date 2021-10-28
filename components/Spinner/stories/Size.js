@@ -10,10 +10,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Size = function Size() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (size) {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (size) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       align: "center",
       direction: "row",

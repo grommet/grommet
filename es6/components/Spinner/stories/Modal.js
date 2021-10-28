@@ -1,5 +1,5 @@
 import React from 'react';
-import { grommet, Box, Button, Grommet, Layer, Spinner, Text } from 'grommet';
+import { Box, Button, Layer, Spinner, Text } from 'grommet';
 export var Modal = function Modal() {
   var _React$useState = React.useState(),
       open = _React$useState[0],
@@ -17,9 +17,10 @@ export var Modal = function Modal() {
     }, 2000);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
+  return /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      vertical: 'xlarge'
+    }
   }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",

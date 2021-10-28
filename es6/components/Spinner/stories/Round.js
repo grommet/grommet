@@ -1,5 +1,5 @@
 import React from 'react';
-import { grommet, Box, Grommet, Spinner } from 'grommet';
+import { Box, Spinner } from 'grommet';
 
 var RoundSpinner = function RoundSpinner(_ref) {
   var round = _ref.round;
@@ -12,10 +12,7 @@ var RoundSpinner = function RoundSpinner(_ref) {
 };
 
 export var Round = function Round() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     direction: "row",
     gap: "medium",
@@ -28,7 +25,7 @@ export var Round = function Round() {
     round: "medium"
   }), /*#__PURE__*/React.createElement(RoundSpinner, {
     round: "full"
-  })));
+  }));
 };
 Round.parameters = {
   chromatic: {

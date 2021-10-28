@@ -26,9 +26,10 @@ var Modal = function Modal() {
     }, 2000);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: {
+      vertical: 'xlarge'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",

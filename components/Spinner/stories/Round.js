@@ -20,10 +20,7 @@ var RoundSpinner = function RoundSpinner(_ref) {
 };
 
 var Round = function Round() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     direction: "row",
     gap: "medium",
@@ -36,7 +33,7 @@ var Round = function Round() {
     round: "medium"
   }), /*#__PURE__*/_react["default"].createElement(RoundSpinner, {
     round: "full"
-  })));
+  }));
 };
 
 exports.Round = Round;

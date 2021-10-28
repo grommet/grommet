@@ -1,10 +1,7 @@
 import React from 'react';
-import { grommet, Box, Grommet, Spinner, Text } from 'grommet';
+import { Box, Spinner, Text } from 'grommet';
 export var Border = function Border() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     gap: "large",
     pad: "medium"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -86,7 +83,7 @@ export var Border = function Border() {
       color: 'brand',
       size: 'medium'
     }]
-  }), /*#__PURE__*/React.createElement(Text, null, "Loading..."))));
+  }), /*#__PURE__*/React.createElement(Text, null, "Loading...")));
 };
 export default {
   title: 'Visualizations/Spinner/Border'

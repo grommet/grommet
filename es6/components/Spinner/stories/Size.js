@@ -1,10 +1,7 @@
 import React from 'react';
-import { grommet, Box, Grommet, Spinner, Text } from 'grommet';
+import { Box, Spinner, Text } from 'grommet';
 export var Size = function Size() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (size) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (size) {
     return /*#__PURE__*/React.createElement(Box, {
       align: "center",
       direction: "row",

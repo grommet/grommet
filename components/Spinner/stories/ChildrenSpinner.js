@@ -19,10 +19,7 @@ var FavoriteFilled = (0, _styledComponents["default"])(_grommetIcons.Favorite).w
 })(["path[fill='none']{fill:red;}"]);
 
 var Children = function Children() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     margin: "large",
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -55,7 +52,7 @@ var Children = function Children() {
     margin: {
       horizontal: 'small'
     }
-  }, " Loading with LOVE..."))));
+  }, " Loading with LOVE...")));
 };
 
 exports.Children = Children;

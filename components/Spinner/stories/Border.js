@@ -10,10 +10,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Border = function Border() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "large",
     pad: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -95,7 +92,7 @@ var Border = function Border() {
       color: 'brand',
       size: 'medium'
     }]
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Loading..."))));
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Loading...")));
 };
 
 exports.Border = Border;
