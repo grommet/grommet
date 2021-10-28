@@ -254,7 +254,8 @@ describe('TextInput', () => {
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
-      fireEvent.click(getByText(document, 'test1'));
+      // Casting a custom to a primitive by erasing type with unknown.
+      fireEvent.click(getByText(document as unknown as HTMLElement, 'test1'));
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       expect(onSelect).toBeCalledWith(
@@ -524,18 +525,18 @@ describe('TextInput', () => {
   });
 
   test('should return focus to ref on select', async () => {
-    const inputRef = { current: {} };
+    const inputRef = React.createRef<HTMLInputElement>();
     const onSelect = jest.fn();
     const { getByPlaceholderText } = render(
       <Grommet>
         <TextInput
+          ref={inputRef}
           data-testid="test-input-focus"
           id="input-focus"
           name="input-focus"
           placeholder="Type to search..."
           suggestions={['option0', 'option1', 'option2']}
           onSelect={onSelect}
-          ref={inputRef}
         />
       </Grommet>,
     );

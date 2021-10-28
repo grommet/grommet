@@ -36,7 +36,7 @@ const OlympicRing = ({ color }) => (
   />
 );
 
-export const Themed = () => (
+export const ThemedSpinner = () => (
   <Grommet theme={theme} full>
     <Box align="center" pad="large" responsive={false}>
       <Stack anchor="left">
@@ -64,6 +64,8 @@ export const Themed = () => (
   </Grommet>
 );
 
+ThemedSpinner.storyName = 'Themed Spinner';
+
 export default {
-  title: 'Visualizations/Spinner/Themed',
+  title: 'Visualizations/Spinner/Custom Themed/Themed Spinner',
 };
