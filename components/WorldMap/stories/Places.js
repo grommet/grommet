@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -46,9 +44,7 @@ var Places = function Places() {
       showDrops = _React$useState[0],
       setShowDrops = _React$useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
@@ -75,7 +71,7 @@ var Places = function Places() {
     }, placeProps('Svalbard', 'graph-1', showDrops)), _extends({
       location: [-54.801944, -68.303056]
     }, placeProps('Ushuaia', 'graph-2', showDrops))]
-  })));
+  }));
 };
 
 exports.Places = Places;

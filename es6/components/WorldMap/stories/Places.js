@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { Box, CheckBox, Grommet, Text, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, Text, WorldMap } from 'grommet';
 
 var placeProps = function placeProps(name, color, showDrop) {
   return _extends({
@@ -37,9 +36,7 @@ export var Places = function Places() {
       showDrops = _React$useState[0],
       setShowDrops = _React$useState[1];
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(CheckBox, {
@@ -66,7 +63,7 @@ export var Places = function Places() {
     }, placeProps('Svalbard', 'graph-1', showDrops)), _extends({
       location: [-54.801944, -68.303056]
     }, placeProps('Ushuaia', 'graph-2', showDrops))]
-  })));
+  }));
 };
 export default {
   title: 'Visualizations/WorldMap/Places'
