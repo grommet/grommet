@@ -42,8 +42,8 @@ const slideLeftCurrent = keyframes`
 
 const StyledCarouselChild = styled.div`
   height: 100%;
-  width: 100%;
   position: absolute;
+  width: 100%;
   visibility: ${(props) => props.visibility};
   animation: ${(props) =>
     props.animation

@@ -13,7 +13,7 @@ export const Simple = () => (
       gap="small"
       justify="center"
     >
-      <Text size="small">Carousel on white background</Text>
+      <Text size="small">Both arrow and selector controls</Text>
       <NewCarousel height="400px" width="400px">
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
@@ -40,12 +40,12 @@ export const Simple = () => (
       justify="center"
       background="lavender"
     >
-      <Text size="small">Carousel light mode on light background</Text>
+      <Text size="small">With selector controls and initial child set</Text>
       <NewCarousel
         height="400px"
         width="400px"
-        initialChild={3}
-        background="lavender"
+        initialChild={2}
+        controls="selectors"
       >
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
@@ -70,10 +70,16 @@ export const Simple = () => (
       align="center"
       gap="small"
       justify="center"
-      background="#263040"
+      background="light-3"
     >
-      <Text size="small">Carousel dark mode on dark background</Text>
-      <NewCarousel height="400px" width="400px" dark initialChild={2}>
+      <Text size="small">With arrow controls and progress indicator</Text>
+      <NewCarousel
+        progress
+        height="400px"
+        width="400px"
+        controls="arrows"
+        initialChild={3}
+      >
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
         </Box>

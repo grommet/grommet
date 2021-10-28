@@ -10,7 +10,6 @@ if (process.env.NODE_ENV !== 'production') {
     play: PropTypes.number,
     initialChild: PropTypes.number,
     onChild: PropTypes.func,
-    dark: PropTypes.bool,
   };
 }
 export const CarouselPropTypes = PropType;
@@ -30,16 +29,13 @@ export const CarouselChildPropTypes = CarouselChildPropType;
 let NewCarouselPropType;
 if (process.env.NODE_ENV !== 'production') {
   NewCarouselPropType = {
+    ...genericProps,
+    activeChild: PropTypes.number,
     initialChild: PropTypes.number,
     fill: PropTypes.bool,
-    a11yTitle: PropTypes.string,
-    alignSelf: PropTypes.string,
-    gridArea: PropTypes.string,
-    controls: PropTypes.string,
+    controls: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     onChild: PropTypes.func,
-    height: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    width: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    margin: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    play: PropTypes.number,
   };
 }
 export const NewCarouselPropTypes = NewCarouselPropType;
