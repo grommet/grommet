@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
@@ -23,8 +23,6 @@ test('image should have no violations', async () => {
 
   const results = await axe(container);
   expect(results).toHaveNoViolations();
-
-  cleanup();
 });
 
 test('Image renders', () => {

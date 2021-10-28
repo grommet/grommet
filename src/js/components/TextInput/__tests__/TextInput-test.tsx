@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -16,7 +16,6 @@ import { Text } from '../../Text';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(

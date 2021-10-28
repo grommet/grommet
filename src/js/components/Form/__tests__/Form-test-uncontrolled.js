@@ -5,13 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
-import {
-  act,
-  cleanup,
-  render,
-  fireEvent,
-  screen,
-} from '@testing-library/react';
+import { act, render, fireEvent, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
@@ -27,8 +21,6 @@ import { Box } from '../../Box';
 import { DateInput } from '../../DateInput';
 
 describe('Form accessibility', () => {
-  afterEach(cleanup);
-
   test(`TextInput in Form should have
   no accessibility violations`, async () => {
     const { container } = render(
@@ -122,8 +114,6 @@ describe('Form accessibility', () => {
 });
 
 describe('Form uncontrolled', () => {
-  afterEach(cleanup);
-
   test('empty', () => {
     const { container } = render(
       <Grommet>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import 'jest-styled-components';
 
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
@@ -11,8 +11,6 @@ import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 
 describe('Form controlled', () => {
-  afterEach(cleanup);
-
   test('controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
