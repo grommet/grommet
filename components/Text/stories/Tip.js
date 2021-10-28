@@ -12,9 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
 var Tip = function Tip() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "medium",
     gap: "xlarge"
@@ -50,7 +48,7 @@ var Tip = function Tip() {
         align: "center"
       }, "tooltip")
     }
-  }, "Tip with content prop")));
+  }, "Tip with content prop"));
 };
 
 exports.Tip = Tip;

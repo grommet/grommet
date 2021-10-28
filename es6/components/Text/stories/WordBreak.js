@@ -1,13 +1,10 @@
 import React from 'react';
-import { Box, Grommet, Text, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Text, Heading } from 'grommet';
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 /* eslint-disable max-len */
 
 export var WordBreak = function WordBreak() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, wordBreakValues.map(function (value) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, wordBreakValues.map(function (value) {
     return /*#__PURE__*/React.createElement(Box, {
       key: value,
       margin: "small",

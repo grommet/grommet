@@ -7,17 +7,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 /* eslint-disable max-len */
 
 var WordBreak = function WordBreak() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, wordBreakValues.map(function (value) {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, wordBreakValues.map(function (value) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
       margin: "small",
