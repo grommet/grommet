@@ -1389,10 +1389,8 @@ describe('Form uncontrolled', () => {
     const toggleField = getByLabelText('toggle');
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     expect(container.firstChild).toMatchSnapshot();
     const moodField = getByPlaceholderText('test mood');
 
@@ -1432,10 +1430,8 @@ describe('Form uncontrolled', () => {
     );
 
     // remove mood, should clear validation
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     nameField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
@@ -1560,20 +1556,15 @@ describe('Form uncontrolled', () => {
     fireEvent.change(nameField, { target: { value: 'name' } });
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     const moodField = getByPlaceholderText('test mood');
 
     // set mood
     fireEvent.change(moodField, { target: { value: 'happy' } });
 
     // remove mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));

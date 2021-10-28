@@ -468,10 +468,8 @@ describe('Form controlled', () => {
     const toggleField = getByLabelText('toggle');
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     expect(container.firstChild).toMatchSnapshot();
     const moodField = getByPlaceholderText('test mood');
 
@@ -511,10 +509,8 @@ describe('Form controlled', () => {
     );
 
     // remove mood, should clear validation
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     nameField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run

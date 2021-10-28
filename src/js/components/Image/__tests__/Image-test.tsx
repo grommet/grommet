@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  act,
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
@@ -100,9 +94,7 @@ test('Image onError', () => {
     </Grommet>,
   );
 
-  act(() => {
-    fireEvent(getByAltText('test'), new Event('error'));
-  });
+  fireEvent(getByAltText('test'), new Event('error'));
 
   expect(onError).toHaveBeenCalledTimes(1);
 });
