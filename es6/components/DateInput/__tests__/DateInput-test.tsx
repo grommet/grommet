@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -17,8 +17,6 @@ const DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 
 describe('DateInput', () => {
   beforeEach(createPortal);
-
-  afterEach(cleanup);
 
   test('should reset date if passed empty string', async () => {
     const Test = () => {
