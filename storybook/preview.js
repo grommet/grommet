@@ -43,12 +43,27 @@ export const decorators = [
 export const parameters = {
   layout: 'fullscreen',
   options: {
-    storySort: (a, b) => {
-      const isCustom = a[1].kind.split('/')[2] === CUSTOM_THEMED;
-      if (isCustom) return 1;
-      return a[1].kind === b[1].kind
+    storySort: (first, second) => {
+      /**
+       * The story sort algorithm will only ever compare two stories
+       * a single time. This means that every story will only ever be either
+       * the "first" parameter OR the "second" parameter, but not both.
+       * So, the checks for custom themed stories need to happen on both inputs
+       * of this function.
+       *
+       * A return value of 1 results in sorting the "first" story AFTER the
+       * "second" story.
+       *
+       * A return value of 0 results in sorting the "first" story BEFORE the
+       * secondary story.
+       */
+      const isFirstCustom = first[1].kind.split('/')[2] === CUSTOM_THEMED;
+      const isSecondCustom = second[1].kind.split('/')[2] === CUSTOM_THEMED;
+      if (isFirstCustom) return 1;
+      if (isSecondCustom) return 0;
+      return first[1].kind === second[1].kind
         ? 0
-        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+        : first[1].id.localeCompare(second[1].id, undefined, { numeric: true });
     },
   },
 };

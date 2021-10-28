@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { grommet, Box, Grommet, Spinner } from 'grommet';
+import { Box, Spinner } from 'grommet';
 
 const gradient =
   'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)';
@@ -41,28 +41,26 @@ export const Animation = () => {
   }, [meterValue]);
 
   return (
-    <Grommet theme={grommet} full>
-      <Box
-        gap="xlarge"
-        pad={{ vertical: 'xlarge', horizontal: 'large' }}
-        margin="xlarge"
-      >
-        <BounceSpinner
-          background={gradientRainbow}
-          border={false}
-          size="medium"
-        />
-        <Spinner
-          background={gradient}
-          size="large"
-          animation={[
-            { type: 'fadeIn', duration: 1900, size: 'large' },
-            { type: 'pulse', duration: 1450, size: 'large' },
-          ]}
-          border={false}
-        />
-      </Box>
-    </Grommet>
+    <Box
+      gap="xlarge"
+      pad={{ vertical: 'xlarge', horizontal: 'large' }}
+      margin="xlarge"
+    >
+      <BounceSpinner
+        background={gradientRainbow}
+        border={false}
+        size="medium"
+      />
+      <Spinner
+        background={gradient}
+        size="large"
+        animation={[
+          { type: 'fadeIn', duration: 1900, size: 'large' },
+          { type: 'pulse', duration: 1450, size: 'large' },
+        ]}
+        border={false}
+      />
+    </Box>
   );
 };
 
