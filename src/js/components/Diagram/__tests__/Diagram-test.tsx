@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'jest-styled-components';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Grommet, Box, Diagram, Stack } from '../..';
 
@@ -22,8 +22,6 @@ Context.propTypes = {
 };
 
 describe('Diagram', () => {
-  afterEach(cleanup);
-
   test('basic', () => {
     const { container } = render(
       <Context>
