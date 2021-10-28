@@ -181,6 +181,7 @@ interface ButtonType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    [key: string]: ButtonKindType;
   };
   disabled?: ButtonKindType & { opacity?: OpacityType };
   hover?: ButtonKindType & {
@@ -501,6 +502,12 @@ export interface ThemeType {
   };
   card?: {
     container?: BoxProps;
+    hover?: {
+      container?: {
+        elevation?: ElevationType;
+        extend?: ExtendType;
+      };
+    };
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
@@ -1063,8 +1070,8 @@ export interface ThemeType {
     };
   };
   pagination?: {
-    button?: ButtonType;
-    container?: BoxProps;
+    button?: ButtonType | string;
+    container?: BoxProps | { extend?: ExtendType };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;

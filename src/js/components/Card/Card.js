@@ -1,13 +1,29 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { elevationStyle } from '../Box/StyledBox';
+
+const StyledCard = styled(Box)`
+  &:hover {
+    ${(props) =>
+      props.onClick &&
+      props.theme.card.hover?.container?.elevation &&
+      elevationStyle(props.theme.card.hover.container.elevation)}
+    ${(props) => props.theme.card.hover?.container?.extend}
+  }
+`;
 
 const Card = forwardRef(({ ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
-    <Box overflow="hidden" ref={ref} {...theme.card.container} {...rest} />
+    <StyledCard
+      overflow="hidden"
+      ref={ref}
+      {...theme.card.container}
+      {...rest}
+    />
   );
 });
 
