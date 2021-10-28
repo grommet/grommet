@@ -86,7 +86,6 @@ export const SpaceX = () => {
 
   const expandable = useMemo(() => groups.map(({id}) => id), [groups]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       const query = {
@@ -103,7 +102,6 @@ export const SpaceX = () => {
       })
       .then(response => response.json())
       .then(d => {
-        console.log('GROUPS', d);
         setGroups(d.docs);
       })
       .catch(error => console.error('Unable to get groups:', error));
@@ -120,6 +118,7 @@ export const SpaceX = () => {
           show: 0,
           count: limit,
         }, groups, []));
+        return;
       }
       const query = {
         options: {
@@ -178,7 +177,6 @@ export const SpaceX = () => {
             property: 'rocketId',
           }}
           onUpdate={opts => {
-            console.log('onUpdate', opts);
             setExpanded(opts.expanded);
             setLimit(opts.count);
             if (opts.sort) setSort(opts.sort);
