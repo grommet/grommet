@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 
 const dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
@@ -13,25 +12,23 @@ export const Range = () => {
     '2020-07-31T15:27:42.920Z',
     '2020-08-07T15:27:42.920Z',
   ]);
-  const onChange = event => {
+  const onChange = (event) => {
     const nextValue = event.value;
     console.log('onChange', nextValue);
     setValue(nextValue);
   };
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DateInput
-          value={value}
-          buttonProps={{
-            label: `${dateFormat.format(
-              new Date(value[0]),
-            )} - ${dateFormat.format(new Date(value[1]))}`,
-          }}
-          onChange={onChange}
-        />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <DateInput
+        value={value}
+        buttonProps={{
+          label: `${dateFormat.format(
+            new Date(value[0]),
+          )} - ${dateFormat.format(new Date(value[1]))}`,
+        }}
+        onChange={onChange}
+      />
+    </Box>
   );
 };
 
