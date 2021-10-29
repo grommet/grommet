@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Button, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, DateInput } from 'grommet';
 
 export const FormatInline = () => {
   const [value, setValue] = React.useState('');
@@ -11,20 +10,13 @@ export const FormatInline = () => {
     setValue(nextValue);
   };
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large" gap="medium">
-        <DateInput
-          format="mm/dd/yyyy"
-          inline
-          value={value}
-          onChange={onChange}
-        />
-        <Button
-          label="today"
-          onClick={() => setValue(new Date().toISOString())}
-        />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large" gap="medium">
+      <DateInput format="mm/dd/yyyy" inline value={value} onChange={onChange} />
+      <Button
+        label="today"
+        onClick={() => setValue(new Date().toISOString())}
+      />
+    </Box>
   );
 };
 

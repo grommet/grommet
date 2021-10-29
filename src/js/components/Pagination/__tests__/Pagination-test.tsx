@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 
 import { Grommet } from '../../Grommet';
@@ -17,8 +17,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('Pagination', () => {
-  afterEach(cleanup);
-
   test(`should display the correct last page based on items length
   and step`, () => {
     const { container, getByText } = render(
@@ -75,12 +73,16 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    const previousButtonDisabled = container
-      .querySelector(`[aria-label="Go to previous page"]`)
-      .hasAttribute('disabled');
-    const nextButtonDisabled = container
-      .querySelector(`[aria-label="Go to next page"]`)
-      .hasAttribute('disabled');
+    const previousButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to previous page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
+    const nextButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to next page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
 
     expect(previousButtonDisabled).toBeTruthy();
     expect(nextButtonDisabled).toBeTruthy();
@@ -95,12 +97,16 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    const previousButtonDisabled = container
-      .querySelector(`[aria-label="Go to previous page"]`)
-      .hasAttribute('disabled');
-    const nextButtonDisabled = container
-      .querySelector(`[aria-label="Go to next page"]`)
-      .hasAttribute('disabled');
+    const previousButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to previous page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
+    const nextButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to next page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
 
     expect(previousButtonDisabled).toBeTruthy();
     expect(nextButtonDisabled).toBeTruthy();
@@ -115,12 +121,16 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    const previousButtonDisabled = container
-      .querySelector(`[aria-label="Go to previous page"]`)
-      .hasAttribute('disabled');
-    const nextButtonDisabled = container
-      .querySelector(`[aria-label="Go to next page"]`)
-      .hasAttribute('disabled');
+    const previousButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to previous page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
+    const nextButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to next page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
 
     expect(previousButtonDisabled).toBeTruthy();
     expect(nextButtonDisabled).toBeTruthy();
@@ -139,8 +149,8 @@ describe('Pagination', () => {
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
     fireEvent.click(getByText(expectedPage));
-    const activePage = container.querySelector(
-      `[aria-current="page"]`,
+    const activePage = (
+      container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
 
     expect(activePage).toEqual(expectedPage);
@@ -230,8 +240,8 @@ describe('Pagination', () => {
 
     const desiredPage = '2';
     fireEvent.click(getByText(desiredPage));
-    const activePage = container.querySelector(
-      `[aria-current="page"]`,
+    const activePage = (
+      container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
 
     expect(activePage).toEqual(desiredPage);
@@ -245,9 +255,11 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    const previousButtonDisabled = container
-      .querySelector(`[aria-label="Go to previous page"]`)
-      .hasAttribute('disabled');
+    const previousButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to previous page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
 
     expect(previousButtonDisabled).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
@@ -261,9 +273,11 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    const nextButtonDisabled = container
-      .querySelector(`[aria-label="Go to next page"]`)
-      .hasAttribute('disabled');
+    const nextButtonDisabled = (
+      container.querySelector(
+        `[aria-label="Go to next page"]`,
+      ) as HTMLButtonElement
+    ).hasAttribute('disabled');
 
     expect(nextButtonDisabled).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
@@ -355,9 +369,10 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
-      '1',
-    );
+    expect(
+      (container.querySelector(`[aria-current="page"]`) as HTMLButtonElement)
+        .innerHTML,
+    ).toBe('1');
 
     rerender(
       <Grommet>
@@ -365,9 +380,10 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    expect(container.querySelector(`[aria-current="page"]`).innerHTML).toBe(
-      '2',
-    );
+    expect(
+      (container.querySelector(`[aria-current="page"]`) as HTMLButtonElement)
+        .innerHTML,
+    ).toBe('2');
     expect(container.firstChild).toMatchSnapshot();
   });
 
