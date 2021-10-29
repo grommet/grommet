@@ -46,32 +46,6 @@ Bottom.parameters = {
   chromatic: { disable: true },
 };
 
-export const HoverIndicator = () => {
-  const [value, setValue] = useState(options[2]);
-  return (
-    <Grommet theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Select
-          placeholder="Clear Options"
-          multiple
-          value={value}
-          options={options}
-          onChange={({ value: nextValue }) => setValue(nextValue)}
-          clear={{
-            hoverIndicator: {
-              background: '#f00',
-              text: { color: { light: '#fff' } },
-            },
-          }}
-        />
-      </Box>
-    </Grommet>
-  );
-};
-HoverIndicator.parameters = {
-  chromatic: { disable: true },
-};
-
 export default {
   title: 'Input/Select/Clear',
 };

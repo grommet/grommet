@@ -39,15 +39,18 @@ const SelectOption = styled(Button)`
 const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
   const [hovering, setHovering] = useState(false);
 
-  const { hoverIndicator, label, position } = clear;
+  const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
-  const buttonHoverIndicator =
-    hoverIndicator || theme.select.clear.hoverIndicator;
+  const background = hovering
+    ? theme.select.clear.hover.background
+    : theme.select.clear.container.background;
+  const color = hovering
+    ? theme.select.clear.hover.color
+    : theme.select.clear.text.color;
 
   return (
     <Button
-      hoverIndicator={buttonHoverIndicator}
       onClick={onClear}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
@@ -56,15 +59,12 @@ const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
         setHovering(false);
       }}
     >
-      <Box {...theme.select.clear.container} align={align}>
-        <Text
-          {...theme.select.clear.text}
-          color={
-            hovering
-              ? buttonHoverIndicator.text.color
-              : theme.select.clear.text.color
-          }
-        >
+      <Box
+        {...theme.select.clear.container}
+        align={align}
+        background={background}
+      >
+        <Text {...theme.select.clear.text} color={color}>
           {buttonLabel}
         </Text>
       </Box>

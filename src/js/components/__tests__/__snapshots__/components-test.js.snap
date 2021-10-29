@@ -1932,10 +1932,9 @@ Object {
               "background": "background-contrast",
               "pad": "small",
             },
-            "hoverIndicator": Object {
-              "text": Object {
-                "color": "text-weak",
-              },
+            "hover": Object {
+              "background": "background-contrast",
+              "color": "text-weak",
             },
             "text": Object {
               "color": "text-weak",

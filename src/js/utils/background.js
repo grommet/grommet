@@ -211,28 +211,18 @@ export const selectedStyle = css`
 
 export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
   let background;
-  let color;
   let elevation;
   if (hoverIndicator === true || hoverIndicator === 'background') {
-    ({ background, color } = theme.global.hover);
+    ({ background } = theme.global.hover);
   } else if (typeof hoverIndicator === 'object') {
-    if (
-      hoverIndicator.background ||
-      hoverIndicator.elevation ||
-      hoverIndicator.text
-    ) {
-      ({ background, elevation } = hoverIndicator);
-      color =
-        hoverIndicator.text && hoverIndicator.text.color
-          ? hoverIndicator.text.color
-          : undefined;
-    } else background = hoverIndicator;
+    if (hoverIndicator.elevation || hoverIndicator.background)
+      ({ elevation, background } = hoverIndicator);
+    else background = hoverIndicator;
   } else {
     background = hoverIndicator;
   }
-
   return css`
-    ${backgroundStyle(background, theme, color)}
+    ${backgroundStyle(background, theme, theme.global.hover.color)}
     ${elevation &&
     `box-shadow: ${
       theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation]
