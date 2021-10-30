@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DateInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DateInput } from 'grommet';
 
 export const Format = () => {
   const [value, setValue] = React.useState('');
@@ -11,13 +10,11 @@ export const Format = () => {
     setValue(nextValue);
   };
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Box width="medium">
-          <DateInput format="m/d/yy" value={value} onChange={onChange} />
-        </Box>
+    <Box align="center" pad="large">
+      <Box width="medium">
+        <DateInput format="m/d/yy" value={value} onChange={onChange} />
       </Box>
-    </Grommet>
+    </Box>
   );
 };
 

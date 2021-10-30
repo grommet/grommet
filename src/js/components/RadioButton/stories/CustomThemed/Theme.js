@@ -41,7 +41,7 @@ export const ThemeRadioButton = () => {
           name="name"
           value="option 1"
           checked={selected === 'option 1'}
-          onChange={event => setSelected(event.target.value)}
+          onChange={(event) => setSelected(event.target.value)}
         />
 
         <Button label="clear" onClick={() => setSelected(undefined)} />
@@ -53,5 +53,5 @@ export const ThemeRadioButton = () => {
 ThemeRadioButton.storyName = 'Theme';
 
 export default {
-  title: 'Input/RadioButton/Theme',
+  title: 'Input/RadioButton/Custom Themed/Theme',
 };

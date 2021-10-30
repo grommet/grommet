@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -12,8 +12,6 @@ import { DropButton } from '..';
 
 describe('DropButton', () => {
   beforeEach(createPortal);
-
-  afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
