@@ -1,8 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useMemo, useState } from 'react';
-import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart, RangeSelector, Stack, Text } from 'grommet';
 import { calcs } from '../calcs';
 import { generateData } from './data'; // compress data for outer control chart
 
@@ -89,109 +88,113 @@ var WindowChart = function WindowChart(_ref) {
       innerBounds = _useMemo2.bounds,
       thickness = _useMemo2.thickness;
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    justify: "between",
-    className: "chromatic-ignore"
-  }, innerAxis[0].reverse().map(function (t) {
-    return /*#__PURE__*/React.createElement(Text, {
-      key: t
-    }, new Date(t).toLocaleDateString());
-  })), /*#__PURE__*/React.createElement(Stack, {
-    guidingChild: "first",
-    interactiveChild: "first"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: thickness
-    }
-  }, /*#__PURE__*/React.createElement(Chart, {
-    type: "bar",
-    color: "accent-2",
-    overflow: true,
-    bounds: innerBounds,
-    values: innerValues.map(function (v) {
-      return _extends({}, v, {
-        onHover: onHover(v)
-      });
-    }),
-    thickness: thickness,
-    size: {
-      width: 'full',
-      height: 'small'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    justify: "between"
-  }, /*#__PURE__*/React.createElement(Box, {
-    border: {
-      side: 'top'
-    },
-    align: "start"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][0]))), /*#__PURE__*/React.createElement(Box, {
-    border: {
-      side: 'bottom',
-      color: 'accent-2',
-      size: 'medium'
-    },
-    align: "start"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    animation: {
-      type: 'fadeIn',
-      duration: 100
-    },
-    pad: "medium",
-    background: {
-      color: 'white',
-      opacity: 'strong'
-    },
-    border: {
-      color: 'accent-2'
-    },
-    round: true,
-    className: "chromatic-ignore"
-  }, /*#__PURE__*/React.createElement(Text, {
-    size: "large",
-    weight: "bold"
-  }, hover.value[1]), /*#__PURE__*/React.createElement(Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Chart, {
-    type: "line",
-    bounds: outerBounds,
-    values: outerValues,
-    size: {
-      width: 'full',
-      height: 'xxsmall'
-    },
-    thickness: "xxsmall"
-  }), /*#__PURE__*/React.createElement(RangeSelector, {
-    min: 0,
-    max: data.length,
-    size: "full",
-    values: range,
-    onChange: onChange,
-    color: "accent-2",
-    style: {
-      userSelect: 'none'
-    }
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      justify: "between",
+      className: "chromatic-ignore"
+    }, innerAxis[0].reverse().map(function (t) {
+      return /*#__PURE__*/React.createElement(Text, {
+        key: t
+      }, new Date(t).toLocaleDateString());
+    })), /*#__PURE__*/React.createElement(Stack, {
+      guidingChild: "first",
+      interactiveChild: "first"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: {
+        horizontal: thickness
+      }
+    }, /*#__PURE__*/React.createElement(Chart, {
+      type: "bar",
+      color: "accent-2",
+      overflow: true,
+      bounds: innerBounds,
+      values: innerValues.map(function (v) {
+        return _extends({}, v, {
+          onHover: onHover(v)
+        });
+      }),
+      thickness: thickness,
+      size: {
+        width: 'full',
+        height: 'small'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      fill: true,
+      justify: "between"
+    }, /*#__PURE__*/React.createElement(Box, {
+      border: {
+        side: 'top'
+      },
+      align: "start"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][0]))), /*#__PURE__*/React.createElement(Box, {
+      border: {
+        side: 'bottom',
+        color: 'accent-2',
+        size: 'medium'
+      },
+      align: "start"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      animation: {
+        type: 'fadeIn',
+        duration: 100
+      },
+      pad: "medium",
+      background: {
+        color: 'white',
+        opacity: 'strong'
+      },
+      border: {
+        color: 'accent-2'
+      },
+      round: true,
+      className: "chromatic-ignore"
+    }, /*#__PURE__*/React.createElement(Text, {
+      size: "large",
+      weight: "bold"
+    }, hover.value[1]), /*#__PURE__*/React.createElement(Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Chart, {
+      type: "line",
+      bounds: outerBounds,
+      values: outerValues,
+      size: {
+        width: 'full',
+        height: 'xxsmall'
+      },
+      thickness: "xxsmall"
+    }), /*#__PURE__*/React.createElement(RangeSelector, {
+      min: 0,
+      max: data.length,
+      size: "full",
+      values: range,
+      onChange: onChange,
+      color: "accent-2",
+      style: {
+        userSelect: 'none'
+      }
+    }))) // </Grommet>
+
+  );
 };
 
 export var Window = function Window() {

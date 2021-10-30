@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _calcs2 = require("../calcs");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -83,68 +81,72 @@ var Rich = function Rich() {
     values: values,
     overflow: true
   };
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    justify: "between",
-    width: "medium",
-    margin: {
-      vertical: 'small'
-    }
-  }, xAxis.map(function (x) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      key: x
-    }, x);
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    guidingChild: "last"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    justify: "between"
-  }, yAxis.map(function (y, index) {
-    var first = index === 0;
-    var last = index === yAxis.length - 1 && !first;
-    var align;
-
-    if (first) {
-      align = 'start';
-    } else if (last) {
-      align = 'end';
-    } else {
-      align = 'center';
-    }
-
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      key: y,
-      direction: "row",
-      align: align
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: {
-        horizontal: 'small'
+      direction: "row",
+      justify: "between",
+      width: "medium",
+      margin: {
+        vertical: 'small'
       }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, y)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      border: "top",
-      flex: true
-    }));
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
-    type: "area",
-    color: {
-      color: 'accent-1',
-      opacity: 'medium'
-    },
-    thickness: "hair"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
-    type: "line",
-    round: true,
-    color: {
-      color: 'accent-3',
-      opacity: 'strong'
-    },
-    thickness: "small"
-  })))));
+    }, xAxis.map(function (x) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: x
+      }, x);
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
+      guidingChild: "last"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      justify: "between"
+    }, yAxis.map(function (y, index) {
+      var first = index === 0;
+      var last = index === yAxis.length - 1 && !first;
+      var align;
+
+      if (first) {
+        align = 'start';
+      } else if (last) {
+        align = 'end';
+      } else {
+        align = 'center';
+      }
+
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        key: y,
+        direction: "row",
+        align: align
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        pad: {
+          horizontal: 'small'
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, y)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        border: "top",
+        flex: true
+      }));
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
+      type: "area",
+      color: {
+        color: 'accent-1',
+        opacity: 'medium'
+      },
+      thickness: "hair"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
+      type: "line",
+      round: true,
+      color: {
+        color: 'accent-3',
+        opacity: 'strong'
+      },
+      thickness: "small"
+    })))) // </Grommet>
+
+  );
 };
 
 exports.Rich = Rich;

@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _calcs = require("../calcs");
 
 var _data = require("./data");
@@ -103,109 +101,113 @@ var WindowChart = function WindowChart(_ref) {
       innerBounds = _useMemo2.bounds,
       thickness = _useMemo2.thickness;
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    justify: "between",
-    className: "chromatic-ignore"
-  }, innerAxis[0].reverse().map(function (t) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      key: t
-    }, new Date(t).toLocaleDateString());
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    guidingChild: "first",
-    interactiveChild: "first"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: {
-      horizontal: thickness
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
-    type: "bar",
-    color: "accent-2",
-    overflow: true,
-    bounds: innerBounds,
-    values: innerValues.map(function (v) {
-      return _extends({}, v, {
-        onHover: onHover(v)
-      });
-    }),
-    thickness: thickness,
-    size: {
-      width: 'full',
-      height: 'small'
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    justify: "between"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    border: {
-      side: 'top'
-    },
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    border: {
-      side: 'bottom',
-      color: 'accent-2',
-      size: 'medium'
-    },
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    animation: {
-      type: 'fadeIn',
-      duration: 100
-    },
-    pad: "medium",
-    background: {
-      color: 'white',
-      opacity: 'strong'
-    },
-    border: {
-      color: 'accent-2'
-    },
-    round: true,
-    className: "chromatic-ignore"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-    size: "large",
-    weight: "bold"
-  }, hover.value[1]), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
-    type: "line",
-    bounds: outerBounds,
-    values: outerValues,
-    size: {
-      width: 'full',
-      height: 'xxsmall'
-    },
-    thickness: "xxsmall"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
-    min: 0,
-    max: data.length,
-    size: "full",
-    values: range,
-    onChange: onChange,
-    color: "accent-2",
-    style: {
-      userSelect: 'none'
-    }
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      justify: "between",
+      className: "chromatic-ignore"
+    }, innerAxis[0].reverse().map(function (t) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: t
+      }, new Date(t).toLocaleDateString());
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
+      guidingChild: "first",
+      interactiveChild: "first"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: {
+        horizontal: thickness
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
+      type: "bar",
+      color: "accent-2",
+      overflow: true,
+      bounds: innerBounds,
+      values: innerValues.map(function (v) {
+        return _extends({}, v, {
+          onHover: onHover(v)
+        });
+      }),
+      thickness: thickness,
+      size: {
+        width: 'full',
+        height: 'small'
+      }
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      justify: "between"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: {
+        side: 'top'
+      },
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: {
+        side: 'bottom',
+        color: 'accent-2',
+        size: 'medium'
+      },
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, innerAxis[1][1])))), hover && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      animation: {
+        type: 'fadeIn',
+        duration: 100
+      },
+      pad: "medium",
+      background: {
+        color: 'white',
+        opacity: 'strong'
+      },
+      border: {
+        color: 'accent-2'
+      },
+      round: true,
+      className: "chromatic-ignore"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      size: "large",
+      weight: "bold"
+    }, hover.value[1]), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, null, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
+      type: "line",
+      bounds: outerBounds,
+      values: outerValues,
+      size: {
+        width: 'full',
+        height: 'xxsmall'
+      },
+      thickness: "xxsmall"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeSelector, {
+      min: 0,
+      max: data.length,
+      size: "full",
+      values: range,
+      onChange: onChange,
+      color: "accent-2",
+      style: {
+        userSelect: 'none'
+      }
+    }))) // </Grommet>
+
+  );
 };
 
 var Window = function Window() {

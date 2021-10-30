@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, Chart, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart, Text } from 'grommet';
 
 var LabelledChart = function LabelledChart(_ref) {
   var color = _ref.color,
@@ -31,24 +30,28 @@ var LabelledChart = function LabelledChart(_ref) {
 };
 
 export var LabelledCharts = function LabelledCharts() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large",
-    direction: "row",
-    gap: "medium"
-  }, /*#__PURE__*/React.createElement(LabelledChart, {
-    label: "Exported",
-    value: 300
-  }), /*#__PURE__*/React.createElement(LabelledChart, {
-    label: "Usable",
-    value: 200,
-    color: "accent-2"
-  }), /*#__PURE__*/React.createElement(LabelledChart, {
-    label: "Used",
-    value: 98.2,
-    color: "accent-3"
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      pad: "large",
+      direction: "row",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(LabelledChart, {
+      label: "Exported",
+      value: 300
+    }), /*#__PURE__*/React.createElement(LabelledChart, {
+      label: "Usable",
+      value: 200,
+      color: "accent-2"
+    }), /*#__PURE__*/React.createElement(LabelledChart, {
+      label: "Used",
+      value: 98.2,
+      color: "accent-3"
+    })) // </Grommet>
+
+  );
 };
 LabelledCharts.storyName = 'Labelled';
 export default {

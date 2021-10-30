@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Chart, Stack, Text } from 'grommet';
 import { Next } from "grommet-icons/es6/icons/Next";
 import { Previous } from "grommet-icons/es6/icons/Previous";
 import { calcs } from '../calcs';
@@ -69,86 +68,90 @@ var ZoomChart = function ZoomChart(_ref) {
     previousReference = lastReference;
   }
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large",
-    direction: "row",
-    gap: "medium"
-  }, /*#__PURE__*/React.createElement(Button, {
-    hoverIndicator: true,
-    icon: /*#__PURE__*/React.createElement(Previous, null),
-    onClick: function onClick() {
-      return setReference(previousReference);
-    }
-  }), /*#__PURE__*/React.createElement(Box, {
-    flex: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    justify: "end"
-  }, Object.keys(intervalDays).map(function (_int) {
-    return /*#__PURE__*/React.createElement(Button, {
-      key: _int,
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      pad: "large",
+      direction: "row",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Button, {
+      hoverIndicator: true,
+      icon: /*#__PURE__*/React.createElement(Previous, null),
       onClick: function onClick() {
-        return setInterval(_int);
+        return setReference(previousReference);
       }
+    }), /*#__PURE__*/React.createElement(Box, {
+      flex: true
     }, /*#__PURE__*/React.createElement(Box, {
-      pad: "small"
-    }, /*#__PURE__*/React.createElement(Text, {
-      color: interval === _int ? 'black' : 'brand'
-    }, _int)));
-  })), /*#__PURE__*/React.createElement(Stack, {
-    guidingChild: "first"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: thickness
-    }
-  }, /*#__PURE__*/React.createElement(Chart, {
-    type: "bar",
-    overflow: true,
-    bounds: bounds,
-    values: values,
-    thickness: thickness,
-    size: {
-      width: 'full',
-      height: 'small'
-    }
-  })), /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    justify: "between"
-  }, /*#__PURE__*/React.createElement(Box, {
-    border: "top",
-    align: "start"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Text, null, axis[1][0]))), /*#__PURE__*/React.createElement(Box, {
-    border: "bottom",
-    align: "start"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Text, null, axis[1][1]))))), /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    justify: "between"
-  }, axis[0].map(function (t) {
-    return /*#__PURE__*/React.createElement(Text, {
-      key: t,
-      className: "chromatic-ignore"
-    }, new Date(t).toLocaleDateString());
-  }))), /*#__PURE__*/React.createElement(Button, {
-    hoverIndicator: true,
-    icon: /*#__PURE__*/React.createElement(Next, null),
-    onClick: function onClick() {
-      return setReference(nextReference);
-    }
-  })));
+      direction: "row",
+      justify: "end"
+    }, Object.keys(intervalDays).map(function (_int) {
+      return /*#__PURE__*/React.createElement(Button, {
+        key: _int,
+        onClick: function onClick() {
+          return setInterval(_int);
+        }
+      }, /*#__PURE__*/React.createElement(Box, {
+        pad: "small"
+      }, /*#__PURE__*/React.createElement(Text, {
+        color: interval === _int ? 'black' : 'brand'
+      }, _int)));
+    })), /*#__PURE__*/React.createElement(Stack, {
+      guidingChild: "first"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: {
+        horizontal: thickness
+      }
+    }, /*#__PURE__*/React.createElement(Chart, {
+      type: "bar",
+      overflow: true,
+      bounds: bounds,
+      values: values,
+      thickness: thickness,
+      size: {
+        width: 'full',
+        height: 'small'
+      }
+    })), /*#__PURE__*/React.createElement(Box, {
+      fill: true,
+      justify: "between"
+    }, /*#__PURE__*/React.createElement(Box, {
+      border: "top",
+      align: "start"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, axis[1][0]))), /*#__PURE__*/React.createElement(Box, {
+      border: "bottom",
+      align: "start"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, axis[1][1]))))), /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      justify: "between"
+    }, axis[0].map(function (t) {
+      return /*#__PURE__*/React.createElement(Text, {
+        key: t,
+        className: "chromatic-ignore"
+      }, new Date(t).toLocaleDateString());
+    }))), /*#__PURE__*/React.createElement(Button, {
+      hoverIndicator: true,
+      icon: /*#__PURE__*/React.createElement(Next, null),
+      onClick: function onClick() {
+        return setReference(nextReference);
+      }
+    })) // </Grommet>
+
+  );
 };
 
 export var Zoom = function Zoom() {

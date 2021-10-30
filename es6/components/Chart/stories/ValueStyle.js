@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grommet, Box, Chart } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart } from 'grommet';
 var values = [{
   value: [10, 20],
   thickness: 12,
@@ -39,20 +38,24 @@ var values = [{
   color: 'status-warning'
 }];
 export var ValueStyleChart = function ValueStyleChart() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large",
-    gap: "large"
-  }, /*#__PURE__*/React.createElement(Chart, {
-    type: "point",
-    point: "circle",
-    values: values
-  }), /*#__PURE__*/React.createElement(Chart, {
-    type: "bar",
-    values: values
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large",
+      gap: "large"
+    }, /*#__PURE__*/React.createElement(Chart, {
+      type: "point",
+      point: "circle",
+      values: values
+    }), /*#__PURE__*/React.createElement(Chart, {
+      type: "bar",
+      values: values
+    })) // </Grommet>
+
+  );
 };
 ValueStyleChart.storyName = 'Value style';
 export default {

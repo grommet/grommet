@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _grommetIcons = require("grommet-icons");
 
 var _calcs2 = require("../calcs");
@@ -83,86 +81,90 @@ var ZoomChart = function ZoomChart(_ref) {
     previousReference = lastReference;
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "large",
-    direction: "row",
-    gap: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    hoverIndicator: true,
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Previous, null),
-    onClick: function onClick() {
-      return setReference(previousReference);
-    }
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    flex: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    justify: "end"
-  }, Object.keys(intervalDays).map(function (_int) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-      key: _int,
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      pad: "large",
+      direction: "row",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      hoverIndicator: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Previous, null),
       onClick: function onClick() {
-        return setInterval(_int);
+        return setReference(previousReference);
       }
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: "small"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: interval === _int ? 'black' : 'brand'
-    }, _int)));
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    guidingChild: "first"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: {
-      horizontal: thickness
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
-    type: "bar",
-    overflow: true,
-    bounds: bounds,
-    values: values,
-    thickness: thickness,
-    size: {
-      width: 'full',
-      height: 'small'
-    }
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    justify: "between"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    border: "top",
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    border: "bottom",
-    align: "start"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "xsmall",
-    background: {
-      color: 'white',
-      opacity: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][1]))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    direction: "row",
-    justify: "between"
-  }, axis[0].map(function (t) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      key: t,
-      className: "chromatic-ignore"
-    }, new Date(t).toLocaleDateString());
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    hoverIndicator: true,
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Next, null),
-    onClick: function onClick() {
-      return setReference(nextReference);
-    }
-  })));
+      direction: "row",
+      justify: "end"
+    }, Object.keys(intervalDays).map(function (_int) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+        key: _int,
+        onClick: function onClick() {
+          return setInterval(_int);
+        }
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        pad: "small"
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        color: interval === _int ? 'black' : 'brand'
+      }, _int)));
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
+      guidingChild: "first"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: {
+        horizontal: thickness
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
+      type: "bar",
+      overflow: true,
+      bounds: bounds,
+      values: values,
+      thickness: thickness,
+      size: {
+        width: 'full',
+        height: 'small'
+      }
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      fill: true,
+      justify: "between"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: "top",
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][0]))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: "bottom",
+      align: "start"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "xsmall",
+      background: {
+        color: 'white',
+        opacity: 'medium'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, axis[1][1]))))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      justify: "between"
+    }, axis[0].map(function (t) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: t,
+        className: "chromatic-ignore"
+      }, new Date(t).toLocaleDateString());
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+      hoverIndicator: true,
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Next, null),
+      onClick: function onClick() {
+        return setReference(nextReference);
+      }
+    })) // </Grommet>
+
+  );
 };
 
 var Zoom = function Zoom() {
