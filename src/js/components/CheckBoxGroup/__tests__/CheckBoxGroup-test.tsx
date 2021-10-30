@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import 'jest-axe/extend-expect';
@@ -9,8 +9,6 @@ import { Grommet } from '../../Grommet';
 import { CheckBoxGroup } from '..';
 
 describe('CheckBoxGroup', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
