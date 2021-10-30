@@ -1,13 +1,10 @@
 import React from 'react';
-import { Grommet, Notification } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Notification } from 'grommet';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 
 var StatusNotification = function StatusNotification() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     justify: "center",
     gap: "large"
@@ -50,7 +47,7 @@ var StatusNotification = function StatusNotification() {
     status: "unknown",
     title: "Status Title",
     message: "This is an example of message text"
-  }))));
+  })));
 };
 
 export var Status = function Status() {

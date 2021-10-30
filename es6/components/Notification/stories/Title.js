@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Grommet, Notification } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Notification } from 'grommet';
 import { Button } from '../../Button';
 import { Box } from '../../Box';
 
@@ -17,9 +16,7 @@ var TitleNotification = function TitleNotification() {
     return setVisible(undefined);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     justify: "center"
   }, /*#__PURE__*/React.createElement(Button, {

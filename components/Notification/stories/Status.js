@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _Box = require("../../Box");
 
 var _Text = require("../../Text");
@@ -16,9 +14,7 @@ var _Text = require("../../Text");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var StatusNotification = function StatusNotification() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "large",
     justify: "center",
     gap: "large"
@@ -61,7 +57,7 @@ var StatusNotification = function StatusNotification() {
     status: "unknown",
     title: "Status Title",
     message: "This is an example of message text"
-  }))));
+  })));
 };
 
 var Status = function Status() {

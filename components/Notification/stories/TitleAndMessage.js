@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 var _Button = require("../../Button");
 
 var _Box = require("../../Box");
@@ -30,9 +28,7 @@ var TitleAndMessageNotification = function TitleAndMessageNotification() {
     return setVisible(undefined);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "large",
     justify: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
