@@ -2,6 +2,8 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import { render, fireEvent, screen } from '@testing-library/react';
@@ -44,8 +46,10 @@ describe('Notification', () => {
     fireEvent.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
+
   test('autoClose', async () => {
-    const { container } = render(
+    jest.useFakeTimers('modern');
+    const { getAllByText } = render(
       <Grommet>
         <Notification
           toast={{ autoClose: false }}
@@ -54,6 +58,7 @@ describe('Notification', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    jest.runAllTimers();
+    expect(getAllByText('title')[0]).toBeInTheDocument();
   });
 });

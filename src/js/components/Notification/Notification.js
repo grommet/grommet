@@ -22,11 +22,11 @@ const Notification = ({ message, onClose, status, title, toast }) => {
 
   useEffect(() => {
     if (autoClose) {
-      const timer = setTimeout(close, theme.notification.time);
+      const timer = setTimeout(close, theme.notification.toast.time);
       return () => clearTimeout(timer);
     }
     return undefined;
-  }, [autoClose, close, theme.notification.time]);
+  }, [autoClose, close, theme.notification.toast.time]);
 
   const { icon: CloseIcon } = theme.notification.close;
   const { icon: StatusIcon, color } = theme.notification[status];
