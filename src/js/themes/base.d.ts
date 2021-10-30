@@ -1437,6 +1437,9 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      track?: {
+        color?: ColorType;
+      };
     };
   };
   worldMap?: {
