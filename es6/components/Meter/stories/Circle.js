@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Grommet, Box, Meter } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Meter } from 'grommet';
 export var Circle = function Circle() {
   var _useState = useState(20),
       value = _useState[0],
@@ -16,19 +15,23 @@ export var Circle = function Circle() {
       clearTimeout(timer.current);
     };
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Meter, {
-    type: "circle",
-    background: "light-2",
-    values: [{
-      value: value,
-      color: value > 50 ? 'accent-2' : 'accent-1'
-    }]
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Meter, {
+      type: "circle",
+      background: "light-2",
+      values: [{
+        value: value,
+        color: value > 50 ? 'accent-2' : 'accent-1'
+      }]
+    })) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/Meter/Circle'
