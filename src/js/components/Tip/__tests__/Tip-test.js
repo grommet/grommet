@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor, cleanup } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
@@ -12,7 +12,6 @@ import { Grommet } from '../../Grommet';
 import { Tip } from '../Tip';
 
 describe('Tip', () => {
-  afterEach(cleanup);
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>

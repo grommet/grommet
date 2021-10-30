@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -10,8 +10,6 @@ import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 
 describe('Collapsible', () => {
-  afterEach(cleanup);
-
   test('no accessibility violations', async () => {
     const { container } = render(
       <Grommet>

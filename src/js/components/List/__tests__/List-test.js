@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
@@ -15,8 +15,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('List', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const onClickItem = jest.fn();
     const { container, getByText } = render(
@@ -272,8 +270,6 @@ describe('List events', () => {
     );
   });
 
-  afterEach(cleanup);
-
   test('Enter key', () => {
     const { container, getByText } = render(<App />);
 
@@ -473,8 +469,6 @@ describe('List onOrder', () => {
       );
     };
   });
-
-  afterEach(cleanup);
 
   test('Mouse move down', () => {
     const { container } = render(<App />);

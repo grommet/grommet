@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -16,7 +16,6 @@ import { Text } from '../../Text';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -254,7 +253,8 @@ describe('TextInput', () => {
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
-      fireEvent.click(getByText(document, 'test1'));
+      // Casting a custom to a primitive by erasing type with unknown.
+      fireEvent.click(getByText(document as unknown as HTMLElement, 'test1'));
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       expect(onSelect).toBeCalledWith(
@@ -524,18 +524,18 @@ describe('TextInput', () => {
   });
 
   test('should return focus to ref on select', async () => {
-    const inputRef = { current: {} };
+    const inputRef = React.createRef<HTMLInputElement>();
     const onSelect = jest.fn();
     const { getByPlaceholderText } = render(
       <Grommet>
         <TextInput
+          ref={inputRef}
           data-testid="test-input-focus"
           id="input-focus"
           name="input-focus"
           placeholder="Type to search..."
           suggestions={['option0', 'option1', 'option2']}
           onSelect={onSelect}
-          ref={inputRef}
         />
       </Grommet>,
     );
