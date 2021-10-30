@@ -3,7 +3,6 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import { render, fireEvent, screen } from '@testing-library/react';
