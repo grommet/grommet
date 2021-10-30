@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 var data = [];
 
 for (var i = 1; i < 8; i += 1) {
@@ -12,17 +11,21 @@ for (var i = 1; i < 8; i += 1) {
 }
 
 export var GuideDefault = function GuideDefault() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataChart, {
-    data: data,
-    series: "percent",
-    guide: true
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataChart, {
+      data: data,
+      series: "percent",
+      guide: true
+    })) // </Grommet>
+
+  );
 };
 GuideDefault.storyName = 'Guide default';
 export default {

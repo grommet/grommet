@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Box, DataChart, Grommet, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart, Stack } from 'grommet';
 var keyFrameExampleOne = keyframes(["0%{width:200px;background-color:#FFFFFF;}100%{width:0px;background-color:#FFFFFF;}"]);
 var AnimatedBox = styled(Box).withConfig({
   displayName: "Prediction__AnimatedBox",
@@ -33,113 +32,117 @@ for (var _i = 0; _i < 13; _i += 1) {
 }
 
 export var Prediction = function Prediction() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Stack, {
-    anchor: "top-right",
-    interactiveChild: "first"
-  }, /*#__PURE__*/React.createElement(DataChart, {
-    data: data,
-    series: ['date', {
-      property: 'amount',
-      label: 'Amount'
-    }, {
-      property: 'need',
-      label: 'Demand'
-    }, {
-      property: 'amountPredicted',
-      label: 'Predicted Amount'
-    }, {
-      property: 'needPredicted'
-    }],
-    chart: [{
-      property: 'amount',
-      type: 'area',
-      thickness: 'xsmall',
-      color: 'graph-3',
-      opacity: 'medium'
-    }, {
-      property: 'amount',
-      type: 'line',
-      thickness: 'xsmall',
-      round: true
-    }, {
-      property: 'amountPredicted',
-      type: 'area',
-      thickness: 'xsmall',
-      color: 'graph-3',
-      opacity: 'medium'
-    }, {
-      property: 'amountPredicted',
-      type: 'line',
-      thickness: 'xsmall',
-      round: true,
-      dash: true
-    }, {
-      property: 'amountPredicted',
-      type: 'point',
-      thickness: 'small',
-      point: 'circle'
-    }, {
-      property: 'amount',
-      type: 'point',
-      thickness: 'small'
-    }, // {
-    //   property: 'needPredicted',
-    //   type: 'line',
-    //   thickness: 'xxsmall',
-    //   round: true,
-    //   dash: true,
-    // },
-    {
-      property: 'need',
-      type: 'line',
-      thickness: 'xxsmall',
-      dash: true,
-      round: true
-    }, {
-      property: 'need',
-      type: 'point',
-      thickness: 'small'
-    }],
-    axis: {
-      x: 'date',
-      y: {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Stack, {
+      anchor: "top-right",
+      interactiveChild: "first"
+    }, /*#__PURE__*/React.createElement(DataChart, {
+      data: data,
+      series: ['date', {
         property: 'amount',
-        granularity: 'medium'
-      }
-    },
-    guide: {
-      y: {
-        granularity: 'fine'
+        label: 'Amount'
+      }, {
+        property: 'need',
+        label: 'Demand'
+      }, {
+        property: 'amountPredicted',
+        label: 'Predicted Amount'
+      }, {
+        property: 'needPredicted'
+      }],
+      chart: [{
+        property: 'amount',
+        type: 'area',
+        thickness: 'xsmall',
+        color: 'graph-3',
+        opacity: 'medium'
+      }, {
+        property: 'amount',
+        type: 'line',
+        thickness: 'xsmall',
+        round: true
+      }, {
+        property: 'amountPredicted',
+        type: 'area',
+        thickness: 'xsmall',
+        color: 'graph-3',
+        opacity: 'medium'
+      }, {
+        property: 'amountPredicted',
+        type: 'line',
+        thickness: 'xsmall',
+        round: true,
+        dash: true
+      }, {
+        property: 'amountPredicted',
+        type: 'point',
+        thickness: 'small',
+        point: 'circle'
+      }, {
+        property: 'amount',
+        type: 'point',
+        thickness: 'small'
+      }, // {
+      //   property: 'needPredicted',
+      //   type: 'line',
+      //   thickness: 'xxsmall',
+      //   round: true,
+      //   dash: true,
+      // },
+      {
+        property: 'need',
+        type: 'line',
+        thickness: 'xxsmall',
+        dash: true,
+        round: true
+      }, {
+        property: 'need',
+        type: 'point',
+        thickness: 'small'
+      }],
+      axis: {
+        x: 'date',
+        y: {
+          property: 'amount',
+          granularity: 'medium'
+        }
       },
-      x: {
-        granularity: 'fine'
+      guide: {
+        y: {
+          granularity: 'fine'
+        },
+        x: {
+          granularity: 'fine'
+        }
+      },
+      gap: "medium",
+      pad: "small",
+      legend: true,
+      detail: true
+    }), /*#__PURE__*/React.createElement(Box, {
+      width: "small",
+      height: "small",
+      border: [{
+        side: 'left',
+        size: 'medium'
+      }],
+      background: {
+        color: '#FFFFFF',
+        opacity: 0.4
       }
-    },
-    gap: "medium",
-    pad: "small",
-    legend: true,
-    detail: true
-  }), /*#__PURE__*/React.createElement(Box, {
-    width: "small",
-    height: "small",
-    border: [{
-      side: 'left',
-      size: 'medium'
-    }],
-    background: {
-      color: '#FFFFFF',
-      opacity: 0.4
-    }
-  }), /*#__PURE__*/React.createElement(AnimatedBox, {
-    width: "small",
-    height: "small"
-  }))));
+    }), /*#__PURE__*/React.createElement(AnimatedBox, {
+      width: "small",
+      height: "small"
+    }))) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/DataChart/Prediction'

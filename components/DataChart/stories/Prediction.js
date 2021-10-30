@@ -9,8 +9,6 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -48,113 +46,117 @@ for (var _i = 0; _i < 13; _i += 1) {
 }
 
 var Prediction = function Prediction() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    anchor: "top-right",
-    interactiveChild: "first"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
-    data: data,
-    series: ['date', {
-      property: 'amount',
-      label: 'Amount'
-    }, {
-      property: 'need',
-      label: 'Demand'
-    }, {
-      property: 'amountPredicted',
-      label: 'Predicted Amount'
-    }, {
-      property: 'needPredicted'
-    }],
-    chart: [{
-      property: 'amount',
-      type: 'area',
-      thickness: 'xsmall',
-      color: 'graph-3',
-      opacity: 'medium'
-    }, {
-      property: 'amount',
-      type: 'line',
-      thickness: 'xsmall',
-      round: true
-    }, {
-      property: 'amountPredicted',
-      type: 'area',
-      thickness: 'xsmall',
-      color: 'graph-3',
-      opacity: 'medium'
-    }, {
-      property: 'amountPredicted',
-      type: 'line',
-      thickness: 'xsmall',
-      round: true,
-      dash: true
-    }, {
-      property: 'amountPredicted',
-      type: 'point',
-      thickness: 'small',
-      point: 'circle'
-    }, {
-      property: 'amount',
-      type: 'point',
-      thickness: 'small'
-    }, // {
-    //   property: 'needPredicted',
-    //   type: 'line',
-    //   thickness: 'xxsmall',
-    //   round: true,
-    //   dash: true,
-    // },
-    {
-      property: 'need',
-      type: 'line',
-      thickness: 'xxsmall',
-      dash: true,
-      round: true
-    }, {
-      property: 'need',
-      type: 'point',
-      thickness: 'small'
-    }],
-    axis: {
-      x: 'date',
-      y: {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
+      anchor: "top-right",
+      interactiveChild: "first"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
+      data: data,
+      series: ['date', {
         property: 'amount',
-        granularity: 'medium'
-      }
-    },
-    guide: {
-      y: {
-        granularity: 'fine'
+        label: 'Amount'
+      }, {
+        property: 'need',
+        label: 'Demand'
+      }, {
+        property: 'amountPredicted',
+        label: 'Predicted Amount'
+      }, {
+        property: 'needPredicted'
+      }],
+      chart: [{
+        property: 'amount',
+        type: 'area',
+        thickness: 'xsmall',
+        color: 'graph-3',
+        opacity: 'medium'
+      }, {
+        property: 'amount',
+        type: 'line',
+        thickness: 'xsmall',
+        round: true
+      }, {
+        property: 'amountPredicted',
+        type: 'area',
+        thickness: 'xsmall',
+        color: 'graph-3',
+        opacity: 'medium'
+      }, {
+        property: 'amountPredicted',
+        type: 'line',
+        thickness: 'xsmall',
+        round: true,
+        dash: true
+      }, {
+        property: 'amountPredicted',
+        type: 'point',
+        thickness: 'small',
+        point: 'circle'
+      }, {
+        property: 'amount',
+        type: 'point',
+        thickness: 'small'
+      }, // {
+      //   property: 'needPredicted',
+      //   type: 'line',
+      //   thickness: 'xxsmall',
+      //   round: true,
+      //   dash: true,
+      // },
+      {
+        property: 'need',
+        type: 'line',
+        thickness: 'xxsmall',
+        dash: true,
+        round: true
+      }, {
+        property: 'need',
+        type: 'point',
+        thickness: 'small'
+      }],
+      axis: {
+        x: 'date',
+        y: {
+          property: 'amount',
+          granularity: 'medium'
+        }
       },
-      x: {
-        granularity: 'fine'
+      guide: {
+        y: {
+          granularity: 'fine'
+        },
+        x: {
+          granularity: 'fine'
+        }
+      },
+      gap: "medium",
+      pad: "small",
+      legend: true,
+      detail: true
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      width: "small",
+      height: "small",
+      border: [{
+        side: 'left',
+        size: 'medium'
+      }],
+      background: {
+        color: '#FFFFFF',
+        opacity: 0.4
       }
-    },
-    gap: "medium",
-    pad: "small",
-    legend: true,
-    detail: true
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    width: "small",
-    height: "small",
-    border: [{
-      side: 'left',
-      size: 'medium'
-    }],
-    background: {
-      color: '#FFFFFF',
-      opacity: 0.4
-    }
-  }), /*#__PURE__*/_react["default"].createElement(AnimatedBox, {
-    width: "small",
-    height: "small"
-  }))));
+    }), /*#__PURE__*/_react["default"].createElement(AnimatedBox, {
+      width: "small",
+      height: "small"
+    }))) // </Grommet>
+
+  );
 };
 
 exports.Prediction = Prediction;

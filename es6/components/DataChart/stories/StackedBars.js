@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, DataChart, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart, Text } from 'grommet';
 var data = [];
 
 for (var i = 0; i < 7; i += 1) {
@@ -12,43 +11,47 @@ for (var i = 0; i < 7; i += 1) {
 }
 
 export var StackedBars = function StackedBars() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataChart, {
-    data: data,
-    series: [{
-      property: 'date',
-      render: function render(date) {
-        return /*#__PURE__*/React.createElement(Text, {
-          margin: {
-            horizontal: 'xsmall'
-          }
-        }, new Date(date).toLocaleDateString('en-US', {
-          month: 'numeric',
-          day: 'numeric'
-        }));
-      }
-    }, 'usage', 'bonus'],
-    chart: [{
-      property: ['usage', 'bonus'],
-      type: 'bars'
-    }],
-    axis: {
-      x: {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataChart, {
+      data: data,
+      series: [{
         property: 'date',
-        granularity: 'fine'
+        render: function render(date) {
+          return /*#__PURE__*/React.createElement(Text, {
+            margin: {
+              horizontal: 'xsmall'
+            }
+          }, new Date(date).toLocaleDateString('en-US', {
+            month: 'numeric',
+            day: 'numeric'
+          }));
+        }
+      }, 'usage', 'bonus'],
+      chart: [{
+        property: ['usage', 'bonus'],
+        type: 'bars'
+      }],
+      axis: {
+        x: {
+          property: 'date',
+          granularity: 'fine'
+        },
+        y: true
       },
-      y: true
-    },
-    guide: {
-      y: true
-    },
-    legend: true
-  })));
+      guide: {
+        y: true
+      },
+      legend: true
+    })) // </Grommet>
+
+  );
 };
 StackedBars.storyName = 'Stacked bars';
 export default {

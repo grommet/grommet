@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 var data = [];
 
 for (var i = 1; i < 8; i += 1) {
@@ -12,41 +11,44 @@ for (var i = 1; i < 8; i += 1) {
 }
 
 export var Guide = function Guide() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    margin: "large",
-    width: {
-      min: 'small',
-      max: 'large'
-    }
-  }, /*#__PURE__*/React.createElement(DataChart, {
-    data: data,
-    series: ['date', 'percent'],
-    chart: [{
-      property: 'percent',
-      thickness: 'xsmall',
-      type: 'line'
-    }, {
-      property: 'percent',
-      thickness: 'medium',
-      type: 'point',
-      point: 'diamond'
-    }],
-    guide: {
-      x: {
-        granularity: 'fine'
-      },
-      y: {
-        granularity: 'medium'
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet} full>
+    React.createElement(Box, {
+      margin: "large",
+      width: {
+        min: 'small',
+        max: 'large'
       }
-    },
-    size: {
-      width: 'fill'
-    },
-    detail: true
-  })));
+    }, /*#__PURE__*/React.createElement(DataChart, {
+      data: data,
+      series: ['date', 'percent'],
+      chart: [{
+        property: 'percent',
+        thickness: 'xsmall',
+        type: 'line'
+      }, {
+        property: 'percent',
+        thickness: 'medium',
+        type: 'point',
+        point: 'diamond'
+      }],
+      guide: {
+        x: {
+          granularity: 'fine'
+        },
+        y: {
+          granularity: 'medium'
+        }
+      },
+      size: {
+        width: 'fill'
+      },
+      detail: true
+    })) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/DataChart/Guide'

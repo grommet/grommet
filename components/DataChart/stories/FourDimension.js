@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var data = [];
@@ -24,44 +22,48 @@ for (var i = 1; i < 32; i += 1) {
 }
 
 var FourDimensionDataChart = function FourDimensionDataChart() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
-    data: data,
-    series: ['name', 'strength', 'risk', 'cost', 'effort'],
-    chart: {
-      type: 'point',
-      point: 'circle',
-      property: {
-        x: 'strength',
-        y: 'risk',
-        thickness: 'cost',
-        // Want a way to take two color values and automatically generate
-        // transformation
-        color: {
-          property: 'effort',
-          transform: function transform(v) {
-            return "#" + (16 - v).toString(16) + "0" + (4 + v).toString(16) + "0" + (4 + v).toString(16) + "0";
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
+      data: data,
+      series: ['name', 'strength', 'risk', 'cost', 'effort'],
+      chart: {
+        type: 'point',
+        point: 'circle',
+        property: {
+          x: 'strength',
+          y: 'risk',
+          thickness: 'cost',
+          // Want a way to take two color values and automatically generate
+          // transformation
+          color: {
+            property: 'effort',
+            transform: function transform(v) {
+              return "#" + (16 - v).toString(16) + "0" + (4 + v).toString(16) + "0" + (4 + v).toString(16) + "0";
+            }
           }
+        },
+        opacity: 'strong'
+      },
+      axis: {
+        x: {
+          granularity: 'medium'
+        },
+        y: {
+          granularity: 'medium'
         }
       },
-      opacity: 'strong'
-    },
-    axis: {
-      x: {
-        granularity: 'medium'
-      },
-      y: {
-        granularity: 'medium'
-      }
-    },
-    guide: true,
-    legend: true
-  })));
+      guide: true,
+      legend: true
+    })) // </Grommet>
+
+  );
 };
 
 exports.FourDimensionDataChart = FourDimensionDataChart;

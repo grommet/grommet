@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 var data = [];
 
 for (var i = 1; i <= 7; i += 1) {
@@ -25,30 +24,34 @@ for (var i = 1; i <= 7; i += 1) {
 }
 
 export var Axis = function Axis() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(DataChart, {
-    data: data,
-    series: ['day', {
-      property: 'percent',
-      suffix: '%'
-    }],
-    chart: "percent",
-    axis: {
-      x: {
-        property: 'day',
-        granularity: 'medium'
-      },
-      y: {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(DataChart, {
+      data: data,
+      series: ['day', {
         property: 'percent',
-        granularity: 'medium'
+        suffix: '%'
+      }],
+      chart: "percent",
+      axis: {
+        x: {
+          property: 'day',
+          granularity: 'medium'
+        },
+        y: {
+          property: 'percent',
+          granularity: 'medium'
+        }
       }
-    }
-  })));
+    })) // </Grommet>
+
+  );
 };
 export default {
   title: 'Visualizations/DataChart/Axis'
