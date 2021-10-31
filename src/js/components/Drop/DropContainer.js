@@ -79,11 +79,8 @@ const DropContainer = forwardRef(
         const windowHeight = window.innerHeight;
         const target = dropTarget;
         const container = (ref || dropRef).current;
-        const parent = container ? container.parentNode : null;
-        const supContainer = parent
-          ? parent.closest('*:not([aria-hidden="false"])')
-          : null;
-        if (container && target && supContainer) {
+        const parent = container ? container.offsetParent : null;
+        if (container && target) {
           // clear prior styling
           container.style.left = '';
           container.style.top = '';
@@ -95,7 +92,7 @@ const DropContainer = forwardRef(
           // get bounds
           const targetRect = target.getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
-          const parentRect = supContainer.getBoundingClientRect();
+          const parentRect = parent.getBoundingClientRect();
           // determine width
           let width;
           if (stretch) {
@@ -130,7 +127,7 @@ const DropContainer = forwardRef(
           } else if (left < 0) {
             left = 0;
           }
-          left = left - parentRect.left + supContainer.scrollLeft;
+          left = left - parentRect.left + parent.scrollLeft;
           // set top or bottom position
           let top;
           let bottom;
@@ -184,7 +181,7 @@ const DropContainer = forwardRef(
               targetRect.top + targetRect.height / 2 - containerRect.height / 2;
             maxHeight = windowHeight - top;
           }
-          top = top - parentRect.top + supContainer.scrollTop;
+          top = top - parentRect.top + parent.scrollTop;
           // if we can't fit it all, or we're rather close,
           // see if there's more room the other direction
           if (
