@@ -220,12 +220,7 @@ const StyledGrid = styled.div.attrs((props) => ({
 
   ${genericStyles}
   ${(props) =>
-    props.border &&
-    (Array.isArray(props.border)
-      ? props.border.map((border) =>
-          borderStyle(border, props.responsive, props.theme),
-        )
-      : borderStyle(props.border, props.responsive, props.theme))}
+    props.border && borderStyle(props.border, props.responsive, props.theme)}
   ${(props) => fillStyle(props.fillContainer)}
   ${(props) => props.align && alignStyle}
   ${(props) => props.alignContent && alignContentStyle}

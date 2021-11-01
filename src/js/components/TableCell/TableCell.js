@@ -102,7 +102,7 @@ const TableCell = forwardRef(
     } else {
       tableContextTheme = theme.table && theme.table.body;
     }
-    // merge tabelContextTheme and rest
+    // merge tableContextTheme and rest
     const mergedProps = { ...tableContextTheme, ...rest };
     Object.keys(mergedProps).forEach((key) => {
       if (rest[key] === undefined) mergedProps[key] = tableContextTheme[key];
