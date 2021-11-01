@@ -9,8 +9,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
@@ -45,22 +43,26 @@ Set.propTypes = {
 };
 
 var All = function All() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
-    columns: "large",
-    gap: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(Set, {
-    size: "medium"
-  }), /*#__PURE__*/_react["default"].createElement(Set, {
-    size: "small"
-  }), /*#__PURE__*/_react["default"].createElement(Set, {
-    size: "large"
-  }), /*#__PURE__*/_react["default"].createElement(Set, {
-    size: "xlarge"
-  })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
-    fill: true
-  }, headingFiller));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+      columns: "large",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(Set, {
+      size: "medium"
+    }), /*#__PURE__*/_react["default"].createElement(Set, {
+      size: "small"
+    }), /*#__PURE__*/_react["default"].createElement(Set, {
+      size: "large"
+    }), /*#__PURE__*/_react["default"].createElement(Set, {
+      size: "xlarge"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      fill: true
+    }, headingFiller)) // </Grommet>
+
+  );
 };
 
 exports.All = All;

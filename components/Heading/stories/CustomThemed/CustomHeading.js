@@ -54,6 +54,6 @@ var Custom = function Custom() {
 
 exports.Custom = Custom;
 var _default = {
-  title: 'Type/Heading/Custom'
+  title: 'Type/Heading/Custom Themed/Custom'
 };
 exports["default"] = _default;

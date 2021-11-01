@@ -62,6 +62,6 @@ var Extend = function Extend() {
 
 exports.Extend = Extend;
 var _default = {
-  title: 'Type/Heading/Extend'
+  title: 'Type/Heading/Custom Themed/Extend'
 };
 exports["default"] = _default;

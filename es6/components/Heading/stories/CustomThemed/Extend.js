@@ -48,5 +48,5 @@ export var Extend = function Extend() {
   }, "This is using the extend property on Heading"));
 };
 export default {
-  title: 'Type/Heading/Extend'
+  title: 'Type/Heading/Custom Themed/Extend'
 };

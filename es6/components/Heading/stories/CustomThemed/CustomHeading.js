@@ -40,5 +40,5 @@ export var Custom = function Custom() {
   }, "Heading level 5 small"));
 };
 export default {
-  title: 'Type/Heading/Custom'
+  title: 'Type/Heading/Custom Themed/Custom'
 };

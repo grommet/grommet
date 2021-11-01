@@ -1,12 +1,15 @@
 import React from 'react';
-import { Grommet, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Heading } from 'grommet';
 export var Color = function Color() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Heading, {
-    color: "accent-1"
-  }, "Colored Heading"));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Heading, {
+      color: "accent-1"
+    }, "Colored Heading") // </Grommet>
+
+  );
 };
 export default {
   title: 'Type/Heading/Color'

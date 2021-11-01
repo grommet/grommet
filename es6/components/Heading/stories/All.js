@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grommet, Grid, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grid, Heading } from 'grommet';
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 
 var H = function H(_ref) {
@@ -33,22 +32,26 @@ Set.propTypes = {
   size: PropTypes.string.isRequired
 };
 export var All = function All() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Grid, {
-    columns: "large",
-    gap: "medium"
-  }, /*#__PURE__*/React.createElement(Set, {
-    size: "medium"
-  }), /*#__PURE__*/React.createElement(Set, {
-    size: "small"
-  }), /*#__PURE__*/React.createElement(Set, {
-    size: "large"
-  }), /*#__PURE__*/React.createElement(Set, {
-    size: "xlarge"
-  })), /*#__PURE__*/React.createElement(Heading, {
-    fill: true
-  }, headingFiller));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grid, {
+      columns: "large",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Set, {
+      size: "medium"
+    }), /*#__PURE__*/React.createElement(Set, {
+      size: "small"
+    }), /*#__PURE__*/React.createElement(Set, {
+      size: "large"
+    }), /*#__PURE__*/React.createElement(Set, {
+      size: "xlarge"
+    })), /*#__PURE__*/React.createElement(Heading, {
+      fill: true
+    }, headingFiller)) // </Grommet>
+
+  );
 };
 export default {
   title: 'Type/Heading/All'
