@@ -142,6 +142,15 @@ export type BackgroundType =
       size?: 'cover' | 'contain' | string;
       light?: string;
     };
+export type HoverIndicatorType =
+  | boolean
+  | string
+  | 'background'
+  | BackgroundType
+  | {
+      background: BackgroundType;
+      elevation: ElevationType;
+    };
 export type BasisType =
   | 'xxsmall'
   | 'xsmall'
