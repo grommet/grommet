@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Grommet, Notification } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Notification } from 'grommet';
 import { Button } from '../../Button';
 import { Box } from '../../Box';
 
@@ -12,7 +11,7 @@ const TitleAndMessageNotification = () => {
   const onClose = () => setVisible(undefined);
 
   return (
-    <Grommet theme={grommet}>
+    <>
       <Box pad="large" justify="center">
         <Button label="Show Notification" onClick={onOpen} />
       </Box>
@@ -24,7 +23,7 @@ const TitleAndMessageNotification = () => {
           onClose={onClose}
         />
       )}
-    </Grommet>
+    </>
   );
 };
 
