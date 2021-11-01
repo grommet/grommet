@@ -10,7 +10,10 @@ const Card = forwardRef(({ ...rest }, ref) => {
   return (
     <Box
       overflow="hidden"
-      context="card"
+      kind={{
+        hover: theme.card.hover?.container,
+        ...theme.card.container,
+      }}
       ref={ref}
       {...theme.card.container}
       {...rest}

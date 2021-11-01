@@ -21,7 +21,6 @@ const Box = forwardRef(
       background,
       border,
       children,
-      context, // internal only
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -138,7 +137,6 @@ const Box = forwardRef(
         aria-label={a11yTitle}
         background={background}
         border={border}
-        context={context}
         ref={ref}
         directionProp={direction}
         elevationProp={elevation}
