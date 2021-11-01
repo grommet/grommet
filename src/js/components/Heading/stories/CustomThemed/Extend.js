@@ -25,7 +25,7 @@ const letterSpacing = ({ level, size }) =>
   level && size ? `letter-spacing: ${letterSpace[level][size]}` : '';
 
 const customTheme = deepMerge(grommet, {
-  heading: { extend: props => `${letterSpacing(props)}` },
+  heading: { extend: (props) => `${letterSpacing(props)}` },
 });
 
 export const Extend = () => (
@@ -43,5 +43,5 @@ export const Extend = () => (
 );
 
 export default {
-  title: 'Type/Heading/Extend',
+  title: 'Type/Heading/Custom Themed/Extend',
 };

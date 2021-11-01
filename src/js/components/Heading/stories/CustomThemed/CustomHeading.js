@@ -21,7 +21,7 @@ const customlevel = deepMerge(grommet, {
         },
       },
     },
-    extend: props => `color: ${props.theme.global.colors.brand}`,
+    extend: (props) => `color: ${props.theme.global.colors.brand}`,
   },
 });
 export const Custom = () => (
@@ -39,5 +39,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Type/Heading/Custom',
+  title: 'Type/Heading/Custom Themed/Custom',
 };
