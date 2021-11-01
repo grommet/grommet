@@ -2,7 +2,7 @@ import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
@@ -34,6 +34,8 @@ const Bar = forwardRef((props, ref) => {
       ? capOffset
       : (max * (length - 2 * capOffset)) / max;
 
+  const svgDefs = [];
+
   const paths = (values || [])
     .reduce((acc, valueArg, index) => {
       if (valueArg.value > 0) {
@@ -60,15 +62,49 @@ const Bar = forwardRef((props, ref) => {
           start -= delta;
         }
 
+        let stroke = strokeProps(
+          someHighlight && !highlight ? background : colorName,
+          theme,
+        );
+
+        const useGradient = color && Array.isArray(color);
+
+        if (useGradient) {
+          const gradientProps = color.filter(
+            (gradEntry) => !gradEntry.color,
+          )[0];
+          const gradientColors = color.filter(
+            ({ color: gradColor }) => gradColor,
+          );
+
+          const uniqueGradientId = gradientColors
+            .map((element) => element.color)
+            .join('-');
+          const gradientId = `${uniqueGradientId}-gradient-${index}`;
+
+          stroke = { ...stroke, stroke: `url(#${gradientId})` };
+
+          svgDefs.push(
+            <linearGradient key={gradientId} id={gradientId} {...gradientProps}>
+              {gradientColors
+                .sort((c1, c2) => c1.value - c2.value)
+                .map(({ value: colorValue, color: gradientColor }) => (
+                  <stop
+                    key={`${gradientColor}-${colorValue}`}
+                    offset={`${colorValue}%`}
+                    stopColor={normalizeColor(gradientColor, theme)}
+                  />
+                ))}
+            </linearGradient>,
+          );
+        }
+
         const result = (
           <path
             key={key}
             d={d}
             fill="none"
-            {...strokeProps(
-              someHighlight && !highlight ? background : colorName,
-              theme,
-            )}
+            {...stroke}
             strokeWidth={direction === 'horizontal' ? thickness : length}
             strokeLinecap={round ? 'round' : 'butt'}
             {...hoverProps}
@@ -108,6 +144,7 @@ const Bar = forwardRef((props, ref) => {
       round={round ? { size: thicknessProp } : undefined}
       {...rest}
     >
+      {svgDefs.length !== 0 && <defs>{svgDefs}</defs>}
       <path
         d={backgroundPath}
         fill="none"

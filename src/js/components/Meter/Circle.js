@@ -2,7 +2,12 @@ import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
+import {
+  arcCommands,
+  normalizeColor,
+  parseMetricToNum,
+  translateEndAngle,
+} from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
@@ -26,6 +31,7 @@ const Circle = forwardRef((props, ref) => {
   let startValue = 0;
   let startAngle = type === 'semicircle' ? 270 : 0;
   const paths = [];
+  const svgDefs = [];
   let pathCaps = [];
   (values || [])
     .filter((v) => v.value > 0)
@@ -48,10 +54,46 @@ const Circle = forwardRef((props, ref) => {
           onMouseLeave: () => onHover(false),
         };
       }
-      const stroke = strokeProps(
+
+      let stroke = strokeProps(
         someHighlight && !highlight ? background : colorName,
         theme,
       );
+
+      const useGradient = color && Array.isArray(color);
+
+      if (useGradient) {
+        const gradientProps = color.filter(
+          ({ color: gradColor }) => !gradColor,
+        )[0];
+        const gradientColors = color.filter(
+          ({ color: gradColor }) => gradColor,
+        );
+
+        const gradientId = [
+          ...gradientColors.map((element) => element.color),
+          ...Object.values(gradientProps || {}),
+        ]
+          .join('-')
+          .replace(/[()]/gi, '');
+
+        stroke = { ...stroke, stroke: `url(#${gradientId})` };
+
+        svgDefs.push(
+          <linearGradient key={gradientId} id={gradientId} {...gradientProps}>
+            {gradientColors
+              .sort((c1, c2) => c1.value - c2.value)
+              .map(({ value: colorValue, color: gradientColor }) => (
+                <stop
+                  key={`${gradientColor}-${colorValue}`}
+                  offset={`${colorValue}%`}
+                  stopColor={normalizeColor(gradientColor, theme)}
+                />
+              ))}
+          </linearGradient>,
+        );
+      }
+
       if (round) {
         const d1 = arcCommands(centerX, centerY, radius, startAngle, endAngle);
         paths.unshift(
@@ -150,9 +192,10 @@ const Circle = forwardRef((props, ref) => {
       height={size === 'full' ? '100%' : viewBoxHeight}
       {...rest}
     >
+      {svgDefs.length !== 0 && <defs>{svgDefs}</defs>}
       {track}
-      {paths}
       {pathCaps}
+      {paths}
     </StyledMeter>
   );
 });
