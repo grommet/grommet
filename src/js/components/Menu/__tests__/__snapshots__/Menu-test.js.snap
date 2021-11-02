@@ -680,7 +680,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .BiUy {
+  .iwMNSr {
     padding: 6px;
   }
 }"
@@ -3021,7 +3021,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 BiUy"
+      class="StyledBox-sc-13pk1d4-0 iwMNSr"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -3407,7 +3407,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .BiUy {
+  .iwMNSr {
     padding: 6px;
   }
 }"
@@ -4138,7 +4138,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .BiUy {
+  .iwMNSr {
     padding: 6px;
   }
 }"
@@ -5823,7 +5823,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .BiUy {
+  .iwMNSr {
     padding: 6px;
   }
 }"
@@ -6364,7 +6364,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .BiUy {
+  .iwMNSr {
     padding: 6px;
   }
 }"

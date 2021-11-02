@@ -1143,7 +1143,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1697,7 +1697,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2251,7 +2251,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2805,7 +2805,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2814,14 +2814,14 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cIlpfW StyledDrop-sc-16s5rx8-0 ohXMl"
+  class="StyledBox-sc-13pk1d4-0 bfNlCf StyledDrop-sc-16s5rx8-0 ohXMl"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO StyledSelect__StyledContainer-sc-znp66n-0 eYDuHC"
+    class="StyledBox-sc-13pk1d4-0 bULqXT StyledSelect__StyledContainer-sc-znp66n-0 eYDuHC"
     id="test-select__select-drop"
   >
     <div
@@ -2836,7 +2836,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hNlVwe"
+          class="StyledBox-sc-13pk1d4-0 hztkmD"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dbAlhH"
@@ -2852,7 +2852,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hNlVwe"
+          class="StyledBox-sc-13pk1d4-0 hztkmD"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dbAlhH"
@@ -2862,7 +2862,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hDMmUh"
+        class="StyledBox-sc-13pk1d4-0 jrrStI"
       />
     </div>
   </div>
@@ -2871,7 +2871,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3152,10 +3152,10 @@ exports[`Select Controlled multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kTfBZm"
+    class="StyledBox-sc-13pk1d4-0 duA-dOj"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iLmQXk"
+      class="StyledBox-sc-13pk1d4-0 TORGV"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 bDhrKg"
@@ -3173,7 +3173,7 @@ exports[`Select Controlled multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bHRIGx"
+      class="StyledBox-sc-13pk1d4-0 euhWRA"
       style="min-width: auto;"
     >
       <svg
@@ -3457,7 +3457,7 @@ exports[`Select Controlled multiple values 3`] = `
 
 exports[`Select Controlled multiple values 4`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4011,7 +4011,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 exports[`Select Controlled multiple with empty results 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bHRIGx {
+  .euhWRA {
     margin-left: 6px;
     margin-right: 6px;
   }
