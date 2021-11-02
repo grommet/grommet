@@ -5,13 +5,11 @@ exports.Card = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _styledComponents = require("styled-components");
 
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
-
-var _StyledBox = require("../Box/StyledBox");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -19,25 +17,18 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var StyledCard = (0, _styledComponents["default"])(_Box.Box).withConfig({
-  displayName: "Card__StyledCard",
-  componentId: "sc-14tum25-0"
-})(["&:hover{", " ", "}"], function (props) {
-  var _props$theme$card$hov, _props$theme$card$hov2;
-
-  return props.onClick && ((_props$theme$card$hov = props.theme.card.hover) == null ? void 0 : (_props$theme$card$hov2 = _props$theme$card$hov.container) == null ? void 0 : _props$theme$card$hov2.elevation) && (0, _StyledBox.elevationStyle)(props.theme.card.hover.container.elevation);
-}, function (props) {
-  var _props$theme$card$hov3, _props$theme$card$hov4;
-
-  return (_props$theme$card$hov3 = props.theme.card.hover) == null ? void 0 : (_props$theme$card$hov4 = _props$theme$card$hov3.container) == null ? void 0 : _props$theme$card$hov4.extend;
-});
 var Card = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$card$hover;
+
   var rest = _extends({}, _ref);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  return /*#__PURE__*/_react["default"].createElement(StyledCard, _extends({
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     overflow: "hidden",
+    kind: _extends({
+      hover: (_theme$card$hover = theme.card.hover) == null ? void 0 : _theme$card$hover.container
+    }, theme.card.container),
     ref: ref
   }, theme.card.container, rest));
 });

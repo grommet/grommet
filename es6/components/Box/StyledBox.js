@@ -38,11 +38,12 @@ var directionStyle = function directionStyle(direction, theme) {
   return styles;
 };
 
-export var elevationStyle = function elevationStyle(elevation) {
+var elevationStyle = function elevationStyle(elevation) {
   return css(["box-shadow:", ";"], function (props) {
     return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][elevation];
   });
 };
+
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
@@ -138,14 +139,18 @@ var animationInitialStyle = function animationInitialStyle(item) {
 var animationStyle = css(["", ";"], function (props) {
   return css(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
-var interactiveStyle = css(["cursor:pointer;&:hover{", "}"], function (props) {
+var interactiveStyle = css(["cursor:pointer;&:hover{", " ", "}"], function (props) {
+  var _props$kindProp;
+
+  return ((_props$kindProp = props.kindProp) == null ? void 0 : _props$kindProp.hover) && getHoverIndicatorStyle(props.kindProp.hover, props.theme);
+}, function (props) {
   return props.hoverIndicator && getHoverIndicatorStyle(props.hoverIndicator, props.theme);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, genericStyles, function (props) {
   return props.align && alignStyle;
@@ -189,6 +194,8 @@ var StyledBox = styled.div.withConfig({
   return props.onClick && props.focus && props.focusIndicator !== false && focusStyle();
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
+}, function (props) {
+  return props.kindProp && props.kindProp.extend;
 });
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {

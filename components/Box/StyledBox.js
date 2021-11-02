@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledBoxGap = exports.StyledBox = exports.elevationStyle = void 0;
+exports.StyledBoxGap = exports.StyledBox = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -58,7 +58,6 @@ var elevationStyle = function elevationStyle(elevation) {
   });
 };
 
-exports.elevationStyle = elevationStyle;
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
 
 var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
@@ -154,14 +153,18 @@ var animationInitialStyle = function animationInitialStyle(item) {
 var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
   return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 });
-var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", "}"], function (props) {
+var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", " ", "}"], function (props) {
+  var _props$kindProp;
+
+  return ((_props$kindProp = props.kindProp) == null ? void 0 : _props$kindProp.hover) && (0, _utils.getHoverIndicatorStyle)(props.kindProp.hover, props.theme);
+}, function (props) {
   return props.hoverIndicator && (0, _utils.getHoverIndicatorStyle)(props.hoverIndicator, props.theme);
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
 var StyledBox = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
-})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return !props.basis && 'max-width: 100%;';
 }, _utils.genericStyles, function (props) {
   return props.align && _utils.alignStyle;
@@ -205,6 +208,8 @@ var StyledBox = _styledComponents["default"].div.withConfig({
   return props.onClick && props.focus && props.focusIndicator !== false && (0, _utils.focusStyle)();
 }, function (props) {
   return props.theme.box && props.theme.box.extend;
+}, function (props) {
+  return props.kindProp && props.kindProp.extend;
 });
 
 exports.StyledBox = StyledBox;

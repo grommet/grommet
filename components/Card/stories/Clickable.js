@@ -27,12 +27,12 @@ var theme = {
   card: {
     hover: {
       container: {
-        elevation: 'large',
-        extend: "transition: all 0.2s ease-in-out;"
+        elevation: 'large'
       }
     },
     container: {
-      elevation: 'medium'
+      elevation: 'medium',
+      extend: "transition: all 0.2s ease-in-out;"
     },
     footer: {
       pad: {

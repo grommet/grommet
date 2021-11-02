@@ -633,12 +633,12 @@ export var generate = function generate(baseSpacing, scale) {
     card: {
       container: {
         round: 'small',
-        elevation: 'small'
+        elevation: 'small' // extend: undefined,
+
       },
       // hover: {
       //   container: {
       //     elevation: undefined,
-      //     extend: undefined,
       //   },
       // },
       header: {},

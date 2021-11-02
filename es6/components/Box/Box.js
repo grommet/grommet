@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
+var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -21,6 +21,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
       elevation = _ref.elevation,
       fill = _ref.fill,
       gap = _ref.gap,
+      kind = _ref.kind,
       _onBlur = _ref.onBlur,
       onClick = _ref.onClick,
       _onFocus = _ref.onFocus,
@@ -135,6 +136,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
+    kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,
     widthProp: width,

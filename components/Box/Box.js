@@ -17,7 +17,7 @@ var _StyledBox = require("./StyledBox");
 
 var _propTypes = require("./propTypes");
 
-var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
+var _excluded = ["a11yTitle", "background", "border", "children", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -37,6 +37,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       elevation = _ref.elevation,
       fill = _ref.fill,
       gap = _ref.gap,
+      kind = _ref.kind,
       _onBlur = _ref.onBlur,
       onClick = _ref.onClick,
       _onFocus = _ref.onFocus,
@@ -154,6 +155,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
+    kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,
     widthProp: width,
