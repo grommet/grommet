@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
@@ -17,6 +17,26 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       over = _useState[0],
       setOver = _useState[1];
 
+  var _useState2 = useState(),
+      usingKeyboard = _useState2[0],
+      setUsingKeyboard = _useState2[1];
+
+  useEffect(function () {
+    document.addEventListener('mousedown', function () {
+      return setUsingKeyboard(false);
+    });
+    document.addEventListener('keydown', function () {
+      return setUsingKeyboard(true);
+    });
+    return function () {
+      document.removeEventListener('mousedown', function () {
+        return setUsingKeyboard(false);
+      });
+      document.removeEventListener('keydown', function () {
+        return setUsingKeyboard(true);
+      });
+    };
+  }, []);
   var componentRef = useForwardedRef(tipRef); // In cases the child is a primitive
 
   var wrapInvalidElement = function wrapInvalidElement() {
@@ -41,10 +61,10 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       return setOver(false);
     },
     onFocus: function onFocus() {
-      return setOver(true);
+      if (usingKeyboard) setOver(true);
     },
     onBlur: function onBlur() {
-      return setOver(false);
+      if (usingKeyboard) setOver(false);
     },
     key: 'tip-child',
     ref: function ref(node) {

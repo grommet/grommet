@@ -32,6 +32,26 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
       over = _useState[0],
       setOver = _useState[1];
 
+  var _useState2 = (0, _react.useState)(),
+      usingKeyboard = _useState2[0],
+      setUsingKeyboard = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    document.addEventListener('mousedown', function () {
+      return setUsingKeyboard(false);
+    });
+    document.addEventListener('keydown', function () {
+      return setUsingKeyboard(true);
+    });
+    return function () {
+      document.removeEventListener('mousedown', function () {
+        return setUsingKeyboard(false);
+      });
+      document.removeEventListener('keydown', function () {
+        return setUsingKeyboard(true);
+      });
+    };
+  }, []);
   var componentRef = (0, _refs.useForwardedRef)(tipRef); // In cases the child is a primitive
 
   var wrapInvalidElement = function wrapInvalidElement() {
@@ -56,10 +76,10 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
       return setOver(false);
     },
     onFocus: function onFocus() {
-      return setOver(true);
+      if (usingKeyboard) setOver(true);
     },
     onBlur: function onBlur() {
-      return setOver(false);
+      if (usingKeyboard) setOver(false);
     },
     key: 'tip-child',
     ref: function ref(node) {
