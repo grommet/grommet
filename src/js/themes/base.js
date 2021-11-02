@@ -1321,10 +1321,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: 'small',
           background: 'background-contrast',
         }, // any box props
-        hover: {
-          background: 'background-contrast',
-          color: 'text-weak',
-        },
+        // hover: {
+        //   background: undefined,
+        //   color: undefined,
+        // },
         text: {
           color: 'text-weak',
         }, // any text props

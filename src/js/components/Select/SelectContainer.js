@@ -8,7 +8,11 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { selectedStyle, setFocusWithoutScroll } from '../../utils';
+import {
+  normalizeColor,
+  selectedStyle,
+  setFocusWithoutScroll,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -36,41 +40,60 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
-  const [hovering, setHovering] = useState(false);
-
+const ClearButtonContainer = styled(Box)``;
+const ClearButtonText = styled(Text)``;
+const ClearButtonComponent = ({
+  className,
+  clear,
+  onClear,
+  name,
+  theme,
+  setFocus,
+}) => {
   const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
-  const background = hovering
-    ? theme.select.clear.hover.background
-    : theme.select.clear.container.background;
-  const color = hovering
-    ? theme.select.clear.hover.color
-    : theme.select.clear.text.color;
 
   return (
     <Button
+      // className must be passed for styled-components component interpolation
+      // https://styled-components.com/docs/advanced#referring-to-other-components
+      className={className}
       onClick={onClear}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
-      onMouseEnter={() => setHovering(true)}
-      onMouseLeave={() => {
-        setHovering(false);
-      }}
     >
-      <Box
-        {...theme.select.clear.container}
-        align={align}
-        background={background}
-      >
-        <Text {...theme.select.clear.text} color={color}>
+      <ClearButtonContainer {...theme.select.clear.container} align={align}>
+        <ClearButtonText {...theme.select.clear.text}>
           {buttonLabel}
-        </Text>
-      </Box>
+        </ClearButtonText>
+      </ClearButtonContainer>
     </Button>
   );
 };
+const ClearButton = styled(ClearButtonComponent)`
+  &:hover {
+    ${(props) =>
+      props.theme.select.clear.hover &&
+      props.theme.select.clear.hover.background &&
+      `> ${ClearButtonContainer} {
+        background: ${normalizeColor(
+          props.theme.select.clear.hover.background,
+          props.theme,
+        )};
+      }`}
+
+    ${(props) =>
+      props.theme.select.clear.hover &&
+      props.theme.select.clear.hover.color &&
+      `${ClearButtonText} {
+        color: ${normalizeColor(
+          props.theme.select.clear.hover.color,
+          props.theme,
+        )};
+      }`}
+  }
+`;
 
 const SelectContainer = forwardRef(
   (

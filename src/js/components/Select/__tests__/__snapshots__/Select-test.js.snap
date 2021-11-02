@@ -3956,14 +3956,14 @@ exports[`Select default value clear 1`] = `
     id="test-select__select-drop"
   >
     <button
-      class="c4"
+      class="c4 "
       type="button"
     >
       <div
-        class="c5"
+        class="c5 SelectContainer__ClearButtonContainer-sc-1wi0ul8-2"
       >
         <span
-          class="c6"
+          class="c6 SelectContainer__ClearButtonText-sc-1wi0ul8-3"
         >
           Clear selection
         </span>
