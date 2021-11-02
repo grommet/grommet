@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 
 const data = [];
 for (let i = 1; i < 8; i += 1) {
@@ -13,26 +12,27 @@ for (let i = 1; i < 8; i += 1) {
 }
 
 export const Guide = () => (
-  <Grommet theme={grommet} full>
-    <Box margin="large" width={{ min: 'small', max: 'large' }}>
-      <DataChart
-        data={data}
-        series={['date', 'percent']}
-        chart={[
-          { property: 'percent', thickness: 'xsmall', type: 'line' },
-          {
-            property: 'percent',
-            thickness: 'medium',
-            type: 'point',
-            point: 'diamond',
-          },
-        ]}
-        guide={{ x: { granularity: 'fine' }, y: { granularity: 'medium' } }}
-        size={{ width: 'fill' }}
-        detail
-      />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet} full>
+  <Box margin="large" width={{ min: 'small', max: 'large' }}>
+    <DataChart
+      data={data}
+      series={['date', 'percent']}
+      chart={[
+        { property: 'percent', thickness: 'xsmall', type: 'line' },
+        {
+          property: 'percent',
+          thickness: 'medium',
+          type: 'point',
+          point: 'diamond',
+        },
+      ]}
+      guide={{ x: { granularity: 'fine' }, y: { granularity: 'medium' } }}
+      size={{ width: 'fill' }}
+      detail
+    />
+  </Box>
+  // </Grommet>
 );
 
 export default {
