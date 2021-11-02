@@ -574,11 +574,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'small',
         elevation: 'small',
+        // extend: undefined,
       },
       // hover: {
       //   container: {
       //     elevation: undefined,
-      //     extend: undefined,
       //   },
       // },
       header: {},
