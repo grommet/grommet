@@ -192,8 +192,8 @@ const interactiveStyle = css`
 
   &:hover {
     ${(props) =>
-      props.kind?.hover &&
-      getHoverIndicatorStyle(props.kind.hover, props.theme)}
+      props.kindProp?.hover &&
+      getHoverIndicatorStyle(props.kindProp.hover, props.theme)}
     ${(props) =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
@@ -201,12 +201,7 @@ const interactiveStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div.withConfig({
-  // don't let kind attribute leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['kind'].includes(prop) && defaultValidatorFn(prop),
-})`
+const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -253,7 +248,7 @@ const StyledBox = styled.div.withConfig({
     props.focusIndicator !== false &&
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
-  ${(props) => props.kind && props.kind.extend}
+  ${(props) => props.kindProp && props.kindProp.extend}
 `;
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
