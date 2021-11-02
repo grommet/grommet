@@ -43,7 +43,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var formatBytes = function formatBytes(size) {
   var units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  var factor = 1000;
+  var factor = 1024;
   var index = 0;
   var num = size;
 
