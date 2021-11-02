@@ -1932,10 +1932,6 @@ Object {
               "background": "background-contrast",
               "pad": "small",
             },
-            "hover": Object {
-              "background": "background-contrast",
-              "color": "text-weak",
-            },
             "text": Object {
               "color": "text-weak",
             },
