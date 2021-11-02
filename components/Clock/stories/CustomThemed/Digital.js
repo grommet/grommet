@@ -66,6 +66,6 @@ Digital.parameters = {
   }
 };
 var _default = {
-  title: 'Visualizations/Clock/Digital'
+  title: 'Visualizations/Clock/Custom Themed/Digital'
 };
 exports["default"] = _default;

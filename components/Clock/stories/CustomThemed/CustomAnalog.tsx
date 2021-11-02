@@ -42,5 +42,5 @@ CustomAnalog.parameters = {
 };
 
 export default {
-  title: 'Visualizations/Clock/Custom analog',
+  title: 'Visualizations/Clock/Custom Themed/Custom analog',
 };

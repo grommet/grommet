@@ -52,5 +52,5 @@ Digital.parameters = {
   }
 };
 export default {
-  title: 'Visualizations/Clock/Digital'
+  title: 'Visualizations/Clock/Custom Themed/Digital'
 };
