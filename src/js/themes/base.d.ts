@@ -1211,7 +1211,7 @@ export interface ThemeType {
     clear?: {
       container?: BoxProps;
       hover?: {
-        background?: BackgroundType;
+        background?: ColorType;
         color?: ColorType;
       };
       text?: TextProps;
