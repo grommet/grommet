@@ -29,7 +29,6 @@ export const ControlsBelow = () => (
   <SimpleVideo
     controls={{
       position: 'below',
-      items: ['volume', 'reduceVolume', 'fullScreen'],
     }}
   />
 );

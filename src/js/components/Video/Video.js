@@ -82,10 +82,6 @@ const Video = forwardRef(
     const videoRef = useForwardedRef(ref);
     const [newControls, setNewControls] = useState();
 
-    useEffect(() => {
-      console.log(videoRef.current);
-    }, [videoRef]);
-
     // Testing: trying to set default for Video controls (ie. Simple story)
     useLayoutEffect(() => {
       if (!controls) {
@@ -101,7 +97,7 @@ const Video = forwardRef(
       } else {
         setNewControls({ position: controls.position, items: controls.items });
       }
-    }, []);
+    }, [controls]);
 
     // mute if needed
     useEffect(() => {

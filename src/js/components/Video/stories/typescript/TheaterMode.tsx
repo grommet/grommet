@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
 
 import { Box, Grommet, Video, grommet } from 'grommet';
-import { Test } from 'grommet-icons';
+import { Monitor } from 'grommet-icons/icons/Monitor';
 
 const TheaterMode = (props) => {
   const [source, setSource] = useState('small_video.mp4');
 
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large">
+      <Box
+        background={source === 'small_video.mp4' ? '' : 'dark-1'}
+        overflow="hidden"
+        height={{ max: 'large' }}
+        align="center"
+        pad="large"
+      >
         <Video
+          src={source}
+          fit="cover"
           controls={{
             position: 'below',
             items: [
               'volume',
               'reduceVolume',
               {
-                icon: <Test />,
+                icon: <Monitor />,
                 onClick: () =>
                   setSource(
                     source === 'small_video.mp4'
@@ -28,9 +36,7 @@ const TheaterMode = (props) => {
             ],
           }}
           {...props}
-        >
-          <source src="testing.mp4" type="video/mp4" />
-        </Video>
+        />
       </Box>
     </Grommet>
   );

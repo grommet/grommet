@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     ...genericProps,
     autoPlay: PropTypes.bool,
     controls: PropTypes.shape({
-      position: PropTypes.oneOf[('over', 'below')],
+      position: PropTypes.oneOf[(false, 'over', 'below')],
       items: PropTypes.arrayOf(
         PropTypes.oneOfType([
           PropTypes.string,

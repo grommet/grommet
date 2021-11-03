@@ -12,7 +12,7 @@ export interface VideoProps {
   alignSelf?: AlignSelfType;
   autoPlay?: boolean;
   controls?: {
-    position?: 'over' | 'below';
+    position?: false | 'over' | 'below';
     items?: [
       (
         | 'closedCaption'
