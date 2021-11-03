@@ -76,7 +76,7 @@ const ClearButton = styled(ClearButtonComponent)`
     ${(props) =>
       props.theme.select.clear.hover &&
       props.theme.select.clear.hover.background &&
-      `> ${ClearButtonContainer} {
+      ` ${ClearButtonContainer} {
         background: ${normalizeColor(
           props.theme.select.clear.hover.background,
           props.theme,
