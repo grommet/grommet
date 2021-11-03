@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useContext,
   useState,
+  useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -15,6 +16,16 @@ import { TipPropTypes } from './propTypes';
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
+  const [usingKeyboard, setUsingKeyboard] = useState();
+
+  useEffect(() => {
+    document.addEventListener('mousedown', () => setUsingKeyboard(false));
+    document.addEventListener('keydown', () => setUsingKeyboard(true));
+    return () => {
+      document.removeEventListener('mousedown', () => setUsingKeyboard(false));
+      document.removeEventListener('keydown', () => setUsingKeyboard(true));
+    };
+  }, []);
 
   const componentRef = useForwardedRef(tipRef);
 
@@ -36,8 +47,12 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const clonedChild = cloneElement(child, {
     onMouseEnter: () => setOver(true),
     onMouseLeave: () => setOver(false),
-    onFocus: () => setOver(true),
-    onBlur: () => setOver(false),
+    onFocus: () => {
+      if (usingKeyboard) setOver(true);
+    },
+    onBlur: () => {
+      if (usingKeyboard) setOver(false);
+    },
     key: 'tip-child',
     ref: (node) => {
       // https://github.com/facebook/react/issues/8873#issuecomment-287873307
