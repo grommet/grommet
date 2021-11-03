@@ -1513,11 +1513,11 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -1530,11 +1530,11 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bsDPkI"
+          class="StyledBox-sc-13pk1d4-0 jsMHFF"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -1547,7 +1547,7 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
         tabindex="0"
       >
         <button
@@ -1568,10 +1568,10 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
           >
             <button
               aria-label="Show carousel slide 1"
@@ -1647,11 +1647,11 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jlblZs"
+          class="StyledBox-sc-13pk1d4-0 bxmmvB"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -1664,11 +1664,11 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -1681,7 +1681,7 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
         tabindex="0"
       >
         <button
@@ -1703,10 +1703,10 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
           >
             <button
               aria-label="Show carousel slide 1"
@@ -2280,11 +2280,11 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jexIge"
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -2297,11 +2297,11 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gdyxnJ"
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bsDPkI"
+          class="StyledBox-sc-13pk1d4-0 jsMHFF"
         >
           <img
             class="StyledImage-sc-ey4zx9-0 cqOVal"
@@ -2314,7 +2314,7 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eoxaih"
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
         tabindex="0"
       >
         <button
@@ -2335,10 +2335,10 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hWlJfk"
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gcLQMe"
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
           >
             <button
               aria-label="Show carousel slide 1"
