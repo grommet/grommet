@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Grommet, Box, Carousel, Image } from 'grommet';
+import { Box, Image } from 'grommet';
+import { Carousel } from '../Carousel';
 
 const data = [
   '//v2.grommet.io/assets/IMG_4210.jpg',
@@ -46,13 +46,11 @@ const View2 = () => {
 };
 
 export const Multi = () => (
-  <Grommet>
-    <Carousel>
-      <View0 />
-      <View1 />
-      <View2 />
-    </Carousel>
-  </Grommet>
+  <Carousel controls="arrows" showProgress>
+    <View0 />
+    <View1 />
+    <View2 />
+  </Carousel>
 );
 
 export default {

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Attraction, Car, TreeOption, Cloud, Amazon } from 'grommet-icons';
 import { Box, Text } from 'grommet';
+import { Carousel } from '../Carousel';
 
-import { NewCarousel } from '../NewCarousel';
-
-export const Simple = () => (
+export const ControlVariations = () => (
   <Box direction="row" align="center" justify="center" fill="horizontal">
     <Box
       height="500px"
@@ -14,7 +13,7 @@ export const Simple = () => (
       justify="center"
     >
       <Text size="small">Both arrow and selector controls</Text>
-      <NewCarousel height="400px" width="400px">
+      <Carousel height="400px" width="400px">
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -30,7 +29,7 @@ export const Simple = () => (
         <Box fill align="center" justify="center">
           <Amazon size="xlarge" />
         </Box>
-      </NewCarousel>
+      </Carousel>
     </Box>
     <Box
       height="500px"
@@ -41,7 +40,7 @@ export const Simple = () => (
       background="lavender"
     >
       <Text size="small">With selector controls and initial child set</Text>
-      <NewCarousel
+      <Carousel
         height="400px"
         width="400px"
         initialChild={2}
@@ -62,7 +61,7 @@ export const Simple = () => (
         <Box fill align="center" justify="center">
           <Amazon size="xlarge" />
         </Box>
-      </NewCarousel>
+      </Carousel>
     </Box>
     <Box
       height="500px"
@@ -73,12 +72,12 @@ export const Simple = () => (
       background="light-3"
     >
       <Text size="small">With arrow controls and progress indicator</Text>
-      <NewCarousel
-        progress
+      <Carousel
         height="400px"
         width="400px"
         controls="arrows"
         initialChild={3}
+        showProgress
       >
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
@@ -95,11 +94,13 @@ export const Simple = () => (
         <Box fill align="center" justify="center">
           <Amazon size="xlarge" />
         </Box>
-      </NewCarousel>
+      </Carousel>
     </Box>
   </Box>
 );
 
+ControlVariations.storyName = 'Control variations';
+
 export default {
-  title: 'Media/Carousel/New Carousel/Simple',
+  title: 'Media/Carousel/Control variations',
 };

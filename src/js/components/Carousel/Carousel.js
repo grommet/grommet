@@ -1,242 +1,350 @@
 import React, {
   Children,
-  useCallback,
+  useState,
   useContext,
   useEffect,
-  useState,
   useRef,
 } from 'react';
-
-import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
-import { ThemeContext } from '../../contexts';
-
+import styled from 'styled-components';
+import { Previous, Next, Radial, RadialSelected } from 'grommet-icons';
+import { CarouselChild } from './CarouselChild';
+import { CarouselPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Stack } from '../Stack';
+import { ThemeContext } from '../../contexts';
+import { defaultProps } from '../../default-props';
+import { widthStyle, heightStyle } from '../../utils';
 
-import { CarouselChild } from './CarouselChild';
-import { CarouselPropTypes } from './propTypes';
+const StyledDot = styled(Button)`
+  border-radius: 50%;
+  &:hover {
+    background-color: #ffffff80;
+  }
+`;
+
+const StyledControl = styled(Button)`
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  background-color: #ffffff99;
+  border-radius: 50%;
+  &:hover {
+    transition: 0.3s;
+    background-color: #ffffffe6;
+  }
+`;
+
+const StyledCarouselContainer = styled(Box)`
+  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+`;
+
+const handleOnJumpNavigation =
+  ({ setDirection, setCurrent, setPrevious, setInTransition, onChild }) =>
+  (current, index, inTransition) => {
+    if (inTransition) return;
+    setInTransition(true);
+    setDirection(index > current ? 'next' : 'previous');
+    setPrevious(current);
+    setCurrent(index);
+    onChild(index);
+  };
+
+const handleOnNext =
+  ({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    numSlides,
+    onChild,
+  }) =>
+  (current, inTransition) => {
+    if (inTransition) return;
+    setInTransition(true);
+    setDirection('next');
+    setPrevious(current);
+    const next = current === numSlides - 1 ? 0 : current + 1;
+    setCurrent(next);
+    onChild(next);
+  };
+
+const handleOnPrevious =
+  ({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    numSlides,
+    onChild,
+  }) =>
+  (current, inTransition) => {
+    if (inTransition) return;
+    setInTransition(true);
+    setDirection('previous');
+    setPrevious(current);
+    const next = current === 0 ? numSlides - 1 : current - 1;
+    setCurrent(next);
+    onChild(next);
+  };
 
 const Carousel = ({
   activeChild,
-  initialChild,
-  onChild,
-  play,
   children,
   controls,
   fill,
-  onFocus,
-  onBlur,
+  height,
+  progress,
+  initialChild,
+  showProgress,
+  onChild,
+  play,
+  width,
   ...rest
 }) => {
+  const noContainer = !width && !height && !fill;
+  const numSlides = children.length;
+  const arrowNavigation = controls && controls !== 'selectors';
+  const jumpNavigation = controls && controls !== 'arrows';
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [focus, setFocus] = useState();
-  const timerRef = useRef();
 
-  const [indexes, setIndexes] = useState({
-    activeIndex: activeChild !== undefined ? activeChild : initialChild,
+  const firstChildRef = useRef(null);
+
+  const [current, setCurrent] = useState(initialChild);
+  const [previous, setPrevious] = useState(undefined);
+  const [inTransition, setInTransition] = useState(false);
+  const [absolute, setAbsolute] = useState(!noContainer);
+  const [direction, setDirection] = useState(undefined);
+  const [carouselWidth, setCarouselWidth] = useState(undefined);
+  const [carouselHeight, setCarouselHeight] = useState(undefined);
+
+  const onJumpNavigation = handleOnJumpNavigation({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    onChild,
+  });
+  const onNext = handleOnNext({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    numSlides,
+    onChild,
+  });
+  const onPrevious = handleOnPrevious({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    numSlides,
+    onChild,
   });
 
-  const { activeIndex, priorActiveIndex } = indexes;
-  const lastIndex = Children.count(children) - 1;
-
-  if (activeIndex !== activeChild && activeChild !== undefined) {
-    if (activeChild >= 0 && activeChild <= lastIndex) {
-      setIndexes({
-        activeIndex: activeChild,
-        priorActiveIndex: activeIndex,
-      });
-    }
-  }
-
-  const onChildChange = useCallback(
-    (index) => {
-      if (onChild) {
-        onChild(index);
-      }
-    },
-    [onChild],
-  );
-
+  /**
+   * Handles when the "fill" or "height" & "width" props are not specified
+   * and no Carousel container is allocated for the slides. This renders
+   * the first active child to expand to the given height and width it
+   * needs and then dynamically reads those values to set as the fixed
+   * dimensions of the Carousel container.
+   */
   useEffect(() => {
+    if (noContainer) {
+      const { current: childRef } = firstChildRef;
+      if (childRef) {
+        setCarouselWidth(`${childRef.offsetWidth}px`);
+        setCarouselHeight(`${childRef.offsetHeight}px`);
+        setAbsolute(true);
+      }
+    } else {
+      setCarouselWidth(fill ? '100%' : width);
+      setCarouselHeight(fill ? '100%' : height);
+    }
+  }, []);
+
+  /**
+   * Delays the transitions between Carousel slides. This is needed to
+   * avoid users "spamming" the controls which results in jarring animations
+   * and a bad user experience.
+   */
+  useEffect(() => {
+    let transitionTimer;
+    if (inTransition) {
+      transitionTimer = setTimeout(() => {
+        setInTransition(false);
+      }, 500);
+    }
+    return () => clearTimeout(transitionTimer);
+  }, [inTransition, setInTransition]);
+
+  // Handles auto-playing Carousel slides
+  useEffect(() => {
+    let playTimer;
     if (play) {
-      const timer = setInterval(() => {
-        if (activeIndex < lastIndex) {
-          setIndexes({
-            activeIndex: activeIndex + 1,
-            priorActiveIndex: activeIndex,
-          });
-          onChildChange(activeIndex + 1);
-        } else {
-          setIndexes({
-            activeIndex: 0,
-            priorActiveIndex: activeIndex,
-          });
-          onChildChange(0);
-        }
+      playTimer = setInterval(() => {
+        onNext(current, inTransition);
       }, play);
-
-      timerRef.current = timer;
-
-      return () => {
-        clearTimeout(timer);
-      };
     }
-    return () => {};
-  }, [activeIndex, play, children, lastIndex, onChildChange]);
+    return () => clearTimeout(playTimer);
+  }, [current, inTransition, play, onNext]);
 
-  const onRight = () => {
-    if (activeIndex >= lastIndex) {
-      return;
+  // Allows Carousel slides to be controlled outside the component
+  useEffect(() => {
+    if (activeChild !== undefined && activeChild !== current) {
+      onJumpNavigation(current, activeChild, false);
     }
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex + 1,
-      priorActiveIndex: activeIndex,
-    });
-    onChildChange(activeIndex + 1);
-  };
+  }, [activeChild]);
 
-  const onLeft = () => {
-    if (activeIndex <= 0) {
-      return;
-    }
-    clearInterval(timerRef.current);
-    setIndexes({
-      activeIndex: activeIndex - 1,
-      priorActiveIndex: activeIndex,
-    });
-    onChildChange(activeIndex - 1);
-  };
-
-  const onSelect = (index) => () => {
-    if (activeIndex !== index) {
-      clearInterval(timerRef.current);
-      setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
-      onChildChange(index);
-    }
-  };
-
-  const showArrows = controls && controls !== 'selectors';
-  const showSelectors = controls && controls !== 'arrows';
-
-  const CurrentIcon = theme.carousel.icons.current;
-  const iconColor = normalizeColor(
-    theme.carousel.icons.color || 'control',
-    theme,
-  );
-
-  const selectors = [];
-  const wrappedChildren = Children.map(children, (child, index) => {
-    selectors.push(
-      <Button
-        a11yTitle={`Show carousel slide ${index + 1}`}
-        // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        icon={
-          <CurrentIcon color={activeIndex === index ? iconColor : undefined} />
-        }
-        onClick={onSelect(index)}
-      />,
-    );
-
+  // Handles when there is only one child
+  if (numSlides === undefined)
     return (
-      <CarouselChild
-        fill={fill}
-        play={play}
-        index={index}
-        activeIndex={activeIndex}
-        priorActiveIndex={priorActiveIndex}
+      <StyledCarouselContainer
+        widthProp={fill ? '100%' : width}
+        heightProp={fill ? '100%' : height}
       >
-        {child}
-      </CarouselChild>
+        {children}
+      </StyledCarouselContainer>
     );
-  });
-
-  const NextIcon = theme.carousel.icons.next;
-  const PreviousIcon = theme.carousel.icons.previous;
-  const nextIconDisabled = activeIndex >= lastIndex;
-  const previousIconDisabled = activeIndex <= 0;
 
   return (
-    <Keyboard onLeft={onLeft} onRight={onRight}>
-      <Stack guidingChild={activeIndex} fill={fill} {...rest}>
-        {wrappedChildren}
+    <Keyboard
+      onLeft={() => onPrevious(current, inTransition)}
+      onRight={() => onNext(current, inTransition)}
+    >
+      <StyledCarouselContainer
+        theme={theme}
+        tabIndex={0}
+        justify="end"
+        overflow="hidden"
+        widthProp={carouselWidth}
+        heightProp={carouselHeight}
+        style={{ position: 'relative' }}
+        {...rest}
+      >
+        {/* Previous Arrow */}
+        {arrowNavigation && (
+          <Box
+            pad={{ horizontal: 'small' }}
+            style={{ position: 'absolute' }}
+            width="48px"
+            justify="center"
+            align="center"
+            fill="vertical"
+          >
+            <StyledControl
+              icon={<Previous color="black" size="small" />}
+              onClick={() => onPrevious(current, inTransition)}
+            />
+          </Box>
+        )}
+
+        {/* Carousel Slides */}
         <Box
-          tabIndex="0"
-          focus={focus}
-          onFocus={(event) => {
-            setFocus(true);
-            if (onFocus) onFocus(event);
-          }}
-          onBlur={(event) => {
-            setFocus(false);
-            if (onBlur) onBlur(event);
-          }}
-          fill
+          style={{ position: 'relative' }}
+          overflow="hidden"
           direction="row"
-          justify="between"
+          fill
         >
-          {showArrows && (
-            <Button
-              fill="vertical"
-              icon={
-                <PreviousIcon
-                  color={normalizeColor(
-                    previousIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={previousIconDisabled}
-              onClick={onLeft}
-              hoverIndicator
-            />
-          )}
-          {showSelectors && (
-            <Box justify="end" fill={!showArrows && 'horizontal'}>
-              <Box direction="row" justify="center">
-                {selectors}
-              </Box>
-            </Box>
-          )}
-          {showArrows && (
-            <Button
-              fill="vertical"
-              icon={
-                <NextIcon
-                  color={normalizeColor(
-                    nextIconDisabled
-                      ? theme.carousel.disabled.icons.color
-                      : theme.carousel.icons.color,
-                    theme,
-                  )}
-                />
-              }
-              plain
-              disabled={nextIconDisabled}
-              onClick={onRight}
-              hoverIndicator
-            />
-          )}
+          {Children.map(children, (child, index) => (
+            <CarouselChild
+              key={`carousel-child-${index + 1}`}
+              index={index}
+              ref={index === current ? firstChildRef : null}
+              absolute={absolute}
+              current={current}
+              previous={previous}
+              direction={direction}
+            >
+              {child}
+            </CarouselChild>
+          ))}
         </Box>
-      </Stack>
+
+        {/* Next Arrow */}
+        {arrowNavigation && (
+          <Box
+            width="48px"
+            pad={{ horizontal: 'small' }}
+            style={{ position: 'absolute', left: `calc(100% - 48px)` }}
+            justify="center"
+            align="center"
+            fill="vertical"
+          >
+            <StyledControl
+              onClick={() => onNext(current, inTransition)}
+              icon={<Next color="black" size="small" />}
+            />
+          </Box>
+        )}
+
+        {/* Selector / Jump Navigation */}
+        {jumpNavigation && (
+          <Box
+            direction="row"
+            fill="horizontal"
+            justify="center"
+            gap="small"
+            pad={!progress && 'xsmall'}
+            style={{
+              position: 'absolute',
+              top: progress && `calc(100% - 40px)`,
+            }}
+          >
+            {children.map((child, index) => (
+              <StyledDot
+                plain
+                key={`slide-${index + 1}`}
+                onClick={() => onJumpNavigation(current, index, inTransition)}
+                icon={
+                  current === index ? (
+                    <RadialSelected color="brand" size="small" />
+                  ) : (
+                    <Radial color="dark-3" size="small" />
+                  )
+                }
+              />
+            ))}
+          </Box>
+        )}
+
+        {/* Progress Indicator */}
+        {showProgress && (
+          <Box
+            direction="row"
+            gap="xsmall"
+            pad={{ vertical: 'xsmall' }}
+            alignSelf="center"
+            justify="center"
+            fill="horizontal"
+            align="center"
+          >
+            {children.map((_, index) => (
+              <Box
+                round
+                width="8px"
+                height="8px"
+                flex={false}
+                border={{ color: 'dark-3' }}
+                background={index === current ? 'brand' : 'white'}
+              />
+            ))}
+          </Box>
+        )}
+      </StyledCarouselContainer>
     </Keyboard>
   );
 };
 
-Carousel.defaultProps = {
-  initialChild: 0,
-  controls: true,
-};
-Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
-Carousel.displayName = 'Carousel';
-
 Carousel.propTypes = CarouselPropTypes;
+
+Carousel.defaultProps = {
+  fill: false,
+  controls: true,
+  onChild: () => {},
+  initialChild: 0,
+  showProgress: false,
+  activeChild: undefined,
+};
 
 export { Carousel };

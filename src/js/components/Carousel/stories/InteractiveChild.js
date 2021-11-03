@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, Button, Box } from 'grommet';
+import { Carousel } from '../Carousel';
 
-import { NewCarousel } from '../NewCarousel';
-
-export const ClickableChild = () => (
+export const InteractiveSlides = () => (
   <Box align="center" pad="large">
-    <NewCarousel height="600px" width="600px">
+    <Carousel controls="arrows" height="medium" width="medium" showProgress>
       <Box
         fill
         align="center"
@@ -45,12 +44,12 @@ export const ClickableChild = () => (
         <Button label="Button" />
         <Button label="Button" />
       </Box>
-    </NewCarousel>
+    </Carousel>
   </Box>
 );
 
-ClickableChild.storyName = 'Clickable Child';
+InteractiveSlides.storyName = 'Interactive slides';
 
 export default {
-  title: 'Media/Carousel/New Carousel/Clickable Child',
+  title: 'Media/Carousel/Interactive slides',
 };

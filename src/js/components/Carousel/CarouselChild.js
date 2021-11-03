@@ -1,70 +1,108 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, forwardRef, useEffect } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { CarouselChildPropTypes } from './propTypes';
 
-import { Box } from '../Box';
-import { ThemeContext } from '../../contexts';
-import { defaultProps } from '../../default-props';
+// Slide Left = Previous or Backward
+const slideRightPrevious = keyframes`
+  0% {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  99% {visibility: visible}
+  100% {transform: translateX(100%)}
+`;
 
-const CarouselChild = ({
-  fill,
-  play,
-  index,
-  activeIndex,
-  priorActiveIndex,
-  children,
-}) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [animation, setAnimation] = useState(undefined);
-  const [visibility, setVisibility] = useState('hidden');
-  useEffect(() => {
-    let timer;
-    if (index === activeIndex) {
-      if (priorActiveIndex !== undefined) {
-        /**
-         * This check will only be false onMount of the component. It ensures
-         * the initial active slide of the Carousel renders with no animation.
-         */
-        setAnimation({
-          type:
-            play || priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-          size: 'xlarge',
-          duration: theme.carousel.animation.duration,
-        });
-      }
-      setVisibility('visible');
-    } else if (index === priorActiveIndex) {
-      setAnimation({
-        type: 'fadeOut',
-        duration: theme.carousel.animation.duration,
-      });
-      timer = setTimeout(
-        () => setVisibility('hidden'),
-        theme.carousel.animation.duration,
-      );
-    }
+const slideRightCurrent = keyframes`
+  0% {
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+  99% {visibility: visible}
+  100% {transform: translateX(0%)}
+`;
+
+// Slide Left = Next or Forward
+const slideLeftPrevious = keyframes`
+  0% {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  99% {visibility: visible}
+  100% {transform: translateX(-100%)}
+`;
+
+const slideLeftCurrent = keyframes`
+  0% {
+    transform: translateX(100%);
+    visibility: visible;
+  }
+  99% {visibility: visible}
+  100% {transform: translateX(0%)}
+  `;
+
+const StyledCarouselChild = styled.div`
+  height: 100%;
+  width: 100%;
+  position: ${(props) => props.absolute && 'absolute'};
+  visibility: ${(props) => props.visibility};
+  animation: ${(props) =>
+    props.animation
+      ? css`
+          ${props.animation} 0.6s
+        `
+      : `none`};
+`;
+
+const handleAnimation =
+  ({ setAnimation, setVisibility }) =>
+  (animation, visibility) => {
+    setAnimation(animation);
+    const timer = setTimeout(() => {
+      setVisibility(visibility);
+    }, 100);
     return () => clearTimeout(timer);
-  }, [
-    activeIndex,
-    priorActiveIndex,
-    index,
-    play,
-    theme.carousel.animation.duration,
-  ]);
-  return (
-    <Box fill={fill} overflow="hidden" style={{ visibility }}>
-      <Box fill={fill} animation={animation}>
+  };
+
+const CarouselChild = forwardRef(
+  ({ children, index, current, previous, direction, absolute }, ref) => {
+    const [animation, setAnimation] = useState(undefined);
+    const [visibility, setVisibility] = useState(
+      current === index ? 'visible' : 'hidden',
+    );
+
+    const onAnimation = handleAnimation({
+      setAnimation,
+      setVisibility,
+    });
+
+    useEffect(() => {
+      // Previous is only undefined on mount. This tells the component:
+      // On mount, do not render the first slide with an animation.
+      if (previous === undefined) return;
+      if (index !== current && index !== previous) setAnimation(undefined);
+
+      if (index === current) {
+        if (direction === 'next') onAnimation(slideLeftCurrent, 'visible');
+        else onAnimation(slideRightCurrent, 'visible');
+      } else if (index === previous) {
+        if (direction === 'next') onAnimation(slideLeftPrevious, 'hidden');
+        else onAnimation(slideRightPrevious, 'hidden');
+      }
+    }, [onAnimation, direction, index, current, previous]);
+
+    return (
+      <StyledCarouselChild
+        ref={ref}
+        visibility={visibility}
+        absolute={absolute}
+        animation={animation}
+      >
         {children}
-      </Box>
-    </Box>
-  );
-};
+      </StyledCarouselChild>
+    );
+  },
+);
 
 CarouselChild.propTypes = CarouselChildPropTypes;
-
-CarouselChild.defaultProps = {
-  fill: false,
-  play: undefined,
-  priorActiveIndex: undefined,
-};
 
 export { CarouselChild };
