@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { ThemeType } from '../../../themes';
 import { Grommet } from '../../Grommet';
@@ -18,8 +18,6 @@ const data = {
 };
 
 describe('NameValueList', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
