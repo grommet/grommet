@@ -1172,7 +1172,7 @@ var generate = function generate(baseSpacing, scale) {
     nameValueList: {
       gap: {
         column: 'large',
-        row: 'medium'
+        row: 'small'
       },
       name: {
         width: 'small'
