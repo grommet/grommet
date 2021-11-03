@@ -7,6 +7,7 @@ import {
   FillType,
   GapType,
   GridAreaType,
+  HoverIndicatorType,
   MarginType,
   Omit,
   PolymorphicType,
@@ -34,7 +35,7 @@ export interface ButtonProps {
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?: HoverIndicatorType;
   href?: string;
   justify?:
     | 'around'

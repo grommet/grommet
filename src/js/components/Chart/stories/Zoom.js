@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Chart, Stack, Text } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 
 import { calcs } from '../calcs';
@@ -23,7 +22,7 @@ const ZoomChart = ({ data, max }) => {
   startDate.setDate(reference.getDate() - intervalDays[interval]);
 
   const values = [];
-  data.some(d => {
+  data.some((d) => {
     const date = new Date(d.time);
     if (date > reference) {
       return true;
@@ -53,72 +52,71 @@ const ZoomChart = ({ data, max }) => {
   }
 
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large" direction="row" gap="medium">
-        <Button
-          hoverIndicator
-          icon={<Previous />}
-          onClick={() => setReference(previousReference)}
-        />
-        <Box flex>
-          <Box direction="row" justify="end">
-            {Object.keys(intervalDays).map(int => (
-              <Button key={int} onClick={() => setInterval(int)}>
-                <Box pad="small">
-                  <Text color={interval === int ? 'black' : 'brand'}>
-                    {int}
-                  </Text>
-                </Box>
-              </Button>
-            ))}
-          </Box>
-          <Stack guidingChild="first">
-            <Box pad={{ horizontal: thickness }}>
-              <Chart
-                type="bar"
-                overflow
-                bounds={bounds}
-                values={values}
-                thickness={thickness}
-                size={{ width: 'full', height: 'small' }}
-              />
-            </Box>
-            <Box fill justify="between">
-              <Box border="top" align="start">
-                <Box
-                  pad="xsmall"
-                  background={{ color: 'white', opacity: 'medium' }}
-                >
-                  <Text>{axis[1][0]}</Text>
-                </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box pad="large" direction="row" gap="medium">
+      <Button
+        hoverIndicator
+        icon={<Previous />}
+        onClick={() => setReference(previousReference)}
+      />
+      <Box flex>
+        <Box direction="row" justify="end">
+          {Object.keys(intervalDays).map((int) => (
+            <Button key={int} onClick={() => setInterval(int)}>
+              <Box pad="small">
+                <Text color={interval === int ? 'black' : 'brand'}>{int}</Text>
               </Box>
-              <Box border="bottom" align="start">
-                <Box
-                  pad="xsmall"
-                  background={{ color: 'white', opacity: 'medium' }}
-                >
-                  <Text>{axis[1][1]}</Text>
-                </Box>
-              </Box>
-            </Box>
-          </Stack>
-          <Box direction="row" justify="between">
-            {/* className="chromatic-ignore" is used for the story testing.
-                grommet doesn't recommend the usage of className */}
-            {axis[0].map(t => (
-              <Text key={t} className="chromatic-ignore">
-                {new Date(t).toLocaleDateString()}
-              </Text>
-            ))}
-          </Box>
+            </Button>
+          ))}
         </Box>
-        <Button
-          hoverIndicator
-          icon={<Next />}
-          onClick={() => setReference(nextReference)}
-        />
+        <Stack guidingChild="first">
+          <Box pad={{ horizontal: thickness }}>
+            <Chart
+              type="bar"
+              overflow
+              bounds={bounds}
+              values={values}
+              thickness={thickness}
+              size={{ width: 'full', height: 'small' }}
+            />
+          </Box>
+          <Box fill justify="between">
+            <Box border="top" align="start">
+              <Box
+                pad="xsmall"
+                background={{ color: 'white', opacity: 'medium' }}
+              >
+                <Text>{axis[1][0]}</Text>
+              </Box>
+            </Box>
+            <Box border="bottom" align="start">
+              <Box
+                pad="xsmall"
+                background={{ color: 'white', opacity: 'medium' }}
+              >
+                <Text>{axis[1][1]}</Text>
+              </Box>
+            </Box>
+          </Box>
+        </Stack>
+        <Box direction="row" justify="between">
+          {/* className="chromatic-ignore" is used for the story testing.
+              grommet doesn't recommend the usage of className */}
+          {axis[0].map((t) => (
+            <Text key={t} className="chromatic-ignore">
+              {new Date(t).toLocaleDateString()}
+            </Text>
+          ))}
+        </Box>
       </Box>
-    </Grommet>
+      <Button
+        hoverIndicator
+        icon={<Next />}
+        onClick={() => setReference(nextReference)}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

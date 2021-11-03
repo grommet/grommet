@@ -41,6 +41,7 @@ const NameValueList = forwardRef(
           columns={columns}
           gap={theme.nameValueList.gap}
           fill={layout === 'grid'}
+          margin="none" // override browser default margin for dl
           {...rest}
         />
       </NameValueListContext.Provider>

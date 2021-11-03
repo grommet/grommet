@@ -110,7 +110,6 @@ export const GroupedBody = forwardRef(
               <TableCell>{marker}</TableCell>
             </TableRow>
           )}
-          scrollableAncestor="window"
           step={step}
         >
           {(row, index, rowRef) => {
