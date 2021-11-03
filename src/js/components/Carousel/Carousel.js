@@ -6,7 +6,10 @@ import React, {
   useRef,
 } from 'react';
 import styled from 'styled-components';
-import { Previous, Next, Radial, RadialSelected } from 'grommet-icons';
+import { Next } from 'grommet-icons/icons/Next';
+import { Previous } from 'grommet-icons/icons/Previous';
+import { Radial } from 'grommet-icons/icons/Radial';
+import { RadialSelected } from 'grommet-icons/icons/RadialSelected';
 import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
 import { Box } from '../Box';
@@ -200,8 +203,8 @@ const Carousel = ({
   if (numSlides === undefined)
     return (
       <StyledCarouselContainer
-        widthProp={fill ? '100%' : width}
-        heightProp={fill ? '100%' : height}
+        widthProp={carouselWidth}
+        heightProp={carouselHeight}
       >
         {children}
       </StyledCarouselContainer>
@@ -341,10 +344,10 @@ Carousel.propTypes = CarouselPropTypes;
 Carousel.defaultProps = {
   fill: false,
   controls: true,
-  onChild: () => {},
   initialChild: 0,
   showProgress: false,
   activeChild: undefined,
+  onChild: () => {},
 };
 
 export { Carousel };
