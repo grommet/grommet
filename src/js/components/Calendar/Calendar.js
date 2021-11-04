@@ -39,7 +39,6 @@ import {
   withinDates,
 } from './utils';
 import { CalendarPropTypes } from './propTypes';
-import { containsFocus } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -707,11 +706,6 @@ const Calendar = forwardRef(
     let days;
     let firstDayInMonth;
     let blankWeek = false;
-
-    useEffect(() => {
-      if (!date && !dates && containsFocus(daysRef))
-        setActive(new Date(firstDayInMonth));
-    }, [date, dates, firstDayInMonth]);
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
