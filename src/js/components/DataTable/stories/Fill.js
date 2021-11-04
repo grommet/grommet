@@ -7,7 +7,7 @@ import { deepMerge } from 'grommet/utils';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, data } from './data';
 
-const pinnedColumns = columns.map(c => ({ ...c }));
+const pinnedColumns = columns.map((c) => ({ ...c }));
 pinnedColumns[0].pin = true;
 
 const myTheme = deepMerge(grommet, {
@@ -23,6 +23,7 @@ const myTheme = deepMerge(grommet, {
       header: {
         background: {
           opacity: 'medium',
+          color: 'light-1',
         },
         extend: `backdrop-filter: blur(8px);`,
       },
@@ -42,9 +43,7 @@ export const Fill = () => (
         step={10}
         fill
         pin
-        background={{
-          pinned: { color: 'background-contrast' },
-        }}
+        background={{ body: 'light-1' }}
       />
     </Box>
   </Grommet>
