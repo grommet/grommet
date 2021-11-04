@@ -39,6 +39,7 @@ import {
   withinDates,
 } from './utils';
 import { CalendarPropTypes } from './propTypes';
+import { containsFocus } from '../../utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -219,6 +220,20 @@ const Calendar = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
+
+    // when mousedown, we don't want to let Calendar set
+    // active date to firstInMonth
+    const [mouseDown, setMouseDown] = useState(false);
+    const onMouseDown = () => setMouseDown(true);
+    const onMouseUp = () => setMouseDown(false);
+    useEffect(() => {
+      document.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('mouseup', onMouseUp);
+      return () => {
+        document.removeEventListener('mousedown', onMouseDown);
+        document.removeEventListener('mouseup', onMouseUp);
+      };
+    }, []);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
@@ -693,6 +708,11 @@ const Calendar = forwardRef(
     let firstDayInMonth;
     let blankWeek = false;
 
+    useEffect(() => {
+      if (!date && !dates && containsFocus(daysRef))
+        setActive(new Date(firstDayInMonth));
+    }, [date, dates, firstDayInMonth]);
+
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
@@ -784,6 +804,7 @@ const Calendar = forwardRef(
                   // Chrome moves the focus indicator to this button. Set
                   // the focus to the grid of days instead.
                   daysRef.current.focus();
+                  setActive(new Date(dateString));
                 },
                 onMouseOver: () => setActive(new Date(dateString)),
                 onMouseOut: () => setActive(undefined),
@@ -817,6 +838,7 @@ const Calendar = forwardRef(
                         // Chrome moves the focus indicator to this button. Set
                         // the focus to the grid of days instead.
                         daysRef.current.focus();
+                        setActive(new Date(dateString));
                       },
                       onMouseOver: () => setActive(new Date(dateString)),
                       onMouseOut: () => setActive(undefined),
@@ -943,9 +965,8 @@ const Calendar = forwardRef(
               focus={focus}
               onFocus={() => {
                 setFocus(true);
-                if (date && betweenDates(new Date(date), displayBounds)) {
-                  setActive(new Date(date));
-                } else {
+                // caller focused onto Calendar via keyboard
+                if (!mouseDown) {
                   setActive(new Date(firstDayInMonth));
                 }
               }}
