@@ -32,17 +32,10 @@ const NameValueList = forwardRef(
     else columns = [valueWidth];
 
     let gap;
-    if (!theme.nameValueList.gap.column && !theme.nameValueList.gap.row) {
-      if (
-        pairProps.direction === 'column' ||
-        (size === 'small' && theme.nameValueList.gap.pairDirectionColumn)
-      )
-        gap = theme.nameValueList.gap.pairDirectionColumn;
-      else if (
-        pairProps.direction === 'row' &&
-        theme.nameValueList.gap.pairDirectionRow
-      )
-        gap = theme.nameValueList.gap.pairDirectionRow;
+    if (!theme.nameValueList.gap?.column && !theme.nameValueList.gap?.row) {
+      if (pairProps.direction === 'column' || size === 'small')
+        gap = theme.nameValueList.gap?.pairDirectionColumn;
+      else gap = theme.nameValueList.gap?.pairDirectionRow;
     } else gap = theme.nameValueList.gap;
 
     return (
