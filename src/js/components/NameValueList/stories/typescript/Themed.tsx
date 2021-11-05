@@ -9,8 +9,8 @@ import { data } from '../data';
 const customTheme: ThemeType = deepMerge(grommet, {
   nameValueList: {
     gap: {
-      column: 'xlarge',
-      row: 'xlarge',
+      column: 'large',
+      row: 'small',
     },
   },
   nameValuePair: {
