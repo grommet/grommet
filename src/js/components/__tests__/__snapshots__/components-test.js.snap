@@ -1684,6 +1684,9 @@ Object {
         "nameValuePair": Object {
           "name": Object {
             "color": "text",
+            "margin": Object {
+              "bottom": "xxsmall",
+            },
             "weight": "bold",
           },
           "value": Object {

@@ -171,6 +171,7 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -282,6 +283,7 @@ exports[`NameValuePair should render value when provided as child of type
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -423,6 +425,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;

@@ -34,6 +34,7 @@ exports[`NameValueList should render 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -150,6 +151,7 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -252,6 +254,7 @@ exports[`NameValueList should render correct alignment of value 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -361,6 +364,7 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -470,6 +474,7 @@ exports[`NameValueList should render correct width of name 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -580,6 +585,7 @@ exports[`NameValueList should render correct width of value 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -690,6 +696,7 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -801,6 +808,7 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -914,6 +922,7 @@ exports[`NameValueList should render value above name when pairProps = { directi
 }
 
 .c4 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -1016,6 +1025,7 @@ exports[`NameValueList should support custom theme 1`] = `
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
