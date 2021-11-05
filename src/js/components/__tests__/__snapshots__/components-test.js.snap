@@ -1672,7 +1672,7 @@ Object {
         "nameValueList": Object {
           "gap": Object {
             "column": "large",
-            "row": "medium",
+            "row": "small",
           },
           "name": Object {
             "width": "small",

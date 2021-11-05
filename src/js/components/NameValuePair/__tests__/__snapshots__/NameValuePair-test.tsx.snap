@@ -47,7 +47,7 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
-  grid-gap: 24px 48px;
+  grid-gap: 12px 48px;
 }
 
 .c4 {
@@ -167,7 +167,7 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
-  grid-gap: 24px 48px;
+  grid-gap: 12px 48px;
 }
 
 .c3 {
@@ -278,7 +278,7 @@ exports[`NameValuePair should render value when provided as child of type
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
-  grid-gap: 24px 48px;
+  grid-gap: 12px 48px;
 }
 
 .c3 {
@@ -412,7 +412,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
-  grid-gap: 24px 48px;
+  grid-gap: 12px 48px;
 }
 
 .c4 {
