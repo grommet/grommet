@@ -25,7 +25,12 @@ const NameValuePair = ({ children, name: nameProp }) => {
   let name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number')
     name = (
-      <Text as="dt" textAlign={nameAlign} {...theme.nameValuePair.name}>
+      <Text
+        as="dt"
+        margin={column ? { bottom: theme.nameValuePair.margin } : 'undefined'}
+        textAlign={nameAlign}
+        {...theme.nameValuePair.name}
+      >
         {nameProp}
       </Text>
     );

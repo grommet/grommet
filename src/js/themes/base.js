@@ -1060,6 +1060,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any text props
         color: 'text',
         weight: 'bold',
+        margin: {
+          bottom: 'xxsmall',
+        },
       },
       value: {
         // any text props
