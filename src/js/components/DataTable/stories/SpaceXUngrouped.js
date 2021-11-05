@@ -14,7 +14,7 @@ const columns = [
     property: 'rocket',
     header: 'Rocket',
     size: 'small',
-    render: datum => <Text>{datum.rocket.name}</Text>
+    render: datum => <Text>{datum.rocket.name}</Text>,
   },
   {
     property: 'success',
@@ -43,6 +43,7 @@ const columns = [
           </Tip>
         );
       }
+      return undefined;
     },
   },
 ];
@@ -107,8 +108,8 @@ export const SpaceXUngrouped = () => {
   );
 };
 
-SpaceXUngrouped.storyName = 'Ungrouped SpaceX';
+SpaceXUngrouped.storyName = 'SpaceX Ungrouped';
 
 export default {
-  title: 'Visualizations/DataTable/Ungrouped SpaceX',
+  title: 'Visualizations/DataTable/SpaceX Ungrouped',
 };

@@ -42,6 +42,7 @@ const columns = [
           </Tip>
         );
       }
+      return undefined;
     },
   },
 ];
@@ -188,8 +189,8 @@ export const SpaceX = () => {
   );
 };
 
-SpaceX.storyName = 'Grouped SpaceX';
+SpaceX.storyName = 'SpaceX Grouped';
 
 export default {
-  title: 'Visualizations/DataTable/Grouped SpaceX',
+  title: 'Visualizations/DataTable/SpaceX Grouped',
 };

@@ -323,7 +323,7 @@ const DataTable = ({
   if (onUpdate && onMore) {
     console.warn('DataTable cannot combine "onUpdate" and "onMore".');
   }
-  
+
   const [items, paginationProps] = usePagination({
     data: adjustedData,
     page: normalizeShow(showProp, step),
@@ -367,6 +367,7 @@ const DataTable = ({
             fill={fill}
             filtering={filtering}
             filters={filters}
+            groupBy={groupBy}
             groups={groups}
             groupState={groupState}
             pin={pin === true || pin === 'header'}
@@ -398,7 +399,10 @@ const DataTable = ({
               ref={bodyRef}
               cellProps={cellProps.body}
               columns={columns}
-              groupBy={groupBy.property ? groupBy.property : groupBy}
+              groupBy={typeof groupBy === 'string' ?
+                { property: groupBy} :
+                groupBy
+              }
               groups={groups}
               groupState={groupState}
               pinnedOffset={pinnedOffset}
@@ -418,9 +422,9 @@ const DataTable = ({
               } : onMore}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? (nextSelected, row) => {
                       setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
+                      if (onSelect) onSelect(nextSelected, row);
                     }
                   : undefined
               }
@@ -453,9 +457,9 @@ const DataTable = ({
               onClickRow={onClickRow}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? (nextSelected, row) => {
                       setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
+                      if (onSelect) onSelect(nextSelected, row);
                     }
                   : undefined
               }
