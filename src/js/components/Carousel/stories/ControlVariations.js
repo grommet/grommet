@@ -71,7 +71,7 @@ export const ControlVariations = () => (
       justify="center"
       background="light-3"
     >
-      <Text size="small">With arrow controls and progress indicator</Text>
+      <Text size="small">With arrow controls and initial child set</Text>
       <Carousel
         height="400px"
         width="400px"

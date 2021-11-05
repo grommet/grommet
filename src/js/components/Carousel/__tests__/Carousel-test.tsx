@@ -105,7 +105,7 @@ describe('Carousel', () => {
 
   test('selector navigation: backward', async () => {
     render(
-      <Carousel initialChild={2} fill controls="selectors">
+      <Carousel initialChild={2} controls="selectors">
         <div>Slide One</div>
         <div>Slide Two</div>
         <div>Slide Three</div>

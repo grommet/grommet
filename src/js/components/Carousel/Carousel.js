@@ -5,42 +5,14 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import styled from 'styled-components';
-import { Next } from 'grommet-icons/icons/Next';
-import { Previous } from 'grommet-icons/icons/Previous';
-import { Radial } from 'grommet-icons/icons/Radial';
-import { RadialSelected } from 'grommet-icons/icons/RadialSelected';
 import { CarouselChild } from './CarouselChild';
+import { CarouselControls } from './CarouselControls';
+import { StyledCarouselContainer } from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { ThemeContext } from '../../contexts';
+import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
-import { widthStyle, heightStyle } from '../../utils';
-
-const StyledDot = styled(Button)`
-  border-radius: 50%;
-  &:hover {
-    background-color: #ffffff80;
-  }
-`;
-
-const StyledControl = styled(Button)`
-  z-index: 1;
-  transition-timing-function: ease-in-out;
-  background-color: #ffffff99;
-  border-radius: 50%;
-  &:hover {
-    transition: 0.3s;
-    background-color: #ffffffe6;
-  }
-`;
-
-const StyledCarouselContainer = styled(Box)`
-  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
-  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
-`;
 
 const handleOnJumpNavigation =
   ({ setDirection, setCurrent, setPrevious, setInTransition, onChild }) =>
@@ -97,20 +69,16 @@ const Carousel = ({
   controls,
   fill,
   height,
-  progress,
   initialChild,
-  showProgress,
   onChild,
   play,
   width,
   ...rest
 }) => {
-  const noContainer = !width && !height && !fill;
   const numSlides = children.length;
-  const arrowNavigation = controls && controls !== 'selectors';
-  const jumpNavigation = controls && controls !== 'arrows';
+  const noContainer = !width && !height && !fill;
   const theme = useContext(ThemeContext) || defaultProps.theme;
-
+  const size = useContext(ResponsiveContext);
   const firstChildRef = useRef(null);
 
   const [current, setCurrent] = useState(initialChild);
@@ -164,7 +132,7 @@ const Carousel = ({
       setCarouselWidth(fill ? '100%' : width);
       setCarouselHeight(fill ? '100%' : height);
     }
-  }, []);
+  }, [fill, width, height, noContainer, size]);
 
   /**
    * Delays the transitions between Carousel slides. This is needed to
@@ -197,6 +165,7 @@ const Carousel = ({
     if (activeChild !== undefined && activeChild !== current) {
       onJumpNavigation(current, activeChild, false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeChild]);
 
   // Handles when there is only one child
@@ -222,118 +191,40 @@ const Carousel = ({
         overflow="hidden"
         widthProp={carouselWidth}
         heightProp={carouselHeight}
-        style={{ position: 'relative' }}
         {...rest}
       >
-        {/* Previous Arrow */}
-        {arrowNavigation && (
-          <Box
-            pad={{ horizontal: 'small' }}
-            style={{ position: 'absolute' }}
-            width="48px"
-            justify="center"
-            align="center"
-            fill="vertical"
-          >
-            <StyledControl
-              icon={<Previous color="black" size="small" />}
-              onClick={() => onPrevious(current, inTransition)}
-            />
-          </Box>
-        )}
-
-        {/* Carousel Slides */}
-        <Box
-          style={{ position: 'relative' }}
-          overflow="hidden"
-          direction="row"
-          fill
+        <CarouselControls
+          controls={controls}
+          current={current}
+          inTransition={inTransition}
+          onNext={onNext}
+          numSlides={numSlides}
+          onPrevious={onPrevious}
+          onJumpNavigation={onJumpNavigation}
         >
-          {Children.map(children, (child, index) => (
-            <CarouselChild
-              key={`carousel-child-${index + 1}`}
-              index={index}
-              ref={index === current ? firstChildRef : null}
-              absolute={absolute}
-              current={current}
-              previous={previous}
-              direction={direction}
-            >
-              {child}
-            </CarouselChild>
-          ))}
-        </Box>
-
-        {/* Next Arrow */}
-        {arrowNavigation && (
+          {/* Carousel Slides */}
           <Box
-            width="48px"
-            pad={{ horizontal: 'small' }}
-            style={{ position: 'absolute', left: `calc(100% - 48px)` }}
-            justify="center"
-            align="center"
-            fill="vertical"
-          >
-            <StyledControl
-              onClick={() => onNext(current, inTransition)}
-              icon={<Next color="black" size="small" />}
-            />
-          </Box>
-        )}
-
-        {/* Selector / Jump Navigation */}
-        {jumpNavigation && (
-          <Box
+            style={{ position: 'relative' }}
+            overflow="hidden"
             direction="row"
-            fill="horizontal"
-            justify="center"
-            gap="small"
-            pad={!progress && 'xsmall'}
-            style={{
-              position: 'absolute',
-              top: progress && `calc(100% - 40px)`,
-            }}
+            fill
           >
-            {children.map((child, index) => (
-              <StyledDot
-                plain
-                key={`slide-${index + 1}`}
-                onClick={() => onJumpNavigation(current, index, inTransition)}
-                icon={
-                  current === index ? (
-                    <RadialSelected color="brand" size="small" />
-                  ) : (
-                    <Radial color="dark-3" size="small" />
-                  )
-                }
-              />
+            {Children.map(children, (child, index) => (
+              <CarouselChild
+                key={`carousel-child-${index + 1}`}
+                index={index}
+                ref={index === current ? firstChildRef : null}
+                absolute={index === current ? absolute : true}
+                current={current}
+                noContainer={noContainer}
+                previous={previous}
+                direction={direction}
+              >
+                {child}
+              </CarouselChild>
             ))}
           </Box>
-        )}
-
-        {/* Progress Indicator */}
-        {showProgress && (
-          <Box
-            direction="row"
-            gap="xsmall"
-            pad={{ vertical: 'xsmall' }}
-            alignSelf="center"
-            justify="center"
-            fill="horizontal"
-            align="center"
-          >
-            {children.map((_, index) => (
-              <Box
-                round
-                width="8px"
-                height="8px"
-                flex={false}
-                border={{ color: 'dark-3' }}
-                background={index === current ? 'brand' : 'white'}
-              />
-            ))}
-          </Box>
-        )}
+        </CarouselControls>
       </StyledCarouselContainer>
     </Keyboard>
   );

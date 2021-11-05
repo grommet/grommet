@@ -1,57 +1,12 @@
 import React, { useState, forwardRef, useEffect } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import {
+  StyledCarouselChild,
+  slideLeftCurrent,
+  slideLeftPrevious,
+  slideRightCurrent,
+  slideRightPrevious,
+} from './StyledCarousel';
 import { CarouselChildPropTypes } from './propTypes';
-
-// Slide Left = Previous or Backward
-const slideRightPrevious = keyframes`
-  0% {
-    transform: translateX(0%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
-  100% {transform: translateX(100%)}
-`;
-
-const slideRightCurrent = keyframes`
-  0% {
-    transform: translateX(-100%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
-  100% {transform: translateX(0%)}
-`;
-
-// Slide Left = Next or Forward
-const slideLeftPrevious = keyframes`
-  0% {
-    transform: translateX(0%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
-  100% {transform: translateX(-100%)}
-`;
-
-const slideLeftCurrent = keyframes`
-  0% {
-    transform: translateX(100%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
-  100% {transform: translateX(0%)}
-  `;
-
-const StyledCarouselChild = styled.div`
-  height: 100%;
-  width: 100%;
-  position: ${(props) => props.absolute && 'absolute'};
-  visibility: ${(props) => props.visibility};
-  animation: ${(props) =>
-    props.animation
-      ? css`
-          ${props.animation} 0.6s
-        `
-      : `none`};
-`;
 
 const handleAnimation =
   ({ setAnimation, setVisibility }) =>
@@ -64,7 +19,10 @@ const handleAnimation =
   };
 
 const CarouselChild = forwardRef(
-  ({ children, index, current, previous, direction, absolute }, ref) => {
+  (
+    { children, index, current, noContainer, previous, direction, absolute },
+    ref,
+  ) => {
     const [animation, setAnimation] = useState(undefined);
     const [visibility, setVisibility] = useState(
       current === index ? 'visible' : 'hidden',
@@ -94,6 +52,7 @@ const CarouselChild = forwardRef(
       <StyledCarouselChild
         ref={ref}
         visibility={visibility}
+        noContainer={noContainer}
         absolute={absolute}
         animation={animation}
       >
