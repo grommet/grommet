@@ -1671,7 +1671,7 @@ Object {
         },
         "nameValueList": Object {
           "gap": Object {
-            "column": "medium",
+            "column": "large",
             "row": "small",
           },
           "name": Object {

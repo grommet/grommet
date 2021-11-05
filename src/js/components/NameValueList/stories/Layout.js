@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Grommet,
-  Heading,
-  NameValueList,
-  NameValuePair,
-  Text,
-} from 'grommet';
+import { Box, Grommet, NameValueList, NameValuePair, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data, metricData } from './data';
 
@@ -14,9 +7,9 @@ export const Layout = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="large">
       <>
-        <Heading level={2} weight="bold" s>
+        <Text weight="bold" size="2xl">
           layout = grid / pairProps direction = column
-        </Heading>
+        </Text>
         <NameValueList layout="grid" pairProps={{ direction: 'column' }}>
           {Object.entries(data).map(([name, value]) => (
             <NameValuePair key={name} name={name}>
@@ -26,9 +19,9 @@ export const Layout = () => (
         </NameValueList>
       </>
       <>
-        <Heading level={2} weight="bold">
+        <Text weight="bold" size="2xl">
           layout = grid / pairProps direction = column-reverse
-        </Heading>
+        </Text>
         <NameValueList
           valueProps={{ width: 'small' }}
           pairProps={{ direction: 'column-reverse' }}
