@@ -27,7 +27,7 @@ const NameValuePair = ({ children, name: nameProp }) => {
     name = (
       <Text
         as="dt"
-        margin={column ? { bottom: theme.nameValuePair.margin } : 'undefined'}
+        margin={column ? theme.nameValuePair.margin : 'undefined'}
         textAlign={nameAlign}
         {...theme.nameValuePair.name}
       >
