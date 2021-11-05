@@ -42,7 +42,6 @@ const NameValuePair = ({ children, name: nameProp }) => {
       // override browser default margin for dd
       <Text
         as="dd"
-        color="pink"
         margin="none"
         textAlign={valueAlign}
         {...theme.nameValuePair.value}
