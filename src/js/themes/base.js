@@ -1047,7 +1047,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     nameValueList: {
-      gap: { column: 'large', row: 'small' },
+      gap: {
+        pairDirectionColumn: {
+          column: 'large',
+          row: 'medium',
+        },
+        pairDirectionRow: {
+          column: 'large',
+          row: 'small',
+        },
+        // {
+        //   column: undefined,
+        //   row: undefined,
+        // }
+      },
       name: {
         width: 'small',
       },
