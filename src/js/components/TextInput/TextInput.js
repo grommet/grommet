@@ -481,6 +481,11 @@ const TextInput = forwardRef(
                     if (onChange) onChange(event);
                   }
             }
+            onClick={() => {
+              if (suggestions && !showDrop) {
+                openDrop();
+              }
+            }}
           />
         </Keyboard>
 
