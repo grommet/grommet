@@ -2421,7 +2421,7 @@ exports[`TextInput medium drop height 1`] = `
 
 exports[`TextInput medium drop height 2`] = `""`;
 
-exports[`TextInput opens drop on focus after selection of suggestion 1`] = `
+exports[`TextInput opens drop on typing again after selection of suggestion 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2627,7 +2627,7 @@ exports[`TextInput opens drop on focus after selection of suggestion 1`] = `
 </div>
 `;
 
-exports[`TextInput opens drop on focus after selection of suggestion 2`] = `""`;
+exports[`TextInput opens drop on typing again after selection of suggestion 2`] = `""`;
 
 exports[`TextInput renders size 1`] = `
 HTMLCollection [

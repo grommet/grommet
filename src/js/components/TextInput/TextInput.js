@@ -145,11 +145,21 @@ const TextInput = forwardRef(
       if (onSuggestionsOpen) onSuggestionsOpen();
     }, [announce, messages, format, onSuggestionsOpen, suggestions]);
 
-    const closeDrop = useCallback(() => {
-      setSuggestionsAtClose(suggestions); // must be before closing drop
-      setShowDrop(false);
-      if (onSuggestionsClose) onSuggestionsClose();
-    }, [onSuggestionsClose, suggestions]);
+    const closeDrop = useCallback(
+      (event) => {
+        if (
+          event &&
+          event.type === 'mousedown' &&
+          event.target === inputRef.current
+        ) {
+          return;
+        }
+        setSuggestionsAtClose(suggestions); // must be before closing drop
+        setShowDrop(false);
+        if (onSuggestionsClose) onSuggestionsClose();
+      },
+      [onSuggestionsClose, suggestions, inputRef],
+    );
 
     // Handle scenarios where we have focus, the drop isn't showing,
     // and the suggestions change. We don't want to open the drop if
@@ -478,14 +488,10 @@ const TextInput = forwardRef(
                     // placeholder only appears when there is no value
                     setValue(event.target.value);
                     setActiveSuggestionIndex(resetSuggestionIndex);
+                    setSuggestionsAtClose();
                     if (onChange) onChange(event);
                   }
             }
-            onClick={() => {
-              if (suggestions && !showDrop) {
-                openDrop();
-              }
-            }}
           />
         </Keyboard>
 

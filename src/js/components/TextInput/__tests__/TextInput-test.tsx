@@ -95,7 +95,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('opens drop on focus after selection of suggestion', (done) => {
+  test('opens drop on typing again after selection of suggestion', (done) => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId } = render(
