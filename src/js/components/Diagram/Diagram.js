@@ -3,7 +3,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useRef,
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -13,6 +12,7 @@ import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
 import { DiagramPropTypes } from './propTypes';
+import useEventListener from '../../utils/use-event-listener';
 
 const computeMidPoint = (fromPoint, toPoint) => [
   fromPoint[0] > toPoint[0]
@@ -94,25 +94,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
     }
   }, [dimensions.width, dimensions.height, svgRef]);
 
-  // Ref that stores resize handler
-  const savedOnResize = useRef();
-
-  // Update resize ref value if onResize changes.
-  // This allows our effect below to always get latest handler
-  useEffect(() => {
-    savedOnResize.current = onResize;
-  }, [onResize]);
-
-  useEffect(() => {
-    const onResizeHandler = (event) => savedOnResize.current(event);
-    onResizeHandler();
-
-    window.addEventListener('resize', onResizeHandler);
-
-    return () => {
-      window.removeEventListener('resize', onResizeHandler);
-    };
-  }, []);
+  useEventListener('resize', onResize);
 
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();

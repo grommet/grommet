@@ -1,15 +1,10 @@
-import React, {
-  forwardRef,
-  useContext,
-  useState,
-  useCallback,
-  useEffect,
-} from 'react';
+import React, { forwardRef, useContext, useState, useCallback } from 'react';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
+import useEventListener from '../../utils/use-event-listener';
 
 const RangeInput = forwardRef(
   (
@@ -42,15 +37,15 @@ const RangeInput = forwardRef(
     });
     const rangeInputRef = useForwardedRef(ref);
 
-    useEffect(() => {
+    const handleScrollTo = () => {
       const { x, y } = scroll;
       if (x !== null && y !== null) {
-        const handleScrollTo = () => window.scrollTo(x, y);
-        window.addEventListener('scroll', handleScrollTo);
-        return () => window.removeEventListener('scroll', handleScrollTo);
+        return window.scrollTo(x, y);
       }
       return undefined;
-    }, [scroll]);
+    };
+
+    useEventListener('scroll', handleScrollTo);
 
     const setRangeInputValue = useCallback(
       (nextValue) => {

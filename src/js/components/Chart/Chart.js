@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -9,6 +9,7 @@ import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 import { ChartPropTypes } from './propTypes';
+import useEventListener from '../../utils/use-event-listener';
 
 const gradientMaskColor = '#ffffff';
 
@@ -190,19 +191,16 @@ const Chart = React.forwardRef(
     }, [containerRef, containerSize, needContainerSize]);
 
     // container size, if needed
-    useEffect(() => {
-      const onResize = () => {
-        const { parentNode } = containerRef.current;
-        const rect = parentNode.getBoundingClientRect();
-        setContainerSize([rect.width, rect.height]);
-      };
+    const onResize = () => {
+      const { parentNode } = containerRef.current;
+      const rect = parentNode.getBoundingClientRect();
+      setContainerSize([rect.width, rect.height]);
+    };
 
-      if (needContainerSize) {
-        window.addEventListener('resize', onResize);
-        return () => window.removeEventListener('resize', onResize);
-      }
-      return undefined;
-    }, [containerRef, needContainerSize]);
+    if (needContainerSize) {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useEventListener('resize', onResize);
+    }
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.

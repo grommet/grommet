@@ -4,7 +4,6 @@ import React, {
   forwardRef,
   useContext,
   useState,
-  useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -12,20 +11,18 @@ import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
 import { TipPropTypes } from './propTypes';
+import useEventListener from '../../utils/use-event-listener';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
   const [usingKeyboard, setUsingKeyboard] = useState();
 
-  useEffect(() => {
-    document.addEventListener('mousedown', () => setUsingKeyboard(false));
-    document.addEventListener('keydown', () => setUsingKeyboard(true));
-    return () => {
-      document.removeEventListener('mousedown', () => setUsingKeyboard(false));
-      document.removeEventListener('keydown', () => setUsingKeyboard(true));
-    };
-  }, []);
+  const handleMouseDown = () => setUsingKeyboard(false);
+  const handleKeyDown = () => setUsingKeyboard(true);
+
+  useEventListener('mousedown', handleMouseDown);
+  useEventListener('keydown', handleKeyDown);
 
   const componentRef = useForwardedRef(tipRef);
 
