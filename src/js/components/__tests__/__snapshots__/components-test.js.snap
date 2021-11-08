@@ -2030,6 +2030,31 @@ Object {
           "header": Object {},
           "panel": Object {},
         },
+        "tag": Object {
+          "container": Object {
+            "align": "center",
+            "border": true,
+            "direction": "row",
+            "pad": Object {
+              "horizontal": "4px",
+            },
+            "round": "large",
+          },
+          "gap": "xsmall",
+          "name": Object {},
+          "padding": Object {
+            "horizontal": "10px",
+            "vertical": "6px",
+          },
+          "remove": Object {
+            "round": "large",
+          },
+          "separator": ":",
+          "size": Object {},
+          "value": Object {
+            "weight": 600,
+          },
+        },
         "text": Object {
           "2xl": Object {
             "height": "40px",
@@ -2289,6 +2314,23 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "onActive": [Function],
+    },
+    "render": [Function],
+  },
+  "Tag": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "prototype": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "background": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "name": [Function],
+      "onClick": [Function],
+      "onRemove": [Function],
+      "size": [Function],
+      "value": [Function],
     },
     "render": [Function],
   },

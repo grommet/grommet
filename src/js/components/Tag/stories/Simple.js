@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Box, Grommet, Tag } from 'grommet';
-// import { grommet } from 'grommet/themes';
-import { hpe } from 'grommet-theme-hpe';
+import { grommet } from 'grommet/themes';
+// import { hpe } from 'grommet-theme-hpe';
 
-const theme = hpe;
+const theme = grommet;
 
 export const Simple = () => {
   const onRemove = () => {};
@@ -27,7 +27,7 @@ export const Simple = () => {
           <Tag value="value" onRemove={onRemove} />
         </Box>
         <Box gap="medium" align="start">
-          <Tag name="name" value="value" />
+          <Tag name="name" value="value" aria-label="somelabel" />
           <Tag name="name" value="value" onClick={onClick} />
         </Box>
         <Box gap="medium" align="start">
