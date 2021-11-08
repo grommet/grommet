@@ -43,6 +43,8 @@ export * from './Meter';
 export * from './Pagination';
 export * from './Paragraph';
 export * from './Nav';
+export * from './NameValueList';
+export * from './NameValuePair';
 export * from './Notification';
 export * from './RadioButton';
 export * from './RadioButtonGroup';

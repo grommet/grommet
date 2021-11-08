@@ -2,7 +2,7 @@ import React from 'react';
 
 import 'jest-styled-components';
 
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
@@ -11,8 +11,6 @@ import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 
 describe('Form controlled', () => {
-  afterEach(cleanup);
-
   test('controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
@@ -468,10 +466,8 @@ describe('Form controlled', () => {
     const toggleField = getByLabelText('toggle');
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     expect(container.firstChild).toMatchSnapshot();
     const moodField = getByPlaceholderText('test mood');
 
@@ -511,10 +507,8 @@ describe('Form controlled', () => {
     );
 
     // remove mood, should clear validation
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     nameField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run

@@ -181,6 +181,7 @@ interface ButtonType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    [key: string]: ButtonKindType;
   };
   disabled?: ButtonKindType & { opacity?: OpacityType };
   hover?: ButtonKindType & {
@@ -501,6 +502,11 @@ export interface ThemeType {
   };
   card?: {
     container?: BoxProps;
+    hover?: {
+      container?: {
+        elevation?: ElevationType;
+      };
+    };
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
@@ -1063,8 +1069,8 @@ export interface ThemeType {
     };
   };
   pagination?: {
-    button?: ButtonType;
-    container?: BoxProps;
+    button?: ButtonType | string;
+    container?: BoxProps | { extend?: ExtendType };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
@@ -1143,6 +1149,19 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
+  };
+  nameValueList?: {
+    gap?: { row?: GapType; column?: GapType };
+    name?: {
+      width: string;
+    };
+    value?: {
+      width: string;
+    };
+  };
+  nameValuePair?: {
+    name?: TextProps;
+    value?: TextProps;
   };
   radioButtonGroup?: {
     container?: BoxProps;
@@ -1417,6 +1436,9 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      track?: {
+        color?: ColorType;
+      };
     };
   };
   worldMap?: {

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Paragraph } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Paragraph } from 'grommet';
 
 const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', '10px'];
 
@@ -11,7 +10,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 `;
 
 export const All = () => (
-  <Grommet theme={grommet}>
+  <>
     {sizes.map((size) => (
       <Paragraph key={size} size={size}>
         {`Paragraph ${size}`}
@@ -23,7 +22,7 @@ export const All = () => (
       This is a full-width paragraph, using the &quot;fill&quot; property:{' '}
       {paragraphFiller}
     </Paragraph>
-  </Grommet>
+  </>
 );
 
 export default {

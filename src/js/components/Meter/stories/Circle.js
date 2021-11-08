@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { Grommet, Box, Meter } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Meter } from 'grommet';
 
 export const Circle = () => {
   const [value, setValue] = useState(20);
@@ -20,15 +19,16 @@ export const Circle = () => {
   );
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Meter
-          type="circle"
-          background="light-2"
-          values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Meter
+        type="circle"
+        background="light-2"
+        values={[{ value, color: value > 50 ? 'accent-2' : 'accent-1' }]}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 
