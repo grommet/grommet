@@ -1488,7 +1488,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       separator: ':',
       value: {
-        weight: '600',
+        weight: 600,
       },
     },
     text: {

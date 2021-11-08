@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     background: backgroundPropType,
     name: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     size: PropTypes.oneOf(['small', 'medium', 'large']),

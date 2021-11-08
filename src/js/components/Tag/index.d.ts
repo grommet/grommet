@@ -3,7 +3,6 @@ import {
   A11yTitleType,
   AlignSelfType,
   BackgroundType,
-  BorderType,
   GridAreaType,
   MarginType,
   // Omit,
@@ -16,11 +15,10 @@ export interface TagProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   background?: BackgroundType;
-  border: BorderType;
   // focusIndicator?: boolean;
   // hoverIndicator?: BackgroundType | boolean;
-  name?: React.ReactNode;
-  value: React.ReactNode;
+  name?: string;
+  value: string | number;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
   size?: 'small' | 'medium' | 'large';

@@ -24,7 +24,6 @@ export const Simple = () => {
             value="value"
             onRemove={onRemove}
           />
-          <Tag name="name" onRemove={onRemove} />
           <Tag value="value" onRemove={onRemove} />
         </Box>
         <Box gap="medium" align="start">
@@ -53,7 +52,6 @@ export const Simple = () => {
           value="value"
           onRemove={onRemove}
         />
-        <Tag name="name" onRemove={onRemove} />
         <Tag value="value" onRemove={onRemove} />
       </Box>
       <Box gap="medium" align="start">
