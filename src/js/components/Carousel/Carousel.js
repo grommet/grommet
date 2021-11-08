@@ -1,25 +1,17 @@
-import React, {
-  Children,
-  useState,
-  useContext,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { Children, useRef, useState, useEffect } from 'react';
 import { CarouselChild } from './CarouselChild';
 import { CarouselControls } from './CarouselControls';
 import { StyledCarouselContainer } from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
-import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { ResponsiveContext, ThemeContext } from '../../contexts';
-import { defaultProps } from '../../default-props';
 
 const handleOnJumpNavigation =
-  ({ setDirection, setCurrent, setPrevious, setInTransition, onChild }) =>
+  ({ setDirection, setCurrent, setInTransition, setPrevious, onChild }) =>
   (current, index, inTransition) => {
+    if (current === index) return;
     if (inTransition) return;
-    setInTransition(true);
     setDirection(index > current ? 'next' : 'previous');
+    setInTransition(true);
     setPrevious(current);
     setCurrent(index);
     onChild(index);
@@ -36,8 +28,8 @@ const handleOnNext =
   }) =>
   (current, inTransition) => {
     if (inTransition) return;
-    setInTransition(true);
     setDirection('next');
+    setInTransition(true);
     setPrevious(current);
     const next = current === numSlides - 1 ? 0 : current + 1;
     setCurrent(next);
@@ -55,8 +47,8 @@ const handleOnPrevious =
   }) =>
   (current, inTransition) => {
     if (inTransition) return;
-    setInTransition(true);
     setDirection('previous');
+    setInTransition(true);
     setPrevious(current);
     const next = current === 0 ? numSlides - 1 : current - 1;
     setCurrent(next);
@@ -67,28 +59,24 @@ const Carousel = ({
   activeChild,
   children,
   controls,
-  fill,
   height,
+  fill,
+  width,
   initialChild,
   onChild,
   play,
-  width,
-  ...rest
 }) => {
+  const noContainer = !fill && !height && !width;
   const numSlides = children.length;
-  const noContainer = !width && !height && !fill;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-  const size = useContext(ResponsiveContext);
   const firstChildRef = useRef(null);
-
   const [current, setCurrent] = useState(initialChild);
   const [previous, setPrevious] = useState(undefined);
-  const [inTransition, setInTransition] = useState(false);
-  const [absolute, setAbsolute] = useState(!noContainer);
+  const [containerProps, setContainerProps] = useState({
+    heightProp: height,
+    widthProp: width,
+  });
   const [direction, setDirection] = useState(undefined);
-  const [carouselWidth, setCarouselWidth] = useState(undefined);
-  const [carouselHeight, setCarouselHeight] = useState(undefined);
-
+  const [inTransition, setInTransition] = useState(false);
   const onJumpNavigation = handleOnJumpNavigation({
     setDirection,
     setCurrent,
@@ -121,18 +109,27 @@ const Carousel = ({
    * dimensions of the Carousel container.
    */
   useEffect(() => {
-    if (noContainer) {
+    if (
+      noContainer &&
+      (containerProps.heightProp === undefined ||
+        containerProps.widthProp === undefined)
+    ) {
       const { current: childRef } = firstChildRef;
       if (childRef) {
-        setCarouselWidth(`${childRef.offsetWidth}px`);
-        setCarouselHeight(`${childRef.offsetHeight}px`);
-        setAbsolute(true);
+        if (childRef.offsetWidth > 0 && childRef.offsetHeight > 0) {
+          setContainerProps({
+            heightProp: `${childRef.offsetHeight}px`,
+            widthProp: `${childRef.offsetWidth}px`,
+          });
+        } else setContainerProps({});
       }
     } else {
-      setCarouselWidth(fill ? '100%' : width);
-      setCarouselHeight(fill ? '100%' : height);
+      setContainerProps({
+        heightProp: fill ? '100%' : height,
+        widthProp: fill ? '100%' : width,
+      });
     }
-  }, [fill, width, height, noContainer, size]);
+  }, [noContainer, fill, height, width]);
 
   /**
    * Delays the transitions between Carousel slides. This is needed to
@@ -170,73 +167,54 @@ const Carousel = ({
 
   // Handles when there is only one child
   if (numSlides === undefined)
-    return (
-      <StyledCarouselContainer
-        widthProp={carouselWidth}
-        heightProp={carouselHeight}
-      >
-        {children}
-      </StyledCarouselContainer>
-    );
+    return <StyledCarouselContainer>{children}</StyledCarouselContainer>;
 
   return (
     <Keyboard
       onLeft={() => onPrevious(current, inTransition)}
       onRight={() => onNext(current, inTransition)}
     >
-      <StyledCarouselContainer
-        theme={theme}
-        tabIndex={0}
-        justify="end"
-        overflow="hidden"
-        widthProp={carouselWidth}
-        heightProp={carouselHeight}
-        {...rest}
-      >
-        <CarouselControls
-          controls={controls}
-          current={current}
-          inTransition={inTransition}
-          onNext={onNext}
-          numSlides={numSlides}
-          onPrevious={onPrevious}
-          onJumpNavigation={onJumpNavigation}
+      <StyledCarouselContainer {...containerProps}>
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            width: '100%',
+            height: '100%',
+          }}
         >
-          {/* Carousel Slides */}
-          <Box
-            style={{ position: 'relative' }}
-            overflow="hidden"
-            direction="row"
-            fill
-          >
-            {Children.map(children, (child, index) => (
-              <CarouselChild
-                key={`carousel-child-${index + 1}`}
-                index={index}
-                ref={index === current ? firstChildRef : null}
-                absolute={index === current ? absolute : true}
-                current={current}
-                noContainer={noContainer}
-                previous={previous}
-                direction={direction}
-              >
-                {child}
-              </CarouselChild>
-            ))}
-          </Box>
-        </CarouselControls>
+          <CarouselControls
+            controls={controls}
+            current={current}
+            inTransition={inTransition}
+            onNext={onNext}
+            numSlides={numSlides}
+            onPrevious={onPrevious}
+            onJumpNavigation={onJumpNavigation}
+          />
+          {Children.map(children, (child, index) => (
+            <CarouselChild
+              key={`carousel-child-${index + 1}`}
+              index={index}
+              ref={index === current ? firstChildRef : null}
+              current={current}
+              previous={previous}
+              direction={direction}
+            >
+              {child}
+            </CarouselChild>
+          ))}
+        </div>
       </StyledCarouselContainer>
     </Keyboard>
   );
 };
 
 Carousel.propTypes = CarouselPropTypes;
-
 Carousel.defaultProps = {
   fill: false,
   controls: true,
   initialChild: 0,
-  showProgress: false,
   activeChild: undefined,
   onChild: () => {},
 };

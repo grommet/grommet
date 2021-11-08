@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
     index: PropTypes.number.isRequired,
     current: PropTypes.number.isRequired,
     previous: PropTypes.number,
-    absolute: PropTypes.bool.isRequired,
     direction: PropTypes.string,
   };
 }

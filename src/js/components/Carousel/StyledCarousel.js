@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { widthStyle, heightStyle } from '../../utils';
 
 const StyledCarouselContainer = styled(Box)`
@@ -10,68 +9,52 @@ const StyledCarouselContainer = styled(Box)`
 `;
 
 const StyledCarouselChild = styled.div`
-  ${(props) => (props.noContainer ? `` : `height: 100%; width: 100%;`)}
-  position: ${(props) => (props.absolute ? 'absolute' : 'relative')};
-  visibility: ${(props) => props.visibility};
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin-right: -100%;
+  display: ${(props) => props.displayProp};
   animation: ${(props) =>
     props.animation
       ? css`
-          ${props.animation} 0.6s
+          ${props.animation} 0.6s ease-in-out
         `
       : `none`};
 `;
 
-const StyledArrow = styled(Button)`
-  z-index: 1;
+const StyledControl = styled(Box)`
   position: absolute;
-  transition-timing-function: ease-in-out;
-  padding: 0px 6px;
-  ${(props) => props.next && `left: calc(100% - 36px);`}
-  &:hover {
-    transition: 0.3s;
-  }
+  z-index: 1;
+  ${(props) => `${props.offset}: 0;`}
+  align-items: center';
+  justify-content: center;
 `;
 
 // Slide Left = Previous or Backward
 const slideRightPrevious = keyframes`
-  0% {
-    transform: translateX(0%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
+  0% {transform: translateX(0%)}
   100% {transform: translateX(100%)}
 `;
 
 const slideRightCurrent = keyframes`
-  0% {
-    transform: translateX(-100%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
+  0% {transform: translateX(-100%)}
   100% {transform: translateX(0%)}
 `;
 
 // Slide Left = Next or Forward
 const slideLeftPrevious = keyframes`
-  0% {
-    transform: translateX(0%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
+  0% {transform: translateX(0%)}
   100% {transform: translateX(-100%)}
 `;
 
 const slideLeftCurrent = keyframes`
-  0% {
-    transform: translateX(100%);
-    visibility: visible;
-  }
-  99% {visibility: visible}
+  0% {transform: translateX(100%)}
   100% {transform: translateX(0%)}
   `;
 
 export {
-  StyledArrow,
+  StyledControl,
   StyledCarouselContainer,
   StyledCarouselChild,
   slideLeftCurrent,

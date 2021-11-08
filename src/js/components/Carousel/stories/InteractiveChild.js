@@ -4,7 +4,7 @@ import { Carousel } from '../Carousel';
 
 export const InteractiveSlides = () => (
   <Box align="center" pad="large">
-    <Carousel controls="arrows" height="medium" width="medium" showProgress>
+    <Carousel controls="arrows" height="medium" width="medium">
       <Box
         fill
         align="center"

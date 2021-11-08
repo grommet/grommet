@@ -1,60 +1,44 @@
-import React, { useState, forwardRef, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import {
-  StyledCarouselChild,
   slideLeftCurrent,
   slideLeftPrevious,
   slideRightCurrent,
   slideRightPrevious,
+  StyledCarouselChild,
 } from './StyledCarousel';
 import { CarouselChildPropTypes } from './propTypes';
 
-const handleAnimation =
-  ({ setAnimation, setVisibility }) =>
-  (animation, visibility) => {
-    setAnimation(animation);
-    const timer = setTimeout(() => {
-      setVisibility(visibility);
-    }, 100);
-    return () => clearTimeout(timer);
-  };
-
 const CarouselChild = forwardRef(
-  (
-    { children, index, current, noContainer, previous, direction, absolute },
-    ref,
-  ) => {
+  ({ children, index, current, previous, direction }, ref) => {
     const [animation, setAnimation] = useState(undefined);
-    const [visibility, setVisibility] = useState(
-      current === index ? 'visible' : 'hidden',
+    const [display, setDisplay] = useState(
+      current === index ? 'block' : 'none',
     );
 
-    const onAnimation = handleAnimation({
-      setAnimation,
-      setVisibility,
-    });
-
     useEffect(() => {
-      // Previous is only undefined on mount. This tells the component:
-      // On mount, do not render the first slide with an animation.
+      // Previous is only undefined on initialization. This tells the component:
+      // on mount, do not render the first slide with an animation.
       if (previous === undefined) return;
-      if (index !== current && index !== previous) setAnimation(undefined);
+      if (index !== current && index !== previous) return;
 
       if (index === current) {
-        if (direction === 'next') onAnimation(slideLeftCurrent, 'visible');
-        else onAnimation(slideRightCurrent, 'visible');
-      } else if (index === previous) {
-        if (direction === 'next') onAnimation(slideLeftPrevious, 'hidden');
-        else onAnimation(slideRightPrevious, 'hidden');
+        setDisplay('block');
+        if (direction === 'next') setAnimation(slideLeftCurrent);
+        else setAnimation(slideRightCurrent);
+      } else {
+        setTimeout(() => {
+          setDisplay('none');
+        }, 600);
+        if (direction === 'next') setAnimation(slideLeftPrevious);
+        else setAnimation(slideRightPrevious);
       }
-    }, [onAnimation, direction, index, current, previous]);
+    }, [current, direction, index, previous]);
 
     return (
       <StyledCarouselChild
-        ref={ref}
-        visibility={visibility}
-        noContainer={noContainer}
-        absolute={absolute}
         animation={animation}
+        displayProp={display}
+        ref={ref}
       >
         {children}
       </StyledCarouselChild>

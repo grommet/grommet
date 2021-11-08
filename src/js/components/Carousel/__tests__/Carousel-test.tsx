@@ -18,28 +18,26 @@ describe('Carousel', () => {
         <div>Slide Two</div>
       </Carousel>,
     );
-
-    expect(getSlideOne()).toHaveStyle({ visibility: 'visible' });
-    expect(getSlideTwo()).toHaveStyle({ visibility: 'hidden' });
+    expect(getSlideOne()).toBeVisible();
+    expect(getSlideTwo()).not.toBeVisible();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic with `initialChild: 1`', () => {
-    const { container } = render(
+    render(
       <Carousel initialChild={1}>
         <div>Slide One</div>
         <div>Slide Two</div>
       </Carousel>,
     );
 
-    expect(getSlideOne()).toHaveStyle({ visibility: 'hidden' });
-    expect(getSlideTwo()).toHaveStyle({ visibility: 'visible' });
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getSlideTwo()).toBeVisible();
+    expect(getSlideOne()).not.toBeVisible();
   });
 
   test('arrow navigation: next', async () => {
     render(
-      <Carousel fill controls="arrows">
+      <Carousel controls="arrows">
         <div>Slide One</div>
         <div>Slide Two</div>
         <div>Slide Three</div>
@@ -52,16 +50,16 @@ describe('Carousel', () => {
      * - Expecting "Slide Two" to be visible
      */
     const nextButton = screen.getByLabelText('Next');
-    expect(getSlideTwo()).toHaveStyle({ visibility: 'hidden' });
     userEvent.click(nextButton);
     await waitFor(() => {
-      expect(getSlideTwo()).toHaveStyle({ visibility: 'visible' });
+      expect(getSlideOne()).not.toBeVisible();
+      expect(getSlideTwo()).toBeVisible();
     });
   });
 
   test('arrow navigation: previous', async () => {
     render(
-      <Carousel fill controls="arrows">
+      <Carousel controls="arrows">
         <div>Slide One</div>
         <div>Slide Two</div>
         <div>Slide Three</div>
@@ -74,16 +72,16 @@ describe('Carousel', () => {
      * - Expecting "Slide Three" to be visible
      */
     const previousButton = screen.getByLabelText('Previous');
-    expect(getSlideThree()).toHaveStyle({ visibility: 'hidden' });
     userEvent.click(previousButton);
     await waitFor(() => {
-      expect(getSlideThree()).toHaveStyle({ visibility: 'visible' });
+      expect(getSlideOne()).not.toBeVisible();
+      expect(getSlideThree()).toBeVisible();
     });
   });
 
   test('selector navigation: forward', async () => {
     render(
-      <Carousel fill controls="selectors">
+      <Carousel controls="selectors">
         <div>Slide One</div>
         <div>Slide Two</div>
         <div>Slide Three</div>
@@ -96,10 +94,10 @@ describe('Carousel', () => {
      * - Expecting "Slide Three" to be visible
      */
     const thirdSelector = screen.getAllByRole('button')[2];
-    expect(getSlideThree()).toHaveStyle({ visibility: 'hidden' });
     userEvent.click(thirdSelector);
     await waitFor(() => {
-      expect(getSlideThree()).toHaveStyle({ visibility: 'visible' });
+      expect(getSlideOne()).not.toBeVisible();
+      expect(getSlideThree()).toBeVisible();
     });
   });
 
@@ -118,10 +116,10 @@ describe('Carousel', () => {
      * - Expecting "Slide One" to be visible
      */
     const firstSelector = screen.getAllByRole('button')[0];
-    expect(getSlideOne()).toHaveStyle({ visibility: 'hidden' });
     userEvent.click(firstSelector);
     await waitFor(() => {
-      expect(getSlideOne()).toHaveStyle({ visibility: 'visible' });
+      expect(getSlideThree()).not.toBeVisible();
+      expect(getSlideOne()).toBeVisible();
     });
   });
 
@@ -134,21 +132,13 @@ describe('Carousel', () => {
       </Carousel>,
     );
 
-    expect(screen.getByText('Slide One')).toHaveStyle({
-      visibility: 'visible',
-    });
-    expect(screen.getByText('Slide Two')).toHaveStyle({
-      visibility: 'hidden',
-    });
-
+    expect(getSlideOne()).toBeVisible();
     await act(async () => {
       jest.advanceTimersByTime(800);
     });
     await waitFor(() => {
-      expect(getSlideOne()).toHaveStyle({ visibility: 'hidden' });
-    });
-    await waitFor(() => {
-      expect(getSlideTwo()).toHaveStyle({ visibility: 'visible' });
+      expect(getSlideOne()).not.toBeVisible();
+      expect(getSlideTwo()).toBeVisible();
     });
   });
 

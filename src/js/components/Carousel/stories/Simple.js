@@ -5,7 +5,7 @@ import { Carousel } from '../Carousel';
 
 export const Simple = () => (
   <Box align="center" pad="large">
-    <Carousel>
+    <Carousel controls>
       <Box pad="xlarge" background="accent-1">
         <Attraction size="xlarge" />
       </Box>

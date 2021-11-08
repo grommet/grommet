@@ -72,13 +72,7 @@ export const ControlVariations = () => (
       background="light-3"
     >
       <Text size="small">With arrow controls and initial child set</Text>
-      <Carousel
-        height="400px"
-        width="400px"
-        controls="arrows"
-        initialChild={3}
-        showProgress
-      >
+      <Carousel height="400px" width="400px" controls="arrows" initialChild={3}>
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
         </Box>

@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { StyledArrow } from './StyledCarousel';
+import { StyledControl } from './StyledCarousel';
 import { CarouselControlsPropTypes } from './propTypes';
 import { Button } from '../Button';
-import { Box } from '../Box';
 import { ThemeContext } from '../../contexts';
 import { normalizeColor } from '../../utils';
 
@@ -10,7 +9,6 @@ const CarouselControls = ({
   controls,
   current,
   inTransition,
-  children,
   numSlides,
   onNext,
   onPrevious,
@@ -34,46 +32,44 @@ const CarouselControls = ({
     <>
       {/* Previous Arrow */}
       {arrowNavigation && (
-        <StyledArrow
-          plain
-          hoverIndicator
-          fill="vertical"
-          onClick={() => onPrevious(current, inTransition)}
-          icon={<PreviousIcon color={arrowColor} />}
-        />
+        <StyledControl offset="left" fill="vertical">
+          <Button
+            plain
+            hoverIndicator
+            fill="vertical"
+            onClick={() => onPrevious(current, inTransition)}
+            icon={<PreviousIcon color={arrowColor} />}
+          />
+        </StyledControl>
       )}
-
-      {/* Carousel Slides */}
-      {children}
 
       {/* Next Arrow */}
       {arrowNavigation && (
-        <StyledArrow
-          next
-          plain
-          hoverIndicator
-          fill="vertical"
-          onClick={() => onNext(current, inTransition)}
-          icon={<NextIcon color={arrowColor} />}
-        />
+        <StyledControl offset="right" fill="vertical">
+          <Button
+            plain
+            hoverIndicator
+            fill="vertical"
+            onClick={() => onNext(current, inTransition)}
+            icon={<NextIcon color={arrowColor} />}
+          />
+        </StyledControl>
       )}
 
       {/* Selectors */}
       {selectorNavigation && (
-        <Box
+        <StyledControl
+          offset="bottom"
           direction="row"
           fill="horizontal"
           gap="xsmall"
-          align="center"
-          justify="center"
           pad={{ vertical: 'xsmall' }}
-          style={{ position: 'absolute' }}
         >
           {Array.from(Array(numSlides).keys()).map((_, index) => (
             <Button
               plain
               hoverIndicator
-              key={`slide-${index + 1}`}
+              key={`control-${index + 1}`}
               onClick={() => onJumpNavigation(current, index, inTransition)}
               icon={
                 <SelectorIcon
@@ -82,7 +78,7 @@ const CarouselControls = ({
               }
             />
           ))}
-        </Box>
+        </StyledControl>
       )}
     </>
   );
