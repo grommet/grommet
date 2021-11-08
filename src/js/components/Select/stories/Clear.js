@@ -46,37 +46,6 @@ Bottom.parameters = {
   chromatic: { disable: true },
 };
 
-export const CustomTheme = () => {
-  const [value, setValue] = useState(options[2]);
-  return (
-    <Grommet
-      theme={{
-        select: {
-          clear: {
-            container: { background: 'light-1', pad: 'medium' },
-            hover: { background: 'neutral-1', color: 'light-1' },
-            text: { color: 'brand' },
-          },
-        },
-      }}
-    >
-      <Box fill align="center" justify="start" pad="large">
-        <Select
-          placeholder="Clear Options"
-          multiple
-          value={value}
-          options={options}
-          onChange={({ value: nextValue }) => setValue(nextValue)}
-          clear
-        />
-      </Box>
-    </Grommet>
-  );
-};
-CustomTheme.parameters = {
-  chromatic: { disable: true },
-};
-
 export default {
   title: 'Input/Select/Clear',
 };
