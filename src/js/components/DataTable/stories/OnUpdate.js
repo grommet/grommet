@@ -141,7 +141,7 @@ const getData = ({ expanded, sort, show, count}) => {
 };
 
 export const OnUpdateDataTable = () => {
-  const step = 5;
+  const step = 50;
   const [groupSelected, setGroupSelected] = useState({});
   const [select, setSelect] = useState([]);
   const [expand, setExpand] = useState(['Fort Collins']);
@@ -149,7 +149,6 @@ export const OnUpdateDataTable = () => {
       expanded: expand,
       sort: { property: 'name', direction: 'asc'},
       count: step,
-      // show: 2,
     }),
   );
   
@@ -238,7 +237,7 @@ export const OnUpdateDataTable = () => {
             setData(getData(opts));
           }}
           select={select}
-          step={5}
+          step={step}
         />
       </Box>
     </Grommet>

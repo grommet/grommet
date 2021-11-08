@@ -249,7 +249,7 @@ const DataTable = ({
         ),
         sort: nextSort,
         count: limit,
-        showProp,
+        show: showProp,
       });
     }
     if (onSortProp) onSortProp(nextSort);
@@ -271,7 +271,7 @@ const DataTable = ({
         expanded: expandedKeys,
         sort,
         count: limit,
-        showProp,
+        show: showProp,
       });
     }
     if (groupBy.onExpand) {
@@ -297,7 +297,7 @@ const DataTable = ({
         expanded: expandedKeys,
         sort,
         count: limit,
-        showProp,
+        show: showProp,
       });
     }
     if (groupBy.onExpand) {
@@ -415,7 +415,7 @@ const DataTable = ({
                     ),
                     sort,
                     count: limit + step,
-                    showProp,
+                    show: showProp,
                   });
                   setLimit( prev => prev + step);
                 }
