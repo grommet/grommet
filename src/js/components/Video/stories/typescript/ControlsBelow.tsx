@@ -25,13 +25,7 @@ const SimpleVideo = (props) => (
   </Grommet>
 );
 
-export const ControlsBelow = () => (
-  <SimpleVideo
-    controls={{
-      position: 'below',
-    }}
-  />
-);
+export const ControlsBelow = () => <SimpleVideo controls="below" />;
 
 ControlsBelow.storyName = 'Controls below';
 

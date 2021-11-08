@@ -84,7 +84,12 @@ const Video = forwardRef(
 
     // Testing: trying to set default for Video controls (ie. Simple story)
     useLayoutEffect(() => {
-      if (!controls) {
+      if (typeof controls === 'string' || typeof controls === 'boolean') {
+        setNewControls({
+          position: controls,
+          items: ['volume', 'reduceVolume', 'fullScreen'],
+        });
+      } else if (!controls) {
         setNewControls({
           position: 'over',
           items: ['volume', 'reduceVolume', 'fullScreen'],

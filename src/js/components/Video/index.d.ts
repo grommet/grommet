@@ -11,24 +11,28 @@ export interface VideoProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   autoPlay?: boolean;
-  controls?: {
-    position?: false | 'over' | 'below';
-    items?: [
-      (
-        | 'closedCaption'
-        | 'configure'
-        | 'fullScreen'
-        | 'pause'
-        | 'play'
-        | 'reduceVolume'
-        | 'volume'
-      ),
-      {
-        icon?: React.ReactNode;
-        onClick?: () => {};
-      },
-    ];
-  };
+  controls?:
+    | false
+    | 'over'
+    | 'below'
+    | {
+        position?: false | 'over' | 'below';
+        items?: [
+          (
+            | 'closedCaption'
+            | 'configure'
+            | 'fullScreen'
+            | 'pause'
+            | 'play'
+            | 'reduceVolume'
+            | 'volume'
+          ),
+          {
+            icon?: React.ReactNode;
+            onClick?: () => {};
+          },
+        ];
+      };
   fit?: 'cover' | 'contain';
   gridArea?: GridAreaType;
   loop?: boolean;
