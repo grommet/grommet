@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
-
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Select } from 'grommet';
 
 export const Simple = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large" gap="medium">
-        <Select
-          id="select"
-          name="select"
-          placeholder="Select"
-          value={value}
-          options={options}
-          onChange={({ option }) => setValue(option)}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large" gap="medium">
+      <Select
+        id="select"
+        name="select"
+        placeholder="Select"
+        value={value}
+        options={options}
+        onChange={({ option }) => setValue(option)}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 
