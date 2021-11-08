@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -13,8 +13,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('DataTable', () => {
-  afterEach(cleanup);
-
   test('empty', () => {
     const { container } = render(
       <Grommet>

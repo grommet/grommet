@@ -45,7 +45,7 @@ export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
   return (
     <Grommet theme={customTheme}>
       <ThemeContext.Consumer>
-        {theme => console.log(JSON.stringify(theme.radioButton))}
+        {(theme) => console.log(JSON.stringify(theme.radioButton))}
       </ThemeContext.Consumer>
       <Box align="center" pad="large">
         <RadioButtonGroup
@@ -56,7 +56,7 @@ export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
             { label: 'Choice 3', value: 'c3' },
           ]}
           value={value}
-          onChange={event => setValue(event.target.value)}
+          onChange={(event) => setValue(event.target.value)}
           {...props}
         />
       </Box>
@@ -67,5 +67,5 @@ export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
 CustomRadioButtonGroup.storyName = 'Custom theme';
 
 export default {
-  title: 'Input/RadioButtonGroup/Custom theme',
+  title: 'Input/RadioButtonGroup/Custom themed/Custom theme',
 };

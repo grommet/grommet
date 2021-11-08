@@ -2,22 +2,26 @@ import React from 'react';
 import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { Grommet, Image, Box } from '../..';
+import { Grommet, Image, Box, InfiniteScrollProps } from '../..';
 import { InfiniteScroll } from '..';
 
-const simpleItems = (value) =>
+type InfiniteScrollItemType = InfiniteScrollProps['items'] extends (infer U)[]
+  ? U
+  : never;
+
+const simpleItems = (value: number) =>
   Array(value)
-    .fill()
+    .fill(``)
     .map((_, i) => `item ${i + 1}`);
 
-const createPageItems = (allChildren) => {
+const createPageItems = (allChildren: HTMLElement[]) => {
   const unfiltered = Array.from(allChildren);
   // Removing any children which are serving as refs
   return unfiltered.filter((childItem) => childItem.outerHTML.includes('item'));
 };
 
 describe('InfiniteScroll', () => {
-  const items = [];
+  const items: InfiniteScrollProps['items'] = [];
   while (items.length < 4) items.push(items.length);
 
   test('basic', () => {
@@ -25,14 +29,20 @@ describe('InfiniteScroll', () => {
       <Grommet>
         <InfiniteScroll />
         <InfiniteScroll items={items}>
-          {(item, index, ref) => (
+          {(
+            item: InfiniteScrollItemType,
+            index: number,
+            ref: React.MutableRefObject<HTMLInputElement>,
+          ) => (
             <div ref={ref} key={index}>
               {item}
             </div>
           )}
         </InfiniteScroll>
         <InfiniteScroll items={items}>
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -43,7 +53,9 @@ describe('InfiniteScroll', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2}>
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -54,7 +66,9 @@ describe('InfiniteScroll', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2} show={3}>
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -69,7 +83,9 @@ describe('InfiniteScroll', () => {
           step={2}
           renderMarker={(m) => <div>{m}</div>}
         >
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -80,7 +96,9 @@ describe('InfiniteScroll', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2} replace>
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -97,7 +115,7 @@ describe('InfiniteScroll', () => {
     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
     occaecat cupidatat non proident, sunt in culpa qui officia
     deserunt mollit anim id est laborum.`;
-    const mixedItems = [];
+    const mixedItems: InfiniteScrollProps['items'] = [];
     // Generate large array of mixed items to test different elements on a page
     for (let i = 0; i < 200; i += 1) {
       switch (i % 5) {
@@ -143,7 +161,9 @@ describe('InfiniteScroll', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={mixedItems}>
-          {(item, index) => <div key={index}>{item}</div>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <div key={index}>{item}</div>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -157,16 +177,15 @@ describe('Number of Items Rendered', () => {
     const step = 50;
     const { container } = render(
       <Grommet>
-        <InfiniteScroll
-          items={simpleItems(1000)}
-          // show={117}
-          step={step}
-        >
-          {(item) => <Box key={item}>{item}</Box>}
+        <InfiniteScroll items={simpleItems(1000)} step={step}>
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
 
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
@@ -178,11 +197,14 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(200)} step={step}>
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
 
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
@@ -194,11 +216,14 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(numItems)} step={1050}>
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
 
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
@@ -210,11 +235,14 @@ describe('Number of Items Rendered', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(numItems)} step={step}>
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
 
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const distinctItems = new Set(pageItems);
     /* Expected number of items should be at the show value rounded
@@ -236,15 +264,20 @@ describe('show scenarios', () => {
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(300)} show={105}>
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
     // advance timers so InfiniteScroll can scroll to show index
-    act(() => jest.advanceTimersByTime(200));
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
     // item(104) = 'item 105' because indexing starts at 0.
     // Need to modify this next selection to only be concerned with the
     // visible window.
+    // @ts-ignore
     const renderedItems = container.firstChild.children.item(104).outerHTML;
     expect(renderedItems).toContain('item 105');
   });
@@ -261,11 +294,14 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
 
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const distinctItems = new Set(pageItems);
     /* Expected number of items should be at the show value rounded
@@ -288,7 +324,9 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -298,6 +336,7 @@ describe('show scenarios', () => {
     expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that we have the total number of items we expect
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     /* Expected number of items should be at the show value rounded
     up to the next step increment/ */
@@ -316,7 +355,9 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -326,6 +367,7 @@ describe('show scenarios', () => {
     expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that we have the total number of items we expect
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
 
     /* Expected number of items should be at the show value rounded
@@ -347,7 +389,9 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -385,7 +429,9 @@ describe('show scenarios', () => {
           show={showIndex}
           step={step}
         >
-          {(item) => <Box key={item}>{item}</Box>}
+          {(item: InfiniteScrollItemType, index: number) => (
+            <Box key={index}>{item}</Box>
+          )}
         </InfiniteScroll>
       </Grommet>,
     );
@@ -398,6 +444,7 @@ describe('show scenarios', () => {
      * When replace is true, the expected number of items should be less
      * than or equal to the step * 2.
      */
+    // @ts-ignore
     const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = step * 2;
     expect(pageItems.length).toBeLessThanOrEqual(expectedItems);

@@ -61,8 +61,6 @@ const TestInput = ({
 };
 
 describe('Drop', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     window.scrollTo = jest.fn();
     const { container } = render(<TestInput />);
