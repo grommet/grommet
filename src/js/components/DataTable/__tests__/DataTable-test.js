@@ -946,7 +946,8 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']),
+      undefined);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1266,7 +1267,8 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
+    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]),
+      expect.objectContaining({"a":"one"}));
     expect(container.firstChild).toMatchSnapshot();
   });
 
