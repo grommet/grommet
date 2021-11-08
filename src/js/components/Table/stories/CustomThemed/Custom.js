@@ -11,7 +11,7 @@ import {
   TableRow,
   Text,
 } from 'grommet';
-import { data, columns } from './data';
+import { data, columns } from '../data';
 
 const customTheme = {
   global: {
@@ -85,5 +85,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Visualizations/Table/Custom',
+  title: 'Visualizations/Table/Custom Themed/Custom',
 };

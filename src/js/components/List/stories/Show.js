@@ -12,7 +12,7 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 export const Show = () => (
-  <Box pad="medium">
+  <Box margin="large" height="small" overflow="scroll">
     <List
       data={data}
       action={(item, index) => (
