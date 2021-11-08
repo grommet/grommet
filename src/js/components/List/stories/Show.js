@@ -12,19 +12,21 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 export const Show = () => (
-  <Box margin="large" height="small" overflow="scroll">
-    <List
-      data={data}
-      action={(item, index) => (
-        <Menu
-          key={index}
-          icon={<More />}
-          hoverIndicator
-          items={[{ label: 'one' }]}
-        />
-      )}
-      show={30}
-    />
+  <Box fill>
+    <Box margin="large" height="small" overflow="scroll">
+      <List
+        data={data}
+        action={(item, index) => (
+          <Menu
+            key={index}
+            icon={<More />}
+            hoverIndicator
+            items={[{ label: 'one' }]}
+          />
+        )}
+        show={30}
+      />
+    </Box>
   </Box>
 );
 
