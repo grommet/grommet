@@ -201,13 +201,35 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var announce = useContext(AnnounceContext);
 
   var _useContext = useContext(MessageContext),
-      format = _useContext.format; // set activeDate when caller changes it, allows us to change
+      format = _useContext.format; // when mousedown, we don't want to let Calendar set
+  // active date to firstInMonth
+
+
+  var _useState = useState(false),
+      mouseDown = _useState[0],
+      setMouseDown = _useState[1];
+
+  var onMouseDown = function onMouseDown() {
+    return setMouseDown(true);
+  };
+
+  var onMouseUp = function onMouseUp() {
+    return setMouseDown(false);
+  };
+
+  useEffect(function () {
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
+    return function () {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+  }, []); // set activeDate when caller changes it, allows us to change
   // it internally too
 
-
-  var _useState = useState(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
-      activeDate = _useState[0],
-      setActiveDate = _useState[1];
+  var _useState2 = useState(dateProp && typeof dateProp === 'string' && range ? activeDates.end : activeDates.start),
+      activeDate = _useState2[0],
+      setActiveDate = _useState2[1];
 
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
@@ -262,35 +284,35 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }; // set date when caller changes it, allows us to change it internally too
 
 
-  var _useState2 = useState(dateProp),
-      date = _useState2[0],
-      setDate = _useState2[1];
+  var _useState3 = useState(dateProp),
+      date = _useState3[0],
+      setDate = _useState3[1];
 
   useEffect(function () {
     setDate(normalizeDate(dateProp));
   }, [dateProp]); // set dates when caller changes it, allows us to change it internally too
 
-  var _useState3 = useState(datesProp),
-      dates = _useState3[0],
-      setDates = _useState3[1];
+  var _useState4 = useState(datesProp),
+      dates = _useState4[0],
+      setDates = _useState4[1];
 
   useEffect(function () {
     setDates(normalizeDate(datesProp));
   }, [datesProp]); // set reference based on what the caller passed or date/dates.
 
-  var _useState4 = useState(normalizeReference(referenceProp, date, dates)),
-      reference = _useState4[0],
-      setReference = _useState4[1];
+  var _useState5 = useState(normalizeReference(referenceProp, date, dates)),
+      reference = _useState5[0],
+      setReference = _useState5[1];
 
   useEffect(function () {
     return setReference(normalizeReference(referenceProp, dateProp, datesProp));
   }, [dateProp, datesProp, referenceProp]); // normalize bounds
 
-  var _useState5 = useState(boundsProp ? boundsProp.map(function (b) {
+  var _useState6 = useState(boundsProp ? boundsProp.map(function (b) {
     return normalizeForTimezone(b);
   }) : undefined),
-      bounds = _useState5[0],
-      setBounds = _useState5[1];
+      bounds = _useState6[0],
+      setBounds = _useState6[1];
 
   useEffect(function () {
     if (boundsProp) setBounds(boundsProp.map(function (b) {
@@ -298,21 +320,21 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }));else setBounds(undefined);
   }, [boundsProp]); // calculate the bounds we display based on the reference
 
-  var _useState6 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-      displayBounds = _useState6[0],
-      setDisplayBounds = _useState6[1];
-
-  var _useState7 = useState(),
-      targetDisplayBounds = _useState7[0],
-      setTargetDisplayBounds = _useState7[1];
+  var _useState7 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
+      displayBounds = _useState7[0],
+      setDisplayBounds = _useState7[1];
 
   var _useState8 = useState(),
-      slide = _useState8[0],
-      setSlide = _useState8[1];
+      targetDisplayBounds = _useState8[0],
+      setTargetDisplayBounds = _useState8[1];
 
   var _useState9 = useState(),
-      animating = _useState9[0],
-      setAnimating = _useState9[1]; // When the reference changes, we need to update the displayBounds.
+      slide = _useState9[0],
+      setSlide = _useState9[1];
+
+  var _useState10 = useState(),
+      animating = _useState10[0],
+      setAnimating = _useState10[1]; // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
@@ -405,13 +427,13 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [reference]);
   var daysRef = useRef();
 
-  var _useState10 = useState(),
-      focus = _useState10[0],
-      setFocus = _useState10[1];
-
   var _useState11 = useState(),
-      active = _useState11[0],
-      setActive = _useState11[1];
+      focus = _useState11[0],
+      setFocus = _useState11[1];
+
+  var _useState12 = useState(),
+      active = _useState12[0],
+      setActive = _useState12[1];
 
   useEffect(function () {
     if (initialFocus === 'days') daysRef.current.focus();
@@ -759,6 +781,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
+                setActive(new Date(dateString));
               },
               onMouseOver: function onMouseOver() {
                 return setActive(new Date(dateString));
@@ -786,6 +809,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
                 // the focus to the grid of days instead.
 
                 daysRef.current.focus();
+                setActive(new Date(dateString));
               },
               onMouseOver: function onMouseOver() {
                 return setActive(new Date(dateString));
@@ -903,11 +927,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     fillContainer: fill,
     focus: focus,
     onFocus: function onFocus() {
-      setFocus(true);
+      setFocus(true); // caller focused onto Calendar via keyboard
 
-      if (date && betweenDates(new Date(date), displayBounds)) {
-        setActive(new Date(date));
-      } else {
+      if (!mouseDown) {
         setActive(new Date(firstDayInMonth));
       }
     },
