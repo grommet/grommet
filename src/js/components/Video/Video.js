@@ -80,26 +80,23 @@ const Video = forwardRef(
     const containerRef = useRef();
     const scrubberRef = useRef();
     const videoRef = useForwardedRef(ref);
-    const [newControls, setNewControls] = useState();
+    const [newControls, setNewControls] = useState({
+      position: 'over',
+      items: ['volume', 'reduceVolume', 'fullScreen'],
+    });
 
-    // Testing: trying to set default for Video controls (ie. Simple story)
     useLayoutEffect(() => {
       if (typeof controls === 'string' || typeof controls === 'boolean') {
         setNewControls({
           position: controls,
           items: ['volume', 'reduceVolume', 'fullScreen'],
         });
-      } else if (!controls) {
-        setNewControls({
-          position: 'over',
-          items: ['volume', 'reduceVolume', 'fullScreen'],
-        });
-      } else if (!controls.items || !controls.position) {
+      } else if (controls && (!controls.items || !controls.position)) {
         setNewControls({
           position: controls.position || 'over',
           items: controls.items || ['volume', 'reduceVolume', 'fullScreen'],
         });
-      } else {
+      } else if (controls) {
         setNewControls({ position: controls.position, items: controls.items });
       }
     }, [controls]);
@@ -245,7 +242,7 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    if (newControls && newControls.position) {
+    if (newControls.position) {
       const over = newControls.position === 'over';
       const background = over
         ? (theme.video.controls && theme.video.controls.background) || {
@@ -302,16 +299,13 @@ const Video = forwardRef(
 
       let newItem;
       const controlsArr =
-        newControls &&
         newControls.items &&
         newControls.items.map((item) => {
           if (typeof item === 'string') {
-            const result = item.replace(/([A-Z])/g, ' $1');
-            const finalResult =
-              result.charAt(0).toUpperCase() + result.slice(1);
-            const newString = finalResult.replace(' ', '');
+            // Transforming item into PascalCase for lookup on Icons
+            const newString = item.charAt(0).toUpperCase() + item.slice(1);
 
-            const Icon = typeof item === 'string' ? Icons[newString] : '';
+            const Icon = Icons[newString];
             const buttonTitle = buttonTable[item].a11yTitle
               ? buttonTable[item].a11yTitle
               : `video.${item}`;
@@ -342,7 +336,7 @@ const Video = forwardRef(
           over={over}
           active={
             !hasPlayed ||
-            (newControls && newControls.position === 'below') ||
+            newControls.position === 'below' ||
             (over && interacting)
           }
           onBlur={() => {
@@ -437,7 +431,7 @@ const Video = forwardRef(
     }
 
     let mouseEventListeners;
-    if (newControls && newControls.position === 'over') {
+    if (newControls.position === 'over') {
       mouseEventListeners = {
         onMouseEnter: () => setInteracting(true),
         onMouseMove: () => setInteracting(true),
@@ -446,11 +440,7 @@ const Video = forwardRef(
     }
 
     let style;
-    if (
-      rest.fit === 'contain' &&
-      newControls &&
-      newControls.position === 'over'
-    ) {
+    if (rest.fit === 'contain' && newControls.position === 'over') {
       // constrain the size to fit the aspect ratio so the controls
       // overlap correctly
       if (width) {

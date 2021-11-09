@@ -68,6 +68,7 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "@storybook/addon-storysource": "^6.3.9",
+    "@storybook/addon-toolbars": "^6.3.11",
     "@storybook/addons": "^6.3.9",
     "@storybook/react": "^6.3.9",
     "@storybook/source-loader": "^6.3.9",
@@ -188,7 +189,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "120 kB"
+      "maxSize": "121 kB"
     }
   ],
   "keywords": [

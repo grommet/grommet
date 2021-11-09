@@ -16,7 +16,10 @@ if (process.env.NODE_ENV !== 'production') {
     name: PropTypes.string,
     margin: marginProp,
     pad: PropTypes.bool,
-    required: PropTypes.bool,
+    required: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({ indicator: PropTypes.bool }),
+    ]),
     validate: PropTypes.oneOfType([
       PropTypes.shape({
         regexp: PropTypes.instanceOf(RegExp), // regular expression

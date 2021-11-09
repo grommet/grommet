@@ -181,6 +181,7 @@ interface ButtonType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    [key: string]: ButtonKindType;
   };
   disabled?: ButtonKindType & { opacity?: OpacityType };
   hover?: ButtonKindType & {
@@ -501,6 +502,11 @@ export interface ThemeType {
   };
   card?: {
     container?: BoxProps;
+    hover?: {
+      container?: {
+        elevation?: ElevationType;
+      };
+    };
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
@@ -1063,8 +1069,8 @@ export interface ThemeType {
     };
   };
   pagination?: {
-    button?: ButtonType;
-    container?: BoxProps;
+    button?: ButtonType | string;
+    container?: BoxProps | { extend?: ExtendType };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
@@ -1107,11 +1113,16 @@ export interface ThemeType {
     };
   };
   radioButton?: {
+    extend?: ExtendType;
+    container?: {
+      extend?: ExtendType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
     };
     check?: {
+      extend?: ExtendType;
       radius?: string;
       background?: {
         color?: ColorType;
@@ -1139,10 +1150,32 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
+  nameValueList?: {
+    gap?: { row?: GapType; column?: GapType };
+    name?: {
+      width: string;
+    };
+    value?: {
+      width: string;
+    };
+  };
+  nameValuePair?: {
+    name?: TextProps;
+    value?: TextProps;
+  };
   radioButtonGroup?: {
     container?: BoxProps;
   };
   rangeInput?: {
+    disabled?: {
+      opacity?: OpacityType;
+      track?: {
+        color?: ColorType;
+      };
+      thumb?: {
+        color?: ColorType;
+      };
+    };
     track?: {
       height?: string;
       color?: any;
@@ -1159,6 +1192,7 @@ export interface ThemeType {
     };
     thumb?: {
       color?: ColorType;
+      extend?: ExtendType;
     };
     extend?: ExtendType;
   };
@@ -1211,7 +1245,13 @@ export interface ThemeType {
       | { color?: ColorType }
       | { size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string };
     icon?: React.ReactNode;
-    size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+    size?: {
+      xsmall?: string;
+      small?: string;
+      medium?: string;
+      large?: string;
+      xlarge?: string;
+    };
   };
   tab?: {
     active?: {
@@ -1396,6 +1436,9 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      track?: {
+        color?: ColorType;
+      };
     };
   };
   worldMap?: {

@@ -89,7 +89,8 @@ const DateInput = forwardRef(
           !valuesAreEqual(
             textToValue(textValue, schema, value, range),
             textToValue(nextTextValue, schema, value, range),
-          )
+          ) ||
+          (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
@@ -201,10 +202,11 @@ const DateInput = forwardRef(
               }
             }}
             onFocus={(event) => {
-              openCalendar();
+              announce(
+                formatMessage({ id: 'dateInput.openCalendar', messages }),
+              );
               if (onFocus) onFocus(event);
             }}
-            onClick={openCalendar}
           />
         </Keyboard>
       </FormContext.Provider>

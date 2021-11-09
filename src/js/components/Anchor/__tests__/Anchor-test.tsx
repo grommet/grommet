@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -10,8 +10,6 @@ import { Grommet } from '../../Grommet';
 import { Anchor } from '..';
 
 describe('Anchor', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -172,6 +170,12 @@ describe('Anchor', () => {
         <Anchor href="#" label="Normal" weight="normal" />
         <Anchor href="#" label="Bold" weight="bold" />
         <Anchor href="#" label="Bold" weight={500} />
+        <Anchor href="#" label="Lighter" weight="lighter" />
+        <Anchor href="#" label="Bolder" weight="bolder" />
+        <Anchor href="#" label="Inherit" weight="inherit" />
+        <Anchor href="#" label="Initial" weight="initial" />
+        <Anchor href="#" label="Revert" weight="revert" />
+        <Anchor href="#" label="Unset" weight="unset" />
       </Grommet>,
     );
     expect(container).toMatchSnapshot();
