@@ -1160,6 +1160,9 @@ export interface ThemeType {
     };
   };
   nameValuePair?: {
+    gap?: {
+      column?: GapType;
+    };
     name?: TextProps;
     value?: TextProps;
   };

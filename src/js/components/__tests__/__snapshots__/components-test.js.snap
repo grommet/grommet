@@ -1682,11 +1682,11 @@ Object {
           },
         },
         "nameValuePair": Object {
+          "gap": Object {
+            "column": "xxsmall",
+          },
           "name": Object {
             "color": "text",
-            "margin": Object {
-              "bottom": "xxsmall",
-            },
             "weight": "bold",
           },
           "value": Object {
