@@ -76,5 +76,5 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
 export const Custom = () => <CustomAccordion />;
 
 export default {
-  title: 'Controls/Accordion/Custom',
+  title: 'Controls/Accordion/Custom Themed/Custom',
 };

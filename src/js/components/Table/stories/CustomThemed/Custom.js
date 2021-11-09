@@ -11,7 +11,7 @@ import {
   TableRow,
   Text,
 } from 'grommet';
-import { data, columns } from './data';
+import { data, columns } from '../data';
 
 const customTheme = {
   global: {
@@ -52,7 +52,7 @@ export const Custom = () => (
       <Table caption="Custom Theme Table">
         <TableHeader>
           <TableRow>
-            {columns.map(c => (
+            {columns.map((c) => (
               <TableCell key={c.property} scope="col" align={c.align}>
                 <Text>{c.label}</Text>
               </TableCell>
@@ -60,9 +60,9 @@ export const Custom = () => (
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map(datum => (
+          {data.map((datum) => (
             <TableRow key={datum.id}>
-              {columns.map(c => (
+              {columns.map((c) => (
                 <TableCell key={c.property} scope={c.dataScope} align={c.align}>
                   <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
                 </TableCell>
@@ -72,7 +72,7 @@ export const Custom = () => (
         </TableBody>
         <TableFooter>
           <TableRow>
-            {columns.map(c => (
+            {columns.map((c) => (
               <TableCell key={c.property} align={c.align}>
                 <Text>{c.footer}</Text>
               </TableCell>
@@ -85,5 +85,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Visualizations/Table/Custom',
+  title: 'Visualizations/Table/Custom Themed/Custom',
 };
