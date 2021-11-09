@@ -28,7 +28,14 @@ const NameValuePair = ({ children, name: nameProp }) => {
       <Text
         as="dt"
         margin={
-          column ? { bottom: theme.nameValuePair?.gap?.column } : 'undefined'
+          column
+            ? {
+                // using margin to act as gap
+                // <dl> elements must only directly contain
+                // properly-ordered <dt> and <dd> groups
+                bottom: theme.nameValuePair?.column?.gap,
+              }
+            : 'undefined'
         }
         textAlign={nameAlign}
         {...theme.nameValuePair.name}

@@ -1056,8 +1056,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     nameValuePair: {
-      gap: {
-        column: 'xxsmall',
+      column: {
+        gap: 'xxsmall',
       },
       name: {
         // any text props

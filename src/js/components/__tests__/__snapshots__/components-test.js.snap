@@ -1682,8 +1682,8 @@ Object {
           },
         },
         "nameValuePair": Object {
-          "gap": Object {
-            "column": "xxsmall",
+          "column": Object {
+            "gap": "xxsmall",
           },
           "name": Object {
             "color": "text",
