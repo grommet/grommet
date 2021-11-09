@@ -10,7 +10,6 @@ import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 import { normalizeColor } from '../../../../utils';
 import { SearchInput } from '../components/SearchInput';
 
-// https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
 const customSearchTheme = {
   global: {
     colors: {
