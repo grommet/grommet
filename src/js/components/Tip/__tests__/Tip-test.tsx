@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
 import { Grommet } from '../../Grommet';
-import { Tip } from '../Tip';
+import { Tip } from '..';
 
 describe('Tip', () => {
   test('should have no accessibility violations', async () => {
@@ -41,7 +41,7 @@ describe('Tip', () => {
     fireEvent.mouseOver(getByText('Test Events'));
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
     expect(document.getElementById('tooltip-id')).not.toBeNull();
-    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
 
     fireEvent.mouseOut(getByText('Test Events'));
     expect(document.getElementById('tooltip-id')).toBeNull();
@@ -75,7 +75,7 @@ describe('Tip', () => {
     // Styles of plain are captured in snapshots only when applying mouseOver
     fireEvent.mouseOver(getByText('Example'));
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
-    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
 
   test('themed', async () => {
@@ -97,7 +97,7 @@ describe('Tip', () => {
 
     fireEvent.mouseOver(getByText('Example'));
     const tooltip = await waitFor(() => screen.getByText('tooltip'));
-    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
 
   test(`dropProps should pass props to Drop`, async () => {
@@ -116,7 +116,7 @@ describe('Tip', () => {
 
     fireEvent.mouseOver(getByText('Test dropProps'));
     const tooltip = await waitFor(() => screen.getByText('hello dropProps'));
-    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
   });
 
   test(`should work with a child that isn't a React Element`, () => {

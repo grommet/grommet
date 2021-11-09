@@ -69,5 +69,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Controls/Pagination/Custom',
+  title: 'Controls/Pagination/Custom Themed/Custom',
 };
