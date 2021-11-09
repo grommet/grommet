@@ -18,12 +18,14 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const [over, setOver] = useState(false);
   const [usingKeyboard, setUsingKeyboard] = useState();
 
+  const onMouseDown = () => setUsingKeyboard(false);
+  const onKeyDown = () => setUsingKeyboard(true);
   useEffect(() => {
-    document.addEventListener('mousedown', () => setUsingKeyboard(false));
-    document.addEventListener('keydown', () => setUsingKeyboard(true));
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyDown);
     return () => {
-      document.removeEventListener('mousedown', () => setUsingKeyboard(false));
-      document.removeEventListener('keydown', () => setUsingKeyboard(true));
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyDown);
     };
   }, []);
 
