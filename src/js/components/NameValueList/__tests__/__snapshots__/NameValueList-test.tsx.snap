@@ -343,7 +343,7 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
-  grid-gap: 48px 12px;
+  grid-gap: 24px 48px;
 }
 
 .c2 {
@@ -1002,7 +1002,7 @@ exports[`NameValueList should support custom theme 1`] = `
   box-sizing: border-box;
   margin: 0px;
   grid-template-columns: repeat( auto-fit,minmax(auto,192px) );
-  grid-gap: 48px 12px;
+  grid-gap: 12px 24px;
 }
 
 .c2 {

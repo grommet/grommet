@@ -1671,17 +1671,19 @@ Object {
         },
         "nameValueList": Object {
           "gap": Object {
-            "pairDirectionColumn": Object {
-              "column": "large",
-              "row": "medium",
-            },
-            "pairDirectionRow": Object {
-              "column": "large",
-              "row": "small",
-            },
+            "column": "large",
+            "row": "small",
           },
           "name": Object {
             "width": "small",
+          },
+          "pair": Object {
+            "column": Object {
+              "gap": Object {
+                "column": "large",
+                "row": "medium",
+              },
+            },
           },
           "value": Object {
             "width": "medium",

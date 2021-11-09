@@ -190,7 +190,15 @@ describe('NameValueList', () => {
   test(`should support custom theme`, () => {
     const customTheme: ThemeType = {
       nameValueList: {
-        gap: { pairDirectionColumn: { column: 'small', row: 'large'} },
+        gap: { column: 'small', row: 'large' },
+        pair: {
+          column: {
+            gap: {
+              column: 'medium',
+              row: 'small',
+            },
+          },
+        },
         name: {
           width: 'xsmall',
         },

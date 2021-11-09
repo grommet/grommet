@@ -31,12 +31,13 @@ const NameValueList = forwardRef(
       columns = [nameWidth, valueWidth];
     else columns = [valueWidth];
 
-    let gap;
-    if (!theme.nameValueList.gap?.column && !theme.nameValueList.gap?.row) {
-      if (pairProps.direction === 'column' || size === 'small')
-        gap = theme.nameValueList.gap?.pairDirectionColumn;
-      else gap = theme.nameValueList.gap?.pairDirectionRow;
-    } else gap = theme.nameValueList.gap;
+    let { gap } = theme.nameValueList;
+    if (
+      (pairProps.direction === 'column' || size === 'small') &&
+      theme.nameValueList.pair?.column?.gap
+    ) {
+      gap = theme.nameValueList.pair.column.gap;
+    }
 
     return (
       <NameValueListContext.Provider
