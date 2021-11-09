@@ -21,7 +21,11 @@ for (var i = 0; i < 95; i += 1) {
 
 var Show = function Show() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "medium"
+    fill: true
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    margin: "large",
+    height: "small",
+    overflow: "scroll"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: data,
     action: function action(item, index) {
@@ -35,7 +39,7 @@ var Show = function Show() {
       });
     },
     show: 30
-  }));
+  })));
 };
 
 exports.Show = Show;

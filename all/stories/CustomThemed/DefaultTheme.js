@@ -31,6 +31,6 @@ var CustomDefaultProps = function CustomDefaultProps() {
 exports.CustomDefaultProps = CustomDefaultProps;
 CustomDefaultProps.storyName = 'Extend default';
 var _default = {
-  title: 'Utilities/Theme/Extend default'
+  title: 'Utilities/Theme/Custom Themed/Extend default'
 };
 exports["default"] = _default;

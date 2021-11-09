@@ -11,7 +11,11 @@ for (var i = 0; i < 95; i += 1) {
 
 export var Show = function Show() {
   return /*#__PURE__*/React.createElement(Box, {
-    pad: "medium"
+    fill: true
+  }, /*#__PURE__*/React.createElement(Box, {
+    margin: "large",
+    height: "small",
+    overflow: "scroll"
   }, /*#__PURE__*/React.createElement(List, {
     data: data,
     action: function action(item, index) {
@@ -25,7 +29,7 @@ export var Show = function Show() {
       });
     },
     show: 30
-  }));
+  })));
 };
 export default {
   title: 'Visualizations/List/Show'

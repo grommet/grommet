@@ -112,6 +112,6 @@ var RichFooter = function RichFooter() {
 exports.RichFooter = RichFooter;
 RichFooter.storyName = 'Rich footer';
 var _default = {
-  title: "Layout/Card/Rich footer"
+  title: "Layout/Card/Custom Themed/Rich footer"
 };
 exports["default"] = _default;

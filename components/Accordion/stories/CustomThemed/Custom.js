@@ -99,6 +99,6 @@ var Custom = function Custom() {
 
 exports.Custom = Custom;
 var _default = {
-  title: 'Controls/Accordion/Custom'
+  title: 'Controls/Accordion/Custom Themed/Custom'
 };
 exports["default"] = _default;

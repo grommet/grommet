@@ -5,7 +5,7 @@ export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "large"
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Box, {
     align: "center"
   }, /*#__PURE__*/React.createElement(Button, {
     hoverIndicator: "light-1",
@@ -15,7 +15,7 @@ export var Plain = function Plain() {
     direction: "row",
     align: "center",
     gap: "small"
-  }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Add")))), /*#__PURE__*/React.createElement(Grommet, {
+  }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Add"))))), /*#__PURE__*/React.createElement(Grommet, {
     theme: {
       global: {
         font: {
@@ -40,5 +40,5 @@ export var Plain = function Plain() {
   }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Kind"))))));
 };
 export default {
-  title: 'Controls/Button/Plain'
+  title: 'Controls/Button/Custom Themed/Plain'
 };

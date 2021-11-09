@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
-import { data, columns } from './data';
+import { data, columns } from '../data';
 var customTheme = {
   global: {
     font: {
@@ -76,5 +76,5 @@ export var Custom = function Custom() {
   }))))));
 };
 export default {
-  title: 'Visualizations/Table/Custom'
+  title: 'Visualizations/Table/Custom Themed/Custom'
 };

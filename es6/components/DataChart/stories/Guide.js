@@ -16,7 +16,9 @@ export var Guide = function Guide() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={grommet} full>
     React.createElement(Box, {
-      margin: "large",
+      fill: true
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large",
       width: {
         min: 'small',
         max: 'large'
@@ -46,7 +48,7 @@ export var Guide = function Guide() {
         width: 'fill'
       },
       detail: true
-    })) // </Grommet>
+    }))) // </Grommet>
 
   );
 };

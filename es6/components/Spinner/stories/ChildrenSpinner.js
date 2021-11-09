@@ -9,6 +9,8 @@ var FavoriteFilled = styled(Favorite).withConfig({
 })(["path[fill='none']{fill:red;}"]);
 export var Children = function Children() {
   return /*#__PURE__*/React.createElement(Box, {
+    fill: true
+  }, /*#__PURE__*/React.createElement(Box, {
     margin: "large",
     align: "center"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -41,7 +43,7 @@ export var Children = function Children() {
     margin: {
       horizontal: 'small'
     }
-  }, " Loading with LOVE...")));
+  }, " Loading with LOVE..."))));
 };
 export default {
   title: 'Visualizations/Spinner/Children'

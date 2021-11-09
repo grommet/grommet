@@ -9,7 +9,7 @@ var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
 
-var _data = require("./data");
+var _data = require("../data");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76,6 +76,6 @@ var Custom = function Custom() {
 
 exports.Custom = Custom;
 var _default = {
-  title: 'Visualizations/DataTable/Custom'
+  title: 'Visualizations/DataTable/Custom Themed/Custom'
 };
 exports["default"] = _default;

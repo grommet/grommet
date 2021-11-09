@@ -15,7 +15,7 @@ var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: "light-1",
@@ -25,7 +25,7 @@ var Plain = function Plain() {
     direction: "row",
     align: "center",
     gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Add")))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Add"))))), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: {
       global: {
         font: {
@@ -52,6 +52,6 @@ var Plain = function Plain() {
 
 exports.Plain = Plain;
 var _default = {
-  title: 'Controls/Button/Plain'
+  title: 'Controls/Button/Custom Themed/Plain'
 };
 exports["default"] = _default;

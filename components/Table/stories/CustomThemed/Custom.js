@@ -7,7 +7,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _data = require("./data");
+var _data = require("../data");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -89,6 +89,6 @@ var Custom = function Custom() {
 
 exports.Custom = Custom;
 var _default = {
-  title: 'Visualizations/Table/Custom'
+  title: 'Visualizations/Table/Custom Themed/Custom'
 };
 exports["default"] = _default;

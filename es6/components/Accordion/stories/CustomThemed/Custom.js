@@ -88,5 +88,5 @@ export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomAccordion, null);
 };
 export default {
-  title: 'Controls/Accordion/Custom'
+  title: 'Controls/Accordion/Custom Themed/Custom'
 };
