@@ -14,14 +14,20 @@ export const CustomValue = () => (
         <NameValueList>
           {Object.entries(statusData).map(([name, value]) => {
             let icon;
-            if (value === 'Ok')
+            if (
+              value ===
+              'Management for campus, branch, remote, and data center network'
+            )
               icon = <StatusGoodSmall color="green" size="small" />;
             else if (value === 'Critical')
               icon = <StatusCriticalSmall color="red" size="small" />;
             return (
               <NameValuePair key={name} name={name}>
-                <Box align="center" direction="row" gap="xsmall">
-                  {icon}
+                <Box align="start" direction="row" gap="xsmall">
+                  {/* margin-top aligns icon with font line height */}
+                  <Box flex={false} margin={{ top: 'xsmall' }}>
+                    {icon}
+                  </Box>
                   <Text color="text-strong">{value}</Text>
                 </Box>
               </NameValuePair>

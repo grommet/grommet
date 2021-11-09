@@ -19,7 +19,7 @@ export const metricData = {
 };
 
 export const statusData = {
-  Power: 'Ok',
+  Power: 'Management for campus, branch, remote, and data center network',
   Health: 'Critical',
   'Last Serviced': '7/14/2021',
 };
