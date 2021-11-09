@@ -36,20 +36,20 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
       usingKeyboard = _useState2[0],
       setUsingKeyboard = _useState2[1];
 
+  var onMouseDown = function onMouseDown() {
+    return setUsingKeyboard(false);
+  };
+
+  var onKeyDown = function onKeyDown() {
+    return setUsingKeyboard(true);
+  };
+
   (0, _react.useEffect)(function () {
-    document.addEventListener('mousedown', function () {
-      return setUsingKeyboard(false);
-    });
-    document.addEventListener('keydown', function () {
-      return setUsingKeyboard(true);
-    });
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyDown);
     return function () {
-      document.removeEventListener('mousedown', function () {
-        return setUsingKeyboard(false);
-      });
-      document.removeEventListener('keydown', function () {
-        return setUsingKeyboard(true);
-      });
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyDown);
     };
   }, []);
   var componentRef = (0, _refs.useForwardedRef)(tipRef); // In cases the child is a primitive
