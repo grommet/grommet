@@ -18,11 +18,12 @@ exports[`Tag basic 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-left: 4px;
-  padding-right: 4px;
   border-radius: 48px;
 }
 
@@ -35,26 +36,16 @@ exports[`Tag basic 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
 }
 
 .c3 {
@@ -62,7 +53,7 @@ exports[`Tag basic 1`] = `
   line-height: 24px;
 }
 
-.c5 {
+.c4 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
@@ -86,34 +77,21 @@ exports[`Tag basic 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     border-radius: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -129,23 +107,17 @@ exports[`Tag basic 1`] = `
       <span
         class="c3"
       >
-        Name
-      </span>
-      <div
-        class="c4"
-      />
-      <span
-        class="c3"
-      >
-        :
-      </span>
-      <div
-        class="c4"
-      />
-      <span
-        class="c5"
-      >
-        Value
+        <span
+          class="c3"
+        >
+          Name
+        </span>
+         : 
+        <span
+          class="c4"
+        >
+          Value
+        </span>
       </span>
     </div>
   </div>
@@ -162,19 +134,24 @@ exports[`Tag onClick 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
 .c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
@@ -196,11 +173,6 @@ exports[`Tag onClick 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c1:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c1:focus {
@@ -256,21 +228,19 @@ exports[`Tag onClick 1`] = `
 .c2 {
   border: solid 1px rgba(0,0,0,0.33);
   border-radius: 48px;
-  padding-left: 4px;
-  padding-right: 4px;
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -291,7 +261,6 @@ exports[`Tag onClick 1`] = `
 >
   <button
     class="c1 c2"
-    direction="row"
     type="button"
   >
     <div
@@ -300,7 +269,12 @@ exports[`Tag onClick 1`] = `
       <span
         class="c4"
       >
-        Test
+        
+        <span
+          class="c5"
+        >
+          Test
+        </span>
       </span>
     </div>
   </button>
@@ -308,7 +282,7 @@ exports[`Tag onClick 1`] = `
 `;
 
 exports[`Tag onRemove 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -319,25 +293,25 @@ exports[`Tag onRemove 1`] = `
   stroke: #666666;
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -359,11 +333,12 @@ exports[`Tag onRemove 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-left: 4px;
-  padding-right: 4px;
   border-radius: 48px;
 }
 
@@ -376,14 +351,14 @@ exports[`Tag onRemove 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -391,10 +366,15 @@ exports[`Tag onRemove 1`] = `
 .c3 {
   font-size: 18px;
   line-height: 24px;
-  font-weight: 600;
 }
 
 .c4 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -405,6 +385,7 @@ exports[`Tag onRemove 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  margin-right: 6px;
   color: inherit;
   outline: none;
   border: none;
@@ -413,48 +394,43 @@ exports[`Tag onRemove 1`] = `
   line-height: 0;
 }
 
-.c4:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -468,7 +444,7 @@ exports[`Tag onRemove 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c6 {
   border-radius: 48px;
 }
 
@@ -480,33 +456,26 @@ exports[`Tag onRemove 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     border-radius: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-radius: 24px;
   }
 }
@@ -523,16 +492,21 @@ exports[`Tag onRemove 1`] = `
       <span
         class="c3"
       >
-        Test
+        
+        <span
+          class="c4"
+        >
+          Test
+        </span>
       </span>
     </div>
     <button
-      class="c4 c5"
+      class="c5 c6"
       type="button"
     >
       <svg
         aria-label="FormClose"
-        class="c6"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <path

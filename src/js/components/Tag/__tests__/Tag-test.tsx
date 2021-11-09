@@ -1,7 +1,7 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
-// import userEvent from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -54,7 +54,7 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    fireEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button'));
     expect(onClick).toBeCalled();
 
     expect(container.firstChild).toMatchSnapshot();
@@ -68,7 +68,7 @@ describe('Tag', () => {
       </Grommet>,
     );
 
-    fireEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button'));
     expect(onRemove).toBeCalled();
 
     expect(container.firstChild).toMatchSnapshot();

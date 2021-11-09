@@ -1338,6 +1338,15 @@ export interface ThemeType {
       };
     };
   };
+  tag?: {
+    border?: BorderType;
+    round?: RoundType;
+    name?: TextProps;
+    pad?: PadType;
+    remove?: ButtonType;
+    separator?: string;
+    value?: TextProps;
+  };
   text?: {
     extend?: ExtendType;
     xsmall?: {

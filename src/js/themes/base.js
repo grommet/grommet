@@ -1463,56 +1463,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     tag: {
-      size: {
-        /*
-        small: {
-          border: {
-            radius: `${baseSpacing * 0.75}px`,
-          },
-          pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
-            horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
-          },
-        },
-        medium: {
-          border: {
-            radius: `${baseSpacing * 0.75}px`, // 18px
-          },
-          pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
-            horizontal: `${baseSpacing - borderWidth}px`, // 22px
-          },
-        },
-        large: {
-          border: {
-            radius: `${baseSpacing}px`, // 24px
-          },
-          pad: {
-            vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
-            horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
-          },
-        }, 
-        */
-      },
-      container: {
-        align: 'center',
-        border: true,
-        direction: 'row',
-        round: 'large',
-        pad: {
-          horizontal: `${baseSpacing / 4 - borderWidth}px`,
-        },
-      },
-      gap: 'xsmall',
+      // background: undefined,
+      border: true,
+      round: 'large',
       name: { },
-      padding: {
-        vertical: `${baseSpacing / 3 - borderWidth}px`,
-        horizontal: `${baseSpacing / 2 - borderWidth}px`,
+      pad: {  
+        horizontal: 'small',
+        vertical: 'xsmall',
       },
       remove: {
-        round: 'large',
+        margin: { right: 'xsmall'},
       },
-      separator: ':',
+      separator: ' : ',
       value: {
         weight: 600,
       },

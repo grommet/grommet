@@ -13,10 +13,6 @@ export interface TagProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  margin?: MarginType;
-  background?: BackgroundType;
-  // focusIndicator?: boolean;
-  // hoverIndicator?: BackgroundType | boolean;
   name?: string;
   value: string | number;
   onClick?: (...args: any[]) => any;
@@ -25,13 +21,10 @@ export interface TagProps {
   as?: PolymorphicType;
 }
 
-// type tagType = Omit<JSX.IntrinsicElements['button'], 'color'>;
-// type extendType = tagType;
-
-export interface TagExtendedProps extends TagProps/*, extendType */{}
+export interface TagExtendedProps extends TagProps {}
 
 // Keep type alias for backwards compatibility.
-export type TagType = TagProps; // & extendType;
+export type TagType = TagProps;
 
 declare const Tag: React.FC<
   TagExtendedProps

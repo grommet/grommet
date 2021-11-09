@@ -15,22 +15,32 @@ const Tag = forwardRef(
   ({ name, value, onRemove, onClick, ...rest }, ref) => {
 
     const theme = useContext(ThemeContext) || defaultProps.theme;
-
+    
+    const containerProps = {
+      ref,
+      align: 'center',
+      background: theme.tag.background,
+      border: theme.tag.border,
+      round: theme.tag.round,
+      ...rest,
+    };
     const contents = (
-      <Box
-        flex={false}
-        pad={theme.tag.padding}
-        direction="row"
-        gap={theme.tag.gap}
-      >
-        {name && <Text {...theme.tag.name}>{name}</Text>}
-        {name && value && <Text>{theme.tag.separator}</Text>}
-        {value && <Text {...theme.tag.value}>{value}</Text>}
+      <Box width={{ min: 'min-content' }} pad={theme.tag.pad}>
+        <Text>
+          {name && <Text {...theme.tag.name}>{name}</Text>}
+          {name && value ? theme.tag.separator : '' }
+          {value && <Text {...theme.tag.value}>{value}</Text>}
+        </Text>
       </Box>
     );
 
     return onRemove || !onClick ? (
-      <Box flex={false} ref={ref} {...theme.tag.container} {...rest}>
+      <Box 
+        flex={false} 
+        direction="row"
+        width={{ min: 'min-content'}}
+        {...containerProps}
+      >
         {contents}
         {onRemove && (
           <StyledRemoveButton
@@ -39,20 +49,19 @@ const Tag = forwardRef(
             hoverIndicator
             focusIndicator
             icon={<FormClose />}
-            {...theme.tag.remove}
+            round={theme.tag.round}
+            {...theme.tag.remove} 
           />
         )}
       </Box>
     ) : (
       <StyledTagButton
-        ref={ref}
+        flex={false}
         plain
         onClick={onClick} 
         hoverIndicator
         focusIndicator
-        flex={false}
-        {...theme.tag.container}
-        {...rest}
+        {...containerProps}
       >
         {contents}
       </StyledTagButton>

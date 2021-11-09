@@ -2058,26 +2058,19 @@ Object {
           "panel": Object {},
         },
         "tag": Object {
-          "container": Object {
-            "align": "center",
-            "border": true,
-            "direction": "row",
-            "pad": Object {
-              "horizontal": "4px",
-            },
-            "round": "large",
-          },
-          "gap": "xsmall",
+          "border": true,
           "name": Object {},
-          "padding": Object {
-            "horizontal": "10px",
-            "vertical": "6px",
+          "pad": Object {
+            "horizontal": "small",
+            "vertical": "xsmall",
           },
           "remove": Object {
-            "round": "large",
+            "margin": Object {
+              "right": "xsmall",
+            },
           },
-          "separator": ":",
-          "size": Object {},
+          "round": "large",
+          "separator": " : ",
           "value": Object {
             "weight": 600,
           },
@@ -2350,7 +2343,6 @@ Object {
       "a11yTitle": [Function],
       "alignSelf": [Function],
       "as": [Function],
-      "background": [Function],
       "gridArea": [Function],
       "margin": [Function],
       "name": [Function],

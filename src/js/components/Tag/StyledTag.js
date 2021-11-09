@@ -2,21 +2,13 @@ import styled from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { borderStyle, edgeStyle, roundStyle } from '../../utils';
+import { borderStyle, roundStyle } from '../../utils';
 
 import { Button } from '../Button';
 
 export const StyledTagButton = styled(Button)`
   ${props => props.border && borderStyle(props.border, true, props.theme)}
   ${props => props.round && roundStyle(props.round, true, props.theme)}
-  ${(props) => props.pad &&
-    edgeStyle(
-      'padding',
-      props.pad,
-      props.responsive,
-      props.theme.box.responsiveBreakpoint,
-      props.theme,
-    )}
 `;
 
 StyledTagButton.defaultProps = {};
