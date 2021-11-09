@@ -5,7 +5,7 @@ import { Blank } from 'grommet-icons';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-import { columns, DATA } from './data';
+import { columns, DATA } from '../data';
 
 const SortableIcon = () => (
   <Blank color="text-xweak" opacity="0.3">
@@ -26,7 +26,8 @@ const customTheme = {
     header: {
       color: 'text-strong',
       extend: ({ column, sort, sortable }) => `
-          ${sortable &&
+          ${
+            sortable &&
             sort &&
             sort.property !== column &&
             `
@@ -35,7 +36,8 @@ const customTheme = {
                   opacity: 100%;
                 }
               }
-            `}
+            `
+          }
          `,
     },
     icons: {
@@ -65,5 +67,5 @@ export const Custom = () => {
 };
 
 export default {
-  title: 'Visualizations/DataTable/Custom',
+  title: 'Visualizations/DataTable/Custom Themed/Custom',
 };
