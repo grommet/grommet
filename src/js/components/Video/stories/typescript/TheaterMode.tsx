@@ -46,6 +46,10 @@ export const CustomizableControls = () => <TheaterMode />;
 
 CustomizableControls.storyName = 'Theater mode';
 
+CustomizableControls.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Media/Video/Theater mode',
 };
