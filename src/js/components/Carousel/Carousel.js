@@ -1,4 +1,10 @@
-import React, { Children, useRef, useState, useEffect } from 'react';
+import React, {
+  Children,
+  useRef,
+  useContext,
+  useState,
+  useEffect,
+} from 'react';
 import { CarouselChild } from './CarouselChild';
 import { CarouselControls } from './CarouselControls';
 import {
@@ -7,8 +13,10 @@ import {
 } from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
 import { Keyboard } from '../Keyboard';
+import { ThemeContext } from '../../contexts';
+import { defaultProps } from '../../default-props';
 
-const handleOnControlNavigation =
+const handleSelectorNavigation =
   ({ setDirection, setCurrent, setInTransition, setPrevious, onChild }) =>
   (current, index, inTransition) => {
     if (current === index) return;
@@ -18,6 +26,26 @@ const handleOnControlNavigation =
     setPrevious(current);
     setCurrent(index);
     onChild(index);
+  };
+
+const handleControlledNavigation =
+  ({
+    setCurrent,
+    setPrevious,
+    setDirection,
+    setInTransition,
+    setActiveChildState,
+    onChild,
+  }) =>
+  (current, activeChild, activeChildState) => {
+    if (activeChild === activeChildState) return;
+    if (activeChild === current) return;
+    setDirection(activeChild > current ? 'next' : 'previous');
+    setInTransition(true);
+    setPrevious(current);
+    setCurrent(activeChild);
+    setActiveChildState(activeChild);
+    onChild(activeChild);
   };
 
 const handleOnNext =
@@ -71,22 +99,39 @@ const Carousel = ({
   play,
   ...rest
 }) => {
-  const noContainer = !fill && (!height || !width);
-  const numSlides = children.length;
   const firstChildRef = useRef(null);
-  const [current, setCurrent] = useState(initialChild);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
+  const numSlides = children.length;
+  const noContainer = !fill && (!height || !width);
+  const animationDuration =
+    play && play < theme.carousel.animation.duration
+      ? play
+      : theme.carousel.animation.duration;
+
+  const [current, setCurrent] = useState(activeChild || initialChild);
   const [previous, setPrevious] = useState(undefined);
+  const [activeChildState, setActiveChildState] = useState(activeChild);
+  const [direction, setDirection] = useState(undefined);
+  const [inTransition, setInTransition] = useState(false);
   const [containerProps, setContainerProps] = useState({
     heightProp: height,
     widthProp: width,
   });
-  const [direction, setDirection] = useState(undefined);
-  const [inTransition, setInTransition] = useState(false);
-  const onControlNavigation = handleOnControlNavigation({
+
+  const onSelectorNavigation = handleSelectorNavigation({
     setDirection,
     setCurrent,
     setPrevious,
     setInTransition,
+    onChild,
+  });
+  const onControlledNavigation = handleControlledNavigation({
+    setDirection,
+    setCurrent,
+    setPrevious,
+    setInTransition,
+    setActiveChildState,
     onChild,
   });
   const onNext = handleOnNext({
@@ -142,11 +187,10 @@ const Carousel = ({
     if (inTransition) {
       transitionTimer = setTimeout(() => {
         setInTransition(false);
-        // Animation duration based on manual testing with designer
-      }, 600);
+      }, animationDuration);
     }
     return () => clearTimeout(transitionTimer);
-  }, [inTransition, setInTransition]);
+  }, [inTransition, setInTransition, animationDuration]);
 
   // Handles auto-playing Carousel slides
   useEffect(() => {
@@ -159,13 +203,10 @@ const Carousel = ({
     return () => clearTimeout(playTimer);
   }, [current, inTransition, play, onNext]);
 
-  // Allows Carousel slides to be controlled outside the component
+  // Allow Carousel slides to be controlled outside the component
   useEffect(() => {
-    if (activeChild !== undefined && activeChild !== current) {
-      onControlNavigation(current, activeChild, false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeChild]);
+    onControlledNavigation(current, activeChild, activeChildState);
+  }, [onControlledNavigation, current, activeChild, activeChildState]);
 
   // Handles when there is only one child
   if (numSlides === undefined)
@@ -174,7 +215,10 @@ const Carousel = ({
   return (
     <Keyboard
       onLeft={() => onPrevious(current, inTransition)}
-      onRight={() => onNext(current, inTransition)}
+      onRight={() => {
+        console.log('onRight');
+        onNext(current, inTransition);
+      }}
     >
       <StyledCarouselContainer {...containerProps} {...rest}>
         <StyledCarouselInnerContainer>
@@ -186,11 +230,12 @@ const Carousel = ({
             onNext={onNext}
             numSlides={numSlides}
             onPrevious={onPrevious}
-            onJumpNavigation={onControlNavigation}
+            onJumpNavigation={onSelectorNavigation}
           />
           {Children.map(children, (child, index) => (
             <CarouselChild
               index={index}
+              animationDuration={animationDuration}
               ref={index === current ? firstChildRef : null}
               current={current}
               previous={previous}

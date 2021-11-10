@@ -26,7 +26,9 @@ const StyledCarouselChild = styled.div`
   animation: ${(props) =>
     props.animation
       ? css`
-          ${props.animation} 0.6s ease-in-out
+          ${props.animation}
+          ${props.animationDuration / 1000}s
+        ease-in-out
         `
       : `none`};
 `;

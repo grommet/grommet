@@ -9,46 +9,42 @@ import {
 import { CarouselChildPropTypes } from './propTypes';
 
 const CarouselChild = forwardRef(
-  ({ children, index, current, previous, direction }, ref) => {
+  (
+    { animationDuration, children, index, current, previous, direction },
+    ref,
+  ) => {
     const [animation, setAnimation] = useState(undefined);
     const [display, setDisplay] = useState(
       current === index ? 'block' : 'none',
     );
 
+    // Handles setting the appropriate display and animation for the child
     useEffect(() => {
+      let animationTimer;
+
       // Previous is only undefined on initialization. This tells the component:
       // on mount, do not render the first slide with an animation.
-      if (previous === undefined) return;
+      if (previous === undefined) return animationTimer;
+      if (index !== current && index !== previous) return animationTimer;
 
-      // If the child is not the current slide or the previous slide then it
-      // does not need an animation and should remain hidden.
-      if (index !== current && index !== previous) return;
-
-      /**
-       * If child is the new current slide of the Carousel set
-       * display to block and determine the direction of the transition.
-       * Depending on the direction apply the correct animation (RTL or LTR).
-       *
-       * If child is the previous slide of the Carousel set
-       * display to none after the transition animation completes. Depending on
-       * the direction apply the correct animation (RTL or LTR).
-       */
       if (index === current) {
         setDisplay('block');
         if (direction === 'next') setAnimation(slideLeftCurrent);
         else setAnimation(slideRightCurrent);
       } else {
-        setTimeout(() => {
+        animationTimer = setTimeout(() => {
           setDisplay('none');
-          // Animation duration based on manual testing with designer
-        }, 600);
+        }, animationDuration);
         if (direction === 'next') setAnimation(slideLeftPrevious);
         else setAnimation(slideRightPrevious);
       }
-    }, [current, direction, index, previous]);
+
+      return () => clearTimeout(animationTimer);
+    }, [current, direction, index, previous, animationDuration]);
 
     return (
       <StyledCarouselChild
+        animationDuration={animationDuration}
         animation={animation}
         displayProp={display}
         ref={ref}

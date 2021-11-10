@@ -12,8 +12,10 @@ export const ControlVariations = () => (
       gap="small"
       justify="center"
     >
-      <Text size="small">Both arrow and selector controls</Text>
-      <Carousel height="400px" width="400px">
+      <Text size="small">
+        Continuous slides with both arrow and selector controls
+      </Text>
+      <Carousel continuous height="400px" width="400px">
         <Box fill align="center" justify="center" background="accent-1">
           <Attraction size="xlarge" />
         </Box>

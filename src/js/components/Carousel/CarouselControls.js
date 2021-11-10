@@ -4,6 +4,7 @@ import { CarouselControlsPropTypes } from './propTypes';
 import { Button } from '../Button';
 import { ThemeContext } from '../../contexts';
 import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const CarouselControls = ({
   controls,

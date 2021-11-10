@@ -7,11 +7,15 @@ import {
   FastForward,
   TreeOption,
 } from 'grommet-icons';
+import { ThemeType } from 'grommet/themes';
 import { Box, Grommet } from 'grommet';
 import { Carousel } from '../../Carousel';
 
-const theme = {
+const customTheme: ThemeType = {
   carousel: {
+    animation: {
+      duration: 500,
+    },
     icons: {
       color: 'orange',
       current: RadialSelected,
@@ -22,7 +26,7 @@ const theme = {
 };
 
 export const Icons = () => (
-  <Grommet theme={theme}>
+  <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Carousel controls>
         <Box pad="xlarge" background="accent-1">

@@ -154,7 +154,7 @@ describe('Carousel', () => {
 
     expect(getSlideOne()).toBeVisible();
     await act(async () => {
-      jest.advanceTimersByTime(800);
+      jest.advanceTimersByTime(1200);
     });
     await waitFor(() => {
       expect(getSlideOne()).not.toBeVisible();
@@ -177,10 +177,13 @@ describe('Carousel', () => {
       keyCode: 37,
       which: 37,
     });
-    await waitFor(() => {
-      expect(getSlideTwo()).not.toBeVisible();
-      expect(getSlideOne()).toBeVisible();
-    });
+    await waitFor(
+      () => {
+        expect(getSlideTwo()).not.toBeVisible();
+        expect(getSlideOne()).toBeVisible();
+      },
+      { timeout: 1200 },
+    );
   });
 
   test('keyboard: right arrow', async () => {
@@ -198,17 +201,19 @@ describe('Carousel', () => {
       keyCode: 39,
       which: 39,
     });
-    await waitFor(() => {
-      expect(getSlideOne()).not.toBeVisible();
-      expect(getSlideTwo()).toBeVisible();
-    });
+    await waitFor(
+      () => {
+        expect(getSlideOne()).not.toBeVisible();
+        expect(getSlideTwo()).toBeVisible();
+      },
+      { timeout: 1200 },
+    );
   });
 
   test('controlled component', async () => {
-    const setActiveSlide = jest.fn();
     const { asFragment } = render(
       <Grommet>
-        <Carousel controls="arrows" activeChild={1} onChild={setActiveSlide}>
+        <Carousel controls="arrows" activeChild={1}>
           <div>Slide One</div>
           <div>Slide Two</div>
         </Carousel>
@@ -216,7 +221,8 @@ describe('Carousel', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
-    expect(setActiveSlide).toHaveBeenCalledWith(1);
+    expect(getSlideOne()).not.toBeVisible();
+    expect(getSlideTwo()).toBeVisible();
   });
 
   test('interactive slide', async () => {

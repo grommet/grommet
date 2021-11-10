@@ -616,9 +616,9 @@ exports[`Carousel controlled component 1`] = `
   height: 100%;
   float: left;
   margin-right: -100%;
-  display: block;
-  -webkit-animation: iqtfUG 0.6s ease-in-out;
-  animation: iqtfUG 0.6s ease-in-out;
+  display: none;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c11 {
@@ -628,8 +628,8 @@ exports[`Carousel controlled component 1`] = `
   float: left;
   margin-right: -100%;
   display: block;
-  -webkit-animation: fDGZkn 0.6s ease-in-out;
-  animation: fDGZkn 0.6s ease-in-out;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c5 {
@@ -658,68 +658,6 @@ exports[`Carousel controlled component 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-  height: 100%;
-  line-height: 0;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c6 {
@@ -784,6 +722,68 @@ exports[`Carousel controlled component 1`] = `
 }
 
 .c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 

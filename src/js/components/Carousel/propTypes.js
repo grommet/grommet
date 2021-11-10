@@ -22,6 +22,7 @@ export const CarouselPropTypes = CarouselPropType;
 let CarouselChildPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselChildPropType = {
+    animationDuration: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     current: PropTypes.number.isRequired,
     previous: PropTypes.number,
