@@ -11,6 +11,11 @@ import { groupColumns, locations, DATA } from './data';
 // The key of the header selection state in groupBy.select
 // Other keys in groupBy.select will be group id's.
 const HEADER_KEY = '';
+const SELECTED = {
+  none: 'none', 
+  some: 'some',
+  all: 'all'
+};
 
 const expandable = [...locations];
 
@@ -56,7 +61,7 @@ const calcHeaderSelected = (nextGroupSelected, selected) => {
   groups.forEach(group => {
     if (group.members.length > 0) {
       if (group.id) {
-        const selectedValue = nextGroupSelected[group.id] || 'none';
+        const selectedValue = nextGroupSelected[group.id] || SELECTED.none;
         totals[selectedValue] += 1;
       }
       else {
@@ -74,13 +79,13 @@ const calcHeaderSelected = (nextGroupSelected, selected) => {
     }
   });
 
-  let headerSelected = 'all';
+  let headerSelected = SELECTED.all;
 
   if (totals.all === 0 && totals.some === 0) {
-    headerSelected = 'none';
+    headerSelected = SELECTED.none;
   }
   else if (totals.some > 0 || (totals.all > 0 && totals.none > 0)) {
-    headerSelected = 'some';
+    headerSelected = SELECTED.some;
   }
   
   return { ...nextGroupSelected, [HEADER_KEY]: headerSelected }; 
@@ -159,11 +164,11 @@ export const OnUpdateDataTable = () => {
       const memberKeys = groupMap[row.location].members.map(({id}) => id);
       const selectedMembers = selected.filter((s) => memberKeys.includes(s));
       if (selectedMembers.length === 0) {
-        groupUpdates[row.location] = 'none';
+        groupUpdates[row.location] = SELECTED.none;
       } else if (selectedMembers.length === memberKeys.length) {
-        groupUpdates[row.location] = 'all';
+        groupUpdates[row.location] = SELECTED.all;
       } else {
-        groupUpdates[row.location] = 'some';
+        groupUpdates[row.location] = SELECTED.some;
       }
     }
     setGroupSelected(prev => 
@@ -181,11 +186,12 @@ export const OnUpdateDataTable = () => {
       nextGroupSelected = { ...groupSelected };
       nextSelected = selected.filter((s) => !memberKeys.includes(s));
 
-      if (groupSelected[row.id] === 'some' || groupSelected[row.id] === 'all') {
-        nextGroupSelected[row.id] = 'none';
+      if (groupSelected[row.id] === SELECTED.some ||
+        groupSelected[row.id] === SELECTED.all) {
+        nextGroupSelected[row.id] = SELECTED.none;
       } else {
         nextSelected = [...nextSelected, ...memberKeys ];
-        nextGroupSelected[row.id] = 'all'; 
+        nextGroupSelected[row.id] = SELECTED.all; 
       }
 
       nextGroupSelected = calcHeaderSelected(nextGroupSelected, nextSelected);
@@ -193,17 +199,17 @@ export const OnUpdateDataTable = () => {
     else {
       // The header was selected/deselected
       nextGroupSelected = {};
-      if (groupBySelected[HEADER_KEY] === 'all') {
+      if (groupBySelected[HEADER_KEY] === SELECTED.all) {
         // add all groups and keys
         groups.forEach(({id, members}) => {
           if (members.length > 0) {
             if (id) {
-              nextGroupSelected[id] = 'all';
+              nextGroupSelected[id] = SELECTED.all;
             }
             nextSelected.push(...members.map(datum => datum.id));
           }
         });
-        nextGroupSelected[HEADER_KEY] = 'all'; 
+        nextGroupSelected[HEADER_KEY] = SELECTED.all; 
       }
       else {
         nextSelected = [];
