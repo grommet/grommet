@@ -7,6 +7,8 @@ export const Controlled = () => {
   const [activeSlide, setActiveSlide] = React.useState(0);
 
   return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
     <Box align="center" pad="large" gap="small">
       <Text size="small">{`Active Slide: ${activeSlide}`}</Text>
       <Box direction="row" gap="small" align="center">
@@ -35,6 +37,7 @@ export const Controlled = () => {
         </Box>
       </Carousel>
     </Box>
+    // </Grommet>
   );
 };
 Controlled.parameters = {

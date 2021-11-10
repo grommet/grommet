@@ -4,6 +4,8 @@ import { Box } from 'grommet';
 import { Carousel } from '../Carousel';
 
 export const Simple = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
   <Box align="center" pad="large">
     <Carousel controls>
       <Box pad="xlarge" background="accent-1">
@@ -17,6 +19,7 @@ export const Simple = () => (
       </Box>
     </Carousel>
   </Box>
+  // </Grommet>
 );
 
 Simple.parameters = {

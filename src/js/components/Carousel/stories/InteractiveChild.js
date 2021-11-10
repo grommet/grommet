@@ -3,6 +3,8 @@ import { Text, Button, Box } from 'grommet';
 import { Carousel } from '../Carousel';
 
 export const InteractiveSlides = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
   <Box align="center" pad="large">
     <Carousel controls="arrows" height="medium" width="medium">
       <Box
@@ -46,6 +48,7 @@ export const InteractiveSlides = () => (
       </Box>
     </Carousel>
   </Box>
+  // </Grommet>
 );
 
 InteractiveSlides.storyName = 'Interactive slides';

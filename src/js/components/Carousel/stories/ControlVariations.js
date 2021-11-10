@@ -4,6 +4,8 @@ import { Box, Text } from 'grommet';
 import { Carousel } from '../Carousel';
 
 export const ControlVariations = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
   <Box direction="row" align="center" justify="center" fill="horizontal">
     <Box
       height="500px"
@@ -93,6 +95,7 @@ export const ControlVariations = () => (
       </Carousel>
     </Box>
   </Box>
+  // </Grommet>
 );
 
 ControlVariations.storyName = 'Control variations';

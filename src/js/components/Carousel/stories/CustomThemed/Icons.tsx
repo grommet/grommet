@@ -11,6 +11,8 @@ import { ThemeType } from 'grommet/themes';
 import { Box, Grommet } from 'grommet';
 import { Carousel } from '../../Carousel';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const customTheme: ThemeType = {
   carousel: {
     animation: {

@@ -5,6 +5,8 @@ import { Text, Box } from 'grommet';
 import { Carousel } from '../Carousel';
 
 export const Autoplay = () => (
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
   <Box gap="medium" align="center" pad="large">
     <Text size="small">
       The Carousel slides will transition every 3 seconds
@@ -21,6 +23,7 @@ export const Autoplay = () => (
       </Box>
     </Carousel>
   </Box>
+  // </Grommet>
 );
 
 export default {
