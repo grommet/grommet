@@ -162,7 +162,7 @@ describe('Carousel', () => {
     });
   });
 
-  test('keyboard: right arrow', async () => {
+  test('keyboard: left arrow', async () => {
     render(
       <Grommet>
         <Carousel initialChild={1} a11yTitle="test-carousel">
