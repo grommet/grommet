@@ -1151,7 +1151,18 @@ export interface ThemeType {
     };
   };
   nameValueList?: {
-    gap?: { row?: GapType; column?: GapType };
+    gap?: {
+      column?: GapType;
+      row?: GapType;
+    };
+    pair?: {
+      column?: {
+        gap?: {
+          column?: GapType;
+          row?: GapType;
+        };
+      };
+    };
     name?: {
       width: string;
     };

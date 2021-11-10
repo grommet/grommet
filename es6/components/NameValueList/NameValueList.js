@@ -10,6 +10,8 @@ import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
 var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$nameValueList$, _theme$nameValueList$2;
+
   var align = _ref.align,
       _ref$layout = _ref.layout,
       layout = _ref$layout === void 0 ? 'column' : _ref$layout,
@@ -33,6 +35,12 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     count: 'fit',
     size: ['auto', valueWidth]
   };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, valueWidth];else columns = [valueWidth];
+  var gap = theme.nameValueList.gap;
+
+  if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$2 = _theme$nameValueList$.column) != null && _theme$nameValueList$2.gap) {
+    gap = theme.nameValueList.pair.column.gap;
+  }
+
   return /*#__PURE__*/React.createElement(NameValueListContext.Provider, {
     value: {
       nameProps: nameProps,
@@ -43,7 +51,7 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     as: "dl",
     ref: ref,
     columns: columns,
-    gap: theme.nameValueList.gap,
+    gap: gap,
     fill: layout === 'grid',
     margin: "none" // override browser default margin for dl
 

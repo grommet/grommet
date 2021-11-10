@@ -1146,6 +1146,14 @@ export var generate = function generate(baseSpacing, scale) {
         column: 'large',
         row: 'small'
       },
+      pair: {
+        column: {
+          gap: {
+            column: 'large',
+            row: 'medium'
+          }
+        }
+      },
       name: {
         width: 'small'
       },
