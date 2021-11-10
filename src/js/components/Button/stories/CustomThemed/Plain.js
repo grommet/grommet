@@ -6,16 +6,18 @@ import { Box, Button, Grommet, Text } from 'grommet';
 
 export const Plain = () => (
   <Box pad="large" gap="large">
-    {/* Out of the Box Button */}
-    <Box align="center">
-      <Button hoverIndicator="light-1" onClick={() => {}}>
-        {/*  When Button include children, it is treated as plain */}
-        <Box pad="small" direction="row" align="center" gap="small">
-          <Add />
-          <Text>Add</Text>
-        </Box>
-      </Button>
-    </Box>
+    <Grommet>
+      {/* Out of the Box Button */}
+      <Box align="center">
+        <Button hoverIndicator="light-1" onClick={() => {}}>
+          {/*  When Button include children, it is treated as plain */}
+          <Box pad="small" direction="row" align="center" gap="small">
+            <Add />
+            <Text>Add</Text>
+          </Box>
+        </Button>
+      </Box>
+    </Grommet>
     {/* Kind Button */}
     <Grommet
       theme={{
@@ -41,5 +43,5 @@ export const Plain = () => (
 );
 
 export default {
-  title: 'Controls/Button/Plain',
+  title: 'Controls/Button/Custom Themed/Plain',
 };
