@@ -18,7 +18,7 @@ const CarouselChild = forwardRef(
       current === index ? 'block' : 'none',
     );
 
-    // Handles setting the appropriate display and animation for the child
+    // Handles setting the appropriate display and animation for the slide
     useEffect(() => {
       let animationTimer;
 

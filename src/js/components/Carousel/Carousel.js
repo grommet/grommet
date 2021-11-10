@@ -215,10 +215,7 @@ const Carousel = ({
   return (
     <Keyboard
       onLeft={() => onPrevious(current, inTransition)}
-      onRight={() => {
-        console.log('onRight');
-        onNext(current, inTransition);
-      }}
+      onRight={() => onNext(current, inTransition)}
     >
       <StyledCarouselContainer {...containerProps} {...rest}>
         <StyledCarouselInnerContainer>
