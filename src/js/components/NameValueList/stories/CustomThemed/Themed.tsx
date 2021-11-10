@@ -14,8 +14,8 @@ const customTheme: ThemeType = deepMerge(grommet, {
           column: 'large',
           row: 'small',
         },
-      }
-    }
+      },
+    },
   },
   nameValuePair: {
     name: {
@@ -46,5 +46,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Themed',
+  title: 'Visualizations/NameValueList/Custom Themed/TS-Custom',
 };
