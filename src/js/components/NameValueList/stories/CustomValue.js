@@ -25,7 +25,7 @@ export const CustomValue = () => (
               icon = <StatusCriticalSmall color="red" size="small" />;
             return (
               <NameValuePair key={name} name={name}>
-                <Box align="start" direction="row" gap="xsmall">
+                <Box align="center" direction="row" gap="xsmall">
                   {icon}
                   <Text color="text-strong">{value}</Text>
                 </Box>
