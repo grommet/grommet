@@ -8,10 +8,14 @@ import { data } from '../data';
 // Remove ': ThemeType' if you are not using Typescript.
 const customTheme: ThemeType = deepMerge(grommet, {
   nameValueList: {
-    gap: {
-      column: 'large',
-      row: 'small',
-    },
+    pair: {
+      column: {
+        gap: {
+          column: 'large',
+          row: 'small',
+        },
+      }
+    }
   },
   nameValuePair: {
     name: {
