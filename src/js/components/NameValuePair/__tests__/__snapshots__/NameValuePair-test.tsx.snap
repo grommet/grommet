@@ -170,18 +170,19 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
   grid-gap: 24px 48px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
-}
-
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -281,18 +282,19 @@ exports[`NameValuePair should render value when provided as child of type
   grid-gap: 24px 48px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: bold;
-}
-
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -423,6 +425,7 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c3 {
+  margin-bottom: 3px;
   font-size: 18px;
   line-height: 24px;
   color: #444444;

@@ -1067,6 +1067,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     nameValuePair: {
+      column: {
+        gap: 'xxsmall',
+      },
       name: {
         // any text props
         color: 'text',
