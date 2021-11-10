@@ -1682,6 +1682,9 @@ Object {
           },
         },
         "nameValuePair": Object {
+          "column": Object {
+            "gap": "xxsmall",
+          },
           "name": Object {
             "color": "text",
             "weight": "bold",
