@@ -8,6 +8,14 @@ const StyledCarouselContainer = styled(Box)`
   ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
 `;
 
+const StyledCarouselInnerContainer = styled(Box)`
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+`;
+
 const StyledCarouselChild = styled.div`
   position: relative;
   width: 100%;
@@ -26,12 +34,12 @@ const StyledCarouselChild = styled.div`
 const StyledControl = styled(Box)`
   position: absolute;
   z-index: 1;
-  ${(props) => `${props.offset}: 0;`}
-  align-items: center';
+  ${(props) => `${props.offsetProp}: 0;`}
+  align-items: center;
   justify-content: center;
 `;
 
-// Slide Left = Previous or Backward
+// Slide Right = Previous or Backward
 const slideRightPrevious = keyframes`
   0% {transform: translateX(0%)}
   100% {transform: translateX(100%)}
@@ -56,6 +64,7 @@ const slideLeftCurrent = keyframes`
 export {
   StyledControl,
   StyledCarouselContainer,
+  StyledCarouselInnerContainer,
   StyledCarouselChild,
   slideLeftCurrent,
   slideLeftPrevious,

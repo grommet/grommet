@@ -8,7 +8,11 @@ if (process.env.NODE_ENV !== 'production') {
     activeChild: PropTypes.number,
     initialChild: PropTypes.number,
     fill: PropTypes.bool,
-    controls: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    continuous: PropTypes.bool,
+    controls: PropTypes.oneOfType([
+      PropTypes.oneOf(['arrows', 'selectors']),
+      PropTypes.bool,
+    ]),
     onChild: PropTypes.func,
     play: PropTypes.number,
   };
@@ -30,8 +34,11 @@ let CarouselControlsPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselControlsPropType = {
     current: PropTypes.number.isRequired,
-    controls: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-      .isRequired,
+    continuous: PropTypes.bool.isRequired,
+    controls: PropTypes.oneOfType([
+      PropTypes.oneOf(['arrows', 'selectors']),
+      PropTypes.bool,
+    ]).isRequired,
     numSlides: PropTypes.number.isRequired,
     inTransition: PropTypes.bool.isRequired,
     onNext: PropTypes.func.isRequired,

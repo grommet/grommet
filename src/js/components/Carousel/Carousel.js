@@ -1,11 +1,14 @@
 import React, { Children, useRef, useState, useEffect } from 'react';
 import { CarouselChild } from './CarouselChild';
 import { CarouselControls } from './CarouselControls';
-import { StyledCarouselContainer } from './StyledCarousel';
+import {
+  StyledCarouselContainer,
+  StyledCarouselInnerContainer,
+} from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
 import { Keyboard } from '../Keyboard';
 
-const handleOnJumpNavigation =
+const handleOnControlNavigation =
   ({ setDirection, setCurrent, setInTransition, setPrevious, onChild }) =>
   (current, index, inTransition) => {
     if (current === index) return;
@@ -57,6 +60,7 @@ const handleOnPrevious =
 
 const Carousel = ({
   activeChild,
+  continuous,
   children,
   controls,
   height,
@@ -65,8 +69,9 @@ const Carousel = ({
   initialChild,
   onChild,
   play,
+  ...rest
 }) => {
-  const noContainer = !fill && !height && !width;
+  const noContainer = !fill && (!height || !width);
   const numSlides = children.length;
   const firstChildRef = useRef(null);
   const [current, setCurrent] = useState(initialChild);
@@ -77,7 +82,7 @@ const Carousel = ({
   });
   const [direction, setDirection] = useState(undefined);
   const [inTransition, setInTransition] = useState(false);
-  const onJumpNavigation = handleOnJumpNavigation({
+  const onControlNavigation = handleOnControlNavigation({
     setDirection,
     setCurrent,
     setPrevious,
@@ -109,11 +114,7 @@ const Carousel = ({
    * dimensions of the Carousel container.
    */
   useEffect(() => {
-    if (
-      noContainer &&
-      (containerProps.heightProp === undefined ||
-        containerProps.widthProp === undefined)
-    ) {
+    if (noContainer) {
       const { current: childRef } = firstChildRef;
       if (childRef) {
         if (childRef.offsetWidth > 0 && childRef.offsetHeight > 0) {
@@ -141,7 +142,8 @@ const Carousel = ({
     if (inTransition) {
       transitionTimer = setTimeout(() => {
         setInTransition(false);
-      }, 500);
+        // Animation duration based on manual testing with designer
+      }, 600);
     }
     return () => clearTimeout(transitionTimer);
   }, [inTransition, setInTransition]);
@@ -160,7 +162,7 @@ const Carousel = ({
   // Allows Carousel slides to be controlled outside the component
   useEffect(() => {
     if (activeChild !== undefined && activeChild !== current) {
-      onJumpNavigation(current, activeChild, false);
+      onControlNavigation(current, activeChild, false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeChild]);
@@ -174,27 +176,20 @@ const Carousel = ({
       onLeft={() => onPrevious(current, inTransition)}
       onRight={() => onNext(current, inTransition)}
     >
-      <StyledCarouselContainer {...containerProps}>
-        <div
-          style={{
-            position: 'relative',
-            overflow: 'hidden',
-            width: '100%',
-            height: '100%',
-          }}
-        >
+      <StyledCarouselContainer {...containerProps} {...rest}>
+        <StyledCarouselInnerContainer>
           <CarouselControls
+            continuous={continuous}
             controls={controls}
             current={current}
             inTransition={inTransition}
             onNext={onNext}
             numSlides={numSlides}
             onPrevious={onPrevious}
-            onJumpNavigation={onJumpNavigation}
+            onJumpNavigation={onControlNavigation}
           />
           {Children.map(children, (child, index) => (
             <CarouselChild
-              key={`carousel-child-${index + 1}`}
               index={index}
               ref={index === current ? firstChildRef : null}
               current={current}
@@ -204,7 +199,7 @@ const Carousel = ({
               {child}
             </CarouselChild>
           ))}
-        </div>
+        </StyledCarouselInnerContainer>
       </StyledCarouselContainer>
     </Keyboard>
   );
@@ -212,8 +207,9 @@ const Carousel = ({
 
 Carousel.propTypes = CarouselPropTypes;
 Carousel.defaultProps = {
-  fill: false,
+  continuous: false,
   controls: true,
+  fill: false,
   initialChild: 0,
   activeChild: undefined,
   onChild: () => {},

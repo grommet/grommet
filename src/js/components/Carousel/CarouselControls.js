@@ -7,6 +7,7 @@ import { normalizeColor } from '../../utils';
 
 const CarouselControls = ({
   controls,
+  continuous,
   current,
   inTransition,
   numSlides,
@@ -22,7 +23,9 @@ const CarouselControls = ({
   const PreviousIcon = theme.carousel.icons.previous;
   const NextIcon = theme.carousel.icons.next;
 
-  const arrowColor = normalizeColor(theme.carousel.icons.color, theme);
+  const nextIconDisabled = !continuous && current + 1 === numSlides;
+  const previousIconDisabled = !continuous && current === 0;
+
   const selectorColor = normalizeColor(
     theme.carousel.icons.color || 'control',
     theme,
@@ -32,26 +35,48 @@ const CarouselControls = ({
     <>
       {/* Previous Arrow */}
       {arrowNavigation && (
-        <StyledControl offset="left" fill="vertical">
+        <StyledControl offsetProp="left" fill="vertical">
           <Button
             plain
             hoverIndicator
             fill="vertical"
+            a11yTitle={`Go to slide ${current}`}
             onClick={() => onPrevious(current, inTransition)}
-            icon={<PreviousIcon color={arrowColor} />}
+            disabled={previousIconDisabled}
+            icon={
+              <PreviousIcon
+                color={normalizeColor(
+                  previousIconDisabled
+                    ? theme.carousel.disabled.icons.color
+                    : theme.carousel.icons.color,
+                  theme,
+                )}
+              />
+            }
           />
         </StyledControl>
       )}
 
       {/* Next Arrow */}
       {arrowNavigation && (
-        <StyledControl offset="right" fill="vertical">
+        <StyledControl offsetProp="right" fill="vertical">
           <Button
             plain
             hoverIndicator
             fill="vertical"
+            a11yTitle={`Go to slide ${current + 2}`}
             onClick={() => onNext(current, inTransition)}
-            icon={<NextIcon color={arrowColor} />}
+            disabled={nextIconDisabled}
+            icon={
+              <NextIcon
+                color={normalizeColor(
+                  nextIconDisabled
+                    ? theme.carousel.disabled.icons.color
+                    : theme.carousel.icons.color,
+                  theme,
+                )}
+              />
+            }
           />
         </StyledControl>
       )}
@@ -59,7 +84,7 @@ const CarouselControls = ({
       {/* Selectors */}
       {selectorNavigation && (
         <StyledControl
-          offset="bottom"
+          offsetProp="bottom"
           direction="row"
           fill="horizontal"
           gap="xsmall"
@@ -70,6 +95,7 @@ const CarouselControls = ({
               plain
               hoverIndicator
               key={`control-${index + 1}`}
+              a11yTitle={`Jump to slide ${index + 1}`}
               onClick={() => onJumpNavigation(current, index, inTransition)}
               icon={
                 <SelectorIcon
