@@ -1154,6 +1154,9 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     nameValuePair: {
+      column: {
+        gap: 'xxsmall'
+      },
       name: {
         // any text props
         color: 'text',

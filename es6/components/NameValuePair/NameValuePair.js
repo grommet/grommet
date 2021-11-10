@@ -8,6 +8,8 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 
 var NameValuePair = function NameValuePair(_ref) {
+  var _theme$nameValuePair, _theme$nameValuePair$;
+
   var children = _ref.children,
       nameProp = _ref.name;
 
@@ -25,10 +27,18 @@ var NameValuePair = function NameValuePair(_ref) {
     width: valueProps == null ? void 0 : valueProps.width
   } : undefined;
   var nameAlign = size !== 'small' ? nameProps == null ? void 0 : nameProps.align : undefined;
-  var valueAlign = size !== 'small' ? valueProps == null ? void 0 : valueProps.align : undefined;
+  var valueAlign = size !== 'small' ? valueProps == null ? void 0 : valueProps.align : undefined; // using margin to act as gap
+  // <dl> elements must only directly contain
+  // properly-ordered <dt> and <dd> groups
+
+  var valueGap;
+  if (column && (_theme$nameValuePair = theme.nameValuePair) != null && (_theme$nameValuePair$ = _theme$nameValuePair.column) != null && _theme$nameValuePair$.gap) valueGap = {
+    bottom: theme.nameValuePair.column.gap
+  };
   var name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number') name = /*#__PURE__*/React.createElement(Text, _extends({
     as: "dt",
+    margin: valueGap,
     textAlign: nameAlign
   }, theme.nameValuePair.name), nameProp);else name = /*#__PURE__*/React.createElement(Box, {
     as: "dt",
@@ -40,7 +50,6 @@ var NameValuePair = function NameValuePair(_ref) {
   // override browser default margin for dd
   React.createElement(Text, _extends({
     as: "dd",
-    color: "pink",
     margin: "none",
     textAlign: valueAlign
   }, theme.nameValuePair.value), children);else value =
