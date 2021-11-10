@@ -21,22 +21,19 @@ const NameValuePair = ({ children, name: nameProp }) => {
 
   const nameAlign = size !== 'small' ? nameProps?.align : undefined;
   const valueAlign = size !== 'small' ? valueProps?.align : undefined;
+  // using margin to act as gap
+  // <dl> elements must only directly contain
+  // properly-ordered <dt> and <dd> groups
+  let valueGap;
+  if (column && theme.nameValuePair?.column?.gap)
+    valueGap = { bottom: theme.nameValuePair.column.gap };
 
   let name;
   if (typeof nameProp === 'string' || typeof nameProp === 'number')
     name = (
       <Text
         as="dt"
-        margin={
-          column
-            ? {
-                // using margin to act as gap
-                // <dl> elements must only directly contain
-                // properly-ordered <dt> and <dd> groups
-                bottom: theme.nameValuePair?.column?.gap,
-              }
-            : 'undefined'
-        }
+        margin={valueGap}
         textAlign={nameAlign}
         {...theme.nameValuePair.name}
       >
