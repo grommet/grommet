@@ -152,7 +152,7 @@ const Header = forwardRef(
       ? [...pin, 'left']
       : pin;
 
-    const totalSelectedGroups = /* onUpdate && */ groupBy?.select ?
+    const totalSelectedGroups = groupBy?.select ?
       Object.keys(groupBy.select).reduce((total, cur) =>
         cur && groupBy.select[cur] === 'all' ? total + 1 : total,
       0) : 0;
@@ -208,8 +208,12 @@ const Header = forwardRef(
                   onChange={() => {
                     let nextSelected;
                     const nextGroupSelected = {};
+                    const allSelected = groupBy?.select ?
+                      groupBy.select[''] === 'all' :
+                      totalSelected === data.length;
+                  
                     // if all are selected, clear selection
-                    if (totalSelected === data.length) {
+                    if (allSelected) {
                       nextSelected = [];
                       nextGroupSelected[''] = 'none';
                     } else {

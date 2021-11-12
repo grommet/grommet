@@ -14,7 +14,7 @@ const HEADER_KEY = '';
 const SELECTED = {
   none: 'none', 
   some: 'some',
-  all: 'all'
+  all: 'all',
 };
 
 const expandable = [...locations];
@@ -199,6 +199,7 @@ export const OnUpdateDataTable = () => {
     else {
       // The header was selected/deselected
       nextGroupSelected = {};
+      nextSelected = [];
       if (groupBySelected[HEADER_KEY] === SELECTED.all) {
         // add all groups and keys
         groups.forEach(({id, members}) => {
