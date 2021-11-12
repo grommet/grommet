@@ -244,16 +244,16 @@ export const normalizeCellProps = (props, theme) => {
   tableContextNames.forEach((context) => {
     result[context] = { pinned: {} };
     cellPropertyNames.forEach((propName) => {
+      let themeValue =
+        theme?.dataTable?.[context]?.[propName] ||
+        theme?.table?.[context]?.[propName];
+
       let value =
         props?.[propName]?.[context] ||
         // if the propName is used without context, it applies to all contexts
         (tableContextNames.every((n) => !props?.[propName]?.[n]) &&
           props?.[propName]);
-      if (value !== undefined) result[context][propName] = value;
-
-      let themeValue =
-        theme?.dataTable?.[context]?.[propName] ||
-        theme?.table?.[context]?.[propName];
+      result[context][propName] = value || themeValue;
 
       // pinned case
       value =
@@ -261,10 +261,9 @@ export const normalizeCellProps = (props, theme) => {
         (context === 'body' &&
           tableContextNames.every((n) => !props?.[propName]?.pinned?.[n]) &&
           props?.[propName]?.pinned) ||
-        value;
-
-      themeValue =
-        theme?.dataTable?.pinned?.[context]?.[propName] || themeValue;
+        value ||
+        theme?.dataTable?.pinned?.[context]?.[propName] ||
+        themeValue;
 
       if (
         value !== undefined &&
@@ -278,13 +277,15 @@ export const normalizeCellProps = (props, theme) => {
         // background explicitly
         value.color = normalizeBackgroundColor(theme);
 
-      if (context === 'body')
+      if (context === 'body') {
         // in case we have pinned columns, store the pinned stuff in
         // cellProps.body.pinned
         result[context].pinned[propName] = value;
-      else if (props.pin === true || props.pin === context)
+      } else if (props.pin === true || props.pin === context) {
         // this context is pinned, use the pinned value directly
-        result[context][propName] = value || themeValue;
+        console.log(value, themeValue);
+        result[context][propName] = value;
+      }
     });
   });
   return result;

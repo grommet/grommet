@@ -43,7 +43,9 @@ export const Fill = () => (
         step={10}
         fill
         pin
-        background={{ body: 'light-1' }}
+        background={{
+          pinned: { color: 'background-contrast' },
+        }}
       />
     </Box>
   </Grommet>
