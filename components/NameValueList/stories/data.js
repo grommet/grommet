@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.statusData = exports.metricData = exports.data = void 0;
+exports.statusData = exports.languageData = exports.metricData = exports.data = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -26,6 +26,11 @@ var metricData = {
   Successful: 31
 };
 exports.metricData = metricData;
+var languageData = {
+  Languages: "English, Spanish, French, Chinese, Japanese, German,\n   Korean, Italian, Arabic, Portugese, Russian",
+  'Operating System': "VMware ESXi 6.7.0 Build-14320388 Update\n   3 Patch 73 6.7.0 Build-14320388 Update 3 Patch 73 ESXi 6.7.0\n   Build-14320388 Update 3 Patch 73 6.7.0 ESXi 6.7.0 Build-14320388\n   Update 3 Patch 73 6.7.0 "
+};
+exports.languageData = languageData;
 var statusData = {
   Power: 'Ok',
   Health: 'Critical',

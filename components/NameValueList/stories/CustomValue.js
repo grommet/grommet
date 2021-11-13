@@ -45,6 +45,36 @@ var CustomValue = function CustomValue() {
     }, icon, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       color: "text-strong"
     }, value)));
+  })))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: "small",
+    gap: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    weight: "bold",
+    size: "3xl"
+  }, "Custom Mult-Line Value"), /*#__PURE__*/_react["default"].createElement(_grommet.NameValueList, null, Object.entries(_data.languageData).map(function (_ref2) {
+    var name = _ref2[0],
+        value = _ref2[1];
+    var icon;
+    if (name === 'Languages') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.Language, {
+      size: "small"
+    });else if (name === 'Operating System') icon = /*#__PURE__*/_react["default"].createElement(_grommetIcons.System, {
+      size: "small"
+    });
+    return /*#__PURE__*/_react["default"].createElement(_grommet.NameValuePair, {
+      key: name,
+      name: name
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      align: "start",
+      direction: "row",
+      gap: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      flex: false,
+      margin: {
+        top: 'xsmall'
+      }
+    }, icon), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      color: "text-strong"
+    }, value)));
   })))));
 };
 
