@@ -188,6 +188,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     disabled: disabled
   }), {
     checked: checked,
+    label: label,
     onClick: stopLabelClick,
     pad: pad,
     onMouseEnter: function onMouseEnter(event) {
