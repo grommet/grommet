@@ -3076,10 +3076,6 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3508,7 +3504,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dXqtYe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gMacqx"
               disabled=""
             >
               <div
@@ -3572,7 +3568,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <label
               aria-label="select beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dXqtYe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gMacqx"
               disabled=""
             >
               <div
@@ -7863,10 +7859,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -8749,10 +8741,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -9483,10 +9471,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -10189,10 +10173,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -10673,7 +10653,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -10804,7 +10784,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -10924,7 +10904,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           >
             <label
               aria-label="unselect two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -11060,7 +11040,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -11152,7 +11132,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -11233,7 +11213,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           >
             <label
               aria-label="select two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -18843,10 +18823,6 @@ exports[`DataTable select 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -19165,7 +19141,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -19243,7 +19219,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
@@ -19298,7 +19274,7 @@ exports[`DataTable select 2`] = `
           >
             <label
               aria-label="unselect beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
