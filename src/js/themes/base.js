@@ -1480,7 +1480,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // background: undefined,
       border: true,
       round: 'large',
-      name: { },
+      // name: undefined,
       pad: {  
         horizontal: 'small',
         vertical: 'xsmall',
