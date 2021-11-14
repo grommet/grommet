@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, {
   useCallback,
   useContext,
@@ -243,14 +242,17 @@ const DataTable = ({
     const nextSort = { property, direction, external };
     setSort(nextSort);
     if (onUpdate) {
-      onUpdate({
-        expanded: Object.keys(groupState).filter(
-          (k) => groupState[k].expanded,
-        ),
-        sort: nextSort,
+      const opts = {
         count: limit,
-        show: showProp,
-      });
+        sort: nextSort,
+      };
+      if (groups) {
+        opts.expanded = Object.keys(groupState).filter(
+          (k) => groupState[k].expanded,
+        );
+      }
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
     }
     if (onSortProp) onSortProp(nextSort);
   };
@@ -267,12 +269,13 @@ const DataTable = ({
       (k) => nextGroupState[k].expanded,
     );
     if (onUpdate) {
-      onUpdate({
+      const opts = {
         expanded: expandedKeys,
-        sort,
         count: limit,
-        show: showProp,
-      });
+      };
+      if (sort?.property) opts.sort = sort;
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
     }
     if (groupBy.onExpand) {
       groupBy.onExpand(expandedKeys);
@@ -293,12 +296,13 @@ const DataTable = ({
       (k) => nextGroupState[k].expanded,
     );
     if (onUpdate) {
-      onUpdate({
+      const opts = {
         expanded: expandedKeys,
-        sort,
         count: limit,
-        show: showProp,
-      });
+      };
+      if (showProp) opts.show = showProp;
+      if (sort?.property) opts.sort = sort;
+      onUpdate(opts);
     }
     if (groupBy.onExpand) {
       groupBy.onExpand(expandedKeys);
@@ -409,14 +413,15 @@ const DataTable = ({
               primaryProperty={primaryProperty}
               onMore={onUpdate ? () => {
                 if (adjustedData.length === limit) {
-                  onUpdate({
+                  const opts = {
                     expanded: Object.keys(groupState).filter(
                       (k) => groupState[k].expanded,
                     ),
-                    sort,
                     count: limit + step,
-                    show: showProp,
-                  });
+                  };
+                  if (sort?.property) opts.sort = sort;
+                  if (showProp) opts.show = showProp;
+                  onUpdate(opts);
                   setLimit( prev => prev + step);
                 }
               } : onMore}
@@ -444,12 +449,12 @@ const DataTable = ({
               data={!paginate ? adjustedData : items}
               onMore={onUpdate ? () => {
                 if (adjustedData.length === limit) {
-                  onUpdate({
-                    expanded: [],
-                    sort,
+                  const opts = {
                     count: limit + step,
-                    showProp,
-                  });
+                  };
+                  if (sort?.property) opts.sort = sort;
+                  if (showProp) opts.show = showProp;
+                  onUpdate(opts);
                   setLimit( prev => prev + step);
                 }
               } : onMore}

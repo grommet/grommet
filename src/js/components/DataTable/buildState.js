@@ -184,7 +184,7 @@ export const buildGroups = (columns, data, groupBy, primaryProperty) => {
 
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
       const groupValue = isGroup ? key : datumValue(datum, groupByProperty);
-      if (!groupMap[isGroup ? key : groupValue]) {
+      if (!groupMap[groupValue]) {
         const group = {
           data: [],
           datum: isGroup ? datum : {},
@@ -198,6 +198,8 @@ export const buildGroups = (columns, data, groupBy, primaryProperty) => {
     });
 
     // include any aggregate column values across the data for each group
+    // If expandable was specified we let the onUpdate callback do it since
+    // we may not have access to all the data to aggregate it.
     if (!groupBy.expandable) {
       columns.forEach((column) => {
         if (column.aggregate) {

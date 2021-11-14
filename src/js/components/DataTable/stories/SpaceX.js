@@ -190,6 +190,9 @@ export const SpaceX = () => {
 };
 
 SpaceX.storyName = 'SpaceX Grouped';
+SpaceX.parameters = {
+  chromatic: { disable: true },
+};
 
 export default {
   title: 'Visualizations/DataTable/SpaceX Grouped',

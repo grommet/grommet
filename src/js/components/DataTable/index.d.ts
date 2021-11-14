@@ -108,8 +108,8 @@ export interface DataTableProps<TRowType = any> {
   onSelect?: (select: (string | number)[], datum: TRowType) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
   onUpdate?: (datatableState: {
-    sort: { property: string; direction: 'asc' | 'desc' };
-    expanded: Array<string>;
+    sort?: { property: string; direction: 'asc' | 'desc' };
+    expanded?: Array<string>;
     show: number;
     count: number;
    }) => void;

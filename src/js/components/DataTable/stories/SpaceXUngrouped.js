@@ -109,7 +109,9 @@ export const SpaceXUngrouped = () => {
 };
 
 SpaceXUngrouped.storyName = 'SpaceX Ungrouped';
-
+SpaceXUngrouped.parameters = {
+  chromatic: { disable: true },
+};
 export default {
   title: 'Visualizations/DataTable/SpaceX Ungrouped',
 };
