@@ -191,6 +191,14 @@ describe('NameValueList', () => {
     const customTheme: ThemeType = {
       nameValueList: {
         gap: { column: 'small', row: 'large' },
+        pair: {
+          column: {
+            gap: {
+              column: 'medium',
+              row: 'small',
+            },
+          },
+        },
         name: {
           width: 'xsmall',
         },
