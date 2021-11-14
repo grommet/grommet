@@ -2070,7 +2070,6 @@ Object {
         },
         "tag": Object {
           "border": true,
-          "name": Object {},
           "pad": Object {
             "horizontal": "small",
             "vertical": "xsmall",
