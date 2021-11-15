@@ -7,7 +7,7 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
   <Box align="center" pad="large">
-    <Carousel controls>
+    <Carousel>
       <Box pad="xlarge" background="accent-1">
         <Attraction size="xlarge" />
       </Box>

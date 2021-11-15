@@ -133,15 +133,12 @@ exports[`Carousel basic 1`] = `
 .c3 {
   position: relative;
   display: block;
-  overflow: hidden;
   height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 
 .c15 {
   position: relative;
-  width: 100%;
-  height: 100%;
   float: left;
   margin-right: -100%;
   display: block;
@@ -151,8 +148,6 @@ exports[`Carousel basic 1`] = `
 
 .c16 {
   position: relative;
-  width: 100%;
-  height: 100%;
   float: left;
   margin-right: -100%;
   display: none;
@@ -605,15 +600,12 @@ exports[`Carousel controlled component 1`] = `
 .c3 {
   position: relative;
   display: block;
-  overflow: hidden;
   height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 
 .c10 {
   position: relative;
-  width: 100%;
-  height: 100%;
   float: left;
   margin-right: -100%;
   display: none;
@@ -623,8 +615,6 @@ exports[`Carousel controlled component 1`] = `
 
 .c11 {
   position: relative;
-  width: 100%;
-  height: 100%;
   float: left;
   margin-right: -100%;
   display: block;

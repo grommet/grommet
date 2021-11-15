@@ -11,15 +11,18 @@ const StyledCarouselContainer = styled(Box)`
 const StyledCarouselInnerContainer = styled(Box)`
   position: relative;
   display: block;
-  overflow: hidden;
   height: 100%;
-  width: 100%;
+  overflow: hidden;
 `;
 
 const StyledCarouselChild = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+  ${(props) =>
+    !props.noContainer &&
+    css`
+      width: 100%;
+      height: 100%;
+    `}
   float: left;
   margin-right: -100%;
   display: ${(props) => props.displayProp};

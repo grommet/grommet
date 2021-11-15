@@ -10,7 +10,15 @@ import { CarouselChildPropTypes } from './propTypes';
 
 const CarouselChild = forwardRef(
   (
-    { animationDuration, children, index, current, previous, direction },
+    {
+      animationDuration,
+      noContainer,
+      children,
+      index,
+      current,
+      previous,
+      direction,
+    },
     ref,
   ) => {
     const [animation, setAnimation] = useState(undefined);
@@ -45,6 +53,7 @@ const CarouselChild = forwardRef(
     return (
       <StyledCarouselChild
         animationDuration={animationDuration}
+        noContainer={noContainer}
         animation={animation}
         displayProp={display}
         ref={ref}

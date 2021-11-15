@@ -13,7 +13,7 @@ import {
 } from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
 import { Keyboard } from '../Keyboard';
-import { ThemeContext } from '../../contexts';
+import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 
 const handleSelectorNavigation =
@@ -101,7 +101,7 @@ const Carousel = ({
 }) => {
   const firstChildRef = useRef(null);
   const theme = useContext(ThemeContext) || defaultProps.theme;
-
+  const size = useContext(ResponsiveContext);
   const numSlides = children.length;
   const noContainer = !fill && (!height || !width);
   const animationDuration =
@@ -163,6 +163,7 @@ const Carousel = ({
       const { current: childRef } = firstChildRef;
       if (childRef) {
         if (childRef.offsetWidth > 0 && childRef.offsetHeight > 0) {
+          console.log('hit', childRef.offsetWidth, childRef.offsetHeight);
           setContainerProps({
             heightProp: `${childRef.offsetHeight}px`,
             widthProp: `${childRef.offsetWidth}px`,
@@ -175,7 +176,7 @@ const Carousel = ({
         widthProp: fill ? '100%' : width,
       });
     }
-  }, [noContainer, fill, height, width]);
+  }, [noContainer, fill, height, width, size]);
 
   /**
    * Delays the transitions between Carousel slides. This is needed to
@@ -236,6 +237,7 @@ const Carousel = ({
               ref={index === current ? firstChildRef : null}
               current={current}
               previous={previous}
+              noContainer={noContainer}
               direction={direction}
             >
               {child}

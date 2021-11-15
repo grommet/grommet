@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
-import { genericProps } from '../../utils/general-prop-types';
+import {
+  genericProps,
+  widthPropType,
+  heightPropType,
+} from '../../utils/general-prop-types';
 
 let CarouselPropType;
 if (process.env.NODE_ENV !== 'production') {
@@ -8,12 +12,15 @@ if (process.env.NODE_ENV !== 'production') {
     activeChild: PropTypes.number,
     initialChild: PropTypes.number,
     fill: PropTypes.bool,
+
     continuous: PropTypes.bool,
     controls: PropTypes.oneOfType([
       PropTypes.oneOf(['arrows', 'selectors']),
       PropTypes.bool,
     ]),
     onChild: PropTypes.func,
+    width: widthPropType,
+    height: heightPropType,
     play: PropTypes.number,
   };
 }
