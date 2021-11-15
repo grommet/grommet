@@ -17,7 +17,6 @@ export interface TagProps {
   value: string | number;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
-  size?: 'small' | 'medium' | 'large';
   as?: PolymorphicType;
 }
 

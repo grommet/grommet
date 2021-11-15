@@ -2358,7 +2358,6 @@ Object {
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],
-      "size": [Function],
       "value": [Function],
     },
     "render": [Function],
