@@ -37,7 +37,8 @@ const handleControlledNavigation =
     setActiveChildState,
     onChild,
   }) =>
-  (current, activeChild, activeChildState) => {
+  (current, activeChild, activeChildState, inTransition) => {
+    if (inTransition) return;
     if (activeChild === activeChildState) return;
     if (activeChild === current) return;
     setDirection(activeChild > current ? 'next' : 'previous');
@@ -206,8 +207,19 @@ const Carousel = ({
 
   // Allow Carousel slides to be controlled outside the component
   useEffect(() => {
-    onControlledNavigation(current, activeChild, activeChildState);
-  }, [onControlledNavigation, current, activeChild, activeChildState]);
+    onControlledNavigation(
+      current,
+      activeChild,
+      activeChildState,
+      inTransition,
+    );
+  }, [
+    onControlledNavigation,
+    current,
+    activeChild,
+    activeChildState,
+    inTransition,
+  ]);
 
   // Handles when there is only one child
   if (numSlides === undefined)
