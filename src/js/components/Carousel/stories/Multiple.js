@@ -48,7 +48,7 @@ const View2 = () => {
 export const Multi = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
-  <Carousel fill controls="arrows">
+  <Carousel controls="arrows">
     <View0 />
     <View1 />
     <View2 />

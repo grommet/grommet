@@ -17,6 +17,7 @@ const StyledCarouselInnerContainer = styled(Box)`
 
 const StyledCarouselChild = styled.div`
   position: relative;
+  max-width: 100%;
   ${(props) =>
     !props.noContainer &&
     css`

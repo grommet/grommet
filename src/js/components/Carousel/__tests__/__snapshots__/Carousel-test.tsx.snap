@@ -139,6 +139,7 @@ exports[`Carousel basic 1`] = `
 
 .c15 {
   position: relative;
+  max-width: 100%;
   float: left;
   margin-right: -100%;
   display: block;
@@ -148,6 +149,7 @@ exports[`Carousel basic 1`] = `
 
 .c16 {
   position: relative;
+  max-width: 100%;
   float: left;
   margin-right: -100%;
   display: none;
@@ -606,6 +608,7 @@ exports[`Carousel controlled component 1`] = `
 
 .c10 {
   position: relative;
+  max-width: 100%;
   float: left;
   margin-right: -100%;
   display: none;
@@ -615,6 +618,7 @@ exports[`Carousel controlled component 1`] = `
 
 .c11 {
   position: relative;
+  max-width: 100%;
   float: left;
   margin-right: -100%;
   display: block;
