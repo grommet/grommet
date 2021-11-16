@@ -110,6 +110,7 @@ const Header = forwardRef(
       fill,
       filtering,
       filters,
+      groupBy,
       groups,
       groupState,
       onFilter,
@@ -151,6 +152,12 @@ const Header = forwardRef(
       ? [...pin, 'left']
       : pin;
 
+    const totalSelectedGroups = groupBy?.select ?
+      Object.keys(groupBy.select).reduce((total, cur) =>
+        cur && groupBy.select[cur] === 'all' ? total + 1 : total,
+      0) : 0;
+    const totalSelected = (selected?.length || 0) + totalSelectedGroups;
+
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>
@@ -182,26 +189,50 @@ const Header = forwardRef(
               {onSelect && (
                 <CheckBox
                   a11yTitle={
-                    selected.length === data.length
+                    totalSelected === data.length
                       ? 'unselect all'
                       : 'select all'
                   }
                   checked={
-                    selected.length > 0 &&
-                    data.length > 0 &&
-                    selected.length === data.length
+                    groupBy?.select ?
+                      groupBy.select[''] === 'all' :
+                      totalSelected > 0 &&
+                      data.length > 0 &&
+                      totalSelected === data.length
                   }
                   indeterminate={
-                    selected.length > 0 && selected.length < data.length
+                    groupBy?.select ?
+                      groupBy.select[''] === 'some' :
+                      totalSelected > 0 && totalSelected < data.length
                   }
                   onChange={() => {
-                    // if any are selected, clear selection
-                    if (selected.length === data.length) onSelect([]);
-                    // if none are selected, select all data
-                    else
-                      onSelect(
-                        data.map((datum) => datumValue(datum, primaryProperty)),
+                    let nextSelected;
+                    const nextGroupSelected = {};
+                    const allSelected = groupBy?.select ?
+                      groupBy.select[''] === 'all' :
+                      totalSelected === data.length;
+                  
+                    // if all are selected, clear selection
+                    if (allSelected) {
+                      nextSelected = [];
+                      nextGroupSelected[''] = 'none';
+                    } else {
+                      // if some or none are selected, select all data
+                      nextSelected = 
+                        data.map((datum) => datumValue(datum, primaryProperty));
+                      nextGroupSelected[''] = 'all';
+                      groupBy?.expandable?.forEach(key => {
+                        nextGroupSelected[key] = 'all';
+                      });
+                    }
+                    if (groupBy.onSelect) {
+                      groupBy.onSelect(
+                        nextSelected,
+                        undefined,
+                        nextGroupSelected,
                       );
+                    }
+                    else onSelect(nextSelected);
                   }}
                   pad={cellProps.pad}
                 />
