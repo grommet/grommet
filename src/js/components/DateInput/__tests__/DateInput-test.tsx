@@ -197,46 +197,12 @@ describe('DateInput', () => {
           defaultValue={[]}
           inline
           onChange={onChange}
-          calendarProps={{ animate: false }}
+          calendarProps={{ reference: '2021-11-20' }}
         />
       </Grommet>,
     );
 
-    const monthNames = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    const d = new Date();
-
-    let previousMonth = d.getMonth() - 1;
-    // if current month is january, then the previous month should be december at index 11
-    if (previousMonth < 0) previousMonth = 11;
-
-    // get month and year to build aria-label for previous button
-    const month = monthNames[previousMonth];
-    const year = d.getFullYear();
-
-    const previousButton = screen.getByRole('button', {
-      name: `${month} ${year}`,
-    });
-    const desiredMonth = 'October 2021';
-
-    // ensure that this test always runs on the same month
-    while (!screen.queryByRole('heading', { name: desiredMonth })) {
-      userEvent.click(previousButton);
-    }
-
-    userEvent.click(screen.getByRole('button', { name: 'Wed Oct 20 2021' }));
+    userEvent.click(screen.getByRole('button', { name: 'Sat Nov 20 2021' }));
     expect(onChange).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });

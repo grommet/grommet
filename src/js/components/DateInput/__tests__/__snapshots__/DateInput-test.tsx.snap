@@ -2951,14 +2951,14 @@ exports[`DateInput dates initialized with empty array 1`] = `
           <h3
             class="c5"
           >
-            October 2021
+            November 2021
           </h3>
         </div>
         <div
           class="c6"
         >
           <button
-            aria-label="September 2021"
+            aria-label="October 2021"
             class="c7"
             type="button"
           >
@@ -2976,7 +2976,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
             </svg>
           </button>
           <button
-            aria-label="November 2021"
+            aria-label="December 2021"
             class="c7"
             type="button"
           >
@@ -2997,9 +2997,9 @@ exports[`DateInput dates initialized with empty array 1`] = `
       </div>
       <div
         aria-label="
-                October 2021;
+                November 2021;
                 Currently selected 
-  2021-10-20 through 2021-10-20
+  2021-11-20 through 2021-11-20
               "
         class="c9"
         role="grid"
@@ -3017,633 +3017,13 @@ exports[`DateInput dates initialized with empty array 1`] = `
               role="gridcell"
             >
               <button
-                aria-label="Sun Sep 26 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Sep 27 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Sep 28 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Sep 29 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Sep 30 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c14"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Oct 01 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Oct 02 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Oct 03 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Oct 04 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Oct 05 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Oct 06 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Oct 07 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Oct 08 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Oct 09 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Oct 10 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  10
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Oct 11 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Oct 12 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Oct 13 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Oct 14 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Oct 15 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Oct 16 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Oct 17 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Oct 18 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Oct 19 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Oct 20 2021"
-                class="c16"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c17"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Oct 21 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Oct 22 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Oct 23 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sun Oct 24 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Mon Oct 25 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Tue Oct 26 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Wed Oct 27 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Thu Oct 28 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Fri Oct 29 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
-                aria-label="Sat Oct 30 2021"
-                class="c13"
-                tabindex="-1"
-                type="button"
-              >
-                <div
-                  class="c15"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="c11"
-            role="row"
-          >
-            <div
-              class="c12"
-              role="gridcell"
-            >
-              <button
                 aria-label="Sun Oct 31 2021"
                 class="c13"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c14"
                 >
                   31
                 </div>
@@ -3660,7 +3040,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c15"
                 >
                   1
                 </div>
@@ -3677,7 +3057,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c15"
                 >
                   2
                 </div>
@@ -3694,7 +3074,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c15"
                 >
                   3
                 </div>
@@ -3711,7 +3091,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c15"
                 >
                   4
                 </div>
@@ -3728,7 +3108,7 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
-                  class="c14"
+                  class="c15"
                 >
                   5
                 </div>
@@ -3745,9 +3125,629 @@ exports[`DateInput dates initialized with empty array 1`] = `
                 type="button"
               >
                 <div
+                  class="c15"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Nov 07 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Nov 08 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Nov 09 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Nov 10 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Nov 11 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Nov 12 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Nov 13 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Nov 14 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Nov 15 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Nov 16 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Nov 17 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Nov 18 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Nov 19 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Nov 20 2021"
+                class="c16"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c17"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Nov 21 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Nov 22 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Nov 23 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Nov 24 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Nov 25 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Nov 26 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Nov 27 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Nov 28 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Nov 29 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Nov 30 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c15"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Dec 01 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Dec 02 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Dec 03 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Dec 04 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="c11"
+            role="row"
+          >
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sun Dec 05 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Mon Dec 06 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
                   class="c14"
                 >
                   6
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Tue Dec 07 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Wed Dec 08 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Thu Dec 09 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Fri Dec 10 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              class="c12"
+              role="gridcell"
+            >
+              <button
+                aria-label="Sat Dec 11 2021"
+                class="c13"
+                tabindex="-1"
+                type="button"
+              >
+                <div
+                  class="c14"
+                >
+                  11
                 </div>
               </button>
             </div>
