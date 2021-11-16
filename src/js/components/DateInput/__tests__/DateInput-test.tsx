@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -188,16 +188,8 @@ describe('DateInput', () => {
 
   test('dates initialized with empty array', () => {
     const onChange = jest.fn((event) => event.value);
-    // month is indexed from 0, so we add one
-    let month: string | number = new Date().getMonth() + 1;
-    if (month < 10) month = `0${month}`;
 
-    const year = new Date().getFullYear();
-
-    let timezoneOffset: string | number = new Date().getTimezoneOffset() / 60;
-    if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
-
-    const { getByText } = render(
+    const { container } = render(
       <Grommet>
         <DateInput
           id="item"
@@ -205,17 +197,48 @@ describe('DateInput', () => {
           defaultValue={[]}
           inline
           onChange={onChange}
+          calendarProps={{ animate: false }}
         />
       </Grommet>,
     );
-    // cannot use snapshots because we are using current date
 
-    fireEvent.click(getByText('20'));
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const d = new Date();
+
+    let previousMonth = d.getMonth() - 1;
+    // if current month is january, then the previous month should be december at index 11
+    if (previousMonth < 0) previousMonth = 11;
+
+    // get month and year to build aria-label for previous button
+    const month = monthNames[previousMonth];
+    const year = d.getFullYear();
+
+    const previousButton = screen.getByRole('button', {
+      name: `${month} ${year}`,
+    });
+    const desiredMonth = 'October 2021';
+
+    // ensure that this test always runs on the same month
+    while (!screen.queryByRole('heading', { name: desiredMonth })) {
+      userEvent.click(previousButton);
+    }
+
+    userEvent.click(screen.getByRole('button', { name: 'Wed Oct 20 2021' }));
     expect(onChange).toHaveBeenCalled();
-    expect(onChange).toHaveReturnedWith([
-      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
-      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
-    ]);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus', () => {
