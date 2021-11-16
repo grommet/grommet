@@ -1,4 +1,4 @@
-var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
+var _excluded = ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -64,6 +64,7 @@ var DataTable = function DataTable(_ref) {
       onSearch = _ref.onSearch,
       onSelect = _ref.onSelect,
       onSortProp = _ref.onSort,
+      onUpdate = _ref.onUpdate,
       replace = _ref.replace,
       pad = _ref.pad,
       paginate = _ref.paginate,
@@ -107,11 +108,13 @@ var DataTable = function DataTable(_ref) {
   var _useState5 = useState(sortProp || {}),
       sort = _useState5[0],
       setSort = _useState5[1]; // the data filtered and sorted, if needed
+  // Note: onUpdate mode expects the data to be passed
+  //   in completely filtered and sorted already.
 
 
   var adjustedData = useMemo(function () {
-    return filterAndSortData(data, filters, onSearch, sort);
-  }, [data, filters, onSearch, sort]); // the values to put in the footer cells
+    return onUpdate ? data : filterAndSortData(data, filters, onSearch, sort);
+  }, [data, filters, onSearch, onUpdate, sort]); // the values to put in the footer cells
 
   var footerValues = useMemo(function () {
     return buildFooterValues(columns, adjustedData);
@@ -127,52 +130,56 @@ var DataTable = function DataTable(_ref) {
   }, [background, border, pad, pin, theme]); // if groupBy, an array with one item per unique groupBy key value
 
   var groups = useMemo(function () {
-    return buildGroups(columns, adjustedData, groupBy);
-  }, [adjustedData, columns, groupBy]); // an object indicating which group values are expanded
+    return buildGroups(columns, adjustedData, groupBy, primaryProperty);
+  }, [adjustedData, columns, groupBy, primaryProperty]); // an object indicating which group values are expanded
 
   var _useGroupState = useGroupState(groups, groupBy),
       groupState = _useGroupState[0],
       setGroupState = _useGroupState[1];
 
-  var _useState6 = useState(select || onSelect && [] || undefined),
-      selected = _useState6[0],
-      setSelected = _useState6[1];
+  var _useState6 = useState(step),
+      limit = _useState6[0],
+      setLimit = _useState6[1];
+
+  var _useState7 = useState(select || onSelect && [] || undefined),
+      selected = _useState7[0],
+      setSelected = _useState7[1];
 
   useEffect(function () {
     return setSelected(select || onSelect && [] || undefined);
   }, [onSelect, select]);
 
-  var _useState7 = useState([]),
-      rowExpand = _useState7[0],
-      setRowExpand = _useState7[1]; // any customized column widths
+  var _useState8 = useState([]),
+      rowExpand = _useState8[0],
+      setRowExpand = _useState8[1]; // any customized column widths
 
 
-  var _useState8 = useState({}),
-      widths = _useState8[0],
-      setWidths = _useState8[1]; // placeholder placement stuff
+  var _useState9 = useState({}),
+      widths = _useState9[0],
+      setWidths = _useState9[1]; // placeholder placement stuff
 
 
   var headerRef = useRef();
   var bodyRef = useRef();
   var footerRef = useRef();
 
-  var _useState9 = useState(),
-      headerHeight = _useState9[0],
-      setHeaderHeight = _useState9[1];
-
   var _useState10 = useState(),
-      footerHeight = _useState10[0],
-      setFooterHeight = _useState10[1]; // offset compensation when body overflows
+      headerHeight = _useState10[0],
+      setHeaderHeight = _useState10[1];
+
+  var _useState11 = useState(),
+      footerHeight = _useState11[0],
+      setFooterHeight = _useState11[1]; // offset compensation when body overflows
 
 
-  var _useState11 = useState(0),
-      scrollOffset = _useState11[0],
-      setScrollOffset = _useState11[1]; // multiple pinned columns offset
+  var _useState12 = useState(0),
+      scrollOffset = _useState12[0],
+      setScrollOffset = _useState12[1]; // multiple pinned columns offset
 
 
-  var _useState12 = useState(),
-      pinnedOffset = _useState12[0],
-      setPinnedOffset = _useState12[1];
+  var _useState13 = useState(),
+      pinnedOffset = _useState13[0],
+      setPinnedOffset = _useState13[1];
 
   var onHeaderWidths = useCallback(function (columnWidths) {
     var hasSelectColumn = Boolean(select || onSelect);
@@ -251,6 +258,23 @@ var DataTable = function DataTable(_ref) {
         external: external
       };
       setSort(nextSort);
+
+      if (onUpdate) {
+        var opts = {
+          count: limit,
+          sort: nextSort
+        };
+
+        if (groups) {
+          opts.expanded = Object.keys(groupState).filter(function (k) {
+            return groupState[k].expanded;
+          });
+        }
+
+        if (showProp) opts.show = showProp;
+        onUpdate(opts);
+      }
+
       if (onSortProp) onSortProp(nextSort);
     };
   }; // toggle whether the group is expanded
@@ -264,11 +288,21 @@ var DataTable = function DataTable(_ref) {
         expanded: !nextGroupState[groupValue].expanded
       });
       setGroupState(nextGroupState);
+      var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
+        return nextGroupState[k].expanded;
+      });
+
+      if (onUpdate) {
+        var opts = {
+          expanded: expandedKeys,
+          count: limit
+        };
+        if (sort != null && sort.property) opts.sort = sort;
+        if (showProp) opts.show = showProp;
+        onUpdate(opts);
+      }
 
       if (groupBy.onExpand) {
-        var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
-          return nextGroupState[k].expanded;
-        });
         groupBy.onExpand(expandedKeys);
       }
     };
@@ -286,11 +320,21 @@ var DataTable = function DataTable(_ref) {
       });
     });
     setGroupState(nextGroupState);
+    var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
+      return nextGroupState[k].expanded;
+    });
+
+    if (onUpdate) {
+      var opts = {
+        expanded: expandedKeys,
+        count: limit
+      };
+      if (showProp) opts.show = showProp;
+      if (sort != null && sort.property) opts.sort = sort;
+      onUpdate(opts);
+    }
 
     if (groupBy.onExpand) {
-      var expandedKeys = Object.keys(nextGroupState).filter(function (k) {
-        return nextGroupState[k].expanded;
-      });
       groupBy.onExpand(expandedKeys);
     }
   }; // remember the width this property's column should be
@@ -307,6 +351,10 @@ var DataTable = function DataTable(_ref) {
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
+  }
+
+  if (onUpdate && onMore) {
+    console.warn('DataTable cannot combine "onUpdate" and "onMore".');
   }
 
   var _usePagination = usePagination(_extends({
@@ -348,6 +396,7 @@ var DataTable = function DataTable(_ref) {
     fill: fill,
     filtering: filtering,
     filters: filters,
+    groupBy: groupBy,
     groups: groups,
     groupState: groupState,
     pin: pin === true || pin === 'header',
@@ -373,17 +422,35 @@ var DataTable = function DataTable(_ref) {
     ref: bodyRef,
     cellProps: cellProps.body,
     columns: columns,
-    groupBy: groupBy.property ? groupBy.property : groupBy,
+    groupBy: typeof groupBy === 'string' ? {
+      property: groupBy
+    } : groupBy,
     groups: groups,
     groupState: groupState,
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
-    onMore: onMore,
-    onSelect: onSelect ? function (nextSelected) {
+    onMore: onUpdate ? function () {
+      if (adjustedData.length === limit) {
+        var opts = {
+          expanded: Object.keys(groupState).filter(function (k) {
+            return groupState[k].expanded;
+          }),
+          count: limit + step
+        };
+        if (sort != null && sort.property) opts.sort = sort;
+        if (showProp) opts.show = showProp;
+        onUpdate(opts);
+        setLimit(function (prev) {
+          return prev + step;
+        });
+      }
+    } : onMore,
+    onSelect: onSelect ? function (nextSelected, row) {
       setSelected(nextSelected);
-      if (onSelect) onSelect(nextSelected);
+      if (onSelect) onSelect(nextSelected, row);
     } : undefined,
     onToggle: onToggleGroup,
+    onUpdate: onUpdate,
     replace: replace,
     rowProps: rowProps,
     selected: selected,
@@ -394,12 +461,24 @@ var DataTable = function DataTable(_ref) {
     cellProps: cellProps.body,
     columns: columns,
     data: !paginate ? adjustedData : items,
-    onMore: onMore,
+    onMore: onUpdate ? function () {
+      if (adjustedData.length === limit) {
+        var opts = {
+          count: limit + step
+        };
+        if (sort != null && sort.property) opts.sort = sort;
+        if (showProp) opts.show = showProp;
+        onUpdate(opts);
+        setLimit(function (prev) {
+          return prev + step;
+        });
+      }
+    } : onMore,
     replace: replace,
     onClickRow: onClickRow,
-    onSelect: onSelect ? function (nextSelected) {
+    onSelect: onSelect ? function (nextSelected, row) {
       setSelected(nextSelected);
-      if (onSelect) onSelect(nextSelected);
+      if (onSelect) onSelect(nextSelected, row);
     } : undefined,
     pinnedCellProps: cellProps.pinned,
     pinnedOffset: pinnedOffset,

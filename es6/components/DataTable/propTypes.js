@@ -66,7 +66,10 @@ if (process.env.NODE_ENV !== 'production') {
     groupBy: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
       property: PropTypes.string,
       expand: PropTypes.arrayOf(PropTypes.string),
-      onExpand: PropTypes.func
+      expandable: PropTypes.arrayOf(PropTypes.string),
+      select: PropTypes.objectOf(PropTypes.oneOf(['all', 'some', 'none'])),
+      onExpand: PropTypes.func,
+      onSelect: PropTypes.func
     })]),
     onClickRow: PropTypes.func,
     rowDetails: PropTypes.func,
@@ -74,6 +77,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSearch: PropTypes.func,
     onSelect: PropTypes.func,
     onSort: PropTypes.func,
+    onUpdate: PropTypes.func,
     pad: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string, PropTypes.shape(padShapeSides), PropTypes.shape(padShapeParts)]),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
     pin: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['header', 'footer'])]),

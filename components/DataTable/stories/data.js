@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.storageColumns = exports.storageData = exports.DATA = exports.data = exports.groupColumns = exports.columns = void 0;
+exports.storageColumns = exports.storageData = exports.DATA = exports.data = exports.locations = exports.groupColumns = exports.columns = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -69,6 +69,7 @@ groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+exports.locations = locations;
 var data = [];
 exports.data = data;
 

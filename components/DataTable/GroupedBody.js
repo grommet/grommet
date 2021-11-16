@@ -21,7 +21,7 @@ var _TableCell = require("../TableCell");
 
 var _buildState = require("./buildState");
 
-var _excluded = ["cellProps", "columns", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "replace", "rowProps", "selected", "size", "step"];
+var _excluded = ["cellProps", "columns", "data", "groupBy", "groups", "groupState", "pinnedOffset", "primaryProperty", "onMore", "onSelect", "onToggle", "onUpdate", "replace", "rowProps", "selected", "size", "step"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -34,6 +34,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var cellPropsProp = _ref.cellProps,
       columns = _ref.columns,
+      data = _ref.data,
       groupBy = _ref.groupBy,
       groups = _ref.groups,
       groupState = _ref.groupState,
@@ -42,6 +43,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMore = _ref.onMore,
       onSelect = _ref.onSelect,
       onToggle = _ref.onToggle,
+      onUpdate = _ref.onUpdate,
       replace = _ref.replace,
       rowProps = _ref.rowProps,
       selected = _ref.selected,
@@ -52,45 +54,51 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var items = (0, _react.useMemo)(function () {
     var nextItems = [];
     groups.forEach(function (group) {
-      var expanded = groupState[group.key].expanded;
+      var _ref2 = groupState[group.key] || {
+        expanded: true
+      },
+          expanded = _ref2.expanded;
+
       var memberCount = group.data.length;
+      var groupSelected = [];
+      var isGroupSelected = false;
 
-      if (memberCount > 1) {
+      if (memberCount > 1 || onUpdate && group.key) {
         // need a header
-        var primaryKeys = [];
-
-        if (group.data.length) {
-          group.data.forEach(function (datum) {
-            primaryKeys.push(datum[primaryProperty]);
-          });
-        }
-
-        var groupSelected = primaryKeys && selected ? primaryKeys.filter(function (val) {
+        var primaryKeys = group.data.map(function (datum) {
+          return datum[primaryProperty];
+        });
+        groupSelected = primaryKeys && selected ? primaryKeys.filter(function (val) {
           return selected.includes(val);
         }) : [];
-        var isGroupSelected = groupSelected.length > 0 && group.data.length > 0 && groupSelected.length === group.data.length;
+        isGroupSelected = groupBy.select ? groupBy.select[group.key] === 'all' : groupSelected.length === group.data.length && groupSelected.length > 0;
+        var indeterminate = groupBy.select ? groupBy.select[group.key] === 'some' : groupSelected.length > 0 && groupSelected.length < group.data.length;
         nextItems.push({
           expanded: expanded,
           key: group.key,
           datum: group.datum,
           context: 'groupHeader',
           isSelected: isGroupSelected,
-          indeterminate: groupSelected.length > 0 && groupSelected.length < group.data.length,
+          indeterminate: indeterminate,
           onChange: function onChange() {
-            if (isGroupSelected) {
-              onSelect(selected.filter(function (s) {
-                return !groupSelected.includes(s);
-              }));
-            } else onSelect([].concat(selected, primaryKeys));
+            var nextSelected = isGroupSelected || indeterminate ? selected.filter(function (s) {
+              return !groupSelected.includes(s);
+            }) : [].concat(selected, primaryKeys);
+
+            if (groupBy.onSelect) {
+              groupBy.onSelect(nextSelected, group.datum, groupBy.select);
+            } else {
+              onSelect(nextSelected, group.datum);
+            }
           }
         });
       }
 
-      if (memberCount === 1 || expanded) {
+      if (!onUpdate && memberCount === 1 || expanded) {
         // add the group members
         group.data.forEach(function (datum, index) {
           var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
-          var isSelected = selected && selected.includes(primaryValue);
+          var isSelected = selected == null ? void 0 : selected.includes(primaryValue);
           nextItems.push({
             key: datum[primaryProperty],
             primaryValue: primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined,
@@ -98,18 +106,17 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             context: memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body',
             isSelected: isSelected,
             onChange: function onChange() {
-              if (isSelected) {
-                onSelect(selected.filter(function (s) {
-                  return s !== primaryValue;
-                }));
-              } else onSelect([].concat(selected, [primaryValue]));
+              var nextSelected = isSelected ? selected.filter(function (s) {
+                return s !== primaryValue;
+              }) : [].concat(selected, [primaryValue]);
+              onSelect(nextSelected, datum);
             }
           });
         });
       }
     });
     return nextItems;
-  }, [groups, groupState, primaryProperty, selected, onSelect]);
+  }, [groups, groupBy, groupState, primaryProperty, selected, onSelect, onUpdate]);
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     ref: ref,
     size: size
@@ -157,7 +164,7 @@ var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var scope;
 
       if (context === 'groupHeader') {
-        scope = column.property === groupBy ? 'row' : undefined;
+        scope = column.property === groupBy.property ? 'row' : undefined;
       } else {
         scope = column.primary ? 'row' : undefined;
       }

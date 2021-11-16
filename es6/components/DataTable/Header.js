@@ -1,5 +1,5 @@
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-    _excluded2 = ["cellProps", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
+    _excluded2 = ["cellProps", "columns", "data", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -103,6 +103,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       fill = _ref2.fill,
       filtering = _ref2.filtering,
       filters = _ref2.filters,
+      groupBy = _ref2.groupBy,
       groups = _ref2.groups,
       groupState = _ref2.groupState,
       onFilter = _ref2.onFilter,
@@ -143,6 +144,10 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   }, [cellWidths, onWidths]);
   var pin = pinProp ? ['top'] : [];
   var selectPin = pinnedOffset != null && pinnedOffset._grommetDataTableSelect ? [].concat(pin, ['left']) : pin;
+  var totalSelectedGroups = groupBy != null && groupBy.select ? Object.keys(groupBy.select).reduce(function (total, cur) {
+    return cur && groupBy.select[cur] === 'all' ? total + 1 : total;
+  }, 0) : 0;
+  var totalSelected = ((selected == null ? void 0 : selected.length) || 0) + totalSelectedGroups;
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
     ref: ref,
     fillProp: fill
@@ -165,15 +170,33 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     pin: selectPin,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect
   }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
-    a11yTitle: selected.length === data.length ? 'unselect all' : 'select all',
-    checked: selected.length > 0 && data.length > 0 && selected.length === data.length,
-    indeterminate: selected.length > 0 && selected.length < data.length,
+    a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
+    checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === data.length,
+    indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < data.length,
     onChange: function onChange() {
-      // if any are selected, clear selection
-      if (selected.length === data.length) onSelect([]); // if none are selected, select all data
-      else onSelect(data.map(function (datum) {
-        return datumValue(datum, primaryProperty);
-      }));
+      var nextSelected;
+      var nextGroupSelected = {};
+      var allSelected = groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected === data.length; // if all are selected, clear selection
+
+      if (allSelected) {
+        nextSelected = [];
+        nextGroupSelected[''] = 'none';
+      } else {
+        var _groupBy$expandable;
+
+        // if some or none are selected, select all data
+        nextSelected = data.map(function (datum) {
+          return datumValue(datum, primaryProperty);
+        });
+        nextGroupSelected[''] = 'all';
+        groupBy == null ? void 0 : (_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.forEach(function (key) {
+          nextGroupSelected[key] = 'all';
+        });
+      }
+
+      if (groupBy.onSelect) {
+        groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
+      } else onSelect(nextSelected);
     },
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/React.createElement(TableCell, {

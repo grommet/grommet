@@ -180,20 +180,24 @@ export var buildFooterValues = function buildFooterValues(columns, data) {
 }; // looks at the groupBy property of each data object and returns an
 // array with one item for each unique value of that property.
 
-export var buildGroups = function buildGroups(columns, data, groupBy) {
+export var buildGroups = function buildGroups(columns, data, groupBy, primaryProperty) {
   var result;
 
-  if (groupBy) {
+  if (groupBy != null && groupBy.property || typeof groupBy === 'string') {
     result = [];
     var groupMap = {};
     data.forEach(function (datum) {
+      var _groupBy$expandable;
+
+      var key = datumValue(datum, primaryProperty);
+      var isGroup = key && ((_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.includes(key));
       var groupByProperty = groupBy.property ? groupBy.property : groupBy;
-      var groupValue = datumValue(datum, groupByProperty);
+      var groupValue = isGroup ? key : datumValue(datum, groupByProperty);
 
       if (!groupMap[groupValue]) {
         var group = {
           data: [],
-          datum: {},
+          datum: isGroup ? datum : {},
           key: groupValue
         };
         group.datum[groupByProperty] = groupValue;
@@ -201,16 +205,28 @@ export var buildGroups = function buildGroups(columns, data, groupBy) {
         groupMap[groupValue] = group;
       }
 
-      groupMap[groupValue].data.push(datum);
+      if (!isGroup) groupMap[groupValue].data.push(datum);
     }); // include any aggregate column values across the data for each group
+    // If expandable was specified we let the onUpdate callback do it since
+    // we may not have access to all the data to aggregate it.
 
-    columns.forEach(function (column) {
-      if (column.aggregate) {
-        result.forEach(function (group) {
-          var datum = group.datum;
-          datum[column.property] = aggregateColumn(column, group.data);
-        });
-      }
+    if (!groupBy.expandable) {
+      columns.forEach(function (column) {
+        if (column.aggregate) {
+          result.forEach(function (group) {
+            var datum = group.datum;
+            datum[column.property] = aggregateColumn(column, group.data);
+          });
+        }
+      });
+    }
+  } else if (groupBy != null && groupBy.expandable) {
+    result = groupBy.expandable.map(function (key) {
+      return {
+        data: [],
+        datum: {},
+        key: key
+      };
     });
   }
 
@@ -223,7 +239,7 @@ export var buildGroupState = function buildGroupState(groups, groupBy) {
   if (groups) {
     groups.forEach(function (_ref) {
       var key = _ref.key;
-      result[key] = {
+      if (key) result[key] = {
         expanded: false
       };
     });

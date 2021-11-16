@@ -57,7 +57,7 @@ groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
-var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+export var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 export var data = [];
 
 for (var i = 0; i < 40; i += 1) {

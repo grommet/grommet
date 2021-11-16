@@ -75,7 +75,10 @@ if (process.env.NODE_ENV !== 'production') {
     groupBy: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
       property: _propTypes["default"].string,
       expand: _propTypes["default"].arrayOf(_propTypes["default"].string),
-      onExpand: _propTypes["default"].func
+      expandable: _propTypes["default"].arrayOf(_propTypes["default"].string),
+      select: _propTypes["default"].objectOf(_propTypes["default"].oneOf(['all', 'some', 'none'])),
+      onExpand: _propTypes["default"].func,
+      onSelect: _propTypes["default"].func
     })]),
     onClickRow: _propTypes["default"].func,
     rowDetails: _propTypes["default"].func,
@@ -83,6 +86,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSearch: _propTypes["default"].func,
     onSelect: _propTypes["default"].func,
     onSort: _propTypes["default"].func,
+    onUpdate: _propTypes["default"].func,
     pad: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(sizes), _propTypes["default"].string, _propTypes["default"].shape(padShapeSides), _propTypes["default"].shape(padShapeParts)]),
     paginate: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].object]),
     pin: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['header', 'footer'])]),
