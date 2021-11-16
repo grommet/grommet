@@ -144,8 +144,7 @@ A guide on commonly used labels added to issues and pull requests:
 This project contains Jest tests. These tests can be run using `yarn test`. When new features are added, a Jest test should also be added. The following best practices should be observed when writing Jest tests:
 
 - `screen` should be used for querying.
-- Ensure the correct query is being used by referring to [this list of queries](https://testing-library.com/docs/queries/about/#priority), ordered by priority.
-- In most cases `getByRole` should be used.
+- Ensure the correct query is being used by referring to [this list of queries](https://testing-library.com/docs/queries/about/#priority), ordered by priority. The majority of the time `getByRole` should be used.
 - In most cases `userEvent` should be used in place of `fireEvent`.
 
 This article, [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), contains more information and testing best practices.
