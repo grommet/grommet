@@ -141,7 +141,7 @@ A guide on commonly used labels added to issues and pull requests:
 
 - You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser.
 
-This project contains Jest tests. These tests can be run using `yarn test`. When new features are added, a Jest test should also be added. The following best practices should be observed when writing Jest tests:
+This project contains tests that are executed using Jest. The bulk of the component tests are written with React Testing Library. These tests can be run using `yarn test` or `npm run test`. When changes to functionality are made, tests should always be included. The following best practices should be observed when writing Jest tests with React Testing Library:
 
 - `screen` should be used for querying.
 - Ensure the correct query is being used by referring to [this list of queries](https://testing-library.com/docs/queries/about/#priority), ordered by priority. The majority of the time `getByRole` should be used.
