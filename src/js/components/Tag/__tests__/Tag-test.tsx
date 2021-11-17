@@ -8,7 +8,6 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
-// import { Add, Next } from 'grommet-icons';
 import { Grommet, Tag } from '../..';
 
 describe('Tag', () => {

@@ -2,22 +2,19 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
-  BackgroundType,
   GridAreaType,
-  MarginType,
-  // Omit,
   PolymorphicType,
 } from '../../utils';
 
 export interface TagProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
   gridArea?: GridAreaType;
   name?: string;
-  value: string | number;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
-  as?: PolymorphicType;
+  value: string | number;
 }
 
 export interface TagExtendedProps extends TagProps {}

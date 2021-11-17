@@ -34,6 +34,10 @@ const Tag = forwardRef(
       </Box>
     );
 
+    if (onClick && onRemove) {
+      console.warn('Tag cannot combine "onClick" and "onRemove".');
+    }
+
     return onRemove || !onClick ? (
       <Box 
         flex={false} 
