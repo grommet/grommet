@@ -8,7 +8,7 @@
 
 #### How should this be manually tested?
 
-#### Are Jest tests written with the following?
+#### Do the tests adhere to the following recommendations?
 
 - [ ] `screen` is used for querying.
 - [ ] The correct query is used. (Refer to [this list of queries](https://testing-library.com/docs/queries/about/#priority))
