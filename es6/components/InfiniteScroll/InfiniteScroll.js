@@ -26,7 +26,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
 
   var lastPage = useMemo(function () {
-    return Math.floor(items.length / step);
+    return Math.max(0, Math.ceil(items.length / step) - 1);
   }, [items.length, step]); // the pages we are rendering
 
   var _useState2 = useState([0, calculateLastPageBound(show, step)]),

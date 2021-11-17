@@ -39,7 +39,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
 
   var lastPage = (0, _react.useMemo)(function () {
-    return Math.floor(items.length / step);
+    return Math.max(0, Math.ceil(items.length / step) - 1);
   }, [items.length, step]); // the pages we are rendering
 
   var _useState2 = (0, _react.useState)([0, calculateLastPageBound(show, step)]),
