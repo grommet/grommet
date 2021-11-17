@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import 'jest-styled-components';
@@ -219,7 +220,7 @@ describe('RadioButtonGroup', () => {
 
     const onChange = jest.fn();
 
-    const { getByRole } = render(
+    render(
       <Grommet>
         <RadioButtonGroup
           name="test"
@@ -232,55 +233,38 @@ describe('RadioButtonGroup', () => {
 
     // Focus radio '2' button and simulate ArrowDown key
     // should result in selecting radio '3'
-    const middleRadioBtn = getByRole('radio', { name: 'radio button 2' });
+    const middleRadioBtn = screen.getByRole('radio', {
+      name: 'radio button 2',
+    });
     middleRadioBtn.focus();
-
+    expect(middleRadioBtn).toHaveFocus();
     await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
-      timeout: 2000,
+      timeout: 200,
     });
 
     // focusing the radio button results in internal state update
     // so we wait (`act`) after focusing
+    userEvent.type(middleRadioBtn, '{arrowDown}');
 
-    fireEvent.keyDown(middleRadioBtn, {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-      bubbles: true,
-      cancelable: true,
-    });
-
-    await waitFor(() => expect(onChange).toBeCalledTimes(1));
-    await waitFor(() =>
-      expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({
-          target: getByRole('radio', { name: 'radio button 3' }),
-        }),
-      ),
+    expect(onChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        target: screen.getByRole('radio', { name: 'radio button 3' }),
+      }),
     );
 
     // Focus radio '2' button and simulate ArrowUp key
     // should result in selecting radio '1'
     middleRadioBtn.focus();
     await waitFor(() => expect(middleRadioBtn).toHaveFocus(), {
-      timeout: 2000,
+      timeout: 200,
     });
 
-    fireEvent.keyDown(middleRadioBtn, {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-      bubbles: true,
-      cancelable: true,
-    });
+    userEvent.type(middleRadioBtn, '{arrowUp}');
 
-    await waitFor(() => expect(onChange).toBeCalledTimes(2));
-    await waitFor(() =>
-      expect(onChange).toHaveBeenLastCalledWith(
-        expect.objectContaining({
-          target: getByRole('radio', { name: 'radio button 1' }),
-        }),
-      ),
+    expect(onChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        target: screen.getByRole('radio', { name: 'radio button 1' }),
+      }),
     );
   });
 });
