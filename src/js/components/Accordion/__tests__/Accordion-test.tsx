@@ -294,12 +294,8 @@ describe('Accordion', () => {
   test('set on hover', () => {
     const onMouseOver1 = jest.fn();
     const onMouseOut1 = jest.fn();
-    const onFocus1 = jest.fn();
-    const onBlur1 = jest.fn();
     const onMouseOver2 = jest.fn();
     const onMouseOut2 = jest.fn();
-    const onFocus2 = jest.fn();
-    const onBlur2 = jest.fn();
     render(
       <Grommet>
         <Accordion>
@@ -307,8 +303,6 @@ describe('Accordion', () => {
             label="Panel 1"
             onMouseOver={onMouseOver1}
             onMouseOut={onMouseOut1}
-            onFocus={onFocus1}
-            onBlur={onBlur1}
           >
             Panel body 1
           </AccordionPanel>
@@ -316,8 +310,6 @@ describe('Accordion', () => {
             label="Panel 2"
             onMouseOver={onMouseOver2}
             onMouseOut={onMouseOut2}
-            onFocus={onFocus2}
-            onBlur={onBlur2}
           >
             Panel body 2
           </AccordionPanel>
@@ -326,33 +318,23 @@ describe('Accordion', () => {
     );
 
     userEvent.hover(screen.getByRole('tab', { name: /Panel 1/i }));
-    expect(onMouseOver1).toHaveBeenCalled;
-    expect(onFocus1).toHaveBeenCalled;
+    expect(onMouseOver1).toHaveBeenCalled();
     userEvent.unhover(screen.getByRole('tab', { name: /Panel 1/i }));
-    expect(onMouseOut1).toHaveBeenCalled;
-    expect(onBlur1).toHaveBeenCalled;
+    expect(onMouseOut1).toHaveBeenCalled();
 
     userEvent.hover(screen.getByRole('tab', { name: /Panel 2/i }));
-    expect(onMouseOver2).toHaveBeenCalled;
-    expect(onFocus2).toHaveBeenCalled;
+    expect(onMouseOver2).toHaveBeenCalled();
     userEvent.unhover(screen.getByRole('tab', { name: /Panel 2/i }));
-    expect(onMouseOver2).toHaveBeenCalled;
-    expect(onBlur2).toHaveBeenCalled;
+    expect(onMouseOver2).toHaveBeenCalled();
   });
 
   test('wrapped panel', () => {
     const onActive = jest.fn();
-    const Panel = ({ index }: { index: Number }) => (
-      <AccordionPanel label={`Panel ${index}`}>
-        Panel body {index}
-      </AccordionPanel>
-    );
     const { asFragment } = render(
       <Grommet>
         <Accordion animate={false} onActive={onActive}>
-          {[1, 2].map((index) => (
-            <Panel key={index} index={index} />
-          ))}
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>,
     );
