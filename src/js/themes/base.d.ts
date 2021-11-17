@@ -505,7 +505,6 @@ export interface ThemeType {
     hover?: {
       container?: {
         elevation?: ElevationType;
-        extend?: ExtendType;
       };
     };
     header?: BoxProps;
@@ -1152,7 +1151,18 @@ export interface ThemeType {
     };
   };
   nameValueList?: {
-    gap?: { row?: GapType; column?: GapType };
+    gap?: {
+      column?: GapType;
+      row?: GapType;
+    };
+    pair?: {
+      column?: {
+        gap?: {
+          column?: GapType;
+          row?: GapType;
+        };
+      };
+    };
     name?: {
       width: string;
     };
@@ -1161,6 +1171,9 @@ export interface ThemeType {
     };
   };
   nameValuePair?: {
+    column?: {
+      gap?: GapType;
+    };
     name?: TextProps;
     value?: TextProps;
   };
@@ -1437,6 +1450,9 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      track?: {
+        color?: ColorType;
+      };
     };
   };
   worldMap?: {

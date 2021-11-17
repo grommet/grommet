@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -13,8 +13,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('DataTable', () => {
-  afterEach(cleanup);
-
   test('empty', () => {
     const { container } = render(
       <Grommet>
@@ -948,7 +946,10 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      undefined,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1268,7 +1269,10 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining([1.1, 1.2]),
+      expect.objectContaining({ a: 'one' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

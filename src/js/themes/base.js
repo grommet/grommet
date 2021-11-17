@@ -574,11 +574,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'small',
         elevation: 'small',
+        // extend: undefined,
       },
       // hover: {
       //   container: {
       //     elevation: undefined,
-      //     extend: undefined,
       //   },
       // },
       header: {},
@@ -1047,7 +1047,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     nameValueList: {
-      gap: { column: 'large', row: 'medium' },
+      gap: {
+        column: 'large',
+        row: 'small',
+      },
+      pair: {
+        column: {
+          gap: {
+            column: 'large',
+            row: 'medium',
+          },
+        },
+      },
       name: {
         width: 'small',
       },
@@ -1056,6 +1067,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     nameValuePair: {
+      column: {
+        gap: 'xxsmall',
+      },
       name: {
         // any text props
         color: 'text',

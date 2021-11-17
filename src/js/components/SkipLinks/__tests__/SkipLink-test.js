@@ -1,12 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent } from '@testing-library/react';
 
 import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
 describe('SkipLink', () => {
-  afterEach(cleanup);
-
   test('basic', () => {
     jest.useFakeTimers('modern');
     const { container } = render(

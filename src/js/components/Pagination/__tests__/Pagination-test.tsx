@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 
 import { Grommet } from '../../Grommet';
@@ -17,8 +17,6 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('Pagination', () => {
-  afterEach(cleanup);
-
   test(`should display the correct last page based on items length
   and step`, () => {
     const { container, getByText } = render(

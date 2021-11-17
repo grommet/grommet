@@ -5,15 +5,13 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
 import { Grommet, Button } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container, getByText } = render(
       <Grommet

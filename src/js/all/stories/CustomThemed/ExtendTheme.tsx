@@ -12,12 +12,12 @@ const custom: ThemeType = {
     `,
   },
   anchor: {
-    extend: props => css`
+    extend: (props) => css`
       color: ${props.href ? 'green' : 'red'};
     `,
   },
   button: {
-    extend: props => {
+    extend: (props) => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -36,7 +36,7 @@ const custom: ThemeType = {
   },
   icon: {
     // Components without typed theme props should pass type-checking
-    extend: props => css`
+    extend: (props) => css`
       color: ${props.untypedProp === 'some value' ? 'red' : 'green'};
     `,
   },
@@ -65,5 +65,5 @@ const ExtendTheme: React.FC = () => {
 export const Extend = () => <ExtendTheme />;
 
 export default {
-  title: 'Utilities/Theme/Extend',
+  title: 'Utilities/Theme/Custom Themed/Extend',
 };

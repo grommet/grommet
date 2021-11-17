@@ -25,11 +25,11 @@ const theme = {
     hover: {
       container: {
         elevation: 'large',
-        extend: `transition: all 0.2s ease-in-out;`,
       },
     },
     container: {
       elevation: 'medium',
+      extend: `transition: all 0.2s ease-in-out;`,
     },
     footer: {
       pad: { horizontal: 'medium', vertical: 'small' },

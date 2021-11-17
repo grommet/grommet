@@ -2691,7 +2691,7 @@ exports[`DataTable click 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -2714,7 +2714,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -2732,7 +2732,7 @@ exports[`DataTable click 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -3076,10 +3076,6 @@ exports[`DataTable custom theme 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3446,18 +3442,18 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ilTUdw"
+            class="StyledBox-sc-13pk1d4-0 idDkxh"
             style="position: relative;"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 ieckpS"
+              class="StyledBox-sc-13pk1d4-0 hHytfL"
             >
               <button
                 class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 jTxFfV"
                 type="button"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 hznAXC"
+                  class="StyledBox-sc-13pk1d4-0 iHiDKr"
                 >
                   <span
                     class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -3474,17 +3470,17 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 dMfVRq"
+                  class="StyledBox-sc-13pk1d4-0 hgSOpX"
                 />
               </div>
               <div
                 class="StyledStack__StyledStackLayer-sc-ajspsk-1 jirMIv"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 cyatEY Resizer__InteractionBox-sc-8l808w-0 ZAwYX"
+                  class="StyledBox-sc-13pk1d4-0 hUYuYt Resizer__InteractionBox-sc-8l808w-0 ZAwYX"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 itpiyr"
+                    class="StyledBox-sc-13pk1d4-0 khLaTS"
                   />
                 </div>
               </div>
@@ -3503,16 +3499,16 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dXqtYe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gMacqx"
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
                 disabled=""
               >
                 <input
@@ -3522,7 +3518,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                   disabled=""
                 >
                   <svg
@@ -3550,7 +3546,7 @@ exports[`DataTable custom theme 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -3567,16 +3563,16 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="select beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dXqtYe"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gMacqx"
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
                 disabled=""
               >
                 <input
@@ -3585,7 +3581,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kxtfCo StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                   disabled=""
                 />
               </div>
@@ -3597,7 +3593,7 @@ exports[`DataTable custom theme 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -4965,7 +4961,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ipALMG"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -4974,7 +4970,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -4997,7 +4993,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -5011,7 +5007,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -5032,7 +5028,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -5041,7 +5037,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -5064,7 +5060,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -5077,7 +5073,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -5088,7 +5084,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -5097,7 +5093,7 @@ exports[`DataTable groupBy 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -5120,7 +5116,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -5133,7 +5129,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -6259,7 +6255,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ipALMG"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -6268,7 +6264,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -6291,7 +6287,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -6305,7 +6301,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -6326,7 +6322,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -6335,7 +6331,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -6358,7 +6354,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -6371,7 +6367,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -6382,7 +6378,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -6391,7 +6387,7 @@ exports[`DataTable groupBy property 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -6414,7 +6410,7 @@ exports[`DataTable groupBy property 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -6427,7 +6423,7 @@ exports[`DataTable groupBy property 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -6950,7 +6946,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -6964,7 +6960,7 @@ exports[`DataTable groupBy toggle 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -7332,7 +7328,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -7346,7 +7342,7 @@ exports[`DataTable groupBy toggle 3`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -7863,10 +7859,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -8749,10 +8741,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -9483,10 +9471,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -10189,10 +10173,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -10636,7 +10616,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ipALMG"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -10645,7 +10625,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -10668,22 +10648,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -10733,7 +10713,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -10747,7 +10727,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -10768,7 +10748,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -10777,7 +10757,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -10799,22 +10779,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -10864,7 +10844,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -10877,7 +10857,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -10888,7 +10868,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -10897,7 +10877,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -10919,22 +10899,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -10984,7 +10964,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -10997,7 +10977,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -11023,7 +11003,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ipALMG"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -11032,7 +11012,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -11055,22 +11035,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="select all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kxtfCo StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 />
               </div>
             </label>
@@ -11081,7 +11061,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11095,7 +11075,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11116,7 +11096,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -11125,7 +11105,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -11147,22 +11127,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="select one"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kxtfCo StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 />
               </div>
             </label>
@@ -11173,7 +11153,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11186,7 +11166,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -11197,7 +11177,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gvDyPc"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <button
@@ -11206,7 +11186,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jOPdZZ"
+                class="StyledBox-sc-13pk1d4-0 dSYXcM"
               >
                 <svg
                   aria-label="FormDown"
@@ -11228,22 +11208,22 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="select two"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kxtfCo StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 />
               </div>
             </label>
@@ -11254,7 +11234,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11267,7 +11247,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           />
         </td>
       </tr>
@@ -11638,14 +11618,14 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11738,14 +11718,14 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11769,7 +11749,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -11782,7 +11762,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11800,7 +11780,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -11813,7 +11793,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -11831,7 +11811,7 @@ exports[`DataTable onSort 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -11844,7 +11824,7 @@ exports[`DataTable onSort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -12286,14 +12266,14 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -12366,14 +12346,14 @@ exports[`DataTable onSort external 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -12397,7 +12377,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -12410,7 +12390,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -12428,7 +12408,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -12441,7 +12421,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -12459,7 +12439,7 @@ exports[`DataTable onSort external 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -12472,7 +12452,7 @@ exports[`DataTable onSort external 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -18521,10 +18501,10 @@ exports[`DataTable search 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ilTUdw"
+            class="StyledBox-sc-13pk1d4-0 idDkxh"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 ieckpS"
+              class="StyledBox-sc-13pk1d4-0 hHytfL"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -18667,7 +18647,7 @@ exports[`DataTable search 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -18843,10 +18823,6 @@ exports[`DataTable select 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -19160,22 +19136,22 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect all"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -19217,7 +19193,7 @@ exports[`DataTable select 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -19238,15 +19214,15 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect alpha"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   checked=""
@@ -19254,7 +19230,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   <svg
                     class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 fcHENV"
@@ -19276,7 +19252,7 @@ exports[`DataTable select 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -19293,22 +19269,22 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fpjvqq"
+            class="StyledBox-sc-13pk1d4-0 VweX"
             style="height: 0px;"
           >
             <label
               aria-label="unselect beta"
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 ivioTX"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hSBMim StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
               >
                 <input
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gdYoqU StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -19350,7 +19326,7 @@ exports[`DataTable select 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -19366,7 +19342,7 @@ exports[`DataTable select 2`] = `
 `;
 
 exports[`DataTable should apply pagination styling 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -19377,30 +19353,30 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -19411,25 +19387,25 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -19493,25 +19469,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19530,7 +19488,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19547,7 +19505,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19567,7 +19525,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -19577,7 +19535,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -19598,7 +19556,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -19631,51 +19589,51 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -19695,6 +19653,86 @@ exports[`DataTable should apply pagination styling 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -19758,86 +19796,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -19884,16 +19842,16 @@ exports[`DataTable should apply pagination styling 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19912,31 +19870,31 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     margin: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -21548,46 +21506,35 @@ exports[`DataTable should apply pagination styling 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -21600,48 +21547,48 @@ exports[`DataTable should apply pagination styling 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -22097,7 +22044,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
 `;
 
 exports[`DataTable should paginate 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -22108,30 +22055,30 @@ exports[`DataTable should paginate 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -22142,25 +22089,25 @@ exports[`DataTable should paginate 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -22224,25 +22171,7 @@ exports[`DataTable should paginate 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22259,7 +22188,7 @@ exports[`DataTable should paginate 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22276,7 +22205,7 @@ exports[`DataTable should paginate 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22296,7 +22225,7 @@ exports[`DataTable should paginate 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -22306,7 +22235,7 @@ exports[`DataTable should paginate 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -22327,7 +22256,7 @@ exports[`DataTable should paginate 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -22360,51 +22289,51 @@ exports[`DataTable should paginate 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -22424,6 +22353,86 @@ exports[`DataTable should paginate 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -22487,86 +22496,6 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -22613,16 +22542,16 @@ exports[`DataTable should paginate 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22641,25 +22570,25 @@ exports[`DataTable should paginate 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -24271,46 +24200,35 @@ exports[`DataTable should paginate 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24323,48 +24241,48 @@ exports[`DataTable should paginate 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24384,7 +24302,7 @@ exports[`DataTable should paginate 1`] = `
 `;
 
 exports[`DataTable should render correct num items per page (step) 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -24395,30 +24313,30 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -24429,25 +24347,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -24511,25 +24429,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24546,7 +24446,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24563,7 +24463,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24583,7 +24483,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -24593,7 +24493,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -24614,7 +24514,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -24647,51 +24547,51 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -24711,6 +24611,86 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -24774,86 +24754,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -24900,16 +24800,16 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24928,25 +24828,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -25442,46 +25342,35 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -25494,118 +25383,118 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 3"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               3
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 4"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               4
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 5"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               5
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 6"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               6
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 7"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               7
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -25625,7 +25514,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 `;
 
 exports[`DataTable should render new data when page changes 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -25636,30 +25525,30 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -25670,25 +25559,25 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -25752,25 +25641,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25787,7 +25658,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25804,7 +25675,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25824,7 +25695,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -25834,7 +25705,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -25855,7 +25726,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25888,51 +25759,51 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25952,6 +25823,86 @@ exports[`DataTable should render new data when page changes 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -26015,86 +25966,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -26141,16 +26012,16 @@ exports[`DataTable should render new data when page changes 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26169,25 +26040,25 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -27799,46 +27670,35 @@ exports[`DataTable should render new data when page changes 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -27851,48 +27711,48 @@ exports[`DataTable should render new data when page changes 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -27916,10 +27776,10 @@ exports[`DataTable should render new data when page changes 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO StyledDataTable__StyledContainer-sc-xrlyjm-1 ezrzcD"
+    class="StyledBox-sc-13pk1d4-0 bULqXT StyledDataTable__StyledContainer-sc-xrlyjm-1 ezrzcD"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dShrb"
+      class="StyledBox-sc-13pk1d4-0 dkUoeu"
     >
       <table
         class="StyledTable-sc-1m3u5g-6 lfIBVd StyledDataTable-sc-xrlyjm-0 hsvjLV"
@@ -27935,7 +27795,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ieckpS"
+                class="StyledBox-sc-13pk1d4-0 hHytfL"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -27949,7 +27809,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="col"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ieckpS"
+                class="StyledBox-sc-13pk1d4-0 hHytfL"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -27971,7 +27831,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -27984,7 +27844,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28002,7 +27862,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28015,7 +27875,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28033,7 +27893,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28046,7 +27906,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28064,7 +27924,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28077,7 +27937,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28095,7 +27955,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28108,7 +27968,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28126,7 +27986,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28139,7 +27999,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28157,7 +28017,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28170,7 +28030,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28188,7 +28048,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28201,7 +28061,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28219,7 +28079,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28232,7 +28092,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28250,7 +28110,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28263,7 +28123,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28281,7 +28141,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28294,7 +28154,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28312,7 +28172,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28325,7 +28185,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28343,7 +28203,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28356,7 +28216,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28374,7 +28234,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28387,7 +28247,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28405,7 +28265,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28418,7 +28278,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28436,7 +28296,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28449,7 +28309,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28467,7 +28327,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28480,7 +28340,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28498,7 +28358,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28511,7 +28371,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28529,7 +28389,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28542,7 +28402,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28560,7 +28420,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28573,7 +28433,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28591,7 +28451,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28604,7 +28464,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28622,7 +28482,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28635,7 +28495,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28653,7 +28513,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28666,7 +28526,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28684,7 +28544,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28697,7 +28557,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28715,7 +28575,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28728,7 +28588,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28746,7 +28606,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28759,7 +28619,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28777,7 +28637,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28790,7 +28650,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28808,7 +28668,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28821,7 +28681,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28839,7 +28699,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28852,7 +28712,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28870,7 +28730,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28883,7 +28743,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28901,7 +28761,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28914,7 +28774,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28932,7 +28792,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28945,7 +28805,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28963,7 +28823,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -28976,7 +28836,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -28994,7 +28854,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29007,7 +28867,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29025,7 +28885,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29038,7 +28898,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29056,7 +28916,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29069,7 +28929,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29087,7 +28947,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29100,7 +28960,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29118,7 +28978,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29131,7 +28991,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29149,7 +29009,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29162,7 +29022,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29180,7 +29040,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29193,7 +29053,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29211,7 +29071,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29224,7 +29084,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29242,7 +29102,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29255,7 +29115,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29273,7 +29133,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29286,7 +29146,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29304,7 +29164,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29317,7 +29177,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29335,7 +29195,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               scope="row"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -29348,7 +29208,7 @@ exports[`DataTable should render new data when page changes 2`] = `
               class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 kSZjsO"
+                class="StyledBox-sc-13pk1d4-0 bULqXT"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -29365,14 +29225,14 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyJvBD"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 bxRbbK Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 cAjaYb Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 kUDZbv"
+        class="StyledBox-sc-13pk1d4-0 jVOTJS"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 ktuPjS"
+          class="StyledBox-sc-13pk1d4-0 hoCTgj"
         >
           <li
             class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
@@ -29460,7 +29320,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 `;
 
 exports[`DataTable should show correct item index when "show" is a number 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -29471,30 +29331,30 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -29505,25 +29365,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -29587,25 +29447,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29622,7 +29464,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29639,7 +29481,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29659,7 +29501,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -29669,7 +29511,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -29690,7 +29532,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -29723,51 +29565,51 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -29787,6 +29629,86 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -29850,86 +29772,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -29976,16 +29818,16 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30004,25 +29846,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -31634,46 +31476,35 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -31686,48 +31517,48 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -35847,14 +35678,14 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -35947,14 +35778,14 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ieckpS"
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
           >
             <button
               class="StyledButton-sc-323bzc-0 JHZdc Header__StyledHeaderCellButton-sc-1baku5q-0 gHgFIP"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hznAXC"
+                class="StyledBox-sc-13pk1d4-0 iHiDKr"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -35978,7 +35809,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -35991,7 +35822,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -36009,7 +35840,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -36022,7 +35853,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"
@@ -36040,7 +35871,7 @@ exports[`DataTable sortable 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fDswbh"
@@ -36053,7 +35884,7 @@ exports[`DataTable sortable 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kSZjsO"
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
           >
             <span
               class="StyledText-sc-1sadyjn-0 fkNrQP"

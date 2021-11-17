@@ -24,7 +24,7 @@ const clockSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
 export const Digital = () => (
   <Grommet theme={theme}>
     <Box direction="row" gap="medium" pad="medium">
-      {clockSizes.map(size => (
+      {clockSizes.map((size) => (
         <Box key={size} align="center">
           <Text>{size}</Text>
           <Clock type="digital" size={size} />
@@ -50,5 +50,5 @@ Digital.parameters = {
 };
 
 export default {
-  title: 'Visualizations/Clock/Digital',
+  title: 'Visualizations/Clock/Custom Themed/Digital',
 };

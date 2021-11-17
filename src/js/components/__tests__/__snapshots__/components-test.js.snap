@@ -1672,16 +1672,27 @@ Object {
         "nameValueList": Object {
           "gap": Object {
             "column": "large",
-            "row": "medium",
+            "row": "small",
           },
           "name": Object {
             "width": "small",
+          },
+          "pair": Object {
+            "column": Object {
+              "gap": Object {
+                "column": "large",
+                "row": "medium",
+              },
+            },
           },
           "value": Object {
             "width": "medium",
           },
         },
         "nameValuePair": Object {
+          "column": Object {
+            "gap": "xxsmall",
+          },
           "name": Object {
             "color": "text",
             "weight": "bold",
