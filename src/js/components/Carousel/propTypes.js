@@ -48,10 +48,9 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.bool,
     ]).isRequired,
     numSlides: PropTypes.number.isRequired,
-    inTransition: PropTypes.bool.isRequired,
     onNext: PropTypes.func.isRequired,
     onPrevious: PropTypes.func.isRequired,
-    onJumpNavigation: PropTypes.func.isRequired,
+    onSelectorNavigation: PropTypes.func.isRequired,
   };
 }
 export const CarouselControlsPropTypes = CarouselControlsPropType;

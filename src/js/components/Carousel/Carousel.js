@@ -4,6 +4,7 @@ import React, {
   useContext,
   useState,
   useEffect,
+  useCallback,
 } from 'react';
 import { CarouselChild } from './CarouselChild';
 import { CarouselControls } from './CarouselControls';
@@ -15,77 +16,6 @@ import { CarouselPropTypes } from './propTypes';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
-
-const handleSelectorNavigation =
-  ({ setDirection, setCurrent, setInTransition, setPrevious, onChild }) =>
-  (current, index, inTransition) => {
-    if (current === index) return;
-    if (inTransition) return;
-    setDirection(index > current ? 'next' : 'previous');
-    setInTransition(true);
-    setPrevious(current);
-    setCurrent(index);
-    onChild(index);
-  };
-
-const handleControlledNavigation =
-  ({
-    setCurrent,
-    setPrevious,
-    setDirection,
-    setInTransition,
-    setActiveChildState,
-    onChild,
-  }) =>
-  (current, activeChild, activeChildState, inTransition) => {
-    if (inTransition) return;
-    if (activeChild === activeChildState) return;
-    if (activeChild === current) return;
-    setDirection(activeChild > current ? 'next' : 'previous');
-    setInTransition(true);
-    setPrevious(current);
-    setCurrent(activeChild);
-    setActiveChildState(activeChild);
-    onChild(activeChild);
-  };
-
-const handleOnNext =
-  ({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    numSlides,
-    onChild,
-  }) =>
-  (current, inTransition) => {
-    if (inTransition) return;
-    setDirection('next');
-    setInTransition(true);
-    setPrevious(current);
-    const next = current === numSlides - 1 ? 0 : current + 1;
-    setCurrent(next);
-    onChild(next);
-  };
-
-const handleOnPrevious =
-  ({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    numSlides,
-    onChild,
-  }) =>
-  (current, inTransition) => {
-    if (inTransition) return;
-    setDirection('previous');
-    setInTransition(true);
-    setPrevious(current);
-    const next = current === 0 ? numSlides - 1 : current - 1;
-    setCurrent(next);
-    onChild(next);
-  };
 
 const Carousel = ({
   activeChild,
@@ -120,37 +50,47 @@ const Carousel = ({
     widthProp: width,
   });
 
-  const onSelectorNavigation = handleSelectorNavigation({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    onChild,
-  });
-  const onControlledNavigation = handleControlledNavigation({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    setActiveChildState,
-    onChild,
-  });
-  const onNext = handleOnNext({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    numSlides,
-    onChild,
-  });
-  const onPrevious = handleOnPrevious({
-    setDirection,
-    setCurrent,
-    setPrevious,
-    setInTransition,
-    numSlides,
-    onChild,
-  });
+  const onPrevious = useCallback(() => {
+    if (inTransition) return;
+    setDirection('previous');
+    setInTransition(true);
+    setPrevious(current);
+    const next = current === 0 ? numSlides - 1 : current - 1;
+    setCurrent(next);
+    onChild(next);
+  }, [current, numSlides, inTransition, onChild]);
+
+  const onNext = useCallback(() => {
+    if (inTransition) return;
+    setDirection('next');
+    setInTransition(true);
+    setPrevious(current);
+    const next = current === numSlides - 1 ? 0 : current + 1;
+    setCurrent(next);
+    onChild(next);
+  }, [current, numSlides, inTransition, onChild]);
+
+  const onSelectorNavigation = useCallback((index) => {
+    if (current === index) return;
+    if (inTransition) return;
+    setDirection(index > current ? 'next' : 'previous');
+    setInTransition(true);
+    setPrevious(current);
+    setCurrent(index);
+    onChild(index);
+  }, [current, inTransition, onChild]);
+
+  const onControlledNavigation = useCallback(() => {
+    if (inTransition) return;
+    if (activeChild === activeChildState) return;
+    if (activeChild === current) return;
+    setDirection(activeChild > current ? 'next' : 'previous');
+    setInTransition(true);
+    setPrevious(current);
+    setCurrent(activeChild);
+    setActiveChildState(activeChild);
+    onChild(activeChild);
+  }, [activeChild, activeChildState, current, inTransition, onChild]);
 
   /**
    * Handles when the "fill" or "height" & "width" props are not specified
@@ -164,7 +104,6 @@ const Carousel = ({
       const { current: childRef } = firstChildRef;
       if (childRef) {
         if (childRef.offsetWidth > 0 && childRef.offsetHeight > 0) {
-          console.log('hit', childRef.offsetWidth, childRef.offsetHeight);
           setContainerProps({
             heightProp: `${childRef.offsetHeight}px`,
             widthProp: `${childRef.offsetWidth}px`,
@@ -199,7 +138,7 @@ const Carousel = ({
     let playTimer;
     if (play) {
       playTimer = setInterval(() => {
-        onNext(current, inTransition);
+        onNext();
       }, play);
     }
     return () => clearTimeout(playTimer);
@@ -227,8 +166,8 @@ const Carousel = ({
 
   return (
     <Keyboard
-      onLeft={() => onPrevious(current, inTransition)}
-      onRight={() => onNext(current, inTransition)}
+      onLeft={() => onPrevious()}
+      onRight={() => onNext()}
     >
       <StyledCarouselContainer {...containerProps} {...rest}>
         <StyledCarouselInnerContainer>
@@ -240,7 +179,7 @@ const Carousel = ({
             onNext={onNext}
             numSlides={numSlides}
             onPrevious={onPrevious}
-            onJumpNavigation={onSelectorNavigation}
+            onSelectorNavigation={onSelectorNavigation}
           />
           {Children.map(children, (child, index) => (
             <CarouselChild

@@ -10,11 +10,10 @@ const CarouselControls = ({
   controls,
   continuous,
   current,
-  inTransition,
   numSlides,
   onNext,
   onPrevious,
-  onJumpNavigation,
+  onSelectorNavigation,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const arrowNavigation = controls && controls !== 'selectors';
@@ -42,7 +41,7 @@ const CarouselControls = ({
             hoverIndicator
             fill="vertical"
             a11yTitle={`Go to slide ${current}`}
-            onClick={() => onPrevious(current, inTransition)}
+            onClick={onPrevious}
             disabled={previousIconDisabled}
             icon={
               <PreviousIcon
@@ -66,7 +65,7 @@ const CarouselControls = ({
             hoverIndicator
             fill="vertical"
             a11yTitle={`Go to slide ${current + 2}`}
-            onClick={() => onNext(current, inTransition)}
+            onClick={onNext}
             disabled={nextIconDisabled}
             icon={
               <NextIcon
@@ -97,7 +96,7 @@ const CarouselControls = ({
               hoverIndicator
               key={`control-${index + 1}`}
               a11yTitle={`Jump to slide ${index + 1}`}
-              onClick={() => onJumpNavigation(current, index, inTransition)}
+              onClick={() => onSelectorNavigation(index)}
               icon={
                 <SelectorIcon
                   color={current === index ? selectorColor : undefined}
