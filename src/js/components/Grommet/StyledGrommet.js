@@ -7,6 +7,7 @@ const fullStyle = (full) => {
   if (full === 'min')
     return css`
       min-height: 100vh;
+      height: 1px;
     `;
   return css`
     width: 100vw;

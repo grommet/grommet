@@ -26,7 +26,7 @@ export const decorators = [
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
         return (
-          <Grommet theme={THEMES.base}>
+          <Grommet full="min" theme={THEMES.base}>
             <Story state={THEMES.base} />
           </Grommet>
         );
@@ -43,7 +43,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]}>
+      <Grommet full="min" theme={THEMES[state]}>
         <Story state={THEMES[state]} />
       </Grommet>
     );
