@@ -194,7 +194,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         });
       }
 
-      if (groupBy.onSelect) {
+      if (groupBy != null && groupBy.onSelect) {
         groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
       } else onSelect(nextSelected);
     },
