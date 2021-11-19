@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
             PropTypes.string,
             PropTypes.shape({
               icon: PropTypes.element,
+              a11yTitle: PropTypes.string,
               onClick: PropTypes.func,
             }),
           ]),

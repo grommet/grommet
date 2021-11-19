@@ -29,6 +29,7 @@ export interface VideoProps {
           ),
           {
             icon?: React.ReactNode;
+            a11yTitle?: A11yTitleType;
             onClick?: () => {};
           },
         ];

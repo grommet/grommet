@@ -48,7 +48,7 @@ const Video = forwardRef(
       alignSelf,
       autoPlay,
       children,
-      controls,
+      controls: controlsProp,
       gridArea,
       loop,
       margin,
@@ -80,26 +80,33 @@ const Video = forwardRef(
     const containerRef = useRef();
     const scrubberRef = useRef();
     const videoRef = useForwardedRef(ref);
-    const [newControls, setNewControls] = useState({
-      position: 'over',
-      items: ['volume', 'reduceVolume', 'fullScreen'],
-    });
+    const [controls, setControls] = useState(
+      typeof controlsProp === 'string' || typeof controlsProp === 'boolean'
+        ? {
+            position: controlsProp,
+            items: ['volume', 'reduceVolume', 'fullScreen'],
+          }
+        : controlsProp,
+    );
 
-    useLayoutEffect(() => {
-      if (typeof controls === 'string' || typeof controls === 'boolean') {
-        setNewControls({
-          position: controls,
-          items: ['volume', 'reduceVolume', 'fullScreen'],
-        });
-      } else if (controls && (!controls.items || !controls.position)) {
-        setNewControls({
+    useEffect(() => {
+      if (controls && (!controls.items || !controls.position)) {
+        setControls({
           position: controls.position || 'over',
           items: controls.items || ['volume', 'reduceVolume', 'fullScreen'],
         });
-      } else if (controls) {
-        setNewControls({ position: controls.position, items: controls.items });
+      } else if (!controls) {
+        setControls({
+          position: 'over',
+          items: ['volume', 'reduceVolume', 'fullScreen'],
+        });
+      } else {
+        setControls({
+          position: controls.position,
+          items: controls.items,
+        });
       }
-    }, [controls]);
+    }, [controlsProp]);
 
     // mute if needed
     useEffect(() => {
@@ -242,8 +249,8 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    if (newControls.position) {
-      const over = newControls.position === 'over';
+    if (controls && controls.position) {
+      const over = controls.position === 'over';
       const background = over
         ? (theme.video.controls && theme.video.controls.background) || {
             color: 'background-back',
@@ -274,70 +281,67 @@ const Video = forwardRef(
         onClick: () => showCaptions(caption.active ? -1 : 0),
       }));
 
-      const buttonTable = {
+      const buttonProps = {
         closedCaption: captionControls,
         fullScreen: {
+          icon: <Icons.FullScreen color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.fullScreen',
+            messages,
+          }),
           onClick: fullscreen,
         },
         pause: {
+          icon: <Icons.Pause color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.pauseButton',
+            messages,
+          }),
           onClick: playing ? pause : play,
         },
         play: {
+          icon: <Icons.Play color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.playButton',
+            messages,
+          }),
           onClick: playing ? pause : play,
         },
         reduceVolume: {
-          a11yTitle: 'video.volumeDown',
+          icon: <Icons.ReduceVolume color={iconColor} />,
+          a11yTitle: format({
+            id: 'video.volumeDown',
+            messages,
+          }),
           onClick: volume >= VOLUME_STEP ? quieter : undefined,
           close: false,
         },
         volume: {
-          a11yTitle: 'video.volumeUp',
+          icon: <Icons.Volume color={iconColor} />,
+          a11yTitle: format({ id: 'video.volumeUp', messages }),
           onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
           close: false,
         },
       };
 
-      let newItem;
-      const controlsArr =
-        newControls.items &&
-        newControls.items.map((item) => {
+      const controlsMenuItems =
+        controls.items &&
+        controls.items.map((item) => {
           if (typeof item === 'string') {
-            // Transforming item into PascalCase for lookup on Icons
-            const newString = item.charAt(0).toUpperCase() + item.slice(1);
-
-            const Icon = Icons[newString];
-            const buttonTitle = buttonTable[item].a11yTitle
-              ? buttonTable[item].a11yTitle
-              : `video.${item}`;
-
-            newItem = {
-              icon: (
-                <Icon
-                  color={iconColor}
-                  a11yTitle={format({
-                    id: buttonTitle,
-                    messages,
-                  })}
-                />
-              ),
-              onClick: buttonTable[item].onClick,
-              close: buttonTable[item].close
-                ? buttonTable[item].close
-                : undefined,
-            };
-            return newItem;
+            return buttonProps[item];
           }
-          newItem = { icon: item.icon, onClick: item.onClick };
-          return newItem;
+          return {
+            icon: item.icon,
+            a11yTitle: item.a11yTitle,
+            onClick: item.onClick,
+          };
         });
 
       controlsElement = (
         <StyledVideoControls
           over={over}
           active={
-            !hasPlayed ||
-            newControls.position === 'below' ||
-            (over && interacting)
+            !hasPlayed || controls.position === 'below' || (over && interacting)
           }
           onBlur={() => {
             if (!containsFocus(containerRef.current)) setInteracting(false);
@@ -423,7 +427,7 @@ const Video = forwardRef(
                 openMenu: format({ id: 'video.openMenu', messages }),
                 closeMenu: format({ id: 'video.closeMenu', messages }),
               }}
-              items={[...controlsArr]}
+              items={[...controlsMenuItems]}
             />
           </Box>
         </StyledVideoControls>
@@ -431,7 +435,7 @@ const Video = forwardRef(
     }
 
     let mouseEventListeners;
-    if (newControls.position === 'over') {
+    if (controls && controls.position === 'over') {
       mouseEventListeners = {
         onMouseEnter: () => setInteracting(true),
         onMouseMove: () => setInteracting(true),
@@ -440,7 +444,7 @@ const Video = forwardRef(
     }
 
     let style;
-    if (rest.fit === 'contain' && newControls.position === 'over') {
+    if (rest.fit === 'contain' && controls && controls.position === 'over') {
       // constrain the size to fit the aspect ratio so the controls
       // overlap correctly
       if (width) {
