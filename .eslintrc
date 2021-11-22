@@ -1,7 +1,7 @@
 {
   "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier", "react-hooks"],
+  "plugins": ["prettier", "react-hooks", "testing-library"],
   "env": {
     "node": true,
     "es6": true
@@ -85,6 +85,10 @@
       "rules": {
         "react/jsx-one-expression-per-line": 0
       }
+    },
+    {
+      "files": ["**/Accordion/__tests__/**.tsx"],
+      "extends": ["plugin:testing-library/react"]
     }
   ]
 }
