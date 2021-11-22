@@ -5,6 +5,9 @@ import { defaultProps } from '../../default-props';
 
 const fullStyle = (full) => {
   if (full === 'min')
+    /* for min-height to take up the whole viewport
+    we need to set height to 1px in addition to setting
+    min-height to 100vh */
     return css`
       min-height: 100vh;
       height: 1px;
