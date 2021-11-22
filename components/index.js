@@ -554,6 +554,14 @@ Object.keys(_Tabs).forEach(function (key) {
   exports[key] = _Tabs[key];
 });
 
+var _Tag = require("./Tag");
+
+Object.keys(_Tag).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Tag[key]) return;
+  exports[key] = _Tag[key];
+});
+
 var _Text = require("./Text");
 
 Object.keys(_Text).forEach(function (key) {

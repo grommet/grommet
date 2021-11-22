@@ -1352,6 +1352,16 @@ export interface ThemeType {
       };
     };
   };
+  tag?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    round?: RoundType;
+    name?: TextProps;
+    pad?: PadType;
+    remove?: ButtonType;
+    separator?: string;
+    value?: TextProps;
+  };
   text?: {
     extend?: ExtendType;
     xsmall?: {
