@@ -158,6 +158,8 @@ The following best practices should be observed when writing Jest tests with Rea
 
 This article, [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), contains more information and testing best practices.
 
+The [Accordion tests](https://github.com/grommet/grommet/blob/master/src/js/components/Accordion/__tests__/Accordion-test.tsx) are a good reference for tests that follow React Testing Library best practices.
+
 ## Contributing to the Documentation
 
 The documentation is stored in the [grommet-site] repository. Each component
