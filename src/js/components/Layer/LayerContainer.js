@@ -5,7 +5,10 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { styled } from '@linaria/react';
+
 import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';

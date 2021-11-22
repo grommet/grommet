@@ -5,7 +5,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { styled } from '@linaria/react';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -18,7 +20,7 @@ const InteractionBox = styled(Box)`
   }
 
   // when mouse down, we want to continue to display styling
-  ${props => props.active && '> * { opacity: 1; }'}
+  ${(props) => props.active && '> * { opacity: 1; }'}
 
   &:hover {
     > * {
@@ -34,7 +36,7 @@ const Resizer = ({ onResize, property }) => {
   const [width, setWidth] = useState();
   const ref = useRef();
 
-  const onMouseDown = useCallback(event => {
+  const onMouseDown = useCallback((event) => {
     if (ref.current) {
       let element = ref.current;
       // find TH parent
@@ -47,7 +49,7 @@ const Resizer = ({ onResize, property }) => {
   }, []);
 
   const onMouseMove = useCallback(
-    event => {
+    (event) => {
       // We determined 12 empirically as being wide enough to hit but
       // not too wide to cause false hits.
       const nextWidth = Math.max(12, width + (event.clientX - start));

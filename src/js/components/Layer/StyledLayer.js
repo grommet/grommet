@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import {
   baseStyle,
@@ -121,129 +122,297 @@ const getBounds = (bounds, margin, theme, position = undefined) => {
 
 const KEYFRAMES = {
   center: {
-    vertical: keyframes`
-      0% { transform: translateX(-50%) scale(0.8); }
-      100% { transform: translateX(-50%) scale(1); }
+    vertical: css`
+      @keyframes centerVertical {
+        0% {
+          transform: translateX(-50%) scale(0.8);
+        }
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translateY(-50%) scale(0.8); }
-      100% { transform: translateY(-50) scale(1); }
+    horizontal: css`
+      @keyframes centerHorizontal {
+        0% {
+          transform: translateY(-50%) scale(0.8);
+        }
+        100% {
+          transform: translateY(-50) scale(1);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: scale(0.8); }
-      100% { transform: scale(1); }
+    true: css`
+      @keyframes centerTrue {
+        0% {
+          transform: scale(0.8);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(-50%, -50%) scale(0.8); }
-      100% { transform: translate(-50%, -50%) scale(1); }
+    false: css`
+      @keyframes centerFalse {
+        0% {
+          transform: translate(-50%, -50%) scale(0.8);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
     `,
   },
   top: {
-    vertical: keyframes`
-      0% { transform: translate(-50%, -100%); }
-      100% { transform: translate(-50%, 0); }
+    vertical: css`
+      @keyframes topVertical {
+        0% {
+          transform: translate(-50%, -100%);
+        }
+        100% {
+          transform: translate(-50%, 0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(0); }
+    horizontal: css`
+      @keyframes topHorizontal {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(0); }
+    true: css`
+      @keyframes topTrue {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(-50%, -100%); }
-      100% { transform: translate(-50%, 0); }
+    false: css`
+      @keyframes topFalse {
+        0% {
+          transform: translate(-50%, -100%);
+        }
+        100% {
+          transform: translate(-50%, 0);
+        }
+      }
     `,
   },
   bottom: {
-    vertical: keyframes`
-      0% { transform: translate(-50%, 100%); }
-      100% { transform: translate(-50%, 0); }
+    vertical: css`
+      @keyframes bottomVertical {
+        0% {
+          transform: translate(-50%, 100%);
+        }
+        100% {
+          transform: translate(-50%, 0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translateY(100%); }
-      100% { transform: translateY(0); }
+    horizontal: css`
+      @keyframes bottomHorizontal {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateY(100%); }
-      100% { transform: translateY(0); }
+    true: css`
+      @keyframes bottomTrue {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(-50%, 100%); }
-      100% { transform: translate(-50%, 0); }
+    false: css`
+      @keyframes bottomFalse {
+        0% {
+          transform: translate(-50%, 100%);
+        }
+        100% {
+          transform: translate(-50%, 0);
+        }
+      }
     `,
   },
   left: {
-    vertical: keyframes`
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+    vertical: css`
+      @keyframes leftVertical {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translate(-100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    horizontal: css`
+      @keyframes leftHorizontal {
+        0% {
+          transform: translate(-100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+    true: css`
+      @keyframes leftTrue {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(-100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    false: css`
+      @keyframes leftFalse {
+        0% {
+          transform: translate(-100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
   },
   right: {
-    vertical: keyframes`
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0); }
+    vertical: css`
+      @keyframes rightVertical {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translate(100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    horizontal: css`
+      @keyframes rightHorizontal {
+        0% {
+          transform: translate(100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0); }
+    true: css`
+      @keyframes rightTrue {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    false: css`
+      @keyframes rightFalse {
+        0% {
+          transform: translate(100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
   },
   start: {
-    vertical: keyframes`
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+    vertical: css`
+      @keyframes startVertical {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translate(-100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    horizontal: css`
+      @keyframes startHorizontal {
+        0% {
+          transform: translate(-100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+    true: css`
+      @keyframes startTrue {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(-100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    false: css`
+      @keyframes startFalse {
+        0% {
+          transform: translate(-100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
   },
   end: {
-    vertical: keyframes`
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0); }
+    vertical: css`
+      @keyframes endVertical {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    horizontal: keyframes`
-      0% { transform: translate(100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    horizontal: css`
+      @keyframes endHorizontal {
+        0% {
+          transform: translate(100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
-    true: keyframes`
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(0); }
+    true: css`
+      @keyframes endTrue {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
     `,
-    false: keyframes`
-      0% { transform: translate(100%, -50%); }
-      100% { transform: translate(0, -50%); }
+    false: css`
+      @keyframes endFalse {
+        0% {
+          transform: translate(100%, -50%);
+        }
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
     `,
   },
 };
@@ -258,7 +427,16 @@ const getAnimationStyle = (props, position, full) => {
   if (animation === 'slide' || animation === true) {
     keys = KEYFRAMES[position][full];
   } else if (animation === 'fadeIn') {
-    keys = keyframes`0% { opacity: 0 } 100% { opacity: 1 }`;
+    keys = css`
+      @keyframes keys {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    `;
   }
   return keys
     ? css`

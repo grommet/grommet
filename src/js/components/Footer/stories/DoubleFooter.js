@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
@@ -14,13 +14,13 @@ const FooterAnchor = ({ ...rest }) => (
 );
 
 const FooterContent = () =>
-  data.map(item => (
+  data.map((item) => (
     <Box gap="medium" key={item[0]}>
       <Text weight="bold" size="small">
         {item[0]}
       </Text>
       <Box>
-        {[1, 2, 3, 4].map(i => (
+        {[1, 2, 3, 4].map((i) => (
           <FooterAnchor key={item[i]}>{item[i]}</FooterAnchor>
         ))}
       </Box>

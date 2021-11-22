@@ -6,7 +6,10 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { defaultProps } from '../../default-props';
 
@@ -152,10 +155,13 @@ const Header = forwardRef(
       ? [...pin, 'left']
       : pin;
 
-    const totalSelectedGroups = groupBy?.select ?
-      Object.keys(groupBy.select).reduce((total, cur) =>
-        cur && groupBy.select[cur] === 'all' ? total + 1 : total,
-      0) : 0;
+    const totalSelectedGroups = groupBy?.select
+      ? Object.keys(groupBy.select).reduce(
+          (total, cur) =>
+            cur && groupBy.select[cur] === 'all' ? total + 1 : total,
+          0,
+        )
+      : 0;
     const totalSelected = (selected?.length || 0) + totalSelectedGroups;
 
     return (
@@ -194,34 +200,35 @@ const Header = forwardRef(
                       : 'select all'
                   }
                   checked={
-                    groupBy?.select ?
-                      groupBy.select[''] === 'all' :
-                      totalSelected > 0 &&
-                      data.length > 0 &&
-                      totalSelected === data.length
+                    groupBy?.select
+                      ? groupBy.select[''] === 'all'
+                      : totalSelected > 0 &&
+                        data.length > 0 &&
+                        totalSelected === data.length
                   }
                   indeterminate={
-                    groupBy?.select ?
-                      groupBy.select[''] === 'some' :
-                      totalSelected > 0 && totalSelected < data.length
+                    groupBy?.select
+                      ? groupBy.select[''] === 'some'
+                      : totalSelected > 0 && totalSelected < data.length
                   }
                   onChange={() => {
                     let nextSelected;
                     const nextGroupSelected = {};
-                    const allSelected = groupBy?.select ?
-                      groupBy.select[''] === 'all' :
-                      totalSelected === data.length;
-                  
+                    const allSelected = groupBy?.select
+                      ? groupBy.select[''] === 'all'
+                      : totalSelected === data.length;
+
                     // if all are selected, clear selection
                     if (allSelected) {
                       nextSelected = [];
                       nextGroupSelected[''] = 'none';
                     } else {
                       // if some or none are selected, select all data
-                      nextSelected = 
-                        data.map((datum) => datumValue(datum, primaryProperty));
+                      nextSelected = data.map((datum) =>
+                        datumValue(datum, primaryProperty),
+                      );
                       nextGroupSelected[''] = 'all';
-                      groupBy?.expandable?.forEach(key => {
+                      groupBy?.expandable?.forEach((key) => {
                         nextGroupSelected[key] = 'all';
                       });
                     }
@@ -231,8 +238,7 @@ const Header = forwardRef(
                         undefined,
                         nextGroupSelected,
                       );
-                    }
-                    else onSelect(nextSelected);
+                    } else onSelect(nextSelected);
                   }}
                   pad={cellProps.pad}
                 />

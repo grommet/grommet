@@ -1,18 +1,20 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { Box, DataChart, Stack } from 'grommet';
 
-const keyFrameExampleOne = keyframes`
-0% {
-  width: 200px;
-  background-color: #FFFFFF;
-}
-
-100% {
-    width: 0px;
-    background-color: #FFFFFF;
+const keyFrameExampleOne = css`
+  @keyframes exampleOne {
+    0% {
+      width: 200px;
+      background-color: #ffffff;
+    }
+    100% {
+      width: 0;
+      background-color: #ffffff;
+    }
   }
 `;
 const AnimatedBox = styled(Box)`

@@ -3,6 +3,8 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
+// TODO: figure out replacement for FlattenInterpolation,
+//  FlattenSimpleInterpolation, & ThemedStyledProps
 import { ReactComponentElement } from 'react';
 
 import {

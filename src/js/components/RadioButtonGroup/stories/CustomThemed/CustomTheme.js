@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 
 const customTheme = deepMerge(grommet, {
   radioButtonGroup: {

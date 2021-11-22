@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 
 import 'jest-styled-components';
 

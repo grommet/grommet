@@ -5,7 +5,9 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { styled } from '@linaria/react';
 
 import { defaultProps } from '../../default-props';
 
@@ -356,9 +358,9 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {/* 
+              {/*
                 If align.top was defined,
-                don't show controlMirror when window height has shrunk 
+                don't show controlMirror when window height has shrunk
               */}
               {!initialAlignTop &&
               (alignControlMirror === 'bottom' || align.bottom === 'bottom')

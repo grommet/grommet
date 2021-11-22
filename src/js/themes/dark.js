@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 
 import { deepFreeze } from '../utils/object';
 import { normalizeColor } from '../utils/colors';

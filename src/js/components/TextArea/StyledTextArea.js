@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { disabledStyle, inputStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -10,7 +11,7 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
-const resizeStyle = resize => {
+const resizeStyle = (resize) => {
   if (resize === 'horizontal') {
     return 'resize: horizontal;';
   }
@@ -25,15 +26,15 @@ const resizeStyle = resize => {
 
 const StyledTextArea = styled.textarea`
   ${inputStyle}
-  ${props => props.resize !== undefined && resizeStyle(props.resize)}
-  ${props => props.fillArg && 'height: 100%;'}
-  ${props => props.plain && plainStyle}
-  ${props =>
+  ${(props) => props.resize !== undefined && resizeStyle(props.resize)}
+  ${(props) => props.fillArg && 'height: 100%;'}
+  ${(props) => props.plain && plainStyle}
+  ${(props) =>
     props.disabled &&
     disabledStyle(
       props.theme.textArea.disabled && props.theme.textArea.disabled.opacity,
     )}
-  ${props => props.theme.textArea && props.theme.textArea.extend};
+  ${(props) => props.theme.textArea && props.theme.textArea.extend};
 `;
 
 StyledTextArea.defaultProps = {};

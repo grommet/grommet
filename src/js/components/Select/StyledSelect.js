@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 
 import { sizeStyle } from '../../utils';
 
@@ -8,11 +8,11 @@ export const StyledContainer = styled.div`
     width: 100%;
   }
 
-  ${props =>
+  ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
 
-  ${props =>
+  ${(props) =>
     props.theme.select.container && props.theme.select.container.extend};
 `;

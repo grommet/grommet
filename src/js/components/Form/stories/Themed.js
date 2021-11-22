@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 
 import { Alert, StatusInfo } from 'grommet-icons';
 import {

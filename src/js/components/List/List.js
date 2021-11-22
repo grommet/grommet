@@ -1,5 +1,7 @@
 import React, { Fragment, useContext, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { styled } from '@linaria/react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';

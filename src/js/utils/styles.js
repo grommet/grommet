@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';

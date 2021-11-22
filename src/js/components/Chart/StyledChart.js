@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -13,11 +14,20 @@ const animateStyle = ({ theme, typeProp }) => {
   return css`
     ${typeProp === 'line' && 'stroke-dasharray: 200%;'}
     animation:
-    ${keyframes`from { ${animateBounds[0]} } to { ${animateBounds[1]} }`}
+    ${css`
+      from {
+        @keyframes bounds {
+          ${animateBounds[0]}
+        }
+        to {
+          ${animateBounds[1]}
+        }
+      }
+    `}
     ${theme.global.animation.duration}
     forwards;
     ${(typeProp === 'bar' || typeProp === 'area') &&
-      'transform-origin: center bottom 0;'}
+    'transform-origin: center bottom 0;'}
   `;
 };
 
@@ -27,8 +37,8 @@ const StyledChart = styled.svg`
   overflow: visible;
 
   ${genericStyles}
-  ${props => props.animate && animateStyle(props)}
-  ${props => props.theme.chart && props.theme.chart.extend};
+  ${(props) => props.animate && animateStyle(props)}
+  ${(props) => props.theme.chart && props.theme.chart.extend};
 `;
 
 StyledChart.defaultProps = {};

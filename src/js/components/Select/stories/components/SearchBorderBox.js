@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 import React, { useState } from 'react';
 
 import { Box } from '../../..';
@@ -18,7 +18,7 @@ const searchingStyle = css`
     left: 0;
     width: 100%;
     height: 2px;
-    background: ${props => normalizeColor('light-2', props.theme)};
+    background: ${(props) => normalizeColor('light-2', props.theme)};
   }
 
   &:after {
@@ -29,7 +29,7 @@ const searchingStyle = css`
     width: 100%;
     height: 2px;
     will-change: left, right;
-    background: ${props => normalizeColor('brand', props.theme)};
+    background: ${(props) => normalizeColor('brand', props.theme)};
     animation: progress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     transform: translateX(-50%) scaleX(0);
   }
@@ -62,7 +62,7 @@ const defaultStyle = css`
     transition: width 0.2s ease, background 0.2s ease, left 0.2s ease;
   }
 
-  ${props =>
+  ${(props) =>
     props.focus &&
     `
     box-shadow: none;

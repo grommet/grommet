@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -84,7 +85,7 @@ const StyledCheckBoxContainer = styled.label`
         props.theme,
       )};
     }
-     
+
     background-color: ${normalizeColor(
       !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,

@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import { css } from '@linaria/core';
 
 const PULSE_SIZES = {
   xsmall: 1.001,
@@ -133,7 +133,11 @@ export const animationObjectStyle = (animation, theme, themeObj) => {
       );
 
     return css`
-      ${keyframes`${animationTransition}`}
+      ${css`
+        @keyframes bounds {
+          ${animationTransition}
+        }
+      `}
       ${normalizeTiming(animation.duration, defaultDuration())}
     ${normalizeTiming(animation.delay, '0s')}
     ${animationEnding(animation.type)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 import { ThemeType, BoxTypes, Grommet, Box, Anchor, Button } from 'grommet';
 
 // Custom theme to verify that various `extend` types work correctly

@@ -8,7 +8,9 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
+// TODO: figure out replacement for ThemeContext
+import { styled } from '@linaria/react';
 
 import { controlBorderStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';

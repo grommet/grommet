@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
@@ -16,14 +17,16 @@ function getTransformOriginStyle(align) {
   return `${vertical} ${horizontal}`;
 }
 
-const dropKeyFrames = keyframes`
-  0% {
-    opacity: 0.5;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+const dropKeyFrames = css`
+  @keyframes drop {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 `;
 

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   const style =
     props.theme.pagination.button &&
     props.theme.pagination.button.size &&
@@ -27,7 +27,7 @@ export const StyledPaginationButton = styled(Button)`
   > svg {
     vertical-align: middle;
   }
-  ${props => sizeStyle(props).content};
+  ${(props) => sizeStyle(props).content};
 `;
 
 export const StyledContainer = styled.div`
@@ -35,17 +35,19 @@ export const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  ${props => sizeStyle(props).container};
-  ${props =>
+  ${(props) => sizeStyle(props).container};
+  ${(props) =>
     props.theme.pagination.control && props.theme.pagination.control.extend};
 `;
 
 export const StyledSeparator = styled(Text)`
   font-weight: bold;
-  ${props =>
-    `font-size: ${sizeStyle(props).content &&
-      sizeStyle(props).content.fontSize}`};
-  ${props =>
-    `line-height: ${sizeStyle(props).content &&
-      sizeStyle(props).content.lineHeight}`};
+  ${(props) =>
+    `font-size: ${
+      sizeStyle(props).content && sizeStyle(props).content.fontSize
+    }`};
+  ${(props) =>
+    `line-height: ${
+      sizeStyle(props).content && sizeStyle(props).content.lineHeight
+    }`};
 `;

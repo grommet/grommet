@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 
 import { inputStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -10,8 +10,8 @@ const StyledFileInput = styled.input`
   ${inputStyle}
   opacity: 0;
   border: none;
-  ${props => !props.disabled && 'cursor: pointer;'}
-  ${props =>
+  ${(props) => !props.disabled && 'cursor: pointer;'}
+  ${(props) =>
     props.rightOffset &&
     `
     width: calc(100% - ${props.rightOffset}px);

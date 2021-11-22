@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -200,7 +201,7 @@ describe('Tabs', () => {
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
   });
 
-  test(`should apply custom theme disabled style when theme.button.default is 
+  test(`should apply custom theme disabled style when theme.button.default is
   defined`, () => {
     const disabledTextColor = 'blue';
     const disabledBorderBottomColor = 'green';

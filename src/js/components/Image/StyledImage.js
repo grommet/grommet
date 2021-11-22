@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 
 import { fillStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -11,15 +12,15 @@ const FIT_MAP = {
 const fitStyle = css`
   flex: 1 1;
   overflow: hidden;
-  object-fit: ${props => FIT_MAP[props.fit]};
+  object-fit: ${(props) => FIT_MAP[props.fit]};
 `;
 
 const StyledImage = styled.img`
   ${genericStyles}
-  ${props => props.fit && fitStyle}
-  ${props => props.fillProp && fillStyle(props.fillProp)}
-  ${props => props.theme.image && props.theme.image.extend}
-  ${props =>
+  ${(props) => props.fit && fitStyle}
+  ${(props) => props.fillProp && fillStyle(props.fillProp)}
+  ${(props) => props.theme.image && props.theme.image.extend}
+  ${(props) =>
     props.opacityProp &&
     `opacity: ${
       props.opacityProp === true
@@ -27,7 +28,7 @@ const StyledImage = styled.img`
         : props.theme.global.opacity[props.opacityProp] || props.opacityProp
     };
   `}
-    `;
+`;
 
 StyledImage.defaultProps = {};
 Object.setPrototypeOf(StyledImage.defaultProps, defaultProps);

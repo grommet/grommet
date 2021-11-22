@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@linaria/react';
 import { Favorite, Nodes } from 'grommet-icons';
 
 import { Box, Spinner, Text } from 'grommet';

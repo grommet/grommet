@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { css } from 'styled-components';
+import { css } from '@linaria/core';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';

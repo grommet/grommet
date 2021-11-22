@@ -1,4 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
+
 import {
   backgroundStyle,
   focusStyle,
@@ -70,7 +72,8 @@ const slideStyle = (props) => {
     }
   `;
   return css`
-    animation: ${keyframes`${slideTransition}`} ${slideDuration} forwards;
+    animation: ${css`
+        @keyframes slide {${slideTransition}}`} ${slideDuration} forwards;
   `;
 };
 
