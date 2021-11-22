@@ -2676,10 +2676,9 @@ exports[`Accordion change to second Panel 2`] = `
 }
 
 .c13 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 1;
-  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
 }
 
 .c6 {
@@ -2845,9 +2844,8 @@ exports[`Accordion change to second Panel 2`] = `
           style=""
         >
           <div
-            aria-hidden="false"
+            aria-hidden="true"
             class="c1 c13"
-            open=""
             style="max-height: 0;"
           >
             Panel body 2
@@ -4629,10 +4627,9 @@ exports[`Accordion focus and hover styles 1`] = `
 }
 
 .c10 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 1;
-  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
 }
 
 .c6 {
@@ -4738,9 +4735,8 @@ exports[`Accordion focus and hover styles 1`] = `
           style=""
         >
           <div
-            aria-hidden="false"
+            aria-hidden="true"
             class="c1 c10"
-            open=""
             style="max-height: 0;"
           >
             Panel body 1
