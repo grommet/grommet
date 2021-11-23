@@ -1,6 +1,5 @@
 import React, {
   Children,
-  useRef,
   useContext,
   useState,
   useEffect,
@@ -8,13 +7,10 @@ import React, {
 } from 'react';
 import { CarouselChild } from './CarouselChild';
 import { CarouselControls } from './CarouselControls';
-import {
-  StyledCarouselContainer,
-  StyledCarouselInnerContainer,
-} from './StyledCarousel';
+import { StyledCarouselContainer } from './StyledCarousel';
 import { CarouselPropTypes } from './propTypes';
 import { Keyboard } from '../Keyboard';
-import { ResponsiveContext, ThemeContext } from '../../contexts';
+import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 
 const Carousel = ({
@@ -30,9 +26,8 @@ const Carousel = ({
   play,
   ...rest
 }) => {
-  const firstChildRef = useRef(null);
+  const containerRef = React.createRef();
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const size = useContext(ResponsiveContext);
   const numSlides = children.length;
   const noContainer = !fill && (!height || !width);
   const animationDuration =
@@ -46,8 +41,8 @@ const Carousel = ({
   const [direction, setDirection] = useState(undefined);
   const [inTransition, setInTransition] = useState(false);
   const [containerProps, setContainerProps] = useState({
-    heightProp: height,
-    widthProp: width,
+    containerHeight: undefined,
+    containerWidth: undefined,
   });
 
   const onPrevious = useCallback(() => {
@@ -70,15 +65,18 @@ const Carousel = ({
     onChild(next);
   }, [current, numSlides, inTransition, onChild]);
 
-  const onSelectorNavigation = useCallback((index) => {
-    if (current === index) return;
-    if (inTransition) return;
-    setDirection(index > current ? 'next' : 'previous');
-    setInTransition(true);
-    setPrevious(current);
-    setCurrent(index);
-    onChild(index);
-  }, [current, inTransition, onChild]);
+  const onSelectorNavigation = useCallback(
+    (index) => {
+      if (current === index) return;
+      if (inTransition) return;
+      setDirection(index > current ? 'next' : 'previous');
+      setInTransition(true);
+      setPrevious(current);
+      setCurrent(index);
+      onChild(index);
+    },
+    [current, inTransition, onChild],
+  );
 
   const onControlledNavigation = useCallback(() => {
     if (inTransition) return;
@@ -94,29 +92,30 @@ const Carousel = ({
 
   /**
    * Handles when the "fill" or "height" & "width" props are not specified
-   * and no Carousel container is allocated for the slides. This renders
-   * the first active child to expand to the given height and width it
-   * needs and then dynamically reads those values to set as the fixed
-   * dimensions of the Carousel container.
+   * and no Carousel container is allocated for the slides. On a transition,
+   * this calculates the current dimensions of the slide and sets those as the
+   * container height and width of the Carousel.
    */
+
   useEffect(() => {
     if (noContainer) {
-      const { current: childRef } = firstChildRef;
-      if (childRef) {
-        if (childRef.offsetWidth > 0 && childRef.offsetHeight > 0) {
+      if (inTransition) {
+        const { offsetWidth: currentWidth, offsetHeight: currentHeight } =
+          containerRef.current;
+        if (currentHeight && currentWidth) {
           setContainerProps({
-            heightProp: `${childRef.offsetHeight}px`,
-            widthProp: `${childRef.offsetWidth}px`,
+            containerHeight: currentHeight,
+            containerWidth: currentWidth,
           });
-        } else setContainerProps({});
+        }
+      } else {
+        setContainerProps({
+          containerHeight: undefined,
+          containerWidth: undefined,
+        });
       }
-    } else {
-      setContainerProps({
-        heightProp: fill ? '100%' : height,
-        widthProp: fill ? '100%' : width,
-      });
     }
-  }, [noContainer, fill, height, width, size]);
+  }, [inTransition, noContainer]);
 
   /**
    * Delays the transitions between Carousel slides. This is needed to
@@ -165,36 +164,37 @@ const Carousel = ({
     return <StyledCarouselContainer>{children}</StyledCarouselContainer>;
 
   return (
-    <Keyboard
-      onLeft={() => onPrevious()}
-      onRight={() => onNext()}
-    >
-      <StyledCarouselContainer {...containerProps} {...rest}>
-        <StyledCarouselInnerContainer>
-          <CarouselControls
-            continuous={continuous}
-            controls={controls}
+    <Keyboard onLeft={() => onPrevious()} onRight={() => onNext()}>
+      <StyledCarouselContainer
+        height={height}
+        width={width}
+        inTransition={inTransition}
+        ref={containerRef}
+        {...containerProps}
+        {...rest}
+      >
+        <CarouselControls
+          continuous={continuous}
+          controls={controls}
+          current={current}
+          inTransition={inTransition}
+          onNext={onNext}
+          numSlides={numSlides}
+          onPrevious={onPrevious}
+          onSelectorNavigation={onSelectorNavigation}
+        />
+        {Children.map(children, (child, index) => (
+          <CarouselChild
+            index={index}
+            animationDuration={animationDuration}
             current={current}
-            inTransition={inTransition}
-            onNext={onNext}
-            numSlides={numSlides}
-            onPrevious={onPrevious}
-            onSelectorNavigation={onSelectorNavigation}
-          />
-          {Children.map(children, (child, index) => (
-            <CarouselChild
-              index={index}
-              animationDuration={animationDuration}
-              ref={index === current ? firstChildRef : null}
-              current={current}
-              previous={previous}
-              noContainer={noContainer}
-              direction={direction}
-            >
-              {child}
-            </CarouselChild>
-          ))}
-        </StyledCarouselInnerContainer>
+            previous={previous}
+            noContainer={noContainer}
+            direction={direction}
+          >
+            {child}
+          </CarouselChild>
+        ))}
       </StyledCarouselContainer>
     </Keyboard>
   );

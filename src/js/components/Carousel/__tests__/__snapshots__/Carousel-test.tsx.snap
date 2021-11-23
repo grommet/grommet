@@ -2,7 +2,7 @@
 
 exports[`Carousel basic 1`] = `
 <DocumentFragment>
-  .c7 {
+  .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -13,30 +13,30 @@ exports[`Carousel basic 1`] = `
   stroke: #666666;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c13 {
+.c12 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -47,25 +47,25 @@ exports[`Carousel basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c13 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c13 *[fill-rule],
-.c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -84,7 +84,7 @@ exports[`Carousel basic 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,7 +99,7 @@ exports[`Carousel basic 1`] = `
   height: 100%;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,7 +116,7 @@ exports[`Carousel basic 1`] = `
   padding-bottom: 6px;
 }
 
-.c14 {
+.c13 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -128,16 +128,12 @@ exports[`Carousel basic 1`] = `
 
 .c2 {
   position: relative;
-}
-
-.c3 {
-  position: relative;
   display: block;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
-.c15 {
+.c14 {
   position: relative;
   max-width: 100%;
   float: left;
@@ -147,7 +143,7 @@ exports[`Carousel basic 1`] = `
   animation: none;
 }
 
-.c16 {
+.c15 {
   position: relative;
   max-width: 100%;
   float: left;
@@ -157,7 +153,7 @@ exports[`Carousel basic 1`] = `
   animation: none;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -171,7 +167,7 @@ exports[`Carousel basic 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   position: absolute;
   z-index: 1;
   right: 0;
@@ -185,7 +181,7 @@ exports[`Carousel basic 1`] = `
   justify-content: center;
 }
 
-.c11 {
+.c10 {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -199,7 +195,7 @@ exports[`Carousel basic 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -221,47 +217,47 @@ exports[`Carousel basic 1`] = `
   line-height: 0;
 }
 
-.c6:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -281,52 +277,52 @@ exports[`Carousel basic 1`] = `
   line-height: 0;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c9:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c12 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -345,48 +341,48 @@ exports[`Carousel basic 1`] = `
   line-height: 0;
 }
 
-.c12:hover {
+.c11:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -401,14 +397,14 @@ exports[`Carousel basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c13 {
     width: 3px;
   }
 }
@@ -420,109 +416,105 @@ exports[`Carousel basic 1`] = `
       class="c1 c2"
     >
       <div
-        class="c1 c3"
+        class="c3 c4"
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-label="Go to slide 0"
+          class="c5"
+          disabled=""
+          type="button"
         >
-          <button
-            aria-label="Go to slide 0"
+          <svg
+            aria-label="Previous"
             class="c6"
-            disabled=""
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Previous"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17 2 7 12l10 10"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="c4 c8"
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="c3 c7"
+      >
+        <button
+          aria-label="Go to slide 2"
+          class="c8"
+          type="button"
         >
-          <button
-            aria-label="Go to slide 2"
-            class="c9"
-            type="button"
+          <svg
+            aria-label="Next"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Next"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m7 2 10 10L7 22"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="c10 c11"
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="c9 c10"
+      >
+        <button
+          aria-label="Jump to slide 1"
+          class="c11"
+          type="button"
         >
-          <button
-            aria-label="Jump to slide 1"
+          <svg
+            aria-label="Subtract"
             class="c12"
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Subtract"
-              class="c13"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M2 12h20"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-          <div
-            class="c14"
-          />
-          <button
-            aria-label="Jump to slide 2"
-            class="c12"
-            type="button"
+            <path
+              d="M2 12h20"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c13"
+        />
+        <button
+          aria-label="Jump to slide 2"
+          class="c11"
+          type="button"
+        >
+          <svg
+            aria-label="Subtract"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Subtract"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M2 12h20"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+            <path
+              d="M2 12h20"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="c14"
+      >
+        <div>
+          Slide One
         </div>
-        <div
-          class="c15"
-        >
-          <div>
-            Slide One
-          </div>
-        </div>
-        <div
-          class="c16"
-        >
-          <div>
-            Slide Two
-          </div>
+      </div>
+      <div
+        class="c15"
+      >
+        <div>
+          Slide Two
         </div>
       </div>
     </div>
@@ -532,7 +524,7 @@ exports[`Carousel basic 1`] = `
 
 exports[`Carousel controlled component 1`] = `
 <DocumentFragment>
-  .c7 {
+  .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -543,25 +535,25 @@ exports[`Carousel controlled component 1`] = `
   stroke: #666666;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -580,7 +572,7 @@ exports[`Carousel controlled component 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -597,16 +589,12 @@ exports[`Carousel controlled component 1`] = `
 
 .c2 {
   position: relative;
-}
-
-.c3 {
-  position: relative;
   display: block;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
-.c10 {
+.c9 {
   position: relative;
   max-width: 100%;
   float: left;
@@ -616,7 +604,7 @@ exports[`Carousel controlled component 1`] = `
   animation: none;
 }
 
-.c11 {
+.c10 {
   position: relative;
   max-width: 100%;
   float: left;
@@ -626,7 +614,7 @@ exports[`Carousel controlled component 1`] = `
   animation: none;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -640,7 +628,7 @@ exports[`Carousel controlled component 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c7 {
   position: absolute;
   z-index: 1;
   right: 0;
@@ -654,7 +642,7 @@ exports[`Carousel controlled component 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -674,52 +662,52 @@ exports[`Carousel controlled component 1`] = `
   line-height: 0;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c6:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -741,43 +729,43 @@ exports[`Carousel controlled component 1`] = `
   line-height: 0;
 }
 
-.c9:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -798,66 +786,62 @@ exports[`Carousel controlled component 1`] = `
       class="c1 c2"
     >
       <div
-        class="c1 c3"
+        class="c3 c4"
       >
-        <div
-          class="c4 c5"
+        <button
+          aria-label="Go to slide 1"
+          class="c5"
+          type="button"
         >
-          <button
-            aria-label="Go to slide 1"
+          <svg
+            aria-label="Previous"
             class="c6"
-            type="button"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Previous"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17 2 7 12l10 10"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="c4 c8"
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="c3 c7"
+      >
+        <button
+          aria-label="Go to slide 3"
+          class="c8"
+          disabled=""
+          type="button"
         >
-          <button
-            aria-label="Go to slide 3"
-            class="c9"
-            disabled=""
-            type="button"
+          <svg
+            aria-label="Next"
+            class="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Next"
-              class="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m7 2 10 10L7 22"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="c9"
+      >
+        <div>
+          Slide One
         </div>
-        <div
-          class="c10"
-        >
-          <div>
-            Slide One
-          </div>
-        </div>
-        <div
-          class="c11"
-        >
-          <div>
-            Slide Two
-          </div>
+      </div>
+      <div
+        class="c10"
+      >
+        <div>
+          Slide Two
         </div>
       </div>
     </div>

@@ -4,15 +4,19 @@ import { widthStyle, heightStyle } from '../../utils';
 
 const StyledCarouselContainer = styled(Box)`
   position: relative;
-  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
-  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
-`;
-
-const StyledCarouselInnerContainer = styled(Box)`
-  position: relative;
   display: block;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
+  ${(props) => props.height && heightStyle(props.height, props.theme)}
+  ${(props) => props.width && widthStyle(props.width, props.theme)}
+  ${(props) =>
+    props.inTransition &&
+    props.containerHeight &&
+    `height: ${props.containerHeight}px`};
+  ${(props) =>
+    props.inTransition &&
+    props.containerWidth &&
+    `width: ${props.containerWidth}px`};
 `;
 
 const StyledCarouselChild = styled.div`
@@ -70,7 +74,6 @@ const slideLeftCurrent = keyframes`
 export {
   StyledControl,
   StyledCarouselContainer,
-  StyledCarouselInnerContainer,
   StyledCarouselChild,
   slideLeftCurrent,
   slideLeftPrevious,
