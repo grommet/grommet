@@ -168,7 +168,7 @@ exports[`Grommet full min 1`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  height: 1px;
+  overflow: visible;
 }
 
 <div
