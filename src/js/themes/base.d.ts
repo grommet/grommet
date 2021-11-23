@@ -1151,7 +1151,18 @@ export interface ThemeType {
     };
   };
   nameValueList?: {
-    gap?: { row?: GapType; column?: GapType };
+    gap?: {
+      column?: GapType;
+      row?: GapType;
+    };
+    pair?: {
+      column?: {
+        gap?: {
+          column?: GapType;
+          row?: GapType;
+        };
+      };
+    };
     name?: {
       width: string;
     };
@@ -1160,6 +1171,9 @@ export interface ThemeType {
     };
   };
   nameValuePair?: {
+    column?: {
+      gap?: GapType;
+    };
     name?: TextProps;
     value?: TextProps;
   };
@@ -1337,6 +1351,16 @@ export interface ThemeType {
         extend?: ExtendType;
       };
     };
+  };
+  tag?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    round?: RoundType;
+    name?: TextProps;
+    pad?: PadType;
+    remove?: ButtonType;
+    separator?: string;
+    value?: TextProps;
   };
   text?: {
     extend?: ExtendType;

@@ -1047,7 +1047,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     nameValueList: {
-      gap: { column: 'large', row: 'small' },
+      gap: {
+        column: 'large',
+        row: 'small',
+      },
+      pair: {
+        column: {
+          gap: {
+            column: 'large',
+            row: 'medium',
+          },
+        },
+      },
       name: {
         width: 'small',
       },
@@ -1056,6 +1067,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     nameValuePair: {
+      column: {
+        gap: 'xxsmall',
+      },
       name: {
         // any text props
         color: 'text',
@@ -1460,6 +1474,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
+      },
+    },
+    tag: {
+      // background: undefined,
+      border: true,
+      round: 'large',
+      // name: undefined,
+      pad: {  
+        horizontal: 'small',
+        vertical: 'xsmall',
+      },
+      remove: {
+        margin: { right: 'xsmall'},
+      },
+      separator: ' : ',
+      value: {
+        weight: 600,
       },
     },
     text: {

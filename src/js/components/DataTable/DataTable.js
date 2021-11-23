@@ -65,6 +65,7 @@ const DataTable = ({
   onSearch, // removing unknown DOM attributes
   onSelect,
   onSort: onSortProp,
+  onUpdate,
   replace,
   pad,
   paginate,
@@ -106,9 +107,11 @@ const DataTable = ({
   const [sort, setSort] = useState(sortProp || {});
 
   // the data filtered and sorted, if needed
+  // Note: onUpdate mode expects the data to be passed
+  //   in completely filtered and sorted already.
   const adjustedData = useMemo(
-    () => filterAndSortData(data, filters, onSearch, sort),
-    [data, filters, onSearch, sort],
+    () => onUpdate ? data : filterAndSortData(data, filters, onSearch, sort),
+    [data, filters, onSearch, onUpdate, sort],
   );
 
   // the values to put in the footer cells
@@ -125,12 +128,14 @@ const DataTable = ({
 
   // if groupBy, an array with one item per unique groupBy key value
   const groups = useMemo(
-    () => buildGroups(columns, adjustedData, groupBy),
-    [adjustedData, columns, groupBy],
+    () => buildGroups(columns, adjustedData, groupBy, primaryProperty),
+    [adjustedData, columns, groupBy, primaryProperty],
   );
 
   // an object indicating which group values are expanded
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
+
+  const [limit, setLimit] = useState(step);
 
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
@@ -236,6 +241,19 @@ const DataTable = ({
     else direction = 'asc';
     const nextSort = { property, direction, external };
     setSort(nextSort);
+    if (onUpdate) {
+      const opts = {
+        count: limit,
+        sort: nextSort,
+      };
+      if (groups) {
+        opts.expanded = Object.keys(groupState).filter(
+          (k) => groupState[k].expanded,
+        );
+      }
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
+    }
     if (onSortProp) onSortProp(nextSort);
   };
 
@@ -247,10 +265,19 @@ const DataTable = ({
       expanded: !nextGroupState[groupValue].expanded,
     };
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      const opts = {
+        expanded: expandedKeys,
+        count: limit,
+      };
+      if (sort?.property) opts.sort = sort;
+      if (showProp) opts.show = showProp;
+      onUpdate(opts);
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -265,10 +292,19 @@ const DataTable = ({
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
     setGroupState(nextGroupState);
+    const expandedKeys = Object.keys(nextGroupState).filter(
+      (k) => nextGroupState[k].expanded,
+    );
+    if (onUpdate) {
+      const opts = {
+        expanded: expandedKeys,
+        count: limit,
+      };
+      if (showProp) opts.show = showProp;
+      if (sort?.property) opts.sort = sort;
+      onUpdate(opts);
+    }
     if (groupBy.onExpand) {
-      const expandedKeys = Object.keys(nextGroupState).filter(
-        (k) => nextGroupState[k].expanded,
-      );
       groupBy.onExpand(expandedKeys);
     }
   };
@@ -287,6 +323,9 @@ const DataTable = ({
 
   if (size && resizeable) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
+  }
+  if (onUpdate && onMore) {
+    console.warn('DataTable cannot combine "onUpdate" and "onMore".');
   }
 
   const [items, paginationProps] = usePagination({
@@ -332,6 +371,7 @@ const DataTable = ({
             fill={fill}
             filtering={filtering}
             filters={filters}
+            groupBy={groupBy}
             groups={groups}
             groupState={groupState}
             pin={pin === true || pin === 'header'}
@@ -363,21 +403,38 @@ const DataTable = ({
               ref={bodyRef}
               cellProps={cellProps.body}
               columns={columns}
-              groupBy={groupBy.property ? groupBy.property : groupBy}
+              groupBy={typeof groupBy === 'string' ?
+                { property: groupBy} :
+                groupBy
+              }
               groups={groups}
               groupState={groupState}
               pinnedOffset={pinnedOffset}
               primaryProperty={primaryProperty}
-              onMore={onMore}
+              onMore={onUpdate ? () => {
+                if (adjustedData.length === limit) {
+                  const opts = {
+                    expanded: Object.keys(groupState).filter(
+                      (k) => groupState[k].expanded,
+                    ),
+                    count: limit + step,
+                  };
+                  if (sort?.property) opts.sort = sort;
+                  if (showProp) opts.show = showProp;
+                  onUpdate(opts);
+                  setLimit( prev => prev + step);
+                }
+              } : onMore}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? (nextSelected, row) => {
                       setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
+                      if (onSelect) onSelect(nextSelected, row);
                     }
                   : undefined
               }
               onToggle={onToggleGroup}
+              onUpdate={onUpdate}
               replace={replace}
               rowProps={rowProps}
               selected={selected}
@@ -390,14 +447,24 @@ const DataTable = ({
               cellProps={cellProps.body}
               columns={columns}
               data={!paginate ? adjustedData : items}
-              onMore={onMore}
+              onMore={onUpdate ? () => {
+                if (adjustedData.length === limit) {
+                  const opts = {
+                    count: limit + step,
+                  };
+                  if (sort?.property) opts.sort = sort;
+                  if (showProp) opts.show = showProp;
+                  onUpdate(opts);
+                  setLimit( prev => prev + step);
+                }
+              } : onMore}
               replace={replace}
               onClickRow={onClickRow}
               onSelect={
                 onSelect
-                  ? (nextSelected) => {
+                  ? (nextSelected, row) => {
                       setSelected(nextSelected);
-                      if (onSelect) onSelect(nextSelected);
+                      if (onSelect) onSelect(nextSelected, row);
                     }
                   : undefined
               }
