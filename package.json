@@ -72,7 +72,7 @@
     "@storybook/addons": "^6.3.12",
     "@storybook/react": "^6.3.12",
     "@storybook/source-loader": "^6.3.12",
-    "@testing-library/dom": "^8.7.2",
+    "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

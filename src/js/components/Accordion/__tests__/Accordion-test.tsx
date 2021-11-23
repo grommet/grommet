@@ -4,7 +4,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
@@ -105,6 +105,10 @@ describe('Accordion', () => {
 
     userEvent.click(screen.getByRole('tab', { name: /Panel 2/i }));
 
+    // wait for panel animation to finish
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
     expect(onActive).toBeCalled();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -227,6 +231,10 @@ describe('Accordion', () => {
     );
 
     userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    // wait for panel animation to finish
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
     expect(asFragment()).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();

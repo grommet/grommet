@@ -3065,7 +3065,7 @@
     resolve-from "^5.0.0"
     store2 "^2.12.0"
 
-"@testing-library/dom@^8.0.0", "@testing-library/dom@^8.7.2":
+"@testing-library/dom@^8.0.0":
   version "8.7.2"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.7.2.tgz#234315c6971be380fc9cbf0b031ada3e9f0bfe09"
   integrity sha512-2zN0Zv9dMnaMAd4c/1E1ZChu4QrICyvWtkUvHFQBPhS1oG3VYGcM7SLGLYdda7187ILRXzIUOvOsbXQm4EASjA==
@@ -3076,6 +3076,20 @@
     aria-query "^4.2.2"
     chalk "^4.1.0"
     dom-accessibility-api "^0.5.6"
+    lz-string "^1.4.4"
+    pretty-format "^27.0.2"
+
+"@testing-library/dom@^8.11.1":
+  version "8.11.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.11.1.tgz#03fa2684aa09ade589b460db46b4c7be9fc69753"
+  integrity sha512-3KQDyx9r0RKYailW2MiYrSSKEfH0GTkI51UGEvJenvcoDoeRYs0PZpi2SXqtnMClQvCqdtTTpOfFETDTVADpAg==
+  dependencies:
+    "@babel/code-frame" "^7.10.4"
+    "@babel/runtime" "^7.12.5"
+    "@types/aria-query" "^4.2.0"
+    aria-query "^5.0.0"
+    chalk "^4.1.0"
+    dom-accessibility-api "^0.5.9"
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
@@ -3951,6 +3965,11 @@ aria-query@^4.2.2:
   dependencies:
     "@babel/runtime" "^7.10.2"
     "@babel/runtime-corejs3" "^7.10.2"
+
+aria-query@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-5.0.0.tgz#210c21aaf469613ee8c9a62c7f86525e058db52c"
+  integrity sha512-V+SM7AbUwJ+EBnB8+DXs0hPZHO0W6pqBcc0dW90OwtVG02PswOu/teuARoLQjdDOH+t9pJgGnW5/Qmouf3gPJg==
 
 arr-diff@^4.0.0:
   version "4.0.0"
@@ -5885,6 +5904,11 @@ dom-accessibility-api@^0.5.6:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.7.tgz#8c2aa6325968f2933160a0b7dbb380893ddf3e7d"
   integrity sha512-ml3lJIq9YjUfM9TUnEPvEYWFSwivwIGBPKpewX7tii7fwCazA8yCioGdqQcNsItPpfFvSJ3VIdMQPj60LJhcQA==
+
+dom-accessibility-api@^0.5.9:
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.10.tgz#caa6d08f60388d0bb4539dd75fe458a9a1d0014c"
+  integrity sha512-Xu9mD0UjrJisTmv7lmVSDMagQcU9R5hwAbxsaAE/35XPnPLJobbuREfV/rraiSaEj/UOvgrzQs66zyTWTlyd+g==
 
 dom-converter@^0.2.0:
   version "0.2.0"
