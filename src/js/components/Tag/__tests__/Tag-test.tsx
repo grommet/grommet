@@ -47,7 +47,7 @@ describe('Tag', () => {
 
   test('onClick', () => {
     const onClick = jest.fn();
-    const {container } = render(
+    const { container } = render(
       <Grommet>
         <Tag value="Test" onClick={onClick} />
       </Grommet>,
@@ -61,7 +61,7 @@ describe('Tag', () => {
 
   test('onRemove', () => {
     const onRemove = jest.fn();
-    const {container } = render(
+    const { container } = render(
       <Grommet>
         <Tag value="Test" onRemove={onRemove} />
       </Grommet>,
