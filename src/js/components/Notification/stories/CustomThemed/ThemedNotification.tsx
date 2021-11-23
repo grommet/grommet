@@ -50,7 +50,7 @@ const customTheme: ThemeType = deepMerge(grommet, {
   },
 });
 
-export const Themed = () => (
+export const ThemedNotification = () => (
   <Grommet theme={customTheme}>
     <Box pad="large" justify="center" gap="large">
       <Notification
@@ -63,8 +63,8 @@ export const Themed = () => (
   </Grommet>
 );
 
-Themed.storyName = 'Themed';
+ThemedNotification.storyName = 'Themed Notification';
 
 export default {
-  title: 'Visualizations/Notification/Themed',
+  title: 'Visualizations/Notification/Custom Themed/Themed Notification',
 };
