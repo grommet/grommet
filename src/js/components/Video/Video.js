@@ -90,20 +90,23 @@ const Video = forwardRef(
     );
 
     useEffect(() => {
-      if (controls && (!controls.items || !controls.position)) {
+      if (controlsProp && (!controlsProp.items || !controlsProp.position)) {
         setControls({
-          position: controls.position || 'over',
-          items: controls.items || ['volume', 'reduceVolume', 'fullScreen'],
+          position:
+            typeof controlsProp === 'string'
+              ? controlsProp
+              : controlsProp.position || 'over',
+          items: controlsProp.items || ['volume', 'reduceVolume', 'fullScreen'],
         });
-      } else if (!controls) {
+      } else if (!controlsProp) {
         setControls({
           position: 'over',
           items: ['volume', 'reduceVolume', 'fullScreen'],
         });
       } else {
         setControls({
-          position: controls.position,
-          items: controls.items,
+          position: controlsProp.position,
+          items: controlsProp.items,
         });
       }
     }, [controlsProp]);

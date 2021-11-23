@@ -6,15 +6,13 @@ import { Monitor } from 'grommet-icons/icons/Monitor';
 const TheaterMode = (props) => {
   const [theaterMode, setTheaterMode] = useState(false);
 
-  React.useEffect(() => console.log('theaterMode', theaterMode), [theaterMode]);
-
   return (
     <Grommet theme={grommet}>
       <Box
         background={theaterMode ? 'dark-1' : 'light-1'}
         overflow="hidden"
         height={{ max: 'large' }}
-        width={theaterMode ? '' : 'small'}
+        width={theaterMode ? null : 'small'}
         fill={theaterMode ? 'horizontal' : null}
         align="center"
         pad="large"
@@ -23,11 +21,11 @@ const TheaterMode = (props) => {
           src="large_video.mp4"
           fit="cover"
           controls={{
-            position: 'below',
+            position: theaterMode ? 'over' : 'below',
             items: [
               {
                 icon: <Monitor />,
-                onClick: () => setTheaterMode(theaterMode ? false : true),
+                onClick: () => setTheaterMode(!theaterMode),
               },
               'fullScreen',
             ],
