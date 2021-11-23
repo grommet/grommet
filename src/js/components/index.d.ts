@@ -67,6 +67,7 @@ export * from './TableHeader';
 export * from './TableRow';
 export * from './Tab';
 export * from './Tabs';
+export * from './Tag';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
