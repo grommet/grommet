@@ -90,25 +90,13 @@ const Video = forwardRef(
     );
 
     useEffect(() => {
-      if (controlsProp && (!controlsProp.items || !controlsProp.position)) {
-        setControls({
-          position:
-            typeof controlsProp === 'string'
-              ? controlsProp
-              : controlsProp.position || 'over',
-          items: controlsProp.items || ['volume', 'reduceVolume', 'fullScreen'],
-        });
-      } else if (!controlsProp) {
-        setControls({
-          position: 'over',
-          items: ['volume', 'reduceVolume', 'fullScreen'],
-        });
-      } else {
-        setControls({
-          position: controlsProp.position,
-          items: controlsProp.items,
-        });
-      }
+      setControls({
+        items: controlsProp?.items || ['volume', 'reduceVolume', 'fullScreen'],
+        position:
+          (typeof controlsProp === 'string' && controlsProp) ||
+          controlsProp?.position ||
+          'over',
+      });
     }, [controlsProp]);
 
     // mute if needed
@@ -252,7 +240,7 @@ const Video = forwardRef(
     }, [videoRef]);
 
     let controlsElement;
-    if (controls && controls.position) {
+    if (controls?.position) {
       const over = controls.position === 'over';
       const background = over
         ? (theme.video.controls && theme.video.controls.background) || {
@@ -327,18 +315,12 @@ const Video = forwardRef(
         },
       };
 
-      const controlsMenuItems =
-        controls.items &&
-        controls.items.map((item) => {
-          if (typeof item === 'string') {
-            return buttonProps[item];
-          }
-          return {
-            icon: item.icon,
-            a11yTitle: item.a11yTitle,
-            onClick: item.onClick,
-          };
-        });
+      const controlsMenuItems = controls.items?.map((item) => {
+        if (typeof item === 'string') {
+          return buttonProps[item];
+        }
+        return item;
+      });
 
       controlsElement = (
         <StyledVideoControls
@@ -438,7 +420,7 @@ const Video = forwardRef(
     }
 
     let mouseEventListeners;
-    if (controls && controls.position === 'over') {
+    if (controls?.position === 'over') {
       mouseEventListeners = {
         onMouseEnter: () => setInteracting(true),
         onMouseMove: () => setInteracting(true),
@@ -447,7 +429,7 @@ const Video = forwardRef(
     }
 
     let style;
-    if (rest.fit === 'contain' && controls && controls.position === 'over') {
+    if (rest.fit === 'contain' && controls?.position === 'over') {
       // constrain the size to fit the aspect ratio so the controls
       // overlap correctly
       if (width) {

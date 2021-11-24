@@ -26,6 +26,7 @@ const TheaterMode = (props) => {
               {
                 icon: <Monitor />,
                 onClick: () => setTheaterMode(!theaterMode),
+                a11yTitle: 'Toggle theater mode',
               },
               'fullScreen',
             ],
