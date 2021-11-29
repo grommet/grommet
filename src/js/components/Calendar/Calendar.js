@@ -212,6 +212,7 @@ const Calendar = forwardRef(
       reference: referenceProp,
       showAdjacentDays = true,
       size = 'medium',
+      timestamp,
       ...rest
     },
     ref,
@@ -455,24 +456,25 @@ const Calendar = forwardRef(
         // output date with no timestamp if that's how user provided it
         let adjustedDate;
         if (!range) {
-          nextDate = selectedDate;
+          nextDate = `${formatToLocalYYYYMMDD(selectedDate)}T${
+            selectedDate.split('T')[1]
+          }`;
           if (datesProp) {
             datesProp.forEach((d) => {
               if (!timeStamp.test(d)) {
                 adjustedDate = formatToLocalYYYYMMDD(nextDate);
                 if (d === adjustedDate) {
                   nextDate = undefined;
-                } else {
                   adjustedDate = undefined;
                 }
               }
             });
           } else if (typeof dateProp === 'string') {
+            // console.log('iam here', nextDate, formatToLocalYYYYMMDD(nextDate));
             if (!timeStamp.test(dateProp)) {
               adjustedDate = formatToLocalYYYYMMDD(selectedDate);
               if (dateProp === adjustedDate) {
                 nextDate = undefined;
-              } else {
                 adjustedDate = undefined;
               }
             }
@@ -482,7 +484,6 @@ const Calendar = forwardRef(
                 adjustedDate = formatToLocalYYYYMMDD(nextDate);
                 if (d === adjustedDate) {
                   nextDate = undefined;
-                } else {
                   adjustedDate = undefined;
                 }
               }
@@ -579,6 +580,16 @@ const Calendar = forwardRef(
           ) {
             // return string for backwards compatibility
             [adjustedDates] = nextDates[0].filter((d) => d);
+            // timestamp is false when original date doesn't have timestamp
+            if (timestamp === false)
+              adjustedDates = formatToLocalYYYYMMDD(adjustedDates);
+          } else if (nextDates && timestamp === false) {
+            adjustedDates = [
+              [
+                formatToLocalYYYYMMDD(nextDates[0][0]),
+                formatToLocalYYYYMMDD(nextDates[0][1]),
+              ],
+            ];
           } else {
             adjustedDates = nextDates;
           }
@@ -594,6 +605,7 @@ const Calendar = forwardRef(
         datesProp,
         onSelect,
         range,
+        timestamp,
       ],
     );
 
@@ -760,11 +772,13 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else {
+        // date string takes local into UTC
         const dateString = day.toISOString();
         // this.dayRefs[dateString] = React.createRef();
         let selected = false;
         let inRange = false;
 
+        console.log(day, date || dates);
         const selectedState = withinDates(day, date || dates);
         if (selectedState === 2) {
           selected = true;

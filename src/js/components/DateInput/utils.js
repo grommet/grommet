@@ -2,6 +2,8 @@
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
 
+import { formatToLocalYYYYMMDD } from '../Calendar/utils';
+
 export const formatToSchema = (format) => {
   if (!format) return undefined;
   const result = [];
@@ -116,7 +118,7 @@ const pullDigits = (text, index) => {
   return text.slice(index, end);
 };
 
-export const textToValue = (text, schema, valueProp, range) => {
+export const textToValue = (text, schema, valueProp, range, timestamp) => {
   if (!text) return range ? [] : undefined;
 
   let result;
@@ -140,17 +142,31 @@ export const textToValue = (text, schema, valueProp, range) => {
     )
       return parts;
 
-    let date = new Date(parts.y, parts.m - 1, parts.d).toISOString();
-    // match time and timezone of any supplied valueProp
-    if (
-      valueProp &&
-      ((Array.isArray(valueProp) && valueProp[0]) || !Array.isArray(valueProp))
-    ) {
-      const valueDate = new Date(
-        Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp,
-      ).toISOString();
-      date = `${date.split('T')[0]}T${valueDate.split('T')[1]}`;
+    // match time and timezone of supplied value
+    let h;
+    let m;
+    let s;
+    let ms;
+    if (timestamp) {
+      const mockDate = new Date(
+        `${
+          new Date(parts.y, parts.m - 1, parts.d).toISOString().split('T')[0]
+        }T${timestamp}`,
+      );
+
+      h =
+        parseInt(timestamp.split(':')[0], 10) -
+        new Date(parts.y, parts.m - 1, parts.d).getTimezoneOffset() / 60;
+      m = mockDate.getUTCMinutes();
+      s = mockDate.getUTCMinutes();
+      ms = mockDate.getUTCMinutes();
     }
+    const date = h
+      ? new Date(parts.y, parts.m - 1, parts.d, h, m, s, ms).toISOString()
+      : // there was no timestamp, someone typed in a value that we should
+        // assume is local time and want to return with no timestamp
+        formatToLocalYYYYMMDD(new Date(parts.y, parts.m - 1, parts.d));
+
     if (!range) {
       if (!result) result = date;
     } else {

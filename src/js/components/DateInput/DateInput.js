@@ -28,6 +28,9 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 
+const timestampRegExp = new RegExp(/T.*/);
+const getTimestamp = (date) => new Date(date).toISOString().split('T')[1];
+
 const DateInput = forwardRef(
   (
     {
@@ -62,6 +65,21 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
+    let timestamp = false;
+    if (Array.isArray(defaultValue)) {
+      if (timestampRegExp.test(defaultValue[0])) {
+        timestamp = getTimestamp(defaultValue[0]);
+      }
+    } else if (
+      typeof defaultValue === 'string' &&
+      timestampRegExp.test(defaultValue)
+    ) {
+      timestamp = getTimestamp(defaultValue);
+    } else if (Array.isArray(value) && timestampRegExp.test(value[0])) {
+      timestamp = getTimestamp(value[0]);
+    } else if (typeof value === 'string' && timestampRegExp.test(value)) {
+      timestamp = getTimestamp(value);
+    }
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -87,15 +105,15 @@ const DateInput = forwardRef(
         const nextTextValue = valueToText(value, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, value, range),
-            textToValue(nextTextValue, schema, value, range),
+            textToValue(textValue, schema, value, range, timestamp),
+            textToValue(nextTextValue, schema, value, range, timestamp),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value]);
+    }, [range, schema, textValue, value, timestamp]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -140,7 +158,7 @@ const DateInput = forwardRef(
                 }
               }
         }
-        {...calendarProps}
+        {...{ ...calendarProps, timestamp }}
       />
     );
 
@@ -191,6 +209,7 @@ const DateInput = forwardRef(
                 schema,
                 value,
                 range,
+                timestamp,
               );
               // update value even when undefined
               setValue(nextValue);
