@@ -92,7 +92,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "copyfiles": "^2.4.1",
-    "core-js": "^3.19.1",
+    "core-js": "^3.19.2",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "elliptic": "^6.5.4",
