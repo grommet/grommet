@@ -538,7 +538,7 @@ exports[`FormField custom error and info icon and container 1`] = `
           class="c7"
         >
           <svg
-            aria-label="StatusInfo"
+            aria-label="Information Status"
             class="c8"
             viewBox="0 0 24 24"
           >
