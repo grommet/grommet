@@ -946,7 +946,10 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      undefined,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1209,6 +1212,41 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('onSelect select/unselect all', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', primary: true },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    let headerCheckBox;
+    headerCheckBox = getByLabelText('select all');
+    fireEvent.click(headerCheckBox);
+    expect(onSelect).toBeCalledWith([1.1, 1.2, 2.1, 2.2]);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // aria-label should have changed since all entries
+    // are selected
+    headerCheckBox = getByLabelText('unselect all');
+    fireEvent.click(headerCheckBox);
+    expect(onSelect).toBeCalledWith([]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onSelect + groupBy should select/deselect all when grouped', () => {
     const onSelect = jest.fn();
     const { container, getByLabelText } = render(
@@ -1266,7 +1304,10 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(expect.arrayContaining([1.1, 1.2]));
+    expect(onSelect).toBeCalledWith(
+      expect.arrayContaining([1.1, 1.2]),
+      expect.objectContaining({ a: 'one' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 

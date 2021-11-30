@@ -19,7 +19,7 @@ import { FileInputPropTypes } from './propTypes';
 
 const formatBytes = (size) => {
   const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  const factor = 1000;
+  const factor = 1024;
   let index = 0;
   let num = size;
   while (num >= factor && index < units.length - 1) {
