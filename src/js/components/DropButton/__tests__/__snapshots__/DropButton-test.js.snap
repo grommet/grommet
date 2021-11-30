@@ -91,20 +91,7 @@ exports[`DropButton close by clicking outside 2`] = `
 </div>
 `;
 
-exports[`DropButton close by clicking outside 3`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fsBPbn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton close by clicking outside 3`] = `""`;
 
 exports[`DropButton closed 1`] = `
 .c0 {
@@ -354,20 +341,7 @@ exports[`DropButton open and close 2`] = `
 </div>
 `;
 
-exports[`DropButton open and close 3`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fsBPbn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton open and close 3`] = `""`;
 
 exports[`DropButton opened 1`] = `
 .c0 {
@@ -547,20 +521,7 @@ exports[`DropButton opened ref 2`] = `
 </div>
 `;
 
-exports[`DropButton opened ref 3`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fsBPbn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton opened ref 3`] = `""`;
 
 exports[`DropButton ref function 1`] = `
 .c0 {
@@ -657,20 +618,7 @@ exports[`DropButton ref function 2`] = `
 </div>
 `;
 
-exports[`DropButton ref function 3`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fsBPbn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton ref function 3`] = `""`;
 
 exports[`DropButton rendersr a11yTitle and aria-label 1`] = `
 .c0 {

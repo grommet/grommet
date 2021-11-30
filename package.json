@@ -114,7 +114,7 @@
     "jest": "^27.4.0",
     "jest-axe": "^5.0.1",
     "jest-cli": "^27.4.0",
-    "jest-styled-components": "^7.0.5",
+    "jest-styled-components": "7.0.5",
     "jsdom": "^18.1.1",
     "postcss": "^8.4.4",
     "pre-commit": "^1.2.2",

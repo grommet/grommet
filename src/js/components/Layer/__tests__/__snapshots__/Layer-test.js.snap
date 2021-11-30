@@ -150,7 +150,7 @@ exports[`Layer animation fadeIn 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cBBukp {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -309,7 +309,7 @@ exports[`Layer animation false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dBFFjV {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -470,7 +470,7 @@ exports[`Layer animation slide 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hgkiAK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -631,7 +631,7 @@ exports[`Layer animation true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hgkiAK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -792,7 +792,7 @@ exports[`Layer custom margin 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jAobhq {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -952,7 +952,7 @@ exports[`Layer custom theme 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hvDxxG {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1094,7 +1094,12 @@ exports[`Layer dark context 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jIenxJ {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1273,23 +1278,13 @@ exports[`Layer hidden 1`] = `
 `;
 
 exports[`Layer hidden 2`] = `
-".dgNlrP {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
+"@media only screen and (max-width: 768px) {
+  .hAogXq {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
 }
 @media only screen and (max-width: 768px) {
   .jyrggP {
@@ -1297,7 +1292,7 @@ exports[`Layer hidden 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bSTjAT {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1309,118 +1304,22 @@ exports[`Layer hidden 2`] = `
 `;
 
 exports[`Layer hidden 3`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.c1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0,0,0,0.5);
-  color: #f8f8f8;
-  pointer-events: all;
-  will-change: transform;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
-  outline: none;
-  pointer-events: all;
-  z-index: 20;
-  position: absolute;
-  max-height: calc(100% - 0px - 0px);
-  max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
-}
-
-.c3 {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    position: relative;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-
 <div
-  class="c0"
+  class="StyledLayer-sc-rmtehz-0 hAogXq"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="c1"
+    class="StyledLayer__StyledOverlay-sc-rmtehz-1 jyrggP"
   />
   <div
-    class="c2"
+    class="StyledLayer__StyledContainer-sc-rmtehz-2 hgkiAK"
     data-g-portal-id="0"
     id="hidden-test"
   >
     <a
       aria-hidden="true"
-      class="c3"
+      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 dHscWN"
       tabindex="-1"
     />
     This is a layer
@@ -1462,17 +1361,7 @@ exports[`Layer hidden 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bSTjAT {
-    position: relative;
-    max-height: none;
-    max-width: none;
-    border-radius: 0;
-    height: 100vh;
-    width: 100vw;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .hgkiAK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1617,7 +1506,12 @@ exports[`Layer invoke onClickOutside when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUKcrQ {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1721,33 +1615,27 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 `;
 
 exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`] = `
-".gdHdpu {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+"@media only screen and (max-width: 768px) {
+  .hAogXq {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .dbmsMO {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 }"
 `;
@@ -1905,7 +1793,7 @@ exports[`Layer invoke onClickOutside when modal={true} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dBFFjV {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2023,24 +1911,13 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 `;
 
 exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] = `
-".gdHdpu {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+"@media only screen and (max-width: 768px) {
+  .hAogXq {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
 }
 @media only screen and (max-width: 768px) {
   .jyrggP {
@@ -2048,13 +1925,13 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
   }
 }
 @media only screen and (max-width: 768px) {
-  .kRIdCS {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 }"
 `;
@@ -2432,30 +2309,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 `;
 
 exports[`Layer invokes onEsc when modal={false} 2`] = `
-"@media only screen and (max-width: 768px) {
-  .gChTae {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .gZcrCV {
-    padding: 6px;
-  }
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fsBPbn {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-.hAogXq {
+".hAogXq {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2483,18 +2337,18 @@ exports[`Layer invokes onEsc when modal={false} 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUKcrQ {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
     height: 100vh;
     width: 100vw;
-  }
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .djWBmY {
-    width: 100%;
   }
 }"
 `;
@@ -2546,18 +2400,6 @@ exports[`Layer is accessible 2`] = `
 `;
 
 exports[`Layer is accessible 3`] = `
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   data-testid="test-body-node"
 >
@@ -2718,7 +2560,7 @@ exports[`Layer margin large 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cNJCLO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2879,7 +2721,7 @@ exports[`Layer margin medium 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkQXQu {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3040,7 +2882,7 @@ exports[`Layer margin none 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hgkiAK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3201,7 +3043,7 @@ exports[`Layer margin small 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bkeRge {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3362,7 +3204,7 @@ exports[`Layer margin xsmall 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dFIotW {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3504,7 +3346,12 @@ exports[`Layer non-modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .oAmiH {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3731,12 +3578,12 @@ exports[`Layer plain 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fQUqSV {
+  .jyrggP {
     position: relative;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gjfNNh {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3897,7 +3744,7 @@ exports[`Layer position: bottom - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .iGNQZq {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4059,7 +3906,7 @@ exports[`Layer position: bottom - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4222,7 +4069,7 @@ exports[`Layer position: bottom - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fuFcFj {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4384,7 +4231,7 @@ exports[`Layer position: bottom - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bVLXlg {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4545,7 +4392,7 @@ exports[`Layer position: bottom-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cvLRwk {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4707,7 +4554,7 @@ exports[`Layer position: bottom-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4870,7 +4717,7 @@ exports[`Layer position: bottom-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gEpPdO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5032,7 +4879,7 @@ exports[`Layer position: bottom-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gffAkL {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5193,7 +5040,7 @@ exports[`Layer position: bottom-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .enkdyz {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5355,7 +5202,7 @@ exports[`Layer position: bottom-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5518,7 +5365,7 @@ exports[`Layer position: bottom-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gEpPdO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5680,7 +5527,7 @@ exports[`Layer position: bottom-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fPLDqM {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -5841,7 +5688,7 @@ exports[`Layer position: center - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hgkiAK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6003,7 +5850,7 @@ exports[`Layer position: center - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kIxtYw {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6163,7 +6010,7 @@ exports[`Layer position: center - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jpjyPO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6325,7 +6172,7 @@ exports[`Layer position: center - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cNYGz {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6486,7 +6333,7 @@ exports[`Layer position: end - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cbxHqA {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6648,7 +6495,7 @@ exports[`Layer position: end - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .eSmPyd {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6811,7 +6658,7 @@ exports[`Layer position: end - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jNVOas {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -6973,7 +6820,7 @@ exports[`Layer position: end - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jQTrdB {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7134,7 +6981,7 @@ exports[`Layer position: left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .cCHTua {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7296,7 +7143,7 @@ exports[`Layer position: left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .jQcFev {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7459,7 +7306,7 @@ exports[`Layer position: left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .bzfOjb {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7621,7 +7468,7 @@ exports[`Layer position: left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gRrPdG {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7782,7 +7629,7 @@ exports[`Layer position: right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .sucTf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -7944,7 +7791,7 @@ exports[`Layer position: right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hmjpSN {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8107,7 +7954,7 @@ exports[`Layer position: right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .hoOGjY {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8269,7 +8116,7 @@ exports[`Layer position: right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .yAUqe {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8430,7 +8277,7 @@ exports[`Layer position: start - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gktcTt {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8592,7 +8439,7 @@ exports[`Layer position: start - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .komNCb {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8755,7 +8602,7 @@ exports[`Layer position: start - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRpyzn {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -8917,7 +8764,7 @@ exports[`Layer position: start - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .eglmxV {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9078,7 +8925,7 @@ exports[`Layer position: top - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kRjQbU {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9240,7 +9087,7 @@ exports[`Layer position: top - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kCfWhJ {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9565,7 +9412,7 @@ exports[`Layer position: top - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .duuvsf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9726,7 +9573,7 @@ exports[`Layer position: top-left - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .CIPlU {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -9888,7 +9735,7 @@ exports[`Layer position: top-left - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gZJhCM {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10051,7 +9898,7 @@ exports[`Layer position: top-left - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .caaibK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10213,7 +10060,7 @@ exports[`Layer position: top-left - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kWylrD {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10374,7 +10221,7 @@ exports[`Layer position: top-right - full: false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fhWOCQ {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10536,7 +10383,7 @@ exports[`Layer position: top-right - full: horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kbyaMf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10699,7 +10546,7 @@ exports[`Layer position: top-right - full: true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dgha-DF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -10861,7 +10708,7 @@ exports[`Layer position: top-right - full: vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .kEKCiH {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11022,7 +10869,7 @@ exports[`Layer should apply background 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .FODKW {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11181,7 +11028,7 @@ exports[`Layer should only place id on StyledLayer when singleId === true 2`] = 
   }
 }
 @media only screen and (max-width: 768px) {
-  .dBFFjV {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11344,7 +11191,7 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .eLerMi {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11508,7 +11355,7 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11673,7 +11520,7 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .fuFcFj {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -11837,7 +11684,7 @@ exports[`Layer should render correct border radius for position: bottom -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bVLXlg {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12000,7 +11847,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .jCVfaQ {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12164,7 +12011,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12329,7 +12176,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gEpPdO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12493,7 +12340,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gffAkL {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12656,7 +12503,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .cpzpnn {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12820,7 +12667,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bBPVwF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -12985,7 +12832,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gEpPdO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13149,7 +12996,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .fPLDqM {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13312,7 +13159,7 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gwjsAm {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13476,7 +13323,7 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .kIxtYw {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13638,7 +13485,7 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .jpjyPO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13802,7 +13649,7 @@ exports[`Layer should render correct border radius for position: center -
   }
 }
 @media only screen and (max-width: 768px) {
-  .cNYGz {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -13966,7 +13813,7 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .hxbffn {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14130,7 +13977,7 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .eSmPyd {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14295,7 +14142,7 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .jNVOas {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14459,7 +14306,7 @@ exports[`Layer should render correct border radius for position: end -
   }
 }
 @media only screen and (max-width: 768px) {
-  .jQTrdB {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14622,7 +14469,7 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .dOgWzO {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14786,7 +14633,7 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .jQcFev {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -14951,7 +14798,7 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bzfOjb {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15115,7 +14962,7 @@ exports[`Layer should render correct border radius for position: left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gRrPdG {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15278,7 +15125,7 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .dZTpOf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15442,7 +15289,7 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .hmjpSN {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15607,7 +15454,7 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .hoOGjY {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15771,7 +15618,7 @@ exports[`Layer should render correct border radius for position: right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .yAUqe {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -15935,7 +15782,7 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .hwUSlG {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16099,7 +15946,7 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .komNCb {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16264,7 +16111,7 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .iRpyzn {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16428,7 +16275,7 @@ exports[`Layer should render correct border radius for position: start -
   }
 }
 @media only screen and (max-width: 768px) {
-  .eglmxV {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16591,7 +16438,7 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .bdWDNI {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -16755,7 +16602,7 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .kCfWhJ {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17084,7 +16931,7 @@ exports[`Layer should render correct border radius for position: top -
   }
 }
 @media only screen and (max-width: 768px) {
-  .duuvsf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17247,7 +17094,7 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .byNWhg {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17411,7 +17258,7 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .gZJhCM {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17576,7 +17423,7 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .caaibK {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17740,7 +17587,7 @@ exports[`Layer should render correct border radius for position: top-left -
   }
 }
 @media only screen and (max-width: 768px) {
-  .kWylrD {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -17903,7 +17750,7 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .cXCSKc {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18067,7 +17914,7 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .kbyaMf {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18232,7 +18079,7 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .dgha-DF {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18396,7 +18243,7 @@ exports[`Layer should render correct border radius for position: top-right -
   }
 }
 @media only screen and (max-width: 768px) {
-  .kEKCiH {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
@@ -18516,24 +18363,13 @@ exports[`Layer target 1`] = `
 `;
 
 exports[`Layer target 2`] = `
-".gdHdpu {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+"@media only screen and (max-width: 768px) {
+  .hAogXq {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
 }
 @media only screen and (max-width: 768px) {
   .jyrggP {
@@ -18541,13 +18377,13 @@ exports[`Layer target 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .gWDuBx {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 }"
 `;
@@ -18647,33 +18483,27 @@ exports[`Layer target not modal 1`] = `
 `;
 
 exports[`Layer target not modal 2`] = `
-".gdHdpu {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+"@media only screen and (max-width: 768px) {
+  .hAogXq {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .fFVKBJ {
+  .jyrggP {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kCBFTL {
     position: relative;
     max-height: none;
     max-width: none;
     border-radius: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 }"
 `;

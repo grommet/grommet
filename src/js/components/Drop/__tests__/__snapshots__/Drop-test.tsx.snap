@@ -81,31 +81,8 @@ exports[`Drop align left left 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.AkHb {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .AkHb {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -317,31 +294,8 @@ exports[`Drop align right left top top 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.fLRpKk {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fLRpKk {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -435,31 +389,8 @@ exports[`Drop align right right 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.fLRpKk {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fLRpKk {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -553,31 +484,8 @@ exports[`Drop align right right bottom top 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ckXZRc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ckXZRc {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -671,31 +579,8 @@ exports[`Drop align right right bottom top 4`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ckXZRc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ckXZRc {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -774,46 +659,8 @@ exports[`Drop background 1`] = `
 `;
 
 exports[`Drop background 2`] = `
-".iiGBiA {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background: #33333310;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.kaPvTl {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #33333310;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kaPvTl {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1246,46 +1093,8 @@ exports[`Drop elevation 1`] = `
 `;
 
 exports[`Drop elevation 2`] = `
-".knYcCD {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-.fUvoIQ {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 10px;
-  position: fixed;
-  z-index: 15;
-  outline: none;
-  background: #33333310;
-  margin: 6px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fUvoIQ {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1608,53 +1417,8 @@ exports[`Drop margin 1`] = `
 `;
 
 exports[`Drop margin 2`] = `
-".bsfhJQ {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-@media only screen and (max-width: 768px) {
-  .bsfhJQ {
-    margin: 6px;
-  }
-}
-.fTuxAg {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fTuxAg {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1847,42 +1611,8 @@ exports[`Drop plain 1`] = `
 `;
 
 exports[`Drop plain 2`] = `
-".itpUPD {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-}
-.jSrMLU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .jSrMLU {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2079,61 +1809,8 @@ exports[`Drop restrict focus 1`] = `
 `;
 
 exports[`Drop restrict focus 2`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #FFFFFF;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
 <div
-  class="c0 c1"
+  class="StyledBox-sc-13pk1d4-0 boMPMF StyledDrop-sc-16s5rx8-0 fsBPbn"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -2271,47 +1948,8 @@ exports[`Drop round 1`] = `
 `;
 
 exports[`Drop round 2`] = `
-".kBXOUZ {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-radius: 100%;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.fkiQNX {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 100%;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fkiQNX {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2437,32 +2075,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.eDXdxW {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-left: 12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .eDXdxW {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2559,32 +2173,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.dGevdU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-left: -12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dGevdU {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2681,32 +2271,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ggKDDe {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-bottom: 12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ggKDDe {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2804,33 +2370,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.jjCNPD {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-bottom: 12px;
-  margin-left: 12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .jjCNPD {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2928,33 +2469,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kcyacV {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-bottom: 12px;
-  margin-left: -12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kcyacV {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3052,33 +2568,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kcyacV {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-bottom: 12px;
-  margin-left: -12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kcyacV {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3175,32 +2666,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.klymAB {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-bottom: 12px;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .klymAB {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3297,32 +2764,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.dlNiiy {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-top: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dlNiiy {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3420,33 +2863,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.WpOlL {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-top: 12px;
-  margin-left: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .WpOlL {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3544,33 +2962,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.cjVWPJ {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-top: 12px;
-  margin-left: -12px;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .cjVWPJ {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3667,32 +3060,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ebaOzV {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-top: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ebaOzV {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3789,32 +3158,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.dlNiiy {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-top: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dlNiiy {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3911,32 +3256,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.eEySlS {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-left: 12px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .eEySlS {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4033,32 +3354,8 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kzdhBs {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  margin-left: -12px;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kzdhBs {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4255,46 +3552,8 @@ exports[`Drop theme elevation renders 1`] = `
 `;
 
 exports[`Drop theme elevation renders 2`] = `
-".ipEkmo {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-.fUvoIQ {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 10px;
-  position: fixed;
-  z-index: 15;
-  outline: none;
-  background: #33333310;
-  margin: 6px;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fUvoIQ {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

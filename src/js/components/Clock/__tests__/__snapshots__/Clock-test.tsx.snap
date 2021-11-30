@@ -361,110 +361,11 @@ exports[`Clock run 1`] = `
 `;
 
 exports[`Clock run 2`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  stroke-width: 8px;
-  stroke: #777777;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c3 {
-  stroke-width: 4px;
-  stroke: #777777;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c2 {
-  stroke-width: 3px;
-  stroke: #6FFFB0;
-  -webkit-transition: stroke 1s ease-out;
-  transition: stroke 1s ease-out;
-}
-
-.c1 {
-  width: 96px;
-  height: 96px;
-}
-
-.c6 {
-  position: relative;
-  width: 0.8em;
-  text-align: center;
-  overflow: hidden;
-  font-size: 18px;
-  line-height: 1.375;
-}
-
-.c7 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.8em;
-  text-align: center;
-  -webkit-animation: gDuLQv 0.5s forwards;
-  animation: gDuLQv 0.5s forwards;
-}
-
-.c9 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.8em;
-  text-align: center;
-  -webkit-animation: buZueW 0.5s forwards;
-  animation: buZueW 0.5s forwards;
-}
-
-.c8 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.8em;
-  text-align: center;
-  -webkit-animation: cQwfQi 0.5s forwards;
-  animation: cQwfQi 0.5s forwards;
-}
-
-.c10 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.8em;
-  text-align: center;
-  -webkit-animation: ffftsv 0.5s forwards;
-  animation: ffftsv 0.5s forwards;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
 <div
-  class="c0"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <svg
-    class="c1"
+    class="StyledClock__StyledAnalog-sc-y4xw8s-3 eGkxYC"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -472,7 +373,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="c2"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 hQmXo"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(210deg); transform-origin: 48px 48px;"
@@ -482,7 +383,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="c3"
+      class="StyledClock__StyledMinute-sc-y4xw8s-1 gSSjmA"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -492,7 +393,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="c4"
+      class="StyledClock__StyledHour-sc-y4xw8s-0 ciCvBT"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -503,7 +404,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <svg
-    class="c1"
+    class="StyledClock__StyledAnalog-sc-y4xw8s-3 eGkxYC"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -511,7 +412,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="c2"
+      class="StyledClock__StyledSecond-sc-y4xw8s-2 hQmXo"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(198deg); transform-origin: 48px 48px;"
@@ -521,7 +422,7 @@ exports[`Clock run 2`] = `
       y2="9"
     />
     <line
-      class="c3"
+      class="StyledClock__StyledMinute-sc-y4xw8s-1 gSSjmA"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(138deg); transform-origin: 48px 48px;"
@@ -531,7 +432,7 @@ exports[`Clock run 2`] = `
       y2="12"
     />
     <line
-      class="c4"
+      class="StyledClock__StyledHour-sc-y4xw8s-0 ciCvBT"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(191.5deg); transform-origin: 48px 48px;"
@@ -542,54 +443,74 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="c5"
+    class="StyledBox-sc-13pk1d4-0 wrGSV"
   >
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       1
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       8
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       :
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       2
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       3
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       :
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       3
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
-      <div
-        class="c7"
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: gDuLQv 0.5s forwards;
+  animation: gDuLQv 0.5s forwards;
+}
+
+<div
+        class="c0"
         direction="up"
       >
         4
       </div>
-      <div
-        class="c8"
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: cQwfQi 0.5s forwards;
+  animation: cQwfQi 0.5s forwards;
+}
+
+<div
+        class="c0"
         direction="up"
       >
         5
@@ -597,54 +518,74 @@ exports[`Clock run 2`] = `
     </div>
   </div>
   <div
-    class="c5"
+    class="StyledBox-sc-13pk1d4-0 wrGSV"
   >
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       1
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       8
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       :
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       2
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       3
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       :
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
       3
     </div>
     <div
-      class="c6"
+      class="StyledClock__StyledDigitalDigit-sc-y4xw8s-4 gpmURu"
     >
-      <div
-        class="c9"
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: buZueW 0.5s forwards;
+  animation: buZueW 0.5s forwards;
+}
+
+<div
+        class="c0"
         direction="down"
       >
         4
       </div>
-      <div
-        class="c10"
+      .c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  -webkit-animation: ffftsv 0.5s forwards;
+  animation: ffftsv 0.5s forwards;
+}
+
+<div
+        class="c0"
         direction="down"
       >
         3
