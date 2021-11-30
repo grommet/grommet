@@ -10,7 +10,7 @@ import { CarouselChildPropTypes } from './propTypes';
 
 const CarouselChild = ({
   animationDuration,
-  noContainer,
+  noDimensions,
   children,
   index,
   current,
@@ -47,7 +47,7 @@ const CarouselChild = ({
   return (
     <StyledCarouselChild
       animationDuration={animationDuration}
-      noContainer={noContainer}
+      noDimensions={noDimensions}
       animation={animation}
       displayProp={display}
     >

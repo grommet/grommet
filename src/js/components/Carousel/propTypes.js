@@ -32,6 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
     animationDuration: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     current: PropTypes.number.isRequired,
+    noDimensions: PropTypes.bool.isRequired,
     previous: PropTypes.number,
     direction: PropTypes.string,
   };

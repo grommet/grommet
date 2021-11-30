@@ -1,6 +1,7 @@
 import React, {
   Children,
   useContext,
+  useMemo,
   useState,
   useEffect,
   useCallback,
@@ -29,11 +30,15 @@ const Carousel = ({
   const containerRef = React.createRef();
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const numSlides = children.length;
-  const noContainer = !fill && (!height || !width);
-  const animationDuration =
-    play && play < theme.carousel.animation.duration
-      ? play
-      : theme.carousel.animation.duration;
+  const noDimensions = !fill && (!height || !width);
+
+  const animationDuration = useMemo(
+    () =>
+      play && play < theme.carousel.animation.duration
+        ? play
+        : theme.carousel.animation.duration,
+    [play, theme.carousel.animation.duration],
+  );
 
   const [current, setCurrent] = useState(activeChild || initialChild);
   const [previous, setPrevious] = useState(undefined);
@@ -98,7 +103,7 @@ const Carousel = ({
    */
 
   useEffect(() => {
-    if (noContainer) {
+    if (noDimensions) {
       if (inTransition) {
         const { offsetWidth: currentWidth, offsetHeight: currentHeight } =
           containerRef.current;
@@ -115,7 +120,7 @@ const Carousel = ({
         });
       }
     }
-  }, [inTransition, noContainer]);
+  }, [inTransition, noDimensions]);
 
   /**
    * Delays the transitions between Carousel slides. This is needed to
@@ -189,7 +194,7 @@ const Carousel = ({
             animationDuration={animationDuration}
             current={current}
             previous={previous}
-            noContainer={noContainer}
+            noDimensions={noDimensions}
             direction={direction}
           >
             {child}

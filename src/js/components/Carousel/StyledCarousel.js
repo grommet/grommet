@@ -9,21 +9,15 @@ const StyledCarouselContainer = styled(Box)`
   height: 100%;
   ${(props) => props.height && heightStyle(props.height, props.theme)}
   ${(props) => props.width && widthStyle(props.width, props.theme)}
-  ${(props) =>
-    props.inTransition &&
-    props.containerHeight &&
-    `height: ${props.containerHeight}px`};
-  ${(props) =>
-    props.inTransition &&
-    props.containerWidth &&
-    `width: ${props.containerWidth}px`};
+  ${(props) => props.containerHeight && `height: ${props.containerHeight}px`};
+  ${(props) => props.containerWidth && `width: ${props.containerWidth}px`};
 `;
 
 const StyledCarouselChild = styled.div`
   position: relative;
   max-width: 100%;
   ${(props) =>
-    !props.noContainer &&
+    !props.noDimensions &&
     css`
       width: 100%;
       height: 100%;
