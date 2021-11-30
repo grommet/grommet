@@ -92,7 +92,9 @@ var activeButtonStyle = function activeButtonStyle(props) {
 };
 
 var disabledButtonStyle = function disabledButtonStyle(props) {
-  return (0, _styledComponents.css)(["", " ", " ", " ", ""], (0, _utils.disabledStyle)(props.theme.button.disabled.opacity), !props.plain && props.theme.button.disabled.border && props.theme.button.disabled.border.color && "border: " + props.theme.button.border.width + " solid\n    " + (0, _utils.normalizeColor)(props.theme.button.disabled.border.color, props.theme) + ";", props.theme.button.disabled.color && (props.primary ? (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.theme.button.disabled.color, props.theme), props.theme, props.theme.button.color) : "color: " + (0, _utils.normalizeColor)(props.theme.button.disabled.color, props.theme) + ";"), props.theme.button.disabled && props.theme.button.disabled.extend);
+  return (0, _styledComponents.css)(["", " ", " ", " ", ""], (0, _utils.disabledStyle)(props.theme.button.disabled.opacity), !props.plain && props.theme.button.disabled.border && props.theme.button.disabled.border.color && "border: " + props.theme.button.border.width + " solid\n    " + (0, _utils.normalizeColor)(props.theme.button.disabled.border.color, props.theme) + ";", props.theme.button.disabled.color && ( // if primary button, apply disabled color to background. otherwise,
+  // apply disabled color to the label
+  props.primary ? (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.theme.button.disabled.color, props.theme), props.theme, props.theme.button.color) : "color: " + (0, _utils.normalizeColor)(props.theme.button.disabled.color, props.theme) + ";"), props.theme.button.disabled && props.theme.button.disabled.extend);
 }; // Deprecate props.theme.button.disabled.opacity in V3
 
 

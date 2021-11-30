@@ -124,7 +124,9 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
     // if focus is within the RadioButtonGroup, determine
     // which radio button should be the active one
-    var focusable = optionValue === value || value === undefined && !index || value === '' && index === 0;
+    var focusable = optionValue === value || value === undefined && !index || // when nothing has been selected, show focus
+    // on the first radiobutton
+    value === '' && index === 0;
     return /*#__PURE__*/React.createElement(RadioButton, _extends({
       ref: function ref(aRef) {
         optionRefs.current[index] = aRef;

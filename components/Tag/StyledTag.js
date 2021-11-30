@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledRemoveButton = exports.StyledTagButton = void 0;
+exports.StyledTagButton = exports.StyledRemoveButton = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.animationObjectStyle = exports.animationEnding = exports.normalizeTiming = exports.animationBounds = void 0;
+exports.normalizeTiming = exports.animationObjectStyle = exports.animationEnding = exports.animationBounds = void 0;
 
 var _styledComponents = require("styled-components");
 

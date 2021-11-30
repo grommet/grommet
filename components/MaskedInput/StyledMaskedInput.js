@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledIcon = exports.StyledMaskedInputContainer = exports.StyledMaskedInput = void 0;
+exports.StyledMaskedInputContainer = exports.StyledMaskedInput = exports.StyledIcon = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 

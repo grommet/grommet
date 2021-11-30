@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.createDateFormat = exports.doublePad = exports.halfPad = exports.heightYGranularity = exports.points = void 0;
+exports.points = exports.heightYGranularity = exports.halfPad = exports.doublePad = exports.createDateFormat = void 0;
 var points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
 exports.points = points;
 var heightYGranularity = {

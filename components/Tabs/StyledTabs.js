@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledTabs = exports.StyledTabPanel = exports.StyledTabsHeader = void 0;
+exports.StyledTabsHeader = exports.StyledTabs = exports.StyledTabPanel = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

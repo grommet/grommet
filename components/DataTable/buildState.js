@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.normalizeRowCellProps = exports.normalizeCellProps = exports.normalizeRowProp = exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
+exports.set = exports.normalizeRowProp = exports.normalizeRowCellProps = exports.normalizePrimaryProperty = exports.normalizeCellProps = exports.normalizeBackgroundColor = exports.initializeFilters = exports.filterAndSortData = exports.datumValue = exports.buildGroups = exports.buildGroupState = exports.buildFooterValues = void 0;
 
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
@@ -315,7 +315,8 @@ var normalizeCellProps = function normalizeCellProps(props, theme) {
     cellPropertyNames.forEach(function (propName) {
       var _props$propName, _theme$dataTable, _theme$dataTable$cont, _theme$table, _theme$table$context, _props$propName3, _props$propName3$pinn, _props$propName5, _theme$dataTable2, _theme$dataTable2$pin, _theme$dataTable2$pin2;
 
-      var value = (props == null ? void 0 : (_props$propName = props[propName]) == null ? void 0 : _props$propName[context]) || tableContextNames.every(function (n) {
+      var value = (props == null ? void 0 : (_props$propName = props[propName]) == null ? void 0 : _props$propName[context]) || // if the propName is used without context, it applies to all contexts
+      tableContextNames.every(function (n) {
         var _props$propName2;
 
         return !(props != null && (_props$propName2 = props[propName]) != null && _props$propName2[n]);

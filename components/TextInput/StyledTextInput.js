@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledSuggestions = exports.StyledIcon = exports.StyledPlaceholder = exports.StyledTextInputContainer = exports.StyledTextInput = void 0;
+exports.StyledTextInputContainer = exports.StyledTextInput = exports.StyledSuggestions = exports.StyledPlaceholder = exports.StyledIcon = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

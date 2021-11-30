@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledSeparator = exports.StyledContainer = exports.StyledPaginationButton = void 0;
+exports.StyledSeparator = exports.StyledPaginationButton = exports.StyledContainer = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 

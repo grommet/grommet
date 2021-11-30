@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.borderStyle = exports.responsiveBorderStyle = void 0;
+exports.responsiveBorderStyle = exports.borderStyle = void 0;
 
 var _styledComponents = require("styled-components");
 

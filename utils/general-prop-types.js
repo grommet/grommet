@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OVERFLOW_VALUES = exports.widthPropType = exports.heightPropType = exports.roundPropType = exports.patternPropType = exports.pointPropType = exports.hoverIndicatorPropType = exports.elevationPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.backgroundPropType = exports.colorPropType = exports.alignPropType = exports.a11yTitlePropType = void 0;
+exports.widthPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 

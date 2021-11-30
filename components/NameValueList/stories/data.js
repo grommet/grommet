@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.statusData = exports.languageData = exports.metricData = exports.data = void 0;
+exports.statusData = exports.metricData = exports.languageData = exports.data = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.base = exports.generate = void 0;
+exports.generate = exports.base = void 0;
 
 var _Actions = require("grommet-icons/icons/Actions");
 

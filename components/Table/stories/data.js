@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.columns = exports.data = void 0;
+exports.data = exports.columns = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 

@@ -106,7 +106,8 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   // to be the first day of the week, then we need to include Sunday and six
   // days prior.
 
-  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = subtractDays(start, 6) : start = subtractDays(start, start.getDay() - firstDayOfWeek);
+  start = start.getDay() === 0 && firstDayOfWeek === 1 ? start = subtractDays(start, 6) : // beginning of week
+  start = subtractDays(start, start.getDay() - firstDayOfWeek);
   var end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
 
   return [start, end];

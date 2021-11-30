@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MessageContext = exports.format = void 0;
+exports.format = exports.MessageContext = void 0;
 
 var _MessageContext = require("./MessageContext");
 

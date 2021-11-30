@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.getBreakpointStyle = exports.getDeviceBreakpoint = exports.getBreakpoint = void 0;
+exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = void 0;
 
 var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {

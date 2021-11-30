@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledContainer = exports.StyledOverlay = exports.StyledLayer = exports.animationDuration = void 0;
+exports.animationDuration = exports.StyledOverlay = exports.StyledLayer = exports.StyledContainer = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

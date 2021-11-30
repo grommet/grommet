@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledTable = exports.StyledTableFooter = exports.StyledTableHeader = exports.StyledTableBody = exports.StyledTableRow = exports.StyledTableDataCaption = exports.StyledTableCell = void 0;
+exports.StyledTableRow = exports.StyledTableHeader = exports.StyledTableFooter = exports.StyledTableDataCaption = exports.StyledTableCell = exports.StyledTableBody = exports.StyledTable = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

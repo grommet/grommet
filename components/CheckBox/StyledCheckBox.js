@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledCheckBox = exports.StyledCheckBoxKnob = exports.StyledCheckBoxToggle = exports.StyledCheckBoxBox = exports.StyledCheckBoxInput = exports.StyledCheckBoxContainer = exports.StyledCheckBoxIcon = void 0;
+exports.StyledCheckBoxToggle = exports.StyledCheckBoxKnob = exports.StyledCheckBoxInput = exports.StyledCheckBoxIcon = exports.StyledCheckBoxContainer = exports.StyledCheckBoxBox = exports.StyledCheckBox = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledDigitalNext = exports.StyledDigitalPrevious = exports.StyledDigitalDigit = exports.StyledAnalog = exports.StyledSecond = exports.StyledMinute = exports.StyledHour = void 0;
+exports.StyledSecond = exports.StyledMinute = exports.StyledHour = exports.StyledDigitalPrevious = exports.StyledDigitalNext = exports.StyledDigitalDigit = exports.StyledAnalog = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.ResetDateWithArray = exports.ResetDateWithString = void 0;
+exports["default"] = exports.ResetDateWithString = exports.ResetDateWithArray = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 

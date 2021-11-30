@@ -46,7 +46,8 @@ var validateName = function validateName(nameValidators, required) {
     var result; // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
 
-    if (required && (nameValue === undefined || nameValue === '' || nameValue === false || Array.isArray(nameValue) && !nameValue.length)) {
+    if (required && ( // false is for CheckBox
+    nameValue === undefined || nameValue === '' || nameValue === false || Array.isArray(nameValue) && !nameValue.length)) {
       // There is no value at that name, and one is required
       result = format({
         id: 'form.required',

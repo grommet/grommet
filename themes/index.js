@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.dark = exports.grommet = exports.generate = exports.base = void 0;
+exports.grommet = exports.generate = exports.dark = exports.base = void 0;
 
 var _base = require("./base");
 

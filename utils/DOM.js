@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.findVisibleParent = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.setFocusWithoutScroll = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.containsFocus = exports.findScrollParents = exports.findScrollParent = void 0;
+exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.containsFocus = void 0;
 
 var findScrollParent = function findScrollParent(element, horizontal) {
   var result;

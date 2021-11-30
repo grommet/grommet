@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CarouselChildPropTypes = exports.CarouselPropTypes = void 0;
+exports.CarouselPropTypes = exports.CarouselChildPropTypes = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
