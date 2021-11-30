@@ -12,7 +12,7 @@ export interface CarouselProps {
   a11yTitle?: A11yTitleType;
   activeChild?: number;
   alignSelf?: AlignSelfType;
-  continuous?: boolean;
+  wrap?: boolean;
   controls?: boolean | 'arrows' | 'selectors';
   gridArea?: GridAreaType;
   margin?: MarginType;

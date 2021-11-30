@@ -13,7 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     initialChild: PropTypes.number,
     fill: PropTypes.bool,
 
-    continuous: PropTypes.bool,
+    wrap: PropTypes.bool,
     controls: PropTypes.oneOfType([
       PropTypes.oneOf(['arrows', 'selectors']),
       PropTypes.bool,
@@ -42,7 +42,7 @@ let CarouselControlsPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselControlsPropType = {
     current: PropTypes.number.isRequired,
-    continuous: PropTypes.bool.isRequired,
+    wrap: PropTypes.bool.isRequired,
     controls: PropTypes.oneOfType([
       PropTypes.oneOf(['arrows', 'selectors']),
       PropTypes.bool,

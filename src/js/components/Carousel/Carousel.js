@@ -15,7 +15,7 @@ import { defaultProps } from '../../default-props';
 
 const Carousel = ({
   activeChild,
-  continuous,
+  wrap,
   children,
   controls,
   height,
@@ -174,7 +174,7 @@ const Carousel = ({
         {...rest}
       >
         <CarouselControls
-          continuous={continuous}
+          wrap={wrap}
           controls={controls}
           current={current}
           inTransition={inTransition}
@@ -202,7 +202,7 @@ const Carousel = ({
 
 Carousel.propTypes = CarouselPropTypes;
 Carousel.defaultProps = {
-  continuous: false,
+  wrap: false,
   controls: true,
   fill: false,
   initialChild: 0,

@@ -8,12 +8,12 @@ import { defaultProps } from '../../default-props';
 
 const CarouselControls = ({
   controls,
-  continuous,
   current,
   numSlides,
   onNext,
   onPrevious,
   onSelectorNavigation,
+  wrap,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const arrowNavigation = controls && controls !== 'selectors';
@@ -23,8 +23,8 @@ const CarouselControls = ({
   const PreviousIcon = theme.carousel.icons.previous;
   const NextIcon = theme.carousel.icons.next;
 
-  const nextIconDisabled = !continuous && current + 1 === numSlides;
-  const previousIconDisabled = !continuous && current === 0;
+  const nextIconDisabled = !wrap && current + 1 === numSlides;
+  const previousIconDisabled = !wrap && current === 0;
 
   const selectorColor = normalizeColor(
     theme.carousel.icons.color || 'control',
