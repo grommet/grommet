@@ -37,6 +37,7 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 // Validates particular key in formValue
 const validateName =
   (nameValidators, required) => (name, formValue, format, messages) => {
+    console.log('validateName');
     const nameValue = formValue[name];
     let result;
     // ValidateArg is something that gets passed in from a FormField component
@@ -75,6 +76,7 @@ const validateName =
 const validateForm = (validations, formValue, format, messages, omitValid) => {
   const nextErrors = {};
   const nextInfos = {};
+  console.log(validations);
   validations.forEach(([name, { field, input }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
@@ -92,6 +94,9 @@ const validateForm = (validations, formValue, format, messages, omitValid) => {
     }
     // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
+
+    // ???? Regardless of the typeof, don't these always resolve to
+    // nextErrors[name] = result.message || result; ??????
     if (typeof result === 'object') {
       if (result.status === 'info') {
         nextInfos[name] = result.message;
@@ -129,6 +134,7 @@ const Form = forwardRef(
       () => valueProp || valueState,
       [valueProp, valueState],
     );
+    const [mounted, setMounted] = useState(false);
     const [touched, setTouched] = useState(defaultTouched);
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
@@ -184,116 +190,91 @@ const Form = forwardRef(
         .forEach((n) => delete nextInfos[n]);
     };
 
-    // On initial mount, when validateOn is change or blur,
-    // set validation results for any set fields and calculate whether
-    // the form is valid overall.
-    useEffect(() => {
-      const validationsForSetFields = Object.entries(
-        validations.current,
-      ).filter(([n]) => value[n]);
-
-      if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
-        const [errors, infos] = validateForm(
-          validationsForSetFields,
+    const runValidation = useCallback(
+      (validationRules) => {
+        console.log('Running validations');
+        setPendingValidation(undefined);
+        const [validatedErrors, validatedInfos] = validateForm(
+          validationRules,
           value,
           format,
           messages,
         );
 
-        filterErrorValidations(errors);
-        filterInfoValidations(infos);
+        setValidationResults((prevValidationResults) => {
+          // keep any previous errors and infos for untouched keys,
+          // these may have come from a submit
+          const nextErrors = {
+            ...prevValidationResults.errors,
+            ...validatedErrors,
+          };
+          const nextInfos = {
+            ...prevValidationResults.infos,
+            ...validatedInfos,
+          };
 
-        const nextValidationResults = {
-          errors,
-          infos,
-          valid: buildValid(errors),
-        };
-        if (onValidate) onValidate(nextValidationResults);
-        setValidationResults(nextValidationResults);
-      }
-      // We only want to run this for the value we have on initial mount.
-      // We don't want subsequent changes to the value to re-run this.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+          filterErrorValidations(nextErrors);
+          filterInfoValidations(nextInfos);
 
-    // Currently, onBlur validation will trigger after a timeout of 120ms.
+          const nextValidationResults = {
+            errors: nextErrors,
+            infos: nextInfos,
+            valid: buildValid(nextErrors),
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          console.log('nextValidationResults', nextValidationResults);
+          return nextValidationResults;
+        });
+      },
+      [buildValid, format, messages, onValidate, value],
+    );
+
     useEffect(() => {
-      const timer = setTimeout(() => {
-        if (pendingValidation) {
-          // run validations on the pending one and any other touched fields
-          const [validatedErrors, validatedInfos] = validateForm(
-            Object.entries(validations.current).filter(
-              ([n]) => touched[n] || pendingValidation.includes(n),
-            ),
-            value,
-            format,
-            messages,
-          );
-          setPendingValidation(undefined);
+      let validationRules = Object.entries(validations.current).filter(
+        ([n]) => value[n],
+      );
+      let timer = null;
 
-          setValidationResults((prevValidationResults) => {
-            // keep any previous errors and infos for untouched keys,
-            // these may have come from a submit
-            const nextErrors = {
-              ...prevValidationResults.errors,
-              ...validatedErrors,
-            };
-            const nextInfos = {
-              ...prevValidationResults.infos,
-              ...validatedInfos,
-            };
+      console.log('requiredFields', requiredFields.current);
+      console.log('validations', validations.current);
 
-            filterErrorValidations(nextErrors);
-            filterInfoValidations(nextInfos);
-
-            const nextValidationResults = {
-              errors: nextErrors,
-              infos: nextInfos,
-              valid: buildValid(nextErrors),
-            };
-            if (onValidate) onValidate(nextValidationResults);
-            return nextValidationResults;
-          });
+      if (!mounted) {
+        console.log('onMount:');
+        // Run validations on a simulated onMount. Simulating onMount because
+        // in a controlled input scenario the Form is not aware of the value
+        // held by the input until second render.
+        if (
+          Object.keys(value).length > 0 &&
+          Object.keys(touched).length === 0
+        ) {
+          setMounted(true);
+          runValidation(validationRules);
         }
-        // a timeout is needed to ensure that a click event (like one on a reset
-        // button) completes prior to running the validation. without a timeout,
-        // the blur will always complete and trigger a validation prematurely
-        // The following values have been empirically tested, but 120 was
-        // selected because it is the largest value
-        // Chrome: 100, Safari: 120, Firefox: 80
-      }, 120);
+        // Form has been interacted with, so can infer it has mounted.
+        else if (Object.keys(touched).length > 0) {
+          setMounted(true);
+        }
+      }
 
+      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
+        console.log('validateOn:', validateOn);
+        validationRules = validationRules.filter(
+          ([n]) => touched[n] || pendingValidation?.includes(n),
+        );
+        timer = setTimeout(() => {
+          runValidation(validationRules);
+        }, 120);
+      }
       return () => clearTimeout(timer);
     }, [
-      buildValid,
-      format,
-      messages,
+      mounted,
       pendingValidation,
-      onValidate,
+      runValidation,
       touched,
+      validateOn,
       value,
-      requiredFields,
+      valueProp,
     ]);
-
-    // clear any errors when value changes
-    useEffect(() => {
-      if (validateOn !== 'change') setPendingValidation(undefined);
-      setValidationResults((prevValidationResults) => {
-        const [nextErrors, nextInfos] = validateForm(
-          Object.entries(validations.current).filter(
-            ([n]) =>
-              prevValidationResults.errors[n] || prevValidationResults.infos[n],
-          ),
-          value,
-          format,
-          messages,
-        );
-        return {
-          errors: { ...prevValidationResults.errors, ...nextErrors },
-          infos: { ...prevValidationResults.infos, ...nextInfos },
-        };
-      });
-    }, [format, messages, touched, validateOn, value]);
 
     // There are three basic patterns of handling form input value state:
     //
