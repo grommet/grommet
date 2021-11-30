@@ -1502,61 +1502,450 @@ exports[`Carousel navigate 1`] = `
 `;
 
 exports[`Carousel navigate 2`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  -webkit-animation: cCLHuk 1s 0s forwards;
+  animation: cCLHuk 1s 0s forwards;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="c1"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bcpaT"
+          class="c4"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="c5"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jsMHFF"
+          class="c6"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        class="c7"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="c8"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
@@ -1568,19 +1957,19 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+          class="c10"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+            class="c11"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1593,12 +1982,12 @@ exports[`Carousel navigate 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1612,13 +2001,13 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="c14"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
@@ -1636,62 +2025,451 @@ exports[`Carousel navigate 2`] = `
 `;
 
 exports[`Carousel navigate 3`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c14:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="c1"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bxmmvB"
+          class="c4"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c5"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bcpaT"
+          class="c6"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c5"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        class="c7"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="c8"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
@@ -1703,19 +2481,19 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+          class="c10"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+            class="c11"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1728,12 +2506,12 @@ exports[`Carousel navigate 3`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1747,12 +2525,12 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="c14"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
@@ -2270,60 +3048,449 @@ exports[`Carousel play 1`] = `
 `;
 
 exports[`Carousel play 2`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+  -webkit-animation: cCLHuk 1s 0s forwards;
+  animation: cCLHuk 1s 0s forwards;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c8:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <div
-    class="StyledStack-sc-ajspsk-0 glGLiV"
+    class="c1"
   >
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bcpaT"
+          class="c4"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+      class="c5"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        class="c3"
         style="visibility: visible;"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jsMHFF"
+          class="c6"
         >
           <img
-            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+      class="c2"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        class="c7"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ewrZsR"
+          class="c8"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path
@@ -2335,19 +3502,19 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+          class="c10"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+            class="c11"
           >
             <button
               aria-label="Show carousel slide 1"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2360,12 +3527,12 @@ exports[`Carousel play 2`] = `
             </button>
             <button
               aria-label="Show carousel slide 2"
-              class="StyledButton-sc-323bzc-0 fJaeOs"
+              class="c12"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                class="c13"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2379,13 +3546,13 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 fLeXHn"
+          class="c14"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            class="c9"
             viewBox="0 0 24 24"
           >
             <path

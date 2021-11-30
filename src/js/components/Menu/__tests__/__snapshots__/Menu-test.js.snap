@@ -680,8 +680,73 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .hOAHvF {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .knmKel {
+    width: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ghvWoc {
+    width: 100%;
   }
 }"
 `;
@@ -3011,29 +3076,193 @@ exports[`Menu open and close on click 1`] = `
 `;
 
 exports[`Menu open and close on click 2`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 kVhqUm"
+    class="c1"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iwMNSr"
+      class="c2"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 fkNrQP"
+        class="c3"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dvZAHf"
+        class="c4"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+        class="c5"
         viewBox="0 0 24 24"
       >
         <path
@@ -3407,8 +3636,73 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .hOAHvF {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .knmKel {
+    width: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ghvWoc {
+    width: 100%;
   }
 }"
 `;
@@ -4138,8 +4432,73 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .hOAHvF {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .knmKel {
+    width: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ghvWoc {
+    width: 100%;
   }
 }"
 `;
@@ -5823,8 +6182,73 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .hOAHvF {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .knmKel {
+    width: 6px;
+  }
+}
+.AkHb {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .AkHb {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ghvWoc {
+    width: 100%;
   }
 }"
 `;
@@ -6364,8 +6788,73 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iwMNSr {
+  .Gcwat {
     padding: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .hOAHvF {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .knmKel {
+    width: 6px;
+  }
+}
+.fLRpKk {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fLRpKk {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ghvWoc {
+    width: 100%;
   }
 }"
 `;

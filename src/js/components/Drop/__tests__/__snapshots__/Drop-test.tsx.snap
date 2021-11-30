@@ -66,7 +66,7 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -81,8 +81,31 @@ exports[`Drop align left left 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.AkHb {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .AkHb {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -161,7 +184,7 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -176,7 +199,7 @@ exports[`Drop align left right top bottom 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -200,7 +223,7 @@ exports[`Drop align left right top bottom 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -279,7 +302,7 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -294,8 +317,31 @@ exports[`Drop align right left top top 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.fLRpKk {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fLRpKk {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -374,7 +420,7 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -389,8 +435,31 @@ exports[`Drop align right right 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.fLRpKk {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fLRpKk {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -469,7 +538,7 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -484,8 +553,31 @@ exports[`Drop align right right bottom top 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.ckXZRc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .ckXZRc {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -564,7 +656,7 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -579,8 +671,31 @@ exports[`Drop align right right bottom top 4`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.ckXZRc {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .ckXZRc {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -659,8 +774,46 @@ exports[`Drop background 1`] = `
 `;
 
 exports[`Drop background 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".iiGBiA {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background: #33333310;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kaPvTl {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background: #33333310;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kaPvTl {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -739,7 +892,7 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -754,7 +907,7 @@ exports[`Drop basic 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -778,7 +931,7 @@ exports[`Drop basic 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -857,7 +1010,7 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -872,7 +1025,7 @@ exports[`Drop close 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -896,7 +1049,7 @@ exports[`Drop close 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -975,7 +1128,7 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -990,7 +1143,7 @@ exports[`Drop default elevation renders 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1014,7 +1167,7 @@ exports[`Drop default elevation renders 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1093,8 +1246,46 @@ exports[`Drop elevation 1`] = `
 `;
 
 exports[`Drop elevation 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".knYcCD {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.fUvoIQ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 15;
+  outline: none;
+  background: #33333310;
+  margin: 6px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fUvoIQ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1173,7 +1364,7 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1188,7 +1379,7 @@ exports[`Drop invalid align 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1212,7 +1403,7 @@ exports[`Drop invalid align 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1291,7 +1482,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1306,7 +1497,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1330,7 +1521,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1417,8 +1608,53 @@ exports[`Drop margin 1`] = `
 `;
 
 exports[`Drop margin 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".bsfhJQ {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .bsfhJQ {
+    margin: 6px;
+  }
+}
+.fTuxAg {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fTuxAg {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1497,7 +1733,7 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1512,7 +1748,7 @@ exports[`Drop no stretch 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1536,7 +1772,7 @@ exports[`Drop no stretch 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1611,8 +1847,42 @@ exports[`Drop plain 1`] = `
 `;
 
 exports[`Drop plain 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".itpUPD {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+}
+.jSrMLU {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .jSrMLU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1691,7 +1961,7 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1706,7 +1976,7 @@ exports[`Drop resize 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1730,7 +2000,7 @@ exports[`Drop resize 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1809,8 +2079,61 @@ exports[`Drop restrict focus 1`] = `
 `;
 
 exports[`Drop restrict focus 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
 <div
-  class="StyledBox-sc-13pk1d4-0 bfNlCf StyledDrop-sc-16s5rx8-0 ohXMl"
+  class="c0 c1"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -1821,7 +2144,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1836,7 +2159,7 @@ exports[`Drop restrict focus 3`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1860,7 +2183,7 @@ exports[`Drop restrict focus 3`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1948,8 +2271,47 @@ exports[`Drop round 1`] = `
 `;
 
 exports[`Drop round 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".kBXOUZ {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 100%;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.fkiQNX {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 100%;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fkiQNX {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2060,7 +2422,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","left":"right"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2075,8 +2437,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.eDXdxW {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-left: 12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .eDXdxW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2158,7 +2544,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","right":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2173,8 +2559,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.dGevdU {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-left: -12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .dGevdU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2256,7 +2666,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2271,8 +2681,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.ggKDDe {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-bottom: 12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .ggKDDe {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2355,7 +2789,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"right"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2370,8 +2804,33 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.jjCNPD {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .jjCNPD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2454,7 +2913,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2469,8 +2928,33 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.kcyacV {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-bottom: 12px;
+  margin-left: -12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .kcyacV {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2553,7 +3037,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 4`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2568,8 +3052,33 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.kcyacV {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-bottom: 12px;
+  margin-left: -12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .kcyacV {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2651,7 +3160,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"right":"right","bottom":"top"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2666,8 +3175,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.klymAB {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-bottom: 12px;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .klymAB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2749,7 +3282,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2764,8 +3297,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.dlNiiy {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-top: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .dlNiiy {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2848,7 +3405,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"right"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2863,8 +3420,33 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.WpOlL {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-top: 12px;
+  margin-left: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .WpOlL {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2947,7 +3529,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2962,8 +3544,33 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.cjVWPJ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-top: 12px;
+  margin-left: -12px;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .cjVWPJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3045,7 +3652,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"right"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3060,8 +3667,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.ebaOzV {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-top: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .ebaOzV {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3143,7 +3774,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3158,8 +3789,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.dlNiiy {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-top: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .dlNiiy {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3241,7 +3896,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","left":"right"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3256,8 +3911,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.eEySlS {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-left: 12px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .eEySlS {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3339,7 +4018,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","right":"left"} 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3354,8 +4033,32 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.kzdhBs {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  margin-left: -12px;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .kzdhBs {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3434,7 +4137,7 @@ exports[`Drop stretch = align 1`] = `
 `;
 
 exports[`Drop stretch = align 2`] = `
-".bfNlCf {
+".boMPMF {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3449,7 +4152,7 @@ exports[`Drop stretch = align 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.ohXMl {
+.fsBPbn {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3473,7 +4176,7 @@ exports[`Drop stretch = align 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+  .fsBPbn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3552,8 +4255,46 @@ exports[`Drop theme elevation renders 1`] = `
 `;
 
 exports[`Drop theme elevation renders 2`] = `
-"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ohXMl {
+".ipEkmo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.fUvoIQ {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 15;
+  outline: none;
+  background: #33333310;
+  margin: 6px;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fUvoIQ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

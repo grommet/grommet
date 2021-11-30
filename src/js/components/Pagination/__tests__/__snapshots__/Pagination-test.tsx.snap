@@ -330,7 +330,7 @@ exports[`Pagination should allow user to control page via state with page +
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -929,7 +929,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="pagination-test"
@@ -1088,7 +1088,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="pagination-test-2"
@@ -1657,7 +1657,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -3419,7 +3419,7 @@ exports[`Pagination should apply size 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -3578,7 +3578,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -3737,7 +3737,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4227,7 +4227,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4826,7 +4826,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5303,7 +5303,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5617,7 +5617,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5998,7 +5998,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6519,7 +6519,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7010,7 +7010,7 @@ exports[`Pagination should display next page of results when "next" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7171,30 +7171,354 @@ exports[`Pagination should display next page of results when "next" is
 
 exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bULqXT Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 jVOTJS"
+      class="c2"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 hoCTgj"
+        class="c3"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 enSvod"
+              class="c7"
               viewBox="0 0 24 24"
             >
               <path
@@ -7207,116 +7531,116 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 gISBYw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c9 c6"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 fkNrQP StyledPageControl__StyledSeparator-sc-1vlfaez-2 dMjGmX"
+            class="c10 c11"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 enSvod"
+              class="c7"
               viewBox="0 0 24 24"
             >
               <path
@@ -7664,7 +7988,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8153,7 +8477,7 @@ exports[`Pagination should display previous page of results when "previous" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8314,30 +8638,354 @@ exports[`Pagination should display previous page of results when "previous" is
 
 exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 > svg {
+  vertical-align: bottom;
+}
+
+.c5:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  vertical-align: bottom;
+}
+
+.c9:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 > svg {
+  vertical-align: middle;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c11 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 2px;
+  }
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="c0"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bULqXT Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 jVOTJS"
+      class="c2"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 hoCTgj"
+        class="c3"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 enSvod"
+              class="c7"
               viewBox="0 0 24 24"
             >
               <path
@@ -8350,116 +8998,116 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 gISBYw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c9 c6"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 fkNrQP StyledPageControl__StyledSeparator-sc-1vlfaez-2 dMjGmX"
+            class="c10 c11"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 huOcqT"
+          class="c8"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jcuIwM"
+          class="c4"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 exRcya StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 byINEE"
+            class="c5 c6"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 enSvod"
+              class="c7"
               viewBox="0 0 24 24"
             >
               <path
@@ -8918,7 +9566,7 @@ exports[`Pagination should display the correct last page based on items length
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9408,7 +10056,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9950,7 +10598,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -10450,7 +11098,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11075,7 +11723,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11649,7 +12297,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 "
   >
     <nav
       aria-label="Pagination Navigation"
