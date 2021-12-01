@@ -1,5 +1,3 @@
-
-   
 import React, { useEffect, useMemo, useState } from 'react';
 
 import { Grommet, Box, DataTable, Text, Tip } from 'grommet';
