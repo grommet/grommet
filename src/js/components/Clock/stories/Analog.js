@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, Clock, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Clock, Text } from 'grommet';
 
 const sizes = [
   'xsmall',
@@ -14,9 +13,11 @@ const sizes = [
 ];
 
 export const Analog = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <>
     <Box direction="row" gap="small" pad="large">
-      {sizes.map(size => (
+      {sizes.map((size) => (
         <Box key={size} align="center">
           <Text>{size}</Text>
           <Clock type="analog" size={size} />
@@ -29,7 +30,8 @@ export const Analog = () => (
         compatibility.
       </Text>
     </Box>
-  </Grommet>
+  </>
+  // </Grommet>
 );
 
 Analog.parameters = {

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataChart } from 'grommet';
 
 const data = [];
 for (let i = 1; i < 8; i += 1) {
@@ -12,24 +11,25 @@ for (let i = 1; i < 8; i += 1) {
 }
 
 export const Pattern = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" justify="start" pad="large">
-      <DataChart
-        data={data}
-        series="percent"
-        chart={[
-          {
-            property: 'percent',
-            type: 'area',
-            thickness: 'xsmall',
-            color: 'graph-0',
-            opacity: 'strong',
-            pattern: 'squares',
-          },
-        ]}
-      />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center" justify="start" pad="large">
+    <DataChart
+      data={data}
+      series="percent"
+      chart={[
+        {
+          property: 'percent',
+          type: 'area',
+          thickness: 'xsmall',
+          color: 'graph-0',
+          opacity: 'strong',
+          pattern: 'squares',
+        },
+      ]}
+    />
+  </Box>
+  // </Grommet>
 );
 
 export default {
