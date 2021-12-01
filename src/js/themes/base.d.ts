@@ -178,7 +178,7 @@ interface ButtonType {
   secondary?: ButtonKindType;
   option?: ButtonKindType;
   active?:
-    | (ButtonKindType & {
+    (ButtonKindType & {
         default?: ButtonKindType;
         primary?: ButtonKindType;
         secondary?: ButtonKindType;
