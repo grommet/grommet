@@ -229,7 +229,7 @@ const Header = forwardRef(
                         nextGroupSelected[key] = 'all';
                       });
                     }
-                    if (groupBy.onSelect) {
+                    if (groupBy?.onSelect) {
                       groupBy.onSelect(
                         nextSelected,
                         undefined,
