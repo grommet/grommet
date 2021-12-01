@@ -185,11 +185,12 @@ interface ButtonType {
       })
     | { [key: string]: ButtonKindType };
   disabled?: ButtonKindType & { opacity?: OpacityType };
-  hover?: ButtonKindType & {
+  hover?: (ButtonKindType & {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
-  };
+  })
+  | { [key: string]: ButtonKindType };
   size?: {
     small?: {
       border?: {
