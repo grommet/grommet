@@ -15,7 +15,7 @@ export const decorators = [
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
-    const full = context.parameters?.args?.full;
+    const full = context.parameters?.args?.full || 'min';
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
