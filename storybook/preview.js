@@ -16,6 +16,7 @@ export const decorators = [
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
+    const full = context.parameters?.args?.full || 'min';
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -43,7 +44,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]}>
+      <Grommet theme={THEMES[state]} full={full}>
         <Story state={THEMES[state]} />
       </Grommet>
     );
