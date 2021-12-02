@@ -83,7 +83,6 @@ const ClearButton = styled(ClearButtonComponent)`
       }`}
 
     ${(props) =>
-      props.theme.select.clear.hover &&
       props.theme.select.clear.hover?.color &&
       `${ClearButtonText} {
         color: ${normalizeColor(
