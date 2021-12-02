@@ -11256,6 +11256,1308 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
 </div>
 `;
 
+exports[`DataTable onSelect select/unselect all 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c17 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.c5:hover input:not([disabled]) + div,
+.c5:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c8 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c8:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c13:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <th
+          class="c3 "
+          scope="col"
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select all"
+              class="c5"
+            >
+              <div
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
+        </th>
+        <th
+          class="c10 "
+          scope="col"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c10 "
+          scope="col"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c14 "
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 1.1"
+              class="c5"
+            >
+              <div
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c15 "
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c12"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="c15 "
+          scope="row"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              1.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c14 "
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 1.2"
+              class="c5"
+            >
+              <div
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c15 "
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c12"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="c15 "
+          scope="row"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              1.2
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c14 "
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 2.1"
+              class="c5"
+            >
+              <div
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c15 "
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c12"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="c15 "
+          scope="row"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              2.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c14 "
+        >
+          <div
+            class="c4"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 2.2"
+              class="c5"
+            >
+              <div
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c15 "
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c12"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="c15 "
+          scope="row"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              2.2
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSelect select/unselect all 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 lfIBVd StyledDataTable-sc-xrlyjm-0 hsvjLV"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYowDL StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect all"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                >
+                  .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dcreUj StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dcreUj StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 dCDxqt"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect 1.1"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                >
+                  .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              1.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect 1.2"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                >
+                  .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              1.2
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect 2.1"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                >
+                  .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              2.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="unselect 2.2"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 eFkyap StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                >
+                  .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              2.2
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSelect select/unselect all 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 lfIBVd StyledDataTable-sc-xrlyjm-0 hsvjLV"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYowDL StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select all"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                />
+              </div>
+            </label>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dcreUj StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dcreUj StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 hHytfL"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 dCDxqt"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 1.1"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              1.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 1.2"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              1.2
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 2.1"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              2.1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bhjpql"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bzvxGh StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 VweX"
+            style="height: 0px;"
+          >
+            <label
+              aria-label="select 2.2"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fFmVaU"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kUMPgf StyledCheckBox-sc-1dbk5ju-6 bXiBYz"
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iaLOrJ"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 gDQNNZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 WtXtt"
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fkNrQP"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dkctaV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 bCSjGy"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bULqXT"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fDswbh"
+            >
+              2.2
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable onSort 1`] = `
 .c0 {
   font-size: 18px;
@@ -19342,7 +20644,7 @@ exports[`DataTable select 2`] = `
 `;
 
 exports[`DataTable should apply pagination styling 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -19353,30 +20655,30 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -19387,25 +20689,25 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -19469,25 +20771,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19506,7 +20790,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19523,7 +20807,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19543,7 +20827,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -19553,7 +20837,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -19574,7 +20858,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -19607,51 +20891,51 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -19671,6 +20955,86 @@ exports[`DataTable should apply pagination styling 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -19734,86 +21098,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -19860,16 +21144,16 @@ exports[`DataTable should apply pagination styling 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19888,31 +21172,31 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     margin: 24px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -21524,46 +22808,35 @@ exports[`DataTable should apply pagination styling 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -21576,48 +22849,48 @@ exports[`DataTable should apply pagination styling 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -22073,7 +23346,7 @@ exports[`DataTable should not show paginate controls when length of data < step 
 `;
 
 exports[`DataTable should paginate 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -22084,30 +23357,30 @@ exports[`DataTable should paginate 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -22118,25 +23391,25 @@ exports[`DataTable should paginate 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -22200,25 +23473,7 @@ exports[`DataTable should paginate 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22235,7 +23490,7 @@ exports[`DataTable should paginate 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22252,7 +23507,7 @@ exports[`DataTable should paginate 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22272,7 +23527,7 @@ exports[`DataTable should paginate 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -22282,7 +23537,7 @@ exports[`DataTable should paginate 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -22303,7 +23558,7 @@ exports[`DataTable should paginate 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -22336,51 +23591,51 @@ exports[`DataTable should paginate 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -22400,6 +23655,86 @@ exports[`DataTable should paginate 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -22463,86 +23798,6 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -22589,16 +23844,16 @@ exports[`DataTable should paginate 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22617,25 +23872,25 @@ exports[`DataTable should paginate 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -24247,46 +25502,35 @@ exports[`DataTable should paginate 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24299,48 +25543,48 @@ exports[`DataTable should paginate 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24360,7 +25604,7 @@ exports[`DataTable should paginate 1`] = `
 `;
 
 exports[`DataTable should render correct num items per page (step) 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -24371,30 +25615,30 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -24405,25 +25649,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -24487,25 +25731,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24522,7 +25748,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24539,7 +25765,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24559,7 +25785,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -24569,7 +25795,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -24590,7 +25816,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -24623,51 +25849,51 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -24687,6 +25913,86 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -24750,86 +26056,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -24876,16 +26102,16 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24904,25 +26130,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -25418,46 +26644,35 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -25470,118 +26685,118 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 3"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               3
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 4"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               4
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 5"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               5
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 6"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               6
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 7"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               7
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -25601,7 +26816,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 `;
 
 exports[`DataTable should render new data when page changes 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -25612,30 +26827,30 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -25646,25 +26861,25 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -25728,25 +26943,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25763,7 +26960,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25780,7 +26977,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25800,7 +26997,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -25810,7 +27007,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -25831,7 +27028,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25864,51 +27061,51 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25928,6 +27125,86 @@ exports[`DataTable should render new data when page changes 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -25991,86 +27268,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -26117,16 +27314,16 @@ exports[`DataTable should render new data when page changes 1`] = `
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26145,25 +27342,25 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -27775,46 +28972,35 @@ exports[`DataTable should render new data when page changes 1`] = `
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -27827,48 +29013,48 @@ exports[`DataTable should render new data when page changes 1`] = `
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -29436,7 +30622,7 @@ exports[`DataTable should render new data when page changes 2`] = `
 `;
 
 exports[`DataTable should show correct item index when "show" is a number 1`] = `
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -29447,30 +30633,30 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -29481,25 +30667,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #000000;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -29563,25 +30749,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29598,7 +30766,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex-direction: column;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29615,7 +30783,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 0 0 auto;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29635,7 +30803,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   padding: 0px;
 }
 
-.c12 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -29645,7 +30813,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   height: 6px;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -29666,7 +30834,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   font-weight: bold;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -29699,51 +30867,51 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 1 0 auto;
 }
 
-.c17 > svg {
+.c16 > svg {
   vertical-align: bottom;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -29763,6 +30931,86 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -29826,86 +31074,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
-.c22 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c22 > svg {
-  vertical-align: bottom;
-}
-
-.c22:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c22:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus > circle,
-.c22:focus > ellipse,
-.c22:focus > line,
-.c22:focus > path,
-.c22:focus > polygon,
-.c22:focus > polyline,
-.c22:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c22:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c22:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible) > circle,
-.c22:focus:not(:focus-visible) > ellipse,
-.c22:focus:not(:focus-visible) > line,
-.c22:focus:not(:focus-visible) > path,
-.c22:focus:not(:focus-visible) > polygon,
-.c22:focus:not(:focus-visible) > polyline,
-.c22:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c22:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c5 {
   margin: 0;
   padding: 0;
@@ -29952,16 +31120,16 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   outline: none;
 }
 
-.c18 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 > svg {
+.c17 > svg {
   vertical-align: middle;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29980,25 +31148,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     height: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     width: 2px;
   }
 }
@@ -31610,46 +32778,35 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               </div>
             </td>
           </tr>
-          <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2"
-          >
-            <td
-              class="c9"
-            >
-              <div
-                class="c11"
-              />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div
-      class="c12"
+      class="c11"
     />
     <div
-      class="c13 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c12 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="c14"
+        class="c13"
       >
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c17 c18"
+              class="c16 c17"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c19"
+                class="c18"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -31662,48 +32819,48 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c21 c18"
+              class="c20 c17"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to page 2"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c20"
+            class="c19"
           />
           <li
-            class="c16"
+            class="c15"
           >
             <button
               aria-label="Go to next page"
-              class="c22 c18"
+              class="c21 c17"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c23"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <path

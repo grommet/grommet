@@ -1480,6 +1480,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
     },
+    tag: {
+      // background: undefined,
+      border: true,
+      round: 'large',
+      // name: undefined,
+      pad: {  
+        horizontal: 'small',
+        vertical: 'xsmall',
+      },
+      remove: {
+        margin: { right: 'xsmall'},
+      },
+      separator: ' : ',
+      value: {
+        weight: 600,
+      },
+    },
     text: {
       font: {
         // family: undefined
