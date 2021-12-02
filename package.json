@@ -71,7 +71,7 @@
     "@storybook/addon-toolbars": "^6.4.3",
     "@storybook/addons": "^6.4.3",
     "@storybook/react": "^6.4.3",
-    "@storybook/source-loader": "^6.4.3",
+    "@storybook/source-loader": "6.3.9",
     "@testing-library/dom": "^8.7.2",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
