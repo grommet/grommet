@@ -475,8 +475,7 @@ describe('Form controlled', () => {
     moodField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      1,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
@@ -488,8 +487,7 @@ describe('Form controlled', () => {
     fireEvent.change(moodField, { target: { value: 'testy' } });
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
@@ -512,8 +510,7 @@ describe('Form controlled', () => {
     nameField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      4,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 

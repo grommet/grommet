@@ -37,7 +37,6 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 // Validates particular key in formValue
 const validateName =
   (nameValidators, required) => (name, formValue, format, messages) => {
-    console.log('validateName');
     const nameValue = formValue[name];
     let result;
     // ValidateArg is something that gets passed in from a FormField component
@@ -76,7 +75,6 @@ const validateName =
 const validateForm = (validations, formValue, format, messages, omitValid) => {
   const nextErrors = {};
   const nextInfos = {};
-  console.log(validations);
   validations.forEach(([name, { field, input }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
@@ -136,9 +134,10 @@ const Form = forwardRef(
     );
     const [mounted, setMounted] = useState(false);
     const [touched, setTouched] = useState(defaultTouched);
-    const [validationResults, setValidationResults] = useState(
-      defaultValidationResults,
-    );
+    const [validationResults, setValidationResults] = useState({
+      errors: errorsProp,
+      infos: infosProp,
+    });
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -148,11 +147,6 @@ const Form = forwardRef(
     // the value of pendingValidation is the name of the FormField
     // awaiting validation.
     const [pendingValidation, setPendingValidation] = useState(undefined);
-
-    useEffect(() => {
-      setPendingValidation(undefined);
-      setValidationResults({ errors: errorsProp, infos: infosProp });
-    }, [errorsProp, infosProp]);
 
     const validations = useRef({});
     const requiredFields = useRef([]);
@@ -192,8 +186,7 @@ const Form = forwardRef(
 
     const runValidation = useCallback(
       (validationRules) => {
-        console.log('Running validations');
-        setPendingValidation(undefined);
+        let result;
         const [validatedErrors, validatedInfos] = validateForm(
           validationRules,
           value,
@@ -222,59 +215,69 @@ const Form = forwardRef(
             valid: buildValid(nextErrors),
           };
           if (onValidate) onValidate(nextValidationResults);
-          console.log('nextValidationResults', nextValidationResults);
+          result = nextValidationResults;
           return nextValidationResults;
         });
+        return result;
       },
       [buildValid, format, messages, onValidate, value],
     );
 
+    // Validation Controller
     useEffect(() => {
-      let validationRules = Object.entries(validations.current).filter(
-        ([n]) => value[n],
-      );
+      const validationRules = Object.entries(validations.current);
       let timer = null;
 
-      console.log('requiredFields', requiredFields.current);
-      console.log('validations', validations.current);
-
       if (!mounted) {
-        console.log('onMount:');
-        // Run validations on a simulated onMount. Simulating onMount because
-        // in a controlled input scenario the Form is not aware of the value
-        // held by the input until second render.
+        // onMount, run validations for all fields holding a value.
+        // "onMount" is simulated to account for a controlled input scenario
+        // where an input has a value, however the Form is not aware of the
+        // value held by the input until second render.
         if (
           Object.keys(value).length > 0 &&
           Object.keys(touched).length === 0
         ) {
           setMounted(true);
-          runValidation(validationRules);
+          runValidation(
+            validationRules
+              .filter(([n]) => value[n])
+              // Do not validate empty arrays which may be initial values in
+              // an input such as DateInput.
+              .filter(
+                ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
+              ),
+          );
         }
-        // Form has been interacted with, so can infer it has mounted.
+        // Form has been interacted with --> infer it has mounted.
         else if (Object.keys(touched).length > 0) {
           setMounted(true);
         }
       }
 
-      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
-        console.log('validateOn:', validateOn);
-        validationRules = validationRules.filter(
-          ([n]) => touched[n] || pendingValidation?.includes(n),
+      // Run validations for any fields touched and held
+      // previous validation errors.
+      if (mounted && !validationResults.valid) {
+        runValidation(
+          validationRules.filter(
+            ([n]) => touched[n] && validationResults.errors[n],
+          ),
         );
+      }
+
+      // Validations should be run for any fields marked as pending and/or
+      // re-run for fields which have been touched and held validation errors.
+      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
         timer = setTimeout(() => {
-          runValidation(validationRules);
+          runValidation(
+            validationRules.filter(
+              ([n]) => touched[n] || pendingValidation.includes(n),
+            ),
+          );
+          setPendingValidation(undefined);
         }, 120);
       }
       return () => clearTimeout(timer);
-    }, [
-      mounted,
-      pendingValidation,
-      runValidation,
-      touched,
-      validateOn,
-      value,
-      valueProp,
-    ]);
+    }, [mounted, pendingValidation, runValidation, touched, validateOn, value]);
 
     // There are three basic patterns of handling form input value state:
     //

@@ -2164,10 +2164,6 @@ exports[`Form uncontrolled errors 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     border-bottom: solid 1px #FF4040;
   }

@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Form, FormField, Grommet, TextInput } from 'grommet';
+import {
+  Box,
+  Button,
+  Form,
+  FormField,
+  Grommet,
+  TextInput,
+  DateInput,
+} from 'grommet';
 
 export const TEMP = () => {
   const [valid] = useState(false);
@@ -39,10 +47,31 @@ export const TEMP = () => {
               <Button type="submit" label="Update" disabled={!valid} primary />
             </Box>
           </Form>
-          {/* <Form onSubmit={() => {}}>
+          <Form onSubmit={() => {}}>
             <FormField name="test" required placeholder="test input" />
             <Button type="submit" primary label="Submit" />
-          </Form> */}
+          </Form>
+          <Form onSubmit={() => {}}>
+            <FormField
+              label="Date Range"
+              htmlFor="date-range"
+              name="date-range"
+              required
+            >
+              <DateInput
+                name="date-range"
+                value={[]}
+                format="mm/dd/yyyy-mm/dd/yyyy"
+              />
+            </FormField>
+            <Button type="submit" label="Submit" />
+          </Form>
+          <Form infos={{ test: 'missing' }}>
+            <FormField name="test" />
+          </Form>
+          <Form errors={{ test: 'missing' }}>
+            <FormField name="test" />
+          </Form>
         </Box>
       </Box>
     </Grommet>

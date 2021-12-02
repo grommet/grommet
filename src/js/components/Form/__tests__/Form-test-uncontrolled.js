@@ -1388,8 +1388,7 @@ describe('Form uncontrolled', () => {
     moodField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      1,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
@@ -1401,8 +1400,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(moodField, { target: { value: 'testy' } });
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
@@ -1411,8 +1409,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(moodField, { target: { value: '' } });
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      3,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
@@ -1425,8 +1422,7 @@ describe('Form uncontrolled', () => {
     nameField.focus();
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      4,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({ errors: {}, infos: {} }),
     );
 
@@ -1491,8 +1487,7 @@ describe('Form uncontrolled', () => {
     getByText('Focus out').focus();
 
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: {},
         infos: {},
