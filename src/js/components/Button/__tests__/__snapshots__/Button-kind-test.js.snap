@@ -164,7 +164,7 @@ exports[`Button kind badge should apply background 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -334,7 +334,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
       style="top: -3px; right: -3px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       />
     </div>
   </div>
@@ -505,7 +505,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -682,7 +682,7 @@ exports[`Button kind badge should display number content 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -1082,7 +1082,7 @@ exports[`Button kind badge should render relative to contents when button has no
         style="top: -3px; right: -3px;"
       >
         <div
-          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+          class="c6 "
         />
       </div>
     </div>
@@ -1656,11 +1656,93 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 `;
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="c0"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 DOiUH"
+    class="c1"
     disabled=""
     type="button"
   >
@@ -2388,11 +2470,97 @@ exports[`Button kind hover secondary with color and background 1`] = `
 `;
 
 exports[`Button kind hover secondary with color and background 2`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: skyblue;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:hover {
+  background-color: orange;
+  color: green;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="c0"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 iDhoQk"
+    class="c1"
     type="button"
   >
     Button
@@ -2498,11 +2666,95 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 `;
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:hover {
+  background-color: pink;
+  color: #FFFFFF;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="c0"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 dgvzWP"
+    class="c1"
     type="button"
   >
     Button
@@ -2690,19 +2942,166 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 `;
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #000;
+  color: #f8f8f8;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="c0"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hfGzsC"
+    class="c1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hhpAHF"
+      class="c2"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 gPdjsX"
+        class="c3"
         viewBox="0 0 24 24"
       >
         <path
@@ -2713,7 +3112,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iUEnJr"
+        class="c4"
       />
       label
     </div>

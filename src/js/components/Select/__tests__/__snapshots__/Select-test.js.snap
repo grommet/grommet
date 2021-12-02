@@ -538,6 +538,66 @@ exports[`Select Clear option renders - bottom 2`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
@@ -817,9 +877,79 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
+  .cImcDU {
+    margin-bottom: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ctACHi {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+@media only screen and (max-width: 768px) {
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -1096,6 +1226,66 @@ exports[`Select Clear option renders custom label 2`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
@@ -1370,6 +1560,66 @@ exports[`Select Clear option renders- top 2`] = `
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -2713,24 +2963,249 @@ exports[`Select complex options and children 1`] = `
 `;
 
 exports[`Select complex options and children 2`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bBHevx"
+    class="c2"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gSrxin"
+      class="c3"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
+        class="c4"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 ecWLed"
+          class="c5 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2741,12 +3216,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gChTae"
+      class="c7"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
@@ -2988,6 +3463,61 @@ exports[`Select complex options and children 4`] = `
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -4020,6 +4550,71 @@ exports[`Select default value clear 2`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .jZUXSc {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
@@ -4573,25 +5168,244 @@ exports[`Select disabled 1`] = `
 `;
 
 exports[`Select disabled 2`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: default;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 ijdOBy Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="c0 c1"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bBHevx"
+    class="c2"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gSrxin"
+      class="c3"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
+        class="c4"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 cWhQGt"
+          class="c5 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4602,12 +5416,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gChTae"
+      class="c7"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
@@ -5234,6 +6048,66 @@ exports[`Select disabled key 3`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
@@ -5568,6 +6442,66 @@ exports[`Select disabled option value 2`] = `
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -7324,6 +8258,66 @@ exports[`Select onChange with valueKey string 3`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
@@ -7824,6 +8818,66 @@ exports[`Select onChange with valueLabel 3`] = `
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -8378,6 +9432,66 @@ exports[`Select onChange without valueKey 3`] = `
   .gChTae {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
   }
 }"
 `;
@@ -9210,24 +10324,253 @@ exports[`Select prop: onOpen 1`] = `
 `;
 
 exports[`Select prop: onOpen 2`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bBHevx"
+    class="c2"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gSrxin"
+      class="c3"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
+        class="c4"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 ecWLed"
+          class="c5 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -9238,12 +10581,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gChTae"
+      class="c7"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 kxOTGz"
+        class="c8"
         viewBox="0 0 24 24"
       >
         <path
@@ -9529,49 +10872,248 @@ exports[`Select prop: onOpen 4`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
 exports[`Select prop: onOpen 5`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jviAPV"
+  class="c0"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="c1 c2"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gZcrCV"
+      class="c3"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 grcvBZ"
+        class="c4"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 cmzBhQ SelectContainer__SelectOption-sc-1wi0ul8-1 jRnsyM"
+    class="c1 c2"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gZcrCV"
+      class="c3"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 grcvBZ"
+        class="c4"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 lgyURG"
+    class="c5"
   />
 </div>
 `;
@@ -10120,39 +11662,7 @@ exports[`Select renders custom up and down icons 1`] = `
 `;
 
 exports[`Select renders custom up and down icons 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
->
-  <button
-    aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
-    type="button"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bBHevx"
-    >
-      <div
-        class="StyledBox-sc-13pk1d4-0 gSrxin"
-      >
-        <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
-        >
-          <input
-            autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 ecWLed"
-            placeholder="Select..."
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 gChTae"
-        style="min-width: auto;"
-      >
-        .c0 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -10163,31 +11673,220 @@ exports[`Select renders custom up and down icons 2`] = `
   stroke: #7D4CDB;
 }
 
-.c0 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c0 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c0 *[stroke*="#"],
-.c0 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c0 *[fill-rule],
-.c0 *[FILL-RULE],
-.c0 *[fill*="#"],
-.c0 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-@media only screen and (max-width:768px) {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
 
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -10202,9 +11901,41 @@ exports[`Select renders custom up and down icons 2`] = `
 
 }
 
-<svg
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Drop"
+    class="c1 c2"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            placeholder="Select..."
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
           aria-label="CaretUp"
-          class="c0"
+          class="c9"
           viewBox="0 0 24 24"
         >
           <path
@@ -12228,22 +13959,255 @@ exports[`Select search 3`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .ehNgxp {
+    padding: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
 exports[`Select search 4`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 vgBsu"
+  class="c0"
   type="search"
   value=""
 />
 `;
 
 exports[`Select search 5`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 vgBsu"
+  class="c0"
   type="search"
   value="o"
 />
@@ -12893,22 +14857,255 @@ exports[`Select search and select 3`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+.boMPMF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 768px) {
+  .ehNgxp {
+    padding: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gZcrCV {
+    padding: 6px;
+  }
+}
+.fsBPbn {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .fsBPbn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .djWBmY {
+    width: 100%;
+  }
 }"
 `;
 
 exports[`Select search and select 4`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 vgBsu"
+  class="c0"
   type="search"
   value=""
 />
 `;
 
 exports[`Select search and select 5`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 vgBsu"
+  class="c0"
   type="search"
   value="t"
 />
@@ -14733,27 +16930,266 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 `;
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
-  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
+  class="c0"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 eiEooU Select__StyledSelectDropButton-sc-17idtfo-2 ktDhrd"
+    class="c1 c2"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bBHevx"
+      class="c3"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSrxin"
+        class="c4"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 jqwtzG"
+          class="c5"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 bmcLpb Select__SelectTextInput-sc-17idtfo-0 ecWLed"
+            class="c6 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -14764,12 +17200,12 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 gChTae"
+        class="c8"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 kxOTGz"
+          class="c9"
           viewBox="0 0 24 24"
         >
           <path

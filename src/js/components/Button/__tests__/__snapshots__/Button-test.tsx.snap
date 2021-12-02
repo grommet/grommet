@@ -537,7 +537,7 @@ exports[`Button badge should apply background 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -703,7 +703,7 @@ exports[`Button badge should be offset from top-right corner 1`] = `
       style="top: -3px; right: -3px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       />
     </div>
   </div>
@@ -870,7 +870,7 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -1043,7 +1043,7 @@ exports[`Button badge should display number content 1`] = `
       style="top: -12px; right: -12px;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 "
       >
         <span
           class="c6"
@@ -1431,7 +1431,7 @@ exports[`Button badge should render relative to contents when button has no
         style="top: -3px; right: -3px;"
       >
         <div
-          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+          class="c6 "
         />
       </div>
     </div>

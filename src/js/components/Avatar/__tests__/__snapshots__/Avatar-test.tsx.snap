@@ -77,7 +77,7 @@ exports[`Avatar icon renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
   >
     <svg
       aria-label="Favorite"
@@ -136,10 +136,10 @@ exports[`Avatar renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
   />
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
     id="test id"
   />
 </div>
@@ -351,22 +351,22 @@ exports[`Avatar round renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
   />
   <div
-    class="c2 StyledAvatar-sc-1suyamb-1"
+    class="c2 "
   />
   <div
-    class="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 "
   />
   <div
-    class="c4 StyledAvatar-sc-1suyamb-1"
+    class="c4 "
   />
   <div
-    class="c5 StyledAvatar-sc-1suyamb-1"
+    class="c5 "
   />
   <div
-    class="c6 StyledAvatar-sc-1suyamb-1"
+    class="c6 "
   />
 </div>
 `;
@@ -910,34 +910,34 @@ exports[`Avatar size 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
   />
   <div
-    class="c2 StyledAvatar-sc-1suyamb-1"
+    class="c2 "
   />
   <div
-    class="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 "
   />
   <div
-    class="c4 StyledAvatar-sc-1suyamb-1"
+    class="c4 "
   />
   <div
-    class="c5 StyledAvatar-sc-1suyamb-1"
+    class="c5 "
   />
   <div
-    class="c6 StyledAvatar-sc-1suyamb-1"
+    class="c6 "
   />
   <div
-    class="c7 StyledAvatar-sc-1suyamb-1"
+    class="c7 "
   />
   <div
-    class="c8 StyledAvatar-sc-1suyamb-1"
+    class="c8 "
   />
   <div
-    class="c9 StyledAvatar-sc-1suyamb-1"
+    class="c9 "
   />
   <div
-    class="c10 StyledAvatar-sc-1suyamb-1"
+    class="c10 "
   >
     <span
       class="c11 "
@@ -946,7 +946,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c12 StyledAvatar-sc-1suyamb-1"
+    class="c12 "
   >
     <span
       class="c13 "
@@ -955,7 +955,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c14 StyledAvatar-sc-1suyamb-1"
+    class="c14 "
   >
     <span
       class="c15 "
@@ -964,7 +964,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c16 StyledAvatar-sc-1suyamb-1"
+    class="c16 "
   >
     <span
       class="c17 "
@@ -973,7 +973,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c18 StyledAvatar-sc-1suyamb-1"
+    class="c18 "
   >
     <span
       class="c19 "
@@ -982,7 +982,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c20 StyledAvatar-sc-1suyamb-1"
+    class="c20 "
   >
     <span
       class="c21 "
@@ -991,7 +991,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c22 StyledAvatar-sc-1suyamb-1"
+    class="c22 "
   >
     <span
       class="c23 "
@@ -1000,7 +1000,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c24 StyledAvatar-sc-1suyamb-1"
+    class="c24 "
   >
     <span
       class="c25 "
@@ -1158,7 +1158,7 @@ exports[`Avatar stack renders 1`] = `
           class="c4"
         >
           <div
-            class="c5 StyledAvatar-sc-1suyamb-1"
+            class="c5 "
           />
           <div
             class="c6"
@@ -1173,7 +1173,7 @@ exports[`Avatar stack renders 1`] = `
       class="c7"
     >
       <div
-        class="c8 StyledAvatar-sc-1suyamb-1"
+        class="c8 "
       />
     </div>
   </div>
@@ -1259,7 +1259,7 @@ exports[`Avatar text renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-1suyamb-1"
+    class="c1 "
   >
     <span
       class="c2"
@@ -1268,7 +1268,7 @@ exports[`Avatar text renders 1`] = `
     </span>
   </div>
   <div
-    class="c3 StyledAvatar-sc-1suyamb-1"
+    class="c3 "
   >
     <span
       class="c2"
@@ -1447,7 +1447,7 @@ exports[`Avatar text size changes according to theme 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledAvatar-sc-1suyamb-1"
+      class="c2 "
     >
       <span
         class="c3 "
@@ -1456,7 +1456,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c4 StyledAvatar-sc-1suyamb-1"
+      class="c4 "
     >
       <span
         class="c5 "
@@ -1465,7 +1465,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c6 StyledAvatar-sc-1suyamb-1"
+      class="c6 "
     >
       <span
         class="c7 "
@@ -1474,7 +1474,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c8 StyledAvatar-sc-1suyamb-1"
+      class="c8 "
     >
       <span
         class="c9 "
