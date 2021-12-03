@@ -496,8 +496,7 @@ describe('Form controlled', () => {
     fireEvent.change(moodField, { target: { value: '' } });
     toggleField.focus();
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      3,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},

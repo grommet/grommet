@@ -138,6 +138,7 @@ const Form = forwardRef(
       errors: errorsProp,
       infos: infosProp,
     });
+    const validationResultsRef = useRef({});
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -212,21 +213,24 @@ const Form = forwardRef(
           const nextValidationResults = {
             errors: nextErrors,
             infos: nextInfos,
-            valid: buildValid(nextErrors),
           };
-          if (onValidate) onValidate(nextValidationResults);
+          if (onValidate)
+            onValidate({
+              ...nextValidationResults,
+              valid: buildValid(nextErrors),
+            });
           result = nextValidationResults;
           return nextValidationResults;
         });
+        validationResultsRef.current = result;
         return result;
       },
       [buildValid, format, messages, onValidate, value],
     );
 
-    // Validation Controller
+    // Validate all fields holding values onMount
     useEffect(() => {
       const validationRules = Object.entries(validations.current);
-      let timer = null;
 
       if (!mounted) {
         // onMount, run validations for all fields holding a value.
@@ -241,7 +245,7 @@ const Form = forwardRef(
           runValidation(
             validationRules
               .filter(([n]) => value[n])
-              // Do not validate empty arrays which may be initial values in
+              // Exlude empty arrays which may be initial values in
               // an input such as DateInput.
               .filter(
                 ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
@@ -253,31 +257,39 @@ const Form = forwardRef(
           setMounted(true);
         }
       }
+    }, [mounted, runValidation, touched, value]);
 
-      // Run validations for any fields touched and held
-      // previous validation errors.
-      if (mounted && !validationResults.valid) {
-        runValidation(
-          validationRules.filter(
-            ([n]) => touched[n] && validationResults.errors[n],
-          ),
-        );
-      }
-
-      // Validations should be run for any fields marked as pending and/or
-      // re-run for fields which have been touched and held validation errors.
-      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
-        timer = setTimeout(() => {
+    // Run validation against fields with pendingValidations from onBlur
+    // and/or onChange
+    useEffect(() => {
+      const validationRules = Object.entries(validations.current);
+      const timer = setTimeout(() => {
+        if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
           runValidation(
             validationRules.filter(
               ([n]) => touched[n] || pendingValidation.includes(n),
             ),
           );
           setPendingValidation(undefined);
-        }, 120);
-      }
+        }
+      }, 120);
       return () => clearTimeout(timer);
-    }, [mounted, pendingValidation, runValidation, touched, validateOn, value]);
+    }, [pendingValidation, runValidation, touched, validateOn]);
+
+    // Re-run validations for fields with prior errors
+    useEffect(() => {
+      const validationRules = Object.entries(validations.current);
+      if (
+        validationResultsRef.current?.errors &&
+        Object.keys(validationResultsRef.current.errors).length > 0
+      ) {
+        runValidation(
+          validationRules.filter(
+            ([n]) => touched[n] && validationResultsRef.current.errors[n],
+          ),
+        );
+      }
+    }, [mounted, runValidation, touched]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -503,6 +515,7 @@ const Form = forwardRef(
               valid: buildValid(nextErrors),
             };
             if (onValidate) onValidate(nextValidationResults);
+            validationResultsRef.current = nextValidationResults;
             return nextValidationResults;
           });
 
