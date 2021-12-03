@@ -38,6 +38,10 @@ const SidebarNav = () => {
 
 export const Sidebar = () => <SidebarNav />;
 
+Sidebar.args = {
+  full: true,
+};
+
 export default {
   title: 'Controls/Nav/Sidebar',
 };
