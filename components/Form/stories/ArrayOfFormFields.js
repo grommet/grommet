@@ -1,0 +1,161 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.ArrayOfFormFields = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _grommet = require("grommet");
+
+var _grommetIcons = require("grommet-icons");
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var ArrayOfFormFields = function ArrayOfFormFields() {
+  var _useState = (0, _react.useState)({
+    name: '',
+    phones: [{
+      number: '',
+      ext: ''
+    }]
+  }),
+      values = _useState[0],
+      setValues = _useState[1];
+
+  var addPhone = function addPhone() {
+    var newPhone = {
+      number: '',
+      ext: ''
+    };
+    var newPhones = [].concat(values == null ? void 0 : values.phones, [newPhone]);
+    setValues(_extends({}, values, {
+      phones: newPhones
+    }));
+  };
+
+  var removePhone = function removePhone(index) {
+    if (values.phones && values.phones.length > 0) {
+      setValues(_extends({}, values, {
+        phones: values.phones.filter(function (v, _idx) {
+          return _idx !== index;
+        })
+      }));
+    }
+  };
+
+  var handleFormChange = function handleFormChange(newFormState) {
+    console.log({
+      newFormState: newFormState
+    });
+
+    if (newFormState) {
+      setValues(newFormState);
+    }
+  };
+
+  var PhoneNumberGroup = null;
+
+  if (values.phones !== undefined) {
+    PhoneNumberGroup = values.phones.map(function (phone, index) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: index,
+        direction: "row",
+        justify: "between",
+        align: "center"
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+        label: "Phone Number",
+        name: "phones[" + index + "].number",
+        required: true,
+        validate: [{
+          regexp: /^[0-9]*$/
+        }, function (number) {
+          if (number && number.length > 10) return 'Only 10 numbers';
+          return undefined;
+        }]
+      }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+        label: "Extension",
+        name: "phones[" + index + "].ext",
+        validate: [{
+          regexp: /^[0-9]*$/
+        }, function (ext) {
+          if (ext && ext.length > 3) return 'Only 3 numbers';
+          return undefined;
+        }]
+      }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+        icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trash, null),
+        label: "Remove",
+        plain: true,
+        hoverIndicator: true,
+        onClick: function onClick() {
+          return removePhone(index);
+        }
+      })));
+    });
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    theme: _grommet.grommet
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    pad: "medium",
+    width: "large"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
+    value: values,
+    validate: "blur",
+    onReset: function onReset() {
+      setValues({
+        name: '',
+        phones: [{
+          number: '',
+          ext: ''
+        }]
+      });
+    },
+    onChange: handleFormChange,
+    onValidate: function onValidate(validationResults) {
+      console.log('validationResults = ', validationResults);
+    },
+    onSubmit: function onSubmit(event) {
+      console.log('Submit', event.value, event.touched);
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "Name",
+    name: "name",
+    pad: true,
+    required: true,
+    validate: [{
+      regexp: /^[a-zA-Z ]*$/
+    }]
+  }), PhoneNumberGroup, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null),
+    label: "Add Number",
+    plain: true,
+    hoverIndicator: true,
+    onClick: addPhone
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    justify: "between",
+    margin: {
+      top: 'medium'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    label: "Cancel"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    type: "reset",
+    label: "Reset"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    type: "submit",
+    label: "Submit",
+    primary: true
+  })))));
+};
+
+exports.ArrayOfFormFields = ArrayOfFormFields;
+var _default = {
+  title: 'Input/Form/Array Of Form Fields'
+};
+exports["default"] = _default;

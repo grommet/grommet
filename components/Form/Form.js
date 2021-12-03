@@ -17,16 +17,74 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var defaultValue = {};
 var defaultTouched = {};
 var defaultValidationResults = {
   errors: {},
   infos: {}
+};
+
+var stringToArray = function stringToArray(string) {
+  var match = string == null ? void 0 : string.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
+
+  if (match) {
+    var arrayName = match[1],
+        indexOfArray = match[2],
+        arrayObjName = match[3];
+    return {
+      indexOfArray: indexOfArray,
+      arrayName: arrayName,
+      arrayObjName: arrayObjName
+    };
+  }
+
+  return undefined;
+};
+
+var getValueForName = function getValueForName(name, value) {
+  var isArrayField = stringToArray(name);
+
+  if (isArrayField) {
+    var _value$arrayName;
+
+    var indexOfArray = isArrayField.indexOfArray,
+        arrayName = isArrayField.arrayName,
+        arrayObjName = isArrayField.arrayObjName;
+    var obj = (_value$arrayName = value[arrayName]) == null ? void 0 : _value$arrayName[indexOfArray];
+    return arrayObjName ? obj == null ? void 0 : obj[arrayObjName] : obj;
+  }
+
+  return value[name];
+};
+
+var setValueForName = function setValueForName(name, componentValue, prevValue) {
+  var nextValue = _extends({}, prevValue);
+
+  var isArrayField = stringToArray(name);
+
+  if (isArrayField) {
+    var indexOfArray = isArrayField.indexOfArray,
+        arrayName = isArrayField.arrayName,
+        arrayObjName = isArrayField.arrayObjName;
+    if (!nextValue[arrayName]) nextValue[arrayName] = [];
+
+    if (arrayObjName) {
+      var _nextValue$arrayName$;
+
+      if (!nextValue[arrayName][indexOfArray]) nextValue[arrayName][indexOfArray] = (_nextValue$arrayName$ = {}, _nextValue$arrayName$[arrayObjName] = componentValue, _nextValue$arrayName$);
+      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
+    } else nextValue[arrayName][indexOfArray] = componentValue;
+  } else {
+    nextValue[name] = componentValue;
+  }
+
+  return nextValue;
 }; // Validating nameValues with the validator and sending correct messaging
+
 
 var validate = function validate(validator, nameValue, formValue, format, messages) {
   var result;
@@ -55,7 +113,7 @@ var validate = function validate(validator, nameValue, formValue, format, messag
 
 var validateName = function validateName(nameValidators, required) {
   return function (name, formValue, format, messages) {
-    var nameValue = formValue[name];
+    var nameValue = getValueForName(name, formValue);
     var result; // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
 
@@ -215,7 +273,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   (0, _react.useEffect)(function () {
     var validationsForSetFields = Object.entries(validations.current).filter(function (_ref3) {
       var n = _ref3[0];
-      return value[n];
+      return getValueForName(n, value);
     });
 
     if (validationsForSetFields.length > 0 && validateOn !== 'submit') {
@@ -338,7 +396,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         inputValue = _useState5[0],
         setInputValue = _useState5[1];
 
-    var formValue = name ? value[name] : undefined; // for dynamic forms, we need to track when an input has been added to
+    var formValue = name ? getValueForName(name, value) : undefined; // for dynamic forms, we need to track when an input has been added to
     // the form value. if the input is unmounted, we will delete its key/value
     // from the form value.
 
@@ -351,10 +409,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       componentValue !== formValue // don't already have it
       ) {
         setValueState(function (prevValue) {
-          var nextValue = _extends({}, prevValue);
-
-          nextValue[name] = componentValue;
-          return nextValue;
+          return setValueForName(name, componentValue, prevValue);
         }); // don't onChange on programmatic changes
       }
     }, [componentValue, formValue, name]); // on unmount, if the form is uncontrolled, remove the key/value
@@ -367,7 +422,15 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
           setValueState(function (prevValue) {
             var nextValue = _extends({}, prevValue);
 
-            delete nextValue[name];
+            var isArrayField = stringToArray(name);
+
+            if (isArrayField) {
+              var arrayName = isArrayField.arrayName;
+              delete nextValue[arrayName];
+            } else {
+              delete nextValue[name];
+            }
+
             return nextValue;
           });
         }
@@ -404,16 +467,14 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         if (!touched[name]) {
           // don't update if not needed
           setTouched(nextTouched);
-        }
-
-        var nextValue = _extends({}, value); // if nextValue doesn't have a key for name, this must be
+        } // if nextValue doesn't have a key for name, this must be
         // uncontrolled form. we will flag this field was added so
         // we know to remove its value from the form if it is dynamically
         // removed
 
 
-        if (!(name in nextValue)) keyCreated.current = true;
-        nextValue[name] = nextComponentValue;
+        if (!(name in value)) keyCreated.current = true;
+        var nextValue = setValueForName(name, nextComponentValue, value);
         setValueState(nextValue);
         if (onChange) onChange(nextValue, {
           touched: nextTouched
