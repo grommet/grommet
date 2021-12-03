@@ -169,25 +169,19 @@ const Form = forwardRef(
       [value],
     );
 
-    // Remove any errors that we don't have any validations for anymore.
-    const filterErrorValidations = (errors) => {
-      const nextErrors = errors;
-      return Object.keys(nextErrors)
-        .filter((n) => !validations.current[n] || nextErrors[n] === undefined)
-        .forEach((n) => delete nextErrors[n]);
-    };
-
-    // Remove any infos that we don't have any validations for anymore.
-    const filterInfoValidations = (infos) => {
-      const nextInfos = infos;
-      return Object.keys(nextInfos)
-        .filter((n) => !validations.current[n] || nextInfos[n] === undefined)
-        .forEach((n) => delete nextInfos[n]);
+    // Remove any previous errors/infos which are now valid.
+    const removeResolvedValidations = (prevValidations) => {
+      const nextValidations = prevValidations;
+      return Object.keys(nextValidations)
+        .filter(
+          (n) => !validations.current[n] || nextValidations[n] === undefined,
+        )
+        .forEach((n) => delete nextValidations[n]);
     };
 
     const runValidation = useCallback(
       (validationRules) => {
-        let result;
+        let results;
         const [validatedErrors, validatedInfos] = validateForm(
           validationRules,
           value,
@@ -207,8 +201,8 @@ const Form = forwardRef(
             ...validatedInfos,
           };
 
-          filterErrorValidations(nextErrors);
-          filterInfoValidations(nextInfos);
+          removeResolvedValidations(nextErrors);
+          removeResolvedValidations(nextInfos);
 
           const nextValidationResults = {
             errors: nextErrors,
@@ -219,11 +213,12 @@ const Form = forwardRef(
               ...nextValidationResults,
               valid: buildValid(nextErrors),
             });
-          result = nextValidationResults;
+          results = nextValidationResults;
           return nextValidationResults;
         });
-        validationResultsRef.current = result;
-        return result;
+
+        validationResultsRef.current = results;
+        return results;
       },
       [buildValid, format, messages, onValidate, value],
     );
@@ -370,6 +365,7 @@ const Form = forwardRef(
         [], // only run onmount and unmount
       );
 
+      // Create validation rules for fields
       useEffect(() => {
         if (validateArg) {
           if (!validations.current[name]) {
@@ -435,6 +431,7 @@ const Form = forwardRef(
         : errorArg || validationResults.errors[name];
       const info = infoArg || validationResults.infos[name];
 
+      // Create validation rules for field
       useEffect(() => {
         const index = requiredFields.current.indexOf(name);
         if (required) {
