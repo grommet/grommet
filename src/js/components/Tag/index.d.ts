@@ -22,8 +22,6 @@ export interface TagExtendedProps extends TagProps {}
 // Keep type alias for backwards compatibility.
 export type TagType = TagProps;
 
-declare const Tag: React.FC<
-  TagExtendedProps
->;
+declare const Tag: React.FC<TagExtendedProps>;
 
 export { Tag };
