@@ -18,6 +18,48 @@ const defaultValidationResults = {
   infos: {},
 };
 
+const stringToArray = (string) => {
+  const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
+  if (match) {
+    const [, arrayName, indexOfArray, arrayObjName] = match;
+    return {
+      indexOfArray,
+      arrayName,
+      arrayObjName,
+    };
+  }
+  return undefined;
+};
+
+const getValueForName = (name, value) => {
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    const obj = value[arrayName]?.[indexOfArray];
+    return arrayObjName ? obj?.[arrayObjName] : obj;
+  }
+  return value[name];
+};
+
+const setValueForName = (name, componentValue, prevValue) => {
+  const nextValue = { ...prevValue };
+  const isArrayField = stringToArray(name);
+  if (isArrayField) {
+    const { indexOfArray, arrayName, arrayObjName } = isArrayField;
+    if (!nextValue[arrayName]) nextValue[arrayName] = [];
+    if (arrayObjName) {
+      if (!nextValue[arrayName][indexOfArray])
+        nextValue[arrayName][indexOfArray] = {
+          [arrayObjName]: componentValue,
+        };
+      nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
+    } else nextValue[arrayName][indexOfArray] = componentValue;
+  } else {
+    nextValue[name] = componentValue;
+  }
+  return nextValue;
+};
+
 // Validating nameValues with the validator and sending correct messaging
 const validate = (validator, nameValue, formValue, format, messages) => {
   let result;
@@ -37,7 +79,7 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 // Validates particular key in formValue
 const validateName =
   (nameValidators, required) => (name, formValue, format, messages) => {
-    const nameValue = formValue[name];
+    const nameValue = getValueForName(name, formValue);
     let result;
     // ValidateArg is something that gets passed in from a FormField component
     // See 'validate' prop in FormField
@@ -155,7 +197,6 @@ const Form = forwardRef(
     const buildValid = useCallback(
       (nextErrors) => {
         let valid = false;
-
         valid = requiredFields.current
           .filter((n) => Object.keys(validations.current).includes(n))
           .every(
@@ -325,7 +366,7 @@ const Form = forwardRef(
       validate: validateArg,
     }) => {
       const [inputValue, setInputValue] = useState(initialValue);
-      const formValue = name ? value[name] : undefined;
+      const formValue = name ? getValueForName(name, value) : undefined;
       // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its key/value
       // from the form value.
@@ -339,11 +380,9 @@ const Form = forwardRef(
           componentValue !== undefined && // input driving
           componentValue !== formValue // don't already have it
         ) {
-          setValueState((prevValue) => {
-            const nextValue = { ...prevValue };
-            nextValue[name] = componentValue;
-            return nextValue;
-          });
+          setValueState((prevValue) =>
+            setValueForName(name, componentValue, prevValue),
+          );
           // don't onChange on programmatic changes
         }
       }, [componentValue, formValue, name]);
@@ -356,7 +395,13 @@ const Form = forwardRef(
             keyCreated.current = false;
             setValueState((prevValue) => {
               const nextValue = { ...prevValue };
-              delete nextValue[name];
+              const isArrayField = stringToArray(name);
+              if (isArrayField) {
+                const { arrayName } = isArrayField;
+                delete nextValue[arrayName];
+              } else {
+                delete nextValue[name];
+              }
               return nextValue;
             });
           }
@@ -402,14 +447,12 @@ const Form = forwardRef(
               setTouched(nextTouched);
             }
 
-            const nextValue = { ...value };
             // if nextValue doesn't have a key for name, this must be
             // uncontrolled form. we will flag this field was added so
             // we know to remove its value from the form if it is dynamically
             // removed
-            if (!(name in nextValue)) keyCreated.current = true;
-            nextValue[name] = nextComponentValue;
-
+            if (!(name in value)) keyCreated.current = true;
+            const nextValue = setValueForName(name, nextComponentValue, value);
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
