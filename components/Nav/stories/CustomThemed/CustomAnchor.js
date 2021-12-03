@@ -73,8 +73,8 @@ var CustomAnchor = function CustomAnchor() {
 };
 
 exports.CustomAnchor = CustomAnchor;
-CustomAnchor.storyName = 'Custom anchor';
+CustomAnchor.storyName = 'Custom Anchor';
 var _default = {
-  title: 'Controls/Nav/Custom anchor'
+  title: 'Controls/Nav/Custom Themed/Custom Anchor'
 };
 exports["default"] = _default;

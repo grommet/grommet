@@ -7,8 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var items = [{
@@ -26,17 +24,21 @@ var items = [{
 }];
 
 var SimpleNav = function SimpleNav() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
-    pad: "large"
-  }, items.map(function (item) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-      href: item.href,
-      label: item.label,
-      key: item.label
-    });
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Nav, {
+      pad: "large"
+    }, items.map(function (item) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+        href: item.href,
+        label: item.label,
+        key: item.label
+      });
+    })) // </Grommet>
+
+  );
 };
 
 var Simple = function Simple() {

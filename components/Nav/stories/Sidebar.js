@@ -42,24 +42,27 @@ var SidebarNav = function SidebarNav() {
       active = _useState[0],
       setActive = _useState[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    full: true,
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    fill: true,
-    direction: "row"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
-    background: "neutral-1"
-  }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
-    return /*#__PURE__*/_react["default"].createElement(SidebarButton, {
-      key: label,
-      label: label,
-      active: label === active,
-      onClick: function onClick() {
-        return setActive(label);
-      }
-    });
-  }))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      fill: true,
+      direction: "row"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
+      background: "neutral-1"
+    }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
+      return /*#__PURE__*/_react["default"].createElement(SidebarButton, {
+        key: label,
+        label: label,
+        active: label === active,
+        onClick: function onClick() {
+          return setActive(label);
+        }
+      });
+    }))) // </Grommet>
+
+  );
 };
 
 var Sidebar = function Sidebar() {
@@ -67,6 +70,9 @@ var Sidebar = function Sidebar() {
 };
 
 exports.Sidebar = Sidebar;
+Sidebar.args = {
+  full: true
+};
 var _default = {
   title: 'Controls/Nav/Sidebar'
 };

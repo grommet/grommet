@@ -87,6 +87,6 @@ var JustifySidebar = function JustifySidebar() {
 exports.JustifySidebar = JustifySidebar;
 JustifySidebar.storyName = 'Justify Sidebar';
 var _default = {
-  title: 'Controls/Nav/Justify Sidebar'
+  title: 'Controls/Nav/Custom Themed/Justify Sidebar'
 };
 exports["default"] = _default;

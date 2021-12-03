@@ -1,6 +1,5 @@
 import React from 'react';
-import { Anchor, Grommet, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Nav } from 'grommet';
 var items = [{
   label: 'Item A',
   href: '#'
@@ -16,17 +15,21 @@ var items = [{
 }];
 
 var SimpleNav = function SimpleNav() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Nav, {
-    pad: "large"
-  }, items.map(function (item) {
-    return /*#__PURE__*/React.createElement(Anchor, {
-      href: item.href,
-      label: item.label,
-      key: item.label
-    });
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    React.createElement(Nav, {
+      pad: "large"
+    }, items.map(function (item) {
+      return /*#__PURE__*/React.createElement(Anchor, {
+        href: item.href,
+        label: item.label,
+        key: item.label
+      });
+    })) // </Grommet>
+
+  );
 };
 
 export var Simple = function Simple() {

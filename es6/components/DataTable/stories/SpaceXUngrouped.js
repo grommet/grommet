@@ -78,17 +78,17 @@ export var SpaceXUngrouped = function SpaceXUngrouped() {
                 query = {
                   options: {
                     populate: [{
-                      path: "rocket",
+                      path: 'rocket',
                       select: {
                         name: 1
                       }
                     }],
-                    sort: (_sort = {}, _sort[sort.property || "name"] = sort.direction || "asc", _sort),
-                    select: ["name", "success", "failures"],
+                    sort: (_sort = {}, _sort[sort.property || 'name'] = sort.direction || 'asc', _sort),
+                    select: ['name', 'success', 'failures'],
                     limit: limit
                   }
                 };
-                fetch("https://api.spacexdata.com/v4/launches/query", {
+                fetch('https://api.spacexdata.com/v4/launches/query', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'

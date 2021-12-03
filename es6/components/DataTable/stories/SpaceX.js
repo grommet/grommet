@@ -84,7 +84,7 @@ var processData = function processData(_ref2, groups, data) {
       };
     });
     items.push.apply(items, groupItems);
-  }); // TODO support paginate 
+  }); // TODO support paginate
 
   var start = show || 0;
 
@@ -136,10 +136,10 @@ export var SpaceX = function SpaceX() {
               case 0:
                 query = {
                   options: {
-                    select: ["name"]
+                    select: ['name']
                   }
                 };
-                fetch("https://api.spacexdata.com/v4/rockets/query", {
+                fetch('https://api.spacexdata.com/v4/rockets/query', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'
@@ -194,24 +194,24 @@ export var SpaceX = function SpaceX() {
                 query = {
                   options: {
                     populate: [{
-                      path: "rocket",
+                      path: 'rocket',
                       select: {
                         name: 1
                       }
                     }],
                     sort: (_sort = {
-                      rocket: "asc"
-                    }, _sort[sort.property || "name"] = sort.direction || "asc", _sort),
-                    select: ["name", "success", "failures"],
+                      rocket: 'asc'
+                    }, _sort[sort.property || 'name'] = sort.direction || 'asc', _sort),
+                    select: ['name', 'success', 'failures'],
                     limit: limit
                   },
                   query: {
                     rocket: {
-                      "$in": expanded
+                      $in: expanded
                     }
                   }
                 };
-                fetch("https://api.spacexdata.com/v4/launches/query", {
+                fetch('https://api.spacexdata.com/v4/launches/query', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'
