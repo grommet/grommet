@@ -7,6 +7,16 @@ import { data } from '../data';
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
 const customTheme: ThemeType = deepMerge(grommet, {
+  nameValueList: {
+    pair: {
+      column: {
+        gap: {
+          column: 'large',
+          row: 'small',
+        },
+      },
+    },
+  },
   nameValuePair: {
     name: {
       color: 'text',
@@ -36,5 +46,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Visualizations/NameValueList/Themed',
+  title: 'Visualizations/NameValueList/Custom Themed/TS-Custom',
 };
