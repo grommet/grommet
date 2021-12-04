@@ -177,17 +177,21 @@ interface ButtonType {
   primary?: ButtonKindType;
   secondary?: ButtonKindType;
   option?: ButtonKindType;
-  active?: ButtonKindType & {
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-  };
+  active?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | { [key: string]: ButtonKindType };
   disabled?: ButtonKindType & { opacity?: OpacityType };
-  hover?: ButtonKindType & {
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-  };
+  hover?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | { [key: string]: ButtonKindType };
   size?: {
     small?: {
       border?: {
@@ -501,6 +505,11 @@ export interface ThemeType {
   };
   card?: {
     container?: BoxProps;
+    hover?: {
+      container?: {
+        elevation?: ElevationType;
+      };
+    };
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
@@ -1063,8 +1072,8 @@ export interface ThemeType {
     };
   };
   pagination?: {
-    button?: ButtonType;
-    container?: BoxProps;
+    button?: ButtonType | string;
+    container?: BoxProps | { extend?: ExtendType };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
@@ -1145,7 +1154,18 @@ export interface ThemeType {
     };
   };
   nameValueList?: {
-    gap?: { row?: GapType; column?: GapType };
+    gap?: {
+      column?: GapType;
+      row?: GapType;
+    };
+    pair?: {
+      column?: {
+        gap?: {
+          column?: GapType;
+          row?: GapType;
+        };
+      };
+    };
     name?: {
       width: string;
     };
@@ -1154,6 +1174,9 @@ export interface ThemeType {
     };
   };
   nameValuePair?: {
+    column?: {
+      gap?: GapType;
+    };
     name?: TextProps;
     value?: TextProps;
   };
@@ -1332,6 +1355,16 @@ export interface ThemeType {
       };
     };
   };
+  tag?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    round?: RoundType;
+    name?: TextProps;
+    pad?: PadType;
+    remove?: ButtonType;
+    separator?: string;
+    value?: TextProps;
+  };
   text?: {
     extend?: ExtendType;
     xsmall?: {
@@ -1430,6 +1463,9 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
+      track?: {
+        color?: ColorType;
+      };
     };
   };
   worldMap?: {

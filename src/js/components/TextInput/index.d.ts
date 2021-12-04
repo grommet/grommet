@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { Omit, PlaceHolderType, TextAlignType } from '../../utils';
+import {
+  A11yTitleType,
+  Omit,
+  PlaceHolderType,
+  TextAlignType,
+} from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface TextInputProps
@@ -7,6 +12,7 @@ export interface TextInputProps
     JSX.IntrinsicElements['input'],
     'onSelect' | 'size' | 'placeholder'
   > {
+  a11yTitle?: A11yTitleType;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';

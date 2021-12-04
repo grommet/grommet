@@ -2,7 +2,7 @@ import React from 'react';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -17,7 +17,6 @@ import { MaskedInput } from '..';
 
 describe('MaskedInput', () => {
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
     const { container } = render(

@@ -90,7 +90,10 @@ export interface DataTableProps<TRowType = any> {
     | {
         property: string;
         expand: Array<string>;
+        expandable: Array<string>;
+        select: { [key: string]: 'all' | 'some' | 'none' };
         onExpand: (expandedKeys: string[]) => void;
+        onSelect: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
@@ -102,8 +105,14 @@ export interface DataTableProps<TRowType = any> {
   onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
   onMore?: () => void;
   onSearch?: (search: string) => void;
-  onSelect?: (select: (string | number)[]) => void;
+  onSelect?: (select: (string | number)[], datum: TRowType) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
+  onUpdate?: (datatableState: {
+    sort?: { property: string; direction: 'asc' | 'desc' };
+    expanded?: Array<string>;
+    show: number;
+    count: number;
+  }) => void;
 }
 
 export interface DataTableExtendedProps<TRowType = any>

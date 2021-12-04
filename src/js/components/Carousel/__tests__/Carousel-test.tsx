@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -7,8 +7,6 @@ import { Carousel } from '..';
 import { Image } from '../../Image';
 
 describe('Carousel', () => {
-  afterEach(cleanup);
-
   test('basic', () => {
     const { container } = render(
       <Grommet>

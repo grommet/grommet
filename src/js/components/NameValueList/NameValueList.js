@@ -31,6 +31,14 @@ const NameValueList = forwardRef(
       columns = [nameWidth, valueWidth];
     else columns = [valueWidth];
 
+    let { gap } = theme.nameValueList;
+    if (
+      (pairProps.direction === 'column' || size === 'small') &&
+      theme.nameValueList.pair?.column?.gap
+    ) {
+      gap = theme.nameValueList.pair.column.gap;
+    }
+
     return (
       <NameValueListContext.Provider
         value={{ nameProps, pairProps, valueProps }}
@@ -39,8 +47,9 @@ const NameValueList = forwardRef(
           as="dl"
           ref={ref}
           columns={columns}
-          gap={theme.nameValueList.gap}
+          gap={gap}
           fill={layout === 'grid'}
+          margin="none" // override browser default margin for dl
           {...rest}
         />
       </NameValueListContext.Provider>

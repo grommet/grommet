@@ -52,7 +52,7 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-const locations = [
+export const locations = [
   'Boise',
   'Fort Collins',
   'Los Gatos',
