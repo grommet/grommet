@@ -31,7 +31,7 @@ const stringToArray = (string) => {
   return undefined;
 };
 
-const getValueForName = (name, value) => {
+const getFieldValue = (name, value) => {
   const isArrayField = stringToArray(name);
   if (isArrayField) {
     const { indexOfArray, arrayName, arrayObjName } = isArrayField;
@@ -41,7 +41,7 @@ const getValueForName = (name, value) => {
   return value[name];
 };
 
-const setValueForName = (name, componentValue, prevValue) => {
+const setFieldValue = (name, componentValue, prevValue) => {
   const nextValue = { ...prevValue };
   const isArrayField = stringToArray(name);
   if (isArrayField) {
@@ -60,16 +60,16 @@ const setValueForName = (name, componentValue, prevValue) => {
   return nextValue;
 };
 
-// Validating nameValues with the validator and sending correct messaging
-const validate = (validator, nameValue, formValue, format, messages) => {
+// Apply validation rule to field value and send correct messaging.
+const validate = (rule, fieldValue, formValue, format, messages) => {
   let result;
-  if (typeof validator === 'function') {
-    result = validator(nameValue, formValue);
-  } else if (validator.regexp) {
-    if (!validator.regexp.test(nameValue)) {
-      result = validator.message || format({ id: 'form.invalid', messages });
-      if (validator.status) {
-        result = { message: result, status: validator.status };
+  if (typeof rule === 'function') {
+    result = rule(fieldValue, formValue);
+  } else if (rule.regexp) {
+    if (!rule.regexp.test(fieldValue)) {
+      result = rule.message || format({ id: 'form.invalid', messages });
+      if (rule.status) {
+        result = { message: result, status: rule.status };
       }
     }
   }
@@ -78,46 +78,55 @@ const validate = (validator, nameValue, formValue, format, messages) => {
 
 // Validates particular key in formValue
 const validateName =
-  (nameValidators, required) => (name, formValue, format, messages) => {
-    const nameValue = getValueForName(name, formValue);
-    let result;
-    // ValidateArg is something that gets passed in from a FormField component
-    // See 'validate' prop in FormField
+  (validationRules, required) => (name, formValue, format, messages) => {
+    const fieldValue = getFieldValue(name, formValue);
+    let validationResult;
+
     if (
       required &&
       // false is for CheckBox
-      (nameValue === undefined ||
-        nameValue === '' ||
-        nameValue === false ||
-        (Array.isArray(nameValue) && !nameValue.length))
+      (fieldValue === undefined ||
+        fieldValue === '' ||
+        fieldValue === false ||
+        (Array.isArray(fieldValue) && !fieldValue.length))
     ) {
-      // There is no value at that name, and one is required
-      result = format({ id: 'form.required', messages });
-    } else if (nameValidators) {
-      if (Array.isArray(nameValidators)) {
-        nameValidators.some((validator) => {
-          result = validate(validator, nameValue, formValue, format, messages);
-          return !!result;
+      validationResult = format({ id: 'form.required', messages });
+    } else if (validationRules) {
+      if (Array.isArray(validationRules)) {
+        validationRules.some((rule) => {
+          validationResult = validate(
+            rule,
+            fieldValue,
+            formValue,
+            format,
+            messages,
+          );
+          return !!validationResult;
         });
       } else {
-        result = validate(
-          nameValidators,
-          nameValue,
+        validationResult = validate(
+          validationRules,
+          fieldValue,
           formValue,
           format,
           messages,
         );
       }
     }
-    return result;
+    return validationResult;
   };
 
-// validations is an array from Object.entries()
 // Validates all keys in formValue
-const validateForm = (validations, formValue, format, messages, omitValid) => {
+const validateForm = (
+  validationRules,
+  formValue,
+  format,
+  messages,
+  omitValid,
+) => {
   const nextErrors = {};
   const nextInfos = {};
-  validations.forEach(([name, { field, input }]) => {
+  validationRules.forEach(([name, { field, input }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
@@ -125,18 +134,15 @@ const validateForm = (validations, formValue, format, messages, omitValid) => {
 
     let result;
     if (input) {
-      // input() are validations supplied through useFormInput()
+      // input() a validation function supplied through useFormInput()
       result = input(name, formValue, format, messages);
     }
     if (field && !result) {
-      // field() are validations supplied through useFormField()
+      // field() a validation function supplied through useFormField()
       result = field(name, formValue, format, messages);
     }
     // typeof error === 'object' is implied for both cases of error with
     // a status message and for an error object that is a react node
-
-    // ???? Regardless of the typeof, don't these always resolve to
-    // nextErrors[name] = result.message || result; ??????
     if (typeof result === 'object') {
       if (result.status === 'info') {
         nextInfos[name] = result.message;
@@ -168,7 +174,6 @@ const Form = forwardRef(
     ref,
   ) => {
     const { format } = useContext(MessageContext);
-
     const [valueState, setValueState] = useState(valueProp || defaultValue);
     const value = useMemo(
       () => valueProp || valueState,
@@ -294,7 +299,6 @@ const Form = forwardRef(
           setMounted(true);
         }
       }
-      return setMounted(false);
     }, [mounted, applyValidationRules, touched, value]);
 
     // Run validation against fields with pendingValidations from onBlur
@@ -314,7 +318,7 @@ const Form = forwardRef(
       return () => clearTimeout(timer);
     }, [pendingValidation, applyValidationRules, touched, validateOn]);
 
-    // Re-run validation rules for fields with prior errors.
+    // Re-run validation rules for all fields with prior errors.
     useEffect(() => {
       const validationRules = Object.entries(validations.current);
       if (
@@ -368,7 +372,7 @@ const Form = forwardRef(
       validate: validateArg,
     }) => {
       const [inputValue, setInputValue] = useState(initialValue);
-      const formValue = name ? getValueForName(name, value) : undefined;
+      const formValue = name ? getFieldValue(name, value) : undefined;
       // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its key/value
       // from the form value.
@@ -383,7 +387,7 @@ const Form = forwardRef(
           componentValue !== formValue // don't already have it
         ) {
           setValueState((prevValue) =>
-            setValueForName(name, componentValue, prevValue),
+            setFieldValue(name, componentValue, prevValue),
           );
           // don't onChange on programmatic changes
         }
@@ -454,7 +458,7 @@ const Form = forwardRef(
             // we know to remove its value from the form if it is dynamically
             // removed
             if (!(name in value)) keyCreated.current = true;
-            const nextValue = setValueForName(name, nextComponentValue, value);
+            const nextValue = setFieldValue(name, nextComponentValue, value);
             setValueState(nextValue);
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
