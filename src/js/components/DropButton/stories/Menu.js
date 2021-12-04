@@ -44,6 +44,10 @@ Menu.parameters = {
   chromatic: { disable: true },
 };
 
+Menu.args = {
+  full: true,
+};
+
 export default {
   title: 'Controls/DropButton/Menu',
 };
