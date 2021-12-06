@@ -600,10 +600,7 @@ describe('Form uncontrolled', () => {
     expect(queryAllByText('good')).toHaveLength(1);
   });
 
-  test('validate on mount', async () => {
-    jest.useFakeTimers('modern');
-    window.scrollTo = jest.fn();
-
+  test('validate on mount', () => {
     const defaultValue = {
       firstName: 'J',
       lastName: '',
