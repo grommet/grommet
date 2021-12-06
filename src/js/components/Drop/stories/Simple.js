@@ -40,6 +40,9 @@ export const Simple = () => <SimpleDrop />;
 Simple.parameters = {
   chromatic: { disable: true },
 };
+Simple.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Simple',

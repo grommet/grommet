@@ -57,6 +57,7 @@ export const TrapFocus = () => (
 TrapFocus.parameters = {
   chromatic: { disable: true },
 };
+TrapFocus.storyName = 'Trap focus';
 
 export default {
   title: 'Controls/Drop/Trap focus',

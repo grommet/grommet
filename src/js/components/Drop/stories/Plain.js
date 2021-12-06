@@ -38,6 +38,9 @@ export const Plain = () => <PlainDrop />;
 Plain.parameters = {
   chromatic: { disable: true },
 };
+Plain.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Plain',

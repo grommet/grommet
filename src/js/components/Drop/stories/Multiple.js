@@ -65,6 +65,9 @@ export const Multiple = () => <MultipleDrop />;
 Multiple.parameters = {
   chromatic: { disable: true },
 };
+Multiple.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Multiple',

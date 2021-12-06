@@ -55,6 +55,9 @@ export const Styled = () => <StyledDrop />;
 Styled.parameters = {
   chromatic: { disable: true },
 };
+Styled.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Styled',

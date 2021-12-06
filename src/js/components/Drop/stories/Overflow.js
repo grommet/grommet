@@ -64,6 +64,9 @@ export const Overflow = () => <OverflowDrop />;
 Overflow.parameters = {
   chromatic: { disable: true },
 };
+Overflow.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Overflow',

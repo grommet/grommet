@@ -70,6 +70,9 @@ export const Progressive = () => <ProgressiveDrop />;
 Progressive.parameters = {
   chromatic: { disable: true },
 };
+Progressive.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/Progressive',

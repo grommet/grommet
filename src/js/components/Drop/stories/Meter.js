@@ -36,6 +36,10 @@ export const SVGChild = () => <TestDrop />;
 SVGChild.parameters = {
   chromatic: { disable: true },
 };
+SVGChild.storyName = 'SVG child';
+SVGChild.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Drop/SVG child',
