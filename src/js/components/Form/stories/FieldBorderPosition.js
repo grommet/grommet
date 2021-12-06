@@ -132,6 +132,7 @@ export const FieldBorderPosition = () => (
         {borderPositions &&
           borderPositions.map((example, index) => (
             <FormExample
+              key={example.name}
               borderPosition={example.name}
               theme={example.theme}
               index={index}
