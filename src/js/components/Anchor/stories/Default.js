@@ -1,14 +1,11 @@
 import React from 'react';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 const DefaultAnchor = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Anchor href="#">Link</Anchor>
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <Anchor href="#">Link</Anchor>
+  </Box>
 );
 
 export const Default = () => <DefaultAnchor />;

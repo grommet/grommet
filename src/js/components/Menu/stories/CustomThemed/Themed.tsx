@@ -91,5 +91,5 @@ Themed.parameters = {
 };
 
 export default {
-  title: 'Controls/Menu/Themed',
+  title: 'Controls/Menu/Custom Themed/Themed',
 };
