@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Close } from 'grommet-icons';
 
-import { Grommet, Box, Button, DropButton, Heading, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, DropButton, Heading, Text } from 'grommet';
 
 const DropContent = ({ onClose }) => (
   <Box pad="small">
@@ -31,18 +30,16 @@ const SimpleDropButton = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DropButton
-          label="Open"
-          open={open}
-          onOpen={onOpen}
-          onClose={onClose}
-          dropContent={<DropContent onClose={onClose} />}
-          dropProps={{ align: { top: 'bottom' } }}
-        />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <DropButton
+        label="Open"
+        open={open}
+        onOpen={onOpen}
+        onClose={onClose}
+        dropContent={<DropContent onClose={onClose} />}
+        dropProps={{ align: { top: 'bottom' } }}
+      />
+    </Box>
   );
 };
 

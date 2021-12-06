@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { A11yTitleType, Omit, PlaceHolderType, TextAlignType } from '../../utils';
+import {
+  A11yTitleType,
+  Omit,
+  PlaceHolderType,
+  TextAlignType,
+} from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface TextInputProps
