@@ -185,7 +185,6 @@ const Form = forwardRef(
       infos: infosProp,
     });
     const validationResultsRef = useRef({});
-
     // Simulated onMount state. Consider Form to be mounted once it has
     // accounted for values originating from controlled inputs (available
     // at second rendering).
@@ -237,7 +236,6 @@ const Form = forwardRef(
 
     const applyValidationRules = useCallback(
       (validationRules) => {
-        let results;
         const [validatedErrors, validatedInfos] = validateForm(
           validationRules,
           value,
@@ -269,12 +267,9 @@ const Form = forwardRef(
               ...nextValidationResults,
               valid: buildValid(nextErrors),
             });
-          results = nextValidationResults;
+          validationResultsRef.current = nextValidationResults;
           return nextValidationResults;
         });
-
-        validationResultsRef.current = results;
-        return results;
       },
       [buildValid, format, messages, onValidate, value],
     );
@@ -331,7 +326,7 @@ const Form = forwardRef(
           ),
         );
       }
-    }, [mounted, applyValidationRules, touched]);
+    }, [applyValidationRules, touched]);
 
     // There are three basic patterns of handling form input value state:
     //
