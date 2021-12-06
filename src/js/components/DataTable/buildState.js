@@ -180,7 +180,7 @@ export const buildGroups = (columns, data, groupBy, primaryProperty) => {
     const groupMap = {};
     data.forEach((datum) => {
       const key = datumValue(datum, primaryProperty);
-      const isGroup = (key && groupBy.expandable?.includes(key));
+      const isGroup = key && groupBy.expandable?.includes(key);
 
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
       const groupValue = isGroup ? key : datumValue(datum, groupByProperty);
@@ -210,10 +210,9 @@ export const buildGroups = (columns, data, groupBy, primaryProperty) => {
         }
       });
     }
+  } else if (groupBy?.expandable) {
+    result = groupBy.expandable.map((key) => ({ data: [], datum: {}, key }));
   }
-  else if (groupBy?.expandable) {
-    result = groupBy.expandable.map( key => ({ data:[], datum: {}, key }));
-  } 
 
   return result;
 };
