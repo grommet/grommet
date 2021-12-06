@@ -1,16 +1,21 @@
 import React from 'react';
 
-import { Box, Grommet, Stack } from 'grommet';
+import { Box, Stack } from 'grommet';
 
 export const Fill = () => (
-  <Grommet full>
-    <Stack fill>
-      <Box background="brand" fill>
-        Test
-      </Box>
-    </Stack>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Stack fill>
+    <Box background="brand" fill>
+      Test
+    </Box>
+  </Stack>
+  // </Grommet>
 );
+
+Fill.args = {
+  full: true,
+};
 
 export default {
   title: 'Layout/Stack/Fill',
