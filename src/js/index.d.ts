@@ -67,6 +67,7 @@ export * from './components/TableHeader';
 export * from './components/TableRow';
 export * from './components/Tab';
 export * from './components/Tabs';
+export * from './components/Tag';
 export * from './components/Text';
 export * from './components/TextArea';
 export * from './components/TextInput';
