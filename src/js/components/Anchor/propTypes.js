@@ -6,7 +6,11 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     a11yTitle: PropTypes.string,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.elementType,
+    ]),
     color: colorPropType,
     disabled: PropTypes.bool,
     gap: PropTypes.oneOfType([

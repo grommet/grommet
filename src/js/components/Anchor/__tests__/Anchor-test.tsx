@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -8,10 +8,9 @@ import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
 import { Anchor } from '..';
+import { Box } from '../../Box';
 
 describe('Anchor', () => {
-  afterEach(cleanup);
-
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -76,6 +75,20 @@ describe('Anchor', () => {
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
+  });
+
+  test('shows no error for component used in as prop', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
+    const { container } = render(
+      <Grommet>
+        <Anchor href="#" as={Box} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(errorSpy).not.toHaveBeenCalled();
+
+    errorSpy.mockReset();
+    errorSpy.mockRestore();
   });
 
   test('focus renders', () => {

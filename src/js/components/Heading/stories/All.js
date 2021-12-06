@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grommet, Grid, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+
+import { Grid, Heading } from 'grommet';
 
 const headingFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -21,7 +21,7 @@ H.propTypes = {
 
 const Set = ({ size }) => (
   <div>
-    {[1, 2, 3, 4, 5, 6].map(level => (
+    {[1, 2, 3, 4, 5, 6].map((level) => (
       <H key={level} level={level} size={size} />
     ))}
   </div>
@@ -32,7 +32,9 @@ Set.propTypes = {
 };
 
 export const All = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <>
     <Grid columns="large" gap="medium">
       <Set size="medium" />
       <Set size="small" />
@@ -40,7 +42,8 @@ export const All = () => (
       <Set size="xlarge" />
     </Grid>
     <Heading fill>{headingFiller}</Heading>
-  </Grommet>
+  </>
+  // </Grommet>
 );
 
 export default {

@@ -25,7 +25,7 @@ export interface VideoProps {
     pauseButton?: string;
     playButton?: string;
     volumeUp?: string;
-    volueDown?: string;
+    volumeDown?: string;
   };
 
   mute?: boolean;
