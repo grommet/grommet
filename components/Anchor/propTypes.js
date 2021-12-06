@@ -16,7 +16,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     a11yTitle: _propTypes["default"].string,
-    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
+    as: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].elementType]),
     color: _generalPropTypes.colorPropType,
     disabled: _propTypes["default"].bool,
     gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),

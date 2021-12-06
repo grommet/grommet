@@ -7,7 +7,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
     a11yTitle: PropTypes.string,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.elementType]),
     color: colorPropType,
     disabled: PropTypes.bool,
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
