@@ -156,7 +156,7 @@ exports[`Notification should have no accessibility violations 1`] = `
         class="c2"
       >
         <svg
-          aria-label="StatusUnknownSmall"
+          aria-label="Status is unknown"
           class="c3"
           viewBox="0 0 12 12"
         >

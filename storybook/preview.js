@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { hpe } from 'grommet-theme-hpe';
 import { Grommet, grommet, Box, Text } from '../src/js';
+import isChromatic from 'chromatic/isChromatic';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
@@ -15,12 +16,22 @@ export const decorators = [
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
+    const full = context.parameters?.args?.full || 'min';
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
      * theme. Custom themed stories will live under a "CustomThemed" directory.
      */
     if (context.kind.split('/')[2] === CUSTOM_THEMED && state !== 'base') {
+      // if we are running the story in chromatic we want the chromatic snapshot
+      // to be taken in the base theme for custom theme stories
+      if (isChromatic()) {
+        return (
+          <Grommet theme={THEMES.base}>
+            <Story state={THEMES.base} />
+          </Grommet>
+        );
+      }
       return (
         <Box align="center" pad="large">
           <Text size="large">
@@ -33,7 +44,7 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]}>
+      <Grommet theme={THEMES[state]} full={full}>
         <Story state={THEMES[state]} />
       </Grommet>
     );
