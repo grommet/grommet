@@ -179,13 +179,21 @@ const Form = forwardRef(
       () => valueProp || valueState,
       [valueProp, valueState],
     );
-    const [mounted, setMounted] = useState(false);
     const [touched, setTouched] = useState(defaultTouched);
     const [validationResults, setValidationResults] = useState({
       errors: errorsProp,
       infos: infosProp,
     });
     const validationResultsRef = useRef({});
+
+    // Simulated onMount state. Consider Form to be mounted once it has
+    // accounted for values originating from controlled inputs (available
+    // at second rendering).
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+      if (!mounted) setMounted('mounting');
+      else if (mounted === 'mounting') setMounted(true);
+    }, [mounted]);
 
     // when onBlur input validation is triggered, we need to complete any
     // potential click events before running the onBlur validation.
@@ -274,32 +282,24 @@ const Form = forwardRef(
     // Validate all fields holding values onMount
     useEffect(() => {
       const validationRules = Object.entries(validations.current);
-
-      if (!mounted) {
-        // Simulated onMount state. "onMount" is simulated to account for a
-        // controlled input scenario where an input has a value, however the
-        // Form is unaware of the value held by the input until second render.
-        if (
-          Object.keys(value).length > 0 &&
-          Object.keys(touched).length === 0
-        ) {
-          setMounted(true);
-          applyValidationRules(
-            validationRules
-              .filter(([n]) => value[n])
-              // Exlude empty arrays which may be initial values in
-              // an input such as DateInput.
-              .filter(
-                ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
-              ),
-          );
-        }
-        // Form has been interacted with --> infer it has mounted.
-        else if (Object.keys(touched).length > 0) {
-          setMounted(true);
-        }
+      // Use simulated onMount state to account for values provided by
+      // controlled inputs.
+      if (
+        mounted !== true &&
+        Object.keys(value).length > 0 &&
+        Object.keys(touched).length === 0
+      ) {
+        applyValidationRules(
+          validationRules
+            .filter(([n]) => value[n])
+            // Exlude empty arrays which may be initial values in
+            // an input such as DateInput.
+            .filter(
+              ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
+            ),
+        );
       }
-    }, [mounted, applyValidationRules, touched, value]);
+    }, [applyValidationRules, mounted, touched, value]);
 
     // Run validation against fields with pendingValidations from onBlur
     // and/or onChange.
