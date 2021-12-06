@@ -193,14 +193,7 @@ const Form = forwardRef(
       if (!mounted) setMounted('mounting');
       else if (mounted === 'mounting') setMounted(true);
     }, [mounted]);
-
-    // when onBlur input validation is triggered, we need to complete any
-    // potential click events before running the onBlur validation.
-    // otherwise, click events like reset, etc. may not be registered.
-    // for a detailed scenario/discussion,
-    // see: https://github.com/grommet/grommet/issues/4863
-    // the value of pendingValidation is the name of the FormField
-    // awaiting validation.
+    // `pendingValidation` is the name of the FormField awaiting validation.
     const [pendingValidation, setPendingValidation] = useState(undefined);
 
     const validations = useRef({});
@@ -309,9 +302,14 @@ const Form = forwardRef(
           );
           setPendingValidation(undefined);
         }
+        // Complete any potential click events before running onBlur validation.
+        // Otherwise, click events like reset, etc. may not be registered. For a
+        // detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+        // Values empirically tested; 120 was selected because it is the largest
+        // Chrome: 100, Safari: 120, Firefox: 80
       }, 120);
       return () => clearTimeout(timer);
-    }, [pendingValidation, applyValidationRules, touched, validateOn]);
+    }, [applyValidationRules, pendingValidation, touched, validateOn]);
 
     // Re-run validation rules for all fields with prior errors.
     useEffect(() => {
