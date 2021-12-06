@@ -50,6 +50,10 @@ const ScrollableTabs = () => (
 
 export const Scrollable = () => <ScrollableTabs />;
 
+Scrollable.args = {
+  full: true,
+};
+
 export default {
   title: 'Controls/Tabs/Scrollable',
 };
