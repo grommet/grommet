@@ -10,15 +10,21 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Simple = function Simple() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
-    anchor: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "large",
-    background: "neutral-1"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    pad: "small",
-    background: "accent-1"
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Stack, {
+      anchor: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "large",
+      background: "neutral-1"
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      pad: "small",
+      background: "accent-1"
+    })) // </Grommet>
+
+  );
 };
 
 exports.Simple = Simple;
