@@ -34,7 +34,7 @@ UncontrolledTabs.propTypes = {
 };
 UncontrolledTabs.args = {
   full: true,
-}
+};
 export const Plain = () => <UncontrolledTabs plain />;
 
 export default {
