@@ -51,5 +51,5 @@ export const JustifySidebar = () => <SidebarNav />;
 JustifySidebar.storyName = 'Justify Sidebar';
 
 export default {
-  title: 'Controls/Nav/Justify Sidebar',
+  title: 'Controls/Nav/Custom Themed/Justify Sidebar',
 };
