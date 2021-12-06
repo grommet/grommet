@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Close } from "grommet-icons/es6/icons/Close";
-import { Grommet, Box, Button, DropButton, Heading, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, DropButton, Heading, Text } from 'grommet';
 
 var DropContent = function DropContent(_ref) {
   var onClose = _ref.onClose;
@@ -38,9 +37,7 @@ var SimpleDropButton = function SimpleDropButton() {
     setOpen(false);
   };
 
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(DropButton, {
@@ -56,7 +53,7 @@ var SimpleDropButton = function SimpleDropButton() {
         top: 'bottom'
       }
     }
-  })));
+  }));
 };
 
 export var Simple = function Simple() {

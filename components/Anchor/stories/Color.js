@@ -9,14 +9,10 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var ColorAnchor = function ColorAnchor() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     gap: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {

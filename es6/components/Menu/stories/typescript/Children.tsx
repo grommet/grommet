@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Grommet, Box, Menu, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu, Text } from 'grommet';
 import { FormDown } from 'grommet-icons';
 
-const MenuWithChildren = props => (
+const MenuWithChildren = (props) => (
   <Menu
     plain
     items={[
@@ -31,16 +30,14 @@ const MenuWithChildren = props => (
 );
 
 const Example = () => (
-  <Grommet theme={grommet}>
-    <Box
-      align="center"
-      pad="large"
-      background={{ color: 'dark-2', opacity: 0.7 }}
-    >
-      <MenuWithChildren disabled />
-      <MenuWithChildren />
-    </Box>
-  </Grommet>
+  <Box
+    align="center"
+    pad="large"
+    background={{ color: 'dark-2', opacity: 0.7 }}
+  >
+    <MenuWithChildren disabled />
+    <MenuWithChildren />
+  </Box>
 );
 
 export const Children = () => <Example />;

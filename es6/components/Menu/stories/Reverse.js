@@ -1,13 +1,10 @@
 import React from 'react';
-import { Grommet, Box, Menu } from 'grommet';
+import { Box, Menu } from 'grommet';
 import { Power } from "grommet-icons/es6/icons/Power";
 import { User } from "grommet-icons/es6/icons/User";
-import { grommet } from 'grommet/themes';
 
 var ReverseMenu = function ReverseMenu() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Menu, {
@@ -30,7 +27,7 @@ var ReverseMenu = function ReverseMenu() {
       reverse: true,
       gap: 'small'
     }]
-  })));
+  }));
 };
 
 export var Reverse = function Reverse() {

@@ -11,8 +11,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var DropContent = function DropContent(_ref) {
@@ -49,9 +47,7 @@ var SimpleDropButton = function SimpleDropButton() {
     setOpen(false);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DropButton, {
@@ -67,7 +63,7 @@ var SimpleDropButton = function SimpleDropButton() {
         top: 'bottom'
       }
     }
-  })));
+  }));
 };
 
 var Simple = function Simple() {

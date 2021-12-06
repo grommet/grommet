@@ -1,12 +1,9 @@
 import React from 'react';
 import { Upload } from "grommet-icons/es6/icons/Upload";
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 var GapAnchor = function GapAnchor() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     pad: "medium",
     gap: "medium"
   }, /*#__PURE__*/React.createElement(Anchor, {
@@ -29,7 +26,7 @@ var GapAnchor = function GapAnchor() {
     label: "5px Gap",
     href: "#",
     gap: "5px"
-  })));
+  }));
 };
 
 export var Gap = function Gap() {

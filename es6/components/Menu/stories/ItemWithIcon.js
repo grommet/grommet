@@ -1,14 +1,11 @@
 import React from 'react';
-import { Grommet, Box, Menu, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu, Text } from 'grommet';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { Github } from "grommet-icons/es6/icons/Github";
 import { Slack } from "grommet-icons/es6/icons/Slack"; // This story offers a suggested workaround for issue #3209.
 
 var IconItemsMenu = function IconItemsMenu() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Menu, {
@@ -39,7 +36,7 @@ var IconItemsMenu = function IconItemsMenu() {
     direction: "row",
     gap: "small",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(FormDown, null), /*#__PURE__*/React.createElement(Text, null, "Menu with Icon on the left")))));
+  }, /*#__PURE__*/React.createElement(FormDown, null), /*#__PURE__*/React.createElement(Text, null, "Menu with Icon on the left"))));
 };
 
 export var ItemWithIcon = function ItemWithIcon() {

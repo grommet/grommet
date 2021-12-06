@@ -1,7 +1,6 @@
 import React from 'react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
-import { Grommet, Box, DropButton, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DropButton, Text } from 'grommet';
 
 var renderItems = function renderItems() {
   return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"), /*#__PURE__*/React.createElement(Text, null, "hi"));
@@ -31,10 +30,7 @@ var GremlinDropButton = function GremlinDropButton() {
 };
 
 var MenuDropButton = function MenuDropButton() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Box, {
     fill: "vertical",
@@ -42,7 +38,7 @@ var MenuDropButton = function MenuDropButton() {
     background: "dark-2"
   }, /*#__PURE__*/React.createElement(GremlinDropButton, null), /*#__PURE__*/React.createElement(Box, {
     flex: true
-  }), /*#__PURE__*/React.createElement(GremlinDropButton, null))));
+  }), /*#__PURE__*/React.createElement(GremlinDropButton, null)));
 };
 
 export var Menu = function Menu() {
@@ -52,6 +48,9 @@ Menu.parameters = {
   chromatic: {
     disable: true
   }
+};
+Menu.args = {
+  full: true
 };
 export default {
   title: 'Controls/DropButton/Menu'

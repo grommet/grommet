@@ -1,11 +1,8 @@
 import React from 'react';
-import { Grommet, Box, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu } from 'grommet';
 
 var ControlBottomMenu = function ControlBottomMenu() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     height: "medium",
     justify: "center",
     align: "center",
@@ -28,7 +25,7 @@ var ControlBottomMenu = function ControlBottomMenu() {
       label: 'FAQ',
       onClick: function onClick() {}
     }]
-  })));
+  }));
 };
 
 export var BottomControlButton = function BottomControlButton() {

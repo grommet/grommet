@@ -1,11 +1,8 @@
 import React from 'react';
-import { Grommet, Box, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu } from 'grommet';
 
 var SimpleMenu = function SimpleMenu() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Menu, {
@@ -27,7 +24,7 @@ var SimpleMenu = function SimpleMenu() {
       label: 'Disabled',
       disabled: true
     }]
-  })));
+  }));
 };
 
 export var Simple = function Simple() {

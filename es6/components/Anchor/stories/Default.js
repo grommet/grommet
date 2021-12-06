@@ -1,16 +1,13 @@
 import React from 'react';
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 var DefaultAnchor = function DefaultAnchor() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Anchor, {
     href: "#"
-  }, "Link")));
+  }, "Link"));
 };
 
 export var Default = function Default() {

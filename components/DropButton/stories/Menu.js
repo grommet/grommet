@@ -9,8 +9,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var renderItems = function renderItems() {
@@ -41,10 +39,7 @@ var GremlinDropButton = function GremlinDropButton() {
 };
 
 var MenuDropButton = function MenuDropButton() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "vertical",
@@ -52,7 +47,7 @@ var MenuDropButton = function MenuDropButton() {
     background: "dark-2"
   }, /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     flex: true
-  }), /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null))));
+  }), /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null)));
 };
 
 var Menu = function Menu() {
@@ -64,6 +59,9 @@ Menu.parameters = {
   chromatic: {
     disable: true
   }
+};
+Menu.args = {
+  full: true
 };
 var _default = {
   title: 'Controls/DropButton/Menu'

@@ -1,11 +1,8 @@
 import React from 'react';
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 var WeightAnchor = function WeightAnchor() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large",
     gap: "xsmall"
@@ -56,7 +53,7 @@ var WeightAnchor = function WeightAnchor() {
     href: "#",
     label: "Anchor weight Unset",
     weight: "unset"
-  })));
+  }));
 };
 
 export var Weight = function Weight() {

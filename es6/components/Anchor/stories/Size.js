@@ -1,11 +1,8 @@
 import React from 'react';
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 var SizeAnchor = function SizeAnchor() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
   }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '10px'].map(function (size) {
@@ -17,7 +14,7 @@ var SizeAnchor = function SizeAnchor() {
       label: size,
       href: "#"
     }));
-  })));
+  }));
 };
 
 export var Size = function Size() {

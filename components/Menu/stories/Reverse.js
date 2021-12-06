@@ -9,14 +9,10 @@ var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
 
-var _themes = require("grommet/themes");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var ReverseMenu = function ReverseMenu() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
@@ -39,7 +35,7 @@ var ReverseMenu = function ReverseMenu() {
       reverse: true,
       gap: 'small'
     }]
-  })));
+  }));
 };
 
 var Reverse = function Reverse() {
