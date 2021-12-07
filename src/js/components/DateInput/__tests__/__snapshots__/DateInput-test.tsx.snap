@@ -1641,7 +1641,7 @@ exports[`DateInput controlled format inline 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -1675,13 +1675,13 @@ exports[`DateInput controlled format inline 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -1690,7 +1690,7 @@ exports[`DateInput controlled format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -9416,7 +9416,7 @@ exports[`DateInput select format 3`] = `
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -9436,43 +9436,43 @@ exports[`DateInput select format 3`] = `
   color: #000000;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9551,7 +9551,7 @@ exports[`DateInput select format 3`] = `
   opacity: 0.5;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9761,12 +9761,12 @@ exports[`DateInput select format 3`] = `
             >
               <button
                 aria-label="Wed Jul 01 2020"
-                class="c14"
+                class="c16"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   1
                 </div>
@@ -9778,7 +9778,7 @@ exports[`DateInput select format 3`] = `
             >
               <button
                 aria-label="Thu Jul 02 2020"
-                class="c17"
+                class="c14"
                 tabindex="-1"
                 type="button"
               >
@@ -9800,7 +9800,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   3
                 </div>
@@ -9817,7 +9817,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   4
                 </div>
@@ -9839,7 +9839,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   5
                 </div>
@@ -9856,7 +9856,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   6
                 </div>
@@ -9873,7 +9873,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   7
                 </div>
@@ -9890,7 +9890,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   8
                 </div>
@@ -9907,7 +9907,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   9
                 </div>
@@ -9924,7 +9924,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   10
                 </div>
@@ -9941,7 +9941,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   11
                 </div>
@@ -9963,7 +9963,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   12
                 </div>
@@ -9980,7 +9980,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   13
                 </div>
@@ -9997,7 +9997,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   14
                 </div>
@@ -10014,7 +10014,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   15
                 </div>
@@ -10031,7 +10031,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   16
                 </div>
@@ -10048,7 +10048,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   17
                 </div>
@@ -10065,7 +10065,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   18
                 </div>
@@ -10087,7 +10087,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   19
                 </div>
@@ -10104,7 +10104,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   20
                 </div>
@@ -10121,7 +10121,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   21
                 </div>
@@ -10138,7 +10138,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   22
                 </div>
@@ -10155,7 +10155,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   23
                 </div>
@@ -10172,7 +10172,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   24
                 </div>
@@ -10189,7 +10189,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   25
                 </div>
@@ -10211,7 +10211,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   26
                 </div>
@@ -10228,7 +10228,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   27
                 </div>
@@ -10245,7 +10245,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   28
                 </div>
@@ -10262,7 +10262,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   29
                 </div>
@@ -10279,7 +10279,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   30
                 </div>
@@ -10296,7 +10296,7 @@ exports[`DateInput select format 3`] = `
                 type="button"
               >
                 <div
-                  class="c16"
+                  class="c17"
                 >
                   31
                 </div>
@@ -10453,7 +10453,7 @@ exports[`DateInput select format 3`] = `
 
 exports[`DateInput select format 4`] = `
 "@media only screen and (max-width: 768px) {
-  .jdFgHe {
+  .inVYAX {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -11775,7 +11775,7 @@ exports[`DateInput select format inline 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -11809,13 +11809,13 @@ exports[`DateInput select format inline 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -11824,7 +11824,7 @@ exports[`DateInput select format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -11954,7 +11954,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 bhKrQS"
+                  class="StyledButton-sc-323bzc-0 kVhqUm"
                   tabindex="-1"
                   type="button"
                 >
@@ -12275,7 +12275,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 kVhqUm"
+                  class="StyledButton-sc-323bzc-0 bhKrQS"
                   tabindex="-1"
                   type="button"
                 >
@@ -13950,7 +13950,7 @@ exports[`DateInput select format inline range 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -13984,13 +13984,13 @@ exports[`DateInput select format inline range 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -13999,7 +13999,7 @@ exports[`DateInput select format inline range 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -14113,7 +14113,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 bhKrQS"
+                  class="StyledButton-sc-323bzc-0 kVhqUm"
                   tabindex="-1"
                   type="button"
                 >
@@ -14271,7 +14271,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 kVhqUm"
+                  class="StyledButton-sc-323bzc-0 bhKrQS"
                   tabindex="-1"
                   type="button"
                 >
@@ -17288,7 +17288,7 @@ exports[`DateInput type format inline 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -17322,13 +17322,13 @@ exports[`DateInput type format inline 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -17337,7 +17337,7 @@ exports[`DateInput type format inline 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -20761,7 +20761,7 @@ exports[`DateInput type format inline range 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -20795,13 +20795,13 @@ exports[`DateInput type format inline range 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -20810,7 +20810,7 @@ exports[`DateInput type format inline range 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -22937,7 +22937,7 @@ exports[`DateInput type format inline range partial 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -22971,13 +22971,13 @@ exports[`DateInput type format inline range partial 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -22986,7 +22986,7 @@ exports[`DateInput type format inline range partial 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -23796,7 +23796,7 @@ exports[`DateInput type format inline range partial 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -23830,13 +23830,13 @@ exports[`DateInput type format inline range partial 3`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -23845,7 +23845,7 @@ exports[`DateInput type format inline range partial 3`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"
@@ -25953,7 +25953,7 @@ exports[`DateInput type format inline short 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kSZjsO"
+    class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -25987,13 +25987,13 @@ exports[`DateInput type format inline short 2`] = `
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kSZjsO"
+        class="StyledBox-sc-13pk1d4-0 bULqXT"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kTfBZm"
+          class="StyledBox-sc-13pk1d4-0 duA-dOj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jdFgHe"
+            class="StyledBox-sc-13pk1d4-0 inVYAX"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 iTbiRE"
@@ -26002,7 +26002,7 @@ exports[`DateInput type format inline short 2`] = `
             </h3>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 dELoJT"
+            class="StyledBox-sc-13pk1d4-0 kyGVqy"
           >
             <button
               aria-label="June 2020"

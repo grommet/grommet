@@ -25,6 +25,7 @@ const Box = forwardRef(
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
       gap,
+      kind, // munged to avoid styled-components putting it in the DOM
       onBlur,
       onClick,
       onFocus,
@@ -142,6 +143,7 @@ const Box = forwardRef(
         elevationProp={elevation}
         fillProp={fill}
         focus={focus}
+        kindProp={kind}
         overflowProp={overflow}
         wrapProp={wrap}
         widthProp={width}
