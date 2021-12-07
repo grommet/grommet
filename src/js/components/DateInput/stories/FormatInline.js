@@ -89,7 +89,6 @@ export const FormatInline = () => {
       <Box gap="small" align="start">
         <Text weight="bold">
           2) When defaultValue has a timezone, everything stays in that timezone
-          (IN PROGRESS FOR TIMEZONES BEFORE PT)
         </Text>
         <Text>defaultValue: {DATETZ}</Text>
         <Text>Current value: {date || '--'}</Text>
@@ -122,7 +121,7 @@ export const FormatInline = () => {
       <Box gap="small" align="start">
         <Text weight="bold">
           4) When defaultValue is a range and has a timezone, everything stays
-          in that timezone (IN PROGRESS FOR TIMEZONES BEFORE PT)
+          in that timezone
         </Text>
         <Text>defaultValue: {`${DATE_RANGETZ[0]} — ${DATE_RANGETZ[1]}`}</Text>
         <Text>
