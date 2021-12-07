@@ -56,13 +56,13 @@ describe('Calendar', () => {
     const adjustedDate = getAdjustedDate(DATE, '08:00:00.000Z');
     const disabledDate = new Date(adjustedDate);
     disabledDate.setDate(disabledDate.getDate() + 1);
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dates', () => {
