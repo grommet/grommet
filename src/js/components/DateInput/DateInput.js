@@ -12,6 +12,7 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -172,44 +173,63 @@ const DateInput = forwardRef(
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <MaskedInput
-            ref={ref}
-            id={id}
-            name={name}
-            icon={<CalendarIcon size={iconSize} />}
-            reverse
-            disabled={disabled}
-            mask={mask}
-            {...inputProps}
-            {...rest}
-            value={textValue}
-            onChange={(event) => {
-              const nextTextValue = event.target.value;
-              setTextValue(nextTextValue);
-              const nextValue = textToValue(
-                nextTextValue,
-                schema,
-                value,
-                range,
-              );
-              // update value even when undefined
-              setValue(nextValue);
-              if (onChange) {
-                event.persist(); // extract from React synthetic event pool
-                const adjustedEvent = event;
-                adjustedEvent.value = nextValue;
-                onChange(adjustedEvent);
-              }
-            }}
-            onFocus={(event) => {
-              announce(
-                formatMessage({ id: 'dateInput.openCalendar', messages }),
-              );
-              if (onFocus) onFocus(event);
-            }}
-          />
+          <Box border round="xsmall" flex direction="row">
+            <MaskedInput
+              // plain
+              // border
+              ref={ref}
+              id={id}
+              name={name}
+              // icon={
+              //   <Button
+              //     style={{ zIndex: 100 }}
+              //     onClick={() => console.log('clicked!')}
+              //     color="pink"
+              //     // icon={<CalendarIcon size={iconSize} />}
+              //     label="here"
+              //   ></Button>
+              // }
+              reverse
+              disabled={disabled}
+              mask={mask}
+              {...inputProps}
+              {...rest}
+              value={textValue}
+              onChange={(event) => {
+                const nextTextValue = event.target.value;
+                setTextValue(nextTextValue);
+                const nextValue = textToValue(
+                  nextTextValue,
+                  schema,
+                  value,
+                  range,
+                );
+                // update value even when undefined
+                setValue(nextValue);
+                if (onChange) {
+                  event.persist(); // extract from React synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.value = nextValue;
+                  onChange(adjustedEvent);
+                }
+              }}
+              onFocus={(event) => {
+                announce(
+                  formatMessage({ id: 'dateInput.openCalendar', messages }),
+                );
+                if (onFocus) onFocus(event);
+              }}
+            />
+            {/* <Box margin={{ horizontal: 'small' }} align="center" alignSelf="center"> */}
+            <Button
+              onClick={openCalendar}
+              plain
+              icon={<CalendarIcon size={iconSize} />}
+              margin={{ horizontal: 'small' }}
+            />
+          </Box>
         </Keyboard>
-      </FormContext.Provider>
+       </FormContext.Provider>
     );
 
     if (inline) {

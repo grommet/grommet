@@ -171,6 +171,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
+    console.log(children);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const {
@@ -206,6 +207,7 @@ const FormField = forwardRef(
       (themeBorder &&
         children &&
         Children.map(children, (child) => {
+          console.log('hit');
           if (
             child &&
             child.type &&
@@ -220,8 +222,11 @@ const FormField = forwardRef(
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
+            console.log('inner hit')
+            // console.log(child);
             return cloneElement(child, {
-              plain: true,
+              // border: false,
+              // plain: true,
               focusIndicator: false,
             });
           }

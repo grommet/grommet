@@ -21,6 +21,9 @@ export const DateForm = () => {
         <FormField name="value" label="value" required>
           <DateInput name="value" format="mm/dd/yyyy" />
         </FormField>
+        <FormField name="value" label="value" required component={DateInput} format="mm/dd/yyyy">
+          {/* <DateInput name="value" format="mm/dd/yyyy" /> */}
+        </FormField>
         <Button type="submit" label="submit" />
       </Form>
     </Box>
