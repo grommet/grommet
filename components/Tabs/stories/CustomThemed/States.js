@@ -151,6 +151,6 @@ var States = function States() {
 
 exports.States = States;
 var _default = {
-  title: 'Controls/Tabs/States'
+  title: 'Controls/Tabs/Custom Themed/States'
 };
 exports["default"] = _default;

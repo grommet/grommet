@@ -5,11 +5,9 @@ exports["default"] = exports.Responsive = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _grommetIcons = require("grommet-icons");
-
 var _grommet = require("grommet");
 
-var _themes = require("grommet/themes");
+var _grommetIcons = require("grommet-icons");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -24,192 +22,196 @@ var ResponsiveTabs = function ResponsiveTabs() {
     return setIndex(nextIndex);
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, {
-    activeIndex: index,
-    onActive: onActive
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 4"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 5"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 6"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 7"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 8"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 9"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 10"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 11"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 12"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 13"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 14"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 15"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 16"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 17"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 18"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-2"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 19"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-3"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
-    size: "xlarge"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: "Tab 20"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    margin: "small",
-    pad: "large",
-    align: "center",
-    background: "accent-1"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
-    size: "xlarge"
-  })))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Tabs, {
+      activeIndex: index,
+      onActive: onActive
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 4"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 5"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 6"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 7"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 8"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 9"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 10"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 11"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 12"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 13"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 14"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 15"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 16"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 17"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 18"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-2"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.TreeOption, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 19"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-3"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
+      size: "xlarge"
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
+      title: "Tab 20"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      margin: "small",
+      pad: "large",
+      align: "center",
+      background: "accent-1"
+    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Attraction, {
+      size: "xlarge"
+    })))) // </Grommet>
+
+  );
 };
 
 var Responsive = function Responsive() {

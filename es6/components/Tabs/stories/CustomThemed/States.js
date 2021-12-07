@@ -137,5 +137,5 @@ export var States = function States() {
   return /*#__PURE__*/React.createElement(TabStates, null);
 };
 export default {
-  title: 'Controls/Tabs/States'
+  title: 'Controls/Tabs/Custom Themed/States'
 };

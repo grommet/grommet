@@ -59,13 +59,13 @@ var customTheme = deepMerge(grommet, {
       background: 'dark-2',
       extend: function extend(_ref3) {
         var theme = _ref3.theme;
-        return css(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
+        return css(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.5);"]);
       }
     },
     panel: {
       extend: function extend(_ref4) {
         var theme = _ref4.theme;
-        return css(["padding:48px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
+        return css(["padding:48px;box-shadow:0px 3px 8px rgba(0,0,0,0.5);"]);
       }
     }
   }
@@ -105,5 +105,5 @@ export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomTabs, null);
 };
 export default {
-  title: 'Controls/Tabs/Custom'
+  title: 'Controls/Tabs/Custom Themed/Custom'
 };

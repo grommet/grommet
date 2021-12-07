@@ -78,6 +78,6 @@ var AlignControls = function AlignControls() {
 exports.AlignControls = AlignControls;
 AlignControls.storyName = 'Align controls';
 var _default = {
-  title: 'Controls/Tabs/Align controls'
+  title: 'Controls/Tabs/Custom Themed/Align controls'
 };
 exports["default"] = _default;

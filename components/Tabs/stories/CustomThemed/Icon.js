@@ -94,6 +94,6 @@ var Icon = function Icon() {
 
 exports.Icon = Icon;
 var _default = {
-  title: 'Controls/Tabs/Icon'
+  title: 'Controls/Tabs/Custom Themed/Icon'
 };
 exports["default"] = _default;
