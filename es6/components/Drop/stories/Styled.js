@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop } from 'grommet';
 
 var StyledDrop = function StyledDrop() {
   var targetRef = useRef();
@@ -11,45 +10,48 @@ var StyledDrop = function StyledDrop() {
   useEffect(function () {
     setShowDrop(true);
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
-    pad: "medium",
-    align: "center",
-    justify: "start",
-    ref: targetRef
-  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
-    target: targetRef.current,
-    elevation: "large",
-    margin: {
-      top: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, "Drop Contents with elevation and margin")), /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      bottom: 'top',
-      left: 'left'
-    },
-    target: targetRef.current,
-    round: "large",
-    background: "background-contrast",
-    margin: {
-      bottom: 'small'
-    }
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, "Drop Contents with round, background and margin")))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      background: "dark-3",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: targetRef
+    }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Drop, {
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: targetRef.current,
+      elevation: "large",
+      margin: {
+        top: 'medium'
+      }
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large"
+    }, "Drop Contents with elevation and margin")), /*#__PURE__*/React.createElement(Drop, {
+      align: {
+        bottom: 'top',
+        left: 'left'
+      },
+      target: targetRef.current,
+      round: "large",
+      background: "background-contrast",
+      margin: {
+        bottom: 'small'
+      }
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large"
+    }, "Drop Contents with round, background and margin")))) // </Grommet>
+
+  );
 };
 
 export var Styled = function Styled() {
@@ -59,6 +61,9 @@ Styled.parameters = {
   chromatic: {
     disable: true
   }
+};
+Styled.args = {
+  full: true
 };
 export default {
   title: 'Controls/Drop/Styled'

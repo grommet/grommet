@@ -63,5 +63,5 @@ Themed.parameters = {
   }
 };
 export default {
-  title: 'Controls/Drop/Themed'
+  title: 'Controls/Drop/Custom Themed/Themed'
 };

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop } from 'grommet';
 
 var PlainDrop = function PlainDrop() {
   var targetRef = useRef();
@@ -11,30 +10,33 @@ var PlainDrop = function PlainDrop() {
   useEffect(function () {
     return setShowDrop(true);
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    background: "brand",
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
-    pad: "medium",
-    align: "center",
-    justify: "start",
-    ref: targetRef
-  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    plain: true,
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
-    target: targetRef.current
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, "No background no shadow"))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      background: "brand",
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      background: "dark-3",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: targetRef
+    }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
+      plain: true,
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: targetRef.current
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large"
+    }, "No background no shadow"))) // </Grommet>
+
+  );
 };
 
 export var Plain = function Plain() {
@@ -44,6 +46,9 @@ Plain.parameters = {
   chromatic: {
     disable: true
   }
+};
+Plain.args = {
+  full: true
 };
 export default {
   title: 'Controls/Drop/Plain'

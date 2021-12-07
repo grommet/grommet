@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Grommet, grommet, Box, Button, Drop, Nav, Text } from 'grommet';
+import { Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator } from "grommet-icons/es6/icons/Calculator";
 import { Bug } from "grommet-icons/es6/icons/Bug";
 import { Achievement } from "grommet-icons/es6/icons/Achievement";
@@ -53,27 +53,32 @@ var TooltipButton = function TooltipButton(_ref) {
 };
 
 export var TrapFocus = function TrapFocus() {
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
-  }, /*#__PURE__*/React.createElement(Nav, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(TooltipButton, {
-    icon: /*#__PURE__*/React.createElement(Calculator, null),
-    name: "Calculator"
-  }), /*#__PURE__*/React.createElement(TooltipButton, {
-    icon: /*#__PURE__*/React.createElement(Bug, null),
-    name: "Bug"
-  }), /*#__PURE__*/React.createElement(TooltipButton, {
-    icon: /*#__PURE__*/React.createElement(Achievement, null),
-    name: "Achievement"
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Nav, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(TooltipButton, {
+      icon: /*#__PURE__*/React.createElement(Calculator, null),
+      name: "Calculator"
+    }), /*#__PURE__*/React.createElement(TooltipButton, {
+      icon: /*#__PURE__*/React.createElement(Bug, null),
+      name: "Bug"
+    }), /*#__PURE__*/React.createElement(TooltipButton, {
+      icon: /*#__PURE__*/React.createElement(Achievement, null),
+      name: "Achievement"
+    })) // </Grommet>
+
+  );
 };
 TrapFocus.parameters = {
   chromatic: {
     disable: true
   }
 };
+TrapFocus.storyName = 'Trap focus';
 export default {
-  title: 'Controls/Drop/Trap Focus'
+  title: 'Controls/Drop/Trap focus'
 };

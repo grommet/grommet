@@ -78,6 +78,6 @@ Themed.parameters = {
   }
 };
 var _default = {
-  title: 'Controls/Drop/Themed'
+  title: 'Controls/Drop/Custom Themed/Themed'
 };
 exports["default"] = _default;

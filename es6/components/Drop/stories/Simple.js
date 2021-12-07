@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop } from 'grommet';
 
 var SimpleDrop = function SimpleDrop() {
   var targetRef = useRef();
@@ -11,28 +10,31 @@ var SimpleDrop = function SimpleDrop() {
   useEffect(function () {
     setShowDrop(true);
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
-    pad: "medium",
-    align: "center",
-    justify: "start",
-    ref: targetRef
-  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
-    target: targetRef.current
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: "large"
-  }, "Drop Contents"))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      background: "dark-3",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: targetRef
+    }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: targetRef.current
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: "large"
+    }, "Drop Contents"))) // </Grommet>
+
+  );
 };
 
 export var Simple = function Simple() {
@@ -42,6 +44,9 @@ Simple.parameters = {
   chromatic: {
     disable: true
   }
+};
+Simple.args = {
+  full: true
 };
 export default {
   title: 'Controls/Drop/Simple'

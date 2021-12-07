@@ -62,21 +62,25 @@ var TooltipButton = function TooltipButton(_ref) {
 };
 
 var TrapFocus = function TrapFocus() {
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
-    align: "center",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(TooltipButton, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Calculator, null),
-    name: "Calculator"
-  }), /*#__PURE__*/_react["default"].createElement(TooltipButton, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Bug, null),
-    name: "Bug"
-  }), /*#__PURE__*/_react["default"].createElement(TooltipButton, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Achievement, null),
-    name: "Achievement"
-  })));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Nav, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(TooltipButton, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Calculator, null),
+      name: "Calculator"
+    }), /*#__PURE__*/_react["default"].createElement(TooltipButton, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Bug, null),
+      name: "Bug"
+    }), /*#__PURE__*/_react["default"].createElement(TooltipButton, {
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Achievement, null),
+      name: "Achievement"
+    })) // </Grommet>
+
+  );
 };
 
 exports.TrapFocus = TrapFocus;
@@ -85,7 +89,8 @@ TrapFocus.parameters = {
     disable: true
   }
 };
+TrapFocus.storyName = 'Trap focus';
 var _default = {
-  title: 'Controls/Drop/Trap Focus'
+  title: 'Controls/Drop/Trap focus'
 };
 exports["default"] = _default;

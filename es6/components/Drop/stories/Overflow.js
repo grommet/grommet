@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Calendar, Drop, Heading, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar, Drop, Heading, TextInput } from 'grommet';
 
 var OverflowDrop = function OverflowDrop() {
   var targetRef = useRef();
@@ -25,54 +24,57 @@ var OverflowDrop = function OverflowDrop() {
   useEffect(function () {
     return setShowDrop(true);
   }, []);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Box, {
-    background: "dark-3",
-    pad: "medium",
-    align: "center",
-    justify: "start",
-    ref: targetRef
-  }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
-    overflow: "unset",
-    align: {
-      top: 'bottom',
-      left: 'left'
-    },
-    target: targetRef.current,
-    onClose: function onClose() {
-      return setShowCalendar(false);
-    }
-  }, /*#__PURE__*/React.createElement(Box, {
-    height: "small"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: 4
-  }, "Select Start Date"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'relative'
-    }
-  }, /*#__PURE__*/React.createElement(TextInput, {
-    ref: inputRef,
-    value: date || '',
-    placeholder: "Focus on me",
-    onFocus: function onFocus() {
-      return setShowCalendar(true);
-    }
-  }), showCalendar && /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      background: '#eee'
-    }
-  }, /*#__PURE__*/React.createElement(Calendar, {
-    date: date,
-    onSelect: onSelect,
-    size: "small"
-  })))))));
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, /*#__PURE__*/React.createElement(Box, {
+      background: "dark-3",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: targetRef
+    }, "Target"), targetRef.current && /*#__PURE__*/React.createElement(Drop, {
+      overflow: "unset",
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: targetRef.current,
+      onClose: function onClose() {
+        return setShowCalendar(false);
+      }
+    }, /*#__PURE__*/React.createElement(Box, {
+      height: "small"
+    }, /*#__PURE__*/React.createElement(Heading, {
+      level: 4
+    }, "Select Start Date"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'relative'
+      }
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      ref: inputRef,
+      value: date || '',
+      placeholder: "Focus on me",
+      onFocus: function onFocus() {
+        return setShowCalendar(true);
+      }
+    }), showCalendar && /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        background: '#eee'
+      }
+    }, /*#__PURE__*/React.createElement(Calendar, {
+      date: date,
+      onSelect: onSelect,
+      size: "small"
+    })))))) // </Grommet>
+
+  );
 };
 
 export var Overflow = function Overflow() {
@@ -82,6 +84,9 @@ Overflow.parameters = {
   chromatic: {
     disable: true
   }
+};
+Overflow.args = {
+  full: true
 };
 export default {
   title: 'Controls/Drop/Overflow'

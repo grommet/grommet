@@ -140,6 +140,6 @@ Lazy.parameters = {
   }
 };
 var _default = {
-  title: 'Controls/Drop/Lazy'
+  title: 'Controls/Drop/Custom Themed/Lazy'
 };
 exports["default"] = _default;
