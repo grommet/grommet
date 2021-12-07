@@ -188,14 +188,6 @@ describe('DateInput', () => {
 
   test('dates initialized with empty array', () => {
     const onChange = jest.fn((event) => event.value);
-    // month is indexed from 0, so we add one
-    let month: string | number = new Date().getMonth() + 1;
-    if (month < 10) month = `0${month}`;
-
-    const year = new Date().getFullYear();
-
-    let timezoneOffset: string | number = new Date().getTimezoneOffset() / 60;
-    if (timezoneOffset < 10) timezoneOffset = `0${timezoneOffset}`;
 
     const { getByText } = render(
       <Grommet>
@@ -205,16 +197,17 @@ describe('DateInput', () => {
           defaultValue={[]}
           inline
           onChange={onChange}
+          calendarProps={{
+            reference: DATE,
+          }}
         />
       </Grommet>,
     );
-    // cannot use snapshots because we are using current date
-
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
-      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
-      `${year}-${month}-20T${timezoneOffset}:00:00.000Z`,
+      `2020-07-20T08:00:00.000Z`,
+      `2020-07-20T08:00:00.000Z`,
     ]);
   });
 
