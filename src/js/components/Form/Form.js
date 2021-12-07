@@ -188,10 +188,10 @@ const Form = forwardRef(
     // Simulated onMount state. Consider Form to be mounted once it has
     // accounted for values originating from controlled inputs (available
     // at second rendering).
-    const [mounted, setMounted] = useState(false);
+    const [mounted, setMounted] = useState('unmounted');
     useEffect(() => {
       if (!mounted) setMounted('mounting');
-      else if (mounted === 'mounting') setMounted(true);
+      else if (mounted === 'mounting') setMounted('mounted');
     }, [mounted]);
     // `pendingValidation` is the name of the FormField awaiting validation.
     const [pendingValidation, setPendingValidation] = useState(undefined);
@@ -273,7 +273,7 @@ const Form = forwardRef(
       // Use simulated onMount state to account for values provided by
       // controlled inputs.
       if (
-        mounted !== true &&
+        mounted !== 'mounted' &&
         Object.keys(value).length > 0 &&
         Object.keys(touched).length === 0
       ) {
