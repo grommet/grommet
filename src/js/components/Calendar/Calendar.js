@@ -494,7 +494,8 @@ const Calendar = forwardRef(
               adjustedDate = `${
                 formatToLocalYYYYMMDD(d).split('T')[0]
               }T${timestamp}`;
-            else if (timestamp === false) [adjustedDate] = d.split('T');
+            else if (timestamp === false)
+              [adjustedDate] = formatToLocalYYYYMMDD(d).split('T');
           }
           return adjustedDate;
         };

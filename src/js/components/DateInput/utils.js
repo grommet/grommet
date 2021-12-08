@@ -145,7 +145,7 @@ export const textToValue = (text, schema, range, timestamp) => {
     // match time and timezone of any supplied valueProp
     if (timestamp)
       date = `${formatToLocalYYYYMMDD(date).split('T')[0]}T${timestamp}`;
-    else date = `${date.split('T')[0]}`;
+    else date = `${formatToLocalYYYYMMDD(date).split('T')[0]}`;
 
     if (!range) {
       if (!result) result = date;

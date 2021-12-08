@@ -14,6 +14,8 @@ import { DateInput } from '..';
 const DATE = '2020-07-02T00:00:00-08:00';
 const DATE_FIRST = '2020-07-01T00:00:00-08:00';
 const DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
+const DATE_NOTZ = '2020-07-02';
+const DATES_NOTZ = ['2020-07-02', '2020-07-07'];
 
 describe('DateInput', () => {
   beforeEach(createPortal);
@@ -274,6 +276,26 @@ describe('DateInput', () => {
     expect(onChange).toHaveReturnedWith('2020-07-20T08:00:00.000Z');
   });
 
+  test('select inline without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { container, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          defaultValue={DATE_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('20'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-20');
+  });
+
   test('select format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByText } = render(
@@ -294,6 +316,28 @@ describe('DateInput', () => {
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('2020-07-20T08:00:00.000Z');
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('select format inline', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          defaultValue={DATE_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByText('20'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-20');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('select format', () => {
@@ -326,6 +370,36 @@ describe('DateInput', () => {
     expect(document.getElementById('item__drop')).toBeNull();
   });
 
+  test('select format no timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          defaultValue={DATE_NOTZ}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.focus(getByPlaceholderText('mm/dd/yyyy'));
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.keyDown(getByPlaceholderText('mm/dd/yyyy'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    expectPortal('item__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('20'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-20');
+    expect(document.getElementById('item__drop')).toBeNull();
+  });
+
   test('type format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
@@ -348,6 +422,30 @@ describe('DateInput', () => {
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('2020-07-21T08:00:00.000Z');
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('type format inline without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          defaultValue={DATE_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy'), {
+      target: { value: '07/21/2020' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-21');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type format inline short', () => {
@@ -375,6 +473,31 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('type format inline short without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="m/d/yy"
+          defaultValue={DATE_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('m/d/yy'), {
+      target: { value: '7/21/20' },
+    });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('2020-07-21');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('type format inline partial', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
@@ -390,6 +513,30 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy'), {
+      target: { value: '07/21/202' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith(undefined);
+    // cannot check snapshot here as it will be relative to the current date
+  });
+
+  test('type format inline partial without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          defaultValue={DATE_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
 
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy'), {
       target: { value: '07/21/202' },
@@ -425,6 +572,29 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('select format inline range without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          defaultValue={DATES_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    // new calendar logic adjust start date by default
+    fireEvent.click(getByText('10'));
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith(['2020-07-10', '2020-07-10']);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('type format inline range', () => {
     const onChange = jest.fn((event) => event.value);
     const { container, getByPlaceholderText } = render(
@@ -450,6 +620,30 @@ describe('DateInput', () => {
       '2020-07-23T08:00:00.000Z',
     ]);
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('type format inline range without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          defaultValue={DATES_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-07/23/2020' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith(['2020-07-21', '2020-07-23']);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type format inline range partial', () => {
@@ -489,6 +683,43 @@ describe('DateInput', () => {
     expect(onChange).toHaveBeenCalledTimes(3);
   });
 
+  test('type format inline range partial without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const { asFragment, getByPlaceholderText } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          defaultValue={DATES_NOTZ}
+          inline
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-07' },
+    });
+    expect(onChange).toHaveNthReturnedWith(1, ['2020-07-21']);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07/21/2020-' },
+    });
+    expect(onChange).toHaveNthReturnedWith(2, ['2020-07-21']);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
+      target: { value: '07//2020-07/27/2021' },
+    });
+    expect(onChange).toHaveNthReturnedWith(3, []);
+    // cannot check snapshot here as it will be relative to the current date
+
+    expect(onChange).toHaveBeenCalledTimes(3);
+  });
+
   test('controlled format inline', () => {
     const onChange = jest.fn((event) => event.value);
     const Test = () => {
@@ -516,6 +747,33 @@ describe('DateInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  test('controlled format inline without timezone', () => {
+    const onChange = jest.fn((event) => event.value);
+    const Test = () => {
+      const [value, setValue] = React.useState(DATE_NOTZ);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy"
+            value={value}
+            inline
+            onChange={onChange}
+          />
+          <Button label="first" onClick={() => setValue(DATE_FIRST)} />
+        </Grommet>
+      );
+    };
+    const { asFragment, getByDisplayValue, getByText } = render(<Test />);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(getByText('first'));
+    expect(getByDisplayValue('07/01/2020')).not.toBeNull();
+    expect(asFragment()).toMatchSnapshot();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   test('should be displayed when value is controlled', async () => {
     const Test = () => {
       const [value, setValue] = React.useState<string[] | []>([]);
@@ -529,6 +787,33 @@ describe('DateInput', () => {
             inline
           />
           <Button label="Set Date" onClick={() => setValue(DATES)} />
+        </Grommet>
+      );
+    };
+    const { container, getByText } = render(<Test />);
+    let dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
+
+    expect(dateInputValue).toEqual('');
+    fireEvent.click(getByText('Set Date'));
+    dateInputValue = (container.querySelector('#item') as HTMLInputElement)
+      .value;
+    expect(dateInputValue).toEqual('07/02/2020-07/07/2020');
+  });
+
+  test('should be displayed when value is controlled without timezone', async () => {
+    const Test = () => {
+      const [value, setValue] = React.useState<string[] | []>([]);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            value={value}
+            inline
+          />
+          <Button label="Set Date" onClick={() => setValue(DATES_NOTZ)} />
         </Grommet>
       );
     };
