@@ -618,7 +618,6 @@ const Calendar = forwardRef(
           // and user's local timezone
           setDate(normalizeForTimezone(nextDate, timestamp));
         } else if (date && Array.isArray(date)) {
-          // why does it not matter as a range?
           setDate(nextDates);
         }
         setActive(new Date(selectedDate));
