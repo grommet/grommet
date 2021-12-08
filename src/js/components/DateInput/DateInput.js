@@ -241,7 +241,7 @@ const DateInput = forwardRef(
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
             target={ref.current}
-            align={{ top: 'bottom', left: 'left' }}
+            align={{ top: 'bottom', left: 'left', ...dropProps }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
               if (
