@@ -41,7 +41,7 @@ describe('Calendar', () => {
   test('disabled', () => {
     // need to set the date to avoid snapshot drift over time
     // have disabled date be distinct from selected date
-    const getAdjustedDate = (value: string, timestamp: string) => {
+    const normalizeForTimezone = (value: string, timestamp: string) => {
       const hourDelta = parseInt(timestamp?.split(':')[0], 10);
       const valueOffset = hourDelta * 60 * 1000; // ms
       const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
@@ -53,7 +53,7 @@ describe('Calendar', () => {
         ).toISOString()
       );
     };
-    const adjustedDate = getAdjustedDate(DATE, '08:00:00.000Z');
+    const adjustedDate = normalizeForTimezone(DATE, '08:00:00.000Z');
     const disabledDate = new Date(adjustedDate);
     disabledDate.setDate(disabledDate.getDate() + 1);
     const { asFragment } = render(

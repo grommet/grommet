@@ -38,7 +38,7 @@ import {
   withinDates,
 } from './utils';
 import { CalendarPropTypes } from './propTypes';
-import { getAdjustedDate, getTimestamp } from '../DateInput/utils';
+import { normalizeForTimezone, getTimestamp } from '../DateInput/utils';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -86,7 +86,7 @@ const getAccessibilityString = (date, dates) => {
 const normalizeReference = (reference, date, dates, timestamp) => {
   let normalizedReference;
   if (reference) {
-    normalizedReference = new Date(getAdjustedDate(reference, timestamp));
+    normalizedReference = new Date(normalizeForTimezone(reference, timestamp));
   } else if (date) {
     if (typeof date === 'string') {
       normalizedReference = new Date(date);
@@ -240,15 +240,15 @@ const Calendar = forwardRef(
     // function that runs inside the useEffect for date and dates
     const normalizeDate = (dateValue, timestamp) => {
       if (typeof dateValue === 'string') {
-        return getAdjustedDate(dateValue, timestamp);
+        return normalizeForTimezone(dateValue, timestamp);
       }
       if (Array.isArray(dateValue)) {
         if (Array.isArray(dateValue[0])) {
           let from;
           let to;
           [from, to] = dateValue[0].map((day) => day || undefined);
-          if (from) from = getAdjustedDate(from, timestamp);
-          if (to) to = getAdjustedDate(to, timestamp);
+          if (from) from = normalizeForTimezone(from, timestamp);
+          if (to) to = normalizeForTimezone(to, timestamp);
 
           return [[from, to]];
         }
@@ -258,11 +258,11 @@ const Calendar = forwardRef(
             let from;
             let to;
             [from, to] = d.map((day) => day);
-            from = getAdjustedDate(from, timestamp);
-            to = getAdjustedDate(to, timestamp);
+            from = normalizeForTimezone(from, timestamp);
+            to = normalizeForTimezone(to, timestamp);
             dateArray.push([from, to]);
           } else {
-            dateArray.push(getAdjustedDate(d, timestamp));
+            dateArray.push(normalizeForTimezone(d, timestamp));
           }
         });
         return dateArray;
@@ -616,7 +616,7 @@ const Calendar = forwardRef(
         if (date && typeof date === 'string') {
           // for internal calculations, adjust based on timestamp
           // and user's local timezone
-          setDate(getAdjustedDate(nextDate, timestamp));
+          setDate(normalizeForTimezone(nextDate, timestamp));
         } else if (date && Array.isArray(date)) {
           // why does it not matter as a range?
           setDate(nextDates);

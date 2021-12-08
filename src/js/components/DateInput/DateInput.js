@@ -21,7 +21,7 @@ import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
 import {
   formatToSchema,
-  getAdjustedDate,
+  normalizeForTimezone,
   getTimestamp,
   schemaToMask,
   valuesAreEqual,
@@ -76,7 +76,7 @@ const DateInput = forwardRef(
     }
 
     // normalize value based on timestamp vs user's local timezone
-    const adjustedValue = getAdjustedDate(value, timestamp);
+    const normalizedDate = normalizeForTimezone(value, timestamp);
 
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
@@ -89,7 +89,7 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(adjustedValue, schema) : undefined,
+      schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
     // We need to distinguish between the caller changing a Form value
@@ -100,7 +100,7 @@ const DateInput = forwardRef(
     // matching "06/1/2021".
     useEffect(() => {
       if (schema && value !== undefined) {
-        const nextTextValue = valueToText(adjustedValue, schema);
+        const nextTextValue = valueToText(normalizedDate, schema);
         if (
           !valuesAreEqual(
             textToValue(textValue, schema, range, timestamp),
@@ -111,7 +111,7 @@ const DateInput = forwardRef(
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value, adjustedValue, timestamp]);
+    }, [range, schema, textValue, value, normalizedDate, timestamp]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -131,10 +131,10 @@ const DateInput = forwardRef(
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
-        date={range ? undefined : adjustedValue}
+        date={range ? undefined : normalizedDate}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [adjustedValue] : undefined}
+        dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -149,7 +149,7 @@ const DateInput = forwardRef(
                 else normalizedValue = nextValue;
                 if (schema)
                   setTextValue(
-                    valueToText(getAdjustedDate(normalizedValue), schema),
+                    valueToText(normalizeForTimezone(normalizedValue), schema),
                   );
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
