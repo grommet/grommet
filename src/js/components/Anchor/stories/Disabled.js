@@ -1,16 +1,13 @@
 import React from 'react';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box } from 'grommet';
 
 const DisabledAnchor = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Box margin="small">
-        <Anchor disabled label="Disabled Anchor" />
-      </Box>
+  <Box align="center" pad="large">
+    <Box margin="small">
+      <Anchor disabled label="Disabled Anchor" />
     </Box>
-  </Grommet>
+  </Box>
 );
 
 export const Disabled = () => <DisabledAnchor />;
