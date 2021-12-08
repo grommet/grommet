@@ -1,4 +1,5 @@
 import React, {
+  createRef,
   forwardRef,
   useContext,
   useEffect,
@@ -44,6 +45,7 @@ const DateInput = forwardRef(
       name,
       onChange,
       onFocus,
+      plain,
       value: valueArg,
       messages,
       ...rest
@@ -57,6 +59,7 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
+    const calendarIconRef = createRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -173,25 +176,15 @@ const DateInput = forwardRef(
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <Box border round="xsmall" flex direction="row">
+          <Box border={!plain} round="xsmall" direction="row">
             <MaskedInput
-              // plain
-              // border
               ref={ref}
               id={id}
               name={name}
-              // icon={
-              //   <Button
-              //     style={{ zIndex: 100 }}
-              //     onClick={() => console.log('clicked!')}
-              //     color="pink"
-              //     // icon={<CalendarIcon size={iconSize} />}
-              //     label="here"
-              //   ></Button>
-              // }
               reverse
               disabled={disabled}
               mask={mask}
+              plain
               {...inputProps}
               {...rest}
               value={textValue}
@@ -220,16 +213,15 @@ const DateInput = forwardRef(
                 if (onFocus) onFocus(event);
               }}
             />
-            {/* <Box margin={{ horizontal: 'small' }} align="center" alignSelf="center"> */}
             <Button
-              onClick={openCalendar}
+              onClick={open ? () => closeCalendar() : () => openCalendar()}
               plain
-              icon={<CalendarIcon size={iconSize} />}
+              icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
               margin={{ horizontal: 'small' }}
             />
           </Box>
         </Keyboard>
-       </FormContext.Provider>
+      </FormContext.Provider>
     );
 
     if (inline) {
@@ -249,10 +241,15 @@ const DateInput = forwardRef(
             overflow="visible"
             id={id ? `${id}__drop` : undefined}
             target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
+            align={{ top: 'bottom', left: 'left' }}
             onEsc={closeCalendar}
             onClickOutside={({ target }) => {
-              if (target !== ref.current) closeCalendar();
+              if (
+                target !== ref.current &&
+                target !== calendarIconRef.current
+              ) {
+                closeCalendar();
+              }
             }}
             {...dropProps}
           >
