@@ -13,7 +13,6 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -213,12 +212,14 @@ const DateInput = forwardRef(
                 if (onFocus) onFocus(event);
               }}
             />
-            <Button
+            <Box
               onClick={open ? () => closeCalendar() : () => openCalendar()}
-              plain
-              icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
-              margin={{ horizontal: 'small' }}
-            />
+              align="center"
+              justify="center"
+              pad={{ horizontal: 'small' }}
+            >
+              <CalendarIcon ref={calendarIconRef} size={iconSize} />
+            </Box>
           </Box>
         </Keyboard>
       </FormContext.Provider>
