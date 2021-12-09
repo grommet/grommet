@@ -36,11 +36,11 @@ export const Stacked = () => {
 
   const GroupedIcons = () => (
     <Stack anchor="left">
-      <Avatar background="accent-1">
-        <UserNew color="accent-2" />
+      <Avatar background="dark-1">
+        <UserNew color="light-2" />
       </Avatar>
-      <Avatar background="accent-2" margin={{ left: 'medium' }}>
-        <UserFemale color="accent-1" />
+      <Avatar background="dark-2" margin={{ left: 'medium' }}>
+        <UserFemale color="light-1" />
       </Avatar>
       <Avatar background="dark-4" margin={{ left: 'large' }}>
         <Favorite color="light-2" />
@@ -66,7 +66,7 @@ export const Stacked = () => {
         {/* Notification */}
         <Stack anchor="top-right">
           <Avatar src={shimi} />
-          <Box pad="xsmall" round background="accent-4" responsive={false} />
+          <Box pad="xsmall" round background="black-4" responsive={false} />
         </Stack>
 
         {/* Groups */}
