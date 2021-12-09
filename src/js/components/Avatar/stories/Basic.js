@@ -18,8 +18,8 @@ export const Basic = () => {
       pad="large"
     >
       <Avatar src={src} />
-      <Avatar background="accent-4">
-        <Favorite color="accent-2" />
+      <Avatar background="dark-4">
+        <Favorite color="light-2" />
       </Avatar>
       <Avatar background="dark-2">R</Avatar>
       <Avatar background="brand">SY</Avatar>

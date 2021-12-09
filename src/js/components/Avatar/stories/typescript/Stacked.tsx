@@ -42,8 +42,8 @@ export const Stacked = () => {
       <Avatar background="accent-2" margin={{ left: 'medium' }}>
         <UserFemale color="accent-1" />
       </Avatar>
-      <Avatar background="accent-4" margin={{ left: 'large' }}>
-        <Favorite color="accent-2" />
+      <Avatar background="dark-4" margin={{ left: 'large' }}>
+        <Favorite color="light-2" />
       </Avatar>
     </Stack>
   );
@@ -80,5 +80,5 @@ export const Stacked = () => {
 };
 
 export default {
-  title: 'Visualizations/Avatar/Custom Themed/Stacked',
+  title: 'Visualizations/Avatar/Stacked',
 };
