@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Favorite, UserFemale, UserNew } from 'grommet-icons';
 
-import { Avatar, Box, Grommet, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Avatar, Box, Stack } from 'grommet';
 
 export const Stacked = () => {
   const shimi = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
@@ -50,7 +49,7 @@ export const Stacked = () => {
   );
 
   return (
-    <Grommet theme={grommet}>
+    <Box>
       <Box align="center" gap="medium" pad="large" background="dark-1">
         {/* Nested Avatars */}
         <Stack anchor="bottom-right">
@@ -76,10 +75,10 @@ export const Stacked = () => {
         <GroupedGravatarCentered />
         <GroupedGravatarRTL />
       </Box>
-    </Grommet>
+    </Box>
   );
 };
 
 export default {
-  title: 'Visualizations/Avatar/Stacked',
+  title: 'Visualizations/Avatar/Custom Themed/Stacked',
 };
