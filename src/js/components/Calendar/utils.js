@@ -124,3 +124,52 @@ export const withinDates = (date, dates) => {
   }
   return result;
 };
+
+export const getTimestamp = (date) =>
+  new RegExp(/T.*/).test(date)
+    ? new Date(date).toISOString().split('T')[1]
+    : // for Calendar, explicitly mark that caller has provided
+      // value with no timestamp
+      false;
+
+// Adjust for differences between timestamp on value and
+// local timezone of user. Internal Calendar logic relies
+// on Javascript date contructor which translates the provided
+// date into the equivalent moment for the user's timezone, which
+// can create undesired results. The standardizes the input value
+// for internal calculations
+// Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
+export const normalizeForTimezone = (value, timestamp) => {
+  let adjustedDate;
+  let hourDelta;
+  let valueOffset = 0;
+  if (timestamp && typeof timestamp === 'string') {
+    hourDelta = parseInt(timestamp?.split(':')[0], 10);
+    valueOffset = hourDelta * 60 * 1000; // ms
+  }
+  const localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+
+  adjustedDate =
+    value &&
+    (Array.isArray(value) ? value : [value]).map((v) =>
+      new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString(),
+    );
+  if (typeof value === 'string') [adjustedDate] = adjustedDate;
+
+  return adjustedDate;
+};
+
+// format the date to align with date format caller passed in
+export const formatDateToPropStructure = (date, timestamp) => {
+  let adjustedDate;
+  if (date) {
+    if (timestamp)
+      adjustedDate = `${
+        formatToLocalYYYYMMDD(date).split('T')[0]
+      }T${timestamp}`;
+    else if (timestamp === false)
+      [adjustedDate] = formatToLocalYYYYMMDD(date).split('T');
+    else adjustedDate = date;
+  }
+  return adjustedDate;
+};

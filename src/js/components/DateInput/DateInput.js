@@ -19,10 +19,9 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
+import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
 import {
   formatToSchema,
-  normalizeForTimezone,
-  getTimestamp,
   schemaToMask,
   valuesAreEqual,
   valueToText,
