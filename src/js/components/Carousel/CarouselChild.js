@@ -36,7 +36,7 @@ const CarouselChild = ({
     } else {
       animationTimer = setTimeout(() => {
         setDisplay('none');
-      }, animationDuration);
+      }, animationDuration-100);
       if (direction === 'next') setAnimation(slideLeftPrevious);
       else setAnimation(slideRightPrevious);
     }

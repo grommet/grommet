@@ -120,6 +120,8 @@ const Carousel = ({
         });
       }
     }
+  // can't depend on containerRef here
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inTransition, noDimensions]);
 
   /**
@@ -146,7 +148,7 @@ const Carousel = ({
       }, play);
     }
     return () => clearTimeout(playTimer);
-  }, [current, inTransition, play, onNext]);
+  }, [play, onNext]);
 
   // Allow Carousel slides to be controlled outside the component
   useEffect(() => {
@@ -173,7 +175,6 @@ const Carousel = ({
       <StyledCarouselContainer
         height={height}
         width={width}
-        inTransition={inTransition}
         ref={containerRef}
         {...containerProps}
         {...rest}

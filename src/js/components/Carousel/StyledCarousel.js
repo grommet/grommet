@@ -33,6 +33,7 @@ const StyledCarouselChild = styled.div`
         ease-in-out
         `
       : `none`};
+  animation-fill-mode: both;
 `;
 
 const StyledControl = styled(Box)`
