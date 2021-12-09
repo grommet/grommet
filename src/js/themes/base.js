@@ -574,7 +574,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'small',
         elevation: 'small',
+        // extend: undefined,
       },
+      // hover: {
+      //   container: {
+      //     elevation: undefined,
+      //   },
+      // },
       header: {},
       body: {},
       footer: {},
@@ -1040,6 +1046,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
+    nameValueList: {
+      gap: {
+        column: 'large',
+        row: 'small',
+      },
+      pair: {
+        column: {
+          gap: {
+            column: 'large',
+            row: 'medium',
+          },
+        },
+      },
+      name: {
+        width: 'small',
+      },
+      value: {
+        width: 'medium',
+      },
+    },
+    nameValuePair: {
+      column: {
+        gap: 'xxsmall',
+      },
+      name: {
+        // any text props
+        color: 'text',
+        weight: 'bold',
+      },
+      value: {
+        // any text props
+        color: 'text',
+      },
+    },
     notification: {
       time: 8000,
       container: {
@@ -1249,6 +1289,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // container: {}, // any box props
     },
     rangeInput: {
+      disabled: {
+        opacity: 0.3,
+        //   thumb: {
+        //     color: undefined,
+        //   },
+        //   track: {
+        //     color: undefined,
+        //   },
+      },
       // extend: undefined
       track: {
         height: '4px',
@@ -1425,6 +1474,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
+      },
+    },
+    tag: {
+      // background: undefined,
+      border: true,
+      round: 'large',
+      // name: undefined,
+      pad: {
+        horizontal: 'small',
+        vertical: 'xsmall',
+      },
+      remove: {
+        margin: { right: 'xsmall' },
+      },
+      separator: ' : ',
+      value: {
+        weight: 600,
       },
     },
     text: {

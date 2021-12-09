@@ -1,0 +1,2803 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel basic 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c13:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+        style="visibility: visible;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+        style="visibility: hidden;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        <button
+          class="c7"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c12"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="c13"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel basic with \`initialChild: 1\` 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c7:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+        style="visibility: hidden;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+        style="visibility: visible;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        <button
+          class="c7"
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c12"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="c13"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c13:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    data-testid="test-carousel"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+        style="visibility: visible;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+        style="visibility: hidden;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        <button
+          class="c7"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c12"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="c13"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+>
+  <div
+    class="StyledStack-sc-ajspsk-0 glGLiV"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 jsMHFF"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        tabindex="0"
+      >
+        <button
+          class="StyledButton-sc-323bzc-0 ewrZsR"
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="StyledButton-sc-323bzc-0 fLeXHn"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+>
+  <div
+    class="StyledStack-sc-ajspsk-0 glGLiV"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bxmmvB"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        tabindex="0"
+      >
+        <button
+          class="StyledButton-sc-323bzc-0 fLeXHn"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="StyledButton-sc-323bzc-0 ewrZsR"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+  line-height: 0;
+}
+
+.c13:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+        style="visibility: visible;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+        style="visibility: hidden;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        <button
+          class="c7"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c12"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="c13"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+>
+  <div
+    class="StyledStack-sc-ajspsk-0 glGLiV"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 bcpaT"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 cpVjjY"
+        style="visibility: visible;"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 jsMHFF"
+        >
+          <img
+            class="StyledImage-sc-ey4zx9-0 cqOVal"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 grDiRk"
+        tabindex="0"
+      >
+        <button
+          class="StyledButton-sc-323bzc-0 ewrZsR"
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox-sc-13pk1d4-0 hqPkXR"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 iDnmdb"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="StyledButton-sc-323bzc-0 fJaeOs"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-sc-ofa7kd-0 cQcocJ"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="StyledButton-sc-323bzc-0 fLeXHn"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="StyledIcon-sc-ofa7kd-0 jjvRzN"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel should trigger events of focus, blur and click 1`] = `
+.c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-carousel"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+        style="visibility: visible;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+        style="visibility: hidden;"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+        tabindex="0"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <button
+              aria-label="Show carousel slide 1"
+              class="c9"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c10"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Show carousel slide 2"
+              class="c11"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c12"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 12h20"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

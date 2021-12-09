@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
 import {
+  disabledStyle,
+  edgeStyle,
   focusStyle,
   normalizeColor,
   parseMetricToNum,
@@ -37,8 +39,7 @@ const getBoundColor = (props, bound) => {
 };
 
 const trackColorStyle = (props) => {
-  const max = props.max || 100; // 'max' defaults to 100 in case not specified
-  const min = props.min || 0; // 'min' defaults to 0 in case not specified
+  const { max, min } = props;
   const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
   let defaultTrackColor;
 
@@ -138,6 +139,15 @@ const trackColorStyle = (props) => {
   `;
 };
 
+const disabledRangeInputStyle = (props, context) => css`
+  ${disabledStyle(props.theme.rangeInput.disabled.opacity)}
+  ${props.theme.rangeInput.disabled[context]?.color &&
+  `background: ${normalizeColor(
+    props.theme.rangeInput.disabled[context].color,
+    props.theme,
+  )};`}
+`;
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
@@ -147,6 +157,10 @@ const rangeTrackStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
     props.theme.rangeInput.track.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'track')};
 `;
 
 const rangeThumbStyle = css`
@@ -167,6 +181,10 @@ const rangeThumbStyle = css`
     props.theme.rangeInput &&
     props.theme.rangeInput.thumb &&
     props.theme.rangeInput.thumb.extend}
+  ${(props) =>
+    props.disabled &&
+    props.theme?.rangeInput?.disabled &&
+    disabledRangeInputStyle(props, 'thumb')};
 `;
 
 const firefoxMicrosoftThumbStyle = css`
@@ -189,8 +207,18 @@ const StyledRangeInput = styled.input`
   height: ${(props) => props.theme.global.spacing};
   width: 100%;
   padding: 0px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
+
+  ${(props) =>
+    props.theme.rangeInput.pad &&
+    edgeStyle(
+      'padding',
+      props.theme.rangeInput.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
 
   &::-moz-focus-inner {
     border: none;
@@ -207,7 +235,6 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
-
     ${(props) =>
       !props.disabled &&
       css`

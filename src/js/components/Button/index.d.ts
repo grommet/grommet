@@ -7,6 +7,7 @@ import {
   FillType,
   GapType,
   GridAreaType,
+  HoverIndicatorType,
   MarginType,
   Omit,
   PolymorphicType,
@@ -34,7 +35,7 @@ export interface ButtonProps {
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  hoverIndicator?: BackgroundType | boolean;
+  hoverIndicator?: HoverIndicatorType;
   href?: string;
   justify?:
     | 'around'
@@ -58,16 +59,29 @@ export interface ButtonProps {
   as?: PolymorphicType;
 }
 
-type anchorType = JSX.IntrinsicElements['a'];
+type anchorType = Omit<JSX.IntrinsicElements['a'], 'color'>;
+type buttonType = Omit<JSX.IntrinsicElements['button'], 'color'>;
+type extendType = anchorType & buttonType;
 
-export interface ButtonExtendedProps
-  extends ButtonProps,
-    Omit<JSX.IntrinsicElements['button'], 'color'> {}
+export interface ButtonExtendedProps extends ButtonProps, extendType {}
 
 // Keep type alias for backwards compatibility.
-export type ButtonType = ButtonProps &
-  Omit<JSX.IntrinsicElements['button'], 'color'>;
+export type ButtonType = ButtonProps & extendType;
 
-declare const Button: React.FC<ButtonExtendedProps & anchorType>;
+declare const Button: React.FC<
+  ButtonExtendedProps & {
+    children?:
+      | React.ReactNode
+      | (({
+          disabled,
+          hover,
+          focus,
+        }: {
+          disabled: boolean;
+          hover: boolean;
+          focus: boolean;
+        }) => React.ReactNode);
+  }
+>;
 
 export { Button };

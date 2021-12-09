@@ -26,7 +26,7 @@ const InfiniteScroll = ({
 
   // the last page we have items for
   const lastPage = useMemo(
-    () => Math.floor(items.length / step),
+    () => Math.max(0, Math.ceil(items.length / step) - 1),
     [items.length, step],
   );
 
@@ -139,7 +139,8 @@ const InfiniteScroll = ({
     if (
       onMore &&
       renderPageBounds[1] === lastPage &&
-      items.length >= pendingLength
+      items.length >= pendingLength &&
+      items.length > 0
     ) {
       // remember we've asked for more, so we don't keep asking if it takes
       // a while

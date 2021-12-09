@@ -32,7 +32,8 @@ Quick steps and ideas of how you can contribute to Grommet:
    [Stack Overflow], [Slack][slack community], or [GitHub][grommet issues].
 1. Report bugs and propose new features by [filing issues on
    GitHub][grommet issues], or come talk to us and fellow contributors in our
-   [Slack community] about your issue or idea.
+   [Slack community] about your issue or idea. Please make sure to check
+   open and closed pull requests and issues before filing a new one!
 1. Share with us exciting projects using Grommet in our [Slack community].
 
 ## How to Contribute
@@ -122,9 +123,42 @@ We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
 [Slack][slack community]!
 
+## Label Usage
+
+A guide on commonly used labels added to issues and pull requests:
+
+- `waiting`: Applied to pull requests that have been previously reviewed and are waiting for a response or code changes from the author. This label
+  can also be applied to issues that have been commented on and are waiting for a response from the author. The waiting label is usually applied
+  after 1 week of no response.
+- `needs attention`: Applied to pull requests that have been waiting for a response or changes for a long period of time. This label gets applied because it is
+  generally something the team wants to get in and indicates that it could get handed off to get it over the finish line.
+- `good first issue`: Indicates issues that are a good place start for new contributors.
+- `help wanted`: A request for help from the community on a particular issue. Keep in mind this doesn't exclude feedback and collaboration on other issues that
+  don't have this label on it.
+- `PRty`: Used by the grommet team to flag pull requests that we want to review in the biweekly "PRty" meeting.
+
 ## Testing Your Code
 
-- You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser .
+**Manual Tests**
+
+You can test your code locally along with your changes using: `yarn storybook` or `npm run storybook`. This will open the storybook in your browser.
+
+**Automated Tests**
+
+This project contains unit tests executed by Jest. The bulk of the component tests are written with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to simulate end user behavior and focus on testing functionality instead of implementation.
+
+Jest tests are run using `yarn test` or `npm run test`. When changes to functionality are made, tests should always be included covering the functionality introduced.
+
+The following best practices should be observed when writing Jest tests with React Testing Library:
+
+- `screen` should be used for querying.
+- Ensure the correct query is being used by referring to [this list of queries](https://testing-library.com/docs/queries/about/#priority), ordered by priority. The majority of the time `getByRole` should be used.
+- In most cases `userEvent` should be used in place of `fireEvent`.
+- Snapshot tests should use `asFragment()` instead of `container.firstChild`.
+
+This article, [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), contains more information and testing best practices.
+
+The [Accordion tests](https://github.com/grommet/grommet/blob/master/src/js/components/Accordion/__tests__/Accordion-test.tsx) are a good reference for tests that follow React Testing Library best practices.
 
 ## Contributing to the Documentation
 
@@ -137,13 +171,14 @@ associated with each other.
 
 Found an error in the documentation? [File an issue][grommet-site issues].
 
-## Need More Help?
+## Slack
 
-Watch this [video] to learn how to contribute to Grommet. The GitHub
-contribution workflow is a bit complex and we want to make sure we don’t lose
-your valuable contributions because of that. Note that the video is outdated and
-talks about contributing to Grommet 1.X, but it may still be helpful for new
-users.
+The fastest way to interact and reach out to the grommet team is via the [Slack community][slack community]. Some channels
+to get started with are:
+
+- `#general`: All members of grommet are in this channel, say hi!
+- `#announcements`: Used for grommet related updates and announcements, such as releases.
+- `#help`: A place to ask for help and support about grommet.
 
 ## References
 
@@ -170,4 +205,3 @@ This contribution guide was inspired by the contribution guides for [Grunt],
 [pull requests]: https://help.github.com/en/articles/creating-a-pull-request-from-a-fork
 [slack community]: https://slack-invite.grommet.io/
 [stack overflow]: https://stackoverflow.com/questions/tagged/grommet
-[video]: https://vimeo.com/129681048

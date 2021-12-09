@@ -11,7 +11,7 @@ export const BorderBox = () => (
       </Box>
       <Box direction="row-responsive" gap="small">
         {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(
-          border => (
+          (border) => (
             <Box key={border} pad="small" border={border}>
               {border}
             </Box>
@@ -37,14 +37,14 @@ export const BorderBox = () => (
         color
       </Box>
       <Box direction="row-responsive" gap="small" align="start">
-        {['small', 'medium', 'large'].map(size => (
+        {['small', 'medium', 'large'].map((size) => (
           <Box key={size} pad="small" border={{ size }}>
             {size}
           </Box>
         ))}
       </Box>
       <Box direction="row-responsive" gap="small" align="start">
-        {['small', 'medium', 'large'].map(size => (
+        {['small', 'medium', 'large'].map((size) => (
           <Box key={size} pad="small" responsive={false} border={{ size }}>
             {size}
           </Box>
@@ -60,15 +60,16 @@ export const BorderBox = () => (
           'ridge',
           'inset',
           'outset',
-        ].map(type => (
+        ].map((type) => (
           <Box key={type} pad="small" border={{ size: 'medium', style: type }}>
             {type}
           </Box>
         ))}
       </Box>
       <Box direction="row-responsive" gap="large" align="center">
-        {['column', 'row', 'row-responsive'].map(direction => (
+        {['column', 'row', 'row-responsive'].map((direction) => (
           <Box
+            key={direction}
             direction={direction}
             gap="large"
             border={{ side: 'between', size: 'large' }}

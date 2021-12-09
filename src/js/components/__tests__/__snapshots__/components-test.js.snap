@@ -330,6 +330,7 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {},
     "propTypes": Object {
+      "confirmRemove": [Function],
       "disabled": [Function],
       "id": [Function],
       "messages": [Function],
@@ -607,6 +608,11 @@ Object {
     },
     "render": [Function],
   },
+  "NameValueList": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "NameValuePair": [Function],
   "Nav": [Function],
   "Notification": [Function],
   "Pagination": Object {
@@ -1663,6 +1669,38 @@ Object {
         "meter": Object {
           "color": "graph-0",
         },
+        "nameValueList": Object {
+          "gap": Object {
+            "column": "large",
+            "row": "small",
+          },
+          "name": Object {
+            "width": "small",
+          },
+          "pair": Object {
+            "column": Object {
+              "gap": Object {
+                "column": "large",
+                "row": "medium",
+              },
+            },
+          },
+          "value": Object {
+            "width": "medium",
+          },
+        },
+        "nameValuePair": Object {
+          "column": Object {
+            "gap": "xxsmall",
+          },
+          "name": Object {
+            "color": "text",
+            "weight": "bold",
+          },
+          "value": Object {
+            "color": "text",
+          },
+        },
         "notification": Object {
           "close": Object {
             "icon": Object {
@@ -1883,6 +1921,9 @@ Object {
         },
         "radioButtonGroup": Object {},
         "rangeInput": Object {
+          "disabled": Object {
+            "opacity": 0.3,
+          },
           "thumb": Object {},
           "track": Object {
             "color": "border",
@@ -2026,6 +2067,23 @@ Object {
         "tabs": Object {
           "header": Object {},
           "panel": Object {},
+        },
+        "tag": Object {
+          "border": true,
+          "pad": Object {
+            "horizontal": "small",
+            "vertical": "xsmall",
+          },
+          "remove": Object {
+            "margin": Object {
+              "right": "xsmall",
+            },
+          },
+          "round": "large",
+          "separator": " : ",
+          "value": Object {
+            "weight": 600,
+          },
         },
         "text": Object {
           "2xl": Object {
@@ -2286,6 +2344,21 @@ Object {
       "margin": [Function],
       "messages": [Function],
       "onActive": [Function],
+    },
+    "render": [Function],
+  },
+  "Tag": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "prototype": Object {
+      "a11yTitle": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "gridArea": [Function],
+      "margin": [Function],
+      "name": [Function],
+      "onClick": [Function],
+      "onRemove": [Function],
+      "value": [Function],
     },
     "render": [Function],
   },

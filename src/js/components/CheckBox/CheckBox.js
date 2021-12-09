@@ -67,7 +67,11 @@ const CheckBox = forwardRef(
     });
 
     const [focus, setFocus] = useState(focusProp);
-    useEffect(() => setFocus(focusProp), [focusProp]);
+    useEffect(() => {
+      // don't allow checkbox to have focus when disabled
+      if (disabled && focusProp) setFocus(false);
+      else setFocus(focusProp);
+    }, [disabled, focusProp]);
 
     useEffect(() => {
       if (checkedProp && indeterminate) {
@@ -211,6 +215,7 @@ const CheckBox = forwardRef(
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
+        label={label}
         onClick={stopLabelClick}
         pad={pad}
         onMouseEnter={(event) => onMouseEnter?.(event)}

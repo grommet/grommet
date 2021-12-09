@@ -1,21 +1,19 @@
 import React from 'react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, WorldMap } from 'grommet';
 
 export const SelectPlace = () => {
   const [places, setPlaces] = React.useState();
 
-  const onSelectPlace = place => {
+  const onSelectPlace = (place) => {
+    console.log('Selected', place);
     setPlaces([{ color: 'graph-1', location: place }]);
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <WorldMap onSelectPlace={onSelectPlace} places={places} />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <WorldMap onSelectPlace={onSelectPlace} places={places} />
+    </Box>
   );
 };
 

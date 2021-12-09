@@ -40,6 +40,10 @@ export interface CalendarProps {
   firstDayOfWeek?: 0 | 1;
   header?: (args: HeaderProps) => React.ReactNode;
   locale?: string;
+  messages?: {
+    previous?: string;
+    next?: string;
+  };
   onReference?: (reference: string) => void;
   onSelect?: (select: string | string[]) => any;
   range?: boolean | 'array';
