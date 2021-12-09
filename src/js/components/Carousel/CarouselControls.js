@@ -3,6 +3,8 @@ import { StyledControl } from './StyledCarousel';
 import { CarouselControlsPropTypes } from './propTypes';
 import { Button } from '../Button';
 import { ThemeContext } from '../../contexts';
+import { MessageContext } from '../../contexts/MessageContext';
+
 import { normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -16,6 +18,7 @@ const CarouselControls = ({
   wrap,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { format } = useContext(MessageContext);
   const arrowNavigation = controls && controls !== 'selectors';
   const selectorNavigation = controls && controls !== 'arrows';
 
@@ -40,7 +43,12 @@ const CarouselControls = ({
             plain
             hoverIndicator
             fill="vertical"
-            a11yTitle={`Go to slide ${current}`}
+            a11yTitle={
+              format({
+                id: 'carousel.previous',
+                values: { slide: current },
+              })
+            }
             onClick={onPrevious}
             disabled={previousIconDisabled}
             icon={
@@ -64,7 +72,12 @@ const CarouselControls = ({
             plain
             hoverIndicator
             fill="vertical"
-            a11yTitle={`Go to slide ${current + 2}`}
+            a11yTitle={  
+              format({
+                id: 'carousel.next',
+                values: { slide: current + 2 },
+              })
+            }
             onClick={onNext}
             disabled={nextIconDisabled}
             icon={
@@ -95,7 +108,12 @@ const CarouselControls = ({
               plain
               hoverIndicator
               key={`control-${index + 1}`}
-              a11yTitle={`Jump to slide ${index + 1}`}
+              a11yTitle={
+                format({
+                  id: 'carousel.jump',
+                  values: { slide: index + 1 },
+                })
+              }
               onClick={() => onSelectorNavigation(index)}
               icon={
                 <SelectorIcon
