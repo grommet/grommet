@@ -30,7 +30,7 @@ const customTheme = deepMerge(grommet, {
     margin: 'none',
     extend: ({ theme }) => css`
       border-top-left-radius: '4px';
-        /* or 'border-top-left-radius: ${theme.global.control.border.radius}' */
+      /* or 'border-top-left-radius: ${theme.global.control.border.radius}' */
       border-top-right-radius: '4px';
       /* or 'border-top-right-radius: ${theme.global.control.border.radius} */
       font-weight: bold;
@@ -64,5 +64,5 @@ const IconTabs = () => (
 export const Icon = () => <IconTabs />;
 
 export default {
-  title: 'Controls/Tabs/Icon',
+  title: 'Controls/Tabs/Custom Themed/Icon',
 };

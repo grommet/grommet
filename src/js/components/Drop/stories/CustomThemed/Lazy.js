@@ -126,5 +126,5 @@ Lazy.parameters = {
 };
 
 export default {
-  title: 'Controls/Drop/Lazy',
+  title: 'Controls/Drop/Custom Themed/Lazy',
 };
