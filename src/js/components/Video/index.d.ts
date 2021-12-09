@@ -18,15 +18,7 @@ export interface VideoProps {
     | {
         position?: false | 'over' | 'below';
         items?: [
-          (
-            | 'closedCaption'
-            | 'configure'
-            | 'fullScreen'
-            | 'pause'
-            | 'play'
-            | 'reduceVolume'
-            | 'volume'
-          ),
+          'captions' | 'fullScreen' | 'play' | 'pause' | 'volume',
           {
             icon?: React.ReactNode;
             a11yTitle?: A11yTitleType;

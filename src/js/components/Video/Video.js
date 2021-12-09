@@ -84,14 +84,14 @@ const Video = forwardRef(
       typeof controlsProp === 'string' || typeof controlsProp === 'boolean'
         ? {
             position: controlsProp,
-            items: ['volume', 'reduceVolume', 'fullScreen'],
+            items: ['volume', 'fullScreen'],
           }
         : controlsProp,
     );
 
     useEffect(() => {
       setControls({
-        items: controlsProp?.items || ['volume', 'reduceVolume', 'fullScreen'],
+        items: controlsProp?.items || ['volume', 'fullScreen'],
         position:
           (typeof controlsProp === 'string' && controlsProp) ||
           controlsProp?.position ||
@@ -272,8 +272,32 @@ const Video = forwardRef(
         onClick: () => showCaptions(caption.active ? -1 : 0),
       }));
 
+      const volumeControls = ['volume', 'reduceVolume'].map((control) => ({
+        icon:
+          control === 'volume' ? (
+            <Icons.Volume color={iconColor} />
+          ) : (
+            <Icons.ReduceVolume color={iconColor} />
+          ),
+        a11yTitle: format({
+          id: control === 'volume' ? 'video.volumeUp' : 'video.volumeDown',
+          messages,
+        }),
+        onClick: () => {
+          if (volume <= 1 - VOLUME_STEP && control === 'volume') {
+            return louder();
+          }
+          if (volume >= VOLUME_STEP && control === 'reduceVolume') {
+            return quieter();
+          }
+          return undefined;
+        },
+        close: false,
+      }));
+
       const buttonProps = {
-        closedCaption: captionControls,
+        captions: captionControls,
+        volume: volumeControls,
         fullScreen: {
           icon: <Icons.FullScreen color={iconColor} />,
           a11yTitle: format({
@@ -298,28 +322,18 @@ const Video = forwardRef(
           }),
           onClick: playing ? pause : play,
         },
-        reduceVolume: {
-          icon: <Icons.ReduceVolume color={iconColor} />,
-          a11yTitle: format({
-            id: 'video.volumeDown',
-            messages,
-          }),
-          onClick: volume >= VOLUME_STEP ? quieter : undefined,
-          close: false,
-        },
-        volume: {
-          icon: <Icons.Volume color={iconColor} />,
-          a11yTitle: format({ id: 'video.volumeUp', messages }),
-          onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
-          close: false,
-        },
       };
 
-      const controlsMenuItems = controls.items?.map((item) => {
-        if (typeof item === 'string') {
-          return buttonProps[item];
+      const controlsMenuItems = [];
+
+      controls.items?.map((item) => {
+        if (item === 'volume') {
+          volumeControls.map((control) => controlsMenuItems.push(control));
+          return undefined;
         }
-        return item;
+        if (typeof item === 'string')
+          return controlsMenuItems.push(buttonProps[item]);
+        return controlsMenuItems.push(item);
       });
 
       controlsElement = (
