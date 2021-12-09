@@ -1,10 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -609,5 +610,20 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(container.children).toMatchSnapshot();
+  });
+
+  test('clicking calendar icon should open drop', () => {
+    render(
+      <Grommet>
+        <DateInput format="m/d/yy" defaultValue="1/1/2021" />
+      </Grommet>,
+    );
+    expect(
+      screen.queryByRole('heading', { name: /January 2021/i }),
+    ).not.toBeInTheDocument();
+    userEvent.click(screen.getByRole('button', { name: /Calendar/i }));
+    expect(
+      screen.getByRole('heading', { name: /January 2021/i }),
+    ).toBeInTheDocument();
   });
 });
