@@ -141,6 +141,8 @@ exports[`Carousel basic 1`] = `
   display: block;
   -webkit-animation: none;
   animation: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c15 {
@@ -151,6 +153,8 @@ exports[`Carousel basic 1`] = `
   display: none;
   -webkit-animation: none;
   animation: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c4 {
@@ -602,6 +606,8 @@ exports[`Carousel controlled component 1`] = `
   display: none;
   -webkit-animation: none;
   animation: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c10 {
@@ -612,6 +618,8 @@ exports[`Carousel controlled component 1`] = `
   display: block;
   -webkit-animation: none;
   animation: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c4 {
