@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 
-import {
-  Accordion,
-  AccordionPanel,
-  Box,
-  Grommet,
-  Text,
-  TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Accordion, AccordionPanel, Box, Text, TextInput } from 'grommet';
 
 const renderPanelHeader = (title, active) => (
   <Box direction="row" align="center" pad="medium" gap="small">
@@ -23,10 +15,12 @@ const CustomHeaderAccordion = () => {
   const [activeIndex, setActiveIndex] = useState([0]);
 
   return (
-    <Grommet theme={grommet}>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box>
       <Accordion
         activeIndex={activeIndex}
-        onActive={newActiveIndex => setActiveIndex(newActiveIndex)}
+        onActive={(newActiveIndex) => setActiveIndex(newActiveIndex)}
       >
         <AccordionPanel
           header={renderPanelHeader('Panel 1', activeIndex.includes(0))}
@@ -51,7 +45,8 @@ const CustomHeaderAccordion = () => {
           </Box>
         </AccordionPanel>
       </Accordion>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 
