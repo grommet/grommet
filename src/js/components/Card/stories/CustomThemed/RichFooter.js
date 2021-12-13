@@ -33,21 +33,15 @@ const theme = {
     },
   },
 };
+const ExpandButton = ({ icon, ...rest }) => (
+  <Button hoverIndicator="light-4" icon={icon} {...rest} />
+);
 
 export const RichFooter = () => {
   const [open, setOpen] = React.useState(false);
   const [favorite, setFavorite] = React.useState(false);
+  const Icon = open ? <FormUp color="brand" /> : <FormDown color="brand" />;
 
-  const ExpandButton = ({ ...rest }) => {
-    const Icon = open ? FormUp : FormDown;
-    return (
-      <Button
-        hoverIndicator="light-4"
-        icon={<Icon color="brand" />}
-        {...rest}
-      />
-    );
-  };
   return (
     <Grommet theme={theme}>
       <Box pad="medium" align="start">
@@ -83,7 +77,7 @@ export const RichFooter = () => {
                 label="Learn More"
               />
             </Box>
-            <ExpandButton onClick={() => setOpen(!open)} />
+            <ExpandButton icon={Icon} onClick={() => setOpen(!open)} />
           </CardFooter>
           <Collapsible open={open}>
             <Paragraph margin="medium" color="dark-3">

@@ -201,7 +201,11 @@ const DataTable = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     const nextScrollOffset =
-      bodyRef.current.parentElement?.clientWidth - bodyRef.current.clientWidth;
+      bodyRef &&
+      bodyRef.current &&
+      bodyRef.current.parentElement.clientWidth - bodyRef &&
+      bodyRef.current &&
+      bodyRef.current.clientWidth;
     if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
 

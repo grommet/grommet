@@ -27,6 +27,12 @@ export const ControlledDataTable = () => {
   const onCheckAll = (event) =>
     setChecked(event.target.checked ? DATA.map((datum) => datum.name) : []);
 
+  const RowName = React.useCallback(
+    (rowName) =>
+      rowName === 'Alan' ? <Box> {rowName} </Box> : <Box>Blah {rowName} </Box>,
+    [],
+  );
+
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="medium">
@@ -56,12 +62,7 @@ export const ControlledDataTable = () => {
           ].map((col) => ({ ...col }))}
           data={DATA}
           sortable
-          rowDetails={(row) => {
-            if (row.name === 'Alan') {
-              return <Box> {row.name} </Box>;
-            }
-            return <Box>Blah {row.name} </Box>;
-          }}
+          rowDetails={(row) => RowName(row.name)}
           size="medium"
         />
       </Box>

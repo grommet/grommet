@@ -1,4 +1,8 @@
-import React, { Children, forwardRef, useState } from 'react';
+import React, {
+  Children,
+  forwardRef,
+  useState,
+} from 'react';
 import { AccordionPropTypes } from './propTypes';
 import { Box } from '../Box';
 
@@ -44,6 +48,16 @@ const Accordion = forwardRef(
         onActive(nextActiveIndexes);
       }
     };
+
+    // const nextChildrenValues = useMemo(
+    //   () =>
+    //     children.map((child, index) => ({
+    //       active: activeIndexes.indexOf(index) > -1,
+    //       animate,
+    //       onPanelChange: () => onPanelChange(index),
+    //     })),
+    //   [activeIndexes, animate, children, onPanelChange],
+    // );
 
     return (
       <Box ref={ref} role="tablist" {...rest}>

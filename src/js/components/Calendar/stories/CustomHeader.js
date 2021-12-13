@@ -6,6 +6,39 @@ import { grommet } from 'grommet/themes';
 import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
 export const CustomHeaderCalendar = () => {
+  const CustomHeader = React.useCallback(
+    (
+      currentDate,
+      locale,
+      onPreviousMonth,
+      onNextMonth,
+      previousInBound,
+      nextInBound,
+    ) => (
+      <Box direction="row" align="center" justify="between">
+        <Button disabled={!previousInBound} onClick={onPreviousMonth}>
+          <Box>
+            <FormPreviousLink />
+          </Box>
+        </Button>
+        <Text size="small">
+          <strong>
+            {currentDate.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
+          </strong>
+        </Text>
+        <Button disabled={!nextInBound} onClick={onNextMonth}>
+          <Box>
+            <FormNextLink />
+          </Box>
+        </Button>
+      </Box>
+    ),
+    [],
+  );
+
   const [date, setDate] = useState();
 
   const onSelect = (nextDate) => {
@@ -27,28 +60,16 @@ export const CustomHeaderCalendar = () => {
             onNextMonth,
             previousInBound,
             nextInBound,
-          }) => (
-            <Box direction="row" align="center" justify="between">
-              <Button disabled={!previousInBound} onClick={onPreviousMonth}>
-                <Box>
-                  <FormPreviousLink />
-                </Box>
-              </Button>
-              <Text size="small">
-                <strong>
-                  {currentDate.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}
-                </strong>
-              </Text>
-              <Button disabled={!nextInBound} onClick={onNextMonth}>
-                <Box>
-                  <FormNextLink />
-                </Box>
-              </Button>
-            </Box>
-          )}
+          }) =>
+            CustomHeader(
+              currentDate,
+              locale,
+              onPreviousMonth,
+              onNextMonth,
+              previousInBound,
+              nextInBound,
+            )
+          }
         />
       </Box>
     </Grommet>

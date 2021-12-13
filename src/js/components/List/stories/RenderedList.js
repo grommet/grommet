@@ -18,23 +18,33 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-export const RenderedList = () => (
-  <Box align="center" pad="large">
-    <List
-      data={data.slice(0, 10)}
-      primaryKey={(item) => (
-        <Text key={item.entry} size="large" weight="bold">
-          {item.entry}
-        </Text>
-      )}
-      secondaryKey={(item) => (
-        <Text key={item.location} size="small" color="dark-4">
-          {item.location}
-        </Text>
-      )}
-    />
-  </Box>
-);
+export const RenderedList = () => {
+  const PrimaryKeyComponent = React.useCallback(
+    (itemEntry) => (
+      <Text key={itemEntry} size="large" weight="bold">
+        {itemEntry}
+      </Text>
+    ),
+    [],
+  );
+  const SecondaryKeyComponent = React.useCallback(
+    (indexLocation) => (
+      <Text key={indexLocation} size="small" color="dark-4">
+        {indexLocation}
+      </Text>
+    ),
+    [],
+  );
+  return (
+    <Box align="center" pad="large">
+      <List
+        data={data.slice(0, 10)}
+        primaryKey={(item) => PrimaryKeyComponent(item.entry)}
+        secondaryKey={(item) => SecondaryKeyComponent(item.location)}
+      />
+    </Box>
+  );
+};
 
 RenderedList.storyName = 'Key render';
 

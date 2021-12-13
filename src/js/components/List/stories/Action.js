@@ -11,22 +11,28 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-export const Action = () => (
-  <Box pad="large">
-    <List
-      data={data.slice(0, 10)}
-      pad={{ left: 'small', right: 'none' }}
-      action={(item, index) => (
-        <Menu
-          key={index}
-          icon={<More />}
-          hoverIndicator
-          items={[{ label: 'one' }]}
-        />
-      )}
-    />
-  </Box>
-);
+export const Action = () => {
+  const MenuComponent = React.useCallback(
+    (index) => (
+      <Menu
+        key={index}
+        icon={<More />}
+        hoverIndicator
+        items={[{ label: 'one' }]}
+      />
+    ),
+    [],
+  );
+  return (
+    <Box pad="large">
+      <List
+        data={data.slice(0, 10)}
+        pad={{ left: 'small', right: 'none' }}
+        action={(index) => MenuComponent(index)}
+      />
+    </Box>
+  );
+};
 
 export default {
   title: 'Visualizations/List/Action',

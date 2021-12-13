@@ -11,24 +11,26 @@ for (let i = 0; i < 95; i += 1) {
   });
 }
 
-export const Show = () => (
-  <Box fill>
-    <Box margin="large" height="small" overflow="scroll">
-      <List
-        data={data}
-        action={(item, index) => (
-          <Menu
-            key={index}
-            icon={<More />}
-            hoverIndicator
-            items={[{ label: 'one' }]}
-          />
-        )}
-        show={30}
+export const Show = () => {
+  const MenuComponent = React.useCallback(
+    (index) => (
+      <Menu
+        key={index}
+        icon={<More />}
+        hoverIndicator
+        items={[{ label: 'one' }]}
       />
+    ),
+    [],
+  );
+  return (
+    <Box fill>
+      <Box margin="large" height="small" overflow="scroll">
+        <List data={data} action={MenuComponent} show={30} />
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 export default {
   title: 'Visualizations/List/Show',

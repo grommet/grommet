@@ -28,13 +28,7 @@ const Avatar = ({
     round,
     width: avatarSize,
   };
-
-  const AvatarChildren = () => (
-    <StyledAvatar {...avatarProps} {...rest}>
-      {children}
-    </StyledAvatar>
-  );
-
+  
   if (height || width) {
     console.warn(
       'Avatar should use `size` instead of `height` or `width` props',
@@ -55,7 +49,11 @@ const Avatar = ({
       </StyledAvatar>
     );
   }
-  return <AvatarChildren />;
+  return (
+    <StyledAvatar {...avatarProps} {...rest}>
+      {children}
+    </StyledAvatar>
+  );
 };
 
 Avatar.propTypes = AvatarPropTypes;

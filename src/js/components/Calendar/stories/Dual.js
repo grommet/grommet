@@ -6,6 +6,42 @@ import { grommet } from 'grommet/themes';
 import { Blank, Previous, Next } from 'grommet-icons';
 
 export const Dual = () => {
+  const FirstCustomHeader = React.useCallback(
+    (currentDate, locale, onPreviousMonth, previousInBound) => (
+      <Box direction="row" align="center" justify="between">
+        <Button
+          disabled={!previousInBound}
+          icon={<Previous />}
+          onClick={onPreviousMonth}
+        />
+        <Heading level={3} margin="none">
+          {currentDate.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric',
+          })}
+        </Heading>
+        <Blank />
+      </Box>
+    ),
+    [],
+  );
+
+  const SecondCustomHeader = React.useCallback(
+    (currentDate, locale, onNextMonth, nextInBound) => (
+      <Box direction="row" align="center" justify="between">
+        <Blank />
+        <Heading level={3} margin="none">
+          {currentDate.toLocaleDateString(locale, {
+            month: 'long',
+            year: 'numeric',
+          })}
+        </Heading>
+        <Button disabled={!nextInBound} icon={<Next />} onClick={onNextMonth} />
+      </Box>
+    ),
+    [],
+  );
+
   const [date, setDate] = useState();
   const [dates, setDates] = useState();
   const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
@@ -45,22 +81,14 @@ export const Dual = () => {
             locale,
             onPreviousMonth,
             previousInBound,
-          }) => (
-            <Box direction="row" align="center" justify="between">
-              <Button
-                disabled={!previousInBound}
-                icon={<Previous />}
-                onClick={onPreviousMonth}
-              />
-              <Heading level={3} margin="none">
-                {currentDate.toLocaleDateString(locale, {
-                  month: 'long',
-                  year: 'numeric',
-                })}
-              </Heading>
-              <Blank />
-            </Box>
-          )}
+          }) =>
+            FirstCustomHeader(
+              currentDate,
+              locale,
+              onPreviousMonth,
+              previousInBound,
+            )
+          }
         />
         <Calendar
           animate={false}
@@ -77,22 +105,9 @@ export const Dual = () => {
             setReference1(priorDate.toString());
             setReference2(refDate.toString());
           }}
-          header={({ date: currentDate, locale, onNextMonth, nextInBound }) => (
-            <Box direction="row" align="center" justify="between">
-              <Blank />
-              <Heading level={3} margin="none">
-                {currentDate.toLocaleDateString(locale, {
-                  month: 'long',
-                  year: 'numeric',
-                })}
-              </Heading>
-              <Button
-                disabled={!nextInBound}
-                icon={<Next />}
-                onClick={onNextMonth}
-              />
-            </Box>
-          )}
+          header={({ date: currentDate, locale, onNextMonth, nextInBound }) =>
+            SecondCustomHeader(currentDate, locale, onNextMonth, nextInBound)
+          }
         />
       </Box>
     </Grommet>
