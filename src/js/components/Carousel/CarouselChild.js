@@ -28,6 +28,7 @@ const CarouselChild = ({
     // on mount, do not render the first slide with an animation.
     if (previous === undefined) return animationTimer;
     if (index !== current && index !== previous) return animationTimer;
+    if (previous === current) return animationTimer;
 
     if (index === current) {
       setDisplay('block');
