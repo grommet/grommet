@@ -13,6 +13,7 @@ import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
@@ -175,7 +176,7 @@ const DateInput = forwardRef(
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={openCalendar}
         >
-          <Box border={!plain} round="xsmall" direction="row">
+          <Box border={!plain} round="xxsmall" direction="row" fill>
             <MaskedInput
               ref={ref}
               id={id}
@@ -187,6 +188,7 @@ const DateInput = forwardRef(
               {...inputProps}
               {...rest}
               value={textValue}
+              // pad='0px'
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
@@ -212,14 +214,12 @@ const DateInput = forwardRef(
                 if (onFocus) onFocus(event);
               }}
             />
-            <Box
+            <Button
               onClick={open ? () => closeCalendar() : () => openCalendar()}
-              align="center"
-              justify="center"
-              pad={{ horizontal: 'small' }}
-            >
-              <CalendarIcon ref={calendarIconRef} size={iconSize} />
-            </Box>
+              plain
+              icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
+              margin={{ horizontal: 'small' }}
+            />
           </Box>
         </Keyboard>
       </FormContext.Provider>

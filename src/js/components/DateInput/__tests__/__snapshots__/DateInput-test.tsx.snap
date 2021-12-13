@@ -335,32 +335,9 @@ exports[`DateInput controlled format inline 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -423,6 +400,67 @@ exports[`DateInput controlled format inline 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -784,14 +822,7 @@ exports[`DateInput controlled format inline 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -837,9 +868,9 @@ exports[`DateInput controlled format inline 1`] = `
           value="07/02/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -853,7 +884,7 @@ exports[`DateInput controlled format inline 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -1692,7 +1723,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -1706,9 +1737,9 @@ exports[`DateInput controlled format inline 2`] = `
           value="07/01/2020"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -1722,7 +1753,7 @@ exports[`DateInput controlled format inline 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -2741,32 +2772,70 @@ exports[`DateInput dropProps should pass props to Drop
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -2846,14 +2915,7 @@ exports[`DateInput dropProps should pass props to Drop
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -2873,9 +2935,9 @@ exports[`DateInput dropProps should pass props to Drop
         value=""
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -2889,7 +2951,7 @@ exports[`DateInput dropProps should pass props to Drop
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -2952,32 +3014,70 @@ exports[`DateInput focus 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3057,14 +3157,7 @@ exports[`DateInput focus 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -3086,9 +3179,9 @@ exports[`DateInput focus 1`] = `
         value="07/02/2020"
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -3102,7 +3195,7 @@ exports[`DateInput focus 1`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -3165,32 +3258,70 @@ exports[`DateInput format 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3270,14 +3401,7 @@ exports[`DateInput format 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -3299,9 +3423,9 @@ exports[`DateInput format 1`] = `
         value="07/02/2020"
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -3315,7 +3439,7 @@ exports[`DateInput format 1`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -3378,32 +3502,70 @@ exports[`DateInput format disabled 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -3485,14 +3647,7 @@ exports[`DateInput format disabled 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -3515,9 +3670,9 @@ exports[`DateInput format disabled 1`] = `
         value="07/02/2020"
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -3531,7 +3686,7 @@ exports[`DateInput format disabled 1`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -3608,32 +3763,9 @@ exports[`DateInput format inline 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -3696,6 +3828,67 @@ exports[`DateInput format inline 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -3988,14 +4181,7 @@ exports[`DateInput format inline 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -4041,9 +4227,9 @@ exports[`DateInput format inline 1`] = `
           value="07/02/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -4057,7 +4243,7 @@ exports[`DateInput format inline 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -6251,32 +6437,70 @@ exports[`DateInput range format 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -6356,14 +6580,7 @@ exports[`DateInput range format 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -6385,9 +6602,9 @@ exports[`DateInput range format 1`] = `
         value="07/02/2020-07/07/2020"
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -6401,7 +6618,7 @@ exports[`DateInput range format 1`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -6478,32 +6695,9 @@ exports[`DateInput range format inline 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -6566,6 +6760,67 @@ exports[`DateInput range format inline 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -6876,14 +7131,7 @@ exports[`DateInput range format inline 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -6929,9 +7177,9 @@ exports[`DateInput range format inline 1`] = `
           value="07/02/2020-07/07/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -6945,7 +7193,7 @@ exports[`DateInput range format inline 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -9394,32 +9642,70 @@ exports[`DateInput select format 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
   cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -9499,14 +9785,7 @@ exports[`DateInput select format 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -9528,9 +9807,9 @@ exports[`DateInput select format 1`] = `
         value="07/02/2020"
       />
     </div>
-    <div
+    <button
       class="c4"
-      tabindex="0"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -9544,7 +9823,7 @@ exports[`DateInput select format 1`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -9554,7 +9833,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hVhTai"
+    class="StyledBox-sc-13pk1d4-0 biwMEx"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -9568,9 +9847,9 @@ exports[`DateInput select format 2`] = `
         value="07/02/2020"
       />
     </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 laVaOV"
-      tabindex="0"
+    <button
+      class="StyledButton-sc-323bzc-0 OtHgH"
+      type="button"
     >
       <svg
         aria-label="Calendar"
@@ -9584,7 +9863,7 @@ exports[`DateInput select format 2`] = `
           stroke-width="2"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -10028,10 +10307,6 @@ exports[`DateInput select format 3`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
@@ -10907,19 +11182,13 @@ exports[`DateInput select format 3`] = `
 
 exports[`DateInput select format 4`] = `
 "@media only screen and (max-width: 768px) {
-  .hVhTai {
+  .biwMEx {
     border: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .hVhTai {
-    border-radius: 3px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .laVaOV {
-    padding-left: 6px;
-    padding-right: 6px;
+  .biwMEx {
+    border-radius: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -11014,32 +11283,9 @@ exports[`DateInput select format inline 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -11102,6 +11348,67 @@ exports[`DateInput select format inline 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -11394,14 +11701,7 @@ exports[`DateInput select format inline 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -11447,9 +11747,9 @@ exports[`DateInput select format inline 1`] = `
           value="07/02/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -11463,7 +11763,7 @@ exports[`DateInput select format inline 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -12296,7 +12596,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -12310,9 +12610,9 @@ exports[`DateInput select format inline 2`] = `
           value="07/20/2020"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -12326,7 +12626,7 @@ exports[`DateInput select format inline 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -13223,32 +13523,9 @@ exports[`DateInput select format inline range 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -13311,6 +13588,67 @@ exports[`DateInput select format inline range 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -13621,14 +13959,7 @@ exports[`DateInput select format inline range 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -13674,9 +14005,9 @@ exports[`DateInput select format inline range 1`] = `
           value="07/02/2020-07/07/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -13690,7 +14021,7 @@ exports[`DateInput select format inline range 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -14524,7 +14855,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -14538,9 +14869,9 @@ exports[`DateInput select format inline range 2`] = `
           value="07/10/2020-07/10/2020"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -14554,7 +14885,7 @@ exports[`DateInput select format inline range 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -16633,32 +16964,9 @@ exports[`DateInput type format inline 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -16721,6 +17029,67 @@ exports[`DateInput type format inline 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -17013,14 +17382,7 @@ exports[`DateInput type format inline 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -17066,9 +17428,9 @@ exports[`DateInput type format inline 1`] = `
           value="07/02/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -17082,7 +17444,7 @@ exports[`DateInput type format inline 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -17915,7 +18277,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -17929,9 +18291,9 @@ exports[`DateInput type format inline 2`] = `
           value="07/21/2020"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -17945,7 +18307,7 @@ exports[`DateInput type format inline 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -18842,32 +19204,9 @@ exports[`DateInput type format inline partial 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -18930,6 +19269,67 @@ exports[`DateInput type format inline partial 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -19222,14 +19622,7 @@ exports[`DateInput type format inline partial 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -19275,9 +19668,9 @@ exports[`DateInput type format inline partial 1`] = `
           value="07/02/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -19291,7 +19684,7 @@ exports[`DateInput type format inline partial 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -20188,32 +20581,9 @@ exports[`DateInput type format inline range 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -20276,6 +20646,67 @@ exports[`DateInput type format inline range 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -20586,14 +21017,7 @@ exports[`DateInput type format inline range 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -20639,9 +21063,9 @@ exports[`DateInput type format inline range 1`] = `
           value="07/02/2020-07/07/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -20655,7 +21079,7 @@ exports[`DateInput type format inline range 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -21489,7 +21913,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -21503,9 +21927,9 @@ exports[`DateInput type format inline range 2`] = `
           value="07/21/2020-07/23/2020"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -21519,7 +21943,7 @@ exports[`DateInput type format inline range 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -22417,32 +22841,9 @@ exports[`DateInput type format inline range partial 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -22505,6 +22906,67 @@ exports[`DateInput type format inline range partial 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -22815,14 +23277,7 @@ exports[`DateInput type format inline range partial 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -22868,9 +23323,9 @@ exports[`DateInput type format inline range partial 1`] = `
           value="07/02/2020-07/07/2020"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -22884,7 +23339,7 @@ exports[`DateInput type format inline range partial 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -23718,7 +24173,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -23732,9 +24187,9 @@ exports[`DateInput type format inline range partial 2`] = `
           value="07/21/2020-07"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -23748,7 +24203,7 @@ exports[`DateInput type format inline range partial 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -24582,7 +25037,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -24596,9 +25051,9 @@ exports[`DateInput type format inline range partial 3`] = `
           value="07/21/2020-"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -24612,7 +25067,7 @@ exports[`DateInput type format inline range partial 3`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
@@ -25510,32 +25965,9 @@ exports[`DateInput type format inline short 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-radius: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .c8 {
@@ -25598,6 +26030,67 @@ exports[`DateInput type format inline short 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c12 {
@@ -25890,14 +26383,7 @@ exports[`DateInput type format inline short 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    padding-left: 6px;
-    padding-right: 6px;
+    border-radius: 2px;
   }
 }
 
@@ -25943,9 +26429,9 @@ exports[`DateInput type format inline short 1`] = `
           value="7/2/20"
         />
       </div>
-      <div
+      <button
         class="c5"
-        tabindex="0"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -25959,7 +26445,7 @@ exports[`DateInput type format inline short 1`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="c7"
@@ -26792,7 +27278,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 bULqXT"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hVhTai"
+      class="StyledBox-sc-13pk1d4-0 biwMEx"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cmOgly"
@@ -26806,9 +27292,9 @@ exports[`DateInput type format inline short 2`] = `
           value="7/21/20"
         />
       </div>
-      <div
-        class="StyledBox-sc-13pk1d4-0 laVaOV"
-        tabindex="0"
+      <button
+        class="StyledButton-sc-323bzc-0 OtHgH"
+        type="button"
       >
         <svg
           aria-label="Calendar"
@@ -26822,7 +27308,7 @@ exports[`DateInput type format inline short 2`] = `
             stroke-width="2"
           />
         </svg>
-      </div>
+      </button>
     </div>
     <div
       class="StyledCalendar-sc-1y4xhmp-0 eUXsmV"
