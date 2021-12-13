@@ -71,6 +71,11 @@ const DateInput = forwardRef(
     // mask is only used when a format is provided
     const mask = useMemo(() => schemaToMask(schema), [schema]);
 
+    const FormContextValue = useMemo(
+      () => ({ useFormInput: ({ value: valueProp }) => [valueProp, () => {}] }),
+      [],
+    );
+
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
@@ -164,9 +169,7 @@ const DateInput = forwardRef(
       <FormContext.Provider
         key="input"
         // don't let MaskedInput drive the Form
-        value={{
-          useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
-        }}
+        value={FormContextValue}
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
