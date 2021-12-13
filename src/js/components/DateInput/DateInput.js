@@ -218,7 +218,7 @@ const DateInput = forwardRef(
               onClick={open ? () => closeCalendar() : () => openCalendar()}
               plain
               icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
-              margin={{ horizontal: 'small' }}
+              margin={{ right: 'small' }}
             />
           </Box>
         </Keyboard>

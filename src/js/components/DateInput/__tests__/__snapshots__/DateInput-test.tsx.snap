@@ -413,7 +413,6 @@ exports[`DateInput controlled format inline 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -1738,7 +1737,7 @@ exports[`DateInput controlled format inline 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -2788,7 +2787,6 @@ exports[`DateInput dropProps should pass props to Drop
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -3030,7 +3028,6 @@ exports[`DateInput focus 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -3274,7 +3271,6 @@ exports[`DateInput format 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -3518,7 +3514,6 @@ exports[`DateInput format disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -3841,7 +3836,6 @@ exports[`DateInput format inline 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -6453,7 +6447,6 @@ exports[`DateInput range format 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -6773,7 +6766,6 @@ exports[`DateInput range format inline 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -9658,7 +9650,6 @@ exports[`DateInput select format 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -9848,7 +9839,7 @@ exports[`DateInput select format 2`] = `
       />
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 OtHgH"
+      class="StyledButton-sc-323bzc-0 iaQwQd"
       type="button"
     >
       <svg
@@ -11361,7 +11352,6 @@ exports[`DateInput select format inline 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -12611,7 +12601,7 @@ exports[`DateInput select format inline 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -13601,7 +13591,6 @@ exports[`DateInput select format inline range 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -14870,7 +14859,7 @@ exports[`DateInput select format inline range 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -17042,7 +17031,6 @@ exports[`DateInput type format inline 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -18292,7 +18280,7 @@ exports[`DateInput type format inline 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -19282,7 +19270,6 @@ exports[`DateInput type format inline partial 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -20659,7 +20646,6 @@ exports[`DateInput type format inline range 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -21928,7 +21914,7 @@ exports[`DateInput type format inline range 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -22919,7 +22905,6 @@ exports[`DateInput type format inline range partial 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -24188,7 +24173,7 @@ exports[`DateInput type format inline range partial 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -25052,7 +25037,7 @@ exports[`DateInput type format inline range partial 3`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
@@ -26043,7 +26028,6 @@ exports[`DateInput type format inline short 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  margin-left: 12px;
   margin-right: 12px;
   color: inherit;
   outline: none;
@@ -27293,7 +27277,7 @@ exports[`DateInput type format inline short 2`] = `
         />
       </div>
       <button
-        class="StyledButton-sc-323bzc-0 OtHgH"
+        class="StyledButton-sc-323bzc-0 iaQwQd"
         type="button"
       >
         <svg
