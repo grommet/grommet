@@ -32,25 +32,14 @@
     "requestAnimationFrame": true
   },
   "rules": {
+    "default-param-last": 0,
+    "import/prefer-default-export": 0,
     "indent": "off",
     "comma-dangle": ["error", "always-multiline"],
-    "no-console": 0,
-    "react/jsx-filename-extension": 0,
-    "import/prefer-default-export": 0,
-    "react/prop-types": 0,
-    "react/jsx-one-expression-per-line": 0,
-    "react/jsx-wrap-multilines": 0,
-    "no-useless-concat": 0,
-    "react/jsx-indent": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/state-in-constructor": 0,
-    "react/static-property-placement": 0,
-    "react/jsx-curly-newline": 0,
     "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1,
-    "react/sort-comp": 0,
-    "semi": [2, "always"],
+    "no-console": 0,
+    // no-unsafe-optional-chaining affects 3 instances. Temporarily disabled.
+    "no-unsafe-optional-chaining": 0,
     "no-restricted-imports": [
       "error",
       {
@@ -62,7 +51,32 @@
           }
         ]
       }
-    ]
+    ],
+    "no-useless-concat": 0,
+    // prefer-regex-literals affects 20 instances. Temporarily disabled.
+    // ToDo: File separate PR to remove this rule address only its instances.
+    "prefer-regex-literals": 0,
+    // react/function-component-definition affects 600+ instances. Temporarily disabled.
+    // ToDo: Enable gradually and apply component by component.
+    // https://github.com/grommet/hpe-design-system/issues/2096#issuecomment-987081797
+    "react/function-component-definition": 0,
+    "react/jsx-curly-newline": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-indent": 0,
+    // react/jsx-no-constructed-context-values affects 8 instances. Temporarily disabled.
+    "react/jsx-no-constructed-context-values": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-wrap-multilines": 0,
+    // react/no-unstable-nested-components affects 14 instances. Temporarily disabled.
+    "react/no-unstable-nested-components": 0,
+    "react/prop-types": 0,
+    "react/sort-comp": 0,
+    "react/state-in-constructor": 0,
+    "react/static-property-placement": 0,
+    "react-hooks/exhaustive-deps": 1,
+    "react-hooks/rules-of-hooks": 2,
+    "semi": [2, "always"]
   },
   "overrides": [
     {
