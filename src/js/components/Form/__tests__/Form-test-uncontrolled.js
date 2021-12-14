@@ -214,6 +214,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
+      // eslint-disable-next-line prefer-regex-literals
       regexp: new RegExp('(?=.*?[A-Z])'),
       message: errorMessage,
       status: 'error',
@@ -244,6 +245,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
+      // eslint-disable-next-line prefer-regex-literals
       regexp: new RegExp('(?=.*?[A-Z])'),
       message: infoMessage,
       status: 'info',
@@ -1011,6 +1013,7 @@ describe('Form uncontrolled', () => {
    */
   test('should validate when supplied an object', () => {
     const regexValidation = {
+      // eslint-disable-next-line prefer-regex-literals
       regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
       message: 'At least one special character or space',
       status: 'error',
@@ -1103,11 +1106,13 @@ describe('Form uncontrolled', () => {
   test(`should validate with array of objects and/or functions`, () => {
     const validationArray = [
       {
+        // eslint-disable-next-line prefer-regex-literals
         regexp: new RegExp('(?=.*?[0-9])'),
         message: 'At least one number',
         status: 'error',
       },
       {
+        // eslint-disable-next-line prefer-regex-literals
         regexp: new RegExp('.{5,}'),
         message: 'At least five characters',
         status: 'error',
@@ -1121,6 +1126,7 @@ describe('Form uncontrolled', () => {
             }
           : undefined,
       {
+        // eslint-disable-next-line prefer-regex-literals
         regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
         message: 'At least one special character or space',
         status: 'error',

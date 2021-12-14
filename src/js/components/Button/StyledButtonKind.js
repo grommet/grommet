@@ -37,6 +37,7 @@ const fontStyle = (props) => {
   `;
 };
 
+// eslint-disable-next-line default-param-last
 const padFromTheme = (size = 'medium', theme, themeObj) => {
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {

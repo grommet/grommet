@@ -16,9 +16,7 @@ import {
 import { grommet } from 'grommet/themes';
 
 export const FieldWithComponentProp = () => {
-  const InputPlain = React.useCallback((props) => {
-    <input {...props} />;
-  }, []);
+  const InputPlain = React.useCallback((props) => <input {...props} />, []);
   return (
     <Grommet full theme={grommet}>
       <Box fill overflow="auto" align="center" justify="center" pad="large">

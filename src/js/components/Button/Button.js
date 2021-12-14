@@ -47,6 +47,7 @@ import { StyledButtonKind } from './StyledButtonKind';
 // and backgroundStyle() will do for the label.
 // The paths are ordered from basic to specific. Go through them
 // specific to base until we find one that has a color and use that.
+// eslint-disable-next-line default-param-last
 const getIconColor = (paths = [], theme, colorProp, kind) => {
   let result = [];
   let index = paths.length - 1;
@@ -94,6 +95,7 @@ const getIconColor = (paths = [], theme, colorProp, kind) => {
   return result[1] || undefined;
 };
 
+// eslint-disable-next-line default-param-last
 const getPropertyColor = (property, paths = [], theme, kind, primary) => {
   let result;
   if (kind) {

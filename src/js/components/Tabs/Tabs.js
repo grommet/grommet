@@ -50,6 +50,7 @@ const Tabs = forwardRef(
 
     const tabs = React.Children.map(children, (child, index) => (
       <TabsContext.Provider
+        // eslint-disable-next-line react/jsx-no-constructed-context-values
         value={{
           activeIndex,
           active: activeIndex === index,

@@ -247,6 +247,7 @@ const LayerContainer = forwardRef(
       const dark = backgroundIsDark(theme.layer.background, theme);
       if (dark !== undefined && dark !== theme.dark) {
         content = (
+          // eslint-disable-next-line react/jsx-no-constructed-context-values
           <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}
           </ThemeContext.Provider>
