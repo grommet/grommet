@@ -175,6 +175,7 @@ const Carousel = ({
       <StyledCarouselContainer
         height={height}
         width={width}
+        fillProp={fill}
         ref={containerRef}
         {...containerProps}
         {...rest}

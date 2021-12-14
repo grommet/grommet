@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Box } from '../Box';
-import { widthStyle, heightStyle } from '../../utils';
+import { widthStyle, heightStyle, fillStyle } from '../../utils';
 
 const StyledCarouselContainer = styled(Box)`
   position: relative;
@@ -9,6 +9,7 @@ const StyledCarouselContainer = styled(Box)`
   height: 100%;
   ${(props) => props.height && heightStyle(props.height, props.theme)}
   ${(props) => props.width && widthStyle(props.width, props.theme)}
+  ${(props) => props.fillProp && fillStyle(props.fillProp)}
   ${(props) => props.containerHeight && `height: ${props.containerHeight}px`};
   ${(props) => props.containerWidth && `width: ${props.containerWidth}px`};
 `;
