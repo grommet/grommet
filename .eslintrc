@@ -38,8 +38,6 @@
     "comma-dangle": ["error", "always-multiline"],
     "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
     "no-console": 0,
-    // no-unsafe-optional-chaining affects 3 instances. Temporarily disabled.
-    "no-unsafe-optional-chaining": 0,
     "no-restricted-imports": [
       "error",
       {

@@ -11,7 +11,7 @@ export const ArrayOfFormFields = () => {
 
   const addPhone = () => {
     const newPhone = { number: '', ext: '' };
-    const newPhones = [...values?.phones, newPhone];
+    const newPhones = [...values.phones, newPhone];
     setValues({
       ...values,
       phones: newPhones,
