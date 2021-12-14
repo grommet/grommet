@@ -177,18 +177,21 @@ interface ButtonType {
   primary?: ButtonKindType;
   secondary?: ButtonKindType;
   option?: ButtonKindType;
-  active?: ButtonKindType & {
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-    [key: string]: ButtonKindType;
-  };
+  active?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | { [key: string]: ButtonKindType };
   disabled?: ButtonKindType & { opacity?: OpacityType };
-  hover?: ButtonKindType & {
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-  };
+  hover?:
+    | (ButtonKindType & {
+        default?: ButtonKindType;
+        primary?: ButtonKindType;
+        secondary?: ButtonKindType;
+      })
+    | { [key: string]: ButtonKindType };
   size?: {
     small?: {
       border?: {
