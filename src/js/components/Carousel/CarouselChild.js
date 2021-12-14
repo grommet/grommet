@@ -35,6 +35,11 @@ const CarouselChild = ({
       if (direction === 'next') setAnimation(slideLeftCurrent);
       else setAnimation(slideRightCurrent);
     } else {
+      // Hide non-current children once the animation is complete.
+      // We try to do it a bit before (~100ms) the animation completes
+      // so that when Carousel switches the container back to auto width
+      // there won't be any extra visible children causing the container
+      // to be too big briefly
       animationTimer = setTimeout(() => {
         setDisplay('none');
       }, animationDuration-100);
