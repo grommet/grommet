@@ -58,6 +58,6 @@ var Themed = function Themed() {
 
 exports.Themed = Themed;
 var _default = {
-  title: 'Visualizations/Avatar/Themed'
+  title: 'Visualizations/Avatar/Custom Themed/Themed'
 };
 exports["default"] = _default;

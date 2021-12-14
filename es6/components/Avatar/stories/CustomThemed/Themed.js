@@ -45,5 +45,5 @@ export var Themed = function Themed() {
   }, "SY")));
 };
 export default {
-  title: 'Visualizations/Avatar/Themed'
+  title: 'Visualizations/Avatar/Custom Themed/Themed'
 };
