@@ -66,7 +66,7 @@ export const Stacked = () => {
         {/* Notification */}
         <Stack anchor="top-right">
           <Avatar src={shimi} />
-          <Box pad="xsmall" round background="black-4" responsive={false} />
+          <Box pad="xsmall" round background="light-1" responsive={false} />
         </Stack>
 
         {/* Groups */}
