@@ -571,7 +571,10 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormContext.Provider value={{ useFormField, useFormInput }}>
+        <FormContext.Provider
+          // eslint-disable-next-line react/jsx-no-constructed-context-values
+          value={{ useFormField, useFormInput }}
+        >
           {children}
         </FormContext.Provider>
       </form>

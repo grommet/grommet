@@ -335,18 +335,24 @@ const DropContainer = forwardRef(
       </StyledDrop>
     );
 
-    if (background || theme.global.drop.background) {
-      const dark = backgroundIsDark(
-        background || theme.global.drop.background,
-        theme,
-      );
-      if (dark !== undefined && dark !== theme.dark) {
-        content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
-            {content}
-          </ThemeContext.Provider>
+    const themeContext = useMemo(() => {
+      let dark;
+      if (background || theme.global.drop.background) {
+        dark = backgroundIsDark(
+          background || theme.global.drop.background,
+          theme,
         );
       }
+      return { ...theme, dark };
+    }, [background, theme]);
+
+    const { dark } = themeContext;
+    if (dark !== undefined && dark !== theme.dark) {
+      content = (
+        <ThemeContext.Provider value={themeContext}>
+          {content}
+        </ThemeContext.Provider>
+      );
     }
 
     return (

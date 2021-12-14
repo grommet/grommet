@@ -243,11 +243,16 @@ const LayerContainer = forwardRef(
       );
     }
 
-    if (theme.layer.background) {
+    const themeContext = useMemo(() => {
       const dark = backgroundIsDark(theme.layer.background, theme);
+      return { ...theme, dark };
+    }, [theme]);
+
+    if (theme.layer.background) {
+      const { dark } = themeContext;
       if (dark !== undefined && dark !== theme.dark) {
         content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={themeContext}>
             {content}
           </ThemeContext.Provider>
         );

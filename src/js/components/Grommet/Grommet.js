@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useMemo, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -134,11 +140,12 @@ const Grommet = forwardRef((props, ref) => {
     theme.global.deviceBreakpoints.tablet;
 
   const grommetRef = useForwardedRef(ref);
+  const getRootsContext = useCallback((root) => [root], []);
 
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={[grommetRef.current]}>
+        <RootsContext.Provider value={getRootsContext(grommetRef.current)}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
