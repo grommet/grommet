@@ -51,9 +51,6 @@
       }
     ],
     "no-useless-concat": 0,
-    // prefer-regex-literals affects 20 instances. Temporarily disabled.
-    // ToDo: File separate PR to remove this rule address only its instances.
-    "prefer-regex-literals": 0,
     // react/function-component-definition affects 600+ instances. Temporarily disabled.
     // ToDo: Enable gradually and apply component by component.
     // https://github.com/grommet/hpe-design-system/issues/2096#issuecomment-987081797
