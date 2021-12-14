@@ -1,5 +1,5 @@
 import React, {
-  createRef,
+  useRef,
   forwardRef,
   useContext,
   useEffect,
@@ -59,7 +59,8 @@ const DateInput = forwardRef(
       (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
-    const calendarIconRef = createRef();
+    const calendarIconRef = useRef();
+    const calendarButtonRef = useRef();
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -188,7 +189,6 @@ const DateInput = forwardRef(
               {...inputProps}
               {...rest}
               value={textValue}
-              // pad='0px'
               onChange={(event) => {
                 const nextTextValue = event.target.value;
                 setTextValue(nextTextValue);
@@ -215,8 +215,9 @@ const DateInput = forwardRef(
               }}
             />
             <Button
-              onClick={open ? () => closeCalendar() : () => openCalendar()}
+              onClick={open ? closeCalendar : openCalendar}
               plain
+              ref={calendarButtonRef}
               icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
               margin={{ right: 'small' }}
             />
@@ -247,7 +248,8 @@ const DateInput = forwardRef(
             onClickOutside={({ target }) => {
               if (
                 target !== ref.current &&
-                target !== calendarIconRef.current
+                target !== calendarIconRef.current &&
+                target !== calendarButtonRef.current
               ) {
                 closeCalendar();
               }
