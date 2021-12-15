@@ -11,7 +11,7 @@ const options = [
 
 export const InsideFormField = () => {
   const [value, setValue] = useState({});
-  const onChange = useCallback((nextValue) => setValue(nextValue), []);
+  const onChange = useCallback(nextValue => setValue(nextValue), []);
 
   return (
     <Grommet theme={grommet}>
