@@ -56,19 +56,19 @@ const customTheme = deepMerge(grommet, {
     header: {
       background: 'dark-2',
       extend: ({ theme }) => css`
-      padding: 10px;
-      /* or 'padding: ${theme.global.edgeSize.small}' */
-      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.50);
-      /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
-    `,
+        padding: 10px;
+        /* or 'padding: ${theme.global.edgeSize.small}' */
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+        /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
+      `,
     },
     panel: {
       extend: ({ theme }) => css`
-      padding: 48px;
-      /* or 'padding: ${theme.global.edgeSize.large}' */
-      box-shadow:  0px 3px 8px rgba(0, 0, 0, 0.50);
-       /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
-    `,
+        padding: 48px;
+        /* or 'padding: ${theme.global.edgeSize.large}' */
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+        /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
+      `,
     },
   },
 });
@@ -108,5 +108,5 @@ const CustomTabs = () => (
 export const Custom = () => <CustomTabs />;
 
 export default {
-  title: 'Controls/Tabs/Custom',
+  title: 'Controls/Tabs/Custom Themed/Custom',
 };

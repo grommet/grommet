@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Favorite, UserFemale, UserNew } from 'grommet-icons';
 
-import { Avatar, Box, Grommet, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Avatar, Box, Stack } from 'grommet';
 
 export const Stacked = () => {
   const shimi = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
@@ -37,20 +36,20 @@ export const Stacked = () => {
 
   const GroupedIcons = () => (
     <Stack anchor="left">
-      <Avatar background="accent-1">
-        <UserNew color="accent-2" />
+      <Avatar background="dark-1">
+        <UserNew color="light-2" />
       </Avatar>
-      <Avatar background="accent-2" margin={{ left: 'medium' }}>
-        <UserFemale color="accent-1" />
+      <Avatar background="dark-2" margin={{ left: 'medium' }}>
+        <UserFemale color="light-1" />
       </Avatar>
-      <Avatar background="accent-4" margin={{ left: 'large' }}>
-        <Favorite color="accent-2" />
+      <Avatar background="dark-4" margin={{ left: 'large' }}>
+        <Favorite color="light-2" />
       </Avatar>
     </Stack>
   );
 
   return (
-    <Grommet theme={grommet}>
+    <Box>
       <Box align="center" gap="medium" pad="large" background="dark-1">
         {/* Nested Avatars */}
         <Stack anchor="bottom-right">
@@ -67,7 +66,7 @@ export const Stacked = () => {
         {/* Notification */}
         <Stack anchor="top-right">
           <Avatar src={shimi} />
-          <Box pad="xsmall" round background="accent-4" responsive={false} />
+          <Box pad="xsmall" round background="light-1" responsive={false} />
         </Stack>
 
         {/* Groups */}
@@ -76,7 +75,7 @@ export const Stacked = () => {
         <GroupedGravatarCentered />
         <GroupedGravatarRTL />
       </Box>
-    </Grommet>
+    </Box>
   );
 };
 

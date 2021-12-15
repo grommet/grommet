@@ -77,7 +77,7 @@ const customThemeWithButtonDefault = {
 
 const TabsExample = ({ label }) => {
   const [index, setIndex] = useState(0);
-  const onActive = nextIndex => setIndex(nextIndex);
+  const onActive = (nextIndex) => setIndex(nextIndex);
   return (
     <Box border gap="medium" pad="medium">
       <Text weight="bold">{label}</Text>
@@ -119,5 +119,5 @@ const TabStates = () => (
 export const States = () => <TabStates />;
 
 export default {
-  title: 'Controls/Tabs/States',
+  title: 'Controls/Tabs/Custom Themed/States',
 };

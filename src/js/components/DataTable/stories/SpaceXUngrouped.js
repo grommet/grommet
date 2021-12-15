@@ -14,17 +14,19 @@ const columns = [
     property: 'rocket',
     header: 'Rocket',
     size: 'small',
-    render: datum => <Text>{datum.rocket.name}</Text>,
+    render: (datum) => <Text>{datum.rocket.name}</Text>,
   },
   {
     property: 'success',
     header: 'Success',
     size: 'xsmall',
-    render: datum => {
+    render: (datum) => {
       if (datum.success === false) {
         const content = (
-          <Box width={{ max: 'medium'}}>
-            {datum.failures?.map(({reason}) => <Text>{reason}</Text>)}
+          <Box width={{ max: 'medium' }}>
+            {datum.failures?.map(({ reason }) => (
+              <Text>{reason}</Text>
+            ))}
           </Box>
         );
         return (
@@ -49,7 +51,7 @@ const columns = [
 ];
 
 export const SpaceXUngrouped = () => {
-  const [sort, setSort] = useState({ property: 'name', direction: 'asc'});
+  const [sort, setSort] = useState({ property: 'name', direction: 'asc' });
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(20);
 
@@ -59,29 +61,29 @@ export const SpaceXUngrouped = () => {
         options: {
           populate: [
             {
-              path: "rocket",
-              select: { name : 1},
+              path: 'rocket',
+              select: { name: 1 },
             },
           ],
           sort: {
-            [sort.property || "name"]: sort.direction || "asc",
+            [sort.property || 'name']: sort.direction || 'asc',
           },
-          select: [ "name", "success", "failures" ],
+          select: ['name', 'success', 'failures'],
           limit,
         },
       };
-      fetch("https://api.spacexdata.com/v4/launches/query", {
+      fetch('https://api.spacexdata.com/v4/launches/query', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
       })
-      .then(response => response.json())
-      .then(({docs}) => {
-        setData(docs || []);
-      })
-      .catch(error => console.error('Unable to get data:', error));
+        .then((response) => response.json())
+        .then(({ docs }) => {
+          setData(docs || []);
+        })
+        .catch((error) => console.error('Unable to get data:', error));
     };
 
     fetchData();
@@ -96,7 +98,7 @@ export const SpaceXUngrouped = () => {
           data={data}
           sortable
           replace
-          onUpdate={opts => {
+          onUpdate={(opts) => {
             console.log('onUpdate', opts);
             setLimit(opts.count);
             if (opts.sort) setSort(opts.sort);

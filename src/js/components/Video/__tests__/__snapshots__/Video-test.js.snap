@@ -1469,13 +1469,13 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hQlZlu"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 ggoCew"
+      class="StyledVideo-sc-w4v8h9-0 hTmgoS"
     >
       <source
         src="small.mp4"
@@ -1484,13 +1484,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 cpqGyh"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 iztIrr"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iYnCfA"
+        class="StyledBox-sc-13pk1d4-0 dbooEK"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eQJqRw"
+          class="StyledButton-sc-323bzc-0 lbPHCq"
           type="button"
         >
           .c0 {
@@ -1549,20 +1549,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 gpsqll"
+          class="StyledBox-sc-13pk1d4-0 iLdLeL"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ddSZjt"
+            class="StyledBox-sc-13pk1d4-0 fPkUNj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 glGLiV"
+              class="StyledStack-sc-ajspsk-0 bcUWWD"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 byyKmG"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 jqeCDj"
+                  class="StyledMeter-sc-nsxarx-0 kequch"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1578,11 +1578,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 cGyVeV"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ljDAOH"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 hBRKSZ"
                   role="button"
                   tabindex="0"
                 />
@@ -1590,10 +1590,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bClCpJ"
+            class="StyledBox-sc-13pk1d4-0 gNLRbj"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dbAlhH"
+              class="StyledText-sc-1sadyjn-0 grcvBZ"
             >
               NaN:NaN
             </span>
@@ -1601,18 +1601,18 @@ exports[`Video Play and Pause event handlers 2`] = `
         </div>
         <button
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 kVhqUm"
+          class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iwMNSr"
+            class="StyledBox-sc-13pk1d4-0 Gcwat"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fkNrQP"
+              class="StyledText-sc-1sadyjn-0 gKFELF"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 biAetp"
+              class="StyledIcon-sc-ofa7kd-0 gPdjsX"
               viewBox="0 0 24 24"
             >
               <path
@@ -5518,13 +5518,13 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hQlZlu"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 ggoCew"
+      class="StyledVideo-sc-w4v8h9-0 hTmgoS"
     >
       <source
         src="small.mp4"
@@ -5533,18 +5533,18 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 gbVPEp"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 benVwn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iYnCfA"
+        class="StyledBox-sc-13pk1d4-0 dbooEK"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eQJqRw"
+          class="StyledButton-sc-323bzc-0 lbPHCq"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 biAetp"
+            class="StyledIcon-sc-ofa7kd-0 gPdjsX"
             viewBox="0 0 24 24"
           >
             <path
@@ -5556,20 +5556,20 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 gpsqll"
+          class="StyledBox-sc-13pk1d4-0 iLdLeL"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ddSZjt"
+            class="StyledBox-sc-13pk1d4-0 fPkUNj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 glGLiV"
+              class="StyledStack-sc-ajspsk-0 bcUWWD"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 byyKmG"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 jqeCDj"
+                  class="StyledMeter-sc-nsxarx-0 kequch"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5585,11 +5585,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 cGyVeV"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ljDAOH"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 hBRKSZ"
                   role="button"
                   tabindex="0"
                 />
@@ -5597,10 +5597,10 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bClCpJ"
+            class="StyledBox-sc-13pk1d4-0 gNLRbj"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dbAlhH"
+              class="StyledText-sc-1sadyjn-0 grcvBZ"
             >
               NaN:NaN
             </span>
@@ -5608,18 +5608,18 @@ exports[`Video mouse events handlers of controls 2`] = `
         </div>
         <button
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 kVhqUm"
+          class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iwMNSr"
+            class="StyledBox-sc-13pk1d4-0 Gcwat"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fkNrQP"
+              class="StyledText-sc-1sadyjn-0 gKFELF"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 biAetp"
+              class="StyledIcon-sc-ofa7kd-0 gPdjsX"
               viewBox="0 0 24 24"
             >
               <path
@@ -5639,13 +5639,13 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hQlZlu"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 ggoCew"
+      class="StyledVideo-sc-w4v8h9-0 hTmgoS"
     >
       <source
         src="small.mp4"
@@ -5654,18 +5654,18 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 gbVPEp"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 benVwn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iYnCfA"
+        class="StyledBox-sc-13pk1d4-0 dbooEK"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eQJqRw"
+          class="StyledButton-sc-323bzc-0 lbPHCq"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 biAetp"
+            class="StyledIcon-sc-ofa7kd-0 gPdjsX"
             viewBox="0 0 24 24"
           >
             <path
@@ -5677,20 +5677,20 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 gpsqll"
+          class="StyledBox-sc-13pk1d4-0 iLdLeL"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ddSZjt"
+            class="StyledBox-sc-13pk1d4-0 fPkUNj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 glGLiV"
+              class="StyledStack-sc-ajspsk-0 bcUWWD"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 byyKmG"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 jqeCDj"
+                  class="StyledMeter-sc-nsxarx-0 kequch"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -5706,11 +5706,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 cGyVeV"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ljDAOH"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 hBRKSZ"
                   role="button"
                   tabindex="0"
                 />
@@ -5718,10 +5718,10 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bClCpJ"
+            class="StyledBox-sc-13pk1d4-0 gNLRbj"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dbAlhH"
+              class="StyledText-sc-1sadyjn-0 grcvBZ"
             >
               NaN:NaN
             </span>
@@ -5729,18 +5729,18 @@ exports[`Video mouse events handlers of controls 3`] = `
         </div>
         <button
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 kVhqUm"
+          class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iwMNSr"
+            class="StyledBox-sc-13pk1d4-0 Gcwat"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fkNrQP"
+              class="StyledText-sc-1sadyjn-0 gKFELF"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 biAetp"
+              class="StyledIcon-sc-ofa7kd-0 gPdjsX"
               viewBox="0 0 24 24"
             >
               <path
@@ -7700,13 +7700,13 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eOvTCA"
+  class="StyledGrommet-sc-19lkkz7-0 bUiuPe"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 hQlZlu"
+    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 bHBrdw"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 ggoCew"
+      class="StyledVideo-sc-w4v8h9-0 hTmgoS"
     >
       <source
         src="small.mp4"
@@ -7715,18 +7715,18 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 gbVPEp"
+      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 benVwn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iYnCfA"
+        class="StyledBox-sc-13pk1d4-0 dbooEK"
       >
         <button
-          class="StyledButton-sc-323bzc-0 eQJqRw"
+          class="StyledButton-sc-323bzc-0 lbPHCq"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 biAetp"
+            class="StyledIcon-sc-ofa7kd-0 gPdjsX"
             viewBox="0 0 24 24"
           >
             <path
@@ -7738,20 +7738,20 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 gpsqll"
+          class="StyledBox-sc-13pk1d4-0 iLdLeL"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ddSZjt"
+            class="StyledBox-sc-13pk1d4-0 fPkUNj"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 glGLiV"
+              class="StyledStack-sc-ajspsk-0 bcUWWD"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 jFgyfo"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 byyKmG"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 jqeCDj"
+                  class="StyledMeter-sc-nsxarx-0 kequch"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -7767,11 +7767,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 bwhIhH"
+                class="StyledStack__StyledStackLayer-sc-ajspsk-1 cGyVeV"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 ljDAOH"
+                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 hBRKSZ"
                   role="button"
                   tabindex="0"
                 />
@@ -7779,10 +7779,10 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bClCpJ"
+            class="StyledBox-sc-13pk1d4-0 gNLRbj"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dbAlhH"
+              class="StyledText-sc-1sadyjn-0 grcvBZ"
             >
               NaN:NaN
             </span>
@@ -7790,18 +7790,18 @@ exports[`Video scrubber 2`] = `
         </div>
         <button
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 kVhqUm"
+          class="StyledButton-sc-323bzc-0 eiEooU"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iwMNSr"
+            class="StyledBox-sc-13pk1d4-0 Gcwat"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fkNrQP"
+              class="StyledText-sc-1sadyjn-0 gKFELF"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 biAetp"
+              class="StyledIcon-sc-ofa7kd-0 gPdjsX"
               viewBox="0 0 24 24"
             >
               <path

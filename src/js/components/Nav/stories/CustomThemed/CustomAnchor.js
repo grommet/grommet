@@ -31,7 +31,7 @@ const CustomAnchorNav = () => (
     <Box background="dark-1" pad="large" fill>
       <Box direction="row" pad={{ vertical: 'medium' }}>
         <Nav width="small" margin={{ right: 'large' }}>
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <Anchor href={item.href} label={item.label} key={item.label} />
           ))}
         </Nav>
@@ -42,8 +42,8 @@ const CustomAnchorNav = () => (
 );
 
 export const CustomAnchor = () => <CustomAnchorNav />;
-CustomAnchor.storyName = 'Custom anchor';
+CustomAnchor.storyName = 'Custom Anchor';
 
 export default {
-  title: 'Controls/Nav/Custom anchor',
+  title: 'Controls/Nav/Custom Themed/Custom Anchor',
 };
