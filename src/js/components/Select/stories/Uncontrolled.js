@@ -1,19 +1,20 @@
 import React from 'react';
-import { Box, Select } from 'grommet';
+
+import { Box, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 export const Uncontrolled = () => (
-  // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={...}>
-  <Box fill align="center" justify="start" pad="large">
-    <Select
-      id="select"
-      name="select"
-      placeholder="Select"
-      options={['one', 'two']}
-      onChange={({ option }) => console.log(option)}
-    />
-  </Box>
-  // </Grommet>
+  <Grommet full theme={grommet}>
+    <Box fill align="center" justify="start" pad="large">
+      <Select
+        id="select"
+        name="select"
+        placeholder="Select"
+        options={['one', 'two']}
+        onChange={({ option }) => console.log(option)}
+      />
+    </Box>
+  </Grommet>
 );
 
 Uncontrolled.parameters = {

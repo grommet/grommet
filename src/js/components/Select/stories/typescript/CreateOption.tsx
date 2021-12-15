@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Select } from 'grommet';
+import { Box, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 // the prefix name of the Create option entry
 const prefix = 'Create';
@@ -36,34 +37,33 @@ export const CreateOption = () => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Box fill align="center" justify="start" pad="large">
-      <Select
-        open
-        size="medium"
-        placeholder="Select"
-        value={value}
-        options={options}
-        onChange={({ option }) => {
-          if (option.includes(prefix)) {
-            defaultOptions.pop(); // remove Create option
-            defaultOptions.push(searchValue);
-            setValue(searchValue);
-          } else {
-            setValue(option);
-          }
-        }}
-        onClose={() => setOptions(defaultOptions)}
-        onSearch={(text: string) => {
-          updateCreateOption(text);
-          const exp = getRegExp(text);
-          setOptions(defaultOptions.filter((o) => exp.test(o)));
-          setSearchValue(text);
-        }}
-      />
-    </Box>
-    // </Grommet>
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          open
+          size="medium"
+          placeholder="Select"
+          value={value}
+          options={options}
+          onChange={({ option }) => {
+            if (option.includes(prefix)) {
+              defaultOptions.pop(); // remove Create option
+              defaultOptions.push(searchValue);
+              setValue(searchValue);
+            } else {
+              setValue(option);
+            }
+          }}
+          onClose={() => setOptions(defaultOptions)}
+          onSearch={(text: string) => {
+            updateCreateOption(text);
+            const exp = getRegExp(text);
+            setOptions(defaultOptions.filter((o) => exp.test(o)));
+            setSearchValue(text);
+          }}
+        />
+      </Box>
+    </Grommet>
   );
 };
 

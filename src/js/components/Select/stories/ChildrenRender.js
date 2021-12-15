@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import { FormClose } from 'grommet-icons';
-import { Box, Button, Select, Text } from 'grommet';
+import { Box, Button, Grommet, Select, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const allSeasons = [
   'S01',
@@ -60,37 +62,36 @@ export const Children = () => {
   );
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Box fill align="center" justify="center">
-      <Select
-        closeOnChange={false}
-        multiple
-        value={
-          <Box wrap direction="row" width="small">
-            {selected && selected.length ? (
-              selected.map((index) => renderSeason(allSeasons[index]))
-            ) : (
-              <Box
-                pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                margin="xsmall"
-              >
-                Select Season
-              </Box>
-            )}
-          </Box>
-        }
-        options={allSeasons}
-        selected={selected}
-        disabled={[2, 6]}
-        onChange={({ selected: nextSelected }) => {
-          setSelected([...nextSelected].sort());
-        }}
-      >
-        {renderOption}
-      </Select>
-    </Box>
-    // </Grommet>
+    <Grommet full theme={grommet}>
+      <Box fill align="center" justify="center">
+        <Select
+          closeOnChange={false}
+          multiple
+          value={
+            <Box wrap direction="row" width="small">
+              {selected && selected.length ? (
+                selected.map((index) => renderSeason(allSeasons[index]))
+              ) : (
+                <Box
+                  pad={{ vertical: 'xsmall', horizontal: 'small' }}
+                  margin="xsmall"
+                >
+                  Select Season
+                </Box>
+              )}
+            </Box>
+          }
+          options={allSeasons}
+          selected={selected}
+          disabled={[2, 6]}
+          onChange={({ selected: nextSelected }) => {
+            setSelected([...nextSelected].sort());
+          }}
+        >
+          {renderOption}
+        </Select>
+      </Box>
+    </Grommet>
   );
 };
 

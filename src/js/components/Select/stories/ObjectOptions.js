@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Select } from 'grommet';
+
+import { Box, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const objectOptions = [
   {
@@ -24,21 +26,20 @@ export const ObjectOptions = () => {
   const [value, setValue] = useState('');
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Box fill align="center" justify="start" pad="large">
-      <Select
-        id="select"
-        name="select"
-        placeholder="Select"
-        labelKey="label"
-        valueKey={{ key: 'value', reduce: true }}
-        value={value}
-        options={objectOptions}
-        onChange={({ value: nextValue }) => setValue(nextValue)}
-      />
-    </Box>
-    // </Grommet>
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          id="select"
+          name="select"
+          placeholder="Select"
+          labelKey="label"
+          valueKey={{ key: 'value', reduce: true }}
+          value={value}
+          options={objectOptions}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
+        />
+      </Box>
+    </Grommet>
   );
 };
 

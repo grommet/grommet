@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Select } from 'grommet';
+
+import { Box, Grommet, Select, grommet } from 'grommet';
 
 const options = ['one', 'two', 'three'];
 
-export const Top = () => {
-  const [value, setValue] = useState(options[0]);
+const ClearTop = () => {
+  const [value, setValue] = useState();
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
     <Box fill align="center" justify="start" pad="large">
       <Select
         placeholder="Clear Options"
@@ -18,32 +17,16 @@ export const Top = () => {
         clear
       />
     </Box>
-    // </Grommet>
   );
-};
-Top.parameters = {
-  chromatic: { disable: true },
 };
 
-export const Bottom = () => {
-  const [value, setValue] = useState(options[1]);
-  return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
-    <Box fill align="center" justify="start" pad="large">
-      <Select
-        placeholder="Clear Options"
-        multiple
-        value={value}
-        options={options}
-        onChange={({ value: nextValue }) => setValue(nextValue)}
-        clear={{ position: 'bottom' }}
-      />
-    </Box>
-    // </Grommet>
-  );
-};
-Bottom.parameters = {
+export const Clear = () => (
+  <Grommet theme={grommet}>
+    <ClearTop />
+  </Grommet>
+);
+
+Clear.parameters = {
   chromatic: { disable: true },
 };
 
