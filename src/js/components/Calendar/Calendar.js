@@ -669,10 +669,23 @@ const Calendar = forwardRef(
           </Box>
           <Box flex={false} direction="row" align="center">
             <Button
-              a11yTitle={previousMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}
+              a11yTitle={
+                messages?.previous
+                  ? format({
+                      id: 'calendar.previous',
+                      messages,
+                      values: {
+                        date: previousMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    })
+                  : previousMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })
+              }
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(previousMonth, bounds)}
               onClick={() => {
@@ -692,10 +705,23 @@ const Calendar = forwardRef(
               }}
             />
             <Button
-              a11yTitle={nextMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}
+              a11yTitle={
+                messages?.next
+                  ? format({
+                      id: 'calendar.next',
+                      messages,
+                      values: {
+                        date: nextMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    })
+                  : nextMonth.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })
+              }
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
               disabled={!betweenDates(nextMonth, bounds)}
               onClick={() => {
@@ -864,7 +890,7 @@ const Calendar = forwardRef(
                       onClick: () => {
                         selectDate(dateString);
                         announce(
-                          `Selected 
+                          `Selected
                           ${formatToLocalYYYYMMDD(dateString)}`,
                           'assertive',
                         );
