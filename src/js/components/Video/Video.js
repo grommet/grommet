@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -80,23 +81,23 @@ const Video = forwardRef(
     const containerRef = useRef();
     const scrubberRef = useRef();
     const videoRef = useForwardedRef(ref);
-    const [controls, setControls] = useState(
-      typeof controlsProp === 'string' || typeof controlsProp === 'boolean'
-        ? {
-            position: controlsProp,
-            items: ['volume', 'fullScreen'],
-          }
-        : controlsProp,
-    );
-
-    useEffect(() => {
-      setControls({
-        items: controlsProp?.items || ['volume', 'fullScreen'],
-        position:
-          (typeof controlsProp === 'string' && controlsProp) ||
-          controlsProp?.position ||
-          'over',
-      });
+    const controls = useMemo(() => {
+      let result;
+      if (
+        typeof controlsProp === 'string' ||
+        typeof controlsProp === 'boolean'
+      ) {
+        result = {
+          items: ['volume', 'fullScreen'],
+          position: controlsProp,
+        };
+      } else {
+        result = {
+          items: controlsProp?.items || ['volume', 'fullScreen'],
+          position: controlsProp?.position || 'over',
+        };
+      }
+      return result;
     }, [controlsProp]);
 
     // mute if needed
