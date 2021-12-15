@@ -184,7 +184,7 @@ export const Search = () => {
 
   useEffect(() => {
     const filterContentPartners = allContentPartners.filter(
-      (s) => s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0,
+      s => s.name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0,
     );
 
     setTimeout(() => {
@@ -197,9 +197,7 @@ export const Search = () => {
     <Box direction="row" align="center" pad="small" flex={false}>
       <CheckBox
         tabIndex="-1"
-        checked={selectedContentPartners.some(
-          (partner) => partner.name === name,
-        )}
+        checked={selectedContentPartners.some(partner => partner.name === name)}
         label={<Text size="small">{name}</Text>}
         onChange={() => {}}
       />
@@ -233,8 +231,8 @@ export const Search = () => {
       </Box>
       <Button
         href="#"
-        onFocus={(event) => event.stopPropagation()}
-        onClick={(event) => {
+        onFocus={event => event.stopPropagation()}
+        onClick={event => {
           event.preventDefault();
           event.stopPropagation();
           clearContentPartners();
@@ -248,7 +246,7 @@ export const Search = () => {
     </Box>
   );
 
-  const sortContentPartners = (selectedPartnerNames) => (p1, p2) => {
+  const sortContentPartners = selectedPartnerNames => (p1, p2) => {
     const p1Exists = selectedPartnerNames.includes(p1.name);
     const p2Exists = selectedPartnerNames.includes(p2.name);
 
@@ -278,7 +276,7 @@ export const Search = () => {
           value={
             selectedContentPartners.length ? renderContentPartners() : undefined
           }
-          selected={selectedContentPartners.map((option) =>
+          selected={selectedContentPartners.map(option =>
             contentPartners.indexOf(option),
           )}
           options={contentPartners}
@@ -301,7 +299,7 @@ export const Search = () => {
             setSelectedContentPartners(newSelectedPartners);
             setContentPartners(sortedContentPartners);
           }}
-          onSearch={(query) => {
+          onSearch={query => {
             setSearching(true);
             setSearchQuery(query);
           }}
