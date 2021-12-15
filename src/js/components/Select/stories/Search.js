@@ -23,7 +23,7 @@ export const Search = () => {
           options={options}
           onChange={({ option }) => setValue(option)}
           onClose={() => setOptions(defaultOptions)}
-          onSearch={(text) => {
+          onSearch={text => {
             // The line below escapes regular expression special characters:
             // [ \ ^ $ . | ? * + ( )
             const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -32,7 +32,7 @@ export const Search = () => {
             // handles escaping special characters. Without escaping special
             // characters, errors will appear in the console
             const exp = new RegExp(escapedText, 'i');
-            setOptions(defaultOptions.filter((o) => exp.test(o)));
+            setOptions(defaultOptions.filter(o => exp.test(o)));
           }}
         />
         <Select
@@ -44,7 +44,7 @@ export const Search = () => {
           onChange={({ value: nextValue }) => setValueMultiple(nextValue)}
           closeOnChange={false}
           onClose={() => setOptions(defaultOptions)}
-          onSearch={(text) => {
+          onSearch={text => {
             // The line below escapes regular expression special characters:
             // [ \ ^ $ . | ? * + ( )
             const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -53,7 +53,7 @@ export const Search = () => {
             // handles escaping special characters. Without escaping special
             // characters, errors will appear in the console
             const exp = new RegExp(escapedText, 'i');
-            setOptions(defaultOptions.filter((o) => exp.test(o)));
+            setOptions(defaultOptions.filter(o => exp.test(o)));
           }}
         />
       </Box>
