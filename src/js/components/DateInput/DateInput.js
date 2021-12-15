@@ -19,6 +19,7 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
+import { getTimestamp, normalizeForTimezone } from '../Calendar/utils';
 import {
   formatToSchema,
   schemaToMask,
@@ -62,6 +63,20 @@ const DateInput = forwardRef(
       initialValue: defaultValue,
     });
 
+    let timestamp;
+    if (Array.isArray(defaultValue) && defaultValue.length) {
+      timestamp = getTimestamp(defaultValue[0]);
+    } else if (typeof defaultValue === 'string') {
+      timestamp = getTimestamp(defaultValue);
+    } else if (Array.isArray(value) && value.length) {
+      timestamp = getTimestamp(value[0]);
+    } else if (typeof value === 'string') {
+      timestamp = getTimestamp(value);
+    }
+
+    // normalize value based on timestamp vs user's local timezone
+    const normalizedDate = normalizeForTimezone(value, timestamp);
+
     // do we expect multiple dates?
     const range = Array.isArray(value) || (format && format.includes('-'));
 
@@ -73,7 +88,7 @@ const DateInput = forwardRef(
 
     // textValue is only used when a format is provided
     const [textValue, setTextValue] = useState(
-      schema ? valueToText(value, schema) : undefined,
+      schema ? valueToText(normalizedDate, schema) : undefined,
     );
 
     // We need to distinguish between the caller changing a Form value
@@ -84,18 +99,18 @@ const DateInput = forwardRef(
     // matching "06/1/2021".
     useEffect(() => {
       if (schema && value !== undefined) {
-        const nextTextValue = valueToText(value, schema);
+        const nextTextValue = valueToText(normalizedDate, schema);
         if (
           !valuesAreEqual(
-            textToValue(textValue, schema, value, range),
-            textToValue(nextTextValue, schema, value, range),
+            textToValue(textValue, schema, range, timestamp),
+            textToValue(nextTextValue, schema, range, timestamp),
           ) ||
           (textValue === '' && nextTextValue !== '')
         ) {
           setTextValue(nextTextValue);
         }
       }
-    }, [range, schema, textValue, value]);
+    }, [range, schema, textValue, value, normalizedDate, timestamp]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -115,10 +130,10 @@ const DateInput = forwardRef(
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
-        date={range ? undefined : value}
+        date={range ? undefined : normalizedDate}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [value] : undefined}
+        dates={range && value.length ? [normalizedDate] : undefined}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -131,7 +146,10 @@ const DateInput = forwardRef(
                 // clicking an edge date removes it
                 else if (range) normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
-                if (schema) setTextValue(valueToText(normalizedValue, schema));
+                if (schema)
+                  setTextValue(
+                    valueToText(normalizeForTimezone(normalizedValue), schema),
+                  );
                 setValue(normalizedValue);
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
@@ -140,7 +158,7 @@ const DateInput = forwardRef(
                 }
               }
         }
-        {...calendarProps}
+        {...{ ...calendarProps, timestamp }}
       />
     );
 
@@ -189,8 +207,8 @@ const DateInput = forwardRef(
               const nextValue = textToValue(
                 nextTextValue,
                 schema,
-                value,
                 range,
+                timestamp,
               );
               // update value even when undefined
               setValue(nextValue);
