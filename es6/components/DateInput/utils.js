@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
+import { formatToLocalYYYYMMDD } from '../Calendar/utils';
 export var formatToSchema = function formatToSchema(format) {
   if (!format) return undefined;
   var result = [];
@@ -125,7 +126,7 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-export var textToValue = function textToValue(text, schema, valueProp, range) {
+export var textToValue = function textToValue(text, schema, range, timestamp) {
   if (!text) return range ? [] : undefined;
   var result;
 
@@ -136,10 +137,7 @@ export var textToValue = function textToValue(text, schema, valueProp, range) {
     if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts;
     var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
-    if (valueProp && (Array.isArray(valueProp) && valueProp[0] || !Array.isArray(valueProp))) {
-      var valueDate = new Date(Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp).toISOString();
-      date = date.split('T')[0] + "T" + valueDate.split('T')[1];
-    }
+    if (timestamp) date = formatToLocalYYYYMMDD(date).split('T')[0] + "T" + timestamp;else date = "" + formatToLocalYYYYMMDD(date).split('T')[0];
 
     if (!range) {
       if (!result) result = date;

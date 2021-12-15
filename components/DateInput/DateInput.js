@@ -31,7 +31,9 @@ var _MaskedInput = require("../MaskedInput");
 
 var _utils = require("../../utils");
 
-var _utils2 = require("./utils");
+var _utils2 = require("../Calendar/utils");
+
+var _utils3 = require("./utils");
 
 var _propTypes = require("./propTypes");
 
@@ -83,20 +85,34 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     initialValue: defaultValue
   }),
       value = _useFormInput[0],
-      setValue = _useFormInput[1]; // do we expect multiple dates?
+      setValue = _useFormInput[1];
 
+  var timestamp;
+
+  if (Array.isArray(defaultValue) && defaultValue.length) {
+    timestamp = (0, _utils2.getTimestamp)(defaultValue[0]);
+  } else if (typeof defaultValue === 'string') {
+    timestamp = (0, _utils2.getTimestamp)(defaultValue);
+  } else if (Array.isArray(value) && value.length) {
+    timestamp = (0, _utils2.getTimestamp)(value[0]);
+  } else if (typeof value === 'string') {
+    timestamp = (0, _utils2.getTimestamp)(value);
+  } // normalize value based on timestamp vs user's local timezone
+
+
+  var normalizedDate = (0, _utils2.normalizeForTimezone)(value, timestamp); // do we expect multiple dates?
 
   var range = Array.isArray(value) || format && format.includes('-'); // parse format and build a formal schema we can use elsewhere
 
   var schema = (0, _react.useMemo)(function () {
-    return (0, _utils2.formatToSchema)(format);
+    return (0, _utils3.formatToSchema)(format);
   }, [format]); // mask is only used when a format is provided
 
   var mask = (0, _react.useMemo)(function () {
-    return (0, _utils2.schemaToMask)(schema);
+    return (0, _utils3.schemaToMask)(schema);
   }, [schema]); // textValue is only used when a format is provided
 
-  var _useState = (0, _react.useState)(schema ? (0, _utils2.valueToText)(value, schema) : undefined),
+  var _useState = (0, _react.useState)(schema ? (0, _utils3.valueToText)(normalizedDate, schema) : undefined),
       textValue = _useState[0],
       setTextValue = _useState[1]; // We need to distinguish between the caller changing a Form value
   // and the user typing a date that he isn't finished with yet.
@@ -108,13 +124,13 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
   (0, _react.useEffect)(function () {
     if (schema && value !== undefined) {
-      var nextTextValue = (0, _utils2.valueToText)(value, schema);
+      var nextTextValue = (0, _utils3.valueToText)(normalizedDate, schema);
 
-      if (!(0, _utils2.valuesAreEqual)((0, _utils2.textToValue)(textValue, schema, value, range), (0, _utils2.textToValue)(nextTextValue, schema, value, range)) || textValue === '' && nextTextValue !== '') {
+      if (!(0, _utils3.valuesAreEqual)((0, _utils3.textToValue)(textValue, schema, range, timestamp), (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp)) || textValue === '' && nextTextValue !== '') {
         setTextValue(nextTextValue);
       }
     }
-  }, [range, schema, textValue, value]); // when format and not inline, whether to show the Calendar in a Drop
+  }, [range, schema, textValue, value, normalizedDate, timestamp]); // when format and not inline, whether to show the Calendar in a Drop
 
   var _useState2 = (0, _react.useState)(),
       open = _useState2[0],
@@ -139,10 +155,10 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     ref: inline ? ref : undefined,
     id: inline && !format ? id : undefined,
     range: range,
-    date: range ? undefined : value // when caller initializes with empty array, dates should be undefined
+    date: range ? undefined : normalizedDate // when caller initializes with empty array, dates should be undefined
     // allowing the user to select both begin and end of the range
     ,
-    dates: range && value.length ? [value] : undefined // places focus on days grid when Calendar opens
+    dates: range && value.length ? [normalizedDate] : undefined // places focus on days grid when Calendar opens
     ,
     initialFocus: open ? 'days' : undefined,
     onSelect: disabled ? undefined : function (nextValue) {
@@ -153,7 +169,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       } // clicking an edge date removes it
       else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
 
-      if (schema) setTextValue((0, _utils2.valueToText)(normalizedValue, schema));
+      if (schema) setTextValue((0, _utils3.valueToText)((0, _utils2.normalizeForTimezone)(normalizedValue), schema));
       setValue(normalizedValue);
       if (_onChange) _onChange({
         value: normalizedValue
@@ -166,7 +182,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
         }, 1);
       }
     }
-  }, calendarProps));
+  }, _extends({}, calendarProps, {
+    timestamp: timestamp
+  })));
 
   if (!format) {
     // When no format is specified, we don't give the user a way to type
@@ -216,7 +234,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     onChange: function onChange(event) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
-      var nextValue = (0, _utils2.textToValue)(nextTextValue, schema, value, range); // update value even when undefined
+      var nextValue = (0, _utils3.textToValue)(nextTextValue, schema, range, timestamp); // update value even when undefined
 
       setValue(nextValue);
 

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.localTimezoneToUTC = exports.formatToLocalYYYYMMDD = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
+exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.normalizeForTimezone = exports.getTimestamp = exports.formatToLocalYYYYMMDD = exports.formatDateToPropStructure = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 var DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
@@ -87,16 +87,9 @@ exports.sameDayOrBefore = sameDayOrBefore;
 
 var daysApart = function daysApart(date1, date2) {
   return Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
-}; // account for timezone offset of user's local machine
-
-
-exports.daysApart = daysApart;
-
-var localTimezoneToUTC = function localTimezoneToUTC(date) {
-  return new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
 };
 
-exports.localTimezoneToUTC = localTimezoneToUTC;
+exports.daysApart = daysApart;
 
 var formatToLocalYYYYMMDD = function formatToLocalYYYYMMDD(date) {
   var adjustedDate = new Date(date);
@@ -161,3 +154,60 @@ var withinDates = function withinDates(date, dates) {
 };
 
 exports.withinDates = withinDates;
+
+var getTimestamp = function getTimestamp(date) {
+  return new RegExp(/T.*/).test(date) ? new Date(date).toISOString().split('T')[1] : // for Calendar, explicitly mark that caller has provided
+  // value with no timestamp
+  false;
+}; // Adjust for differences between timestamp on value and
+// local timezone of user. Internal Calendar logic relies
+// on Javascript date contructor which translates the provided
+// date into the equivalent moment for the user's timezone, which
+// can create undesired results. The standardizes the input value
+// for internal calculations
+// Reference: https://www.ursahealth.com/new-insights/dates-and-timezones-in-javascript
+
+
+exports.getTimestamp = getTimestamp;
+
+var normalizeForTimezone = function normalizeForTimezone(value, timestamp) {
+  var adjustedDate;
+  var hourDelta;
+  var valueOffset = 0;
+
+  if (timestamp && typeof timestamp === 'string') {
+    hourDelta = parseInt(timestamp == null ? void 0 : timestamp.split(':')[0], 10);
+    valueOffset = hourDelta * 60 * 1000; // ms
+  }
+
+  var localOffset = new Date().getTimezoneOffset() * 60 * 1000;
+  adjustedDate = value && (Array.isArray(value) ? value : [value]).map(function (v) {
+    return new Date(new Date(v).getTime() - valueOffset + localOffset).toISOString();
+  });
+
+  if (typeof value === 'string') {
+    var _adjustedDate = adjustedDate;
+    adjustedDate = _adjustedDate[0];
+  }
+
+  return adjustedDate;
+}; // format the date to align with date format caller passed in
+
+
+exports.normalizeForTimezone = normalizeForTimezone;
+
+var formatDateToPropStructure = function formatDateToPropStructure(date, timestamp) {
+  var adjustedDate;
+
+  if (date) {
+    if (timestamp) adjustedDate = formatToLocalYYYYMMDD(date).split('T')[0] + "T" + timestamp;else if (timestamp === false) {
+      var _formatToLocalYYYYMMD = formatToLocalYYYYMMDD(date).split('T');
+
+      adjustedDate = _formatToLocalYYYYMMD[0];
+    } else adjustedDate = date;
+  }
+
+  return adjustedDate;
+};
+
+exports.formatDateToPropStructure = formatDateToPropStructure;

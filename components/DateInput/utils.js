@@ -3,11 +3,10 @@
 exports.__esModule = true;
 exports.valuesAreEqual = exports.valueToText = exports.textToValue = exports.schemaToMask = exports.formatToSchema = void 0;
 
+var _utils = require("../Calendar/utils");
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-// Converting between Date and String types is handled via a "schema".
-// The schema is an array of strings, split into strings with identical
-// characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
 var formatToSchema = function formatToSchema(format) {
   if (!format) return undefined;
   var result = [];
@@ -138,7 +137,7 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 
-var textToValue = function textToValue(text, schema, valueProp, range) {
+var textToValue = function textToValue(text, schema, range, timestamp) {
   if (!text) return range ? [] : undefined;
   var result;
 
@@ -149,10 +148,7 @@ var textToValue = function textToValue(text, schema, valueProp, range) {
     if (!parts.m || !parts.d || !parts.y || parts.y.length < 4 || parts.m.length > 2 || parts.d.length > 2 || parts.m > 12 || parts.d > 31 || (parts.m === "02" || parts.m === "2") && parts.d > (leapYear ? 29 : 28)) return parts;
     var date = new Date(parts.y, parts.m - 1, parts.d).toISOString(); // match time and timezone of any supplied valueProp
 
-    if (valueProp && (Array.isArray(valueProp) && valueProp[0] || !Array.isArray(valueProp))) {
-      var valueDate = new Date(Array.isArray(valueProp) && valueProp.length ? valueProp[0] : valueProp).toISOString();
-      date = date.split('T')[0] + "T" + valueDate.split('T')[1];
-    }
+    if (timestamp) date = (0, _utils.formatToLocalYYYYMMDD)(date).split('T')[0] + "T" + timestamp;else date = "" + (0, _utils.formatToLocalYYYYMMDD)(date).split('T')[0];
 
     if (!range) {
       if (!result) result = date;
