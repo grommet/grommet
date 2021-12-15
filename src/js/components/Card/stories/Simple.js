@@ -5,7 +5,7 @@ import { Box, Card, CardBody, CardFooter, CardHeader, Text } from 'grommet';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box pad="large" gap="medium" height="large" width="medium">
+  <Box pad="large" gap="medium" width="medium">
     <Card pad="small" background="dark-1" gap="medium">
       <CardHeader>header</CardHeader>
       <CardBody>body</CardBody>

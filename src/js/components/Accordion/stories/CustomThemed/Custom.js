@@ -29,7 +29,6 @@ const customAccordionTheme = {
       color: 'hotpink',
     },
     border: undefined,
-    panel: {},
   },
 };
 
