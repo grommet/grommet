@@ -20,7 +20,7 @@ const updateCreateOption = (text: string) => {
 };
 
 // improving Search support of special characters
-const getRegExp = (text) => {
+const getRegExp = text => {
   // The line below escapes regular expression special characters:
   // [ \ ^ $ . | ? * + ( )
   const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -58,7 +58,7 @@ export const CreateOption = () => {
           onSearch={(text: string) => {
             updateCreateOption(text);
             const exp = getRegExp(text);
-            setOptions(defaultOptions.filter((o) => exp.test(o)));
+            setOptions(defaultOptions.filter(o => exp.test(o)));
             setSearchValue(text);
           }}
         />
