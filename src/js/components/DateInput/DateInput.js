@@ -200,7 +200,6 @@ const DateInput = forwardRef(
               ref={ref}
               id={id}
               name={name}
-              icon={<CalendarIcon size={iconSize} />}
               reverse
               disabled={disabled}
               mask={mask}
@@ -234,7 +233,7 @@ const DateInput = forwardRef(
               }}
             />
             <Button
-              onClick={open ? closeCalendar : openCalendar}
+              onClick={open ? () => closeCalendar() : () => openCalendar()}
               plain
               ref={calendarButtonRef}
               icon={<CalendarIcon ref={calendarIconRef} size={iconSize} />}
