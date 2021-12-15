@@ -50,5 +50,5 @@ export const Themed = () => {
 };
 
 export default {
-  title: 'Visualizations/Avatar/Themed',
+  title: 'Visualizations/Avatar/Custom Themed/Themed',
 };
