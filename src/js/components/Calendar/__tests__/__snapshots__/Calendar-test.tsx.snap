@@ -4861,7 +4861,7 @@ exports[`Calendar dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected
+                Currently selected 
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"
@@ -6135,7 +6135,7 @@ exports[`Calendar daysOfWeek 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected
+                Currently selected 
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c12"
@@ -17281,7 +17281,7 @@ exports[`Calendar select dates 1`] = `
       <div
         aria-label="
                 January 2020;
-                Currently selected
+                Currently selected 
   2020-01-12 ,2020-01-08 through 2020-01-10
               "
         class="c9"

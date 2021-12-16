@@ -10179,7 +10179,7 @@ exports[`DateInput range format inline 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -11380,7 +11380,7 @@ exports[`DateInput range inline 1`] = `
       <div
         aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
         class="c9"
@@ -19837,7 +19837,7 @@ exports[`DateInput select format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -20701,7 +20701,7 @@ exports[`DateInput select format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-10 through 2020-07-10
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 bqRhn"
@@ -22097,7 +22097,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -23553,7 +23553,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-10 through 2020-07-10
               "
             class="c13"
@@ -34137,7 +34137,7 @@ exports[`DateInput type format inline range 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -35001,7 +35001,7 @@ exports[`DateInput type format inline range 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through 2020-07-23
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -36396,7 +36396,7 @@ exports[`DateInput type format inline range partial 1`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
           class="c13"
@@ -37260,7 +37260,7 @@ exports[`DateInput type format inline range partial 2`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through none
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -38124,7 +38124,7 @@ exports[`DateInput type format inline range partial 3`] = `
         <div
           aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through none
               "
           class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 goAAKK"
@@ -39520,7 +39520,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -40899,7 +40899,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through none
               "
             class="c13"
@@ -42278,7 +42278,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through none
               "
             class="c13"
@@ -43675,7 +43675,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-02 through 2020-07-07
               "
             class="c13"
@@ -45072,7 +45072,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
           <div
             aria-label="
                 July 2020;
-                Currently selected
+                Currently selected 
   2020-07-21 through 2020-07-23
               "
             class="c13"
